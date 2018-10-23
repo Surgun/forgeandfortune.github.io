@@ -152,7 +152,7 @@ $(document).on('click', "div.eventList", (e) => {
     }
     if (event.floor !== null) {
         const d5 = $("<div/>").addClass("eventFloorHeading").html("Floor Reached:");
-        const d6 = $("<div/>").addClass("eventloor").html("Floor " + event.floor);
+        const d6 = $("<div/>").addClass("eventFloor").html("Floor " + event.floor);
         d.append(d5,d6);
     }
     if (event.reward !== null ) {

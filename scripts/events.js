@@ -146,9 +146,10 @@ $(document).on('click', "div.eventList", (e) => {
     const d2 = $("<div/>").addClass("eventMessage").html(event.message);
     d.append(d1,d1a,d2);
     if (event.time !== null) {
+        const d3a = $("<div/>").addClass("eventStatTitle").html("Dungeon Statistics");
         const d3 = $("<div/>").addClass("eventTimeHeading").html("Total Time:");
         const d4 = $("<div/>").addClass("eventTime").html(msToTime(event.time));
-        d.append(d3,d4);
+        d.append(d3a,d3,d4);
     }
     if (event.floor !== null) {
         const d5 = $("<div/>").addClass("eventFloorHeading").html("Floor Reached:");

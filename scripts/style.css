@@ -3436,8 +3436,28 @@ footer a[href*="discord.gg"]:hover {
         grid-row: 1;
     }
 
-    .dsm + .dsm + .dsm + .dsm{
+    .dsm + .dsm + .dsm + .dsm {
         grid-column: 1;
+        grid-row: 1;
+    }
+
+    .dsc {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .dsc + .dsc {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .dsc + .dsc + .dsc {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .dsc + .dsc + .dsc + .dsc {
+        grid-column: 4;
         grid-row: 1;
     }
 }

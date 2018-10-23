@@ -268,8 +268,8 @@ function gearEquipFromInventory(invID) {
     equipContainerTarget = Inventory.inv[invID];
     const item = equipContainerTarget.item;
     const itemdiv = $("<div/>").addClass("equipItem");
-    itemdiv.addClass("R"+item.rarity)
-    const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",item.rarity).html(item.itemPicName());
+    itemdiv.addClass("R"+equipContainerTarget.rarity)
+    const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(item.itemPicName());
     const itemProps = $("<div/>").addClass("equipItemProps").html(equipContainerTarget.propDiv());
     itemdiv.append(itemName,itemProps);
     $ietEquip.html(itemdiv);

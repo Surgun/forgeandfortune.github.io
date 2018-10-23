@@ -562,6 +562,14 @@ body {
     margin: 10px auto;
 }
 
+.heroEquipBlockEquipStat.hebPositive {
+    color: mediumspringgreen;
+}
+
+.heroEquipBlockEquipStat.hebNegative {
+    color: #c90000;
+}
+
 .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle {
     font-weight: normal;
     font-size: 1rem;
@@ -2629,7 +2637,7 @@ Rarities
     display: flex;
     flex-direction: column;
     padding: 15px;
-    margin: 10px 20px 10px 0;
+    margin: 10px 10px 10px 0;
     background-color: var(--bg);
     border: 1px solid var(--border);
 }

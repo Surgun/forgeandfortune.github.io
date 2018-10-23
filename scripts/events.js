@@ -56,7 +56,6 @@ const EventManager = {
         refreshEvents();
     },
     removeEvent(eventNum) {
-        console.log(eventNum);
         const event = this.events.find(e => e.eventNum === eventNum);
         if (event.reward !== null) ResourceManager.addDungeonDrops(event.reward);
         this.seenEvents.push(event.id);
@@ -94,7 +93,6 @@ class Event {
         return save;
     }
     loadSave(save) {
-        console.log(save);
         this.reward = save.reward;
         this.time = save.time;
         this.floor = save.floor;

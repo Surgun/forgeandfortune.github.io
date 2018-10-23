@@ -3,7 +3,7 @@
     "id": "E001",
     "title": "A Mysterious Letter",
     "author": "Abqu",
-    "message": "<p>If you're reading this letter, then I'm already gone.</p><p>But don't worry, you've got this!</p><p>I had to leave unexpectedly, for reasons I cannot disclose.  But here's what you need to know:</p><p>First, this is your shop.  Feel free to use it as you see fit.</p><p>Oren, the miner, and Revere, the daring thief, should be around to help you get started.</p><p>I've also included some gold for you to start your operations.</p><p>Here's what you should do:<br>- start making Knives, for income;<br>- give Revere one of those Knives to make her stronger;<br>- send her out into the dungeon, to get crafting materials;<br>- hire a new worker, and;<br>- purchase another crafting slot</p><p>If you follow these steps, you should be well on your way to success.</p><p>Remember, all playstyles are viable (whatever that means).</p><p>You may hear from me again in the future.</p><p>Your friend,</p><p>ABQU</p><p>P.S. I've left descriptions of the wares and my thoughts on the residents of the town.  You'll do great! Okay, bye.</p>",
+    "message": "<p>If you're reading this letter, then I'm already gone.</p><p>But don't worry, you've got this!</p><p>I had to leave unexpectedly, for reasons I cannot disclose.  But here's what you need to know:</p><p>First, this is your shop.  Feel free to use it as you see fit.</p><p>Oren, the miner, and Revere, the daring thief, should be around to help you get started.</p><p>I've also included some gold for you to start your operations.</p><p>Here's what you should do:<br>- Start making Knives, for income;<br>- Give Revere one of those Knives to make her stronger;<br>- Send her out into the dungeon, to get crafting materials;<br>- Hire a new worker, and;<br>- Purchase another crafting slot</p><p>If you follow these steps, you should be well on your way to success.</p><p>Remember, all playstyles are viable (whatever that means).</p><p>You may hear from me again in the future.</p><p>Your friend,</p><p>ABQU</p><p>P.S. I've left descriptions of the wares and my thoughts on the residents of the town.  You'll do great! Okay, bye.</p>",
     "type": "letter"
   },
   {
@@ -23,7 +23,7 @@
   {
     "id": "E004",
     "title": "Dungeon Reward",
-    "author": "Adventure League",
+    "author": "The Action League",
     "message": "<p>Thanks to your efforts, our group made it back safe and sound! Here's a cut of the loot as a reward.</p><p>Warm Regards,</p><p>The Adventure League</p>",
     "type": "dungeon"
   },

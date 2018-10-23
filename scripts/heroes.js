@@ -235,7 +235,7 @@ class Hero {
         if (this.slot6Type.includes(type)) return this.slot6;
     }
     healCost() {
-        return this.maxHP()-this.hp;
+        return Math.floor(Math.pow(1.05, this.lvl-1)*(this.maxHP()-this.hp));
     }
     healPay() {
         const amt = this.healCost();
@@ -332,7 +332,7 @@ const HeroManager = {
         //heal up all non-current partying members by 1% of their maxhp
         this.heroes.forEach(hero => {
             if (hero.inDungeon) return;
-            hero.healPercent(1);
+            hero.heal(1);
         });
     },
     relativePow(heroID,slot,pow) {

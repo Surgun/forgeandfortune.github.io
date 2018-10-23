@@ -142,8 +142,9 @@ $(document).on('click', "div.eventList", (e) => {
     $eventContent.empty();
     const d = $("<div/>").addClass("eventBody");
     const d1 = $("<div/>").addClass("eventAuthor").html(`FROM: ${event.author}`);
+    const d1a = $("<div/>").addClass("eventAuthor").html(`DATE: January 13, 1979`);
     const d2 = $("<div/>").addClass("eventMessage").html(event.message);
-    d.append(d1,d2);
+    d.append(d1,d1a,d2);
     if (event.time !== null) {
         const d3 = $("<div/>").addClass("eventTimeHeading").html("Total Time:");
         const d4 = $("<div/>").addClass("eventTime").html(msToTime(event.time));

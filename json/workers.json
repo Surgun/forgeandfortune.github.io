@@ -1,0 +1,162 @@
+[
+  {
+    "workerID": "W001",
+    "name": "Oren",
+    "production": "ore",
+    "type": "standard",
+    "description": "Oren comes from a long line of miners and specializes in gathering Ore.",
+    "defaultRecipeLine": "Knives"
+  },
+  {
+    "workerID": "W002",
+    "name": "Eryn",
+    "production": "wood",
+    "type": "standard",
+    "description": "Eryn carefully chooses which trees to chop down to produce Wood.",
+    "defaultRecipeLine": "Maces"
+  },
+  {
+    "workerID": "W003",
+    "name": "Herbie",
+    "production": "herb",
+    "type": "standard",
+    "description": "Herbie is a fledgling botanist and spends his days collecting Herbs.",
+    "defaultRecipeLine": "Potions"
+  },
+  {
+    "workerID": "W004",
+    "name": "Lakur",
+    "production": "leather",
+    "type": "standard",
+    "description": "Lakur is a skilled hunter and earns her living by producing Leather.",
+    "defaultRecipeLine": "Whips"
+  },
+  {
+    "workerID": "W005",
+    "name": "Harmony",
+    "production": "bone",
+    "type": "standard",
+    "description": "Harmony has a black market supplier, and expertly refines Bone.",
+    "defaultRecipeLine": "Spears"
+  },
+  {
+    "workerID": "W006",
+    "name": "Frederik",
+    "production": "fabric",
+    "type": "standard",
+    "description": "Frederik hopes to become a designer, but for now, creates Fabric.",
+    "defaultRecipeLine": "Pendants"
+  },
+  {
+    "workerID": "W007",
+    "name": "Magnolia",
+    "production": "steel",
+    "type": "standard",
+    "description": "Magnolia was taught by her mother to produce high quality Steel.",
+    "defaultRecipeLine": "Swords"
+  },
+  {
+    "workerID": "W008",
+    "name": "Sylvester",
+    "production": "silver",
+    "type": "standard",
+    "description": "Sylvester relies on reputable ore traders to smelts his Silver.",
+    "defaultRecipeLine": "Rods"
+  },
+  {
+    "workerID": "W009",
+    "name": "Pippa",
+    "production": "paper",
+    "type": "standard",
+    "description": "Pippa has excellent attention to detail, and it shows in her Paper.",
+    "defaultRecipeLine": "Tomes"
+  },
+  {
+    "workerID": "W010",
+    "name": "Manny",
+    "production": "mana",
+    "type": "standard",
+    "description": "Manny has perfected a very delicate technique to gather Mana.",
+    "defaultRecipeLine": "Wands"
+  },
+  {
+    "workerID": "W101",
+    "name": "Hardy",
+    "production": "ore",
+    "type": "advanced",
+    "description": "Hardy has two passions: being a good big brother, and mining Ore.",
+    "defaultRecipeLine": "Knives"
+  },
+  {
+    "workerID": "W102",
+    "name": "Wendy",
+    "production": "wood",
+    "type": "advanced",
+    "description": "Wendy is trying to emulate Eryn, and the second step is making Wood.",
+    "defaultRecipeLine": "Maces"
+  },
+  {
+    "workerID": "W103",
+    "name": "Blossom",
+    "production": "herb",
+    "type": "advanced",
+    "description": "Blossom loves being outdoors, and enjoys her time collecting Herbs.",
+    "defaultRecipeLine": "Potions"
+  },
+  {
+    "workerID": "W104",
+    "name": "Rocky",
+    "production": "leather",
+    "type": "advanced",
+    "description": "Rocky finds it's best not to think too hard about how he makes Leather.",
+    "defaultRecipeLine": "Whips"
+  },
+  {
+    "workerID": "W105",
+    "name": "Floyd",
+    "production": "bone",
+    "type": "advanced",
+    "description": "Floyd has a special, one-of-a-kind relationship with Bone.",
+    "defaultRecipeLine": "Spears"
+  },
+  {
+    "workerID": "W106",
+    "name": "Tricia",
+    "production": "fabric",
+    "type": "advanced",
+    "description": "Tricia is a hard-working student, hoping to learn all she can about Fabric.",
+    "defaultRecipeLine": "Pendants"
+  },
+  {
+    "workerID": "W107",
+    "name": "Remington",
+    "production": "steel",
+    "type": "advanced",
+    "description": "Remington works very hard, providing only the highest quality Steel.",
+    "defaultRecipeLine": "Swords"
+  },
+  {
+    "workerID": "W108",
+    "name": "Renae",
+    "production": "silver",
+    "type": "advanced",
+    "description": "Renae enjoys getting her hands dirty when she processes Silver.",
+    "defaultRecipeLine": "Rods"
+  },
+  {
+    "workerID": "W109",
+    "name": "Paula",
+    "production": "paper",
+    "type": "advanced",
+    "description": "Paula is an excellent understudy, and is getting better at making Paper.",
+    "defaultRecipeLine": "Tomes"
+  },
+  {
+    "workerID": "W110",
+    "name": "Jewel",
+    "production": "mana",
+    "type": "advanced",
+    "description": "Jewel doesn't enjoy her job, but her bills get paid by gathering Mana.",
+    "defaultRecipeLine": "Wands"
+  }
+]

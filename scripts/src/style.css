@@ -63,7 +63,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer  {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer  {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -ms-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -562,7 +562,7 @@ body {
     margin: 10px auto;
 }
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader {
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle {
     font-weight: normal;
     font-size: 1rem;
     padding: 0 5px 5px;
@@ -2590,6 +2590,7 @@ Rarities
 }
 
 #eventList {
+    position: fixed;
     width: 100%;
     height: 100%;
     max-width: 250px;
@@ -2617,21 +2618,20 @@ Rarities
     flex: 1;
     font-size: 0.9em;
     padding: 15px;
+    margin-left: 250px;
 }
 
-.rewardDiv:before, .eventMessage:before {
-    position: relative;
-    display: block;
+.eventAuthor {
+    color: var(--highlight);
 }
 
 .eventMessage {
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
-}
-
-.eventMessage:before {
-    content: "Dungeon Complete!";
+    padding: 15px;
+    margin: 10px 20px 10px 0;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
 }
 
 .dungeonEventText {
@@ -2643,7 +2643,7 @@ Rarities
 }
 
 .eventConfirm {
-    margin-top: 20px;
+    margin: 20px 0;
     padding: 15px;
     max-width: 200px;
     text-align: center;
@@ -2657,9 +2657,8 @@ Rarities
     cursor: pointer;
 }
 
-.rewardDiv:before {
-    content: "Your Rewards!";
-    margin-top: 25px;
+.rewardDivTitle {
+    margin-top: 20px;
 }
 
 .rewardCard {

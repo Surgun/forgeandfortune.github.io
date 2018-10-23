@@ -562,7 +562,7 @@ body {
     margin: 10px auto;
 }
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle {
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle {
     font-weight: normal;
     font-size: 1rem;
     padding: 0 5px 5px;
@@ -2634,12 +2634,8 @@ Rarities
     border: 1px solid var(--border);
 }
 
-.dungeonEventText {
-    padding: 0 5px;
-}
-
-.dungeonEventTime, .dungeonEventFloor{
-    margin: 5px 0;
+.eventTimeHeading, .eventTime, .eventFloorHeading, .eventFloor {
+    margin-left: 5px;
 }
 
 .eventConfirm {

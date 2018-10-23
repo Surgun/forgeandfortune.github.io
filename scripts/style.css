@@ -3295,6 +3295,85 @@ footer a[href*="discord.gg"]:hover {
 
     main {display: none!important;}
 
+    #mobile-content {
+        text-align: center;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--bg);
+        border-top: 2px solid var(--border);
+    }
+
+    .mobile-nav-listing {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 600px;
+        list-style: none;
+        font-family: 'Varela Round', 'Open Sans', sans-serif;
+    }
+
+    .mobile-nav-listing .nav-item {
+        flex-grow: 1;
+        font-size: 0.75rem;
+    }
+
+    .mobile-nav-listing .nav-item:hover {
+        background-color: var(--bg-3);
+    }
+
+    .mobile-nav-listing .nav-item a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 20px 10px;
+        color: var(--text);
+        text-decoration: none;
+    }
+
+    .mobile-notice {
+        margin: 20px auto;
+        padding: 0 20px 20px;
+        max-width: 600px;
+    }
+
+    .mobile-notice-logo {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .mobile-notice-headline {
+        color: var(--highlight);
+        text-transform: uppercase;
+        font-family: 'Roboto Slab', serif;
+        font-weight: 100;
+    }
+
+    .mobile-notice-headline:after {
+        position: relative;
+        display: block;
+        content: "";
+        height: 2px;
+        width: 75%;
+        margin: 10px auto;
+        background-color: var(--border-2);
+    }
+
+    .mobile-notice-description {
+        font-family: 'Varela Round', 'Open Sans', sans-serif;
+    }
+
+    .mobile-notice-description + .mobile-notice-description {
+        margin-top: 10px;
+    }
+
 }
 
 /* Disables mobile notice on screens game is supported on */

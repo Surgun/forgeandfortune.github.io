@@ -505,9 +505,10 @@ body {
 
 .equipItem {
     display: inline-flex;
-    padding: 20px;
+    padding: 15px;
     margin-bottom: 20px;
-    min-height: 150px;
+    min-width: 155px;
+    min-height: 175px;
     text-align: center;
 }
 

@@ -175,7 +175,8 @@ const recipeList = {
     },
     canBuy(type) {
         const item = this.getNextBuyable(type);
-        return item.rcost.all(r => WorkerManager.lvlByType(r) >= item.lvl)
+        console.log(item.rcost);
+        return item.rcost.every(r => WorkerManager.lvlByType(r) >= item.lvl)
     },
     moreRecipes(type) {
         return this.recipes.filter(r => !r.owned && type === r.type).length > 0;

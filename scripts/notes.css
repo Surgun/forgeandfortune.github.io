@@ -1,3 +1,7 @@
+body {
+    font-family: 'Varela Round', 'Open Sans', sans-serif;
+}
+
 .article_header {
     width: 100%;
     background-color: var(--bg-3);
@@ -52,10 +56,29 @@
 .article_date {
     display: inline-block;
     margin: 10px auto 0;
-    padding: 0 15px;
+    padding: 7px 15px;
     font-size: 0.9em;
+    background-color: var(--bg-2);
+    border: 1px solid var(--border-2)
 }
 
-.article_date + .article_date {
-    border-left: 2px solid var(--border-3);
+.article_notes {
+    text-align: left;
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+.article_notes h2 {
+    color: var(--highlight);
+    padding-bottom: 5px;
+    margin: 15px 0;
+    border-bottom: 2px solid var(--border-2);
+}
+
+.article_notes p {
+    margin: 10px 0;
+}
+
+.article_notes ul {
+    margin-left: 20px;
 }

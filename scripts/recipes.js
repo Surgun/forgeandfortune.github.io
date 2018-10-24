@@ -173,6 +173,10 @@ const recipeList = {
         }
         return returnVal;
     },
+    canBuy(type) {
+        const item = this.getNextBuyable(type);
+        return item.rcost.all(r => WorkerManager.lvlByType(r) >= item.lvl)
+    },
     moreRecipes(type) {
         return this.recipes.filter(r => !r.owned && type === r.type).length > 0;
     },
@@ -229,7 +233,7 @@ function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
     ItemType.forEach(type => {
         const recipeIcon = $("#rf"+type);
-        if (recipeList.recipeNewFilter.includes(type)) recipeIcon.addClass("hasEvent");
+        if (recipeList.canBuy(type)) recipeIcon.addClass("hasEvent");
         else recipeIcon.removeClass("hasEvent");
         if (recipeList.ownAtLeastOneOrCanBuy(type)) recipeIcon.show();
         else recipeIcon.hide();
@@ -322,7 +326,7 @@ $(document).on('click', '.recipeName', (e) => {
     //click on a recipe to slot it
     e.preventDefault();
     const type = $(e.target).attr("id");
-    const item = recipeList.idToItem(type);
+    //const item = recipeList.idToItem(type);
     actionSlotManager.addSlot(type);
 });
 
@@ -339,5 +343,6 @@ $(document).on('click','.bpShopButton', (e) => {
     e.preventDefault();
     const id = $(e.target).attr('id');
     recipeList.buyBP(id);
+    refreshRecipeFilters();
 });
 

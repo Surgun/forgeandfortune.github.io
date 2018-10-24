@@ -128,7 +128,7 @@ const WorkerManager = {
         const worker = this.workerByID(workerID);
         worker.owned = true;
         worker.clearDonation();
-        this.freeCraft(workerID);
+        //this.freeCraft(workerID);
         refreshWorkers();
         refreshSideWorkers();
         refreshRecipeFilters();

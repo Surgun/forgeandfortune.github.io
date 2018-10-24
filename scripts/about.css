@@ -288,3 +288,9 @@ nav {
 .user-desc {
     animation-delay: .6s;
 }
+
+@media screen and (max-width: 1250px) {
+
+    main {display: block!important;}
+    #mobile-content {display: none!important;}
+}

@@ -116,11 +116,11 @@ img.pg-loading-logo {
   padding: 0 20px;
 }
 
-body > #content {
+body > #content, body > #mobile-content {
   display: none;
 }
 
-body.pg-loaded > #content {
+body.pg-loaded > #content, body.pg-loaded > #mobile-content {
   display: block;
 }
 

@@ -76,10 +76,10 @@ const miscLoadedValues = {};
 
 function currentDate() {
     const elapsed = achievementStats.timePlayed;
-    let hrs = Math.floor(elapsed/720000);
+    let hrs = Math.floor(elapsed/150000);
     let days = Math.floor(hrs/24);
     hrs -= days*24;
-    let seasons = Math.floor(days/20);
+    let seasons = Math.floor(days/30);
     days -= seasons*20;
     let years = Math.floor(seasons/4);
     seasons -= years*4;

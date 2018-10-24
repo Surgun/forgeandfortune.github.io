@@ -33,5 +33,12 @@
     "author": "Abqu",
     "message": "<p>I am in desperate need of new adventurers, for reasons I cannot disclose.</p><p>There are great rewards, but little time.</p><p>It is important you do not share this with anyone.</p><p>Ooops, ahem, sorry, that's for someone else.</p><p>Please don't tell anyone about this.</p><p>ABQU</p>",
     "type": "letter"
+  },
+  {
+    "id": "E006",
+    "title": "A Mysterious Letter",
+    "author": "Abqu",
+    "message": "<p>Hey, would you look at that!</p><p>It looks like you crafted a recipe ONE HUNDRED TIMES.  Amazing.</p><p>You may be wondering, \"What exactly does this mean?\"</p><p>Well, I'm here to tell ya:</p><p>Items that you craft 100 times become mastered.  This means:</p><p>A) The craft progress bar for that item has changed into a 82% better color.</br><p>2) The chance at exceptional crafts for that item has DOUBLED.</br><p>c) If the item took materials to craft, the recipe now takes NO MATERIALS.</br><p>IV) You've gained a progress point, whatever that is.</p><p>Anyway, great job, and keep up the great work!</p><p>Your min/max friend til the end,</p><p>ABQU</p>",
+    "type": "letter"
   }
 ]

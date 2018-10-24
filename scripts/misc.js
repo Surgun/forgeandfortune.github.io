@@ -73,3 +73,20 @@ function msToSec(ms) {
 }
 
 const miscLoadedValues = {};
+
+function currentDate() {
+    const elapsed = achievementStats.timePlayed;
+    let hrs = Math.floor(elapsed/720000);
+    let days = Math.floor(hrs/24);
+    hrs -= days*24;
+    let seasons = Math.floor(days/20);
+    days -= seasons*20;
+    let years = Math.floor(seasons/4);
+    seasons -= years*4;
+    const seasonWords = ["Spring","Summer","Fall","Winter"];
+    let trailing = "th"
+    if (days === 0) trailing = "st"
+    if (days === 1) trailing = "nd"
+    if (days === 2) trailing = "rd" 
+    return `${days+1}${trailing} of ${seasonWords[seasons]}, Year ${years+1}`;
+}

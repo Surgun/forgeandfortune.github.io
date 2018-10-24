@@ -83,6 +83,7 @@ class Event {
         this.time = null;
         this.floor = null;
         Object.assign(this, props);
+        this.date = currentDate();
     }
     createSave() {
         const save = {};
@@ -90,12 +91,14 @@ class Event {
         save.reward = this.reward;
         save.time = this.time;
         save.floor = this.floor;
+        save.date = this.date;
         return save;
     }
     loadSave(save) {
         this.reward = save.reward;
         this.time = save.time;
         this.floor = save.floor;
+        this.date = save.date;
     }
 };
 
@@ -142,7 +145,7 @@ $(document).on('click', "div.eventList", (e) => {
     $eventContent.empty();
     const d = $("<div/>").addClass("eventBody");
     const d1 = $("<div/>").addClass("eventAuthor").html(`FROM: ${event.author}`);
-    const d1a = $("<div/>").addClass("eventAuthor").html(`DATE: January 13, 1979`);
+    const d1a = $("<div/>").addClass("eventAuthor").html(`DATE: ${event.date}`);
     const d2 = $("<div/>").addClass("eventMessage").html(event.message);
     d.append(d1,d1a,d2);
     if (event.time !== null) {

@@ -175,7 +175,7 @@ const recipeList = {
     },
     canBuy(type) {
         const item = this.getNextBuyable(type);
-        console.log(item.rcost);
+        if (item === undefined) return false;
         return item.rcost.every(r => WorkerManager.lvlByType(r) >= item.lvl)
     },
     moreRecipes(type) {

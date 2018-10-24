@@ -150,7 +150,8 @@ const recipeList = {
     },
     buyBP(id) {
         const item = this.idToItem(id);
-        const amt = miscLoadedValues.recipeBuy[item.lvl-1]
+        const amt = item.recipeBuy;
+        //const amt = miscLoadedValues.recipeBuy[item.lvl-1]
         if (ResourceManager.materialAvailable("M001") < amt) {
             Notifications.cantAffordBlueprint();
             return;
@@ -301,7 +302,10 @@ function refreshBlueprint(type) {
     }
     const needed = recipeList.remainingReqs(type);
     if (needed.length === 0) {
-        const b1 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`UNLOCK - ${miscIcons.gold}&nbsp;&nbsp;${miscLoadedValues.recipeBuy[nextRecipe.lvl-1]}`);
+        let amt = `${miscIcons.gold}&nbsp;&nbsp;${nextRecipe.recipeBuy}`
+        if (nextRecipe.recipeBuy === 0) amt = "FREE";
+        const b1 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`UNLOCK - ${amt}`);
+        //const b1 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`UNLOCK - ${miscIcons.gold}&nbsp;&nbsp;${miscLoadedValues.recipeBuy[nextRecipe.lvl-1]}`);
         d.append(b1);
     }
     else {

@@ -3507,42 +3507,42 @@ footer a[href*="discord.gg"]:hover {
         grid-template-rows: 150px;
     }
 
-    .dsm {
+    .dsm, .dfm {
         grid-column: 4;
         grid-row: 1;
     }
 
-    .dsm + .dsm {
+    .dsm + .dsm, .dfm + .dfm {
         grid-column: 3;
         grid-row: 1;
     }
 
-    .dsm + .dsm + .dsm{
+    .dsm + .dsm + .dsm, .dfm + .dfm + .dfm {
         grid-column: 2;
         grid-row: 1;
     }
 
-    .dsm + .dsm + .dsm + .dsm {
+    .dsm + .dsm + .dsm + .dsm, .dfm + .dfm + .dfm + .dfm {
         grid-column: 1;
         grid-row: 1;
     }
 
-    .dsc {
+    .dsc, .dfc {
         grid-column: 1;
         grid-row: 1;
     }
 
-    .dsc + .dsc {
+    .dsc + .dsc, .dfc + .dfc {
         grid-column: 2;
         grid-row: 1;
     }
 
-    .dsc + .dsc + .dsc {
+    .dsc + .dsc + .dsc, .dfc + .dfc + .dfc {
         grid-column: 3;
         grid-row: 1;
     }
 
-    .dsc + .dsc + .dsc + .dsc {
+    .dsc + .dsc + .dsc + .dsc, .dfc + .dfc + .dfc + .dfc {
         grid-column: 4;
         grid-row: 1;
     }

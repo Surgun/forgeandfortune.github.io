@@ -101,7 +101,7 @@ const ResourceManager = {
         })
     },
     reOrderMats() {
-        this.materials.sort((a,b) => a.tier >= b.tier);
+        this.materials.sort((a,b) => a.tier - b.tier);
     }
 }
 

@@ -917,7 +917,8 @@ Rarities
     z-index: 2;
     padding: 3px 5px;
     font-size: 20px;
-    opacity: 0.5;
+    color: #635c5c;
+    opacity: 0.75;
     cursor: pointer;
     text-shadow: 1px 1px 0 rgba(0,0,0,0.55), -1px -1px 0 rgba(0,0,0,0.55), 1px -1px 0 rgba(0,0,0,0.55), -1px 1px 0 rgba(0,0,0,0.55);
 }

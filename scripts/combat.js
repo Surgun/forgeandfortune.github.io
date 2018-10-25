@@ -52,23 +52,12 @@ const CombatManager = {
 
 
 function getTarget(party,type) {
-    if (type === "first") {
-        return party.filter(hero => hero.alive())[0]
-    }
-    else if (type === "reverse") {
-        for (let i=party.length;i>0;i--) {
-            if (party[i].alive()) return party[i];
-        }
-    }
-    else if (type === "random") {
-        return party[Math.floor(Math.random()*party.length)];
-    }
-    else if (type === "highhp") {
-        return party.sort((a,b) => {return b.hp - a.hp})[0];
-    }
-    else if (type === "lowhp") {
-        return party.sort((a,b) => {return a.hp - b.hp})[0];
-    }
+    party = party.filter(h => h.alive());
+    if (type === "first") return party[0]
+    else if (type === "reverse") return party.reverse()[0];
+    else if (type === "random") return party[Math.floor(Math.random()*party.length)];
+    else if (type === "highhp") return party.sort((a,b) => {return b.hp - a.hp})[0];
+    else if (type === "lowhp") return party.sort((a,b) => {return a.hp - b.hp})[0];
 }
 
 const $drLogHero = $("#drLogHero");

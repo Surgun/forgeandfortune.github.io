@@ -52,7 +52,7 @@ const achievementStats = {
     totalFloorsBeaten : 0,
     floorBeaten(floor) {
         this.totalFloorsBeaten += 1;
-        this.maxFloor = Math.max(this.maxFloor,floor);
+        this.maxFloor = Math.max(this.maxFloor,floor+1);
         $statMaxFloor.html("Floor " + this.maxFloor);
         $statFloors.html(this.totalFloorsBeaten);
         refreshProgress();

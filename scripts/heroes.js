@@ -402,21 +402,6 @@ function initializeHeroList() {
     if (!HeroManager.heroes.some(h=>h.xp === h.maxXP())) $heroTab.removeClass("hasEvent");
 }
 
-/*function refreshHeroes() {
-    $hiredHeroes.empty();
-    for (let i=0;i<heroProgress.length;i++) {
-        const hero = heroProgress[i];
-        const d = $("<div/>").addClass("heroOwnCard").attr("id","hcl"+hero.id);
-        if (hero.xp === hero.maxXP()) d.addClass("hasEvent");
-        const d1 = $("<div/>").addClass("heroOwnName").html(hero.name);
-        const d2 = $("<div/>").addClass("heroOwneImage").html(hero.image);
-        const d3 = $("<div/>").addClass('heroLvl').html("L"+hero.lvl + " (" +hero.xp +" xp)");
-        const d4 = $("<div/>").addClass("heroOwneRole").html("Role: " + hero.role);
-        d.append(d1,d2,d3,d4)
-        $hiredHeroes.append(d);
-    }
-}*/
-
 const $heroDetails = $("#heroDetails");
 const $heroGearSlots = $("#heroGearSlots");
 

@@ -179,7 +179,11 @@ const WorkerManager = {
         return difference.length === 0;
     },
     sacrificeItem(workerID,craftID,rarity) {
-        if (!Inventory.haveItem(craftID,rarity)) return;
+        if (!Inventory.haveItem(craftID,rarity)) {
+            if (rarity === 0) Notifications.noItemWorkerSac("Common");
+            if (rarity === 1) Notifications.noItemWorkerSac("Good");
+            return;
+        }
         const worker = this.workerByID(workerID);
         Inventory.removeFromInventory(craftID,rarity);
         if (craftID in worker.donated) worker.donated[craftID] += 1;

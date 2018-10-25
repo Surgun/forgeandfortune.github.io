@@ -332,7 +332,7 @@ const HeroManager = {
         //heal up all non-current partying members by 1% of their maxhp
         this.heroes.forEach(hero => {
             if (hero.inDungeon) return;
-            hero.heal(1);
+            hero.heal(2);
         });
     },
     relativePow(heroID,slot,pow) {

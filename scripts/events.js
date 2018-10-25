@@ -180,6 +180,7 @@ function eventChecker() {
     if (!EventManager.hasSeen("E003") && WorkerManager.workers.some(w => w.type === "advanced" && w.owned)) EventManager.addEvent("E003");
     if (!EventManager.hasSeen("E005") && achievementStats.totalItemsCrafted >= 10000) EventManager.addEvent("E005");
     if (!EventManager.hasSeen("E006") && masteredItem) EventManager.addEvent("E006");
+    if (!EventManager.hasSeen("E007") && Inventory.full()) EventManager.addEvent("E007");
 }
 
 let masteredItem = false;

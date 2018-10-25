@@ -9,6 +9,11 @@ $(document).on("click","#sortInventory",(e) => {
     Inventory.sortInventory();
 });
 
+$(document).on("click","#sellAllCommons",(e) => {
+    e.preventDefault();
+    Inventory.sellCommons();
+});
+
 $(document).on("click",".inventoryEquip",(e) => {
     e.preventDefault();
     const invID = $(e.target).attr("id");
@@ -229,6 +234,11 @@ const Inventory = {
         const hps = this.inv.filter(i => i !== null && types.includes(i.type)).map(p => p.hp());
         if (hps.length === 0) return 0;
         return Math.max(...hps);
+    },
+    sellCommons() {
+        this.inv.forEach((ic,indx) => {
+            if (ic !== null && ic.rarity === 0) this.sellInventory(indx);
+        })
     }
 }
 

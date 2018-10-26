@@ -219,8 +219,12 @@ const WorkerManager = {
                     const T3 = remainingTypes[Math.floor(Math.seededRandom() * remainingTypes.length)];
                     remainingTypes = remainingTypes.filter(t=>t !== T3);
                     let r = 0
-                    if (t === "advanced") r = 1
-                    const req = [[recipeList.recipeIDByTypeLvl(T1,i),r,10],[recipeList.recipeIDByTypeLvl(T2,i),r,10],[recipeList.recipeIDByTypeLvl(T3,i),r,10],["M001",0,miscLoadedValues.workerSacCost[i]]];
+                    let goldamt = miscLoadedValues.workerSacCost[i];
+                    if (t === "advanced") {
+                        r = 1;
+                        goldamt = miscLoadedValues.advWorkerSacCost[i];
+                    }
+                    const req = [[recipeList.recipeIDByTypeLvl(T1,i),r,10],[recipeList.recipeIDByTypeLvl(T2,i),r,10],[recipeList.recipeIDByTypeLvl(T3,i),r,10],["M001",0,goldamt]];
                     worker.lvlreq.push(req);
                 });
             };

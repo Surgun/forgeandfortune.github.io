@@ -62,9 +62,11 @@ const PartyCreator = {
         return heroesReal.some(h => h.alive());
     },
     lockParty() {
-        this.heroes.map(hid => HeroManager.idToHero(hid)).forEach(h=>h.inDungeon = true);
+        this.heroes.map(hid => HeroManager.idToHero(hid)).forEach(h=>{
+            h.inDungeon = true;
+            h.act = Math.floor((Math.random() * 0.2*h.actmax()));
+        });
         const party = new Party(this.heroes);
-
         this.heroes = [];
         return party;
     }

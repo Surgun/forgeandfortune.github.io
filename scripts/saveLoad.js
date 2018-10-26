@@ -36,6 +36,7 @@ function forceSave() {
 
 function createSave() {
     const saveFile = {}
+    saveFile["v"] = "0202"
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
     saveFile["e"] = EventManager.createSave();

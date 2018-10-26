@@ -69,7 +69,7 @@ class Mob {
         }
         this.act += t;
         if (this.act >= this.actmax()) {
-            this.act -= this.actmax();
+            this.act = 0;
             CombatManager.mobAttack(this, dungeonID);
         }
     }

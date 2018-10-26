@@ -131,7 +131,7 @@ class Hero {
         }
         this.act += t;
         if (this.act >= this.actmax()) {
-            this.act -= this.actmax();
+            this.act = 0;
             CombatManager.heroAttack(this, dungeonID);
         }
     }
@@ -189,8 +189,9 @@ class Hero {
         return hp;
     }
     addXP(xp) {
-        if (this.xp === this.maxXP()) return;
         this.xp = Math.min(this.xp + xp,this.maxXP());
+        if (this.xp === this.maxXP()) return;
+        if (HeroManager.heroView !== this.id) return;
         if (this.xp !== this.maxXP()) $(".heroExamineExp").html(`Exp: ${this.xp}/${this.maxXP()}`)
         else {
             $heroTab.addClass("hasEvent");

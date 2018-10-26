@@ -47,5 +47,6 @@ const devtools = {
                 hero.equip(container,i);
             })
         })
-    }
+    },
+    skipSac : false,
 }

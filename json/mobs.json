@@ -34,7 +34,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M102": 100
+      "M102": 60
     },
     "minFloor": 80,
     "maxFloor": 200
@@ -54,7 +54,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M103": 100
+      "M103": 40
     },
     "minFloor": 180,
     "maxFloor": 300
@@ -74,7 +74,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M104": 100
+      "M104": 25
     },
     "minFloor": 280,
     "maxFloor": 400
@@ -94,7 +94,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M105": 100
+      "M105": 25
     },
     "minFloor": 380,
     "maxFloor": 500
@@ -114,7 +114,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M106": 100
+      "M106": 25
     },
     "minFloor": 480,
     "maxFloor": 600
@@ -134,7 +134,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M107": 100
+      "M107": 25
     },
     "minFloor": 580,
     "maxFloor": 700
@@ -154,7 +154,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M108": 100
+      "M108": 25
     },
     "minFloor": 680,
     "maxFloor": 800
@@ -174,7 +174,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M109": 100
+      "M109": 25
     },
     "minFloor": 780,
     "maxFloor": 900
@@ -194,7 +194,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M110": 100
+      "M110": 25
     },
     "minFloor": 880,
     "maxFloor": 10000
@@ -207,7 +207,7 @@
     "powBase": 1,
     "powLvl": 0.5,
     "apmax": 7,
-    "actTime": 3000,
+    "actTime": 2500,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -227,14 +227,14 @@
     "powBase": 1,
     "powLvl": 0.4,
     "apmax": 7,
-    "actTime": 3000,
+    "actTime": 2500,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M202": 100
+      "M202": 60
     },
     "minFloor": 80,
     "maxFloor": 200
@@ -247,14 +247,14 @@
     "powBase": 1,
     "powLvl": 0.3,
     "apmax": 7,
-    "actTime": 3000,
+    "actTime": 2500,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M203": 100
+      "M203": 40
     },
     "minFloor": 180,
     "maxFloor": 300
@@ -267,14 +267,14 @@
     "powBase": 1,
     "powLvl": 0.2,
     "apmax": 7,
-    "actTime": 3000,
+    "actTime": 2500,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M204": 100
+      "M204": 25
     },
     "minFloor": 280,
     "maxFloor": 400
@@ -287,7 +287,7 @@
     "powBase": 1,
     "powLvl": 0.2,
     "apmax": 7,
-    "actTime": 3000,
+    "actTime": 2500,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -307,7 +307,7 @@
     "powBase": 1,
     "powLvl": 0.2,
     "apmax": 7,
-    "actTime": 3000,
+    "actTime": 2500,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -327,7 +327,7 @@
     "powBase": 1,
     "powLvl": 0.2,
     "apmax": 7,
-    "actTime": 3000,
+    "actTime": 2500,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -347,7 +347,7 @@
     "powBase": 1,
     "powLvl": 0.2,
     "apmax": 7,
-    "actTime": 3000,
+    "actTime": 2500,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -367,7 +367,7 @@
     "powBase": 1,
     "powLvl": 0.2,
     "apmax": 7,
-    "actTime": 3000,
+    "actTime": 2500,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -387,7 +387,7 @@
     "powBase": 1,
     "powLvl": 0.2,
     "apmax": 7,
-    "actTime": 3000,
+    "actTime": 2500,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -434,7 +434,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M302": 100
+      "M302": 60
     },
     "minFloor": 80,
     "maxFloor": 200
@@ -454,7 +454,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M303": 100
+      "M303": 40
     },
     "minFloor": 180,
     "maxFloor": 300
@@ -474,7 +474,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M304": 100
+      "M304": 25
     },
     "minFloor": 280,
     "maxFloor": 400
@@ -494,7 +494,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M305": 100
+      "M305": 25
     },
     "minFloor": 380,
     "maxFloor": 500
@@ -514,7 +514,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M306": 100
+      "M306": 25
     },
     "minFloor": 480,
     "maxFloor": 600
@@ -534,7 +534,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M307": 100
+      "M307": 25
     },
     "minFloor": 580,
     "maxFloor": 700
@@ -554,7 +554,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M308": 100
+      "M308": 25
     },
     "minFloor": 680,
     "maxFloor": 800
@@ -574,7 +574,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M309": 100
+      "M309": 25
     },
     "minFloor": 780,
     "maxFloor": 900
@@ -594,7 +594,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M310": 100
+      "M310": 25
     },
     "minFloor": 880,
     "maxFloor": 10000
@@ -634,7 +634,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M402": 100
+      "M402": 60
     },
     "minFloor": 80,
     "maxFloor": 200
@@ -654,7 +654,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M403": 100
+      "M403": 40
     },
     "minFloor": 180,
     "maxFloor": 300
@@ -674,7 +674,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M404": 100
+      "M404": 25
     },
     "minFloor": 280,
     "maxFloor": 400
@@ -694,7 +694,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M405": 100
+      "M405": 25
     },
     "minFloor": 380,
     "maxFloor": 500
@@ -714,7 +714,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M406": 100
+      "M406": 25
     },
     "minFloor": 480,
     "maxFloor": 600
@@ -734,7 +734,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M407": 100
+      "M407": 25
     },
     "minFloor": 580,
     "maxFloor": 700
@@ -754,7 +754,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M408": 100
+      "M408": 25
     },
     "minFloor": 680,
     "maxFloor": 800
@@ -774,7 +774,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M409": 100
+      "M409": 25
     },
     "minFloor": 780,
     "maxFloor": 900
@@ -794,7 +794,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M410": 100
+      "M410": 25
     },
     "minFloor": 880,
     "maxFloor": 10000
@@ -834,7 +834,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M502": 100
+      "M502": 60
     },
     "minFloor": 80,
     "maxFloor": 200
@@ -854,7 +854,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M503": 100
+      "M503": 40
     },
     "minFloor": 180,
     "maxFloor": 300
@@ -874,7 +874,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M504": 100
+      "M504": 25
     },
     "minFloor": 280,
     "maxFloor": 400
@@ -894,7 +894,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M505": 100
+      "M505": 25
     },
     "minFloor": 380,
     "maxFloor": 500
@@ -914,7 +914,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M506": 100
+      "M506": 25
     },
     "minFloor": 480,
     "maxFloor": 600
@@ -934,7 +934,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M507": 100
+      "M507": 25
     },
     "minFloor": 580,
     "maxFloor": 700
@@ -954,7 +954,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M508": 100
+      "M508": 25
     },
     "minFloor": 680,
     "maxFloor": 800
@@ -974,7 +974,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M509": 100
+      "M509": 25
     },
     "minFloor": 780,
     "maxFloor": 900
@@ -994,7 +994,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M510": 100
+      "M510": 25
     },
     "minFloor": 880,
     "maxFloor": 10000
@@ -1034,7 +1034,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M602": 100
+      "M602": 60
     },
     "minFloor": 80,
     "maxFloor": 200
@@ -1054,7 +1054,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M603": 100
+      "M603": 40
     },
     "minFloor": 180,
     "maxFloor": 300
@@ -1074,7 +1074,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M604": 100
+      "M604": 25
     },
     "minFloor": 280,
     "maxFloor": 400
@@ -1094,7 +1094,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M605": 100
+      "M605": 25
     },
     "minFloor": 380,
     "maxFloor": 500
@@ -1114,7 +1114,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M606": 100
+      "M606": 25
     },
     "minFloor": 480,
     "maxFloor": 600
@@ -1134,7 +1134,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M607": 100
+      "M607": 25
     },
     "minFloor": 580,
     "maxFloor": 700
@@ -1154,7 +1154,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M608": 100
+      "M608": 25
     },
     "minFloor": 680,
     "maxFloor": 800
@@ -1174,7 +1174,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M609": 100
+      "M609": 25
     },
     "minFloor": 780,
     "maxFloor": 900
@@ -1194,7 +1194,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M610": 100
+      "M610": 25
     },
     "minFloor": 880,
     "maxFloor": 10000

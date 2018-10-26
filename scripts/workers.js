@@ -36,6 +36,12 @@ class Worker {
         return this.lvlreq[this.lvl-1];
     }
     upgrade() {
+        if (devtools.skipSac) {
+            this.lvl += 1;
+            this.clearDonation();
+            refreshWorkers();
+            return;
+        }
         if (ResourceManager.materialAvailable("M001") < this.numToDonate("M001")) {
             Notifications.workerGoldReq();
             return;

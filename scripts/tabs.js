@@ -17,3 +17,22 @@ function openTab(tabName) {
     $(".tabcontent").hide();
     $("#"+tabName).show();
 }
+
+const $comptitle1 = $("#comptitle1");
+const $comptitle2 = $("#comptitle2");
+const $comptitle3 = $("#comptitle3");
+
+$comptitle1.click((e) => {
+    e.preventDefault();
+    openTab("inventoryTab");
+});
+
+$comptitle2.click((e) => {
+    e.preventDefault();
+    openTab("recipesTab");
+});
+
+$comptitle3.click((e) => {
+    e.preventDefault();
+    openTab("dungeonsTab");
+});

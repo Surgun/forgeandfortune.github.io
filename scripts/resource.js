@@ -90,10 +90,10 @@ const ResourceManager = {
         return item.name;
     },
     idToMaterial(matID) {
-        for (let i=0;i<this.materials.length;i++) {
-            if (this.materials[i].id === matID) return this.materials[i];
-        }
-        return null;
+        return this.materials.find(m=>m.id === matID);
+    },
+    isAMaterial(matID) {
+        return this.materials.some(m=>m.id === matID);
     },
     addDungeonDrops(drops) {
         drops.forEach(d => {
@@ -127,3 +127,9 @@ function hardMatRefresh() {
         $("#amt"+mat.id).html(formatToUnits(mat.amt,3));
     })
 }
+
+$(document).on("click",".material",(e) => {
+    e.preventDefault();
+    const matID = $(e.currentTarget).attr("id");
+    populateRecipe(matID);
+});

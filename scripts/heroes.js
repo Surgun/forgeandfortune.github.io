@@ -19,6 +19,7 @@ class Hero {
         this.lvl = 1;
         this.xp = 0;
         this.hp = levelCurves.getLvlStats(this.lvl).hp;
+        this.maxHPseen = this.hp;
         this.ap = 0;
         this.apmax = 5;
         this.act = 0;
@@ -46,6 +47,7 @@ class Hero {
         save.hp = this.hp;
         save.ap = this.ap;
         save.act = this.act;
+        save.maxHPseen = this.maxHPseen;
         save.inDungeon = this.inDungeon;
         if (this.slot1 === null) save.slot1 = null;
         else save.slot1 = this.slot1.createSave();
@@ -75,6 +77,7 @@ class Hero {
         if (save.slot4 !== null) this.slot4 = new itemContainer(save.slot4.id,save.slot4.rarity);
         if (save.slot5 !== null) this.slot5 = new itemContainer(save.slot5.id,save.slot5.rarity);
         if (save.slot6 !== null) this.slot6 = new itemContainer(save.slot6.id,save.slot6.rarity);
+        if (save.maxHPseen !== undefined) this.maxHPseen = save.maxHPseen;
         this.owned = save.owned;
     }
     getPow() {
@@ -146,6 +149,7 @@ class Hero {
         if (slot === 3) this.slot4 = item;
         if (slot === 4) this.slot5 = item;
         if (slot === 5) this.slot6 = item;
+        this.checkHealth();
     }
     removeSlot(slot) {
         if (slot === 0) this.slot1 = null;
@@ -189,22 +193,20 @@ class Hero {
         return hp;
     }
     addXP(xp) {
+        if (this.dead() || this.xp === this.maxXP()) return;
         this.xp = Math.min(this.xp + xp,this.maxXP());
-        if (this.xp === this.maxXP()) return;
+        if (this.xp === this.maxXP()) initializeHeroList();
         if (HeroManager.heroView !== this.id) return;
-        if (this.xp !== this.maxXP()) $(".heroExamineExp").html(`Exp: ${this.xp}/${this.maxXP()}`)
-        else {
-            $heroTab.addClass("hasEvent");
-            initializeHeroList();
-            if (HeroManager.heroView === this.id) {
-                $(".heroExamineLvlButton").show();
-                $(".heroExamineExp").hide();
-            }
+        $(".heroExamineExp").html(`Exp: ${this.xp}/${this.maxXP()}`)
+        if (this.xp === this.maxXP()) {        
+            $(".heroExamineLvlButton").show();
+            $(".heroExamineExp").hide();
         }
     }
     levelup() {
         this.lvl += 1;
         this.xp = 0;
+        this.checkHealth();
         refreshProgress();
         initializeHeroList();
         examineHero(this.id);
@@ -257,6 +259,12 @@ class Hero {
     }
     canEquipType(type) {
         return this.slot1Type.includes(type) || this.slot2Type.includes(type) || this.slot3Type.includes(type) || this.slot4Type.includes(type) || this.slot5Type.includes(type) || this.slot6Type.includes(type);
+    }
+    checkHealth() {
+        if (this.maxHP() <= this.maxHPseen) return;
+        const hpDelta = this.maxHP() - this.maxHPseen;
+        this.maxHPseen = this.maxHP();
+        this.heal(hpDelta);
     }
 }
 
@@ -401,6 +409,7 @@ function initializeHeroList() {
         $heroList.append(b1);
     }
     if (!HeroManager.heroes.some(h=>h.xp === h.maxXP())) $heroTab.removeClass("hasEvent");
+    else $heroTab.addClass("hasEvent");
 }
 
 const $heroDetails = $("#heroDetails");

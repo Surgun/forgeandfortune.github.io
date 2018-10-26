@@ -204,13 +204,21 @@ let cachedbptype = null;
 
 function populateRecipe(type) {
     let rFilter = recipeList.recipes.filter(r => r.owned);
-    if (type === "Matless") rFilter = rFilter.filter(r => r.mcost.length === 0 || r.isMastered());
-    else if (ResourceManager.isAMaterial(type)) rFilter = rFilter.filter(r => r.mcost.hasOwnProperty(type) && !r.isMastered());
-    else rFilter = rFilter.filter(r => r.type === type);
-    if (rFilter.length === 0) {
-        Notifications.noItemFilter();
-        return;
+    if (type === "Matless") {
+        rFilter = rFilter.filter(r => r.mcost.length === 0 || r.isMastered());
+        if (rFilter.length === 0) {
+            Notifications.noItemFilter();
+            return;
+        }
     }
+    else if (ResourceManager.isAMaterial(type)) {
+        rFilter = rFilter.filter(r => r.mcost.hasOwnProperty(type) && !r.isMastered());
+        if (rFilter.length === 0) {
+            Notifications.noItemFilter();
+            return;
+        }
+    }
+    else rFilter = rFilter.filter(r => r.type === type);
     let alternate = false;
     type = type || cachedbptype;
     cachedbptype = type;

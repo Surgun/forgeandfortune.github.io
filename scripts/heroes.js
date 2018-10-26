@@ -238,7 +238,7 @@ class Hero {
         if (this.slot6Type.includes(type)) return this.slot6;
     }
     healCost() {
-        return Math.floor(Math.pow(1.05, this.lvl-1)*(this.maxHP()-this.hp));
+        return Math.floor(Math.pow(1.05, (this.lvl-1)*2)*(this.maxHP()-this.hp));
     }
     healPay() {
         const amt = this.healCost();

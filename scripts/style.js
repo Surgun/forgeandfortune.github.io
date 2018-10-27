@@ -108,6 +108,20 @@ if (clipboardButton) {
     clipboardButton.addEventListener("click", clipboardText);
 }
 
+// Toast Positioning
+
+const toastSettings = document.querySelectorAll("#settings_notificationLocation .selection-container");
+
+toastSettings.forEach((selection) => {
+    selection.addEventListener("input", assignToastPosition);
+});
+
+function assignToastPosition(e) {
+    const option = e.target.getAttribute("value");
+    toastPosition = option;
+    $.toast().reset('all');
+}
+
 // Logo Easter Egg
 
 const $gameLogo = $("#game-logo");

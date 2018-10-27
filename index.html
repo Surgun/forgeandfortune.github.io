@@ -116,6 +116,49 @@
                 </div>
             </div>
         </div>
+        <div id="dialogSettings" class="dialog" role="dialog" aria-labelledby="titleImportSave" aria-describedby="descImportSave">
+            <div class="dialog_content">
+                <div class="dialog_header">
+                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
+                    <h2 id="titleSettings" class="dialog_title">Settings</h2>
+                </div>
+                <div class="dialog_body">
+                    <p id="descSettings" class="dialog_description">Adjust your game preferences and settings.</p>
+                    <div class="settings-grid">
+                        <div id="settings_notificationLocation">
+                            <h3 class="settings-title">Notification Location</h3>
+                            <p class="settings-description">Designates where the notifications for various events (such as exceptional crafts) will appear.</p>
+                            <div class="selections-grid">
+                                <label class="selection-container">Top-Left
+                                    <input type="radio" name="selection" value="top-left">
+                                    <span class="selection"></span>
+                                </label>
+                                <label class="selection-container">Top-Center
+                                    <input type="radio" name="selection" value="top-center">
+                                    <span class="selection"></span>
+                                </label>
+                                <label class="selection-container">Top-Right
+                                    <input type="radio" name="selection" value="top-right">
+                                    <span class="selection"></span>
+                                </label>
+                                <label class="selection-container">Bottom-Left
+                                    <input type="radio" name="selection" value="bottom-left">
+                                    <span class="selection"></span>
+                                </label>
+                                <label class="selection-container">Bottom-Center
+                                    <input type="radio" name="selection" value="bottom-center">
+                                    <span class="selection"></span>
+                                </label>
+                                <label class="selection-container">Bottom-Right
+                                    <input type="radio" name="selection" value="bottom-right">
+                                    <span class="selection"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- End of Dialogs -->
         <section class="game-content">
             <div class="status">
@@ -345,6 +388,7 @@
                     <a id="exportSave" class="tooltip" href="#dialogExportSave" data-tooltip="Export your current game data for sharing or importing at a later time.">Export Save</a>
                     <a id="importSave" class="tooltip" href="#dialogImportSave" data-tooltip="Import your own previously exported data or shared game data.">Import Save</a>
                     <a id="cloudSave" class="tooltip" href="#dialogPlayfab" data-tooltip="Save or load your game data from the Cloud using Playfab.">Cloud Save</a>
+                    <a id="settings" class="tooltip" href="#dialogSettings" data-tooltip="Change your game preferences and settings.">Settings</a>
                 </div>
                 <div id="bottom-right">
                     <a href="/patchnotes/latest.html" id="version-scale">v0.2.0.3</a>
@@ -409,11 +453,11 @@
 <script src="scripts/playfab.js"></script>
 <script type="text/javascript" src="scripts/pako.min.js"></script>
 <script src="scripts/main.js"></script>
-<script src="scripts/style.js"></script>
 <script src="scripts/toastifications.js"></script>
 <script src="scripts/saveLoad.js"></script>
 <script src="scripts/progress.js"></script>
 <script src="scripts/combat.js"></script>
 <script language="javascript" src="scripts/lz-string.js"></script>
+<script src="scripts/style.js"></script>
 </body>
 </html>

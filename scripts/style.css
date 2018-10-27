@@ -113,7 +113,7 @@ body {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -3027,6 +3027,10 @@ footer a[href*="discord.gg"]:hover {
     height: 2px;
     width: 0;
     background-color: var(--border-2);
+}
+
+.loadSureDescription {
+    color: var(--highlight);
 }
 
 #pfEmail:hover:after, #pfPassword:hover:after, #pfEmail:focus-within:after, #pfPassword:focus-within:after {

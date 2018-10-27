@@ -114,12 +114,20 @@ const toastSettings = document.querySelectorAll("#settings_notificationLocation 
 
 toastSettings.forEach((selection) => {
     selection.addEventListener("input", assignToastPosition);
+    if(selection.querySelector("input").value === localStorage.getItem("toastPreference")) {
+        selection.querySelector("input").setAttribute("checked", "checked")
+    };
 });
 
 function assignToastPosition(e) {
     const option = e.target.getAttribute("value");
+    toastSettings.forEach((selection) => {
+        selection.querySelector("input").removeAttribute("checked")
+    });
+    e.target.setAttribute("checked", "checked");
     toastPosition = option;
     $.toast().reset('all');
+    localStorage.setItem("toastPreference", toastPosition);
 }
 
 // Logo Easter Egg

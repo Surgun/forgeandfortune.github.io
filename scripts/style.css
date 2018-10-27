@@ -303,6 +303,7 @@ body {
     background-color: var(--bg-3);
     border: 2px solid var(--border);
     border-radius: 25px;
+    cursor: pointer;
 }
 
 .material .materialName {

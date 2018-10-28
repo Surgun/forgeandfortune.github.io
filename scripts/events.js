@@ -26,7 +26,14 @@ const EventManager = {
         this.seenEvents = save.seenEvents;
     },
     loadEvent(props) {
-        this.eventDB.push(new EventTemplate(props));
+        const event = new EventTemplate(props);
+        this.eventDB.push(event);
+        if (event.type !== "letter") return;
+        event.visible = false;
+        event.eventNum = this.eventNum;
+        this.eventNum += 1;
+        if (event.id === "E001") event.reward = [{id:"M001",amt:miscLoadedValues.startingGold}];
+        this.events.push(event);   
     },
     idToEventDB(eventID) {
         return this.eventDB.find(e => e.id === eventID);
@@ -34,14 +41,9 @@ const EventManager = {
     eventNumToEvent(eventNum) {
         return this.events.find(event => event.eventNum === eventNum);
     },
-    addEvent(eventID) {
-        const eventTemplate = this.idToEventDB(eventID);
-        const event = new Event(eventTemplate);
-        event.eventNum = this.eventNum;
-        this.eventNum += 1;
-        if (event.id === "E001") event.reward = [{id:"M001",amt:miscLoadedValues.startingGold}];
-        this.events.push(event);
-        if (!this.seenEvents.includes(eventID)) this.seenEvents.push(eventID);
+    showEvent(eventID) {
+        const event = this.idToEventDB(eventID);
+        event.visible = true;
         refreshEvents();
     },
     addEventDungeon(reward,time,floor) {
@@ -51,6 +53,7 @@ const EventManager = {
         event.time = time;
         event.floor = floor;
         event.eventNum = this.eventNum;
+        event.visible = true;
         this.eventNum += 1;
         this.events.push(event);
         refreshEvents();
@@ -59,7 +62,7 @@ const EventManager = {
         const event = this.events.find(e => e.eventNum === eventNum);
         if (event.reward !== null) ResourceManager.addDungeonDrops(event.reward);
         this.seenEvents.push(event.id);
-        this.events = this.events.filter(event => event.eventNum !== eventNum);
+        event.visible = false;
         refreshEvents();
     },
     hasEvents() {
@@ -67,7 +70,7 @@ const EventManager = {
     },
     hasSeen(eventID) {
         return this.seenEvents.includes(eventID);
-    }
+    },
 };
 
 class EventTemplate {
@@ -102,13 +105,18 @@ class Event {
     }
 };
 
-const $eventList = $("#eventList");
+const $eventList = $("#eventListMail");
 const $eventContent = $("#eventContent");
 const $eventTab = $("#eventTab");
 
-function refreshEvents() {
+function refreshEvents(old) {
     $eventList.empty();
-    EventManager.events.forEach(event => {
+    let eventsToDisplay = EventManager.events;
+    if (old) {
+        EventManager.populateOldEvents();
+        eventsToDisplay = EventManager.oldEvents;
+    }
+    eventsToDisplay.forEach(event => {
         const d1 = $("<div/>").addClass("eventList").attr("eventNum",event.eventNum).html(`${event.image} ${event.title}`);
         $eventList.append(d1);
     });

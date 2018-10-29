@@ -2,16 +2,20 @@
 
 const EventManager = {
     events : [],
+    oldEvents : [],
     eventDB : [],
-    seenEvents : [],
     eventNum : 0,
+    seeOld : false,
     createSave() {
         const save = {};
         save.events = [];
         this.events.forEach(e => {
             save.events.push(e.createSave());
         })
-        save.seenEvents = this.seenEvents;
+        save.oldEvents = [];
+        this.oldEvents.forEach(e => {
+            save.oldEvents.push(e.createSave());
+        })
         return save;
     },
     loadSave(save) {
@@ -23,27 +27,32 @@ const EventManager = {
             this.eventNum += 1;
             this.events.push(event);
         });
-        this.seenEvents = save.seenEvents;
+        if (save.oldEvents === undefined) return;
+        save.oldEvents.forEach(e => {
+            const eventTemplate = this.idToEventDB(e.id);
+            const event = new Event(eventTemplate);
+            event.loadSave(e);
+            event.eventNum = this.eventNum;
+            this.eventNum += 1;
+            this.oldEvents.push(event);
+        });
     },
     loadEvent(props) {
-        const event = new EventTemplate(props);
-        this.eventDB.push(event);
-        if (event.type !== "letter") return;
-        event.visible = false;
-        event.eventNum = this.eventNum;
-        this.eventNum += 1;
-        if (event.id === "E001") event.reward = [{id:"M001",amt:miscLoadedValues.startingGold}];
-        this.events.push(event);   
+        this.eventDB.push(new EventTemplate(props));
     },
     idToEventDB(eventID) {
         return this.eventDB.find(e => e.id === eventID);
     },
     eventNumToEvent(eventNum) {
-        return this.events.find(event => event.eventNum === eventNum);
+        return this.events.concat(this.oldEvents).find(event => event.eventNum === eventNum)
     },
-    showEvent(eventID) {
-        const event = this.idToEventDB(eventID);
-        event.visible = true;
+    addEvent(eventID) {
+        const eventTemplate = this.idToEventDB(eventID);
+        const event = new Event(eventTemplate);
+        event.eventNum = this.eventNum;
+        this.eventNum += 1;
+        if (event.id === "E001") event.reward = [{id:"M001",amt:miscLoadedValues.startingGold}];
+        this.events.push(event);
         refreshEvents();
     },
     addEventDungeon(reward,time,floor) {
@@ -53,24 +62,23 @@ const EventManager = {
         event.time = time;
         event.floor = floor;
         event.eventNum = this.eventNum;
-        event.visible = true;
         this.eventNum += 1;
         this.events.push(event);
-        refreshEvents();
-    },
-    removeEvent(eventNum) {
-        const event = this.events.find(e => e.eventNum === eventNum);
-        if (event.reward !== null) ResourceManager.addDungeonDrops(event.reward);
-        this.seenEvents.push(event.id);
-        event.visible = false;
         refreshEvents();
     },
     hasEvents() {
         return this.events.length > 0;
     },
     hasSeen(eventID) {
-        return this.seenEvents.includes(eventID);
+        return this.events.concat(this.oldEvents).map(e=>e.id).includes(eventID);
     },
+    readEvent(eventNum) {
+        const event = this.events.find(e=>e.eventNum === eventNum);
+        this.events = this.events.filter(e=>e.eventNum !== eventNum);
+        if (event.reward !== null) ResourceManager.addDungeonDrops(event.reward);
+        if (event.type === "letter") this.oldEvents.push(event);
+        refreshEvents();
+    }
 };
 
 class EventTemplate {
@@ -105,25 +113,28 @@ class Event {
     }
 };
 
-const $eventList = $("#eventListMail");
+class OldEvent {
+    constructor(props) {
+        Object.assign(this, props);
+    }
+}
+
+const $eventList = $("#eventList");
 const $eventContent = $("#eventContent");
 const $eventTab = $("#eventTab");
 
-function refreshEvents(old) {
+function refreshEvents(seeOld) {
+    $eventContent.empty();
+    if (EventManager.hasEvents()) $eventTab.addClass("hasEvent");
+    else $eventTab.removeClass("hasEvent");
     $eventList.empty();
-    let eventsToDisplay = EventManager.events;
-    if (old) {
-        EventManager.populateOldEvents();
-        eventsToDisplay = EventManager.oldEvents;
-    }
-    eventsToDisplay.forEach(event => {
+    let events = EventManager.events;
+    if (seeOld) events = EventManager.oldEvents;
+    events.forEach(event => {
         const d1 = $("<div/>").addClass("eventList").attr("eventNum",event.eventNum).html(`${event.image} ${event.title}`);
         $eventList.append(d1);
     });
-    $eventContent.empty();
-    if (EventManager.hasEvents()) $eventTab.addClass("hasEvent");
-    else {
-        $eventTab.removeClass("hasEvent");
+    if (events.length == 0) {
         const d1 = $("<div/>").addClass("events-placeholder-details").html("You have no mail to collect at the moment."); 
         $eventList.append(d1);
     }
@@ -180,7 +191,21 @@ $(document).on('click', "div.eventConfirm", (e) => {
     //gets rid of event, and adds to inventory if you need to
     e.preventDefault();
     const eventID = parseInt($(e.currentTarget).attr("eventID"));
-    EventManager.removeEvent(eventID);
+    EventManager.readEvent(eventID);
+})
+
+$(document).on('click', "#readNew", (e) => {
+    $(e.currentTarget).addClass("readActive");
+    $("#readOld").removeClass("readActive");
+    EventManager.seeOld = false;
+    refreshEvents();
+})
+
+$(document).on('click', "#readOld", (e) => {
+    $(e.currentTarget).addClass("readActive");
+    $("#readNew").removeClass("readActive");
+    EventManager.seeOld = true;
+    refreshEvents();
 })
 
 function eventChecker() {

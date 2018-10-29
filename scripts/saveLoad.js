@@ -61,7 +61,7 @@ function createSaveExport() {
 
 function loadGame() {
     //populate itemCount with blueprints as a base
-    const loadGame = JSON.parse(localStorage.getItem("ffgs1"));
+    let loadGame = JSON.parse(localStorage.getItem("ffgs1"));
     if (loadGame === null) return false;
     //aka there IS a file
     if (typeof loadGame["as"] !== "undefined") actionSlotManager.loadSave(loadGame["as"]);

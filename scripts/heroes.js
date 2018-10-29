@@ -458,7 +458,12 @@ function examineHero(ID) {
         if (hero.equipUpgradeAvailable(slotNum)) d5.addClass("equipUpgradeAvailable")
         const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]);
         const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+equipRarity).html(equipText);
-        const d5c = $("<div/>").addClass("heroExamineEquipmentEquipTypes").html(hero.slotTypeIcons(slotNum));
+        let d5c = "";
+        if (equip === null) {
+            d5c = "";
+        } else {
+            d5c = $("<div/>").addClass("heroExamineEquipmentEquipTypes").html(hero.slotTypeIcons(slotNum));
+        }
         if (equip === null) d5b.addClass("heroExamineEquipmentEquipEmpty");
         const d6 = $("<div/>").addClass("heroExamineEquipmentList");
         lowerDiv.append(d5.append(d5a,d5b,d5c),d6);

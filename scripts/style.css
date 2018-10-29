@@ -103,7 +103,7 @@ body {
 
 /* Font Stack */
 
-#Actions > h1, .heading, .tab-heading, footer, .Worker .BuyWorker, .WorkerUpgrade, .Worker .HireWorker, #progresslist, #workerList, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .ASBlock, .ASBuySlot, #dungeon-container {
+#Actions > h1, .heading, .tab-heading, footer, .Worker .BuyWorker, .WorkerUpgrade, .Worker .HireWorker, #progresslist, #workerList, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes, .ASBlock, .ASBuySlot, #dungeon-container {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -1870,9 +1870,27 @@ Rarities
     flex: 1;
 }
 
-.heroExamineEquipmentEquipEmpty {
+.heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes {
     font-size: 0.9em;
     color: var(--text-3);
+}
+
+.heroExamineEquipmentEquipTypes {
+    display: none;
+    position: absolute;
+    top: 26px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-3);
+}
+
+.heroExamineEquipmentEquip:hover + .heroExamineEquipmentEquipTypes {
+    display: flex;
+    pointer-events: none;
 }
 
 .heroExamineTop {
@@ -1948,6 +1966,7 @@ Rarities
 }
 
 .heroExamineEquipment {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;

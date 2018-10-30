@@ -221,7 +221,7 @@ function initializeActionSlots() {
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
         console.log(actionSlotManager.autoSacrifice(i));
         if (actionSlotManager.autoSacrifice(i)) d5.addClass("WSautoEnabled");
-        if (!actionSlotManager.hasSlot(i)) d4.hide();
+        if (!actionSlotManager.hasSlot(i)) d4.hide(), d5.hide();
         d.append(d1,d2.append(a2),d3.append(s3),d4,d5);
         $ActionSlots.append(d);
     }

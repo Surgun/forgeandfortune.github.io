@@ -137,6 +137,11 @@ $(document).on("click",".recipeHeadValue",(e) => {
     sortRecipesByHeading("value");
 });
 
+$(document).on("click",".recipeHeadCount",(e) => {
+    e.preventDefault();
+    sortRecipesByHeading("mastery");
+});
+
 function sortRecipesByHeading(heading) {
     if (recipeList.recipeCategory === heading) {
         recipeList.recipeCategory = heading+"Asc";
@@ -299,6 +304,8 @@ function initializeRecipes(type) {
     if (type === "valueAsc") recipeList.recipes.sort((a,b) => b.value-a.value);
     if (type === "craftTime") recipeList.recipes.sort((a,b) => a.craftTime-b.craftTime);
     if (type === "craftTimeAsc") recipeList.recipes.sort((a,b) => b.craftTime-a.craftTime);
+    if (type === "mastery") recipeList.recipes.sort((a,b) => Math.min(100,a.craftCount)-Math.min(100,b.craftCount));
+    if (type === "masteryAsc") recipeList.recipes.sort((a,b) => Math.min(100,b.craftCount)-Math.min(100,a.craftCount));
     $RecipeResults.empty();
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('recipeTable');

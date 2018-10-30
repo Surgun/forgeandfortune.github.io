@@ -79,6 +79,9 @@ class Mob {
     getPow() {
         return this.pow;
     }
+    getAdjPow() {
+        return this.getPow();
+    }
     pic() {
         return this.image;
     }

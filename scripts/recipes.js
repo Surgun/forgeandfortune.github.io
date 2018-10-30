@@ -66,7 +66,10 @@ class Item{
     recipeListStats() {
         const d = $("<div/>").addClass("recipeStatList");
         if (this.actTime > 0) {
-            const d1 = $("<div/>").addClass("recipeStatListAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;&nbsp;" + msToSec(this.actTime));
+            let speed = "Average";
+            if (this.actTime > 5000) speed = "Slow";
+            else if (this.actTime < 5000) speed = "Fast";
+            const d1 = $("<div/>").addClass("recipeStatListAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;&nbsp;" + speed);
             d.append(d1);
         }
         if (this.pow > 0) {

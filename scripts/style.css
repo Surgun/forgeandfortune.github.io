@@ -2290,6 +2290,10 @@ Rarities
     grid-row: 1;
 }
 
+.mobDead {
+    visibility: hidden;
+}
+
 .dhc {
     padding: 20px;
     margin: 1px;
@@ -2360,6 +2364,7 @@ Rarities
     border-top: 1px solid var(--border);
     flex: 1 300px;
     padding: 15px;
+    overflow: auto;
 }
 
 .logEntry {

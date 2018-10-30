@@ -69,5 +69,22 @@ const PartyCreator = {
         const party = new Party(this.heroes);
         this.heroes = [];
         return party;
+    },
+    healCost() {
+        if (this.heroes.length === 0) return 0;
+        return this.heroes.map(h=>HeroManager.idToHero(h).healCost()).reduce((total,h) => total + h);
+    },
+    noheal() {
+        if (this.heroes.length === 0) return true;
+        return this.heroes.map(h=>HeroManager.idToHero(h)).every(h=>h.hp === h.maxHP());
+    },
+    payHealPart() {
+        const amt = this.healCost();
+        if (ResourceManager.materialAvailable("M001") < amt) {
+            Notifications.cantAffordHealParty();
+            return;
+        }
+        ResourceManager.deductMoney(amt);
+        this.heroes.map(h=>HeroManager.idToHero(h)).forEach(h=>h.healPercent(100));
     }
 }

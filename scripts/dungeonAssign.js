@@ -84,6 +84,12 @@ $(document).on('click', ".healHero", (e) => {
     HeroManager.idToHero(ID).healPay();
 });
 
+$(document).on('click',"#dungeonTeamHeal", (e) => {
+    e.preventDefault();
+    PartyCreator.payHealPart();
+    refreshHealPartyCost();
+});
+
 function refreshHeroSelect() {
     //builds the div that we hide and can show when we're selecting for that area
     $dtsTop.empty();
@@ -100,8 +106,10 @@ function refreshHeroSelect() {
     }
     $dtsTop.append(d);
     const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("Launch Adventure");
+    const dbutton2 = $("<div/>").attr("id","dungeonTeamHeal").html(`Heal Party - <div class="healHeroCost">${miscIcons.gold} ${PartyCreator.healCost()}</div>`);
     if (PartyCreator.heroes.length === 0) dbutton.addClass('dungeonStartNotAvailable')
-    $dtsTop.append(dbutton);
+    if (PartyCreator.noheal()) dbutton2.hide();
+    $dtsTop.append(dbutton, dbutton2);
     $dtsBottom.empty();
     const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Your Available Heroes</h3>");
     $dtsBottom.append(d1bot);
@@ -113,6 +121,12 @@ function refreshHeroSelect() {
         }
     });
     $dtsBottom.append(d2);
+}
+
+function refreshHealPartyCost() {
+    const button = $("#dungeonTeamHeal");
+    button.html(`Heal - <div class="healHeroCost">${miscIcons.gold} ${PartyCreator.healCost()}</div>`);
+    if (PartyCreator.noheal()) button.hide();
 }
 
 function refreshDungeonSelect() {

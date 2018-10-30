@@ -252,6 +252,7 @@ class Hero {
         }
         ResourceManager.deductMoney(amt);
         this.healPercent(100);
+        refreshHealPartyCost();
     }
     equipUpgradeAvailable(slot) {
         const types = this.slotTypesByNum(slot)
@@ -339,6 +340,7 @@ const HeroManager = {
         if (this.healTime >= 6000) {
             this.healTime -= 6000;
             this.restBeat();
+            refreshHealPartyCost();
         }
     },
     restBeat() {

@@ -24,6 +24,7 @@ $(document).on("click", ".WSAuto", (e) => {
     e.preventDefault();
     const slot = $(e.currentTarget).attr("id");
     actionSlotManager.toggleAutoSacrifice(slot);
+    autoSacEvent();
 });
 
 class actionSlot {

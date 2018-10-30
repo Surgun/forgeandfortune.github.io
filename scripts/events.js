@@ -217,4 +217,8 @@ function eventChecker() {
     if (!EventManager.hasSeen("E007") && Inventory.full()) EventManager.addEvent("E007");
 }
 
+function autoSacEvent() {
+    if (!EventManager.hasSeen("E008")) EventManager.addEvent("E008");
+}
+
 let masteredItem = false;

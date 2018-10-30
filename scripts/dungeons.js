@@ -48,6 +48,7 @@ class Dungeon {
             mob.addTime(t, this.id);
             if (mob.hp === 0) {
                 const drops = mob.rollDrops();
+                BattleLog.mobDrops(mob.name,drops);
                 this.party.addXP(mob.lvl);
                 this.addDungeonDrop(drops);
             }

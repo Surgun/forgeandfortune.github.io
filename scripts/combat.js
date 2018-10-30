@@ -98,6 +98,11 @@ const BattleLog = {
         this.addHeroLog(`--- Floor ${num} ---`);
         this.addEnemyLog(`--- Floor ${num} ---`);
     },
+    mobDrops(name,drops) {
+        this.addHeroLog("Found an item!");
+        const dropname = ResourceManager.idToMaterial(drops[0]).name;
+        this.addEnemyLog(`${name} dropped ${dropname}`)
+    },
     addAttackLog(battleMessage) {
         if (battleMessage.dungeonID !== DungeonManager.dungeonView) return;
         let m = `${battleMessage.attacker.name} attacks for ${battleMessage.damage} damage`

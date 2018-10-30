@@ -39,6 +39,9 @@ class Dungeon {
     }
     addTime(t) {
         //add time to all combatants, if they're ready for combat they'll bounce back here.
+        const partyTimeRemaining = this.party.heroes.map(h => h.actmax()-h.act);
+        let maxTime = Math.max(Math.min(...partyTimeRemaining),10);
+        t = Math.min(t,maxTime);
         this.dungeonTime += t;
         this.party.addTime(t, this.id);
         this.mobs.forEach(mob => {

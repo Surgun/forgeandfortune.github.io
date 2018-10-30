@@ -25,17 +25,17 @@ const $comptitle3 = $("#comptitle3");
 $comptitle1.click((e) => {
     e.preventDefault();
     openTab("inventoryTab");
-    navTabHighlightSidebar($('#inventoryTabLink')[0]);
+    navTabHighlight(e,$('#inventoryTabLink')[0]);
 });
 
 $comptitle2.click((e) => {
     e.preventDefault();
     openTab("recipesTab");
-    navTabHighlightSidebar($('#recipeTab')[0]);
+    navTabHighlight(e,$('#recipeTab')[0]);
 });
 
 $comptitle3.click((e) => {
     e.preventDefault();
     openTab("dungeonsTab");
-    navTabHighlightSidebar($('#dungeonsTabLink')[0]);
+    navTabHighlight(e,$('#dungeonsTabLink')[0]);
 });

@@ -21,18 +21,16 @@ for (i = 0; i < navTab.length; i++) {
     navTab[i].addEventListener("click", navTabHighlight);
 };
 
-function navTabHighlight() {
+function navTabHighlight(evt, tgt) {
+    console.log(event);
     for (i = 0; i < navTab.length; i++) {
         navTab[i].classList.remove("tab-selected");
     };
-    this.classList.add("tab-selected");
-};
-
-function navTabHighlightSidebar(target) {
-    for (i = 0; i < navTab.length; i++) {
-        navTab[i].classList.remove("tab-selected");
-    };
-    target.classList.add("tab-selected");
+    if (tgt) {
+        tgt.classList.add("tab-selected");
+    } else {
+        evt.target.parentNode.classList.add("tab-selected");
+    }      
 };
 
 // Status Container Expand and Collapse

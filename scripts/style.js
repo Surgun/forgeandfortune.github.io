@@ -15,16 +15,16 @@ function tabHighlight() {
 
 // Tab Selection for Navigation
 
-var navTab = document.querySelectorAll(".tablinks");
+const navTabs = document.querySelectorAll(".tablinks");
 
-for (i = 0; i < navTab.length; i++) {
-    navTab[i].addEventListener("click", navTabHighlight);
-};
+navTabs.forEach((navTab) => {
+    navTab.addEventListener("click", navTabHighlight);
+});
 
 function navTabHighlight(evt, tgt) {
-    for (i = 0; i < navTab.length; i++) {
-        navTab[i].classList.remove("tab-selected");
-    };
+    navTabs.forEach((navTab) => {
+        navTab.classList.remove("tab-selected");
+    });
     if (tgt) {
         tgt.classList.add("tab-selected");
     } else {

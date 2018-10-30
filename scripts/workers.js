@@ -275,8 +275,10 @@ const WorkerManager = {
                 if (worker.sacRemaining(id) > 0) {
                     if (id in worker.donated) worker.donated[id] += 1;
                     else worker.donated[id] = 1;
+                    const itemName = recipeList.idToItem(id).name;
                     madeSac = true;
                     refreshWorkers();
+                    Notifications.autoWorkerSac(worker.name,itemName);
                     return true;
                 }
             }

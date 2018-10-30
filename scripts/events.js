@@ -73,10 +73,11 @@ const EventManager = {
         return this.events.concat(this.oldEvents).map(e=>e.id).includes(eventID);
     },
     readEvent(eventNum) {
-        const event = this.events.find(e=>e.eventNum === eventNum);
+        const event = this.eventNumToEvent(eventNum);
         this.events = this.events.filter(e=>e.eventNum !== eventNum);
         if (event.reward !== null) ResourceManager.addDungeonDrops(event.reward);
-        if (event.type === "letter") this.oldEvents.push(event);
+        event.reward = null;
+        if (event.type === "letter" && !this.oldEvents.map(e=>e.id).includes(event.id)) this.oldEvents.push(event);
         refreshEvents();
     }
 };
@@ -123,13 +124,13 @@ const $eventList = $("#eventList");
 const $eventContent = $("#eventContent");
 const $eventTab = $("#eventTab");
 
-function refreshEvents(seeOld) {
+function refreshEvents() {
     $eventContent.empty();
     if (EventManager.hasEvents()) $eventTab.addClass("hasEvent");
     else $eventTab.removeClass("hasEvent");
     $eventList.empty();
     let events = EventManager.events;
-    if (seeOld) events = EventManager.oldEvents;
+    if (EventManager.seeOld) events = EventManager.oldEvents;
     events.forEach(event => {
         const d1 = $("<div/>").addClass("eventList").attr("eventNum",event.eventNum).html(`${event.image} ${event.title}`);
         $eventList.append(d1);
@@ -161,6 +162,7 @@ $(document).on('click', "div.eventList", (e) => {
     $(e.currentTarget).addClass("highlight");
     const eventNum = parseInt($(e.currentTarget).attr("eventNum"));
     const event = EventManager.eventNumToEvent(eventNum);
+    console.log(event);
     $eventContent.empty();
     const d = $("<div/>").addClass("eventBody");
     const d1 = $("<div/>").addClass("eventAuthor").html(`FROM: ${event.author}`);

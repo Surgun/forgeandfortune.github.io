@@ -331,11 +331,18 @@ body {
 }
 
 #DungeonSideBarStatus, #inventorySidebar {
+    position: relative;
     text-align: center;
     background-color: var(--bg-3);
+    border: 1px solid transparent;
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 15px;
+}
+
+#inventorySidebar.inventoryFullSide {
+    background-color: rgb(72, 9, 0);
+    border-color: #820000;
 }
 
 #DungeonSideBarStatus {

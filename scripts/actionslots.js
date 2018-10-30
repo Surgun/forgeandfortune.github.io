@@ -20,9 +20,10 @@ $(document).on("click", ".ASauto", (e) => {
     actionSlotManager.toggleAuto(slot);
 });
 
-$(document).on("click", ".WSauto", (e) => {
+$(document).on("click", ".WSAuto", (e) => {
     e.preventDefault();
     const slot = $(e.currentTarget).attr("id");
+    console.log(slot);
     actionSlotManager.toggleAutoSacrifice(slot);
 });
 
@@ -81,11 +82,14 @@ class actionSlot {
     autoSellToggle() {
         return this.item.autoSellToggle();
     }
+    autoSacrificeToggle() {
+        return this.item.autoSacrificeToggle();
+    }
     autoSell() {
         return this.item.autoSell;
     }
-    workerSac() {
-        return this.item.workerSac;
+    autoSacrifice() {
+        return this.item.autoSacrifice;
     }
     refundMaterial() {
         if (this.status !== slotState.CRAFTING) return;
@@ -177,9 +181,9 @@ const actionSlotManager = {
         if (this.slots.length <= i) return "";
         return this.slots[i].autoSell();
     },
-    workerSac(i) {
+    autoSacrifice(i) {
         if (this.slots.length <= i) return "";
-        return this.slots[i].workerSac();
+        return this.slots[i].autoSacrifice();
     },
     toggleAuto(i) {
         this.slots[i].autoSellToggle();
@@ -213,9 +217,10 @@ function initializeActionSlots() {
         let autoSellTooltip;
         actionSlotManager.autoSell(i) !== "None" ? autoSellTooltip = actionSlotManager.autoSell(i) + " and lesser rarities" : autoSellTooltip = "None";
         const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${autoSellTooltip}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
-        const d5 = $("<div/>").addClass("WSAuto tooltip").attr("data-tooltip", `Toggle Worker Auto-Sacrifice`).attr("id","asws"+i).html(`<i class="fas fa-hammer"></i>`);
+        const d5 = $("<div/>").addClass("WSAuto tooltip").attr("data-tooltip", `Toggle Worker Auto-Sacrifice`).attr("id",i).html(`<i class="fas fa-hammer"></i>`);
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
-        if (actionSlotManager.workerSac(i) !== "None") d5.addClass("WSautoEnabled"+actionSlotManager.workerSac(i));
+        console.log(actionSlotManager.autoSacrifice(i));
+        if (actionSlotManager.autoSacrifice(i)) d5.addClass("WSautoEnabled");
         if (!actionSlotManager.hasSlot(i)) d4.hide();
         d.append(d1,d2.append(a2),d3.append(s3),d4,d5);
         $ActionSlots.append(d);

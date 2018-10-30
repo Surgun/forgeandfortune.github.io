@@ -28,6 +28,14 @@ function navTabHighlight() {
     this.classList.add("tab-selected");
 };
 
+function navTabHighlightSidebar(target) {
+    for (i = 0; i < navTab.length; i++) {
+        navTab[i].classList.remove("tab-selected");
+    };
+    console.log(target);
+    target.classList.add("tab-selected");
+};
+
 // Status Container Expand and Collapse
 
 const sideHeadings = document.querySelectorAll("#side-content .heading");

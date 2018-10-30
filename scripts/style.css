@@ -113,7 +113,7 @@ body {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -2619,8 +2619,36 @@ Rarities
     height: 100%;
 }
 
+#readUnread {
+    display: flex;
+    position: fixed;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    background-color: var(--bg);
+    border-right: 1px solid var(--border);
+}
+
+#readNew, #readOld {
+    padding: 15px 0;
+    flex-grow: 1;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+}
+
+#readNew.readActive, #readOld.readActive {
+    background-color: var(--border);
+    color: var(--text);
+    border-bottom: 1px solid var(--highlight);
+}
+
 #eventList {
     position: fixed;
+    top: 89px;
     width: 100%;
     height: calc(100% - 90px);
     max-width: 250px;

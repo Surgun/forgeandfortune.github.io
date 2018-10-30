@@ -136,7 +136,7 @@ function refreshEvents() {
         $eventList.append(d1);
     });
     if (events.length == 0) {
-        const d1 = $("<div/>").addClass("events-placeholder-details").html("You have no mail to collect at the moment."); 
+        const d1 = $("<div/>").addClass("events-placeholder-details").html("You have no mail to read at the moment."); 
         $eventList.append(d1);
     }
 }

@@ -29,7 +29,7 @@ const $comptitle3 = $("#comptitle3");
 
 $comptitle1.click((e) => {
     e.preventDefault();
-
+    tabClick(e, "inventoryTab");
 });
 
 $comptitle2.click((e) => {

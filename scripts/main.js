@@ -20,7 +20,6 @@ function afterLoad() {
         HeroManager.heroOrder.shift();
         achievementStats.startTime = Date.now();
         EventManager.addEvent("E001");
-        //ResourceManager.addMaterial("M001",miscLoadedValues.startingGold);
         ItemType.forEach(type => recipeList.recipeNewFilter.push(type));
     }
     else {

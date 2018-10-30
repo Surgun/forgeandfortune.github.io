@@ -270,6 +270,7 @@ const WorkerManager = {
         const possibleWorkers = this.workers.filter(w=>w.owned);
         let madeSac = false;
         possibleWorkers.some(worker => {
+            if (worker.thislvlreq() === undefined) return false;
             if (worker.thislvlreq().find(e=>e[0] === id)) {
                 if (worker.type === "advanced" && rarity === 0) return false;
                 if (worker.sacRemaining(id) > 0) {
@@ -375,7 +376,7 @@ function refreshWorkers() {
     if (WorkerManager.workers.every(w=>w.owned)) return;
     const pw = $("<div/>").addClass("purchaseWorkerCard");
     const pw1 = $("<div/>").addClass("unknownWorker").html('<img src="images/workers/blackoutline.png">');
-    const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase New Worker <div class="buyWorkerCost">${miscIcons.gold} ${amt}</div>`);
+    const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase New Worker <div class="buyWorkerCost">${miscIcons.gold} ${formatToUnits(amt,3)}</div>`);
     pw.append(pw1,b1);
     $workers.append(pw);
 }

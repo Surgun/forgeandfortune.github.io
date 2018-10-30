@@ -69,15 +69,15 @@ const achievementStats = {
         if (rarity === "Good") this.goodsCrafted += 1;
         if (rarity === "Great") this.greatsCrafted += 1;
         if (rarity === "Epic") this.epicsCrafted += 1;
-        $statTotalItems.html(this.totalItemsCrafted);
-        $statCommons.html(this.commonsCrafted);
-        $statGoods.html(this.goodsCrafted);
-        $statGreats.html(this.greatsCrafted);
-        $statEpics.html(this.epicsCrafted);
+        $statTotalItems.html(formatToUnits(this.totalItemsCrafted,3));
+        $statCommons.html(formatToUnits(this.commonsCrafted,3));
+        $statGoods.html(formatToUnits(this.goodsCrafted,3));
+        $statGreats.html(formatToUnits(this.greatsCrafted,3));
+        $statEpics.html(formatToUnits(this.epicsCrafted,3));
     },
     gold(g) {
         this.totalGoldEarned += g;
-        $statTotalGoldEarned.html(this.totalGoldEarned);
+        $statTotalGoldEarned.html(formatToUnits(this.totalGoldEarned,3));
     },
     createSave() {
         const save = {};

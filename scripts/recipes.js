@@ -37,7 +37,7 @@ class Item{
         return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>";
     }
     imageValue() {
-        return ResourceManager.formatCost("M001",this.value);
+        return ResourceManager.formatCost("M001",formatToUnits(this.value,1));
     }
     visualizeRes() {
         const d = $("<div/>").addClass("itemCost")
@@ -117,9 +117,43 @@ class Item{
     }
 }
 
+$(document).on("click",".recipeHeadName",(e) => {
+    e.preventDefault();
+    sortRecipesByHeading("name");
+});
+
+$(document).on("click",".recipeHeadLvl",(e) => {
+    e.preventDefault();
+    sortRecipesByHeading("lvl");
+});
+
+$(document).on("click",".recipeHeadTime",(e) => {
+    e.preventDefault();
+    sortRecipesByHeading("craftTime");
+});
+
+$(document).on("click",".recipeHeadValue",(e) => {
+    e.preventDefault();
+    sortRecipesByHeading("value");
+});
+
+function sortRecipesByHeading(heading) {
+    if (recipeList.recipeCategory === heading) {
+        recipeList.recipeCategory = heading+"Asc";
+        initializeRecipes(heading+"Asc");
+    }
+    else {
+        recipeList.recipeCategory = heading;
+        initializeRecipes(heading);
+    }
+    populateRecipe(recipeList.recipePop);
+}
+
 const recipeList = {
     recipes : [],
     recipeNewFilter : [],
+    recipeCategory : "default",
+    recipePop : "knives",
     createSave() {
         const save = [];
         this.recipes.forEach(r=> {
@@ -209,6 +243,7 @@ const recipeList = {
 let cachedbptype = null;
 
 function populateRecipe(type) {
+    recipeList.recipePop = type;
     let rFilter = recipeList.recipes.filter(r => r.owned);
     if (type === "Matless") {
         rFilter = rFilter.filter(r => r.mcost.length === 0 || r.isMastered());
@@ -253,7 +288,17 @@ function refreshRecipeFilters() {
     });
 }
 
-function initializeRecipes() {
+function initializeRecipes(type) {
+    type = type || "default";
+    if (type === "default") recipeList.recipes.sort((a, b) => a.id.localeCompare(b.id))
+    if (type === "name") recipeList.recipes.sort((a, b) => a.name.localeCompare(b.name))
+    if (type === "nameAsc") recipeList.recipes.sort((a, b) => b.name.localeCompare(a.name))
+    if (type === "lvl") recipeList.recipes.sort((a,b) => a.lvl-b.lvl);
+    if (type === "lvlAsc") recipeList.recipes.sort((a,b) => b.lvl-a.lvl);
+    if (type === "value") recipeList.recipes.sort((a,b) => a.value-b.value);
+    if (type === "valueAsc") recipeList.recipes.sort((a,b) => b.value-a.value);
+    if (type === "craftTime") recipeList.recipes.sort((a,b) => a.craftTime-b.craftTime);
+    if (type === "craftTimeAsc") recipeList.recipes.sort((a,b) => b.craftTime-a.craftTime);
     $RecipeResults.empty();
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('recipeTable');
@@ -276,7 +321,8 @@ function initializeRecipes() {
         const td5 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
         const td6 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
         const td7 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
-        const td8 = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html("0/100");
+        const craftCount = Math.min(100,recipe.craftCount);
+        const td8 = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(craftCount+"/100");
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6,td7,td8);
         table.append(row);
     });
@@ -349,6 +395,10 @@ $(document).on('click', '.recipeSelect', (e) => {
     const type = $(e.target).attr("id").substring(2);
     recipeList.recipeNewFilter = recipeList.recipeNewFilter.filter(t => t !== type);
     refreshRecipeFilters();
+    if (recipeList.recipeCategory !== "default") {
+        recipeList.recipeCategory = "default";
+        initializeRecipes("default");
+    }
     populateRecipe(type);
 })
 

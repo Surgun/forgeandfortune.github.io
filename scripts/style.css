@@ -2728,15 +2728,10 @@ Rarities
     cursor: pointer;
 }
 
-.rewardDiv {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 90px));
-}
-
 .rewardDivTitle {
     margin-top: 20px;
-    grid-column: 1 / -1;
 }
+
 .rewardCard {
     position: relative;
     padding: 3px 10px;
@@ -2751,7 +2746,7 @@ Rarities
 
 .rewardImage {
     position: relative;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .rewardImage > img {

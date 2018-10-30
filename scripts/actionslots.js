@@ -20,6 +20,12 @@ $(document).on("click", ".ASauto", (e) => {
     actionSlotManager.toggleAuto(slot);
 });
 
+$(document).on("click", ".WSauto", (e) => {
+    e.preventDefault();
+    const slot = $(e.currentTarget).attr("id");
+    actionSlotManager.toggleAutoSacrifice(slot);
+});
+
 class actionSlot {
     constructor(itemid) {
         this.itemid = itemid;
@@ -49,7 +55,8 @@ class actionSlot {
         this.craftTime += t;
         if (this.craftTime > this.maxCraft) {
             this.craftTime = 0;
-            Inventory.craftToInventory(this.itemid);
+            if (this.item.autoSacrifice) WorkerManager.craftToSac(this.itemid);
+            else Inventory.craftToInventory(this.itemid);
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart();
         }
@@ -76,6 +83,9 @@ class actionSlot {
     }
     autoSell() {
         return this.item.autoSell;
+    }
+    workerSac() {
+        return this.item.workerSac;
     }
     refundMaterial() {
         if (this.status !== slotState.CRAFTING) return;
@@ -167,8 +177,16 @@ const actionSlotManager = {
         if (this.slots.length <= i) return "";
         return this.slots[i].autoSell();
     },
+    workerSac(i) {
+        if (this.slots.length <= i) return "";
+        return this.slots[i].workerSac();
+    },
     toggleAuto(i) {
         this.slots[i].autoSellToggle();
+        initializeActionSlots();
+    },
+    toggleAutoSacrifice(i) {
+        this.slots[i].autoSacrificeToggle();
         initializeActionSlots();
     },
     isMastered(i) {
@@ -195,9 +213,11 @@ function initializeActionSlots() {
         let autoSellTooltip;
         actionSlotManager.autoSell(i) !== "None" ? autoSellTooltip = actionSlotManager.autoSell(i) + " and lesser rarities" : autoSellTooltip = "None";
         const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${autoSellTooltip}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
+        const d5 = $("<div/>").addClass("WSAuto tooltip").attr("data-tooltip", `Toggle Worker Auto-Sacrifice`).attr("id","asws"+i).html(`<i class="fas fa-hammer"></i>`);
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
+        if (actionSlotManager.workerSac(i) !== "None") d5.addClass("WSautoEnabled"+actionSlotManager.workerSac(i));
         if (!actionSlotManager.hasSlot(i)) d4.hide();
-        d.append(d1,d2.append(a2),d3.append(s3),d4);
+        d.append(d1,d2.append(a2),d3.append(s3),d4,d5);
         $ActionSlots.append(d);
     }
     if (actionSlotManager.maxSlots < 5) {

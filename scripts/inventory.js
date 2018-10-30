@@ -36,7 +36,6 @@ $(document).on("click",".heroEquipBlockEquipButton",(e) => {
 })
 
 let containerid = 0;
-//let autoSellToggle = false;
 
 class itemContainer {
     constructor(id,rarity) {

@@ -10,6 +10,7 @@ class Item{
         this.owned = false;
         this.craftCount = 0;
         this.autoSell = "None";
+        this.autoSacrifice = false;
     }
     createSave() {
         const save = {};
@@ -17,12 +18,14 @@ class Item{
         save.owned = this.owned;
         save.craftCount = this.craftCount;
         save.autoSell = this.autoSell;
+        save.autoSacrifice = this.autoSacrifice;
         return save;
     }
     loadSave(save) {
         this.owned = save.owned;
         this.craftCount = save.craftCount;
         this.autoSell = save.autoSell;
+        if (save.autoSacrifice !== undefined) this.autoSacrifice = save.autoSacrifice;
     }
     itemDescription() {
         return this.description;
@@ -108,6 +111,9 @@ class Item{
         else if (this.autoSell === "Good") this.autoSell = "Great";
         else if (this.autoSell === "Great") this.autoSell = "Epic";
         else this.autoSell = "None";
+    }
+    autoSacrificeToggle() {
+        this.autoSacrifice = !this.autoSacrifice;
     }
 }
 

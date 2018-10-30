@@ -242,6 +242,49 @@ const WorkerManager = {
     workerMaxLevelCount() {
         return this.workers.length*10;
     },
+    craftToSac(id) {
+        const item = recipeList.idToItem(id)
+        let rarity = 0;
+        item.addCount();
+        const roll = Math.floor(Math.random() * 1000)
+        let mod = 1;
+        if (item.isMastered()) mod = 2;
+        if (roll < miscLoadedValues.qualityCheck[3]*mod) {
+            rarity = 3;
+            achievementStats.craftedItem("Epic");
+        }
+        else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2])*mod) {
+            rarity = 2;
+            achievementStats.craftedItem("Great");
+        }
+        else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1])*mod) {
+            rarity = 1;
+            achievementStats.craftedItem("Good");
+        }
+        else achievementStats.craftedItem("Common");
+        this.attemptSacrifice(id,rarity);
+    },
+    attemptSacrifice(id,rarity) {
+        //worker.req is an array of arrays
+        //[[id,rarity,amt],[id,rarity,amt]]
+        const possibleWorkers = this.workers.filter(w=>w.owned);
+        let madeSac = false;
+        possibleWorkers.some(worker => {
+            if (worker.req.find(e=>e[0] === id)) {
+                if (worker.type === "advanced" && rarity === 0) return false;
+                if (this.sacRemaining(id) > 0) {
+                    if (craftID in worker.donated) worker.donated[craftID] += 1;
+                    else worker.donated[craftID] = 1;
+                    madeSac = true;
+                    return true;
+                }
+            }
+            return false;
+        })
+        const autoSellToggle = {"None":-1,"Common":0,"Good":1,"Great":2,"Epic":3};
+        if (!madeSac) Inventory.addToInventory(id,rarity,autoSellToggle[item.autoSell]);
+
+    }
 }
 
 const $workers = $('#workerList');

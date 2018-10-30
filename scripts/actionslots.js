@@ -23,7 +23,6 @@ $(document).on("click", ".ASauto", (e) => {
 $(document).on("click", ".WSAuto", (e) => {
     e.preventDefault();
     const slot = $(e.currentTarget).attr("id");
-    console.log(slot);
     actionSlotManager.toggleAutoSacrifice(slot);
 });
 
@@ -219,7 +218,6 @@ function initializeActionSlots() {
         const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${autoSellTooltip}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
         const d5 = $("<div/>").addClass("WSAuto tooltip").attr("data-tooltip", `Toggle Worker Auto-Sacrifice`).attr("id",i).html(`<i class="fas fa-hammer"></i>`);
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
-        console.log(actionSlotManager.autoSacrifice(i));
         if (actionSlotManager.autoSacrifice(i)) d5.addClass("WSautoEnabled");
         if (!actionSlotManager.hasSlot(i)) d4.hide();
         d.append(d1,d2.append(a2),d3.append(s3),d4,d5);

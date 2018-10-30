@@ -30,6 +30,7 @@ $(document).on("click", "#dungeon1", (e) => {
     $dungeonSelect.hide();
     if (DungeonManager.dungeonStatus("d1")) {
         DungeonManager.dungeonView = "d1";
+        BattleLog.clear();
         initiateDungeonFloor();
         $dungeonRun.show();
     }
@@ -103,7 +104,7 @@ function refreshHeroSelect() {
     const d2 = $("<div/>").addClass("dungeonAvailableCollection");
     HeroManager.ownedHeroes().forEach(hero => {
         if (!hero.inDungeon && !PartyCreator.heroes.includes(hero.id)) {
-            const d3 = characterCard("dungeonAvailable",hero.id,hero.id);
+            const d3 = characterCard("dungeonAvailable",hero.uniqueid,hero.id);
             d2.append(d3);  
         }
     });
@@ -130,7 +131,7 @@ function characterCard(prefix,dv,ID) {
     const d3 = $("<div/>").addClass(prefix+"Lvl").html("Level "+hero.lvl);
     const d4 = $("<div/>").addClass(prefix+"Pow").html(miscIcons.pow+"&nbsp;"+hero.getPow())
     const d5 = createHPBar(hero,"Party");    
-    const d6 = $("<div/>").addClass("healHero").attr("id","hh"+hero.id).html(`Heal - <div class="healHeroCost">${miscIcons.gold} ${hero.healCost()}</div>`);
+    const d6 = $("<div/>").addClass("healHero").attr("id","hh"+hero.uniqueid).html(`Heal - <div class="healHeroCost">${miscIcons.gold} ${hero.healCost()}</div>`);
     if (hero.healCost() === 0) d6.hide();
     dclick.append(d1,d2,d3,d4,d5);
     return d.append(dclick,d6);
@@ -143,8 +144,10 @@ const $drStatsHero = $("#drStatsHero");
 const $drStatsMob = $("#drStatsMob");
 
 function floorStateChange(dungeonID) {
-    if (dungeonID === DungeonManager.dungeonView) initiateDungeonFloor();
     const dungeon = DungeonManager.dungeonByID(dungeonID);
+    if (dungeonID === DungeonManager.dungeonView) {
+        initiateDungeonFloor();
+    }
     $("#DungeonSideBarStatus").html(`${dungeon.name} - Floor ${dungeon.floorNum}`);
 }
 
@@ -176,6 +179,7 @@ function initiateDungeonFloor() {
         const d3b = $("<div/>").addClass("dfmImage").html(mob.image);
         const d3a = $("<div/>").addClass("dfmBar").html(createActBar(mob))
         d3.append(d3a,d3b,d3c);
+        if (mob.hp === 0) d3.addClass("mobDead");
         $dungeonMobList.append(d3);
         const d4 = $("<div/>").addClass("dsm");
         const d4a = $("<div/>").addClass("dsmPic").html(mob.head);
@@ -185,7 +189,6 @@ function initiateDungeonFloor() {
         d4.append(d4a,d4b,d4c,d4d);
         $drStatsMob.append(d4);
     });
-    BattleLog.clear();
 }
 
 function refreshDungeonFloorBars() {
@@ -219,8 +222,8 @@ function sidebarHP(hero) {
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("dsbhpBarDiv").html(dungeonIcons[Stat.HP]);
-    const d1a = $("<div/>").addClass("dsbhpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hpSide"+hero.id);
-    const s1 = $("<span/>").addClass("dsbhpBarFill").attr("id","hpFillSide"+hero.id).css('width', hpWidth);
+    const d1a = $("<div/>").addClass("dsbhpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hpSide"+hero.uniqueid);
+    const s1 = $("<span/>").addClass("dsbhpBarFill").attr("id","hpFillSide"+hero.uniqueid).css('width', hpWidth);
     return d1.append(d1a,s1);
 }
 
@@ -228,8 +231,8 @@ function createHPBar(hero,tag) {
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("hpBarDiv").html(dungeonIcons[Stat.HP]);
-    const d1a = $("<div/>").addClass("hpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hp"+tag+hero.id);
-    const s1 = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+tag+hero.id).css('width', hpWidth);
+    const d1a = $("<div/>").addClass("hpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hp"+tag+hero.uniqueid);
+    const s1 = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+tag+hero.uniqueid).css('width', hpWidth);
     return d1.append(d1a,s1);
 }
 
@@ -238,8 +241,8 @@ function createActBar(hero) {
     const actWidth = (actPercent*100).toFixed(1)+"%";
     const actText = round((hero.actmax()-hero.act)/1000,1);
     const d = $("<div/>").addClass("actBarDiv").html(dungeonIcons[Stat.ACT]);
-    const d1 = $("<div/>").addClass("actBar").attr("data-label",actText).attr("id","act"+hero.id);
-    const s1 = $("<span/>").addClass("actBarFill").attr("id","actFill"+hero.id).css('width', actWidth);
+    const d1 = $("<div/>").addClass("actBar").attr("data-label",actText).attr("id","act"+hero.uniqueid);
+    const s1 = $("<span/>").addClass("actBarFill").attr("id","actFill"+hero.uniqueid).css('width', actWidth);
     return d.append(d1,s1);
 }
 
@@ -247,21 +250,21 @@ function createAPBar(hero) {
     const apPercent = hero.ap/hero.apmax;
     const apWidth = (apPercent*100).toFixed(1)+"%";
     const d = $("<div/>").addClass("apBarDiv").html(dungeonIcons[Stat.AP]);
-    const d1 = $("<div/>").addClass("apBar").attr("data-label",hero.ap+"/"+hero.apmax).attr("id","ap"+hero.id);
-    const s1 = $("<span/>").addClass("apBarFill").attr("id","apFill"+hero.id).css('width', apWidth);
+    const d1 = $("<div/>").addClass("apBar").attr("data-label",hero.ap+"/"+hero.apmax).attr("id","ap"+hero.uniqueid);
+    const s1 = $("<span/>").addClass("apBarFill").attr("id","apFill"+hero.uniqueid).css('width', apWidth);
     return d.append(d1,s1);
 }
 
 function refreshHPBar(hero) {
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
-    $("#hpParty"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
-    $("#hpFillParty"+hero.id).css('width', hpWidth);
-    $("#hpDung"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
-    $("#hpFillDung"+hero.id).css('width', hpWidth);
-    $("#hpSide"+hero.id).attr("data-label",hero.hp+"/"+hero.maxHP());
-    $("#hpFillSide"+hero.id).css('width', hpWidth);
-    const $hh = $("#hh"+hero.id)
+    $("#hpParty"+hero.uniqueid).attr("data-label",hero.hp+"/"+hero.maxHP());
+    $("#hpFillParty"+hero.uniqueid).css('width', hpWidth);
+    $("#hpDung"+hero.uniqueid).attr("data-label",hero.hp+"/"+hero.maxHP());
+    $("#hpFillDung"+hero.uniqueid).css('width', hpWidth);
+    $("#hpSide"+hero.uniqueid).attr("data-label",hero.hp+"/"+hero.maxHP());
+    $("#hpFillSide"+hero.uniqueid).css('width', hpWidth);
+    const $hh = $("#hh"+hero.uniqueid)
     $hh.html(`Heal - <div class="healHeroCost">${miscIcons.gold} ${hero.healCost()}</div>`);
     if (hero.healCost() > 0) $hh.show();
     else $hh.hide();
@@ -271,16 +274,16 @@ function refreshAPBar(hero) {
     const apPercent = hero.ap/hero.apmax;
     const apWidth = (apPercent*100).toFixed(1)+"%";
     const d = $("<div/>").addClass("apBarDiv").html(dungeonIcons[Stat.AP]);
-    const d1 = $("<div/>").addClass("apBar").attr("data-label",hero.ap+"/"+hero.apmax).attr("id","ap"+hero.id);
-    const s1 = $("<span/>").addClass("apBarFill").attr("id","apFill"+hero.id).css('width', apWidth);
-    $("#ap"+hero.id).attr("data-label",hero.ap+"/"+hero.apmax);
-    $("#apFill"+hero.id).css('width', apWidth);
+    const d1 = $("<div/>").addClass("apBar").attr("data-label",hero.ap+"/"+hero.apmax).attr("id","ap"+hero.uniqueid);
+    const s1 = $("<span/>").addClass("apBarFill").attr("id","apFill"+hero.uniqueid).css('width', apWidth);
+    $("#ap"+hero.uniqueid).attr("data-label",hero.ap+"/"+hero.apmax);
+    $("#apFill"+hero.uniqueid).css('width', apWidth);
 }
 
 function refreshActBar(hero) {
     const actPercent = hero.act/hero.actmax();
     const actWidth = (actPercent*100).toFixed(1)+"%";
     const actText = round((hero.actmax()-hero.act)/1000,1);
-    $("#act"+hero.id).attr("data-label",actText);
-    $("#actFill"+hero.id).css('width', actWidth);
+    $("#act"+hero.uniqueid).attr("data-label",actText);
+    $("#actFill"+hero.uniqueid).css('width', actWidth);
 }

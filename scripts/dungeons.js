@@ -48,9 +48,6 @@ class Dungeon {
                 this.addDungeonDrop(drops);
             }
         });
-        const newmobs = this.mobs.filter(m => m.hp > 0);
-        if (newmobs.length < this.mobs.length) floorStateChange(this.id);
-        this.mobs = this.mobs.filter(m => m.hp > 0);
         if (this.party.isDead()) {
             this.party.heroes.forEach(h=>h.inDungeon = false);
             EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorNum);
@@ -59,9 +56,10 @@ class Dungeon {
                 openTab("dungeonsTab");
             }
             initializeSideBarDungeon();
+            BattleLog.clear();
             return;
         }
-        if (this.mobs.length === 0) this.advanceFloor();
+        if (this.mobs.every(m=>m.hp === 0)) this.advanceFloor();
     }
     addDungeonDrop(drops) {
         drops.forEach(drop => {
@@ -74,6 +72,7 @@ class Dungeon {
         achievementStats.floorBeaten(this.floorNum);
         this.floorNum += 1;
         this.mobs = MobManager.generateDungeonMobs(this.id,this.floorNum);
+        BattleLog.advanceFloor(this.floorNum);
         floorStateChange(this.id);
     }
     heroInHere(heroID) {

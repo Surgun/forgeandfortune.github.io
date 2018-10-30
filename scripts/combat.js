@@ -94,6 +94,10 @@ const BattleLog = {
         $drLogHero.empty();
         $drLogMob.empty();
     },
+    advanceFloor(num) {
+        this.addHeroLog(`--- Floor ${num} ---`);
+        this.addEnemyLog(`--- Floor ${num} ---`);
+    },
     addAttackLog(battleMessage) {
         if (battleMessage.dungeonID !== DungeonManager.dungeonView) return;
         let m = `${battleMessage.attacker.name} attacks for ${battleMessage.damage} damage`

@@ -16,6 +16,7 @@ const levelCurves = {
 class Hero {
     constructor (props) {
         Object.assign(this, props);
+        this.uniqueid = this.id;
         this.lvl = 1;
         this.xp = 0;
         this.hp = levelCurves.getLvlStats(this.lvl).hp;

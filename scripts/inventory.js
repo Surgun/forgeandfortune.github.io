@@ -265,6 +265,8 @@ function refreshInventory() {
         $inventory.append(itemdiv);
     });
     $sideInventory.html(`${Inventory.inventoryCount()}/20`)
+    if (Inventory.inventoryCount() === 20) $sideInventory.addClass("inventoryFullSide");
+    else $sideInventory.removeClass("inventoryFullSide");
 }
 
 let equipContainerTarget = null;

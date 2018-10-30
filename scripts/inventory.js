@@ -30,6 +30,7 @@ $(document).on("click",".heroEquipBlockEquipButton",(e) => {
     const heroID = $(e.target).attr("hid");
     const equippingTo = parseInt($(e.target).attr("sid"));
     HeroManager.equipItem(equipContainerTarget.containerID,heroID,equippingTo);
+    if (HeroManager.heroView === heroID) examineHero(heroID);
     $(".tabcontent").hide();
     $("#inventoryTab").show();
 })

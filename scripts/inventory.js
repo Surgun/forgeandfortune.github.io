@@ -68,7 +68,10 @@ class itemContainer {
     propDiv() {
         const d = $("<div/>").addClass("invProp");
         if (this.act() > 0) {
-            const d1 = $("<div/>").addClass("invPropAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;" + msToSec(this.act()));
+            let speed = "Average";
+            if (this.act() > 5000) speed = "Slow";
+            else if (this.act() < 5000) speed = "Fast";
+            const d1 = $("<div/>").addClass("invPropAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;" + speed)
             d.append(d1);
         }
         if (this.pow() > 0) {
@@ -298,13 +301,10 @@ function gearEquipFromInventory(invID) {
             const d4a = $("<div/>").addClass("heroEquipBlockEquipSlot").html(slotName[i]);
             const relPow = HeroManager.relativePow(hb.id,i,equipContainerTarget.pow());
             const relHP = HeroManager.relativeHP(hb.id,i,equipContainerTarget.hp());
-            const slotSpeed = HeroManager.relativeAct(hb.id,i,equipContainerTarget.act());
+            const slotSpeed = HeroManager.slotSpeed(hb.id,i);
 
-            const d4aa = $("<div/>").addClass("heroEquipBlockEquipStat");
-            if (slotSpeed === "N/A") d4aa.hide();
-            else if (slotSpeed > 0) d4aa.addClass("hebNegative").html(miscIcons.act + "&nbsp;+" + msToSec(slotSpeed));
-            else if (slotSpeed < 0) d4aa.addClass("hebPositive").html(miscIcons.act + "&nbsp;" + msToSec(slotSpeed));
-            else d4aa.html(miscIcons.act + "&nbsp;Same");
+            const d4aa = $("<div/>").addClass("heroEquipBlockEquipStat").html(miscIcons.act + "&nbsp;" + slotSpeed);
+            if (slotSpeed === null) d4aa.hide();
 
             const d4b = $("<div/>").addClass("heroEquipBlockEquipStat")
             if (relPow > 0) d4b.addClass("hebPositive").html(miscIcons.pow + "&nbsp;+" + relPow);

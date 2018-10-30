@@ -358,10 +358,14 @@ const HeroManager = {
         const hero = this.idToHero(heroID);
         return hp - hero.getHPSlot(slot);
     },
-    relativeAct(heroID,slot,act) {
+    slotSpeed(heroID,slot) {
         const hero = this.idToHero(heroID);
-        if (slot !== 0) return "N/A";
-        return act-hero.actmax();
+        if (slot !== 0) return null;
+        if (hero.slot1 === null) return "Average";
+        const speed = hero.slot1.act();
+        if (speed > 5000) return "Slow";
+        if (speed < 5000) return "Fast";
+        return "Average";
     },
     purchaseHero() {
         const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];
@@ -516,10 +520,9 @@ function examineHeroPossibleEquip(slot,heroID) {
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('EHPE');
     const htd1 = $('<div/>').addClass('EHPEHeaderName').html("NAME");
-    const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("ACT");
-    const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
-    const htd4 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
-    const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3,htd4);
+    const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
+    const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
+    const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3);
     table.append(hrow);
 
     let upgradeAvaialable = false;

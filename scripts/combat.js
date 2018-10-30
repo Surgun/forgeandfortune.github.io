@@ -74,7 +74,7 @@ const BattleLog = {
         $drLogHero.empty();
         this.heroLog.forEach(m=> {
             const d = $("<div/>").addClass("heroBattleLog").html(m);
-            $drLogHero.append(d);
+            $drLogHero.prepend(d);
         });
     },
     addEnemyLog(m) {
@@ -85,7 +85,7 @@ const BattleLog = {
         $drLogMob.empty();
         this.enemyLog.forEach(m=> {
             const d = $("<div/>").addClass("enemyBattleLog").html(m);
-            $drLogMob.append(d);
+            $drLogMob.prepend(d);
         });
     },
     clear() {

@@ -162,7 +162,6 @@ $(document).on('click', "div.eventList", (e) => {
     $(e.currentTarget).addClass("highlight");
     const eventNum = parseInt($(e.currentTarget).attr("eventNum"));
     const event = EventManager.eventNumToEvent(eventNum);
-    console.log(event);
     $eventContent.empty();
     const d = $("<div/>").addClass("eventBody");
     const d1 = $("<div/>").addClass("eventAuthor").html(`FROM: ${event.author}`);

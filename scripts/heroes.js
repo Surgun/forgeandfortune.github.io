@@ -90,6 +90,9 @@ class Hero {
         if (this.slot6 !== null) pow += this.slot6.pow();
         return pow;
     }
+    getAdjPow() {
+        return Math.floor(this.getPow() * this.actmax()/5000);
+    }
     getPowSlot(slot) {
         if (slot === 0 && this.slot1 !== null) return this.slot1.pow();
         if (slot === 1 && this.slot2 !== null) return this.slot2.pow();

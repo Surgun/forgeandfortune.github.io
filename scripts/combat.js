@@ -19,7 +19,7 @@ const CombatManager = {
     executeAttack(attacker, defender, battleMessage) {
         const critical = this.rollStat(attacker.crit);
         battleMessage.critical = critical;
-        let damage = attacker.getPow();
+        let damage = attacker.getAdjPow();
         if (critical) damage = Math.round(damage*attacker.critdmg);
         if (attacker.ap === attacker.apmax) {
             battleMessage.apAttack = true;

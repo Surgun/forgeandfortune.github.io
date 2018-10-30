@@ -270,9 +270,7 @@ const WorkerManager = {
         const possibleWorkers = this.workers.filter(w=>w.owned);
         let madeSac = false;
         possibleWorkers.some(worker => {
-            console.log(worker.thislvlreq());
             if (worker.thislvlreq().find(e=>e[0] === id)) {
-                console.log("HI");
                 if (worker.type === "advanced" && rarity === 0) return false;
                 if (worker.sacRemaining(id) > 0) {
                     if (id in worker.donated) worker.donated[id] += 1;

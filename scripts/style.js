@@ -32,7 +32,6 @@ function navTabHighlightSidebar(target) {
     for (i = 0; i < navTab.length; i++) {
         navTab[i].classList.remove("tab-selected");
     };
-    console.log(target);
     target.classList.add("tab-selected");
 };
 

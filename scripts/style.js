@@ -22,7 +22,6 @@ for (i = 0; i < navTab.length; i++) {
 };
 
 function navTabHighlight(evt, tgt) {
-    console.log(event);
     for (i = 0; i < navTab.length; i++) {
         navTab[i].classList.remove("tab-selected");
     };

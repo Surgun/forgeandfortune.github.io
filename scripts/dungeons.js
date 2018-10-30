@@ -11,6 +11,7 @@ class Dungeon {
         this.mobs = MobManager.generateDungeonMobs(this.id,this.floorNum)
         this.dropList = [];
         this.dungeonTime = 0;
+        this.mobDeadCount = 0;
     }
     createSave() {
         const save = {};
@@ -48,6 +49,10 @@ class Dungeon {
                 this.addDungeonDrop(drops);
             }
         });
+        if (this.mobs.filter(m=>m.hp===0).length > this.mobDeadCount) {
+            this.mobDeadCount = this.mobs.filter(m=>m.hp===0).length;
+            deadMobSweep(this.id);
+        }
         if (this.party.isDead()) {
             this.party.heroes.forEach(h=>h.inDungeon = false);
             EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorNum);
@@ -73,6 +78,7 @@ class Dungeon {
         this.floorNum += 1;
         this.mobs = MobManager.generateDungeonMobs(this.id,this.floorNum);
         BattleLog.advanceFloor(this.floorNum);
+        this.mobDeadCount = 0;
         floorStateChange(this.id);
     }
     heroInHere(heroID) {

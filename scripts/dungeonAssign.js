@@ -28,18 +28,22 @@ const $dsd1 = $("#dsd1");
 $(document).on("click", "#dungeon1", (e) => {
     e.preventDefault();
     $dungeonSelect.hide();
-    if (DungeonManager.dungeonStatus("d1")) {
-        DungeonManager.dungeonView = "d1";
-        BattleLog.clear();
-        initiateDungeonFloor();
-        $dungeonRun.show();
-    }
+    if (DungeonManager.dungeonStatus("d1")) showDungeon("d1");
     else {
         refreshHeroSelect("d1");
         DungeonManager.dungeonCreatingID = "d1";
+        $dungeonSelect.hide();
         $dungeonTeamSelect.show();
     }
 });
+
+function showDungeon(dungeonID) {
+    DungeonManager.dungeonView = dungeonID;
+    BattleLog.clear();
+    initiateDungeonFloor();
+    $dungeonSelect.hide();
+    $dungeonRun.show();
+}
 
 //clicking a hero to remove them from your party
 $(document).on('click', "div.dungeonTeamCardClick", (e) => {
@@ -174,7 +178,7 @@ function initiateDungeonFloor() {
         $drStatsHero.append(d2);
     });
     dungeon.mobs.forEach((mob) => {
-        const d3 = $("<div/>").addClass("dfm");
+        const d3 = $("<div/>").addClass("dfm").attr("id","dfm"+mob.uniqueid);
         const d3c = $("<div/>").addClass("dfmName").html(mob.name);
         const d3b = $("<div/>").addClass("dfmImage").html(mob.image);
         const d3a = $("<div/>").addClass("dfmBar").html(createActBar(mob))
@@ -188,6 +192,14 @@ function initiateDungeonFloor() {
         const d4d = $("<div/>").addClass("dsmAP").html(createAPBar(mob,"Dung"));
         d4.append(d4a,d4b,d4c,d4d);
         $drStatsMob.append(d4);
+    });
+}
+
+function deadMobSweep(dungeonID) {
+    if (dungeonID !== DungeonManager.dungeonView) return;
+    const dungeon = DungeonManager.getCurrentDungeon();
+    dungeon.mobs.forEach((mob) => {
+        if (mob.hp === 0) $("#dfm"+mob.uniqueid).addClass("mobDead");
     });
 }
 
@@ -205,7 +217,7 @@ function initializeSideBarDungeon() {
     $DungeonSideBarTeam.empty();
     DungeonManager.dungeons.forEach(dungeon => {
         const d = $("<div/>").addClass("dungeonGroup");
-        const d1 = $("<div/>").attr("id","DungeonSideBarStatus").html(`${dungeon.name} - Floor ${dungeon.floorNum}`);
+        const d1 = $("<div/>").attr("id","DungeonSideBarStatus").attr("dungeonID",dungeon.id).html(`${dungeon.name} - Floor ${dungeon.floorNum}`);
         d.append(d1);
         dungeon.party.heroes.forEach(hero => {
             const d3 = $("<div/>").addClass("dungeonSideBarMember");

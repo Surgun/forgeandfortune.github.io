@@ -39,3 +39,11 @@ $comptitle3.click((e) => {
     openTab("dungeonsTab");
     navTabHighlight(e,$('#dungeonsTabLink')[0]);
 });
+
+$(document).on('click', "#DungeonSideBarStatus", (e) => {
+    e.preventDefault();
+    openTab("dungeonsTab");
+    navTabHighlight(e,$('#dungeonsTabLink')[0]);
+    const dungeonID = $(e.currentTarget).attr("dungeonID");
+    showDungeon(dungeonID);
+})

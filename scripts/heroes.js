@@ -520,9 +520,10 @@ function examineHeroPossibleEquip(slot,heroID) {
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('EHPE');
     const htd1 = $('<div/>').addClass('EHPEHeaderName').html("NAME");
-    const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
-    const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
-    const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3);
+    const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("ACT");
+    const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
+    const htd4 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
+    const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3,htd4);
     table.append(hrow);
 
     let upgradeAvaialable = false;
@@ -530,15 +531,18 @@ function examineHeroPossibleEquip(slot,heroID) {
         const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName);
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
         const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());
+        const speed = HeroManager.slotSpeed(heroID,slot);
+        const td1a = $('<div/>').addClass('EHPEstat')
         const td2 = $('<div/>').addClass('EHPEstat')
         const td3 = $('<div/>').addClass('EHPEstat')
+        td1a.html(speed);
         if (relPow > 0) td2.addClass("EHPEstatPositive").html(itemContainer.pow() + " (+" + relPow + ")");
         else if (relPow < 0) td2.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relPow + ")");
         else td2.html(itemContainer.pow() + " (+" + relPow + ")");
         if (relHP > 0) td3.addClass("EHPEstatPositive").html(itemContainer.hp() + " (+" + relHP + ")");
         else if (relHP < 0) td3.addClass("EHPEstatNegative").html(itemContainer.hp() + " (" + relHP + ")");
         else td3.html(itemContainer.hp());
-        const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2,td3);
+        const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td1a,td2,td3);
         table.append(row);
     });
     $heroEquipmentList.append(table);

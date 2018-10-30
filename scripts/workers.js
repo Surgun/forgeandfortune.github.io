@@ -265,23 +265,27 @@ const WorkerManager = {
         this.attemptSacrifice(id,rarity);
     },
     attemptSacrifice(id,rarity) {
-        //worker.req is an array of arrays
+        //worker.lvlreq is an array of arrays
         //[[id,rarity,amt],[id,rarity,amt]]
         const possibleWorkers = this.workers.filter(w=>w.owned);
         let madeSac = false;
         possibleWorkers.some(worker => {
-            if (worker.req.find(e=>e[0] === id)) {
+            console.log(worker.thislvlreq());
+            if (worker.thislvlreq().find(e=>e[0] === id)) {
+                console.log("HI");
                 if (worker.type === "advanced" && rarity === 0) return false;
-                if (this.sacRemaining(id) > 0) {
-                    if (craftID in worker.donated) worker.donated[craftID] += 1;
-                    else worker.donated[craftID] = 1;
+                if (worker.sacRemaining(id) > 0) {
+                    if (id in worker.donated) worker.donated[id] += 1;
+                    else worker.donated[id] = 1;
                     madeSac = true;
+                    refreshWorkers();
                     return true;
                 }
             }
             return false;
         })
-        const autoSellToggle = {"None":-1,"Common":0,"Good":1,"Great":2,"Epic":3};
+        const item = recipeList.idToItem(id);
+        const autoSellToggle = {"None":-1,"Common":0,"Good":1,"Great":2,"Epic":3}
         if (!madeSac) Inventory.addToInventory(id,rarity,autoSellToggle[item.autoSell]);
 
     }

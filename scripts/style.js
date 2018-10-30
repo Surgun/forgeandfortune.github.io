@@ -15,17 +15,21 @@ function tabHighlight() {
 
 // Tab Selection for Navigation
 
-var navTab = document.querySelectorAll(".tablinks");
+const navTabs = document.querySelectorAll(".tablinks");
 
-for (i = 0; i < navTab.length; i++) {
-    navTab[i].addEventListener("click", navTabHighlight);
-};
+navTabs.forEach((navTab) => {
+    navTab.addEventListener("click", navTabHighlight);
+});
 
-function navTabHighlight() {
-    for (i = 0; i < navTab.length; i++) {
-        navTab[i].classList.remove("tab-selected");
-    };
-    this.classList.add("tab-selected");
+function navTabHighlight(evt, tgt) {
+    navTabs.forEach((navTab) => {
+        navTab.classList.remove("tab-selected");
+    });
+    if (tgt) {
+        tgt.classList.add("tab-selected");
+    } else {
+        evt.target.parentNode.classList.add("tab-selected");
+    }      
 };
 
 // Status Container Expand and Collapse

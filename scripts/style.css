@@ -113,7 +113,7 @@ body {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -121,6 +121,9 @@ body {
 
 #content, footer {
     padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
 
@@ -2290,6 +2293,10 @@ Rarities
     grid-row: 1;
 }
 
+.mobDead {
+    visibility: hidden;
+}
+
 .dhc {
     padding: 20px;
     margin: 1px;
@@ -2360,6 +2367,7 @@ Rarities
     border-top: 1px solid var(--border);
     flex: 1 300px;
     padding: 15px;
+    overflow: auto;
 }
 
 .logEntry {
@@ -2720,15 +2728,10 @@ Rarities
     cursor: pointer;
 }
 
-.rewardDiv {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 90px));
-}
-
 .rewardDivTitle {
     margin-top: 20px;
-    grid-column: 1 / -1;
 }
+
 .rewardCard {
     position: relative;
     padding: 3px 10px;

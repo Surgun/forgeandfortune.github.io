@@ -25,14 +25,17 @@ const $comptitle3 = $("#comptitle3");
 $comptitle1.click((e) => {
     e.preventDefault();
     openTab("inventoryTab");
+    navTabHighlight(e,$('#inventoryTabLink')[0]);
 });
 
 $comptitle2.click((e) => {
     e.preventDefault();
     openTab("recipesTab");
+    navTabHighlight(e,$('#recipeTab')[0]);
 });
 
 $comptitle3.click((e) => {
     e.preventDefault();
     openTab("dungeonsTab");
+    navTabHighlight(e,$('#dungeonsTabLink')[0]);
 });

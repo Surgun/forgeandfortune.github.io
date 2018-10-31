@@ -66,7 +66,7 @@ class Item{
     recipeListStats() {
         const d = $("<div/>").addClass("recipeStatList");
         if (this.actTime > 0) {
-            let speed = "Average";
+            let speed = "Fair";
             if (this.actTime > 5000) speed = "Slow";
             else if (this.actTime < 5000) speed = "Fast";
             const d1 = $("<div/>").addClass("recipeStatListAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;&nbsp;" + speed);

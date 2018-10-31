@@ -195,7 +195,9 @@ const recipeList = {
         return this.recipes.find(recipe => recipe.id === id);
     },
     getNextBuyable(type) {
-        const maxLvl = Math.max(...this.recipes.filter(r => r.owned && r.type === type).map(f => f.lvl))
+        const itemlvls = this.recipes.filter(r => r.owned && r.type === type).map(f => f.lvl);
+        itemlvls.push(0);
+        const maxLvl = Math.max(...itemlvls)
         return this.recipes.find(recipe => recipe.type === type && recipe.lvl === maxLvl+1);
     },
     buyable() {

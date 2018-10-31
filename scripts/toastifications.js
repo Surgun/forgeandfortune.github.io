@@ -230,8 +230,8 @@ const Notifications = {
     },
     autoWorkerSac(worker,item) {
         $.toast({
-            text: `${item} sacrifices to ${worker}`, // Text that is to be shown in the toast
-            heading: 'Auto Worker Sacrifice', // Optional heading to be shown on the toast
+            text: `${item} contributed to ${worker}`, // Text that is to be shown in the toast
+            heading: 'Worker Auto-Contribution', // Optional heading to be shown on the toast
             icon: 'info', // Type of toast icon
             showHideTransition: 'fade', // fade, slide or plain
             allowToastClose: true, // Boolean value true or false

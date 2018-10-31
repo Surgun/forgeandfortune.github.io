@@ -184,6 +184,7 @@ $(document).on('click', "div.eventList", (e) => {
         d.append(d7);
     }
     const d8 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
+    if (EventManager.seeOld) d8.hide();
     d.append(d8);
     $eventContent.append(d);
 });

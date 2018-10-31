@@ -1212,6 +1212,10 @@ Rarities
     opacity: 0.5;
 }
 
+.isSortableHead {
+    cursor: pointer;
+}
+
 .recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname  {
     display: flex;
     align-items: center;

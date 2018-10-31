@@ -122,6 +122,7 @@ class Item{
 $(document).on("click",".recipeHeadName",(e) => {
     e.preventDefault();
     sortRecipesByHeading("name");
+    e.addClass("isSortableHead");
 });
 
 $(document).on("click",".recipeHeadLvl",(e) => {
@@ -311,14 +312,14 @@ function initializeRecipes(type) {
     $RecipeResults.empty();
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('recipeTable');
-    const htd1 = $('<div/>').addClass('recipeHeadName').html("NAME");
-    const htd2 = $('<div/>').addClass('recipeHeadLvl').html("LVL");
+    const htd1 = $('<div/>').addClass('recipeHeadName isSortableHead').html("NAME");
+    const htd2 = $('<div/>').addClass('recipeHeadLvl isSortableHead').html("LVL");
     const htd3 = $('<div/>').addClass('recipeHeadRes').html("RESOURCES");
     const htd4 = $('<div/>').addClass('recipeHeadCost').html("MATS");
     const htd5 = $('<div/>').addClass('recipeHeadStats').html("STATS");
-    const htd6 = $('<div/>').addClass('recipeHeadTime').html("TIME");
-    const htd7 = $('<div/>').addClass('recipeHeadValue').html("VALUE");
-    const htd8 = $('<div/>').addClass('recipeHeadCount').html("MASTERY");
+    const htd6 = $('<div/>').addClass('recipeHeadTime isSortableHead').html("TIME");
+    const htd7 = $('<div/>').addClass('recipeHeadValue isSortableHead').html("VALUE");
+    const htd8 = $('<div/>').addClass('recipeHeadCount isSortableHead').html("MASTERY");
     const hrow = $('<div/>').addClass('recipeHeader').append(htd1,htd2,htd3,htd4,htd5,htd6,htd7,htd8);
     table.append(hrow);
     recipeList.recipes.forEach((recipe) => {

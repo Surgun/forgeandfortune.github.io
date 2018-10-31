@@ -99,6 +99,7 @@ const BattleLog = {
         this.addEnemyLog(`--- Floor ${num} ---`);
     },
     mobDrops(name,drops) {
+        if (drops.length === 0) return;
         this.addHeroLog("Found an item!");
         const dropname = ResourceManager.idToMaterial(drops[0]).name;
         this.addEnemyLog(`${name} dropped ${dropname}`)

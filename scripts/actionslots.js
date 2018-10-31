@@ -217,7 +217,7 @@ function initializeActionSlots() {
         let autoSellTooltip;
         actionSlotManager.autoSell(i) !== "None" ? autoSellTooltip = actionSlotManager.autoSell(i) + " and lesser rarities" : autoSellTooltip = "None";
         const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${autoSellTooltip}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
-        const d5 = $("<div/>").addClass("WSAuto tooltip").attr("data-tooltip", `Toggle Worker Auto-Sacrifice`).attr("id",i).html(`<i class="fas fa-hammer"></i>`);
+        const d5 = $("<div/>").addClass("WSAuto tooltip").attr("data-tooltip", `Toggle Worker Auto-Contribute`).attr("id",i).html(`<i class="fas fa-hammer"></i>`);
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
         if (actionSlotManager.autoSacrifice(i)) d5.addClass("WSautoEnabled");
         if (!actionSlotManager.hasSlot(i)) d4.hide(), d5.hide();

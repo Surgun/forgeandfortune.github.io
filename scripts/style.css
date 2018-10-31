@@ -969,6 +969,7 @@ Rarities
     left: 0;
     top: unset;
     bottom: 0;
+    font-size: .99rem;
 }
 
 .pbLabel {
@@ -2979,15 +2980,15 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .WSAuto.tooltip:before {
-    top: -3px;
-    left: 32px;
+    top: -5px;
+    left: 28px;
 }
 
 .WSAuto.tooltip:after {
-    left: 40px;
+    left: 35px;
     bottom: 5px;
     width: 150px;
-    transform-origin: left;
+    transform-origin: bottom left;
 }
 
 .itemToSac.tooltip:before {

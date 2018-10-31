@@ -63,6 +63,7 @@ const loadMessages = [
     "Rebooting idea machine.",
     "Sourcing locally grown lettuce.",
     "Finding cute animal gifs.",
+    "Introducing game breaking bugs.",
     "Lowering self esteem."
 ];
 

@@ -361,11 +361,11 @@ const HeroManager = {
     slotSpeed(heroID,slot) {
         const hero = this.idToHero(heroID);
         if (slot !== 0) return null;
-        if (hero.slot1 === null) return "Average";
+        if (hero.slot1 === null) return "Fair";
         const speed = hero.slot1.act();
         if (speed > 5000) return "Slow";
         if (speed < 5000) return "Fast";
-        return "Average";
+        return "Fair";
     },
     purchaseHero() {
         const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];

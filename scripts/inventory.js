@@ -68,7 +68,7 @@ class itemContainer {
     propDiv() {
         const d = $("<div/>").addClass("invProp");
         if (this.act() > 0) {
-            let speed = "Average";
+            let speed = "Fair";
             if (this.act() > 5000) speed = "Slow";
             else if (this.act() < 5000) speed = "Fast";
             const d1 = $("<div/>").addClass("invPropAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;" + speed)

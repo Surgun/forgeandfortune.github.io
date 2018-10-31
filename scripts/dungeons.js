@@ -46,7 +46,8 @@ class Dungeon {
         this.party.addTime(t, this.id);
         this.mobs.forEach(mob => {
             mob.addTime(t, this.id);
-            if (mob.hp === 0) {
+            if (mob.hp === 0 && !mob.alreadydead) {
+                mob.alreadydead = true;
                 const drops = mob.rollDrops();
                 BattleLog.mobDrops(mob.name,drops);
                 this.party.addXP(mob.lvl);

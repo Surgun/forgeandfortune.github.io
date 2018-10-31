@@ -44,6 +44,7 @@ class Mob {
         this.act = 0;
         this.ap = 0;
         this.uniqueid = mobID;
+        this.alreadydead = false;
         mobID += 1;
     }
     createSave() {
@@ -53,6 +54,7 @@ class Mob {
         save.hp = this.hp;
         save.act = this.act;
         save.ap = this.ap
+        save.alreadydead = this.alreadydead;
         return save;
     }
     loadSave(save) {
@@ -60,6 +62,7 @@ class Mob {
         this.hp = save.hp;
         this.act = save.act;
         this.ap = save.ap;
+        if (save.alreadydead !== undefined) this.alreadydead = save.alreadydead;
     }
     addTime(t, dungeonID) {
         if (this.dead()) {

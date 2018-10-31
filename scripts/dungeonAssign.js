@@ -125,7 +125,7 @@ function refreshHeroSelect() {
 
 function refreshHealPartyCost() {
     const button = $("#dungeonTeamHeal");
-    button.html(`Heal - <div class="healHeroCost">${miscIcons.gold} ${PartyCreator.healCost()}</div>`);
+    button.html(`Heal Party - <div class="healHeroCost">${miscIcons.gold} ${PartyCreator.healCost()}</div>`);
     if (PartyCreator.noheal()) button.hide();
 }
 

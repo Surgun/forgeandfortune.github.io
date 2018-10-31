@@ -531,10 +531,12 @@ function examineHeroPossibleEquip(slot,heroID) {
         const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName);
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
         const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());
-        const speed = HeroManager.slotSpeed(heroID,slot);
-        const td1a = $('<div/>').addClass('EHPEstat')
-        const td2 = $('<div/>').addClass('EHPEstat')
-        const td3 = $('<div/>').addClass('EHPEstat')
+        let speed = "Fair";
+        if (itemContainer.act() > 5000) speed = "Slow";
+        if (itemContainer.act() < 5000) speed = "Fast";
+        const td1a = $('<div/>').addClass('EHPEstat');
+        const td2 = $('<div/>').addClass('EHPEstat');
+        const td3 = $('<div/>').addClass('EHPEstat');
         td1a.html(speed);
         if (relPow > 0) td2.addClass("EHPEstatPositive").html(itemContainer.pow() + " (+" + relPow + ")");
         else if (relPow < 0) td2.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relPow + ")");

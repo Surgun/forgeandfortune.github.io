@@ -122,26 +122,31 @@ class Item{
 $(document).on("click",".recipeHeadName",(e) => {
     e.preventDefault();
     sortRecipesByHeading("name");
+    recipeCanCraft();
 });
 
 $(document).on("click",".recipeHeadLvl",(e) => {
     e.preventDefault();
     sortRecipesByHeading("lvl");
+    recipeCanCraft();
 });
 
 $(document).on("click",".recipeHeadTime",(e) => {
     e.preventDefault();
     sortRecipesByHeading("craftTime");
+    recipeCanCraft();
 });
 
 $(document).on("click",".recipeHeadValue",(e) => {
     e.preventDefault();
     sortRecipesByHeading("value");
+    recipeCanCraft();
 });
 
 $(document).on("click",".recipeHeadCount",(e) => {
     e.preventDefault();
     sortRecipesByHeading("mastery");
+    recipeCanCraft();
 });
 
 function sortRecipesByHeading(heading) {
@@ -190,7 +195,7 @@ const recipeList = {
         return this.recipes.find(recipe => recipe.id === id);
     },
     getNextBuyable(type) {
-        const maxLvl = Math.max(...this.recipes.filter(r => r.owned).map(f => f.lvl))
+        const maxLvl = Math.max(...this.recipes.filter(r => r.owned && r.type === type).map(f => f.lvl))
         return this.recipes.find(recipe => recipe.type === type && recipe.lvl === maxLvl+1);
     },
     buyable() {

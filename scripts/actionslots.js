@@ -92,7 +92,7 @@ class actionSlot {
         return this.item.autoSacrifice;
     }
     refundMaterial() {
-        if (this.status !== slotState.CRAFTING) return;
+        if (this.status !== slotState.CRAFTING || this.item.isMastered()) return;
         ResourceManager.refundMaterial(this.item);
     }
 }

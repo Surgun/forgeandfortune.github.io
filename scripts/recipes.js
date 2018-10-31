@@ -100,7 +100,6 @@ class Item{
             masteredItem = true;
             refreshCraftCount();
             initializeActionSlots();
-            populateRecipe();
             refreshProgress();
         }
         $("#rc"+this.id).html(this.count()+"/100");

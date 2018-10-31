@@ -122,7 +122,6 @@ class Item{
 $(document).on("click",".recipeHeadName",(e) => {
     e.preventDefault();
     sortRecipesByHeading("name");
-    e.addClass("isSortableHead");
 });
 
 $(document).on("click",".recipeHeadLvl",(e) => {
@@ -191,7 +190,8 @@ const recipeList = {
         return this.recipes.find(recipe => recipe.id === id);
     },
     getNextBuyable(type) {
-        return this.recipes.find(recipe => recipe.type === type && !recipe.owned);
+        const maxLvl = Math.max(...this.recipes.filter(r => r.owned).map(f => f.lvl))
+        return this.recipes.find(recipe => recipe.type === type && recipe.lvl === maxLvl+1);
     },
     buyable() {
         return true;

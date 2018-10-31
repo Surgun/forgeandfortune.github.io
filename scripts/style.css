@@ -1984,6 +1984,29 @@ Rarities
     border-bottom-color: var(--highlight);
 }
 
+.heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes {
+    font-size: 0.9em;
+    color: var(--text-3);
+}
+
+.heroExamineEquipmentEquipTypes {
+    display: flex;
+    position: absolute;
+    top: 200%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-3);
+    pointer-events: none;
+}
+
+.heroExamineEquipmentEquip:hover + .heroExamineEquipmentEquipTypes {
+    top: 26px;
+}
+
 .heroExamineEquipmentList + .heroExamineEquipment {
     border-left: 1px solid var(--border);
 }

@@ -130,6 +130,7 @@ function hardMatRefresh() {
 
 $(document).on("click",".material",(e) => {
     e.preventDefault();
+    openTab("recipesTab");
     const matID = $(e.currentTarget).attr("id");
     populateRecipe(matID);
 });

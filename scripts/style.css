@@ -78,6 +78,26 @@ body {
     margin: 0;
 }
 
+body:after {
+    content: "This is an experimental build of Forge & Fortune. Many features are likely to not appear or function as intended.";
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    transform: translateX(-10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 450px;
+    height: 45px;
+    padding: 0 10px;
+    background-color: rgba(105, 2, 2, 0.1);
+    border: 1px solid rgb(144, 17, 18);
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    z-index: 9999;
+}
+
 .back-to-top {
     position: fixed;
     bottom: 2%;
@@ -113,7 +133,7 @@ body {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage {
+.recipeName, .dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -1176,32 +1196,112 @@ Rarities
     width: 100%;
 }
 
-.recipeHeader, .EHPEHeader {
+.recipeContents {
+    display: grid;
+    grid-template: 100px / repeat(auto-fill, minmax(270px, 1fr));
+    grid-auto-rows: 100px;
+    grid-gap: 10px;
+    margin: 10px;
+}
+
+.recipeRow {
+    position: relative;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden; /* temp */
+}
+
+.recipeName {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.recipeName > img {
+    max-height: 24px;
+    margin-right: 5px;
+}
+
+.recipeDescription {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: rgba(255,255,255,0.5);
+    cursor: default;
+}
+
+.recipeDescription:hover {
+    color: #fff;
+}
+
+.recipeLvl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid green;
+    border-radius: 50%;
+    background: darkgreen;
+}
+
+.recipecostdiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reciperesdiv, .recipematdiv {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.reciperesdiv {
+    margin-right: 5%;
+}
+
+.recipematdiv {
+    margin-left: 5%;
+}
+
+.itemCost {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.indvCost {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px 0 0;
+    padding: 5px 10px;
+    min-width: 50px;
+    background-color: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.EHPEHeader {
     background-color: var(--bg);
     height: 40px;
     border-bottom: 1px solid var(--border);
     font-weight: bold;
 }
 
-.recipeHeader, .recipeRow, .EHPEHeader, .EHPErow {
+.EHPEHeader, .EHPErow {
     display: flex;
     position: relative;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     min-height: 40px;
-}
-
-.recipeRowLast {
-    margin-bottom: 50px;
-}
-
-.recipeRowHighlight {
-    background-color: var(--bg);
-}
-
-.recipeRow:hover {
-    background-color: var(--border);
 }
 
 .recipeRow.recipeRowDisable {
@@ -1217,7 +1317,7 @@ Rarities
     cursor: pointer;
 }
 
-.recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname  {
+.EHPEHeaderName, .EHPEname  {
     display: flex;
     align-items: center;
     width: 100%;
@@ -1225,77 +1325,18 @@ Rarities
     padding-left: 10px;
 }
 
-.recipeHeadName, .EHPEHeaderName {
+.EHPEHeaderName {
     padding-left: 15px;
     max-width: 250px;
 }
 
-.recipeName {
-    padding-left: 30px;
-}
-
-.recipeName, .EHPEname {
+.EHPEname {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     cursor: pointer;
-}
-
-.recipeName>img, .EHPEname>img {
-    margin-right: 10px;
-    height: 28px;
-}
-
-.recipeName > img, .item-name {
-    pointer-events: none;
-}
-
-.recipeDescription {
-    position: relative;
-    padding-left: 5px;
-    color: rgba(255,255,255,0.5);
-    cursor: default;
-}
-
-.recipeDescription:hover {
-    color: #fff;
-}
-
-.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeHeadStats, .recipeStats, .recipeValue, .recipeLvl {
-    width: 100%;
-    max-width: 200px;
-}
-
-.recipeHeadLvl, .recipeLvl {
-    max-width: 50px;
-}
-
-.recipeLvl {
-    margin-left: 235px;
-}
-
-.reciperesdiv, .itemCost, .recipeStatList {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.recipeHeadRes, .reciperesdiv {
-    max-width: 120px;
-}
-
-.recipeHeadCost, .recipematdiv {
-    max-width: 100px;
-}
-
-.indvCost {
-    display: inline-block;
-    position: relative;
-    margin-right: 5px;
-    min-width: 23px;
-    text-align: left;
 }
 
 .indvCost.masteredMat > img {
@@ -1310,26 +1351,8 @@ Rarities
     color: var(--text-3);
 }
 
-.indvCost, .recipeValue {
-    display: flex;
-    align-items: center;
-}
-
-.recipeStatList > div {
-    position: relative;
-    min-width: 50px;
-}
-
 .recipeStatList > div > img {
     vertical-align: middle;
-}
-
-.recipeStatListAct {
-    margin-right: 10px;
-}
-
-.recipeHeadValue, .recipeValue {
-    min-width: 120px;
 }
 
 .bpShop {

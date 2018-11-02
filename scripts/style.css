@@ -2027,7 +2027,7 @@ Rarities
     align-items: center;
     padding: 5px;
     width: 100%;
-    height: calc(100% - 26px);
+    flex-grow: 1;
 }
 
 .heroExamineEquipmentEquip > .item-name {

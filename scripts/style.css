@@ -12,15 +12,35 @@
     }
 }
 
-:root {
-    --bg: #21262b;
-    --bg-2: #1c2025;
-    --bg-3: #191c21;
+body {
+    --bg-primary: #21262b;
+    --bg-secondary: #1c2025;
+    --bg-tertiary: #191c21;
+    --border-primary: #292f35;
+    --border-secondary: #323a42;
+    --border-tertiary: #333f4a;
+    --text-primary: #fff;
+    --text-secondary: #774e4e;
+    --text-tertiary: #b5b5b5;
+    --text-inverted: #000;
+    --status-primary: #089e5f;
+    --status-secondary: #064a38;
+    --highlight: #ffc100;
+    --scroll-thumb: rgba(255,255,255,0.075);
+    --scroll-track: rgba(0,0,0,.20);
+    --gradient-primary: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
+    --gradient-secondary: linear-gradient(to right, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
+}
+
+body.lightmode {
+    --bg: #ffffff;
+    --bg-2: #e4e4e4;
+    --bg-3: #b9b9b9;
     --green-dark: #064a38;
     --green-light: #089e5f;
     --blue-dark: #063a4a;
     --blue-light: #087d9e;
-    --border: #292f35;
+    --border: #c7c7c7;
     --border-2: #323a42;
     --border-3: #333f4a;
     --highlight: #ffc100;
@@ -30,11 +50,7 @@
     --scroll-thumb: rgba(255,255,255,0.075);
     --scroll-track: rgba(0,0,0,.20);
     --scheme: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
-    --scheme-moz: -moz-linear-gradient(left, #0b7edc 0%, #1396f3 50%, #00adff 100%);
-    --scheme-webkit: -webkit-linear-gradient(left, #0b7edc 0%,#1396f3 50%,#00adff 100%);
     --scheme-2: linear-gradient(to right, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
-    --scheme-2-moz: -moz-linear-gradient(left, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
-    --scheme-2-webkit: -webkit-linear-gradient(left, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
 }
 
 /* Scrollbar */
@@ -72,8 +88,8 @@
 }
 
 body {
-    color: var(--text);
-    background-color: var(--bg-2);
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
     font-family: "Trebuchet MS", sans-serif;
     margin: 0;
 }
@@ -104,8 +120,8 @@ body:after {
     right: 1.5%;
     padding: 20px 25px;
     border-radius: 50%;
-    background-color: var(--border-3);
-    color: var(--text);
+    background-color: var(--border-tertiary);
+    color: var(--text-primary);
     opacity: 0;
     -webkit-transform: scale(0);
     -moz-transform: scale(0);
@@ -157,16 +173,16 @@ body:after {
     flex-direction: column;
     width: 250px;
     height: 100vh;
-    background-color: var(--bg);
+    background-color: var(--bg-primary);
 }
 
 .game-content .status {
-    border-right: 1px solid var(--border);
+    border-right: 1px solid var(--border-primary);
 }
 
 #game-logo {
     margin: 0 auto;
-    background-color: var(--bg);
+    background-color: var(--bg-primary);
     background-image: url('../../images/site-logo.png');
     background-position: center;
     background-size: contain;
@@ -206,7 +222,7 @@ body:after {
     position: absolute;
     top: 8px;
     right: 6px;
-    color: var(--text-3);
+    color: var(--text-tertiary);
     font-family: monospace;
     font-weight: bold;
     -webkit-transition: all 0.3s ease-in-out;
@@ -228,8 +244,8 @@ body:after {
     font-size: .95em;
     padding: 5px 20px 5px 10px;
     text-align: center;
-    color: var(--text);
-    border-bottom: 2px solid var(--border);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-primary);
     cursor: pointer;
 }
 
@@ -241,21 +257,21 @@ body:after {
     position: relative;
     display: flex;
     align-items: center;
-    background-color: var(--green-dark);
-    border: 1px solid var(--green-light);
+    background-color: var(--status-secondary);
+    border: 1px solid var(--status-primary);
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     height: 30px;
 }
 
 .workerSideBar.wsbActive {
-    background-color: var(--bg);
-    border-color: var(--border-3);
+    background-color: var(--bg-primary);
+    border-color: var(--border-tertiary);
     cursor: pointer;
 }
 
 .workerSideBar.wsbActive:hover, .workerSideBar.wsbActive:hover .wsbLvl, .workerSideBar.wsbActive:hover .wsbCraft {
-    border-color: var(--border-2);
+    border-color: var(--border-secondary);
 }
 
 .workerSideBar + .workerSideBar {
@@ -268,16 +284,16 @@ body:after {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--green-dark);
-    border: 1px solid var(--green-light);
+    background-color: var(--status-secondary);
+    border: 1px solid var(--status-primary);
     border-radius: 50%;
     width: 30px;
     height: 30px;
 }
 
 .workerSideBar.wsbActive .wsbLvl {
-    background-color: var(--bg);
-    border-color: var(--border-3);
+    background-color: var(--bg-primary);
+    border-color: var(--border-tertiary);
 }
 
 .wsbType {
@@ -289,12 +305,12 @@ body:after {
 .wsbCraft {
     min-width: 50px;
     text-align: center;
-    border-left: 1px solid var(--green-light);
+    border-left: 1px solid var(--status-primary);
     padding: 2px 0;
 }
 
 .workerSideBar.wsbActive .wsbCraft {
-    border-color: var(--border-3);
+    border-color: var(--border-tertiary);
 }
 
 .wsbCraft > img {
@@ -323,8 +339,8 @@ body:after {
     margin: 2px 0;
     padding: 5px 10px;
     width: 50%;
-    background-color: var(--bg-3);
-    border: 2px solid var(--border);
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-primary);
     border-radius: 25px;
     cursor: pointer;
 }
@@ -340,7 +356,7 @@ body:after {
 
 #right-side-content {
     padding: 0 10px;
-    border-left: 1px solid var(--border);
+    border-left: 1px solid var(--border-primary);
     height: calc(100vh - 50px);
     overflow-y: auto;
 }
@@ -353,7 +369,7 @@ body:after {
 #DungeonSideBarStatus, #inventorySidebar {
     position: relative;
     text-align: center;
-    background-color: var(--bg-3);
+    background-color: var(--bg-tertiary);
     border: 1px solid transparent;
     padding: 5px;
     margin-bottom: 10px;
@@ -384,14 +400,14 @@ body:after {
     display: inline-flex;
     margin: 10px 0 0 10px;
     padding: 10px 15px;
-    background-color: var(--bg-2);
-    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
     cursor: pointer;
 }
 
 #sortInventory:hover, #closeEquipItem:hover, #sellAllCommons:hover {
-    background-color: var(--bg);
-    border-color: var(--border-3);
+    background-color: var(--bg-primary);
+    border-color: var(--border-tertiary);
 }
 
 #sortInventory:after {
@@ -425,9 +441,9 @@ body:after {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+    color: var(--text-primary);
     min-height: 212px;
 }
 
@@ -563,8 +579,8 @@ body:after {
 }
 
 .heroEquipBlock {
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 .heroEquipBlockPic {
@@ -584,13 +600,13 @@ body:after {
     height: 2px;
     width: 75%;
     margin: 10px auto;
-    background-color: var(--border);
+    background-color: var(--border-primary);
 }
 
 .heroEquipBlockEquip + .heroEquipBlockEquip {
     margin-top: 20px;
     padding: 15px 0;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-primary);
 }
 
 .heroEquipBlockEquipButton {
@@ -610,7 +626,7 @@ body:after {
     font-size: 1rem;
     padding: 0 5px 5px;
     margin: 0 0 10px;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 2px solid var(--border-primary);
 }
 
 /* 
@@ -657,8 +673,8 @@ Rarities
 
 .inventoryItem.R0 > .inventoryItemName:before {
     content: "Common";
-    background-color: var(--bg-2);
-    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
 }
 
 .inventoryItem.R1 > .inventoryItemName:before {
@@ -702,15 +718,15 @@ Rarities
     position: sticky;
     top: 0;
     max-height: calc(100vh - 50px);
-    border-bottom: 2px solid var(--border);
-    background-color: var(--bg-2);
+    border-bottom: 2px solid var(--border-primary);
+    background-color: var(--bg-secondary);
     z-index: 100;
 }
 
 .tablinks {
     background-color: transparent;
     border: none;
-    color: var(--text-3);
+    color: var(--text-tertiary);
     margin: 0 0 -2px 0;
     padding: 0;
     text-transform: uppercase;
@@ -728,7 +744,7 @@ Rarities
 }
 
 .tablinks.tab-selected {
-    border-color: var(--border-2);
+    border-color: var(--border-secondary);
     color: var(--highlight);
 }
 
@@ -785,8 +801,8 @@ Rarities
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: var(--bg);
-    border: 2px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
     border-radius: 10px;
     margin: 0 0 5px 0;
     width: 100%;
@@ -813,7 +829,7 @@ Rarities
 }
 
 .plProgressBar {
-    background-color: var(--bg-2);
+    background-color: var(--bg-secondary);
 }
 
 .ASProgressBar:before {
@@ -848,16 +864,12 @@ Rarities
     display: block;
     position: relative;
     height: 100%;
-    background: var(--scheme);
-    background: var(--scheme-moz);
-    background: var(--scheme-webkit);
+    background: var(--gradient-primary);
     z-index: 1;
 }
 
 .ASProgressBar .ProgressBarFill.ProgressBarFillMaster {
-    background: var(--scheme-2);
-    background: var(--scheme-2-moz);
-    background: var(--scheme-2-webkit);
+    background: var(--gradient-secondary);
 }
 
 .plProgressBarPercent {
@@ -866,8 +878,8 @@ Rarities
 
 .ASType {
     text-align: center;
-    background-color: var(--bg-3);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-primary);
     padding: 5px 20px;
 }
 
@@ -924,16 +936,16 @@ Rarities
     justify-content: center;
     padding: 15px 20px;
     min-height: 100px;
-    background-color: var(--bg-3);
-    border: 2px dashed var(--border-3);
+    background-color: var(--bg-tertiary);
+    border: 2px dashed var(--border-tertiary);
     border-radius: 10px;
     font-size: 0.9em;
     cursor: pointer;
 }
 
 .ASBuySlot:hover {
-    background-color: var(--green-dark);
-    border: 2px solid var(--green-light);
+    background-color: var(--status-secondary);
+    border: 2px solid var(--status-primary);
 }
 
 .ASBuySlotCost {
@@ -994,7 +1006,7 @@ Rarities
 
 .pbLabel {
     padding: 3px 14px;
-    color: var(--text);
+    color: var(--text-primary);
 }
 
 .tab-heading {
@@ -1003,9 +1015,9 @@ Rarities
 }
 
 #importSaveText, #exportSaveText {
-    background-color: var(--bg-3);
-    border: 1px solid var(--border);
-    color: var(--text);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    color: var(--text-primary);
     width: 100%;
     min-height: 30px;
     padding: 0 5px;
@@ -1014,30 +1026,30 @@ Rarities
 #RecipeFilter {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--bg);
+    background-color: var(--bg-primary);
     padding: 0 25px 0 0;
     line-height: 40px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-primary);
 }
 
 #RecipeFilter a.recipeSelect {
     position: relative;
-    color: var(--text);
+    color: var(--text-primary);
     padding: 0 15px 0 3px;
     height: 100%;
     max-width: 40px;
     max-height: 40px;
     overflow: hidden;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
     text-decoration: none;
 }
 
 #RecipeFilter a.recipeSelect.selected {
     width: auto;
     max-width: 100%;
-    background-color: var(--bg-2);
-    color: var(--text-2);
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
 }
 
 #RecipeFilter a.recipeSelect:first-of-type {
@@ -1045,8 +1057,8 @@ Rarities
 }
 
 #RecipeFilter a.recipeSelect:hover {
-    background-color: var(--bg-2);
-    color: var(--text-2);
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
 }
 
 #RecipeFilter a[href*="Selector"]:before {
@@ -1206,8 +1218,8 @@ Rarities
 
 .recipeRow {
     position: relative;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
     border-radius: 10px;
     padding: 10px;
     overflow: hidden; /* temp */
@@ -1283,8 +1295,8 @@ Rarities
     margin: 0 5px 0 0;
     padding: 5px 10px;
     min-width: 50px;
-    background-color: var(--bg-2);
-    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
     border-radius: 15px;
 }
 
@@ -1302,8 +1314,8 @@ Rarities
     align-items: center;
     margin-right: 10px;
     padding: 5px 10px;
-    background-color: var(--bg-2);
-    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
     border-radius: 15px;
 }
 
@@ -1312,9 +1324,9 @@ Rarities
 }
 
 .EHPEHeader {
-    background-color: var(--bg);
+    background-color: var(--bg-primary);
     height: 40px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-primary);
     font-weight: bold;
 }
 
@@ -1371,7 +1383,7 @@ Rarities
 }
 
 .indvCost.masteredMat {
-    color: var(--text-3);
+    color: var(--text-tertiary);
 }
 
 .bpShop {
@@ -1381,8 +1393,8 @@ Rarities
     max-width: 300px;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
     margin: 10px 15px 15px;
 }
 
@@ -1390,8 +1402,8 @@ Rarities
     width: 100%;
     text-align: center;
     font-size: 0.9em;
-    background-color: var(--bg-3);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-primary);
     padding: 5px 15px;
 }
 
@@ -1399,15 +1411,15 @@ Rarities
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid var(--border);
-    background-color: var(--bg-2);
+    border-top: 1px solid var(--border-primary);
+    background-color: var(--bg-secondary);
     padding: 10px 15px;
     width: 100%;
     cursor: pointer;
 }
 
 .bpShopButton:hover {
-    background-color: var(--bg-3);
+    background-color: var(--bg-tertiary);
 }
 
 .bpShopButton > img {
@@ -1436,8 +1448,8 @@ Rarities
     padding: 10px;
     font-size: 0.9em;
     text-align: center;
-    background-color: var(--bg-2);
-    border-top: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-primary);
 }
 
 .bpReqHeading:after {
@@ -1447,11 +1459,11 @@ Rarities
     margin: 5px auto;
     height: 2px;
     width: 75%;
-    background-color: var(--border-2);
+    background-color: var(--border-secondary);
 }
 
 .bpReqNeeded {
-    color: var(--text-3);
+    color: var(--text-tertiary);
 }
 
 #workerList {
@@ -1471,8 +1483,8 @@ Rarities
     max-width: 250px;
     margin: 0 15px 10px 0;
     padding: 15px;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 .Worker.wtadvanced .WorkerDetails .WorkerNameAndProduction .WorkerName {
@@ -1487,14 +1499,14 @@ Rarities
     justify-content: center;
     align-items: center;
     min-height: 259px;
-    background-color: var(--bg-2);
-    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
     cursor: pointer;
 }
 
 .purchaseWorkerCard:hover {
-    background-color: var(--green-dark);
-    border-color: var(--green-light);
+    background-color: var(--status-secondary);
+    border-color: var(--status-primary);
 }
 
 .unknownWorker > img {
@@ -1556,14 +1568,14 @@ Rarities
     position: absolute;
     top: 3.5px;
     right: 5px;
-    color: var(--text-3);
+    color: var(--text-tertiary);
     font-weight: normal;
     margin-left: 5px;
     z-index: 10;
 }
 
 .WorkerDesc:hover {
-    color: var(--text);
+    color: var(--text-primary);
 }
 
 .WorkerDesc > i {
@@ -1584,13 +1596,13 @@ Rarities
 
 .Worker .itemContributions {
     padding-bottom: 3px;
-    color: var(--text-3);
+    color: var(--text-tertiary);
     font-size: .8em;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
     width: 100%;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-primary);
 }
 
 .Worker .itemSac {
@@ -1615,8 +1627,8 @@ Rarities
 .Worker .itemToSac {
     display: inline-block;
     text-align: center;
-    background-color: var(--bg-3);
-    border: 1px solid var(--border);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
     margin-bottom: 5px;
     padding: 10px;
     font-size: .9em;
@@ -1641,9 +1653,9 @@ Rarities
     display: block;
     padding: 10px;
     border: none;
-    background-color: var(--bg-2);
-    border-top: 1px solid var(--border);
-    color: var(--text);
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-primary);
+    color: var(--text-primary);
     font-size: 0.8em;
     text-transform: uppercase;
     cursor: pointer;
@@ -1658,7 +1670,7 @@ Rarities
 }
 
 .Worker .BuyWorker {
-    border-left: 1px solid var(--border);
+    border-left: 1px solid var(--border-primary);
 }
 
 .Worker .BuyWorker>img {
@@ -1667,7 +1679,7 @@ Rarities
 }
 
 .Worker .BuyWorker:hover, .WorkerUpgrade:hover {
-    background-color: var(--bg-3);
+    background-color: var(--bg-tertiary);
 }
 
 .BuyWorker.workerDisable, .WorkerUpgrade.workerUpgradeDisable {
@@ -1711,20 +1723,20 @@ Rarities
     width: 100%;
     padding: 0 5px 5px;
     margin: 25px 0 10px;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 2px solid var(--border-primary);
 }
 
 #progress_container > div > h2 {
     font-size: 1em;
     margin-bottom: 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 2px solid var(--border-primary);
 }
 
 .progress-desc {
     font-size: .9em;
     text-align: center;
-    color: var(--text-3);
+    color: var(--text-tertiary);
     flex-grow: 1;
 }
 
@@ -1733,8 +1745,8 @@ Rarities
     flex-direction: column;
     align-items: center;
     position: relative;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
     min-width: 250px;
     max-width: 250px;
     margin: 0 15px 10px 0;
@@ -1745,7 +1757,7 @@ Rarities
     display: block;
     position: absolute;
     bottom: 0;
-    border-top: 1px solid var(--border)!important;
+    border-top: 1px solid var(--border-primary)!important;
     width: 100%;
     margin: 0;
 }
@@ -1761,8 +1773,8 @@ Rarities
     align-items: center;
     padding: 15px 15px 15px 0;
     font-size: 0.9em;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 .ProgressCard.achieved > .MilestoneStar {
@@ -1783,19 +1795,19 @@ Rarities
     display: flex;
     flex-direction: column;
     padding: 15px;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 .statHeading {
     padding-bottom: 5px;
     margin-bottom: 5px;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 2px solid var(--border-primary);
 }
 
 .statNormal, .MilestoneDescription {
     font-size: 0.9em;
-    color: var(--text-3);
+    color: var(--text-tertiary);
 }
 
 .MilestoneTitle, .MilestoneDescription {
@@ -1805,7 +1817,7 @@ Rarities
 .MilestoneTitle {
     padding-bottom: 5px;
     margin-bottom: 10px;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 2px solid var(--border-primary);
 }
 
 #heroContainer {
@@ -1829,8 +1841,8 @@ Rarities
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
     min-width: 125px;
     min-height: 195px;
     text-align: center;
@@ -1847,13 +1859,13 @@ Rarities
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--bg);
+    background-color: var(--bg-primary);
     text-align: center;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 5px 20px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-primary);
 }
 
 .buyNewHeroCard {
@@ -1861,17 +1873,17 @@ Rarities
 }
 
 .heroOwnedCard:hover, .dungeonTeamCard:hover, .dungeonAvailableCard:hover, .drHeroCard:hover {
-    background-color: var(--bg-2);
+    background-color: var(--bg-secondary);
     cursor: pointer;
 }
 
 .dungeonTeamCard.noHeroDungeonSelect:hover {
-    background-color: var(--bg);
+    background-color: var(--bg-primary);
     cursor: default;
 }
 
 .heroOwnedCard.highlight {
-    background: var(--bg-3);
+    background: var(--bg-tertiary);
     border-bottom-color: var(--highlight);
 }
 
@@ -1882,14 +1894,14 @@ Rarities
 .buyNewHeroCard {
     padding: 15px 20px;
     margin: 5px;
-    background-color: var(--bg-2);
-    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
     cursor: pointer;
 }
 
 .buyNewHeroCard:hover {
-    background-color: var(--green-dark);
-    border-color: var(--green-light);
+    background-color: var(--status-secondary);
+    border-color: var(--status-primary);
 }
 
 #heroTab {
@@ -1898,8 +1910,8 @@ Rarities
 
 .heroExamineLvlButton {
     position: relative;
-    background-color: var(--green-dark);
-    border: 1px solid var(--green-light);
+    background-color: var(--status-secondary);
+    border: 1px solid var(--status-primary);
     margin-top: 5px;
     padding: 5px 15px;
     cursor: pointer;
@@ -1907,14 +1919,14 @@ Rarities
 }
 
 .heroExamineLvlButton:hover {
-    background-color: var(--green-light);
+    background-color: var(--status-primary);
 }
 
 #heroCard {
     display: flex;
     flex: 1;
-    background-color: var(--bg);
-    border-left: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border-left: 1px solid var(--border-primary);
     overflow: auto;
 }
 
@@ -1948,8 +1960,8 @@ Rarities
 .heroExamineImage {
     margin-bottom: 5px;
     padding: 10px;
-    background-color: var(--bg-2);
-    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
 }
 
 .heroExamineName, .heroExamineHeading {
@@ -1966,7 +1978,7 @@ Rarities
     height: 2px;
     width: 75%;
     margin: 3px auto;
-    background-color: var(--border);
+    background-color: var(--border-primary);
 }
 
 .heroExamineStats {
@@ -1983,7 +1995,7 @@ Rarities
     margin: 2px 0;
     padding: 10px 20px;
     width: 100%;
-    background-color: var(--bg-3);
+    background-color: var(--bg-tertiary);
     font-size: 0.9em;
 }
 
@@ -1993,7 +2005,7 @@ Rarities
 
 #heroGear {
     flex: 1;
-    border-left: 1px solid var(--border);
+    border-left: 1px solid var(--border-primary);
     overflow: auto;
 }
 
@@ -2017,8 +2029,8 @@ Rarities
     text-align: center;
     flex: 1 135px;
     min-height: 100px;
-    background-color: var(--bg-3);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-primary);
     cursor: pointer;
     overflow: hidden;
 }
@@ -2029,7 +2041,7 @@ Rarities
 
 .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes {
     font-size: 0.9em;
-    color: var(--text-3);
+    color: var(--text-tertiary);
 }
 
 .heroExamineEquipmentEquipTypes {
@@ -2042,7 +2054,7 @@ Rarities
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-3);
+    background-color: var(--bg-tertiary);
     pointer-events: none;
 }
 
@@ -2051,12 +2063,12 @@ Rarities
 }
 
 .heroExamineEquipmentList + .heroExamineEquipment {
-    border-left: 1px solid var(--border);
+    border-left: 1px solid var(--border-primary);
 }
 
 .heroExamineEquipmentSlot {
-    background-color: var(--bg-2);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-primary);
     width: 100%;
     text-align: center;
     padding: 3px 5px;
@@ -2085,7 +2097,7 @@ Rarities
 
 .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes {
     font-size: 0.9em;
-    color: var(--text-3);
+    color: var(--text-tertiary);
 }
 
 .heroExamineEquipmentEquipTypes {
@@ -2098,7 +2110,7 @@ Rarities
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-3);
+    background-color: var(--bg-tertiary);
     pointer-events: none;
 }
 
@@ -2109,12 +2121,12 @@ Rarities
 #heroEquipmentList {
     position: relative;
     width: 100%;
-    background-color: var(--bg);
+    background-color: var(--bg-primary);
 }
 
 .EHPEHeader {
-    background-color: var(--bg-2);
-    border-top: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-primary);
 }
 
 .EHPEHeader > div {
@@ -2122,11 +2134,11 @@ Rarities
 }
 
 .EHPErow:nth-of-type(odd) {
-    background-color: var(--bg-2);
+    background-color: var(--bg-secondary);
 }
 
 .EHPErow:hover {
-    background-color: var(--border);
+    background-color: var(--border-primary);
 }
 
 .EHPEstat {
@@ -2175,8 +2187,8 @@ Rarities
 
 .dungeonContainer {
     position: relative;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
     text-align: center;
     padding: 15px;
     cursor: pointer;
@@ -2189,7 +2201,7 @@ Rarities
 }
 
 .dungeonStatus {
-    color: var(--text-3);
+    color: var(--text-tertiary);
 }
 
 .dungeonStatus.dungeonInProgress {
@@ -2218,12 +2230,12 @@ Rarities
 }
 
 .dungeonFloor {
-    border-bottom: 1px solid var(--border-3);
+    border-bottom: 1px solid var(--border-tertiary);
     padding: 10px;
 }
 
 .dungeonFloor.dungeonFloorCurrent {
-    background-color: var(--bg);
+    background-color: var(--bg-primary);
 }
 
 .dungeonFloor > img {
@@ -2257,7 +2269,7 @@ Rarities
     position: relative;
     min-height: 300px;
     max-height: 300px;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 2px solid var(--border-primary);
     overflow: hidden;
 }
 
@@ -2388,8 +2400,8 @@ Rarities
     margin: 1px;
     min-width: 125px;
     max-width: 125px;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 #drStats {
@@ -2413,8 +2425,8 @@ Rarities
     flex-direction: column;
     text-align: center;
     padding: 15px;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 .dsm {
@@ -2442,22 +2454,22 @@ Rarities
     flex-wrap: wrap;
     flex-grow: 1;
     min-height: 100px;
-    background-color: var(--bg-3);
+    background-color: var(--bg-tertiary);
 }
 
 #drLogHero {
-    border-right: 1px solid var(--border);
+    border-right: 1px solid var(--border-primary);
 }
 
 #drLogHero, #drLogMob {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-primary);
     flex: 1 300px;
     padding: 15px;
     overflow: auto;
 }
 
 .logEntry {
-    border-bottom: 1px solid var(--border-3);
+    border-bottom: 1px solid var(--border-tertiary);
     padding: 10px 5px;
 }
 
@@ -2484,8 +2496,8 @@ Rarities
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
-    border: 1px solid var(--green-light);
-    background-color: var(--green-dark);
+    border: 1px solid var(--status-primary);
+    background-color: var(--status-secondary);
 }
 
 #dungeonTeamButton:not(.dungeonStartNotAvailable):after, .heroExamineLvlButton:after {
@@ -2511,12 +2523,12 @@ Rarities
 }
 
 #dungeonTeamButton:hover {
-    background-color: var(--green-light);
+    background-color: var(--status-primary);
 }
 
 #dungeonTeamButton.dungeonStartNotAvailable {
-    border-color: var(--border);
-    background-color: var(--bg);
+    border-color: var(--border-primary);
+    background-color: var(--bg-primary);
     cursor: not-allowed;
     opacity: 0.5;
 }
@@ -2525,14 +2537,14 @@ Rarities
     display: inline-flex;
     padding: 10px 20px;
     margin-left: 15px;
-    background-color: var(--bg-2);
-    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
     cursor: pointer;
 }
 
 #dungeonTeamHeal:hover {
-    background-color: var(--bg);
-    border-color: var(--border-3);
+    background-color: var(--bg-primary);
+    border-color: var(--border-tertiary);
 }
 
 .dungeonAvailablePow, .dungeonTeamPow {
@@ -2543,8 +2555,8 @@ Rarities
     justify-content: space-between;
     margin: 5px auto;
     padding: 5px 15px;
-    background-color: var(--bg-3);
-    border: 1px solid var(--border);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
     border-radius: 15px;
 }
 
@@ -2567,13 +2579,13 @@ Rarities
     align-items: center;
     margin-top: 10px;
     padding: 5px;
-    background-color: var(--bg-2);
-    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
     border-radius: 15px;
 }
 
 .healHero:hover {
-    border-color: var(--border-3);
+    border-color: var(--border-tertiary);
 }
 
 .healHeroCost, .buyHeroCost {
@@ -2658,8 +2670,8 @@ Rarities
     max-width: 300px;
     height: 23px;
     margin: 5px 0;
-    background: var(--bg-3);
-    border: 1px solid var(--border);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
 }
 
 #floorProgressBarContainer > img {
@@ -2692,9 +2704,7 @@ Rarities
     display: block;
     position: relative;
     height: 100%;
-    background: var(--scheme);
-    background: var(--scheme-moz);
-    background: var(--scheme-webkit);
+    background: var(--gradient-primary);
 }
 
 /* Events / Mail Content */
@@ -2716,7 +2726,7 @@ Rarities
     font-weight: 700;
     text-align: center;
     background-color: rgba(162,21,0,1);
-    color: var(--text-2);
+    color: var(--text-secondary);
     border-radius: 50%;
     -webkit-animation: 2s ease-in-out infinite notification;
     animation: 2s ease-in-out infinite notification;
@@ -2736,25 +2746,25 @@ Rarities
     width: 250px;
     font-size: 0.9em;
     text-transform: uppercase;
-    color: var(--text-3);
-    background-color: var(--bg);
-    border-right: 1px solid var(--border);
+    color: var(--text-tertiary);
+    background-color: var(--bg-primary);
+    border-right: 1px solid var(--border-primary);
 }
 
 #readNew, #readOld {
     padding: 15px 0;
     flex-grow: 1;
     cursor: pointer;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-primary);
 }
 
 #readNew:hover, #readOld:hover {
-    background-color: var(--bg-2);
+    background-color: var(--bg-secondary);
 }
 
 #readNew.readActive, #readOld.readActive {
-    background-color: var(--border);
-    color: var(--text);
+    background-color: var(--border-primary);
+    color: var(--text-primary);
     border-bottom: 1px solid var(--highlight);
 }
 
@@ -2764,24 +2774,24 @@ Rarities
     width: 100%;
     height: calc(100% - 90px);
     max-width: 250px;
-    background-color: var(--bg);
-    border-right: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border-right: 1px solid var(--border-primary);
     overflow-y: auto;
 }
 
 .eventList {
     padding: 15px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-primary);
     cursor: pointer;
 }
 
 .eventList.highlight {
-    background: var(--bg-3);
+    background: var(--bg-tertiary);
     border-bottom-color: var(--highlight);
 }
 
 .eventList:hover {
-    background-color: var(--bg-2);
+    background-color: var(--bg-secondary);
 }
 
 #eventContent {
@@ -2796,8 +2806,8 @@ Rarities
     padding: 5px 10px;
     margin: 0 10px 0 0;
     color: var(--highlight);
-    background-color: var(--border);
-    border: 1px solid var(--border-3);
+    background-color: var(--border-primary);
+    border: 1px solid var(--border-tertiary);
 }
 
 .eventMessage {
@@ -2805,8 +2815,8 @@ Rarities
     flex-direction: column;
     padding: 15px;
     margin: 10px 10px 10px 0;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 .eventTimeHeading, .eventTime, .eventFloorHeading, .eventFloor {
@@ -2818,13 +2828,13 @@ Rarities
     padding: 15px;
     max-width: 200px;
     text-align: center;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 .eventConfirm:hover {
-    background-color: var(--green-dark);
-    border-color: var(--green-light);
+    background-color: var(--status-secondary);
+    border-color: var(--status-primary);
     cursor: pointer;
 }
 
@@ -2840,8 +2850,8 @@ Rarities
     display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 .rewardImage {
@@ -2867,8 +2877,8 @@ footer {
     width: calc(100% - 250px);
     height: 50px;
     font-size: 14px;
-    background-color: var(--bg);
-    border-top: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-primary);
     z-index: 999;
 }
 
@@ -2881,12 +2891,12 @@ footer a {
     display: inline-block;
     height: 100%;
     padding: 15px;
-    color: var(--text);
+    color: var(--text-primary);
     text-decoration: none;
 }
 
 footer a:hover {
-    background-color: var(--bg-2);
+    background-color: var(--bg-secondary);
 }
 
 #version-scale {
@@ -2902,7 +2912,7 @@ footer a:hover {
 #bottom-right a > i {
     margin-left: 5px;
     font-size: 1em;
-    color: var(--text-3);
+    color: var(--text-tertiary);
 }
 
 #bottom-right a:hover > i {
@@ -3185,10 +3195,10 @@ footer a[href*="discord.gg"]:hover {
 #pfEmail > input, #pfPassword > input {
     width: 100%;
     padding: 10px 3px;
-    background-color: var(--bg-2);
-    color: var(--text);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
     border: none;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-primary);
     border-radius: 0;
 }
 
@@ -3198,7 +3208,7 @@ footer a[href*="discord.gg"]:hover {
     content: "";
     height: 2px;
     width: 0;
-    background-color: var(--border-2);
+    background-color: var(--border-secondary);
 }
 
 .loadSureDescription {
@@ -3220,9 +3230,9 @@ footer a[href*="discord.gg"]:hover {
     padding: 10px 25px;
     flex-grow: 1;
     text-transform: uppercase;
-    background-color: var(--bg-3);
-    color: var(--text);
-    border: 1px solid var(--border);
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-primary);
     border-radius: 0;
     cursor: pointer;
     -webkit-appearance: none;
@@ -3236,7 +3246,7 @@ footer a[href*="discord.gg"]:hover {
 }
 
 #pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover, #importSaveButton:hover, #declineSaveButton:hover, #exportSaveCopy:hover {
-    background-color: var(--bg-2);
+    background-color: var(--bg-secondary);
 }
 
 .ClipboardCopy {
@@ -3282,8 +3292,8 @@ footer a[href*="discord.gg"]:hover {
     position: relative;
     margin: 2px;
     padding: 10px 10px 10px 50px;
-    background-color: var(--bg-2);
-    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -3309,8 +3319,8 @@ footer a[href*="discord.gg"]:hover {
     left: 10px;
     height: 25px;
     width: 25px;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
     border-radius: 50%;
     transform: translateY(-50%);
 }
@@ -3332,11 +3342,11 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .selection-container:hover {
-    border-color: var(--border-3);
+    border-color: var(--border-tertiary);
 }
 
 .selection-container input:checked ~ .selection {
-    background-color: var(--bg);
+    background-color: var(--bg-primary);
 }
 
 .selection-container .selection:after {
@@ -3379,8 +3389,8 @@ footer a[href*="discord.gg"]:hover {
     max-width: 500px;
     height: auto;
     max-height: 400px;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
     -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -ms-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
@@ -3419,7 +3429,7 @@ footer a[href*="discord.gg"]:hover {
     top: 5px;
     right: 5px;
     padding: 8px 12px;
-    color: var(--text-2);
+    color: var(--text-secondary);
     font-size: 1.5em;
     text-decoration: none;
     border-radius: 50%;
@@ -3434,9 +3444,9 @@ footer a[href*="discord.gg"]:hover {
     margin: 0;
     padding: 10px;
     max-height: 50px;
-    background-color: var(--border-3);
-    border-bottom: 1px solid var(--border);
-    color: var(--text-2);
+    background-color: var(--border-tertiary);
+    border-bottom: 1px solid var(--border-primary);
+    color: var(--text-secondary);
     font-size: 1.3em;
     font-weight: 300;
     text-transform: uppercase;
@@ -3568,8 +3578,8 @@ footer a[href*="discord.gg"]:hover {
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: var(--bg);
-        border-top: 2px solid var(--border);
+        background-color: var(--bg-primary);
+        border-top: 2px solid var(--border-primary);
     }
 
     .mobile-nav-listing {
@@ -3589,7 +3599,7 @@ footer a[href*="discord.gg"]:hover {
     }
 
     .mobile-nav-listing .nav-item:hover {
-        background-color: var(--bg-3);
+        background-color: var(--bg-tertiary);
     }
 
     .mobile-nav-listing .nav-item a {
@@ -3597,7 +3607,7 @@ footer a[href*="discord.gg"]:hover {
         height: 100%;
         width: 100%;
         padding: 20px 10px;
-        color: var(--text);
+        color: var(--text-primary);
         text-decoration: none;
     }
 
@@ -3627,7 +3637,7 @@ footer a[href*="discord.gg"]:hover {
         height: 2px;
         width: 75%;
         margin: 10px auto;
-        background-color: var(--border-2);
+        background-color: var(--border-secondary);
     }
 
     .mobile-notice-description {
@@ -3704,8 +3714,8 @@ footer a[href*="discord.gg"]:hover {
         align-content: flex-start;
         width: 200px;
         height: calc(100% - 90px);
-        background-color: var(--bg);
-        border-right: 1px solid var(--border);
+        background-color: var(--bg-primary);
+        border-right: 1px solid var(--border-primary);
         border-bottom: none;
         padding: 0;
         line-height: 40px;
@@ -3713,22 +3723,22 @@ footer a[href*="discord.gg"]:hover {
     }
     
     #RecipeFilter a.recipeSelect {
-        color: var(--text);
+        color: var(--text-primary);
         padding: 0 0 0 10px;
         width: 100%;
         max-height: 40px;
         max-width: none;
         overflow: hidden;
         border-right: none;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--border-primary);
         text-decoration: none;
     }
     
     #RecipeFilter a.recipeSelect.selected {
         max-width: none;
         width: 100%;
-        background-color: var(--bg-2);
-        color: var(--text-2);
+        background-color: var(--bg-secondary);
+        color: var(--text-secondary);
         border-bottom: 1px solid var(--highlight)
     }
     

@@ -107,6 +107,7 @@ body:after {
     max-width: 450px;
     height: 45px;
     padding: 0 10px;
+    font-family: 'Varela Round', 'Open Sans', sans-serif;
     background-color: rgba(105, 2, 2, 0.1);
     border: 1px solid rgb(144, 17, 18);
     border-right: 15px solid transparent;
@@ -1210,8 +1211,8 @@ Rarities
 
 .recipeContents {
     display: grid;
-    grid-template: 200px / repeat(auto-fill, minmax(270px, 1fr));
-    grid-auto-rows: 200px;
+    grid-template: 300px / repeat(auto-fill, minmax(270px, 1fr));
+    grid-auto-rows: 300px;
     grid-gap: 10px;
     margin: 10px;
 }
@@ -1230,11 +1231,17 @@ Rarities
     justify-content: left;
     align-items: center;
     margin-left: 40px;
+    border: 1px solid red; /* temp */
 }
 
 .recipeName > img {
     max-height: 24px;
     margin-right: 5px;
+    background: pink; /* temp */
+}
+
+.recipeName > .item-name {
+    background: pink; /* temp */
 }
 
 .recipeDescription {

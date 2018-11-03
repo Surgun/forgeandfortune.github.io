@@ -69,15 +69,15 @@ class Item{
             let speed = "Fair";
             if (this.actTime > 5000) speed = "Slow";
             else if (this.actTime < 5000) speed = "Fast";
-            const d1 = $("<div/>").addClass("recipeStatListAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;&nbsp;" + speed);
+            const d1 = $("<div/>").addClass("recipeStatListAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + speed);
             d.append(d1);
         }
         if (this.pow > 0) {
-            const d2 = $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + "&nbsp;&nbsp;" + this.pow);
+            const d2 = $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + this.pow);
             d.append(d2);
         }
         if (this.hp > 0) {
-            const d3 = $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "HP").html(miscIcons.hp + "&nbsp;&nbsp;" + this.hp);
+            const d3 = $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "HP").html(miscIcons.hp + this.hp);
             d.append(d3);
         }
         return d;
@@ -340,8 +340,14 @@ function initializeRecipes(type) {
         const td3b = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
         td3.append(td3a, td3b);
         const td4 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
+        const td4a = $("<div/>").addClass("recipeStatHeader recipeCardHeader").html("Statistics");
+        td4.prepend(td4a);
         const td5 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
+        const td5a = $("<div/>").addClass("recipeTimeHeader recipeCardHeader").html("Craft Time");
+        td5.prepend(td5a);
         const td6 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
+        const td6a = $("<div/>").addClass("recipeValueHeader recipeCardHeader").html("Value");
+        td6.prepend(td6a);
         const craftCount = Math.min(100,recipe.craftCount);
         const td7 = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(craftCount+"/100");
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6,td7);

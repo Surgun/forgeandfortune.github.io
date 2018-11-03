@@ -3127,8 +3127,8 @@
     "name": "Metal Armor",
     "description": "Provides strong protection, but limited mobility.",
     "lvl": 1,
-    "value": 22,
-    "craftTime": 20369,
+    "value": 9999999,
+    "craftTime": 9999999,
     "type": "Armor",
     "rcost": [
       "ore",
@@ -3138,9 +3138,9 @@
     "mcost": {
       "M301": 1
     },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 60,
+    "actTime": 9999,
+    "pow": 9999,
+    "hp": 9999,
     "recipeBuy": 100
   },
   {

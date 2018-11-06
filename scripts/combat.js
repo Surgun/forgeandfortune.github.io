@@ -66,8 +66,9 @@ const $drLogMob = $("#drLogMob");
 const BattleLog = {
     heroLog : [],
     enemyLog : [],
+    logLength : 15,
     addHeroLog(m) {
-        if (this.heroLog.length == 15) {
+        if (this.heroLog.length == this.logLength) {
             this.heroLog.shift();
         }
         this.heroLog.push(m);
@@ -78,7 +79,7 @@ const BattleLog = {
         });
     },
     addEnemyLog(m) {
-        if (this.enemyLog.length == 15) {
+        if (this.enemyLog.length == this.logLength) {
             this.enemyLog.shift();
         }
         this.enemyLog.push(m);

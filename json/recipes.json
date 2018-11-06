@@ -1292,7 +1292,7 @@
       "steel"
     ],
     "mcost": {
-      "M208": 1
+      "M408": 1
     },
     "actTime": 4000,
     "pow": 180,
@@ -2831,7 +2831,7 @@
       "mana"
     ],
     "mcost": {
-      "M306": 1
+      "M506": 1
     },
     "actTime": 0,
     "pow": 0,
@@ -3445,7 +3445,7 @@
       "mana"
     ],
     "mcost": {
-      "M406": 1
+      "M606": 1
     },
     "actTime": 0,
     "pow": 0,
@@ -4051,7 +4051,7 @@
       "mana"
     ],
     "mcost": {
-      "M306": 1
+      "M106": 1
     },
     "actTime": 0,
     "pow": 144,
@@ -4261,7 +4261,7 @@
   {
     "id": "R5307",
     "name": "Golden Shuriken",
-    "description": "This weapon broke the mold.  Throw for the moon.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "lvl": 7,
     "value": 1494090,
     "craftTime": 411968,
@@ -4452,7 +4452,7 @@
       "mana"
     ],
     "mcost": {
-      "M406": 1
+      "M206": 1
     },
     "actTime": 0,
     "pow": 144,

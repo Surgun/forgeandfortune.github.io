@@ -125,32 +125,46 @@
                 <div class="dialog_body">
                     <p id="descSettings" class="dialog_description">Adjust your game preferences and settings.</p>
                     <div class="settings-grid">
+                            <div id="settings_siteTheme">
+                                    <h3 class="settings-title">Site Theme</h3>
+                                    <p class="settings-description">Select your preferred theme for the entire site.</p>
+                                    <div class="selections-grid">
+                                        <label class="selection-container">Default Theme
+                                            <input type="radio" name="theme" value="0" checked="checked">
+                                            <span class="selection"></span>
+                                        </label>
+                                        <label class="selection-container">Light Theme
+                                            <input type="radio" name="theme" value="1">
+                                            <span class="selection"></span>
+                                        </label>
+                                    </div>
+                                </div>
                         <div id="settings_notificationLocation">
                             <h3 class="settings-title">Notification Location</h3>
                             <p class="settings-description">Designates where the notifications for various events (such as exceptional crafts) will appear.</p>
                             <div class="selections-grid">
                                 <label class="selection-container">Top-Left
-                                    <input type="radio" name="selection" value="top-left" checked="checked">
+                                    <input type="radio" name="toast" value="top-left" checked="checked">
                                     <span class="selection"></span>
                                 </label>
                                 <label class="selection-container">Top-Center
-                                    <input type="radio" name="selection" value="top-center">
+                                    <input type="radio" name="toast" value="top-center">
                                     <span class="selection"></span>
                                 </label>
                                 <label class="selection-container">Top-Right
-                                    <input type="radio" name="selection" value="top-right">
+                                    <input type="radio" name="toast" value="top-right">
                                     <span class="selection"></span>
                                 </label>
                                 <label class="selection-container">Bottom-Left
-                                    <input type="radio" name="selection" value="bottom-left">
+                                    <input type="radio" name="toast" value="bottom-left">
                                     <span class="selection"></span>
                                 </label>
                                 <label class="selection-container">Bottom-Center
-                                    <input type="radio" name="selection" value="bottom-center">
+                                    <input type="radio" name="toast" value="bottom-center">
                                     <span class="selection"></span>
                                 </label>
                                 <label class="selection-container">Bottom-Right
-                                    <input type="radio" name="selection" value="bottom-right">
+                                    <input type="radio" name="toast" value="bottom-right">
                                     <span class="selection"></span>
                                 </label>
                             </div>
@@ -158,11 +172,11 @@
                         <div id="settings_logLength">
                             <h3 class="settings-title">Battle Log Length</h3>
                             <p class="settings-description">Set the maximum amount of lines to be displayed in the battle log for Adventures. Default value is 15, minimum accepted value of 5, maximum accepted value of 100.</p>
-                            </div>
                             <div class="settings-content">
                                 <input type="number" name="battleLog" id="battleLogValue" min="5" max="100">
                                 <button id="battleLogReset">Reset to Default</button>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -112,7 +112,7 @@ if (clipboardButton) {
     clipboardButton.addEventListener("click", clipboardText);
 }
 
-// Toast Positioning
+// Settings Management
 
 const settings = {
     toastPosition: "",
@@ -133,6 +133,8 @@ function loadSettings() {
 }
 
 loadSettings();
+
+// Toast Positioning Setting
 
 const toastSettings = document.querySelectorAll("#settings_notificationLocation .selection-container");
 

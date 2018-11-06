@@ -114,11 +114,31 @@ if (clipboardButton) {
 
 // Toast Positioning
 
+const settings = {
+    toastPosition: "",
+    battleLogLength: 5,
+    theme: 0
+}
+
+function saveSettings() {
+    localStorage.setItem("settings", JSON.stringify(settings));
+}
+
+function loadSettings() {
+    const obj = JSON.parse(localStorage.getItem("settings"));
+    for (let setting in obj) {
+        settings[setting] = obj[setting];
+    }
+    localStorage.setItem("settings", JSON.stringify(settings));
+}
+
+loadSettings();
+
 const toastSettings = document.querySelectorAll("#settings_notificationLocation .selection-container");
 
 toastSettings.forEach((selection) => {
     selection.addEventListener("input", assignToastPosition);
-    if(selection.querySelector("input").value === localStorage.getItem("toastPreference")) {
+    if(selection.querySelector("input").value === settings.toastPosition) {
         selection.querySelector("input").setAttribute("checked", "checked")
     };
 });
@@ -131,7 +151,8 @@ function assignToastPosition(e) {
     e.target.setAttribute("checked", "checked");
     toastPosition = option;
     $.toast().reset('all');
-    localStorage.setItem("toastPreference", toastPosition);
+    settings.toastPosition = toastPosition;
+    saveSettings();
 }
 
 // Logo Easter Egg
@@ -148,3 +169,4 @@ $gameLogo.click((e) => {
         logoNum = 0;
     }
 });
+

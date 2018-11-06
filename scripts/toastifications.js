@@ -1,6 +1,6 @@
 //https://kamranahmed.info/toast 
 
-let toastPosition = localStorage.getItem("toastPreference") || "top-left";
+let toastPosition = settings.toastPosition || "top-left";
 
 const Notifications = {
     craftWarning() {

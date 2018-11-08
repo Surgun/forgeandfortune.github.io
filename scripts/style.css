@@ -2780,7 +2780,7 @@ Rarities
 
 #eventList {
     position: fixed;
-    top: 89px;
+    top: 88px;
     width: 100%;
     height: calc(100% - 90px);
     max-width: 250px;

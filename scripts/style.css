@@ -35,24 +35,25 @@ body {
 }
 
 body.lightmode {
-    --bg: #ffffff;
-    --bg-2: #e4e4e4;
-    --bg-3: #b9b9b9;
-    --green-dark: #064a38;
-    --green-light: #089e5f;
-    --blue-dark: #063a4a;
-    --blue-light: #087d9e;
-    --border: #c7c7c7;
-    --border-2: #323a42;
-    --border-3: #333f4a;
+    --bg-primary: #dbdbdb;
+    --bg-secondary: #1c2025;
+    --bg-tertiary: #191c21;
+    --border-primary: #292f35;
+    --border-secondary: #323a42;
+    --border-tertiary: #333f4a;
+    --text-primary: #fff;
+    --text-secondary: #bbb;
+    --text-tertiary: #999;
+    --text-inverted: #000;
+    --text-white: #fff;
+    --text-black: #000;
+    --status-primary: #089e5f;
+    --status-secondary: #064a38;
     --highlight: #ffc100;
-    --text: #fff;
-    --text-2: #fff;
-    --text-3: #b5b5b5;
     --scroll-thumb: rgba(255,255,255,0.075);
     --scroll-track: rgba(0,0,0,.20);
-    --scheme: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
-    --scheme-2: linear-gradient(to right, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
+    --gradient-primary: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
+    --gradient-secondary: linear-gradient(to right, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
 }
 
 /* Scrollbar */

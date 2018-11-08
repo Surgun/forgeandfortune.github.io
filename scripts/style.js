@@ -157,6 +157,39 @@ function assignToastPosition(e) {
     saveSettings();
 }
 
+// Theme Management
+
+const themeSettings = document.querySelectorAll("#settings_siteTheme .selection-container");
+
+themeSettings.forEach((selection) => {
+    selection.addEventListener("input", assignTheme);
+    if(selection.querySelector("input").value === settings.theme) {
+        selection.querySelector("input").setAttribute("checked", "checked")
+    };
+});
+
+function assignTheme(e) {
+    const option = e.target.getAttribute("value");
+    themeSettings.forEach((selection) => {
+        selection.querySelector("input").removeAttribute("checked")
+    });
+    e.target.setAttribute("checked", "checked");
+    theme = option;
+    settings.theme = theme;
+    saveSettings();
+    checkTheme();
+}
+
+function checkTheme() {
+    if (settings.theme == 1) {
+        document.body.classList.add("lightmode");
+    } else if (settings.theme == 0) {
+        document.body.classList.remove("lightmode");
+    }
+}
+
+checkTheme();
+
 // Logo Easter Egg
 
 const $gameLogo = $("#game-logo");

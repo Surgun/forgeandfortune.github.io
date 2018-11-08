@@ -127,19 +127,19 @@ $(document).on("click",".recipeHeadName",(e) => {
 
 $(document).on("click",".recipeHeadLvl",(e) => {
     e.preventDefault();
-    sortRecipesByHeading("lvl");
+    sortRecipesByHeading("default");
     recipeCanCraft();
 });
 
 $(document).on("click",".recipeHeadTime",(e) => {
     e.preventDefault();
-    sortRecipesByHeading("craftTime");
+    sortRecipesByHeading("default");
     recipeCanCraft();
 });
 
 $(document).on("click",".recipeHeadValue",(e) => {
     e.preventDefault();
-    sortRecipesByHeading("value");
+    sortRecipesByHeading("default");
     recipeCanCraft();
 });
 
@@ -150,15 +150,9 @@ $(document).on("click",".recipeHeadCount",(e) => {
 });
 
 function sortRecipesByHeading(heading) {
-    if (recipeList.recipeCategory === heading) {
-        recipeList.recipeCategory = heading+"Asc";
-        initializeRecipes(heading+"Asc");
-    }
-    else {
-        recipeList.recipeCategory = heading;
-        initializeRecipes(heading);
-    }
-    populateRecipe(recipeList.recipePop);
+    if (recipeList.recipeCategory === heading) recipeList.recipeCategory = heading+"Asc";
+    else recipeList.recipeCategory = heading;
+    initializeRecipes(recipeList.recipePop, recipeList.recipeCategory);
 }
 
 const recipeList = {
@@ -213,7 +207,7 @@ const recipeList = {
         }
         ResourceManager.deductMoney(amt);
         item.owned = true;
-        populateRecipe(item.type);
+        initializeRecipes(recipeList.recipePop, "default")
         refreshWorkers();
     },
     ownAtLeastOneOrCanBuy(type) {
@@ -255,10 +249,20 @@ const recipeList = {
     }
 }
 
-let cachedbptype = null;
+function refreshRecipeFilters() {
+    //hide recipe buttons if we don't know know a recipe and also can't learn one...
+    ItemType.forEach(type => {
+        const recipeIcon = $("#rf"+type);
+        if (recipeList.canBuy(type)) recipeIcon.addClass("hasEvent");
+        else recipeIcon.removeClass("hasEvent");
+        if (recipeList.ownAtLeastOneOrCanBuy(type)) recipeIcon.show();
+        else recipeIcon.hide();
+    });
+}
 
-function populateRecipe(type) {
+function initializeRecipes(type,sortType) {
     recipeList.recipePop = type;
+    //filtering
     let rFilter = recipeList.recipes.filter(r => r.owned);
     if (type === "Matless") {
         rFilter = rFilter.filter(r => r.mcost.length === 0 || r.isMastered());
@@ -275,47 +279,13 @@ function populateRecipe(type) {
         }
     }
     else rFilter = rFilter.filter(r => r.type === type);
-    let alternate = false;
-    type = type || cachedbptype;
-    cachedbptype = type;
-    let lastRow = null;
-    $(".recipeRow").hide().removeClass("recipeRowHighlight");
-    rFilter.forEach(recipe => {
-        const rr = $("#rr"+recipe.id);
-        lastRow = "#rr"+recipe.id;
-        rr.show();
-        rr.removeClass("recipeRowLast");
-        if (alternate) rr.addClass("recipeRowHighlight");
-        alternate = !alternate;
-    });
-    $(lastRow).addClass("recipeRowLast");
-    refreshBlueprint(type);
-}
-
-function refreshRecipeFilters() {
-    //hide recipe buttons if we don't know know a recipe and also can't learn one...
-    ItemType.forEach(type => {
-        const recipeIcon = $("#rf"+type);
-        if (recipeList.canBuy(type)) recipeIcon.addClass("hasEvent");
-        else recipeIcon.removeClass("hasEvent");
-        if (recipeList.ownAtLeastOneOrCanBuy(type)) recipeIcon.show();
-        else recipeIcon.hide();
-    });
-}
-
-function initializeRecipes(type) {
-    type = type || "default";
-    if (type === "default") recipeList.recipes.sort((a, b) => a.id.localeCompare(b.id))
-    if (type === "name") recipeList.recipes.sort((a, b) => a.name.localeCompare(b.name))
-    if (type === "nameAsc") recipeList.recipes.sort((a, b) => b.name.localeCompare(a.name))
-    if (type === "lvl") recipeList.recipes.sort((a,b) => a.lvl-b.lvl);
-    if (type === "lvlAsc") recipeList.recipes.sort((a,b) => b.lvl-a.lvl);
-    if (type === "value") recipeList.recipes.sort((a,b) => a.value-b.value);
-    if (type === "valueAsc") recipeList.recipes.sort((a,b) => b.value-a.value);
-    if (type === "craftTime") recipeList.recipes.sort((a,b) => a.craftTime-b.craftTime);
-    if (type === "craftTimeAsc") recipeList.recipes.sort((a,b) => b.craftTime-a.craftTime);
-    if (type === "mastery") recipeList.recipes.sort((a,b) => Math.min(100,a.craftCount)-Math.min(100,b.craftCount));
-    if (type === "masteryAsc") recipeList.recipes.sort((a,b) => Math.min(100,b.craftCount)-Math.min(100,a.craftCount));
+    if (sortType === "default") rFilter.sort((a, b) => a.id.localeCompare(b.id))
+    if (sortType === "defaultAsc") rFilter.sort((a, b) => b.id.localeCompare(a.id))
+    if (sortType === "name") rFilter.sort((a, b) => a.name.localeCompare(b.name))
+    if (sortType === "nameAsc") rFilter.sort((a, b) => b.name.localeCompare(a.name))
+    if (sortType === "mastery") rFilter.sort((a,b) => Math.min(100,a.craftCount)-Math.min(100,b.craftCount));
+    if (sortType === "masteryAsc") rFilter.sort((a,b) => Math.min(100,b.craftCount)-Math.min(100,a.craftCount));
+    //generate the lists
     $RecipeResults.empty();
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('recipeTable');
@@ -329,9 +299,12 @@ function initializeRecipes(type) {
     const htd7 = $('<div/>').addClass('recipeHeadValue isSortableHead').html("VALUE");
     const htd8 = $('<div/>').addClass('recipeHeadCount isSortableHead').html("MASTERY");
     tableHeader.append(htd1,htd2,htd3,htd4,htd5,htd6,htd7,htd8);
-    //table.append(tableHeader);
     const tableContents = $('<div/>').addClass('recipeContents');
-    recipeList.recipes.forEach((recipe) => {
+    //rows of table
+    let alternate = false;
+    let lastRow = null;
+
+    rFilter.forEach((recipe) => {
         const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
         const td1a = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
         const td2 = $('<div/>').addClass('recipeLvl').html(recipe.lvl);
@@ -358,10 +331,15 @@ function initializeRecipes(type) {
         const td7b = $('<div/>').addClass('recipeCountStatus').attr("id","rc"+recipe.id).html(craftCount+"/100");
         td7.append(td7a,td7b);
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6,td7);
+        lastRow = row;
+        if (alternate) row.addClass("recipeRowHighlight");
+        alternate = !alternate;
         tableContents.append(row);
     });
     table.append(tableContents);
+    if (lastRow !== null) lastRow.addClass("recipeRowLast");
     $RecipeResults.append(table);
+    refreshBlueprint(type)
 }
 
 function refreshCraftCount() {
@@ -434,7 +412,7 @@ $(document).on('click', '.recipeSelect', (e) => {
         recipeList.recipeCategory = "default";
         initializeRecipes("default");
     }
-    populateRecipe(type);
+    initializeRecipes(type,"default");
 })
 
 $(document).on('click','.bpShopButton', (e) => {

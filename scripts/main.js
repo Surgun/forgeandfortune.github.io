@@ -7,7 +7,6 @@ const player = {
 }
 
 function afterLoad() {
-    initializeRecipes();
     initializeMats();
     if (!loadGame()) {
         WorkerManager.generateWorkerSac();
@@ -37,7 +36,7 @@ function afterLoad() {
     refreshRecipeFilters();
     refreshEvents();
     hardMatRefresh();
-    populateRecipe("Knives");
+    initializeRecipes("knives","default");
     refreshProgress();
     initializeSideBarDungeon();
     recipeCanCraft();

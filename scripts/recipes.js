@@ -299,6 +299,7 @@ function initializeRecipes(type,sortType) {
     const htd7 = $('<div/>').addClass('recipeHeadValue isSortableHead').html("VALUE");
     const htd8 = $('<div/>').addClass('recipeHeadCount isSortableHead').html("MASTERY");
     tableHeader.append(htd1,htd2,htd3,htd4,htd5,htd6,htd7,htd8);
+    //table.append(tableHeader);
     const tableContents = $('<div/>').addClass('recipeContents');
     //rows of table
     let alternate = false;

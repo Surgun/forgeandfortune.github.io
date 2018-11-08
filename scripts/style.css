@@ -3183,7 +3183,7 @@ footer a[href*="discord.gg"]:hover {
 .rewardCard.tooltip:after {
     left: -50%;
     right: -50%;
-    margin-left: -8px;
+    margin-left: 0;
     bottom: 130%;
 }
 

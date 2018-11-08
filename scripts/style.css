@@ -3117,7 +3117,7 @@ footer a[href*="discord.gg"]:hover {
     bottom: 130%;
     left: 0;
     right: 0;
-    transform-origin: left 20px;
+    transform-origin: bottom left;
 }
 
 .material.tooltip:after {

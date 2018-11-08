@@ -20,9 +20,11 @@ body {
     --border-secondary: #323a42;
     --border-tertiary: #333f4a;
     --text-primary: #fff;
-    --text-secondary: #774e4e;
-    --text-tertiary: #b5b5b5;
+    --text-secondary: #bbb;
+    --text-tertiary: #999;
     --text-inverted: #000;
+    --text-white: #fff;
+    --text-black: #000;
     --status-primary: #089e5f;
     --status-secondary: #064a38;
     --highlight: #ffc100;
@@ -145,12 +147,12 @@ body:after {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title {
+.dialog_header, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.recipeName, .dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage {
+.dialog_body, .recipeName, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -3288,6 +3290,11 @@ footer a[href*="discord.gg"]:hover {
 
 .settings-description {
     padding: 0 5px;
+    color: var(--text-secondary);
+}
+
+.setting-container {
+    margin-bottom: 25px;
 }
 
 .selections-grid {
@@ -3451,7 +3458,7 @@ footer a[href*="discord.gg"]:hover {
     top: 5px;
     right: 5px;
     padding: 8px 12px;
-    color: var(--text-secondary);
+    color: var(--text-white);
     font-size: 1.5em;
     text-decoration: none;
     border-radius: 50%;
@@ -3468,7 +3475,7 @@ footer a[href*="discord.gg"]:hover {
     max-height: 50px;
     background-color: var(--border-tertiary);
     border-bottom: 1px solid var(--border-primary);
-    color: var(--text-secondary);
+    color: var(--text-white);
     font-size: 1.3em;
     font-weight: 300;
     text-transform: uppercase;

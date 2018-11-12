@@ -73,7 +73,7 @@ function selectLoadMessage() {
 
 const loading_screen = pleaseWait({
     logo: "images/site-logo.png",
-    backgroundColor: 'var(--bg)',
+    backgroundColor: 'var(--bg-primary)',
     loadingHtml: `
     <div class="loadingMessage">${selectLoadMessage()}</div>
     <div class="spinner"></div>

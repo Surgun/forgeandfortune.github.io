@@ -40,6 +40,7 @@ function afterLoad() {
     refreshProgress();
     initializeSideBarDungeon();
     recipeCanCraft();
+    refreshSideTown();
     setInterval(mainLoop, 10);
     if (HeroManager.heroes.some(h=>h.xp === h.maxXP())) $("#heroTab").addClass("hasEvent");
     loading_screen.finish();

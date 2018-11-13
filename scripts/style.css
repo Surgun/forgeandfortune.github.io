@@ -74,7 +74,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -153,7 +153,7 @@ body:after {
     font-weight: 100;
 }
 
-.dialog_body, .recipeName, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage {
+.dialog_body, .recipeName, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #battleLogValue, #battleLogSet, #battleLogReset {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -3259,7 +3259,7 @@ footer a[href*="discord.gg"]:hover {
     background-color: var(--bg-secondary);
 }
 
-.ClipboardCopy {
+.ClipboardCopy, .battleLogNotice {
     display: inline-block;
     padding: 0 15px;
     color: var(--highlight);
@@ -3373,11 +3373,16 @@ footer a[href*="discord.gg"]:hover {
     border-width: 0 2px 2px 0;
 }
 
-#battleLogValue, #battleLogReset {
+#battleLogValue, #battleLogSet, #battleLogReset {
     padding: 10px 15px;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);
     color: var(--text);
+}
+
+#battleLogSet:hover, #battleLogReset:hover {
+    border-color: var(--border-tertiary);
+    cursor: pointer;
 }
 
 #battleLogValue::-webkit-inner-spin-button {

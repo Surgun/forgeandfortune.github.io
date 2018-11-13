@@ -66,7 +66,7 @@ const $drLogMob = $("#drLogMob");
 const BattleLog = {
     heroLog : [],
     enemyLog : [],
-    logLength : 15,
+    logLength : settings.battleLogLength,
     addHeroLog(m) {
         if (this.heroLog.length == this.logLength) {
             this.heroLog.shift();

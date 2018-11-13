@@ -116,7 +116,7 @@ if (clipboardButton) {
 
 const settings = {
     toastPosition: "",
-    battleLogLength: 5,
+    battleLogLength: 15,
     theme: 0
 }
 
@@ -189,6 +189,48 @@ function checkTheme() {
 }
 
 checkTheme();
+
+// Battle Log Length
+
+const battleLogSetBtn = document.querySelector('#battleLogSet');
+const battleLogResetBtn = document.querySelector('#battleLogReset');
+const battleLogLengthInput = document.querySelector('#battleLogValue');
+const battleLogNotice = document.createElement('div');
+
+battleLogSetBtn.addEventListener("click", assignLogLength);
+battleLogResetBtn.addEventListener("click", resetLogLength);
+battleLogLengthInput.value = settings.battleLogLength;
+
+function assignLogLength() {
+    if (battleLogLengthInput.value < 5 || battleLogLengthInput.value > 100) {
+        battleLogNotice.innerHTML = "Invalid Value!";
+        addLogNotice();
+        return;
+    } else {
+        battleLogNotice.innerHTML = "Updated!";
+        BattleLog.logLength = battleLogLengthInput.value;
+        settings.battleLogLength = BattleLog.logLength;
+        addLogNotice();
+        saveSettings();
+    }
+}
+
+function resetLogLength() {
+    battleLogNotice.innerHTML = "Reset!";
+    settings.battleLogLength = 15;
+    BattleLog.logLength = settings.battleLogLength;
+    battleLogLengthInput.value = settings.battleLogLength;
+    addLogNotice();
+    saveSettings();
+}
+
+function addLogNotice() {
+    if (document.querySelector('.battleLogNotice')) {
+        document.querySelector('.battleLogNotice').remove();
+    }
+    battleLogNotice.classList.add('battleLogNotice');
+    battleLogResetBtn.insertAdjacentElement('afterend', battleLogNotice);
+}
 
 // Logo Easter Egg
 

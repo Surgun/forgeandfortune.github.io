@@ -25,8 +25,9 @@ body {
     --text-inverted: #000;
     --text-white: #fff;
     --text-black: #000;
-    --status-primary: #089e5f;
-    --status-secondary: #064a38;
+    --green-primary: #11dc82;
+    --green-secondary: #10442d;
+    --green-tertiary: #15925b;
     --highlight: #ffc100;
     --scroll-thumb: rgba(255,255,255,0.075);
     --scroll-track: rgba(0,0,0,.20);
@@ -49,9 +50,10 @@ body.lightmode {
     --text-inverted: #fff;
     --text-white: #fff;
     --text-black: #000;
-    --status-primary: #089e5f;
-    --status-secondary: #064a38;
-    --highlight: #008cff;
+    --green-primary: #003c21;
+    --green-secondary: #5ce097;
+    --green-tertiary: #15925b;
+    --highlight: #008cff; 
     --scroll-thumb: rgba(255,255,255,0.075);
     --scroll-track: rgba(0,0,0,.20);
     --gradient-primary: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
@@ -271,8 +273,8 @@ body:after {
     position: relative;
     display: flex;
     align-items: center;
-    background-color: var(--status-secondary);
-    border: 1px solid var(--status-primary);
+    background-color: var(--green-secondary);
+    border: 1px solid var(--green-tertiary);
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     height: 30px;
@@ -298,8 +300,8 @@ body:after {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--status-secondary);
-    border: 1px solid var(--status-primary);
+    background-color: var(--green-secondary);
+    border: 1px solid var(--green-tertiary);
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -319,7 +321,7 @@ body:after {
 .wsbCraft {
     min-width: 50px;
     text-align: center;
-    border-left: 1px solid var(--status-primary);
+    border-left: 1px solid var(--green-tertiary);
     padding: 2px 0;
 }
 
@@ -958,8 +960,8 @@ Rarities
 }
 
 .ASBuySlot:hover {
-    background-color: var(--status-secondary);
-    border: 2px solid var(--status-primary);
+    background-color: var(--green-secondary);
+    border: 2px solid var(--green-tertiary);
 }
 
 .ASBuySlotCost {
@@ -1508,7 +1510,7 @@ Rarities
 }
 
 .Worker.wtadvanced .WorkerDetails .WorkerNameAndProduction .WorkerName {
-    color: #11dc82;
+    color: var(--green-primary);
 }
 
 .WorkerImage, .WorkerName {
@@ -1525,8 +1527,8 @@ Rarities
 }
 
 .purchaseWorkerCard:hover {
-    background-color: var(--status-secondary);
-    border-color: var(--status-primary);
+    background-color: var(--green-secondary);
+    border-color: var(--green-tertiary);
 }
 
 .unknownWorker > img {
@@ -1588,14 +1590,15 @@ Rarities
     position: absolute;
     top: 3.5px;
     right: 5px;
-    color: var(--text-tertiary);
+    color: var(--text-primary);
     font-weight: normal;
     margin-left: 5px;
     z-index: 10;
+    opacity: 0.5;
 }
 
 .WorkerDesc:hover {
-    color: var(--text-primary);
+    opacity: 1;
 }
 
 .WorkerDesc > i {
@@ -1608,8 +1611,8 @@ Rarities
     top: 0;
     left: 0;
     right: 0;
-    background: #10442d;
-    color: #11dc82;
+    background: var(--green-secondary);
+    color: var(--green-primary);
     text-align: center;
     padding: 5px;
 }
@@ -1920,8 +1923,8 @@ Rarities
 }
 
 .buyNewHeroCard:hover {
-    background-color: var(--status-secondary);
-    border-color: var(--status-primary);
+    background-color: var(--green-secondary);
+    border-color: var(--green-tertiary);
 }
 
 #heroTab {
@@ -1930,8 +1933,8 @@ Rarities
 
 .heroExamineLvlButton {
     position: relative;
-    background-color: var(--status-secondary);
-    border: 1px solid var(--status-primary);
+    background-color: var(--green-secondary);
+    border: 1px solid var(--green-tertiary);
     margin-top: 5px;
     padding: 5px 15px;
     cursor: pointer;
@@ -1939,7 +1942,7 @@ Rarities
 }
 
 .heroExamineLvlButton:hover {
-    background-color: var(--status-primary);
+    background-color: var(--green-tertiary);
 }
 
 #heroCard {
@@ -2516,8 +2519,8 @@ Rarities
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
-    border: 1px solid var(--status-primary);
-    background-color: var(--status-secondary);
+    border: 1px solid var(--green-tertiary);
+    background-color: var(--green-secondary);
 }
 
 #dungeonTeamButton:not(.dungeonStartNotAvailable):after, .heroExamineLvlButton:after {
@@ -2530,7 +2533,7 @@ Rarities
     content: "";
     width: 100%;
     height: 100%;
-    background: #089e5f;
+    background: var(--green-tertiary);
     z-index: -1;
     opacity: 1;
     -webkit-transform: scaleY(1) scaleX(1);
@@ -2543,7 +2546,8 @@ Rarities
 }
 
 #dungeonTeamButton:hover {
-    background-color: var(--status-primary);
+    background-color: var(--green-tertiary);
+    color: var(--text-white);
 }
 
 #dungeonTeamButton.dungeonStartNotAvailable {
@@ -2589,7 +2593,7 @@ Rarities
 }
 
 .dungeonAvailableLvl, .dungeonTeamLvl {
-    color: #11dc82;
+    color: var(--green-primary);
 }
 
 .healHero {
@@ -2746,7 +2750,7 @@ Rarities
     font-weight: 700;
     text-align: center;
     background-color: rgba(162,21,0,1);
-    color: var(--text-secondary);
+    color: var(--text-white);
     border-radius: 50%;
     -webkit-animation: 2s ease-in-out infinite notification;
     animation: 2s ease-in-out infinite notification;
@@ -2853,8 +2857,8 @@ Rarities
 }
 
 .eventConfirm:hover {
-    background-color: var(--status-secondary);
-    border-color: var(--status-primary);
+    background-color: var(--green-secondary);
+    border-color: var(--green-tertiary);
     cursor: pointer;
 }
 

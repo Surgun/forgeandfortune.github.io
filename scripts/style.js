@@ -175,9 +175,11 @@ const battleLogResetBtn = document.querySelector('#battleLogReset');
 const battleLogLengthInput = document.querySelector('#battleLogValue');
 const battleLogNotice = document.createElement('div');
 
-battleLogSetBtn.addEventListener("click", assignLogLength);
-battleLogResetBtn.addEventListener("click", resetLogLength);
-battleLogLengthInput.value = settings.battleLogLength;
+if (battleLogSetBtn && battleLogResetBtn && battleLogLengthInput) {
+    battleLogSetBtn.addEventListener("click", assignLogLength);
+    battleLogResetBtn.addEventListener("click", resetLogLength);
+    battleLogLengthInput.value = settings.battleLogLength;
+}
 
 function assignLogLength() {
     if (battleLogLengthInput.value < 5 || battleLogLengthInput.value > 100) {

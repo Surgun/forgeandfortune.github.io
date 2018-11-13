@@ -33,6 +33,7 @@ body {
     --gradient-primary: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
     --gradient-secondary: linear-gradient(to right, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
     --box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    --transition: 0.2s ease-in-out;
 }
 
 body.lightmode {
@@ -45,7 +46,7 @@ body.lightmode {
     --text-primary: #000;
     --text-secondary: #2f2f2f;
     --text-tertiary: #252525;
-    --text-inverted: #000;
+    --text-inverted: #fff;
     --text-white: #fff;
     --text-black: #000;
     --status-primary: #089e5f;
@@ -56,6 +57,7 @@ body.lightmode {
     --gradient-primary: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
     --gradient-secondary: linear-gradient(to right, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
     --box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    --transition: 0.2s ease-in-out;
 }
 
 /* Scrollbar */
@@ -77,11 +79,11 @@ body.lightmode {
 /* Global */
 
 .game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset {
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    -webkit-transition: all var(--transition);
+    -moz-transition: all var(--transition);
+    -ms-transition: all var(--transition);
+    -o-transition: all var(--transition);
+    transition: all var(--transition);
 }
 
 .back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .recipeRow {
@@ -738,11 +740,11 @@ Rarities
     text-transform: uppercase;
     font-size: 0.8em;
     cursor: pointer;
-    -webkit-transition: color 0.2s ease-in-out;
-    -moz-transition: color 0.2s ease-in-out;
-    -ms-transition: color 0.2s ease-in-out;
-    -o-transition: color 0.2s ease-in-out;
-    transition: color 0.2s ease-in-out;
+    -webkit-transition: color var(--transition);
+    -moz-transition: color var(--transition)t;
+    -ms-transition: color var(--transition);
+    -o-transition: color var(--transition);
+    transition: color var(--transition);
 }
 
 .tablinks > div {
@@ -769,11 +771,11 @@ Rarities
     width: 0;
     height: 2px;
     background-color: var(--highlight);
-    -webkit-transition: width 0.2s ease-in-out;
-    -moz-transition: width 0.2s ease-in-out;
-    -ms-transition: width 0.2s ease-in-out;
-    -o-transition: width 0.2s ease-in-out;
-    transition: width 0.2s ease-in-out;
+    -webkit-transition: width var(--transition);
+    -moz-transition: width var(--transition);
+    -ms-transition: width var(--transition);
+    -o-transition: width var(--transition);
+    transition: width var(--transition);
 }
 
 .tablinks:hover:after {

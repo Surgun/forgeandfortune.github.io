@@ -125,7 +125,7 @@ body.pg-loaded > #content, body.pg-loaded > #mobile-content {
 }
 
 .loadingMessage {
-  color: var(--text-3);
+  color: var(--text-tertiary);
 }
 
 .spinner {

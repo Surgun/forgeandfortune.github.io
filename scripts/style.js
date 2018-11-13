@@ -188,6 +188,7 @@ function assignLogLength() {
         battleLogNotice.innerHTML = "Updated!";
         BattleLog.logLength = battleLogLengthInput.value;
         settings.battleLogLength = BattleLog.logLength;
+        BattleLog.clear();
         addLogNotice();
         saveSettings();
     }
@@ -198,6 +199,7 @@ function resetLogLength() {
     settings.battleLogLength = 15;
     BattleLog.logLength = settings.battleLogLength;
     battleLogLengthInput.value = settings.battleLogLength;
+    BattleLog.clear();
     addLogNotice();
     saveSettings();
 }

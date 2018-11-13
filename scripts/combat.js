@@ -68,7 +68,7 @@ const BattleLog = {
     enemyLog : [],
     logLength : settings.battleLogLength,
     addHeroLog(m) {
-        if (this.heroLog.length == this.logLength) {
+        if (this.heroLog.length >= this.logLength) {
             this.heroLog.shift();
         }
         this.heroLog.push(m);
@@ -79,7 +79,7 @@ const BattleLog = {
         });
     },
     addEnemyLog(m) {
-        if (this.enemyLog.length == this.logLength) {
+        if (this.enemyLog.length >= this.logLength) {
             this.enemyLog.shift();
         }
         this.enemyLog.push(m);

@@ -181,34 +181,32 @@ battleLogLengthInput.value = settings.battleLogLength;
 
 function assignLogLength() {
     if (battleLogLengthInput.value < 5 || battleLogLengthInput.value > 100) {
-        battleLogNotice.innerHTML = "Invalid Value!";
-        addLogNotice();
+        addLogNotice("Invalid Value!");
         return;
     } else {
-        battleLogNotice.innerHTML = "Updated!";
         BattleLog.logLength = battleLogLengthInput.value;
         settings.battleLogLength = BattleLog.logLength;
         BattleLog.clear();
-        addLogNotice();
+        addLogNotice("Updated!");
         saveSettings();
     }
 }
 
 function resetLogLength() {
-    battleLogNotice.innerHTML = "Reset!";
     settings.battleLogLength = 15;
     BattleLog.logLength = settings.battleLogLength;
     battleLogLengthInput.value = settings.battleLogLength;
     BattleLog.clear();
-    addLogNotice();
+    addLogNotice("Reset!");
     saveSettings();
 }
 
-function addLogNotice() {
+function addLogNotice(notice) {
     if (document.querySelector('.battleLogNotice')) {
         document.querySelector('.battleLogNotice').remove();
     }
     battleLogNotice.classList.add('battleLogNotice');
+    battleLogNotice.innerHTML = notice;
     battleLogResetBtn.insertAdjacentElement('afterend', battleLogNotice);
 }
 

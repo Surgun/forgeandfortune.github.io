@@ -3,7 +3,7 @@
 // place all individual settings code and management in the style.js file
 
 const settings = {
-    toastPosition: "",
+    toastPosition: "top-left",
     battleLogLength: 15,
     theme: 0
 }

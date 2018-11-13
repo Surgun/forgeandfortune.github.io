@@ -1,4 +1,6 @@
 // Settings Management
+// Initial settings code for loading and saving is placed here, 
+// place all individual settings code and management in the style.js file
 
 const settings = {
     toastPosition: "",

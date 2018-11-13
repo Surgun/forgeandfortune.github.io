@@ -135,7 +135,7 @@ function assignToastPosition(e) {
     saveSettings();
 }
 
-// Theme Management
+// Theme Management Setting
 
 const themeSettings = document.querySelectorAll("#settings_siteTheme .selection-container");
 
@@ -168,7 +168,7 @@ function checkTheme() {
 
 checkTheme();
 
-// Battle Log Length
+// Battle Log Length Setting
 
 const battleLogSetBtn = document.querySelector('#battleLogSet');
 const battleLogResetBtn = document.querySelector('#battleLogReset');

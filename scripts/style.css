@@ -32,15 +32,16 @@ body {
     --scroll-track: rgba(0,0,0,.20);
     --gradient-primary: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
     --gradient-secondary: linear-gradient(to right, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
+    --box-shadow: 0 0 10px rgba(0,0,0,0.25);
 }
 
 body.lightmode {
     --bg-primary: #ffffff;
     --bg-secondary: #e2e2e2;
     --bg-tertiary: #f3f3f3;
-    --border-primary: #d2d2d2;
+    --border-primary: #ccc;
     --border-secondary: #3c3c3c;
-    --border-tertiary: #333f4a;
+    --border-tertiary: #4d607f;
     --text-primary: #000;
     --text-secondary: #2f2f2f;
     --text-tertiary: #252525;
@@ -54,6 +55,7 @@ body.lightmode {
     --scroll-track: rgba(0,0,0,.20);
     --gradient-primary: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
     --gradient-secondary: linear-gradient(to right, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
+    --box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 /* Scrollbar */
@@ -83,11 +85,11 @@ body.lightmode {
 }
 
 .back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .recipeRow {
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    -ms-box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    -o-box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    -ms-box-shadow: var(--box-shadow);
+    -o-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
 }
 
 body {
@@ -2906,7 +2908,7 @@ footer a {
 }
 
 footer a:hover {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-tertiary);
 }
 
 #version-scale {

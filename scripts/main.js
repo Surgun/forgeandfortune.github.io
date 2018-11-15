@@ -90,6 +90,7 @@ function mainLoop() {
     saveGame(Date.now()-player.lastTime);
     player.lastTime = Date.now();
     DungeonManager.addTime(elapsedTime);
+    FusionManager.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
     HeroManager.healTimer(elapsedTime);
     eventChecker();

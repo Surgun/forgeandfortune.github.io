@@ -2688,6 +2688,22 @@ Rarities
     background: var(--scheme-webkit);
 }
 
+/* Town & Buildings */
+
+#buildingList {
+    display: grid;
+    margin: 10px;
+    grid-template: 200px / repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+}
+
+.buildingName {
+    padding: 10px;
+    text-align: center;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
 /* Events / Mail Content */
 
 #eventTab {

@@ -36,7 +36,7 @@ function afterLoad() {
     refreshRecipeFilters();
     refreshEvents();
     hardMatRefresh();
-    initializeRecipes("knives","default");
+    initializeRecipes("Knives","default");
     refreshProgress();
     initializeSideBarDungeon();
     recipeCanCraft();

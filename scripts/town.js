@@ -29,6 +29,7 @@ const FusionManager = {
     fuseNum : 0,
     addFuse(id,rarity) {
         if (this.slots.length === this.maxSlots) return;
+        if (!Inventory.hasThree(id,rarity)) return;
         const newFuse = new fuse(id,rarity);
         newFuse.fuseID = this.fuseNum;
         this.fuseNum += 1;

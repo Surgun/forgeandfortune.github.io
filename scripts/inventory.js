@@ -244,7 +244,7 @@ const Inventory = {
         })
     },
     getFusePossibilities() {
-        const fuses = this.inv.map(i=>{
+        const fuses = this.nonblank().map(i=>{
             return i.id+i.rarity
         });
         const fuseSorted = fuses.reduce((fuseList, item) => {
@@ -263,6 +263,9 @@ const Inventory = {
             fuseFiltered.push(fuse);
         }
         return fuseFiltered;
+    },
+    hasThree() {
+        return true;
     }
 }
 

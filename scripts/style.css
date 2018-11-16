@@ -2693,7 +2693,7 @@ Rarities
 #buildingList {
     display: grid;
     margin: 10px;
-    grid-template: 200px / repeat(auto-fill, minmax(150px, 1fr));
+    grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 10px;
 }
 

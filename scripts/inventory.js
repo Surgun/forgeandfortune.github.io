@@ -242,6 +242,27 @@ const Inventory = {
         this.inv.forEach((ic,indx) => {
             if (ic !== null && ic.rarity === 0) this.sellInventory(indx);
         })
+    },
+    getFusePossibilities() {
+        const fuses = this.inv.map(i=>{
+            return i.id+i.rarity
+        });
+        const fuseSorted = fuses.reduce((fuseList, item) => {
+            if (item in fuseList) fuseList[item]++;
+            else fuseList[item] = 1;
+            return fuseList;
+        },{});
+        const fuseFiltered = [];
+        for (let [idR, num] of Object.entries(fuseSorted)) {
+            if (num < 3) continue;
+            const fuse = {};
+            fuse.id = idR.slice(0, -1);
+            fuse.name = recipeList.idToItem(fuse.id).name;
+            fuse.rarity = parseInt(idR.slice(-1))+1;
+            if (fuse.rarity > 3) continue;
+            fuseFiltered.push(fuse);
+        }
+        return fuseFiltered;
     }
 }
 

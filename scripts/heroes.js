@@ -557,7 +557,6 @@ function unequipSlot(slot,heroID) {
     examineHero(heroID);
 }
 
-
 $(document).on('click', "div.heroOwnedCard", (e) => {
     //pop up the detailed character card
     e.preventDefault();

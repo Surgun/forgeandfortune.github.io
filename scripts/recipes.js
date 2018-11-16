@@ -121,25 +121,25 @@ class Item{
 
 $(document).on("click",".recipeHeadName",(e) => {
     e.preventDefault();
-    sortRecipesByHeading("name");
+    sortRecipesByHeading("name","name");
     recipeCanCraft();
 });
 
 $(document).on("click",".recipeHeadLvl",(e) => {
     e.preventDefault();
-    sortRecipesByHeading("default");
+    sortRecipesByHeading("lvl");
     recipeCanCraft();
 });
 
 $(document).on("click",".recipeHeadTime",(e) => {
     e.preventDefault();
-    sortRecipesByHeading("default");
+    sortRecipesByHeading("time");
     recipeCanCraft();
 });
 
 $(document).on("click",".recipeHeadValue",(e) => {
     e.preventDefault();
-    sortRecipesByHeading("default");
+    sortRecipesByHeading("value");
     recipeCanCraft();
 });
 
@@ -150,9 +150,9 @@ $(document).on("click",".recipeHeadCount",(e) => {
 });
 
 function sortRecipesByHeading(heading) {
-    if (recipeList.recipeCategory === heading) recipeList.recipeCategory = heading+"Asc";
-    else recipeList.recipeCategory = heading;
-    initializeRecipes(recipeList.recipePop, recipeList.recipeCategory);
+    if (recipeList.recipeCategory === heading) heading = heading+"Asc";
+    recipeList.recipeCategory = heading;
+    initializeRecipes(recipeList.recipePop, recipeList.recipeCategory, heading);
 }
 
 const recipeList = {
@@ -260,7 +260,8 @@ function refreshRecipeFilters() {
     });
 }
 
-function initializeRecipes(type,sortType) {
+function initializeRecipes(type,sortType,heading) {
+    console.log(type,sortType);
     recipeList.recipePop = type;
     //filtering
     let rFilter = recipeList.recipes.filter(r => r.owned);
@@ -285,6 +286,12 @@ function initializeRecipes(type,sortType) {
     if (sortType === "nameAsc") rFilter.sort((a, b) => b.name.localeCompare(a.name))
     if (sortType === "mastery") rFilter.sort((a,b) => Math.min(100,a.craftCount)-Math.min(100,b.craftCount));
     if (sortType === "masteryAsc") rFilter.sort((a,b) => Math.min(100,b.craftCount)-Math.min(100,a.craftCount));
+    if (sortType === "lvl") rFilter.sort((a,b) => a.lvl - b.lvl);
+    if (sortType === "lvlAsc") rFilter.sort((a,b) => b.lvl - a.lvl);
+    if (sortType === "value") rFilter.sort((a,b) => a.value - b.value);
+    if (sortType === "valueAsc") rFilter.sort((a,b) => b.value - a.value);
+    if (sortType === "time") rFilter.sort((a,b) => a.craftTime - b.craftTime);
+    if (sortType === "timeAsc") rFilter.sort((a,b) => b.craftTime - a.craftTime);
     //generate the lists
     $RecipeResults.empty();
     //cycle through everything in bp's and make the div for it
@@ -299,7 +306,19 @@ function initializeRecipes(type,sortType) {
     const htd7 = $('<div/>').addClass('recipeHeadValue isSortableHead').html("VALUE");
     const htd8 = $('<div/>').addClass('recipeHeadCount isSortableHead').html("MASTERY");
     tableHeader.append(htd1,htd2,htd3,htd4,htd5,htd6,htd7,htd8);
+    //add that stupid arrow class
+    if (heading === "name") htd1.addClass("sortDesc");
+    else if (heading === "nameAsc") htd1.addClass("sortAsc");
+    else if (heading === "mastery") htd8.addClass("sortDesc");
+    else if (heading === "masteryAsc") htd8.addClass("sortAsc");
+    else if (heading === "lvl") htd2.addClass("sortDesc");
+    else if (heading === "lvlAsc") htd2.addClass("sortAsc");
+    else if (heading === "value") htd7.addClass("sortDesc");
+    else if (heading === "valueAsc") htd7.addClass("sortAsc");
+    else if (heading === "time") htd6.addClass("sortDesc");
+    else if (heading === "timeAsc") htd6.addClass("sortAsc");
     //table.append(tableHeader);
+    
     const tableContents = $('<div/>').addClass('recipeContents');
     //rows of table
     let alternate = false;
@@ -340,7 +359,8 @@ function initializeRecipes(type,sortType) {
     table.append(tableContents);
     if (lastRow !== null) lastRow.addClass("recipeRowLast");
     $RecipeResults.append(table);
-    refreshBlueprint(type)
+    refreshBlueprint(type);
+    recipeCanCraft();
 }
 
 function refreshCraftCount() {

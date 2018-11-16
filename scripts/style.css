@@ -1374,6 +1374,28 @@ Rarities
     cursor: pointer;
 }
 
+.sortDesc:after, .sortAsc:after {
+    position: relative;
+    margin-left: 5px;
+    font-family: "Font Awesome 5 Free";
+    content: "\f063";
+    font-weight: 900;
+    font-size: 12px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.sortAsc:after {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
 .EHPEHeaderName, .EHPEname  {
     display: flex;
     align-items: center;
@@ -2729,6 +2751,22 @@ Rarities
     position: relative;
     height: 100%;
     background: var(--gradient-primary);
+}
+
+/* Town & Buildings */
+
+#buildingList {
+    display: grid;
+    margin: 10px;
+    grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+}
+
+.buildingName {
+    padding: 10px;
+    text-align: center;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
 }
 
 /* Events / Mail Content */

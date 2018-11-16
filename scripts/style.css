@@ -2765,8 +2765,8 @@ Rarities
 .buildingName {
     padding: 10px;
     text-align: center;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 /* Events / Mail Content */

@@ -155,7 +155,7 @@ body:after {
 
 /* Font Stack */
 
-#Actions > h1, .heading, .tab-heading, footer, .Worker .BuyWorker, .WorkerUpgrade, .Worker .HireWorker, #progresslist, #workerList, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes, .ASBlock, .ASBuySlot, #dungeon-container {
+#Actions > h1, .heading, .tab-heading, footer, .Worker .BuyWorker, .WorkerUpgrade, .Worker .HireWorker, #progresslist, #workerList, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes, .ASBlock, .ASBuySlot, #dungeon-container, .lighttheme-btn.tooltip:after {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -3239,6 +3239,11 @@ footer a[href*="discord.gg"]:hover {
     bottom: 130%;
 }
 
+.lighttheme-btn.tooltip:after {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
 /* Firefox-Specific Fixes */
 @-moz-document url-prefix() { 
     #workerList, #progresslist {
@@ -3331,6 +3336,17 @@ footer a[href*="discord.gg"]:hover {
 
 #pfloadYes {
     margin-right: 5px;
+}
+
+span.beta-tag {
+    margin-left: 10px;
+    padding: 3px 8px;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    background-color: var(--border-tertiary);
+    color: var(--text-white);
+    box-shadow: var(--box-shadow);
 }
 
 .settings-title, .settings-description {

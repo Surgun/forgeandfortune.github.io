@@ -2467,7 +2467,7 @@ Rarities
     padding: 20px;
 }
 
-#dungeonTeamButton {
+#dungeonTeamButton, .fuseStart {
     display: inline-flex;
     position: relative;
     margin-top: 20px;
@@ -2501,7 +2501,7 @@ Rarities
     animation: 1s button-active infinite;
 }
 
-#dungeonTeamButton:hover {
+#dungeonTeamButton:hover, .fuseStart:hover {
     background-color: var(--green-light);
 }
 
@@ -2577,7 +2577,7 @@ Rarities
     margin: 0 2px;
 }
 
-.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv {
     position: relative;
     display: flex;
     align-items: center;
@@ -2606,14 +2606,14 @@ Rarities
     margin-top: 10px;
 }
 
-.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img {
+.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img, .fuseBarDiv > img {
     position: absolute;
     left: 8px;
     bottom: 2px;
     z-index: 1;
 }
 
-.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before {
+.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before {
     content: " " attr(data-label);
     position: absolute;
     font-size: 0.9em;
@@ -2623,7 +2623,7 @@ Rarities
     z-index: 2;
 }
 
-.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill {
+.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill {
     display: block;
     position: relative;
     height: 100%;
@@ -2697,11 +2697,32 @@ Rarities
     grid-gap: 10px;
 }
 
+#buildingContent {
+    margin: 10px;
+    padding-top: 10px;
+    border-top: 2px solid var(--border);
+}
+
 .buildingName {
     padding: 10px;
     text-align: center;
     background-color: var(--bg);
     border: 1px solid var(--border);
+}
+
+.fuseSlotHolder {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    margin: 10px 0;
+}
+
+.fuseSlot {
+    position: relative;
+    padding: 15px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
 }
 
 /* Events / Mail Content */

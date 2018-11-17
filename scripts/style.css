@@ -2702,10 +2702,6 @@ Rarities
     grid-gap: 10px;
 }
 
-#buildingContent {
-    margin: 0 10px;
-}
-
 .buildingName {
     padding: 10px;
     text-align: center;
@@ -2714,10 +2710,17 @@ Rarities
 }
 
 .buildingInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px 5px;
+    background-color: var(--bg-3);
+    border-bottom: 2px solid var(--border);
 }
 
 .buildingContents {
+    padding: 20px 10px;
     opacity: 0;
     animation: 0.5s 1s fade-in forwards;
 }

@@ -2780,8 +2780,8 @@ Rarities
     justify-content: center;
     align-items: center;
     padding: 20px 5px;
-    background-color: var(--bg-3);
-    border-bottom: 2px solid var(--border);
+    background-color: var(--bg-tertiary);
+    border-bottom: 2px solid var(--border-primary);
 }
 
 .buildingContents {
@@ -2804,7 +2804,7 @@ Rarities
 .buildingInfoName {
     display: inline-block;
     text-transform: uppercase;
-    color: var(--text);
+    color: var(--text-primary);
     margin-bottom: 10px;
     animation: 0.5s scale-in forwards;
 }
@@ -2829,7 +2829,7 @@ Rarities
 }
 
 .buildingInfoDesc {
-    color: var(--text-3);
+    color: var(--text-tertiary);
     transform: scale(0);
     transform-origin: top 200px;
     animation: 0.5s 0.75s scale-in forwards;
@@ -2845,8 +2845,8 @@ Rarities
 .fuseSlot {
     position: relative;
     padding: 15px;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
     border-radius: 10px;
 }
 
@@ -3530,7 +3530,7 @@ span.beta-tag {
     padding: 10px 15px;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);
-    color: var(--text);
+    color: var(--text-primary);
 }
 
 #battleLogSet:hover, #battleLogReset:hover {

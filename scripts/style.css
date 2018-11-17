@@ -3239,6 +3239,11 @@ footer a[href*="discord.gg"]:hover {
     bottom: 130%;
 }
 
+.article_date.tooltip:after {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
 .lighttheme-btn.tooltip:after {
     max-width: 200px;
     margin: 0 auto;

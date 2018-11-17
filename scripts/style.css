@@ -160,12 +160,12 @@ body:after {
     font-weight: normal;
 }
 
-.dialog_header, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.dialog_body, .recipeName, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #battleLogValue, #battleLogSet, #battleLogReset {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #townContainer {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -637,7 +637,7 @@ body:after {
     color: #c90000;
 }
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title {
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead {
     font-weight: normal;
     font-size: 1rem;
     padding: 0 5px 5px;
@@ -2533,7 +2533,7 @@ Rarities
     padding: 20px;
 }
 
-#dungeonTeamButton {
+#dungeonTeamButton, .fuseStart {
     display: inline-flex;
     position: relative;
     margin-top: 20px;
@@ -2644,7 +2644,7 @@ Rarities
     margin: 0 2px;
 }
 
-.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv {
     position: relative;
     display: flex;
     align-items: center;
@@ -2673,14 +2673,14 @@ Rarities
     margin-top: 10px;
 }
 
-.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img {
+.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img, .fuseBarDiv > img {
     position: absolute;
     left: 8px;
     bottom: 2px;
     z-index: 1;
 }
 
-.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before {
+.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before {
     content: " " attr(data-label);
     position: absolute;
     font-size: 0.9em;
@@ -2690,7 +2690,7 @@ Rarities
     z-index: 2;
 }
 
-.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill {
+.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill {
     display: block;
     position: relative;
     height: 100%;
@@ -2755,9 +2755,14 @@ Rarities
 
 /* Town & Buildings */
 
+#townContainer {
+    height: 100%;
+}
+
 #buildingList {
     display: grid;
-    margin: 10px;
+    margin: 0 10px;
+    padding: 10px 0;
     grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 10px;
 }
@@ -2767,6 +2772,82 @@ Rarities
     text-align: center;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
+}
+
+.buildingInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 5px;
+    background-color: var(--bg-3);
+    border-bottom: 2px solid var(--border);
+}
+
+.buildingContents {
+    padding: 20px 10px;
+    opacity: 0;
+    animation: 0.5s 1s fade-in forwards;
+}
+
+.buildingInfoImage, .buildingInfoName, .buildingInfoDesc {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.buildingInfoImage {
+    text-align: center;
+    animation: 0.5s scale-in forwards;
+}
+
+.buildingInfoName {
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 10px;
+    animation: 0.5s scale-in forwards;
+}
+
+.buildingInfoName > h2 {
+    margin: 0;
+    padding: 0 15px;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.buildingInfoName:after {
+    display: block;
+    content: "";
+    position: relative;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    margin: 0 auto;
+    background-color: var(--highlight);
+    animation: 1s 0.5s width forwards;
+}
+
+.buildingInfoDesc {
+    color: var(--text-3);
+    transform: scale(0);
+    transform-origin: top 200px;
+    animation: 0.5s 0.75s scale-in forwards;
+}
+
+.fuseSlotHolder {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    margin: 10px 0;
+}
+
+.fuseSlot {
+    position: relative;
+    padding: 15px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
 }
 
 /* Events / Mail Content */
@@ -3614,6 +3695,15 @@ span.beta-tag {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes width {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
     }
 }
 

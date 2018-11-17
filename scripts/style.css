@@ -108,12 +108,12 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #townContainer {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -585,7 +585,7 @@ body {
     color: #c90000;
 }
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title {
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead {
     font-weight: normal;
     font-size: 1rem;
     padding: 0 5px 5px;
@@ -2690,17 +2690,20 @@ Rarities
 
 /* Town & Buildings */
 
+#townContainer {
+    height: 100%;
+}
+
 #buildingList {
     display: grid;
-    margin: 10px;
+    margin: 0 10px;
+    padding: 10px 0;
     grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 10px;
 }
 
 #buildingContent {
-    margin: 10px;
-    padding-top: 10px;
-    border-top: 2px solid var(--border);
+    margin: 0 10px;
 }
 
 .buildingName {
@@ -2708,6 +2711,60 @@ Rarities
     text-align: center;
     background-color: var(--bg);
     border: 1px solid var(--border);
+}
+
+.buildingInfo {
+    padding: 20px 5px;
+}
+
+.buildingContents {
+    opacity: 0;
+    animation: 0.5s 1s fade-in forwards;
+}
+
+.buildingInfoImage, .buildingInfoName, .buildingInfoDesc {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.buildingInfoImage {
+    text-align: center;
+    animation: 0.5s scale-in forwards;
+}
+
+.buildingInfoName {
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 10px;
+    animation: 0.5s scale-in forwards;
+}
+
+.buildingInfoName > h2 {
+    margin: 0;
+    padding: 0 15px;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.buildingInfoName:after {
+    display: block;
+    content: "";
+    position: relative;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    margin: 0 auto;
+    background-color: var(--highlight);
+    animation: 1s 0.5s width forwards;
+}
+
+.buildingInfoDesc {
+    color: var(--text-3);
+    transform: scale(0);
+    transform-origin: top 200px;
+    animation: 0.5s 0.75s scale-in forwards;
 }
 
 .fuseSlotHolder {
@@ -3525,6 +3582,15 @@ footer a[href*="discord.gg"]:hover {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes width {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
     }
 }
 

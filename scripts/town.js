@@ -57,23 +57,30 @@ function refreshSideTown() {
 
 function showFuseBldg() {
     $buildingContent.empty();
-    const d = $("<div/>").addClass("fuseDesc").html("Fuse 3x of the same item into a rarity higher");
-    const d1 = $("<div/>").addClass("fuseHead").html("Fusion Slots:");
-    const d2 = $("<div/>").addClass("fuseSlotHolder");
-    FusionManager.slots.forEach(slot => {
-        const d2a = $("<div/>").addClass("fuseSlot");
-        const d2b = $("<div/>").addClass("fuseSlotName").html(slot.name);
-        const d2c = createFuseBar(slot);
-        d2a.append(d2b,d2c);
-        d2.append(d2a);
-    });
-    for (let i=0;i<FusionManager.maxSlots-FusionManager.slots.length;i++) {
-        const d2d = $("<div/>").addClass("fuseSlot");
-        const d2e = $("<div/>").addClass("fuseSlotName").html("Empty");
-        d2d.append(d2e);
-        d2.append(d2d);
-    }
-    const d3 = $("<div/>").addClass("possibleFuse").html("Possible Fuses:");
+    const d = $("<div/>").addClass("buildingInfo");
+        const da = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>");
+        const db = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Building</h2>");
+        const dc = $("<div/>").addClass("buildingInfoDesc").html("Fuse three of the same item into a rarity higher of the same item.");
+        d.append(da,db,dc);
+    const d1 = $("<div/>").addClass("buildingContents"); 
+        const d1a = $("<div/>").addClass("fuseHead").html("Fusion Slots");
+        d1.append(d1a);
+        const d1b = $("<div/>").addClass("fuseSlotHolder");
+        FusionManager.slots.forEach(slot => {
+            const d1b1 = $("<div/>").addClass("fuseSlot");
+            const d1b2 = $("<div/>").addClass("fuseSlotName").html(slot.name);
+            const d1b3 = createFuseBar(slot);
+            d1b1.append(d1b2,d1b3);
+            d1b.append(d1b1);
+        });
+        for (let i=0;i<FusionManager.maxSlots-FusionManager.slots.length;i++) {
+            const d1b4 = $("<div/>").addClass("fuseSlot");
+            const d1b5 = $("<div/>").addClass("fuseSlotName").html("Empty");
+            d1b4.append(d1b5);
+            d1b.append(d1b4);
+        }
+        d1.append(d1a,d1b);
+    const d3 = $("<div/>").addClass("possibleFuseHead").html("Possible Fuses");
     const d4 = $("<div/>").addClass('possibleFuseHolder');
     const rarities = ["Common","Good","Great","Epic"];
     Inventory.getFusePossibilities().forEach(f => {
@@ -83,7 +90,8 @@ function showFuseBldg() {
         d4a.append(d4b,d4c);
         d4.append(d4a);
     });
-    $buildingContent.append(d,d1,d2,d3,d4);
+    d1.append(d3,d4);
+    $buildingContent.append(d,d1);
 }
 
 function createFuseBar(fuse) {

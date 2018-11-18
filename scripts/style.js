@@ -62,7 +62,7 @@ function toggleAboutState(e) {
     }
 };
 
-/* Back To Top Button */
+// Back To Top Button
 
 const backToTopButton = document.querySelector(".back-to-top");
 
@@ -76,7 +76,7 @@ function backToTop() {
 
 if (backToTopButton) window.onscroll = () => backToTop();
 
-/* Dialog Behavior and Tracking */
+// Dialog Behavior and Tracking
 
 const dialogs = document.querySelectorAll(".dialog");
 const dialogsCloseButtons = document.querySelectorAll(".dialog_close");
@@ -109,7 +109,7 @@ if (window.location.href.indexOf("#dialog") > -1) {
     setDialogClose();
 }
 
-/* Export Copy Click Feedback */
+// Export Copy Click Feedback
 
 const clipboardButton = document.querySelector("#exportSaveCopy");
 

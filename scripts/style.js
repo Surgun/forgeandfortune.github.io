@@ -1,15 +1,11 @@
 // Tab Selection for Recipes List
 
-var recipeItem = document.querySelectorAll("#RecipeFilter a.recipeSelect");
+const recipeItems = document.querySelectorAll(".recipeSelect");
 
-for (i = 0; i < recipeItem.length; i++) {
-    recipeItem[i].addEventListener("click", tabHighlight);
-};
+recipeItems.forEach((recipeItem) => recipeItem.addEventListener("click", tabHighlight));
 
 function tabHighlight() {
-    for (i = 0; i < recipeItem.length; i++) {
-        recipeItem[i].classList.remove("selected");
-    };
+    recipeItems.forEach((recipeItem) => recipeItem.classList.remove("selected"));
     this.classList.add("selected");
 };
 
@@ -36,9 +32,7 @@ function navTabHighlight(evt, tgt) {
 
 const sideHeadings = document.querySelectorAll("#side-content .heading");
 
-for (i = 0; i < sideHeadings.length; i++) {
-    sideHeadings[i].addEventListener("click", toggleState);
-};
+sideHeadings.forEach((heading) => heading.addEventListener("click", toggleState));
 
 function toggleState(e) {
     if (e.currentTarget.parentNode.classList.contains("height-collapse")) {
@@ -54,9 +48,7 @@ function toggleState(e) {
 
 const versionHeadings = document.querySelectorAll("#cc-container .version-heading");
 
-for (i = 0; i < versionHeadings.length; i++) {
-    versionHeadings[i].addEventListener("click", toggleAboutState);
-};
+versionHeadings.forEach((heading) => heading.addEventListener("click", toggleAboutState));
 
 function toggleAboutState(e) {
     if (e.currentTarget.nextElementSibling.classList.contains("expanded")) {

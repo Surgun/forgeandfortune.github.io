@@ -4,6 +4,7 @@
 
 const settings = {
     toastPosition: "top-left",
+    dialogStatus: 0,
     battleLogLength: 15,
     theme: 0
 }

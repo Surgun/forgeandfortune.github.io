@@ -84,14 +84,37 @@ function backToTop() {
 
 if (backToTopButton) window.onscroll = () => backToTop();
 
-/* Close Dialogs with Click Outside of Element */
+/* Dialog Behavior and Tracking */
 
 const dialogs = document.querySelectorAll(".dialog");
+const dialogsCloseButtons = document.querySelectorAll(".dialog_close");
+const dialogTriggers = document.querySelectorAll(".isDialog");
 
 dialogs.forEach((dialog) => dialog.addEventListener("click", closeDialog));
+dialogsCloseButtons.forEach((closeButton) => closeButton.addEventListener("click", setDialogClose));
+dialogTriggers.forEach((dialogTrigger) => dialogTrigger.addEventListener("click", setDialogOpen));
 
 function closeDialog(dialog) {
-    if (this === dialog.target) window.location.assign("#closeDialog");
+    if (this === dialog.target) {
+        window.location.assign("#closeDialog");
+        setDialogClose();
+    }
+}
+
+function setDialogOpen() {
+    settings.dialogStatus = 1;
+    saveSettings();
+}
+
+function setDialogClose() {
+    settings.dialogStatus = 0;
+    saveSettings();
+}
+
+if (window.location.href.indexOf("#dialog") > -1) {
+    setDialogOpen();
+} else {
+    setDialogClose();
 }
 
 /* Export Copy Click Feedback */

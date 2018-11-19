@@ -7,7 +7,7 @@ recipeItems.forEach((recipeItem) => recipeItem.addEventListener("click", tabHigh
 function tabHighlight() {
     recipeItems.forEach((recipeItem) => recipeItem.classList.remove("selected"));
     this.classList.add("selected");
-};
+}
 
 // Tab Selection for Navigation
 
@@ -26,7 +26,7 @@ function navTabHighlight(evt, tgt) {
     } else {
         evt.target.parentNode.classList.add("tab-selected");
     }      
-};
+}
 
 // Status Container Expand and Collapse
 
@@ -44,7 +44,7 @@ function toggleState(e) {
         let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
         arrow[0].classList.add("arrow-rotate");
     }
-};
+}
 
 const versionHeadings = document.querySelectorAll("#cc-container .version-heading");
 
@@ -60,7 +60,7 @@ function toggleAboutState(e) {
         let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
         arrow[0].classList.add("arrow-rotate");
     }
-};
+}
 
 // Back To Top Button
 
@@ -156,9 +156,9 @@ const themeSettings = document.querySelectorAll("#settings_siteTheme .selection-
 
 themeSettings.forEach((selection) => {
     selection.addEventListener("input", assignTheme);
-    if(selection.querySelector("input").value === settings.theme) {
+    if(parseInt(selection.querySelector("input").value) === settings.theme) {
         selection.querySelector("input").setAttribute("checked", "checked")
-    };
+    }
 });
 
 function assignTheme(e) {
@@ -167,16 +167,15 @@ function assignTheme(e) {
         selection.querySelector("input").removeAttribute("checked")
     });
     e.target.setAttribute("checked", "checked");
-    theme = option;
-    settings.theme = theme;
+    settings.theme = parseInt(option);
     saveSettings();
     checkTheme();
 }
 
 function checkTheme() {
-    if (settings.theme == 1) {
+    if (settings.theme === 1) {
         document.body.classList.add("lightmode");
-    } else if (settings.theme == 0) {
+    } else if (settings.theme === 0) {
         document.body.classList.remove("lightmode");
     }
 }
@@ -199,7 +198,6 @@ if (battleLogSetBtn && battleLogResetBtn && battleLogLengthInput) {
 function assignLogLength() {
     if (battleLogLengthInput.value < 5 || battleLogLengthInput.value > 100) {
         addLogNotice("Invalid Value!");
-        return;
     } else {
         BattleLog.logLength = battleLogLengthInput.value;
         settings.battleLogLength = BattleLog.logLength;

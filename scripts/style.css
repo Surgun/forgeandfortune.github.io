@@ -2760,7 +2760,6 @@ Rarities
     display: inline-block;
     text-transform: uppercase;
     color: var(--text);
-    margin-bottom: 10px;
     animation: 0.5s scale-in forwards;
 }
 
@@ -2784,10 +2783,13 @@ Rarities
 }
 
 .buildingInfoDesc {
-    color: var(--text-3);
-    transform: scale(0);
+    color: var(--text);
+    /*transform: scale(0);*/
+    opacity: 0;
+    padding: 20px;
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 50%,rgba(0,0,0,0) 100%);
     transform-origin: top;
-    animation: 0.5s 0.75s scale-in forwards;
+    animation: 0.5s 1s fade-in forwards;
 }
 
 .fuseSlotHolder {

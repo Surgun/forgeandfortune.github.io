@@ -2747,6 +2747,7 @@ Rarities
 
 .buildingInfoImage {
     text-align: center;
+    transform-origin: bottom;
     animation: 0.5s scale-in forwards;
 }
 
@@ -2785,7 +2786,7 @@ Rarities
 .buildingInfoDesc {
     color: var(--text-3);
     transform: scale(0);
-    transform-origin: top 200px;
+    transform-origin: top;
     animation: 0.5s 0.75s scale-in forwards;
 }
 

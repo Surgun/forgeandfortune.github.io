@@ -113,12 +113,8 @@ const Inventory = {
         });
     },
     addToInventory(id,rarity,autoSell) {
-        if (this.full()) {
-            this.sellItem(id,rarity);
-        }
-        else if (autoSell >= rarity) {
-            this.sellItem(id,rarity);
-        }
+        if (this.full()) this.sellItem(id,rarity);
+        else if (autoSell >= rarity) this.sellItem(id,rarity);
         else {
             this.findempty(new itemContainer(id,rarity));
             const item = recipeList.idToItem(id);
@@ -262,10 +258,14 @@ const Inventory = {
             if (fuse.rarity > 3) continue;
             fuseFiltered.push(fuse);
         }
+        console.log(fuseFiltered);
         return fuseFiltered;
     },
-    hasThree() {
-        return true;
+    hasThree(id,rarity) {
+        console.log(id,rarity);
+        const inv = this.nonblank().filter(i=> i.id === id && i.rarity === rarity);
+        console.log(inv);
+        return inv.length >= 3;
     }
 }
 

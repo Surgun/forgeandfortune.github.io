@@ -21,6 +21,9 @@ class fuse {
     timeRemaining() {
         return this.getMaxFuse() - this.fuseTime;
     }
+    fuseComplete() {
+        return this.fuseTime === this.getMaxFuse();
+    }
 }
 
 const FusionManager = {
@@ -29,7 +32,10 @@ const FusionManager = {
     fuseNum : 0,
     addFuse(id,rarity) {
         if (this.slots.length === this.maxSlots) return;
-        if (!Inventory.hasThree(id,rarity)) return;
+        if (!Inventory.hasThree(id,rarity-1)) return;
+        Inventory.removeFromInventory(id,rarity-1);
+        Inventory.removeFromInventory(id,rarity-1);
+        Inventory.removeFromInventory(id,rarity-1);
         const newFuse = new fuse(id,rarity);
         newFuse.fuseID = this.fuseNum;
         this.fuseNum += 1;
@@ -40,6 +46,15 @@ const FusionManager = {
         this.slots.forEach(fuse => {
             fuse.addTime(ms);
         });
+        this.slots.forEach(slot => {
+            if (slot.fuseComplete()) {
+                EventManager.addEventFuse({id:slot.id,rarity:slot.rarity});
+            };
+        });
+        if (this.slots.some(s=>s.fuseComplete())) {
+            this.slots = this.slots.filter(s => !s.fuseComplete());
+            refreshFuseSlots();
+        };
         refreshFuseBars();
     },
 }
@@ -65,7 +80,7 @@ function showFuseBldg() {
     const d1 = $("<div/>").addClass("buildingContents"); 
         const d1a = $("<div/>").addClass("fuseHead").html("Fusion Slots");
         d1.append(d1a);
-        const d1b = $("<div/>").addClass("fuseSlotHolder");
+        const d1b = $("<div/>").addClass("fuseSlotHolder").attr("id","fuseBldgSlot");
         FusionManager.slots.forEach(slot => {
             const d1b1 = $("<div/>").addClass("fuseSlot");
             const d1b2 = $("<div/>").addClass("fuseSlotName").html(slot.name);
@@ -114,6 +129,24 @@ function refreshFuseBars() {
     });
 }
 
+function refreshFuseSlots() {
+    const d1b = $("#fuseBldgSlot");
+    d1b.empty();
+    FusionManager.slots.forEach(slot => {
+        const d1b1 = $("<div/>").addClass("fuseSlot");
+        const d1b2 = $("<div/>").addClass("fuseSlotName").html(slot.name);
+        const d1b3 = createFuseBar(slot);
+        d1b1.append(d1b2,d1b3);
+        d1b.append(d1b1);
+    });
+    for (let i=0;i<FusionManager.maxSlots-FusionManager.slots.length;i++) {
+        const d1b4 = $("<div/>").addClass("fuseSlot");
+        const d1b5 = $("<div/>").addClass("fuseSlotName").html("Empty");
+        d1b4.append(d1b5);
+        d1b.append(d1b4);
+    }
+}
+
 $(document).on('click', "#fusionBldg", (e) => {
     e.preventDefault();
     showFuseBldg();
@@ -122,6 +155,6 @@ $(document).on('click', "#fusionBldg", (e) => {
 $(document).on('click', '.fuseStart', (e) => {
     e.preventDefault();
     const id = $(e.target).attr("fuseID");
-    const rarity = $(e.target).attr("fuseRarity");
+    const rarity = parseInt($(e.target).attr("fuseRarity"));
     FusionManager.addFuse(id,rarity);
 })

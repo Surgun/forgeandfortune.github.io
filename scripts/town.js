@@ -72,11 +72,12 @@ function refreshSideTown() {
 
 function showFuseBldg() {
     $buildingContent.empty();
-    const d = $("<div/>").addClass("buildingInfo");
-        const da = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>");
-        const db = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Building</h2>");
-        const dc = $("<div/>").addClass("buildingInfoDesc").html("Fuse three of the same item into a rarity higher of the same item.");
-        d.append(da,db,dc);
+    const d = $("<div/>").addClass("buildingInfo buildingFusion");
+        const da = $("<div/>").addClass("buildingInfoBackground");
+        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fuseBuilding/fusion_building.png'>");
+        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Building</h2>");
+        const dd = $("<div/>").addClass("buildingInfoDesc").html("Fuse three of the same item into a rarity higher of the same item.");
+        d.append(da,db,dc,dd);
     const d1 = $("<div/>").addClass("buildingContents"); 
         const d1a = $("<div/>").addClass("fuseHead").html("Fusion Slots");
         d1.append(d1a);

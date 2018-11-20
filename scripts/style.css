@@ -2710,13 +2710,16 @@ Rarities
 }
 
 .buildingInfo {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px 5px;
+    max-height: 250px;
     background-color: var(--bg-3);
     border-bottom: 2px solid var(--border);
+    overflow: hidden;
 }
 
 .buildingContents {
@@ -2731,9 +2734,26 @@ Rarities
     text-align: center;
 }
 
+.buildingInfoBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .45;
+}
+
+.buildingFusion .buildingInfoBackground {
+    background: url(/images/townImages/fuseBuilding/bg.png);
+}
+
 .buildingInfoImage {
     text-align: center;
+    transform-origin: bottom;
     animation: 0.5s scale-in forwards;
+}
+
+.buildingInfoImage > img {
+    max-height: 125px;
+    filter: drop-shadow(0 0 5px black)
 }
 
 .buildingInfoName {
@@ -2766,7 +2786,7 @@ Rarities
 .buildingInfoDesc {
     color: var(--text-3);
     transform: scale(0);
-    transform-origin: top 200px;
+    transform-origin: top;
     animation: 0.5s 0.75s scale-in forwards;
 }
 

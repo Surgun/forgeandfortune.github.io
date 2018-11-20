@@ -59,7 +59,7 @@ function showFuseBldg() {
     $buildingContent.empty();
     const d = $("<div/>").addClass("buildingInfo buildingFusion");
         const da = $("<div/>").addClass("buildingInfoBackground");
-        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fuseBuilding/building.png'>");
+        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fuseBuilding/fusion_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Building</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Fuse three of the same item into a rarity higher of the same item.");
         d.append(da,db,dc,dd);

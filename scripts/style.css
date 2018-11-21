@@ -55,7 +55,7 @@
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, .isSortableHead {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, .fuseStart {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -63,7 +63,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .fuseSlot, .possibleFusegroup {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -ms-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -2467,7 +2467,7 @@ Rarities
     padding: 20px;
 }
 
-#dungeonTeamButton, .fuseStart {
+#dungeonTeamButton {
     display: inline-flex;
     position: relative;
     margin-top: 20px;
@@ -2501,7 +2501,7 @@ Rarities
     animation: 1s button-active infinite;
 }
 
-#dungeonTeamButton:hover, .fuseStart:hover {
+#dungeonTeamButton:hover {
     background-color: var(--green-light);
 }
 
@@ -2722,8 +2722,8 @@ Rarities
     overflow: hidden;
 }
 
-.buildingContents {
-    padding: 20px 10px;
+.buildingTab {
+    padding: 10px;
     opacity: 0;
     animation: 0.5s 1s fade-in forwards;
 }
@@ -2791,11 +2791,11 @@ Rarities
     animation: 0.5s 1s fade-in forwards;
 }
 
-.fuseSlotHolder {
+#fuseSlots {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 10px;
-    margin: 10px 0;
+    margin: 0;
 }
 
 .fuseSlot {
@@ -2804,6 +2804,78 @@ Rarities
     background-color: var(--bg);
     border: 1px solid var(--border);
     border-radius: 10px;
+}
+
+.possibleFuseHead {
+    margin-top: 15px;
+}
+
+.possibleFuseHolder {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    margin: 0;
+}
+
+.possibleFusegroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.possibleFusegroupHeader {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: var(--bg-2);
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    text-align: center;
+}
+
+.possibleFusegroupHeader.possibleFuseRarity1 {
+    background-color: rgba(27, 223, 69, 0.25);
+    color: rgb(44, 255, 89);
+    text-shadow: 1px 2px 0 black;
+}
+
+.possibleFusegroupHeader.possibleFuseRarity2 {
+    background-color: rgba(2, 121, 223, 0.25);
+    color: rgb(8, 173, 255);
+    text-shadow: 1px 2px 0 black;
+}
+
+.possibleFusegroupHeader.possibleFuseRarity3 {
+    background-color: rgba(243, 6, 144, 0.25);
+    color: rgb(255, 79, 167);
+    text-shadow: 1px 2px 0 black;
+}
+
+.possibleFuse {
+    padding: 15px;
+}
+
+.fuseStart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: var(--bg-2);
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    font-size: .8em;
+    cursor: pointer;
+}
+
+.fuseStart:hover {
+    background-color: var(--bg-3);
 }
 
 /* Events / Mail Content */

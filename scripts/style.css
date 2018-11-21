@@ -2870,6 +2870,7 @@ Rarities
     background-color: var(--bg-2);
     border-top: 1px solid var(--border);
     color: var(--text);
+    font-size: .8em;
     cursor: pointer;
 }
 

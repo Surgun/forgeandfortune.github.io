@@ -266,9 +266,7 @@ const Inventory = {
         return fuseFiltered;
     },
     hasThree(id,rarity) {
-        console.log(id,rarity);
         const inv = this.nonblank().filter(i=> i.id === id && i.rarity === rarity);
-        console.log(inv);
         return inv.length >= 3;
     }
 }

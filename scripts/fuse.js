@@ -31,7 +31,10 @@ const FusionManager = {
     maxSlots : 3,
     fuseNum : 0,
     addFuse(id,rarity) {
-        if (this.slots.length === this.maxSlots) return;
+        if (this.slots.length === this.maxSlots) {
+            Notifications.noFuseSlots();
+            return;
+        }
         if (!Inventory.hasThree(id,rarity-1)) return;
         const fuseDummy = {id:id,rarity:rarity};
         if (ResourceManager.materialAvailable("M001") < this.getFuseCost(fuseDummy)) {
@@ -101,7 +104,7 @@ function refreshFuseSlots() {
     $fuseSlots.empty();
     FusionManager.slots.forEach(slot => {
         const d1 = $("<div/>").addClass("fuseSlot");
-        const d2 = $("<div/>").addClass("fuseSlotName").html(slot.name);
+        const d2 = $("<div/>").addClass("fuseSlotName").html(slot.recipe.itemPicName());
         const d3 = createFuseBar(slot);
         d1.append(d2,d3);
         $fuseSlots.append(d1);

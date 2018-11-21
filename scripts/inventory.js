@@ -132,6 +132,7 @@ const Inventory = {
         this.inv[i] = item;
         refreshInventory();
         refreshWorkerAmts();
+        refreshPossibleFuse();
     },
     craftToInventory(id) {
         const item = recipeList.idToItem(id)
@@ -174,6 +175,7 @@ const Inventory = {
                 this.inv[i] = null;
                 refreshInventory();
                 refreshWorkerAmts();
+                refreshPossibleFuse();
                 return;
             }
         }
@@ -183,6 +185,7 @@ const Inventory = {
         this.inv.push(null);
         refreshInventory();
         refreshWorkerAmts();
+        refreshPossibleFuse();
     },
     sellInventory(indx) {
         const item = this.inv[indx];
@@ -190,6 +193,7 @@ const Inventory = {
         this.sellItem(item.id,item.rarity);
         refreshInventory();
         refreshWorkerAmts();
+        refreshPossibleFuse();
     },
     sellItem(id,rarity) {
         const gold = recipeList.idToItem(id).value*(rarity+1);
@@ -221,6 +225,7 @@ const Inventory = {
         }
         refreshInventory();
         refreshWorkerAmts();
+        refreshPossibleFuse();
     },
     getMaxPowByTypes(types) {
         //given a list of types, return highest power
@@ -258,7 +263,6 @@ const Inventory = {
             if (fuse.rarity > 3) continue;
             fuseFiltered.push(fuse);
         }
-        console.log(fuseFiltered);
         return fuseFiltered;
     },
     hasThree(id,rarity) {

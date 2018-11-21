@@ -8,6 +8,13 @@ class fuse {
         this.rarity = rarity;
         this.fuseTime = 0;
     }
+    createSave() {
+        const save = {};
+        save.id = this.id;
+        save.rarity = this.rarity;
+        save.fuseTime = this.fuseTime;
+        return save;
+    }
     addTime(ms) {
         this.fuseTime += ms;
         this.fuseTime = Math.min(this.fuseTime,this.getMaxFuse());
@@ -30,6 +37,25 @@ const FusionManager = {
     slots : [],
     maxSlots : 3,
     fuseNum : 0,
+    createSave() {
+        const save = {};
+        save.maxSlots = this.maxSlots;
+        save.slots = [];
+        this.slots.forEach(slot => {
+            console.log(slot.createSave());
+            save.slots.push(slot.createSave());
+        });
+        return save;
+    },
+    loadSave(save) {
+        save.slots.forEach(s => {
+            console.log(s);
+            const slot = new fuse(s.id,s.rarity);
+            slot.fuseTime = s.fuseTime;
+            this.slots.push(slot);
+        });
+        this.maxSlots = save.maxSlots;
+    },
     addFuse(id,rarity) {
         if (this.slots.length === this.maxSlots) {
             Notifications.noFuseSlots();

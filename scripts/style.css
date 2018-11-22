@@ -2819,11 +2819,16 @@ Rarities
     border-radius: 10px;
 }
 
-.fuseSlotName {
+.fuseSlotName, .bankItemName, .possibleFuse {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.fuseSlotName > img, .bankItemName > img, .possibleFuse > img {
+    margin-bottom: 5px;
 }
 
 .fuseBarDiv {

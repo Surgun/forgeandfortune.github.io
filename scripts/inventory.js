@@ -133,6 +133,7 @@ const Inventory = {
         refreshInventory();
         refreshWorkerAmts();
         refreshPossibleFuse();
+        refreshBankInventory();
     },
     craftToInventory(id) {
         const item = recipeList.idToItem(id)
@@ -176,6 +177,7 @@ const Inventory = {
                 refreshInventory();
                 refreshWorkerAmts();
                 refreshPossibleFuse();
+                refreshBankInventory();
                 return;
             }
         }
@@ -186,6 +188,7 @@ const Inventory = {
         refreshInventory();
         refreshWorkerAmts();
         refreshPossibleFuse();
+        refreshBankInventory();
     },
     sellInventory(indx) {
         const item = this.inv[indx];
@@ -194,6 +197,7 @@ const Inventory = {
         refreshInventory();
         refreshWorkerAmts();
         refreshPossibleFuse();
+        refreshBankInventory();
     },
     sellItem(id,rarity) {
         const gold = recipeList.idToItem(id).value*(rarity+1);
@@ -226,6 +230,7 @@ const Inventory = {
         refreshInventory();
         refreshWorkerAmts();
         refreshPossibleFuse();
+        refreshBankInventory();
     },
     getMaxPowByTypes(types) {
         //given a list of types, return highest power

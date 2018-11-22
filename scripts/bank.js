@@ -1,0 +1,97 @@
+"use strict";
+
+const $bankInvSlots = $("#bankInvSlots");
+const $bankBankSlots = $("#bankBankSlots");
+
+const BankManager = {
+    slots : [],
+    maxSlots : 20,
+    createSave() {
+        const save = {};
+        save.maxSlots = this.maxSlots;
+        save.slots = [];
+        this.slots.forEach(slot => {
+            save.slots.push(slot.createSave());
+        });
+        return save;
+    },
+    loadSave(save) {
+        this.maxSlots = save.maxSlots;
+        save.slots.forEach(item => {
+            const container = new itemContainer(item.id,item.rarity);
+            container.sharp = item.sharp;
+            this.slots.push(container);
+        });
+    },
+    full() {
+        return this.slots.length === this.maxSlots;
+    },
+    containerToItem(containerID) {
+        return this.slots.find(s=>s.containerID === containerID)
+    },
+    addFromInventory(containerID) {
+        if (this.full()) return;
+        const container = Inventory.containerToItem(containerID);
+        Inventory.removeContainerFromInventory(containerID);
+        this.addContainer(container);
+    },
+    removeContainer(containerID) {
+        this.slots = this.slots.filter(c=>c.containerID !== containerID);
+        refreshBankBank();
+    },
+    addContainer(container) {
+        this.slots.push(container);
+        refreshBankBank();
+    },
+    removeFromBank(containerID) {
+        if (Inventory.full()) return;
+        const container = this.containerToItem(containerID);
+        this.removeContainer(containerID);
+        Inventory.addItemContainerToInventory(container);
+    },
+}
+
+function initiateBankBldg() {
+    refreshBankBank();
+    refreshBankInventory();
+}
+
+function refreshBankInventory() {
+    $bankInvSlots.empty();
+    const d1 = $("<div/>").addClass("bankInvHead").html(`INVENTORY (${Inventory.nonblank().length}/${Inventory.invMax})` );
+    $bankInvSlots.append(d1);
+    Inventory.nonblank().forEach(item => {
+        $bankInvSlots.append(itemCard(item,false));
+    });
+}
+
+function refreshBankBank() {
+    $bankBankSlots.empty();
+    const d1 = $("<div/>").addClass("bankBankHead").html(`BANK (${BankManager.slots.length}/${BankManager.maxSlots})` );
+    $bankBankSlots.append(d1);
+    BankManager.slots.forEach(item => {
+        $bankBankSlots.append(itemCard(item,true));
+    });
+}
+
+function itemCard(item,inBank) {
+    const itemdiv = $("<div/>").addClass("bankItem").addClass("R"+item.rarity);
+    const itemName = $("<div/>").addClass("bankItemName").html(item.picName);
+    const itemProps = $("<div/>").addClass("bankProps").html(item.propDiv());
+    const locationButton = $("<div/>").attr("containerID",item.containerID);
+    if (inBank) locationButton.addClass('bankTake').html("Take");
+    else locationButton.addClass('bankStow').html("Stow");
+    return itemdiv.append(itemName,itemProps, locationButton);
+}
+
+$(document).on("click",".bankTake",(e) => {
+    e.preventDefault();
+    const containerID = parseInt($(e.target).attr("containerID"));
+    BankManager.removeFromBank(containerID);
+});
+
+$(document).on("click",".bankStow",(e) => {
+    e.preventDefault();
+    const containerID = parseInt($(e.target).attr("containerID"));
+    BankManager.addFromInventory(containerID);
+});

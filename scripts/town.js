@@ -3,6 +3,7 @@
 const $buildingList = $("#buildingList");
 const $buildingHeader = $("#buildingHeader");
 const $fuseBuilding = $("#fuseBuilding");
+const $bankBuilding = $("#bankBuilding");
 
 function refreshSideTown() {
     $buildingList.empty();
@@ -26,7 +27,26 @@ function showFuseBldg() {
     initiateFuseBldg();
 }
 
+function showBankBldg() {
+    $(".buildingTab").hide();
+    $bankBuilding.show();
+    $buildingHeader.empty();
+    const d = $("<div/>").addClass("buildingInfo buildingBank");
+        const da = $("<div/>").addClass("buildingInfoBackground");
+        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/bankBuilding/bank_building.png'>");
+        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Bank Building</h2>");
+        const dd = $("<div/>").addClass("buildingInfoDesc").html("Store important items at the bank.");
+        d.append(da,db,dc,dd);
+    $buildingHeader.append(d);
+    initiateBankBldg();    
+}
+
 $(document).on('click', "#fusionBldg", (e) => {
     e.preventDefault();
     showFuseBldg();
+});
+
+$(document).on('click', '#bankBldg', (e) => {
+    e.preventDefault();
+    showBankBldg();
 });

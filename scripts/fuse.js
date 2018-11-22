@@ -42,14 +42,12 @@ const FusionManager = {
         save.maxSlots = this.maxSlots;
         save.slots = [];
         this.slots.forEach(slot => {
-            console.log(slot.createSave());
             save.slots.push(slot.createSave());
         });
         return save;
     },
     loadSave(save) {
         save.slots.forEach(s => {
-            console.log(s);
             const slot = new fuse(s.id,s.rarity);
             slot.fuseTime = s.fuseTime;
             this.slots.push(slot);

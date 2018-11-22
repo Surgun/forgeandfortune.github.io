@@ -69,7 +69,6 @@ const EventManager = {
     addEventFuse(container) {
         const eventTemplate = this.idToEventDB("E009")
         const event = new Event(eventTemplate);
-        console.log(event.author);
         event.itemReward = container;
         event.eventNum = this.eventNum;
         this.eventNum += 1;
@@ -197,7 +196,6 @@ $(document).on('click', "div.eventList", (e) => {
         const d7 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
         d.append(d7);
     }
-    console.log(event.itemReward);
     if (event.itemReward !== null) {
         const item = recipeList.idToItem(event.itemReward.id);
         const d8 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());

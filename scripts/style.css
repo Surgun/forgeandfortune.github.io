@@ -80,7 +80,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake {
     -webkit-transition: all var(--transition);
     -moz-transition: all var(--transition);
     -ms-transition: all var(--transition);
@@ -88,7 +88,7 @@ body.lightmode {
     transition: all var(--transition);
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .recipeRow, span.beta-tag {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .recipeRow, span.beta-tag, .fuseSlot, .possibleFusegroup, .bankItem {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     -ms-box-shadow: var(--box-shadow);
@@ -637,7 +637,7 @@ body:after {
     color: #c90000;
 }
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead {
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankInvHead, .bankBankHead {
     font-weight: normal;
     font-size: 1rem;
     padding: 0 5px 5px;
@@ -2533,7 +2533,7 @@ Rarities
     padding: 20px;
 }
 
-#dungeonTeamButton, .fuseStart {
+#dungeonTeamButton {
     display: inline-flex;
     position: relative;
     margin-top: 20px;
@@ -2772,20 +2772,24 @@ Rarities
     text-align: center;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
+    cursor: pointer;
 }
 
 .buildingInfo {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px 5px;
+    max-height: 250px;
     background-color: var(--bg-tertiary);
     border-bottom: 2px solid var(--border-primary);
+    overflow: hidden;
 }
 
-.buildingContents {
-    padding: 20px 10px;
+.buildingTab {
+    padding: 10px;
     opacity: 0;
     animation: 0.5s 1s fade-in forwards;
 }
@@ -2796,16 +2800,36 @@ Rarities
     text-align: center;
 }
 
+.buildingInfoBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .45;
+}
+
+.buildingFusion .buildingInfoBackground {
+    background: url(/images/townImages/fuseBuilding/bg.png);
+}
+
+.buildingBank .buildingInfoBackground {
+    background: url(/images/townImages/bankBuilding/bg.png);
+}
+
 .buildingInfoImage {
     text-align: center;
+    transform-origin: bottom;
     animation: 0.5s scale-in forwards;
+}
+
+.buildingInfoImage > img {
+    max-height: 125px;
+    filter: drop-shadow(0 0 5px black)
 }
 
 .buildingInfoName {
     display: inline-block;
     text-transform: uppercase;
     color: var(--text-primary);
-    margin-bottom: 10px;
     animation: 0.5s scale-in forwards;
 }
 
@@ -2829,25 +2853,164 @@ Rarities
 }
 
 .buildingInfoDesc {
-    color: var(--text-tertiary);
-    transform: scale(0);
-    transform-origin: top 200px;
-    animation: 0.5s 0.75s scale-in forwards;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-primary);
+    opacity: 0;
+    padding: 20px;
+    min-height: 75px;
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 50%,rgba(0,0,0,0) 100%);
+    transform-origin: top;
+    animation: 0.5s 1s fade-in forwards;
 }
 
-.fuseSlotHolder {
+#fuseSlots, #bankInvSlots, #bankBankSlots {
     display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
-    margin: 10px 0;
+    margin: 0;
 }
 
-.fuseSlot {
+.fuseSlot, .bankItem {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
     border-radius: 10px;
+}
+
+.fuseSlotName, .bankItemName, .possibleFuse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fuseSlotName > img, .bankItemName > img, .possibleFuse > img {
+    margin-bottom: 5px;
+}
+
+.fuseBarDiv {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.fuseBar:before {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    left: unset;
+    bottom: 1px;
+}
+
+.possibleFuseHead {
+    margin-top: 15px;
+}
+
+.possibleFuseHolder {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    margin: 0;
+}
+
+.possibleFusegroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.possibleFusegroupHeader {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: var(--bg-2);
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    text-align: center;
+}
+
+.possibleFusegroupHeader.possibleFuseRarity1 {
+    background-color: rgba(27, 223, 69, 0.25);
+    color: rgb(44, 255, 89);
+    text-shadow: 1px 2px 0 black;
+}
+
+.possibleFusegroupHeader.possibleFuseRarity2 {
+    background-color: rgba(2, 121, 223, 0.25);
+    color: rgb(8, 173, 255);
+    text-shadow: 1px 2px 0 black;
+}
+
+.possibleFusegroupHeader.possibleFuseRarity3 {
+    background-color: rgba(243, 6, 144, 0.25);
+    color: rgb(255, 79, 167);
+    text-shadow: 1px 2px 0 black;
+}
+
+.possibleFuse {
+    padding: 15px;
+}
+
+.fuseStart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: var(--bg-2);
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    font-size: .8em;
+    cursor: pointer;
+}
+
+.fuseStart:hover {
+    background-color: var(--bg-3);
+}
+
+#bankInvSlots, #bankBankSlots {
+    margin-bottom: 10px;
+}
+
+.bankInvHead, .bankBankHead {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+}
+
+.bankProps {
+    margin: 10px 0;
+}
+
+.bankStow, .bankTake {
+    margin-top: auto;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: rgba(255,255,255,.05);
+    color: var(--text);
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.bankStow:hover, .bankTake:hover {
+    background-color: rgba(255,255,255,.1);
 }
 
 /* Events / Mail Content */

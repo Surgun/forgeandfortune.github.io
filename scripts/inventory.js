@@ -113,12 +113,8 @@ const Inventory = {
         });
     },
     addToInventory(id,rarity,autoSell) {
-        if (this.full()) {
-            this.sellItem(id,rarity);
-        }
-        else if (autoSell >= rarity) {
-            this.sellItem(id,rarity);
-        }
+        if (this.full()) this.sellItem(id,rarity);
+        else if (autoSell >= rarity) this.sellItem(id,rarity);
         else {
             this.findempty(new itemContainer(id,rarity));
             const item = recipeList.idToItem(id);
@@ -136,6 +132,8 @@ const Inventory = {
         this.inv[i] = item;
         refreshInventory();
         refreshWorkerAmts();
+        refreshPossibleFuse();
+        refreshBankInventory();
     },
     craftToInventory(id) {
         const item = recipeList.idToItem(id)
@@ -178,6 +176,8 @@ const Inventory = {
                 this.inv[i] = null;
                 refreshInventory();
                 refreshWorkerAmts();
+                refreshPossibleFuse();
+                refreshBankInventory();
                 return;
             }
         }
@@ -187,6 +187,8 @@ const Inventory = {
         this.inv.push(null);
         refreshInventory();
         refreshWorkerAmts();
+        refreshPossibleFuse();
+        refreshBankInventory();
     },
     sellInventory(indx) {
         const item = this.inv[indx];
@@ -194,6 +196,8 @@ const Inventory = {
         this.sellItem(item.id,item.rarity);
         refreshInventory();
         refreshWorkerAmts();
+        refreshPossibleFuse();
+        refreshBankInventory();
     },
     sellItem(id,rarity) {
         const gold = recipeList.idToItem(id).value*(rarity+1);
@@ -225,6 +229,8 @@ const Inventory = {
         }
         refreshInventory();
         refreshWorkerAmts();
+        refreshPossibleFuse();
+        refreshBankInventory();
     },
     getMaxPowByTypes(types) {
         //given a list of types, return highest power
@@ -264,8 +270,9 @@ const Inventory = {
         }
         return fuseFiltered;
     },
-    hasThree() {
-        return true;
+    hasThree(id,rarity) {
+        const inv = this.nonblank().filter(i=> i.id === id && i.rarity === rarity);
+        return inv.length >= 3;
     }
 }
 

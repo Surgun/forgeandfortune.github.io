@@ -56,8 +56,8 @@ class itemContainer {
         return save;
     }
     picName() {
-        const prefix = `+${this.sharp}&nbsp;`
-        if (this.sharp > 0) return this.item.itemPic()+prefix+this.item.itemName();
+        const prefix = `<span class="item-prefix">+${this.sharp}</span>`
+        if (this.sharp > 0) return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
         return this.item.itemPicName();
     }
     pow() {

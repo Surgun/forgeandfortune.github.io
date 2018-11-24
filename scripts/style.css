@@ -2817,7 +2817,7 @@ Rarities
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
     background-color: var(--bg);
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -2938,7 +2938,7 @@ Rarities
 
 .bankStow, .bankTake, .smithStage, #smithAttempt {
     margin-top: auto;
-    padding: 10px 15px;
+    padding: 5px 10px;
     width: 100%;
     background-color: rgba(255,255,255,.05);
     color: var(--text);
@@ -2976,10 +2976,27 @@ Rarities
 
 .smith_cost {
     margin-top: 5px;
+    width: 100%;
 }
 
 .smith_cost > img {
     margin: 0 5px;
+}
+
+.item-prefix-name {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.item-prefix {
+    margin-right: 5px;
+}
+
+.EHPEname > .item-prefix-name {
+    width: unset;
 }
 
 /* Events / Mail Content */

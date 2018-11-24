@@ -96,7 +96,7 @@ function itemStageCardSmith() {
     const itemName = $("<div/>").addClass("smithItemName").html(item.picName());
     const itemProps = $("<div/>").addClass("smithProps").html(item.statChange());
     const itemChance = $("<div/>").addClass("smithChance").html(`${bloopSmith.getSmithChance()}% Success`)
-    const locationButton = $("<div/>").attr("id","smithAttempt").html(`Smith <span class="smith_cost">${miscIcons.gold} ${bloopSmith.getSmithCost()}</span>`);
+    const locationButton = $("<div/>").attr("id","smithAttempt").html(` Confirm Smith <span class="smith_cost">${miscIcons.gold} ${bloopSmith.getSmithCost()}</span>`);
     return itemdiv.append(itemName,itemProps, itemChance, locationButton); 
 }
 

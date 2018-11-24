@@ -2951,6 +2951,10 @@ Rarities
     background-color: rgba(255,255,255,.1);
 }
 
+#smithWorkingArea {
+    margin-bottom: 10px;
+}
+
 #smithWorkingArea .smithProps {
     margin: 0 0 0 -15px;
 }
@@ -2968,6 +2972,10 @@ Rarities
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.smith_cost {
+    margin-top: 5px;
 }
 
 .smith_cost > img {

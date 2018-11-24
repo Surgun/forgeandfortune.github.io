@@ -152,11 +152,7 @@ const Inventory = {
     findempty(item) {
         const i = this.inv.findIndex(r=>r===null);
         this.inv[i] = item;
-        refreshInventory();
-        refreshWorkerAmts();
-        refreshPossibleFuse();
-        refreshBankInventory();
-        refreshSmithInventory();
+        refreshInventoryPlaces()
     },
     craftToInventory(id) {
         const item = recipeList.idToItem(id)
@@ -197,11 +193,7 @@ const Inventory = {
             if (ic === null) continue;
             if (ic.id === id && ic.rarity === rarity) {
                 this.inv[i] = null;
-                refreshInventory();
-                refreshWorkerAmts();
-                refreshPossibleFuse();
-                refreshBankInventory();
-                refreshSmithInventory();
+                refreshInventoryPlaces()
                 return;
             }
         }
@@ -209,21 +201,13 @@ const Inventory = {
     removeContainerFromInventory(containerID) {
         this.inv = this.inv.filter(c=>c === null || c.containerID !== containerID);
         this.inv.push(null);
-        refreshInventory();
-        refreshWorkerAmts();
-        refreshPossibleFuse();
-        refreshBankInventory();
-        refreshSmithInventory();
+        refreshInventoryPlaces()
     },
     sellInventory(indx) {
         const item = this.inv[indx];
         this.inv[indx] = null;
         this.sellItem(item.id,item.rarity);
-        refreshInventory();
-        refreshWorkerAmts();
-        refreshPossibleFuse();
-        refreshBankInventory();
-        refreshSmithInventory();
+        refreshInventoryPlaces()
     },
     sellItem(id,rarity) {
         const gold = recipeList.idToItem(id).value*(rarity+1);
@@ -253,11 +237,7 @@ const Inventory = {
         while (this.inv.length < this.invMax) {
             this.inv.push(null);
         }
-        refreshInventory();
-        refreshWorkerAmts();
-        refreshPossibleFuse();
-        refreshBankInventory();
-        refreshSmithInventory();
+        refreshInventoryPlaces()
     },
     getMaxPowByTypes(types) {
         //given a list of types, return highest power
@@ -386,4 +366,12 @@ function gearEquipFromInventory(invID) {
     });
     $(".tabcontent").hide();
     $("#inventoryEquipTab").show();
+}
+
+function refreshInventoryPlaces() {
+    refreshInventory();
+    refreshWorkerAmts();
+    refreshPossibleFuse();
+    refreshBankInventory();
+    refreshSmithInventory();
 }

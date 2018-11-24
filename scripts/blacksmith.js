@@ -31,7 +31,7 @@ const bloopSmith = {
     },
     getSmithCost() {
         if (this.smithSlot === null) return;
-        return Math.floor(0.5*this.smithSlot.goldValue()*this.smithSlot.sharp);
+        return Math.max(1,Math.floor(0.5*this.smithSlot.goldValue()*(this.smithSlot.sharp+1)));
     },
     getSmithChance() {
         if (this.smithSlot === null) return;
@@ -39,7 +39,10 @@ const bloopSmith = {
     },
     smith() {
         if (this.smithSlot === null) return;
-        if (ResourceManager.materialAvailable("M001") < this.getSmithCost()) return;
+        if (ResourceManager.materialAvailable("M001") < this.getSmithCost()) {
+            Notifications.cantAffordSmith();
+            return;
+        }
         ResourceManager.deductMoney(this.getSmithCost());
         const failure = Math.floor(Math.random() * 100);
         if (failure < this.getSmithChance()) {
@@ -49,7 +52,8 @@ const bloopSmith = {
         else {
             this.smithSlot.sharp += 1;
         }
-        initiateSmithBldg();
+        refreshInventoryPlaces()
+        refreshSmithWorking();
     },
 }
 
@@ -60,6 +64,13 @@ function initiateSmithBldg() {
 
 function refreshSmithInventory() {
     $smithInvSlots.empty();
+    const d1 = $("<div/>").addClass("smithInvHead").html("INVENTORY");
+    $smithInvSlots.append(d1);
+    if (Inventory.nonblank().length === 0) {
+        const d2 = $("<div/>").addClass("smithInvBlank").html("No Items in Inventory");
+        $smithInvSlots.append(d2);
+        return;
+    }
     Inventory.nonblank().filter(i=>i.sharp < 10).forEach(item => {
         $smithInvSlots.append(itemCardSmith(item));
     });
@@ -85,7 +96,7 @@ function itemStageCardSmith() {
     const itemName = $("<div/>").addClass("smithItemName").html(item.picName());
     const itemProps = $("<div/>").addClass("smithProps").html(item.statChange());
     const itemChance = $("<div/>").addClass("smithChance").html(`${bloopSmith.getSmithChance()}% Success`)
-    const locationButton = $("<div/>").attr("id","smithAttempt").html("SMITH");
+    const locationButton = $("<div/>").attr("id","smithAttempt").html(`SMITH - ${miscIcons.gold} ${bloopSmith.getSmithCost()}`);
     return itemdiv.append(itemName,itemProps, itemChance, locationButton); 
 }
 

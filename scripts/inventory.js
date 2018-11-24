@@ -259,7 +259,7 @@ const Inventory = {
         })
     },
     getFusePossibilities() {
-        const fuses = this.nonblank().map(i=>{
+        const fuses = this.nonblank().filter(s=>s.sharp === 0).map(i=>{
             return i.id+i.rarity
         });
         const fuseSorted = fuses.reduce((fuseList, item) => {

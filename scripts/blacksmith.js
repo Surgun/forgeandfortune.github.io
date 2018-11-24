@@ -51,6 +51,7 @@ const bloopSmith = {
         }
         else {
             this.smithSlot.sharp += 1;
+            if (this.smithSlot.sharp === 10) this.smithSlot = null;
         }
         refreshInventoryPlaces()
         refreshSmithWorking();

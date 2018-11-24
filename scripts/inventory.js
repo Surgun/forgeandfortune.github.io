@@ -95,10 +95,12 @@ class itemContainer {
         return d;
     }
     statChange() {
-        const d = $("<div/>").addClass("invPropr");
+        const d = $("<div/>").addClass("invProp");
         if (this.pow() > 0) {
-            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","POW").html(`${miscIcons.pow}&nbsp;${this.pow()}&nbsp;->&nbsp;${this.powPlus()}`);
-            d.append(d2);
+            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","POW").html(`<span class="POW_before">${miscIcons.pow}&nbsp;${this.pow()}</span>`);
+            const d3 = `<span class="arrow_right"><i class="fas fa-arrow-right"></i></span>`;
+            const d4 = `<span class="POW_after">${this.powPlus()}</span>`;
+            d.append(d2,d3,d4);
         }
         if (this.hp() > 0) {
             const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","HP").html(`${miscIcons.hp}&nbsp;${this.hp()}&nbsp;->&nbsp;${this.hpPlus()}`);

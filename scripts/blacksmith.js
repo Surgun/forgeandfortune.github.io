@@ -86,7 +86,7 @@ function itemCardSmith(item) {
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
     const itemName = $("<div/>").addClass("smithItemName").html(item.picName());
     const itemProps = $("<div/>").addClass("smithProps").html(item.propDiv());
-    const locationButton = $("<div/>").addClass("smithStage").attr("containerID",item.containerID).html("SMITH");
+    const locationButton = $("<div/>").addClass("smithStage").attr("containerID",item.containerID).html("Smith");
     return itemdiv.append(itemName,itemProps,locationButton);
 }
 
@@ -96,7 +96,7 @@ function itemStageCardSmith() {
     const itemName = $("<div/>").addClass("smithItemName").html(item.picName());
     const itemProps = $("<div/>").addClass("smithProps").html(item.statChange());
     const itemChance = $("<div/>").addClass("smithChance").html(`${bloopSmith.getSmithChance()}% Success`)
-    const locationButton = $("<div/>").attr("id","smithAttempt").html(`SMITH - ${miscIcons.gold} ${bloopSmith.getSmithCost()}`);
+    const locationButton = $("<div/>").attr("id","smithAttempt").html(`Smith <span class="smith_cost">${miscIcons.gold} ${bloopSmith.getSmithCost()}</span>`);
     return itemdiv.append(itemName,itemProps, itemChance, locationButton); 
 }
 

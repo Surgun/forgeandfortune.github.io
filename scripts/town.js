@@ -4,6 +4,7 @@ const $buildingList = $("#buildingList");
 const $buildingHeader = $("#buildingHeader");
 const $fuseBuilding = $("#fuseBuilding");
 const $bankBuilding = $("#bankBuilding");
+const $smithBuilding = $("#smithBuilding");
 
 function refreshSideTown() {
     $buildingList.empty();
@@ -41,6 +42,20 @@ function showBankBldg() {
     initiateBankBldg();    
 }
 
+function showSmithBldg() {
+    $(".buildingTab").hide();
+    $smithBuilding.show();
+    $buildingHeader.empty();
+    const d = $("<div/>").addClass("buildingInfo buildingSmith");
+        const da = $("<div/>").addClass("buildingInfoBackground");
+        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/smithBuilding/smith_building.png'>");
+        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Blacksmith Building</h2>");
+        const dd = $("<div/>").addClass("buildingInfoDesc").html("Upgrade your weapons at the blacksmith.");
+        d.append(da,db,dc,dd);
+    $buildingHeader.append(d);
+    initiateSmithBldg();    
+}
+
 $(document).on('click', "#fusionBldg", (e) => {
     e.preventDefault();
     showFuseBldg();
@@ -49,4 +64,9 @@ $(document).on('click', "#fusionBldg", (e) => {
 $(document).on('click', '#bankBldg', (e) => {
     e.preventDefault();
     showBankBldg();
+});
+
+$(document).on('click', '#smithBldg', (e) => {
+    e.preventDefault();
+    showSmithBldg();
 });

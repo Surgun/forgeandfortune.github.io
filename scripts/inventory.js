@@ -43,7 +43,6 @@ class itemContainer {
         this.item = recipeList.idToItem(id);
         this.name = this.item.name;
         this.type = this.item.type;
-        this.picName = this.item.itemPicName();
         this.rarity = rarity;
         this.containerID = containerid;
         this.sharp = 0;
@@ -56,11 +55,22 @@ class itemContainer {
         save.sharp = this.sharp;
         return save;
     }
+    picName() {
+        const prefix = `+${this.sharp}&nbsp;`
+        if (this.sharp > 0) return this.item.itemPic()+prefix+this.item.itemName();
+        return this.item.itemPicName();
+    }
     pow() {
-        return Math.round(this.item.pow * miscLoadedValues.rarityMod[this.rarity]);
+        return Math.floor(this.item.pow * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*this.sharp));
+    }
+    powPlus() {
+        return Math.floor(this.item.pow * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*(this.sharp+1)));
     }
     hp() {
-        return Math.round(this.item.hp * miscLoadedValues.rarityMod[this.rarity]);
+        return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*this.sharp));
+    }
+    hpPlus() {
+        return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*(this.sharp+1)));
     }
     act() {
         return this.item.act();
@@ -84,11 +94,23 @@ class itemContainer {
         }
         return d;
     }
+    statChange() {
+        const d = $("<div/>").addClass("invPropr");
+        if (this.pow() > 0) {
+            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","POW").html(`${miscIcons.pow}&nbsp;${this.pow()}&nbsp;->&nbsp;${this.powPlus()}`);
+            d.append(d2);
+        }
+        if (this.hp() > 0) {
+            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","HP").html(`${miscIcons.hp}&nbsp;${this.hp()}&nbsp;->&nbsp;${this.hpPlus()}`);
+            d.append(d2);
+        }
+        return d;
+    }
     goldValueFormatted() {
         return ResourceManager.materialIcon("M001") + "&nbsp;" + this.goldValue();
     }
     goldValue() {
-        return (this.item.value * (this.rarity+1)).toString();
+        return (this.item.value * (this.rarity+1));
     }
 
 }
@@ -134,6 +156,7 @@ const Inventory = {
         refreshWorkerAmts();
         refreshPossibleFuse();
         refreshBankInventory();
+        refreshSmithInventory();
     },
     craftToInventory(id) {
         const item = recipeList.idToItem(id)
@@ -178,6 +201,7 @@ const Inventory = {
                 refreshWorkerAmts();
                 refreshPossibleFuse();
                 refreshBankInventory();
+                refreshSmithInventory();
                 return;
             }
         }
@@ -189,6 +213,7 @@ const Inventory = {
         refreshWorkerAmts();
         refreshPossibleFuse();
         refreshBankInventory();
+        refreshSmithInventory();
     },
     sellInventory(indx) {
         const item = this.inv[indx];
@@ -198,6 +223,7 @@ const Inventory = {
         refreshWorkerAmts();
         refreshPossibleFuse();
         refreshBankInventory();
+        refreshSmithInventory();
     },
     sellItem(id,rarity) {
         const gold = recipeList.idToItem(id).value*(rarity+1);
@@ -231,6 +257,7 @@ const Inventory = {
         refreshWorkerAmts();
         refreshPossibleFuse();
         refreshBankInventory();
+        refreshSmithInventory();
     },
     getMaxPowByTypes(types) {
         //given a list of types, return highest power
@@ -290,7 +317,7 @@ function refreshInventory() {
             return;
         }
         itemdiv.addClass("R"+item.rarity)
-        const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName);
+        const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
         const itemCost = $("<div/>").addClass("inventoryItemValue").html(item.goldValueFormatted());
         const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
         const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");

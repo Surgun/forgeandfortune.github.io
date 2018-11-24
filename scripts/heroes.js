@@ -463,7 +463,7 @@ function examineHero(ID) {
         let equipText = "";
         let equipRarity = 0
         if (equip !== null) {
-            equipText = equip.picName;
+            equipText = equip.picName();
             equipRarity = equip.rarity;
         }
         else {
@@ -528,7 +528,7 @@ function examineHeroPossibleEquip(slot,heroID) {
 
     let upgradeAvaialable = false;
     Inventory.listbyType(types).forEach((itemContainer) => {
-        const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName);
+        const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName());
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
         const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());
         let speed = "Fair";

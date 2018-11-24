@@ -80,7 +80,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .footer_more-list {
     -webkit-transition: all var(--transition);
     -moz-transition: all var(--transition);
     -ms-transition: all var(--transition);
@@ -88,7 +88,7 @@ body.lightmode {
     transition: all var(--transition);
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .recipeRow, span.beta-tag, .fuseSlot, .possibleFusegroup, .bankItem {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .recipeRow, span.beta-tag, .fuseSlot, .possibleFusegroup, .bankItem, .footer_more-list {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     -ms-box-shadow: var(--box-shadow);
@@ -3193,7 +3193,7 @@ footer {
     align-items: center;
 }
 
-footer a {
+footer a, .footer_more-btn {
     display: inline-block;
     height: 100%;
     padding: 15px;
@@ -3201,7 +3201,7 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover {
+footer a:hover, .footer_more-btn:hover {
     background-color: var(--bg-tertiary);
 }
 
@@ -3210,7 +3210,7 @@ footer a:hover {
     margin: 0;
 }
 
-#bottom-right a {
+#bottom-right a, .footer_more-btn {
     display: inline-flex;
     align-items: center;
     -webkit-transition: background-color var(--transition);
@@ -3238,6 +3238,52 @@ footer a:hover {
 footer a[href*="discord.gg"]:hover {
     background-color: #7289DA;
     color: #fff;
+}
+
+.footer_more-container {
+    position: relative;
+}
+
+.footer_more-btn {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.footer_more-btn > i {
+    margin-left: 10px;
+}
+
+.footer_more-btn:hover + .footer_more-list, .footer_more-list:hover {
+    transform: scale(1);
+}
+
+.footer_more-list {
+    position: absolute;
+    right: 1px;
+    bottom: 49px;
+    margin: 0;
+    padding: 0;
+    min-width: 200px;
+    list-style: none;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    overflow: hidden;
+    transform: scale(0);
+    transform-origin: bottom;
+}
+
+.footer_more-list li {
+    width: 100%;
+}
+
+.footer_more-list li a {
+    display: flex;
+    width: 100%;
+}
+
+.footer_more-list li a > i {
+    min-width: 25px;
+    text-align: center;
 }
 
 #clearSave, #exportSave, #importSave, #cloudSave, #settings {

@@ -33,6 +33,9 @@ class Item{
     itemPicName() {
         return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
     }
+    itemName() {
+        return "<div class='item-name'>"+this.name+"</div>";
+    }
     itemPic() {
         return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>";
     }

@@ -96,8 +96,8 @@ const BattleLog = {
         $drLogMob.empty();
     },
     advanceFloor(num) {
-        this.addHeroLog(`--- Floor ${num} ---`);
-        this.addEnemyLog(`--- Floor ${num} ---`);
+        this.addHeroLog(`<div class="battleLogFloor">Floor ${num}</div>`);
+        this.addEnemyLog(`<div class="battleLogFloor">Floor ${num}</div>`);
     },
     mobDrops(name,drops) {
         if (drops.length === 0) return;

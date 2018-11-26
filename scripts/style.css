@@ -108,7 +108,7 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
@@ -2844,9 +2844,19 @@ Rarities
     margin-bottom: 5px;
 }
 
+.fuseSlotName {
+    margin-bottom: 20px;
+}
+
 .fuseBarDiv {
-    margin-top: 15px;
     width: 100%;
+    height: 26px;
+    line-height: 26px;
+    margin: auto 0 5px;
+    background-color: rgba(255,255,255,0.05);
+    border: 0;
+    border-radius: 5px;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -2857,7 +2867,12 @@ Rarities
     align-items: center;
     width: 100%;
     left: unset;
-    bottom: 1px;
+    top: 55%;
+    bottom: 50%;
+}
+
+.fuseBarFill {
+    background-color: rgba(255,255,255,0.15);
 }
 
 .possibleFuseHead {
@@ -2990,6 +3005,11 @@ Rarities
 
 .smith_cost > img {
     margin: 0 5px;
+}
+
+.smithInvBlank {
+    padding: 0 5px;
+    color: var(--text-3);
 }
 
 .item-prefix-name {

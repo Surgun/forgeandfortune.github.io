@@ -108,7 +108,7 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
@@ -2450,6 +2450,15 @@ Rarities
 .logEntry {
     border-bottom: 1px solid var(--border-3);
     padding: 10px 5px;
+}
+
+.battleLogFloor {
+    background-color: var(--bg-2);
+    padding: 5px;
+    margin: 5px 0 5px -5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--highlight);
 }
 
 #drTop {

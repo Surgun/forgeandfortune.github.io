@@ -400,10 +400,10 @@ body {
 }
 
 #ietEquip {
-    margin: 0;
+    margin: 0 0 20px 0;
 }
 
-.inventoryItemName {
+.inventoryItemName, .equipItemName {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -414,13 +414,13 @@ body {
     padding: 10px;
 }
 
-.inventoryItemName > .item-name {
+.inventoryItemName > .item-name, .equipItemName > .item-name {
     margin-top: 10px;
     width: 100%;
     align-self: flex-start;
 }
 
-.inventoryItemName > img {
+.inventoryItemName > img, .equipItemName > img {
     display: inline-block;
     height: 24px;
     pointer-events: none;
@@ -517,15 +517,6 @@ body {
 
 #closeEquipItem {
     margin: 20px 0;
-}
-
-.equipItem {
-    display: inline-flex;
-    padding: 15px;
-    margin-bottom: 20px;
-    min-width: 155px;
-    min-height: 175px;
-    text-align: center;
 }
 
 .equipItemProps {
@@ -676,19 +667,19 @@ Rarities
     opacity: 1;
 }
 
-.inventoryItem > .inventoryItemName, .bankItem > .bankItemName, .smithItem > .smithItemName {
+.inventoryItem > .inventoryItemName, .equipItem > .equipItemName, .bankItem > .bankItemName, .smithItem > .smithItemName {
     text-shadow: 1px 2px 0 black;
 }
 
-.inventoryItem.R1 > .inventoryItemName, .bankItem.R1 > .bankItemName, .smithItem.R1 > .smithItemName  {
+.inventoryItem.R1 > .inventoryItemName, .equipItem.R1 > .equipItemName, .bankItem.R1 > .bankItemName, .smithItem.R1 > .smithItemName  {
     color: rgb(44, 255, 89);
 }
 
-.inventoryItem.R2 > .inventoryItemName, .bankItem.R2 > .bankItemName, .smithItem.R2 > .smithItemName  {
+.inventoryItem.R2 > .inventoryItemName, .equipItem.R2 > .equipItemName, .bankItem.R2 > .bankItemName, .smithItem.R2 > .smithItemName  {
     color: rgb(8, 173, 255);
 }
 
-.inventoryItem.R3 > .inventoryItemName, .bankItem.R3 > .bankItemName, .smithItem.R3 > .smithItemName  {
+.inventoryItem.R3 > .inventoryItemName, .equipItem.R3 > .equipItemName, .bankItem.R3 > .bankItemName, .smithItem.R3 > .smithItemName  {
     color: rgb(255, 79, 167);
 }
 

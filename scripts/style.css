@@ -2753,6 +2753,7 @@ Rarities
 }
 
 .buildingTab {
+    display: none;
     padding: 10px;
     opacity: 0;
     animation: 0.5s 0.5s fade-in forwards;

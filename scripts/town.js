@@ -34,7 +34,7 @@ function showFuseBldg() {
 
 function showBankBldg() {
     $(".buildingTab").removeClass("bldgTabActive").hide();
-    $bankBuildinge.addClass("bldgTabActive").show();
+    $bankBuilding.addClass("bldgTabActive").show();
     $buildingHeader.empty();
     const d = $("<div/>").addClass("buildingInfo buildingBank");
         const da = $("<div/>").addClass("buildingInfoBackground");

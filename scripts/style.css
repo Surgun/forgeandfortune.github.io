@@ -108,12 +108,12 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #townContainer {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #townContainer, .inventoryItem, .equipItem {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -392,11 +392,15 @@ body {
     opacity: 1;
 }
 
-#inventory {
+#inventory, #ietEquip {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
     margin: 10px;
+}
+
+#ietEquip {
+    margin: 0;
 }
 
 .inventoryItem, .equipItem {
@@ -405,8 +409,10 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 10px;
     background-color: var(--bg);
     border: 1px solid var(--border);
+    border-radius: 10px;
     color: var(--text);
     min-height: 212px;
 }
@@ -417,7 +423,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 0.9em;
     flex-grow: 1;
     width: 100%;
     padding: 10px;
@@ -487,11 +492,25 @@ body {
     align-items: center;
 }
 
-.inventoryEquip {
+.inventoryButtons {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
     margin-top: auto;
+    width: 100%;
+    text-align: center;
 }
 
-.inventorySell, .inventoryEquip, .heroEquipBlockEquipButton {
+.inventoryEquip, .inventorySell {
+    flex: 1;
+    margin: 10px 2.5px 0;
+    padding:  8px 10px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.heroEquipBlockEquipButton {
     width: 85%;
     background-color: rgba(255,255,255,0.05);
     text-align: center;
@@ -502,11 +521,8 @@ body {
 }
 
 .inventorySell:hover, .inventoryEquip:hover, .heroEquipBlockEquipButton:hover {
-    background-color: rgba(255,255,255,0.15);
-}
-
-.inventorySell {
-    margin-bottom: 10px;
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
 #inventoryEquipTab {
@@ -524,10 +540,6 @@ body {
     min-width: 155px;
     min-height: 175px;
     text-align: center;
-}
-
-.equipItemName {
-    font-size: 0.9em;
 }
 
 .equipItemProps {
@@ -603,21 +615,21 @@ Rarities
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(27, 223, 69, 0.15) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
-    border-color: rgba(27, 223, 69, 0.25);
+    /*border-color: rgba(27, 223, 69, 0.25);*/
 }
 
 .R2 { /* Blue */
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(2, 121, 223, 0.15) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
-    border-color: rgba(2, 121, 223, 0.25);
+    /*border-color: rgba(2, 121, 223, 0.25);*/
 }
 
 .R3 { /* Pink */
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(243, 6, 144, 0.15) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
-    border-color: rgba(243, 6, 144, 0.25);
+    /*border-color: rgba(243, 6, 144, 0.25);*/
 }
 
 .inventoryItem.R0 > .inventoryItemName:before, 
@@ -626,12 +638,13 @@ Rarities
 .inventoryItem.R3 > .inventoryItemName:before {
     display: block;
     position: absolute;  
-    top: 5px;
-    right: 5px;
-    left: 5px;
-    border-radius: 15px;
-    padding: 5px;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    border-radius: 5px;
+    padding: 8px 10px;
     opacity: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
     z-index: 10;
 }
 
@@ -661,6 +674,22 @@ Rarities
 
 .inventoryItem.R0 > .inventoryItemName:hover:before, .inventoryItem.R1 > .inventoryItemName:hover:before, .inventoryItem.R2 > .inventoryItemName:hover:before, .inventoryItem.R3 > .inventoryItemName:hover:before {
     opacity: 1;
+}
+
+.inventoryItem > .inventoryItemName {
+    text-shadow: 1px 2px 0 black;
+}
+
+.inventoryItem.R1 > .inventoryItemName {
+    color: rgb(44, 255, 89);
+}
+
+.inventoryItem.R2 > .inventoryItemName {
+    color: rgb(8, 173, 255);
+}
+
+.inventoryItem.R3 > .inventoryItemName {
+    color: rgb(255, 79, 167);
 }
 
 /* 
@@ -2967,12 +2996,13 @@ Rarities
     background-color: rgba(255,255,255,.05);
     color: var(--text);
     text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .bankStow:hover, .bankTake:hover, .smithStage:hover, #smithAttempt:hover {
     background-color: rgba(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
 #smithWorkingArea {

@@ -141,7 +141,7 @@ function refreshFuseSlots() {
         const d1 = $("<div/>").addClass("fuseSlot");
         const d2 = $("<div/>").addClass("fuseSlotName").html(slot.recipe.itemPicName());
         const d3 = createFuseBar(slot);
-        const d4 = $("<div/>").addClass("fuseSlotCollect").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html("COLLECT").hide();
+        const d4 = $("<div/>").addClass("fuseSlotCollect").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html("Collect").hide();
         if (slot.fuseComplete()) {
             d3.hide();
             d4.show();

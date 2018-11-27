@@ -105,6 +105,12 @@ const Notifications = {
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
     },
+    fuseInvFull() {
+        const text = `Inventory is currently full.`; // Text that is to be shown in the toast
+        const heading = 'Cannot collect Fuse'; // Optional heading to be shown on the toast
+        const icon = 'error'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
     cantAffordFuse() {
         const text = "You do not have enough gold."; // Text that is to be shown in the toast
         const heading = 'Cannot Start Fuse'; // Optional heading to be shown on the toast

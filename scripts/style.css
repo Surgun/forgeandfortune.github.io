@@ -80,7 +80,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart,.bankStow, .bankTake, .smithStage, #smithAttempt, .footer_more-list {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart,.bankStow, .bankTake, .smithStage, #smithAttempt, .fuseSlotCollect, .footer_more-list {
     -webkit-transition: all var(--transition);
     -moz-transition: all var(--transition);
     -ms-transition: all var(--transition);
@@ -160,12 +160,12 @@ body:after {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, .selection-container, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, .selection-container, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .inventoryItem, .equipItem {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -444,44 +444,35 @@ body:after {
     opacity: 1;
 }
 
-#inventory {
+#inventory, #ietEquip {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
     margin: 10px;
 }
 
-.inventoryItem, .equipItem {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
-    color: var(--text-primary);
-    min-height: 212px;
+#ietEquip {
+    margin: 0 0 20px 0;
 }
 
-.inventoryItemName {
+.inventoryItemName, .equipItemName {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 0.9em;
     flex-grow: 1;
     width: 100%;
     padding: 10px;
 }
 
-.inventoryItemName > .item-name {
+.inventoryItemName > .item-name, .equipItemName > .item-name {
     margin-top: 10px;
     width: 100%;
     align-self: flex-start;
 }
 
-.inventoryItemName > img {
+.inventoryItemName > img, .equipItemName > img {
     display: inline-block;
     height: 24px;
     pointer-events: none;
@@ -539,11 +530,25 @@ body:after {
     align-items: center;
 }
 
-.inventoryEquip {
+.inventoryButtons {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
     margin-top: auto;
+    width: 100%;
+    text-align: center;
 }
 
-.inventorySell, .inventoryEquip, .heroEquipBlockEquipButton {
+.inventoryEquip, .inventorySell {
+    flex: 1;
+    margin: 10px 2.5px 0;
+    padding:  8px 10px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.heroEquipBlockEquipButton {
     width: 85%;
     background-color: rgba(255,255,255,0.05);
     text-align: center;
@@ -554,11 +559,8 @@ body:after {
 }
 
 .inventorySell:hover, .inventoryEquip:hover, .heroEquipBlockEquipButton:hover {
-    background-color: rgba(255,255,255,0.15);
-}
-
-.inventorySell {
-    margin-bottom: 10px;
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
 #inventoryEquipTab {
@@ -567,19 +569,6 @@ body:after {
 
 #closeEquipItem {
     margin: 20px 0;
-}
-
-.equipItem {
-    display: inline-flex;
-    padding: 15px;
-    margin-bottom: 20px;
-    min-width: 155px;
-    min-height: 175px;
-    text-align: center;
-}
-
-.equipItemName {
-    font-size: 0.9em;
 }
 
 .equipItemProps {
@@ -655,21 +644,35 @@ Rarities
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(27, 223, 69, 0.15) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
-    border-color: rgba(27, 223, 69, 0.25);
+    /*border-color: rgba(27, 223, 69, 0.25);*/
 }
 
 .R2 { /* Blue */
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(2, 121, 223, 0.15) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
-    border-color: rgba(2, 121, 223, 0.25);
+    /*border-color: rgba(2, 121, 223, 0.25);*/
 }
 
 .R3 { /* Pink */
     background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(243, 6, 144, 0.15) 100%);
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
-    border-color: rgba(243, 6, 144, 0.25);
+    /*border-color: rgba(243, 6, 144, 0.25);*/
+}
+
+.inventoryItem, .equipItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+    color: var(--text-primary);
+    min-height: 212px;
 }
 
 .inventoryItem.R0 > .inventoryItemName:before, 
@@ -678,12 +681,13 @@ Rarities
 .inventoryItem.R3 > .inventoryItemName:before {
     display: block;
     position: absolute;  
-    top: 5px;
-    right: 5px;
-    left: 5px;
-    border-radius: 15px;
-    padding: 5px;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    border-radius: 5px;
+    padding: 8px 10px;
     opacity: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
     z-index: 10;
 }
 
@@ -713,6 +717,22 @@ Rarities
 
 .inventoryItem.R0 > .inventoryItemName:hover:before, .inventoryItem.R1 > .inventoryItemName:hover:before, .inventoryItem.R2 > .inventoryItemName:hover:before, .inventoryItem.R3 > .inventoryItemName:hover:before {
     opacity: 1;
+}
+
+.inventoryItem > .inventoryItemName, .equipItem > .equipItemName, .bankItem > .bankItemName, .smithItem > .smithItemName {
+    text-shadow: 1px 2px 0 black;
+}
+
+.inventoryItem.R1 > .inventoryItemName, .equipItem.R1 > .equipItemName, .bankItem.R1 > .bankItemName, .smithItem.R1 > .smithItemName  {
+    color: rgb(44, 255, 89);
+}
+
+.inventoryItem.R2 > .inventoryItemName, .equipItem.R2 > .equipItemName, .bankItem.R2 > .bankItemName, .smithItem.R2 > .smithItemName  {
+    color: rgb(8, 173, 255);
+}
+
+.inventoryItem.R3 > .inventoryItemName, .equipItem.R3 > .equipItemName, .bankItem.R3 > .bankItemName, .smithItem.R3 > .smithItemName  {
+    color: rgb(255, 79, 167);
 }
 
 /* 
@@ -2910,9 +2930,19 @@ Rarities
     margin-bottom: 5px;
 }
 
+.fuseSlotName {
+    padding: 10px 0;
+}
+
 .fuseBarDiv {
-    margin-top: 15px;
     width: 100%;
+    height: 26px;
+    line-height: 26px;
+    margin: auto 0 5px;
+    background-color: rgba(255,255,255,0.05);
+    border: 0;
+    border-radius: 5px;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -2923,7 +2953,12 @@ Rarities
     align-items: center;
     width: 100%;
     left: unset;
-    bottom: 1px;
+    top: 55%;
+    bottom: 50%;
+}
+
+.fuseBarFill {
+    background-color: rgba(255,255,255,0.15);
 }
 
 .possibleFuseHead {
@@ -3011,19 +3046,20 @@ Rarities
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #smithAttempt {
+.bankStow, .bankTake, .smithStage, #smithAttempt, .fuseSlotCollect {
     margin-top: auto;
-    padding: 5px 10px;
+    padding: 8px 10px;
     width: 100%;
     background-color: rgba(255,255,255,.05);
-    color: var(--text);
+    color: var(--text-primary);
     text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #smithAttempt:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #smithAttempt:hover, .fuseSlotCollect:hover {
     background-color: rgba(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
 #smithWorkingArea {
@@ -3056,6 +3092,11 @@ Rarities
 
 .smith_cost > img {
     margin: 0 5px;
+}
+
+.smithInvBlank {
+    padding: 0 5px;
+    color: var(--text-tertiary);
 }
 
 .item-prefix-name {

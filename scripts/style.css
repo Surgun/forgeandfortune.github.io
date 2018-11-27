@@ -676,6 +676,22 @@ Rarities
     opacity: 1;
 }
 
+.inventoryItem > .inventoryItemName {
+    text-shadow: 1px 2px 0 black;
+}
+
+.inventoryItem.R1 > .inventoryItemName {
+    color: rgb(44, 255, 89);
+}
+
+.inventoryItem.R2 > .inventoryItemName {
+    color: rgb(8, 173, 255);
+}
+
+.inventoryItem.R3 > .inventoryItemName {
+    color: rgb(255, 79, 167);
+}
+
 /* 
 =============================================
 

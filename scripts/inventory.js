@@ -302,9 +302,11 @@ function refreshInventory() {
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
         const itemCost = $("<div/>").addClass("inventoryItemValue").html(item.goldValueFormatted());
         const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
+        const actionBtns = $("<div/>").addClass("inventoryButtons");
         const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
         const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
-        itemdiv.append(itemName,itemCost,itemProps, equipButton, sellButton);
+        actionBtns.append(equipButton,sellButton);
+        itemdiv.append(itemName,itemCost,itemProps,actionBtns);
         $inventory.append(itemdiv);
     });
     $sideInventory.html(`${Inventory.inventoryCount()}/20`)

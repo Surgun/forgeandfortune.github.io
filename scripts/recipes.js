@@ -264,7 +264,6 @@ function refreshRecipeFilters() {
 }
 
 function initializeRecipes(type,sortType,heading) {
-    console.log(type,sortType);
     recipeList.recipePop = type;
     //filtering
     let rFilter = recipeList.recipes.filter(r => r.owned);

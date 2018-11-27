@@ -16,8 +16,7 @@ class fuse {
         return save;
     }
     addTime(ms) {
-        this.fuseTime += ms;
-        this.fuseTime = Math.min(this.fuseTime,this.getMaxFuse());
+        this.fuseTime = Math.min(this.fuseTime+ms,this.getMaxFuse());
     }
     getMaxFuse() {
         return this.recipe.craftTime*this.rarity;
@@ -50,6 +49,8 @@ const FusionManager = {
         save.slots.forEach(s => {
             const slot = new fuse(s.id,s.rarity);
             slot.fuseTime = s.fuseTime;
+            slot.fuseID = this.fuseNum;
+            this.fuseNum += 1;
             this.slots.push(slot);
         });
         this.maxSlots = save.maxSlots;
@@ -79,20 +80,26 @@ const FusionManager = {
         this.slots.forEach(fuse => {
             fuse.addTime(ms);
         });
-        this.slots.forEach(slot => {
-            if (slot.fuseComplete()) {
-                EventManager.addEventFuse({id:slot.id,rarity:slot.rarity});
-            };
-        });
-        if (this.slots.some(s=>s.fuseComplete())) {
-            this.slots = this.slots.filter(s => !s.fuseComplete());
-            refreshFuseSlots();
-        };
         refreshFuseBars();
     },
     getFuseCost(fuse) {
         const item = recipeList.idToItem(fuse.id);
         return 4*item.value*fuse.rarity;
+    },
+    aFuseIsDone() {
+        return this.slots.some(f=>f.fuseComplete());
+    },
+    collectFuse(fuseID) {
+        const slot = this.slots.find(f=>f.fuseID === fuseID);
+        console.log(fuseID);
+        if (slot === undefined || !slot.fuseComplete()) return;
+        if (Inventory.full()) {
+            Notifications.fuseInvFull();
+            return;
+        }
+        Inventory.addToInventory(slot.id,slot.rarity,-1);
+        this.slots = this.slots.filter(f=>f.fuseID !== fuseID);
+        refreshFuseSlots();
     }
 }
 
@@ -105,7 +112,7 @@ function createFuseBar(fuse) {
     const fusePercent = fuse.fuseTime/fuse.getMaxFuse();
     const fuseAmt = msToTime(fuse.getMaxFuse()-fuse.fuseTime);
     const fuseWidth = (fusePercent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("fuseBarDiv");
+    const d1 = $("<div/>").addClass("fuseBarDiv").attr("id","fuseBarDiv"+fuse.fuseID);
     const d1a = $("<div/>").addClass("fuseBar").attr("data-label",fuseAmt).attr("id","fuseBar"+fuse.fuseID);
     const s1 = $("<span/>").addClass("fuseBarFill").attr("id","fuseFill"+fuse.fuseID).css('width', fuseWidth);
     return d1.append(d1a,s1);
@@ -113,6 +120,10 @@ function createFuseBar(fuse) {
 
 function refreshFuseBars() {
     FusionManager.slots.forEach(fuse => {
+        if (fuse.fuseComplete()) {
+            $("#fuseBarDiv"+fuse.fuseID).hide();
+            $("#fuseSlotCollect"+fuse.fuseID).show();
+        }
         const fusePercent = fuse.fuseTime/fuse.getMaxFuse();
         const fuseAmt = msToTime(fuse.getMaxFuse()-fuse.fuseTime);
         const fuseWidth = (fusePercent*100).toFixed(1)+"%";
@@ -130,7 +141,12 @@ function refreshFuseSlots() {
         const d1 = $("<div/>").addClass("fuseSlot");
         const d2 = $("<div/>").addClass("fuseSlotName").html(slot.recipe.itemPicName());
         const d3 = createFuseBar(slot);
-        d1.append(d2,d3);
+        const d4 = $("<div/>").addClass("fuseSlotCollect").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html("COLLECT").hide();
+        if (slot.fuseComplete()) {
+            d3.hide();
+            d4.show();
+        }
+        d1.append(d2,d3,d4);
         $fuseSlots.append(d1);
     });
     for (let i=0;i<FusionManager.maxSlots-FusionManager.slots.length;i++) {
@@ -163,4 +179,11 @@ $(document).on('click', '.fuseStart', (e) => {
     const id = $(e.target).attr("fuseID");
     const rarity = parseInt($(e.target).attr("fuseRarity"));
     FusionManager.addFuse(id,rarity);
+});
+
+$(document).on('click', '.fuseSlotCollect', (e) => {
+    e.preventDefault();
+    const id = parseInt($(e.target).attr("fuseid"));
+    console.log(id);
+    FusionManager.collectFuse(id);
 });

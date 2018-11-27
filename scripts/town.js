@@ -6,6 +6,10 @@ const $fuseBuilding = $("#fuseBuilding");
 const $bankBuilding = $("#bankBuilding");
 const $smithBuilding = $("#smithBuilding");
 
+const TownManager = {
+    lastBldg : null,
+}
+
 function refreshSideTown() {
     $buildingList.empty();
     const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html("Bank");
@@ -15,8 +19,8 @@ function refreshSideTown() {
 }
 
 function showFuseBldg() {
-    $(".buildingTab").hide();
-    $fuseBuilding.show();
+    $(".buildingTab").removeClass("bldgTabActive").hide();
+    $fuseBuilding.addClass("bldgTabActive").show();
     $buildingHeader.empty();
     const d = $("<div/>").addClass("buildingInfo buildingFusion");
         const da = $("<div/>").addClass("buildingInfoBackground");
@@ -29,8 +33,8 @@ function showFuseBldg() {
 }
 
 function showBankBldg() {
-    $(".buildingTab").hide();
-    $bankBuilding.show();
+    $(".buildingTab").removClass("bldgTabActive").hide();
+    $bankBuildinge.addClass("bldgTabActive").show();
     $buildingHeader.empty();
     const d = $("<div/>").addClass("buildingInfo buildingBank");
         const da = $("<div/>").addClass("buildingInfoBackground");
@@ -43,8 +47,8 @@ function showBankBldg() {
 }
 
 function showSmithBldg() {
-    $(".buildingTab").hide();
-    $smithBuilding.show();
+    $(".buildingTab").removeClass("bldgTabActive").hide();
+    $smithBuilding.addClass("bldgTabActive").show();
     $buildingHeader.empty();
     const d = $("<div/>").addClass("buildingInfo buildingSmith");
         const da = $("<div/>").addClass("buildingInfoBackground");
@@ -58,15 +62,21 @@ function showSmithBldg() {
 
 $(document).on('click', "#fusionBldg", (e) => {
     e.preventDefault();
+    if (TownManager.lastBldg === "fusion") return;
+    TownManager.lastBldg = "fusion";
     showFuseBldg();
 });
 
 $(document).on('click', '#bankBldg', (e) => {
     e.preventDefault();
+    if (TownManager.lastBldg === "bank") return;
+    TownManager.lastBldg = "bank";
     showBankBldg();
 });
 
 $(document).on('click', '#smithBldg', (e) => {
     e.preventDefault();
+    if (TownManager.lastBldg === "smith") return;
+    TownManager.lastBldg = "smith";
     showSmithBldg();
 });

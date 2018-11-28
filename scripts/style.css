@@ -2748,6 +2748,7 @@ Rarities
     padding: 20px 5px;
     max-height: 250px;
     background-color: var(--bg-3);
+    border-top: 2px solid var(--border);
     border-bottom: 2px solid var(--border);
     overflow: hidden;
 }
@@ -2966,6 +2967,14 @@ Rarities
 
 .fuseStart:hover {
     background-color: var(--bg-3);
+}
+
+#bankContainer {
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+    grid-gap: 20px;
+    justify-content: start;
+    align-items: start;
 }
 
 #bankInvSlots, #bankBankSlots {

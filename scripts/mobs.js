@@ -9,8 +9,12 @@ const MobManager = {
         return this.monsterDB.find(mob => mob.id === id);
     },
     generateDungeonMobs(dungeonID, floorNum) {
+        disableEventLayers();
         if (dungeonID !== "d1") return;
-        if (isItChristmas() && randomChance(5,100)) return this.christmasFloor(floorNum);
+        if (isItChristmas() && randomChance(5,100)) {
+            enableChristmasLayers();
+            return this.christmasFloor(floorNum);
+        }
         const mobs = [];
         let mobCount = 1;
         if (floorNum >= 100) mobCount += 1;

@@ -92,7 +92,7 @@ function currentDate() {
 }
 
 function randomChance(num,total) {
-    //return ture if random(0-tota;) is less than num
+    //return true if random(0-total) is less than num
     return num > Math.floor(Math.random() * total);
 }
 

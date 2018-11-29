@@ -2269,37 +2269,72 @@ Rarities
 }
 
 .bgContainer .layer1 {
-    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Background.jpg');
+    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer1.jpg');
     background-size: 500px;
 }
 
 .bgContainer .layer2 {
-    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png');
+    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer2.png');
     background-size: 500px;
-    
 }
 
 .bgContainer .layer3 {
-    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Front.png');
+    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer3.png');
     background-size: 500px;
 }
 
 .bgContainer .layer4 {
-    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Front.png');
+    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer4.png');
     background-size: 500px;
     -webkit-animation: 8s linear infinite gleam;
     animation: 8s linear infinite gleam;
 }
 
 .bgContainer .layer5 {
-    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Light_Back.png');
+    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer5.png');
     background-size: 500px;
     -webkit-animation: 5s linear infinite gleam;
     animation: 5s linear infinite gleam;
 }
 
 .bgContainer .layer6 {
-    background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Ground.jpg');
+    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer6.jpg');
+    background-repeat: repeat-x;
+    background-position-y: bottom;
+    background-size: 500px;
+}
+
+.bgContainer .layer1.christmasEvent {
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer1.jpg');
+    background-size: 500px;
+}
+
+.bgContainer .layer2.christmasEvent {
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer2.png');
+    background-size: 500px;
+}
+
+.bgContainer .layer3.christmasEvent {
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer3.png');
+    background-size: 500px;
+}
+
+.bgContainer .layer4.christmasEvent {
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer4.png');
+    background-size: 500px;
+    -webkit-animation: 8s linear infinite gleam;
+    animation: 8s linear infinite gleam;
+}
+
+.bgContainer .layer5.christmasEvent {
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer5.png');
+    background-size: 500px;
+    -webkit-animation: 5s linear infinite gleam;
+    animation: 5s linear infinite gleam;
+}
+
+.bgContainer .layer6.christmasEvent {
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer6.png');
     background-repeat: repeat-x;
     background-position-y: bottom;
     background-size: 500px;

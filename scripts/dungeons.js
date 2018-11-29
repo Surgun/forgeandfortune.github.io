@@ -58,7 +58,10 @@ class Dungeon {
             deadMobSweep(this.id);
         }
         if (this.party.isDead()) {
-            this.party.heroes.forEach(h=>h.inDungeon = false);
+            this.party.heroes.forEach(h=>{
+                h.inDungeon = false;
+                h.ap = 0;
+            });
             EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorNum);
             DungeonManager.removeDungeon(this.id);
             if (DungeonManager.dungeonView !== null) {

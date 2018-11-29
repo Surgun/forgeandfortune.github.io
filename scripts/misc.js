@@ -90,3 +90,13 @@ function currentDate() {
     if (days === 2) trailing = "rd" 
     return `${days+1}${trailing} of ${seasonWords[seasons]}, Year ${years+1}`;
 }
+
+function randomChance(num,total) {
+    //return ture if random(0-tota;) is less than num
+    return num > Math.floor(Math.random() * total);
+}
+
+function isItChristmas() {
+    const d = new Date();
+    return d.getMonth() === 10 || d.getMonth() === 11;
+}

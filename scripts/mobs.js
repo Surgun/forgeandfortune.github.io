@@ -10,6 +10,7 @@ const MobManager = {
     },
     generateDungeonMobs(dungeonID, floorNum) {
         if (dungeonID !== "d1") return;
+        if (isItChristmas() && randomChance(3,100)) return this.christmasFloor(floorNum);
         const mobs = [];
         let mobCount = 1;
         if (floorNum >= 100) mobCount += 1;
@@ -22,6 +23,13 @@ const MobManager = {
             mobCount -=1;
         }
         return mobs;        
+    },
+    christmasFloor(floorNum) {
+        const christmasMobs = ["B901","B902","B903","B904","B905","B906","B907","B908","B909","B910"];
+        const possibleMonster = this.monsterDB.filter(mob => christmasMobs.includes(mob.id) && mob.minFloor <= floorNum && mob.maxFloor >= floorNum);
+        console.log(possibleMonster);
+        const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
+        return [new Mob(floorNum, mobTemplate)];
     }
 }
 

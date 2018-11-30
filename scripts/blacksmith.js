@@ -41,44 +41,54 @@ const bloopSmith = {
     },
     smithStart() {
         if (this.smithState !== "waiting" || this.smithSlot === null) return;
-        this.smithState = "smithing";
-        this.smithTimer = 10000;
-    },
-    smith() {
-        if (this.smithSlot === null) return;
         if (ResourceManager.materialAvailable("M001") < this.getSmithCost()) {
             Notifications.cantAffordSmith();
             return;
         }
         ResourceManager.deductMoney(this.getSmithCost());
+        Inventory.removeContainerFromInventory(this.smithSlot.containerID);
+        this.smithState = "smithing";
+        this.smithTimer = 5000;
+        refreshInventoryPlaces();
+    },
+    smith() {
+        if (this.smithSlot === null) return;
         const failure = Math.floor(Math.random() * 100);
         if (failure < this.getSmithChance()) {
-            Inventory.removeContainerFromInventory(this.smithSlot.containerID);
-            this.smithSlot = null;
+            this.smithSlot = "failed";
         }
         else {
             this.smithSlot.sharp += 1;
-            if (this.smithSlot.sharp === 10) this.smithSlot = null;
         }
-        refreshInventoryPlaces()
-        refreshSmithWorking();
+        this.smithState = "complete";
+        refreshSmithArea();
     },
     addTime(ms) {
         if (this.smithState !== "smithing") return;
         this.smithTimer = Math.max(0,this.smithTimer - ms);
         refreshSmithBar();
-        if (this.smithTimer === 0) {
-            this.smithState = "complete";
-            refreshSmithArea();
+        if (this.smithTimer === 0) this.smith();
+    },
+    collectSmith() {
+        if (this.smithState !== "complete") return;
+        if (this.smithSlot === "failed") {
+            this.smithSlot = null;
+            this.smithState = "waiting";
+            return;
         }
+        if (Inventory.full()) {
+            Notifications.cantCollectSmith();
+            return;
+        }
+        Inventory.addItemContainerToInventory(this.smithSlot);
+        this.smithSlot = null;
+        this.smithState = "waiting";
     }
 }
 
 function initiateSmithBldg() {
     refreshSmithInventory();
-    refreshSmithWorking();
-    refreshSmithMiddle();
-    refreshSmithResult();
+    refreshSmithArea();
 }
 
 function refreshSmithInventory() {
@@ -102,56 +112,44 @@ const $swSuccess = $("#swSuccess");
 const $swBar = $("#swBar");
 const $swFill = $("#swFill");
 const $swItemResult = $("#swItemResult");
-const $swAgain = $("#swAgain");
+const $swCollect = $("#swCollect");
 
 function refreshSmithArea() {
     if (bloopSmith.smithState === "waiting") {
+        console.log('waiting');
         if (bloopSmith.smithSlot === null) {
             $swItemStage.html("No Item Selected");
             $swItemResult.html("No Item Selected").removeClass("notSmithedYet");
             $swMiddleText.html("Waiting for an Item to Smith").show();
             $swSuccess.hide();
             $swConfirm.hide();
-            $swAgain.hide();
+            $swCollect.hide();
         }
         else {
             $swItemStage.html(itemStageCardSmith(false));
             $swItemResult.html(itemStageCardSmith(true)).addClass("notSmithedYet");
             $swMiddleText.hide();
-            $swSuccess.html(`${bloopSmith.getSmithChance()}% Success`).show();
-            $swConfirm.html(` Confirm Smith <span class="smith_cost">${miscIcons.gold} ${bloopSmith.getSmithCost()}</span>`).show();
-            $swAgain.hide();
+            $swSuccess.html(`${bloopSmith.getSmithChance ()}% Success`).show();
+            $swConfirm.html(` Confirm Smith <span class="smith_cost">${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}</span>`).show();
+            $swCollect.hide();
         }
     }
     else if (bloopSmith.smithState === "smithing") {
-        $swItemStage.html("In Progress");
+        $swItemStage.html(itemStageCardSmith(false));
         $swItemResult.html("In Progress").removeClass("notSmithedYet");
         $swMiddleText.html("Smithing...").show();
         $swSuccess.hide();
         $swConfirm.hide();
-        $swAgain.hide();
+        $swCollect.hide();
     }
-    else {
+    else if (bloopSmith.smithState === "complete") {
         $swItemStage.html("Collect Reward");
         $swItemResult.html(itemStageCardSmith(false));
         $swMiddleText.html("Smithing Complete");
         $swSuccess.hide();
         $swConfirm.hide();
-        $swAgain.show();
+        $swCollect.show();
     }
-}
-
-function refreshSmithWorking() {
-    $swItemStage.html(itemStageCardSmith());
-    $swItemResult.html(itemResultCardSmith());
-    $swSuccess.html(`${bloopSmith.getSmithChance()}% Success`).show();
-    $swConfirm.html(` Confirm Smith <span class="smith_cost">${miscIcons.gold} ${bloopSmith.getSmithCost()}</span>`).show();
-    if (bloopSmith.smithSlot === null) {
-        $swSuccess.hide();
-        $swConfirm.hide();
-    }
-    if (bloopSmith.smithTimer > 0) $smithInvSlots.hide();
-    else $smithInvSlots.show();
 }
 
 function refreshSmithBar() {
@@ -172,10 +170,17 @@ function itemCardSmith(item) {
 
 function itemStageCardSmith(upgrade) {
     if (bloopSmith.smithSlot === null) return;
+    if (bloopSmith.smithSlot === "failed") {
+        const itemdiv = $("<div/>").addClass("smithItem");
+        const itemName = $("<div/>").addClass("smithItemName").html("<img src='images/recipes/failedSmith.png'>&nbsp;<div class='item-name'>Failed</div>");
+        return itemdiv.append(itemName);
+    }
     const item = bloopSmith.smithSlot;
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
-    const itemName = $("<div/>").addClass("smithItemName").html(item.picName());
-    const itemProps = $("<div/>").addClass("smithProps").html(item.statChange());
+    const itemName = $("<div/>").addClass("smithItemName");
+    if (upgrade) itemName.html(item.picNamePlus());
+    else itemName.html(item.picName());
+    const itemProps = $("<div/>").addClass("smithProps").html(item.statChange(upgrade));
     return itemdiv.append(itemName,itemProps); 
 }
 
@@ -183,11 +188,17 @@ $(document).on("click",".smithStage",(e) => {
     e.preventDefault();
     const containerID = parseInt($(e.target).attr("containerID"));
     bloopSmith.addSmith(containerID);
-    refreshSmithWorking();
+    refreshSmithArea();
 });
 
-$(document).on("click","#smithAttempt", (e) => {
+$(document).on("click","#swConfirm", (e) => {
     e.preventDefault();
     bloopSmith.smithStart();
-    refreshSmithWorking();
+    refreshSmithArea();
 });
+
+$(document).on("click","#swCollect", (e) => {
+    e.preventDefault();
+    bloopSmith.collectSmith();
+    refreshSmithArea();
+})

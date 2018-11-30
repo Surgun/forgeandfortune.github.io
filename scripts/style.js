@@ -149,7 +149,7 @@ $gameLogo.click((e) => {
     }
 });
 
-//
+// Event Functions
 
 function disableEventLayers() {
     const layers = document.querySelectorAll(".bgContainer .layer");

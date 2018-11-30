@@ -55,7 +55,7 @@
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, .fuseStart, .bankStow, .bankTake, .smithStage, #smithAttempt, .fuseSlotCollect, .buildingName {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, .fuseSlotCollect, .buildingName {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -2287,7 +2287,6 @@ Rarities
 .bgContainer .layer2 {
     background: url('../../images/dungeonBackgrounds/Parallax_Layers/2D_CAVE_INTERIOR-Rocks_Back.png');
     background-size: 500px;
-    
 }
 
 .bgContainer .layer3 {
@@ -2597,7 +2596,7 @@ Rarities
     margin: 0 2px;
 }
 
-.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv {
     position: relative;
     display: flex;
     align-items: center;
@@ -2626,14 +2625,14 @@ Rarities
     margin-top: 10px;
 }
 
-.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img, .fuseBarDiv > img {
+.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img, .fuseBarDiv > img, #swBarDiv > img {
     position: absolute;
     left: 8px;
     bottom: 2px;
     z-index: 1;
 }
 
-.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before {
+.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before {
     content: " " attr(data-label);
     position: absolute;
     font-size: 0.9em;
@@ -2643,7 +2642,7 @@ Rarities
     z-index: 2;
 }
 
-.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill {
+.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill, #swFill {
     display: block;
     position: relative;
     height: 100%;
@@ -2871,7 +2870,7 @@ Rarities
     padding: 10px 0;
 }
 
-.fuseBarDiv {
+.fuseBarDiv, #swBarDiv {
     width: 100%;
     height: 26px;
     line-height: 26px;
@@ -2883,7 +2882,7 @@ Rarities
     text-align: center;
 }
 
-.fuseBar:before {
+.fuseBar:before, #swBar:before {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -2894,7 +2893,7 @@ Rarities
     bottom: 50%;
 }
 
-.fuseBarFill {
+.fuseBarFill, #swFill {
     background-color: rgba(255,255,255,0.15);
 }
 
@@ -2991,7 +2990,7 @@ Rarities
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #smithAttempt, .fuseSlotCollect, .heroEquipBlockEquipButton {
+.bankStow, .bankTake, .smithStage, #swConfirm, .fuseSlotCollect, .heroEquipBlockEquipButton {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -3002,7 +3001,7 @@ Rarities
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #smithAttempt:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -3023,7 +3022,7 @@ Rarities
     margin: 0 10px;
 }
 
-#smithAttempt, .smith_cost {
+#swConfirm, .smith_cost {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -3037,6 +3036,11 @@ Rarities
 
 .smith_cost > img {
     margin: 0 5px;
+}
+
+#swSuccess {
+    margin-top: 5px;
+    text-align: center;
 }
 
 .smithInvBlank {

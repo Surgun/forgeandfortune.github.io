@@ -8,8 +8,8 @@ const bloopSmith = {
     smithTimer : 0,
     createSave() {
         const save = {};
-        save.smithSlotTime = this.smithSlotTime;
-        save.smithFinished = this.smithFinished;
+        save.smithTimer = this.smithTimer;
+        save.smithState = this.smithState;
         if (this.smithSlot !== null) save.smithSlot = this.smithSlot.createSave();
         else save.smithSlot = null;
         return save;
@@ -23,8 +23,8 @@ const bloopSmith = {
         else {
             this.smithSlot = null;
         }
-        this.smithSlotTime = save.smithSlotTime;
-        this.smithFinished = save.smithFinished;
+        this.smithTimer = save.smithTimer;
+        this.smithState = save.smithState;
     },
     addSmith(containerID) {
         if (this.smithState !== "waiting") return;
@@ -116,11 +116,11 @@ const $swCollect = $("#swCollect");
 
 function refreshSmithArea() {
     if (bloopSmith.smithState === "waiting") {
-        console.log('waiting');
         if (bloopSmith.smithSlot === null) {
             $swItemStage.html("No Item Selected");
             $swItemResult.html("No Item Selected").removeClass("notSmithedYet");
             $swMiddleText.html("Waiting for an Item to Smith").show();
+            resetSmithBar();
             $swSuccess.hide();
             $swConfirm.hide();
             $swCollect.hide();
@@ -129,7 +129,8 @@ function refreshSmithArea() {
             $swItemStage.html(itemStageCardSmith(false));
             $swItemResult.html(itemStageCardSmith(true)).addClass("notSmithedYet");
             $swMiddleText.hide();
-            $swSuccess.html(`${bloopSmith.getSmithChance ()}% Success`).show();
+            resetSmithBar();
+            $swSuccess.html(`${100-bloopSmith.getSmithChance ()}% Success`).show();
             $swConfirm.html(` Confirm Smith <span class="smith_cost">${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}</span>`).show();
             $swCollect.hide();
         }
@@ -148,16 +149,22 @@ function refreshSmithArea() {
         const d1 = $("<div/>").attr("id","swCollect").html("Collect");
         $swItemResult.append(d1);
         $swMiddleText.html("Smithing Complete");
+        resetSmithBar();
         $swSuccess.hide();
         $swConfirm.hide();
         $swCollect.show();
     }
 }
 
+function resetSmithBar() {
+    $swBar.attr("data-label","");
+    $swFill.css("width",0);
+}
+
 function refreshSmithBar() {
-    const smithPercent = 1-bloopSmith.smithTimer/10000;
+    const smithPercent = 1-bloopSmith.smithTimer/5000;
     const smithWidth = (smithPercent*100).toFixed(1)+"%";
-    const smithAmt = msToTime(bloopSmith.smithTimer-1000);
+    const smithAmt = msToTime(bloopSmith.smithTimer);
     $swBar.attr("data-label",smithAmt);
     $swFill.css('width',smithWidth);
 }

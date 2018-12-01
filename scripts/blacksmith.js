@@ -145,6 +145,8 @@ function refreshSmithArea() {
     else if (bloopSmith.smithState === "complete") {
         $swItemStage.html("Collect Reward");
         $swItemResult.html(itemStageCardSmith(false));
+        const d1 = $("<div/>").attr("id","swCollect").html("Collect");
+        $swItemResult.append(d1);
         $swMiddleText.html("Smithing Complete");
         $swSuccess.hide();
         $swConfirm.hide();

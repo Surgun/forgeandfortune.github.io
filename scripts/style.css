@@ -3079,11 +3079,15 @@ Rarities
 }
 
 #smithWorkingArea {
-    margin: 10px 0;
+    margin: -10px -10px 10px -10px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    min-height: 190px;
+    background-color: var(--bg-3);
+    border-bottom: 1px solid var(--border);
 }
 
 #swItemStage .smithItem, #swItemResult .smithItem {
@@ -3103,6 +3107,29 @@ Rarities
 
 #swItemStage, #swItemResult {
     max-width: 175px;
+}
+
+.smith-failed {
+    margin-bottom: 10px;
+}
+
+.inProgressTextBox {
+    color: var(--highlight);
+}
+
+.collectTextBox {
+    color: var(--text-3);
+}
+
+.collectTextBox:after {
+    display: block;
+    position: relative;
+    content: "\f30b";
+    font-family: "Font Awesome 5 Free";
+    font-size: 1.5em;
+    font-weight: 900;
+    -webkit-animation: 1.2s point-right infinite;
+    animation: 1.2s point-right infinite;
 }
 
 #smithWorkingArea .smithProps {
@@ -4093,6 +4120,18 @@ span.beta-tag {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes point-right {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 10px;
+    }
+    100% {
+        left: 0;
     }
 }
 

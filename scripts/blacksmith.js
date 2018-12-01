@@ -117,8 +117,8 @@ const $swCollect = $("#swCollect");
 function refreshSmithArea() {
     if (bloopSmith.smithState === "waiting") {
         if (bloopSmith.smithSlot === null) {
-            $swItemStage.html("No Item Selected");
-            $swItemResult.html("No Item Selected").removeClass("notSmithedYet");
+            $swItemStage.html("No Item Selected").removeClass("collectTextBox");
+            $swItemResult.html("No Item Selected")
             $swMiddleText.html("Waiting for an Item to Smith").show();
             resetSmithBar();
             $swSuccess.hide();
@@ -127,7 +127,7 @@ function refreshSmithArea() {
         }
         else {
             $swItemStage.html(itemStageCardSmith(false));
-            $swItemResult.html(itemStageCardSmith(true)).addClass("notSmithedYet");
+            $swItemResult.html(itemStageCardSmith(true));
             $swMiddleText.hide();
             resetSmithBar();
             $swSuccess.html(`${100-bloopSmith.getSmithChance ()}% Success`).show();
@@ -137,16 +137,16 @@ function refreshSmithArea() {
     }
     else if (bloopSmith.smithState === "smithing") {
         $swItemStage.html(itemStageCardSmith(false));
-        $swItemResult.html("In Progress").removeClass("notSmithedYet");
+        $swItemResult.html("In Progress").addClass("inProgressTextBox");
         $swMiddleText.html("Smithing...").show();
         $swSuccess.hide();
         $swConfirm.hide();
         $swCollect.hide();
     }
     else if (bloopSmith.smithState === "complete") {
-        $swItemStage.html("Collect Reward");
+        $swItemStage.html("Collect Reward").addClass("collectTextBox");
         const d1 = $("<div/>").attr("id","swCollect").html("Collect");
-        $swItemResult.html(itemStageCardSmith(false).append(d1));
+        $swItemResult.html(itemStageCardSmith(false).append(d1)).removeClass("inProgressTextBox");
         $swMiddleText.html("Smithing Complete");
         resetSmithBar();
         $swSuccess.hide();
@@ -180,7 +180,7 @@ function itemStageCardSmith(upgrade) {
     if (bloopSmith.smithSlot === null) return;
     if (bloopSmith.smithSlot === "failed") {
         const itemdiv = $("<div/>").addClass("smithItem");
-        const itemName = $("<div/>").addClass("smithItemName").html("<img src='images/recipes/failedSmith.png'>&nbsp;<div class='item-name'>Failed</div>");
+        const itemName = $("<div/>").addClass("smithItemName").html("<img src='images/recipes/failedSmith.png'><div class='item-name smith-failed'>Failed</div>");
         return itemdiv.append(itemName);
     }
     const item = bloopSmith.smithSlot;

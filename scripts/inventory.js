@@ -60,6 +60,10 @@ class itemContainer {
         if (this.sharp > 0) return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
         return this.item.itemPicName();
     }
+    picNamePlus() {
+        const prefix = `<span class="item-prefix">+${this.sharp + 1}</span>`
+        return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
+    }
     pow() {
         return Math.floor(this.item.pow * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*this.sharp));
     }
@@ -94,16 +98,18 @@ class itemContainer {
         }
         return d;
     }
-    statChange() {
+    statChange(upgrade) {
         const d = $("<div/>").addClass("invProp");
         if (this.pow() > 0) {
-            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","POW").html(`<span class="POW_before">${miscIcons.pow}&nbsp;${this.pow()}</span>`);
-            const d3 = `<span class="arrow_right"><i class="fas fa-arrow-right"></i></span>`;
-            const d4 = `<span class="POW_after">${this.powPlus()}</span>`;
-            d.append(d2,d3,d4);
+            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","POW")
+            if (upgrade) d2.html(`${miscIcons.pow}&nbsp;${this.powPlus()}`);
+            else d2.html(`${miscIcons.pow}&nbsp;${this.pow()}`);
+            d.append(d2);
         }
         if (this.hp() > 0) {
-            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","HP").html(`${miscIcons.hp}&nbsp;${this.hp()}&nbsp;->&nbsp;${this.hpPlus()}`);
+            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","HP");
+            if (upgrade) d2.html(`${miscIcons.hp}&nbsp;${this.hpPlus()}`);
+            else d2.html(`${miscIcons.hp}&nbsp;${this.hp()}`);
             d.append(d2);
         }
         return d;

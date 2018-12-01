@@ -129,6 +129,12 @@ const Notifications = {
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
     },
+    cantCollectSmith() {
+        const text = "You do not have inventory space.";
+        const heading = "Cannot Collect Smithing";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
 }
 
 function popToast(text,heading,icon) {

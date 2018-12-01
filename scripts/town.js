@@ -64,6 +64,8 @@ $(document).on('click', "#fusionBldg", (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "fusion") return;
     TownManager.lastBldg = "fusion";
+    $(".buildingName").removeClass("selected");
+    $("#fusionBldg").addClass("selected");
     showFuseBldg();
 });
 
@@ -71,6 +73,8 @@ $(document).on('click', '#bankBldg', (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "bank") return;
     TownManager.lastBldg = "bank";
+    $(".buildingName").removeClass("selected");
+    $("#bankBldg").addClass("selected");
     showBankBldg();
 });
 
@@ -78,5 +82,7 @@ $(document).on('click', '#smithBldg', (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "smith") return;
     TownManager.lastBldg = "smith";
+    $(".buildingName").removeClass("selected");
+    $("#smithBldg").addClass("selected");
     showSmithBldg();
 });

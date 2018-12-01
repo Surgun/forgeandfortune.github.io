@@ -2749,6 +2749,7 @@ Rarities
     padding: 20px 5px;
     max-height: 250px;
     background-color: var(--bg-3);
+    border-bottom: 2px solid var(--border);
     overflow: hidden;
 }
 
@@ -3012,8 +3013,7 @@ Rarities
 
 #smithWorkingArea {
     margin: 10px 0;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 25px;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -3029,9 +3029,17 @@ Rarities
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 0 10px;
     max-width: 225px;
     width: 100%;
+}
+
+#swItemStage, #swItemResult {
+    max-width: 175px;
+}
+
+.notSmithedYet {
+    
 }
 
 #swCollect {
@@ -3044,7 +3052,7 @@ Rarities
 }
 
 #smithWorkingArea .invProp > div {
-    margin: 0;
+    margin: 10px;
 }
 
 .smithProps .arrow_right {

@@ -164,7 +164,7 @@ function itemCardSmith(item) {
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
     const itemName = $("<div/>").addClass("smithItemName").html(item.picName());
     const itemProps = $("<div/>").addClass("smithProps").html(item.propDiv());
-    const smithButton = $("<div/>").addClass("smithStage").attr("containerID",item.containerID).html("SMITH");
+    const smithButton = $("<div/>").addClass("smithStage").attr("containerID",item.containerID).html("Smith");
     return itemdiv.append(itemName,itemProps,smithButton);
 }
 

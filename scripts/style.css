@@ -3086,8 +3086,8 @@ Rarities
     align-items: center;
     text-align: center;
     min-height: 190px;
-    background-color: var(--bg-3);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-primary);
 }
 
 #swItemStage .smithItem, #swItemResult .smithItem {
@@ -3118,7 +3118,7 @@ Rarities
 }
 
 .collectTextBox {
-    color: var(--text-3);
+    color: var(--text-tertiary);
 }
 
 .collectTextBox:after {

@@ -2884,7 +2884,7 @@ Rarities
 }
 
 #swBarDiv {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .fuseBar:before, #swBar:before {
@@ -3038,10 +3038,6 @@ Rarities
     max-width: 175px;
 }
 
-.notSmithedYet {
-    
-}
-
 #swCollect {
     margin: auto;
     max-width: 80%;
@@ -3076,7 +3072,7 @@ Rarities
 }
 
 #swSuccess {
-    margin-top: 5px;
+    margin-top: 10px;
     text-align: center;
 }
 

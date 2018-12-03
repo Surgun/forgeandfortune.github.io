@@ -9,19 +9,30 @@ const MobManager = {
         return this.monsterDB.find(mob => mob.id === id);
     },
     generateDungeonMobs(dungeonID, floorNum) {
+        disableEventLayers();
         if (dungeonID !== "d1") return;
+        if (isItChristmas() && randomChance(5,100)) {
+            enableChristmasLayers();
+            return this.christmasFloor(floorNum);
+        }
         const mobs = [];
         let mobCount = 1;
         if (floorNum >= 100) mobCount += 1;
         if (floorNum >= 200) mobCount += 1;
         if (floorNum >= 300) mobCount += 1;
         while (mobCount > 0) {
-            const possibleMonster = this.monsterDB.filter(mob => mob.minFloor <= floorNum && mob.maxFloor >= floorNum);
+            const possibleMonster = this.monsterDB.filter(mob => mob.event === "normal" && mob.minFloor <= floorNum && mob.maxFloor >= floorNum);
             const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
             mobs.push(new Mob(floorNum, mobTemplate));
             mobCount -=1;
         }
         return mobs;        
+    },
+    christmasFloor(floorNum) {
+        const possibleMonster = this.monsterDB.filter(mob => mob.event === "christmas" && mob.minFloor <= floorNum && mob.maxFloor >= floorNum);
+        console.log(possibleMonster);
+        const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
+        return [new Mob(floorNum, mobTemplate)];
     }
 }
 

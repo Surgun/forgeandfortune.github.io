@@ -102,8 +102,8 @@ const BattleLog = {
     mobDrops(name,drops) {
         if (drops.length === 0) return;
         this.addHeroLog("Found an item!");
-        const dropname = ResourceManager.idToMaterial(drops[0]).name;
-        this.addEnemyLog(`${name} dropped ${dropname}`)
+        const dropnames = drops.map(m=>ResourceManager.idToMaterial(m).name);
+        this.addEnemyLog(`${name} dropped ${dropnames.join(", ")}`)
     },
     addAttackLog(battleMessage) {
         if (battleMessage.dungeonID !== DungeonManager.dungeonView) return;

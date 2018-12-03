@@ -240,3 +240,18 @@ $gameLogo.click(() => {
     }
 });
 
+// Event Functions
+
+function disableEventLayers() {
+    const layers = document.querySelectorAll(".bgContainer .layer");
+    layers.forEach((layer)=> {
+        layer.classList.remove("christmasEvent"); // Add event classes to be removed
+    });
+}
+
+function enableChristmasLayers() {
+    const layers = document.querySelectorAll(".bgContainer .layer");
+    layers.forEach((layer)=> {
+        layer.classList.add("christmasEvent");
+    });
+}

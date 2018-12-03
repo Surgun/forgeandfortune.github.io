@@ -17,7 +17,8 @@
       "M101": 100
     },
     "minFloor": 1,
-    "maxFloor": 100
+    "maxFloor": 100,
+    "event": "normal"
   },
   {
     "id": "B102",
@@ -37,7 +38,8 @@
       "M102": 60
     },
     "minFloor": 80,
-    "maxFloor": 200
+    "maxFloor": 200,
+    "event": "normal"
   },
   {
     "id": "B103",
@@ -57,7 +59,8 @@
       "M103": 40
     },
     "minFloor": 180,
-    "maxFloor": 300
+    "maxFloor": 300,
+    "event": "normal"
   },
   {
     "id": "B104",
@@ -77,7 +80,8 @@
       "M104": 25
     },
     "minFloor": 280,
-    "maxFloor": 400
+    "maxFloor": 400,
+    "event": "normal"
   },
   {
     "id": "B105",
@@ -97,7 +101,8 @@
       "M105": 25
     },
     "minFloor": 380,
-    "maxFloor": 500
+    "maxFloor": 500,
+    "event": "normal"
   },
   {
     "id": "B106",
@@ -117,7 +122,8 @@
       "M106": 25
     },
     "minFloor": 480,
-    "maxFloor": 600
+    "maxFloor": 600,
+    "event": "normal"
   },
   {
     "id": "B107",
@@ -137,7 +143,8 @@
       "M107": 25
     },
     "minFloor": 580,
-    "maxFloor": 700
+    "maxFloor": 700,
+    "event": "normal"
   },
   {
     "id": "B108",
@@ -157,7 +164,8 @@
       "M108": 25
     },
     "minFloor": 680,
-    "maxFloor": 800
+    "maxFloor": 800,
+    "event": "normal"
   },
   {
     "id": "B109",
@@ -177,7 +185,8 @@
       "M109": 25
     },
     "minFloor": 780,
-    "maxFloor": 900
+    "maxFloor": 900,
+    "event": "normal"
   },
   {
     "id": "B110",
@@ -197,7 +206,8 @@
       "M110": 25
     },
     "minFloor": 880,
-    "maxFloor": 10000
+    "maxFloor": 10000,
+    "event": "normal"
   },
   {
     "id": "B201",
@@ -217,7 +227,8 @@
       "M201": 100
     },
     "minFloor": 1,
-    "maxFloor": 100
+    "maxFloor": 100,
+    "event": "normal"
   },
   {
     "id": "B202",
@@ -237,7 +248,8 @@
       "M202": 60
     },
     "minFloor": 80,
-    "maxFloor": 200
+    "maxFloor": 200,
+    "event": "normal"
   },
   {
     "id": "B203",
@@ -257,7 +269,8 @@
       "M203": 40
     },
     "minFloor": 180,
-    "maxFloor": 300
+    "maxFloor": 300,
+    "event": "normal"
   },
   {
     "id": "B204",
@@ -277,7 +290,8 @@
       "M204": 25
     },
     "minFloor": 280,
-    "maxFloor": 400
+    "maxFloor": 400,
+    "event": "normal"
   },
   {
     "id": "B205",
@@ -297,7 +311,8 @@
       "M205": 25
     },
     "minFloor": 380,
-    "maxFloor": 500
+    "maxFloor": 500,
+    "event": "normal"
   },
   {
     "id": "B206",
@@ -317,7 +332,8 @@
       "M206": 25
     },
     "minFloor": 480,
-    "maxFloor": 600
+    "maxFloor": 600,
+    "event": "normal"
   },
   {
     "id": "B207",
@@ -337,7 +353,8 @@
       "M207": 25
     },
     "minFloor": 580,
-    "maxFloor": 700
+    "maxFloor": 700,
+    "event": "normal"
   },
   {
     "id": "B208",
@@ -357,7 +374,8 @@
       "M208": 25
     },
     "minFloor": 680,
-    "maxFloor": 800
+    "maxFloor": 800,
+    "event": "normal"
   },
   {
     "id": "B209",
@@ -377,7 +395,8 @@
       "M209": 25
     },
     "minFloor": 780,
-    "maxFloor": 900
+    "maxFloor": 900,
+    "event": "normal"
   },
   {
     "id": "B210",
@@ -397,7 +416,8 @@
       "M210": 25
     },
     "minFloor": 880,
-    "maxFloor": 10000
+    "maxFloor": 10000,
+    "event": "normal"
   },
   {
     "id": "B301",
@@ -417,7 +437,8 @@
       "M301": 100
     },
     "minFloor": 1,
-    "maxFloor": 100
+    "maxFloor": 100,
+    "event": "normal"
   },
   {
     "id": "B302",
@@ -437,7 +458,8 @@
       "M302": 60
     },
     "minFloor": 80,
-    "maxFloor": 200
+    "maxFloor": 200,
+    "event": "normal"
   },
   {
     "id": "B303",
@@ -457,7 +479,8 @@
       "M303": 40
     },
     "minFloor": 180,
-    "maxFloor": 300
+    "maxFloor": 300,
+    "event": "normal"
   },
   {
     "id": "B304",
@@ -477,7 +500,8 @@
       "M304": 25
     },
     "minFloor": 280,
-    "maxFloor": 400
+    "maxFloor": 400,
+    "event": "normal"
   },
   {
     "id": "B305",
@@ -497,7 +521,8 @@
       "M305": 25
     },
     "minFloor": 380,
-    "maxFloor": 500
+    "maxFloor": 500,
+    "event": "normal"
   },
   {
     "id": "B306",
@@ -517,7 +542,8 @@
       "M306": 25
     },
     "minFloor": 480,
-    "maxFloor": 600
+    "maxFloor": 600,
+    "event": "normal"
   },
   {
     "id": "B307",
@@ -537,7 +563,8 @@
       "M307": 25
     },
     "minFloor": 580,
-    "maxFloor": 700
+    "maxFloor": 700,
+    "event": "normal"
   },
   {
     "id": "B308",
@@ -557,7 +584,8 @@
       "M308": 25
     },
     "minFloor": 680,
-    "maxFloor": 800
+    "maxFloor": 800,
+    "event": "normal"
   },
   {
     "id": "B309",
@@ -577,7 +605,8 @@
       "M309": 25
     },
     "minFloor": 780,
-    "maxFloor": 900
+    "maxFloor": 900,
+    "event": "normal"
   },
   {
     "id": "B310",
@@ -597,7 +626,8 @@
       "M310": 25
     },
     "minFloor": 880,
-    "maxFloor": 10000
+    "maxFloor": 10000,
+    "event": "normal"
   },
   {
     "id": "B401",
@@ -617,7 +647,8 @@
       "M401": 100
     },
     "minFloor": 1,
-    "maxFloor": 100
+    "maxFloor": 100,
+    "event": "normal"
   },
   {
     "id": "B402",
@@ -637,7 +668,8 @@
       "M402": 60
     },
     "minFloor": 80,
-    "maxFloor": 200
+    "maxFloor": 200,
+    "event": "normal"
   },
   {
     "id": "B403",
@@ -657,7 +689,8 @@
       "M403": 40
     },
     "minFloor": 180,
-    "maxFloor": 300
+    "maxFloor": 300,
+    "event": "normal"
   },
   {
     "id": "B404",
@@ -677,7 +710,8 @@
       "M404": 25
     },
     "minFloor": 280,
-    "maxFloor": 400
+    "maxFloor": 400,
+    "event": "normal"
   },
   {
     "id": "B405",
@@ -697,7 +731,8 @@
       "M405": 25
     },
     "minFloor": 380,
-    "maxFloor": 500
+    "maxFloor": 500,
+    "event": "normal"
   },
   {
     "id": "B406",
@@ -717,7 +752,8 @@
       "M406": 25
     },
     "minFloor": 480,
-    "maxFloor": 600
+    "maxFloor": 600,
+    "event": "normal"
   },
   {
     "id": "B407",
@@ -737,7 +773,8 @@
       "M407": 25
     },
     "minFloor": 580,
-    "maxFloor": 700
+    "maxFloor": 700,
+    "event": "normal"
   },
   {
     "id": "B408",
@@ -757,7 +794,8 @@
       "M408": 25
     },
     "minFloor": 680,
-    "maxFloor": 800
+    "maxFloor": 800,
+    "event": "normal"
   },
   {
     "id": "B409",
@@ -777,7 +815,8 @@
       "M409": 25
     },
     "minFloor": 780,
-    "maxFloor": 900
+    "maxFloor": 900,
+    "event": "normal"
   },
   {
     "id": "B410",
@@ -797,7 +836,8 @@
       "M410": 25
     },
     "minFloor": 880,
-    "maxFloor": 10000
+    "maxFloor": 10000,
+    "event": "normal"
   },
   {
     "id": "B501",
@@ -817,7 +857,8 @@
       "M501": 100
     },
     "minFloor": 1,
-    "maxFloor": 100
+    "maxFloor": 100,
+    "event": "normal"
   },
   {
     "id": "B502",
@@ -837,7 +878,8 @@
       "M502": 60
     },
     "minFloor": 80,
-    "maxFloor": 200
+    "maxFloor": 200,
+    "event": "normal"
   },
   {
     "id": "B503",
@@ -857,7 +899,8 @@
       "M503": 40
     },
     "minFloor": 180,
-    "maxFloor": 300
+    "maxFloor": 300,
+    "event": "normal"
   },
   {
     "id": "B504",
@@ -877,7 +920,8 @@
       "M504": 25
     },
     "minFloor": 280,
-    "maxFloor": 400
+    "maxFloor": 400,
+    "event": "normal"
   },
   {
     "id": "B505",
@@ -897,7 +941,8 @@
       "M505": 25
     },
     "minFloor": 380,
-    "maxFloor": 500
+    "maxFloor": 500,
+    "event": "normal"
   },
   {
     "id": "B506",
@@ -917,7 +962,8 @@
       "M506": 25
     },
     "minFloor": 480,
-    "maxFloor": 600
+    "maxFloor": 600,
+    "event": "normal"
   },
   {
     "id": "B507",
@@ -937,7 +983,8 @@
       "M507": 25
     },
     "minFloor": 580,
-    "maxFloor": 700
+    "maxFloor": 700,
+    "event": "normal"
   },
   {
     "id": "B508",
@@ -957,7 +1004,8 @@
       "M508": 25
     },
     "minFloor": 680,
-    "maxFloor": 800
+    "maxFloor": 800,
+    "event": "normal"
   },
   {
     "id": "B509",
@@ -977,7 +1025,8 @@
       "M509": 25
     },
     "minFloor": 780,
-    "maxFloor": 900
+    "maxFloor": 900,
+    "event": "normal"
   },
   {
     "id": "B510",
@@ -997,7 +1046,8 @@
       "M510": 25
     },
     "minFloor": 880,
-    "maxFloor": 10000
+    "maxFloor": 10000,
+    "event": "normal"
   },
   {
     "id": "B601",
@@ -1017,7 +1067,8 @@
       "M601": 100
     },
     "minFloor": 1,
-    "maxFloor": 100
+    "maxFloor": 100,
+    "event": "normal"
   },
   {
     "id": "B602",
@@ -1037,7 +1088,8 @@
       "M602": 60
     },
     "minFloor": 80,
-    "maxFloor": 200
+    "maxFloor": 200,
+    "event": "normal"
   },
   {
     "id": "B603",
@@ -1057,7 +1109,8 @@
       "M603": 40
     },
     "minFloor": 180,
-    "maxFloor": 300
+    "maxFloor": 300,
+    "event": "normal"
   },
   {
     "id": "B604",
@@ -1077,7 +1130,8 @@
       "M604": 25
     },
     "minFloor": 280,
-    "maxFloor": 400
+    "maxFloor": 400,
+    "event": "normal"
   },
   {
     "id": "B605",
@@ -1097,7 +1151,8 @@
       "M605": 25
     },
     "minFloor": 380,
-    "maxFloor": 500
+    "maxFloor": 500,
+    "event": "normal"
   },
   {
     "id": "B606",
@@ -1117,7 +1172,8 @@
       "M606": 25
     },
     "minFloor": 480,
-    "maxFloor": 600
+    "maxFloor": 600,
+    "event": "normal"
   },
   {
     "id": "B607",
@@ -1137,7 +1193,8 @@
       "M607": 25
     },
     "minFloor": 580,
-    "maxFloor": 700
+    "maxFloor": 700,
+    "event": "normal"
   },
   {
     "id": "B608",
@@ -1157,7 +1214,8 @@
       "M608": 25
     },
     "minFloor": 680,
-    "maxFloor": 800
+    "maxFloor": 800,
+    "event": "normal"
   },
   {
     "id": "B609",
@@ -1177,7 +1235,8 @@
       "M609": 25
     },
     "minFloor": 780,
-    "maxFloor": 900
+    "maxFloor": 900,
+    "event": "normal"
   },
   {
     "id": "B610",
@@ -1197,6 +1256,267 @@
       "M610": 25
     },
     "minFloor": 880,
-    "maxFloor": 10000
+    "maxFloor": 10000,
+    "event": "normal"
+  },
+  {
+    "id": "B901",
+    "name": "Grumpy Gift",
+    "hpBase": 100,
+    "hpLvl": 4,
+    "powBase": 1,
+    "powLvl": 0,
+    "apmax": 10,
+    "actTime": 3333,
+    "armor": 0,
+    "crit": 0,
+    "critdmg": 0,
+    "dodge": 0,
+    "target": "highhp",
+    "drops": {
+      "M101": 100,
+      "M201": 100,
+      "M301": 100,
+      "M401": 100,
+      "M501": 100,
+      "M601": 100
+    },
+    "minFloor": 1,
+    "maxFloor": 100,
+    "event": "christmas"
+  },
+  {
+    "id": "B902",
+    "name": "Peculiar Present",
+    "hpBase": 200,
+    "hpLvl": 8,
+    "powBase": 1,
+    "powLvl": 0,
+    "apmax": 10,
+    "actTime": 3333,
+    "armor": 0,
+    "crit": 0,
+    "critdmg": 0,
+    "dodge": 0,
+    "target": "highhp",
+    "drops": {
+      "M102": 100,
+      "M202": 100,
+      "M302": 100,
+      "M402": 100,
+      "M502": 100,
+      "M602": 100
+    },
+    "minFloor": 101,
+    "maxFloor": 200,
+    "event": "christmas"
+  },
+  {
+    "id": "B903",
+    "name": "Grimy Gift",
+    "hpBase": 300,
+    "hpLvl": 12,
+    "powBase": 1,
+    "powLvl": 0,
+    "apmax": 10,
+    "actTime": 3333,
+    "armor": 0,
+    "crit": 0,
+    "critdmg": 0,
+    "dodge": 0,
+    "target": "highhp",
+    "drops": {
+      "M103": 100,
+      "M203": 100,
+      "M303": 100,
+      "M403": 100,
+      "M503": 100,
+      "M603": 100
+    },
+    "minFloor": 201,
+    "maxFloor": 300,
+    "event": "christmas"
+  },
+  {
+    "id": "B904",
+    "name": "Plain Present",
+    "hpBase": 400,
+    "hpLvl": 16,
+    "powBase": 1,
+    "powLvl": 0,
+    "apmax": 10,
+    "actTime": 3333,
+    "armor": 0,
+    "crit": 0,
+    "critdmg": 0,
+    "dodge": 0,
+    "target": "highhp",
+    "drops": {
+      "M104": 100,
+      "M204": 100,
+      "M304": 100,
+      "M404": 100,
+      "M504": 100,
+      "M604": 100
+    },
+    "minFloor": 301,
+    "maxFloor": 400,
+    "event": "christmas"
+  },
+  {
+    "id": "B905",
+    "name": "Glorious Gift",
+    "hpBase": 500,
+    "hpLvl": 20,
+    "powBase": 1,
+    "powLvl": 0,
+    "apmax": 10,
+    "actTime": 3333,
+    "armor": 0,
+    "crit": 0,
+    "critdmg": 0,
+    "dodge": 0,
+    "target": "highhp",
+    "drops": {
+      "M105": 100,
+      "M205": 100,
+      "M305": 100,
+      "M405": 100,
+      "M505": 100,
+      "M605": 100
+    },
+    "minFloor": 401,
+    "maxFloor": 500,
+    "event": "christmas"
+  },
+  {
+    "id": "B906",
+    "name": "Pleasant Present",
+    "hpBase": 600,
+    "hpLvl": 24,
+    "powBase": 1,
+    "powLvl": 0,
+    "apmax": 10,
+    "actTime": 3333,
+    "armor": 0,
+    "crit": 0,
+    "critdmg": 0,
+    "dodge": 0,
+    "target": "highhp",
+    "drops": {
+      "M106": 100,
+      "M206": 100,
+      "M306": 100,
+      "M406": 100,
+      "M506": 100,
+      "M606": 100
+    },
+    "minFloor": 501,
+    "maxFloor": 600,
+    "event": "christmas"
+  },
+  {
+    "id": "B907",
+    "name": "Grand Gift",
+    "hpBase": 700,
+    "hpLvl": 28,
+    "powBase": 1,
+    "powLvl": 0,
+    "apmax": 10,
+    "actTime": 3333,
+    "armor": 0,
+    "crit": 0,
+    "critdmg": 0,
+    "dodge": 0,
+    "target": "highhp",
+    "drops": {
+      "M107": 100,
+      "M207": 100,
+      "M307": 100,
+      "M407": 100,
+      "M507": 100,
+      "M607": 100
+    },
+    "minFloor": 601,
+    "maxFloor": 700,
+    "event": "christmas"
+  },
+  {
+    "id": "B908",
+    "name": "Perfect Present",
+    "hpBase": 800,
+    "hpLvl": 32,
+    "powBase": 1,
+    "powLvl": 0,
+    "apmax": 10,
+    "actTime": 3333,
+    "armor": 0,
+    "crit": 0,
+    "critdmg": 0,
+    "dodge": 0,
+    "target": "highhp",
+    "drops": {
+      "M108": 100,
+      "M208": 100,
+      "M308": 100,
+      "M408": 100,
+      "M508": 100,
+      "M608": 100
+    },
+    "minFloor": 701,
+    "maxFloor": 800,
+    "event": "christmas"
+  },
+  {
+    "id": "B909",
+    "name": "Mrs Claus",
+    "hpBase": 900,
+    "hpLvl": 36,
+    "powBase": 1,
+    "powLvl": 0,
+    "apmax": 10,
+    "actTime": 3333,
+    "armor": 0,
+    "crit": 0,
+    "critdmg": 0,
+    "dodge": 0,
+    "target": "highhp",
+    "drops": {
+      "M109": 100,
+      "M209": 100,
+      "M309": 100,
+      "M409": 100,
+      "M509": 100,
+      "M609": 100
+    },
+    "minFloor": 801,
+    "maxFloor": 900,
+    "event": "christmas"
+  },
+  {
+    "id": "B910",
+    "name": "Santa",
+    "hpBase": 1000,
+    "hpLvl": 40,
+    "powBase": 1,
+    "powLvl": 0,
+    "apmax": 10,
+    "actTime": 3333,
+    "armor": 0,
+    "crit": 0,
+    "critdmg": 0,
+    "dodge": 0,
+    "target": "highhp",
+    "drops": {
+      "M110": 100,
+      "M210": 100,
+      "M310": 100,
+      "M410": 100,
+      "M510": 100,
+      "M610": 100
+    },
+    "minFloor": 901,
+    "maxFloor": 10000,
+    "event": "christmas"
   }
 ]

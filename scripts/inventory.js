@@ -115,7 +115,7 @@ class itemContainer {
         return d;
     }
     goldValueFormatted() {
-        return ResourceManager.materialIcon("M001") + "&nbsp;" + this.goldValue();
+        return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue());
     }
     goldValue() {
         return (this.item.value * (this.rarity+1));
@@ -306,7 +306,7 @@ function refreshInventory() {
         }
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
-        const itemCost = $("<div/>").addClass("inventoryItemValue").html(item.goldValueFormatted());
+        const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr("data-tooltip", item.goldValue() + " Gold").html(item.goldValueFormatted());
         const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
         const actionBtns = $("<div/>").addClass("inventoryButtons");
         const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");

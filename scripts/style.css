@@ -530,6 +530,7 @@ body:after {
 }
 
 .inventoryItemValue, .invProp {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -3756,6 +3757,12 @@ footer a[href*="discord.gg"]:hover {
 .lighttheme-btn.tooltip:after {
     max-width: 200px;
     margin: 0 auto;
+}
+
+.inventoryItemValue.tooltip:after {
+    max-width: 100px;
+    margin: 0 auto;
+    font-size: 0.8em;
 }
 
 /* Firefox-Specific Fixes */

@@ -42,6 +42,9 @@ class Item{
     imageValue() {
         return ResourceManager.formatCost("M001",formatToUnits(this.value,1));
     }
+    itemValue() {
+        return formatToUnits(this.value,1);
+    }
     visualizeRes() {
         const d = $("<div/>").addClass("itemCost")
         this.rcost.forEach(resource => {
@@ -342,10 +345,10 @@ function initializeRecipes(type,sortType,heading) {
         const td4a = $("<div/>").addClass("recipeStatHeader recipeCardHeader").html("Statistics");
         td4.prepend(td4a);
         const td5 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
-        const td5a = $("<div/>").addClass("recipeTimeHeader recipeCardHeader").html("Craft Time");
+        const td5a = $("<div/>").addClass("recipeTimeHeader recipeCardHeader tooltip").attr("data-tooltip", "Craft Time").html(`<i class="far fa-clock"></i>`);
         td5.prepend(td5a);
-        const td6 = $('<div/>').addClass('recipeValue').html(recipe.imageValue());
-        const td6a = $("<div/>").addClass("recipeValueHeader recipeCardHeader").html("Value");
+        const td6 = $('<div/>').addClass('recipeValue').html(recipe.itemValue());
+        const td6a = $("<div/>").addClass("recipeValueHeader recipeCardHeader tooltip").attr("data-tooltip", "Gold").html(`<img src='images/resources/M001.png'>`);
         td6.prepend(td6a);
         const craftCount = Math.min(100,recipe.craftCount);
         const td7 = $('<div/>').addClass('recipeCount');

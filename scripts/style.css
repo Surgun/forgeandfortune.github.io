@@ -165,7 +165,7 @@ body:after {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, .selection-container, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, .selection-container, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .inventoryItem, .equipItem, .heroEquipBlockEquip {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -621,7 +621,10 @@ body:after {
 }
 
 .heroEquipBlockEquipStat {
-    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .heroEquipBlockEquipStat.hebPositive {
@@ -3288,7 +3291,7 @@ Rarities
     position: fixed;
     top: 88px;
     width: 100%;
-    height: calc(100% - 90px);
+    height: calc(100% - 138px);
     max-width: 250px;
     background-color: var(--bg-primary);
     border-right: 1px solid var(--border-primary);

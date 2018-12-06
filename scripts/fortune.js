@@ -144,6 +144,6 @@ $(document).on("click","#fortuneSetButton",(e) => {
 
 $(document).on("click",".fortuneStatusButton",(e) => {
     e.preventDefault();
-    const type = $(e.target).attr("type");
+    const type = $(e.currentTarget).attr("type");
     FortuneManager.payUp(type);
 });

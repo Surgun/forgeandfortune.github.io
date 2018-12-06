@@ -2784,6 +2784,14 @@ Rarities
     background: url(/images/townImages/smithBuilding/bg.png);
 }
 
+.buildingFortune .buildingInfoBackground {
+    background: url(/images/townImages/fortuneBuilding/bg.png);
+}
+
+.buildingResearch .buildingInfoBackground {
+    background: url(/images/townImages/researchBuilding/bg.png);
+}
+
 .buildingInfoImage {
     text-align: center;
     transform-origin: bottom;

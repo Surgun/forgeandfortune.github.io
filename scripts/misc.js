@@ -1,3 +1,8 @@
+const weekDuration = 86400000;
+const weeksInSeason = 4;
+const seasonsInYear = 4;
+const seasonWords = ["Spring","Summer","Fall","Winter"];
+
 function formatToUnits(number, precision) {
     const abbrev = ['', ' K', ' M', ' B', ' T', 'Q'];
     const unrangifiedOrder = Math.floor(Math.log10(Math.abs(number)) / 3)
@@ -76,17 +81,22 @@ const miscLoadedValues = {};
 
 function currentDate() {
     const elapsed = achievementStats.timePlayed;
-    let hrs = Math.floor(elapsed/150000);
-    let days = Math.floor(hrs/24);
-    hrs -= days*24;
-    let seasons = Math.floor(days/30);
-    days -= seasons*20;
-    let years = Math.floor(seasons/4);
-    seasons -= years*4;
-    const seasonWords = ["Spring","Summer","Fall","Winter"];
-    let trailing = "th"
-    if (days === 0) trailing = "st"
-    if (days === 1) trailing = "nd"
-    if (days === 2) trailing = "rd" 
-    return `${days+1}${trailing} of ${seasonWords[seasons]}, Year ${years+1}`;
+    const weeks = Math.floor(elapsed/weekDuration);
+    const seasons = Math.floor(weeks/weeksInSeason);
+    const years = Math.floor(seasons/seasonsInYear);
+    const weekRemaining = weeks-4*seasons;
+    const seasonRemaining = seasons-4*years;
+    
+    return `Week ${weekRemaining+1} of ${seasonWords[seasonRemaining]}, Year ${years+1}`;
+}
+
+function timeLeftinWeek() {
+    const elapsed = achievementStats.timePlayed;
+    const left = weekDuration-elapsed%weekDuration;
+    return timeSince(0,left);
+}
+
+function currentWeek() {
+    const elapsed = achievementStats.timePlayed;
+    return Math.floor(elapsed/weekDuration);
 }

@@ -94,5 +94,6 @@ function mainLoop() {
     bloopSmith.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
     HeroManager.healTimer(elapsedTime);
+    FortuneManager.resetFortune();
     eventChecker();
 }

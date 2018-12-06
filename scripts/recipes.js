@@ -1,6 +1,7 @@
 "use strict";
 
 const ItemType = ["Armor", "Axes", "Belts", "Bows", "Cloaks", "Darts", "Earrings", "Gauntlets", "Gloves", "Hats", "Helmets", "Instruments", "Knives", "Maces", "Masks", "Pendants", "Potions", "Rings", "Rods", "Shields", "Shoes", "Spears", "Staves", "Swords", "Thrown", "Tomes", "Vests", "Wands", "Wards", "Whips"];
+const RoughItemType = ["Armor","Weapon","Accessory","Weapon","Armor","Accessory","Accessory","Armor","Armor","Armor","Armor","Accessory","Weapon","Weapon","Armor","Accessory","Accessory","Accessory","Weapon","Accessory","Armor","Weapon","Weapon","Weapon","Accessory","Accessory","Armor","Weapon","Accessory","Weapon"];
 
 const $RecipeResults = $("#RecipeResults");
 
@@ -249,6 +250,10 @@ const recipeList = {
     },
     advancedWorkerUnlock() {
         return this.recipes.filter(r => r.owned).some(recipe => recipe.lvl >= 5);
+    },
+    maxTier() {
+        const lvls = this.recipes.filter(r=>r.owned).map(r=>r.lvl);
+        return Math.max(...lvls);
     }
 }
 

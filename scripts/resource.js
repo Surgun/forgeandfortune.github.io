@@ -102,6 +102,14 @@ const ResourceManager = {
     },
     reOrderMats() {
         this.materials.sort((a,b) => a.tier - b.tier);
+    },
+    fortuneResource(lvl) {
+        const resources = this.materials.filter(r=>r.fortuneLvl===lvl);
+        const week = currentWeek();
+        const good = resources[week%resources.length].id;
+        const great = resources[(week+1)%resources.length].id;
+        const epic = resources[(week+2)%resources.length].id;
+        return [good,great,epic];
     }
 }
 
@@ -112,7 +120,7 @@ function initializeMats() {
     ResourceManager.materials.forEach(mat => {
         const d = $("<div/>").addClass("material tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
         const d1 = $("<div/>").addClass("materialName").html(mat.img);
-        const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(formatToUnits(mat.amt,3));
+        const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(formatToUnits(mat.amt,2));
         d.append(d1,d2);
         d.hide();
         $materials.append(d);
@@ -124,7 +132,7 @@ function hardMatRefresh() {
     ResourceManager.materials.forEach(mat=> {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
-        $("#amt"+mat.id).html(formatToUnits(mat.amt,3));
+        $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
     })
 }
 

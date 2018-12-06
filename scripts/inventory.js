@@ -115,7 +115,7 @@ class itemContainer {
         return d;
     }
     goldValueFormatted() {
-        return ResourceManager.materialIcon("M001") + "&nbsp;" + this.goldValue();
+        return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue(),2);
     }
     goldValue() {
         return (this.item.value * (this.rarity+1));

@@ -2,311 +2,379 @@
   {
     "id": "M001",
     "name": "Gold",
-    "tier": 0
+    "tier": 0,
+    "fortuneLvl": 0
   },
   {
     "id": "M002",
     "name": "Blueprint",
-    "tier": 0
+    "tier": 0,
+    "fortuneLvl": 0
   },
   {
     "id": "M101",
     "name": "Emerald Slime",
-    "tier": 55
+    "tier": 55,
+    "fortuneLvl": 1
   },
   {
     "id": "M102",
     "name": "Peach Slime",
-    "tier": 49
+    "tier": 49,
+    "fortuneLvl": 2
   },
   {
     "id": "M103",
     "name": "Indigo Slime",
-    "tier": 43
+    "tier": 43,
+    "fortuneLvl": 3
   },
   {
     "id": "M104",
     "name": "Ginger Slime",
-    "tier": 37
+    "tier": 37,
+    "fortuneLvl": 4
   },
   {
     "id": "M105",
     "name": "Stinky Slime",
-    "tier": 31
+    "tier": 31,
+    "fortuneLvl": 5
   },
   {
     "id": "M106",
     "name": "Clear Slime",
-    "tier": 25
+    "tier": 25,
+    "fortuneLvl": 6
   },
   {
     "id": "M107",
     "name": "Magenta Slime",
-    "tier": 19
+    "tier": 19,
+    "fortuneLvl": 7
   },
   {
     "id": "M108",
     "name": "Grey Slime",
-    "tier": 13
+    "tier": 13,
+    "fortuneLvl": 8
   },
   {
     "id": "M109",
     "name": "Cobalt Slime",
-    "tier": 7
+    "tier": 7,
+    "fortuneLvl": 9
   },
   {
     "id": "M110",
     "name": "Technicolor Slime",
-    "tier": 1
+    "tier": 1,
+    "fortuneLvl": 10
   },
   {
     "id": "M201",
     "name": "Bee Wing",
-    "tier": 56
+    "tier": 56,
+    "fortuneLvl": 1
   },
   {
     "id": "M202",
     "name": "Cobra Scale",
-    "tier": 50
+    "tier": 50,
+    "fortuneLvl": 2
   },
   {
     "id": "M203",
     "name": "Compost",
-    "tier": 44
+    "tier": 44,
+    "fortuneLvl": 3
   },
   {
     "id": "M204",
     "name": "Rat Tail",
-    "tier": 38
+    "tier": 38,
+    "fortuneLvl": 4
   },
   {
     "id": "M205",
     "name": "Stinger",
-    "tier": 32
+    "tier": 32,
+    "fortuneLvl": 5
   },
   {
     "id": "M206",
     "name": "Silk",
-    "tier": 26
+    "tier": 26,
+    "fortuneLvl": 6
   },
   {
     "id": "M207",
     "name": "Snake Scale",
-    "tier": 20
+    "tier": 20,
+    "fortuneLvl": 7
   },
   {
     "id": "M208",
     "name": "Parasitic Egg",
-    "tier": 14
+    "tier": 14,
+    "fortuneLvl": 8
   },
   {
     "id": "M209",
     "name": "Wasp Wing",
-    "tier": 8
+    "tier": 8,
+    "fortuneLvl": 9
   },
   {
     "id": "M210",
     "name": "Bat Wing",
-    "tier": 2
+    "tier": 2,
+    "fortuneLvl": 10
   },
   {
     "id": "M301",
     "name": "Earth Crystal",
-    "tier": 57
+    "tier": 57,
+    "fortuneLvl": 1
   },
   {
     "id": "M302",
     "name": "Psychic Crystal",
-    "tier": 51
+    "tier": 51,
+    "fortuneLvl": 2
   },
   {
     "id": "M303",
     "name": "Life Crystal",
-    "tier": 45
+    "tier": 45,
+    "fortuneLvl": 3
   },
   {
     "id": "M304",
     "name": "Wind Crystal",
-    "tier": 39
+    "tier": 39,
+    "fortuneLvl": 4
   },
   {
     "id": "M305",
     "name": "Lightning Crystal",
-    "tier": 33
+    "tier": 33,
+    "fortuneLvl": 5
   },
   {
     "id": "M306",
     "name": "Fire Crystal",
-    "tier": 27
+    "tier": 27,
+    "fortuneLvl": 6
   },
   {
     "id": "M307",
     "name": "Ice Crystal",
-    "tier": 21
+    "tier": 21,
+    "fortuneLvl": 7
   },
   {
     "id": "M308",
     "name": "Poison Crystal",
-    "tier": 15
+    "tier": 15,
+    "fortuneLvl": 8
   },
   {
     "id": "M309",
     "name": "Storm Crystal",
-    "tier": 9
+    "tier": 9,
+    "fortuneLvl": 9
   },
   {
     "id": "M310",
     "name": "Death Crystal",
-    "tier": 3
+    "tier": 3,
+    "fortuneLvl": 10
   },
   {
     "id": "M401",
     "name": "Crab Shell",
-    "tier": 58
+    "tier": 58,
+    "fortuneLvl": 1
   },
   {
     "id": "M402",
     "name": "Turtle Shell",
-    "tier": 52
+    "tier": 52,
+    "fortuneLvl": 2
   },
   {
     "id": "M403",
     "name": "Octopus Tentacle",
-    "tier": 46
+    "tier": 46,
+    "fortuneLvl": 3
   },
   {
     "id": "M404",
     "name": "Frog Eye",
-    "tier": 40
+    "tier": 40,
+    "fortuneLvl": 4
   },
   {
     "id": "M405",
     "name": "Amphab Spine",
-    "tier": 34
+    "tier": 34,
+    "fortuneLvl": 5
   },
   {
     "id": "M406",
     "name": "Bear Hair",
-    "tier": 28
+    "tier": 28,
+    "fortuneLvl": 6
   },
   {
     "id": "M407",
     "name": "Toad Shroom",
-    "tier": 22
+    "tier": 22,
+    "fortuneLvl": 7
   },
   {
     "id": "M408",
     "name": "Moose Antler",
-    "tier": 16
+    "tier": 16,
+    "fortuneLvl": 8
   },
   {
     "id": "M409",
     "name": "Alligator Skull",
-    "tier": 10
+    "tier": 10,
+    "fortuneLvl": 9
   },
   {
     "id": "M410",
     "name": "Dinosaur Bone",
-    "tier": 4
+    "tier": 4,
+    "fortuneLvl": 10
   },
   {
     "id": "M501",
     "name": "Ankh",
-    "tier": 59
+    "tier": 59,
+    "fortuneLvl": 1
   },
   {
     "id": "M502",
     "name": "Horseshoe",
-    "tier": 53
+    "tier": 53,
+    "fortuneLvl": 2
   },
   {
     "id": "M503",
     "name": "Chain",
-    "tier": 47
+    "tier": 47,
+    "fortuneLvl": 3
   },
   {
     "id": "M504",
     "name": "Coal",
-    "tier": 41
+    "tier": 41,
+    "fortuneLvl": 4
   },
   {
     "id": "M505",
     "name": "Goblet",
-    "tier": 35
+    "tier": 35,
+    "fortuneLvl": 5
   },
   {
     "id": "M506",
     "name": "Nut",
-    "tier": 29
+    "tier": 29,
+    "fortuneLvl": 6
   },
   {
     "id": "M507",
     "name": "Bolt",
-    "tier": 23
+    "tier": 23,
+    "fortuneLvl": 7
   },
   {
     "id": "M508",
     "name": "Chime",
-    "tier": 17
+    "tier": 17,
+    "fortuneLvl": 8
   },
   {
     "id": "M509",
     "name": "Cuffs",
-    "tier": 11
+    "tier": 11,
+    "fortuneLvl": 9
   },
   {
     "id": "M510",
     "name": "Gear",
-    "tier": 5
+    "tier": 5,
+    "fortuneLvl": 10
   },
   {
     "id": "M601",
     "name": "Red Bow",
-    "tier": 60
+    "tier": 60,
+    "fortuneLvl": 1
   },
   {
     "id": "M602",
     "name": "Orange Yarn",
-    "tier": 54
+    "tier": 54,
+    "fortuneLvl": 2
   },
   {
     "id": "M603",
     "name": "Yellow Clasp",
-    "tier": 48
+    "tier": 48,
+    "fortuneLvl": 3
   },
   {
     "id": "M604",
     "name": "Green Button",
-    "tier": 42
+    "tier": 42,
+    "fortuneLvl": 4
   },
   {
     "id": "M605",
     "name": "Blue Feather",
-    "tier": 36
+    "tier": 36,
+    "fortuneLvl": 5
   },
   {
     "id": "M606",
     "name": "Indigo Bow",
-    "tier": 30
+    "tier": 30,
+    "fortuneLvl": 6
   },
   {
     "id": "M607",
     "name": "Pink Yarn",
-    "tier": 24
+    "tier": 24,
+    "fortuneLvl": 7
   },
   {
     "id": "M608",
     "name": "Cerulean Berries",
-    "tier": 18
+    "tier": 18,
+    "fortuneLvl": 8
   },
   {
     "id": "M609",
     "name": "Black Feather",
-    "tier": 12
+    "tier": 12,
+    "fortuneLvl": 9
   },
   {
     "id": "M610",
     "name": "White Berries",
-    "tier": 6
+    "tier": 6,
+    "fortuneLvl": 10
+  },
+  {
+    "id": "M9900",
+    "name": "Plank",
+    "tier": 0,
+    "fortuneLvl": 0
   }
 ]

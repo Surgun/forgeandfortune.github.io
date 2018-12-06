@@ -98,6 +98,11 @@ const FortuneManager = {
         else if (type === "Epic") this.epicPaid = true;
         refreshFortuneInfo();
     },
+    isLucky(type,quality) {
+        if (!this.setPaid) return false;
+        const prop = this.propsByType(quality);
+        return prop.line === type;
+    }
 }
 
 function initiateFortuneBldg () {

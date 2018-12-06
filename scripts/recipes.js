@@ -1,7 +1,6 @@
 "use strict";
 
 const ItemType = ["Armor", "Axes", "Belts", "Bows", "Cloaks", "Darts", "Earrings", "Gauntlets", "Gloves", "Hats", "Helmets", "Instruments", "Knives", "Maces", "Masks", "Pendants", "Potions", "Rings", "Rods", "Shields", "Shoes", "Spears", "Staves", "Swords", "Thrown", "Tomes", "Vests", "Wands", "Wards", "Whips"];
-const RoughItemType = ["Armor","Weapon","Accessory","Weapon","Armor","Accessory","Accessory","Armor","Armor","Armor","Armor","Accessory","Weapon","Weapon","Armor","Accessory","Accessory","Accessory","Weapon","Accessory","Armor","Weapon","Weapon","Weapon","Accessory","Accessory","Armor","Weapon","Accessory","Weapon"];
 
 const $RecipeResults = $("#RecipeResults");
 

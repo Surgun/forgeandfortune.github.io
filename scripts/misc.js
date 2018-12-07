@@ -100,3 +100,13 @@ function currentWeek() {
     const elapsed = achievementStats.timePlayed;
     return Math.floor(elapsed/weekDuration);
 }
+
+function randomChance(num,total) {
+    //return true if random(0-total) is less than num
+    return num > Math.floor(Math.random() * total);
+}
+
+function isItChristmas() {
+    const d = new Date();
+    return d.getMonth() === 10 || d.getMonth() === 11;
+}

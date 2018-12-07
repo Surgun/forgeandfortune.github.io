@@ -20,10 +20,33 @@ const FortuneManager = {
     greatPaid : false,
     epicPaid : false,
     createSave() {
-
+        const save = {};
+        save.fortuneWeek = this.fortuneWeek;
+        save.goodLine = this.goodLine;
+        save.greatLine = this.greatLine;
+        save.epicLine = this.epicLine;
+        save.goodReq = this.goodReq;
+        save.greatReq = this.greatReq;
+        save.epicReq = this.epicReq;
+        save.reqAmt = this.reqAmt;
+        save.setPaid = this.setPaid;
+        save.goodPaid = this.goodPaid;
+        save.greatPaid = this.greatPaid;
+        save.epicPaid = this.epicPaid;
     },
     loadSave(save) {
-
+        this.fortuneWeek = save.fortuneWeek;
+        this.goodLine = save.goodLine;
+        this.greatLine = save.greatLine;
+        this.epicLine = save.epicLine;
+        this.goodReq = save.goodReq;
+        this.greatReq = save.greatReq;
+        this.epicReq = save.epicReq;
+        this.reqAmt = save.reqAmt;
+        this.setPaid = save.setPaid;
+        this.goodPaid = save.goodPaid;
+        this.greatPaid = save.greatPaid;
+        this.epicPaid = save.epicPaid;
     },
     setReqResource() {
         const lvl = recipeList.maxTier();
@@ -47,6 +70,7 @@ const FortuneManager = {
         this.greatPaid = false;
         this.epicPaid = false;
         refreshFortuneInfo();
+        refreshFilterListLucky()
     },
     setCrafts() {
         if (this.setPaid) return;
@@ -97,6 +121,7 @@ const FortuneManager = {
         else if (type === "Great") this.greatPaid = true;
         else if (type === "Epic") this.epicPaid = true;
         refreshFortuneInfo();
+        refreshFilterListLucky();
     },
     isLucky(type,quality) {
         if (!this.setPaid) return false;
@@ -123,6 +148,14 @@ function refreshFortuneInfo() {
     types.forEach(type => {
         $fortuneStatus.append(fortuneBox(type));
     });
+}
+
+function refreshFilterListLucky() {
+    $(".recipeSelect").removeClass("luckyGood luckyGreat luckyEpic");
+    if (!FortuneManager.setPaid) return;
+    if (FortuneManager.goodPaid) $("#rf"+FortuneManager.goodLine).addClass("luckyGood");
+    if (FortuneManager.greatPaid) $("#rf"+FortuneManager.greatLine).addClass("luckyGreat");
+    if (FortuneManager.epicPaid) $("#rf"+FortuneManager.epicLine).addClass("luckyEpic");
 }
 
 function fortuneBox(type) {

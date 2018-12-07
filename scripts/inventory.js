@@ -115,7 +115,7 @@ class itemContainer {
         return d;
     }
     goldValueFormatted() {
-        return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue(), 2);
+        return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue(),2);
     }
     goldValue() {
         return (this.item.value * (this.rarity+1));
@@ -168,24 +168,22 @@ const Inventory = {
         const autoSell = item.autoSell;
         item.addCount();
         const roll = Math.floor(Math.random() * 1000)
-        let mod = 1;
         let sellToggle = -1
         if (autoSell === "Common") sellToggle = 0;
         if (autoSell === "Good") sellToggle = 1;
         if (autoSell === "Great") sellToggle = 2;
         if (autoSell === "Epic") sellToggle = 3;
-        if (item.isMastered()) mod = 2;
-        if (roll < miscLoadedValues.qualityCheck[3]*mod) {
+        if (roll < this.craftChance(item,"Epic")) {
             this.addToInventory(id,3,sellToggle);
             achievementStats.craftedItem("Epic");
             if (sellToggle < 3) Notifications.exceptionalCraft(name,"Epic","craftEpic");
         }
-        else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2])*mod) {
+        else if (roll < (this.craftChance(item,"Epic")+this.craftChance(item,"Great"))) {
             this.addToInventory(id,2,sellToggle);
             achievementStats.craftedItem("Great");
             if (sellToggle < 2) Notifications.exceptionalCraft(name,"Great","craftGreat");
         }
-        else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1])*mod) {
+        else if (roll < (this.craftChance(item,"Epic")+this.craftChance(item,"Great")+this.craftChance(item,"Good"))) {
             this.addToInventory(id,1,sellToggle);
             achievementStats.craftedItem("Good");
             if (sellToggle < 1) Notifications.exceptionalCraft(name,"Good","craftGood");
@@ -194,6 +192,13 @@ const Inventory = {
             this.addToInventory(id,0,sellToggle);
             achievementStats.craftedItem("Common");
         }
+    },
+    craftChance(item,quality) {
+        const masterMod = item.isMastered() ? 2 : 1;
+        const fortuneMod = FortuneManager.isLucky(item.type,quality) ? 2 : 1;
+        if (quality === "Good") return miscLoadedValues.qualityCheck[1]*masterMod*fortuneMod;
+        if (quality === "Great") return miscLoadedValues.qualityCheck[2]*masterMod*fortuneMod;
+        if (quality === "Epic") return miscLoadedValues.qualityCheck[3]*masterMod*fortuneMod;
     },
     removeFromInventory(id,rarity) {
         for (let i=0;i<this.inv.length;i++) {

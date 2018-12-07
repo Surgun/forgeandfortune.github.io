@@ -1040,6 +1040,33 @@ Rarities
     color: var(--text-2);
 }
 
+.recipeSelect.luckyFortune:after {
+    content: "\f6e8";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: var(--text);
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.recipeSelect.luckyFortune.luckyGood:after {
+    color: rgb(44, 255, 89);
+}
+
+.recipeSelect.luckyFortune.luckyGreat:after {
+    color: rgb(8, 173, 255);
+}
+
+.recipeSelect.luckyFortune.luckyEpic:after {
+    color: rgb(255, 79, 167);
+}
+
 #RecipeFilter a[href*="Selector"]:before {
     display: inline-block;
     position: relative;
@@ -1235,7 +1262,7 @@ Rarities
 .sortDesc:after, .sortAsc:after {
     position: relative;
     margin-left: 5px;
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Pro";
     content: "\f063";
     font-weight: 900;
     font-size: 12px;
@@ -3066,9 +3093,13 @@ Rarities
     display: block;
     position: relative;
     content: "\f30b";
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Pro";
     font-size: 1.5em;
     font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
     -webkit-animation: 1.2s point-right infinite;
     animation: 1.2s point-right infinite;
 }

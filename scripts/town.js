@@ -13,10 +13,10 @@ const TownManager = {
 
 function refreshSideTown() {
     $buildingList.empty();
-    const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html("Bank");
-    const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html("Fusion");
-    const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html("Blacksmith");
-    const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html("Fortune");
+    const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`<i class="fas fa-university"></i> Bank`);
+    const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`<i class="fas fa-cauldron"></i> Fusion`);
+    const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`<i class="fas fa-hammer-war"></i> Blacksmith`);
+    const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html(`<i class="fas fa-hat-wizard"></i> Fortune`);
     $buildingList.append(d1,d2,d3,d4);
 }
 

@@ -104,11 +104,13 @@ class Item{
         this.craftCount += 1;
         if (this.craftCount === 100) {
             masteredItem = true;
-            refreshCraftCount();
+            //refreshCraftCount();
+            refreshMasteryBar();
             initializeActionSlots();
             refreshProgress();
         }
-        $("#rc"+this.id).html(this.count()+"/100");
+        //$("#rc"+this.id).html(this.count()+"/100");
+        refreshMasteryBar();
     }
     isMastered() {
         return this.craftCount >= 100;
@@ -357,7 +359,15 @@ function initializeRecipes(type,sortType,heading) {
         const craftCount = Math.min(100,recipe.craftCount);
         const td7 = $('<div/>').addClass('recipeCount');
         const td7a = $("<div/>").addClass("recipeMasteryHeader recipeCardHeader").html("Mastery");
-        const td7b = $('<div/>').addClass('recipeCountStatus').attr("id","rc"+recipe.id).html(craftCount+"/100");
+        /*Mastery Bar Stuff, Akerson can purty this up if he wants */
+        const masteryWidth = (craftCount).toFixed(1)+"%";
+        const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
+        const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",craftCount).attr("id","masteryBar");
+        const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
+        const td7b = $('<div/>').addClass('recipeCountStatus').attr("id","rc"+recipe.id);
+        masteryBarDiv.append(masteryBar,masteryBarFill);
+        td7b.append(masteryBarDiv);
+        /* */
         td7.append(td7a,td7b);
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6,td7);
         lastRow = row;
@@ -372,6 +382,18 @@ function initializeRecipes(type,sortType,heading) {
     recipeCanCraft();
 }
 
+function refreshMasteryBar() {
+    recipeList.recipes.forEach((recipe) => {
+        const rr = $("#rc"+recipe.id)
+        const masteryWidth = (recipe.craftCount).toFixed(1)+"%";
+        const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
+        const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",recipe.craftCount).attr("id","masteryBar");
+        const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
+        masteryBarDiv.append(masteryBar,masteryBarFill);
+        rr.html(masteryBarDiv);
+    });
+}
+/*
 function refreshCraftCount() {
     recipeList.recipes.forEach((recipe) => {
         const rr = $("#rc"+recipe.id)
@@ -379,7 +401,7 @@ function refreshCraftCount() {
         if (recipe.isMastered()) $("#vr"+recipe.id).addClass("masteredMat");
     });
 }
-
+*/
 function recipeCanCraft() {
     //loops through recipes, adds class if disabled
     $(".recipeRow").removeClass("recipeRowDisable");

@@ -14,8 +14,8 @@ const TownManager = {
 function refreshSideTown() {
     $buildingList.empty();
     const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`<i class="fas fa-university"></i> Bank`);
-    const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`<i class="fas fa-cauldron"></i> Fusion`);
-    const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`<i class="fas fa-hammer-war"></i> Blacksmith`);
+    const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`<i class="fas fa-cauldron"></i> Cauldron`);
+    const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`<i class="fas fa-hammer-war"></i> Forge`);
     const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html(`<i class="fas fa-hat-wizard"></i> Fortune`);
     $buildingList.append(d1,d2,d3,d4);
 }
@@ -27,7 +27,7 @@ function showFuseBldg() {
     const d = $("<div/>").addClass("buildingInfo buildingFusion");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fuseBuilding/fusion_building.png'>");
-        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Building</h2>");
+        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Cauldron</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Fuse three of the same item into a rarity higher of the same item.");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
@@ -41,7 +41,7 @@ function showBankBldg() {
     const d = $("<div/>").addClass("buildingInfo buildingBank");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/bankBuilding/bank_building.png'>");
-        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Bank Building</h2>");
+        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Bank</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Store important items at the bank.");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
@@ -55,8 +55,8 @@ function showSmithBldg() {
     const d = $("<div/>").addClass("buildingInfo buildingSmith");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/smithBuilding/smith_building.png'>");
-        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Blacksmith Building</h2>");
-        const dd = $("<div/>").addClass("buildingInfoDesc").html("Upgrade your weapons at the blacksmith.");
+        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Forge</h2>");
+        const dd = $("<div/>").addClass("buildingInfoDesc").html("Upgrade your weapons at the forge.");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     initiateSmithBldg();    

@@ -255,3 +255,57 @@ function enableChristmasLayers() {
         layer.classList.add("christmasEvent");
     });
 }
+
+//
+
+const $dbpanel = $("#db-panel");
+
+function dbEnable() {
+    $dbpanel.empty();
+    const d = $("<button/>").addClass("dbClose").html("Close Debug");
+
+    const d1 = $("<div/>").addClass("gmContainer");
+        const d1a = $("<button/>").addClass("gmOption").html("Enable God Mode");
+    d1.append(d1a);
+
+    const d2 = $("<div/>").addClass("heroTestContainer");
+        const d2a = $("<button/>").addClass("heroTestOption").html("Enable Hero Test");
+    d2.append(d2a);
+
+    const d3 = $("<div/>").addClass("addItemContainer");
+        const d3a = $("<input/>").addClass("addItemName");
+        const d3b = $("<input/>").addClass("addItemRarity");
+    d3.append(d3a,d3b);
+
+    const d4 = $("<div/>").addClass("gearHeroesContainer");
+        const d4a = $("<input/>").addClass("gearHeroesLevel");
+        const d4b = $("<input/>").addClass("gearHeroesRarity");
+    d4.append(d4a,d4b);
+
+    const d5 = $("<div/>").addClass("addGoldContainer");
+    const d6 = $("<div/>").addClass("addMaterialContainer");
+    const d7 = $("<div/>").addClass("adjustSpeedContainer");
+
+    const addGoldInput = $("<input/>").addClass("addGoldInput");
+    const addMaterialInput = $("<input/>").addClass("addMaterialInput");
+    const adjustSpeedInput = $("<input/>").addClass("adjustSpeedInput");
+
+    d5.append(addGoldInput);
+    d6.append(addMaterialInput);
+    d7.append(adjustSpeedInput);
+
+    $dbpanel.append(d,d1,d2,d3,d4,d5,d6,d7);
+    $dbpanel.css("display", "block");
+}
+
+$(document).on('click', '.gmOption', (e) => {
+    devtools.godmode();
+});
+
+$(document).on('click', '.heroTestOption', (e) => {
+    devtools.heroTest();
+});
+
+$(document).on('click', '.dbClose', (e) => {
+    $dbpanel.css("display", "none");
+});

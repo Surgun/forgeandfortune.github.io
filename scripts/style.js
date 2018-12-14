@@ -259,9 +259,11 @@ function enableChristmasLayers() {
 //
 
 const $dbpanel = $("#db-panel");
+let dbi = 0;
 
 function dbEnable() {
     $dbpanel.empty();
+    dbi = 0;
     const d = $("<button/>").addClass("dbClose").html("Close Debug");
 
     const d1 = $("<div/>").addClass("gmContainer");
@@ -272,31 +274,65 @@ function dbEnable() {
         const d2a = $("<button/>").addClass("heroTestOption").html("Enable Hero Test");
     d2.append(d2a);
 
-    const d3 = $("<div/>").addClass("addItemContainer");
-        const d3a = $("<input/>").addClass("addItemName");
-        const d3b = $("<input/>").addClass("addItemRarity");
-    d3.append(d3a,d3b);
+    const d3 = $("<div/>").addClass("materialContainer");
+        const d3a = $("<button/>").addClass("materialOption").html("Add Materials");
+    d3.append(d3a);
 
-    const d4 = $("<div/>").addClass("gearHeroesContainer");
-        const d4a = $("<input/>").addClass("gearHeroesLevel");
-        const d4b = $("<input/>").addClass("gearHeroesRarity");
-    d4.append(d4a,d4b);
+    const d4 = $("<div/>").addClass("addItemContainer");
+        const d4a = $("<h5/>").addClass("addItemTitle").html("Add Item to Inventory");
+        const d4b = $("<input/>").addClass("addItemName").attr("placeholder", "Item ID");
+        const d4c = $("<input/>").addClass("addItemRarity").attr("placeholder", "Item Rarity");
+        const d4d = $("<button/>").addClass("addItemBtn").html("Add");
+    d4.append(d4a,d4b,d4c,d4d);
 
-    const d5 = $("<div/>").addClass("addGoldContainer");
-    const d6 = $("<div/>").addClass("addMaterialContainer");
+    const d5 = $("<div/>").addClass("gearHeroesContainer");
+        const d5a = $("<h5/>").addClass("gearHeroesTitle").html("Add Gear to Heroes");
+        const d5b = $("<input/>").addClass("gearHeroesLevel").attr("placeholder", "Gear Level");
+        const d5c = $("<input/>").addClass("gearHeroesRarity").attr("placeholder", "Gear Rarity");
+        const d5d = $("<button/>").addClass("gearHeroesBtn").html("Gear");
+    d5.append(d5a,d5b,d5c,d5d);
+
+    const d6 = $("<div/>").addClass("addGoldContainer");
+        const d6a = $("<h5/>").addClass("addGoldTitle").html("Add Gold");
+        const d6b = $("<input/>").addClass("addGoldInput").attr("placeholder", "0");
+        const d6c = $("<button/>").addClass("addGoldBtn").html("Add");
+    d6.append(d6a,d6b,d6c);
+
     const d7 = $("<div/>").addClass("adjustSpeedContainer");
-
-    const addGoldInput = $("<input/>").addClass("addGoldInput");
-    const addMaterialInput = $("<input/>").addClass("addMaterialInput");
-    const adjustSpeedInput = $("<input/>").addClass("adjustSpeedInput");
-
-    d5.append(addGoldInput);
-    d6.append(addMaterialInput);
-    d7.append(adjustSpeedInput);
+        const d7a = $("<h5/>").addClass("adjustSpeedTitle").html("Adjust Speed");
+        const d7b = $("<input/>").addClass("adjustSpeedInput").attr("placeholder", "0.0");
+        const d7c = $("<button/>").addClass("adjustSpeedBtn").html("Adjust");
+    d7.append(d7a,d7b,d7c);
 
     $dbpanel.append(d,d1,d2,d3,d4,d5,d6,d7);
     $dbpanel.css("display", "block");
 }
+
+$(document).on('click', '.materialOption', (e) => {
+    devtools.materials();
+});
+
+$(document).on('click', '.addGoldBtn', (e) => {
+    const goldAmount = parseInt(document.querySelector(".addGoldInput").value);
+    devtools.addGold(goldAmount);
+});
+
+$(document).on('click', '.adjustSpeedBtn', (e) => {
+    const speedAmount = parseFloat(document.querySelector(".adjustSpeedInput").value).toFixed(2);
+    devtools.speed(speedAmount);
+});
+
+$(document).on('click', '.gearHeroesBtn', (e) => {
+    const itemLevel = parseInt(document.querySelector(".gearHeroesLevel").value);
+    const itemRarity = parseInt(document.querySelector(".gearHeroesRarity").value);
+    devtools.gearHeroes(itemLevel,itemRarity);
+});
+
+$(document).on('click', '.addItemBtn', (e) => {
+    const itemName = (document.querySelector(".addItemName").value).toString();
+    const itemRarity = parseInt(document.querySelector(".addItemRarity").value);
+    devtools.addItem(itemName,itemRarity);
+});
 
 $(document).on('click', '.gmOption', (e) => {
     devtools.godmode();
@@ -308,4 +344,8 @@ $(document).on('click', '.heroTestOption', (e) => {
 
 $(document).on('click', '.dbClose', (e) => {
     $dbpanel.css("display", "none");
+});
+
+$(document).on('click', '#db-init', (e) => {
+    (dbi >= 7) ? dbEnable() : dbi++;
 });

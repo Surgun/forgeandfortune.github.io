@@ -162,15 +162,18 @@ function refreshPossibleFuse() {
     const d1 = $("<div/>").addClass("possibleFuseHead").html("Possible Fuses");
     const d2 = $("<div/>").addClass('possibleFuseHolder');
     const rarities = ["Common","Good","Great","Epic"];
-    Inventory.getFusePossibilities().forEach(f => {
-        const item = recipeList.idToItem(f.id);
-        const d3 = $("<div/>").addClass("possibleFusegroup");
-        const d4 = $("<div/>").addClass("possibleFusegroupHeader").addClass("possibleFuseRarity"+f.rarity).html(`${rarities[f.rarity]} Fuse`)
-        const d5 = $("<div/>").addClass("possibleFuse").html(`${item.itemPicName()}`);
-        const d6 = $("<div/>").addClass("fuseStart").attr("fuseID",f.id).attr("fuseRarity",f.rarity).html(`FUSE&nbsp;&nbsp;${ResourceManager.materialIcon("M001")}&nbsp;&nbsp;${formatToUnits(FusionManager.getFuseCost(f),2)}`);
-        d3.append(d4,d5,d6);
-        d2.append(d3);
-    });
+    if(Inventory.getFusePossibilities().length === 0) d2.addClass("fuseInvBlank").html("No Items Available to Fuse");
+    if(Inventory.getFusePossibilities().length > 0) {
+        Inventory.getFusePossibilities().forEach(f => {
+            const item = recipeList.idToItem(f.id);
+            const d3 = $("<div/>").addClass("possibleFusegroup");
+            const d4 = $("<div/>").addClass("possibleFusegroupHeader").addClass("possibleFuseRarity"+f.rarity).html(`${rarities[f.rarity]} Fuse`)
+            const d5 = $("<div/>").addClass("possibleFuse").html(`${item.itemPicName()}`);
+            const d6 = $("<div/>").addClass("fuseStart").attr("fuseID",f.id).attr("fuseRarity",f.rarity).html(`FUSE&nbsp;&nbsp;${ResourceManager.materialIcon("M001")}&nbsp;&nbsp;${formatToUnits(FusionManager.getFuseCost(f),2)}`);
+            d3.append(d4,d5,d6);
+            d2.append(d3);
+        });
+    }
     $fuseList.append(d1,d2);
 }
     

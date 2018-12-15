@@ -105,7 +105,7 @@ const FortuneManager = {
     getFortuneText(type) {
         const props = this.propsByType(type);
         if (!props.payState) return "???";
-        return `${props.line} line`;
+        return `${props.line}`;
     },
     getGoldCost() {
         return miscLoadedValues.fortuneCost[recipeList.maxTier()-1];
@@ -136,9 +136,10 @@ function initiateFortuneBldg () {
 
 function refreshFortuneInfo() {
     $fortuneStatus.empty();
+    const d = $("<div/>").addClass(`fortuneStatusContainer`);
     if (!FortuneManager.setPaid) {
         const d1 = $("<div/>").addClass("fortuneSetHead").html("Pay to get your fortune read?");
-        const d2 = $("<div/>").attr("id","fortuneSetButton").html(`Pay - ${miscIcons.gold} ${formatToUnits(FortuneManager.getGoldCost(),2)}`);
+        const d2 = $("<div/>").attr("id","fortuneSetButton").html(`Pay<span class="fortune_cost">${miscIcons.gold} ${formatToUnits(FortuneManager.getGoldCost(),2)}</span>`);
         $fortuneStatus.append(d1,d2);
         return;
     }
@@ -146,8 +147,9 @@ function refreshFortuneInfo() {
     const d3 = $("<div/>").addClass("fortuneSetHead").html("Ah! I see much fortune in your future! Here's what I found:");
     $fortuneStatus.append(d3);
     types.forEach(type => {
-        $fortuneStatus.append(fortuneBox(type));
+        d.append(fortuneBox(type));
     });
+    $fortuneStatus.append(d);
 }
 
 function refreshFilterListLucky() {
@@ -160,13 +162,13 @@ function refreshFilterListLucky() {
 
 function fortuneBox(type) {
     const d1 = $("<div/>").addClass(`fortuneStatus ${"fortune"+type}`)
-    const d2 = $("<div/>").addClass("fortuneStatusHeading").html(`Increased ${type} Procs:`);
+    const d2 = $("<div/>").addClass("fortuneStatusHeading").html(`<i class="fas fa-hat-wizard"></i><span>Increased ${type} Procs</span>`);
     const d3 = $("<div/>").addClass("fortuneStatusType").html(FortuneManager.getFortuneText(type));
     d1.append(d2,d3);
     const props = FortuneManager.propsByType(type);
     if (props.payState) return d1;
     const mat = ResourceManager.idToMaterial(props.matReq);
-    const d4 = $("<div/>").addClass('fortuneStatusButton').attr("type",type).html(`Look Deeper - ${mat.img} ${props.amt}`);
+    const d4 = $("<div/>").addClass('fortuneStatusButton').attr("type",type).html(`Look Deeper<span class="deeper_cost">${mat.img} ${props.amt}</span>`);
     return d1.append(d4);
 }
 

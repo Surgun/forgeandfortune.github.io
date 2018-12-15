@@ -131,7 +131,7 @@ function refreshSmithArea() {
             $swMiddleText.hide();
             resetSmithBar();
             $swSuccess.html(`${100-bloopSmith.getSmithChance ()}% Success`).show();
-            $swConfirm.html(` Confirm Smith <span class="smith_cost">${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}</span>`).show();
+            $swConfirm.html(`Confirm Smith<span class="smith_cost">${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}</span>`).show();
             $swCollect.hide();
         }
     }

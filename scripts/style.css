@@ -1040,31 +1040,15 @@ Rarities
     color: var(--text-2);
 }
 
-.recipeSelect.luckyFortune:after {
-    content: "\f6e8";
-    font-family: "Font Awesome 5 Pro";
-    font-weight: 900;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    color: var(--text);
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    z-index: 5;
-}
-
-.recipeSelect.luckyFortune.luckyGood:after {
+.recipeSelect.luckyFortune.luckyGood > i {
     color: rgb(44, 255, 89);
 }
 
-.recipeSelect.luckyFortune.luckyGreat:after {
+.recipeSelect.luckyFortune.luckyGreat > i {
     color: rgb(8, 173, 255);
 }
 
-.recipeSelect.luckyFortune.luckyEpic:after {
+.recipeSelect.luckyFortune.luckyEpic > i {
     color: rgb(255, 79, 167);
 }
 
@@ -4211,6 +4195,10 @@ footer a[href*="discord.gg"]:hover {
 
 /* Reduces content width of workers and heroes tab elements on smaller screens */
 @media screen and (max-width: 1475px) {
+    #RecipeFilter a.recipeSelect > i {
+        display: none;
+    }
+    
     #workerList {
         padding: 5px;
         justify-content: center;
@@ -4248,6 +4236,16 @@ footer a[href*="discord.gg"]:hover {
 
 /* For desktop/laptop screens with enough width to display vertical recipe filter listing */
 @media screen and (min-width: 1475px) {
+    #RecipeFilter a.recipeSelect {
+        display: flex;
+        align-items: center;
+    }
+
+    #RecipeFilter a.recipeSelect > i {
+        position: absolute;
+        right: 10px;
+    }
+
     #recipes-container {
         display: flex;
         height: 100%;

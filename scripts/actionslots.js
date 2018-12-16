@@ -56,7 +56,8 @@ class actionSlot {
         this.craftTime += t;
         if (this.craftTime > this.maxCraft) {
             this.craftTime = 0;
-            if (this.item.autoSacrifice) WorkerManager.craftToSac(this.itemid);
+            if (ItemType.includes(this.item.type)) TownManager.specialCraft(this.itemid);
+            else if (this.item.autoSacrifice) WorkerManager.craftToSac(this.itemid);
             else Inventory.craftToInventory(this.itemid);
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart();

@@ -30,6 +30,7 @@ const ResourceManager = {
     },
     loadSave(save) {
         save.forEach(m=> {
+            console.log(m);
             const mat = this.idToMaterial(m.id);
             mat.loadSave(m);
         });
@@ -117,7 +118,7 @@ const $materials = $("#materials");
 
 function initializeMats() {
     ResourceManager.reOrderMats();
-    ResourceManager.materials.forEach(mat => {
+    ResourceManager.materials.filter(m=>m.type === "recipe").forEach(mat => {
         const d = $("<div/>").addClass("material tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
         const d1 = $("<div/>").addClass("materialName").html(mat.img);
         const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(formatToUnits(mat.amt,2));
@@ -129,7 +130,7 @@ function initializeMats() {
 
 function hardMatRefresh() {
     //used when we first load in
-    ResourceManager.materials.forEach(mat=> {
+    ResourceManager.materials.filter(m=>m.type === "recipe").forEach(mat=> {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(formatToUnits(mat.amt,2));

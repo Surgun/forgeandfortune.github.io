@@ -108,7 +108,7 @@ const achievementStats = {
         this.totalFloorsBeaten = save.totalFloorsBeaten;
         $statMaxFloor.html("Floor " + this.maxFloor);
         $statTotalGoldEarned.html(formatToUnits(this.totalGoldEarned,2));
-        $statFloors.html(this.totalFloorsBeaten)
+        $statFloors.html(this.totalFloorsBeaten);
         $statTimePlayed.html(timeSince(0,this.timePlayed));
         $statTotalItems.html(this.totalItemsCrafted);
         $statCommons.html(this.commonsCrafted);

@@ -138,7 +138,7 @@ const $fuseList = $("#fuseList");
 function refreshFuseSlots() {
     $fuseSlots.empty();
     FusionManager.slots.forEach(slot => {
-        const d1 = $("<div/>").addClass("fuseSlot");
+        const d1 = $("<div/>").addClass("fuseSlot").addClass("R"+slot.rarity);
         const d2 = $("<div/>").addClass("fuseSlotName").html(slot.recipe.itemPicName());
         const d3 = createFuseBar(slot);
         const d4 = $("<div/>").addClass("fuseSlotCollect").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html("Collect").hide();

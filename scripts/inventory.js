@@ -43,6 +43,7 @@ class itemContainer {
         this.item = recipeList.idToItem(id);
         this.name = this.item.name;
         this.type = this.item.type;
+        this.lvl = this.item.lvl;
         this.rarity = rarity;
         this.containerID = containerid;
         this.sharp = 0;
@@ -63,6 +64,9 @@ class itemContainer {
     picNamePlus() {
         const prefix = `<span class="item-prefix">+${this.sharp + 1}</span>`
         return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
+    }
+    itemLevel() {
+        return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
     pow() {
         return Math.floor(this.item.pow * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*this.sharp));
@@ -312,12 +316,13 @@ function refreshInventory() {
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
         const itemCost = $("<div/>").addClass("inventoryItemValue").html(item.goldValueFormatted());
+        const itemLevel = $("<div/>").addClass("inventoryItemLevel").html(item.itemLevel());
         const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
         const actionBtns = $("<div/>").addClass("inventoryButtons");
         const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
         const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
         actionBtns.append(equipButton,sellButton);
-        itemdiv.append(itemName,itemCost,itemProps,actionBtns);
+        itemdiv.append(itemName,itemLevel,itemCost,itemProps,actionBtns);
         $inventory.append(itemdiv);
     });
     $sideInventory.html(`${Inventory.inventoryCount()}/20`)

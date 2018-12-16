@@ -77,11 +77,12 @@ function refreshBankBank() {
 function itemCard(item,inBank) {
     const itemdiv = $("<div/>").addClass("bankItem").addClass("R"+item.rarity);
     const itemName = $("<div/>").addClass("bankItemName").html(item.picName());
+    const itemLevel = $("<div/>").addClass("bankItemLevel").html(item.itemLevel());
     const itemProps = $("<div/>").addClass("bankProps").html(item.propDiv());
     const locationButton = $("<div/>").attr("containerID",item.containerID);
     if (inBank) locationButton.addClass('bankTake').html("Take");
     else locationButton.addClass('bankStow').html("Stow");
-    return itemdiv.append(itemName,itemProps, locationButton);
+    return itemdiv.append(itemName,itemLevel,itemProps,locationButton);
 }
 
 $(document).on("click",".bankTake",(e) => {

@@ -2884,7 +2884,7 @@ Rarities
 }
 
 .fuseSlotName > img, .bankItemName > img, .possibleFuse > img, .smithItemName > img {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .fuseSlotName {
@@ -3009,6 +3009,18 @@ Rarities
 .bankInvHead, .bankBankHead, .smithInvHead {
     grid-column: 1 / -1;
     margin-top: 10px;
+}
+
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: var(--text);
+    font-size: 0.8em;
+    text-align: center;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    padding: 5px 8px;
 }
 
 .bankProps, .smithProps, .smithChance {

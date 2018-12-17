@@ -1,0 +1,16 @@
+{
+    "short_name": "F&F",
+    "name": "Forge & Fortune",
+    "icons": [
+      {
+        "src": "/favicons/favicon-196x196.png",
+        "type": "image/png",
+        "sizes": "196x196"
+      }
+    ],
+    "start_url": "?source=homescreen",
+    "background_color": "#21262b",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#21262b"
+  }

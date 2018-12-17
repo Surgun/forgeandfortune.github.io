@@ -3,378 +3,602 @@
     "id": "M001",
     "name": "Gold",
     "tier": 0,
-    "fortuneLvl": 0
+    "fortuneLvl": 0,
+    "type": "recipe"
   },
   {
     "id": "M002",
     "name": "Blueprint",
     "tier": 0,
-    "fortuneLvl": 0
+    "fortuneLvl": 0,
+    "type": "recipe"
   },
   {
     "id": "M101",
     "name": "Emerald Slime",
     "tier": 55,
-    "fortuneLvl": 1
+    "fortuneLvl": 1,
+    "type": "recipe"
   },
   {
     "id": "M102",
     "name": "Peach Slime",
     "tier": 49,
-    "fortuneLvl": 2
+    "fortuneLvl": 2,
+    "type": "recipe"
   },
   {
     "id": "M103",
     "name": "Indigo Slime",
     "tier": 43,
-    "fortuneLvl": 3
+    "fortuneLvl": 3,
+    "type": "recipe"
   },
   {
     "id": "M104",
     "name": "Ginger Slime",
     "tier": 37,
-    "fortuneLvl": 4
+    "fortuneLvl": 4,
+    "type": "recipe"
   },
   {
     "id": "M105",
     "name": "Stinky Slime",
     "tier": 31,
-    "fortuneLvl": 5
+    "fortuneLvl": 5,
+    "type": "recipe"
   },
   {
     "id": "M106",
     "name": "Clear Slime",
     "tier": 25,
-    "fortuneLvl": 6
+    "fortuneLvl": 6,
+    "type": "recipe"
   },
   {
     "id": "M107",
     "name": "Magenta Slime",
     "tier": 19,
-    "fortuneLvl": 7
+    "fortuneLvl": 7,
+    "type": "recipe"
   },
   {
     "id": "M108",
     "name": "Grey Slime",
     "tier": 13,
-    "fortuneLvl": 8
+    "fortuneLvl": 8,
+    "type": "recipe"
   },
   {
     "id": "M109",
     "name": "Cobalt Slime",
     "tier": 7,
-    "fortuneLvl": 9
+    "fortuneLvl": 9,
+    "type": "recipe"
   },
   {
     "id": "M110",
     "name": "Technicolor Slime",
     "tier": 1,
-    "fortuneLvl": 10
+    "fortuneLvl": 10,
+    "type": "recipe"
   },
   {
     "id": "M201",
     "name": "Bee Wing",
     "tier": 56,
-    "fortuneLvl": 1
+    "fortuneLvl": 1,
+    "type": "recipe"
   },
   {
     "id": "M202",
     "name": "Cobra Scale",
     "tier": 50,
-    "fortuneLvl": 2
+    "fortuneLvl": 2,
+    "type": "recipe"
   },
   {
     "id": "M203",
     "name": "Compost",
     "tier": 44,
-    "fortuneLvl": 3
+    "fortuneLvl": 3,
+    "type": "recipe"
   },
   {
     "id": "M204",
     "name": "Rat Tail",
     "tier": 38,
-    "fortuneLvl": 4
+    "fortuneLvl": 4,
+    "type": "recipe"
   },
   {
     "id": "M205",
     "name": "Stinger",
     "tier": 32,
-    "fortuneLvl": 5
+    "fortuneLvl": 5,
+    "type": "recipe"
   },
   {
     "id": "M206",
     "name": "Silk",
     "tier": 26,
-    "fortuneLvl": 6
+    "fortuneLvl": 6,
+    "type": "recipe"
   },
   {
     "id": "M207",
     "name": "Snake Scale",
     "tier": 20,
-    "fortuneLvl": 7
+    "fortuneLvl": 7,
+    "type": "recipe"
   },
   {
     "id": "M208",
     "name": "Parasitic Egg",
     "tier": 14,
-    "fortuneLvl": 8
+    "fortuneLvl": 8,
+    "type": "recipe"
   },
   {
     "id": "M209",
     "name": "Wasp Wing",
     "tier": 8,
-    "fortuneLvl": 9
+    "fortuneLvl": 9,
+    "type": "recipe"
   },
   {
     "id": "M210",
     "name": "Bat Wing",
     "tier": 2,
-    "fortuneLvl": 10
+    "fortuneLvl": 10,
+    "type": "recipe"
   },
   {
     "id": "M301",
     "name": "Earth Crystal",
     "tier": 57,
-    "fortuneLvl": 1
+    "fortuneLvl": 1,
+    "type": "recipe"
   },
   {
     "id": "M302",
     "name": "Psychic Crystal",
     "tier": 51,
-    "fortuneLvl": 2
+    "fortuneLvl": 2,
+    "type": "recipe"
   },
   {
     "id": "M303",
     "name": "Life Crystal",
     "tier": 45,
-    "fortuneLvl": 3
+    "fortuneLvl": 3,
+    "type": "recipe"
   },
   {
     "id": "M304",
     "name": "Wind Crystal",
     "tier": 39,
-    "fortuneLvl": 4
+    "fortuneLvl": 4,
+    "type": "recipe"
   },
   {
     "id": "M305",
     "name": "Lightning Crystal",
     "tier": 33,
-    "fortuneLvl": 5
+    "fortuneLvl": 5,
+    "type": "recipe"
   },
   {
     "id": "M306",
     "name": "Fire Crystal",
     "tier": 27,
-    "fortuneLvl": 6
+    "fortuneLvl": 6,
+    "type": "recipe"
   },
   {
     "id": "M307",
     "name": "Ice Crystal",
     "tier": 21,
-    "fortuneLvl": 7
+    "fortuneLvl": 7,
+    "type": "recipe"
   },
   {
     "id": "M308",
     "name": "Poison Crystal",
     "tier": 15,
-    "fortuneLvl": 8
+    "fortuneLvl": 8,
+    "type": "recipe"
   },
   {
     "id": "M309",
     "name": "Storm Crystal",
     "tier": 9,
-    "fortuneLvl": 9
+    "fortuneLvl": 9,
+    "type": "recipe"
   },
   {
     "id": "M310",
     "name": "Death Crystal",
     "tier": 3,
-    "fortuneLvl": 10
+    "fortuneLvl": 10,
+    "type": "recipe"
   },
   {
     "id": "M401",
     "name": "Crab Shell",
     "tier": 58,
-    "fortuneLvl": 1
+    "fortuneLvl": 1,
+    "type": "recipe"
   },
   {
     "id": "M402",
     "name": "Turtle Shell",
     "tier": 52,
-    "fortuneLvl": 2
+    "fortuneLvl": 2,
+    "type": "recipe"
   },
   {
     "id": "M403",
     "name": "Octopus Tentacle",
     "tier": 46,
-    "fortuneLvl": 3
+    "fortuneLvl": 3,
+    "type": "recipe"
   },
   {
     "id": "M404",
     "name": "Frog Eye",
     "tier": 40,
-    "fortuneLvl": 4
+    "fortuneLvl": 4,
+    "type": "recipe"
   },
   {
     "id": "M405",
     "name": "Amphab Spine",
     "tier": 34,
-    "fortuneLvl": 5
+    "fortuneLvl": 5,
+    "type": "recipe"
   },
   {
     "id": "M406",
     "name": "Bear Hair",
     "tier": 28,
-    "fortuneLvl": 6
+    "fortuneLvl": 6,
+    "type": "recipe"
   },
   {
     "id": "M407",
     "name": "Toad Shroom",
     "tier": 22,
-    "fortuneLvl": 7
+    "fortuneLvl": 7,
+    "type": "recipe"
   },
   {
     "id": "M408",
     "name": "Moose Antler",
     "tier": 16,
-    "fortuneLvl": 8
+    "fortuneLvl": 8,
+    "type": "recipe"
   },
   {
     "id": "M409",
     "name": "Alligator Skull",
     "tier": 10,
-    "fortuneLvl": 9
+    "fortuneLvl": 9,
+    "type": "recipe"
   },
   {
     "id": "M410",
     "name": "Dinosaur Bone",
     "tier": 4,
-    "fortuneLvl": 10
+    "fortuneLvl": 10,
+    "type": "recipe"
   },
   {
     "id": "M501",
     "name": "Ankh",
     "tier": 59,
-    "fortuneLvl": 1
+    "fortuneLvl": 1,
+    "type": "recipe"
   },
   {
     "id": "M502",
     "name": "Horseshoe",
     "tier": 53,
-    "fortuneLvl": 2
+    "fortuneLvl": 2,
+    "type": "recipe"
   },
   {
     "id": "M503",
     "name": "Chain",
     "tier": 47,
-    "fortuneLvl": 3
+    "fortuneLvl": 3,
+    "type": "recipe"
   },
   {
     "id": "M504",
     "name": "Coal",
     "tier": 41,
-    "fortuneLvl": 4
+    "fortuneLvl": 4,
+    "type": "recipe"
   },
   {
     "id": "M505",
     "name": "Goblet",
     "tier": 35,
-    "fortuneLvl": 5
+    "fortuneLvl": 5,
+    "type": "recipe"
   },
   {
     "id": "M506",
     "name": "Nut",
     "tier": 29,
-    "fortuneLvl": 6
+    "fortuneLvl": 6,
+    "type": "recipe"
   },
   {
     "id": "M507",
     "name": "Bolt",
     "tier": 23,
-    "fortuneLvl": 7
+    "fortuneLvl": 7,
+    "type": "recipe"
   },
   {
     "id": "M508",
     "name": "Chime",
     "tier": 17,
-    "fortuneLvl": 8
+    "fortuneLvl": 8,
+    "type": "recipe"
   },
   {
     "id": "M509",
     "name": "Cuffs",
     "tier": 11,
-    "fortuneLvl": 9
+    "fortuneLvl": 9,
+    "type": "recipe"
   },
   {
     "id": "M510",
     "name": "Gear",
     "tier": 5,
-    "fortuneLvl": 10
+    "fortuneLvl": 10,
+    "type": "recipe"
   },
   {
     "id": "M601",
     "name": "Red Bow",
     "tier": 60,
-    "fortuneLvl": 1
+    "fortuneLvl": 1,
+    "type": "recipe"
   },
   {
     "id": "M602",
     "name": "Orange Yarn",
     "tier": 54,
-    "fortuneLvl": 2
+    "fortuneLvl": 2,
+    "type": "recipe"
   },
   {
     "id": "M603",
     "name": "Yellow Clasp",
     "tier": 48,
-    "fortuneLvl": 3
+    "fortuneLvl": 3,
+    "type": "recipe"
   },
   {
     "id": "M604",
     "name": "Green Button",
     "tier": 42,
-    "fortuneLvl": 4
+    "fortuneLvl": 4,
+    "type": "recipe"
   },
   {
     "id": "M605",
     "name": "Blue Feather",
     "tier": 36,
-    "fortuneLvl": 5
+    "fortuneLvl": 5,
+    "type": "recipe"
   },
   {
     "id": "M606",
     "name": "Indigo Bow",
     "tier": 30,
-    "fortuneLvl": 6
+    "fortuneLvl": 6,
+    "type": "recipe"
   },
   {
     "id": "M607",
     "name": "Pink Yarn",
     "tier": 24,
-    "fortuneLvl": 7
+    "fortuneLvl": 7,
+    "type": "recipe"
   },
   {
     "id": "M608",
     "name": "Cerulean Berries",
     "tier": 18,
-    "fortuneLvl": 8
+    "fortuneLvl": 8,
+    "type": "recipe"
   },
   {
     "id": "M609",
     "name": "Black Feather",
     "tier": 12,
-    "fortuneLvl": 9
+    "fortuneLvl": 9,
+    "type": "recipe"
   },
   {
     "id": "M610",
     "name": "White Berries",
     "tier": 6,
-    "fortuneLvl": 10
+    "fortuneLvl": 10,
+    "type": "recipe"
   },
   {
-    "id": "M9900",
-    "name": "Plank",
-    "tier": 0,
-    "fortuneLvl": 0
+    "id": "M99101",
+    "name": "Nail",
+    "tier": 1,
+    "fortuneLvl": 0,
+    "type": "bank"
+  },
+  {
+    "id": "M99102",
+    "name": "Lumber",
+    "tier": 2,
+    "fortuneLvl": 0,
+    "type": "bank"
+  },
+  {
+    "id": "M99103",
+    "name": "Shingle",
+    "tier": 3,
+    "fortuneLvl": 0,
+    "type": "bank"
+  },
+  {
+    "id": "M99104",
+    "name": "Beam",
+    "tier": 4,
+    "fortuneLvl": 0,
+    "type": "bank"
+  },
+  {
+    "id": "M99105",
+    "name": "Insulation",
+    "tier": 5,
+    "fortuneLvl": 0,
+    "type": "bank"
+  },
+  {
+    "id": "M99106",
+    "name": "Vault",
+    "tier": 6,
+    "fortuneLvl": 0,
+    "type": "bank"
+  },
+  {
+    "id": "M99201",
+    "name": "Sturdy Nail",
+    "tier": 7,
+    "fortuneLvl": 0,
+    "type": "fuse"
+  },
+  {
+    "id": "M99202",
+    "name": "Sturdy Lumber",
+    "tier": 8,
+    "fortuneLvl": 0,
+    "type": "fuse"
+  },
+  {
+    "id": "M99203",
+    "name": "Sturdy Shingle",
+    "tier": 9,
+    "fortuneLvl": 0,
+    "type": "fuse"
+  },
+  {
+    "id": "M99204",
+    "name": "Sturdy Beam",
+    "tier": 10,
+    "fortuneLvl": 0,
+    "type": "fuse"
+  },
+  {
+    "id": "M99205",
+    "name": "Sturdy Insulation",
+    "tier": 11,
+    "fortuneLvl": 0,
+    "type": "fuse"
+  },
+  {
+    "id": "M99206",
+    "name": "Cauldron ",
+    "tier": 12,
+    "fortuneLvl": 0,
+    "type": "fuse"
+  },
+  {
+    "id": "M99301",
+    "name": "Strong Nail",
+    "tier": 13,
+    "fortuneLvl": 0,
+    "type": "forge"
+  },
+  {
+    "id": "M99302",
+    "name": "Strong Lumber",
+    "tier": 14,
+    "fortuneLvl": 0,
+    "type": "forge"
+  },
+  {
+    "id": "M99303",
+    "name": "Strong Shingle",
+    "tier": 15,
+    "fortuneLvl": 0,
+    "type": "forge"
+  },
+  {
+    "id": "M99304",
+    "name": "Strong Rope",
+    "tier": 16,
+    "fortuneLvl": 0,
+    "type": "forge"
+  },
+  {
+    "id": "M99305",
+    "name": "Strong Insulation",
+    "tier": 17,
+    "fortuneLvl": 0,
+    "type": "forge"
+  },
+  {
+    "id": "M99306",
+    "name": "Forge",
+    "tier": 18,
+    "fortuneLvl": 0,
+    "type": "forge"
+  },
+  {
+    "id": "M99501",
+    "name": "Heavy Nail",
+    "tier": 25,
+    "fortuneLvl": 0,
+    "type": "fortune"
+  },
+  {
+    "id": "M99502",
+    "name": "Heavy Lumber",
+    "tier": 26,
+    "fortuneLvl": 0,
+    "type": "fortune"
+  },
+  {
+    "id": "M99503",
+    "name": "Heavy Shingle",
+    "tier": 27,
+    "fortuneLvl": 0,
+    "type": "fortune"
+  },
+  {
+    "id": "M99504",
+    "name": "Heavy Beam",
+    "tier": 28,
+    "fortuneLvl": 0,
+    "type": "fortune"
+  },
+  {
+    "id": "M99505",
+    "name": "Heavy Insulation",
+    "tier": 29,
+    "fortuneLvl": 0,
+    "type": "fortune"
+  },
+  {
+    "id": "M99506",
+    "name": "Crystal Ball",
+    "tier": 30,
+    "fortuneLvl": 0,
+    "type": "fortune"
   }
 ]

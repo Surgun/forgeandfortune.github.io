@@ -80,7 +80,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings {
     -webkit-transition: all var(--transition);
     -moz-transition: all var(--transition);
     -ms-transition: all var(--transition);
@@ -88,7 +88,7 @@ body.lightmode {
     transition: all var(--transition);
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .recipeRow, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .footer_more-list {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .recipeRow, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .footer_more-list {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     -ms-box-shadow: var(--box-shadow);
@@ -718,15 +718,15 @@ Rarities
     text-shadow: 1px 2px 0 black;
 }
 
-.inventoryItem.R1 > .inventoryItemName, .equipItem.R1 > .equipItemName, .bankItem.R1 > .bankItemName, .smithItem.R1 > .smithItemName  {
+.inventoryItem.R1 > .inventoryItemName, .equipItem.R1 > .equipItemName, .bankItem.R1 > .bankItemName, .smithItem.R1 > .smithItemName, .fuseSlot.R1 > .fuseSlotName {
     color: rgb(44, 255, 89);
 }
 
-.inventoryItem.R2 > .inventoryItemName, .equipItem.R2 > .equipItemName, .bankItem.R2 > .bankItemName, .smithItem.R2 > .smithItemName  {
+.inventoryItem.R2 > .inventoryItemName, .equipItem.R2 > .equipItemName, .bankItem.R2 > .bankItemName, .smithItem.R2 > .smithItemName, .fuseSlot.R2 > .fuseSlotName {
     color: rgb(8, 173, 255);
 }
 
-.inventoryItem.R3 > .inventoryItemName, .equipItem.R3 > .equipItemName, .bankItem.R3 > .bankItemName, .smithItem.R3 > .smithItemName  {
+.inventoryItem.R3 > .inventoryItemName, .equipItem.R3 > .equipItemName, .bankItem.R3 > .bankItemName, .smithItem.R3 > .smithItemName, .fuseSlot.R3 > .fuseSlotName {
     color: rgb(255, 79, 167);
 }
 
@@ -1092,30 +1092,15 @@ Rarities
     color: var(--text-secondary);
 }
 
-.recipeSelect.luckyFortune:after {
-    content: "\f6e8";
-    font-family: "Font Awesome 5 Pro";
-    font-weight: 900;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    color: var(--text);
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-}
-
-.recipeSelect.luckyFortune.luckyGood:after {
+.recipeSelect.luckyFortune.luckyGood > i {
     color: rgb(44, 255, 89);
 }
 
-.recipeSelect.luckyFortune.luckyGreat:after {
+.recipeSelect.luckyFortune.luckyGreat > i {
     color: rgb(8, 173, 255);
 }
 
-.recipeSelect.luckyFortune.luckyEpic:after {
+.recipeSelect.luckyFortune.luckyEpic > i {
     color: rgb(255, 79, 167);
 }
 
@@ -2988,7 +2973,7 @@ Rarities
     margin: 0;
 }
 
-.fuseSlot, .bankItem, .smithItem {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -3000,7 +2985,7 @@ Rarities
     border-radius: 10px;
 }
 
-.fuseSlotName, .bankItemName, .possibleFuse, .smithItemName {
+.fuseSlotName, .bankItemName, .possibleFuse, .smithItemName, .fortuneStatusHeading {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3009,7 +2994,7 @@ Rarities
 }
 
 .fuseSlotName > img, .bankItemName > img, .possibleFuse > img, .smithItemName > img {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .fuseSlotName {
@@ -3059,7 +3044,7 @@ Rarities
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 10px;
-    margin: 0;
+    margin: 20px 0 0 0;
 }
 
 .possibleFusegroup {
@@ -3140,11 +3125,23 @@ Rarities
     margin-top: 10px;
 }
 
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: var(--text-primary);
+    font-size: 0.8em;
+    text-align: center;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
 .bankProps, .smithProps, .smithChance {
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -3155,7 +3152,7 @@ Rarities
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -3230,19 +3227,26 @@ Rarities
     margin: 0 10px;
 }
 
-#swConfirm, .smith_cost {
+#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover {
+    background-color: var(--green-light);
+}
+
+#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.smith_cost {
+.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost {
     margin-top: 5px;
+    padding: 5px;
     width: 100%;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 5px;
 }
 
-.smith_cost > img {
+.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img {
     margin: 0 5px;
 }
 
@@ -3251,7 +3255,7 @@ Rarities
     text-align: center;
 }
 
-.smithInvBlank {
+.smithInvBlank, .fuseInvBlank {
     padding: 0 5px;
     color: var(--text-tertiary);
 }
@@ -3271,6 +3275,118 @@ Rarities
 .EHPEname > .item-prefix-name {
     width: unset;
 }
+
+#fortuneWeek {
+    font-size: 1.1em;
+    text-align: center;
+    color: var(--highlight);
+}
+
+#fortuneWeek:after {
+    content: "";
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 800px;
+    height: 2px;
+    background-color: var(--border-secondary);
+}
+
+#fortuneSetButton, .buyBuildingBP {
+    margin: 15px auto 0;
+    max-width: 200px;
+}
+
+.fortuneSetHead {
+    text-align: center;
+}
+
+.fortuneStatusContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fortuneStatus {
+    margin: 10px;
+    min-width: 210px;
+}
+
+.fortuneStatusHeading, .fortuneStatusType {
+    margin-bottom: 10px;
+}
+
+.fortuneStatusHeading > i {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.fortuneStatus.fortuneGood > .fortuneStatusHeading {
+    color: rgb(44, 255, 89);
+}
+
+.fortuneStatus.fortuneGreat > .fortuneStatusHeading {
+    color: rgb(8, 173, 255);
+}
+
+.fortuneStatus.fortuneEpic > .fortuneStatusHeading {
+    color: rgb(255, 79, 167);
+}
+
+.fortuneStatusType {
+    padding: 5px 10px;
+    color: var(--highlight);
+    background-color: var(--bg-tertiary);
+    border-radius: 5px;
+}
+
+.bMaterials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bmaterial {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 5px;
+    padding: 5px 10px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.bmaterialName > img {
+    max-height: 24px;
+}
+
+.bmaterialAmt {
+    margin-left: 5px;
+}
+
+.brecipeTable .recipeRow .reciperesdiv {
+    margin-left: 225px;
+}
+
+.brecipeTable .recipeRow .recipematdiv {
+    margin-left: 25px;
+}
+
+.brecipeHeadCost {
+    margin-left: 45px;
+}
+
+.brecipeTable .recipeRow .recipeTime {
+    margin-left: 55px;
+}
+
+.brecipeHeadTime {
+    margin-left: 105px;
+}
+
 
 /* Events / Mail Content */
 
@@ -3295,6 +3411,7 @@ Rarities
     border-radius: 50%;
     -webkit-animation: 2s ease-in-out infinite notification;
     animation: 2s ease-in-out infinite notification;
+    z-index: 10;
 }
 
 #eventContainer {
@@ -4359,6 +4476,10 @@ span.beta-tag {
 
 /* Reduces content width of workers and heroes tab elements on smaller screens */
 @media screen and (max-width: 1475px) {
+    #RecipeFilter a.recipeSelect > i {
+        display: none;
+    }
+
     #workerList {
         padding: 5px;
         justify-content: center;
@@ -4396,6 +4517,16 @@ span.beta-tag {
 
 /* For desktop/laptop screens with enough width to display vertical recipe filter listing */
 @media screen and (min-width: 1475px) {
+    #RecipeFilter a.recipeSelect {
+        display: flex;
+        align-items: center;
+    }
+
+    #RecipeFilter a.recipeSelect > i {
+        position: absolute;
+        right: 10px;
+    }
+
     #recipes-container {
         display: flex;
         height: 100%;

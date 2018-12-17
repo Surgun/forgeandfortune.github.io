@@ -1292,7 +1292,7 @@
       "steel"
     ],
     "mcost": {
-      "M208": 1
+      "M408": 1
     },
     "actTime": 4000,
     "pow": 180,
@@ -2831,7 +2831,7 @@
       "mana"
     ],
     "mcost": {
-      "M306": 1
+      "M506": 1
     },
     "actTime": 0,
     "pow": 0,
@@ -3445,7 +3445,7 @@
       "mana"
     ],
     "mcost": {
-      "M406": 1
+      "M606": 1
     },
     "actTime": 0,
     "pow": 0,
@@ -4051,7 +4051,7 @@
       "mana"
     ],
     "mcost": {
-      "M306": 1
+      "M106": 1
     },
     "actTime": 0,
     "pow": 144,
@@ -4452,7 +4452,7 @@
       "mana"
     ],
     "mcost": {
-      "M406": 1
+      "M206": 1
     },
     "actTime": 0,
     "pow": 144,
@@ -5104,7 +5104,7 @@
   {
     "id": "R6210",
     "name": "Adipem Pater",
-    "description": "Once considered to heavy for practical use, but could be helpful in the right setting.",
+    "description": "If this pendant could lose some weight, it would be far more useful.",
     "lvl": 10,
     "value": 381772192,
     "craftTime": 1903125,
@@ -5904,5 +5904,539 @@
     "pow": 0,
     "hp": 720,
     "recipeBuy": 2882400500
+  },
+  {
+    "id": "R99101",
+    "name": "Nail",
+    "description": "",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 6000,
+    "type": "bank",
+    "rcost": [
+      "ore"
+    ],
+    "mcost": "",
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99102",
+    "name": "Lumber",
+    "description": "",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 15000,
+    "type": "bank",
+    "rcost": [
+      "wood"
+    ],
+    "mcost": {
+      "M101": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99103",
+    "name": "Shingle",
+    "description": "",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 30000,
+    "type": "bank",
+    "rcost": [
+      "bone"
+    ],
+    "mcost": {
+      "M201": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99104",
+    "name": "Beam",
+    "description": "",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 60000,
+    "type": "bank",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M301": 3
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99105",
+    "name": "Insulation",
+    "description": "",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 9000,
+    "type": "bank",
+    "rcost": [
+      "paper"
+    ],
+    "mcost": {
+      "M401": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99106",
+    "name": "Vault",
+    "description": "",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 900000,
+    "type": "bank",
+    "rcost": [
+      "silver"
+    ],
+    "mcost": {
+      "M501": 20,
+      "M601": 20
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99201",
+    "name": "Sturdy Nail",
+    "description": "",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 12000,
+    "type": "fuse",
+    "rcost": [
+      "ore"
+    ],
+    "mcost": "",
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99202",
+    "name": "Sturdy Lumber",
+    "description": "",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 30000,
+    "type": "fuse",
+    "rcost": [
+      "wood"
+    ],
+    "mcost": {
+      "M202": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99203",
+    "name": "Sturdy Shingle",
+    "description": "",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 45000,
+    "type": "fuse",
+    "rcost": [
+      "bone"
+    ],
+    "mcost": {
+      "M302": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99204",
+    "name": "Sturdy Beam",
+    "description": "",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 120000,
+    "type": "fuse",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M402": 3
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99205",
+    "name": "Sturdy Insulation",
+    "description": "",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 18000,
+    "type": "fuse",
+    "rcost": [
+      "paper"
+    ],
+    "mcost": {
+      "M502": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99206",
+    "name": "Cauldron ",
+    "description": "",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 1800000,
+    "type": "fuse",
+    "rcost": [
+      "mana"
+    ],
+    "mcost": {
+      "M602": 20,
+      "M102": 20
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99301",
+    "name": "Strong Nail",
+    "description": "",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 18000,
+    "type": "smith",
+    "rcost": [
+      "ore"
+    ],
+    "mcost": "",
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99302",
+    "name": "Strong Lumber",
+    "description": "",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 45000,
+    "type": "smith",
+    "rcost": [
+      "wood"
+    ],
+    "mcost": {
+      "M303": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99303",
+    "name": "Strong Shingle",
+    "description": "",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 75000,
+    "type": "smith",
+    "rcost": [
+      "bone"
+    ],
+    "mcost": {
+      "M403": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99304",
+    "name": "Strong Rope",
+    "description": "",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 180000,
+    "type": "smith",
+    "rcost": [
+      "herb"
+    ],
+    "mcost": {
+      "M503": 3
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99305",
+    "name": "Strong Insulation",
+    "description": "",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 27000,
+    "type": "smith",
+    "rcost": [
+      "paper"
+    ],
+    "mcost": {
+      "M603": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99306",
+    "name": "Forge",
+    "description": "",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 2700000,
+    "type": "smith",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M103": 20,
+      "M203": 20
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99501",
+    "name": "Heavy Nail",
+    "description": "",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 30000,
+    "type": "fortune",
+    "rcost": [
+      "ore"
+    ],
+    "mcost": "",
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99502",
+    "name": "Heavy Lumber",
+    "description": "",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 75000,
+    "type": "fortune",
+    "rcost": [
+      "wood"
+    ],
+    "mcost": {
+      "M101": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99503",
+    "name": "Heavy Shingle",
+    "description": "",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 150000,
+    "type": "fortune",
+    "rcost": [
+      "bone"
+    ],
+    "mcost": {
+      "M201": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99504",
+    "name": "Heavy Beam",
+    "description": "",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 300000,
+    "type": "fortune",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M301": 3
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99505",
+    "name": "Heavy Insulation",
+    "description": "",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 45000,
+    "type": "fortune",
+    "rcost": [
+      "paper"
+    ],
+    "mcost": {
+      "M401": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R99506",
+    "name": "Crystal Ball",
+    "description": "",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 4500000,
+    "type": "fortune",
+    "rcost": [
+      "mana"
+    ],
+    "mcost": {
+      "M501": 20,
+      "M601": 20
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R999001",
+    "name": "Bank",
+    "description": "",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 1800000,
+    "type": "bank",
+    "rcost": [
+      "wood",
+      "steel",
+      "paper",
+      "silver"
+    ],
+    "mcost": {},
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R999002",
+    "name": "Fusion Cauldron",
+    "description": "",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 3600000,
+    "type": "fuse",
+    "rcost": [
+      "ore",
+      "steel",
+      "paper",
+      "silver"
+    ],
+    "mcost": {},
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R999003",
+    "name": "Forge",
+    "description": "",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 7200000,
+    "type": "smith",
+    "rcost": [
+      "ore",
+      "bone",
+      "paper",
+      "steel"
+    ],
+    "mcost": {},
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
+  },
+  {
+    "id": "R999005",
+    "name": "Fortune Teller",
+    "description": "",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 21600000,
+    "type": "fortune",
+    "rcost": [
+      "ore",
+      "wood",
+      "steel",
+      "bone",
+      "mana",
+      "mana"
+    ],
+    "mcost": {},
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0
   }
 ]

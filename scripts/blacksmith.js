@@ -131,7 +131,7 @@ function refreshSmithArea() {
             $swMiddleText.hide();
             resetSmithBar();
             $swSuccess.html(`${100-bloopSmith.getSmithChance ()}% Success`).show();
-            $swConfirm.html(` Confirm Smith <span class="smith_cost">${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}</span>`).show();
+            $swConfirm.html(`Confirm Smith<span class="smith_cost">${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}</span>`).show();
             $swCollect.hide();
         }
     }
@@ -171,9 +171,10 @@ function refreshSmithBar() {
 function itemCardSmith(item) {
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
     const itemName = $("<div/>").addClass("smithItemName").html(item.picName());
+    const itemLevel = $("<div/>").addClass("smithItemLevel").html(item.itemLevel());
     const itemProps = $("<div/>").addClass("smithProps").html(item.propDiv());
     const smithButton = $("<div/>").addClass("smithStage").attr("containerID",item.containerID).html("Smith");
-    return itemdiv.append(itemName,itemProps,smithButton);
+    return itemdiv.append(itemName,itemProps,itemLevel,smithButton);
 }
 
 function itemStageCardSmith(upgrade) {

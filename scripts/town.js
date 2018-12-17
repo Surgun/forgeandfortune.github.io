@@ -171,7 +171,7 @@ const $buildBuilding = $("#buildBuilding");
 function buildScreen(type) {
     $buildBuilding.empty();
     if (!TownManager.paidCost(type)) {
-        const d1 = $("<div/>").addClass("buyBuildingBP").attr("type",type).html(`Buy Blueprint - ${ResourceManager.materialIcon("M001")}&nbsp;&nbsp;${formatToUnits(getBuildingCost(type),2)}`)
+        const d1 = $("<div/>").addClass("buyBuildingBP").attr("type",type).html(`Buy Blueprint<span class="buybp_cost">${ResourceManager.materialIcon("M001")} ${formatToUnits(getBuildingCost(type),2)}</span>`)
         $buildBuilding.append(d1);
         return;
     }

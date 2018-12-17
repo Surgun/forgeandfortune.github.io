@@ -1199,14 +1199,14 @@ Rarities
     width: 100%;
 }
 
-.recipeHeader, .EHPEHeader {
+.recipeHeader, .EHPEHeader, .brecipeHeader {
     background-color: var(--bg);
     height: 40px;
     border-bottom: 1px solid var(--border);
     font-weight: bold;
 }
 
-.recipeHeader, .recipeRow, .EHPEHeader, .EHPErow {
+.recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .brecipeHeader {
     display: flex;
     position: relative;
     flex-direction: row;
@@ -1266,13 +1266,13 @@ Rarities
     transform: rotate(180deg);
 }
 
-.recipeHeadName, .recipeHeadLvl, .recipeHeadRes, .recipeHeadCost, .recipeHeadStats, .recipeHeadTime, .recipeHeadValue, .recipeHeadCount {
+.recipeHeadName, .recipeHeadLvl, .recipeHeadRes, .recipeHeadCost, .recipeHeadStats, .recipeHeadTime, .recipeHeadValue, .recipeHeadCount, .brecipeHeadName, .brecipeHeadRes, .brecipeHeadCost, .brecipeHeadTime {
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-.recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname  {
+.recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname, .brecipeHeadName {
     display: flex;
     align-items: center;
     width: 100%;
@@ -1280,7 +1280,7 @@ Rarities
     padding-left: 10px;
 }
 
-.recipeHeadName, .EHPEHeaderName {
+.recipeHeadName, .EHPEHeaderName, .brecipeHeadName {
     padding-left: 15px;
     max-width: 250px;
 }
@@ -3225,6 +3225,54 @@ Rarities
     background-color: var(--bg-3);
     border-radius: 5px;
 }
+
+.bMaterials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bmaterial {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 5px;
+    padding: 5px 10px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.bmaterialName > img {
+    max-height: 24px;
+}
+
+.bmaterialAmt {
+    margin-left: 5px;
+}
+
+.brecipeTable .recipeRow .reciperesdiv {
+    margin-left: 225px;
+}
+
+.brecipeTable .recipeRow .recipematdiv {
+    margin-left: 25px;
+}
+
+.brecipeHeadCost {
+    margin-left: 45px;
+}
+
+.brecipeTable .recipeRow .recipeTime {
+    margin-left: 55px;
+}
+
+.brecipeHeadTime {
+    margin-left: 105px;
+}
+
 
 /* Events / Mail Content */
 

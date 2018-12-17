@@ -186,10 +186,10 @@ function buildScreen(type) {
     $buildBuilding.append(d2);
     const d4 = $("<div/>").addClass("bRecipes");
     const table = $('<div/>').addClass('brecipeTable');
-    const htd1 = $('<div/>').addClass('brecipeHeadName isSortableHead').html("NAME");
+    const htd1 = $('<div/>').addClass('brecipeHeadName').html("NAME");
     const htd2 = $('<div/>').addClass('brecipeHeadRes').html("RESOURCES");
     const htd3 = $('<div/>').addClass('brecipeHeadCost').html("MATS");
-    const htd4 = $('<div/>').addClass('brecipeHeadTime isSortableHead').html("TIME");
+    const htd4 = $('<div/>').addClass('brecipeHeadTime').html("TIME");
     const hrow = $('<div/>').addClass('brecipeHeader').append(htd1,htd2,htd3,htd4);
     table.append(hrow);
     let alternate = false;

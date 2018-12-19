@@ -6407,7 +6407,12 @@
       "paper",
       "silver"
     ],
-    "mcost": {},
+    "mcost": {
+      "R99101": 10,
+      "R99106": 1,
+      "R99108": 4,
+      "R99109": 1
+    },
     "actTime": 0,
     "pow": 0,
     "hp": 0,
@@ -6765,92 +6770,6 @@
       "M501": 20,
       "M601": 20
     },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R999001",
-    "name": "Bank",
-    "description": "Store your precious keepsakes here.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 1800000,
-    "type": "bank",
-    "rcost": [
-      "wood",
-      "steel",
-      "paper",
-      "silver"
-    ],
-    "mcost": {},
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R999002",
-    "name": "Fusion Cauldron",
-    "description": "Merge your junk into treasure.",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 3600000,
-    "type": "fuse",
-    "rcost": [
-      "ore",
-      "steel",
-      "paper",
-      "silver"
-    ],
-    "mcost": {},
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R999003",
-    "name": "Forge",
-    "description": "Improve your gear at a slight risk of catastrophe.",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 7200000,
-    "type": "smith",
-    "rcost": [
-      "ore",
-      "bone",
-      "paper",
-      "steel"
-    ],
-    "mcost": {},
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R999005",
-    "name": "Fortune Teller",
-    "description": "The future can be known, for a price.",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 21600000,
-    "type": "fortune",
-    "rcost": [
-      "ore",
-      "wood",
-      "steel",
-      "bone",
-      "mana",
-      "mana"
-    ],
-    "mcost": {},
     "actTime": 0,
     "pow": 0,
     "hp": 0,

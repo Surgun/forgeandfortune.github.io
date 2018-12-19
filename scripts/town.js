@@ -49,6 +49,7 @@ const TownManager = {
     },
     specialCraft(itemID) {
         ResourceManager.addMaterial(itemID,1);
+        
     }
 }
 
@@ -87,7 +88,7 @@ function showFuseBldg() {
 
 function showBankBldg() {
     $(".buildingTab").removeClass("bldgTabActive").hide();
-    $bankBuilding.addClass("bldgTabActive").show();
+    $bankBuilding.addClass("bldgTabActive");
     $buildingHeader.empty();
     const d = $("<div/>").addClass("buildingInfo buildingBank");
         const da = $("<div/>").addClass("buildingInfoBackground");
@@ -174,7 +175,7 @@ function buildScreen(type) {
         const d1 = $("<div/>").addClass("buyBuildingBP").attr("type",type).html(`Buy Blueprint<span class="buybp_cost">${ResourceManager.materialIcon("M001")} ${formatToUnits(getBuildingCost(type),2)}</span>`)
         $buildBuilding.append(d1);
         return;
-    }
+    }/*
     const d2 = $("<div/>").addClass("bMaterials")
     ResourceManager.materials.filter(m => m.type === type).forEach(mat => {
         const d3 = $("<div/>").addClass("bmaterial tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
@@ -183,7 +184,7 @@ function buildScreen(type) {
         d3.append(d3a,d3b);
         d2.append(d3);
     });
-    $buildBuilding.append(d2);
+    $buildBuilding.append(d2);*/
     const d4 = $("<div/>").addClass("bRecipes");
     const table = $('<div/>').addClass('brecipeTable');
     const htd1 = $('<div/>').addClass('brecipeHeadName').html("NAME");

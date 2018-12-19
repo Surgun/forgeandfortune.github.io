@@ -56,6 +56,7 @@ class Item{
     visualizeMat() {
         const d = $("<div/>").addClass("itemCost");
         for (const [material, amt] of Object.entries(this.mcost)) {
+            console.log(material);
             const mat = ResourceManager.idToMaterial(material);
             const d1 = $("<div/>").addClass("indvCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt));
             d.append(d1);
@@ -113,6 +114,7 @@ class Item{
         refreshMasteryBar();
     }
     isMastered() {
+        if (this.recipeType === "building") return false;
         return this.craftCount >= 100;
     }
     autoSellToggle() {

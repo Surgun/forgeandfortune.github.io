@@ -171,6 +171,10 @@ const Inventory = {
         const name = item.name;
         const autoSell = item.autoSell;
         item.addCount();
+        if (item.recipeType === "building") {
+            this.addToInventory(id,0,-1);
+            return;
+        }
         const roll = Math.floor(Math.random() * 1000)
         let sellToggle = -1
         if (autoSell === "Common") sellToggle = 0;
@@ -205,6 +209,7 @@ const Inventory = {
         if (quality === "Epic") return miscLoadedValues.qualityCheck[3]*masterMod*fortuneMod;
     },
     removeFromInventory(id,rarity) {
+        console.log(id,rarity);
         for (let i=0;i<this.inv.length;i++) {
             const ic = this.inv[i]
             if (ic === null) continue;
@@ -297,6 +302,13 @@ const Inventory = {
     hasThree(id,rarity) {
         const inv = this.nonblank().filter(i=> i.id === id && i.rarity === rarity);
         return inv.length >= 3;
+    },
+    itemCount(id,rarity) {
+        return this.nonblank().filter(r=>r.id === id && r.rarity === rarity).length;
+    },
+    removePrecraft(id,amt) {
+        if (this.itemCount(id,0) < amt) return;
+        for (let i=0;i<amt;i++) this.removeFromInventory(id,0);
     }
 }
 
@@ -317,11 +329,21 @@ function refreshInventory() {
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
         const itemCost = $("<div/>").addClass("inventoryItemValue").html(item.goldValueFormatted());
         const itemLevel = $("<div/>").addClass("inventoryItemLevel").html(item.itemLevel());
+        if (item.goldValue() === 0) {
+            itemCost.hide();
+            itemLevel.hide();
+        }
         const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
         const actionBtns = $("<div/>").addClass("inventoryButtons");
-        const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
-        const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
-        actionBtns.append(equipButton,sellButton);
+        if (item.item.recipeType === "normal") {
+            const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
+            const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
+            actionBtns.append(equipButton,sellButton);
+        }
+        else {
+            const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Discard");
+            actionBtns.append(sellButton);
+        }
         itemdiv.append(itemName,itemLevel,itemCost,itemProps,actionBtns);
         $inventory.append(itemdiv);
     });

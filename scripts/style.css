@@ -1448,6 +1448,65 @@ Rarities
     cursor: pointer;
 }
 
+.recipeName>img, .EHPEname>img {
+    margin-right: 10px;
+    height: 28px;
+}
+
+.recipeName > img, .item-name {
+    pointer-events: none;
+}
+
+.recipeDescription {
+    position: relative;
+    padding-left: 5px;
+    color: rgba(255,255,255,0.5);
+    cursor: default;
+}
+
+.recipeDescription:hover {
+    color: #fff;
+}
+
+.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeHeadStats, .recipeStats, .recipeValue, .recipeLvl {
+    width: 100%;
+    max-width: 200px;
+}
+
+.recipeHeadLvl, .recipeLvl {
+    max-width: 50px;
+}
+
+.recipeLvl {
+    margin-left: 235px;
+}
+
+.reciperesdiv, .itemCost, .recipeStatList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.recipeHeadRes, .reciperesdiv {
+    max-width: 120px;
+}
+
+.recipeHeadCost, .recipematdiv {
+    max-width: 100px;
+}
+
+.indvCost {
+    display: inline-block;
+    position: relative;
+    margin-right: 5px;
+    min-width: 23px;
+    text-align: left;
+}
+
+.indvCost > img {
+    max-height: 20px;
+}
+
 .indvCost.masteredMat > img {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -3372,6 +3431,7 @@ Rarities
 }
 
 .brecipeTable .recipeRow .recipematdiv {
+    max-width: 150px;
     margin-left: 25px;
 }
 
@@ -3379,14 +3439,13 @@ Rarities
     margin-left: 45px;
 }
 
-.brecipeTable .recipeRow .recipeTime {
-    margin-left: 55px;
-}
-
 .brecipeHeadTime {
-    margin-left: 105px;
+    margin-left: 100px;
 }
 
+.brecipeTable .recipematdiv .indvCost {
+    min-width: 55px;
+}
 
 /* Events / Mail Content */
 
@@ -3929,6 +3988,16 @@ footer a[href*="discord.gg"]:hover {
     max-width: 100px;
     margin: 0 auto;
     font-size: 0.8em;
+}
+
+.brecipeTable .recipeDescription.tooltip:after {
+    width: 300px;
+    top: 180%;
+    left: 5px;
+    right: unset;
+    bottom: unset;
+    margin-left: 0;
+    transform-origin: left top;
 }
 
 /* Firefox-Specific Fixes */

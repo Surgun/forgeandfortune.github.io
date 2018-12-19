@@ -52,6 +52,7 @@ const BankManager = {
 }
 
 function initiateBankBldg() {
+    $bankBuilding.show();
     refreshBankBank();
     refreshBankInventory();
 }
@@ -78,6 +79,7 @@ function itemCard(item,inBank) {
     const itemdiv = $("<div/>").addClass("bankItem").addClass("R"+item.rarity);
     const itemName = $("<div/>").addClass("bankItemName").html(item.picName());
     const itemLevel = $("<div/>").addClass("bankItemLevel").html(item.itemLevel());
+    if (item.item.recipeType === "building") itemLevel.hide();
     const itemProps = $("<div/>").addClass("bankProps").html(item.propDiv());
     const locationButton = $("<div/>").attr("containerID",item.containerID);
     if (inBank) locationButton.addClass('bankTake').html("Take");

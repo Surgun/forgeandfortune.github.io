@@ -208,6 +208,8 @@ function buildScreen(type) {
     if (lastRow !== null) lastRow.addClass("recipeRowLast");
     d4.append(table);
     $buildBuilding.append(d4);
+    const d5 = $("<div/>").addClass("buildingInstr").html("Construct the bank to unlock permanently!");
+    $buildBuilding.append(d5);
 }
 
 $(document).on('click', ".buyBuildingBP", (e) => {

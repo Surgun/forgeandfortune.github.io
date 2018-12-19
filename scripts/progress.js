@@ -21,7 +21,7 @@ function refreshProgress() {
     const heroPercent = (HeroManager.heroLevelCount()/HeroManager.heroMaxLevelCount()*100).toFixed(2);
     $pbHero.css('width', heroPercent+"%");
     const overallPercent = (recipeList.masteryCount()+WorkerManager.workerLevelCount()+HeroManager.heroLevelCount())/(recipeList.recipeCount()+WorkerManager.workerMaxLevelCount()+HeroManager.heroMaxLevelCount());
-    if (overallPercent === 100 && achievementStats.endTime === -1) achievementStats.endTime = Date.now();
+    if (overallPercent === 1 && achievementStats.endTime === -1) achievementStats.endTime = Date.now();
     $plOverall.html((overallPercent * 100).toFixed(2)+"%");
     $pbOverall.css('width', (overallPercent*100).toFixed(2)+"%");
 }

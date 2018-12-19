@@ -3273,7 +3273,6 @@ Rarities
     margin-left: 105px;
 }
 
-
 /* Events / Mail Content */
 
 #eventTab {
@@ -3743,6 +3742,16 @@ footer a[href*="discord.gg"]:hover {
     right: -50%;
     margin-left: -8px;
     bottom: 130%;
+}
+
+.brecipeTable .recipeDescription.tooltip:after {
+    width: 300px;
+    top: 180%;
+    left: 5px;
+    right: unset;
+    bottom: unset;
+    margin-left: 0;
+    transform-origin: left top;
 }
 
 /* Firefox-Specific Fixes */

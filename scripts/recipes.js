@@ -39,6 +39,9 @@ class Item{
     itemPic() {
         return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>";
     }
+    itemLevel() {
+        return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
+    }
     imageValue() {
         return ResourceManager.formatCost("M001",formatToUnits(this.value,1));
     }
@@ -340,7 +343,7 @@ function initializeRecipes(type,sortType,heading) {
     rFilter.forEach((recipe) => {
         const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
         const td1a = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
-        const td2 = $('<div/>').addClass('recipeLvl').html(recipe.lvl);
+        const td2 = $('<div/>').addClass("inventoryItemLevel").html(recipe.itemLevel());
         const td3 = $('<div/>').addClass('recipecostdiv');
         const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
         const td3a1 = $("<div/>").addClass("recipeResHeader recipeCardHeader").html("Resources");

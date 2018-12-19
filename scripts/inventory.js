@@ -327,7 +327,7 @@ function refreshInventory() {
         }
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
-        const itemCost = $("<div/>").addClass("inventoryItemValue").html(item.goldValueFormatted());
+        const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr("data-tooltip", `${item.goldValue()} Gold`).html(item.goldValueFormatted());
         const itemLevel = $("<div/>").addClass("inventoryItemLevel").html(item.itemLevel());
         if (item.goldValue() === 0) {
             itemCost.hide();

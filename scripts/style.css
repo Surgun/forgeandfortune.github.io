@@ -165,7 +165,7 @@ body:after {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, .selection-container, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .inventoryItem, .equipItem, .heroEquipBlockEquip {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, .selection-container, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .inventoryItem, .equipItem, .heroEquipBlockEquip, #recipes-container {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -482,7 +482,7 @@ body:after {
 }
 
 .inventoryItemName > .item-name, .equipItemName > .item-name {
-    margin-top: 10px;
+    margin-top: 15px;
     width: 100%;
     align-self: flex-start;
 }
@@ -555,9 +555,13 @@ body:after {
     text-align: center;
 }
 
+.inventoryEquip + .inventorySell {
+    margin-left: 10px;
+}
+
 .inventoryEquip, .inventorySell {
     flex: 1;
-    margin: 10px 2.5px 0;
+    margin-top: 10px;
     padding:  8px 10px;
     background-color: rgba(255,255,255,0.05);
     border-radius: 5px;
@@ -3186,10 +3190,10 @@ Rarities
 
 .bankItemLevel, .smithItemLevel, .inventoryItemLevel {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 10px;
+    left: 10px;
     color: var(--text-primary);
-    font-size: 0.8em;
+    font-size: 0.75em;
     text-align: center;
     background-color: rgba(255,255,255,0.05);
     border-radius: 5px;

@@ -150,6 +150,11 @@ const actionSlotManager = {
     hasSlot(slotnum) {
         return this.slots.length > slotnum;
     },
+    isBuildingMaterial(slotnum) {
+        if (!this.hasSlot(slotnum)) return false;
+        console.log(this.slots[slotnum].item.recipeType)
+        return this.slots[slotnum].item.recipeType === "building";
+    },
     isEmptySlot() {
         return `<img class='ASEmptyImg' src='images/recipes/noitem.png' /> Empty Slot`;
     },
@@ -221,7 +226,7 @@ function initializeActionSlots() {
         const d5 = $("<div/>").addClass("WSAuto tooltip").attr("data-tooltip", `Toggle Worker Auto-Contribute`).attr("id",i).html(`<i class="fas fa-hammer"></i>`);
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
         if (actionSlotManager.autoSacrifice(i)) d5.addClass("WSautoEnabled");
-        if (!actionSlotManager.hasSlot(i)) d4.hide(), d5.hide();
+        if (!actionSlotManager.hasSlot(i) || actionSlotManager.isBuildingMaterial(i)) d4.hide(), d5.hide();
         d.append(d1,d2.append(a2),d3.append(s3),d4,d5);
         $ActionSlots.append(d);
     }

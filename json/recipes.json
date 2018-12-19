@@ -14,7 +14,8 @@
     "actTime": 5000,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R0102",
@@ -33,7 +34,8 @@
     "actTime": 5000,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R0103",
@@ -52,7 +54,8 @@
     "actTime": 5000,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R0104",
@@ -71,7 +74,8 @@
     "actTime": 5000,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R0105",
@@ -91,7 +95,8 @@
     "actTime": 5000,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R0106",
@@ -109,7 +114,8 @@
     "actTime": 5000,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0107",
@@ -129,7 +135,8 @@
     "actTime": 5000,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R0108",
@@ -149,7 +156,8 @@
     "actTime": 5000,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R0109",
@@ -169,7 +177,8 @@
     "actTime": 5000,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R0110",
@@ -189,7 +198,8 @@
     "actTime": 5000,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0201",
@@ -208,7 +218,8 @@
     "actTime": 6000,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R0202",
@@ -225,7 +236,8 @@
     "actTime": 6000,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R0203",
@@ -244,7 +256,8 @@
     "actTime": 6000,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R0204",
@@ -263,7 +276,8 @@
     "actTime": 6000,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R0205",
@@ -283,7 +297,8 @@
     "actTime": 6000,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R0206",
@@ -303,7 +318,8 @@
     "actTime": 6000,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0207",
@@ -321,7 +337,8 @@
     "actTime": 6000,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R0208",
@@ -341,7 +358,8 @@
     "actTime": 6000,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R0209",
@@ -361,7 +379,8 @@
     "actTime": 6000,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R0210",
@@ -381,7 +400,8 @@
     "actTime": 6000,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0301",
@@ -398,7 +418,8 @@
     "actTime": 4000,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R0302",
@@ -417,7 +438,8 @@
     "actTime": 4000,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R0303",
@@ -434,7 +456,8 @@
     "actTime": 4000,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R0304",
@@ -453,7 +476,8 @@
     "actTime": 4000,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R0305",
@@ -473,7 +497,8 @@
     "actTime": 4000,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R0306",
@@ -493,7 +518,8 @@
     "actTime": 4000,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0307",
@@ -513,7 +539,8 @@
     "actTime": 4000,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R0308",
@@ -531,7 +558,8 @@
     "actTime": 4000,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R0309",
@@ -551,7 +579,8 @@
     "actTime": 4000,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R0310",
@@ -571,7 +600,8 @@
     "actTime": 4000,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0401",
@@ -588,7 +618,8 @@
     "actTime": 5000,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R0402",
@@ -607,7 +638,8 @@
     "actTime": 5000,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R0403",
@@ -626,7 +658,8 @@
     "actTime": 5000,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R0404",
@@ -645,7 +678,8 @@
     "actTime": 5000,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R0405",
@@ -665,7 +699,8 @@
     "actTime": 5000,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R0406",
@@ -683,7 +718,8 @@
     "actTime": 5000,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0407",
@@ -703,7 +739,8 @@
     "actTime": 5000,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R0408",
@@ -723,7 +760,8 @@
     "actTime": 5000,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R0409",
@@ -743,7 +781,8 @@
     "actTime": 5000,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R0410",
@@ -763,7 +802,8 @@
     "actTime": 5000,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0501",
@@ -780,7 +820,8 @@
     "actTime": 4000,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R0502",
@@ -799,7 +840,8 @@
     "actTime": 4000,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R0503",
@@ -816,7 +858,8 @@
     "actTime": 4000,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R0504",
@@ -835,7 +878,8 @@
     "actTime": 4000,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R0505",
@@ -855,7 +899,8 @@
     "actTime": 4000,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R0506",
@@ -875,7 +920,8 @@
     "actTime": 4000,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0507",
@@ -895,7 +941,8 @@
     "actTime": 4000,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R0508",
@@ -913,7 +960,8 @@
     "actTime": 4000,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R0509",
@@ -933,7 +981,8 @@
     "actTime": 4000,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R0510",
@@ -953,7 +1002,8 @@
     "actTime": 4000,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0601",
@@ -972,7 +1022,8 @@
     "actTime": 6000,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R0602",
@@ -989,7 +1040,8 @@
     "actTime": 6000,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R0603",
@@ -1008,7 +1060,8 @@
     "actTime": 6000,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R0604",
@@ -1027,7 +1080,8 @@
     "actTime": 6000,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R0605",
@@ -1047,7 +1101,8 @@
     "actTime": 6000,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R0606",
@@ -1067,7 +1122,8 @@
     "actTime": 6000,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0607",
@@ -1085,7 +1141,8 @@
     "actTime": 6000,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R0608",
@@ -1105,7 +1162,8 @@
     "actTime": 6000,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R0609",
@@ -1125,7 +1183,8 @@
     "actTime": 6000,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R0610",
@@ -1145,7 +1204,8 @@
     "actTime": 6000,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0701",
@@ -1162,7 +1222,8 @@
     "actTime": 4000,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R0702",
@@ -1181,7 +1242,8 @@
     "actTime": 4000,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R0703",
@@ -1200,7 +1262,8 @@
     "actTime": 4000,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R0704",
@@ -1219,7 +1282,8 @@
     "actTime": 4000,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R0705",
@@ -1239,7 +1303,8 @@
     "actTime": 4000,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R0706",
@@ -1257,7 +1322,8 @@
     "actTime": 4000,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0707",
@@ -1277,7 +1343,8 @@
     "actTime": 4000,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R0708",
@@ -1297,7 +1364,8 @@
     "actTime": 4000,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R0709",
@@ -1317,7 +1385,8 @@
     "actTime": 4000,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R0710",
@@ -1337,7 +1406,8 @@
     "actTime": 4000,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0801",
@@ -1356,7 +1426,8 @@
     "actTime": 6000,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R0802",
@@ -1373,7 +1444,8 @@
     "actTime": 6000,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R0803",
@@ -1392,7 +1464,8 @@
     "actTime": 6000,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R0804",
@@ -1411,7 +1484,8 @@
     "actTime": 6000,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R0805",
@@ -1431,7 +1505,8 @@
     "actTime": 6000,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R0806",
@@ -1451,7 +1526,8 @@
     "actTime": 6000,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0807",
@@ -1469,7 +1545,8 @@
     "actTime": 6000,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R0808",
@@ -1489,7 +1566,8 @@
     "actTime": 6000,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R0809",
@@ -1509,7 +1587,8 @@
     "actTime": 6000,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R0810",
@@ -1529,7 +1608,8 @@
     "actTime": 6000,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0901",
@@ -1546,7 +1626,8 @@
     "actTime": 5000,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R0902",
@@ -1565,7 +1646,8 @@
     "actTime": 5000,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R0903",
@@ -1582,7 +1664,8 @@
     "actTime": 5000,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R0904",
@@ -1601,7 +1684,8 @@
     "actTime": 5000,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R0905",
@@ -1621,7 +1705,8 @@
     "actTime": 5000,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R0906",
@@ -1641,7 +1726,8 @@
     "actTime": 5000,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R0907",
@@ -1661,7 +1747,8 @@
     "actTime": 5000,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R0908",
@@ -1679,7 +1766,8 @@
     "actTime": 5000,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R0909",
@@ -1699,7 +1787,8 @@
     "actTime": 5000,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R0910",
@@ -1719,7 +1808,8 @@
     "actTime": 5000,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R1001",
@@ -1736,7 +1826,8 @@
     "actTime": 5000,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R1002",
@@ -1755,7 +1846,8 @@
     "actTime": 5000,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R1003",
@@ -1774,7 +1866,8 @@
     "actTime": 5000,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R1004",
@@ -1793,7 +1886,8 @@
     "actTime": 5000,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R1005",
@@ -1811,7 +1905,8 @@
     "actTime": 5000,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R1006",
@@ -1831,7 +1926,8 @@
     "actTime": 5000,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R1007",
@@ -1851,7 +1947,8 @@
     "actTime": 5000,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R1008",
@@ -1871,7 +1968,8 @@
     "actTime": 5000,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R1009",
@@ -1891,7 +1989,8 @@
     "actTime": 5000,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R1010",
@@ -1909,7 +2008,8 @@
     "actTime": 5000,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R2101",
@@ -1927,7 +2027,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R2102",
@@ -1947,7 +2048,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R2103",
@@ -1967,7 +2069,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R2104",
@@ -1987,7 +2090,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 180,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R2105",
@@ -2008,7 +2112,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 210,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R2106",
@@ -2027,7 +2132,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R2107",
@@ -2048,7 +2154,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 270,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R2108",
@@ -2069,7 +2176,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 300,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R2109",
@@ -2090,7 +2198,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 330,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R2110",
@@ -2111,7 +2220,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R2201",
@@ -2129,7 +2239,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R2202",
@@ -2149,7 +2260,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R2203",
@@ -2169,7 +2281,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R2204",
@@ -2189,7 +2302,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 180,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R2205",
@@ -2210,7 +2324,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 210,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R2206",
@@ -2229,7 +2344,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R2207",
@@ -2250,7 +2366,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 270,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R2208",
@@ -2271,7 +2388,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 300,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R2209",
@@ -2292,7 +2410,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 330,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R2210",
@@ -2313,7 +2432,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R2301",
@@ -2331,7 +2451,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R2302",
@@ -2351,7 +2472,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R2303",
@@ -2371,7 +2493,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R2304",
@@ -2391,7 +2514,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 180,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R2305",
@@ -2411,7 +2535,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 210,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R2306",
@@ -2430,7 +2555,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R2307",
@@ -2451,7 +2577,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 270,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R2308",
@@ -2472,7 +2599,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 300,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R2309",
@@ -2493,7 +2621,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 330,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R2310",
@@ -2514,7 +2643,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R3101",
@@ -2534,7 +2664,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R3102",
@@ -2552,7 +2683,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R3103",
@@ -2572,7 +2704,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R3104",
@@ -2592,7 +2725,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 180,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R3105",
@@ -2613,7 +2747,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 210,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R3106",
@@ -2634,7 +2769,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R3107",
@@ -2653,7 +2789,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 270,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R3108",
@@ -2674,7 +2811,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 300,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R3109",
@@ -2695,7 +2833,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 330,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R3110",
@@ -2716,7 +2855,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R3201",
@@ -2736,7 +2876,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R3202",
@@ -2754,7 +2895,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R3203",
@@ -2774,7 +2916,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R3204",
@@ -2794,7 +2937,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 180,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R3205",
@@ -2815,7 +2959,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 210,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R3206",
@@ -2836,7 +2981,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R3207",
@@ -2855,7 +3001,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 270,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R3208",
@@ -2876,7 +3023,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 300,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R3209",
@@ -2897,7 +3045,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 330,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R3210",
@@ -2918,7 +3067,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R3301",
@@ -2938,7 +3088,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R3302",
@@ -2956,7 +3107,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R3303",
@@ -2976,7 +3128,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R3304",
@@ -2996,7 +3149,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 180,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R3305",
@@ -3017,7 +3171,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 210,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R3306",
@@ -3038,7 +3193,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R3307",
@@ -3057,7 +3213,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 270,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R3308",
@@ -3078,7 +3235,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 300,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R3309",
@@ -3099,7 +3257,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 330,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R3310",
@@ -3120,7 +3279,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R4101",
@@ -3141,7 +3301,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R4102",
@@ -3162,7 +3323,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R4103",
@@ -3181,7 +3343,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R4104",
@@ -3202,7 +3365,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R4105",
@@ -3223,7 +3387,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 420,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R4106",
@@ -3244,7 +3409,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 480,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R4107",
@@ -3265,7 +3431,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 540,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R4108",
@@ -3284,7 +3451,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 600,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R4109",
@@ -3305,7 +3473,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 660,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R4110",
@@ -3326,7 +3495,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 720,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R4201",
@@ -3347,7 +3517,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R4202",
@@ -3368,7 +3539,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R4203",
@@ -3387,7 +3559,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R4204",
@@ -3408,7 +3581,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R4205",
@@ -3429,7 +3603,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 420,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R4206",
@@ -3450,7 +3625,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 480,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R4207",
@@ -3471,7 +3647,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 540,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R4208",
@@ -3490,7 +3667,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 600,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R4209",
@@ -3511,7 +3689,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 660,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R4210",
@@ -3532,7 +3711,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 720,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R4301",
@@ -3553,7 +3733,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R4302",
@@ -3574,7 +3755,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R4303",
@@ -3593,7 +3775,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R4304",
@@ -3614,7 +3797,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R4305",
@@ -3635,7 +3819,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 420,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R4306",
@@ -3656,7 +3841,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 480,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R4307",
@@ -3677,7 +3863,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 540,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R4308",
@@ -3696,7 +3883,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 600,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R4309",
@@ -3717,7 +3905,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 660,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R4310",
@@ -3738,7 +3927,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 720,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R5101",
@@ -3757,7 +3947,8 @@
     "actTime": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R5102",
@@ -3776,7 +3967,8 @@
     "actTime": 0,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R5103",
@@ -3796,7 +3988,8 @@
     "actTime": 0,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R5104",
@@ -3814,7 +4007,8 @@
     "actTime": 0,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R5105",
@@ -3835,7 +4029,8 @@
     "actTime": 0,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R5106",
@@ -3856,7 +4051,8 @@
     "actTime": 0,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R5107",
@@ -3877,7 +4073,8 @@
     "actTime": 0,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R5108",
@@ -3898,7 +4095,8 @@
     "actTime": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R5109",
@@ -3917,7 +4115,8 @@
     "actTime": 0,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R5110",
@@ -3938,7 +4137,8 @@
     "actTime": 0,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R5201",
@@ -3957,7 +4157,8 @@
     "actTime": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R5202",
@@ -3976,7 +4177,8 @@
     "actTime": 0,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R5203",
@@ -3996,7 +4198,8 @@
     "actTime": 0,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R5204",
@@ -4014,7 +4217,8 @@
     "actTime": 0,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R5205",
@@ -4035,7 +4239,8 @@
     "actTime": 0,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R5206",
@@ -4056,7 +4261,8 @@
     "actTime": 0,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R5207",
@@ -4077,7 +4283,8 @@
     "actTime": 0,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R5208",
@@ -4098,7 +4305,8 @@
     "actTime": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R5209",
@@ -4117,7 +4325,8 @@
     "actTime": 0,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R5210",
@@ -4138,7 +4347,8 @@
     "actTime": 0,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R5301",
@@ -4157,7 +4367,8 @@
     "actTime": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R5302",
@@ -4176,7 +4387,8 @@
     "actTime": 0,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R5303",
@@ -4196,7 +4408,8 @@
     "actTime": 0,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R5304",
@@ -4214,7 +4427,8 @@
     "actTime": 0,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R5305",
@@ -4235,7 +4449,8 @@
     "actTime": 0,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R5306",
@@ -4256,7 +4471,8 @@
     "actTime": 0,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R5307",
@@ -4277,7 +4493,8 @@
     "actTime": 0,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R5308",
@@ -4298,7 +4515,8 @@
     "actTime": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R5309",
@@ -4317,7 +4535,8 @@
     "actTime": 0,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R5310",
@@ -4338,7 +4557,8 @@
     "actTime": 0,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R5501",
@@ -4355,7 +4575,8 @@
     "actTime": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R5502",
@@ -4374,7 +4595,8 @@
     "actTime": 0,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R5503",
@@ -4394,7 +4616,8 @@
     "actTime": 0,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R5504",
@@ -4414,7 +4637,8 @@
     "actTime": 0,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R5505",
@@ -4433,7 +4657,8 @@
     "actTime": 0,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R5506",
@@ -4457,7 +4682,8 @@
     "actTime": 0,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R5507",
@@ -4478,7 +4704,8 @@
     "actTime": 0,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R5508",
@@ -4499,7 +4726,8 @@
     "actTime": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R5509",
@@ -4520,7 +4748,8 @@
     "actTime": 0,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R5510",
@@ -4539,7 +4768,8 @@
     "actTime": 0,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R5601",
@@ -4558,7 +4788,8 @@
     "actTime": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R5602",
@@ -4577,7 +4808,8 @@
     "actTime": 0,
     "pow": 36,
     "hp": 0,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R5603",
@@ -4597,7 +4829,8 @@
     "actTime": 0,
     "pow": 72,
     "hp": 0,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R5604",
@@ -4617,7 +4850,8 @@
     "actTime": 0,
     "pow": 108,
     "hp": 0,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R5605",
@@ -4636,7 +4870,8 @@
     "actTime": 0,
     "pow": 126,
     "hp": 0,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R5606",
@@ -4657,7 +4892,8 @@
     "actTime": 0,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R5607",
@@ -4678,7 +4914,8 @@
     "actTime": 0,
     "pow": 162,
     "hp": 0,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R5608",
@@ -4699,7 +4936,8 @@
     "actTime": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R5609",
@@ -4720,7 +4958,8 @@
     "actTime": 0,
     "pow": 198,
     "hp": 0,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R5610",
@@ -4739,7 +4978,8 @@
     "actTime": 0,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6101",
@@ -4756,7 +4996,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R6102",
@@ -4775,7 +5016,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R6103",
@@ -4794,7 +5036,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R6104",
@@ -4811,7 +5054,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R6105",
@@ -4831,7 +5075,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 420,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R6106",
@@ -4851,7 +5096,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 480,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6107",
@@ -4871,7 +5117,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 540,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R6108",
@@ -4891,7 +5138,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 600,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R6109",
@@ -4909,7 +5157,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 660,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R6110",
@@ -4929,7 +5178,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 720,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6201",
@@ -4946,7 +5196,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R6202",
@@ -4965,7 +5216,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R6203",
@@ -4984,7 +5236,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R6204",
@@ -5001,7 +5254,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R6205",
@@ -5021,7 +5275,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 420,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R6206",
@@ -5041,7 +5296,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 480,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6207",
@@ -5061,7 +5317,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 540,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R6208",
@@ -5081,7 +5338,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 600,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R6209",
@@ -5099,7 +5357,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 660,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R6210",
@@ -5119,7 +5378,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 720,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6301",
@@ -5139,7 +5399,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R6302",
@@ -5159,7 +5420,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R6303",
@@ -5179,7 +5441,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R6304",
@@ -5197,7 +5460,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R6305",
@@ -5217,7 +5481,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 420,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R6306",
@@ -5237,7 +5502,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 480,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6307",
@@ -5257,7 +5523,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 540,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R6308",
@@ -5277,7 +5544,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 600,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R6309",
@@ -5295,7 +5563,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 660,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R6310",
@@ -5315,7 +5584,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 720,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6401",
@@ -5335,7 +5605,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R6402",
@@ -5355,7 +5626,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R6403",
@@ -5375,7 +5647,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R6404",
@@ -5395,7 +5668,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R6405",
@@ -5413,7 +5687,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 420,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R6406",
@@ -5433,7 +5708,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 480,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6407",
@@ -5453,7 +5729,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 540,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R6408",
@@ -5473,7 +5750,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 600,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R6409",
@@ -5493,7 +5771,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 660,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R6410",
@@ -5511,7 +5790,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 720,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6501",
@@ -5531,7 +5811,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R6502",
@@ -5551,7 +5832,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R6503",
@@ -5571,7 +5853,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R6504",
@@ -5591,7 +5874,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R6505",
@@ -5609,7 +5893,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 420,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R6506",
@@ -5629,7 +5914,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 480,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6507",
@@ -5649,7 +5935,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 540,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R6508",
@@ -5669,7 +5956,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 600,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R6509",
@@ -5689,7 +5977,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 660,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R6510",
@@ -5707,7 +5996,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 720,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6601",
@@ -5727,7 +6017,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100
+    "recipeBuy": 100,
+    "recipeType": "normal"
   },
   {
     "id": "R6602",
@@ -5747,7 +6038,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 120,
-    "recipeBuy": 500
+    "recipeBuy": 500,
+    "recipeType": "normal"
   },
   {
     "id": "R6603",
@@ -5767,7 +6059,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 240,
-    "recipeBuy": 3500
+    "recipeBuy": 1000,
+    "recipeType": "normal"
   },
   {
     "id": "R6604",
@@ -5787,7 +6080,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 360,
-    "recipeBuy": 24500
+    "recipeBuy": 7500,
+    "recipeType": "normal"
   },
   {
     "id": "R6605",
@@ -5805,7 +6099,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 420,
-    "recipeBuy": 171500
+    "recipeBuy": 52500,
+    "recipeType": "normal"
   },
   {
     "id": "R6606",
@@ -5825,7 +6120,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 480,
-    "recipeBuy": 1200500
+    "recipeBuy": 367500,
+    "recipeType": "normal"
   },
   {
     "id": "R6607",
@@ -5845,7 +6141,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 540,
-    "recipeBuy": 8403500
+    "recipeBuy": 2572500,
+    "recipeType": "normal"
   },
   {
     "id": "R6608",
@@ -5865,7 +6162,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 600,
-    "recipeBuy": 58824500
+    "recipeBuy": 18007500,
+    "recipeType": "normal"
   },
   {
     "id": "R6609",
@@ -5885,7 +6183,8 @@
     "actTime": 0,
     "pow": 0,
     "hp": 660,
-    "recipeBuy": 411771500
+    "recipeBuy": 126052500,
+    "recipeType": "normal"
   },
   {
     "id": "R6610",
@@ -5903,12 +6202,13 @@
     "actTime": 0,
     "pow": 0,
     "hp": 720,
-    "recipeBuy": 2882400500
+    "recipeBuy": 882367500,
+    "recipeType": "normal"
   },
   {
     "id": "R99101",
     "name": "Nail",
-    "description": "",
+    "description": "Try not to get too hammered.",
     "lvl": 1,
     "value": 0,
     "craftTime": 6000,
@@ -5920,12 +6220,13 @@
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
     "id": "R99102",
     "name": "Lumber",
-    "description": "",
+    "description": "Made from the knottiest pine.",
     "lvl": 1,
     "value": 0,
     "craftTime": 15000,
@@ -5939,12 +6240,13 @@
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
     "id": "R99103",
     "name": "Shingle",
-    "description": "",
+    "description": "You should put a ring on it.",
     "lvl": 1,
     "value": 0,
     "craftTime": 30000,
@@ -5953,17 +6255,18 @@
       "bone"
     ],
     "mcost": {
-      "M201": 1
+      "M201": 2
     },
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
     "id": "R99104",
     "name": "Beam",
-    "description": "",
+    "description": "Don't cross them.",
     "lvl": 1,
     "value": 0,
     "craftTime": 60000,
@@ -5972,17 +6275,18 @@
       "steel"
     ],
     "mcost": {
-      "M301": 3
+      "M301": 5
     },
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
     "id": "R99105",
     "name": "Insulation",
-    "description": "",
+    "description": "Protects against solar radiation.",
     "lvl": 1,
     "value": 0,
     "craftTime": 9000,
@@ -5991,17 +6295,18 @@
       "paper"
     ],
     "mcost": {
-      "M401": 1
+      "M401": 4
     },
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
     "id": "R99106",
     "name": "Vault",
-    "description": "",
+    "description": "Security not guaranteed.",
     "lvl": 1,
     "value": 0,
     "craftTime": 900000,
@@ -6016,351 +6321,82 @@
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
-    "id": "R99201",
-    "name": "Sturdy Nail",
-    "description": "",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 12000,
-    "type": "fuse",
-    "rcost": [
-      "ore"
+    "id": "R99107",
+    "name": "Frame",
+    "description": [
+      "It wasn't me",
+      ""
     ],
-    "mcost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99202",
-    "name": "Sturdy Lumber",
-    "description": "",
-    "lvl": 2,
+    "lvl": 1,
     "value": 0,
     "craftTime": 30000,
-    "type": "fuse",
+    "type": "bank",
     "rcost": [
+      "ore",
       "wood"
     ],
     "mcost": {
-      "M202": 1
+      "R99101": 6,
+      "R99102": 4
     },
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
-    "id": "R99203",
-    "name": "Sturdy Shingle",
-    "description": "",
-    "lvl": 2,
+    "id": "R99108",
+    "name": "Wall",
+    "description": "All in all, it's another brick.",
+    "lvl": 1,
     "value": 0,
-    "craftTime": 45000,
-    "type": "fuse",
+    "craftTime": 30000,
+    "type": "bank",
     "rcost": [
-      "bone"
-    ],
-    "mcost": {
-      "M302": 1
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99204",
-    "name": "Sturdy Beam",
-    "description": "",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 120000,
-    "type": "fuse",
-    "rcost": [
-      "steel"
-    ],
-    "mcost": {
-      "M402": 3
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99205",
-    "name": "Sturdy Insulation",
-    "description": "",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 18000,
-    "type": "fuse",
-    "rcost": [
+      "wood",
       "paper"
     ],
     "mcost": {
-      "M502": 1
+      "R99105": 5,
+      "R99107": 1
     },
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
-    "id": "R99206",
-    "name": "Cauldron ",
-    "description": "",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 1800000,
-    "type": "fuse",
-    "rcost": [
-      "mana"
-    ],
-    "mcost": {
-      "M602": 20,
-      "M102": 20
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99301",
-    "name": "Strong Nail",
-    "description": "",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 18000,
-    "type": "smith",
-    "rcost": [
-      "ore"
-    ],
-    "mcost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99302",
-    "name": "Strong Lumber",
-    "description": "",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 45000,
-    "type": "smith",
-    "rcost": [
-      "wood"
-    ],
-    "mcost": {
-      "M303": 1
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99303",
-    "name": "Strong Shingle",
-    "description": "",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 75000,
-    "type": "smith",
-    "rcost": [
-      "bone"
-    ],
-    "mcost": {
-      "M403": 1
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99304",
-    "name": "Strong Rope",
-    "description": "",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 180000,
-    "type": "smith",
-    "rcost": [
-      "herb"
-    ],
-    "mcost": {
-      "M503": 3
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99305",
-    "name": "Strong Insulation",
-    "description": "",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 27000,
-    "type": "smith",
-    "rcost": [
-      "paper"
-    ],
-    "mcost": {
-      "M603": 1
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99306",
-    "name": "Forge",
-    "description": "",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 2700000,
-    "type": "smith",
-    "rcost": [
-      "steel"
-    ],
-    "mcost": {
-      "M103": 20,
-      "M203": 20
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99501",
-    "name": "Heavy Nail",
-    "description": "",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 30000,
-    "type": "fortune",
-    "rcost": [
-      "ore"
-    ],
-    "mcost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99502",
-    "name": "Heavy Lumber",
-    "description": "",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 75000,
-    "type": "fortune",
-    "rcost": [
-      "wood"
-    ],
-    "mcost": {
-      "M101": 1
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99503",
-    "name": "Heavy Shingle",
-    "description": "",
-    "lvl": 5,
+    "id": "R99109",
+    "name": "Roof",
+    "description": "Keep your overheads low.",
+    "lvl": 1,
     "value": 0,
     "craftTime": 150000,
-    "type": "fortune",
+    "type": "bank",
     "rcost": [
-      "bone"
-    ],
-    "mcost": {
-      "M201": 1
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99504",
-    "name": "Heavy Beam",
-    "description": "",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 300000,
-    "type": "fortune",
-    "rcost": [
+      "bone",
       "steel"
     ],
     "mcost": {
-      "M301": 3
+      "R99103": 10,
+      "R99104": 3
     },
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
-    "id": "R99505",
-    "name": "Heavy Insulation",
-    "description": "",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 45000,
-    "type": "fortune",
-    "rcost": [
-      "paper"
-    ],
-    "mcost": {
-      "M401": 1
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R99506",
-    "name": "Crystal Ball",
-    "description": "",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 4500000,
-    "type": "fortune",
-    "rcost": [
-      "mana"
-    ],
-    "mcost": {
-      "M501": 20,
-      "M601": 20
-    },
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0
-  },
-  {
-    "id": "R999001",
+    "id": "R99110",
     "name": "Bank",
-    "description": "",
+    "description": "Store your precious keepsakes here.",
     "lvl": 1,
     "value": 0,
     "craftTime": 1800000,
@@ -6375,12 +6411,391 @@
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99201",
+    "name": "Sturdy Nail",
+    "description": "Try not to get too hammered.",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 12000,
+    "type": "fuse",
+    "rcost": [
+      "ore"
+    ],
+    "mcost": "",
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99202",
+    "name": "Sturdy Lumber",
+    "description": "Made from the knottiest pine.",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 30000,
+    "type": "fuse",
+    "rcost": [
+      "wood"
+    ],
+    "mcost": {
+      "M202": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99203",
+    "name": "Sturdy Shingle",
+    "description": "You should put a ring on it.",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 45000,
+    "type": "fuse",
+    "rcost": [
+      "bone"
+    ],
+    "mcost": {
+      "M302": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99204",
+    "name": "Sturdy Beam",
+    "description": "Don't cross them.",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 120000,
+    "type": "fuse",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M402": 3
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99205",
+    "name": "Sturdy Insulation",
+    "description": "Protects against solar radiation.",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 18000,
+    "type": "fuse",
+    "rcost": [
+      "paper"
+    ],
+    "mcost": {
+      "M502": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99206",
+    "name": "Cauldron ",
+    "description": "It may not make sense, but hey, it's magic.",
+    "lvl": 2,
+    "value": 0,
+    "craftTime": 1800000,
+    "type": "fuse",
+    "rcost": [
+      "mana"
+    ],
+    "mcost": {
+      "M602": 20,
+      "M102": 20
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99301",
+    "name": "Strong Nail",
+    "description": "Try not to get too hammered.",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 18000,
+    "type": "smith",
+    "rcost": [
+      "ore"
+    ],
+    "mcost": "",
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99302",
+    "name": "Strong Lumber",
+    "description": "Made from the knottiest pine.",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 45000,
+    "type": "smith",
+    "rcost": [
+      "wood"
+    ],
+    "mcost": {
+      "M303": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99303",
+    "name": "Strong Shingle",
+    "description": "You should put a ring on it.",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 75000,
+    "type": "smith",
+    "rcost": [
+      "bone"
+    ],
+    "mcost": {
+      "M403": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99304",
+    "name": "Strong Rope",
+    "description": "These are the ties that bind.",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 180000,
+    "type": "smith",
+    "rcost": [
+      "herb"
+    ],
+    "mcost": {
+      "M503": 3
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99305",
+    "name": "Strong Insulation",
+    "description": "Protects against solar radiation.",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 27000,
+    "type": "smith",
+    "rcost": [
+      "paper"
+    ],
+    "mcost": {
+      "M603": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99306",
+    "name": "Forge",
+    "description": "Perfect for pounding out the details.",
+    "lvl": 3,
+    "value": 0,
+    "craftTime": 2700000,
+    "type": "smith",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M103": 20,
+      "M203": 20
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99501",
+    "name": "Heavy Nail",
+    "description": "Try not to get too hammered.",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 30000,
+    "type": "fortune",
+    "rcost": [
+      "ore"
+    ],
+    "mcost": "",
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99502",
+    "name": "Heavy Lumber",
+    "description": "Made from the knottiest pine.",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 75000,
+    "type": "fortune",
+    "rcost": [
+      "wood"
+    ],
+    "mcost": {
+      "M101": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99503",
+    "name": "Heavy Shingle",
+    "description": "You should put a ring on it.",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 150000,
+    "type": "fortune",
+    "rcost": [
+      "bone"
+    ],
+    "mcost": {
+      "M201": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99504",
+    "name": "Heavy Beam",
+    "description": "Don't cross them.",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 300000,
+    "type": "fortune",
+    "rcost": [
+      "steel"
+    ],
+    "mcost": {
+      "M301": 3
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99505",
+    "name": "Heavy Insulation",
+    "description": "Protects against solar radiation.",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 45000,
+    "type": "fortune",
+    "rcost": [
+      "paper"
+    ],
+    "mcost": {
+      "M401": 1
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R99506",
+    "name": "Crystal Ball",
+    "description": "It can predict the future.  Maybe.",
+    "lvl": 5,
+    "value": 0,
+    "craftTime": 4500000,
+    "type": "fortune",
+    "rcost": [
+      "mana"
+    ],
+    "mcost": {
+      "M501": 20,
+      "M601": 20
+    },
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
+  },
+  {
+    "id": "R999001",
+    "name": "Bank",
+    "description": "Store your precious keepsakes here.",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 1800000,
+    "type": "bank",
+    "rcost": [
+      "wood",
+      "steel",
+      "paper",
+      "silver"
+    ],
+    "mcost": {},
+    "actTime": 0,
+    "pow": 0,
+    "hp": 0,
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
     "id": "R999002",
     "name": "Fusion Cauldron",
-    "description": "",
+    "description": "Merge your junk into treasure.",
     "lvl": 2,
     "value": 0,
     "craftTime": 3600000,
@@ -6395,12 +6810,13 @@
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
     "id": "R999003",
     "name": "Forge",
-    "description": "",
+    "description": "Improve your gear at a slight risk of catastrophe.",
     "lvl": 3,
     "value": 0,
     "craftTime": 7200000,
@@ -6415,12 +6831,13 @@
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   },
   {
     "id": "R999005",
     "name": "Fortune Teller",
-    "description": "",
+    "description": "The future can be known, for a price.",
     "lvl": 5,
     "value": 0,
     "craftTime": 21600000,
@@ -6437,6 +6854,7 @@
     "actTime": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0
+    "recipeBuy": 0,
+    "recipeType": "building"
   }
 ]

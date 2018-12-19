@@ -49,6 +49,7 @@ const TownManager = {
     },
     specialCraft(itemID) {
         ResourceManager.addMaterial(itemID,1);
+        
     }
 }
 
@@ -171,10 +172,10 @@ const $buildBuilding = $("#buildBuilding");
 function buildScreen(type) {
     $buildBuilding.empty();
     if (!TownManager.paidCost(type)) {
-        const d1 = $("<div/>").addClass("buyBuildingBP").attr("type",type).html(`Buy Blueprint<span class="buybp_cost">${ResourceManager.materialIcon("M001")} ${formatToUnits(getBuildingCost(type),2)}</span>`)
+        const d1 = $("<div/>").addClass("buyBuildingBP").attr("type",type).html(`Buy Blueprint - ${ResourceManager.materialIcon("M001")}&nbsp;&nbsp;${formatToUnits(getBuildingCost(type),2)}`)
         $buildBuilding.append(d1);
         return;
-    }
+    }/*
     const d2 = $("<div/>").addClass("bMaterials")
     ResourceManager.materials.filter(m => m.type === type).forEach(mat => {
         const d3 = $("<div/>").addClass("bmaterial tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
@@ -183,13 +184,13 @@ function buildScreen(type) {
         d3.append(d3a,d3b);
         d2.append(d3);
     });
-    $buildBuilding.append(d2);
+    $buildBuilding.append(d2);*/
     const d4 = $("<div/>").addClass("bRecipes");
     const table = $('<div/>').addClass('brecipeTable');
-    const htd1 = $('<div/>').addClass('brecipeHeadName').html("NAME");
+    const htd1 = $('<div/>').addClass('brecipeHeadName isSortableHead').html("NAME");
     const htd2 = $('<div/>').addClass('brecipeHeadRes').html("RESOURCES");
     const htd3 = $('<div/>').addClass('brecipeHeadCost').html("MATS");
-    const htd4 = $('<div/>').addClass('brecipeHeadTime').html("TIME");
+    const htd4 = $('<div/>').addClass('brecipeHeadTime isSortableHead').html("TIME");
     const hrow = $('<div/>').addClass('brecipeHeader').append(htd1,htd2,htd3,htd4);
     table.append(hrow);
     let alternate = false;

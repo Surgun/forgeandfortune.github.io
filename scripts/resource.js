@@ -39,6 +39,10 @@ const ResourceManager = {
         this.materials.push(material);
     },
     addMaterial(res,amt) {
+        if (res.charAt(0) === "R") {
+            for (let i=0;i<amt;i++) Inventory.addToInventory(res,0,-1);
+            return;
+        }
         const mat = this.materials.find(mat => mat.id === res); 
         mat.amt += amt;
         if (mat.amt === 0) $("#"+mat.id).hide();
@@ -55,7 +59,13 @@ const ResourceManager = {
         this.addMaterial("M001",-amt);
     },
     deductMaterial(item) {
+        console.log(item.mcost);
         for (const [resource, amt] of Object.entries(item.mcost)) {
+            console.log(resource,amt);
+            if (resource.charAt(0) === "R") {
+                Inventory.removePrecraft(resource, amt);
+                continue;
+            }
             this.addMaterial(resource,-amt);
         }
     },
@@ -83,6 +93,9 @@ const ResourceManager = {
         return Inventory.itemCount(res,0) >= amt;
     },
     materialAvailable(matID) {
+        if (matID.charAt(0) === "R") {
+            return Inventory.itemCount(matID,0);
+        }
         return this.materials.find(mat => mat.id === matID).amt;
     },
     nameForWorkerSac(mat) {
@@ -91,6 +104,7 @@ const ResourceManager = {
         return item.name;
     },
     idToMaterial(matID) {
+        if (matID.charAt(0) === "R") return recipeList.idToItem(matID);
         return this.materials.find(m=>m.id === matID);
     },
     isAMaterial(matID) {
@@ -118,7 +132,7 @@ const $materials = $("#materials");
 
 function initializeMats() {
     ResourceManager.reOrderMats();
-    ResourceManager.materials.filter(m=>m.type === "recipe").forEach(mat => {
+    ResourceManager.materials.forEach(mat => {
         const d = $("<div/>").addClass("material tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
         const d1 = $("<div/>").addClass("materialName").html(mat.img);
         const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(formatToUnits(mat.amt,2));
@@ -130,7 +144,7 @@ function initializeMats() {
 
 function hardMatRefresh() {
     //used when we first load in
-    ResourceManager.materials.filter(m=>m.type === "recipe").forEach(mat=> {
+    ResourceManager.materials.forEach(mat=> {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(formatToUnits(mat.amt,2));

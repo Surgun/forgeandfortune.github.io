@@ -347,5 +347,5 @@ $(document).on('click', '.dbClose', (e) => {
 });
 
 $(document).on('click', '#db-init', (e) => {
-    (dbi >= 7) ? dbEnable() : dbi++;
+    (dbi >= 6) ? dbEnable() : dbi++;
 });

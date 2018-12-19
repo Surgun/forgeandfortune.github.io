@@ -335,7 +335,7 @@ function refreshInventory() {
         }
         const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
         const actionBtns = $("<div/>").addClass("inventoryButtons");
-        if (item.recipeType === "recipe") {
+        if (item.item.recipeType === "normal") {
             const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
             const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
             actionBtns.append(equipButton,sellButton);

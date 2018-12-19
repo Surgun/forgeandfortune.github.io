@@ -52,6 +52,7 @@ const BankManager = {
 }
 
 function initiateBankBldg() {
+    $bankBuilding.show();
     refreshBankBank();
     refreshBankInventory();
 }

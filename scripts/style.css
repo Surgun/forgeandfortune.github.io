@@ -1353,6 +1353,10 @@ Rarities
     text-align: left;
 }
 
+.indvCost > img {
+    max-height: 20px;
+}
+
 .indvCost.masteredMat > img {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -3258,6 +3262,7 @@ Rarities
 }
 
 .brecipeTable .recipeRow .recipematdiv {
+    max-width: 150px;
     margin-left: 25px;
 }
 
@@ -3265,12 +3270,12 @@ Rarities
     margin-left: 45px;
 }
 
-.brecipeTable .recipeRow .recipeTime {
-    margin-left: 55px;
+.brecipeHeadTime {
+    margin-left: 100px;
 }
 
-.brecipeHeadTime {
-    margin-left: 105px;
+.brecipeTable .recipematdiv .indvCost {
+    min-width: 55px;
 }
 
 /* Events / Mail Content */

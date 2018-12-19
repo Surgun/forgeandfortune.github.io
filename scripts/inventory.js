@@ -167,6 +167,7 @@ const Inventory = {
         refreshInventoryPlaces()
     },
     craftToInventory(id) {
+        console.log("HI");
         const item = recipeList.idToItem(id)
         const name = item.name;
         const autoSell = item.autoSell;

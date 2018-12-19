@@ -59,7 +59,6 @@ const ResourceManager = {
         this.addMaterial("M001",-amt);
     },
     deductMaterial(item) {
-        console.log(item.mcost);
         for (const [resource, amt] of Object.entries(item.mcost)) {
             console.log(resource,amt);
             if (resource.charAt(0) === "R") {

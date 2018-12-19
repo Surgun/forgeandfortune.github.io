@@ -46,10 +46,6 @@ const TownManager = {
         if (type === "fuse") this.fuseCost = true;
         if (type === "smith") this.smithCost = true;
         if (type === "fortune") this.fortuneCost = true;
-    },
-    specialCraft(itemID) {
-        ResourceManager.addMaterial(itemID,1);
-        
     }
 }
 

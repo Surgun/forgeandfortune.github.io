@@ -3293,7 +3293,8 @@
     "rcost": [
       "ore",
       "leather",
-      "steel"
+      "steel",
+      "paper"
     ],
     "mcost": {
       "M301": 1

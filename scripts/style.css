@@ -1265,6 +1265,8 @@ Rarities
 
 .recipeRow {
     position: relative;
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
     border-radius: 10px;
@@ -1281,7 +1283,7 @@ Rarities
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
+    margin: auto 0 10px;
 }
 
 .recipeTimeContainer, .recipeValueContainer {
@@ -1289,6 +1291,7 @@ Rarities
     justify-content: center;
     align-items: center;
     line-height: 1em;
+    padding: 0 5px;
 }
 
 .recipeTimeHeader, .recipeValueHeader {
@@ -1361,18 +1364,20 @@ Rarities
 
 .recipecostdiv {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-top: 10px;
 }
 
 .reciperesdiv, .recipematdiv {
     display: inline-block;
-    margin-top: 10px;
 }
 
 .itemCost {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
+    margin: 10px 0 0;
 }
 
 .indvCost {
@@ -1380,9 +1385,8 @@ Rarities
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5px 0 0;
+    margin-right: 5px;
     padding: 5px 10px;
-    min-width: 50px;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);
     border-radius: 5px;
@@ -1390,9 +1394,9 @@ Rarities
 
 .recipeStatList {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    margin: 5px 0;
+    margin: 10px 0 15px;
 }
 
 .recipeStatList > div {
@@ -1400,7 +1404,6 @@ Rarities
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
     padding: 5px 10px;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);
@@ -1488,10 +1491,6 @@ Rarities
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-}
-
-.recipeHeadRes, .reciperesdiv {
-    max-width: 120px;
 }
 
 .indvCost > img {

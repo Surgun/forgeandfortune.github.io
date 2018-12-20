@@ -255,7 +255,7 @@ const recipeList = {
         return this.recipes.filter(r=>r.isMastered()).length;
     },
     recipeCount() {
-        return this.recipes.length;
+        return this.recipes.filter(r=>r.recipeType==="normal").length;
     },
     advancedWorkerUnlock() {
         return this.recipes.filter(r => r.owned).some(recipe => recipe.lvl >= 5);

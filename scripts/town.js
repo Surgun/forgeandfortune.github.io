@@ -46,10 +46,6 @@ const TownManager = {
         if (type === "fuse") this.fuseCost = true;
         if (type === "smith") this.smithCost = true;
         if (type === "fortune") this.fortuneCost = true;
-    },
-    specialCraft(itemID) {
-        ResourceManager.addMaterial(itemID,1);
-        
     }
 }
 
@@ -188,20 +184,22 @@ function buildScreen(type) {
     const d4 = $("<div/>").addClass("bRecipes");
     const table = $('<div/>').addClass('brecipeTable');
     const htd1 = $('<div/>').addClass('brecipeHeadName').html("NAME");
-    const htd2 = $('<div/>').addClass('brecipeHeadRes').html("RESOURCES");
-    const htd3 = $('<div/>').addClass('brecipeHeadCost').html("MATS");
-    const htd4 = $('<div/>').addClass('brecipeHeadTime').html("TIME");
-    const hrow = $('<div/>').addClass('brecipeHeader').append(htd1,htd2,htd3,htd4);
+    const htd2 = $('<div/>').addClass('brecipeHeadLvl').html("LVL");
+    const htd3 = $('<div/>').addClass('brecipeHeadRes').html("RESOURCES");
+    const htd4 = $('<div/>').addClass('brecipeHeadCost').html("MATS");
+    const htd5 = $('<div/>').addClass('brecipeHeadTime').html("TIME");
+    const hrow = $('<div/>').addClass('brecipeHeader').append(htd1,htd2,htd3,htd4,htd5);
     table.append(hrow);
     let alternate = false;
     let lastRow = null;
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
         const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
-        const td2 = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
-        const td3 = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
-        const td4 = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
-        const td5 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td2,td3,td4,td5);
+        const td2 = $('<div/>').addClass('recipeLvl').html(recipe.lvl);
+        const td3 = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
+        const td4 = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
+        const td5 = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
+        const td6 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td2,td3,td4,td5,td6);
         lastRow = row;
         if (alternate) row.addClass("recipeRowHighlight");
         alternate = !alternate;
@@ -210,6 +208,8 @@ function buildScreen(type) {
     if (lastRow !== null) lastRow.addClass("recipeRowLast");
     d4.append(table);
     $buildBuilding.append(d4);
+    const d5 = $("<div/>").addClass("buildingInstr").html("Construct the bank to unlock permanently!");
+    $buildBuilding.append(d5);
 }
 
 $(document).on('click', ".buyBuildingBP", (e) => {

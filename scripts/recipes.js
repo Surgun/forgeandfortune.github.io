@@ -374,7 +374,7 @@ function initializeRecipes(type,sortType,heading) {
             masteryBarDiv.append(masteryBar,masteryBarFill);
             td6a.append(masteryBarDiv);
             /* */
-        const td6b = $('<div/>').addClass('recipeCraft').html(`<i class="fas fa-hammer"></i> Craft`);
+        const td6b = $('<div/>').addClass('recipeCraft').attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
         td6.append(td6a,td6b);
 
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6);
@@ -454,7 +454,7 @@ function refreshBlueprint(type) {
     $blueprintUnlock.append(d);
 }
 
-$(document).on('click', '.recipeName', (e) => {
+$(document).on('click', '.recipeCraft', (e) => {
     //click on a recipe to slot it
     e.preventDefault();
     const type = $(e.target).attr("id");

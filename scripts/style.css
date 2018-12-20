@@ -180,20 +180,22 @@ body:after {
 }
 
 .game-content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template: 1fr 50px / 250px 1fr 250px;
+    height: 100vh;
 }
 
 .game-content .status, #right-side-content {
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 100vh;
     background-color: var(--bg-primary);
 }
 
 .game-content .status {
     border-right: 1px solid var(--border-primary);
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    overflow-y: auto;
 }
 
 #game-logo {
@@ -371,9 +373,10 @@ body:after {
 }
 
 #right-side-content {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
     padding: 0 10px;
     border-left: 1px solid var(--border-primary);
-    height: calc(100vh - 50px);
     overflow-y: auto;
 }
 
@@ -741,10 +744,8 @@ Rarities
 */
 
 .game-wrapper {
-    flex-grow: 1;
-    height: 100vh;
-    max-width: calc(100% - 500px);
-    max-height: calc(100vh - 50px);
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     overflow-y: auto;
 }
 
@@ -3598,16 +3599,11 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    padding: 0;
-    width: calc(100% - 250px);
-    height: 50px;
+    grid-row: 2;
+    grid-column: 2 / -1;
     font-size: 14px;
     background-color: var(--bg-primary);
     border-top: 1px solid var(--border-primary);
-    z-index: 999;
 }
 
 #bottom-left, #bottom-right {
@@ -3692,6 +3688,7 @@ footer a[href*="discord.gg"]:hover {
     overflow: hidden;
     transform: scale(0);
     transform-origin: bottom;
+    z-index: 10;
 }
 
 .footer_more-list li {

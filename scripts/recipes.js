@@ -341,7 +341,7 @@ function initializeRecipes(type,sortType,heading) {
     let lastRow = null;
 
     rFilter.forEach((recipe) => {
-        const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
+        const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
         const td1a = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
         const td2 = $('<div/>').addClass("recipeItemLevel").html(recipe.itemLevel());
         const td3 = $('<div/>').addClass('recipecostdiv');
@@ -374,7 +374,7 @@ function initializeRecipes(type,sortType,heading) {
             masteryBarDiv.append(masteryBar,masteryBarFill);
             td6a.append(masteryBarDiv);
             /* */
-        const td6b = $('<div/>').addClass('recipeCraft').attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
+        const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
         td6.append(td6a,td6b);
 
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6);
@@ -412,9 +412,9 @@ function refreshCraftCount() {
 */
 function recipeCanCraft() {
     //loops through recipes, adds class if disabled
-    $(".recipeRow").removeClass("recipeRowDisable");
+    $(".recipeCraft").removeClass("recipeCraftDisable");
     recipeList.recipes.forEach(recipe => {
-        if (!WorkerManager.canCurrentlyCraft(recipe)) $("#rr"+recipe.id).addClass("recipeRowDisable");
+        if (!WorkerManager.canCurrentlyCraft(recipe)) $(".rr"+recipe.id).addClass("recipeCraftDisable");
     }) 
 }
 

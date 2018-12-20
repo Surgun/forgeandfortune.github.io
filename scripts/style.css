@@ -1295,6 +1295,26 @@ Rarities
     margin-right: 5px;
 }
 
+.recipeCraft {
+    margin-top: auto;
+    padding: 8px 10px;
+    width: 100%;
+    background-color: var(--green-tertiary);
+    color: var(--text-primary);
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recipeCraft:not(.recipeCraftDisable):hover {
+    background-color: var(--green-primary);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+.recipeCraftDisable {
+    background-color: rgba(255, 0, 0, .5);
+}
+
 .recipeName {
     display: flex;
     justify-content: left;
@@ -1405,15 +1425,6 @@ Rarities
     justify-content: flex-start;
     align-items: center;
     min-height: 40px;
-}
-
-.recipeRow.recipeRowDisable {
-    color: rgba(255,255,255,0.5);
-}
-
-.recipeRow.recipeRowDisable > div > img, 
-.recipeRow.recipeRowDisable > div > div > div > img {
-    opacity: 0.5;
 }
 
 .isSortableHead {
@@ -3181,7 +3192,7 @@ Rarities
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .recipeCraft {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -3192,7 +3203,7 @@ Rarities
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .recipeCraft:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -3268,7 +3279,7 @@ Rarities
 }
 
 #swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover {
-    background-color: var(--green-light);
+    background-color: var(--green-tertiary);
 }
 
 #swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost{

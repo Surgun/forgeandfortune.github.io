@@ -343,38 +343,41 @@ function initializeRecipes(type,sortType,heading) {
     rFilter.forEach((recipe) => {
         const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
         const td1a = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
-        const td2 = $('<div/>').addClass("inventoryItemLevel").html(recipe.itemLevel());
+        const td2 = $('<div/>').addClass("recipeItemLevel").html(recipe.itemLevel());
         const td3 = $('<div/>').addClass('recipecostdiv');
         const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
-        const td3a1 = $("<div/>").addClass("recipeResHeader recipeCardHeader").html("Resources");
-        td3a.prepend(td3a1);
         const td3b = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
-        const td3b1 = $("<div/>").addClass("recipeMatHeader recipeCardHeader").html("Materials");
-        td3b.prepend(td3b1);
         td3.append(td3a, td3b);
         const td4 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
-        const td4a = $("<div/>").addClass("recipeStatHeader recipeCardHeader").html("Statistics");
-        td4.prepend(td4a);
-        const td5 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
-        const td5a = $("<div/>").addClass("recipeTimeHeader recipeCardHeader tooltip").attr("data-tooltip", "Craft Time").html(`<i class="far fa-clock"></i>`);
-        td5.prepend(td5a);
-        const td6 = $('<div/>').addClass('recipeValue').html(recipe.itemValue());
-        const td6a = $("<div/>").addClass("recipeValueHeader recipeCardHeader tooltip").attr("data-tooltip", "Gold").html(`<img src='images/resources/M001.png'>`);
-        td6.prepend(td6a);
-        const craftCount = Math.min(100,recipe.craftCount);
-        const td7 = $('<div/>').addClass('recipeCount');
-        const td7a = $("<div/>").addClass("recipeMasteryHeader recipeCardHeader").html("Mastery");
-        /*Mastery Bar Stuff, Akerson can purty this up if he wants */
-        const masteryWidth = (craftCount).toFixed(1)+"%";
-        const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
-        const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",craftCount).attr("id","masteryBar");
-        const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
-        const td7b = $('<div/>').addClass('recipeCountStatus').attr("id","rc"+recipe.id);
-        masteryBarDiv.append(masteryBar,masteryBarFill);
-        td7b.append(masteryBarDiv);
-        /* */
-        td7.append(td7a,td7b);
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6,td7);
+
+        const td5 = $('<div/>').addClass('recipeTimeAndValue');
+            const td5a = $('<div/>').addClass('recipeTimeContainer');
+                const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader tooltip").attr("data-tooltip", "Craft Time").html(`<i class="fas fa-clock"></i>`);
+                const td5a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
+            td5a.append(td5a1,td5a2);
+
+            const td5b = $('<div/>').addClass('recipeValueContainer');
+                const td5b1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader tooltip").attr("data-tooltip", "Gold").html(`<img src='images/resources/M001.png'>`);
+                const td5b2 = $('<div/>').addClass('recipeValue').html(recipe.itemValue());
+            td5b.append(td5b1,td5b2);
+        td5.append(td5a,td5b);
+
+        const td6 = $('<div/>').addClass('recipeCountAndCraft');
+            const craftCount = Math.min(100,recipe.craftCount);
+        const td6a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id);
+            /*Mastery Bar Stuff, Akerson can purty this up if he wants */
+            const masteryWidth = (craftCount).toFixed(1)+"%";
+            const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
+            const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",`${craftCount} / 100`).attr("id","masteryBar");
+            const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
+            const td6a1 = $('<div/>').addClass('recipeCountStatus').attr("id","rc"+recipe.id);
+            masteryBarDiv.append(masteryBar,masteryBarFill);
+            td6a.append(masteryBarDiv);
+            /* */
+        const td6b = $('<div/>').addClass('recipeCraft').html(`<i class="fas fa-hammer"></i> Craft`);
+        td6.append(td6a,td6b);
+
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6);
         lastRow = row;
         if (alternate) row.addClass("recipeRowHighlight");
         alternate = !alternate;
@@ -392,7 +395,7 @@ function refreshMasteryBar() {
         const rr = $("#rc"+recipe.id)
         const masteryWidth = (recipe.craftCount).toFixed(1)+"%";
         const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
-        const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",recipe.craftCount).attr("id","masteryBar");
+        const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",`${recipe.craftCount} / 100`).attr("id","masteryBar");
         const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
         masteryBarDiv.append(masteryBar,masteryBarFill);
         rr.html(masteryBarDiv);

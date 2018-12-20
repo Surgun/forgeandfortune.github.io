@@ -80,7 +80,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCraft {
     -webkit-transition: all var(--transition);
     -moz-transition: all var(--transition);
     -ms-transition: all var(--transition);
@@ -562,7 +562,7 @@ body:after {
 .inventoryEquip, .inventorySell {
     flex: 1;
     margin-top: 10px;
-    padding:  8px 10px;
+    padding: 8px 10px;
     background-color: rgba(255,255,255,0.05);
     border-radius: 5px;
     cursor: pointer;
@@ -1263,16 +1263,36 @@ Rarities
     margin: 10px;
 }
 
-.recipeCardHeader, .recipeMatHeader  {
-    display: none;
-}
-
 .recipeRow {
     position: relative;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
     border-radius: 10px;
     padding: 10px;
+}
+
+.recipeCountAndCraft {
+    display: grid;
+    grid-template: 1fr / 2fr 1fr;
+    grid-gap: 10px;
+}
+
+.recipeTimeAndValue {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.recipeTimeContainer, .recipeValueContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1em;
+}
+
+.recipeTimeHeader, .recipeValueHeader {
+    margin-right: 5px;
 }
 
 .recipeName {
@@ -1329,14 +1349,6 @@ Rarities
     margin-top: 10px;
 }
 
-.reciperesdiv {
-    margin-right: 5%;
-}
-
-.recipematdiv {
-    margin-left: 5%;
-}
-
 .itemCost {
     display: flex;
     justify-content: left;
@@ -1353,7 +1365,7 @@ Rarities
     min-width: 50px;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .recipeStatList {
@@ -1372,7 +1384,7 @@ Rarities
     padding: 5px 10px;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);
-    border-radius: 15px;
+    border-radius: 5px;
 }
 
 .recipeStatList > div > img {
@@ -1461,30 +1473,6 @@ Rarities
     pointer-events: none;
 }
 
-.recipeDescription {
-    position: relative;
-    padding-left: 5px;
-    color: rgba(255,255,255,0.5);
-    cursor: default;
-}
-
-.recipeDescription:hover {
-    color: #fff;
-}
-
-.recipeHeadCost, .recipeHeadTime, .recipeHeadCount, .recipeHeadLvl, .recipeHeadRes, .recipeHeadValue, .reciperesdiv, .recipematdiv, .recipeTime, .recipeCount, .recipeHeadStats, .recipeStats, .recipeValue, .recipeLvl {
-    width: 100%;
-    max-width: 200px;
-}
-
-.recipeHeadLvl, .recipeLvl {
-    max-width: 50px;
-}
-
-.recipeLvl {
-    margin-left: 235px;
-}
-
 .reciperesdiv, .itemCost, .recipeStatList {
     display: flex;
     flex-wrap: wrap;
@@ -1493,18 +1481,6 @@ Rarities
 
 .recipeHeadRes, .reciperesdiv {
     max-width: 120px;
-}
-
-.recipeHeadCost, .recipematdiv {
-    max-width: 100px;
-}
-
-.indvCost {
-    display: inline-block;
-    position: relative;
-    margin-right: 5px;
-    min-width: 23px;
-    text-align: left;
 }
 
 .indvCost > img {
@@ -3076,6 +3052,11 @@ Rarities
     text-align: center;
 }
 
+.masteryBarDiv {
+    margin-bottom: 0;
+    height: 100%;
+}
+
 #swBarDiv {
     margin-top: 5px;
 }
@@ -3093,10 +3074,6 @@ Rarities
 
 .fuseBarFill, #swFill, .masteryBarFill {
     background-color: rgba(255,255,255,0.15);
-}
-
-.masteryBarFill {
-    background-color: var(--highlight);
 }
 
 .possibleFuseHead {
@@ -3188,7 +3165,7 @@ Rarities
     margin-top: 10px;
 }
 
-.bankItemLevel, .smithItemLevel, .inventoryItemLevel {
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -3204,7 +3181,7 @@ Rarities
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .recipeCraft {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -3215,7 +3192,7 @@ Rarities
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .recipeCraft:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }

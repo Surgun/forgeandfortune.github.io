@@ -1322,18 +1322,15 @@ Rarities
     display: flex;
     justify-content: left;
     align-items: center;
-    margin-left: 40px;
-    border: 1px solid red; /* temp */
+    margin-left: 50px;
+    padding: 0 20px 5px 0;
+    height: 38px;
+    border-bottom: 2px solid var(--border-secondary);
 }
 
 .recipeName > img {
-    max-height: 24px;
+    max-height: 28px;
     margin-right: 5px;
-    background: pink; /* temp */
-}
-
-.recipeName > .item-name {
-    background: pink; /* temp */
 }
 
 .recipeDescription {
@@ -1366,7 +1363,6 @@ Rarities
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    margin-top: 10px;
 }
 
 .reciperesdiv, .recipematdiv {

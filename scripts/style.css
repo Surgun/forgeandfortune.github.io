@@ -3291,7 +3291,7 @@ Rarities
     border: 1px solid var(--border);
     background-color: var(--bg-3);
     color: var(--highlight);
-    margin: 0 10px;
+    margin: -15px 10px 20px;
     padding: 15px;
 }
 

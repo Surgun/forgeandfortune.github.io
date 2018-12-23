@@ -1324,7 +1324,7 @@ Rarities
     justify-content: left;
     align-items: center;
     margin-left: 50px;
-    padding: 0 20px 5px 0;
+    padding: 0 35px 5px 0;
     height: 38px;
     border-bottom: 2px solid var(--border-secondary);
 }
@@ -1336,14 +1336,21 @@ Rarities
 
 .recipeDescription {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    color: rgba(255,255,255,0.5);
-    cursor: default;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    background-color: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.75);
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .recipeDescription:hover {
-    color: #fff;
+    background-color: rgba(255,255,255,0.15);
 }
 
 .recipeLvl {
@@ -1481,7 +1488,11 @@ Rarities
     cursor: pointer;
 }
 
-.recipeName>img, .EHPEname>img {
+.recipeCardHeader, .recipeValue {
+    position: relative;
+}
+
+.recipeName > img, .EHPEname > img {
     margin-right: 10px;
     height: 28px;
 }
@@ -3420,41 +3431,11 @@ Rarities
     margin-left: 5px;
 }
 
-.brecipeTable .recipeRow .recipeLvl {
-    margin-left: 255px;
-}
-
-.brecipeTable .recipeRow .recipematdiv {
-    max-width: 150px;
-    margin-left: 25px;
-}
-
-.brecipeTable .recipeRow .recipeDescription {
-    position: absolute;
-    left: 3px;
-}
-
-.brecipeHeadRes {
-    margin-left: 25px;
-}
-
-.brecipeHeadCost {
-    margin-left: 45px;
-}
-
-.brecipeHeadTime {
-    margin-left: 100px;
-}
-
-.brecipeTable .recipematdiv .indvCost {
-    min-width: 55px;
-}
-
 .buildingInstr {
-    border: 1px solid var(--border);
-    background-color: var(--bg-3);
+    border: 1px solid var(--border-primary);
+    background-color: var(--bg-tertiary);
     color: var(--highlight);
-    margin: -15px 10px 20px;
+    margin: 10px 10px 20px;
     padding: 15px;
 }
 

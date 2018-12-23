@@ -194,7 +194,7 @@ function buildScreen(type) {
     let lastRow = null;
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
         const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
-        const td2 = $('<div/>').addClass('recipeLvl').html(recipe.lvl);
+        const td2 = $('<div/>').addClass('recipeItemLevel').html(recipe.itemLevel());
         const td3 = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
         const td4 = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
         const td5 = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());

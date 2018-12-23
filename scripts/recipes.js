@@ -45,8 +45,11 @@ class Item{
     imageValue() {
         return ResourceManager.formatCost("M001",formatToUnits(this.value,1));
     }
+    itemValueFormatted() {
+        return formatToUnits(this.value,2);
+    }
     itemValue() {
-        return formatToUnits(this.value,1);
+        return this.value;
     }
     visualizeRes() {
         const d = $("<div/>").addClass("itemCost")
@@ -358,7 +361,7 @@ function initializeRecipes(type,sortType,heading) {
 
             const td5b = $('<div/>').addClass('recipeValueContainer');
                 const td5b1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader tooltip").attr("data-tooltip", "Gold").html(`<img src='images/resources/M001.png'>`);
-                const td5b2 = $('<div/>').addClass('recipeValue').html(recipe.itemValue());
+                const td5b2 = $('<div/>').addClass('recipeValue tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`).html(recipe.itemValueFormatted());
             td5b.append(td5b1,td5b2);
         td5.append(td5a,td5b);
 

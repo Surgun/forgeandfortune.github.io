@@ -1453,6 +1453,12 @@ Rarities
     transform: rotate(180deg);
 }
 
+.recipeHeadName, .recipeHeadLvl, .recipeHeadRes, .recipeHeadCost, .recipeHeadStats, .recipeHeadTime, .recipeHeadValue, .recipeHeadCount, .brecipeHeadName, .brecipeHeadRes, .brecipeHeadCost, .brecipeHeadTime, .brecipeHeadLvl {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
 .EHPEHeaderName, .EHPEname  {
     display: flex;
     align-items: center;
@@ -3414,12 +3420,21 @@ Rarities
     margin-left: 5px;
 }
 
-.brecipeTable .recipeRow .reciperesdiv {
-    margin-left: 225px;
+.brecipeTable .recipeRow .recipeLvl {
+    margin-left: 255px;
 }
 
 .brecipeTable .recipeRow .recipematdiv {
     max-width: 150px;
+    margin-left: 25px;
+}
+
+.brecipeTable .recipeRow .recipeDescription {
+    position: absolute;
+    left: 3px;
+}
+
+.brecipeHeadRes {
     margin-left: 25px;
 }
 
@@ -3433,6 +3448,14 @@ Rarities
 
 .brecipeTable .recipematdiv .indvCost {
     min-width: 55px;
+}
+
+.buildingInstr {
+    border: 1px solid var(--border);
+    background-color: var(--bg-3);
+    color: var(--highlight);
+    margin: -15px 10px 20px;
+    padding: 15px;
 }
 
 /* Events / Mail Content */

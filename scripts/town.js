@@ -183,23 +183,36 @@ function buildScreen(type) {
     $buildBuilding.append(d2);*/
     const d4 = $("<div/>").addClass("bRecipes");
     const table = $('<div/>').addClass('brecipeTable');
-    const htd1 = $('<div/>').addClass('brecipeHeadName').html("NAME");
-    const htd2 = $('<div/>').addClass('brecipeHeadLvl').html("LVL");
-    const htd3 = $('<div/>').addClass('brecipeHeadRes').html("RESOURCES");
-    const htd4 = $('<div/>').addClass('brecipeHeadCost').html("MATS");
-    const htd5 = $('<div/>').addClass('brecipeHeadTime').html("TIME");
-    const hrow = $('<div/>').addClass('brecipeHeader').append(htd1,htd2,htd3,htd4,htd5);
-    table.append(hrow);
+    // const htd1 = $('<div/>').addClass('brecipeHeadName').html("NAME");
+    // const htd2 = $('<div/>').addClass('brecipeHeadLvl').html("LVL");
+    // const htd3 = $('<div/>').addClass('brecipeHeadRes').html("RESOURCES");
+    // const htd4 = $('<div/>').addClass('brecipeHeadCost').html("MATS");
+    // const htd5 = $('<div/>').addClass('brecipeHeadTime').html("TIME");
+    // const hrow = $('<div/>').addClass('brecipeHeader').append(htd1,htd2,htd3,htd4,htd5);
+    // table.append(hrow);
     let alternate = false;
     let lastRow = null;
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
-        const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
-        const td2 = $('<div/>').addClass('recipeItemLevel').html(recipe.itemLevel());
-        const td3 = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
-        const td4 = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
-        const td5 = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
-        const td6 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td2,td3,td4,td5,td6);
+        const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
+        const td1a = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
+        const td2 = $('<div/>').addClass("recipeItemLevel").html(recipe.itemLevel());
+        const td3 = $('<div/>').addClass('recipecostdiv');
+        const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
+        const td3b = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
+        td3.append(td3a, td3b);
+
+        const td5 = $('<div/>').addClass('recipeTimeAndValue');
+            const td5a = $('<div/>').addClass('recipeTimeContainer');
+                const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader tooltip").attr("data-tooltip", "Craft Time").html(`<i class="fas fa-clock"></i>`);
+                const td5a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
+            td5a.append(td5a1,td5a2);
+        td5.append(td5a);
+
+        const td6 = $('<div/>').addClass('recipeCountAndCraft');
+        const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
+        td6.append(td6b);
+
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td5,td6);
         lastRow = row;
         if (alternate) row.addClass("recipeRowHighlight");
         alternate = !alternate;

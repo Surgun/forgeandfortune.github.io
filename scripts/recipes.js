@@ -69,6 +69,20 @@ class Item{
         }
         return d;
     }
+    visualizeResAndMat() {
+        const d = $("<div/>").addClass("itemCost")
+        this.rcost.forEach(resource => {
+            const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
+            d.append($("<div/>").addClass("indvCost tooltip").attr("data-tooltip",resourceNameForTooltips).html('<img src="images/resources/'+resource+'.png">'));
+        })
+        for (const [material, amt] of Object.entries(this.mcost)) {
+            console.log(material);
+            const mat = ResourceManager.idToMaterial(material);
+            const d1 = $("<div/>").addClass("indvCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt));
+            d.append(d1);
+        }
+        return d;
+    }
     getCost(resource) {
         if (resource in this.rcost) return this.rcost[resource];
         return 0;
@@ -348,9 +362,8 @@ function initializeRecipes(type,sortType,heading) {
         const td1a = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
         const td2 = $('<div/>').addClass("recipeItemLevel").html(recipe.itemLevel());
         const td3 = $('<div/>').addClass('recipecostdiv');
-        const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
-        const td3b = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
-        td3.append(td3a, td3b);
+        const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
+        td3.append(td3a);
         const td4 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
 
         const td5 = $('<div/>').addClass('recipeTimeAndValue');

@@ -197,16 +197,20 @@ function buildScreen(type) {
         const td1a = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
         const td2 = $('<div/>').addClass("recipeItemLevel").html(recipe.itemLevel());
         const td3 = $('<div/>').addClass('recipecostdiv');
-        const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
-        const td3b = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
-        td3.append(td3a, td3b);
+        const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
+        td3.append(td3a);
 
         const td5 = $('<div/>').addClass('recipeTimeAndValue');
             const td5a = $('<div/>').addClass('recipeTimeContainer');
                 const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader tooltip").attr("data-tooltip", "Craft Time").html(`<i class="fas fa-clock"></i>`);
                 const td5a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
             td5a.append(td5a1,td5a2);
-        td5.append(td5a);
+
+            const td5b = $('<div/>').addClass('recipeValueContainer');
+                const td5b1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader tooltip").attr("data-tooltip", "Gold").html(`<img src='images/resources/M001.png'>`);
+                const td5b2 = $('<div/>').addClass('recipeValue').html("---");
+            td5b.append(td5b1,td5b2);
+        td5.append(td5a,td5b);
 
         const td6 = $('<div/>').addClass('recipeCountAndCraft');
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);

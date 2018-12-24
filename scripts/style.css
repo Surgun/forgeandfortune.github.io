@@ -1381,11 +1381,20 @@ Rarities
     display: inline-block;
 }
 
+.reciperesdiv {
+    margin: 10px 0;
+}
+
 .itemCost {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin: 10px 0 0;
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(60px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 3px;
+    width: 100%;
+}
+
+.brecipeTable .itemCost {
+    grid-template: 1fr 1fr / repeat(auto-fill, minmax(70px, 1fr));
 }
 
 .indvCost {
@@ -1404,7 +1413,7 @@ Rarities
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0 15px;
+    margin: 0 0 10px 0;
 }
 
 .recipeStatList > div {
@@ -1505,10 +1514,11 @@ Rarities
     pointer-events: none;
 }
 
-.reciperesdiv, .itemCost, .recipeStatList {
+.reciperesdiv, .recipeStatList {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    width: 100%;
 }
 
 .indvCost > img {

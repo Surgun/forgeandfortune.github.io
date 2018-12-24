@@ -1274,6 +1274,11 @@ Rarities
     padding: 10px;
 }
 
+.recipeCardFront, .recipeCardBack {
+    flex-direction: column;
+    height: 100%;
+}
+
 .recipeCountAndCraft {
     display: grid;
     grid-template: 1fr / 2fr 1fr;
@@ -1394,7 +1399,8 @@ Rarities
 }
 
 .brecipeTable .itemCost {
-    grid-template: 1fr 1fr / repeat(auto-fill, minmax(70px, 1fr));
+    grid-template: 1fr 1fr / repeat(auto-fill, minmax(60px, 1fr));
+    font-size: 0.9em;
 }
 
 .indvCost {

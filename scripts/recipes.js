@@ -359,8 +359,8 @@ function initializeRecipes(type,sortType,heading) {
 
     rFilter.forEach((recipe) => {
         const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
-        const td1a = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
-        const td2 = $('<div/>').addClass("recipeItemLevel").html(recipe.itemLevel());
+        const td1a = $('<div/>').addClass('recipeDescription').html("<i class='fas fa-info-circle'></i>");
+        const td2 = $('<div/>').addClass('recipeItemLevel').html(recipe.itemLevel());
         const td3 = $('<div/>').addClass('recipecostdiv');
         const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
         td3.append(td3a);
@@ -381,19 +381,22 @@ function initializeRecipes(type,sortType,heading) {
         const td6 = $('<div/>').addClass('recipeCountAndCraft');
             const craftCount = Math.min(100,recipe.craftCount);
         const td6a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id);
-            /*Mastery Bar Stuff, Akerson can purty this up if he wants */
             const masteryWidth = (craftCount).toFixed(1)+"%";
             const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
             const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",`${craftCount} / 100`).attr("id","masteryBar");
             const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
-            const td6a1 = $('<div/>').addClass('recipeCountStatus').attr("id","rc"+recipe.id);
             masteryBarDiv.append(masteryBar,masteryBarFill);
-            td6a.append(masteryBarDiv);
-            /* */
+        td6a.append(masteryBarDiv);
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
         td6.append(td6a,td6b);
 
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td1a,td2,td3,td4,td5,td6);
+        const td7 = $('<div/>').addClass('recipeClose');
+        const td8 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
+
+        const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5,td6);
+        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td8).hide();
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardFront,recipeCardBack);
+
         lastRow = row;
         if (alternate) row.addClass("recipeRowHighlight");
         alternate = !alternate;
@@ -496,5 +499,13 @@ $(document).on('click','.bpShopButton', (e) => {
     const id = $(e.target).attr('id');
     recipeList.buyBP(id);
     refreshRecipeFilters();
+});
+
+$(document).on('click','.recipeDescription', (e) => {
+    e.preventDefault();
+    $(".recipeCardBack").hide();
+    $(".recipeCardFront").css("display","flex");
+    $(e.currentTarget).parent().hide();
+    $(e.currentTarget).parent().next().css("display","block");;
 });
 

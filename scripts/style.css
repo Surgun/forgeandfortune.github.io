@@ -1402,7 +1402,6 @@ Rarities
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 5px;
     padding: 5px 10px;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);

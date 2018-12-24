@@ -73,12 +73,12 @@ class Item{
         const d = $("<div/>").addClass("itemCost")
         this.rcost.forEach(resource => {
             const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
-            d.append($("<div/>").addClass("indvCost tooltip").attr("data-tooltip",resourceNameForTooltips).html('<img src="images/resources/'+resource+'.png">'));
+            d.append($("<div/>").addClass("indvCost resCost tooltip").attr("data-tooltip",resourceNameForTooltips).html('<img src="images/resources/'+resource+'.png">'));
         })
         for (const [material, amt] of Object.entries(this.mcost)) {
             console.log(material);
             const mat = ResourceManager.idToMaterial(material);
-            const d1 = $("<div/>").addClass("indvCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt));
+            const d1 = $("<div/>").addClass("indvCost matCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt));
             d.append(d1);
         }
         return d;

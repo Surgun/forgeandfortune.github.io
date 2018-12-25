@@ -1296,7 +1296,7 @@ Rarities
     margin: auto 0 10px;
 }
 
-.recipeTimeContainer, .recipeValueContainer {
+.recipeTimeContainer, .recipeAmountContainer, .recipeValueContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1304,7 +1304,7 @@ Rarities
     padding: 0 5px;
 }
 
-.recipeTimeHeader, .recipeValueHeader {
+.recipeTimeHeader, .recipeAmountHeader, .recipeValueHeader {
     margin-right: 5px;
 }
 

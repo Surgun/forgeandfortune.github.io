@@ -369,14 +369,19 @@ function initializeRecipes(type,sortType,heading) {
         const td5 = $('<div/>').addClass('recipeTimeAndValue');
             const td5a = $('<div/>').addClass('recipeTimeContainer');
                 const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader tooltip").attr("data-tooltip", "Craft Time").html(`<i class="fas fa-clock"></i>`);
-                const td5a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime))
+                const td5a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
             td5a.append(td5a1,td5a2);
 
-            const td5b = $('<div/>').addClass('recipeValueContainer');
-                const td5b1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader tooltip").attr("data-tooltip", "Gold").html(`<img src='images/resources/M001.png'>`);
-                const td5b2 = $('<div/>').addClass('recipeValue tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`).html(recipe.itemValueFormatted());
+            const td5b = $('<div/>').addClass('recipeAmountContainer');
+                const td5b1 = $("<div/>").addClass("recipeAmountHeader recipeCardHeader tooltip").attr("data-tooltip", "In Inventory").html(`<i class="fas fa-cube"></i>`);
+                const td5b2 = $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`);
             td5b.append(td5b1,td5b2);
-        td5.append(td5a,td5b);
+
+            const td5c = $('<div/>').addClass('recipeValueContainer');
+                const td5c1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader tooltip").attr("data-tooltip", "Gold").html(`<img src='images/resources/M001.png'>`);
+                const td5c2 = $('<div/>').addClass('recipeValue tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`).html(recipe.itemValueFormatted());
+            td5c.append(td5c1,td5c2);
+        td5.append(td5a,td5b,td5c);
 
         const td6 = $('<div/>').addClass('recipeCountAndCraft');
             const craftCount = Math.min(100,recipe.craftCount);
@@ -392,9 +397,10 @@ function initializeRecipes(type,sortType,heading) {
 
         const td7 = $('<div/>').addClass('recipeClose');
         const td8 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
+        const td9 = $('<div/>').addClass('recipeTotalCrafted').html(`<span>Total Crafted: </span>${recipe.craftCount}`);
 
         const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5,td6);
-        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td8).hide();
+        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td8,td9).hide();
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardFront,recipeCardBack);
 
         lastRow = row;

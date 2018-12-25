@@ -403,7 +403,7 @@ function initializeRecipes(type,sortType,heading) {
             /* This is psuedo code meant for simply displaying how mastery progression will look. A proper function will need to be created once mastery tiers have been designed and implemented */
                 const td9b1 = $("<div/>").addClass("masteryBlock masteryObtained").html(`${recipe.itemPic()}<div class="masteryDetail">Material Reduction</div>`);
                 const td9b2 = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Rarity Chance</div>`);
-                const td9b3 = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Craft Time</div>`);
+                const td9b3 = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Craft Time Reduction</div>`);
             td9b.append(td9b1,td9b2,td9b3);
             /* End */
         td9.append(td9a,td9b);

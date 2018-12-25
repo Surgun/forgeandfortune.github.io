@@ -221,12 +221,12 @@ function buildScreen(type) {
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
         td6.append(td6b);
 
-        const td7 = $('<div/>').addClass('recipeClose');
+        const td7 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
         const td8 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
-        const td9 = $('<div/>').addClass('recipeTotalCrafted').html(`<span>Total Crafted: </span>${recipe.craftCount}`);
+        const td10 = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
 
         const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td5,td6);
-        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td8,td9).hide();
+        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td7,td8,td10).hide();
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardFront,recipeCardBack);
 
         lastRow = row;

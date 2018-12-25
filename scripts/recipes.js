@@ -395,12 +395,22 @@ function initializeRecipes(type,sortType,heading) {
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
         td6.append(td6a,td6b);
 
-        const td7 = $('<div/>').addClass('recipeClose');
+        const td7 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
         const td8 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
-        const td9 = $('<div/>').addClass('recipeTotalCrafted').html(`<span>Total Crafted: </span>${recipe.craftCount}`);
+        const td9 = $('<div/>').addClass('recipeMasteryContainer');
+            const td9a = $("<div/>").addClass("masteryBlockHeader").html("Recipe Progression");
+            const td9b = $("<div/>").addClass("masteryBlockContainer");
+            /* This is psuedo code meant for simply displaying how mastery progression will look. A proper function will need to be created once mastery tiers have been designed and implemented */
+                const td9b1 = $("<div/>").addClass("masteryBlock masteryObtained").html(`${recipe.itemPic()}<div class="masteryDetail">Material Reduction</div>`);
+                const td9b2 = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Rarity Chance</div>`);
+                const td9b3 = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Craft Time</div>`);
+            td9b.append(td9b1,td9b2,td9b3);
+            /* End */
+        td9.append(td9a,td9b);
+        const td10 = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
 
         const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5,td6);
-        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td8,td9).hide();
+        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td7,td8,td9,td10).hide();
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardFront,recipeCardBack);
 
         lastRow = row;
@@ -512,6 +522,13 @@ $(document).on('click','.recipeDescription', (e) => {
     $(".recipeCardBack").hide();
     $(".recipeCardFront").css("display","flex");
     $(e.currentTarget).parent().hide();
-    $(e.currentTarget).parent().next().css("display","flex");;
+    $(e.currentTarget).parent().next().css("display","flex");
 });
 
+$(document).on('click','.recipeClose', (e) => {
+    e.preventDefault();
+    $(".recipeCardBack").hide();
+    $(".recipeCardFront").css("display","flex");
+    $(e.currentTarget).parent().hide();
+    $(e.currentTarget).parent().prev().css("display","flex");
+});

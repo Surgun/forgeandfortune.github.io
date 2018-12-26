@@ -167,7 +167,7 @@ const Inventory = {
         refreshInventoryPlaces()
     },
     craftToInventory(id) {
-        console.log("HI");
+        if (id === "R99110") return unlockBank();
         const item = recipeList.idToItem(id)
         const name = item.name;
         const autoSell = item.autoSell;

@@ -83,10 +83,13 @@ function showFuseBldg() {
     else buildScreen("fuse");
 }
 
+const $buildBuilding = $("#buildBuilding");
+
 function showBankBldg() {
     $(".buildingTab").removeClass("bldgTabActive").hide();
     $bankBuilding.addClass("bldgTabActive");
     $buildingHeader.empty();
+    $buildBuilding.hide();
     const d = $("<div/>").addClass("buildingInfo buildingBank");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/bankBuilding/bank_building.png'>");
@@ -95,7 +98,10 @@ function showBankBldg() {
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.bankUnlock) initiateBankBldg();
-    else buildScreen("bank");
+    else {
+        $buildBuilding.show();
+        buildScreen("bank");
+    }
 }
 
 function showSmithBldg() {
@@ -168,6 +174,7 @@ const $buildingRecipes = $("#buildingRecipes");
 const $buildingMats = $("#buildingMats");
 
 function buildScreen(type) {
+    console.log(type);
     $buildingRecipes.empty();
     $buildingMats.empty();
     TownManager.lastType = type;
@@ -254,4 +261,11 @@ function buildBuildMats() {
         d1.append(d2);
     });
     $buildingMats.append(d1);
+}
+
+function unlockBank() {
+    TownManager.bankUnlock = true;
+    TownManager.bankCost = true;
+    refreshSideTown();
+    showBankBldg();
 }

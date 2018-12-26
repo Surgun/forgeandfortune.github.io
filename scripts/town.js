@@ -9,6 +9,7 @@ const $fortuneBuilding = $("#fortuneBuilding");
 
 const TownManager = {
     lastBldg : null,
+    lastType : null,
     bankUnlock : false,
     bankCost : false,
     fuseUnlock : false,
@@ -163,24 +164,21 @@ $(document).on('click', '#fortuneBldg', (e) => {
     showFortuneBldg();
 });
 
-const $buildBuilding = $("#buildBuilding");
+const $buildingRecipes = $("#buildingRecipes");
+const $buildingMats = $("#buildingMats");
 
 function buildScreen(type) {
-    $buildBuilding.empty();
+    $buildingRecipes.empty();
+    $buildingMats.empty();
+    TownManager.lastType = type;
     if (!TownManager.paidCost(type)) {
         const d1 = $("<div/>").addClass("buyBuildingBP").attr("type",type).html(`Buy Blueprint<span class="buybp_cost">${ResourceManager.materialIcon("M001")} ${formatToUnits(getBuildingCost(type),2)}</span>`)
-        $buildBuilding.append(d1);
+        $buildingRecipes.append(d1);
         return;
-    }/*
-    const d2 = $("<div/>").addClass("bMaterials")
-    ResourceManager.materials.filter(m => m.type === type).forEach(mat => {
-        const d3 = $("<div/>").addClass("bmaterial tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
-        const d3a = $("<div/>").addClass("bmaterialName").html(mat.img);
-        const d3b = $("<div/>").addClass("bmaterialAmt").attr("id","amt"+mat.id).html(formatToUnits(mat.amt,2));
-        d3.append(d3a,d3b);
-        d2.append(d3);
-    });
-    $buildBuilding.append(d2);*/
+    }
+    else {
+        buildBuildMats(type);
+    }
     const d4 = $("<div/>").addClass("bRecipes");
     const table = $('<div/>').addClass('brecipeTable');
     const htd1 = $('<div/>').addClass('brecipeHeadName').html("NAME");
@@ -207,9 +205,9 @@ function buildScreen(type) {
     });
     if (lastRow !== null) lastRow.addClass("recipeRowLast");
     d4.append(table);
-    $buildBuilding.append(d4);
+    $buildingRecipes.append(d4);
     const d5 = $("<div/>").addClass("buildingInstr").html("Construct the bank to unlock permanently!");
-    $buildBuilding.append(d5);
+    $buildingRecipes.append(d5);
 }
 
 $(document).on('click', ".buyBuildingBP", (e) => {
@@ -241,4 +239,19 @@ function showBuilding(type) {
     if (type === "fuse") showFuseBldg();
     if (type === "smith") showSmithBldg();
     if (type === "fortune") showFortuneBldg();
+}
+
+function buildBuildMats() {
+    $buildingMats.empty();
+    if (!TownManager.paidCost(TownManager.lastType)) return;
+    const d1 = $("<div/>").addClass("buildingMatTable");
+    recipeList.recipes.filter(r=>r.type===TownManager.lastType).forEach(recipe => {
+        const d2 = $("<div/>").addClass("buildingMatDiv");
+        const d3 = $("<div/>").addClass("buildingMatName").html(recipe.name);
+        const d4 = $("<div/>").addClass('buildingMatImage').html(recipe.itemPic());
+        const d5 = $("<div/>").addClass("buildingMatAmt").html(Inventory.itemCount(recipe.id,0));
+        d2.append(d3,d4,d5);
+        d1.append(d2);
+    });
+    $buildingMats.append(d1);
 }

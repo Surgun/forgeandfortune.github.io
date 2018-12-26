@@ -3230,31 +3230,42 @@ Rarities
     border-radius: 5px;
 }
 
-.bMaterials {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+#buildingMats {
+    border-bottom: 1px solid var(--border);
 }
 
-.bmaterial {
+.buildingMatTable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.buildingMatDiv {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
     justify-content: center;
     align-items: center;
-    margin: 10px 5px;
-    padding: 5px 10px;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
     text-align: center;
 }
 
-.bmaterialName > img {
-    max-height: 24px;
+.buildingMatDiv + .buildingMatDiv {
+    border-left: 2px solid var(--border);
 }
 
-.bmaterialAmt {
-    margin-left: 5px;
+.buildingMatName {
+    width: 100%;
+}
+
+.buildingMatImage > img {
+    max-height: 24px;
+    margin-right: 5px;
+}
+
+.buildingMatAmt {
+    font-size: 0.8em;
 }
 
 .brecipeTable .recipeRow .recipeLvl {
@@ -3774,6 +3785,11 @@ footer a[href*="discord.gg"]:hover {
     bottom: unset;
     margin-left: 0;
     transform-origin: left top;
+}
+
+.buildingMatDiv.tooltip:after {
+    width: 65px;
+    margin: 0 auto;
 }
 
 /* Firefox-Specific Fixes */

@@ -246,11 +246,10 @@ function buildBuildMats() {
     if (!TownManager.paidCost(TownManager.lastType)) return;
     const d1 = $("<div/>").addClass("buildingMatTable");
     recipeList.recipes.filter(r=>r.type===TownManager.lastType).forEach(recipe => {
-        const d2 = $("<div/>").addClass("buildingMatDiv");
-        const d3 = $("<div/>").addClass("buildingMatName").html(recipe.name);
-        const d4 = $("<div/>").addClass('buildingMatImage').html(recipe.itemPic());
-        const d5 = $("<div/>").addClass("buildingMatAmt").html(Inventory.itemCount(recipe.id,0));
-        d2.append(d3,d4,d5);
+        const d2 = $("<div/>").addClass("buildingMatDiv tooltip").attr("data-tooltip",recipe.name);
+        const d3 = $("<div/>").addClass('buildingMatImage').html(recipe.itemPic());
+        const d4 = $("<div/>").addClass("buildingMatAmt").html(Inventory.itemCount(recipe.id,0));
+        d2.append(d3,d4);
         d1.append(d2);
     });
     $buildingMats.append(d1);

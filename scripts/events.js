@@ -66,6 +66,15 @@ const EventManager = {
         this.events.push(event);
         refreshEvents();
     },
+    addEventFuse(container) {
+        const eventTemplate = this.idToEventDB("E009")
+        const event = new Event(eventTemplate);
+        event.itemReward = container;
+        event.eventNum = this.eventNum;
+        this.eventNum += 1;
+        this.events.push(event);
+        refreshEvents();
+    },
     hasEvents() {
         return this.events.length > 0;
     },
@@ -74,10 +83,37 @@ const EventManager = {
     },
     readEvent(eventNum) {
         const event = this.eventNumToEvent(eventNum);
-        this.events = this.events.filter(e=>e.eventNum !== eventNum);
         if (event.reward !== null) ResourceManager.addDungeonDrops(event.reward);
         event.reward = null;
+        if (event.itemReward !== null) {
+            if (Inventory.full()) {
+                Notifications.rewardInvFull();
+                return;
+            }
+            Inventory.addToInventory(event.itemReward.id,event.itemReward.rarity,-1);
+        }
+        if (event.id === "E009") {
+            TownManager.bankOnce = true;
+            TownManager.bankSee = true;
+            refreshSideTown();
+        }
+        if (event.id === "E010") {
+            TownManager.fuseOnce = true;
+            TownManager.fuseSee = true;
+            refreshSideTown();
+        }
+        if (event.id === "E011") {
+            TownManager.smithOnce = true;
+            TownManager.smithSee = true;
+            refreshSideTown();
+        }
+        if (event.id === "E012") {
+            TownManager.fortuneOnce = true;
+            TownManager.fortuneSee = true;
+            refreshSideTown();
+        }
         if (event.type === "letter" && !this.oldEvents.map(e=>e.id).includes(event.id)) this.oldEvents.push(event);
+        this.events = this.events.filter(e=>e.eventNum !== eventNum);
         refreshEvents();
     }
 };
@@ -92,6 +128,7 @@ class EventTemplate {
 class Event {
     constructor(props) {
         this.reward = null;
+        this.itemReward = null;
         this.time = null;
         this.floor = null;
         Object.assign(this, props);
@@ -104,6 +141,7 @@ class Event {
         save.time = this.time;
         save.floor = this.floor;
         save.date = this.date;
+        save.itemReward = this.itemReward;
         return save;
     }
     loadSave(save) {
@@ -111,14 +149,9 @@ class Event {
         this.time = save.time;
         this.floor = save.floor;
         this.date = save.date;
+        if (save.itemReward !== undefined) this.itemReward = save.itemReward;
     }
 };
-
-class OldEvent {
-    constructor(props) {
-        Object.assign(this, props);
-    }
-}
 
 const $eventList = $("#eventList");
 const $eventContent = $("#eventContent");
@@ -183,9 +216,14 @@ $(document).on('click', "div.eventList", (e) => {
         const d7 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
         d.append(d7);
     }
-    const d8 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
-    if (EventManager.seeOld) d8.hide();
-    d.append(d8);
+    if (event.itemReward !== null) {
+        const item = recipeList.idToItem(event.itemReward.id);
+        const d8 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());
+        d.append(d8);
+    }
+    const d9 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
+    if (EventManager.seeOld) d9.hide();
+    d.append(d9);
     $eventContent.append(d);
 });
 
@@ -216,6 +254,10 @@ function eventChecker() {
     if (!EventManager.hasSeen("E005") && achievementStats.totalItemsCrafted >= 10000) EventManager.addEvent("E005");
     if (!EventManager.hasSeen("E006") && masteredItem) EventManager.addEvent("E006");
     if (!EventManager.hasSeen("E007") && Inventory.full()) EventManager.addEvent("E007");
+    if (!EventManager.hasSeen("E009") && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[0]) EventManager.addEvent("E009");
+    if (!EventManager.hasSeen("E010") && TownManager.bankUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[1]) EventManager.addEvent("E010");
+    if (!EventManager.hasSeen("E011") && TownManager.fuseUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[2]) EventManager.addEvent("E011");
+    if (!EventManager.hasSeen("E012") && TownManager.smithUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[3]) EventManager.addEvent("E012");
 }
 
 function autoSacEvent() {

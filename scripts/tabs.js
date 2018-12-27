@@ -14,6 +14,9 @@ function openTab(tabName) {
         $dungeonTeamSelect.hide();
         $dungeonRun.hide();
     }
+    if (tabName === "townTab") {
+        refreshSideTown();
+    }
     $(".tabcontent").hide();
     $("#"+tabName).show();
 }

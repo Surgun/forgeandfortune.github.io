@@ -43,7 +43,7 @@ class itemContainer {
         this.item = recipeList.idToItem(id);
         this.name = this.item.name;
         this.type = this.item.type;
-        this.picName = this.item.itemPicName();
+        this.lvl = this.item.lvl;
         this.rarity = rarity;
         this.containerID = containerid;
         this.sharp = 0;
@@ -56,11 +56,29 @@ class itemContainer {
         save.sharp = this.sharp;
         return save;
     }
+    picName() {
+        const prefix = `<span class="item-prefix">+${this.sharp}</span>`
+        if (this.sharp > 0) return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
+        return this.item.itemPicName();
+    }
+    picNamePlus() {
+        const prefix = `<span class="item-prefix">+${this.sharp + 1}</span>`
+        return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
+    }
+    itemLevel() {
+        return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
+    }
     pow() {
-        return Math.round(this.item.pow * miscLoadedValues.rarityMod[this.rarity]);
+        return Math.floor(this.item.pow * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*this.sharp));
+    }
+    powPlus() {
+        return Math.floor(this.item.pow * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*(this.sharp+1)));
     }
     hp() {
-        return Math.round(this.item.hp * miscLoadedValues.rarityMod[this.rarity]);
+        return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*this.sharp));
+    }
+    hpPlus() {
+        return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*(this.sharp+1)));
     }
     act() {
         return this.item.act();
@@ -84,11 +102,27 @@ class itemContainer {
         }
         return d;
     }
+    statChange(upgrade) {
+        const d = $("<div/>").addClass("invProp");
+        if (this.pow() > 0) {
+            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","POW")
+            if (upgrade) d2.html(`${miscIcons.pow}&nbsp;${this.powPlus()}`);
+            else d2.html(`${miscIcons.pow}&nbsp;${this.pow()}`);
+            d.append(d2);
+        }
+        if (this.hp() > 0) {
+            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","HP");
+            if (upgrade) d2.html(`${miscIcons.hp}&nbsp;${this.hpPlus()}`);
+            else d2.html(`${miscIcons.hp}&nbsp;${this.hp()}`);
+            d.append(d2);
+        }
+        return d;
+    }
     goldValueFormatted() {
-        return ResourceManager.materialIcon("M001") + "&nbsp;" + this.goldValue();
+        return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue(),2);
     }
     goldValue() {
-        return (this.item.value * (this.rarity+1)).toString();
+        return (this.item.value * (this.rarity+1));
     }
 
 }
@@ -113,12 +147,8 @@ const Inventory = {
         });
     },
     addToInventory(id,rarity,autoSell) {
-        if (this.full()) {
-            this.sellItem(id,rarity);
-        }
-        else if (autoSell >= rarity) {
-            this.sellItem(id,rarity);
-        }
+        if (this.full()) this.sellItem(id,rarity);
+        else if (autoSell >= rarity) this.sellItem(id,rarity);
         else {
             this.findempty(new itemContainer(id,rarity));
             const item = recipeList.idToItem(id);
@@ -134,33 +164,38 @@ const Inventory = {
     findempty(item) {
         const i = this.inv.findIndex(r=>r===null);
         this.inv[i] = item;
-        refreshInventory();
-        refreshWorkerAmts();
+        refreshInventoryPlaces()
     },
     craftToInventory(id) {
+        if (id === "R99110") return unlockBank();
+        if (id === "R99210") return unlockFuse();
+        if (id === "R99310") return unlockSmith();
+        if (id === "R99510") return unlockFortune();
         const item = recipeList.idToItem(id)
         const name = item.name;
         const autoSell = item.autoSell;
         item.addCount();
+        if (item.recipeType === "building") {
+            this.addToInventory(id,0,-1);
+            return;
+        }
         const roll = Math.floor(Math.random() * 1000)
-        let mod = 1;
         let sellToggle = -1
         if (autoSell === "Common") sellToggle = 0;
         if (autoSell === "Good") sellToggle = 1;
         if (autoSell === "Great") sellToggle = 2;
         if (autoSell === "Epic") sellToggle = 3;
-        if (item.isMastered()) mod = 2;
-        if (roll < miscLoadedValues.qualityCheck[3]*mod) {
+        if (roll < this.craftChance(item,"Epic")) {
             this.addToInventory(id,3,sellToggle);
             achievementStats.craftedItem("Epic");
             if (sellToggle < 3) Notifications.exceptionalCraft(name,"Epic","craftEpic");
         }
-        else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2])*mod) {
+        else if (roll < (this.craftChance(item,"Epic")+this.craftChance(item,"Great"))) {
             this.addToInventory(id,2,sellToggle);
             achievementStats.craftedItem("Great");
             if (sellToggle < 2) Notifications.exceptionalCraft(name,"Great","craftGreat");
         }
-        else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1])*mod) {
+        else if (roll < (this.craftChance(item,"Epic")+this.craftChance(item,"Great")+this.craftChance(item,"Good"))) {
             this.addToInventory(id,1,sellToggle);
             achievementStats.craftedItem("Good");
             if (sellToggle < 1) Notifications.exceptionalCraft(name,"Good","craftGood");
@@ -170,14 +205,20 @@ const Inventory = {
             achievementStats.craftedItem("Common");
         }
     },
+    craftChance(item,quality) {
+        const masterMod = item.isMastered() ? 2 : 1;
+        const fortuneMod = FortuneManager.isLucky(item.type,quality) ? 2 : 1;
+        if (quality === "Good") return miscLoadedValues.qualityCheck[1]*masterMod*fortuneMod;
+        if (quality === "Great") return miscLoadedValues.qualityCheck[2]*masterMod*fortuneMod;
+        if (quality === "Epic") return miscLoadedValues.qualityCheck[3]*masterMod*fortuneMod;
+    },
     removeFromInventory(id,rarity) {
         for (let i=0;i<this.inv.length;i++) {
             const ic = this.inv[i]
             if (ic === null) continue;
             if (ic.id === id && ic.rarity === rarity) {
                 this.inv[i] = null;
-                refreshInventory();
-                refreshWorkerAmts();
+                refreshInventoryPlaces()
                 return;
             }
         }
@@ -185,15 +226,13 @@ const Inventory = {
     removeContainerFromInventory(containerID) {
         this.inv = this.inv.filter(c=>c === null || c.containerID !== containerID);
         this.inv.push(null);
-        refreshInventory();
-        refreshWorkerAmts();
+        refreshInventoryPlaces()
     },
     sellInventory(indx) {
         const item = this.inv[indx];
         this.inv[indx] = null;
         this.sellItem(item.id,item.rarity);
-        refreshInventory();
-        refreshWorkerAmts();
+        refreshInventoryPlaces()
     },
     sellItem(id,rarity) {
         const gold = recipeList.idToItem(id).value*(rarity+1);
@@ -215,7 +254,8 @@ const Inventory = {
     inventoryCount() {
         return this.nonblank().length;
     },
-    nonblank() {
+    nonblank(typeOverride) {
+        if (typeOverride) return this.inv.filter(r=>r !== null && r.item.recipeType === "normal");
         return this.inv.filter(r=>r !== null);
     },
     sortInventory() {
@@ -223,8 +263,7 @@ const Inventory = {
         while (this.inv.length < this.invMax) {
             this.inv.push(null);
         }
-        refreshInventory();
-        refreshWorkerAmts();
+        refreshInventoryPlaces()
     },
     getMaxPowByTypes(types) {
         //given a list of types, return highest power
@@ -242,6 +281,38 @@ const Inventory = {
         this.inv.forEach((ic,indx) => {
             if (ic !== null && ic.rarity === 0) this.sellInventory(indx);
         })
+    },
+    getFusePossibilities() {
+        const fuses = this.nonblank().filter(s=>s.sharp === 0 && s.item.recipeType === "normal").map(i=>{
+            return i.id+i.rarity
+        });
+        const fuseSorted = fuses.reduce((fuseList, item) => {
+            if (item in fuseList) fuseList[item]++;
+            else fuseList[item] = 1;
+            return fuseList;
+        },{});
+        const fuseFiltered = [];
+        for (let [idR, num] of Object.entries(fuseSorted)) {
+            if (num < 3) continue;
+            const fuse = {};
+            fuse.id = idR.slice(0, -1);
+            fuse.name = recipeList.idToItem(fuse.id).name;
+            fuse.rarity = parseInt(idR.slice(-1))+1;
+            if (fuse.rarity > 3) continue;
+            fuseFiltered.push(fuse);
+        }
+        return fuseFiltered;
+    },
+    hasThree(id,rarity) {
+        const inv = this.nonblank().filter(i=> i.id === id && i.rarity === rarity);
+        return inv.length >= 3;
+    },
+    itemCount(id,rarity) {
+        return this.nonblank().filter(r=>r.id === id && r.rarity === rarity).length;
+    },
+    removePrecraft(id,amt) {
+        if (this.itemCount(id,0) < amt) return;
+        for (let i=0;i<amt;i++) this.removeFromInventory(id,0);
     }
 }
 
@@ -259,12 +330,25 @@ function refreshInventory() {
             return;
         }
         itemdiv.addClass("R"+item.rarity)
-        const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName);
+        const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
         const itemCost = $("<div/>").addClass("inventoryItemValue").html(item.goldValueFormatted());
+        const itemLevel = $("<div/>").addClass("inventoryItemLevel").html(item.itemLevel());
+        if (item.goldValue() === 0) {
+            itemCost.hide();
+            itemLevel.hide();
+        }
         const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
-        const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
-        const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
-        itemdiv.append(itemName,itemCost,itemProps, equipButton, sellButton);
+        const actionBtns = $("<div/>").addClass("inventoryButtons");
+        if (item.item.recipeType === "normal") {
+            const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
+            const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
+            actionBtns.append(equipButton,sellButton);
+        }
+        else {
+            const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Discard");
+            actionBtns.append(sellButton);
+        }
+        itemdiv.append(itemName,itemLevel,itemCost,itemProps,actionBtns);
         $inventory.append(itemdiv);
     });
     $sideInventory.html(`${Inventory.inventoryCount()}/20`)
@@ -328,4 +412,13 @@ function gearEquipFromInventory(invID) {
     });
     $(".tabcontent").hide();
     $("#inventoryEquipTab").show();
+}
+
+function refreshInventoryPlaces() {
+    refreshInventory();
+    refreshWorkerAmts();
+    refreshPossibleFuse();
+    refreshBankInventory();
+    refreshSmithInventory();
+    buildBuildMats();
 }

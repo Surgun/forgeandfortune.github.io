@@ -55,7 +55,7 @@
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, .isSortableHead {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -63,7 +63,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .fuseSlot, .possibleFusegroup, .bankItem, .smithItem, .fortuneStatus {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -ms-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -108,12 +108,12 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .inventoryItemName, .equipItemName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #townContainer, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -392,44 +392,50 @@ body {
     opacity: 1;
 }
 
-#inventory {
+#inventory, #ietEquip, #ietHero {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
     margin: 10px;
 }
 
-.inventoryItem, .equipItem {
+#ietEquip, #ietHero {
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.inventoryItem, .equipItem, .heroEquipBlock {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 10px;
     background-color: var(--bg);
     border: 1px solid var(--border);
+    border-radius: 10px;
     color: var(--text);
     min-height: 212px;
 }
 
-.inventoryItemName {
+.inventoryItemName, .equipItemName {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 0.9em;
     flex-grow: 1;
     width: 100%;
     padding: 10px;
 }
 
-.inventoryItemName > .item-name {
+.inventoryItemName > .item-name, .equipItemName > .item-name {
     margin-top: 10px;
     width: 100%;
     align-self: flex-start;
 }
 
-.inventoryItemName > img {
+.inventoryItemName > img, .equipItemName > img {
     display: inline-block;
     height: 24px;
     pointer-events: none;
@@ -487,26 +493,27 @@ body {
     align-items: center;
 }
 
-.inventoryEquip {
+.inventoryButtons {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
     margin-top: auto;
+    width: 100%;
+    text-align: center;
 }
 
-.inventorySell, .inventoryEquip, .heroEquipBlockEquipButton {
-    width: 85%;
+.inventoryEquip, .inventorySell {
+    flex: 1;
+    margin: 10px 2.5px 0;
+    padding:  8px 10px;
     background-color: rgba(255,255,255,0.05);
-    text-align: center;
-    border-radius: 25px;
-    margin-top: 5px;
-    padding: 5px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.inventorySell:hover, .inventoryEquip:hover, .heroEquipBlockEquipButton:hover {
-    background-color: rgba(255,255,255,0.15);
-}
-
-.inventorySell {
-    margin-bottom: 10px;
+.inventorySell:hover, .inventoryEquip:hover {
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
 #inventoryEquipTab {
@@ -517,34 +524,12 @@ body {
     margin: 20px 0;
 }
 
-.equipItem {
-    display: inline-flex;
-    padding: 15px;
-    margin-bottom: 20px;
-    min-width: 155px;
-    min-height: 175px;
-    text-align: center;
-}
-
-.equipItemName {
-    font-size: 0.9em;
-}
-
 .equipItemProps {
     margin-top: 15px;
 }
 
-#ietHero {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 15px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
 .heroEquipBlock {
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    justify-content: start;
 }
 
 .heroEquipBlockPic {
@@ -567,14 +552,23 @@ body {
     background-color: var(--border);
 }
 
+.heroEquipBlockEquips {
+    width: 100%;
+}
+
+.heroEquipBlockEquipSlot {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
 .heroEquipBlockEquip + .heroEquipBlockEquip {
     margin-top: 20px;
     padding: 15px 0;
     border-top: 1px solid var(--border);
 }
 
-.heroEquipBlockEquipButton {
-    margin: 10px auto;
+.heroEquipBlockEquipStat {
+    margin: 5px 0;
 }
 
 .heroEquipBlockEquipStat.hebPositive {
@@ -585,7 +579,7 @@ body {
     color: #c90000;
 }
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title {
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankInvHead, .bankBankHead, .smithInvHead {
     font-weight: normal;
     font-size: 1rem;
     padding: 0 5px 5px;
@@ -600,24 +594,24 @@ Rarities
 */
 
 .R1 { /* Green */
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(27, 223, 69, 0.15) 100%);
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
-    border-color: rgba(27, 223, 69, 0.25);
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(27, 223, 69, 0.15) 100%);
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
+    /*border-color: rgba(27, 223, 69, 0.25);*/
 }
 
 .R2 { /* Blue */
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(2, 121, 223, 0.15) 100%);
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
-    border-color: rgba(2, 121, 223, 0.25);
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(2, 121, 223, 0.15) 100%);
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
+    /*border-color: rgba(2, 121, 223, 0.25);*/
 }
 
 .R3 { /* Pink */
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(243, 6, 144, 0.15) 100%);
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
-    border-color: rgba(243, 6, 144, 0.25);
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(243, 6, 144, 0.15) 100%);
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
+    /*border-color: rgba(243, 6, 144, 0.25);*/
 }
 
 .inventoryItem.R0 > .inventoryItemName:before, 
@@ -626,12 +620,13 @@ Rarities
 .inventoryItem.R3 > .inventoryItemName:before {
     display: block;
     position: absolute;  
-    top: 5px;
-    right: 5px;
-    left: 5px;
-    border-radius: 15px;
-    padding: 5px;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    border-radius: 5px;
+    padding: 8px 10px;
     opacity: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
     z-index: 10;
 }
 
@@ -661,6 +656,22 @@ Rarities
 
 .inventoryItem.R0 > .inventoryItemName:hover:before, .inventoryItem.R1 > .inventoryItemName:hover:before, .inventoryItem.R2 > .inventoryItemName:hover:before, .inventoryItem.R3 > .inventoryItemName:hover:before {
     opacity: 1;
+}
+
+.inventoryItem > .inventoryItemName, .equipItem > .equipItemName, .bankItem > .bankItemName, .smithItem > .smithItemName {
+    text-shadow: 1px 2px 0 black;
+}
+
+.inventoryItem.R1 > .inventoryItemName, .equipItem.R1 > .equipItemName, .bankItem.R1 > .bankItemName, .smithItem.R1 > .smithItemName, .fuseSlot.R1 > .fuseSlotName {
+    color: rgb(44, 255, 89);
+}
+
+.inventoryItem.R2 > .inventoryItemName, .equipItem.R2 > .equipItemName, .bankItem.R2 > .bankItemName, .smithItem.R2 > .smithItemName, .fuseSlot.R2 > .fuseSlotName {
+    color: rgb(8, 173, 255);
+}
+
+.inventoryItem.R3 > .inventoryItemName, .equipItem.R3 > .equipItemName, .bankItem.R3 > .bankItemName, .smithItem.R3 > .smithItemName, .fuseSlot.R3 > .fuseSlotName {
+    color: rgb(255, 79, 167);
 }
 
 /* 
@@ -704,6 +715,7 @@ Rarities
 }
 
 .tablinks > div {
+    position: relative;
     padding: 10px 15px;
 }
 
@@ -1029,6 +1041,18 @@ Rarities
     color: var(--text-2);
 }
 
+.recipeSelect.luckyFortune.luckyGood > i {
+    color: rgb(44, 255, 89);
+}
+
+.recipeSelect.luckyFortune.luckyGreat > i {
+    color: rgb(8, 173, 255);
+}
+
+.recipeSelect.luckyFortune.luckyEpic > i {
+    color: rgb(255, 79, 167);
+}
+
 #RecipeFilter a[href*="Selector"]:before {
     display: inline-block;
     position: relative;
@@ -1176,14 +1200,14 @@ Rarities
     width: 100%;
 }
 
-.recipeHeader, .EHPEHeader {
+.recipeHeader, .EHPEHeader, .brecipeHeader {
     background-color: var(--bg);
     height: 40px;
     border-bottom: 1px solid var(--border);
     font-weight: bold;
 }
 
-.recipeHeader, .recipeRow, .EHPEHeader, .EHPErow {
+.recipeHeader, .recipeRow, .EHPEHeader, .EHPErow, .brecipeHeader {
     display: flex;
     position: relative;
     flex-direction: row;
@@ -1224,7 +1248,7 @@ Rarities
 .sortDesc:after, .sortAsc:after {
     position: relative;
     margin-left: 5px;
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Pro";
     content: "\f063";
     font-weight: 900;
     font-size: 12px;
@@ -1243,13 +1267,13 @@ Rarities
     transform: rotate(180deg);
 }
 
-.recipeHeadName, .recipeHeadLvl, .recipeHeadRes, .recipeHeadCost, .recipeHeadStats, .recipeHeadTime, .recipeHeadValue, .recipeHeadCount {
+.recipeHeadName, .recipeHeadLvl, .recipeHeadRes, .recipeHeadCost, .recipeHeadStats, .recipeHeadTime, .recipeHeadValue, .recipeHeadCount, .brecipeHeadName, .brecipeHeadRes, .brecipeHeadCost, .brecipeHeadTime, .brecipeHeadLvl {
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-.recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname  {
+.recipeHeadName, .recipeName, .EHPEHeaderName, .EHPEname, .brecipeHeadName {
     display: flex;
     align-items: center;
     width: 100%;
@@ -1257,7 +1281,7 @@ Rarities
     padding-left: 10px;
 }
 
-.recipeHeadName, .EHPEHeaderName {
+.recipeHeadName, .EHPEHeaderName, .brecipeHeadName {
     padding-left: 15px;
     max-width: 250px;
 }
@@ -1328,6 +1352,10 @@ Rarities
     margin-right: 5px;
     min-width: 23px;
     text-align: left;
+}
+
+.indvCost > img {
+    max-height: 20px;
 }
 
 .indvCost.masteredMat > img {
@@ -2487,6 +2515,15 @@ Rarities
     padding: 10px 5px;
 }
 
+.battleLogFloor {
+    background-color: var(--bg-2);
+    padding: 5px;
+    margin: 5px 0 5px -5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--highlight);
+}
+
 #drTop {
     display: flex;
     flex-wrap: wrap;
@@ -2612,7 +2649,7 @@ Rarities
     margin: 0 2px;
 }
 
-.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv {
     position: relative;
     display: flex;
     align-items: center;
@@ -2641,14 +2678,14 @@ Rarities
     margin-top: 10px;
 }
 
-.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img {
+.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img, .fuseBarDiv > img, #swBarDiv > img {
     position: absolute;
     left: 8px;
     bottom: 2px;
     z-index: 1;
 }
 
-.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before {
+.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before {
     content: " " attr(data-label);
     position: absolute;
     font-size: 0.9em;
@@ -2658,7 +2695,7 @@ Rarities
     z-index: 2;
 }
 
-.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill {
+.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill, #swFill {
     display: block;
     position: relative;
     height: 100%;
@@ -2723,11 +2760,628 @@ Rarities
     background: var(--scheme-webkit);
 }
 
-/* Events / Mail Content */
+/* Town & Buildings */
 
-#eventTab {
-    position: relative;
+#townContainer {
+    height: 100%;
 }
+
+#buildingList {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
+    background-color: var(--bg);
+    border-bottom: 2px solid var(--border);
+}
+
+.buildingName {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--bg);
+    color: var(--text-3);
+    border-right: 1px solid var(--border-2);
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+}
+
+.buildingName:hover {
+    background-color: var(--bg-2);
+}
+
+.buildingName.selected {
+    background-color: var(--border);
+    color: var(--text);
+    border-bottom: 1px solid var(--highlight);
+}
+
+.buildingInfo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 5px;
+    max-height: 250px;
+    background-color: var(--bg-3);
+    border-bottom: 2px solid var(--border);
+    overflow: hidden;
+}
+
+.buildingTab {
+    display: none;
+    padding: 10px;
+    opacity: 0;
+    animation: 0.5s 0.5s fade-in forwards;
+}
+
+.buildingInfoImage, .buildingInfoName, .buildingInfoDesc {
+    min-width: 400px;
+    text-align: center;
+}
+
+.buildingInfoBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .45;
+}
+
+.buildingFusion .buildingInfoBackground {
+    background: url(/images/townImages/fuseBuilding/bg.png);
+}
+
+.buildingBank .buildingInfoBackground {
+    background: url(/images/townImages/bankBuilding/bg.png);
+}
+
+.buildingSmith .buildingInfoBackground {
+    background: url(/images/townImages/smithBuilding/bg.png);
+}
+
+.buildingFortune .buildingInfoBackground {
+    background: url(/images/townImages/fortuneBuilding/bg.png);
+}
+
+.buildingResearch .buildingInfoBackground {
+    background: url(/images/townImages/researchBuilding/bg.png);
+}
+
+.buildingInfoImage {
+    text-align: center;
+    transform-origin: bottom;
+    animation: 0.3s scale-in forwards;
+}
+
+.buildingInfoImage > img {
+    max-height: 125px;
+    filter: drop-shadow(0 0 5px black)
+}
+
+.buildingInfoName {
+    display: inline-block;
+    text-transform: uppercase;
+    color: var(--text);
+    animation: 0.3s scale-in forwards;
+}
+
+.buildingInfoName > h2 {
+    margin: 0;
+    padding: 0 15px;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.buildingInfoName:after {
+    display: block;
+    content: "";
+    position: relative;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    margin: 0 auto;
+    background-color: var(--highlight);
+    animation: 1s 0.3s width forwards;
+}
+
+.buildingInfoDesc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+    opacity: 0;
+    padding: 20px;
+    max-width: 400px;
+    min-height: 75px;
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 50%,rgba(0,0,0,0) 100%);
+    transform-origin: top;
+    animation: 0.3s 0.5s fade-in forwards;
+}
+
+.buildInProgress .buildingInfoBackground {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+#fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithWorkingArea {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
+    grid-gap: 10px;
+    margin: 0;
+}
+
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.fuseSlotName, .bankItemName, .possibleFuse, .smithItemName, .fortuneStatusHeading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fuseSlotName > img, .bankItemName > img, .possibleFuse > img, .smithItemName > img {
+    margin-bottom: 15px;
+}
+
+.fuseSlotName {
+    padding: 10px 0;
+}
+
+.fuseBarDiv, #swBarDiv {
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    margin: auto 0 5px;
+    background-color: rgba(255,255,255,0.05);
+    border: 0;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+}
+
+#swBarDiv {
+    margin-top: 5px;
+}
+
+.fuseBar:before, #swBar:before {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    left: unset;
+    top: 55%;
+    bottom: 50%;
+}
+
+.fuseBarFill, #swFill {
+    background-color: rgba(255,255,255,0.15);
+}
+
+.possibleFuseHead {
+    margin-top: 15px;
+}
+
+.possibleFuseHolder {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    margin: 20px 0 0 0;
+}
+
+.possibleFusegroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.possibleFusegroupHeader {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: var(--bg-2);
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    text-align: center;
+}
+
+.possibleFusegroupHeader.possibleFuseRarity1 {
+    background-color: rgba(27, 223, 69, 0.25);
+    color: rgb(44, 255, 89);
+    text-shadow: 1px 2px 0 black;
+}
+
+.possibleFusegroupHeader.possibleFuseRarity2 {
+    background-color: rgba(2, 121, 223, 0.25);
+    color: rgb(8, 173, 255);
+    text-shadow: 1px 2px 0 black;
+}
+
+.possibleFusegroupHeader.possibleFuseRarity3 {
+    background-color: rgba(243, 6, 144, 0.25);
+    color: rgb(255, 79, 167);
+    text-shadow: 1px 2px 0 black;
+}
+
+.possibleFuse {
+    padding: 15px;
+}
+
+.fuseStart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: var(--bg-2);
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    font-size: .8em;
+    cursor: pointer;
+}
+
+.fuseStart:hover {
+    background-color: var(--bg-3);
+}
+
+#bankContainer {
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+    grid-gap: 20px;
+    justify-content: start;
+    align-items: start;
+}
+
+#bankInvSlots, #bankBankSlots {
+    margin-bottom: 10px;
+}
+
+.bankInvHead, .bankBankHead, .smithInvHead {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+}
+
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: var(--text);
+    font-size: 0.8em;
+    text-align: center;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+
+.bankProps, .smithProps, .smithChance {
+    margin: 10px 0;
+}
+
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP {
+    margin-top: auto;
+    padding: 8px 10px;
+    width: 100%;
+    background-color: rgba(255,255,255,.05);
+    color: var(--text);
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover {
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+#smithWorkingArea {
+    margin: -10px -10px 10px -10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 190px;
+    background-color: var(--bg-3);
+    border-bottom: 1px solid var(--border);
+}
+
+#swItemStage .smithItem, #swItemResult .smithItem {
+    width: 100%;
+}
+
+#swItemStage, #swMiddle, #swItemResult {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    max-width: 225px;
+    width: 100%;
+}
+
+#swItemStage, #swItemResult {
+    max-width: 175px;
+}
+
+.smith-failed {
+    margin-bottom: 10px;
+}
+
+.inProgressTextBox {
+    color: var(--highlight);
+}
+
+.collectTextBox {
+    color: var(--text-3);
+}
+
+.collectTextBox:after {
+    display: block;
+    position: relative;
+    content: "\f30b";
+    font-family: "Font Awesome 5 Pro";
+    font-size: 1.5em;
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -webkit-animation: 1.2s point-right infinite;
+    animation: 1.2s point-right infinite;
+}
+
+#smithWorkingArea .smithProps {
+    margin: 0 0 0 -15px;
+}
+
+#smithWorkingArea .invProp > div {
+    margin: 10px;
+}
+
+.smithProps .arrow_right {
+    margin: 0 10px;
+}
+
+#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover {
+    background-color: var(--green-light);
+}
+
+#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost {
+    position: relative;
+    margin-top: 5px;
+    padding: 5px;
+    width: 100%;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 5px;
+}
+
+.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img {
+    margin: 0 5px;
+}
+
+#swSuccess {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.smithInvBlank, .fuseInvBlank {
+    padding: 0 5px;
+    color: var(--text-3);
+}
+
+.item-prefix-name {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.item-prefix {
+    margin-right: 5px;
+}
+
+.EHPEname > .item-prefix-name {
+    width: unset;
+}
+
+#fortuneWeek {
+    font-size: 1.1em;
+    text-align: center;
+    color: var(--highlight);
+}
+
+#fortuneWeek:after {
+    content: "";
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 800px;
+    height: 2px;
+    background-color: var(--border-2);
+}
+
+#fortuneSetButton, .buyBuildingBP {
+    margin: 15px auto 0;
+    max-width: 200px;
+}
+
+.fortuneSetHead {
+    text-align: center;
+}
+
+.fortuneStatusContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fortuneStatus {
+    margin: 10px;
+    min-width: 210px;
+}
+
+.fortuneStatusHeading, .fortuneStatusType {
+    margin-bottom: 10px;
+}
+
+.fortuneStatusHeading > i {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.fortuneStatus.fortuneGood > .fortuneStatusHeading {
+    color: rgb(44, 255, 89);
+}
+
+.fortuneStatus.fortuneGreat > .fortuneStatusHeading {
+    color: rgb(8, 173, 255);
+}
+
+.fortuneStatus.fortuneEpic > .fortuneStatusHeading {
+    color: rgb(255, 79, 167);
+}
+
+.fortuneStatusType {
+    padding: 5px 10px;
+    color: var(--highlight);
+    background-color: var(--bg-3);
+    border-radius: 5px;
+}
+
+#buildingMats {
+    border-bottom: 1px solid var(--border);
+}
+
+.buildingMatTable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.buildingMatDiv {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.buildingMatDiv + .buildingMatDiv {
+    border-left: 2px solid var(--border);
+}
+
+.buildingMatName {
+    width: 100%;
+}
+
+.buildingMatImage > img {
+    max-height: 24px;
+    margin-right: 5px;
+}
+
+.buildingMatAmt {
+    font-size: 0.8em;
+}
+
+.brecipeTable .recipeRow .recipeLvl {
+    margin-left: 255px;
+}
+
+.brecipeTable .recipeRow .recipematdiv {
+    max-width: 150px;
+    margin-left: 25px;
+}
+
+.brecipeTable .recipeRow .recipeDescription {
+    position: absolute;
+    left: 3px;
+}
+
+.brecipeHeadRes {
+    margin-left: 25px;
+}
+
+.brecipeHeadCost {
+    margin-left: 45px;
+}
+
+.brecipeHeadTime {
+    margin-left: 100px;
+}
+
+.brecipeTable .recipematdiv .indvCost {
+    min-width: 55px;
+}
+
+.brecipeTable .recipeRowLast {
+    margin-bottom: 0;
+}
+
+.buildingInstr {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: var(--highlight);
+    margin-top: 10px;
+    padding: 15px;
+}
+
+.buildingInstrHead {
+    background-color: var(--border-3);
+    border: 1px solid var(--border-3);
+    color: var(--highlight);
+    padding: 10px 15px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.buildingInstrDesc {
+    background-color: var(--border);
+    border: 1px solid var(--border-3);
+    color: var(--text);
+    padding: 10px 15px;
+    margin-left: -5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#emptyTown {
+    background-color: var(--bg-3);
+    color: var(--highlight);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Events / Mail Content */
 
 .hasEvent:after {
     content: "!";
@@ -2746,6 +3400,7 @@ Rarities
     border-radius: 50%;
     -webkit-animation: 2s ease-in-out infinite notification;
     animation: 2s ease-in-out infinite notification;
+    z-index: 10;
 }
 
 #eventContainer {
@@ -3193,6 +3848,26 @@ footer a[href*="discord.gg"]:hover {
     bottom: 130%;
 }
 
+.brecipeTable .recipeDescription.tooltip:after {
+    width: 300px;
+    top: 180%;
+    left: 5px;
+    right: unset;
+    bottom: unset;
+    margin-left: 0;
+    transform-origin: left top;
+}
+
+.buildingMatDiv.tooltip:after {
+    width: 65px;
+    margin: 0 auto;
+}
+
+.deeper_cost.tooltip:after {
+    width: 150px;
+    margin: 0 auto;
+}
+
 /* Firefox-Specific Fixes */
 @-moz-document url-prefix() { 
     #workerList, #progresslist {
@@ -3526,6 +4201,15 @@ footer a[href*="discord.gg"]:hover {
     }
 }
 
+@keyframes width {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 @keyframes gleam {
     0% {
         opacity: 0;
@@ -3547,6 +4231,18 @@ footer a[href*="discord.gg"]:hover {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes point-right {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 10px;
+    }
+    100% {
+        left: 0;
     }
 }
 
@@ -3682,6 +4378,10 @@ footer a[href*="discord.gg"]:hover {
 
 /* Reduces content width of workers and heroes tab elements on smaller screens */
 @media screen and (max-width: 1475px) {
+    #RecipeFilter a.recipeSelect > i {
+        display: none;
+    }
+
     #workerList {
         padding: 5px;
         justify-content: center;
@@ -3719,6 +4419,16 @@ footer a[href*="discord.gg"]:hover {
 
 /* For desktop/laptop screens with enough width to display vertical recipe filter listing */
 @media screen and (min-width: 1475px) {
+    #RecipeFilter a.recipeSelect {
+        display: flex;
+        align-items: center;
+    }
+
+    #RecipeFilter a.recipeSelect > i {
+        position: absolute;
+        right: 10px;
+    }
+
     #recipes-container {
         display: flex;
         height: 100%;

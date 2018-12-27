@@ -139,6 +139,12 @@ const actionSlotManager = {
         refreshSideWorkers();
         recipeCanCraft();
     },
+    removeBldgSlots() {
+        this.slots = this.slots.filter(s => s.item.recipeType === "normal");
+        refreshSideWorkers();
+        recipeCanCraft();
+        initializeActionSlots();
+    },
     removeID(itemID) {
         const num = this.slots.findIndex(a=>a.itemid === itemID);
         this.slots.splice(num, 1);
@@ -148,6 +154,10 @@ const actionSlotManager = {
     },
     hasSlot(slotnum) {
         return this.slots.length > slotnum;
+    },
+    isBuildingMaterial(slotnum) {
+        if (!this.hasSlot(slotnum)) return false;
+        return this.slots[slotnum].item.recipeType === "building";
     },
     isEmptySlot() {
         return `<img class='ASEmptyImg' src='images/recipes/noitem.png' /> Empty Slot`;
@@ -160,7 +170,7 @@ const actionSlotManager = {
             slot.craftAdvance(t)
             $("#ASBarFill"+i).css('width', slot.progress);
             if (slot.status === slotState.CRAFTING) $("#ASBar"+i).removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));
-            else $("#ASBar"+i).addClass("matsNeeded").attr("data-label","Waiting for materials");
+            else if (slot.status === slotState.NEEDMATERIAL) $("#ASBar"+i).addClass("matsNeeded").attr("data-label","Waiting for materials");
         });
     },
     itemList() {
@@ -220,7 +230,7 @@ function initializeActionSlots() {
         const d5 = $("<div/>").addClass("WSAuto tooltip").attr("data-tooltip", `Toggle Worker Auto-Contribute`).attr("id",i).html(`<i class="fas fa-hammer"></i>`);
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
         if (actionSlotManager.autoSacrifice(i)) d5.addClass("WSautoEnabled");
-        if (!actionSlotManager.hasSlot(i)) d4.hide(), d5.hide();
+        if (!actionSlotManager.hasSlot(i) || actionSlotManager.isBuildingMaterial(i)) d4.hide(), d5.hide();
         d.append(d1,d2.append(a2),d3.append(s3),d4,d5);
         $ActionSlots.append(d);
     }

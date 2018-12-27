@@ -40,6 +40,7 @@ function afterLoad() {
     refreshProgress();
     initializeSideBarDungeon();
     recipeCanCraft();
+    refreshSideTown();
     setInterval(mainLoop, 10);
     if (HeroManager.heroes.some(h=>h.xp === h.maxXP())) $("#heroTab").addClass("hasEvent");
     loading_screen.finish();
@@ -89,7 +90,14 @@ function mainLoop() {
     saveGame(Date.now()-player.lastTime);
     player.lastTime = Date.now();
     DungeonManager.addTime(elapsedTime);
+    FusionManager.addTime(elapsedTime);
+    bloopSmith.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
     HeroManager.healTimer(elapsedTime);
+    FortuneManager.resetFortune();
+    if (TownManager.purgeSlots) {
+        actionSlotManager.removeBldgSlots();
+        TownManager.purgeSlots = false;
+    }
     eventChecker();
 }

@@ -242,7 +242,7 @@ class Hero {
         if (this.slot6Type.includes(type)) return this.slot6;
     }
     healCost() {
-        return Math.floor(Math.pow(1.07, (this.lvl-1))*(this.maxHP()-this.hp));
+        return Math.floor(Math.pow(1.07, (this.lvl-1))*(this.maxHP()-this.hp)/miscLoadedValues.hltFactor);
     }
     healPay() {
         const amt = this.healCost();
@@ -463,7 +463,7 @@ function examineHero(ID) {
         let equipText = "";
         let equipRarity = 0
         if (equip !== null) {
-            equipText = equip.picName;
+            equipText = equip.picName();
             equipRarity = equip.rarity;
         }
         else {
@@ -528,7 +528,7 @@ function examineHeroPossibleEquip(slot,heroID) {
 
     let upgradeAvaialable = false;
     Inventory.listbyType(types).forEach((itemContainer) => {
-        const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName);
+        const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName());
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
         const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());
         let speed = "Fair";
@@ -556,7 +556,6 @@ function unequipSlot(slot,heroID) {
     HeroManager.unequip(slot,heroID);
     examineHero(heroID);
 }
-
 
 $(document).on('click', "div.heroOwnedCard", (e) => {
     //pop up the detailed character card

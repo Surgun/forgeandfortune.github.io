@@ -1,5 +1,4 @@
 "use strict";
-const FloorType = Object.freeze({FIGHT:"Fight", TRAP:"Trap", TRIAL:"Trial", TREASURE:"Treasure", HEAL:"Heal"});
 const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP",ACT:"Act"});
 
 class Dungeon {
@@ -59,7 +58,10 @@ class Dungeon {
             deadMobSweep(this.id);
         }
         if (this.party.isDead()) {
-            this.party.heroes.forEach(h=>h.inDungeon = false);
+            this.party.heroes.forEach(h=>{
+                h.inDungeon = false;
+                h.ap = 0;
+            });
             EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorNum);
             DungeonManager.removeDungeon(this.id);
             if (DungeonManager.dungeonView !== null) {
@@ -137,8 +139,8 @@ const DungeonManager = {
 };
 
 const dungeonIcons = {
-    [FloorType.FIGHT] : '<img src="images/DungeonIcons/combat_floor.png" alt="Fight">',
-    [FloorType.TREASURE] : '<img src="images/DungeonIcons/treasure_floor.png" alt="Treasure">',
+    //[FloorType.FIGHT] : '<img src="images/DungeonIcons/combat_floor.png" alt="Fight">',
+    //[FloorType.TREASURE] : '<img src="images/DungeonIcons/treasure_floor.png" alt="Treasure">',
     [Stat.HP] : '<img src="images/DungeonIcons/hp.png" alt="HP">',
     [Stat.POW] : '<img src="images/DungeonIcons/pow.png" alt="POW">',
     [Stat.ACT] : '<img src="images/DungeonIcons/act.png" alt="Act">',

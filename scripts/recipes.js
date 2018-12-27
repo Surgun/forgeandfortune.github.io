@@ -33,6 +33,9 @@ class Item{
     itemPicName() {
         return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>"+"<div class='item-name'>"+this.name+"</div>";
     }
+    itemName() {
+        return "<div class='item-name'>"+this.name+"</div>";
+    }
     itemPic() {
         return "<img src='images/recipes/"+this.type+"/"+this.id+".png'>";
     }
@@ -105,6 +108,7 @@ class Item{
         $("#rc"+this.id).html(this.count()+"/100");
     }
     isMastered() {
+        if (this.recipeType === "building") return false;
         return this.craftCount >= 100;
     }
     autoSellToggle() {
@@ -242,10 +246,14 @@ const recipeList = {
         return this.recipes.filter(r=>r.isMastered()).length;
     },
     recipeCount() {
-        return this.recipes.length;
+        return this.recipes.filter(r=>r.recipeType==="normal").length;
     },
     advancedWorkerUnlock() {
         return this.recipes.filter(r => r.owned).some(recipe => recipe.lvl >= 5);
+    },
+    maxTier() {
+        const lvls = this.recipes.filter(r=>r.owned).map(r=>r.lvl);
+        return Math.max(...lvls);
     }
 }
 
@@ -261,7 +269,6 @@ function refreshRecipeFilters() {
 }
 
 function initializeRecipes(type,sortType,heading) {
-    console.log(type,sortType);
     recipeList.recipePop = type;
     //filtering
     let rFilter = recipeList.recipes.filter(r => r.owned);

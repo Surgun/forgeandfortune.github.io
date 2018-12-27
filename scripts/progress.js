@@ -21,7 +21,7 @@ function refreshProgress() {
     const heroPercent = (HeroManager.heroLevelCount()/HeroManager.heroMaxLevelCount()*100).toFixed(2);
     $pbHero.css('width', heroPercent+"%");
     const overallPercent = (recipeList.masteryCount()+WorkerManager.workerLevelCount()+HeroManager.heroLevelCount())/(recipeList.recipeCount()+WorkerManager.workerMaxLevelCount()+HeroManager.heroMaxLevelCount());
-    if (overallPercent === 100 && achievementStats.endTime === -1) achievementStats.endTime = Date.now();
+    if (overallPercent === 1 && achievementStats.endTime === -1) achievementStats.endTime = Date.now();
     $plOverall.html((overallPercent * 100).toFixed(2)+"%");
     $pbOverall.css('width', (overallPercent*100).toFixed(2)+"%");
 }
@@ -69,15 +69,15 @@ const achievementStats = {
         if (rarity === "Good") this.goodsCrafted += 1;
         if (rarity === "Great") this.greatsCrafted += 1;
         if (rarity === "Epic") this.epicsCrafted += 1;
-        $statTotalItems.html(formatToUnits(this.totalItemsCrafted,3));
-        $statCommons.html(formatToUnits(this.commonsCrafted,3));
-        $statGoods.html(formatToUnits(this.goodsCrafted,3));
-        $statGreats.html(formatToUnits(this.greatsCrafted,3));
-        $statEpics.html(formatToUnits(this.epicsCrafted,3));
+        $statTotalItems.html(formatToUnits(this.totalItemsCrafted,2));
+        $statCommons.html(formatToUnits(this.commonsCrafted,2));
+        $statGoods.html(formatToUnits(this.goodsCrafted,2));
+        $statGreats.html(formatToUnits(this.greatsCrafted,2));
+        $statEpics.html(formatToUnits(this.epicsCrafted,2));
     },
     gold(g) {
         this.totalGoldEarned += g;
-        $statTotalGoldEarned.html(formatToUnits(this.totalGoldEarned,3));
+        $statTotalGoldEarned.html(formatToUnits(this.totalGoldEarned,2));
     },
     createSave() {
         const save = {};
@@ -107,8 +107,8 @@ const achievementStats = {
         this.totalItemsCrafted = save.totalItemsCrafted;
         this.totalFloorsBeaten = save.totalFloorsBeaten;
         $statMaxFloor.html("Floor " + this.maxFloor);
-        $statTotalGoldEarned.html(formatToUnits(this.totalGoldEarned,3));
-        $statFloors.html(this.totalFloorsBeaten)
+        $statTotalGoldEarned.html(formatToUnits(this.totalGoldEarned,2));
+        $statFloors.html(this.totalFloorsBeaten);
         $statTimePlayed.html(timeSince(0,this.timePlayed));
         $statTotalItems.html(this.totalItemsCrafted);
         $statCommons.html(this.commonsCrafted);

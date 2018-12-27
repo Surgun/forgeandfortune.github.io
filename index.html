@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous">
     <!-- Favicons -->
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/apple-touch-icon-57x57.png" />
@@ -182,6 +182,7 @@
                     <button class="tablinks" id="workersTabLink" onclick="openTab('workersTab')"><div>Workers</div></button>
                     <button class="tablinks" id="heroesTabLink" onclick="openTab('heroesTab')"><div id="heroTab">Heroes</div></button>
                     <button class="tablinks" id="dungeonsTabLink" onclick="openTab('dungeonsTab')"><div>Adventures</div></button>
+                    <button class="tablinks" id="townTabLink" onclick="openTab('townsTab')"><div id="townTab">Town</div></button>
                     <button class="tablinks" id="eventsTabLink" onclick="openTab('eventsTab')"><div id="eventTab">Mail</div></button>
                     <button class="tablinks" id="progressTabLink"onclick="openTab('progressTab')"><div>Progress</div></button>
                 </div>
@@ -304,6 +305,47 @@
                         </div>
                     </div>
                 </div>
+                <div id="townsTab" class="tabcontent">
+                    <div id="townContainer">
+                        <div id="emptyTown">The town looks empty - except for your Shop, of course. Perhaps there's a way to craft new buildings?</div>
+                        <div id="buildingList"></div>
+                        <div id="buildingHeader"></div>
+                        <div id="buildBuilding">
+                            <div id="buildingMats"></div>
+                            <div id="buildingRecipes"></div>
+                        </div>
+                        <div id="fuseBuilding" class="buildingTab">
+                            <div id="fuseSlots"></div>
+                            <div id="fuseList"></div>
+                        </div>
+                        <div id="bankBuilding" class="buildingTab">
+                            <div id="bankContainer">
+                                <div id="bankInvSlots"></div>
+                                <div id="bankBankSlots"></div>
+                            </div>
+                        </div>
+                        <div id="smithBuilding" class="buildingTab">
+                            <div id="smithWorkingArea">
+                                <div id="swItemStage"></div>
+                                <div id="swMiddle">
+                                    <div id="swMiddleText"></div>
+                                    <div id="swConfirm"></div>
+                                    <div id="swSuccess"></div>
+                                    <div id="swBarDiv">
+                                        <div id="swBar"></div>
+                                        <div id="swFill"></div>
+                                    </div>
+                                </div>
+                                <div id="swItemResult"></div>
+                            </div>
+                            <div id="smithInvSlots"></div>
+                        </div>
+                        <div id="fortuneBuilding" class="buildingTab">
+                            <div id="fortuneWeek"></div>
+                            <div id="fortuneStatus"></div>
+                        </div>
+                    </div>
+                </div>
                 <div id="eventsTab" class="tabcontent">
                     <div id="eventContainer">
                         <div id="readUnread">
@@ -398,7 +440,7 @@
                     <a id="settings" class="tooltip" href="#dialogSettings" data-tooltip="Change your game preferences and settings.">Settings</a>
                 </div>
                 <div id="bottom-right">
-                    <a href="/patchnotes/latest.html" id="version-scale">v0.2.0.10</a>
+                    <a href="/patchnotes/latest.html" id="version-scale">v0.2.1.0</a>
                     <a href="about.html" target="_blank">About &amp; Crediting <i class="fas fa-external-link-square-alt"></i></a>
                     <a href="http://www.discord.gg/qGBAVNR" target="_blank">Discord Server <i class="fas fa-external-link-square-alt"></i></a>
                 </div>
@@ -456,6 +498,11 @@
 <script src="scripts/actionslots.js"></script>
 <script src="scripts/devtools.js"></script>
 <script src="scripts/events.js"></script>
+<script src="scripts/fuse.js"></script>
+<script src="scripts/bank.js"></script>
+<script src="scripts/blacksmith.js"></script>
+<script src="scripts/fortune.js"></script>
+<script src="scripts/town.js"></script>
 <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
 <script src="scripts/playfab.js"></script>
 <script type="text/javascript" src="scripts/pako.min.js"></script>

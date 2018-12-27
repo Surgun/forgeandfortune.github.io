@@ -292,7 +292,7 @@ function buildScreen(type) {
     $buildingRecipes.append(d4);
     const d5 = $("<div/>").addClass("buildingInstr");
         const d5a = $("<div/>").addClass("buildingInstrHead").html("Instruction");
-        const d5b = $("<div/>").addClass("buildingInstrDesc").html("Construct the bank to unlock permanently!");
+        const d5b = $("<div/>").addClass("buildingInstrDesc").html("Construct the final recipe to unlock this building permanently!");
     d5.append(d5a,d5b);
     $buildingRecipes.append(d5);
 }

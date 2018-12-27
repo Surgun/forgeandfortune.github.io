@@ -255,9 +255,9 @@ function eventChecker() {
     if (!EventManager.hasSeen("E006") && masteredItem) EventManager.addEvent("E006");
     if (!EventManager.hasSeen("E007") && Inventory.full()) EventManager.addEvent("E007");
     if (!EventManager.hasSeen("E009") && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[0]) EventManager.addEvent("E009");
-    if (!EventManager.hasSeen("E010") && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[1]) EventManager.addEvent("E010");
-    if (!EventManager.hasSeen("E011") && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[2]) EventManager.addEvent("E011");
-    if (!EventManager.hasSeen("E012") && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[3]) EventManager.addEvent("E012");
+    if (!EventManager.hasSeen("E010") && TownManager.bankUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[1]) EventManager.addEvent("E010");
+    if (!EventManager.hasSeen("E011") && TownManager.fuseUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[2]) EventManager.addEvent("E011");
+    if (!EventManager.hasSeen("E012") && TownManager.smithUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[3]) EventManager.addEvent("E012");
 }
 
 function autoSacEvent() {

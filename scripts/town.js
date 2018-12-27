@@ -203,7 +203,7 @@ $(document).on('click', "#fusionBldg", (e) => {
     TownManager.lastBldg = "fusion";
     TownManager.fuseOnce = false;
     $(".buildingName").removeClass("selected");
-    if (!TownManager.unseenLeft()) $("#townTabLink").removeClass("hasEvent");
+    if (!TownManager.unseenLeft()) $("#townTab").removeClass("hasEvent");
     $("#fusionBldg").addClass("selected");
     $("#fusionBldg").removeClass("hasEvent");
     showFuseBldg();
@@ -215,7 +215,10 @@ $(document).on('click', '#bankBldg', (e) => {
     TownManager.lastBldg = "bank";
     TownManager.bankOnce = false;
     $(".buildingName").removeClass("selected");
-    if (!TownManager.unseenLeft()) $("#townTabLink").removeClass("hasEvent");
+    if (!TownManager.unseenLeft()) {
+        console.log("FUCK");
+        $("#townTab").removeClass("hasEvent");
+    }
     $("#bankBldg").addClass("selected");
     $("#bankBldg").removeClass("hasEvent");
     showBankBldg();
@@ -227,7 +230,7 @@ $(document).on('click', '#smithBldg', (e) => {
     TownManager.lastBldg = "smith";
     TownManager.smithOnce = false;
     $(".buildingName").removeClass("selected");
-    if (!TownManager.unseenLeft()) $("#townTabLink").removeClass("hasEvent");
+    if (!TownManager.unseenLeft()) $("#townTab").removeClass("hasEvent");
     $("#smithBldg").addClass("selected");
     $("#smithBldg").removeClass("hasEvent");
     showSmithBldg();
@@ -239,7 +242,7 @@ $(document).on('click', '#fortuneBldg', (e) => {
     TownManager.lastBldg = "fortune";
     TownManager.fortuneOnce = false;
     $(".buildingName").removeClass("selected");
-    if (!TownManager.unseenLeft()) $("#townTabLink").removeClass("hasEvent");
+    if (!TownManager.unseenLeft()) $("#townTab").removeClass("hasEvent");
     $("#fortuneBldg").addClass("selected");
     $("#fortuneBldg").removeClass("hasEvent");
     showFortuneBldg();

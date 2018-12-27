@@ -213,7 +213,10 @@ function buildScreen(type) {
     if (lastRow !== null) lastRow.addClass("recipeRowLast");
     d4.append(table);
     $buildingRecipes.append(d4);
-    const d5 = $("<div/>").addClass("buildingInstr").html("Construct the bank to unlock permanently!");
+    const d5 = $("<div/>").addClass("buildingInstr");
+        const d5a = $("<div/>").addClass("buildingInstrHead").html("Instruction");
+        const d5b = $("<div/>").addClass("buildingInstrDesc").html("Construct the bank to unlock permanently!");
+    d5.append(d5a,d5b);
     $buildingRecipes.append(d5);
 }
 

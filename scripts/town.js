@@ -281,6 +281,7 @@ function unlockBank() {
     TownManager.bankUnlock = true;
     TownManager.bankCost = true;
     TownManager.lastBldg = "bank";
+    actionSlotManager.removeBldgSlots();
     $(".buildingName").removeClass("selected");
     $("#bankBldg").addClass("selected");
     refreshSideTown();
@@ -291,6 +292,7 @@ function unlockFuse() {
     TownManager.fuseCost = true;
     TownManager.fuseUnlock = true;
     TownManager.lastBldg = "fuse";
+    actionSlotManager.removeBldgSlots();
     $(".buildingName").removeClass("selected");
     $("#fuseBldg").addClass("selected");
     refreshSideTown();
@@ -301,6 +303,7 @@ function unlockSmith() {
     TownManager.smithUnlock = true;
     TownManager.smithCost = true;
     TownManager.lastBldg = "smith";
+    actionSlotManager.removeBldgSlots();
     $(".buildingName").removeClass("selected");
     $("#smithBldg").addClass("selected");
     refreshSideTown();
@@ -311,6 +314,7 @@ function unlockFortune() {
     TownManager.fortuneCost = true;
     TownManager.fortuneUnlock = true;
     TownManager.lastBldg = "fortune";
+    actionSlotManager.removeBldgSlots();
     $(".buildingName").removeClass("selected");
     $("#fortuneBldg").addClass("selected");
     refreshSideTown();

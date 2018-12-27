@@ -10,33 +10,45 @@ const $fortuneBuilding = $("#fortuneBuilding");
 const TownManager = {
     lastBldg : null,
     lastType : null,
+    bankSee : false,
     bankUnlock : false,
     bankCost : false,
+    fuseSee : false,
     fuseUnlock : false,
     fuseCost : false,
+    smithSee : false,
     smithUnlock : false,
     smithCost : false,
+    fortuneSee : false,
     fortuneUnlock : false,
     fortuneCost : false,
     createSave() {
         const save = {};
+        save.bankSee = this.bankSee;
         save.bankUnlock = this.bankUnlock;
         save.bankCost = this.bankCost;
+        save.fuseSee = this.fuseSee;
         save.fuseUnlock = this.fuseUnlock;
         save.fuseCost = this.fuseCost;
+        save.smithSee = this.smithSee;
         save.smithUnlock = this.smithUnlock;
         save.smithCost = this.smithCost;
+        save.fortuneSee = this.fortuneSee;
         save.fortuneUnlock = this.fortuneUnlock;
         save.fortuneCost = this.fortuneCost;
         return save;
     },
     loadSave(save) {
+        this.bankSee = save.bankSee;
         this.bankUnlock = save.bankUnlock;
         this.bankCost = save.bankCost;
+        this.fuseSee = save.fuseSee;
         this.fuseUnlock = save.fuseUnlock;
         this.fuseCost = save.fuseCost;
+        this.smithSee = save.smithSee;
         this.smithUnlock = save.smithUnlock;
-        this.smithCost = save.fuseCost
+        this.smithCost = save.smithCost;
+        this.fortuneSee = save.fortuneSee;
         this.fortuneUnlock = save.fortuneUnlock;
         this.fortuneCost = save.fortuneCost;
     },
@@ -82,6 +94,7 @@ function showFuseBldg() {
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fuseBuilding/fusion_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Cauldron</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Fuse three of the same item into a rarity higher of the same item.");
+        if (!TownManager.fuseUnlock) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.fuseUnlock) initiateFuseBldg();
@@ -103,6 +116,7 @@ function showBankBldg() {
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/bankBuilding/bank_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Bank</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Store important items at the bank.");
+        if (!TownManager.fuseUnlock) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.bankUnlock) initiateBankBldg();
@@ -122,6 +136,7 @@ function showSmithBldg() {
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/smithBuilding/smith_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Forge</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Upgrade your weapons at the forge.");
+        if (!TownManager.fuseUnlock) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.smithUnlock) initiateSmithBldg();    
@@ -141,6 +156,7 @@ function showFortuneBldg() {
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fortuneBuilding/fortune_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fortune Teller</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Find which crafts are lucky this week!");
+        if (!TownManager.fuseUnlock) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.fortuneUnlock) initiateFortuneBldg();

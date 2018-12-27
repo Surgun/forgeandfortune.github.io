@@ -3134,6 +3134,7 @@ Rarities
 }
 
 .smith_cost, .fortune_cost, .deeper_cost, .buybp_cost {
+    position: relative;
     margin-top: 5px;
     padding: 5px;
     width: 100%;
@@ -3818,6 +3819,11 @@ footer a[href*="discord.gg"]:hover {
 
 .buildingMatDiv.tooltip:after {
     width: 65px;
+    margin: 0 auto;
+}
+
+.deeper_cost.tooltip:after {
+    width: 150px;
     margin: 0 auto;
 }
 

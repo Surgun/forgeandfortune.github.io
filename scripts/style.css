@@ -2860,6 +2860,11 @@ Rarities
     animation: 0.3s 0.5s fade-in forwards;
 }
 
+.buildInProgress .buildingInfoBackground {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
 #fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithWorkingArea {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));

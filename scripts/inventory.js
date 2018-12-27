@@ -213,7 +213,6 @@ const Inventory = {
         if (quality === "Epic") return miscLoadedValues.qualityCheck[3]*masterMod*fortuneMod;
     },
     removeFromInventory(id,rarity) {
-        console.log(id,rarity);
         for (let i=0;i<this.inv.length;i++) {
             const ic = this.inv[i]
             if (ic === null) continue;

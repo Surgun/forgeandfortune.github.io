@@ -91,7 +91,6 @@ const FusionManager = {
     },
     collectFuse(fuseID) {
         const slot = this.slots.find(f=>f.fuseID === fuseID);
-        console.log(fuseID);
         if (slot === undefined || !slot.fuseComplete()) return;
         if (Inventory.full()) {
             Notifications.fuseInvFull();
@@ -188,6 +187,5 @@ $(document).on('click', '.fuseStart', (e) => {
 $(document).on('click', '.fuseSlotCollect', (e) => {
     e.preventDefault();
     const id = parseInt($(e.target).attr("fuseid"));
-    console.log(id);
     FusionManager.collectFuse(id);
 });

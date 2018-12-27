@@ -216,7 +216,6 @@ $(document).on('click', '#bankBldg', (e) => {
     TownManager.bankOnce = false;
     $(".buildingName").removeClass("selected");
     if (!TownManager.unseenLeft()) {
-        console.log("FUCK");
         $("#townTab").removeClass("hasEvent");
     }
     $("#bankBldg").addClass("selected");

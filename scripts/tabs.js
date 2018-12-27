@@ -18,7 +18,6 @@ function openTab(tabName) {
         refreshSideTown();
     }
     $(".tabcontent").hide();
-    console.log(tabName);
     $("#"+tabName).show();
 }
 

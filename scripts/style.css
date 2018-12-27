@@ -2738,6 +2738,7 @@ Rarities
 }
 
 .buildingName {
+    position: relative;
     padding: 10px;
     text-align: center;
     background-color: var(--bg);

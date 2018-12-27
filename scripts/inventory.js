@@ -168,6 +168,9 @@ const Inventory = {
     },
     craftToInventory(id) {
         if (id === "R99110") return unlockBank();
+        if (id === "R99210") return unlockFuse();
+        if (id === "R99310") return unlockSmith();
+        if (id === "R99510") return unlockFortune();
         const item = recipeList.idToItem(id)
         const name = item.name;
         const autoSell = item.autoSell;

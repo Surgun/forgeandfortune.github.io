@@ -87,6 +87,7 @@ const bloopSmith = {
 }
 
 function initiateSmithBldg() {
+    $smithBuilding.show();
     refreshSmithInventory();
     refreshSmithArea();
 }

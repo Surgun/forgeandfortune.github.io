@@ -70,8 +70,9 @@ function refreshSideTown() {
 
 function showFuseBldg() {
     $(".buildingTab").removeClass("bldgTabActive").hide();
-    $fuseBuilding.addClass("bldgTabActive").show();
+    $fuseBuilding.addClass("bldgTabActive");
     $buildingHeader.empty();
+    $buildBuilding.hide();
     const d = $("<div/>").addClass("buildingInfo buildingFusion");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fuseBuilding/fusion_building.png'>");
@@ -80,7 +81,10 @@ function showFuseBldg() {
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.fuseUnlock) initiateFuseBldg();
-    else buildScreen("fuse");
+    else {
+        $buildBuilding.show();
+        buildScreen("fuse");
+    }
 }
 
 const $buildBuilding = $("#buildBuilding");
@@ -106,8 +110,9 @@ function showBankBldg() {
 
 function showSmithBldg() {
     $(".buildingTab").removeClass("bldgTabActive").hide();
-    $smithBuilding.addClass("bldgTabActive").show();
+    $smithBuilding.addClass("bldgTabActive");
     $buildingHeader.empty();
+    $buildBuilding.hide();
     const d = $("<div/>").addClass("buildingInfo buildingSmith");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/smithBuilding/smith_building.png'>");
@@ -116,13 +121,17 @@ function showSmithBldg() {
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.smithUnlock) initiateSmithBldg();    
-    else buildScreen("smith");
+    else {
+        $buildBuilding.show();
+        buildScreen("smith");
+    }
 }
 
 function showFortuneBldg() {
     $(".buildingTab").removeClass("bldgTabActive").hide();
-    $fortuneBuilding.addClass("bldgTabActive").show();
+    $fortuneBuilding.addClass("bldgTabActive");
     $buildingHeader.empty();
+    $buildBuilding.hide();
     const d = $("<div/>").addClass("buildingInfo buildingFortune");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fortuneBuilding/fortune_building.png'>");
@@ -131,7 +140,10 @@ function showFortuneBldg() {
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.fortuneUnlock) initiateFortuneBldg();
-    else buildScreen("fortune");
+    else {
+        $buildBuilding.show();
+        buildScreen("fortune");
+    }
 }
 
 $(document).on('click', "#fusionBldg", (e) => {
@@ -174,7 +186,6 @@ const $buildingRecipes = $("#buildingRecipes");
 const $buildingMats = $("#buildingMats");
 
 function buildScreen(type) {
-    console.log(type);
     $buildingRecipes.empty();
     $buildingMats.empty();
     TownManager.lastType = type;
@@ -265,6 +276,39 @@ function buildBuildMats() {
 function unlockBank() {
     TownManager.bankUnlock = true;
     TownManager.bankCost = true;
+    TownManager.lastBldg = "bank";
+    $(".buildingName").removeClass("selected");
+    $("#bankBldg").addClass("selected");
     refreshSideTown();
     showBankBldg();
+}
+
+function unlockFuse() {
+    TownManager.fuseCost = true;
+    TownManager.fuseUnlock = true;
+    TownManager.lastBldg = "fuse";
+    $(".buildingName").removeClass("selected");
+    $("#fuseBldg").addClass("selected");
+    refreshSideTown();
+    showFuseBldg();
+}
+
+function unlockSmith() {
+    TownManager.smithUnlock = true;
+    TownManager.smithCost = true;
+    TownManager.lastBldg = "smith";
+    $(".buildingName").removeClass("selected");
+    $("#smithBldg").addClass("selected");
+    refreshSideTown();
+    showSmithBldg();
+}
+
+function unlockFortune() {
+    TownManager.fortuneCost = true;
+    TownManager.fortuneUnlock = true;
+    TownManager.lastBldg = "fortune";
+    $(".buildingName").removeClass("selected");
+    $("#fortuneBldg").addClass("selected");
+    refreshSideTown();
+    showFortuneBldg();
 }

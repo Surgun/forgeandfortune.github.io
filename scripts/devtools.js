@@ -15,6 +15,14 @@ const devtools = {
         ResourceManager.materials.forEach(material => {
             ResourceManager.addMaterial(material.id,9999999);
         })
+        TownManager.bankSee = true;
+        TownManager.bankUnlock = true;
+        TownManager.fuseSee = true;
+        TownManager.fuseUnlock = true;
+        TownManager.smithSee = true;
+        TownManager.smithUnlock = true;
+        TownManager.fortuneSee = true;
+        TownManager.fortuneUnlock = true;
         forceSave();
         location.replace('/');
     },

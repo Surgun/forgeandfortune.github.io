@@ -82,11 +82,14 @@ const TownManager = {
     }
 }
 
+const $emptyTown = $("#emptyTown");
+
 function refreshSideTown() {
     $buildingList.empty();
     if (TownManager.unseenLeft()) $("#townTabLink").addClass("hasEvent");
     else $("#townTabLink").removeClass("hasEvent");
     if (!TownManager.bankSee) return;
+    $emptyTown.empty();
     const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`<i class="fas fa-university"></i> Bank`);
     if (TownManager.lastBldg === "bank") d1.addClass("selected");
     if (TownManager.bankOnce) d1.addClass("hasEvent");
@@ -115,7 +118,8 @@ function showFuseBldg() {
     $buildBuilding.hide();
     const d = $("<div/>").addClass("buildingInfo buildingFusion");
         const da = $("<div/>").addClass("buildingInfoBackground");
-        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fuseBuilding/fusion_building.png'>");
+        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
+        if (TownManager.fuseUnlock) db.html("<img src='images/townImages/fuseBuilding/fusion_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Cauldron</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Fuse three of the same item into a rarity higher of the same item.");
         if (!TownManager.fuseUnlock) d.addClass("buildInProgress");
@@ -137,7 +141,8 @@ function showBankBldg() {
     $buildBuilding.hide();
     const d = $("<div/>").addClass("buildingInfo buildingBank");
         const da = $("<div/>").addClass("buildingInfoBackground");
-        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/bankBuilding/bank_building.png'>");
+        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
+        if (TownManager.bankUnlock) db.html("<img src='images/townImages/bankBuilding/bank_building.png'>")
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Bank</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Store important items at the bank.");
         if (!TownManager.bankUnlock) d.addClass("buildInProgress");
@@ -157,7 +162,8 @@ function showSmithBldg() {
     $buildBuilding.hide();
     const d = $("<div/>").addClass("buildingInfo buildingSmith");
         const da = $("<div/>").addClass("buildingInfoBackground");
-        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/smithBuilding/smith_building.png'>");
+        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
+        if (TownManager.smithUnlock) db.html("<img src='images/townImages/smithBuilding/smith_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Forge</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Upgrade your weapons at the forge.");
         if (!TownManager.smithUnlock) d.addClass("buildInProgress");
@@ -177,7 +183,8 @@ function showFortuneBldg() {
     $buildBuilding.hide();
     const d = $("<div/>").addClass("buildingInfo buildingFortune");
         const da = $("<div/>").addClass("buildingInfoBackground");
-        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fortuneBuilding/fortune_building.png'>");
+        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
+        if (TownManager.fortuneUnlock) db.html("<img src='images/townImages/fortuneBuilding/fortune_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fortune Teller</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Find which crafts are lucky this week!");
         if (!TownManager.fortuneUnlock) d.addClass("buildInProgress");

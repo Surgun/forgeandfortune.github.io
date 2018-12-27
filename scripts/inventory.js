@@ -255,7 +255,7 @@ const Inventory = {
         return this.nonblank().length;
     },
     nonblank(typeOverride) {
-        if (typeOverride) return this.inv.filter(r=>r !== null && r.recipeType === "normal");
+        if (typeOverride) return this.inv.filter(r=>r !== null && r.item.recipeType === "normal");
         return this.inv.filter(r=>r !== null);
     },
     sortInventory() {

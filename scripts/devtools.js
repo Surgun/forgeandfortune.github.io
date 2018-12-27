@@ -48,5 +48,35 @@ const devtools = {
             })
         })
     },
+    bankBldg() {
+        this.speed(1000);
+        this.addGold(1000000000000000000000);
+        WorkerManager.workers.forEach(worker => {
+            worker.owned = true;
+            worker.lvl = 10;
+        });
+        for (let i=0;i<10;i++) Inventory.addToInventory("R99101",0,-1);
+        for (let i=0;i<4;i++) Inventory.addToInventory("R99108",0,-1);
+        Inventory.addToInventory("R99106",0,-1);
+        Inventory.addToInventory("R99109",0,-1);
+    },
+    fuseBldg() {
+        for (let i=0;i<10;i++) Inventory.addToInventory("R99201",0,-1);
+        for (let i=0;i<4;i++) Inventory.addToInventory("R99208",0,-1);
+        Inventory.addToInventory("R99206",0,-1);
+        Inventory.addToInventory("R99209",0,-1);
+    },
+    smithBldg() {
+        for (let i=0;i<10;i++) Inventory.addToInventory("R99301",0,-1);
+        for (let i=0;i<4;i++) Inventory.addToInventory("R99308",0,-1);
+        Inventory.addToInventory("R99306",0,-1);
+        Inventory.addToInventory("R99309",0,-1);
+    },
+    fortuneBldg() {
+        for (let i=0;i<10;i++) Inventory.addToInventory("R99501",0,-1);
+        for (let i=0;i<4;i++) Inventory.addToInventory("R99508",0,-1);
+        Inventory.addToInventory("R99506",0,-1);
+        Inventory.addToInventory("R99509",0,-1);
+    },
     skipSac : false,
 }

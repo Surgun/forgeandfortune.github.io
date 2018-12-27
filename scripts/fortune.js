@@ -131,6 +131,7 @@ const FortuneManager = {
 }
 
 function initiateFortuneBldg () {
+    $fortuneBuilding.show();
     refreshFortuneInfo();
 }
 

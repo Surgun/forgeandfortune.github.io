@@ -168,6 +168,9 @@ const Inventory = {
     },
     craftToInventory(id) {
         if (id === "R99110") return unlockBank();
+        if (id === "R99210") return unlockFuse();
+        if (id === "R99310") return unlockSmith();
+        if (id === "R99510") return unlockFortune();
         const item = recipeList.idToItem(id)
         const name = item.name;
         const autoSell = item.autoSell;
@@ -252,7 +255,8 @@ const Inventory = {
     inventoryCount() {
         return this.nonblank().length;
     },
-    nonblank() {
+    nonblank(typeOverride) {
+        if (typeOverride) return this.inv.filter(r=>r !== null && r.recipeType === "normal");
         return this.inv.filter(r=>r !== null);
     },
     sortInventory() {
@@ -280,7 +284,7 @@ const Inventory = {
         })
     },
     getFusePossibilities() {
-        const fuses = this.nonblank().filter(s=>s.sharp === 0).map(i=>{
+        const fuses = this.nonblank().filter(s=>s.sharp === 0 && s.recipeType === "normal").map(i=>{
             return i.id+i.rarity
         });
         const fuseSorted = fuses.reduce((fuseList, item) => {

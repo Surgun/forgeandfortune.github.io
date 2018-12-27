@@ -139,6 +139,12 @@ const actionSlotManager = {
         refreshSideWorkers();
         recipeCanCraft();
     },
+    removeBldgSlots() {
+        this.slots = this.slots.filter(s => s.item.recipeType === "normal");
+        initializeActionSlots();
+        refreshSideWorkers();
+        recipeCanCraft();
+    },
     removeID(itemID) {
         const num = this.slots.findIndex(a=>a.itemid === itemID);
         this.slots.splice(num, 1);
@@ -151,7 +157,6 @@ const actionSlotManager = {
     },
     isBuildingMaterial(slotnum) {
         if (!this.hasSlot(slotnum)) return false;
-        console.log(this.slots[slotnum].item.recipeType)
         return this.slots[slotnum].item.recipeType === "building";
     },
     isEmptySlot() {

@@ -104,6 +104,7 @@ const FusionManager = {
 }
 
 function initiateFuseBldg() {
+    $fuseBuilding.show();
     refreshFuseSlots();
     refreshPossibleFuse();
 }

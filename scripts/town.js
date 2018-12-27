@@ -86,8 +86,8 @@ const $emptyTown = $("#emptyTown");
 
 function refreshSideTown() {
     $buildingList.empty();
-    if (TownManager.unseenLeft()) $("#townTabLink").addClass("hasEvent");
-    else $("#townTabLink").removeClass("hasEvent");
+    if (TownManager.unseenLeft()) $("#townTab").addClass("hasEvent");
+    else $("#townTab").removeClass("hasEvent");
     if (!TownManager.bankSee) return;
     $emptyTown.empty();
     const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`<i class="fas fa-university"></i> Bank`);

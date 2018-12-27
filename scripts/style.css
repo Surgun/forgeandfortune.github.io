@@ -715,6 +715,7 @@ Rarities
 }
 
 .tablinks > div {
+    position: relative;
     padding: 10px 15px;
 }
 
@@ -3337,10 +3338,6 @@ Rarities
 }
 
 /* Events / Mail Content */
-
-#eventTab {
-    position: relative;
-}
 
 .hasEvent:after {
     content: "!";

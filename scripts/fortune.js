@@ -169,7 +169,9 @@ function fortuneBox(type) {
     const props = FortuneManager.propsByType(type);
     if (props.payState) return d1;
     const mat = ResourceManager.idToMaterial(props.matReq);
-    const d4 = $("<div/>").addClass('fortuneStatusButton').attr("type",type).html(`Look Deeper<span class="deeper_cost">${mat.img} ${props.amt}</span>`);
+    const d4 = $("<div/>").addClass('fortuneStatusButton').attr("type",type).html("Look Deeper");
+    const d4a = $("<div/>").addClass('deeper_cost tooltip').attr("data-tooltip",mat.name).html(`${mat.img} ${props.amt}`);
+    d4.append(d4a);
     return d1.append(d4);
 }
 

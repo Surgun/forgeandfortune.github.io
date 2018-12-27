@@ -296,7 +296,7 @@ $(document).on('click', ".buyBuildingBP", (e) => {
 function buyBuildingBP(type) {
     const cost = getBuildingCost(type);
     if (ResourceManager.materialAvailable("M001") < cost) {
-        Notifications.workerGoldReq();
+        Notifications.cantAffordBlueprint();
         return;
     }
     ResourceManager.deductMoney(cost);

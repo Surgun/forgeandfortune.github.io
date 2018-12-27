@@ -2860,6 +2860,11 @@ Rarities
     animation: 0.3s 0.5s fade-in forwards;
 }
 
+.buildInProgress .buildingInfoBackground {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
 #fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithWorkingArea {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
@@ -3129,6 +3134,7 @@ Rarities
 }
 
 .smith_cost, .fortune_cost, .deeper_cost, .buybp_cost {
+    position: relative;
     margin-top: 5px;
     padding: 5px;
     width: 100%;
@@ -3813,6 +3819,11 @@ footer a[href*="discord.gg"]:hover {
 
 .buildingMatDiv.tooltip:after {
     width: 65px;
+    margin: 0 auto;
+}
+
+.deeper_cost.tooltip:after {
+    width: 150px;
     margin: 0 auto;
 }
 

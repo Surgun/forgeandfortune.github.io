@@ -3314,7 +3314,7 @@ Rarities
 .buildingInstrHead {
     background-color: var(--border-3);
     border: 1px solid var(--border-3);
-    color: var(--text);
+    color: var(--highlight);
     padding: 10px 15px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -3323,6 +3323,7 @@ Rarities
 .buildingInstrDesc {
     background-color: var(--border);
     border: 1px solid var(--border-3);
+    color: var(--text);
     padding: 10px 15px;
     margin-left: -5px;
     border-top-right-radius: 5px;

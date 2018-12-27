@@ -3338,6 +3338,13 @@ Rarities
     border-bottom-right-radius: 5px;
 }
 
+#emptyTown {
+    background-color: var(--bg-3);
+    color: var(--highlight);
+    text-align: center;
+    padding: 20px;
+}
+
 /* Events / Mail Content */
 
 .hasEvent:after {

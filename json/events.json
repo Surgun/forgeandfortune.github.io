@@ -57,9 +57,33 @@
   },
   {
     "id": "E009",
-    "title": "Fusion Complete",
-    "author": "The Action League",
-    "message": "<p>Your fusion is complete! Here's your reward!</p><p>Warm Regards,</p><p>The Adventure League</p>",
-    "type": "fusion"
+    "title": "A Mysterious Letter",
+    "author": "Abqu",
+    "message": [
+      "<p>Ohohohohoho",
+      "!</p><p>Look at what you've found! That's a strange blueprint to be left on the ground.</p><p>Oh my, isn't it pretty.  I bet we could use this to start up a city.</p><p>Come by the town to start the construction, and then we can talk about world destruction!</p><p>Erm, my bad.  I meant to say, let's start on this building straight away.</p><p>You and I will see this through (to the bitter end).</p><p>Warmest regards,</p><p>Abqu</p><p>(your best friend)</p>"
+    ],
+    "type": "letter"
+  },
+  {
+    "id": "E010",
+    "title": "A Mysterious Letter",
+    "author": "Abqu",
+    "message": "<p>Woah, buddy, check you out!  You've discovered another building blueprint.</p><p>This one looks pretty special.  It's got a mythical quality to it.  I hope you won't be discouraged to tackle the project because of it.</p><p>Come and and see me in the town, and we'll get this party started!</p><p>Woop woop,</p><p>Abqu</p>",
+    "type": "letter"
+  },
+  {
+    "id": "E011",
+    "title": "A Mysterious Letter",
+    "author": "Abqu",
+    "message": "<p>Oh, person, look at you go.  You've stumbled across another rare blooprint!</p><p>This one is, uh, well, it's pretty tough to describe.  It's definitely elite, and one-of-a-kind, but it is not for everyone.</p><p>It's got some writing here, let's see... it says... 'overlord' and there's a scribble that reminds me of compost.  Hmm.</p><p>Come to the town, and we'll get to work.</p><p>Friends aren't profitable,</p><p>Abqu</p>",
+    "type": "letter"
+  },
+  {
+    "id": "E012",
+    "title": "A Mysterious Letter",
+    "author": "Abqu",
+    "message": "<p>My best friend, come on down!</p><p>You got the next set of plans for the town, and this one is pretty good, great, maybe even epic!</p><p>Hop on over to the town, and let's start working towards a better future.</p><p>You and me, together.</p><p>You and me, forever!</p><p>We're so in sych, it's like we finish each other's love letters.</p><p>Your soulmate,</p><p>Abqu</p>",
+    "type": "letter"
   }
 ]

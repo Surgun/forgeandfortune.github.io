@@ -11,44 +11,56 @@ const TownManager = {
     lastBldg : null,
     lastType : null,
     bankSee : false,
+    bankOnce : false,
     bankUnlock : false,
     bankCost : false,
     fuseSee : false,
+    fuseOnce : false,
     fuseUnlock : false,
     fuseCost : false,
     smithSee : false,
+    smithOnce : false,
     smithUnlock : false,
     smithCost : false,
     fortuneSee : false,
+    fortuneOnce : false,
     fortuneUnlock : false,
     fortuneCost : false,
     createSave() {
         const save = {};
         save.bankSee = this.bankSee;
+        save.bankOnce = this.bankOnce;
         save.bankUnlock = this.bankUnlock;
         save.bankCost = this.bankCost;
         save.fuseSee = this.fuseSee;
+        save.fuseOnce = this.fuseOnce;
         save.fuseUnlock = this.fuseUnlock;
         save.fuseCost = this.fuseCost;
         save.smithSee = this.smithSee;
+        save.smithOnce = this.smithCost;
         save.smithUnlock = this.smithUnlock;
         save.smithCost = this.smithCost;
         save.fortuneSee = this.fortuneSee;
+        save.fortuneOnce = this.fortuneOnce;
         save.fortuneUnlock = this.fortuneUnlock;
         save.fortuneCost = this.fortuneCost;
         return save;
     },
     loadSave(save) {
         this.bankSee = save.bankSee;
+        this.bankOnce = save.bankOnce
         this.bankUnlock = save.bankUnlock;
         this.bankCost = save.bankCost;
         this.fuseSee = save.fuseSee;
+        this.fuseOnce = save.fuseOnce;
         this.fuseUnlock = save.fuseUnlock;
         this.fuseCost = save.fuseCost;
         this.smithSee = save.smithSee;
+        this.smithOnce = save.smithOnce;
         this.smithUnlock = save.smithUnlock;
         this.smithCost = save.smithCost;
         this.fortuneSee = save.fortuneSee;
+        this.fortuneOnce = save.fortuneOnce;
         this.fortuneUnlock = save.fortuneUnlock;
         this.fortuneCost = save.fortuneCost;
     },
@@ -63,25 +75,37 @@ const TownManager = {
         if (type === "fuse") this.fuseCost = true;
         if (type === "smith") this.smithCost = true;
         if (type === "fortune") this.fortuneCost = true;
+    },
+    unseenLeft() {
+        console.log(this.bankOnce || this.fuseOnce || this.smithOnce || this.fortuneOnce)
+        return this.bankOnce || this.fuseOnce || this.smithOnce || this.fortuneOnce;
     }
 }
 
 function refreshSideTown() {
     $buildingList.empty();
+    if (TownManager.unseenLeft()) $("#townTabLink").addClass("hasEvent");
+    else $("#townTabLink").removeClass("hasEvent");
+    if (!TownManager.bankSee) return;
     const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`<i class="fas fa-university"></i> Bank`);
+    if (TownManager.lastBldg === "bank") d1.addClass("selected");
+    if (TownManager.bankOnce) d1.addClass("hasEvent");
     $buildingList.append(d1);
-    if (TownManager.bankUnlock) {
-        const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`<i class="fas fa-cauldron"></i> Cauldron`);
-        $buildingList.append(d2);
-    }
-    if (TownManager.fuseUnlock) {
-        const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`<i class="fas fa-hammer-war"></i> Forge`);
-        $buildingList.append(d3);
-    }
-    if (TownManager.smithUnlock) {
-        const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html(`<i class="fas fa-hat-wizard"></i> Fortune`);
-        $buildingList.append(d4);
-    }
+    if (!TownManager.bankUnlock || !TownManager.fuseSee) return;
+    const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`<i class="fas fa-cauldron"></i> Cauldron`);
+    if (TownManager.lastBldg === "fuse") d2.addClass("selected");
+    if (TownManager.fuseOnce) d2.addClass("hasEvent");
+    $buildingList.append(d2);
+    if (!TownManager.fuseUnlock || !TownManager.smithSee) return;
+    const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`<i class="fas fa-hammer-war"></i> Forge`);
+    if (TownManager.lastBldg === "smith") d3.addClass("selected");
+    if (TownManager.smithOnce) d3.addClass("hasEvent");
+    $buildingList.append(d3);
+    if (!TownManager.smithUnlock || !TownManager.fortuneSee) return;
+    const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html(`<i class="fas fa-hat-wizard"></i> Fortune`);
+    if (TownManager.lastBldg === "fortune") d4.addClass("selected");
+    if (TownManager.fortuneOnce) d4.addClass("hasEvent");
+    $buildingList.append(d4);
 }
 
 function showFuseBldg() {
@@ -170,8 +194,11 @@ $(document).on('click', "#fusionBldg", (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "fusion") return;
     TownManager.lastBldg = "fusion";
+    TownManager.fuseOnce = false;
     $(".buildingName").removeClass("selected");
+    if (!TownManager.unseenLeft()) $("#townTabLink").removeClass("hasEvent");
     $("#fusionBldg").addClass("selected");
+    $("#fusionBldg").removeClass("hasEvent");
     showFuseBldg();
 });
 
@@ -179,8 +206,11 @@ $(document).on('click', '#bankBldg', (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "bank") return;
     TownManager.lastBldg = "bank";
+    TownManager.bankOnce = false;
     $(".buildingName").removeClass("selected");
+    if (!TownManager.unseenLeft()) $("#townTabLink").removeClass("hasEvent");
     $("#bankBldg").addClass("selected");
+    $("#bankBldg").removeClass("hasEvent");
     showBankBldg();
 });
 
@@ -188,8 +218,11 @@ $(document).on('click', '#smithBldg', (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "smith") return;
     TownManager.lastBldg = "smith";
+    TownManager.smithOnce = false;
     $(".buildingName").removeClass("selected");
+    if (!TownManager.unseenLeft()) $("#townTabLink").removeClass("hasEvent");
     $("#smithBldg").addClass("selected");
+    $("#smithBldg").removeClass("hasEvent");
     showSmithBldg();
 });
 
@@ -197,8 +230,11 @@ $(document).on('click', '#fortuneBldg', (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "fortune") return;
     TownManager.lastBldg = "fortune";
+    TownManager.fortuneOnce = false;
     $(".buildingName").removeClass("selected");
+    if (!TownManager.unseenLeft()) $("#townTabLink").removeClass("hasEvent");
     $("#fortuneBldg").addClass("selected");
+    $("#fortuneBldg").removeClass("hasEvent");
     showFortuneBldg();
 });
 

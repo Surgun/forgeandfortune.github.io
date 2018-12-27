@@ -32,9 +32,13 @@ const TownManager = {
     },
     loadSave(save) {
         this.bankUnlock = save.bankUnlock;
+        this.bankCost = save.bankCost;
         this.fuseUnlock = save.fuseUnlock;
+        this.fuseCost = save.fuseCost;
         this.smithUnlock = save.smithUnlock;
+        this.smithCost = save.fuseCost
         this.fortuneUnlock = save.fortuneUnlock;
+        this.fortuneCost = save.fortuneCost;
     },
     paidCost(type) {
         if (type === "bank") return this.bankCost;

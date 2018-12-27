@@ -255,7 +255,8 @@ const Inventory = {
     inventoryCount() {
         return this.nonblank().length;
     },
-    nonblank() {
+    nonblank(typeOverride) {
+        if (typeOverride) return this.inv.filter(r=>r !== null && r.recipeType === "normal");
         return this.inv.filter(r=>r !== null);
     },
     sortInventory() {
@@ -283,7 +284,7 @@ const Inventory = {
         })
     },
     getFusePossibilities() {
-        const fuses = this.nonblank().filter(s=>s.sharp === 0).map(i=>{
+        const fuses = this.nonblank().filter(s=>s.sharp === 0 && s.recipeType === "normal").map(i=>{
             return i.id+i.rarity
         });
         const fuseSorted = fuses.reduce((fuseList, item) => {

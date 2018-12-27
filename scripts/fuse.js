@@ -74,7 +74,7 @@ const FusionManager = {
         newFuse.fuseID = this.fuseNum;
         this.fuseNum += 1;
         this.slots.push(newFuse);
-        showFuseBldg();
+        refreshFuseSlots();
     },
     addTime(ms) {
         this.slots.forEach(fuse => {

@@ -26,6 +26,7 @@ const TownManager = {
     fortuneOnce : false,
     fortuneUnlock : false,
     fortuneCost : false,
+    purgeSlots : false,
     createSave() {
         const save = {};
         save.bankSee = this.bankSee;
@@ -77,7 +78,6 @@ const TownManager = {
         if (type === "fortune") this.fortuneCost = true;
     },
     unseenLeft() {
-        console.log(this.bankOnce || this.fuseOnce || this.smithOnce || this.fortuneOnce)
         return this.bankOnce || this.fuseOnce || this.smithOnce || this.fortuneOnce;
     }
 }
@@ -346,7 +346,7 @@ function unlockBank() {
     TownManager.bankUnlock = true;
     TownManager.bankCost = true;
     TownManager.lastBldg = "bank";
-    actionSlotManager.removeBldgSlots();
+    TownManager.purgeSlots = true;
     $(".buildingName").removeClass("selected");
     $("#bankBldg").addClass("selected");
     refreshSideTown();
@@ -357,7 +357,7 @@ function unlockFuse() {
     TownManager.fuseCost = true;
     TownManager.fuseUnlock = true;
     TownManager.lastBldg = "fuse";
-    actionSlotManager.removeBldgSlots();
+    TownManager.purgeSlots = true;
     $(".buildingName").removeClass("selected");
     $("#fuseBldg").addClass("selected");
     refreshSideTown();
@@ -368,7 +368,7 @@ function unlockSmith() {
     TownManager.smithUnlock = true;
     TownManager.smithCost = true;
     TownManager.lastBldg = "smith";
-    actionSlotManager.removeBldgSlots();
+    TownManager.purgeSlots = true;
     $(".buildingName").removeClass("selected");
     $("#smithBldg").addClass("selected");
     refreshSideTown();
@@ -379,7 +379,7 @@ function unlockFortune() {
     TownManager.fortuneCost = true;
     TownManager.fortuneUnlock = true;
     TownManager.lastBldg = "fortune";
-    actionSlotManager.removeBldgSlots();
+    TownManager.purgeSlots;
     $(".buildingName").removeClass("selected");
     $("#fortuneBldg").addClass("selected");
     refreshSideTown();

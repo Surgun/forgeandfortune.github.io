@@ -235,6 +235,7 @@
       5
     ],
     "startingGold": 100,
+    "hltFactor": 4,
     "fortuneCost": [
       30,
       250,

@@ -30,7 +30,6 @@ const ResourceManager = {
     },
     loadSave(save) {
         save.forEach(m=> {
-            console.log(m);
             const mat = this.idToMaterial(m.id);
             mat.loadSave(m);
         });
@@ -60,7 +59,6 @@ const ResourceManager = {
     },
     deductMaterial(item) {
         for (const [resource, amt] of Object.entries(item.mcost)) {
-            console.log(resource,amt);
             if (resource.charAt(0) === "R") {
                 Inventory.removePrecraft(resource, amt);
                 continue;

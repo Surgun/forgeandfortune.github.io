@@ -58,6 +58,7 @@ class actionSlot {
             this.craftTime = 0;
             if (this.item.autoSacrifice) WorkerManager.craftToSac(this.itemid);
             else Inventory.craftToInventory(this.itemid);
+            console.log('craft advance');
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart();
         }
@@ -141,9 +142,9 @@ const actionSlotManager = {
     },
     removeBldgSlots() {
         this.slots = this.slots.filter(s => s.item.recipeType === "normal");
-        initializeActionSlots();
         refreshSideWorkers();
         recipeCanCraft();
+        initializeActionSlots();
     },
     removeID(itemID) {
         const num = this.slots.findIndex(a=>a.itemid === itemID);
@@ -169,8 +170,9 @@ const actionSlotManager = {
         $.each(this.slots, (i,slot) => {
             slot.craftAdvance(t)
             $("#ASBarFill"+i).css('width', slot.progress);
+            console.log(this.slots.length);
             if (slot.status === slotState.CRAFTING) $("#ASBar"+i).removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));
-            else $("#ASBar"+i).addClass("matsNeeded").attr("data-label","Waiting for materials");
+            else if (slot.status === slotState.NEEDMATERIAL) $("#ASBar"+i).addClass("matsNeeded").attr("data-label","Waiting for materials");
         });
     },
     itemList() {
@@ -213,6 +215,7 @@ const $ActionSlots = $("#ActionSlots");
 
 function initializeActionSlots() {
     $ActionSlots.empty();
+    console.log(actionSlotManager.slots.length);
     for (let i=0;i<actionSlotManager.maxSlots;i++) {
         const d = $("<div/>").addClass("ASBlock");
         const d1 = $("<div/>").addClass("ASName");

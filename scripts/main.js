@@ -95,5 +95,9 @@ function mainLoop() {
     actionSlotManager.craftAdvance(elapsedTime);
     HeroManager.healTimer(elapsedTime);
     FortuneManager.resetFortune();
+    if (TownManager.purgeSlots) {
+        actionSlotManager.removeBldgSlots();
+        TownManager.purgeSlots = false;
+    }
     eventChecker();
 }

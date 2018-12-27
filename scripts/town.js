@@ -116,7 +116,7 @@ function showBankBldg() {
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/bankBuilding/bank_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Bank</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Store important items at the bank.");
-        if (!TownManager.fuseUnlock) d.addClass("buildInProgress");
+        if (!TownManager.bankUnlock) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.bankUnlock) initiateBankBldg();
@@ -136,7 +136,7 @@ function showSmithBldg() {
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/smithBuilding/smith_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Forge</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Upgrade your weapons at the forge.");
-        if (!TownManager.fuseUnlock) d.addClass("buildInProgress");
+        if (!TownManager.smithUnlock) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.smithUnlock) initiateSmithBldg();    
@@ -156,7 +156,7 @@ function showFortuneBldg() {
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/townImages/fortuneBuilding/fortune_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fortune Teller</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Find which crafts are lucky this week!");
-        if (!TownManager.fuseUnlock) d.addClass("buildInProgress");
+        if (!TownManager.fortuneUnlock) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.fortuneUnlock) initiateFortuneBldg();

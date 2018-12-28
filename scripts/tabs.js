@@ -17,6 +17,10 @@ function openTab(tabName) {
     if (tabName === "townTab") {
         refreshSideTown();
     }
+    if (tabName === "inventoryTab") {
+        if (TownManager.bankUnlock) $("#goToBank").show();
+        else $("#goToBank").hide();
+    }
     $(".tabcontent").hide();
     $("#"+tabName).show();
 }
@@ -51,15 +55,17 @@ $(document).on('click', "#DungeonSideBarStatus", (e) => {
     tabClick(e, "dungeonsTab");
     const dungeonID = $(e.currentTarget).attr("dungeonID");
     showDungeon(dungeonID);
-})
+});
 
 $(document).on('click', "#goToBank", (e) => {
     e.preventDefault();
     tabClick(e, 'townsTab');
-    showBankBldg();
+    TownManager.lastBldg = "bank";
+    TownManager.bankOnce = false;
     $(".buildingName").removeClass("selected");
     $("#bankBldg").addClass("selected");
-})
+    showBankBldg();
+});
 
 $(document).on( "keypress", (e) => {
     if (e.which === 49) tabClick(e, "inventoryTab");

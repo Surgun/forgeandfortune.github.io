@@ -23,6 +23,7 @@ function openTab(tabName) {
 
 function tabClick(e, name) {
     openTab(name);
+    if (name === "townsTab") name = "townTab"
     navTabHighlight(e,$('#'+name+'Link')[0]);
 }
 
@@ -58,6 +59,7 @@ $(document).on( "keypress", (e) => {
     else if (e.which === 51) tabClick(e, "workersTab");
     else if (e.which === 52) tabClick(e, "heroesTab");
     else if (e.which === 53) tabClick(e, "dungeonsTab");
-    else if (e.which === 54) tabClick(e, "eventsTab");
-    else if (e.which === 55) tabClick(e, "progressTab");
+    else if (e.which === 54) tabClick(e, "townsTab");
+    else if (e.which === 55) tabClick(e, "eventsTab");
+    else if (e.which === 56) tabClick(e, "progressTab");
 });

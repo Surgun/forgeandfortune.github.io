@@ -223,7 +223,7 @@ class Hero {
         const item = this.getSlot(slot);
         if (item === null) return;
         this.removeSlot(slot);
-        Inventory.addToInventory(item.id,item.rarity);
+        Inventory.addItemContainerToInventory(item);
     }
     hasEquip(type) {
         if (this.slot1Type.includes(type)) return this.slot1 !== null;

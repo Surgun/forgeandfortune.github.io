@@ -228,6 +228,9 @@ const Inventory = {
         this.inv.push(null);
         refreshInventoryPlaces()
     },
+    hasContainer(containerID) {
+        return this.nonblank().some(c => c.containerID === containerID);
+    },
     sellInventory(indx) {
         const item = this.inv[indx];
         this.inv[indx] = null;
@@ -420,5 +423,6 @@ function refreshInventoryPlaces() {
     refreshPossibleFuse();
     refreshBankInventory();
     refreshSmithInventory();
+    resetSmithSlot();
     buildBuildMats();
 }

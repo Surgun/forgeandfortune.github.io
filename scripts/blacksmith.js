@@ -115,6 +115,13 @@ const $swFill = $("#swFill");
 const $swItemResult = $("#swItemResult");
 const $swCollect = $("#swCollect");
 
+function resetSmithSlot() {
+    if (bloopSmith.smithSlot === null) return;
+    if (Inventory.hasContainer(bloopSmith.smithSlot.containerID)) return;
+    bloopSmith.smithSlot = null;
+    refreshSmithArea();
+}
+
 function refreshSmithArea() {
     if (bloopSmith.smithState === "waiting") {
         if (bloopSmith.smithSlot === null) {

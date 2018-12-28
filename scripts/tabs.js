@@ -53,6 +53,14 @@ $(document).on('click', "#DungeonSideBarStatus", (e) => {
     showDungeon(dungeonID);
 })
 
+$(document).on('click', "#goToBank", (e) => {
+    e.preventDefault();
+    tabClick(e, 'townsTab');
+    showBankBldg();
+    $(".buildingName").removeClass("selected");
+    $("#bankBldg").addClass("selected");
+})
+
 $(document).on( "keypress", (e) => {
     if (e.which === 49) tabClick(e, "inventoryTab");
     else if (e.which === 50) tabClick(e, "recipesTab");

@@ -55,7 +55,7 @@
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory, #sortInventory:after, #sellAllCommons, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, #closeEquipItem, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, #sortInventory:after, .invActionButton, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -63,7 +63,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, #sortInventory, #sellAllCommons, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, #closeEquipItem, .equipItem, .dsc, .dsm, .dungeonContainer, .fuseSlot, .possibleFusegroup, .bankItem, .smithItem, .fortuneStatus {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, .fuseSlot, .possibleFusegroup, .bankItem, .smithItem, .fortuneStatus {
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
     -ms-box-shadow: 0 0 10px rgba(0,0,0,0.25);
@@ -359,7 +359,7 @@ body {
     margin-left: 10px;
 }
 
-#sortInventory, #closeEquipItem, #sellAllCommons  {
+.invActionButton {
     position: relative;
     display: inline-flex;
     margin: 10px 0 0 10px;
@@ -369,9 +369,13 @@ body {
     cursor: pointer;
 }
 
-#sortInventory:hover, #closeEquipItem:hover, #sellAllCommons:hover {
+.invActionButton:hover {
     background-color: var(--bg);
     border-color: var(--border-3);
+}
+
+.invActionButton > span {
+    margin-left: 5px;
 }
 
 #sortInventory:after {

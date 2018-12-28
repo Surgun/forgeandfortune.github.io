@@ -113,7 +113,7 @@ body {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #townContainer, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #townContainer, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroExamineEquipmentEquip {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -662,19 +662,19 @@ Rarities
     opacity: 1;
 }
 
-.inventoryItem > .inventoryItemName, .equipItem > .equipItemName, .bankItem > .bankItemName, .smithItem > .smithItemName {
+.inventoryItem > .inventoryItemName, .equipItem > .equipItemName, .bankItem > .bankItemName, .smithItem > .smithItemName, .heroExamineEquipmentEquip {
     text-shadow: 1px 2px 0 black;
 }
 
-.inventoryItem.R1 > .inventoryItemName, .equipItem.R1 > .equipItemName, .bankItem.R1 > .bankItemName, .smithItem.R1 > .smithItemName, .fuseSlot.R1 > .fuseSlotName {
+.inventoryItem.R1 > .inventoryItemName, .equipItem.R1 > .equipItemName, .bankItem.R1 > .bankItemName, .smithItem.R1 > .smithItemName, .fuseSlot.R1 > .fuseSlotName, .heroExamineEquipmentEquip.R1 {
     color: rgb(44, 255, 89);
 }
 
-.inventoryItem.R2 > .inventoryItemName, .equipItem.R2 > .equipItemName, .bankItem.R2 > .bankItemName, .smithItem.R2 > .smithItemName, .fuseSlot.R2 > .fuseSlotName {
+.inventoryItem.R2 > .inventoryItemName, .equipItem.R2 > .equipItemName, .bankItem.R2 > .bankItemName, .smithItem.R2 > .smithItemName, .fuseSlot.R2 > .fuseSlotName, .heroExamineEquipmentEquip.R2 {
     color: rgb(8, 173, 255);
 }
 
-.inventoryItem.R3 > .inventoryItemName, .equipItem.R3 > .equipItemName, .bankItem.R3 > .bankItemName, .smithItem.R3 > .smithItemName, .fuseSlot.R3 > .fuseSlotName {
+.inventoryItem.R3 > .inventoryItemName, .equipItem.R3 > .equipItemName, .bankItem.R3 > .bankItemName, .smithItem.R3 > .smithItemName, .fuseSlot.R3 > .fuseSlotName, .heroExamineEquipmentEquip.R3 {
     color: rgb(255, 79, 167);
 }
 
@@ -2092,6 +2092,7 @@ Rarities
     padding: 5px;
     width: 100%;
     flex-grow: 1;
+    font-size: 0.85em;
 }
 
 .heroExamineEquipmentEquip > .item-name {
@@ -3204,6 +3205,7 @@ Rarities
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin: auto 0;
 }
 
 .item-prefix {

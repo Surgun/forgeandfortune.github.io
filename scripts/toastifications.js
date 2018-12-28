@@ -69,6 +69,12 @@ const Notifications = {
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
     },
+    cantAffordFortune() {
+        const text = "You do not have enough of this material to look deeper."; // Text that is to be shown in the toast
+        const heading = 'Cannot Look Deeper'; // Optional heading to be shown on the toast
+        const icon = 'error'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
     noPartySelected() {
         const text = "You have no heroes in your party."; // Text that is to be shown in the toast
         const heading = 'Cannot Start Dungeon'; // Optional heading to be shown on the toast

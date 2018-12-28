@@ -115,7 +115,10 @@ const FortuneManager = {
         if (props.payState) return;
         const matID = props.matReq;
         const amt = props.amt;
-        if (ResourceManager.materialAvailable(matID) < amt) return false;
+        if (ResourceManager.materialAvailable(matID) < amt) {
+            Notifications.cantAffordFortune();
+            return false;
+        }
         ResourceManager.addMaterial(matID,-amt);
         if (type === "Good") this.goodPaid = true;
         else if (type === "Great") this.greatPaid = true;

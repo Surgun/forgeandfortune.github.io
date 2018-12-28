@@ -3,6 +3,7 @@
 const $smithInvSlots = $("#smithInvSlots");
 
 const bloopSmith = {
+    smithStage : null,
     smithSlot : null,
     smithState : "waiting",
     smithTimer : 0,
@@ -28,28 +29,27 @@ const bloopSmith = {
     },
     addSmith(containerID) {
         if (this.smithState !== "waiting") return;
-        const container = Inventory.containerToItem(containerID);
-        this.smithSlot = container;
+        this.smithStage = Inventory.containerToItem(containerID);
     },
     getSmithCost() {
-        if (this.smithSlot === null) return;
-        return Math.max(1,Math.floor(0.5*this.smithSlot.goldValue()*(this.smithSlot.sharp+1)));
+        if (this.smithStage === null) return;
+        return Math.max(1,Math.floor(0.5*this.smithStage.goldValue()*(this.smithStage.sharp+1)));
     },
     getSmithChance() {
-        if (this.smithSlot === null) return;
-        return 10+this.smithSlot.sharp*5;
+        if (this.smithStage === null) return;
+        return 10+this.smithStage.sharp*5;
     },
     smithStart() {
-        if (this.smithState !== "waiting" || this.smithSlot === null) return;
+        if (this.smithState !== "waiting" || this.smithStage === null) return;
         if (ResourceManager.materialAvailable("M001") < this.getSmithCost()) {
             Notifications.cantAffordSmith();
             return;
         }
         ResourceManager.deductMoney(this.getSmithCost());
-        Inventory.removeContainerFromInventory(this.smithSlot.containerID);
+        this.smithSlot = this.smithStage;
+        Inventory.removeContainerFromInventory(this.smithStage.containerID);
         this.smithState = "smithing";
         this.smithTimer = 5000;
-        refreshInventoryPlaces();
     },
     smith() {
         if (this.smithSlot === null) return;
@@ -115,16 +115,16 @@ const $swFill = $("#swFill");
 const $swItemResult = $("#swItemResult");
 const $swCollect = $("#swCollect");
 
-function resetSmithSlot() {
-    if (bloopSmith.smithSlot === null) return;
-    if (Inventory.hasContainer(bloopSmith.smithSlot.containerID)) return;
-    bloopSmith.smithSlot = null;
+function wipeSmithStage() {
+    if (bloopSmith.smithStage === null) return;
+    if (Inventory.hasContainer(bloopSmith.smithStage.containerID)) return;
+    bloopSmith.smithStage = null;
     refreshSmithArea();
 }
 
 function refreshSmithArea() {
     if (bloopSmith.smithState === "waiting") {
-        if (bloopSmith.smithSlot === null) {
+        if (bloopSmith.smithStage === null) {
             $swItemStage.html("No Item Selected").removeClass("collectTextBox");
             $swItemResult.html("No Item Selected")
             $swMiddleText.html("Waiting for an Item to Smith").show();
@@ -134,8 +134,8 @@ function refreshSmithArea() {
             $swCollect.hide();
         }
         else {
-            $swItemStage.html(itemStageCardSmith(false));
-            $swItemResult.html(itemStageCardSmith(true));
+            $swItemStage.html(itemStageCardSmith(bloopSmith.smithStage,false));
+            $swItemResult.html(itemStageCardSmith(bloopSmith.smithStage,true));
             $swMiddleText.hide();
             resetSmithBar();
             $swSuccess.html(`${100-bloopSmith.getSmithChance ()}% Success`).show();
@@ -144,7 +144,7 @@ function refreshSmithArea() {
         }
     }
     else if (bloopSmith.smithState === "smithing") {
-        $swItemStage.html(itemStageCardSmith(false));
+        $swItemStage.html(itemStageCardSmith(bloopSmith.smithSlot,false));
         $swItemResult.html("In Progress").addClass("inProgressTextBox");
         $swMiddleText.html("Smithing...").show();
         $swSuccess.hide();
@@ -154,7 +154,7 @@ function refreshSmithArea() {
     else if (bloopSmith.smithState === "complete") {
         $swItemStage.html("Collect Reward").addClass("collectTextBox");
         const d1 = $("<div/>").attr("id","swCollect").html("Collect");
-        $swItemResult.html(itemStageCardSmith(false).append(d1)).removeClass("inProgressTextBox");
+        $swItemResult.html(itemStageCardSmith(bloopSmith.smithSlot,false).append(d1)).removeClass("inProgressTextBox");
         $swMiddleText.html("Smithing Complete");
         resetSmithBar();
         $swSuccess.hide();
@@ -185,20 +185,18 @@ function itemCardSmith(item) {
     return itemdiv.append(itemName,itemProps,itemLevel,smithButton);
 }
 
-function itemStageCardSmith(upgrade) {
-    if (bloopSmith.smithSlot === null) return;
-    if (bloopSmith.smithSlot === "failed") {
+function itemStageCardSmith(slot,upgrade) {
+    if (slot === "failed") {
         const itemdiv = $("<div/>").addClass("smithItem");
         const itemName = $("<div/>").addClass("smithItemName").html("<img src='images/recipes/failedSmith.png'><div class='item-name smith-failed'>Failed</div>");
         return itemdiv.append(itemName);
     }
-    const item = bloopSmith.smithSlot;
-    const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
+    const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+slot.rarity);
     const itemName = $("<div/>").addClass("smithItemName");
-    if (upgrade) itemName.html(item.picNamePlus());
-    else itemName.html(item.picName());
-    const itemProps = $("<div/>").addClass("smithProps").html(item.statChange(upgrade));
-    return itemdiv.append(itemName,itemProps); 
+    if (upgrade) itemName.html(slot.picNamePlus());
+    else itemName.html(slot.picName());
+    const itemProps = $("<div/>").addClass("smithProps").html(slot.statChange(upgrade));
+    return itemdiv.append(itemName,itemProps);
 }
 
 $(document).on("click",".smithStage",(e) => {

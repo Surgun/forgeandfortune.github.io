@@ -423,6 +423,6 @@ function refreshInventoryPlaces() {
     refreshPossibleFuse();
     refreshBankInventory();
     refreshSmithInventory();
-    resetSmithSlot();
     buildBuildMats();
+    wipeSmithStage();
 }

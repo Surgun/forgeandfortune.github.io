@@ -56,6 +56,9 @@ class itemContainer {
         save.sharp = this.sharp;
         return save;
     }
+    loadSave(save) {
+        this.sharp = save.sharp;
+    }
     picName() {
         const prefix = `<span class="item-prefix-name">+${this.sharp} ${this.item.name}</span>`
         if (this.sharp > 0) return `${this.item.itemPic()}<div class="item-prefix-name">${prefix}</div>`;
@@ -142,7 +145,7 @@ const Inventory = {
         save.forEach((item,i) => {
             if (item === null) return;
             const container = new itemContainer(item.id,item.rarity);
-            container.sharp = item.sharp;
+            container.loadSave(item);
             this.inv[i] = container;
         });
     },

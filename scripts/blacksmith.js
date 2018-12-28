@@ -35,9 +35,9 @@ const bloopSmith = {
         if (this.smithStage === null) return;
         return Math.max(1,Math.floor(0.5*this.smithStage.goldValue()*(this.smithStage.sharp+1)));
     },
-    getSmithChance() {
-        if (this.smithStage === null) return;
-        return 10+this.smithStage.sharp*5;
+    getSmithChance(item) {
+        if (item === null) return;
+        return 10+item.sharp*5;
     },
     smithStart() {
         if (this.smithState !== "waiting" || this.smithStage === null) return;
@@ -54,7 +54,7 @@ const bloopSmith = {
     smith() {
         if (this.smithSlot === null) return;
         const failure = Math.floor(Math.random() * 100);
-        if (failure < this.getSmithChance()) {
+        if (failure < this.getSmithChance(this.smithSlot)) {
             this.smithSlot = "failed";
         }
         else {
@@ -138,7 +138,7 @@ function refreshSmithArea() {
             $swItemResult.html(itemStageCardSmith(bloopSmith.smithStage,true));
             $swMiddleText.hide();
             resetSmithBar();
-            $swSuccess.html(`${100-bloopSmith.getSmithChance ()}% Success`).show();
+            $swSuccess.html(`${100-bloopSmith.getSmithChance(bloopSmith.smithStage)}% Success`).show();
             $swConfirm.html(`Confirm Smith<span class="smith_cost">${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}</span>`).show();
             $swCollect.hide();
         }

@@ -36,7 +36,6 @@ const FortuneManager = {
         return save;
     },
     loadSave(save) {
-        console.log("fuck yeah");
         this.fortuneWeek = save.fortuneWeek;
         this.goodLine = save.goodLine;
         this.greatLine = save.greatLine;

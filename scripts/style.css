@@ -3507,6 +3507,7 @@ Rarities
 }
 
 #buildingMats {
+    background-color: var(--bg-primary);
     border-bottom: 1px solid var(--border-primary);
 }
 
@@ -3524,11 +3525,6 @@ Rarities
     flex-grow: 1;
     justify-content: center;
     align-items: center;
-    margin: 10px 5px;
-    padding: 5px 10px;
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
-    border-radius: 10px;
     text-align: center;
 }
 

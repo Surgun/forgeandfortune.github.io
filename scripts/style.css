@@ -1483,8 +1483,8 @@ Rarities
     justify-content: center;
     align-items: center;
     padding: 5px 10px;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
+    background-color: var(--border-primary);
+    border: 1px solid var(--border-secondary);
     border-radius: 5px;
 }
 
@@ -3554,11 +3554,6 @@ Rarities
     margin-left: 25px;
 }
 
-.brecipeTable .recipeRow .recipeDescription {
-    position: absolute;
-    left: 3px;
-}
-
 .brecipeHeadRes {
     margin-left: 25px;
 }
@@ -4167,6 +4162,19 @@ footer a[href*="discord.gg"]:hover {
 .deeper_cost.tooltip:after {
     width: 150px;
     margin: 0 auto;
+}
+
+.indvCost.tooltip:after {
+    width: 80px;
+    margin: 0 auto;
+}
+
+.indvCost.tooltip:nth-child(4n+4):after {
+    right: -25px;
+}
+
+.indvCost.tooltip:nth-child(4n+1):after {
+    left: -25px;
 }
 
 /* Firefox-Specific Fixes */

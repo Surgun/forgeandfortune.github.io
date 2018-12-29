@@ -366,19 +366,19 @@ function initializeRecipes(type,sortType,heading) {
         const td4 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
 
         const td5 = $('<div/>').addClass('recipeTimeAndValue');
-            const td5a = $('<div/>').addClass('recipeTimeContainer');
-                const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader tooltip").attr("data-tooltip", "Craft Time").html(`<i class="fas fa-clock"></i>`);
+            const td5a = $('<div/>').addClass('recipeTimeContainer tooltip').attr("data-tooltip", "Craft Time")
+                const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader").html(`<i class="fas fa-clock"></i>`);
                 const td5a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
             td5a.append(td5a1,td5a2);
 
-            const td5b = $('<div/>').addClass('recipeAmountContainer');
-                const td5b1 = $("<div/>").addClass("recipeAmountHeader recipeCardHeader tooltip").attr("data-tooltip", "In Inventory").html(`<i class="fas fa-cube"></i>`);
+            const td5b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "In Inventory");
+                const td5b1 = $("<div/>").addClass("recipeAmountHeader recipeCardHeader").html(`<i class="fas fa-cube"></i>`);
                 const td5b2 = $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`);
             td5b.append(td5b1,td5b2);
 
-            const td5c = $('<div/>').addClass('recipeValueContainer');
-                const td5c1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader tooltip").attr("data-tooltip", "Gold").html(`<img src='images/resources/M001.png'>`);
-                const td5c2 = $('<div/>').addClass('recipeValue tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`).html(recipe.itemValueFormatted());
+            const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`);
+                const td5c1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`);
+                const td5c2 = $('<div/>').addClass('recipeValue').html(recipe.itemValueFormatted());
             td5c.append(td5c1,td5c2);
         td5.append(td5a,td5b,td5c);
 

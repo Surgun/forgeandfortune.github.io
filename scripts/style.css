@@ -1371,6 +1371,7 @@ Rarities
 }
 
 .recipeTimeContainer, .recipeAmountContainer, .recipeValueContainer {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1493,17 +1494,22 @@ Rarities
     justify-content: space-between;
     align-items: center;
     margin: 0 0 10px 0;
+    border-radius: 5px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
 }
 
 .recipeStatList > div {
     position: relative;
     display: flex;
     justify-content: center;
+    flex-grow: 1;
     align-items: center;
-    padding: 5px 10px;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
-    border-radius: 5px;
+    padding: 8px 10px;
+}
+
+.recipeStatList > div + div {
+    border-left: 1px solid var(--border-primary);
 }
 
 .recipeStatList > div > img {
@@ -4038,8 +4044,8 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .recipeStatList > .tooltip:after, .invProp > .tooltip:after {
-    left: -50%;
-    right: -50%;
+    width: 70px;
+    margin: 0 auto;
 }
 
 .invProp > .tooltip:after {
@@ -4176,6 +4182,33 @@ footer a[href*="discord.gg"]:hover {
 .indvCost.tooltip:nth-child(4n+1):after {
     left: -25px;
 }
+
+.recipeTimeContainer.tooltip:before, .recipeAmountContainer.tooltip:before, .recipeValueContainer.tooltip:before {
+    top: -85%;
+}
+
+.recipeTimeContainer.tooltip:hover:before, .recipeAmountContainer.tooltip:hover:before, .recipeValueContainer.tooltip:hover:before {
+    top: -55%;
+}
+
+.recipeValueContainer.tooltip:before {
+    top: -65%;
+}
+
+.recipeValueContainer.tooltip:hover:before {
+    top: -35%;
+}
+
+.recipeTimeContainer.tooltip:after, .recipeAmountContainer.tooltip:after, .recipeValueContainer.tooltip:after {
+    bottom: 150%;
+    width: 80px;
+    margin: 0 auto;
+}
+
+.recipeValueContainer.tooltip:after {
+    bottom: 135%;
+}
+
 
 /* Firefox-Specific Fixes */
 @-moz-document url-prefix() { 

@@ -33,8 +33,10 @@ const FortuneManager = {
         save.goodPaid = this.goodPaid;
         save.greatPaid = this.greatPaid;
         save.epicPaid = this.epicPaid;
+        return save;
     },
     loadSave(save) {
+        console.log("fuck yeah");
         this.fortuneWeek = save.fortuneWeek;
         this.goodLine = save.goodLine;
         this.greatLine = save.greatLine;
@@ -74,7 +76,10 @@ const FortuneManager = {
     },
     setCrafts() {
         if (this.setPaid) return;
-        if (ResourceManager.materialAvailable("M001") < this.getGoldCost()) return;
+        if (ResourceManager.materialAvailable("M001") < this.getGoldCost()) {
+            Notifications.cantReadFortune();
+            return;
+        }
         ResourceManager.deductMoney(this.getGoldCost());
         this.goodLine = ItemType[Math.floor(Math.random() * ItemType.length)];
         this.greatLine = ItemType[Math.floor(Math.random() * ItemType.length)];

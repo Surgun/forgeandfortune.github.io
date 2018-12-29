@@ -147,6 +147,12 @@ const Notifications = {
         const icon = "error";
         popToast(text,heading,icon);
     },
+    cantReadFortune() {
+        const text = "You do not have enough gold.";
+        const heading = "Cannot Read Fortune";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
 }
 
 function popToast(text,heading,icon) {

@@ -14,12 +14,20 @@ function openTab(tabName) {
         $dungeonTeamSelect.hide();
         $dungeonRun.hide();
     }
+    if (tabName === "townTab") {
+        refreshSideTown();
+    }
+    if (tabName === "inventoryTab") {
+        if (TownManager.bankUnlock) $("#goToBank").show();
+        else $("#goToBank").hide();
+    }
     $(".tabcontent").hide();
     $("#"+tabName).show();
 }
 
 function tabClick(e, name) {
     openTab(name);
+    if (name === "townsTab") name = "townTab"
     navTabHighlight(e,$('#'+name+'Link')[0]);
 }
 
@@ -47,16 +55,25 @@ $(document).on('click', "#DungeonSideBarStatus", (e) => {
     tabClick(e, "dungeonsTab");
     const dungeonID = $(e.currentTarget).attr("dungeonID");
     showDungeon(dungeonID);
-})
+});
+
+$(document).on('click', "#goToBank", (e) => {
+    e.preventDefault();
+    tabClick(e, 'townsTab');
+    TownManager.lastBldg = "bank";
+    TownManager.bankOnce = false;
+    $(".buildingName").removeClass("selected");
+    $("#bankBldg").addClass("selected");
+    showBankBldg();
+});
 
 $(document).on( "keypress", (e) => {
-    if (settings.dialogStatus === 0) {
-        if (e.which === 49) tabClick(e, "inventoryTab");
-        else if (e.which === 50) tabClick(e, "recipesTab");
-        else if (e.which === 51) tabClick(e, "workersTab");
-        else if (e.which === 52) tabClick(e, "heroesTab");
-        else if (e.which === 53) tabClick(e, "dungeonsTab");
-        else if (e.which === 54) tabClick(e, "eventsTab");
-        else if (e.which === 55) tabClick(e, "progressTab");
-    }
+    if (e.which === 49) tabClick(e, "inventoryTab");
+    else if (e.which === 50) tabClick(e, "recipesTab");
+    else if (e.which === 51) tabClick(e, "workersTab");
+    else if (e.which === 52) tabClick(e, "heroesTab");
+    else if (e.which === 53) tabClick(e, "dungeonsTab");
+    else if (e.which === 54) tabClick(e, "townsTab");
+    else if (e.which === 55) tabClick(e, "eventsTab");
+    else if (e.which === 56) tabClick(e, "progressTab");
 });

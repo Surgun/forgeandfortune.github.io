@@ -139,6 +139,12 @@ const actionSlotManager = {
         refreshSideWorkers();
         recipeCanCraft();
     },
+    removeBldgSlots() {
+        this.slots = this.slots.filter(s => s.item.recipeType === "normal");
+        refreshSideWorkers();
+        recipeCanCraft();
+        initializeActionSlots();
+    },
     removeID(itemID) {
         const num = this.slots.findIndex(a=>a.itemid === itemID);
         this.slots.splice(num, 1);
@@ -151,7 +157,6 @@ const actionSlotManager = {
     },
     isBuildingMaterial(slotnum) {
         if (!this.hasSlot(slotnum)) return false;
-        console.log(this.slots[slotnum].item.recipeType)
         return this.slots[slotnum].item.recipeType === "building";
     },
     isEmptySlot() {
@@ -165,7 +170,7 @@ const actionSlotManager = {
             slot.craftAdvance(t)
             $("#ASBarFill"+i).css('width', slot.progress);
             if (slot.status === slotState.CRAFTING) $("#ASBar"+i).removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));
-            else $("#ASBar"+i).addClass("matsNeeded").attr("data-label","Waiting for materials");
+            else if (slot.status === slotState.NEEDMATERIAL) $("#ASBar"+i).addClass("matsNeeded").attr("data-label","Waiting for materials");
         });
     },
     itemList() {

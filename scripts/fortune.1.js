@@ -50,7 +50,6 @@ const FortuneManager = {
         this.goodLine = ItemType[Math.floor(Math.random() * ItemType.length)];
     },
     getFortuneText(type) {
-        console.log(this[type+"Paid"]);
         if (this[type+"Paid"] === 0) return "???";
         const item = recipeList.idToItem(this[type+"Line"]);
         if (this[type+"Paid"] === 1) return `Some type of ${item.roughType}...`;

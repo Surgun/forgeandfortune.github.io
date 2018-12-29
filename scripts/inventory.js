@@ -56,9 +56,12 @@ class itemContainer {
         save.sharp = this.sharp;
         return save;
     }
+    loadSave(save) {
+        this.sharp = save.sharp;
+    }
     picName() {
-        const prefix = `<span class="item-prefix">+${this.sharp}</span>`
-        if (this.sharp > 0) return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
+        const prefix = `<span class="item-prefix-name">+${this.sharp} ${this.item.name}</span>`
+        if (this.sharp > 0) return `${this.item.itemPic()}<div class="item-prefix-name">${prefix}</div>`;
         return this.item.itemPicName();
     }
     picNamePlus() {
@@ -142,7 +145,7 @@ const Inventory = {
         save.forEach((item,i) => {
             if (item === null) return;
             const container = new itemContainer(item.id,item.rarity);
-            container.sharp = item.sharp;
+            container.loadSave(item);
             this.inv[i] = container;
         });
     },
@@ -167,7 +170,10 @@ const Inventory = {
         refreshInventoryPlaces()
     },
     craftToInventory(id) {
-        console.log("HI");
+        if (id === "R99110") return unlockBank();
+        if (id === "R99210") return unlockFuse();
+        if (id === "R99310") return unlockSmith();
+        if (id === "R99510") return unlockFortune();
         const item = recipeList.idToItem(id)
         const name = item.name;
         const autoSell = item.autoSell;
@@ -210,7 +216,6 @@ const Inventory = {
         if (quality === "Epic") return miscLoadedValues.qualityCheck[3]*masterMod*fortuneMod;
     },
     removeFromInventory(id,rarity) {
-        console.log(id,rarity);
         for (let i=0;i<this.inv.length;i++) {
             const ic = this.inv[i]
             if (ic === null) continue;
@@ -225,6 +230,9 @@ const Inventory = {
         this.inv = this.inv.filter(c=>c === null || c.containerID !== containerID);
         this.inv.push(null);
         refreshInventoryPlaces()
+    },
+    hasContainer(containerID) {
+        return this.nonblank().some(c => c.containerID === containerID);
     },
     sellInventory(indx) {
         const item = this.inv[indx];
@@ -252,7 +260,8 @@ const Inventory = {
     inventoryCount() {
         return this.nonblank().length;
     },
-    nonblank() {
+    nonblank(typeOverride) {
+        if (typeOverride) return this.inv.filter(r=>r !== null && r.item.recipeType === "normal");
         return this.inv.filter(r=>r !== null);
     },
     sortInventory() {
@@ -280,7 +289,7 @@ const Inventory = {
         })
     },
     getFusePossibilities() {
-        const fuses = this.nonblank().filter(s=>s.sharp === 0).map(i=>{
+        const fuses = this.nonblank().filter(s=>s.sharp === 0 && s.item.recipeType === "normal").map(i=>{
             return i.id+i.rarity
         });
         const fuseSorted = fuses.reduce((fuseList, item) => {
@@ -420,4 +429,6 @@ function refreshInventoryPlaces() {
     refreshPossibleFuse();
     refreshBankInventory();
     refreshSmithInventory();
+    buildBuildMats();
+    wipeSmithStage();
 }

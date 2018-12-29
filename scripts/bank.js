@@ -19,7 +19,7 @@ const BankManager = {
         this.maxSlots = save.maxSlots;
         save.slots.forEach(item => {
             const container = new itemContainer(item.id,item.rarity);
-            container.sharp = item.sharp;
+            container.loadSave(item);
             this.slots.push(container);
         });
     },

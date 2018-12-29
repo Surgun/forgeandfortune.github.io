@@ -52,6 +52,7 @@ function createSave() {
     saveFile["bb"] = BankManager.createSave();
     saveFile["bs"] = bloopSmith.createSave();
     saveFile["fo"] = FortuneManager.createSave();
+    saveFile["tm"] = TownManager.createSave();
     saveFile["saveTime"] = Date.now();
     //const output = pako.gzip(JSON.stringify(saveFile),{ to: 'string' });
     return JSON.stringify(saveFile);
@@ -83,6 +84,7 @@ function loadGame() {
     if (typeof loadGame["bb"] !== "undefined") BankManager.loadSave(loadGame["bb"]);
     if (typeof loadGame["bs"] !== "undefined") bloopSmith.loadSave(loadGame["bs"]);
     if (typeof loadGame["fo"] !== "undefined") FortuneManager.loadSave(loadGame["fo"]);
+    if (typeof loadGame["tm"] !== "undefined") TownManager.loadSave(loadGame["tm"]);
     return true;
 }
 

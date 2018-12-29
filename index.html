@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-NJXGk7R+8gWGBdutmr+/d6XDokLwQhF1U3VA7FhvBDlOq7cNdI69z7NQdnXxcF7k" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous">
     <!-- Favicons -->
     <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/apple-touch-icon-57x57.png" />
@@ -207,17 +207,18 @@
                     <button class="tablinks" id="workersTabLink" onclick="openTab('workersTab')"><div><i class="fas fa-fist-raised"></i> Workers</div></button>
                     <button class="tablinks" id="heroesTabLink" onclick="openTab('heroesTab')"><div id="heroTab"><i class="fas fa-helmet-battle"></i> Heroes</div></button>
                     <button class="tablinks" id="dungeonsTabLink" onclick="openTab('dungeonsTab')"><div><i class="fas fa-swords"></i> Adventures</div></button>
-                    <button class="tablinks" id="townTabLink" onclick="openTab('townTab')"><div><i class="fas fa-city"></i> Town</div></button>
+                    <button class="tablinks" id="townTabLink" onclick="openTab('townsTab')"><div id="townTab"><i class="fas fa-city"></i> Town</div></button>
                     <button class="tablinks" id="eventsTabLink" onclick="openTab('eventsTab')"><div id="eventTab"><i class="fas fa-envelope"></i> Mail</div></button>
                     <button class="tablinks" id="progressTabLink"onclick="openTab('progressTab')"><div><i class="fas fa-tasks"></i> Progress</div></button>
                 </div>
                 <div id="inventoryTab" class="tabcontent">
-                        <div id="sellAllCommons">Sell All Commons</div>
-                    <div id="sortInventory">Sort Inventory</div>
+                    <div id="goToBank" class="invActionButton"><i class="fas fa-university"></i><span>Bank</span></div>
+                    <div id="sellAllCommons" class="invActionButton">Sell All Commons</div>
+                    <div id="sortInventory" class="invActionButton">Sort Inventory</div>
                     <div id="inventory"></div>
                 </div>
                 <div id="inventoryEquipTab" class="tabcontent">
-                    <div id="closeEquipItem">Close</div>
+                    <div id="closeEquipItem" class="invActionButton">Close</div>
                     <div class="equipHeading">Equipping Item</div>
                     <div id="ietEquip"></div>
                     <div class="equipHeading">Possible Heroes</div>
@@ -330,8 +331,9 @@
                         </div>
                     </div>
                 </div>
-                <div id="townTab" class="tabcontent">
+                <div id="townsTab" class="tabcontent">
                     <div id="townContainer">
+                        <div id="emptyTown">The town looks empty - except for your Shop, of course. Perhaps there's a way to craft new buildings?</div>
                         <div id="buildingList"></div>
                         <div id="buildingHeader"></div>
                         <div id="buildBuilding">

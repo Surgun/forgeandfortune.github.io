@@ -72,12 +72,30 @@ class Hero {
         this.ap = save.ap;
         this.act = save.act;
         this.inDungeon = save.inDungeon;
-        if (save.slot1 !== null) this.slot1 = new itemContainer(save.slot1.id,save.slot1.rarity);
-        if (save.slot2 !== null) this.slot2 = new itemContainer(save.slot2.id,save.slot2.rarity);
-        if (save.slot3 !== null) this.slot3 = new itemContainer(save.slot3.id,save.slot3.rarity);
-        if (save.slot4 !== null) this.slot4 = new itemContainer(save.slot4.id,save.slot4.rarity);
-        if (save.slot5 !== null) this.slot5 = new itemContainer(save.slot5.id,save.slot5.rarity);
-        if (save.slot6 !== null) this.slot6 = new itemContainer(save.slot6.id,save.slot6.rarity);
+        if (save.slot1 !== null) {
+            this.slot1 = new itemContainer(save.slot1.id,save.slot1.rarity);
+            this.slot1.loadSave(save.slot1);
+        }
+        if (save.slot2 !== null) {
+            this.slot2 = new itemContainer(save.slot2.id,save.slot2.rarity);
+            this.slot2.loadSave(save.slot2);
+        }
+        if (save.slot3 !== null) {
+            this.slot3 = new itemContainer(save.slot3.id,save.slot3.rarity);
+            this.slot3.loadSave(save.slot3);
+        }
+        if (save.slot4 !== null) {
+            this.slot4 = new itemContainer(save.slot4.id,save.slot4.rarity);
+            this.slot4.loadSave(save.slot4);
+        }
+        if (save.slot5 !== null) {
+            this.slot5 = new itemContainer(save.slot5.id,save.slot5.rarity);
+            this.slot5.loadSave(save.slot5);
+        }
+        if (save.slot6 !== null) {
+            this.slot6 = new itemContainer(save.slot6.id,save.slot6.rarity);
+            this.slot6.loadSave(save.slot6);
+        }
         if (save.maxHPseen !== undefined) this.maxHPseen = save.maxHPseen;
         this.owned = save.owned;
     }
@@ -223,7 +241,7 @@ class Hero {
         const item = this.getSlot(slot);
         if (item === null) return;
         this.removeSlot(slot);
-        Inventory.addToInventory(item.id,item.rarity);
+        Inventory.addItemContainerToInventory(item);
     }
     hasEquip(type) {
         if (this.slot1Type.includes(type)) return this.slot1 !== null;
@@ -242,7 +260,7 @@ class Hero {
         if (this.slot6Type.includes(type)) return this.slot6;
     }
     healCost() {
-        return Math.floor(Math.pow(1.07, (this.lvl-1))*(this.maxHP()-this.hp));
+        return Math.floor(Math.pow(1.07, (this.lvl-1))*(this.maxHP()-this.hp)/miscLoadedValues.hltFactor);
     }
     healPay() {
         const amt = this.healCost();

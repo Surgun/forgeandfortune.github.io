@@ -33,6 +33,7 @@ const FortuneManager = {
         save.goodPaid = this.goodPaid;
         save.greatPaid = this.greatPaid;
         save.epicPaid = this.epicPaid;
+        return save;
     },
     loadSave(save) {
         this.fortuneWeek = save.fortuneWeek;
@@ -74,7 +75,10 @@ const FortuneManager = {
     },
     setCrafts() {
         if (this.setPaid) return;
-        if (ResourceManager.materialAvailable("M001") < this.getGoldCost()) return;
+        if (ResourceManager.materialAvailable("M001") < this.getGoldCost()) {
+            Notifications.cantReadFortune();
+            return;
+        }
         ResourceManager.deductMoney(this.getGoldCost());
         this.goodLine = ItemType[Math.floor(Math.random() * ItemType.length)];
         this.greatLine = ItemType[Math.floor(Math.random() * ItemType.length)];
@@ -115,7 +119,10 @@ const FortuneManager = {
         if (props.payState) return;
         const matID = props.matReq;
         const amt = props.amt;
-        if (ResourceManager.materialAvailable(matID) < amt) return false;
+        if (ResourceManager.materialAvailable(matID) < amt) {
+            Notifications.cantAffordFortune();
+            return false;
+        }
         ResourceManager.addMaterial(matID,-amt);
         if (type === "Good") this.goodPaid = true;
         else if (type === "Great") this.greatPaid = true;
@@ -131,6 +138,7 @@ const FortuneManager = {
 }
 
 function initiateFortuneBldg () {
+    $fortuneBuilding.show();
     refreshFortuneInfo();
 }
 
@@ -168,7 +176,9 @@ function fortuneBox(type) {
     const props = FortuneManager.propsByType(type);
     if (props.payState) return d1;
     const mat = ResourceManager.idToMaterial(props.matReq);
-    const d4 = $("<div/>").addClass('fortuneStatusButton').attr("type",type).html(`Look Deeper<span class="deeper_cost">${mat.img} ${props.amt}</span>`);
+    const d4 = $("<div/>").addClass('fortuneStatusButton').attr("type",type).html("Look Deeper");
+    const d4a = $("<div/>").addClass('deeper_cost tooltip').attr("data-tooltip",mat.name).html(`${mat.img} ${props.amt}`);
+    d4.append(d4a);
     return d1.append(d4);
 }
 

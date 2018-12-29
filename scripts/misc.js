@@ -17,6 +17,9 @@ function msToTime(s) {
     let secs = s % 60;
     s = (s - secs) / 60;
     let mins = s % 60;
+    s = (s - mins) / 60;
+    let hours = s % 60;
+    mins = mins + 60*hours;
     if (secs < 10) secs = "0" + secs
     if (mins < 10) mins = "0" + mins   
     return mins + ':' + secs;

@@ -1403,6 +1403,10 @@ Rarities
     background-color: rgba(255, 0, 0, .5);
 }
 
+.recipeCraft > i {
+    pointer-events: none;
+}
+
 .recipeName, .recipeBackTabContainer {
     display: flex;
     justify-content: left;

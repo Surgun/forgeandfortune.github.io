@@ -3712,10 +3712,12 @@ Rarities
 }
 
 #eventList {
+    --offset-amt: 88px;
+    --content-height: 138px;
     position: fixed;
-    top: 88px;
+    top: var(--offset-amt);
     width: 100%;
-    height: calc(100% - 138px);
+    height: calc(100% - var(--content-height));
     max-width: 250px;
     background-color: var(--bg-primary);
     border-right: 1px solid var(--border-primary);
@@ -4832,6 +4834,11 @@ span.beta-tag {
 @media screen and (max-width: 1308px) {
     .tabcontent {
         --tab-height: 58px;
+    }
+
+    #eventList {
+        --offset-amt: 106px;
+        --content-height: 156px;
     }
 }
 

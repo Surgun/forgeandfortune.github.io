@@ -816,7 +816,8 @@ Rarities
 }
 
 .tabcontent {
-    height: calc(100vh - 90px);
+    --tab-height: 40px;
+    height: calc(100% - var(--tab-height));
     -webkit-animation: 0.2s fade-in;
     animation: 0.2s fade-in;
 }
@@ -1104,7 +1105,6 @@ Rarities
 
 #RecipeFilter a.recipeSelect:hover {
     background-color: var(--bg-secondary);
-    color: var(--text-secondary);
 }
 
 #RecipeFilter a.recipeSelect > i {
@@ -1273,7 +1273,7 @@ Rarities
 
 .recipeContents, .brecipeTable {
     display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(270px, 1fr));
+    grid-template: auto / repeat(auto-fill, minmax(275px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 10px;
     margin: 10px;
@@ -1287,6 +1287,8 @@ Rarities
     border: 1px solid var(--border-primary);
     border-radius: 10px;
     padding: 10px;
+    min-height: 216px;
+    max-width: 350px;
 }
 
 .recipeCardFront, .recipeCardBack {
@@ -4791,10 +4793,6 @@ span.beta-tag {
 
 /* Reduces content width of workers and heroes tab elements on smaller screens */
 @media screen and (max-width: 1475px) {
-    #RecipeFilter a.recipeSelect > i {
-        display: none;
-    }
-
     #workerList {
         padding: 5px;
         justify-content: center;
@@ -4831,8 +4829,10 @@ span.beta-tag {
 }
 
 /* For desktop/laptop screens with enough width to display vertical recipe filter listing */
-@media screen and (min-width: 1475px) {
-    
+@media screen and (max-width: 1308px) {
+    .tabcontent {
+        --tab-height: 58px;
+    }
 }
 
 @media screen and (min-width: 1775px) {

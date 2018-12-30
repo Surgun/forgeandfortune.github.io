@@ -1064,42 +1064,52 @@ Rarities
     padding: 0 5px;
 }
 
+#recipes-container {
+    display: flex;
+    height: 100%;
+}
+
+#recipes-list {
+    flex-grow: 1;
+    overflow: auto;
+}
+
 #RecipeFilter {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+    max-width: 200px;
     background-color: var(--bg-primary);
-    padding: 0 25px 0 0;
-    line-height: 40px;
-    border-bottom: 1px solid var(--border-primary);
+    border-right: 1px solid var(--border-primary);
+    overflow: auto;
 }
 
 #RecipeFilter a.recipeSelect {
     position: relative;
-    color: var(--text-primary);
-    padding: 0 15px 0 3px;
-    height: 100%;
-    max-width: 40px;
-    max-height: 40px;
-    overflow: hidden;
-    border-right: 1px solid var(--border-primary);
+    display: flex;
+    align-items: center;
+    padding: 3px 5px;
+    border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
+    color: var(--text-primary);
     text-decoration: none;
 }
 
-#RecipeFilter a.recipeSelect.selected {
-    width: auto;
-    max-width: 100%;
-    background-color: var(--bg-secondary);
-    color: var(--text-secondary);
-}
-
-#RecipeFilter a.recipeSelect:first-of-type {
-    margin-left: 0;
+#RecipeFilter a.recipeSelect.selected, #RecipeFilter a.recipeSelect.selected:hover {
+    background-color: var(--border-primary);
+    border-color: var(--border-tertiary);
+    color: var(--highlight);
 }
 
 #RecipeFilter a.recipeSelect:hover {
     background-color: var(--bg-secondary);
     color: var(--text-secondary);
+}
+
+#RecipeFilter a.recipeSelect > i {
+    position: absolute;
+    right: 10px;
 }
 
 .recipeSelect.luckyFortune.luckyGood > i {
@@ -4822,73 +4832,7 @@ span.beta-tag {
 
 /* For desktop/laptop screens with enough width to display vertical recipe filter listing */
 @media screen and (min-width: 1475px) {
-    #RecipeFilter a.recipeSelect {
-        display: flex;
-        align-items: center;
-    }
-
-    #RecipeFilter a.recipeSelect > i {
-        position: absolute;
-        right: 10px;
-    }
-
-    #recipes-container {
-        display: flex;
-        height: 100%;
-    }
     
-    #RecipeFilter {
-        position: fixed;
-        display: flex;
-        align-content: flex-start;
-        width: 200px;
-        height: calc(100% - 90px);
-        background-color: var(--bg-primary);
-        border-right: 1px solid var(--border-primary);
-        border-bottom: none;
-        padding: 0;
-        line-height: 40px;
-        overflow: auto;
-    }
-    
-    #RecipeFilter a.recipeSelect {
-        color: var(--text-primary);
-        padding: 0 0 0 10px;
-        width: 100%;
-        max-height: 40px;
-        max-width: none;
-        overflow: hidden;
-        border-right: none;
-        border-bottom: 1px solid var(--border-primary);
-        text-decoration: none;
-    }
-    
-    #RecipeFilter a.recipeSelect.selected {
-        max-width: none;
-        width: 100%;
-        background-color: var(--bg-secondary);
-        color: var(--text-secondary);
-        border-bottom: 1px solid var(--highlight)
-    }
-    
-    #RecipeResults {
-        flex-grow: 1;
-    }
-
-    #recipes-list {
-        flex-grow: 1;
-        margin-left: 200px;
-    }
-    
-    .recipeDescription.tooltip:after {
-        width: 300px;
-        top: 180%;
-        left: unset;
-        right: unset;
-        bottom: unset;
-        margin-left: -166px;
-        transform-origin: top;
-    }
 }
 
 @media screen and (min-width: 1775px) {

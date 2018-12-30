@@ -75,7 +75,7 @@ class Item{
             d.append($("<div/>").addClass("indvCost resCost tooltip").attr("data-tooltip",resourceNameForTooltips).html('<img src="images/resources/'+resource+'.png">'));
         })
         for (const [material, amt] of Object.entries(this.mcost)) {
-            console.log(material);
+            //console.log(material);
             const mat = ResourceManager.idToMaterial(material);
             const d1 = $("<div/>").addClass("indvCost matCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt));
             d.append(d1);

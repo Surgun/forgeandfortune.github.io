@@ -363,53 +363,63 @@ function initializeRecipes(type,sortType,heading) {
         const td3 = $('<div/>').addClass('recipecostdiv');
         const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
         td3.append(td3a);
-        const td4 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
 
-        const td5 = $('<div/>').addClass('recipeTimeAndValue');
-            const td5a = $('<div/>').addClass('recipeTimeContainer tooltip').attr("data-tooltip", "Craft Time")
-                const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader").html(`<i class="fas fa-clock"></i>`);
-                const td5a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
-            td5a.append(td5a1,td5a2);
+        const td4 = $('<div/>').addClass('recipeTimeAndValue');
+            const td4a = $('<div/>').addClass('recipeTimeContainer tooltip').attr("data-tooltip", "Craft Time")
+                const td4a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader").html(`<i class="fas fa-clock"></i>`);
+                const td4a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
+            td4a.append(td4a1,td4a2);
 
-            const td5b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "In Inventory");
-                const td5b1 = $("<div/>").addClass("recipeAmountHeader recipeCardHeader").html(`<i class="fas fa-cube"></i>`);
-                const td5b2 = $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`);
-            td5b.append(td5b1,td5b2);
+            const td4b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "In Inventory");
+                const td4b1 = $("<div/>").addClass("recipeAmountHeader recipeCardHeader").html(`<i class="fas fa-cube"></i>`);
+                const td4b2 = $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`);
+            td4b.append(td4b1,td4b2);
 
-            const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`);
-                const td5c1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`);
-                const td5c2 = $('<div/>').addClass('recipeValue').html(recipe.itemValueFormatted());
-            td5c.append(td5c1,td5c2);
-        td5.append(td5a,td5b,td5c);
+            const td4c = $('<div/>').addClass('recipeValueContainer tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`);
+                const td4c1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`);
+                const td4c2 = $('<div/>').addClass('recipeValue').html(recipe.itemValueFormatted());
+            td4c.append(td4c1,td4c2);
+        td4.append(td4a,td4b,td4c);
 
-        const td6 = $('<div/>').addClass('recipeCountAndCraft');
+        const td5 = $('<div/>').addClass('recipeCountAndCraft');
             const craftCount = Math.min(100,recipe.craftCount);
-        const td6a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id);
+        const td5a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id);
             const masteryWidth = (craftCount).toFixed(1)+"%";
             const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
             const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",`${craftCount} / 100`).attr("id","masteryBar");
             const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
             masteryBarDiv.append(masteryBar,masteryBarFill);
-        td6a.append(masteryBarDiv);
-        const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
-        td6.append(td6a,td6b);
+        td5a.append(masteryBarDiv);
+        const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
+        td5.append(td5a,td5b);
 
-        const td7 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
-        const td8 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
-        const td9 = $('<div/>').addClass('recipeMasteryContainer');
-            const td9a = $("<div/>").addClass("masteryBlockHeader").html("Recipe Progression");
-            const td9b = $("<div/>").addClass("masteryBlockContainer");
-            /* This is psuedo code meant for simply displaying how mastery progression will look. A proper function will need to be created once mastery tiers have been designed and implemented */
-                const td9b1 = $("<div/>").addClass("masteryBlock masteryObtained").html(`${recipe.itemPic()}<div class="masteryDetail">Material Reduction</div>`);
-                const td9b2 = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Rarity Chance</div>`);
-                const td9b3 = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Craft Time Reduction</div>`);
-            td9b.append(td9b1,td9b2,td9b3);
-            /* End */
-        td9.append(td9a,td9b);
-        const td10 = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
+        const td6 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
+        const td7 = $('<div/>').addClass('recipeBackTabContainer');
+            const td7a = $('<div/>').addClass('recipeBackTab backTab1 selected').html(`Details`);
+            const td7b = $('<div/>').addClass('recipeBackTab backTab2').html(`Mastery`);
+        td7.append(td7a,td7b);
 
-        const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5,td6);
-        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td7,td8,td9,td10).hide();
+            const td8 = $('<div/>').addClass('recipeTabContainer recipeTabDetails');
+                const td8a = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
+                const td8b = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
+                const td8c = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
+            td8.append(td8a,td8b,td8c);
+
+            const td9 = $('<div/>').addClass('recipeTabContainer recipeTabMastery');
+                const td9a = $('<div/>').addClass('recipeMasteryContainer');
+                    const td9a1 = $("<div/>").addClass("masteryBlockHeader").html("Recipe Progression");
+                    const td9a2 = $("<div/>").addClass("masteryBlockContainer");
+                    /* This is psuedo code meant for simply displaying how mastery progression will look. A proper function will need to be created once mastery tiers have been designed and implemented */
+                        const td9a2a = $("<div/>").addClass("masteryBlock masteryObtained").html(`${recipe.itemPic()}<div class="masteryDetail">Material Reduction</div>`);
+                        const td9a2b = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Rarity Chance</div>`);
+                        const td9a2c = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Craft Time Reduction</div>`);
+                    td9a2.append(td9a2a,td9a2b,td9a2c);
+                    /* End */
+                td9a.append(td9a1,td9a2);
+            td9.append(td9a).hide();
+
+        const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5);
+        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9).hide();
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardFront,recipeCardBack);
 
         lastRow = row;
@@ -522,6 +532,9 @@ $(document).on('click','.recipeDescription', (e) => {
     $(".recipeCardFront").css("display","flex");
     $(e.currentTarget).parent().hide();
     $(e.currentTarget).parent().next().css("display","flex");
+    $(".recipeTabContainer").hide();
+    $(".backTab1").addClass("selected");
+    $(".recipeTabDetails").show();
 });
 
 $(document).on('click','.recipeClose', (e) => {
@@ -531,3 +544,13 @@ $(document).on('click','.recipeClose', (e) => {
     $(e.currentTarget).parent().hide();
     $(e.currentTarget).parent().prev().css("display","flex");
 });
+
+$(document).on('click','.recipeBackTab', (e) => {
+    e.preventDefault();
+    name = $(e.target).text();
+    $(".recipeTabContainer").hide();
+    $(".recipeTab"+name).show();
+    $(".recipeBackTab").removeClass("selected");
+    $(e.currentTarget).addClass("selected");
+});
+

@@ -11,10 +11,6 @@ const MobManager = {
     generateDungeonMobs(dungeonID, floorNum) {
         disableEventLayers();
         if (dungeonID !== "d1") return;
-        if (isItChristmas() && randomChance(5,100)) {
-            enableChristmasLayers();
-            return this.christmasFloor(floorNum);
-        }
         const mobs = [];
         let mobCount = 1;
         if (floorNum >= 100) mobCount += 1;
@@ -26,14 +22,8 @@ const MobManager = {
             mobs.push(new Mob(floorNum, mobTemplate));
             mobCount -=1;
         }
-        return mobs;        
+        return mobs; 
     },
-    christmasFloor(floorNum) {
-        const possibleMonster = this.monsterDB.filter(mob => mob.event === "christmas" && mob.minFloor <= floorNum && mob.maxFloor >= floorNum);
-        console.log(possibleMonster);
-        const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
-        return [new Mob(floorNum, mobTemplate)];
-    }
 }
 
 class MobTemplate {
@@ -75,13 +65,13 @@ class Mob {
         this.ap = save.ap;
         if (save.alreadydead !== undefined) this.alreadydead = save.alreadydead;
     }
-    addTime(t, dungeonID) {
+    addTime(dungeonID) {
         if (this.dead()) {
             this.act = 0;
             this.ap = 0;
             return;
         }
-        this.act += t;
+        this.act += 1;
         if (this.act >= this.actmax()) {
             this.act = 0;
             CombatManager.mobAttack(this, dungeonID);

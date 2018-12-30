@@ -38,13 +38,32 @@ class Dungeon {
     }
     addTime(t) {
         //add time to all combatants, if they're ready for combat they'll bounce back here.
-        const partyTimeRemaining = this.party.heroes.map(h => h.actmax()-h.act);
-        let maxTime = Math.max(Math.min(...partyTimeRemaining),10);
-        t = Math.min(t,maxTime);
         this.dungeonTime += t;
-        this.party.addTime(t, this.id);
-        this.mobs.forEach(mob => {
-            mob.addTime(t, this.id);
+        while (this.dungeonTime > 500) {
+            this.mobs.forEach(mob =>  mob.addTime(this.id));
+            if (this.party.isDead()) {
+                this.resetDungeon();
+                return;
+            }
+            this.party.addTime(this.id);
+            this.dungeonTime -= 500;
+        }
+    }
+    resetDungeon() {
+        this.party.heroes.forEach(h=>{
+            h.inDungeon = false;
+            h.ap = 0;
+        });
+        EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorNum);
+        DungeonManager.removeDungeon(this.id);
+        if (DungeonManager.dungeonView !== null) {
+            openTab("dungeonsTab");
+        }
+        initializeSideBarDungeon();
+        BattleLog.clear();
+        return;
+    }
+        /*
             if (mob.hp === 0 && !mob.alreadydead) {
                 mob.alreadydead = true;
                 const drops = mob.rollDrops();
@@ -57,22 +76,7 @@ class Dungeon {
             this.mobDeadCount = this.mobs.filter(m=>m.hp===0).length;
             deadMobSweep(this.id);
         }
-        if (this.party.isDead()) {
-            this.party.heroes.forEach(h=>{
-                h.inDungeon = false;
-                h.ap = 0;
-            });
-            EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorNum);
-            DungeonManager.removeDungeon(this.id);
-            if (DungeonManager.dungeonView !== null) {
-                openTab("dungeonsTab");
-            }
-            initializeSideBarDungeon();
-            BattleLog.clear();
-            return;
-        }
-        if (this.mobs.every(m=>m.hp === 0)) this.advanceFloor();
-    }
+        if (this.mobs.every(m=>m.hp === 0)) this.advanceFloor();*/
     addDungeonDrop(drops) {
         drops.forEach(drop => {
             const found = this.dropList.find(d => d.id === drop)

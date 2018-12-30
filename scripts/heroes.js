@@ -132,7 +132,7 @@ class Hero {
     }
     actmax() {
         if (this.slot1 !== null) return this.slot1.act();
-        else return 5000;
+        else return 10;
     }
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.maxHP());
@@ -149,12 +149,12 @@ class Hero {
     alive() {
         return this.hp > 0;
     }
-    addTime(t, dungeonID) {
+    addTime(dungeonID) {
         if (this.dead() || !this.inDungeon) {
             this.act = 0;
             this.ap = 0;
         }
-        this.act += t;
+        this.act += 1;
         if (this.act >= this.actmax()) {
             this.act = 0;
             CombatManager.heroAttack(this, dungeonID);

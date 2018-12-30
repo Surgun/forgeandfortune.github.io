@@ -533,6 +533,7 @@ $(document).on('click','.recipeDescription', (e) => {
     $(e.currentTarget).parent().hide();
     $(e.currentTarget).parent().next().css("display","flex");
     $(".recipeTabContainer").hide();
+    $(".recipeBackTab").removeClass("selected");
     $(".backTab1").addClass("selected");
     $(".recipeTabDetails").show();
 });

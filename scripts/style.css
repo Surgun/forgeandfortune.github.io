@@ -1300,23 +1300,20 @@ Rarities
 
 .masteryBlockContainer {
     display: grid;
-    grid-template: 1fr / repeat(3, 1fr);
+    grid-template: auto / 1fr;
     grid-gap: 5px;
+    margin-top: 10px;
 }
 
 .masteryBlock {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-secondary);
     border-radius: 5px;
     font-size: 0.8em;
-}
-
-.masteryBlock > img {
-    max-height: 20px;
-    margin-top: 5px;
+    padding: 5px;
 }
 
 .masteryBlock.masteryObtained {
@@ -1325,22 +1322,28 @@ Rarities
     color: var(--highlight);
 }
 
+.masteryBlock > i {
+    font-size: 1.25rem;
+    opacity: 0.25;
+}
+
+.masteryBlock.masteryObtained > i {
+    opacity: 1;
+}
+
 .masteryDetail {
-    margin-top: 5px;
-    padding: 0 5px;
     text-align: center;
-    flex-grow: 1;
+    flex-grow: 2;
 }
 
 .masteryCountRequired {
-    margin-top: 5px;
-    padding: 5px;
-    width: 100%;
-    background-color: var(--bg-primary);
     text-align: center;
-    border-top: 1px solid var(--border-secondary);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    flex-grow: 1;
+    margin: 0 auto;
+}
+
+.masteryCountRequired > i {
+    margin-right: 2px;
 }
 
 .recipeTotalCrafted {

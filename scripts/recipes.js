@@ -407,15 +407,14 @@ function initializeRecipes(type,sortType,heading) {
 
             const td9 = $('<div/>').addClass('recipeTabContainer recipeTabMastery');
                 const td9a = $('<div/>').addClass('recipeMasteryContainer');
-                    const td9a1 = $("<div/>").addClass("masteryBlockDescription").html("Reaching certain mastery thresholds will unlock bonuses for this recipe.");
-                    const td9a2 = $("<div/>").addClass("masteryBlockContainer");
+                    const td9a1 = $("<div/>").addClass("masteryBlockContainer");
                     /* This is psuedo code meant for simply displaying how mastery progression will look. A proper function will need to be created once mastery tiers have been designed and implemented */
-                        const td9a2a = $("<div/>").addClass("masteryBlock masteryObtained").html(`${recipe.itemPic()}<div class="masteryDetail">Material Reduction</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 25</div>`);
-                        const td9a2b = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Rarity Chance</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 50</div>`);
-                        const td9a2c = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Craft Time Reduction</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 100</div>`);
-                    td9a2.append(td9a2a,td9a2b,td9a2c);
+                        const td9a1a = $("<div/>").addClass("masteryBlock masteryObtained").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">Material Cost Removal</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 25</div>`);
+                        const td9a1b = $("<div/>").addClass("masteryBlock").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">+25% Rarity Chance</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 50</div>`);
+                        const td9a1c = $("<div/>").addClass("masteryBlock").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">-25% Craft Time Reduction</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 100</div>`);
+                    td9a1.append(td9a1a,td9a1b,td9a1c);
                     /* End */
-                td9a.append(td9a1,td9a2);
+                td9a.append(td9a1);
             td9.append(td9a).hide();
 
         const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5);

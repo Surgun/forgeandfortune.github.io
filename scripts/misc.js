@@ -113,3 +113,19 @@ function isItChristmas() {
     const d = new Date();
     return d.getMonth() === 10 || d.getMonth() === 11;
 }
+
+function inventorySort(a, b) {
+    const ai = a.item;
+    const bi = b.item;
+    const aj = ItemType.indexOf(ai.type);
+    const bj = ItemType.indexOf(bi.type);
+    if (ai.lvl > bi.lvl) return -1;
+    if (ai.lvl < bi.lvl) return 1;
+    if (aj > bj) return -1;
+    if (aj < bj) return 1;
+    if (a.rarity > b.rarity) return -1;
+    if (a.rarity < b.rarity) return 1;
+    if (a.sharp > b.sharp) return -1;
+    if (b.sharp < a.sharp) return 1;
+    return 0;
+}

@@ -266,6 +266,7 @@ const Inventory = {
     },
     sortInventory() {
         this.inv = this.inv.filter(c=>c !== null);
+        this.inv.sort((a,b) => inventorySort(a,b));
         while (this.inv.length < this.invMax) {
             this.inv.push(null);
         }

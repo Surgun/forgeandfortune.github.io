@@ -1282,10 +1282,16 @@ Rarities
 .recipeCardFront, .recipeCardBack {
     flex-direction: column;
     height: 100%;
+    animation: 0.2s scale-in forwards;
 }
 
 .recipeCardBack {
     font-size: 0.9em;
+}
+
+.recipeTabContainer {
+    transform: scaleY(0);
+    animation: 0.2s scale-y-in forwards;
 }
 
 .recipeBackDescription, .masteryBlockDescription {
@@ -1333,13 +1339,11 @@ Rarities
 
 .masteryDetail {
     text-align: center;
-    flex-grow: 2;
+    flex-grow: 1;
 }
 
 .masteryCountRequired {
-    text-align: center;
-    flex-grow: 1;
-    margin: 0 auto;
+    min-width: 50px;
 }
 
 .masteryCountRequired > i {
@@ -1460,8 +1464,8 @@ Rarities
 
 .recipeDescription, .recipeClose {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3343,6 +3347,11 @@ Rarities
     padding: 5px 8px;
 }
 
+.recipeItemLevel {
+    top: 0;
+    left: 0;
+}
+
 .bankProps, .smithProps, .smithChance {
     margin: 10px 0;
 }
@@ -4667,6 +4676,24 @@ span.beta-tag {
     }
     to {
         transform: scale(1);
+    }
+}
+
+@keyframes scale-x-in {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes scale-y-in {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
     }
 }
 

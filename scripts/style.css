@@ -377,7 +377,7 @@ body {
 .invActionButton > span {
     margin-left: 5px;
 }
-
+/*
 #sortInventory:after {
     content: "Sorting your inventory will move items over so that they take up any empty spots in between.";
     position: absolute;
@@ -389,7 +389,7 @@ body {
     opacity: 0;
     pointer-events: none;
 }
-
+*/
 #sortInventory:hover:after {
     left: 110%;
     height: auto;

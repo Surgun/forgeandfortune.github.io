@@ -407,12 +407,12 @@ function initializeRecipes(type,sortType,heading) {
 
             const td9 = $('<div/>').addClass('recipeTabContainer recipeTabMastery');
                 const td9a = $('<div/>').addClass('recipeMasteryContainer');
-                    const td9a1 = $("<div/>").addClass("masteryBlockHeader").html("Recipe Progression");
+                    const td9a1 = $("<div/>").addClass("masteryBlockDescription").html("Reaching certain mastery thresholds will unlock bonuses for this recipe.");
                     const td9a2 = $("<div/>").addClass("masteryBlockContainer");
                     /* This is psuedo code meant for simply displaying how mastery progression will look. A proper function will need to be created once mastery tiers have been designed and implemented */
-                        const td9a2a = $("<div/>").addClass("masteryBlock masteryObtained").html(`${recipe.itemPic()}<div class="masteryDetail">Material Reduction</div>`);
-                        const td9a2b = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Rarity Chance</div>`);
-                        const td9a2c = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Craft Time Reduction</div>`);
+                        const td9a2a = $("<div/>").addClass("masteryBlock masteryObtained").html(`${recipe.itemPic()}<div class="masteryDetail">Material Reduction</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 25</div>`);
+                        const td9a2b = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Rarity Chance</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 50</div>`);
+                        const td9a2c = $("<div/>").addClass("masteryBlock").html(`${recipe.itemPic()}<div class="masteryDetail">Craft Time Reduction</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 100</div>`);
                     td9a2.append(td9a2a,td9a2b,td9a2c);
                     /* End */
                 td9a.append(td9a1,td9a2);

@@ -161,7 +161,10 @@ function refreshFortuneInfo() {
 }
 
 function refreshFilterListLucky() {
-    $(".recipeSelect").removeClass("luckyGood luckyGreat luckyEpic");
+    $(".recipeSelect").removeClass("luckyFortune luckyGood luckyGreat luckyEpic");
+    ItemType.forEach(i => {
+        $("#rf"+i).html(i);
+    })  
     if (!FortuneManager.setPaid) return;
     if (FortuneManager.goodPaid) $("#rf"+FortuneManager.goodLine).addClass("luckyFortune luckyGood").html(`${FortuneManager.goodLine}<i class="fas fa-hat-wizard"></i>`);
     if (FortuneManager.greatPaid) $("#rf"+FortuneManager.greatLine).addClass("luckyFortune luckyGreat").html(`${FortuneManager.greatLine}<i class="fas fa-hat-wizard"></i>`);

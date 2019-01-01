@@ -400,10 +400,12 @@ function initializeRecipes(type,sortType,heading) {
         td7.append(td7a,td7b);
 
             const td8 = $('<div/>').addClass('recipeTabContainer recipeTabDetails');
-                const td8a = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
-                const td8b = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
-                const td8c = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
-            td8.append(td8a,td8b,td8c);
+                const td8a = $('<div/>').addClass('recipeDetailsContainer');
+                    const td8a1 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
+                    const td8a2 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
+                    const td8a3 = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
+                td8a.append(td8a1,td8a2,td8a3);
+            td8.append(td8a);
 
             const td9 = $('<div/>').addClass('recipeTabContainer recipeTabMastery');
                 const td9a = $('<div/>').addClass('recipeMasteryContainer');

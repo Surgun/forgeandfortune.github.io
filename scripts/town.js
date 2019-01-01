@@ -264,13 +264,6 @@ function buildScreen(type) {
     }
     const d4 = $("<div/>").addClass("bRecipes");
     const table = $('<div/>').addClass('brecipeTable');
-    // const htd1 = $('<div/>').addClass('brecipeHeadName').html("NAME");
-    // const htd2 = $('<div/>').addClass('brecipeHeadLvl').html("LVL");
-    // const htd3 = $('<div/>').addClass('brecipeHeadRes').html("RESOURCES");
-    // const htd4 = $('<div/>').addClass('brecipeHeadCost').html("MATS");
-    // const htd5 = $('<div/>').addClass('brecipeHeadTime').html("TIME");
-    // const hrow = $('<div/>').addClass('brecipeHeader').append(htd1,htd2,htd3,htd4,htd5);
-    // table.append(hrow);
     let alternate = false;
     let lastRow = null;
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
@@ -281,33 +274,41 @@ function buildScreen(type) {
         const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
         td3.append(td3a);
 
-        const td5 = $('<div/>').addClass('recipeTimeAndValue');
-            const td5a = $('<div/>').addClass('recipeTimeContainer');
-                const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader tooltip").attr("data-tooltip", "Craft Time").html(`<i class="fas fa-clock"></i>`);
-                const td5a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
-            td5a.append(td5a1,td5a2);
+        const td4 = $('<div/>').addClass('recipeTimeAndValue');
+            const td4a = $('<div/>').addClass('recipeTimeContainer tooltip').attr("data-tooltip", "Craft Time")
+                const td4a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader").html(`<i class="fas fa-clock"></i>`);
+                const td4a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
+            td4a.append(td4a1,td4a2);
 
-            const td5b = $('<div/>').addClass('recipeAmountContainer');
-                const td5b1 = $("<div/>").addClass("recipeAmountHeader recipeCardHeader tooltip").attr("data-tooltip", "In Inventory").html(`<i class="fas fa-cube"></i>`);
-                const td5b2 = $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`);
-            td5b.append(td5b1,td5b2);
+            const td4b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "In Inventory");
+                const td4b1 = $("<div/>").addClass("recipeAmountHeader recipeCardHeader").html(`<i class="fas fa-cube"></i>`);
+                const td4b2 = $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`);
+            td4b.append(td4b1,td4b2);
 
-            const td5c = $('<div/>').addClass('recipeValueContainer');
-                const td5c1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader tooltip").attr("data-tooltip", "Gold").html(`<img src='images/resources/M001.png'>`);
-                const td5c2 = $('<div/>').addClass('recipeValue').html("---");
-            td5c.append(td5c1,td5c2);
-        td5.append(td5a,td5b,td5c);
+            const td4c = $('<div/>').addClass('recipeValueContainer tooltip').attr("data-tooltip", `No Gold Value`);
+                const td4c1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`);
+                const td4c2 = $('<div/>').addClass('recipeValue').html(`---`);
+            td4c.append(td4c1,td4c2);
+        td4.append(td4a,td4b,td4c);
 
-        const td6 = $('<div/>').addClass('recipeCountAndCraft');
-        const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
-        td6.append(td6b);
+        const td5 = $('<div/>').addClass('recipeCountAndCraft');
+            const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
+        td5.append(td5b);
 
-        const td7 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
-        const td8 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
-        const td10 = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
+        const td6 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
+        const td7 = $('<div/>').addClass('recipeBackTabContainer');
+            const td7a = $('<div/>').addClass('recipeBackTab backTab1 selected').html(`Details`);
+        td7.append(td7a);
 
-        const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td5,td6);
-        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td7,td8,td10).hide();
+        const td8 = $('<div/>').addClass('recipeTabContainer recipeTabDetails');
+            const td8a = $('<div/>').addClass('recipeDetailsContainer');
+                const td8a1 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
+                const td8a3 = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
+            td8a.append(td8a1,td8a3);
+        td8.append(td8a);
+
+        const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5);
+        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8).hide();
         const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardFront,recipeCardBack);
 
         lastRow = row;

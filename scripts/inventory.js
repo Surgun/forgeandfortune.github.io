@@ -426,6 +426,7 @@ function gearEquipFromInventory(invID) {
 
 function refreshInventoryPlaces() {
     refreshInventory();
+    refreshCardInvCount();
     refreshWorkerAmts();
     refreshPossibleFuse();
     refreshBankInventory();

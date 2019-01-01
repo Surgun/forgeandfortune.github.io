@@ -124,12 +124,10 @@ class Item{
         this.craftCount += 1;
         if (this.craftCount === 100) {
             masteredItem = true;
-            //refreshCraftCount();
             refreshMasteryBar();
             initializeActionSlots();
             refreshProgress();
         }
-        //$("#rc"+this.id).html(this.count()+"/100");
         refreshMasteryBar();
     }
     isMastered() {
@@ -446,15 +444,15 @@ function refreshMasteryBar() {
         rr.html(masteryBarDiv);
     });
 }
-/*
-function refreshCraftCount() {
+
+function refreshCardInvCount() {
     recipeList.recipes.forEach((recipe) => {
-        const rr = $("#rc"+recipe.id)
-        rr.html(recipe.count()+"/100");
-        if (recipe.isMastered()) $("#vr"+recipe.id).addClass("masteredMat");
+        const rr = $("#rr"+recipe.id+" .recipeAmount");
+        const invCount = Inventory.itemCountAll(recipe.id);
+        rr.html(invCount);
     });
 }
-*/
+
 function recipeCanCraft() {
     //loops through recipes, adds class if disabled
     $(".recipeCraft").removeClass("recipeCraftDisable");

@@ -66,7 +66,10 @@ const loadMessages = [
     "Sourcing locally grown lettuce.",
     "Finding cute animal gifs.",
     "Introducing game breaking bugs.",
-    "Lowering self esteem."
+    "Lowering self esteem.",
+    "Redesigning game...again.",
+    "Deleting important files.",
+    "2 + 2 = 4 - 1 = 3"
 ];
 
 function selectLoadMessage() {

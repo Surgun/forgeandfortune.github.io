@@ -1320,14 +1320,14 @@ Rarities
 }
 
 .recipeMasteryContainer {
-    margin: auto 0 5px;
+    height: 100%;
 }
 
 .masteryBlockContainer {
-    display: grid;
-    grid-template: auto / 1fr;
-    grid-gap: 5px;
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .masteryBlock {
@@ -1338,6 +1338,7 @@ Rarities
     border: 1px solid var(--border-primary);
     border-radius: 5px;
     font-size: 0.8em;
+    margin: 2.5px 0;
     padding: 5px;
 }
 
@@ -1371,7 +1372,7 @@ Rarities
 
 .recipeTotalCrafted {
     text-align: center;
-    padding: 5px;
+    padding: 8px 5px;
     background-color: var(--bg-tertiary);
     border-radius: 5px;
     color: var(--text-secondary);
@@ -1461,6 +1462,7 @@ Rarities
 }
 
 .recipeBackTab {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1479,6 +1481,21 @@ Rarities
 .recipeBackTab.selected, .recipeBackTab.selected:hover {
     background-color: var(--border-primary);
     color: var(--highlight);
+}
+
+.recipeBackTab:after {
+    position: absolute;
+    content: "";
+    bottom: -2px;
+    height: 2px;
+    width: 0;
+    background-color: transparent;
+    transition: var(--transition);
+}
+
+.recipeBackTab.selected:after {
+    width: 100%;
+    background-color: var(--highlight);
 }
 
 .recipeDescription, .recipeClose {

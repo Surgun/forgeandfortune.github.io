@@ -103,27 +103,6 @@ body {
     margin: 0;
 }
 
-body:after {
-    content: "This is an experimental build of Forge & Fortune. Many features are likely to not appear or function as intended.";
-    position: fixed;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-10%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    max-width: 450px;
-    height: 47px;
-    padding: 0 10px;
-    font-family: 'Varela Round', 'Open Sans', sans-serif;
-    background-color: rgba(255, 0, 0, 0.1);
-    border: 1px solid rgb(255, 0, 2);
-    border-right: 15px solid transparent;
-    border-left: 15px solid transparent;
-    z-index: 9999;
-}
-
 .back-to-top {
     position: fixed;
     bottom: 2%;

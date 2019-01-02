@@ -324,6 +324,7 @@ function buildScreen(type) {
         const d5b = $("<div/>").addClass("buildingInstrDesc").html("Construct the final recipe to unlock this building permanently!");
     d5.append(d5a,d5b);
     $buildingRecipes.append(d5);
+    recipeCanCraft();
 }
 
 $(document).on('click', ".buyBuildingBP", (e) => {

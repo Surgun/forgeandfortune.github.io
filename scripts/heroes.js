@@ -110,7 +110,7 @@ class Hero {
         return pow;
     }
     getAdjPow() {
-        return Math.floor(this.getPow() * this.actmax()/5000);
+        return Math.floor(this.getPow() * this.actmax()/10);
     }
     getPowSlot(slot) {
         if (slot === 0 && this.slot1 !== null) return this.slot1.pow();
@@ -149,16 +149,17 @@ class Hero {
     alive() {
         return this.hp > 0;
     }
-    addTime(dungeonID) {
+    addTime() {
         if (this.dead() || !this.inDungeon) {
             this.act = 0;
             this.ap = 0;
         }
-        this.act += 1;
-        if (this.act >= this.actmax()) {
-            this.act = 0;
-            CombatManager.heroAttack(this, dungeonID);
-        }
+        this.act = Math.max(0,this.act-1);
+    }
+    ready() {
+        if (this.act > 0) return false;
+        this.act = this.actmax()
+        return true;
     }
     getEquipSlots() {
         //return an object with 

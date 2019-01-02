@@ -95,10 +95,6 @@ const BattleLog = {
         $drLogHero.empty();
         $drLogMob.empty();
     },
-    advanceFloor(num) {
-        this.addHeroLog(`<div class="battleLogFloor">Floor ${num}</div>`);
-        this.addEnemyLog(`<div class="battleLogFloor">Floor ${num}</div>`);
-    },
     mobDrops(name,drops) {
         if (drops.length === 0) return;
         this.addHeroLog("Found an item!");

@@ -209,14 +209,6 @@ function initiateDungeonFloor() {
     });
 }
 
-function deadMobSweep(dungeonID) {
-    if (dungeonID !== DungeonManager.dungeonView) return;
-    const dungeon = DungeonManager.getCurrentDungeon();
-    dungeon.mobs.forEach((mob) => {
-        if (mob.hp === 0) $("#dfm"+mob.uniqueid).addClass("mobDead");
-    });
-}
-
 function refreshDungeonFloorBars() {
     const dungeon = DungeonManager.getCurrentDungeon();
     dungeon.party.heroes.forEach((hero) => {
@@ -265,7 +257,7 @@ function createHPBar(hero,tag) {
 function createActBar(hero) {
     const actPercent = hero.act/hero.actmax();
     const actWidth = (actPercent*100).toFixed(1)+"%";
-    const actText = round((hero.actmax()-hero.act)/1000,1);
+    const actText = hero.act;
     const d = $("<div/>").addClass("actBarDiv").html(dungeonIcons[Stat.ACT]);
     const d1 = $("<div/>").addClass("actBar").attr("data-label",actText).attr("id","act"+hero.uniqueid);
     const s1 = $("<span/>").addClass("actBarFill").attr("id","actFill"+hero.uniqueid).css('width', actWidth);
@@ -309,7 +301,7 @@ function refreshAPBar(hero) {
 function refreshActBar(hero) {
     const actPercent = hero.act/hero.actmax();
     const actWidth = (actPercent*100).toFixed(1)+"%";
-    const actText = round((hero.actmax()-hero.act)/1000,1);
+    const actText = hero.act;
     $("#act"+hero.uniqueid).attr("data-label",actText);
     $("#actFill"+hero.uniqueid).css('width', actWidth);
 }

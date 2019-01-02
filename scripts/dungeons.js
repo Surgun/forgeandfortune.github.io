@@ -5,9 +5,9 @@ class Dungeon {
     constructor(id,party) {
         this.id = id;
         this.name = "Groovy Grove"
-        this.floorNum = 1;
+        this.maxMonster = party.size();
         this.party = party;
-        this.mobs = MobManager.generateDungeonMobs(this.id,this.floorNum)
+        this.mobs = [];
         this.dropList = [];
         this.dungeonTime = 0;
         this.mobDeadCount = 0;
@@ -39,14 +39,40 @@ class Dungeon {
     addTime(t) {
         //add time to all combatants, if they're ready for combat they'll bounce back here.
         this.dungeonTime += t;
-        while (this.dungeonTime > 500) {
-            this.mobs.forEach(mob =>  mob.addTime(this.id));
+        while (this.dungeonTime >= 500) {
+            this.mobs.forEach(mob =>  {
+                mob.addTime();
+                if (mob.ready()) CombatManager.mobAttack(mob,this.id);
+            });
             if (this.party.isDead()) {
                 this.resetDungeon();
                 return;
             }
-            this.party.addTime(this.id);
+            this.party.heroes.forEach(hero => {
+                hero.addTime();
+                if (hero.ready()) CombatManager.heroAttack(hero,this.id);
+                this.checkDeadMobs();
+            });
             this.dungeonTime -= 500;
+        }
+    }
+    checkDeadMobs() {
+        let needrefresh = false;
+        this.mobs.forEach(mob => {
+            if (mob.dead()) {
+                this.addDungeonDrop(mob.rollDrops());
+                this.mobDeadCount += 1;
+                needrefresh = true;
+            }
+        })
+        this.mobs = this.mobs.filter(mob => !mob.dead());
+        this.repopulate();
+        if (needrefresh) initiateDungeonFloor();
+    }
+    repopulate() {
+        while (this.mobs.length < this.maxMonster) {
+            this.mobs.push(MobManager.generateDungeonMob(this.id,this.mobDeadCount));
+            console.log(this.mobs.map(m=>m.name));
         }
     }
     resetDungeon() {
@@ -63,37 +89,12 @@ class Dungeon {
         BattleLog.clear();
         return;
     }
-        /*
-            if (mob.hp === 0 && !mob.alreadydead) {
-                mob.alreadydead = true;
-                const drops = mob.rollDrops();
-                BattleLog.mobDrops(mob.name,drops);
-                this.party.addXP(mob.lvl);
-                this.addDungeonDrop(drops);
-            }
-        });
-        if (this.mobs.filter(m=>m.hp===0).length > this.mobDeadCount) {
-            this.mobDeadCount = this.mobs.filter(m=>m.hp===0).length;
-            deadMobSweep(this.id);
-        }
-        if (this.mobs.every(m=>m.hp === 0)) this.advanceFloor();*/
     addDungeonDrop(drops) {
         drops.forEach(drop => {
             const found = this.dropList.find(d => d.id === drop)
             if (found === undefined) this.dropList.push({"id":drop,"amt":1});
             else found.amt += 1;
         })
-    }
-    advanceFloor() {
-        achievementStats.floorBeaten(this.floorNum);
-        this.floorNum += 1;
-        this.mobs = MobManager.generateDungeonMobs(this.id,this.floorNum);
-        BattleLog.advanceFloor(this.floorNum);
-        this.mobDeadCount = 0;
-        floorStateChange(this.id);
-    }
-    heroInHere(heroID) {
-        return this.party.some(h=>h.id === heroID);
     }
 }
 
@@ -132,6 +133,7 @@ const DungeonManager = {
     createDungeon() {
         const party = PartyCreator.lockParty();
         const dungeon = new Dungeon(this.dungeonCreatingID,party);
+        dungeon.repopulate();
         this.dungeons.push(dungeon);
     },
     dungeonByID(dungeonID) {

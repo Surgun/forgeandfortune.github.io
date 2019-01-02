@@ -8,21 +8,13 @@ const MobManager = {
     idToMob(id) {
         return this.monsterDB.find(mob => mob.id === id);
     },
-    generateDungeonMobs(dungeonID, floorNum) {
+    generateDungeonMob(dungeonID, difficulty) {
         disableEventLayers();
         if (dungeonID !== "d1") return;
-        const mobs = [];
-        let mobCount = 1;
-        if (floorNum >= 100) mobCount += 1;
-        if (floorNum >= 200) mobCount += 1;
-        if (floorNum >= 300) mobCount += 1;
-        while (mobCount > 0) {
-            const possibleMonster = this.monsterDB.filter(mob => mob.event === "normal" && mob.minFloor <= floorNum && mob.maxFloor >= floorNum);
-            const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
-            mobs.push(new Mob(floorNum, mobTemplate));
-            mobCount -=1;
-        }
-        return mobs; 
+        const possibleMonster = this.monsterDB.filter(mob => mob.event === "normal" && mob.minFloor <= difficulty && mob.maxFloor >= difficulty);
+        const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
+        console.log(difficulty,mobTemplate);
+        return new Mob(difficulty, mobTemplate);
     },
 }
 
@@ -45,7 +37,6 @@ class Mob {
         this.act = 0;
         this.ap = 0;
         this.uniqueid = mobID;
-        this.alreadydead = false;
         mobID += 1;
     }
     createSave() {
@@ -65,20 +56,16 @@ class Mob {
         this.ap = save.ap;
         if (save.alreadydead !== undefined) this.alreadydead = save.alreadydead;
     }
-    addTime(dungeonID) {
-        if (this.dead()) {
-            this.act = 0;
-            this.ap = 0;
-            return;
-        }
-        this.act += 1;
-        if (this.act >= this.actmax()) {
-            this.act = 0;
-            CombatManager.mobAttack(this, dungeonID);
-        }
+    addTime() {
+        this.act = Math.max(0,this.act-1);
     }
     actmax() {
         return this.actTime;
+    }
+    ready() {
+        if (this.act > 0) return false;
+        this.act = this.actmax()
+        return true;
     }
     getPow() {
         return this.pow;

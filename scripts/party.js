@@ -3,18 +3,18 @@
 class Party {
     constructor (heroID) {
         this.heroID = heroID;
-        this.heroes = this.createHeroList();
+        this.heroes = heroID.map(h => HeroManager.idToHero(h));
     }
     createSave() {
         const save = {};
         save.heroID = this.heroID;
         return save;
     }
-    createHeroList() {
-        return this.heroID.map(h => HeroManager.idToHero(h));
-    }
     hasMember(member) {
         return this.heroes.includes(member);
+    }
+    size() {
+        return this.heroes.length;
     }
     alive() {
         return this.heroes.some(hero => !hero.dead());
@@ -27,7 +27,7 @@ class Party {
             hero.addXP(xp);
         });
     }
-    addTime(t, dungeonID) {
+    addTime(t) {
         this.heroes.forEach(h=> {
             h.addTime(t, dungeonID);
         })

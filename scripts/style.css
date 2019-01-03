@@ -4733,6 +4733,23 @@ span.beta-tag {
     }
 }
 
+@keyframes btn-press {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.97);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-press {
+    animation: 0.3s btn-press;
+    -webkit-animation: 0.3s btn-press;
+}
+
 /* Hide content while retaining the content's effects on elements, such as, its width and height. */
 .hidden {
     visibility: hidden;

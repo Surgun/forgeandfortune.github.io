@@ -349,3 +349,19 @@ $(document).on('click', '.dbClose', (e) => {
 $(document).on('click', '#db-init', (e) => {
     (dbi >= 6) ? dbEnable() : dbi++;
 });
+
+$(document).on('click', '.recipeCraft', (e) => {
+    const $button = $(e.target);
+    $(".recipeCraft").removeClass('btn-press');
+    $button.addClass('btn-press');
+    resetBtnPressAnimation();
+});
+
+function resetBtnPressAnimation() {
+    const btns = document.getElementsByClassName('btn-press');
+    Array.prototype.forEach.call(btns, (btn) => {
+        btn.style.animation = 'none';
+        btn.offsetHeight;
+        btn.style.animation = null; 
+    });
+}

@@ -150,7 +150,7 @@ function hardMatRefresh() {
 
 $(document).on("click",".material",(e) => {
     e.preventDefault();
-    openTab("recipesTab");
+    tabClick(e, "recipesTab");
     const matID = $(e.currentTarget).attr("id");
     initializeRecipes(matID,"default");
 });

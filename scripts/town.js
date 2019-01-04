@@ -165,7 +165,7 @@ function showSmithBldg() {
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
         if (TownManager.smithUnlock) db.html("<img src='images/townImages/smithBuilding/smith_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Forge</h2>");
-        const dd = $("<div/>").addClass("buildingInfoDesc").html("Upgrade your weapons at the forge.");
+        const dd = $("<div/>").addClass("buildingInfoDesc").html("Upgrade your gear at the forge.");
         if (!TownManager.smithUnlock) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);

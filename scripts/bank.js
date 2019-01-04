@@ -64,8 +64,7 @@ function initiateBankBldg() {
 function refreshBankInventory() {
     $bankInvSlots.empty();
     const d1 = $("<div/>").addClass("bankInvHead").html(`INVENTORY (${Inventory.nonblank().length}/${Inventory.invMax})` );
-    const d2 = $("<div/>").attr("id","sortBank").html("Sort Bank");
-    $bankInvSlots.append(d1,d2);
+    $bankInvSlots.append(d1);
     Inventory.nonblank().forEach(item => {
         $bankInvSlots.append(itemCard(item,false));
     });
@@ -73,7 +72,10 @@ function refreshBankInventory() {
 
 function refreshBankBank() {
     $bankBankSlots.empty();
-    const d1 = $("<div/>").addClass("bankBankHead").html(`BANK (${BankManager.slots.length}/${BankManager.maxSlots})` );
+    const d1 = $("<div/>").addClass("bankBankHeadContainer");
+    const d2 = $("<div/>").addClass("bankBankHead").html(`BANK (${BankManager.slots.length}/${BankManager.maxSlots})` );
+    const d3 = $("<div/>").attr("id","sortBank").html("Sort Bank");
+    d1.append(d2,d3);
     $bankBankSlots.append(d1);
     BankManager.slots.forEach(item => {
         $bankBankSlots.append(itemCard(item,true));

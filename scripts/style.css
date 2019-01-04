@@ -4256,6 +4256,10 @@ footer a[href*="discord.gg"]:hover {
     top: -55%;
 }
 
+.recipeTimeContainer.tooltip:before {
+    margin-left: 5px;
+}
+
 .recipeTimeContainer.tooltip:after {
     left: -65px;
     transform-origin: 45px bottom;
@@ -4279,7 +4283,7 @@ footer a[href*="discord.gg"]:hover {
     bottom: 135%;
     left: unset;
     right: 0;
-    transform-origin: 65px bottom;
+    transform-origin: center bottom;
 }
 
 /* Firefox-Specific Fixes */

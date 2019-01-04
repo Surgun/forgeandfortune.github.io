@@ -2927,6 +2927,10 @@ Rarities
     border-radius: 10px;
 }
 
+.fuseSlot {
+    min-height: 160px;
+}
+
 .fuseSlotName, .bankItemName, .possibleFuse, .smithItemName, .fortuneStatusHeading {
     display: flex;
     flex-direction: column;

@@ -47,6 +47,7 @@ class itemContainer {
         this.rarity = rarity;
         this.containerID = containerid;
         this.sharp = 0;
+        this.sharpbreak = this.rollFail();
         containerid += 1;
     }
     createSave() {
@@ -58,6 +59,7 @@ class itemContainer {
     }
     loadSave(save) {
         this.sharp = save.sharp;
+        if (save.sharpbreak !== undefined) this.sharpbreak = save.sharpbreak;
     }
     picName() {
         const prefix = `<span class="item-prefix-name">+${this.sharp} ${this.item.name}</span>`
@@ -127,7 +129,16 @@ class itemContainer {
     goldValue() {
         return (this.item.value * (this.rarity+1));
     }
-
+    rollFail() {
+        //pre-determine breakpoint
+        let upgrade = 0;
+        while (upgrade < 10) {
+            const failure = Math.floor(Math.random() * 100);
+            if (failure < 10+upgrade*5) return upgrade;
+            upgrade += 1;
+        }
+        return upgrade;
+    }
 }
 
 const Inventory = {
@@ -153,7 +164,8 @@ const Inventory = {
         if (this.full()) this.sellItem(id,rarity);
         else if (autoSell >= rarity) this.sellItem(id,rarity);
         else {
-            this.findempty(new itemContainer(id,rarity));
+            const container = new itemContainer(id,rarity);
+            this.findempty(container);
             const item = recipeList.idToItem(id);
             if (examineGearTypesCache.includes(item.type)) {
                 examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache);

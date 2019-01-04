@@ -426,7 +426,7 @@ $(document).on('click', '.recipeSelect', (e) => {
 
 $(document).on('click','.bpShopButton', (e) => {
     e.preventDefault();
-    const id = $(e.target).attr('id');
+    const id = $(e.currentTarget).attr('id');
     recipeList.buyBP(id);
     refreshRecipeFilters();
 });

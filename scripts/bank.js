@@ -39,6 +39,10 @@ const BankManager = {
         this.slots = this.slots.filter(c=>c.containerID !== containerID);
         refreshBankBank();
     },
+    sortBank() {
+        this.slots.sort((a,b) => inventorySort(a,b));
+        refreshBankBank()
+    },
     addContainer(container) {
         this.slots.push(container);
         refreshBankBank();
@@ -68,7 +72,10 @@ function refreshBankInventory() {
 
 function refreshBankBank() {
     $bankBankSlots.empty();
-    const d1 = $("<div/>").addClass("bankBankHead").html(`BANK (${BankManager.slots.length}/${BankManager.maxSlots})` );
+    const d1 = $("<div/>").addClass("bankBankHeadContainer");
+    const d2 = $("<div/>").addClass("bankBankHead").html(`BANK (${BankManager.slots.length}/${BankManager.maxSlots})` );
+    const d3 = $("<div/>").attr("id","sortBank").html("Sort Bank");
+    d1.append(d2,d3);
     $bankBankSlots.append(d1);
     BankManager.slots.forEach(item => {
         $bankBankSlots.append(itemCard(item,true));
@@ -97,4 +104,9 @@ $(document).on("click",".bankStow",(e) => {
     e.preventDefault();
     const containerID = parseInt($(e.target).attr("containerID"));
     BankManager.addFromInventory(containerID);
+});
+
+$(document).on("click","#sortBank",(e) => {
+    e.preventDefault();
+    BankManager.sortBank();
 });

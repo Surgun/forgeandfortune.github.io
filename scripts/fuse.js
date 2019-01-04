@@ -169,8 +169,9 @@ function refreshPossibleFuse() {
             const d3 = $("<div/>").addClass("possibleFusegroup");
             const d4 = $("<div/>").addClass("possibleFusegroupHeader").addClass("possibleFuseRarity"+f.rarity).html(`${rarities[f.rarity]} Fuse`)
             const d5 = $("<div/>").addClass("possibleFuse").html(`${item.itemPicName()}`);
-            const d6 = $("<div/>").addClass("fuseStart").attr("fuseID",f.id).attr("fuseRarity",f.rarity).html(`FUSE&nbsp;&nbsp;${ResourceManager.materialIcon("M001")}&nbsp;&nbsp;${formatToUnits(FusionManager.getFuseCost(f),2)}`);
-            d3.append(d4,d5,d6);
+            const d6 = $("<div/>").addClass("fuseTime").html(`Fuse Time: ${msToTime(item.craftTime*f.rarity)}`);
+            const d7 = $("<div/>").addClass("fuseStart").attr("fuseID",f.id).attr("fuseRarity",f.rarity).html(`FUSE&nbsp;&nbsp;${ResourceManager.materialIcon("M001")}&nbsp;&nbsp;${formatToUnits(FusionManager.getFuseCost(f),2)}`);
+            d3.append(d4,d5,d6,d7);
             d2.append(d3);
         });
     }

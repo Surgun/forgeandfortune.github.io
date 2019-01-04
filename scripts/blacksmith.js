@@ -11,14 +11,14 @@ const bloopSmith = {
         const save = {};
         save.smithTimer = this.smithTimer;
         save.smithState = this.smithState;
-        if (this.smithSlot !== null) save.smithSlot = this.smithSlot.createSave();
+        if (this.smithSlot !== null && this.smithSlot !== "failed") save.smithSlot = this.smithSlot.createSave();
         else save.smithSlot = null;
         return save;
     },
     loadSave(save) {
         if (save.smithSlot !== null) {
             const container = new itemContainer(save.smithSlot.id,save.smithSlot.rarity);
-            container.sharp = save.smithSlot.sharp;
+            container.loadSave(save);
             this.smithSlot = container;
         }
         else {
@@ -53,8 +53,7 @@ const bloopSmith = {
     },
     smith() {
         if (this.smithSlot === null) return;
-        const failure = Math.floor(Math.random() * 100);
-        if (failure < this.getSmithChance(this.smithSlot)) {
+        if (this.smithSlot.sharp >= this.smithSlot.sharpbreak) {
             this.smithSlot = "failed";
         }
         else {

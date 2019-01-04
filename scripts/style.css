@@ -2772,10 +2772,14 @@ Rarities
 }
 
 #buildingList {
+    position: sticky;
+    top: 40px;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
     background-color: var(--bg);
     border-bottom: 2px solid var(--border);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    z-index: 1;
 }
 
 .buildingName {

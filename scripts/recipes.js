@@ -500,7 +500,7 @@ function refreshBlueprint(type) {
 $(document).on('click', '.recipeCraft', (e) => {
     //click on a recipe to slot it
     e.preventDefault();
-    const type = $(e.target).attr("id");
+    const type = $(e.currentTarget).attr("id");
     //const item = recipeList.idToItem(type);
     actionSlotManager.addSlot(type);
 });
@@ -520,7 +520,7 @@ $(document).on('click', '.recipeSelect', (e) => {
 
 $(document).on('click','.bpShopButton', (e) => {
     e.preventDefault();
-    const id = $(e.target).attr('id');
+    const id = $(e.currentTarget).attr('id');
     recipeList.buyBP(id);
     refreshRecipeFilters();
 });

@@ -179,13 +179,13 @@ function refreshPossibleFuse() {
     
 $(document).on('click', '.fuseStart', (e) => {
     e.preventDefault();
-    const id = $(e.target).attr("fuseID");
-    const rarity = parseInt($(e.target).attr("fuseRarity"));
+    const id = $(e.currentTarget).attr("fuseID");
+    const rarity = parseInt($(e.currentTarget).attr("fuseRarity"));
     FusionManager.addFuse(id,rarity);
 });
 
 $(document).on('click', '.fuseSlotCollect', (e) => {
     e.preventDefault();
-    const id = parseInt($(e.target).attr("fuseid"));
+    const id = parseInt($(e.currentTarget).attr("fuseid"));
     FusionManager.collectFuse(id);
 });

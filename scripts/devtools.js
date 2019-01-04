@@ -98,5 +98,15 @@ const devtools = {
         Inventory.addToInventory("R99506",0,-1);
         Inventory.addToInventory("R99509",0,-1);
     },
+    forceTown() {
+        TownManager.bankSee = true;
+        TownManager.bankUnlock = true;
+        TownManager.fuseSee = true;
+        TownManager.fuseUnlock = true;
+        TownManager.smithSee = true;
+        TownManager.smithUnlock = true;
+        TownManager.fortuneSee = true;
+        TownManager.fortuneUnlock = true;
+    },
     skipSac : false,
 }

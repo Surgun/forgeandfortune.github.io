@@ -3035,6 +3035,12 @@ Rarities
     padding: 15px;
 }
 
+.fuseTime {
+    padding: 10px 0 0 0;
+    color: var(--text-3);
+    border-top: 2px solid var(--border);
+}
+
 .fuseStart {
     display: flex;
     flex-wrap: wrap;

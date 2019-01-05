@@ -1254,7 +1254,10 @@ Rarities
 .recipeCardFront, .recipeCardBack {
     flex-direction: column;
     height: 100%;
-    animation: 0.2s scale-in forwards;
+    transform: rotateX(90deg);
+    opacity: 0;
+    -webkit-animation: 0.4s flip-card forwards;
+    animation: 0.4s flip-card forwards;
 }
 
 .recipeCardBack {
@@ -4716,6 +4719,17 @@ span.beta-tag {
     }
     to {
         transform: scaleY(1);
+    }
+}
+
+@keyframes flip-card {
+    from {
+        transform: rotateX(180deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateX(360deg);
+        opacity: 1;
     }
 }
 

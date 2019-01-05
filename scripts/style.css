@@ -403,7 +403,7 @@ body {
     cursor: pointer;
 }
 
-.invActionButton:hover {
+.invActionButton:hover, #sortBank:hover {
     background-color: var(--bg-primary);
     border-color: var(--border-tertiary);
 }
@@ -602,7 +602,7 @@ body {
     color: #c90000;
 }
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHead, .smithInvHead, .bankBankHead, .masteryBlockHeader {
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHead, .smithInvHead, .masteryBlockHeader {
     font-weight: normal;
     font-size: 1rem;
     padding: 0 5px 5px;

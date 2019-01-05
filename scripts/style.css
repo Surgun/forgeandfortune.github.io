@@ -653,7 +653,7 @@ Rarities
 }
 
 .inventoryItem.R0 > .inventoryItemName:before {
-    content: "\f3a5 Common";
+    content: "Common";
     background-color: var(--bg-primary);
 }
 

@@ -80,7 +80,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCraft, .recipeClose,.recipeBackTab, , #sortBank {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, #sortInventory:after, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCraft, .recipeClose,.recipeBackTab, #sortBank {
     -webkit-transition: all var(--transition);
     -moz-transition: all var(--transition);
     -ms-transition: all var(--transition);
@@ -442,6 +442,7 @@ body {
     border-radius: 10px;
     color: var(--text-primary);
     min-height: 212px;
+    overflow: hidden;
 }
 
 .inventoryItemName, .equipItemName {
@@ -642,42 +643,41 @@ Rarities
 .inventoryItem.R3 > .inventoryItemName:before {
     display: block;
     position: absolute;  
-    top: 10px;
-    right: 10px;
-    left: 10px;
-    border-radius: 5px;
-    padding: 8px 10px;
+    top: -50px;
+    right: 0;
+    left: 0;
+    padding: 25px 10px 5px;
+    background-color: var(--bg-primary);
     opacity: 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,.1);
     z-index: 10;
 }
 
 .inventoryItem.R0 > .inventoryItemName:before {
-    content: "Common";
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
+    content: "\f3a5 Common";
+    background-color: var(--bg-primary);
 }
 
 .inventoryItem.R1 > .inventoryItemName:before {
     content: "Good";
-    background-color: #193724;
-    border: 1px solid #1a562a;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
+    background-size: 100% 212px;
 }
 
 .inventoryItem.R2 > .inventoryItemName:before {
     content: "Great";
-    background-color: #162a3b;
-    border: 1px solid #133b5e;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
+    background-size: 100% 212px;
 }
 
 .inventoryItem.R3 > .inventoryItemName:before {
     content: "Epic";
-    background-color: #391a30;
-    border: 1px solid #5d1642;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
+    background-size: 100% 212px;
 }
 
 .inventoryItem.R0 > .inventoryItemName:hover:before, .inventoryItem.R1 > .inventoryItemName:hover:before, .inventoryItem.R2 > .inventoryItemName:hover:before, .inventoryItem.R3 > .inventoryItemName:hover:before {
     opacity: 1;
+    top: 0;
 }
 
 .inventoryItem > .inventoryItemName, .equipItem > .equipItemName, .bankItem > .bankItemName, .smithItem > .smithItemName, .heroExamineEquipmentEquip {
@@ -3346,7 +3346,7 @@ Rarities
     margin: 0;
 }
 
-.bankItemLevel, .smithItemLevel, .inventoryItemLevel {
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel {
     position: absolute;
     top: 10px;
     left: 10px;

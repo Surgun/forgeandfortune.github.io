@@ -3089,7 +3089,7 @@ Rarities
     margin: 0;
 }
 
-.bankItemLevel, .smithItemLevel, .inventoryItemLevel {
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .equipLevel {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -3099,6 +3099,10 @@ Rarities
     background-color: rgba(255,255,255,0.05);
     border-radius: 5px;
     padding: 5px 8px;
+}
+
+.equipLevel {
+    top: 30px;
 }
 
 .bankProps, .smithProps, .smithChance {

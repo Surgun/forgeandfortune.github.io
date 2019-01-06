@@ -63,7 +63,10 @@ function initiateBankBldg() {
 
 function refreshBankInventory() {
     $bankInvSlots.empty();
-    const d1 = $("<div/>").addClass("bankInvHead").html(`INVENTORY (${Inventory.nonblank().length}/${Inventory.invMax})` );
+    const d1 = $("<div/>").addClass("bankInvHeadContainer");
+    const d2 = $("<div/>").addClass("bankInvHead").html(`INVENTORY (${Inventory.nonblank().length}/${Inventory.invMax})` );
+    const d3 = $("<div/>").attr("id","sortInventoryBank").html("Sort Inventory");
+    d1.append(d2,d3);
     $bankInvSlots.append(d1);
     Inventory.nonblank().forEach(item => {
         $bankInvSlots.append(itemCard(item,false));
@@ -109,4 +112,9 @@ $(document).on("click",".bankStow",(e) => {
 $(document).on("click","#sortBank",(e) => {
     e.preventDefault();
     BankManager.sortBank();
+});
+
+$(document).on("click","#sortInventoryBank",(e) => {
+    e.preventDefault();
+    Inventory.sortInventory();
 });

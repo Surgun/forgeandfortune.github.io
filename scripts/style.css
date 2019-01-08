@@ -1235,7 +1235,8 @@ Rarities
 }
 
 .brecipeTable {
-    grid-template: auto / repeat(auto-fill, minmax(270px, 1fr));
+    margin: 10px 40px 10px 10px;
+    grid-template: auto / repeat(auto-fill, minmax(275px, 1fr));
 }
 
 .recipeRow {

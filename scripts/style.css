@@ -416,6 +416,10 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
+.invActionButton > i {
+    margin-bottom: 3px;
+}
+
 .invActionButton > span {
     margin-left: 5px;
 }

@@ -1275,6 +1275,16 @@ Rarities
     transform: rotateX(180deg);
 }
 
+.recipeCardFlipped {
+    transform: rotateX(180deg) translateZ(0);
+    -webkit-transform: rotateX(180deg) translateZ(0);
+    perspective: 1px;
+}
+
+.recipeCardDisabled {
+    pointer-events: none;
+}
+
 .recipeTabContainer {
     flex: 1;
     transform: scaleY(0);

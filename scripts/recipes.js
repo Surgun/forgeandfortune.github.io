@@ -528,20 +528,20 @@ $(document).on('click','.bpShopButton', (e) => {
 
 $(document).on('click','.recipeDescription', (e) => {
     e.preventDefault();
-    $(".recipeCardContainer").css("transform","rotateX(0deg)");
-    $(".recipeCardFront").css("pointer-events","auto");
+    $(".recipeCardContainer").removeClass("recipeCardFlipped");
+    $(".recipeCardFront").removeClass("recipeCardDisabled");
     $(".recipeTabContainer").hide();
     $(".recipeBackTab").removeClass("selected");
     $(".backTab1").addClass("selected");
     $(".recipeTabDetails").show();
-    $(e.currentTarget).parent().css("pointer-events","none");
-    $(e.currentTarget).parent().parent().css("transform","rotateX(180deg)");
+    $(e.currentTarget).parent().addClass("recipeCardDisabled");
+    $(e.currentTarget).parent().parent().addClass("recipeCardFlipped");
 });
 
 $(document).on('click','.recipeClose', (e) => {
     e.preventDefault();
-    $(e.currentTarget).parent().prev().css("pointer-events","auto");
-    $(e.currentTarget).parent().parent().css("transform","rotateX(360deg)");
+    $(e.currentTarget).parent().prev().removeClass("recipeCardDisabled");
+    $(e.currentTarget).parent().parent().removeClass("recipeCardFlipped");
 });
 
 $(document).on('click','.recipeBackTab', (e) => {

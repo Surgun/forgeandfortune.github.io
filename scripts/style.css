@@ -144,7 +144,7 @@ body {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -539,11 +539,11 @@ body {
 }
 
 #inventoryEquipTab {
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 #closeEquipItem {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .equipItemProps {
@@ -4363,14 +4363,14 @@ footer a[href*="discord.gg"]:hover {
 }
 
 #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy {
-    margin-top: 10px;
+    margin: 10px 0;
     padding: 10px 25px;
     flex-grow: 1;
     text-transform: uppercase;
-    background-color: var(--bg-tertiary);
+    background-color: rgba(255,255,255,.05);
     color: var(--text-primary);
-    border: 1px solid var(--border-primary);
-    border-radius: 0;
+    border: 0;
+    border-radius: 5px;
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -4383,7 +4383,16 @@ footer a[href*="discord.gg"]:hover {
 }
 
 #pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover, #importSaveButton:hover, #declineSaveButton:hover, #exportSaveCopy:hover {
-    background-color: var(--bg-secondary);
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+#pfButtons > input, #pfImportExport > input, #pfLoadButtons > input {
+    margin-right: 5px;
+}
+
+#deleteSaveButton, #declineSaveButton {
+    margin: 5px 0;
 }
 
 .ClipboardCopy, .battleLogNotice {

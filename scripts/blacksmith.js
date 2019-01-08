@@ -93,7 +93,7 @@ function initiateSmithBldg() {
 
 function refreshSmithInventory() {
     $smithInvSlots.empty();
-    const d1 = $("<div/>").addClass("smithInvHead").html("INVENTORY");
+    const d1 = $("<div/>").addClass("smithInvHead").html("Inventory");
     $smithInvSlots.append(d1);
     if (Inventory.nonblank(true).length === 0) {
         const d2 = $("<div/>").addClass("smithInvBlank").html("No Items in Inventory");

@@ -1267,6 +1267,7 @@ Rarities
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
     border-radius: 10px;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -1275,9 +1276,13 @@ Rarities
     transform: rotateX(180deg);
 }
 
+.recipeRowHighlight {
+    transform: rotateX(360deg);
+}
+
 .recipeCardFlipped {
-    transform: rotateX(180deg) translateZ(0);
     -webkit-transform: rotateX(180deg) translateZ(0);
+    transform: rotateX(180deg) translateZ(0);
     perspective: 1px;
 }
 
@@ -1287,6 +1292,7 @@ Rarities
 
 .recipeTabContainer {
     flex: 1;
+    -webkit-transform: scaleY(0);
     transform: scaleY(0);
     animation: 0.2s scale-y-in forwards;
 }
@@ -4745,17 +4751,6 @@ span.beta-tag {
     }
     to {
         transform: scaleY(1);
-    }
-}
-
-@keyframes flip-card {
-    from {
-        transform: rotateX(180deg);
-        opacity: 0;
-    }
-    to {
-        transform: rotateX(360deg);
-        opacity: 1;
     }
 }
 

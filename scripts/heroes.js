@@ -481,9 +481,11 @@ function examineHero(ID) {
     $.each(slots, (slotNum,equip) => {
         let equipText = "";
         let equipRarity = 0
+        let equipLevel = "";
         if (equip !== null) {
             equipText = equip.picName();
             equipRarity = equip.rarity;
+            equipLevel = "LVL " + equip.lvl;
         }
         else {
             equipText = hero.slotTypeIcons(slotNum);
@@ -492,6 +494,8 @@ function examineHero(ID) {
         if (hero.equipUpgradeAvailable(slotNum)) d5.addClass("equipUpgradeAvailable")
         const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]);
         const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+equipRarity).html(equipText);
+        const d5b1 = $("<div/>").addClass("equipLevel").html(equipLevel);
+        d5b.append(d5b1);
         let d5c = "";
         if (equip === null) {
             d5c = "";
@@ -539,10 +543,11 @@ function examineHeroPossibleEquip(slot,heroID) {
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('EHPE');
     const htd1 = $('<div/>').addClass('EHPEHeaderName').html("NAME");
-    const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("ACT");
-    const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
-    const htd4 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
-    const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3,htd4);
+    const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("LVL");
+    const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("ACT");
+    const htd4 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
+    const htd5 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
+    const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3,htd4,htd5);
     table.append(hrow);
 
     let upgradeAvaialable = false;
@@ -553,17 +558,20 @@ function examineHeroPossibleEquip(slot,heroID) {
         let speed = "Fair";
         if (itemContainer.act() > 5000) speed = "Slow";
         if (itemContainer.act() < 5000) speed = "Fast";
+        let level = itemContainer.lvl;
         const td1a = $('<div/>').addClass('EHPEstat');
+        const td1b = $('<div/>').addClass('EHPEstat');
         const td2 = $('<div/>').addClass('EHPEstat');
         const td3 = $('<div/>').addClass('EHPEstat');
         td1a.html(speed);
+        td1b.html(level);
         if (relPow > 0) td2.addClass("EHPEstatPositive").html(itemContainer.pow() + " (+" + relPow + ")");
         else if (relPow < 0) td2.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relPow + ")");
         else td2.html(itemContainer.pow() + " (+" + relPow + ")");
         if (relHP > 0) td3.addClass("EHPEstatPositive").html(itemContainer.hp() + " (+" + relHP + ")");
         else if (relHP < 0) td3.addClass("EHPEstatNegative").html(itemContainer.hp() + " (" + relHP + ")");
         else td3.html(itemContainer.hp());
-        const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td1a,td2,td3);
+        const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td1b,td1a,td2,td3);
         table.append(row);
     });
     $heroEquipmentList.append(table);

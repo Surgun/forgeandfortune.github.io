@@ -392,8 +392,9 @@ function gearEquipFromInventory(invID) {
     const itemdiv = $("<div/>").addClass("equipItem");
     itemdiv.addClass("R"+equipContainerTarget.rarity)
     const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(item.itemPicName());
+    const itemLevel = $("<div/>").addClass("equipItemLevel").html(item.itemLevel());
     const itemProps = $("<div/>").addClass("equipItemProps").html(equipContainerTarget.propDiv());
-    itemdiv.append(itemName,itemProps);
+    itemdiv.append(itemName,itemLevel,itemProps);
     $ietEquip.html(itemdiv);
     const heroBlocks = HeroManager.slotsByItem(item);
     heroBlocks.forEach(hb=> {

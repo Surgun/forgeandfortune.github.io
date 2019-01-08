@@ -388,7 +388,7 @@ function initializeRecipes(type,sortType,heading) {
             const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
             masteryBarDiv.append(masteryBar,masteryBarFill);
         td5a.append(masteryBarDiv);
-        const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
+        const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
         td5.append(td5a,td5b);
 
         const td6 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
@@ -418,8 +418,9 @@ function initializeRecipes(type,sortType,heading) {
             td9.append(td9a).hide();
 
         const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5);
-        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9).hide();
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardFront,recipeCardBack);
+        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9);
+        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').append(recipeCardFront,recipeCardBack);
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardContainer);
 
         lastRow = row;
         if (alternate) row.addClass("recipeRowHighlight");
@@ -527,22 +528,20 @@ $(document).on('click','.bpShopButton', (e) => {
 
 $(document).on('click','.recipeDescription', (e) => {
     e.preventDefault();
-    $(".recipeCardBack").hide();
-    $(".recipeCardFront").css("display","flex");
-    $(e.currentTarget).parent().hide();
-    $(e.currentTarget).parent().next().css("display","flex");
+    $(".recipeCardContainer").removeClass("recipeCardFlipped");
+    $(".recipeCardFront").removeClass("recipeCardDisabled");
     $(".recipeTabContainer").hide();
     $(".recipeBackTab").removeClass("selected");
     $(".backTab1").addClass("selected");
     $(".recipeTabDetails").show();
+    $(e.currentTarget).parent().addClass("recipeCardDisabled");
+    $(e.currentTarget).parent().parent().addClass("recipeCardFlipped");
 });
 
 $(document).on('click','.recipeClose', (e) => {
     e.preventDefault();
-    $(".recipeCardBack").hide();
-    $(".recipeCardFront").css("display","flex");
-    $(e.currentTarget).parent().hide();
-    $(e.currentTarget).parent().prev().css("display","flex");
+    $(e.currentTarget).parent().prev().removeClass("recipeCardDisabled");
+    $(e.currentTarget).parent().parent().removeClass("recipeCardFlipped");
 });
 
 $(document).on('click','.recipeBackTab', (e) => {

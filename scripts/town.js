@@ -292,7 +292,7 @@ function buildScreen(type) {
         td4.append(td4a,td4b,td4c);
 
         const td5 = $('<div/>').addClass('recipeCountAndCraft');
-            const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
+            const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
         td5.append(td5b);
 
         const td6 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
@@ -308,8 +308,9 @@ function buildScreen(type) {
         td8.append(td8a);
 
         const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5);
-        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8).hide();
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardFront,recipeCardBack);
+        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8);
+        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').append(recipeCardFront,recipeCardBack);
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardContainer);
 
         lastRow = row;
         if (alternate) row.addClass("recipeRowHighlight");

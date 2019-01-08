@@ -3364,7 +3364,7 @@ Rarities
     margin: 0;
 }
 
-.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel {
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel {
     position: absolute;
     top: 10px;
     left: 10px;

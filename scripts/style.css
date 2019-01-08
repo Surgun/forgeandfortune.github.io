@@ -1425,6 +1425,10 @@ Rarities
     cursor: pointer;
 }
 
+.recipeCraft > span {
+    margin-left: 5px;
+}
+
 .recipeCraft:not(.recipeCraftDisable):hover {
     background-color: var(--green-primary);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
@@ -3060,12 +3064,14 @@ Rarities
 }
 
 #buildingList {
+    --offset-height: 40px;
     position: sticky;
-    top: 40px;
+    top: var(--offset-height);
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
     background-color: var(--bg-primary);
     border-bottom: 2px solid var(--border-primary);
+    z-index: 10;
 }
 
 .buildingName {
@@ -4947,6 +4953,35 @@ span.beta-tag {
     #eventList {
         --offset-amt: 106px;
         --content-height: 156px;
+    }
+
+    #buildingList {
+        --offset-height: 58px;
+    }
+
+    #RecipeFilter {
+        max-width: 170px;
+    }
+
+    .recipeContents {
+        grid-template: auto / repeat(auto-fill, minmax(265px, 1fr));
+    }
+
+    .recipeContents .itemCost {
+        display: grid;
+        grid-template: 1fr 1fr / repeat(auto-fill, minmax(50px, 1fr));
+    }
+
+    .recipeCountAndCraft {
+        grid-template: 1fr / 3fr 1fr;
+    }
+
+    .recipeCraft > span {
+        display: none;
+    }
+
+    .brecipeTable .recipeCraft > span {
+        display: inline;
     }
 }
 

@@ -388,7 +388,7 @@ function initializeRecipes(type,sortType,heading) {
             const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
             masteryBarDiv.append(masteryBar,masteryBarFill);
         td5a.append(masteryBarDiv);
-        const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
+        const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
         td5.append(td5a,td5b);
 
         const td6 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);

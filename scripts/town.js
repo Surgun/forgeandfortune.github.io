@@ -292,7 +292,7 @@ function buildScreen(type) {
         td4.append(td4a,td4b,td4c);
 
         const td5 = $('<div/>').addClass('recipeCountAndCraft');
-            const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i> Craft`);
+            const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
         td5.append(td5b);
 
         const td6 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);

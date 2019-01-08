@@ -418,8 +418,9 @@ function initializeRecipes(type,sortType,heading) {
             td9.append(td9a).hide();
 
         const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5);
-        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9).hide();
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardFront,recipeCardBack);
+        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9);
+        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').append(recipeCardFront,recipeCardBack);
+        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardContainer);
 
         lastRow = row;
         if (alternate) row.addClass("recipeRowHighlight");
@@ -527,22 +528,20 @@ $(document).on('click','.bpShopButton', (e) => {
 
 $(document).on('click','.recipeDescription', (e) => {
     e.preventDefault();
-    $(".recipeCardBack").hide();
-    $(".recipeCardFront").css("display","flex");
-    $(e.currentTarget).parent().hide();
-    $(e.currentTarget).parent().next().css("display","flex");
+    $(".recipeCardContainer").css("transform","rotateX(0deg)");
+    $(".recipeCardFront").css("pointer-events","auto");
     $(".recipeTabContainer").hide();
     $(".recipeBackTab").removeClass("selected");
     $(".backTab1").addClass("selected");
     $(".recipeTabDetails").show();
+    $(e.currentTarget).parent().css("pointer-events","none");
+    $(e.currentTarget).parent().parent().css("transform","rotateX(180deg)");
 });
 
 $(document).on('click','.recipeClose', (e) => {
     e.preventDefault();
-    $(".recipeCardBack").hide();
-    $(".recipeCardFront").css("display","flex");
-    $(e.currentTarget).parent().hide();
-    $(e.currentTarget).parent().prev().css("display","flex");
+    $(e.currentTarget).parent().prev().css("pointer-events","auto");
+    $(e.currentTarget).parent().parent().css("transform","rotateX(360deg)");
 });
 
 $(document).on('click','.recipeBackTab', (e) => {

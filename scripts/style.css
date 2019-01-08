@@ -393,29 +393,31 @@ body {
     margin-left: 10px;
 }
 
+.inventoryActions {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .invActionButton, #sortBank, #sortInventoryBank {
     position: relative;
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 10px 0 0 10px;
     padding: 10px 15px;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
+    background-color: rgba(255,255,255,.05);
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .invActionButton:hover, #sortBank:hover, #sortInventoryBank:hover {
-    background-color: var(--bg-primary);
-    border-color: var(--border-tertiary);
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
 .invActionButton > span {
     margin-left: 5px;
-}
-
-#sortInventory:hover:after {
-    left: 110%;
-    height: auto;
-    opacity: 1;
 }
 
 #inventory, #ietEquip, #ietHero {

@@ -54,7 +54,6 @@ function createSave() {
     saveFile["fo"] = FortuneManager.createSave();
     saveFile["tm"] = TownManager.createSave();
     saveFile["saveTime"] = Date.now();
-    console.log(saveFile);
     //const output = pako.gzip(JSON.stringify(saveFile),{ to: 'string' });
     return JSON.stringify(saveFile);
 }

@@ -23,12 +23,12 @@ class Hero {
         this.maxHPseen = this.hp;
         this.ap = 0;
         this.apmax = 5;
-        this.act = 0;
         this.armor = 0;
         this.crit = 5;
         this.critdmg = 2;
         this.dodgeChance = 0;
         this.target = "first";
+        this.unitType = "hero";
         this.slot1 = null;
         this.slot2 = null;
         this.slot3 = null;
@@ -47,7 +47,6 @@ class Hero {
         save.xp = this.xp;
         save.hp = this.hp;
         save.ap = this.ap;
-        save.act = this.act;
         save.maxHPseen = this.maxHPseen;
         save.inDungeon = this.inDungeon;
         if (this.slot1 === null) save.slot1 = null;
@@ -70,7 +69,6 @@ class Hero {
         this.xp = save.xp;
         this.hp = save.hp;
         this.ap = save.ap;
-        this.act = save.act;
         this.inDungeon = save.inDungeon;
         if (save.slot1 !== null) {
             this.slot1 = new itemContainer(save.slot1.id,save.slot1.rarity);
@@ -130,6 +128,9 @@ class Hero {
         if (slot === 5 && this.slot6 !== null) return this.slot6.hp();
         return 0;
     }
+    initialAct() {
+        return this.actmax();
+    }
     actmax() {
         if (this.slot1 !== null) return this.slot1.act();
         else return 10;
@@ -155,11 +156,6 @@ class Hero {
             this.ap = 0;
         }
         this.act = Math.max(0,this.act-1);
-    }
-    ready() {
-        if (this.act > 0) return false;
-        this.act = this.actmax()
-        return true;
     }
     getEquipSlots() {
         //return an object with 
@@ -330,6 +326,9 @@ const HeroManager = {
     },
     idToHero(ID) {
         return this.heroes.find(hero => hero.id === ID);
+    },
+    isHeroID(ID) {
+        return this.heroes.some(hero => hero.id === ID);
     },
     equipItem(containerID,heroID,slot) {
         const item = Inventory.containerToItem(containerID);

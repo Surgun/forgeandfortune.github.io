@@ -2,8 +2,10 @@
 
 const MobManager = {
     monsterDB : [],
+    activeMobs : [],
     addMob(mob) {
         this.monsterDB.push(mob);
+        this.unitType = "mob";
     },
     idToMob(id) {
         return this.monsterDB.find(mob => mob.id === id);
@@ -13,9 +15,27 @@ const MobManager = {
         if (dungeonID !== "d1") return;
         const possibleMonster = this.monsterDB.filter(mob => mob.event === "normal" && mob.minFloor <= difficulty && mob.maxFloor >= difficulty);
         const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
-        console.log(difficulty,mobTemplate);
-        return new Mob(difficulty, mobTemplate);
+        const mob = new Mob(difficulty, mobTemplate);
+        this.addActiveMob(mob);
+        return mob;
     },
+    addActiveMob(mob) {
+        this.activeMobs.push(mob);
+    },
+    removeMob(mob) {
+        this.activeMobs = this.activeMobs.filter(m => m.uniqueid !== mob.uniqueid);
+    },
+    uniqueidToMob(id) {
+        return this.activeMobs.find(mob => mob.uniqueid === id);
+    },
+    getUniqueID() {
+        let i = 0;
+        const mobIds = this.activeMobs.map(m=>m.uniqueid);
+        while (mobIds.includes(i)) {
+            i += 1;
+        }
+        return i;
+    }
 }
 
 class MobTemplate {
@@ -26,7 +46,6 @@ class MobTemplate {
     }
 }
 
-let mobID = 0;
 class Mob {
     constructor (lvl,mobTemplate) {
         Object.assign(this, mobTemplate);
@@ -34,17 +53,15 @@ class Mob {
         this.pow = Math.floor(mobTemplate.powBase + mobTemplate.powLvl*lvl);
         this.hpmax = Math.floor(mobTemplate.hpBase + mobTemplate.hpLvl*lvl);
         this.hp = this.hpmax;
-        this.act = 0;
         this.ap = 0;
-        this.uniqueid = mobID;
-        mobID += 1;
+        this.uniqueid = MobManager.getUniqueID();
     }
     createSave() {
         const save = {};
         save.lvl = this.lvl;
         save.id = this.id;
+        save.uniqueid = this.uniqueid;
         save.hp = this.hp;
-        save.act = this.act;
         save.ap = this.ap
         save.alreadydead = this.alreadydead;
         return save;
@@ -52,20 +69,18 @@ class Mob {
     loadSave(save) {
         this.lvl = save.lvl;
         this.hp = save.hp;
-        this.act = save.act;
         this.ap = save.ap;
+        this.uniqueid = save.uniqueid;
         if (save.alreadydead !== undefined) this.alreadydead = save.alreadydead;
     }
     addTime() {
         this.act = Math.max(0,this.act-1);
     }
+    initialAct() {
+        return this.actmax();
+    }
     actmax() {
         return this.actTime;
-    }
-    ready() {
-        if (this.act > 0) return false;
-        this.act = this.actmax()
-        return true;
     }
     getPow() {
         return this.pow;

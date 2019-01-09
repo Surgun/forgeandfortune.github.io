@@ -182,14 +182,14 @@ function initiateDungeonFloor() {
         const d1b = $("<div/>").addClass("dfcImage").html(hero.image);
         const d1a = $("<div/>").addClass("dfcBar").html(createActBar(hero))
         d1.append(d1a,d1b,d1c);
-        $dungeonHeroList.append(d1);
+        $dungeonHeroList.prepend(d1);
         const d2 = $("<div/>").addClass("dsc");
         const d2a = $("<div/>").addClass("dscPic").html(hero.head);
         const d2b = $("<div/>").addClass("dscName").html(hero.name);
         const d2c = $("<div/>").addClass("dscHP").html(createHPBar(hero,"Dung"));
         const d2d = $("<div/>").addClass("dscAP").html(createAPBar(hero,"Dung"));
         d2.append(d2a,d2b,d2c,d2d);
-        $drStatsHero.append(d2);
+        $drStatsHero.prepend(d2);
     });
     dungeon.mobs.forEach((mob) => {
         const d3 = $("<div/>").addClass("dfm").attr("id","dfm"+mob.uniqueid);
@@ -198,14 +198,14 @@ function initiateDungeonFloor() {
         const d3a = $("<div/>").addClass("dfmBar").html(createActBar(mob))
         d3.append(d3a,d3b,d3c);
         if (mob.hp === 0) d3.addClass("mobDead");
-        $dungeonMobList.append(d3);
+        $dungeonMobList.prepend(d3);
         const d4 = $("<div/>").addClass("dsm");
         const d4a = $("<div/>").addClass("dsmPic").html(mob.head);
         const d4b = $("<div/>").addClass("dsmName").html(mob.name);
         const d4c = $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung"));
         const d4d = $("<div/>").addClass("dsmAP").html(createAPBar(mob,"Dung"));
         d4.append(d4a,d4b,d4c,d4d);
-        $drStatsMob.append(d4);
+        $drStatsMob.prepend(d4);
     });
 }
 

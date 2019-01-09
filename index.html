@@ -212,12 +212,14 @@
                     <button class="tablinks" id="progressTabLink"onclick="openTab('progressTab')"><div><i class="fas fa-tasks"></i> Progress</div></button>
                 </div>
                 <div id="inventoryTab" class="tabcontent">
-                    <div class="inventoryActions">
-                        <div id="goToBank" class="invActionButton"><i class="fas fa-university"></i><span>View Bank</span></div>
-                        <div id="sellAllCommons" class="invActionButton">Sell All Commons</div>
-                        <div id="sortInventory" class="invActionButton">Sort Inventory</div>
+                    <div id="inventory-container">
+                        <div class="inventoryActions">
+                            <div id="goToBank" class="invActionButton"><i class="fas fa-university"></i><span>View Bank</span></div>
+                            <div id="sellAllCommons" class="invActionButton">Sell All Commons</div>
+                            <div id="sortInventory" class="invActionButton">Sort Inventory</div>
+                        </div>
+                        <div id="inventory"></div>
                     </div>
-                    <div id="inventory"></div>
                 </div>
                 <div id="inventoryEquipTab" class="tabcontent">
                     <div class="inventoryActions">
@@ -386,12 +388,15 @@
                 </div>
                 <div id="eventsTab" class="tabcontent">
                     <div id="eventContainer">
-                        <div id="readUnread">
-                            <div id="readNew" class="readActive">Unread</div><div id="readOld">Saved</div>
-                        </div>
-                        <div id="eventList">
-                            <div id="eventListMail">
-                                <div class="events-placeholder-details">You have no mail to read at the moment.</div>
+                        <div id="eventListContainer">
+                            <div id="readUnread">
+                                <div id="readNew" class="readOption readActive">Unread</div>
+                                <div id="readOld" class="readOption">Saved</div>
+                            </div>
+                            <div id="eventList">
+                                <div id="eventListMail">
+                                    <div class="events-placeholder-details">You have no mail to read at the moment.</div>
+                                </div>
                             </div>
                         </div>
                         <div id="eventContent"></div>

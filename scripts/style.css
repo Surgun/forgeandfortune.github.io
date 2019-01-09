@@ -80,7 +80,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, #readNew, #readOld, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardContainer, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortSearch{
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #progresslist, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .purchaseWorkerCard, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardContainer, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortSearch{
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -391,6 +391,11 @@ body {
 .dungeonSideBarMemberHP {
     flex: 1;
     margin-left: 10px;
+}
+
+#inventory-container {
+    height: 100%;
+    overflow: auto;
 }
 
 .inventoryActions {
@@ -1803,6 +1808,8 @@ Rarities
 #workerList {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
+    overflow: auto;
 }
 
 #workerList, #progresslist, #dungeonSelect {
@@ -2484,7 +2491,7 @@ Rarities
     display: flex;
     height: 100%;
     font-size: 0.9em;
-    overflow: hidden;
+    overflow: auto;
 }
 
 #dungeonLayout {
@@ -3760,61 +3767,86 @@ Rarities
 #eventContainer {
     display: flex;
     height: 100%;
+    overflow: auto;
+}
+
+#eventListContainer {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 250px;
+    background-color: var(--bg-primary);
+    border-right: 1px solid var(--border-primary);
+    overflow: auto;
 }
 
 #readUnread {
     display: flex;
-    position: fixed;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    width: 250px;
-    font-size: 0.9em;
-    text-transform: uppercase;
     color: var(--text-tertiary);
-    background-color: var(--bg-primary);
-    border-right: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary)
 }
 
-#readNew, #readOld {
-    padding: 15px 0;
+.readOption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     flex-grow: 1;
+    padding: 10px 15px;
     cursor: pointer;
-    border-bottom: 1px solid var(--border-primary);
 }
 
-#readNew:hover, #readOld:hover {
+.readOption:after {
+    position: absolute;
+    bottom: -2px;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: transparent;
+}
+
+.readOption:hover {
     background-color: var(--bg-secondary);
 }
 
-#readNew.readActive, #readOld.readActive {
+.readOption.readActive {
     background-color: var(--border-primary);
     color: var(--text-primary);
-    border-bottom: 1px solid var(--highlight);
+}
+
+.readOption.readActive:after {
+    width: 100%;
+    background-color: var(--highlight);
 }
 
 #eventList {
-    --offset-amt: 88px;
-    --content-height: 138px;
-    position: fixed;
-    top: var(--offset-amt);
-    width: 100%;
-    height: calc(100% - var(--content-height));
-    max-width: 250px;
-    background-color: var(--bg-primary);
-    border-right: 1px solid var(--border-primary);
-    overflow-y: auto;
+    flex-grow: 1;
 }
 
 .eventList {
-    padding: 15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 12px 15px;
+    border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
     cursor: pointer;
 }
 
-.eventList.highlight {
-    background: var(--bg-tertiary);
-    border-bottom-color: var(--highlight);
+.eventList > img {
+    margin-right: 5px;
+}
+
+.eventList.highlight, .eventList.highlight:hover {
+    background-color: var(--border-primary);
+    border-color: var(--border-tertiary);
+    color: var(--highlight);
 }
 
 .eventList:hover {
@@ -3825,7 +3857,6 @@ Rarities
     flex: 1;
     font-size: 0.9em;
     padding: 15px;
-    margin-left: 250px;
 }
 
 .eventAuthor {
@@ -4973,11 +5004,6 @@ span.beta-tag {
 @media screen and (max-width: 1308px) {
     .tabcontent {
         --tab-height: 58px;
-    }
-
-    #eventList {
-        --offset-amt: 106px;
-        --content-height: 156px;
     }
 
     #RecipeFilter {

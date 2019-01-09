@@ -351,7 +351,7 @@ $(document).on('click', '#db-init', (e) => {
 });
 
 $(document).on('click', '.recipeCraft', (e) => {
-    const $button = $(e.target);
+    const $button = $(e.currentTarget);
     $(".recipeCraft").removeClass('btn-press');
     $button.addClass('btn-press');
     resetBtnPressAnimation();

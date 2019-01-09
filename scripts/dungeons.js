@@ -43,7 +43,6 @@ class Dungeon {
     createSave() {
         const save = {};
         save.id = this.id;
-        save.floorNum = this.floorNum;
         save.party = this.party.createSave();
         save.mobs = [];
         this.mobs.forEach(m=>{
@@ -51,6 +50,7 @@ class Dungeon {
         });
         save.dropList = this.dropList;
         save.dungeonTime = this.dungeonTime;
+        save.mobDeadCount = this.mobDeadCount
         save.order = [];
         this.order.forEach(o=> {
             save.order.push(o.createSave());
@@ -58,16 +58,16 @@ class Dungeon {
         return save;
     }
     loadSave(save) {
-        this.floorNum = save.floorNum;
         this.mobs = [];
         save.mobs.forEach(mobSave => {
             const mobTemplate = MobManager.idToMob(mobSave.id);
-            const mob = new Mob(save.floorNum, mobTemplate);
+            const mob = new Mob(save.mobDeadCount, mobTemplate);
             mob.loadSave(mobSave);
             MobManager.addActiveMob(mob);
         });
         this.dropList = save.dropList;
         this.dungeonTime = save.dungeonTime;
+        this.mobDeadCount = save.mobDeadCount;
         this.order = [];
         save.order.forEach(orderSave => {
             if (HeroManager.isHeroID(orderSave.unitid)) {
@@ -119,8 +119,8 @@ class Dungeon {
                 return;
             }
             this.dungeonTime -= 1000;
-            this.order.forEach(o => console.log(o.unit.name,o.act));
-            console.log("-------------")
+            //this.order.forEach(o => console.log(o.unit.name,o.act));
+            //console.log("-------------")
         }
     }
     checkDeadMobs() {
@@ -158,7 +158,7 @@ class Dungeon {
             h.inDungeon = false;
             h.ap = 0;
         });
-        EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorNum);
+        EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.mobDeadCount);
         DungeonManager.removeDungeon(this.id);
         if (DungeonManager.dungeonView !== null) {
             openTab("dungeonsTab");

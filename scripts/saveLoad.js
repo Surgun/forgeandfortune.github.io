@@ -24,7 +24,7 @@ let saveTime = 0;
 function saveGame(ms) {
     saveTime += ms;
     if (saveTime < 5000) return;
-    saveTime -= 5000;
+    saveTime = 0;
     if (stopSave) return;
     localStorage.setItem('ffgs1', createSave());
     ga('send', 'event', 'Save', 'savegame', 'savegame');
@@ -54,6 +54,7 @@ function createSave() {
     saveFile["fo"] = FortuneManager.createSave();
     saveFile["tm"] = TownManager.createSave();
     saveFile["saveTime"] = Date.now();
+    console.log(saveFile);
     //const output = pako.gzip(JSON.stringify(saveFile),{ to: 'string' });
     return JSON.stringify(saveFile);
 }

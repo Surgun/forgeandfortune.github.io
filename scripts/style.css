@@ -3084,12 +3084,12 @@ Rarities
 
 #townContainer {
     height: 100%;
+    overflow: auto;
 }
 
 #buildingList {
-    --offset-height: 40px;
     position: sticky;
-    top: var(--offset-height);
+    top: 0;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
     background-color: var(--bg-primary);
@@ -4978,10 +4978,6 @@ span.beta-tag {
     #eventList {
         --offset-amt: 106px;
         --content-height: 156px;
-    }
-
-    #buildingList {
-        --offset-height: 58px;
     }
 
     #RecipeFilter {

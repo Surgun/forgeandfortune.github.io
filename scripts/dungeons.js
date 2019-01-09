@@ -44,6 +44,7 @@ class Dungeon {
         const save = {};
         save.id = this.id;
         save.party = this.party.createSave();
+
         save.mobs = [];
         this.mobs.forEach(m=>{
             save.mobs.push(m.createSave());
@@ -61,8 +62,9 @@ class Dungeon {
         this.mobs = [];
         save.mobs.forEach(mobSave => {
             const mobTemplate = MobManager.idToMob(mobSave.id);
-            const mob = new Mob(save.mobDeadCount, mobTemplate);
+            const mob = new Mob(mobSave.lvl, mobTemplate);
             mob.loadSave(mobSave);
+            this.mobs.push(mob);
             MobManager.addActiveMob(mob);
         });
         this.dropList = save.dropList;
@@ -82,7 +84,7 @@ class Dungeon {
                 to.loadSave(orderSave);
                 this.order.push(to);
             }
-        })
+        });
     }
     addToOrder(unit,act) {
         const unitOrder = new turnOrder(unit);
@@ -119,8 +121,8 @@ class Dungeon {
                 return;
             }
             this.dungeonTime -= 1000;
-            //this.order.forEach(o => console.log(o.unit.name,o.act));
-            //console.log("-------------")
+            this.order.forEach(o => console.log(o.unit.name,o.act));
+            console.log("-------------")
         }
     }
     checkDeadMobs() {
@@ -131,7 +133,6 @@ class Dungeon {
                 this.mobDeadCount += 1;
                 MobManager.removeMob(mob);
                 this.order = this.order.filter(to => to.unit.uniqueid !== mob.uniqueid);
-                console.log(`${mob.name} died!`)
                 needrefresh = true;
             }
         })
@@ -150,7 +151,6 @@ class Dungeon {
             const mob = MobManager.generateDungeonMob(this.id,this.mobDeadCount);
             this.mobs.push(mob);
             this.addToOrder(mob,true);
-            console.log(`${mob.name} added!`)
         }
     }
     resetDungeon() {

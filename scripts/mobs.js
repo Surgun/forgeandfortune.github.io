@@ -63,15 +63,12 @@ class Mob {
         save.uniqueid = this.uniqueid;
         save.hp = this.hp;
         save.ap = this.ap
-        save.alreadydead = this.alreadydead;
         return save;
     }
     loadSave(save) {
-        this.lvl = save.lvl;
         this.hp = save.hp;
         this.ap = save.ap;
         this.uniqueid = save.uniqueid;
-        if (save.alreadydead !== undefined) this.alreadydead = save.alreadydead;
     }
     addTime() {
         this.act = Math.max(0,this.act-1);

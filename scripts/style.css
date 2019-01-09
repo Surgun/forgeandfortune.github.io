@@ -3894,6 +3894,7 @@ Rarities
 /* Footer Elements */
 
 footer {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -3902,6 +3903,7 @@ footer {
     font-size: 14px;
     background-color: var(--bg-primary);
     border-top: 1px solid var(--border-primary);
+    z-index: 1;
 }
 
 #bottom-left, #bottom-right {

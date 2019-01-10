@@ -414,8 +414,7 @@ function initializeRecipes(type,sortType,heading) {
                     td9a1.append(td9a1a,td9a1b,td9a1c);
                     /* End */
                 td9a.append(td9a1);
-            td9.append(td9a).hide();
-
+            td9.append(td9a);
         const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5);
         const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9);
         const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').append(recipeCardFront,recipeCardBack);
@@ -529,10 +528,10 @@ $(document).on('click','.recipeDescription', (e) => {
     e.preventDefault();
     $(".recipeCardContainer").removeClass("recipeCardFlipped");
     $(".recipeCardFront").removeClass("recipeCardDisabled");
-    $(".recipeTabContainer").hide();
+    $(".recipeTabContainer").addClass("none");
     $(".recipeBackTab").removeClass("selected");
     $(".backTab1").addClass("selected");
-    $(".recipeTabDetails").show();
+    $(".recipeTabDetails").removeClass("none");
     $(e.currentTarget).parent().addClass("recipeCardDisabled");
     $(e.currentTarget).parent().parent().addClass("recipeCardFlipped");
 });
@@ -544,11 +543,13 @@ $(document).on('click','.recipeClose', (e) => {
 });
 
 $(document).on('click','.recipeBackTab', (e) => {
+    console.time("tab"); // track execution
     e.preventDefault();
-    name = $(e.target).text();
-    $(".recipeTabContainer").hide();
-    $(".recipeTab"+name).show();
+    name = $(e.currentTarget).text();
+    $(".recipeTabContainer").addClass("none");
+    $(".recipeTab"+name).removeClass("none");
     $(".recipeBackTab").removeClass("selected");
     $(e.currentTarget).addClass("selected");
+    console.timeEnd("tab"); // output execution time
 });
 

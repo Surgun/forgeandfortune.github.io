@@ -5,15 +5,14 @@ const CombatManager = {
         const dungeon = DungeonManager.dungeonByID(dungeonID);
         const enemies = dungeon.mobs;
         const target = getTarget(enemies, hero.target);
-        if (target === undefined) return;
-        const battleMessage = new BattleMessage(dungeonID, hero, target, true);
+        const battleMessage = new BattleMessage(dungeonID, hero, target);
         this.executeAttack(hero,target,battleMessage);
     },
     mobAttack(mob, dungeonID) {
         const dungeon = DungeonManager.dungeonByID(dungeonID);
         const enemies = dungeon.party.heroes;
         const target = getTarget(enemies, mob.target);
-        const battleMessage = new BattleMessage(dungeonID, mob, target, false);
+        const battleMessage = new BattleMessage(dungeonID, mob, target);
         this.executeAttack(mob, target, battleMessage);
     },
     executeAttack(attacker, defender, battleMessage) {
@@ -30,7 +29,6 @@ const CombatManager = {
         refreshAPBar(attacker);
         battleMessage.damage = damage;
         this.takeDamage(damage, defender, battleMessage);
-        BattleLog.addAttackLog(battleMessage);
     },
     takeDamage(damage,defender,battleMessage) {
         damage -= defender.armor;
@@ -43,7 +41,7 @@ const CombatManager = {
         }
         battleMessage.defenderDead = defender.hp === 0;
         refreshHPBar(defender);
-        BattleLog.addDefendLog(battleMessage);
+        BattleLog.addBattleLog(battleMessage);
     },
     rollStat(critChance) {
         return critChance > Math.floor(Math.random()*100) + 1
@@ -60,65 +58,35 @@ function getTarget(party,type) {
     else if (type === "lowhp") return party.sort((a,b) => {return a.hp - b.hp})[0];
 }
 
-const $drLogHero = $("#drLogHero");
-const $drLogMob = $("#drLogMob");
+const $drLog = $("#drLog");
 
 const BattleLog = {
-    heroLog : [],
-    enemyLog : [],
+    log : [],
     logLength : settings.battleLogLength,
-    addHeroLog(m) {
-        if (this.heroLog.length >= this.logLength) {
-            this.heroLog.shift();
+    addLog(m) {
+        if (this.log.length >= this.logLength) {
+            this.log.shift();
         }
-        this.heroLog.push(m);
-        $drLogHero.empty();
-        this.heroLog.forEach(m=> {
-            const d = $("<div/>").addClass("heroBattleLog").html(m);
-            $drLogHero.prepend(d);
-        });
-    },
-    addEnemyLog(m) {
-        if (this.enemyLog.length >= this.logLength) {
-            this.enemyLog.shift();
-        }
-        this.enemyLog.push(m);
-        $drLogMob.empty();
-        this.enemyLog.forEach(m=> {
-            const d = $("<div/>").addClass("enemyBattleLog").html(m);
-            $drLogMob.prepend(d);
+        this.log.push(m);
+        $drLog.empty();
+        this.log.forEach(m=> {
+            const d = $("<div/>").addClass("battleLog").html(m);
+            $drLog.prepend(d);
         });
     },
     clear() {
-        this.heroLog = [];
-        this.enemyLog = [];
-        $drLogHero.empty();
-        $drLogMob.empty();
+        this.log = [];
+        $drLog.empty();
     },
     mobDrops(name,drops) {
         if (drops.length === 0) return;
-        this.addHeroLog("Found an item!");
         const dropnames = drops.map(m=>ResourceManager.idToMaterial(m).name);
-        this.addEnemyLog(`${name} dropped ${dropnames.join(", ")}`)
+        this.addLog(`${name} dropped ${dropnames.join(", ")}`)
     },
-    addAttackLog(battleMessage) {
+    addBattleLog(battleMessage) {
         if (battleMessage.dungeonID !== DungeonManager.dungeonView) return;
-        let m = `${battleMessage.attacker.name} attacks for ${battleMessage.damage} damage`
-        if (battleMessage.critical && battleMessage.apAttack) m = `${battleMessage.attacker.name} crits for an enhanced ${battleMessage.damage} damage!`
-        if (!battleMessage.critical && battleMessage.apAttack) m = `${battleMessage.attacker.name} attacks for an enhanced ${battleMessage.damage} damage!`
-        if (battleMessage.critical && !battleMessage.apAttack) m = `${battleMessage.attacker.name} crits for ${battleMessage.damage} damage!`
-        if (battleMessage.isHero) this.addHeroLog(m);
-        else this.addEnemyLog(m);
+        this.addLog(battleMessage.message());
     },
-    addDefendLog(battleMessage) {
-        if (battleMessage.dungeonID !== DungeonManager.dungeonView) return;
-        let m = `${battleMessage.defender.name} takes ${battleMessage.damage} damage`
-        if (battleMessage.armor > 0) m += ` (${battleMessage.armor} absorbed)`;
-        if (battleMessage.dodge) m = `${battleMessage.defender.name} dodged the attack!`;
-        if (battleMessage.defenderDead) m = `${battleMessage.defender.name} died!`;
-        if (battleMessage.isHero) this.addEnemyLog(m);
-        else this.addHeroLog(m)
-    }
 }
 
 class BattleMessage {
@@ -127,8 +95,50 @@ class BattleMessage {
         this.isHero = isHero;
         this.attacker = attacker;
         this.defender = defender;
+        this.defenderDead = false;
         this.critical = false;
         this.apAttack = false;
         this.damage = 0;
     }
+    attackerDiv() {
+        const d = $("<div/>").addClass("blAttacker").html(this.attacker.name);
+        if (this.isHero) d.addClass("blHero");
+        return d
+    }
+    defenderDiv() {
+        const d = $("<div/>").addClass("blDefender").html(this.defender.name);
+        console.log(this.defender.name);
+        if (!this.isHero) d.addClass("blHero");
+        return d;
+    }
+    message() {
+        const attacker = this.attackerDiv();
+        const defender = this.defenderDiv();
+        const damage = $("<div/>").addClass("blDamage").html(`${this.damage} damage. `)
+        const message = $("<div/>").addClass("battleMessage").html(attacker);
+        if (this.critical) message.append(" crits ");
+        else message.append(" attacks ")
+        message.append(defender);
+        if (this.apAttack) message.append("for an enhanced ");
+        else message.append("for ");
+        message.append(damage);
+        if (this.defenderDead) message.append(" ",defender.clone()," died!");
+        return message;
+    }
+}
+
+const $drTurnOrder = $("#drTurnOrder");
+
+function displayTurnOrder(dungeon) {
+    if (dungeon.id !== DungeonManager.dungeonView) return;
+    $drTurnOrder.empty();
+    dungeon.order.forEach(turn => {
+        const unit = turn.unit;
+        const d = $("<div/>").addClass("turnOrderDiv");
+        const d1 = $("<div/>").addClass("dsmPic").html(unit.head);
+        const d2 = $("<div/>").addClass("dsmName").html(unit.name);
+        const d3 = $("<div/>").html(turn.act);
+        d.append(d1,d2,d3);
+        $drTurnOrder.append(d);
+    });
 }

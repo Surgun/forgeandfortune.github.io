@@ -102,15 +102,15 @@ class Dungeon {
         this.order.push(unitOrder);
     }
     getNextOrder() {
-        const next = this.order.shift();
         const reduceAmt = this.order[0].act;
         this.order.forEach(o => o.reductAct(reduceAmt));
+        const next = this.order.shift();
         return next.getUnit();
     }
     addTime(t) {
         //if there's enough time, grab the next guy and do some combat
         this.dungeonTime += t;
-        while (this.dungeonTime >= 1000) {
+        while (this.dungeonTime >= 2000) {
             const unit = this.getNextOrder();
             if (unit.unitType === "hero") CombatManager.heroAttack(unit,this.id);
             else CombatManager.mobAttack(unit,this.id);
@@ -120,9 +120,8 @@ class Dungeon {
                 this.resetDungeon();
                 return;
             }
-            this.dungeonTime -= 1000;
-            this.order.forEach(o => console.log(o.unit.name,o.act));
-            console.log("-------------")
+            this.dungeonTime -= 2000;
+            displayTurnOrder(this);
         }
     }
     checkDeadMobs() {

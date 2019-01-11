@@ -1056,6 +1056,8 @@ Rarities
     flex-grow: 1;
     margin: 10px 20px 0 10px;
     transform-origin: left;
+    -webkit-animation: 0.2s scale-in forwards;
+    animation: 0.2s scale-in forwards;
 }
 
 .recipeSortInput {

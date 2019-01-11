@@ -145,33 +145,10 @@ class Item{
     }
 }
 
-$(document).on("click",".recipeHeadName",(e) => {
+$(document).on("click",".recipeActionButton",(e) => {
     e.preventDefault();
-    sortRecipesByHeading("name","name");
-    recipeCanCraft();
-});
-
-$(document).on("click",".recipeHeadLvl",(e) => {
-    e.preventDefault();
-    sortRecipesByHeading("lvl");
-    recipeCanCraft();
-});
-
-$(document).on("click",".recipeHeadTime",(e) => {
-    e.preventDefault();
-    sortRecipesByHeading("time");
-    recipeCanCraft();
-});
-
-$(document).on("click",".recipeHeadValue",(e) => {
-    e.preventDefault();
-    sortRecipesByHeading("value");
-    recipeCanCraft();
-});
-
-$(document).on("click",".recipeHeadCount",(e) => {
-    e.preventDefault();
-    sortRecipesByHeading("mastery");
+    const filter = e.currentTarget.getAttribute("data-filter");
+    sortRecipesByHeading(filter);
     recipeCanCraft();
 });
 

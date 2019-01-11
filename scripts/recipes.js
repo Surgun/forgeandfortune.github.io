@@ -145,33 +145,10 @@ class Item{
     }
 }
 
-$(document).on("click",".recipeHeadName",(e) => {
+$(document).on("click",".recipeActionButton",(e) => {
     e.preventDefault();
-    sortRecipesByHeading("name","name");
-    recipeCanCraft();
-});
-
-$(document).on("click",".recipeHeadLvl",(e) => {
-    e.preventDefault();
-    sortRecipesByHeading("lvl");
-    recipeCanCraft();
-});
-
-$(document).on("click",".recipeHeadTime",(e) => {
-    e.preventDefault();
-    sortRecipesByHeading("time");
-    recipeCanCraft();
-});
-
-$(document).on("click",".recipeHeadValue",(e) => {
-    e.preventDefault();
-    sortRecipesByHeading("value");
-    recipeCanCraft();
-});
-
-$(document).on("click",".recipeHeadCount",(e) => {
-    e.preventDefault();
-    sortRecipesByHeading("mastery");
+    const filter = e.currentTarget.getAttribute("data-filter");
+    sortRecipesByHeading(filter);
     recipeCanCraft();
 });
 
@@ -290,7 +267,7 @@ function refreshRecipeFilters() {
     });
 }
 
-function initializeRecipes(type,sortType,heading) {
+function initializeRecipes(type,sortType,heading,query) {
     recipeList.recipePop = type;
     //filtering
     let rFilter = recipeList.recipes.filter(r => r.owned);
@@ -305,6 +282,13 @@ function initializeRecipes(type,sortType,heading) {
         rFilter = rFilter.filter(r => r.mcost.hasOwnProperty(type) && !r.isMastered());
         if (rFilter.length === 0) {
             Notifications.noItemFilter();
+            return;
+        }
+    }
+    else if (type === "search") {
+        rFilter =  rFilter.filter(r => query.indexOf(r) > -1);
+        if (rFilter.length === 0) {
+            Notifications.noSearchFound();
             return;
         }
     }
@@ -543,13 +527,31 @@ $(document).on('click','.recipeClose', (e) => {
 });
 
 $(document).on('click','.recipeBackTab', (e) => {
-    console.time("tab"); // track execution
     e.preventDefault();
     name = $(e.currentTarget).text();
     $(".recipeTabContainer").addClass("none");
     $(".recipeTab"+name).removeClass("none");
     $(".recipeBackTab").removeClass("selected");
     $(e.currentTarget).addClass("selected");
-    console.timeEnd("tab"); // output execution time
+});
+
+function cleanString(string) {
+    const newString = (string).toLowerCase().replace(/\s+/g, '');
+    return newString;
+}
+
+function runSortSearch() {
+    const searchTerm = cleanString(document.getElementById("recipeSortInput").value);
+    const queriedRecipes = recipeList.recipes.filter(recipe => cleanString(recipe.name).indexOf(searchTerm) > -1);
+    initializeRecipes("search","default","lvl",queriedRecipes);
+}
+
+$(document).on('click','.recipeSortButton', (e) => {
+    e.preventDefault();
+    runSortSearch();
+});
+
+$(document).on('keydown','.recipeSortInput', (e) => {
+    if (e.keyCode === 13) runSortSearch();
 });
 

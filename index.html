@@ -246,7 +246,7 @@
                             <a class="recipeSelect" id="rfHats" href="HatSelector">Hats</a>
                             <a class="recipeSelect" id="rfHelmets" href="HelmetSelector">Helmets</a>
                             <a class="recipeSelect" id="rfInstruments" href="InstrumentSelector">Instruments</a>
-                            <a class="recipeSelect" id="rfKnives" href="KnifeSelector">Knives</a>
+                            <a class="recipeSelect selected" id="rfKnives" href="KnifeSelector">Knives</a>
                             <a class="recipeSelect" id="rfMaces" href="MaceSelector">Maces</a>
                             <a class="recipeSelect" id="rfMasks" href="MaskSelector">Masks</a>
                             <a class="recipeSelect" id="rfPendants" href="PendantSelector">Pendants</a>
@@ -267,12 +267,16 @@
                         </div>
                         <div id="recipes-list">
                             <div id="RecipeSorting" class="recipe-sort-container">
-                                <div class="recipeActionButton">Name</div>
-                                <div class="recipeActionButton">Level</div>
-                                <div class="recipeActionButton">Value</div>
-                                <div class="recipeActionButton">Craft Time</div>
-                                <div class="recipeActionButton">Mastery</div>
-                                <input class="recipeSortSearch" type="text" name="recipe-search" placeholder="Search for a recipe...">
+                                <div class="recipeActionButton" data-filter="name">Name</div>
+                                <div class="recipeActionButton" data-filter="lvl">Level</div>
+                                <div class="recipeActionButton" data-filter="value">Value</div>
+                                <div class="recipeActionButton" data-filter="time">Craft Time</div>
+                                <div class="recipeActionButton" data-filter="mastery">Mastery</div>
+                                <div class="recipeActionButton">Custom</div>
+                                <div class="recipeSortSearch">
+                                    <input id="recipeSortInput" class="recipeSortInput" type="text" name="recipe-search" placeholder="Search for a recipe...">
+                                    <div class="recipeSortButton"><i class="fas fa-search"></i></div>
+                                </div>
                             </div>
                             <div id="RecipeResults"></div>
                             <div id="BlueprintUnlock"></div>
@@ -335,8 +339,10 @@
                                             <div id="drStatsHero"></div>
                                             <div id="drStatsMob"></div>
                                         </div>
-                                        <div id="drTurnOrder"></div>
-                                        <div id="drLog"></div>
+                                        <div class="drTurnOrderLogContainer">
+                                            <div id="drTurnOrder"></div>
+                                            <div id="drLog"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

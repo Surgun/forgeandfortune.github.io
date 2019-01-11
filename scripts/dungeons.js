@@ -23,7 +23,6 @@ class turnOrder {
         return save;
     }
     loadSave(save) {
-
         this.act = save.act;    
     }
 }
@@ -32,7 +31,7 @@ class Dungeon {
     constructor(id,party) {
         this.id = id;
         this.name = "Groovy Grove"
-        this.maxMonster = party.size();
+        this.maxMonster = 4;
         this.party = party;
         this.mobs = [];
         this.dropList = [];
@@ -44,7 +43,6 @@ class Dungeon {
         const save = {};
         save.id = this.id;
         save.party = this.party.createSave();
-
         save.mobs = [];
         this.mobs.forEach(m=>{
             save.mobs.push(m.createSave());

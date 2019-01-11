@@ -54,6 +54,7 @@ class Mob {
         this.hpmax = Math.floor(mobTemplate.hpBase + mobTemplate.hpLvl*lvl);
         this.hp = this.hpmax;
         this.ap = 0;
+        this.apmax = 120;
         this.uniqueid = MobManager.getUniqueID();
     }
     createSave() {
@@ -96,6 +97,10 @@ class Mob {
     }
     maxHP() {
         return this.hpmax;
+    }
+    addAP() {
+        this.ap += this.apAdd;
+        this.ap = Math.min(this.ap,120);
     }
     deadCheck() {
         if (this.hp > 0 || this.status === MobState.DEAD) return;

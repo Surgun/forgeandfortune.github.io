@@ -22,7 +22,7 @@ class Hero {
         this.hp = levelCurves.getLvlStats(this.lvl).hp;
         this.maxHPseen = this.hp;
         this.ap = 0;
-        this.apmax = 100;
+        this.apmax = 120;
         this.armor = 0;
         this.crit = 5;
         this.critdmg = 2;
@@ -142,6 +142,7 @@ class Hero {
         else {
             this.ap += this.slot1.apAdd;
         }
+        this.ap = Math.min(120,this.ap);
     }
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.maxHP());

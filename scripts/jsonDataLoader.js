@@ -89,11 +89,12 @@ function loadEvents() {
             const event = new Event(props)
             EventManager.loadEvent(event);
         });
-        loadDungeons();
+        //loadDungeons();
+        afterLoad();
     });
 }
 
-function loadDungeons() {
+/*function loadDungeons() {
     $.ajax({
         url: "json/dungeons.json",
     }).done((data) => {
@@ -104,4 +105,4 @@ function loadDungeons() {
         });
         afterLoad();
     });
-}
+}*/

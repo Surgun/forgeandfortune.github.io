@@ -89,6 +89,19 @@ function loadEvents() {
             const event = new Event(props)
             EventManager.loadEvent(event);
         });
+        loadDungeons();
+    });
+}
+
+function loadDungeons() {
+    $.ajax({
+        url: "json/dungeons.json",
+    }).done((data) => {
+        console.log("event load complete");
+        $.each(data, function(i,props){
+            const event = new Dungeon(props)
+            DungeonManager.addDungeon(event);
+        });
         afterLoad();
     });
 }

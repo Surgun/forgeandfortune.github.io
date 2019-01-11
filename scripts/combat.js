@@ -25,7 +25,7 @@ const CombatManager = {
             damage = Math.round(damage * 2);
             attacker.ap = 0;
         }
-        attacker.ap += 1;
+        attacker.addAP();
         refreshAPBar(attacker);
         battleMessage.damage = damage;
         this.takeDamage(damage, defender, battleMessage);

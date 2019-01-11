@@ -2816,12 +2816,33 @@ Rarities
     grid-row: 2;
 }
 
+.drTurnOrderLogContainer {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border-top: 1px solid var(--border-primary);
+}
+
+#drTurnOrder {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.turnOrderDiv {
+    border: 1px solid pink;
+}
+
 #drLog {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     flex-grow: 1;
-    min-height: 100px;
-    background-color: var(--bg-tertiary);
+    overflow: auto;
+}
+
+.battleLog {
+    border: 1px solid greenyellow;
 }
 
 #drLogHero {

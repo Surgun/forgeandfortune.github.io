@@ -1279,6 +1279,7 @@ Rarities
     height: 100%;
     max-width: 350px;
     perspective: 1500px;
+    transform: rotateX(360deg);
     -webkit-animation: 0.2s scale-in;
     animation: 0.2s scale-in;
 }
@@ -1307,10 +1308,6 @@ Rarities
 .recipeCardBack {
     font-size: 0.9em;
     transform: rotateX(180deg);
-}
-
-.recipeRowHighlight {
-    transform: rotateX(360deg);
 }
 
 .recipeCardFlipped {

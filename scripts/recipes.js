@@ -543,13 +543,11 @@ $(document).on('click','.recipeClose', (e) => {
 });
 
 $(document).on('click','.recipeBackTab', (e) => {
-    console.time("tab"); // track execution
     e.preventDefault();
     name = $(e.currentTarget).text();
     $(".recipeTabContainer").addClass("none");
     $(".recipeTab"+name).removeClass("none");
     $(".recipeBackTab").removeClass("selected");
     $(e.currentTarget).addClass("selected");
-    console.timeEnd("tab"); // output execution time
 });
 

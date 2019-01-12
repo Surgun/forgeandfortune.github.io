@@ -155,7 +155,7 @@ $(document).on("click",".recipeActionButton",(e) => {
 function sortRecipesByHeading(heading) {
     if (recipeList.recipeCategory === heading) heading = heading+"Asc";
     recipeList.recipeCategory = heading;
-    initializeRecipes(recipeList.recipePop, recipeList.recipeCategory, heading);
+    initializeRecipes(recipeList.recipePop, recipeList.recipeCategory, heading, queriedRecipes);
 }
 
 const recipeList = {
@@ -543,8 +543,8 @@ function cleanString(string) {
 function runSortSearch() {
     const searchTerm = cleanString(document.getElementById("recipeSortInput").value);
     if (searchTerm.length >= 2) {
-        const queriedRecipes = recipeList.recipes.filter(recipe => cleanString(recipe.name).indexOf(searchTerm) > -1);
-        initializeRecipes("search","default","lvl",queriedRecipes);
+        window.queriedRecipes = recipeList.recipes.filter(recipe => cleanString(recipe.name).indexOf(searchTerm) > -1);
+        initializeRecipes("search","lvl","lvl",queriedRecipes);
     } else {
         Notifications.searchLengthInvalid();
     }

@@ -540,10 +540,12 @@ function cleanString(string) {
     return newString;
 }
 
+let queriedRecipes = null;
+
 function runSortSearch() {
     const searchTerm = cleanString(document.getElementById("recipeSortInput").value);
     if (searchTerm.length >= 2) {
-        window.queriedRecipes = recipeList.recipes.filter(recipe => cleanString(recipe.name).indexOf(searchTerm) > -1);
+        queriedRecipes = recipeList.recipes.filter(recipe => cleanString(recipe.name).indexOf(searchTerm) > -1);
         initializeRecipes("search","lvl","lvl",queriedRecipes);
     } else {
         Notifications.searchLengthInvalid();

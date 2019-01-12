@@ -111,6 +111,12 @@ const Notifications = {
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
     },
+    searchLengthInvalid() {
+        const text = `Your search must contain at least two characters.`; // Text that is to be shown in the toast
+        const heading = 'Invalid Search Parameters'; // Optional heading to be shown on the toast
+        const icon = 'error'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
     autoWorkerSac(worker,item) {
         const text = `${item} contributed to ${worker}`; // Text that is to be shown in the toast
         const heading = 'Worker Auto-Contribution'; // Optional heading to be shown on the toast

@@ -542,8 +542,12 @@ function cleanString(string) {
 
 function runSortSearch() {
     const searchTerm = cleanString(document.getElementById("recipeSortInput").value);
-    const queriedRecipes = recipeList.recipes.filter(recipe => cleanString(recipe.name).indexOf(searchTerm) > -1);
-    initializeRecipes("search","default","lvl",queriedRecipes);
+    if (searchTerm.length >= 2) {
+        const queriedRecipes = recipeList.recipes.filter(recipe => cleanString(recipe.name).indexOf(searchTerm) > -1);
+        initializeRecipes("search","default","lvl",queriedRecipes);
+    } else {
+        Notifications.searchLengthInvalid();
+    }
 }
 
 $(document).on('click','.recipeSortButton', (e) => {

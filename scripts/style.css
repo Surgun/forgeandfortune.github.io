@@ -1071,9 +1071,8 @@ Rarities
     color: var(--text);
 }
 
-.recipeSortInput:focus, .recipeSortInput:focus + .recipeSortButton {
+.recipeSortInput:focus {
     background-color: rgba(255,255,255,.1);
-    border-color: rgba(255,255,255,.05);
 }
 
 .recipeSortButton {
@@ -1084,6 +1083,10 @@ Rarities
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
+}
+
+.recipeSortInput:focus + .recipeSortButton {
+    background-color: rgba(255,255,255,.125);
 }
 
 .recipeSortInput:focus + .recipeSortButton:hover, .recipeSortButton:hover {

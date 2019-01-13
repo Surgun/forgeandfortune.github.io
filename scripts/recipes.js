@@ -124,10 +124,12 @@ class Item{
         if (this.craftCount === 100) {
             masteredItem = true;
             refreshMasteryBar();
+            refreshCraftedCount();
             initializeActionSlots();
             refreshProgress();
         }
         refreshMasteryBar();
+        refreshCraftedCount();
     }
     isMastered() {
         if (this.recipeType === "building") return false;
@@ -426,6 +428,13 @@ function refreshMasteryBar() {
         const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
         masteryBarDiv.append(masteryBar,masteryBarFill);
         rr.html(masteryBarDiv);
+    });
+}
+
+function refreshCraftedCount() {
+    recipeList.recipes.forEach((recipe) => {
+        const rr = $("#rr"+recipe.id);
+        rr.find(".recipeTotalCrafted").html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
     });
 }
 

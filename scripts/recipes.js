@@ -291,6 +291,7 @@ function initializeRecipes(type,sortType,heading,query) {
             Notifications.noSearchFound();
             return;
         }
+        $(".recipeSelect").removeClass("selected");
     }
     else rFilter = rFilter.filter(r => r.type === type);
     if (sortType === "default") rFilter.sort((a, b) => a.id.localeCompare(b.id))

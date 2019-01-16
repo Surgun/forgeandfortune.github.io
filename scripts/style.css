@@ -3610,7 +3610,7 @@ Rarities
     border-radius: 5px;
 }
 
-.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img, .worker_cost > img {
+.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img {
     margin: 0 5px;
 }
 

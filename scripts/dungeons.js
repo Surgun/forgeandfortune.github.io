@@ -213,6 +213,11 @@ const DungeonManager = {
     dungeonStatus(dungeonID) {
         return this.dungeons.find(d=>d.id===dungeonID).status;
     },
+    removeDungeon(dungeonID) {
+        const dungeon = this.dungeonByID(dungeonID);
+        dungeon.party = null;
+        dungeon.status = DungeonStatus.EMPTY;
+    },
     createDungeon() {
         const party = PartyCreator.lockParty();
         const dungeon = this.dungeonByID(this.dungeonCreatingID);

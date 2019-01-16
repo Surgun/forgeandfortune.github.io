@@ -134,17 +134,17 @@ body {
 
 /* Font Stack */
 
-#Actions > h1, .heading, .tab-heading, footer, .Worker .BuyWorker, .WorkerUpgrade, .Worker .HireWorker, #progresslist, #workerList, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes, .ASBlock, .ASBuySlot, #dungeon-container, .lighttheme-btn.tooltip:after {
+#Actions > h1, .heading, .tab-heading, footer,  #progresslist, .tablinks, #heroDetails, #eventContainer, .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes, .ASBlock, .ASBuySlot, #dungeon-container, .lighttheme-btn.tooltip:after, .itemSac {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .WorkerName, .dungeonTeamName, .dungeonAvailableName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .dungeonTeamName, .dungeonAvailableName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -613,7 +613,7 @@ body {
 }
 
 .heroEquipBlockEquipStat.hebNegative {
-    color: #c90000;
+    color: #ff4545;
 }
 
 .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead {
@@ -1555,7 +1555,7 @@ Rarities
     background-color: var(--highlight);
 }
 
-.recipeDescription, .recipeClose {
+.recipeDescription, .recipeClose, .WorkerDesc > i {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -1570,7 +1570,7 @@ Rarities
     cursor: pointer;
 }
 
-.recipeDescription:hover, .recipeClose:hover {
+.recipeDescription:hover, .recipeClose:hover, .WorkerDesc > i:hover {
     background-color: rgba(255,255,255,0.15);
 }
 
@@ -1836,28 +1836,31 @@ Rarities
 .bpReqNeeded {
     color: var(--text-tertiary);
 }
-
-#workerList {
-    display: flex;
-    flex-wrap: wrap;
+.workerList-container {
     height: 100%;
     overflow: auto;
 }
 
+#workerList {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, 250px);
+    grid-gap: 10px;
+    align-items: start;
+}
+
 #workerList, #progresslist, #dungeonSelect {
-    padding: 20px;
+    padding: 10px;
 }
 
 .Worker, .purchaseWorkerCard {
     display: flex;
     flex-direction: column;
     position: relative;
-    min-width: 250px;
-    max-width: 250px;
-    margin: 0 15px 10px 0;
-    padding: 15px;
+    height: 100%;
+    padding: 10px;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
+    border-radius: 10px;
 }
 
 .Worker.wtadvanced .WorkerDetails .WorkerNameAndProduction .WorkerName {
@@ -1871,7 +1874,6 @@ Rarities
 .purchaseWorkerCard {
     justify-content: center;
     align-items: center;
-    min-height: 259px;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);
     cursor: pointer;
@@ -1902,70 +1904,62 @@ Rarities
     margin-right: 5px;
 }
 
-.WorkerDesc, .WorkerLvl {
-    font-size: .9em;
-}
-
 .WorkerDetails {
     display: flex;
     justify-content: center;
-    margin-top: 25px;
 }
 
 .WorkerImage {
     height: 64px;
     width: 64px;
-    margin-right: 5px;
+    margin-top: -10px;
+    margin-right: -10px;
 }
 
 .WorkerNameAndProduction {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
 }
 
 .WorkerName {
     display: inline-flex;
-    text-transform: uppercase;
-    font-size: 1.1em;
 }
 
 .WorkerProduction {
     display: flex;
-    font-size: 0.9em;
+    justify-content: center;
     align-items: center;
+    font-size: 0.8em;
 }
 
-.WorkerDesc {
-    position: absolute;
-    top: 3.5px;
-    right: 5px;
-    color: var(--text-primary);
-    font-weight: normal;
-    margin-left: 5px;
-    z-index: 10;
-    opacity: 0.5;
+.production_type {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--border-secondary);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    z-index: 2;
 }
 
-.WorkerDesc:hover {
-    opacity: 1;
-}
-
-.WorkerDesc > i {
-    font-size: 1.1em;
-    vertical-align: middle;
-}
-
-.WorkerLvl {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--green-secondary);
-    color: var(--green-primary);
-    text-align: center;
-    padding: 5px;
+.production_text {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -15px;
+    padding-left: 20px;
+    padding-right: 15px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-secondary);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 25px;
+    z-index: 1;
 }
 
 .Worker .itemContributions {
@@ -2003,7 +1997,7 @@ Rarities
     text-align: center;
     background-color: var(--bg-tertiary);
     border: 1px solid var(--border-primary);
-    margin-bottom: 5px;
+    border-radius: 5px;
     padding: 10px;
     font-size: .9em;
     width: 100%;
@@ -2011,8 +2005,7 @@ Rarities
 }
 
 .Worker .itemToSacDiv.cantAfford .itemToSac {
-    background-color: rgba(255, 0, 0, 0.10);
-    color: #c90000;
+    color: #ff4545;
     cursor: not-allowed;
 }
 
@@ -2020,34 +2013,26 @@ Rarities
     text-align: center;
     font-size: 0.9em;
     color: var(--highlight);
-    margin-top: 10px;
+    margin: auto 0 0;
+    padding: 15px;
+    background-color: var(--border-primary);
+    border-radius: 5px;
 }
 
 .Worker .BuyWorker, .WorkerUpgrade {
-    display: block;
-    padding: 10px;
-    border: none;
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-primary);
-    color: var(--text-primary);
-    font-size: 0.8em;
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
-.WorkerUpgrade {
+    border: 0;
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    margin: auto -15px -15px;
 }
 
-.Worker .BuyWorker {
-    border-left: 1px solid var(--border-primary);
+.upgrade_text {
+    padding: 0 10px;
+    margin-right: 10px;
 }
 
-.Worker .BuyWorker>img {
+.Worker .BuyWorker > img {
     margin-bottom: -2px;
     margin-right: 1px;
 }
@@ -2057,13 +2042,11 @@ Rarities
 }
 
 .BuyWorker.workerDisable, .WorkerUpgrade.workerUpgradeDisable {
-    color: #c90000;
-    background-color: rgb(56, 34, 39);
+    background-color: rgba(255, 0, 0, 0.15);
 }
 
 .BuyWorker.workerDisable:hover, .WorkerUpgrade.workerUpgradeDisable:hover {
-    color: #c90000;
-    background-color: rgb(56, 34, 39);
+    background-color: rgba(255, 0, 0, 0.25);
     cursor: not-allowed;
 }
 
@@ -2512,7 +2495,7 @@ Rarities
 }
 
 .EHPEstat.EHPEstatNegative {
-    color: #c90000;
+    color: #ff4545;
 }
 
 .EHPEstat + .EHPEstat {
@@ -3469,7 +3452,7 @@ Rarities
     margin: 0;
 }
 
-.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel {
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -3490,7 +3473,7 @@ Rarities
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -3501,7 +3484,7 @@ Rarities
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -3576,18 +3559,18 @@ Rarities
     margin: 0 10px;
 }
 
-#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover {
+#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover {
     background-color: var(--green-tertiary);
 }
 
-#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost{
+#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost {
+.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost {
     position: relative;
     margin-top: 5px;
     padding: 5px;
@@ -3596,8 +3579,12 @@ Rarities
     border-radius: 5px;
 }
 
-.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img {
+.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img, .worker_cost > img {
     margin: 0 5px;
+}
+
+.worker_cost {
+    margin-top: 0;
 }
 
 #swSuccess {
@@ -4094,11 +4081,11 @@ footer a[href*="discord.gg"]:hover {
 }
 
 #clearSave {
-    color: #c90000;
+    color: #ff4545;
 }
 
 #clearSave:hover {
-    background-color: #c90000;
+    background-color: rgb(144, 17, 18);
     color: #fff;
 }
 

@@ -53,7 +53,7 @@ class Worker {
         refreshWorkers();
     }
     productionText() {
-        return "Produces:&nbsp;&nbsp;"+ResourceManager.materialIcon(this.production);
+        return `<span class="production_type">${ResourceManager.materialIcon(this.production)}</span><span class="production_text">Worker</span>`;
     }
     clearDonation() {
         this.donated = {};
@@ -332,10 +332,11 @@ function refreshWorkers() {
             const d3 = $("<div/>").addClass("WorkerProduction").html(worker.productionText());
         workerNameProduction.append(d2, d2a, d3);
         workerDetails.append(d1, workerNameProduction);
-        const d4 = $("<div/>").addClass("WorkerLvl").html("Level " + worker.lvl);
-        const d5a = $("<div/>").addClass("itemContributions").html("Required Contributions"); 
+        const workerLvl = `<div class="level_text">LVL</div><div class="level_integer">${worker.lvl}</div>`;
+        const d4 = $("<div/>").addClass("WorkerLvl").html(workerLvl);
+        const d4a = $("<div/>").addClass("itemContributions").html("Required Contributions"); 
         const d5 = $('<div/>').addClass("itemSac");
-        workerDiv.append(workerDetails,d4,d5a,d5)
+        workerDiv.append(workerDetails,d4,d4a,d5)
         //workersac
         if (!worker.maxlevel()) {
             let money = "";
@@ -348,7 +349,11 @@ function refreshWorkers() {
                     return;
                 }
                 const adjamt = worker.sacRemaining(reqs[0])
-                if (adjamt === 0) return;
+                if (adjamt === 0) {
+                    d4a.hide();
+                    d5.hide();
+                    return;
+                }
                 const d5a = $("<div/>").addClass("itemToSacDiv").attr("id","ws"+worker.workerID+res+rarity);
                 if (worker.type === "advanced") d5a.addClass("isGood");
                 if (!Inventory.haveItem(res,rarity)) d5a.addClass("cantAfford");
@@ -359,12 +364,13 @@ function refreshWorkers() {
                 d5b.append(d5b1,d5b2);
                 d5.append(d5a.append(d5b));
             });
-            const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html("Upgrade&nbsp;&nbsp;" + money);
+            const workerCost = `<span class="upgrade_text">Upgrade</span><span class="worker_cost">${money}</span>`;
+            const b1 = $("<button/>").addClass("WorkerUpgrade").attr("data-value",worker.workerID).html(workerCost);
             if (!worker.canUpgrade()) b1.addClass("workerUpgradeDisable tooltip").attr("data-tooltip","You must first contribute the items above by clicking on them.")
             workerDiv.append(b1);
         }
         if (worker.maxlevel()) {
-            d5a.hide(); 
+            d4a.hide(); 
             d5.hide();
             const d6 = $("<div/>").addClass("workerMaxDescription").html("Maximum Level Reached!");
             workerDiv.append(d6);

@@ -25,13 +25,14 @@ const $DungeonSideBarTeam = $("#DungeonSideBarTeam");
 const $dsd1 = $("#dsd1");
 
 //click on a dungeon to start making a team!
-$(document).on("click", "#dungeon1", (e) => {
+$(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();
     $dungeonSelect.hide();
-    if (DungeonManager.dungeonStatus("d1")) showDungeon("d1");
-    else {
-        refreshHeroSelect("d1");
-        DungeonManager.dungeonCreatingID = "d1";
+    const dungeonID = $(e.currentTarget).attr("id");
+    if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.ADVENTURING) showDungeon(dungeonID);
+    else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.EMPTY) {
+        refreshHeroSelect(dungeonID);
+        DungeonManager.dungeonCreatingID = dungeonID;
         $dungeonSelect.hide();
         $dungeonTeamSelect.show();
     }
@@ -66,7 +67,6 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
     e.preventDefault();
     if (PartyCreator.validTeam()) {
         DungeonManager.createDungeon();
-        DungeonManager.dungeonView = "d1";
         initiateDungeonFloor();
         initializeSideBarDungeon();
         $dungeonTeamSelect.hide();
@@ -129,11 +129,23 @@ function refreshHealPartyCost() {
     if (PartyCreator.noheal()) button.hide();
 }
 
+const $dungeonListings = $("#dungeonListings");
+
 function refreshDungeonSelect() {
     //shows each dungeon so you can select that shit...
-    if (DungeonManager.dungeonStatus("d1")) $dsd1.addClass("dungeonInProgress").html("In Progress");
-    else $dsd1.removeClass("dungeonInProgress").html("Idle");
+    $dungeonListings.empty();
+    DungeonManager.dungeons.forEach(dungeon => {
+        const d1 = $("<div/>").addClass("dungeonContainer").attr("id",dungeon.id);
+        const d2 = $("<div/>").addClass("dungeonHeader").html(dungeon.name);
+        const d3 = $("<div/>").addClass("dungeonStatus").attr("id","ds"+dungeon.id);
+        if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").html("In Progress");
+        else d3.removeClass("dungeonInProgress").html("Idle");
+        const d4 = $("<div/>").addClass("dungeonBackground");
+        d1.append(d2,d3,d4);
+        $dungeonListings.append(d1);
+    })
 }
+
 
 function characterCard(prefix,dv,ID) {
     const d = $("<div/>").addClass(prefix+"Card").attr("data-value",dv);
@@ -221,6 +233,7 @@ function refreshDungeonFloorBars() {
 function initializeSideBarDungeon() {
     $DungeonSideBarTeam.empty();
     DungeonManager.dungeons.forEach(dungeon => {
+        if (dungeon.status !== DungeonStatus.ADVENTURING) return;
         const d = $("<div/>").addClass("dungeonGroup");
         const d1 = $("<div/>").attr("id","DungeonSideBarStatus").attr("dungeonID",dungeon.id).html(`${dungeon.name} - Floor ${dungeon.mobDeadCount}`);
         d.append(d1);

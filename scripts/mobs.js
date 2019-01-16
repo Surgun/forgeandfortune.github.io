@@ -12,8 +12,7 @@ const MobManager = {
     },
     generateDungeonMob(dungeonID, difficulty) {
         disableEventLayers();
-        if (dungeonID !== "d1") return;
-        const possibleMonster = this.monsterDB.filter(mob => mob.event === "normal" && mob.minFloor <= difficulty && mob.maxFloor >= difficulty);
+        const possibleMonster = this.monsterDB.filter(mob => mob.event === "normal" && mob.minFloor <= difficulty && mob.maxFloor >= difficulty && mob.dungeons.includes(dungeonID));
         const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
         const mob = new Mob(difficulty, mobTemplate);
         this.addActiveMob(mob);

@@ -1,5 +1,6 @@
 "use strict";
 const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP",ACT:"Act"});
+const DungeonStatus = Object.freeze({EMPTY:0,ADVENTURING:1});
 
 class turnOrder {
     constructor(unit) {
@@ -28,21 +29,22 @@ class turnOrder {
 }
 
 class Dungeon {
-    constructor(id,party) {
-        this.id = id;
-        this.name = "Groovy Grove"
+    constructor(props) {
+        Object.assign(this, props);
         this.maxMonster = 4;
-        this.party = party;
+        this.party = null;
         this.mobs = [];
         this.dropList = [];
         this.dungeonTime = 0;
         this.mobDeadCount = 0;
         this.order = [];
+        this.status = DungeonStatus.EMPTY;
     }
     createSave() {
         const save = {};
         save.id = this.id;
-        save.party = this.party.createSave();
+        if (this.party === null) save.party = null;
+        else save.party = this.party.createSave();
         save.mobs = [];
         this.mobs.forEach(m=>{
             save.mobs.push(m.createSave());
@@ -54,9 +56,12 @@ class Dungeon {
         this.order.forEach(o=> {
             save.order.push(o.createSave());
         })
+        save.status = this.status;
         return save;
     }
     loadSave(save) {
+        if (save.party !== null) this.party = new Party(save.party.heroID);
+        else save.party = null;
         this.mobs = [];
         save.mobs.forEach(mobSave => {
             const mobTemplate = MobManager.idToMob(mobSave.id);
@@ -83,6 +88,7 @@ class Dungeon {
                 this.order.push(to);
             }
         });
+        this.status = save.status;
     }
     addToOrder(unit,act) {
         const unitOrder = new turnOrder(unit);
@@ -107,6 +113,7 @@ class Dungeon {
     }
     addTime(t) {
         //if there's enough time, grab the next guy and do some combat
+        if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
         while (this.dungeonTime >= 2000) {
             const unit = this.getNextOrder();
@@ -138,15 +145,17 @@ class Dungeon {
         this.repopulate();
         if (needrefresh) initiateDungeonFloor();
     }
-    initializeParty() {
+    initializeParty(party) {
+        this.party = party;
         this.party.heroes.forEach(hero => {
             this.addToOrder(hero,true);
-        })
+        });
     }
     repopulate() {
         while (this.mobs.length < this.maxMonster) {
             const mob = MobManager.generateDungeonMob(this.id,this.mobDeadCount);
             this.mobs.push(mob);
+            console.log(mob);
             this.addToOrder(mob,true);
         }
     }
@@ -162,6 +171,7 @@ class Dungeon {
         }
         initializeSideBarDungeon();
         BattleLog.clear();
+        this.status = DungeonStatus.EMPTY;
         return;
     }
     addDungeonDrop(drops) {
@@ -185,12 +195,13 @@ const DungeonManager = {
         });
         return save;
     },
+    addDungeon(dungeon) {
+        this.dungeons.push(dungeon);
+    },
     loadSave(save) {
         save.dungeons.forEach(d => {
-            const party = new Party(d.party.heroID);
-            const dungeon = new Dungeon(d.id,party);
+            const dungeon = DungeonManager.dungeonByID(d.id);
             dungeon.loadSave(d);
-            this.dungeons.push(dungeon);
         });
     },
     addTime(t) {
@@ -199,18 +210,16 @@ const DungeonManager = {
         });
         if (this.dungeonView !== null) refreshDungeonFloorBars();
     },
-    removeDungeon(id) {
-        this.dungeons = this.dungeons.filter(d => d.id !== id);
-    },
     dungeonStatus(dungeonID) {
-        return this.dungeons.filter(d=>d.id === dungeonID).length > 0;
+        return this.dungeons.find(d=>d.id===dungeonID).status;
     },
     createDungeon() {
         const party = PartyCreator.lockParty();
-        const dungeon = new Dungeon(this.dungeonCreatingID,party);
-        dungeon.initializeParty();
+        const dungeon = this.dungeonByID(this.dungeonCreatingID);
+        dungeon.status = DungeonStatus.ADVENTURING;
+        this.dungeonView = this.dungeonCreatingID;
+        dungeon.initializeParty(party);
         dungeon.repopulate();
-        this.dungeons.push(dungeon);
     },
     dungeonByID(dungeonID) {
         return this.dungeons.find(d => d.id === dungeonID);

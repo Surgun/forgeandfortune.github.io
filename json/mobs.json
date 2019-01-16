@@ -19,6 +19,11 @@
     },
     "minFloor": 0,
     "maxFloor": 100,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -41,6 +46,11 @@
     },
     "minFloor": 80,
     "maxFloor": 200,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -63,6 +73,11 @@
     },
     "minFloor": 180,
     "maxFloor": 300,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -85,6 +100,11 @@
     },
     "minFloor": 280,
     "maxFloor": 400,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -107,6 +127,11 @@
     },
     "minFloor": 380,
     "maxFloor": 500,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -129,6 +154,11 @@
     },
     "minFloor": 480,
     "maxFloor": 600,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -151,6 +181,11 @@
     },
     "minFloor": 580,
     "maxFloor": 700,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -173,6 +208,11 @@
     },
     "minFloor": 680,
     "maxFloor": 800,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -195,6 +235,11 @@
     },
     "minFloor": 780,
     "maxFloor": 900,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -217,6 +262,11 @@
     },
     "minFloor": 880,
     "maxFloor": 10000,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -239,6 +289,11 @@
     },
     "minFloor": 0,
     "maxFloor": 100,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -261,6 +316,11 @@
     },
     "minFloor": 80,
     "maxFloor": 200,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -283,6 +343,11 @@
     },
     "minFloor": 180,
     "maxFloor": 300,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -305,6 +370,11 @@
     },
     "minFloor": 280,
     "maxFloor": 400,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -327,6 +397,11 @@
     },
     "minFloor": 380,
     "maxFloor": 500,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -349,6 +424,11 @@
     },
     "minFloor": 480,
     "maxFloor": 600,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -371,6 +451,11 @@
     },
     "minFloor": 580,
     "maxFloor": 700,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -393,6 +478,11 @@
     },
     "minFloor": 680,
     "maxFloor": 800,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -415,6 +505,11 @@
     },
     "minFloor": 780,
     "maxFloor": 900,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -437,6 +532,11 @@
     },
     "minFloor": 880,
     "maxFloor": 10000,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -459,6 +559,11 @@
     },
     "minFloor": 0,
     "maxFloor": 100,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -481,6 +586,11 @@
     },
     "minFloor": 80,
     "maxFloor": 200,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -503,6 +613,11 @@
     },
     "minFloor": 180,
     "maxFloor": 300,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -525,6 +640,11 @@
     },
     "minFloor": 280,
     "maxFloor": 400,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -547,6 +667,11 @@
     },
     "minFloor": 380,
     "maxFloor": 500,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -569,6 +694,11 @@
     },
     "minFloor": 480,
     "maxFloor": 600,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -591,6 +721,11 @@
     },
     "minFloor": 580,
     "maxFloor": 700,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -613,6 +748,11 @@
     },
     "minFloor": 680,
     "maxFloor": 800,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -635,6 +775,11 @@
     },
     "minFloor": 780,
     "maxFloor": 900,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -657,6 +802,11 @@
     },
     "minFloor": 880,
     "maxFloor": 10000,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -679,6 +829,11 @@
     },
     "minFloor": 0,
     "maxFloor": 100,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -701,6 +856,11 @@
     },
     "minFloor": 80,
     "maxFloor": 200,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -723,6 +883,11 @@
     },
     "minFloor": 180,
     "maxFloor": 300,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -745,6 +910,11 @@
     },
     "minFloor": 280,
     "maxFloor": 400,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -767,6 +937,11 @@
     },
     "minFloor": 380,
     "maxFloor": 500,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -789,6 +964,11 @@
     },
     "minFloor": 480,
     "maxFloor": 600,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -811,6 +991,11 @@
     },
     "minFloor": 580,
     "maxFloor": 700,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -833,6 +1018,11 @@
     },
     "minFloor": 680,
     "maxFloor": 800,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -855,6 +1045,11 @@
     },
     "minFloor": 780,
     "maxFloor": 900,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -877,6 +1072,11 @@
     },
     "minFloor": 880,
     "maxFloor": 10000,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -899,6 +1099,11 @@
     },
     "minFloor": 0,
     "maxFloor": 100,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -921,6 +1126,11 @@
     },
     "minFloor": 80,
     "maxFloor": 200,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -943,6 +1153,11 @@
     },
     "minFloor": 180,
     "maxFloor": 300,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -965,6 +1180,11 @@
     },
     "minFloor": 280,
     "maxFloor": 400,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -987,6 +1207,11 @@
     },
     "minFloor": 380,
     "maxFloor": 500,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1009,6 +1234,11 @@
     },
     "minFloor": 480,
     "maxFloor": 600,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1031,6 +1261,11 @@
     },
     "minFloor": 580,
     "maxFloor": 700,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1053,6 +1288,11 @@
     },
     "minFloor": 680,
     "maxFloor": 800,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1075,6 +1315,11 @@
     },
     "minFloor": 780,
     "maxFloor": 900,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1097,6 +1342,11 @@
     },
     "minFloor": 880,
     "maxFloor": 10000,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1119,6 +1369,11 @@
     },
     "minFloor": 0,
     "maxFloor": 100,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1141,6 +1396,11 @@
     },
     "minFloor": 80,
     "maxFloor": 200,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1163,6 +1423,11 @@
     },
     "minFloor": 180,
     "maxFloor": 300,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1185,6 +1450,11 @@
     },
     "minFloor": 280,
     "maxFloor": 400,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1207,6 +1477,11 @@
     },
     "minFloor": 380,
     "maxFloor": 500,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1229,6 +1504,11 @@
     },
     "minFloor": 480,
     "maxFloor": 600,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1251,6 +1531,11 @@
     },
     "minFloor": 580,
     "maxFloor": 700,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1273,6 +1558,11 @@
     },
     "minFloor": 680,
     "maxFloor": 800,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1295,6 +1585,11 @@
     },
     "minFloor": 780,
     "maxFloor": 900,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1317,6 +1612,11 @@
     },
     "minFloor": 880,
     "maxFloor": 10000,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "normal"
   },
   {
@@ -1344,6 +1644,11 @@
     },
     "minFloor": 0,
     "maxFloor": 100,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "christmas"
   },
   {
@@ -1371,6 +1676,11 @@
     },
     "minFloor": 101,
     "maxFloor": 200,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "christmas"
   },
   {
@@ -1398,6 +1708,11 @@
     },
     "minFloor": 201,
     "maxFloor": 300,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "christmas"
   },
   {
@@ -1425,6 +1740,11 @@
     },
     "minFloor": 301,
     "maxFloor": 400,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "christmas"
   },
   {
@@ -1452,6 +1772,11 @@
     },
     "minFloor": 401,
     "maxFloor": 500,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "christmas"
   },
   {
@@ -1479,6 +1804,11 @@
     },
     "minFloor": 501,
     "maxFloor": 600,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "christmas"
   },
   {
@@ -1506,6 +1836,11 @@
     },
     "minFloor": 601,
     "maxFloor": 700,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "christmas"
   },
   {
@@ -1533,6 +1868,11 @@
     },
     "minFloor": 701,
     "maxFloor": 800,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "christmas"
   },
   {
@@ -1560,6 +1900,11 @@
     },
     "minFloor": 801,
     "maxFloor": 900,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "christmas"
   },
   {
@@ -1587,6 +1932,11 @@
     },
     "minFloor": 901,
     "maxFloor": 10000,
+    "dungeons": [
+      "D001",
+      "D002",
+      "D003"
+    ],
     "event": "christmas"
   }
 ]

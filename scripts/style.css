@@ -139,12 +139,12 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .bpReqHeading, .bpShopTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .dungeonTeamName, .dungeonAvailableName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader, .Worker .itemContributions {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .dungeonTeamName, .dungeonAvailableName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader, .Worker .itemContributions {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReqNeeded, .settings-description, #readUnread, .eventList, .eventMessage, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #readUnread, .eventList, .eventMessage, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -1085,7 +1085,7 @@ Rarities
     cursor: pointer;
 }
 
-.recipeSortInput:focus + .recipeSortButton {
+.recipeSortInput:hover + .recipeSortButton, .recipeSortInput:focus + .recipeSortButton {
     background-color: rgba(255,255,255,.125);
 }
 
@@ -1321,7 +1321,7 @@ Rarities
     transform-style: preserve-3d;
 }
 
-.recipeCardFront, .recipeCardBack {
+.recipeCardFront, .recipeCardBack, .bpShop {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -1764,82 +1764,42 @@ Rarities
 
 .bpShop {
     position: relative;
+    min-height: 216px;
+    height: 100%;
+    max-width: 350px;
+    -webkit-animation: 0.2s scale-in;
+    animation: 0.2s scale-in;
+}
+
+.bpReqHeading {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--border-secondary);
+    color: var(--highlight);
+}
+
+.bpShopDescription, .bpReq {
     display: flex;
-    flex-wrap: wrap;
-    max-width: 300px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
-    margin: 10px 15px 15px;
-}
-
-.bpShopTitle {
-    width: 100%;
-    text-align: center;
-    font-size: 0.9em;
-    background-color: var(--bg-tertiary);
-    border-bottom: 1px solid var(--border-primary);
-    padding: 5px 15px;
-}
-
-.bpShopButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid var(--border-primary);
-    background-color: var(--bg-secondary);
-    padding: 10px 15px;
-    width: 100%;
-    cursor: pointer;
-}
-
-.bpShopButton:hover {
-    background-color: var(--bg-tertiary);
-}
-
-.bpShopButton > img {
-    margin-left: 5px;
-}
-
-.bpShopName {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 10px 20px;
-}
-
-.bpShopName > img {
-    height: 24px;
-}
-
-.bpShopName .item-name {
-    margin-left: 10px;
-}
-
-.bpReq {
-    width: 100%;
     padding: 10px;
-    font-size: 0.9em;
     text-align: center;
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-primary);
-}
-
-.bpReqHeading:after {
-    content: "";
-    position: relative;
-    display: block;
-    margin: 5px auto;
-    height: 2px;
-    width: 75%;
-    background-color: var(--border-secondary);
+    flex-grow: 1;
+    font-size: 0.9em;
 }
 
 .bpReqNeeded {
-    color: var(--text-tertiary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.bpReqWorker {
+    padding: 3px 0;
+}
+
 .workerList-container {
     height: 100%;
     overflow: auto;
@@ -2022,7 +1982,7 @@ Rarities
     border-radius: 5px;
 }
 
-.Worker .BuyWorker, .WorkerUpgrade {
+.Worker .BuyWorker, .WorkerUpgrade, .bpShopButton {
     position: relative;
     border: 0;
     font-size: 1em;
@@ -2031,7 +1991,7 @@ Rarities
     align-items: center;
 }
 
-.upgrade_text {
+.upgrade_text, .unlockbp_text {
     padding: 0 10px;
     margin-right: 10px;
 }
@@ -3504,7 +3464,7 @@ Rarities
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .bpShopButton {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -3515,7 +3475,7 @@ Rarities
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .bpShopButton:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -3590,18 +3550,18 @@ Rarities
     margin: 0 10px;
 }
 
-#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover {
+#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .bpShopButton:hover {
     background-color: var(--green-tertiary);
 }
 
-#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost {
+#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost, .unlockbp_cost {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost {
+.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost {
     position: relative;
     margin-top: 5px;
     padding: 5px;
@@ -3614,8 +3574,9 @@ Rarities
     margin: 0 5px;
 }
 
-.worker_cost {
+.worker_cost, .unlockbp_cost {
     margin-top: 0;
+    max-width: 120px;
 }
 
 #swSuccess {

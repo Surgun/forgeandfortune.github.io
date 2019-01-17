@@ -37,6 +37,13 @@ const devtools = {
     speed(amt) {
         player.timeWarp = amt;
     },
+    workersTest() {
+        WorkerManager.workers.forEach(worker => {
+            worker.owned = true;
+            worker.lvl = 9;
+        })
+        refreshWorkers();
+    },
     heroTest() {
         Inventory.addToInventory("R0101",0);
         Inventory.addToInventory("R0201",0);

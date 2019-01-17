@@ -112,7 +112,7 @@ class Item{
         this.rcost.forEach(r => {
             if (WorkerManager.lvlByType(r) >= this.lvl) return;
             const mat = r.charAt(0).toUpperCase() + r.slice(1);
-            s += `Lv${this.lvl} ${mat} Worker, `
+            s += `<span class="bpReqWorker">LVL ${this.lvl} ${mat} Worker</span>`
         });
         return s.slice(0, -2);
     }
@@ -465,29 +465,36 @@ function refreshBlueprint(type) {
     const d = $("<div/>").addClass('bpShop');
     const nextRecipe = recipeList.getNextBuyable(type);
     if (recipeList.moreRecipes(type)) {
-        const d1a = $("<div/>").addClass('bpShopTitle').html("Next Blueprint Unlock");
-        const d1 = $("<div/>").addClass('bpShopName').html(nextRecipe.itemPicName());
-        d.append(d1a,d1);
+        const d1 = $("<div/>").addClass('recipeItemLevel').html(nextRecipe.itemLevel());
+        const d2 = $("<div/>").addClass('recipeName').html(nextRecipe.itemPicName());
+        d.append(d1,d2);
     }
     else {
         return;
     }
     const needed = recipeList.remainingReqs(type);
     if (needed.length === 0) {
-        let amt = `${miscIcons.gold}&nbsp;&nbsp;${nextRecipe.recipeBuy}`
-        if (nextRecipe.recipeBuy === 0) amt = "FREE";
-        const b1 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`UNLOCK - ${amt}`);
-        //const b1 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`UNLOCK - ${miscIcons.gold}&nbsp;&nbsp;${miscLoadedValues.recipeBuy[nextRecipe.lvl-1]}`);
-        d.append(b1);
+        let amt = `<span class="unlockbp_text">Unlock</span><span class="unlockbp_cost">${miscIcons.gold}&nbsp;${formatToUnits(nextRecipe.recipeBuy,2)}</span>`
+        let notice = `To unlock this recipe you'll need to pay a gold cost.`
+        if (nextRecipe.recipeBuy === 0) {
+            amt = "Unlock";
+            notice = `You can unlock this recipe now for free.`
+        }
+        const b1 = $("<div/>").addClass('bpShopDescription').html(`${notice}`);
+        const b2 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`${amt}`);
+        d.append(b1,b2);
     }
     else {
-        const d2 = $("<div/>").addClass('bpReq');
-        const d2a = $("<div/>").addClass('bpReqHeading').html("Prerequisite Workers");
-        const d2b = $("<div/>").addClass('bpReqNeeded').html(needed);
-        d2.append(d2a, d2b);
-        d.append(d2);
+        const d3 = $("<div/>").addClass('bpReq');
+        const d3a = $("<div/>").addClass('bpReqHeading').html("Prerequisite Workers Needed");
+        const d3b = $("<div/>").addClass('bpReqNeeded').html(needed);
+        d3.append(d3a,d3b);
+        d.append(d3);
     }
     $blueprintUnlock.append(d);
+
+    const $RecipeContents= $(".recipeContents");
+    $RecipeContents.append($blueprintUnlock);
 }
 
 $(document).on('click', '.recipeCraft', (e) => {

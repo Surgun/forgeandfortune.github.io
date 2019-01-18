@@ -84,11 +84,11 @@ const FortuneManager = {
         const fortunesTaken = [];
 
         this.goodLine = ItemType[Math.floor(Math.random() * ItemType.length)];
-        fortunesTaken.push(fortunesTaken);
+        fortunesTaken.push(this.goodLine);
 
         const fortunesRemainGood = ItemType.filter(i => !fortunesTaken.includes(i));
         this.greatLine = fortunesRemainGood[Math.floor(Math.random() * fortunesRemainGood.length)];
-        fortunesTaken.push(fortunesTaken);
+        fortunesTaken.push(this.greatLine);
 
         const fortunesRemainGreat = ItemType.filter(i => !fortunesTaken.includes(i));
         this.epicLine = fortunesRemainGreat[Math.floor(Math.random() * fortunesRemainGreat.length)];

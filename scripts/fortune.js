@@ -74,18 +74,15 @@ const FortuneManager = {
         refreshFilterListLucky()
     },
     setCrafts() {
-        let fortuneItemType = ItemType;
         if (this.setPaid) return;
         if (ResourceManager.materialAvailable("M001") < this.getGoldCost()) {
             Notifications.cantReadFortune();
             return;
         }
         ResourceManager.deductMoney(this.getGoldCost());
-        this.goodLine = ItemType[Math.floor(Math.random() * fortuneItemType.length)];
-        fortuneItemType.pop(this.goodLine);
-        this.greatLine = ItemType[Math.floor(Math.random() * fortuneItemType.length)];
-        fortuneItemType.pop(this.goodLine);
-        this.epicLine = ItemType[Math.floor(Math.random() * fortuneItemType.length)];
+        this.goodLine = ItemType[Math.floor(Math.random() * ItemType.length)];
+        this.greatLine = ItemType[Math.floor(Math.random() * ItemType.length)];
+        this.epicLine = ItemType[Math.floor(Math.random() * ItemType.length)];
         this.setPaid = true;
         refreshFortuneInfo();
     },

@@ -74,30 +74,29 @@ const FortuneManager = {
         refreshFilterListLucky()
     },
     setCrafts() {
-        let fortuneItemType = ItemType;
-        let fortuneItemTypeIndex = null;
         if (this.setPaid) return;
         if (ResourceManager.materialAvailable("M001") < this.getGoldCost()) {
             Notifications.cantReadFortune();
             return;
         }
         ResourceManager.deductMoney(this.getGoldCost());
+        
+        const fortunesTaken = [];
 
-        this.goodLine = ItemType[Math.floor(Math.random() * fortuneItemType.length)];
-        fortuneItemTypeIndex = fortuneItemType.indexOf(this.goodLine);
-        if (fortuneItemTypeIndex > -1) fortuneItemType.splice(fortuneItemTypeIndex, 1);
+        this.goodLine = ItemType[Math.floor(Math.random() * ItemType.length)];
+        fortunesTaken.push(fortunesTaken);
 
-        this.greatLine = ItemType[Math.floor(Math.random() * fortuneItemType.length)];
-        fortuneItemTypeIndex = fortuneItemType.indexOf(this.greatLine);
-        if (fortuneItemTypeIndex > -1) fortuneItemType.splice(fortuneItemTypeIndex, 1);
+        const fortunesRemainGood = ItemType.filter(i => !fortunesTaken.includes(i));
+        this.greatLine = fortunesRemainGood[Math.floor(Math.random() * fortunesRemainGood.length)];
+        fortunesTaken.push(fortunesTaken);
 
-        this.epicLine = ItemType[Math.floor(Math.random() * fortuneItemType.length)];
-        fortuneItemTypeIndex = fortuneItemType.indexOf(this.epicLine);
-        if (fortuneItemTypeIndex > -1) fortuneItemType.splice(fortuneItemTypeIndex, 1);
+        const fortunesRemainGreat = ItemType.filter(i => !fortunesTaken.includes(i));
+        this.epicLine = fortunesRemainGreat[Math.floor(Math.random() * fortunesRemainGreat.length)];
 
         this.setPaid = true;
         refreshFortuneInfo();
-        console.log(this.goodLine, this.greatLine, this.epicLine);
+
+        console.log(this.goodLine,this.greatLine,this.epicLine);
     },
     propsByType(type) {
         const props = {};

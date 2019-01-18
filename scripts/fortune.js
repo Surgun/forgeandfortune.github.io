@@ -83,20 +83,21 @@ const FortuneManager = {
         }
         ResourceManager.deductMoney(this.getGoldCost());
 
-        this.goodLine = ItemType[Math.floor(Math.random() * ItemType.length)];
+        this.goodLine = ItemType[Math.floor(Math.random() * fortuneItemType.length)];
         fortuneItemTypeIndex = fortuneItemType.indexOf(this.goodLine);
         if (fortuneItemTypeIndex > -1) fortuneItemType.splice(fortuneItemTypeIndex, 1);
 
-        this.greatLine = ItemType[Math.floor(Math.random() * ItemType.length)];
+        this.greatLine = ItemType[Math.floor(Math.random() * fortuneItemType.length)];
         fortuneItemTypeIndex = fortuneItemType.indexOf(this.greatLine);
         if (fortuneItemTypeIndex > -1) fortuneItemType.splice(fortuneItemTypeIndex, 1);
 
-        this.epicLine = ItemType[Math.floor(Math.random() * ItemType.length)];
+        this.epicLine = ItemType[Math.floor(Math.random() * fortuneItemType.length)];
         fortuneItemTypeIndex = fortuneItemType.indexOf(this.epicLine);
         if (fortuneItemTypeIndex > -1) fortuneItemType.splice(fortuneItemTypeIndex, 1);
 
         this.setPaid = true;
         refreshFortuneInfo();
+        console.log(this.goodLine, this.greatLine, this.epicLine);
     },
     propsByType(type) {
         const props = {};

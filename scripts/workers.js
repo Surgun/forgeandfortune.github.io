@@ -382,8 +382,10 @@ function refreshWorkers() {
     if (WorkerManager.workers.every(w=>w.owned)) return;
     const pw = $("<div/>").addClass("purchaseWorkerCard");
     const pw1 = $("<div/>").addClass("unknownWorker").html('<img src="images/workers/blackoutline.png">');
-    const b1 = $("<div/>").addClass("buyNewWorker").html(`Purchase New Worker <div class="buyWorkerCost">${miscIcons.gold} ${formatToUnits(amt,3)}</div>`);
-    pw.append(pw1,b1);
+    const pw2 = $("<div/>").addClass("buyNewWorkerTitle").html(`Unlock New Worker`);
+    const pw3 = $("<div/>").addClass("buyNewWorkerDesc").html(`Purchase another worker to help with crafting more recipes.`);
+    const pw4 = $("<div/>").addClass("buyNewWorkerButton").html(`<div class="buyWorkerText">Purchase</div><div class="buyWorkerCost">${miscIcons.gold} ${formatToUnits(amt,2)}</div>`);
+    pw.append(pw1,pw2,pw3,pw4);
     $workers.append(pw);
 }
 

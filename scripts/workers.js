@@ -372,8 +372,9 @@ function refreshWorkers() {
         if (worker.maxlevel()) {
             d4a.hide(); 
             d5.hide();
-            const d6 = $("<div/>").addClass("workerMaxDescription").html("Maximum Level Reached!");
-            workerDiv.append(d6);
+            const d6 = $("<div/>").addClass("workerMaxNotice").html("Nice work! You've contributed all of the necessary items to max out this worker.");
+            const d7 = $("<div/>").addClass("workerMaxDescription").html("Maximum Level Reached!");
+            workerDiv.append(d6,d7);
         }
         $workers.append(workerDiv);
     });

@@ -412,6 +412,12 @@ const HeroManager = {
     heroMaxLevelCount() {
         return this.heroes.length*50;
     },
+    heroLevel(hero) {
+        return `<div class="level_text">LVL</div><div class="level_integer">${hero.lvl}</div>`;
+    },
+    heroPower(hero) {
+        return `<div class="pow_img">${miscIcons.pow}</div><div class="pow_interger">${hero.getPow()}</div>`
+    },
     slotsByItem(item) {
         //return a list of heroes and the appropriate slot
         const type = item.type;
@@ -441,14 +447,20 @@ function initializeHeroList() {
         if (hero.xp === hero.maxXP()) d.addClass("hasEvent");
         const d1 = $("<div/>").addClass("heroOwnedImage").html(hero.head);
         const d2 = $("<div/>").addClass("heroOwnedName").html(hero.name);
-        d.append(d1,d2);
+        const d3 = $("<div/>").addClass("heroLevel").html(HeroManager.heroLevel(hero));
+        const d4 = $("<div/>").addClass("heroPower").html(HeroManager.heroPower(hero));
+        d.append(d1,d2,d3,d4);
         if (!hero.owned) d.hide();
         $heroList.append(d);
     });
     if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
         const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];
-        const b1 = $("<div/>").addClass("buyNewHeroCard").html(`Purchase Hero - <div class="buyHeroCost">${miscIcons.gold}${amt}</div>`);
-        $heroList.append(b1);
+        const bh1 = $("<div/>").addClass("buyNewHeroCard")
+        const bh2 = $("<div/>").addClass("buyNewHeroTitle").html(`Unlock New Hero`);
+        const bh3 = $("<div/>").addClass("buyNewHeroDesc").html(`Purchase another hero to help with adventures.`);
+        const bh4 = $("<div/>").addClass("buyNewHeroButton").html(`<div class="buyHeroText">Purchase</div><div class="buyHeroCost">${miscIcons.gold} ${formatToUnits(amt,2)}</div>`);
+        bh1.append(bh2,bh3,bh4);
+        $heroList.append(bh1);
     }
     if (!HeroManager.heroes.some(h=>h.xp === h.maxXP())) $heroTab.removeClass("hasEvent");
     else $heroTab.addClass("hasEvent");

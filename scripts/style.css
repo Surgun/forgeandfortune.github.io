@@ -80,7 +80,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardContainer, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardContainer, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -134,7 +134,7 @@ body {
 
 /* Font Stack */
 
-#Actions > h1, .heading, .tab-heading, footer,  #progresslist, .tablinks, .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes, .ASBlock, .ASBuySlot, #dungeon-container, .lighttheme-btn.tooltip:after, .itemSac, .BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after, .WorkerDesc:after {
+#Actions > h1, .heading, .tab-heading, footer,  #progresslist, .tablinks, .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes, .ASBlock, #dungeon-container, .lighttheme-btn.tooltip:after, .itemSac, .BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after, .WorkerDesc:after {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -144,7 +144,7 @@ body {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #readUnread, .eventList, .eventMessage, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #readUnread, .eventList, .eventMessage, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -808,7 +808,7 @@ Rarities
     width: 100%;
 }
 
-.ASBlock {
+.ASBlock, .ASBuySlot {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -941,30 +941,8 @@ Rarities
 }
 
 .ASBuySlot {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 20px;
-    min-height: 100px;
-    background-color: var(--bg-tertiary);
-    border: 2px dashed var(--border-tertiary);
-    border-radius: 10px;
-    font-size: 0.9em;
-    cursor: pointer;
-}
-
-.ASBuySlot:hover {
-    background-color: var(--green-secondary);
-    border: 2px solid var(--green-tertiary);
-}
-
-.ASBuySlotCost {
-    margin-top: 10px;
-}
-
-.ASBuySlotCost > img {
-    vertical-align: middle;
+    padding: 10px;
+    text-align: center;
 }
 
 .ASauto, .WSAuto {
@@ -1847,10 +1825,14 @@ Rarities
     vertical-align: middle;
 }
 
-.buyNewWorkerTitle, .buyNewHeroTitle {
+.buyNewWorkerTitle, .buyNewHeroTitle, .ASBuySlotTitle {
     padding-bottom: 10px;
     color: var(--highlight);
     border-bottom: 1px solid var(--border-secondary);
+}
+
+.ASBuySlotTitle {
+    border: 0;
 }
 
 .buyNewWorkerDesc, .workerMaxNotice, .buyNewHeroDesc {
@@ -1863,13 +1845,14 @@ Rarities
     padding: 10px 0;
 }
 
-.buyWorkerCost, .buyHeroCost {
+.buyWorkerCost, .buyHeroCost, .ASBuySlotCost {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-top: 10px;
 }
 
-.buyWorkerCost > img, .buyHeroCost > img {
+.buyWorkerCost > img, .buyHeroCost > img, .ASBuySlotCost > img {
     margin-right: 5px;
 }
 
@@ -1987,7 +1970,7 @@ Rarities
     border-radius: 5px;
 }
 
-.Worker .BuyWorker, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton {
+.Worker .BuyWorker, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton {
     position: relative;
     border: 0;
     font-size: 1em;
@@ -1996,7 +1979,7 @@ Rarities
     align-items: center;
 }
 
-.upgrade_text, .unlockbp_text, .buyWorkerText, .buyHeroText {
+.upgrade_text, .unlockbp_text, .buyWorkerText, .buyHeroText, .ASBuySlotText {
     padding: 0 10px;
     margin-right: 10px;
 }
@@ -2229,6 +2212,10 @@ Rarities
     padding: 3px 10px;
     background-color: var(--border-primary);
     border-radius: 5px;
+}
+
+.pow_img {
+    margin: 5px 5px 0px 0px;
 }
 
 #heroTab {
@@ -3484,7 +3471,7 @@ Rarities
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -3495,7 +3482,7 @@ Rarities
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -3570,7 +3557,7 @@ Rarities
     margin: 0 10px;
 }
 
-#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover {
+#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover {
     background-color: var(--green-tertiary);
 }
 
@@ -3581,7 +3568,7 @@ Rarities
     align-items: center;
 }
 
-.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost {
+.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost {
     position: relative;
     margin-top: 5px;
     padding: 5px;
@@ -3594,7 +3581,7 @@ Rarities
     margin: 0 5px;
 }
 
-.worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost {
+.worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost {
     margin-top: 0;
     max-width: 120px;
 }

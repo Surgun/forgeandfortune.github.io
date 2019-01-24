@@ -9,7 +9,7 @@ $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     actionSlotManager.removeSlot(slot);
 });
 
-$(document).on("click", ".ASBuySlot", (e) => {
+$(document).on("click", ".ASBuySlotButton", (e) => {
     e.preventDefault();
     actionSlotManager.upgradeSlot();
 })
@@ -237,8 +237,8 @@ function initializeActionSlots() {
     if (actionSlotManager.maxSlots < 5) {
         const d4 = $("<div/>").addClass("ASBuySlot");
         const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
-        const d5 = $("<div/>").addClass("ASBuySlotText").html(`Purchase Crafting Slot`);
-        const d6 = $("<div/>").addClass("ASBuySlotCost").html(`${miscIcons.gold}&nbsp;&nbsp;${amt}`);
+        const d5 = $("<div/>").addClass("ASBuySlotTitle").html(`Unlock Crafting Slot`);
+        const d6 = $("<div/>").addClass("ASBuySlotButton").html(`<div class="ASBuySlotText">Purchase</div><div class="ASBuySlotCost">${miscIcons.gold} ${formatToUnits(amt,2)}</div>`);
         d4.append(d5, d6);
         $ActionSlots.append(d4);
     }

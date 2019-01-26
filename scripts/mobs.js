@@ -30,7 +30,6 @@ const MobManager = {
     },
     christmasFloor(floorNum) {
         const possibleMonster = this.monsterDB.filter(mob => mob.event === "christmas" && mob.minFloor <= floorNum && mob.maxFloor >= floorNum);
-        console.log(possibleMonster);
         const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
         return [new Mob(floorNum, mobTemplate)];
     }

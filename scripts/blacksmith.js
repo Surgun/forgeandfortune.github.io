@@ -63,7 +63,6 @@ const bloopSmith = {
         if (this.smithSlot === null) return;
         const chance = this.getSmithChance(this.smithSlot);
         const roll = getRandomFromItem(this.smithSlot);
-        console.log(chance,roll)
         if (roll < chance) {
             this.smithSlot.sharp += 1;
         }

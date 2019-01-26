@@ -59,7 +59,6 @@ class itemContainer {
         return save;
     }
     loadSave(save) {
-        console.log(save);
         this.sharp = save.sharp;
         if (save.seed !== undefined) this.seed = save.seed;
     }

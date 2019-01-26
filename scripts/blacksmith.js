@@ -6,11 +6,13 @@ const bloopSmith = {
     smithStage : null,
     smithSlot : null,
     smithState : "waiting",
+    smithSuccess : false,
     smithTimer : 0,
     createSave() {
         const save = {};
         save.smithTimer = this.smithTimer;
         save.smithState = this.smithState;
+        save.smithSuccess = this.smithSuccess;
         if (this.smithSlot !== null) save.smithSlot = this.smithSlot.createSave();
         else save.smithSlot = null;
         return save;
@@ -24,6 +26,7 @@ const bloopSmith = {
         else {
             this.smithSlot = null;
         }
+        if (save.smithSuccess !== undefined) this.smithSuccess = save.smithSuccess;
         this.smithTimer = save.smithTimer;
         this.smithState = save.smithState;
     },
@@ -60,10 +63,11 @@ const bloopSmith = {
         if (this.smithSlot === null) return;
         const chance = this.getSmithChance(this.smithSlot);
         const roll = getRandomFromItem(this.smithSlot);
-        console.log(chance,roll);
+        console.log(chance,roll)
         if (roll < chance) {
             this.smithSlot.sharp += 1;
         }
+        this.smithSuccess = roll < chance;
         this.smithState = "complete";
         refreshSmithArea();
     },
@@ -163,7 +167,11 @@ function refreshSmithArea() {
         $swItemStage.html("Collect Reward").addClass("collectTextBox");
         const d1 = $("<div/>").attr("id","swCollect").html("Collect");
         $swItemResult.html(itemStageCardSmith(bloopSmith.smithSlot,false).append(d1)).removeClass("inProgressTextBox");
-        $swMiddleText.html("Smithing Complete");
+        if (bloopSmith.smithSuccess) $swMiddleText.html("Smithing Complete");
+        else {
+            $swMiddleText.html("Smithing Failed");
+            $swItemResult.addClass("smithFailed");
+        }
         resetSmithBar();
         $swSuccess.hide();
         $swConfirm.hide();

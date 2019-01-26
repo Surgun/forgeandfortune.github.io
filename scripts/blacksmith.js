@@ -11,14 +11,14 @@ const bloopSmith = {
         const save = {};
         save.smithTimer = this.smithTimer;
         save.smithState = this.smithState;
-        if (this.smithSlot !== null && this.smithSlot !== "failed") save.smithSlot = this.smithSlot.createSave();
+        if (this.smithSlot !== null) save.smithSlot = this.smithSlot.createSave();
         else save.smithSlot = null;
         return save;
     },
     loadSave(save) {
         if (save.smithSlot !== null) {
             const container = new itemContainer(save.smithSlot.id,save.smithSlot.rarity);
-            container.loadSave(save);
+            container.loadSave(save.smithSlot);
             this.smithSlot = container;
         }
         else {
@@ -37,7 +37,7 @@ const bloopSmith = {
     },
     getSmithChance(item) {
         if (item === null) return;
-        return 10+item.sharp*5;
+        return miscLoadedValues.smithChance[item.sharp];
     },
     smithStart() {
         if (this.smithState !== "waiting" || this.smithStage === null) return;
@@ -45,7 +45,12 @@ const bloopSmith = {
             Notifications.cantAffordSmith();
             return;
         }
+        if (ResourceManager.materialAvailable(this.getStageResourceCost()) < 3) {
+            Notifications.cantAffordSmithRes();
+            return;
+        }
         ResourceManager.deductMoney(this.getSmithCost());
+        ResourceManager.addMaterial(this.getStageResourceCost(),-3);
         this.smithSlot = this.smithStage;
         Inventory.removeContainerFromInventory(this.smithStage.containerID);
         this.smithState = "smithing";
@@ -53,10 +58,10 @@ const bloopSmith = {
     },
     smith() {
         if (this.smithSlot === null) return;
-        if (this.smithSlot.sharp >= this.smithSlot.sharpbreak) {
-            this.smithSlot = "failed";
-        }
-        else {
+        const chance = this.getSmithChance(this.smithSlot);
+        const roll = getRandomFromItem(this.smithSlot);
+        console.log(chance,roll);
+        if (roll < chance) {
             this.smithSlot.sharp += 1;
         }
         this.smithState = "complete";
@@ -70,11 +75,6 @@ const bloopSmith = {
     },
     collectSmith() {
         if (this.smithState !== "complete") return;
-        if (this.smithSlot === "failed") {
-            this.smithSlot = null;
-            this.smithState = "waiting";
-            return;
-        }
         if (Inventory.full()) {
             Notifications.cantCollectSmith();
             return;
@@ -82,6 +82,10 @@ const bloopSmith = {
         Inventory.addItemContainerToInventory(this.smithSlot);
         this.smithSlot = null;
         this.smithState = "waiting";
+    },
+    getStageResourceCost() {
+        if (this.smithStage === null) return;
+        return this.smithStage.getSmithResourceCost();
     }
 }
 
@@ -93,7 +97,7 @@ function initiateSmithBldg() {
 
 function refreshSmithInventory() {
     $smithInvSlots.empty();
-    const d1 = $("<div/>").addClass("smithInvHead").html("INVENTORY");
+    const d1 = $("<div/>").addClass("smithInvHead").html("Inventory");
     $smithInvSlots.append(d1);
     if (Inventory.nonblank(true).length === 0) {
         const d2 = $("<div/>").addClass("smithInvBlank").html("No Items in Inventory");
@@ -137,8 +141,12 @@ function refreshSmithArea() {
             $swItemResult.html(itemStageCardSmith(bloopSmith.smithStage,true));
             $swMiddleText.hide();
             resetSmithBar();
-            $swSuccess.html(`${100-bloopSmith.getSmithChance(bloopSmith.smithStage)}% Success`).show();
-            $swConfirm.html(`Confirm Smith<span class="smith_cost">${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}</span>`).show();
+            $swSuccess.html(`${bloopSmith.getSmithChance(bloopSmith.smithStage)}% Success`).show();
+            const d1 = $("<div/>").addClass("smithCostGold").html(`Confirm Smith`)
+            const s1 = $("<span/>").addClass("smith_cost").html(`${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}`);
+            const s2 = $("<span/>").addClass("smith_cost_res").html(`${ResourceManager.materialIcon(bloopSmith.smithStage.item.smithCost)} 3`)
+            d1.append(s1,s2);
+            $swConfirm.html(d1).show();
             $swCollect.hide();
         }
     }

@@ -135,6 +135,12 @@ const Notifications = {
         const icon = "error";
         popToast(text,heading,icon);
     },
+    cantAffordSmithRes() {
+        const text = "You do not have enough resources.";
+        const heading = "Cannot Start Smithing";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
     noFuseSlots() {
         const text = "No fuse slots are available."; // Text that is to be shown in the toast
         const heading = 'Cannot Start Fuse'; // Optional heading to be shown on the toast

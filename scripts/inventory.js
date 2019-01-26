@@ -47,7 +47,7 @@ class itemContainer {
         this.rarity = rarity;
         this.containerID = containerid;
         this.sharp = 0;
-        this.sharpbreak = this.rollFail();
+        this.seed = Math.floor(Math.random() * 1000000);
         containerid += 1;
     }
     createSave() {
@@ -55,11 +55,13 @@ class itemContainer {
         save.id = this.id;
         save.rarity = this.rarity;
         save.sharp = this.sharp;
+        save.seed = this.seed;
         return save;
     }
     loadSave(save) {
+        console.log(save);
         this.sharp = save.sharp;
-        if (save.sharpbreak !== undefined) this.sharpbreak = save.sharpbreak;
+        if (save.seed !== undefined) this.seed = save.seed;
     }
     picName() {
         const prefix = `<span class="item-prefix-name">+${this.sharp} ${this.item.name}</span>`
@@ -129,15 +131,8 @@ class itemContainer {
     goldValue() {
         return (this.item.value * (this.rarity+1));
     }
-    rollFail() {
-        //pre-determine breakpoint
-        let upgrade = 0;
-        while (upgrade < 10) {
-            const failure = Math.floor(Math.random() * 100);
-            if (failure < 10+upgrade*5) return upgrade;
-            upgrade += 1;
-        }
-        return upgrade;
+    getSmithResourceCost() {
+        return this.item.smithCost;
     }
 }
 
@@ -333,7 +328,7 @@ const Inventory = {
     removePrecraft(id,amt) {
         if (this.itemCount(id,0) < amt) return;
         for (let i=0;i<amt;i++) this.removeFromInventory(id,0);
-    }
+    },
 }
 
 $inventory = $("#inventory");
@@ -388,7 +383,7 @@ function gearEquipFromInventory(invID) {
     const item = equipContainerTarget.item;
     const itemdiv = $("<div/>").addClass("equipItem");
     itemdiv.addClass("R"+equipContainerTarget.rarity)
-    const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(item.itemPicName());
+    const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
     const itemProps = $("<div/>").addClass("equipItemProps").html(equipContainerTarget.propDiv());
     itemdiv.append(itemName,itemProps);
     $ietEquip.html(itemdiv);

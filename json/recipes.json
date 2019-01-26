@@ -11,7 +11,9 @@
       "wood"
     ],
     "mcost": "",
-    "actTime": 5000,
+    "smithCost": "M101",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 0,
@@ -31,7 +33,9 @@
     "mcost": {
       "M602": 1
     },
-    "actTime": 5000,
+    "smithCost": "M602",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -51,7 +55,9 @@
     "mcost": {
       "M203": 1
     },
-    "actTime": 5000,
+    "smithCost": "M203",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -71,7 +77,9 @@
     "mcost": {
       "M404": 1
     },
-    "actTime": 5000,
+    "smithCost": "M404",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -92,7 +100,9 @@
     "mcost": {
       "M105": 1
     },
-    "actTime": 5000,
+    "smithCost": "M105",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -111,7 +121,9 @@
       "bone"
     ],
     "mcost": "",
-    "actTime": 5000,
+    "smithCost": "M106",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -132,7 +144,9 @@
     "mcost": {
       "M307": 1
     },
-    "actTime": 5000,
+    "smithCost": "M307",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -153,7 +167,9 @@
     "mcost": {
       "M508": 1
     },
-    "actTime": 5000,
+    "smithCost": "M508",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -174,7 +190,9 @@
     "mcost": {
       "M109": 1
     },
-    "actTime": 5000,
+    "smithCost": "M109",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -195,7 +213,9 @@
     "mcost": {
       "M310": 1
     },
-    "actTime": 5000,
+    "smithCost": "M310",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -215,7 +235,9 @@
     "mcost": {
       "M101": 1
     },
-    "actTime": 6000,
+    "smithCost": "M101",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 100,
@@ -233,7 +255,9 @@
       "ore"
     ],
     "mcost": "",
-    "actTime": 6000,
+    "smithCost": "M102",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -253,7 +277,9 @@
     "mcost": {
       "M303": 1
     },
-    "actTime": 6000,
+    "smithCost": "M303",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -273,7 +299,9 @@
     "mcost": {
       "M504": 1
     },
-    "actTime": 6000,
+    "smithCost": "M504",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -294,7 +322,9 @@
     "mcost": {
       "M205": 1
     },
-    "actTime": 6000,
+    "smithCost": "M205",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -315,7 +345,9 @@
     "mcost": {
       "M306": 1
     },
-    "actTime": 6000,
+    "smithCost": "M306",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -334,7 +366,9 @@
       "wood"
     ],
     "mcost": "",
-    "actTime": 6000,
+    "smithCost": "M107",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -355,7 +389,9 @@
     "mcost": {
       "M608": 1
     },
-    "actTime": 6000,
+    "smithCost": "M608",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -376,7 +412,9 @@
     "mcost": {
       "M209": 1
     },
-    "actTime": 6000,
+    "smithCost": "M209",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -397,7 +435,9 @@
     "mcost": {
       "M410": 1
     },
-    "actTime": 6000,
+    "smithCost": "M410",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -415,7 +455,9 @@
       "bone"
     ],
     "mcost": "",
-    "actTime": 4000,
+    "smithCost": "M201",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 0,
@@ -435,7 +477,9 @@
     "mcost": {
       "M102": 1
     },
-    "actTime": 4000,
+    "smithCost": "M102",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -453,7 +497,9 @@
       "bone"
     ],
     "mcost": "",
-    "actTime": 4000,
+    "smithCost": "M103",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -473,7 +519,9 @@
     "mcost": {
       "M604": 1
     },
-    "actTime": 4000,
+    "smithCost": "M604",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -494,7 +542,9 @@
     "mcost": {
       "M305": 1
     },
-    "actTime": 4000,
+    "smithCost": "M305",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -515,7 +565,9 @@
     "mcost": {
       "M406": 1
     },
-    "actTime": 4000,
+    "smithCost": "M406",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -536,7 +588,9 @@
     "mcost": {
       "M507": 1
     },
-    "actTime": 4000,
+    "smithCost": "M507",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -555,7 +609,9 @@
       "bone"
     ],
     "mcost": "",
-    "actTime": 4000,
+    "smithCost": "M108",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -576,7 +632,9 @@
     "mcost": {
       "M309": 1
     },
-    "actTime": 4000,
+    "smithCost": "M309",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -597,7 +655,9 @@
     "mcost": {
       "M510": 1
     },
-    "actTime": 4000,
+    "smithCost": "M510",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -615,7 +675,9 @@
       "silver"
     ],
     "mcost": "",
-    "actTime": 5000,
+    "smithCost": "M301",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 0,
@@ -635,7 +697,9 @@
     "mcost": {
       "M602": 1
     },
-    "actTime": 5000,
+    "smithCost": "M602",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -655,7 +719,9 @@
     "mcost": {
       "M203": 1
     },
-    "actTime": 5000,
+    "smithCost": "M203",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -675,7 +741,9 @@
     "mcost": {
       "M504": 1
     },
-    "actTime": 5000,
+    "smithCost": "M504",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -696,7 +764,9 @@
     "mcost": {
       "M205": 1
     },
-    "actTime": 5000,
+    "smithCost": "M205",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -715,7 +785,9 @@
       "silver"
     ],
     "mcost": "",
-    "actTime": 5000,
+    "smithCost": "M206",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -736,7 +808,9 @@
     "mcost": {
       "M107": 1
     },
-    "actTime": 5000,
+    "smithCost": "M107",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -757,7 +831,9 @@
     "mcost": {
       "M408": 1
     },
-    "actTime": 5000,
+    "smithCost": "M408",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -778,7 +854,9 @@
     "mcost": {
       "M209": 1
     },
-    "actTime": 5000,
+    "smithCost": "M209",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -799,7 +877,9 @@
     "mcost": {
       "M410": 1
     },
-    "actTime": 5000,
+    "smithCost": "M410",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -817,7 +897,9 @@
       "mana"
     ],
     "mcost": "",
-    "actTime": 4000,
+    "smithCost": "M401",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 0,
@@ -837,7 +919,9 @@
     "mcost": {
       "M102": 1
     },
-    "actTime": 4000,
+    "smithCost": "M102",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -855,7 +939,9 @@
       "mana"
     ],
     "mcost": "",
-    "actTime": 4000,
+    "smithCost": "M203",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -875,7 +961,9 @@
     "mcost": {
       "M604": 1
     },
-    "actTime": 4000,
+    "smithCost": "M604",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -896,7 +984,9 @@
     "mcost": {
       "M305": 1
     },
-    "actTime": 4000,
+    "smithCost": "M305",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -917,7 +1007,9 @@
     "mcost": {
       "M306": 1
     },
-    "actTime": 4000,
+    "smithCost": "M306",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -938,7 +1030,9 @@
     "mcost": {
       "M207": 1
     },
-    "actTime": 4000,
+    "smithCost": "M207",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -957,7 +1051,9 @@
       "mana"
     ],
     "mcost": "",
-    "actTime": 4000,
+    "smithCost": "M208",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -978,7 +1074,9 @@
     "mcost": {
       "M309": 1
     },
-    "actTime": 4000,
+    "smithCost": "M309",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -999,7 +1097,9 @@
     "mcost": {
       "M510": 1
     },
-    "actTime": 4000,
+    "smithCost": "M510",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -1019,7 +1119,9 @@
     "mcost": {
       "M501": 1
     },
-    "actTime": 6000,
+    "smithCost": "M501",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 100,
@@ -1037,7 +1139,9 @@
       "wood"
     ],
     "mcost": "",
-    "actTime": 6000,
+    "smithCost": "M302",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -1057,7 +1161,9 @@
     "mcost": {
       "M303": 1
     },
-    "actTime": 6000,
+    "smithCost": "M303",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -1077,7 +1183,9 @@
     "mcost": {
       "M104": 1
     },
-    "actTime": 6000,
+    "smithCost": "M104",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -1098,7 +1206,9 @@
     "mcost": {
       "M405": 1
     },
-    "actTime": 6000,
+    "smithCost": "M405",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -1119,7 +1229,9 @@
     "mcost": {
       "M406": 1
     },
-    "actTime": 6000,
+    "smithCost": "M406",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -1138,7 +1250,9 @@
       "mana"
     ],
     "mcost": "",
-    "actTime": 6000,
+    "smithCost": "M207",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -1159,7 +1273,9 @@
     "mcost": {
       "M608": 1
     },
-    "actTime": 6000,
+    "smithCost": "M608",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -1180,7 +1296,9 @@
     "mcost": {
       "M409": 1
     },
-    "actTime": 6000,
+    "smithCost": "M409",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -1201,7 +1319,9 @@
     "mcost": {
       "M610": 1
     },
-    "actTime": 6000,
+    "smithCost": "M610",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -1219,7 +1339,9 @@
       "ore"
     ],
     "mcost": "",
-    "actTime": 4000,
+    "smithCost": "M401",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 0,
@@ -1239,7 +1361,9 @@
     "mcost": {
       "M602": 1
     },
-    "actTime": 4000,
+    "smithCost": "M602",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -1259,7 +1383,9 @@
     "mcost": {
       "M203": 1
     },
-    "actTime": 4000,
+    "smithCost": "M203",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -1279,7 +1405,9 @@
     "mcost": {
       "M604": 1
     },
-    "actTime": 4000,
+    "smithCost": "M604",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -1300,7 +1428,9 @@
     "mcost": {
       "M305": 1
     },
-    "actTime": 4000,
+    "smithCost": "M305",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -1319,7 +1449,9 @@
       "steel"
     ],
     "mcost": "",
-    "actTime": 4000,
+    "smithCost": "M306",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -1340,7 +1472,9 @@
     "mcost": {
       "M107": 1
     },
-    "actTime": 4000,
+    "smithCost": "M107",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -1361,7 +1495,9 @@
     "mcost": {
       "M408": 1
     },
-    "actTime": 4000,
+    "smithCost": "M408",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -1382,7 +1518,9 @@
     "mcost": {
       "M309": 1
     },
-    "actTime": 4000,
+    "smithCost": "M309",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -1403,7 +1541,9 @@
     "mcost": {
       "M510": 1
     },
-    "actTime": 4000,
+    "smithCost": "M510",
+    "actTime": 8,
+    "apAdd": 25,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -1423,7 +1563,9 @@
     "mcost": {
       "M301": 1
     },
-    "actTime": 6000,
+    "smithCost": "M301",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 100,
@@ -1441,7 +1583,9 @@
       "wood"
     ],
     "mcost": "",
-    "actTime": 6000,
+    "smithCost": "M402",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -1461,7 +1605,9 @@
     "mcost": {
       "M303": 1
     },
-    "actTime": 6000,
+    "smithCost": "M303",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -1481,7 +1627,9 @@
     "mcost": {
       "M104": 1
     },
-    "actTime": 6000,
+    "smithCost": "M104",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -1502,7 +1650,9 @@
     "mcost": {
       "M405": 1
     },
-    "actTime": 6000,
+    "smithCost": "M405",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -1523,7 +1673,9 @@
     "mcost": {
       "M306": 1
     },
-    "actTime": 6000,
+    "smithCost": "M306",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -1542,7 +1694,9 @@
       "leather"
     ],
     "mcost": "",
-    "actTime": 6000,
+    "smithCost": "M307",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -1563,7 +1717,9 @@
     "mcost": {
       "M608": 1
     },
-    "actTime": 6000,
+    "smithCost": "M608",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -1584,7 +1740,9 @@
     "mcost": {
       "M409": 1
     },
-    "actTime": 6000,
+    "smithCost": "M409",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -1605,7 +1763,9 @@
     "mcost": {
       "M610": 1
     },
-    "actTime": 6000,
+    "smithCost": "M610",
+    "actTime": 12,
+    "apAdd": 40,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -1623,7 +1783,9 @@
       "leather"
     ],
     "mcost": "",
-    "actTime": 5000,
+    "smithCost": "M501",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 0,
@@ -1643,7 +1805,9 @@
     "mcost": {
       "M102": 1
     },
-    "actTime": 5000,
+    "smithCost": "M102",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -1661,7 +1825,9 @@
       "leather"
     ],
     "mcost": "",
-    "actTime": 5000,
+    "smithCost": "M303",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -1681,7 +1847,9 @@
     "mcost": {
       "M204": 1
     },
-    "actTime": 5000,
+    "smithCost": "M204",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -1702,7 +1870,9 @@
     "mcost": {
       "M505": 1
     },
-    "actTime": 5000,
+    "smithCost": "M505",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -1723,7 +1893,9 @@
     "mcost": {
       "M406": 1
     },
-    "actTime": 5000,
+    "smithCost": "M406",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -1744,7 +1916,9 @@
     "mcost": {
       "M307": 1
     },
-    "actTime": 5000,
+    "smithCost": "M307",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -1763,7 +1937,9 @@
       "fabric"
     ],
     "mcost": "",
-    "actTime": 5000,
+    "smithCost": "M308",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -1784,7 +1960,9 @@
     "mcost": {
       "M509": 1
     },
-    "actTime": 5000,
+    "smithCost": "M509",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -1805,7 +1983,9 @@
     "mcost": {
       "M110": 1
     },
-    "actTime": 5000,
+    "smithCost": "M110",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -1823,7 +2003,9 @@
       "steel"
     ],
     "mcost": "",
-    "actTime": 5000,
+    "smithCost": "M601",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 0,
@@ -1843,7 +2025,9 @@
     "mcost": {
       "M202": 1
     },
-    "actTime": 5000,
+    "smithCost": "M202",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -1863,7 +2047,9 @@
     "mcost": {
       "M403": 1
     },
-    "actTime": 5000,
+    "smithCost": "M403",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -1883,7 +2069,9 @@
     "mcost": {
       "M104": 1
     },
-    "actTime": 5000,
+    "smithCost": "M104",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -1902,7 +2090,9 @@
       "silver"
     ],
     "mcost": "",
-    "actTime": 5000,
+    "smithCost": "M105",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -1923,7 +2113,9 @@
     "mcost": {
       "M506": 1
     },
-    "actTime": 5000,
+    "smithCost": "M506",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -1944,7 +2136,9 @@
     "mcost": {
       "M607": 1
     },
-    "actTime": 5000,
+    "smithCost": "M607",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -1965,7 +2159,9 @@
     "mcost": {
       "M108": 1
     },
-    "actTime": 5000,
+    "smithCost": "M108",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -1986,7 +2182,9 @@
     "mcost": {
       "M409": 1
     },
-    "actTime": 5000,
+    "smithCost": "M409",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -2005,7 +2203,9 @@
       "silver"
     ],
     "mcost": "",
-    "actTime": 5000,
+    "smithCost": "M110",
+    "actTime": 10,
+    "apAdd": 30,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -2024,7 +2224,9 @@
       "leather"
     ],
     "mcost": "",
+    "smithCost": "M101",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
     "recipeBuy": 100,
@@ -2045,7 +2247,9 @@
     "mcost": {
       "M302": 1
     },
+    "smithCost": "M302",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 500,
@@ -2066,7 +2270,9 @@
     "mcost": {
       "M503": 1
     },
+    "smithCost": "M503",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 1000,
@@ -2087,7 +2293,9 @@
     "mcost": {
       "M204": 1
     },
+    "smithCost": "M204",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 180,
     "recipeBuy": 7500,
@@ -2109,7 +2317,9 @@
     "mcost": {
       "M405": 1
     },
+    "smithCost": "M405",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 210,
     "recipeBuy": 52500,
@@ -2129,7 +2339,9 @@
       "steel"
     ],
     "mcost": "",
+    "smithCost": "M406",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 367500,
@@ -2151,7 +2363,9 @@
     "mcost": {
       "M107": 1
     },
+    "smithCost": "M107",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 270,
     "recipeBuy": 2572500,
@@ -2173,7 +2387,9 @@
     "mcost": {
       "M208": 1
     },
+    "smithCost": "M208",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 300,
     "recipeBuy": 18007500,
@@ -2195,7 +2411,9 @@
     "mcost": {
       "M509": 1
     },
+    "smithCost": "M509",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 330,
     "recipeBuy": 126052500,
@@ -2217,7 +2435,9 @@
     "mcost": {
       "M210": 1
     },
+    "smithCost": "M210",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 882367500,
@@ -2236,7 +2456,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M201",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
     "recipeBuy": 100,
@@ -2257,7 +2479,9 @@
     "mcost": {
       "M202": 1
     },
+    "smithCost": "M202",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 500,
@@ -2278,7 +2502,9 @@
     "mcost": {
       "M403": 1
     },
+    "smithCost": "M403",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 1000,
@@ -2299,7 +2525,9 @@
     "mcost": {
       "M204": 1
     },
+    "smithCost": "M204",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 180,
     "recipeBuy": 7500,
@@ -2321,7 +2549,9 @@
     "mcost": {
       "M505": 1
     },
+    "smithCost": "M505",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 210,
     "recipeBuy": 52500,
@@ -2341,7 +2571,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M506",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 367500,
@@ -2363,7 +2595,9 @@
     "mcost": {
       "M307": 1
     },
+    "smithCost": "M307",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 270,
     "recipeBuy": 2572500,
@@ -2385,7 +2619,9 @@
     "mcost": {
       "M208": 1
     },
+    "smithCost": "M208",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 300,
     "recipeBuy": 18007500,
@@ -2407,7 +2643,9 @@
     "mcost": {
       "M509": 1
     },
+    "smithCost": "M509",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 330,
     "recipeBuy": 126052500,
@@ -2429,7 +2667,9 @@
     "mcost": {
       "M110": 1
     },
+    "smithCost": "M110",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 882367500,
@@ -2448,7 +2688,9 @@
       "fabric"
     ],
     "mcost": "",
+    "smithCost": "M301",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
     "recipeBuy": 100,
@@ -2469,7 +2711,9 @@
     "mcost": {
       "M202": 1
     },
+    "smithCost": "M202",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 500,
@@ -2490,7 +2734,9 @@
     "mcost": {
       "M403": 1
     },
+    "smithCost": "M403",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 1000,
@@ -2511,7 +2757,9 @@
     "mcost": {
       "M304": 1
     },
+    "smithCost": "M304",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 180,
     "recipeBuy": 7500,
@@ -2532,7 +2780,9 @@
     "mcost": {
       "M605": 1
     },
+    "smithCost": "M605",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 210,
     "recipeBuy": 52500,
@@ -2552,7 +2802,9 @@
       "silver"
     ],
     "mcost": "",
+    "smithCost": "M606",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 367500,
@@ -2574,7 +2826,9 @@
     "mcost": {
       "M507": 1
     },
+    "smithCost": "M507",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 270,
     "recipeBuy": 2572500,
@@ -2596,7 +2850,9 @@
     "mcost": {
       "M208": 1
     },
+    "smithCost": "M208",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 300,
     "recipeBuy": 18007500,
@@ -2618,7 +2874,9 @@
     "mcost": {
       "M609": 1
     },
+    "smithCost": "M609",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 330,
     "recipeBuy": 126052500,
@@ -2640,7 +2898,9 @@
     "mcost": {
       "M210": 1
     },
+    "smithCost": "M210",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 882367500,
@@ -2661,7 +2921,9 @@
     "mcost": {
       "M201": 1
     },
+    "smithCost": "M201",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
     "recipeBuy": 100,
@@ -2680,7 +2942,9 @@
       "steel"
     ],
     "mcost": "",
+    "smithCost": "M202",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 500,
@@ -2701,7 +2965,9 @@
     "mcost": {
       "M603": 1
     },
+    "smithCost": "M603",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 1000,
@@ -2722,7 +2988,9 @@
     "mcost": {
       "M304": 1
     },
+    "smithCost": "M304",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 180,
     "recipeBuy": 7500,
@@ -2744,7 +3012,9 @@
     "mcost": {
       "M505": 1
     },
+    "smithCost": "M505",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 210,
     "recipeBuy": 52500,
@@ -2766,7 +3036,9 @@
     "mcost": {
       "M606": 1
     },
+    "smithCost": "M606",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 367500,
@@ -2786,7 +3058,9 @@
       "steel"
     ],
     "mcost": "",
+    "smithCost": "M407",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 270,
     "recipeBuy": 2572500,
@@ -2808,7 +3082,9 @@
     "mcost": {
       "M408": 1
     },
+    "smithCost": "M408",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 300,
     "recipeBuy": 18007500,
@@ -2830,7 +3106,9 @@
     "mcost": {
       "M609": 1
     },
+    "smithCost": "M609",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 330,
     "recipeBuy": 126052500,
@@ -2852,7 +3130,9 @@
     "mcost": {
       "M110": 1
     },
+    "smithCost": "M110",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 882367500,
@@ -2873,7 +3153,9 @@
     "mcost": {
       "M601": 1
     },
+    "smithCost": "M601",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
     "recipeBuy": 100,
@@ -2892,7 +3174,9 @@
       "herb"
     ],
     "mcost": "",
+    "smithCost": "M502",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 500,
@@ -2913,7 +3197,9 @@
     "mcost": {
       "M503": 1
     },
+    "smithCost": "M503",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 1000,
@@ -2934,7 +3220,9 @@
     "mcost": {
       "M304": 1
     },
+    "smithCost": "M304",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 180,
     "recipeBuy": 7500,
@@ -2956,7 +3244,9 @@
     "mcost": {
       "M605": 1
     },
+    "smithCost": "M605",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 210,
     "recipeBuy": 52500,
@@ -2978,7 +3268,9 @@
     "mcost": {
       "M506": 1
     },
+    "smithCost": "M506",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 367500,
@@ -2998,7 +3290,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M507",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 270,
     "recipeBuy": 2572500,
@@ -3020,7 +3314,9 @@
     "mcost": {
       "M108": 1
     },
+    "smithCost": "M108",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 300,
     "recipeBuy": 18007500,
@@ -3042,7 +3338,9 @@
     "mcost": {
       "M609": 1
     },
+    "smithCost": "M609",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 330,
     "recipeBuy": 126052500,
@@ -3064,7 +3362,9 @@
     "mcost": {
       "M210": 1
     },
+    "smithCost": "M210",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 882367500,
@@ -3085,7 +3385,9 @@
     "mcost": {
       "M401": 1
     },
+    "smithCost": "M401",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
     "recipeBuy": 100,
@@ -3104,7 +3406,9 @@
       "fabric"
     ],
     "mcost": "",
+    "smithCost": "M602",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 500,
@@ -3125,7 +3429,9 @@
     "mcost": {
       "M503": 1
     },
+    "smithCost": "M503",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 1000,
@@ -3146,7 +3452,9 @@
     "mcost": {
       "M404": 1
     },
+    "smithCost": "M404",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 180,
     "recipeBuy": 7500,
@@ -3168,7 +3476,9 @@
     "mcost": {
       "M105": 1
     },
+    "smithCost": "M105",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 210,
     "recipeBuy": 52500,
@@ -3190,7 +3500,9 @@
     "mcost": {
       "M606": 1
     },
+    "smithCost": "M606",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 367500,
@@ -3210,7 +3522,9 @@
       "fabric"
     ],
     "mcost": "",
+    "smithCost": "M607",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 270,
     "recipeBuy": 2572500,
@@ -3232,7 +3546,9 @@
     "mcost": {
       "M108": 1
     },
+    "smithCost": "M108",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 300,
     "recipeBuy": 18007500,
@@ -3254,7 +3570,9 @@
     "mcost": {
       "M209": 1
     },
+    "smithCost": "M209",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 330,
     "recipeBuy": 126052500,
@@ -3276,7 +3594,9 @@
     "mcost": {
       "M310": 1
     },
+    "smithCost": "M310",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 882367500,
@@ -3298,7 +3618,9 @@
     "mcost": {
       "M301": 1
     },
+    "smithCost": "M301",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 100,
@@ -3320,7 +3642,9 @@
     "mcost": {
       "M402": 1
     },
+    "smithCost": "M402",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 500,
@@ -3340,7 +3664,9 @@
       "steel"
     ],
     "mcost": "",
+    "smithCost": "M403",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 1000,
@@ -3362,7 +3688,9 @@
     "mcost": {
       "M404": 1
     },
+    "smithCost": "M404",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 7500,
@@ -3384,7 +3712,9 @@
     "mcost": {
       "M605": 1
     },
+    "smithCost": "M605",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 420,
     "recipeBuy": 52500,
@@ -3406,7 +3736,9 @@
     "mcost": {
       "M106": 1
     },
+    "smithCost": "M106",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 480,
     "recipeBuy": 367500,
@@ -3428,7 +3760,9 @@
     "mcost": {
       "M207": 1
     },
+    "smithCost": "M207",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 540,
     "recipeBuy": 2572500,
@@ -3448,7 +3782,9 @@
       "steel"
     ],
     "mcost": "",
+    "smithCost": "M408",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 600,
     "recipeBuy": 18007500,
@@ -3470,7 +3806,9 @@
     "mcost": {
       "M109": 1
     },
+    "smithCost": "M109",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 660,
     "recipeBuy": 126052500,
@@ -3492,7 +3830,9 @@
     "mcost": {
       "M610": 1
     },
+    "smithCost": "M610",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 720,
     "recipeBuy": 882367500,
@@ -3514,7 +3854,9 @@
     "mcost": {
       "M101": 1
     },
+    "smithCost": "M101",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 100,
@@ -3536,7 +3878,9 @@
     "mcost": {
       "M302": 1
     },
+    "smithCost": "M302",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 500,
@@ -3556,7 +3900,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M503",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 1000,
@@ -3578,7 +3924,9 @@
     "mcost": {
       "M404": 1
     },
+    "smithCost": "M404",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 7500,
@@ -3600,7 +3948,9 @@
     "mcost": {
       "M105": 1
     },
+    "smithCost": "M105",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 420,
     "recipeBuy": 52500,
@@ -3622,7 +3972,9 @@
     "mcost": {
       "M606": 1
     },
+    "smithCost": "M606",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 480,
     "recipeBuy": 367500,
@@ -3644,7 +3996,9 @@
     "mcost": {
       "M507": 1
     },
+    "smithCost": "M507",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 540,
     "recipeBuy": 2572500,
@@ -3664,7 +4018,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M508",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 600,
     "recipeBuy": 18007500,
@@ -3686,7 +4042,9 @@
     "mcost": {
       "M109": 1
     },
+    "smithCost": "M109",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 660,
     "recipeBuy": 126052500,
@@ -3708,7 +4066,9 @@
     "mcost": {
       "M310": 1
     },
+    "smithCost": "M310",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 720,
     "recipeBuy": 882367500,
@@ -3730,7 +4090,9 @@
     "mcost": {
       "M501": 1
     },
+    "smithCost": "M501",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 100,
@@ -3752,7 +4114,9 @@
     "mcost": {
       "M302": 1
     },
+    "smithCost": "M302",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 500,
@@ -3772,7 +4136,9 @@
       "bone"
     ],
     "mcost": "",
+    "smithCost": "M603",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 1000,
@@ -3794,7 +4160,9 @@
     "mcost": {
       "M504": 1
     },
+    "smithCost": "M504",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 7500,
@@ -3816,7 +4184,9 @@
     "mcost": {
       "M205": 1
     },
+    "smithCost": "M205",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 420,
     "recipeBuy": 52500,
@@ -3838,7 +4208,9 @@
     "mcost": {
       "M506": 1
     },
+    "smithCost": "M506",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 480,
     "recipeBuy": 367500,
@@ -3860,7 +4232,9 @@
     "mcost": {
       "M407": 1
     },
+    "smithCost": "M407",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 540,
     "recipeBuy": 2572500,
@@ -3880,7 +4254,9 @@
       "bone"
     ],
     "mcost": "",
+    "smithCost": "M608",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 600,
     "recipeBuy": 18007500,
@@ -3902,7 +4278,9 @@
     "mcost": {
       "M109": 1
     },
+    "smithCost": "M109",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 660,
     "recipeBuy": 126052500,
@@ -3924,7 +4302,9 @@
     "mcost": {
       "M410": 1
     },
+    "smithCost": "M410",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 720,
     "recipeBuy": 882367500,
@@ -3944,7 +4324,9 @@
     "mcost": {
       "M401": 1
     },
+    "smithCost": "M401",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 100,
@@ -3964,7 +4346,9 @@
     "mcost": {
       "M502": 1
     },
+    "smithCost": "M502",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -3985,7 +4369,9 @@
     "mcost": {
       "M103": 1
     },
+    "smithCost": "M103",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -4004,7 +4390,9 @@
       "silver"
     ],
     "mcost": "",
+    "smithCost": "M104",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -4026,7 +4414,9 @@
     "mcost": {
       "M105": 1
     },
+    "smithCost": "M105",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -4048,7 +4438,9 @@
     "mcost": {
       "M206": 1
     },
+    "smithCost": "M206",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -4070,7 +4462,9 @@
     "mcost": {
       "M407": 1
     },
+    "smithCost": "M407",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -4092,7 +4486,9 @@
     "mcost": {
       "M308": 1
     },
+    "smithCost": "M308",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -4112,7 +4508,9 @@
       "herb"
     ],
     "mcost": "",
+    "smithCost": "M109",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -4134,7 +4532,9 @@
     "mcost": {
       "M310": 1
     },
+    "smithCost": "M310",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -4154,7 +4554,9 @@
     "mcost": {
       "M201": 1
     },
+    "smithCost": "M201",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 100,
@@ -4174,7 +4576,9 @@
     "mcost": {
       "M402": 1
     },
+    "smithCost": "M402",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -4195,7 +4599,9 @@
     "mcost": {
       "M603": 1
     },
+    "smithCost": "M603",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -4214,7 +4620,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M204",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -4236,7 +4644,9 @@
     "mcost": {
       "M205": 1
     },
+    "smithCost": "M205",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -4258,7 +4668,9 @@
     "mcost": {
       "M106": 1
     },
+    "smithCost": "M106",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -4280,7 +4692,9 @@
     "mcost": {
       "M407": 1
     },
+    "smithCost": "M407",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -4302,7 +4716,9 @@
     "mcost": {
       "M308": 1
     },
+    "smithCost": "M308",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -4322,7 +4738,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M209",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -4344,7 +4762,9 @@
     "mcost": {
       "M410": 1
     },
+    "smithCost": "M410",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -4364,7 +4784,9 @@
     "mcost": {
       "M601": 1
     },
+    "smithCost": "M601",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 100,
@@ -4384,7 +4806,9 @@
     "mcost": {
       "M402": 1
     },
+    "smithCost": "M402",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -4405,7 +4829,9 @@
     "mcost": {
       "M603": 1
     },
+    "smithCost": "M603",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -4424,7 +4850,9 @@
       "steel"
     ],
     "mcost": "",
+    "smithCost": "M304",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -4446,7 +4874,9 @@
     "mcost": {
       "M305": 1
     },
+    "smithCost": "M305",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -4468,7 +4898,9 @@
     "mcost": {
       "M106": 1
     },
+    "smithCost": "M106",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -4490,7 +4922,9 @@
     "mcost": {
       "M207": 1
     },
+    "smithCost": "M207",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -4512,7 +4946,9 @@
     "mcost": {
       "M308": 1
     },
+    "smithCost": "M308",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -4532,7 +4968,9 @@
       "silver"
     ],
     "mcost": "",
+    "smithCost": "M309",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -4554,7 +4992,9 @@
     "mcost": {
       "M510": 1
     },
+    "smithCost": "M510",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -4572,7 +5012,9 @@
       "paper"
     ],
     "mcost": "",
+    "smithCost": "M401",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 0,
@@ -4592,7 +5034,9 @@
     "mcost": {
       "M502": 1
     },
+    "smithCost": "M502",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -4613,7 +5057,9 @@
     "mcost": {
       "M103": 1
     },
+    "smithCost": "M103",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -4634,7 +5080,9 @@
     "mcost": {
       "M504": 1
     },
+    "smithCost": "M504",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -4654,7 +5102,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M205",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -4679,7 +5129,9 @@
     "mcost": {
       "M206": 1
     },
+    "smithCost": "M206",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -4701,7 +5153,9 @@
     "mcost": {
       "M607": 1
     },
+    "smithCost": "M607",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -4723,7 +5177,9 @@
     "mcost": {
       "M508": 1
     },
+    "smithCost": "M508",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -4745,7 +5201,9 @@
     "mcost": {
       "M209": 1
     },
+    "smithCost": "M209",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -4765,7 +5223,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M210",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -4785,7 +5245,9 @@
     "mcost": {
       "M101": 1
     },
+    "smithCost": "M101",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 18,
     "hp": 0,
     "recipeBuy": 100,
@@ -4805,7 +5267,9 @@
     "mcost": {
       "M502": 1
     },
+    "smithCost": "M502",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 36,
     "hp": 0,
     "recipeBuy": 500,
@@ -4826,7 +5290,9 @@
     "mcost": {
       "M103": 1
     },
+    "smithCost": "M103",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 72,
     "hp": 0,
     "recipeBuy": 1000,
@@ -4847,7 +5313,9 @@
     "mcost": {
       "M604": 1
     },
+    "smithCost": "M604",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 108,
     "hp": 0,
     "recipeBuy": 7500,
@@ -4867,7 +5335,9 @@
       "steel"
     ],
     "mcost": "",
+    "smithCost": "M305",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 126,
     "hp": 0,
     "recipeBuy": 52500,
@@ -4889,7 +5359,9 @@
     "mcost": {
       "M206": 1
     },
+    "smithCost": "M206",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 144,
     "hp": 0,
     "recipeBuy": 367500,
@@ -4911,7 +5383,9 @@
     "mcost": {
       "M607": 1
     },
+    "smithCost": "M607",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 162,
     "hp": 0,
     "recipeBuy": 2572500,
@@ -4933,7 +5407,9 @@
     "mcost": {
       "M508": 1
     },
+    "smithCost": "M508",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 180,
     "hp": 0,
     "recipeBuy": 18007500,
@@ -4955,7 +5431,9 @@
     "mcost": {
       "M309": 1
     },
+    "smithCost": "M309",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 198,
     "hp": 0,
     "recipeBuy": 126052500,
@@ -4975,7 +5453,9 @@
       "steel"
     ],
     "mcost": "",
+    "smithCost": "M310",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 216,
     "hp": 0,
     "recipeBuy": 882367500,
@@ -4993,7 +5473,9 @@
       "herb"
     ],
     "mcost": "",
+    "smithCost": "M501",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 0,
@@ -5013,7 +5495,9 @@
     "mcost": {
       "M602": 1
     },
+    "smithCost": "M602",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 500,
@@ -5033,7 +5517,9 @@
     "mcost": {
       "M203": 1
     },
+    "smithCost": "M203",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 1000,
@@ -5051,7 +5537,9 @@
       "herb"
     ],
     "mcost": "",
+    "smithCost": "M404",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 7500,
@@ -5072,7 +5560,9 @@
     "mcost": {
       "M405": 1
     },
+    "smithCost": "M405",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 420,
     "recipeBuy": 52500,
@@ -5093,7 +5583,9 @@
     "mcost": {
       "M106": 1
     },
+    "smithCost": "M106",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 480,
     "recipeBuy": 367500,
@@ -5114,7 +5606,9 @@
     "mcost": {
       "M307": 1
     },
+    "smithCost": "M307",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 540,
     "recipeBuy": 2572500,
@@ -5135,7 +5629,9 @@
     "mcost": {
       "M508": 1
     },
+    "smithCost": "M508",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 600,
     "recipeBuy": 18007500,
@@ -5154,7 +5650,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M409",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 660,
     "recipeBuy": 126052500,
@@ -5175,7 +5673,9 @@
     "mcost": {
       "M610": 1
     },
+    "smithCost": "M610",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 720,
     "recipeBuy": 882367500,
@@ -5193,7 +5693,9 @@
       "fabric"
     ],
     "mcost": "",
+    "smithCost": "M601",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 0,
@@ -5213,7 +5715,9 @@
     "mcost": {
       "M202": 1
     },
+    "smithCost": "M202",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 500,
@@ -5233,7 +5737,9 @@
     "mcost": {
       "M303": 1
     },
+    "smithCost": "M303",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 1000,
@@ -5251,7 +5757,9 @@
       "fabric"
     ],
     "mcost": "",
+    "smithCost": "M504",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 7500,
@@ -5272,7 +5780,9 @@
     "mcost": {
       "M505": 1
     },
+    "smithCost": "M505",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 420,
     "recipeBuy": 52500,
@@ -5293,7 +5803,9 @@
     "mcost": {
       "M206": 1
     },
+    "smithCost": "M206",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 480,
     "recipeBuy": 367500,
@@ -5314,7 +5826,9 @@
     "mcost": {
       "M407": 1
     },
+    "smithCost": "M407",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 540,
     "recipeBuy": 2572500,
@@ -5335,7 +5849,9 @@
     "mcost": {
       "M608": 1
     },
+    "smithCost": "M608",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 600,
     "recipeBuy": 18007500,
@@ -5354,7 +5870,9 @@
       "silver"
     ],
     "mcost": "",
+    "smithCost": "M509",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 660,
     "recipeBuy": 126052500,
@@ -5375,7 +5893,9 @@
     "mcost": {
       "M110": 1
     },
+    "smithCost": "M110",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 720,
     "recipeBuy": 882367500,
@@ -5396,7 +5916,9 @@
     "mcost": {
       "M201": 1
     },
+    "smithCost": "M201",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 100,
@@ -5417,7 +5939,9 @@
     "mcost": {
       "M302": 1
     },
+    "smithCost": "M302",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 500,
@@ -5438,7 +5962,9 @@
     "mcost": {
       "M403": 1
     },
+    "smithCost": "M403",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 1000,
@@ -5457,7 +5983,9 @@
       "silver"
     ],
     "mcost": "",
+    "smithCost": "M604",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 7500,
@@ -5478,7 +6006,9 @@
     "mcost": {
       "M605": 1
     },
+    "smithCost": "M605",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 420,
     "recipeBuy": 52500,
@@ -5499,7 +6029,9 @@
     "mcost": {
       "M306": 1
     },
+    "smithCost": "M306",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 480,
     "recipeBuy": 367500,
@@ -5520,7 +6052,9 @@
     "mcost": {
       "M507": 1
     },
+    "smithCost": "M507",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 540,
     "recipeBuy": 2572500,
@@ -5541,7 +6075,9 @@
     "mcost": {
       "M108": 1
     },
+    "smithCost": "M108",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 600,
     "recipeBuy": 18007500,
@@ -5560,7 +6096,9 @@
       "silver"
     ],
     "mcost": "",
+    "smithCost": "M609",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 660,
     "recipeBuy": 126052500,
@@ -5581,7 +6119,9 @@
     "mcost": {
       "M210": 1
     },
+    "smithCost": "M210",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 720,
     "recipeBuy": 882367500,
@@ -5602,7 +6142,9 @@
     "mcost": {
       "M301": 1
     },
+    "smithCost": "M301",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 100,
@@ -5623,7 +6165,9 @@
     "mcost": {
       "M402": 1
     },
+    "smithCost": "M402",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 500,
@@ -5644,7 +6188,9 @@
     "mcost": {
       "M503": 1
     },
+    "smithCost": "M503",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 1000,
@@ -5665,7 +6211,9 @@
     "mcost": {
       "M104": 1
     },
+    "smithCost": "M104",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 7500,
@@ -5684,7 +6232,9 @@
       "bone"
     ],
     "mcost": "",
+    "smithCost": "M405",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 420,
     "recipeBuy": 52500,
@@ -5705,7 +6255,9 @@
     "mcost": {
       "M406": 1
     },
+    "smithCost": "M406",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 480,
     "recipeBuy": 367500,
@@ -5726,7 +6278,9 @@
     "mcost": {
       "M607": 1
     },
+    "smithCost": "M607",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 540,
     "recipeBuy": 2572500,
@@ -5747,7 +6301,9 @@
     "mcost": {
       "M208": 1
     },
+    "smithCost": "M208",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 600,
     "recipeBuy": 18007500,
@@ -5768,7 +6324,9 @@
     "mcost": {
       "M409": 1
     },
+    "smithCost": "M409",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 660,
     "recipeBuy": 126052500,
@@ -5787,7 +6345,9 @@
       "bone"
     ],
     "mcost": "",
+    "smithCost": "M410",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 720,
     "recipeBuy": 882367500,
@@ -5808,7 +6368,9 @@
     "mcost": {
       "M401": 1
     },
+    "smithCost": "M401",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 100,
@@ -5829,7 +6391,9 @@
     "mcost": {
       "M502": 1
     },
+    "smithCost": "M502",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 500,
@@ -5850,7 +6414,9 @@
     "mcost": {
       "M603": 1
     },
+    "smithCost": "M603",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 1000,
@@ -5871,7 +6437,9 @@
     "mcost": {
       "M204": 1
     },
+    "smithCost": "M204",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 7500,
@@ -5890,7 +6458,9 @@
       "steel"
     ],
     "mcost": "",
+    "smithCost": "M505",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 420,
     "recipeBuy": 52500,
@@ -5911,7 +6481,9 @@
     "mcost": {
       "M506": 1
     },
+    "smithCost": "M506",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 480,
     "recipeBuy": 367500,
@@ -5932,7 +6504,9 @@
     "mcost": {
       "M107": 1
     },
+    "smithCost": "M107",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 540,
     "recipeBuy": 2572500,
@@ -5953,7 +6527,9 @@
     "mcost": {
       "M308": 1
     },
+    "smithCost": "M308",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 600,
     "recipeBuy": 18007500,
@@ -5974,7 +6550,9 @@
     "mcost": {
       "M509": 1
     },
+    "smithCost": "M509",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 660,
     "recipeBuy": 126052500,
@@ -5993,7 +6571,9 @@
       "steel"
     ],
     "mcost": "",
+    "smithCost": "M510",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 720,
     "recipeBuy": 882367500,
@@ -6014,7 +6594,9 @@
     "mcost": {
       "M501": 1
     },
+    "smithCost": "M501",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "recipeBuy": 100,
@@ -6035,7 +6617,9 @@
     "mcost": {
       "M102": 1
     },
+    "smithCost": "M102",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 120,
     "recipeBuy": 500,
@@ -6056,7 +6640,9 @@
     "mcost": {
       "M103": 1
     },
+    "smithCost": "M103",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 240,
     "recipeBuy": 1000,
@@ -6077,7 +6663,9 @@
     "mcost": {
       "M304": 1
     },
+    "smithCost": "M304",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 360,
     "recipeBuy": 7500,
@@ -6096,7 +6684,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M605",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 420,
     "recipeBuy": 52500,
@@ -6117,7 +6707,9 @@
     "mcost": {
       "M606": 1
     },
+    "smithCost": "M606",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 480,
     "recipeBuy": 367500,
@@ -6138,7 +6730,9 @@
     "mcost": {
       "M207": 1
     },
+    "smithCost": "M207",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 540,
     "recipeBuy": 2572500,
@@ -6159,7 +6753,9 @@
     "mcost": {
       "M408": 1
     },
+    "smithCost": "M408",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 600,
     "recipeBuy": 18007500,
@@ -6180,7 +6776,9 @@
     "mcost": {
       "M609": 1
     },
+    "smithCost": "M609",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 660,
     "recipeBuy": 126052500,
@@ -6199,7 +6797,9 @@
       "mana"
     ],
     "mcost": "",
+    "smithCost": "M610",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 720,
     "recipeBuy": 882367500,
@@ -6217,7 +6817,9 @@
       "ore"
     ],
     "mcost": "",
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6237,7 +6839,9 @@
     "mcost": {
       "M101": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6257,7 +6861,9 @@
     "mcost": {
       "M201": 2
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6277,7 +6883,9 @@
     "mcost": {
       "M301": 5
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6297,7 +6905,9 @@
     "mcost": {
       "M401": 4
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6318,7 +6928,9 @@
       "M501": 20,
       "M601": 20
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6340,7 +6952,9 @@
       "R99101": 6,
       "R99102": 4
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6362,7 +6976,9 @@
       "R99105": 5,
       "R99107": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6384,7 +7000,9 @@
       "R99103": 10,
       "R99104": 3
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6410,7 +7028,9 @@
       "R99108": 4,
       "R99109": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6428,7 +7048,9 @@
       "ore"
     ],
     "mcost": "",
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6448,7 +7070,9 @@
     "mcost": {
       "M202": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6468,7 +7092,9 @@
     "mcost": {
       "M302": 2
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6488,7 +7114,9 @@
     "mcost": {
       "M402": 5
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6508,7 +7136,9 @@
     "mcost": {
       "M502": 4
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6530,7 +7160,9 @@
       "M602": 20,
       "M102": 20
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6552,7 +7184,9 @@
       "R99201": 6,
       "R99202": 4
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6574,7 +7208,9 @@
       "R99205": 5,
       "R99207": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6596,7 +7232,9 @@
       "R99203": 10,
       "R99204": 3
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6622,7 +7260,9 @@
       "R99208": 4,
       "R99209": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6640,7 +7280,9 @@
       "ore"
     ],
     "mcost": "",
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6660,7 +7302,9 @@
     "mcost": {
       "M303": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6680,7 +7324,9 @@
     "mcost": {
       "M403": 2
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6700,7 +7346,9 @@
     "mcost": {
       "M503": 5
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6720,7 +7368,9 @@
     "mcost": {
       "M603": 4
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6743,7 +7393,9 @@
       "M103": 20,
       "M203": 20
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6765,7 +7417,9 @@
       "R99301": 6,
       "R99302": 4
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6787,7 +7441,9 @@
       "R99305": 5,
       "R99307": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6809,7 +7465,9 @@
       "R99303": 10,
       "R99304": 3
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6835,7 +7493,9 @@
       "R99308": 4,
       "R99309": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6853,7 +7513,9 @@
       "ore"
     ],
     "mcost": "",
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6873,7 +7535,9 @@
     "mcost": {
       "M505": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6893,7 +7557,9 @@
     "mcost": {
       "M605": 2
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6913,7 +7579,9 @@
     "mcost": {
       "M105": 5
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6933,7 +7601,9 @@
     "mcost": {
       "M205": 4
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6956,7 +7626,9 @@
       "M305": 20,
       "M405": 20
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -6978,7 +7650,9 @@
       "R99501": 6,
       "R99502": 4
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -7000,7 +7674,9 @@
       "R99505": 5,
       "R99507": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -7022,7 +7698,9 @@
       "R99503": 10,
       "R99504": 3
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,
@@ -7037,7 +7715,6 @@
     "craftTime": 5400000,
     "type": "fortune",
     "rcost": [
-      "ore",
       "herb",
       "steel",
       "silver",
@@ -7049,7 +7726,9 @@
       "R99508": 4,
       "R99509": 1
     },
+    "smithCost": "",
     "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "recipeBuy": 0,

@@ -23,3 +23,9 @@ function seedLoadSave(save) {
     hbSeed = save[1];
     wbSeed = save[2];
 }
+
+function getRandomFromItem(item) {
+    item.seed = (item.seed * 9301 + 49297) % 233280;
+    console.log(item.seed);
+    return Math.floor(item.seed/233280*100);
+}

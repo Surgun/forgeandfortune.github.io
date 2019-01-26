@@ -109,11 +109,6 @@ function randomChance(num,total) {
     return num > Math.floor(Math.random() * total);
 }
 
-function isItChristmas() {
-    const d = new Date();
-    return d.getMonth() === 10 || d.getMonth() === 11;
-}
-
 function inventorySort(a, b) {
     const ai = a.item;
     const bi = b.item;

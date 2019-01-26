@@ -1,4 +1,5 @@
 "use strict";
+const EnhanceTypes = Object.freeze({PARRY:0,ARMOR:1,BLOODLET:2,SURGE:3});
 
 const CombatManager = {
     heroAttack(hero, dungeonID) {

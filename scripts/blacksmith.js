@@ -142,10 +142,11 @@ function refreshSmithArea() {
             $swMiddleText.hide();
             resetSmithBar();
             $swSuccess.html(`${bloopSmith.getSmithChance(bloopSmith.smithStage)}% Success`).show();
-            const d1 = $("<div/>").addClass("smithCostGold").html(`Confirm Smith`)
-            const s1 = $("<span/>").addClass("smith_cost").html(`${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}`);
-            const s2 = $("<span/>").addClass("smith_cost_res").html(`${ResourceManager.materialIcon(bloopSmith.smithStage.item.smithCost)} 3`)
-            d1.append(s1,s2);
+            const d1 = $("<div/>").addClass("smithCostContainer")
+            const s1 = $("<div/>").addClass("smith_title").html(`Confirm Smith`)
+            const s2 = $("<span/>").addClass("smith_cost smith_gold").html(`${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(),2)}`);
+            const s3 = $("<span/>").addClass("smith_cost smith_material tooltip").attr("data-tooltip",ResourceManager.idToMaterial(bloopSmith.smithStage.item.smithCost).name).html(`${ResourceManager.materialIcon(bloopSmith.smithStage.item.smithCost)} 3`)
+            d1.append(s1,s2,s3);
             $swConfirm.html(d1).show();
             $swCollect.hide();
         }

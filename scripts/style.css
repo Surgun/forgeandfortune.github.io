@@ -3195,6 +3195,17 @@ Rarities
     margin: 0 10px;
 }
 
+.smithCostContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.smith_title {
+    width: 100%;
+}
+
 #swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover {
     background-color: var(--green-light);
 }
@@ -3213,6 +3224,15 @@ Rarities
     width: 100%;
     background-color: rgba(0,0,0,.2);
     border-radius: 5px;
+}
+
+.smith_cost {
+    flex-grow: 1;
+    width: unset;
+}
+
+.smith_cost + .smith_cost {
+    margin-left: 10px;
 }
 
 .smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img {
@@ -3899,7 +3919,7 @@ footer a[href*="discord.gg"]:hover {
     margin: 0 auto;
 }
 
-.deeper_cost.tooltip:after {
+.smith_cost.tooltip:after, .deeper_cost.tooltip:after {
     width: 150px;
     margin: 0 auto;
 }

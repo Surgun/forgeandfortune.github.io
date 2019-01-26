@@ -3152,6 +3152,25 @@ Rarities
     width: 100%;
 }
 
+#swMiddleText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+#swMiddleText > i {
+    margin-right: 5px;
+}
+
+#swMiddleText.smithFailed {
+    color: #eb3f3f;
+}
+
+#swMiddleText.smithSucceed {
+    color: #3be280;
+}
+
 #swItemStage, #swItemResult {
     max-width: 175px;
 }

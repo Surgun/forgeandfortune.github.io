@@ -134,7 +134,7 @@ function refreshSmithArea() {
         if (bloopSmith.smithStage === null) {
             $swItemStage.html("No Item Selected").removeClass("collectTextBox");
             $swItemResult.html("No Item Selected")
-            $swMiddleText.html("Waiting for an Item to Smith").show();
+            $swMiddleText.html("Waiting for an Item to Smith").removeClass("smithFailed smithSucceed").show();
             resetSmithBar();
             $swSuccess.hide();
             $swConfirm.hide();
@@ -167,10 +167,13 @@ function refreshSmithArea() {
         $swItemStage.html("Collect Reward").addClass("collectTextBox");
         const d1 = $("<div/>").attr("id","swCollect").html("Collect");
         $swItemResult.html(itemStageCardSmith(bloopSmith.smithSlot,false).append(d1)).removeClass("inProgressTextBox");
-        if (bloopSmith.smithSuccess) $swMiddleText.html("Smithing Complete");
+        if (bloopSmith.smithSuccess) {
+            $swMiddleText.html(`<i class="fas fa-check-square"></i> Smithing Complete`);
+            $swMiddleText.addClass("smithSucceed");
+        }
         else {
-            $swMiddleText.html("Smithing Failed");
-            $swItemResult.addClass("smithFailed");
+            $swMiddleText.html(`<i class="fas fa-times-square"></i> Smithing Failed`);
+            $swMiddleText.addClass("smithFailed");
         }
         resetSmithBar();
         $swSuccess.hide();

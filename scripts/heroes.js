@@ -648,5 +648,29 @@ $(document).on('click', ".heroExamineLvlButton", (e) => {
     HeroManager.levelup(heroID);
 })
 
+$(document).on('click', ".heroTab", (e) => {
+    e.preventDefault();
+    const heroTabs = document.querySelectorAll(".heroTab");
+    const currentTab = e.currentTarget;
+    heroTabs.forEach( tab => tab.classList.remove("selected"));
+    currentTab.classList.add("selected");
+})
+
+$(document).on('click', ".heroTab1", (e) => {
+    e.preventDefault();
+    const heroDetails = document.querySelector("#heroDetails");
+    const heroGear = document.querySelector("#heroGear");
+    heroDetails.classList.remove("none");
+    heroGear.classList.add("none");
+})
+
+$(document).on('click', ".heroTab2", (e) => {
+    e.preventDefault();
+    const heroDetails = document.querySelector("#heroDetails");
+    const heroGear = document.querySelector("#heroGear");
+    heroDetails.classList.add("none");
+    heroGear.classList.remove("none");
+})
+
 //global variable to hold where we're looking to equip to for the equipping shit.
 let equippingTo = null;

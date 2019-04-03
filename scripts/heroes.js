@@ -523,9 +523,10 @@ function examineHero(ID) {
             d5c = $("<div/>").addClass("heroExamineEquipmentEquipTypes").html(hero.slotTypeIcons(slotNum));
         }
         if (equip === null) d5b.addClass("heroExamineEquipmentEquipEmpty");
-        const d6 = $("<div/>").addClass("heroExamineEquipmentList");
-        lowerDiv.append(d5.append(d5a,d5b,d5c),d6);
+        
+        lowerDiv.append(d5.append(d5a,d5b,d5c));
     });
+    
     $heroDetails.append(upperLeftDiv,upperRightDiv);
     $heroGearSlots.append(lowerDiv);
 }

@@ -85,18 +85,8 @@ class itemContainer {
     hpPlus() {
         return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*(this.sharp+1)));
     }
-    act() {
-        return this.item.act();
-    }
     propDiv() {
         const d = $("<div/>").addClass("invProp");
-        if (this.act() > 0) {
-            let speed = "Fair";
-            if (this.act() > 5000) speed = "Slow";
-            else if (this.act() < 5000) speed = "Fast";
-            const d1 = $("<div/>").addClass("invPropAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;" + speed)
-            d.append(d1);
-        }
         if (this.pow() > 0) {
             const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + "&nbsp;" + this.pow())
             d.append(d2);
@@ -409,10 +399,6 @@ function gearEquipFromInventory(invID) {
             const d4a = $("<div/>").addClass("heroEquipBlockEquipSlot").html(slotName[i]);
             const relPow = HeroManager.relativePow(hb.id,i,equipContainerTarget.pow());
             const relHP = HeroManager.relativeHP(hb.id,i,equipContainerTarget.hp());
-            const slotSpeed = HeroManager.slotSpeed(hb.id,i);
-
-            const d4aa = $("<div/>").addClass("heroEquipBlockEquipStat").html(miscIcons.act + "&nbsp;" + slotSpeed);
-            if (slotSpeed === null) d4aa.hide();
 
             const d4b = $("<div/>").addClass("heroEquipBlockEquipStat")
             if (relPow > 0) d4b.addClass("hebPositive").html(miscIcons.pow + "&nbsp;+" + relPow);
@@ -428,7 +414,7 @@ function gearEquipFromInventory(invID) {
             if (relPow !== 0 || relHP !== 0) d4d.hide();
 
             const d4e = $("<div/>").addClass("heroEquipBlockEquipButton").attr("hid",hb.id).attr("sid",i).html("Equip");
-            d4.append(d4a,d4aa,d4b,d4c,d4d,d4e);
+            d4.append(d4a,d4b,d4c,d4d,d4e);
             d3.append(d4);
         });
         d.append(d1,d2,d3);

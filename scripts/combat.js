@@ -127,19 +127,3 @@ class BattleMessage {
         return message;
     }
 }
-
-const $drTurnOrder = $("#drTurnOrder");
-
-function displayTurnOrder(dungeon) {
-    if (dungeon.id !== DungeonManager.dungeonView) return;
-    $drTurnOrder.empty();
-    dungeon.order.forEach(turn => {
-        const unit = turn.unit;
-        const d = $("<div/>").addClass("turnOrderDiv");
-        const d1 = $("<div/>").addClass("dsmPic").html(unit.head);
-        const d2 = $("<div/>").addClass("dsmName").html(unit.name);
-        const d3 = $("<div/>").html(turn.act);
-        d.append(d1,d2,d3);
-        $drTurnOrder.append(d);
-    });
-}

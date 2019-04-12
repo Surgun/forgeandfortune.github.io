@@ -12,6 +12,7 @@ const MobManager = {
     },
     generateDungeonMob(dungeonID, difficulty) {
         disableEventLayers();
+        console.log(dungeonID);
         const possibleMonster = this.monsterDB.filter(mob => mob.event === "normal" && mob.minFloor <= difficulty && mob.maxFloor >= difficulty && mob.dungeons.includes(dungeonID));
         const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
         const mob = new Mob(difficulty, mobTemplate);
@@ -34,6 +35,13 @@ const MobManager = {
             i += 1;
         }
         return i;
+    },
+    generateDungeonFloor(floorNum) {
+        const mobFloor = [];
+        for (let i=0;i<4;i++) {
+            mobFloor.push(this.generateDungeonMob("D001",floorNum));
+        }
+        return mobFloor;
     }
 }
 
@@ -55,6 +63,7 @@ class Mob {
         this.ap = 0;
         this.apmax = 120;
         this.uniqueid = MobManager.getUniqueID();
+        this.gotloot = false;
     }
     createSave() {
         const save = {};
@@ -71,13 +80,6 @@ class Mob {
         this.uniqueid = save.uniqueid;
     }
     addTime() {
-        this.act = Math.max(0,this.act-1);
-    }
-    initialAct() {
-        return this.actmax();
-    }
-    actmax() {
-        return this.actTime;
     }
     getPow() {
         return this.pow;
@@ -115,7 +117,11 @@ class Mob {
 
             if (success > roll) mobDrops.push(material);
         }
+        this.gotloot = true;
         return mobDrops;
+    }
+    looted() {
+        return this.gotloot;
     }
     healCost() {
         return 0;

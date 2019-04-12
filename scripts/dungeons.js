@@ -2,31 +2,37 @@
 const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP",ACT:"Act"});
 const DungeonStatus = Object.freeze({EMPTY:0,ADVENTURING:1});
 
-class turnOrder {
-    constructor(unit) {
-        this.unit = unit;
-        this.act = 0;
+class TurnOrder {
+    constructor(heroes,mobs) {
+        this.heroes = heroes;
+        this.mobs = mobs;
+        this.order =  interlace(heroes,mobs);
+        this.position = 0;
     }
-    setAct(initialAct) {
-        if (initialAct) this.act = this.unit.initialAct();
-        else this.act = this.unit.actmax();
+    getOrder() {
+        return this.order;
     }
-    getUnit() {
-        return this.unit;
-    }
-    reductAct(amt) {
-        this.act -= amt;
+    nextTurn() {
+        if (this.order[this.position].dead()){ 
+            this.position += 1;
+            if (this.position === this.order.length) this.position = 0;
+            this.nextTurn();
+        }
+        const toReturn = this.order[this.position];
+        this.position += 1;
+        if (this.position === this.order.length) this.position = 0;
+        return toReturn;
     }
     createSave() {
         const save = {};
-        save.unitid = this.unit.uniqueid;
-        save.act = this.act;
+        save.position = this.position;
         return save;
     }
     loadSave(save) {
-        this.act = save.act;    
+        this.position = save.position;
     }
 }
+
 
 class Dungeon {
     constructor(props) {
@@ -36,8 +42,8 @@ class Dungeon {
         this.mobs = [];
         this.dropList = [];
         this.dungeonTime = 0;
-        this.mobDeadCount = 0;
-        this.order = [];
+        this.floorCount = 0;
+        this.order = null;
         this.status = DungeonStatus.EMPTY;
     }
     createSave() {
@@ -51,11 +57,10 @@ class Dungeon {
         });
         save.dropList = this.dropList;
         save.dungeonTime = this.dungeonTime;
-        save.mobDeadCount = this.mobDeadCount
+        save.floorCount = this.floorCount;
         save.order = [];
-        this.order.forEach(o=> {
-            save.order.push(o.createSave());
-        })
+        if (this.order === null) save.order = null;
+        else save.order = this.order.createSave();
         save.status = this.status;
         return save;
     }
@@ -70,101 +75,54 @@ class Dungeon {
             this.mobs.push(mob);
             MobManager.addActiveMob(mob);
         });
+        if (save.order !== null) {
+            this.order = new TurnOrder(this.party.heroes,this.mobs);
+            this.order.loadSave(save.order);
+        }   
         this.dropList = save.dropList;
         this.dungeonTime = save.dungeonTime;
-        this.mobDeadCount = save.mobDeadCount;
-        this.order = [];
-        save.order.forEach(orderSave => {
-            if (HeroManager.isHeroID(orderSave.unitid)) {
-                const heroUnit = HeroManager.idToHero(orderSave.unitid);
-                const to = new turnOrder(heroUnit);
-                to.loadSave(orderSave);
-                this.order.push(to);
-            }
-            else {
-                const mobUnit = MobManager.uniqueidToMob(orderSave.unitid);
-                const to = new turnOrder(mobUnit);
-                to.loadSave(orderSave);
-                this.order.push(to);
-            }
-        });
+        this.floorCount = save.floorCount;
         this.status = save.status;
-    }
-    addToOrder(unit,act) {
-        const unitOrder = new turnOrder(unit);
-        unitOrder.setAct(act);
-        if (this.order.length === 0) {
-            this.order.push(unitOrder);
-            return;
-        }
-        for (let i=0;i<this.order.length;i++) {
-            if (this.order[i].act > unitOrder.act) {
-                this.order.splice(i,0,unitOrder);
-                return;
-            }
-        }
-        this.order.push(unitOrder);
-    }
-    getNextOrder() {
-        const reduceAmt = this.order[0].act;
-        this.order.forEach(o => o.reductAct(reduceAmt));
-        const next = this.order.shift();
-        return next.getUnit();
     }
     addTime(t) {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
-        while (this.dungeonTime >= 2000) {
-            const unit = this.getNextOrder();
+        while (this.dungeonTime >= 1000) {
+            const unit = this.order.nextTurn();
             if (unit.unitType === "hero") CombatManager.heroAttack(unit,this.id);
             else CombatManager.mobAttack(unit,this.id);
-            this.addToOrder(unit,false);
             this.checkDeadMobs();
             if (this.party.isDead()) {
                 this.resetDungeon();
                 return;
             }
-            this.dungeonTime -= 2000;
-            displayTurnOrder(this);
+            this.dungeonTime -= 1000;
         }
     }
     checkDeadMobs() {
         let needrefresh = false;
         this.mobs.forEach(mob => {
-            if (mob.dead()) {
+            if (mob.dead() && !mob.looted()) {
                 this.addDungeonDrop(mob.rollDrops());
-                this.mobDeadCount += 1;
-                MobManager.removeMob(mob);
-                this.order = this.order.filter(to => to.unit.uniqueid !== mob.uniqueid);
                 needrefresh = true;
             }
         })
-        this.mobs = this.mobs.filter(mob => !mob.dead());
-        
-        this.repopulate();
+        if (this.mobs.every(m=>m.dead())) {
+            this.nextFloor();
+            needrefresh = true;
+        }
         if (needrefresh) initiateDungeonFloor();
     }
     initializeParty(party) {
         this.party = party;
-        this.party.heroes.forEach(hero => {
-            this.addToOrder(hero,true);
-        });
-    }
-    repopulate() {
-        while (this.mobs.length < this.maxMonster) {
-            const mob = MobManager.generateDungeonMob(this.id,this.mobDeadCount);
-            this.mobs.push(mob);
-            console.log(mob);
-            this.addToOrder(mob,true);
-        }
     }
     resetDungeon() {
         this.party.heroes.forEach(h=>{
             h.inDungeon = false;
             h.ap = 0;
         });
-        EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.mobDeadCount);
+        EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorCount);
         DungeonManager.removeDungeon(this.id);
         if (DungeonManager.dungeonView !== null) {
             openTab("dungeonsTab");
@@ -172,6 +130,7 @@ class Dungeon {
         initializeSideBarDungeon();
         BattleLog.clear();
         this.status = DungeonStatus.EMPTY;
+        this.order = null;
         return;
     }
     addDungeonDrop(drops) {
@@ -180,6 +139,11 @@ class Dungeon {
             if (found === undefined) this.dropList.push({"id":drop,"amt":1});
             else found.amt += 1;
         })
+    }
+    nextFloor() {
+        this.floorCount += 1;
+        this.mobs = MobManager.generateDungeonFloor(this.floorCount);
+        this.order = new TurnOrder(this.party.heroes,this.mobs);
     }
 }
 
@@ -208,7 +172,6 @@ const DungeonManager = {
         this.dungeons.forEach(dungeon => {
             dungeon.addTime(t);
         });
-        if (this.dungeonView !== null) refreshDungeonFloorBars();
     },
     dungeonStatus(dungeonID) {
         return this.dungeons.find(d=>d.id===dungeonID).status;
@@ -224,7 +187,7 @@ const DungeonManager = {
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = this.dungeonCreatingID;
         dungeon.initializeParty(party);
-        dungeon.repopulate();
+        dungeon.nextFloor();
     },
     dungeonByID(dungeonID) {
         return this.dungeons.find(d => d.id === dungeonID);

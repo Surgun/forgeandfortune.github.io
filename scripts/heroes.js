@@ -108,7 +108,7 @@ class Hero {
         return pow;
     }
     getAdjPow() {
-        return Math.floor(this.getPow() * this.actmax()/10);
+        return Math.floor(this.getPow());
     }
     getPowSlot(slot) {
         if (slot === 0 && this.slot1 !== null) return this.slot1.pow();
@@ -127,13 +127,6 @@ class Hero {
         if (slot === 4 && this.slot5 !== null) return this.slot5.hp();
         if (slot === 5 && this.slot6 !== null) return this.slot6.hp();
         return 0;
-    }
-    initialAct() {
-        return this.actmax();
-    }
-    actmax() {
-        if (this.slot1 !== null) return this.slot1.act();
-        else return 10;
     }
     addAP() {
         if (this.slot1 === null) {
@@ -160,11 +153,6 @@ class Hero {
         return this.hp > 0;
     }
     addTime() {
-        if (this.dead() || !this.inDungeon) {
-            this.act = 0;
-            this.ap = 0;
-        }
-        this.act = Math.max(0,this.act-1);
     }
     getEquipSlots() {
         //return an object with 
@@ -385,15 +373,6 @@ const HeroManager = {
         const hero = this.idToHero(heroID);
         return hp - hero.getHPSlot(slot);
     },
-    slotSpeed(heroID,slot) {
-        const hero = this.idToHero(heroID);
-        if (slot !== 0) return null;
-        if (hero.slot1 === null) return "Fair";
-        const speed = hero.slot1.act();
-        if (speed > 5000) return "Slow";
-        if (speed < 5000) return "Fast";
-        return "Fair";
-    },
     purchaseHero() {
         const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];
         if (ResourceManager.materialAvailable("M001") < amt) {
@@ -490,8 +469,8 @@ function examineHero(ID) {
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
     upperRightDiv.append(htd.append(htd1));
-    const stats = [hero.maxHP(),hero.getPow(), msToSec(hero.actmax()), hero.apmax, hero.armor, hero.crit+"%", hero.critdmg*100+"%", hero.dodgeChance+"%"];
-    const statName = ["MAX HP","POW","ACT","AP","ARMOR","CRIT","CRDMG","DODGE"];
+    const stats = [hero.maxHP(),hero.getPow(), hero.apmax, hero.armor, hero.crit+"%", hero.critdmg*100+"%", hero.dodgeChance+"%"];
+    const statName = ["MAX HP","POW","AP","ARMOR","CRIT","CRDMG","DODGE"];
     for (let i=0;i<stats.length;i++) {
         upperRightDiv.append(statRow(statName[i],stats[i]));
     }
@@ -576,15 +555,11 @@ function examineHeroPossibleEquip(slot,heroID) {
         const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName());
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
         const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());
-        let speed = "Fair";
-        if (itemContainer.act() > 5000) speed = "Slow";
-        if (itemContainer.act() < 5000) speed = "Fast";
         let level = itemContainer.lvl;
         const td1a = $('<div/>').addClass('EHPEstat');
         const td1b = $('<div/>').addClass('EHPEstat');
         const td2 = $('<div/>').addClass('EHPEstat');
         const td3 = $('<div/>').addClass('EHPEstat');
-        td1a.html(speed);
         td1b.html(level);
         if (relPow > 0) td2.addClass("EHPEstatPositive").html(itemContainer.pow() + " (+" + relPow + ")");
         else if (relPow < 0) td2.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relPow + ")");

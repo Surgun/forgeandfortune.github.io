@@ -64,7 +64,6 @@ const PartyCreator = {
     lockParty() {
         this.heroes.map(hid => HeroManager.idToHero(hid)).forEach(h=>{
             h.inDungeon = true;
-            h.act = Math.floor((Math.random() * 0.2*h.actmax()));
         });
         const party = new Party(this.heroes);
         this.heroes = [];

@@ -172,19 +172,20 @@ const $dungeonHeroList = $("#dungeonHeroList");
 const $dungeonMobList = $("#dungeonMobList");
 const $drStatsHero = $("#drStatsHero");
 const $drStatsMob = $("#drStatsMob");
+const $drTurnOrder = $("#drTurnOrder");
 
 function floorStateChange(dungeonID) {
     const dungeon = DungeonManager.dungeonByID(dungeonID);
     if (dungeonID === DungeonManager.dungeonView) {
         initiateDungeonFloor();
     }
-    $("#DungeonSideBarStatus").html(`${dungeon.name} - Floor ${dungeon.mobDeadCount}`);
+    $("#DungeonSideBarStatus").html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
 }
 
 function initiateDungeonFloor() {
     const dungeon = DungeonManager.getCurrentDungeon();
     if (dungeon === undefined) return;
-    $floorID.html("Floor "+dungeon.mobDeadCount);
+    $floorID.html("Floor "+dungeon.floorCount);
     $dungeonHeroList.empty();
     $dungeonMobList.empty();
     $drStatsHero.empty();
@@ -218,15 +219,14 @@ function initiateDungeonFloor() {
         d4.append(d4a,d4b,d4c,d4d);
         $drStatsMob.prepend(d4);
     });
-}
-
-function refreshDungeonFloorBars() {
-    const dungeon = DungeonManager.getCurrentDungeon();
-    dungeon.party.heroes.forEach((hero) => {
-        refreshActBar(hero);
-    });
-    dungeon.mobs.forEach((mob) => {
-        refreshActBar(mob);
+    $drTurnOrder.empty();
+    dungeon.order.getOrder().forEach((unit,i) => {
+        const d1 = $("<div/>").addClass("orderUnit");
+        const d1a = $("<div/>").addClass("orderUnitHead").html(unit.head);
+        const d1b = $("<div/>").addClass("orderUnitHead").html(unit.name);
+        d1.append(d1a,d1b);
+        if (dungeon.order.position === i) d1.addClass("orderUnitActive");
+        $drTurnOrder.append(d1);
     });
 }
 
@@ -235,7 +235,7 @@ function initializeSideBarDungeon() {
     DungeonManager.dungeons.forEach(dungeon => {
         if (dungeon.status !== DungeonStatus.ADVENTURING) return;
         const d = $("<div/>").addClass("dungeonGroup");
-        const d1 = $("<div/>").attr("id","DungeonSideBarStatus").attr("dungeonID",dungeon.id).html(`${dungeon.name} - Floor ${dungeon.mobDeadCount}`);
+        const d1 = $("<div/>").attr("id","DungeonSideBarStatus").attr("dungeonID",dungeon.id).html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
         d.append(d1);
         dungeon.party.heroes.forEach(hero => {
             const d3 = $("<div/>").addClass("dungeonSideBarMember");
@@ -298,12 +298,4 @@ function refreshAPBar(hero) {
     const s1 = $("<span/>").addClass("apBarFill").attr("id","apFill"+hero.uniqueid).css('width', apWidth);
     $("#ap"+hero.uniqueid).attr("data-label",hero.ap+"/"+hero.apmax);
     $("#apFill"+hero.uniqueid).css('width', apWidth);
-}
-
-function refreshActBar(hero) {
-    const actPercent = hero.act/hero.actmax();
-    const actWidth = (actPercent*100).toFixed(1)+"%";
-    const actText = hero.act;
-    $("#act"+hero.uniqueid).attr("data-label",actText);
-    $("#actFill"+hero.uniqueid).css('width', actWidth);
 }

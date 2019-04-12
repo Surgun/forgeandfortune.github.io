@@ -124,3 +124,14 @@ function inventorySort(a, b) {
     if (b.sharp < a.sharp) return 1;
     return 0;
 }
+
+function interlace(a1,a2) {
+    //returns a new array mixed between two
+    const length = Math.max(a1.length,a2.length);
+    const result = [];
+    for (let i=0;i<length;i++) {
+        if (a1.length > i) result.push(a1[i]);
+        if (a2.length > i) result.push(a2[i]);
+    }
+    return result;
+}

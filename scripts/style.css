@@ -4544,6 +4544,8 @@ footer a[href*="discord.gg"]:hover {
     color: var(--highlight);
     -webkit-animation: 0.2s scale-in;
     animation: 0.2s scale-in;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
 }
 
 #pfImportExport {

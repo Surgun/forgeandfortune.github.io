@@ -2228,13 +2228,12 @@ Rarities
 
 .heroCounter {
     display: inline-block;
-    background-color: var(--green-secondary);
-    border: 1px solid var(--green-tertiary);
-    color: var(--text-primary);
+    background-color: #116d44;
+    color: var(--text-white);
     font-weight: bold;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+    width: auto;
+    padding: 0 5px;
+    border-radius: 10px;
 }
 
 #heroTab {

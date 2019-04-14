@@ -140,6 +140,7 @@ class Hero {
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.maxHP());
         refreshHPBar(this);
+        updateHeroCounter()
     }
     healPercent(hpPercent) {
         let hp = Math.floor(this.maxHP()*hpPercent/100);
@@ -581,6 +582,14 @@ function examineHeroPossibleEquip(slot,heroID) {
 function unequipSlot(slot,heroID) {
     HeroManager.unequip(slot,heroID);
     examineHero(heroID);
+}
+
+function updateHeroCounter() {
+    let count = 0;
+    HeroManager.heroes.forEach((hero)=>{
+        if (!hero.inDungeon && hero.hp == hero.maxHP()) count++;
+    });
+    $(".heroCounter").html(count);
 }
 
 $(document).on('click', "div.heroOwnedCard", (e) => {

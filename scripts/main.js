@@ -34,6 +34,7 @@ function afterLoad() {
     initializeActionSlots();
     initializeHeroList();
     refreshHeroSelect();
+    updateHeroCounter();
     refreshRecipeFilters();
     refreshEvents();
     hardMatRefresh();

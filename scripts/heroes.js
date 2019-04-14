@@ -587,10 +587,23 @@ function unequipSlot(slot,heroID) {
 function updateHeroCounter() {
     let count = 0;
     HeroManager.heroes.forEach((hero)=>{
-        if (!hero.inDungeon && hero.hp == hero.maxHP()) count++;
+        if (hero.owned && !hero.inDungeon && hero.hp == hero.maxHP()) count++;
     });
-    $(".heroCounter").html(count);
+    if (count > 0) {
+        $(".heroCounter").removeClass("heroesCountZero");
+        $(".heroCounter").addClass("heroesCountActive");
+        $(".heroCount").html(count);
+    } else {
+        $(".heroCounter").removeClass("heroesCountActive");
+        $(".heroCounter").addClass("heroesCountZero");
+    }
+    
 }
+
+$(document).on('click',".heroCounter", (e) => {
+    e.preventDefault();
+    tabClick(e, "dungeonsTab");
+});
 
 $(document).on('click', "div.heroOwnedCard", (e) => {
     //pop up the detailed character card

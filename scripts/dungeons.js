@@ -13,15 +13,12 @@ class TurnOrder {
         return this.order;
     }
     nextTurn() {
-        if (this.order[this.position].dead()){ 
-            this.position += 1;
-            if (this.position === this.order.length) this.position = 0;
-            this.nextTurn();
-        }
-        const toReturn = this.order[this.position];
+        return this.order[this.position];
+    }
+    nextPosition() {
         this.position += 1;
         if (this.position === this.order.length) this.position = 0;
-        return toReturn;
+        if (this.order[this.position].dead()) this.nextPosition();
     }
     createSave() {
         const save = {};
@@ -88,16 +85,18 @@ class Dungeon {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
-        while (this.dungeonTime >= 1000) {
+        while (this.dungeonTime >= 750) {
             const unit = this.order.nextTurn();
             if (unit.unitType === "hero") CombatManager.heroAttack(unit,this.id);
             else CombatManager.mobAttack(unit,this.id);
+            this.order.nextPosition();
             this.checkDeadMobs();
             if (this.party.isDead()) {
                 this.resetDungeon();
                 return;
             }
-            this.dungeonTime -= 1000;
+            this.dungeonTime -= 750;
+            refreshTurnOrder();
         }
     }
     checkDeadMobs() {
@@ -131,6 +130,7 @@ class Dungeon {
         BattleLog.clear();
         this.status = DungeonStatus.EMPTY;
         this.order = null;
+        this.dungeonTime = 0;
         return;
     }
     addDungeonDrop(drops) {

@@ -219,13 +219,22 @@ function initiateDungeonFloor() {
         d4.append(d4a,d4b,d4c,d4d);
         $drStatsMob.prepend(d4);
     });
+    refreshTurnOrder();
+}
+
+function refreshTurnOrder() {
     $drTurnOrder.empty();
+    const dungeon = DungeonManager.getCurrentDungeon();
     dungeon.order.getOrder().forEach((unit,i) => {
         const d1 = $("<div/>").addClass("orderUnit");
+        if (unit.dead()) d1.addClass("orderUnitDead");
         const d1a = $("<div/>").addClass("orderUnitHead").html(unit.head);
         const d1b = $("<div/>").addClass("orderUnitHead").html(unit.name);
         d1.append(d1a,d1b);
-        if (dungeon.order.position === i) d1.addClass("orderUnitActive");
+        if (dungeon.order.position === i) {
+            const d1c = $("<div/>").addClass("unitActive").html("(Next)");
+            d1.addClass("orderUnitActive").append(d1c);
+        };
         $drTurnOrder.append(d1);
     });
 }

@@ -536,10 +536,6 @@ function examineHeroPossibleEquip(slot,heroID) {
     const types = HeroManager.getSlotTypes(slot,heroID);
     examineGearTypesCache = types;
     $heroEquipmentList.empty();
-    if (Inventory.listbyType(types).length === 0) {
-        Notifications.noGearForSlot();
-        return;
-    }
     //cycle through everything in bp's and make the div for it
     const table = $('<div/>').addClass('EHPE');
     const htd1 = $('<div/>').addClass('EHPEHeaderName').html("NAME");
@@ -549,7 +545,13 @@ function examineHeroPossibleEquip(slot,heroID) {
     const htd5 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
     const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3,htd4,htd5);
     table.append(hrow);
-
+    // Check if gear available to display in list
+    if (Inventory.listbyType(types).length === 0) {
+        const noGearMessage = $('<div/>').addClass('noGearMessage').html(`You have no gear available to equip in this slot.`);
+        $heroEquipmentList.append(table,noGearMessage);
+        return;
+    }
+    
     let upgradeAvaialable = false;
     Inventory.listbyType(types).forEach((itemContainer) => {
         const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName());
@@ -570,6 +572,7 @@ function examineHeroPossibleEquip(slot,heroID) {
         const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td1b,td1a,td2,td3);
         table.append(row);
     });
+
     $heroEquipmentList.append(table);
     //returns a value if this slot has an upgrade available
     return upgradeAvaialable;

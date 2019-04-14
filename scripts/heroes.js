@@ -385,6 +385,7 @@ const HeroManager = {
         this.idToHero(heroID).owned = true;
         initializeHeroList();
         refreshHeroSelect();
+        updateHeroCounter();
     },
     heroLevelCount() {
         return this.heroes.filter(w=>w.owned).map(w=>w.lvl).reduce((a,b) => a+b,0);
@@ -590,6 +591,11 @@ function updateHeroCounter() {
         if (hero.owned && !hero.inDungeon && hero.hp == hero.maxHP()) count++;
     });
     if (count > 0) {
+        if (count == 1) {
+            $(".heroCountText").html(" Hero Fully Healed");
+        } else {
+            $(".heroCountText").html(" Heroes Fully Healed");
+        }
         $(".heroCounter").removeClass("heroesCountZero");
         $(".heroCounter").addClass("heroesCountActive");
         $(".heroCount").html(count);
@@ -597,7 +603,6 @@ function updateHeroCounter() {
         $(".heroCounter").removeClass("heroesCountActive");
         $(".heroCounter").addClass("heroesCountZero");
     }
-    
 }
 
 $(document).on('click',".heroCounter", (e) => {

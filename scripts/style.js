@@ -121,6 +121,9 @@ function clipboardText() {
     copyAlert.innerHTML = "Copied to clipboard.";
     copyAlert.classList.add("ClipboardCopy");
     clipboardButton.insertAdjacentElement("afterend", copyAlert);
+    setTimeout(()=>{
+        document.querySelector(".ClipboardCopy").style.opacity = 0;
+    }, 2500);
 }
 
 if (clipboardButton) {
@@ -187,7 +190,6 @@ checkTheme();
 const battleLogSetBtn = document.querySelector('#battleLogSet');
 const battleLogResetBtn = document.querySelector('#battleLogReset');
 const battleLogLengthInput = document.querySelector('#battleLogValue');
-const battleLogNotice = document.createElement('div');
 
 if (battleLogSetBtn && battleLogResetBtn && battleLogLengthInput) {
     battleLogSetBtn.addEventListener("click", assignLogLength);
@@ -220,9 +222,13 @@ function addLogNotice(notice) {
     if (document.querySelector('.battleLogNotice')) {
         document.querySelector('.battleLogNotice').remove();
     }
+    const battleLogNotice = document.createElement('div');
     battleLogNotice.classList.add('battleLogNotice');
     battleLogNotice.innerHTML = notice;
     battleLogResetBtn.insertAdjacentElement('afterend', battleLogNotice);
+    setTimeout(()=>{
+        document.querySelector(".battleLogNotice").style.opacity = 0;
+    }, 2500);
 }
 
 // Logo Easter Egg

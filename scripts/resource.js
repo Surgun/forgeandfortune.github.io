@@ -49,6 +49,7 @@ const ResourceManager = {
         $("#amt"+mat.id).html(formatToUnits(mat.amt,3));
     },
     canAffordMaterial(item) {
+        if (item.mcost === null) return true;
         for (const [material, amt] of Object.entries(item.mcost)) {
             if (amt > this.materialAvailable(material)) return false;
         }
@@ -58,6 +59,7 @@ const ResourceManager = {
         this.addMaterial("M001",-amt);
     },
     deductMaterial(item) {
+        if (item.mcost === null) return;
         for (const [resource, amt] of Object.entries(item.mcost)) {
             if (resource.charAt(0) === "R") {
                 Inventory.removePrecraft(resource, amt);

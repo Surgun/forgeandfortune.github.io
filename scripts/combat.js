@@ -21,12 +21,12 @@ const CombatManager = {
         battleMessage.critical = critical;
         let damage = attacker.getAdjPow();
         if (critical) damage = Math.round(damage*attacker.critdmg);
-        if (attacker.ap === attacker.apmax) {
+        if (attacker.ap >= 100) {
             battleMessage.apAttack = true;
             damage = Math.round(damage * 2);
-            attacker.ap = 0;
+            attacker.ap -= 100;
         }
-        attacker.addAP();
+        else attacker.addAP();
         refreshAPBar(attacker);
         battleMessage.damage = damage;
         this.takeDamage(damage, defender, battleMessage);

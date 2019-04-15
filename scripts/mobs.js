@@ -119,7 +119,6 @@ class Mob {
     }
     addAP() {
         this.ap += this.apAdd;
-        this.ap = Math.min(this.ap,120);
     }
     deadCheck() {
         if (this.hp > 0 || this.status === MobState.DEAD) return;

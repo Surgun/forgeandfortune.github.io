@@ -1,5 +1,5 @@
 "use strict";
-const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP",ACT:"Act"});
+const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP"});
 const DungeonStatus = Object.freeze({EMPTY:0,ADVENTURING:1});
 
 class TurnOrder {
@@ -203,6 +203,5 @@ const dungeonIcons = {
     //[FloorType.TREASURE] : '<img src="images/DungeonIcons/treasure_floor.png" alt="Treasure">',
     [Stat.HP] : '<img src="images/DungeonIcons/hp.png" alt="HP">',
     [Stat.POW] : '<img src="images/DungeonIcons/pow.png" alt="POW">',
-    [Stat.ACT] : '<img src="images/DungeonIcons/act.png" alt="Act">',
     [Stat.AP] : '<img src="images/DungeonIcons/ap.png" alt="AP">',
 }

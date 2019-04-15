@@ -74,6 +74,7 @@ class Item{
             const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
             d.append($("<div/>").addClass("indvCost resCost tooltip").attr("data-tooltip",resourceNameForTooltips).html('<img src="images/resources/'+resource+'.png">'));
         })
+        if (this.mcost === null) return d;
         for (const [material, amt] of Object.entries(this.mcost)) {
             const mat = ResourceManager.idToMaterial(material);
             const d1 = $("<div/>").addClass("indvCost matCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt));
@@ -90,15 +91,12 @@ class Item{
     }
     recipeListStats() {
         const d = $("<div/>").addClass("recipeStatList");
-        if (this.actTime > 0) {
-            let speed = "Fair";
-            if (this.actTime > 5000) speed = "Slow";
-            else if (this.actTime < 5000) speed = "Fast";
-            const d1 = $("<div/>").addClass("recipeStatListAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + speed);
+        if (this.pow > 0) {
+            const d1 = $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + this.pow);
             d.append(d1);
         }
-        if (this.pow > 0) {
-            const d2 = $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + this.pow);
+        if (this.ap > 0) {
+            const d2 = $("<div/>").addClass("recipeStatListAP tooltip").attr("data-tooltip", "AP").html(miscIcons.ap + this.ap);
             d.append(d2);
         }
         if (this.hp > 0) {

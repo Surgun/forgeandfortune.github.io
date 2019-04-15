@@ -277,7 +277,7 @@ function createHPBar(hero,tag) {
 }
 
 function createAPBar(hero) {
-    const apPercent = hero.ap/hero.apmax;
+    const apPercent = Math.min(1,hero.ap/hero.apmax);
     const apWidth = (apPercent*100).toFixed(1)+"%";
     const d = $("<div/>").addClass("apBarDiv").html(dungeonIcons[Stat.AP]);
     const d1 = $("<div/>").addClass("apBar").attr("data-label",hero.ap+"/"+hero.apmax).attr("id","ap"+hero.uniqueid);

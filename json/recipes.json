@@ -10,9 +10,8 @@
     "rcost": [
       "wood"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M101",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 18,
     "hp": 0,
@@ -34,7 +33,6 @@
       "M602": 1
     },
     "smithCost": "M602",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 36,
     "hp": 0,
@@ -56,7 +54,6 @@
       "M203": 1
     },
     "smithCost": "M203",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 72,
     "hp": 0,
@@ -78,7 +75,6 @@
       "M404": 1
     },
     "smithCost": "M404",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 108,
     "hp": 0,
@@ -101,7 +97,6 @@
       "M105": 1
     },
     "smithCost": "M105",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 126,
     "hp": 0,
@@ -120,9 +115,8 @@
       "wood",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M106",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 144,
     "hp": 0,
@@ -145,7 +139,6 @@
       "M307": 1
     },
     "smithCost": "M307",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 162,
     "hp": 0,
@@ -168,7 +161,6 @@
       "M508": 1
     },
     "smithCost": "M508",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 180,
     "hp": 0,
@@ -191,7 +183,6 @@
       "M109": 1
     },
     "smithCost": "M109",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 198,
     "hp": 0,
@@ -214,7 +205,6 @@
       "M310": 1
     },
     "smithCost": "M310",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 216,
     "hp": 0,
@@ -236,7 +226,6 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 18,
     "hp": 0,
@@ -254,9 +243,8 @@
     "rcost": [
       "ore"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M102",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 36,
     "hp": 0,
@@ -278,7 +266,6 @@
       "M303": 1
     },
     "smithCost": "M303",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 72,
     "hp": 0,
@@ -300,7 +287,6 @@
       "M504": 1
     },
     "smithCost": "M504",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 108,
     "hp": 0,
@@ -323,7 +309,6 @@
       "M205": 1
     },
     "smithCost": "M205",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 126,
     "hp": 0,
@@ -346,7 +331,6 @@
       "M306": 1
     },
     "smithCost": "M306",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 144,
     "hp": 0,
@@ -365,9 +349,8 @@
       "ore",
       "wood"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M107",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 162,
     "hp": 0,
@@ -390,7 +373,6 @@
       "M608": 1
     },
     "smithCost": "M608",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 180,
     "hp": 0,
@@ -413,7 +395,6 @@
       "M209": 1
     },
     "smithCost": "M209",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 198,
     "hp": 0,
@@ -436,7 +417,6 @@
       "M410": 1
     },
     "smithCost": "M410",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 216,
     "hp": 0,
@@ -454,9 +434,8 @@
     "rcost": [
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M201",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 18,
     "hp": 0,
@@ -478,7 +457,6 @@
       "M102": 1
     },
     "smithCost": "M102",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 36,
     "hp": 0,
@@ -496,9 +474,8 @@
     "rcost": [
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M103",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 72,
     "hp": 0,
@@ -520,7 +497,6 @@
       "M604": 1
     },
     "smithCost": "M604",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 108,
     "hp": 0,
@@ -543,7 +519,6 @@
       "M305": 1
     },
     "smithCost": "M305",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 126,
     "hp": 0,
@@ -566,7 +541,6 @@
       "M406": 1
     },
     "smithCost": "M406",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 144,
     "hp": 0,
@@ -589,7 +563,6 @@
       "M507": 1
     },
     "smithCost": "M507",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 162,
     "hp": 0,
@@ -608,9 +581,8 @@
       "wood",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M108",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 180,
     "hp": 0,
@@ -633,7 +605,6 @@
       "M309": 1
     },
     "smithCost": "M309",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 198,
     "hp": 0,
@@ -656,7 +627,6 @@
       "M510": 1
     },
     "smithCost": "M510",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 216,
     "hp": 0,
@@ -674,9 +644,8 @@
     "rcost": [
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M301",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 18,
     "hp": 0,
@@ -698,7 +667,6 @@
       "M602": 1
     },
     "smithCost": "M602",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 36,
     "hp": 0,
@@ -720,7 +688,6 @@
       "M203": 1
     },
     "smithCost": "M203",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 72,
     "hp": 0,
@@ -742,7 +709,6 @@
       "M504": 1
     },
     "smithCost": "M504",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 108,
     "hp": 0,
@@ -765,7 +731,6 @@
       "M205": 1
     },
     "smithCost": "M205",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 126,
     "hp": 0,
@@ -784,9 +749,8 @@
       "steel",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M206",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 144,
     "hp": 0,
@@ -809,7 +773,6 @@
       "M107": 1
     },
     "smithCost": "M107",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 162,
     "hp": 0,
@@ -832,7 +795,6 @@
       "M408": 1
     },
     "smithCost": "M408",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 180,
     "hp": 0,
@@ -855,7 +817,6 @@
       "M209": 1
     },
     "smithCost": "M209",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 198,
     "hp": 0,
@@ -878,7 +839,6 @@
       "M410": 1
     },
     "smithCost": "M410",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 216,
     "hp": 0,
@@ -896,9 +856,8 @@
     "rcost": [
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M401",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 18,
     "hp": 0,
@@ -920,7 +879,6 @@
       "M102": 1
     },
     "smithCost": "M102",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 36,
     "hp": 0,
@@ -938,9 +896,8 @@
     "rcost": [
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M203",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 72,
     "hp": 0,
@@ -962,7 +919,6 @@
       "M604": 1
     },
     "smithCost": "M604",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 108,
     "hp": 0,
@@ -985,7 +941,6 @@
       "M305": 1
     },
     "smithCost": "M305",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 126,
     "hp": 0,
@@ -1008,7 +963,6 @@
       "M306": 1
     },
     "smithCost": "M306",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 144,
     "hp": 0,
@@ -1031,7 +985,6 @@
       "M207": 1
     },
     "smithCost": "M207",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 162,
     "hp": 0,
@@ -1050,9 +1003,8 @@
       "wood",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M208",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 180,
     "hp": 0,
@@ -1075,7 +1027,6 @@
       "M309": 1
     },
     "smithCost": "M309",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 198,
     "hp": 0,
@@ -1098,7 +1049,6 @@
       "M510": 1
     },
     "smithCost": "M510",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 216,
     "hp": 0,
@@ -1120,7 +1070,6 @@
       "M501": 1
     },
     "smithCost": "M501",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 18,
     "hp": 0,
@@ -1138,9 +1087,8 @@
     "rcost": [
       "wood"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M302",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 36,
     "hp": 0,
@@ -1162,7 +1110,6 @@
       "M303": 1
     },
     "smithCost": "M303",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 72,
     "hp": 0,
@@ -1184,7 +1131,6 @@
       "M104": 1
     },
     "smithCost": "M104",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 108,
     "hp": 0,
@@ -1207,7 +1153,6 @@
       "M405": 1
     },
     "smithCost": "M405",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 126,
     "hp": 0,
@@ -1230,7 +1175,6 @@
       "M406": 1
     },
     "smithCost": "M406",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 144,
     "hp": 0,
@@ -1249,9 +1193,8 @@
       "wood",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M207",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 162,
     "hp": 0,
@@ -1274,7 +1217,6 @@
       "M608": 1
     },
     "smithCost": "M608",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 180,
     "hp": 0,
@@ -1297,7 +1239,6 @@
       "M409": 1
     },
     "smithCost": "M409",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 198,
     "hp": 0,
@@ -1320,7 +1261,6 @@
       "M610": 1
     },
     "smithCost": "M610",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 216,
     "hp": 0,
@@ -1338,9 +1278,8 @@
     "rcost": [
       "ore"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M401",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 18,
     "hp": 0,
@@ -1362,7 +1301,6 @@
       "M602": 1
     },
     "smithCost": "M602",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 36,
     "hp": 0,
@@ -1384,7 +1322,6 @@
       "M203": 1
     },
     "smithCost": "M203",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 72,
     "hp": 0,
@@ -1406,7 +1343,6 @@
       "M604": 1
     },
     "smithCost": "M604",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 108,
     "hp": 0,
@@ -1429,7 +1365,6 @@
       "M305": 1
     },
     "smithCost": "M305",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 126,
     "hp": 0,
@@ -1448,9 +1383,8 @@
       "ore",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M306",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 144,
     "hp": 0,
@@ -1473,7 +1407,6 @@
       "M107": 1
     },
     "smithCost": "M107",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 162,
     "hp": 0,
@@ -1496,7 +1429,6 @@
       "M408": 1
     },
     "smithCost": "M408",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 180,
     "hp": 0,
@@ -1519,7 +1451,6 @@
       "M309": 1
     },
     "smithCost": "M309",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 198,
     "hp": 0,
@@ -1542,7 +1473,6 @@
       "M510": 1
     },
     "smithCost": "M510",
-    "actTime": 8,
     "apAdd": 25,
     "pow": 216,
     "hp": 0,
@@ -1564,7 +1494,6 @@
       "M301": 1
     },
     "smithCost": "M301",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 18,
     "hp": 0,
@@ -1582,9 +1511,8 @@
     "rcost": [
       "wood"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M402",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 36,
     "hp": 0,
@@ -1606,7 +1534,6 @@
       "M303": 1
     },
     "smithCost": "M303",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 72,
     "hp": 0,
@@ -1628,7 +1555,6 @@
       "M104": 1
     },
     "smithCost": "M104",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 108,
     "hp": 0,
@@ -1651,7 +1577,6 @@
       "M405": 1
     },
     "smithCost": "M405",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 126,
     "hp": 0,
@@ -1674,7 +1599,6 @@
       "M306": 1
     },
     "smithCost": "M306",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 144,
     "hp": 0,
@@ -1693,9 +1617,8 @@
       "wood",
       "leather"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M307",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 162,
     "hp": 0,
@@ -1718,7 +1641,6 @@
       "M608": 1
     },
     "smithCost": "M608",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 180,
     "hp": 0,
@@ -1741,7 +1663,6 @@
       "M409": 1
     },
     "smithCost": "M409",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 198,
     "hp": 0,
@@ -1764,7 +1685,6 @@
       "M610": 1
     },
     "smithCost": "M610",
-    "actTime": 12,
     "apAdd": 40,
     "pow": 216,
     "hp": 0,
@@ -1782,9 +1702,8 @@
     "rcost": [
       "leather"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M501",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 18,
     "hp": 0,
@@ -1806,7 +1725,6 @@
       "M102": 1
     },
     "smithCost": "M102",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 36,
     "hp": 0,
@@ -1824,9 +1742,8 @@
     "rcost": [
       "leather"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M303",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 72,
     "hp": 0,
@@ -1848,7 +1765,6 @@
       "M204": 1
     },
     "smithCost": "M204",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 108,
     "hp": 0,
@@ -1871,7 +1787,6 @@
       "M505": 1
     },
     "smithCost": "M505",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 126,
     "hp": 0,
@@ -1894,7 +1809,6 @@
       "M406": 1
     },
     "smithCost": "M406",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 144,
     "hp": 0,
@@ -1917,7 +1831,6 @@
       "M307": 1
     },
     "smithCost": "M307",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 162,
     "hp": 0,
@@ -1936,9 +1849,8 @@
       "leather",
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M308",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 180,
     "hp": 0,
@@ -1961,7 +1873,6 @@
       "M509": 1
     },
     "smithCost": "M509",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 198,
     "hp": 0,
@@ -1984,7 +1895,6 @@
       "M110": 1
     },
     "smithCost": "M110",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 216,
     "hp": 0,
@@ -2002,9 +1912,8 @@
     "rcost": [
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M601",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 18,
     "hp": 0,
@@ -2026,7 +1935,6 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 36,
     "hp": 0,
@@ -2048,7 +1956,6 @@
       "M403": 1
     },
     "smithCost": "M403",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 72,
     "hp": 0,
@@ -2070,7 +1977,6 @@
       "M104": 1
     },
     "smithCost": "M104",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 108,
     "hp": 0,
@@ -2089,9 +1995,8 @@
       "steel",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M105",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 126,
     "hp": 0,
@@ -2114,7 +2019,6 @@
       "M506": 1
     },
     "smithCost": "M506",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 144,
     "hp": 0,
@@ -2137,7 +2041,6 @@
       "M607": 1
     },
     "smithCost": "M607",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 162,
     "hp": 0,
@@ -2160,7 +2063,6 @@
       "M108": 1
     },
     "smithCost": "M108",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 180,
     "hp": 0,
@@ -2183,7 +2085,6 @@
       "M409": 1
     },
     "smithCost": "M409",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 198,
     "hp": 0,
@@ -2202,9 +2103,8 @@
       "steel",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M110",
-    "actTime": 10,
     "apAdd": 30,
     "pow": 216,
     "hp": 0,
@@ -2223,9 +2123,8 @@
       "ore",
       "leather"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M101",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
@@ -2248,7 +2147,6 @@
       "M302": 1
     },
     "smithCost": "M302",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -2271,7 +2169,6 @@
       "M503": 1
     },
     "smithCost": "M503",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -2294,7 +2191,6 @@
       "M204": 1
     },
     "smithCost": "M204",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 180,
@@ -2318,7 +2214,6 @@
       "M405": 1
     },
     "smithCost": "M405",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 210,
@@ -2338,9 +2233,8 @@
       "leather",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M406",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -2364,7 +2258,6 @@
       "M107": 1
     },
     "smithCost": "M107",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 270,
@@ -2388,7 +2281,6 @@
       "M208": 1
     },
     "smithCost": "M208",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 300,
@@ -2412,7 +2304,6 @@
       "M509": 1
     },
     "smithCost": "M509",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 330,
@@ -2436,7 +2327,6 @@
       "M210": 1
     },
     "smithCost": "M210",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -2455,9 +2345,8 @@
       "fabric",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M201",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
@@ -2480,7 +2369,6 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -2503,7 +2391,6 @@
       "M403": 1
     },
     "smithCost": "M403",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -2526,7 +2413,6 @@
       "M204": 1
     },
     "smithCost": "M204",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 180,
@@ -2550,7 +2436,6 @@
       "M505": 1
     },
     "smithCost": "M505",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 210,
@@ -2570,9 +2455,8 @@
       "fabric",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M506",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -2596,7 +2480,6 @@
       "M307": 1
     },
     "smithCost": "M307",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 270,
@@ -2620,7 +2503,6 @@
       "M208": 1
     },
     "smithCost": "M208",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 300,
@@ -2644,7 +2526,6 @@
       "M509": 1
     },
     "smithCost": "M509",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 330,
@@ -2668,7 +2549,6 @@
       "M110": 1
     },
     "smithCost": "M110",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -2687,9 +2567,8 @@
       "leather",
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M301",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
@@ -2712,7 +2591,6 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -2735,7 +2613,6 @@
       "M403": 1
     },
     "smithCost": "M403",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -2758,7 +2635,6 @@
       "M304": 1
     },
     "smithCost": "M304",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 180,
@@ -2781,7 +2657,6 @@
       "M605": 1
     },
     "smithCost": "M605",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 210,
@@ -2801,9 +2676,8 @@
       "fabric",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M606",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -2827,7 +2701,6 @@
       "M507": 1
     },
     "smithCost": "M507",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 270,
@@ -2851,7 +2724,6 @@
       "M208": 1
     },
     "smithCost": "M208",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 300,
@@ -2875,7 +2747,6 @@
       "M609": 1
     },
     "smithCost": "M609",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 330,
@@ -2899,7 +2770,6 @@
       "M210": 1
     },
     "smithCost": "M210",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -2922,7 +2792,6 @@
       "M201": 1
     },
     "smithCost": "M201",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
@@ -2941,9 +2810,8 @@
       "fabric",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M202",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -2966,7 +2834,6 @@
       "M603": 1
     },
     "smithCost": "M603",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -2989,7 +2856,6 @@
       "M304": 1
     },
     "smithCost": "M304",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 180,
@@ -3013,7 +2879,6 @@
       "M505": 1
     },
     "smithCost": "M505",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 210,
@@ -3037,7 +2902,6 @@
       "M606": 1
     },
     "smithCost": "M606",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -3057,9 +2921,8 @@
       "fabric",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M407",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 270,
@@ -3083,7 +2946,6 @@
       "M408": 1
     },
     "smithCost": "M408",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 300,
@@ -3107,7 +2969,6 @@
       "M609": 1
     },
     "smithCost": "M609",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 330,
@@ -3131,7 +2992,6 @@
       "M110": 1
     },
     "smithCost": "M110",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -3154,7 +3014,6 @@
       "M601": 1
     },
     "smithCost": "M601",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
@@ -3173,9 +3032,8 @@
       "leather",
       "herb"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M502",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -3198,7 +3056,6 @@
       "M503": 1
     },
     "smithCost": "M503",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -3221,7 +3078,6 @@
       "M304": 1
     },
     "smithCost": "M304",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 180,
@@ -3245,7 +3101,6 @@
       "M605": 1
     },
     "smithCost": "M605",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 210,
@@ -3269,7 +3124,6 @@
       "M506": 1
     },
     "smithCost": "M506",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -3289,9 +3143,8 @@
       "herb",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M507",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 270,
@@ -3315,7 +3168,6 @@
       "M108": 1
     },
     "smithCost": "M108",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 300,
@@ -3339,7 +3191,6 @@
       "M609": 1
     },
     "smithCost": "M609",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 330,
@@ -3363,7 +3214,6 @@
       "M210": 1
     },
     "smithCost": "M210",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -3386,7 +3236,6 @@
       "M401": 1
     },
     "smithCost": "M401",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
@@ -3405,9 +3254,8 @@
       "wood",
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M602",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -3430,7 +3278,6 @@
       "M503": 1
     },
     "smithCost": "M503",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -3453,7 +3300,6 @@
       "M404": 1
     },
     "smithCost": "M404",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 180,
@@ -3477,7 +3323,6 @@
       "M105": 1
     },
     "smithCost": "M105",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 210,
@@ -3501,7 +3346,6 @@
       "M606": 1
     },
     "smithCost": "M606",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -3521,9 +3365,8 @@
       "leather",
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M607",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 270,
@@ -3547,7 +3390,6 @@
       "M108": 1
     },
     "smithCost": "M108",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 300,
@@ -3571,7 +3413,6 @@
       "M209": 1
     },
     "smithCost": "M209",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 330,
@@ -3595,7 +3436,6 @@
       "M310": 1
     },
     "smithCost": "M310",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -3619,7 +3459,6 @@
       "M301": 1
     },
     "smithCost": "M301",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -3643,7 +3482,6 @@
       "M402": 1
     },
     "smithCost": "M402",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -3663,9 +3501,8 @@
       "leather",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M403",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -3689,7 +3526,6 @@
       "M404": 1
     },
     "smithCost": "M404",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -3713,7 +3549,6 @@
       "M605": 1
     },
     "smithCost": "M605",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 420,
@@ -3737,7 +3572,6 @@
       "M106": 1
     },
     "smithCost": "M106",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 480,
@@ -3761,7 +3595,6 @@
       "M207": 1
     },
     "smithCost": "M207",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 540,
@@ -3781,9 +3614,8 @@
       "leather",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M408",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 600,
@@ -3807,7 +3639,6 @@
       "M109": 1
     },
     "smithCost": "M109",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 660,
@@ -3831,7 +3662,6 @@
       "M610": 1
     },
     "smithCost": "M610",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 720,
@@ -3855,7 +3685,6 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -3879,7 +3708,6 @@
       "M302": 1
     },
     "smithCost": "M302",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -3899,9 +3727,8 @@
       "fabric",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M503",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -3925,7 +3752,6 @@
       "M404": 1
     },
     "smithCost": "M404",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -3949,7 +3775,6 @@
       "M105": 1
     },
     "smithCost": "M105",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 420,
@@ -3973,7 +3798,6 @@
       "M606": 1
     },
     "smithCost": "M606",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 480,
@@ -3997,7 +3821,6 @@
       "M507": 1
     },
     "smithCost": "M507",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 540,
@@ -4017,9 +3840,8 @@
       "fabric",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M508",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 600,
@@ -4043,7 +3865,6 @@
       "M109": 1
     },
     "smithCost": "M109",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 660,
@@ -4067,7 +3888,6 @@
       "M310": 1
     },
     "smithCost": "M310",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 720,
@@ -4091,7 +3911,6 @@
       "M501": 1
     },
     "smithCost": "M501",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -4115,7 +3934,6 @@
       "M302": 1
     },
     "smithCost": "M302",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -4135,9 +3953,8 @@
       "leather",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M603",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -4161,7 +3978,6 @@
       "M504": 1
     },
     "smithCost": "M504",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -4185,7 +4001,6 @@
       "M205": 1
     },
     "smithCost": "M205",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 420,
@@ -4209,7 +4024,6 @@
       "M506": 1
     },
     "smithCost": "M506",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 480,
@@ -4233,7 +4047,6 @@
       "M407": 1
     },
     "smithCost": "M407",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 540,
@@ -4253,9 +4066,8 @@
       "leather",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M608",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 600,
@@ -4279,7 +4091,6 @@
       "M109": 1
     },
     "smithCost": "M109",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 660,
@@ -4303,7 +4114,6 @@
       "M410": 1
     },
     "smithCost": "M410",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 720,
@@ -4325,7 +4135,6 @@
       "M401": 1
     },
     "smithCost": "M401",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 18,
     "hp": 0,
@@ -4347,7 +4156,6 @@
       "M502": 1
     },
     "smithCost": "M502",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 36,
     "hp": 0,
@@ -4370,7 +4178,6 @@
       "M103": 1
     },
     "smithCost": "M103",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 72,
     "hp": 0,
@@ -4389,9 +4196,8 @@
       "steel",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M104",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 108,
     "hp": 0,
@@ -4415,7 +4221,6 @@
       "M105": 1
     },
     "smithCost": "M105",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 126,
     "hp": 0,
@@ -4439,7 +4244,6 @@
       "M206": 1
     },
     "smithCost": "M206",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 144,
     "hp": 0,
@@ -4463,7 +4267,6 @@
       "M407": 1
     },
     "smithCost": "M407",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 162,
     "hp": 0,
@@ -4487,7 +4290,6 @@
       "M308": 1
     },
     "smithCost": "M308",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 180,
     "hp": 0,
@@ -4507,9 +4309,8 @@
       "silver",
       "herb"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M109",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 198,
     "hp": 0,
@@ -4533,7 +4334,6 @@
       "M310": 1
     },
     "smithCost": "M310",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 216,
     "hp": 0,
@@ -4555,7 +4355,6 @@
       "M201": 1
     },
     "smithCost": "M201",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 18,
     "hp": 0,
@@ -4577,7 +4376,6 @@
       "M402": 1
     },
     "smithCost": "M402",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 36,
     "hp": 0,
@@ -4600,7 +4398,6 @@
       "M603": 1
     },
     "smithCost": "M603",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 72,
     "hp": 0,
@@ -4619,9 +4416,8 @@
       "herb",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M204",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 108,
     "hp": 0,
@@ -4645,7 +4441,6 @@
       "M205": 1
     },
     "smithCost": "M205",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 126,
     "hp": 0,
@@ -4669,7 +4464,6 @@
       "M106": 1
     },
     "smithCost": "M106",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 144,
     "hp": 0,
@@ -4693,7 +4487,6 @@
       "M407": 1
     },
     "smithCost": "M407",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 162,
     "hp": 0,
@@ -4717,7 +4510,6 @@
       "M308": 1
     },
     "smithCost": "M308",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 180,
     "hp": 0,
@@ -4737,9 +4529,8 @@
       "herb",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M209",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 198,
     "hp": 0,
@@ -4763,7 +4554,6 @@
       "M410": 1
     },
     "smithCost": "M410",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 216,
     "hp": 0,
@@ -4785,7 +4575,6 @@
       "M601": 1
     },
     "smithCost": "M601",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 18,
     "hp": 0,
@@ -4807,7 +4596,6 @@
       "M402": 1
     },
     "smithCost": "M402",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 36,
     "hp": 0,
@@ -4830,7 +4618,6 @@
       "M603": 1
     },
     "smithCost": "M603",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 72,
     "hp": 0,
@@ -4849,9 +4636,8 @@
       "wood",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M304",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 108,
     "hp": 0,
@@ -4875,7 +4661,6 @@
       "M305": 1
     },
     "smithCost": "M305",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 126,
     "hp": 0,
@@ -4899,7 +4684,6 @@
       "M106": 1
     },
     "smithCost": "M106",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 144,
     "hp": 0,
@@ -4923,7 +4707,6 @@
       "M207": 1
     },
     "smithCost": "M207",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 162,
     "hp": 0,
@@ -4947,7 +4730,6 @@
       "M308": 1
     },
     "smithCost": "M308",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 180,
     "hp": 0,
@@ -4967,9 +4749,8 @@
       "steel",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M309",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 198,
     "hp": 0,
@@ -4993,7 +4774,6 @@
       "M510": 1
     },
     "smithCost": "M510",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 216,
     "hp": 0,
@@ -5011,9 +4791,8 @@
     "rcost": [
       "paper"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M401",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 18,
     "hp": 0,
@@ -5035,7 +4814,6 @@
       "M502": 1
     },
     "smithCost": "M502",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 36,
     "hp": 0,
@@ -5058,7 +4836,6 @@
       "M103": 1
     },
     "smithCost": "M103",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 72,
     "hp": 0,
@@ -5081,7 +4858,6 @@
       "M504": 1
     },
     "smithCost": "M504",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 108,
     "hp": 0,
@@ -5101,9 +4877,8 @@
       "paper",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M205",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 126,
     "hp": 0,
@@ -5130,7 +4905,6 @@
       "M206": 1
     },
     "smithCost": "M206",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 144,
     "hp": 0,
@@ -5154,7 +4928,6 @@
       "M607": 1
     },
     "smithCost": "M607",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 162,
     "hp": 0,
@@ -5178,7 +4951,6 @@
       "M508": 1
     },
     "smithCost": "M508",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 180,
     "hp": 0,
@@ -5202,7 +4974,6 @@
       "M209": 1
     },
     "smithCost": "M209",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 198,
     "hp": 0,
@@ -5222,9 +4993,8 @@
       "paper",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M210",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 216,
     "hp": 0,
@@ -5246,7 +5016,6 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 18,
     "hp": 0,
@@ -5268,7 +5037,6 @@
       "M502": 1
     },
     "smithCost": "M502",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 36,
     "hp": 0,
@@ -5291,7 +5059,6 @@
       "M103": 1
     },
     "smithCost": "M103",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 72,
     "hp": 0,
@@ -5314,7 +5081,6 @@
       "M604": 1
     },
     "smithCost": "M604",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 108,
     "hp": 0,
@@ -5334,9 +5100,8 @@
       "bone",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M305",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 126,
     "hp": 0,
@@ -5360,7 +5125,6 @@
       "M206": 1
     },
     "smithCost": "M206",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 144,
     "hp": 0,
@@ -5384,7 +5148,6 @@
       "M607": 1
     },
     "smithCost": "M607",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 162,
     "hp": 0,
@@ -5408,7 +5171,6 @@
       "M508": 1
     },
     "smithCost": "M508",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 180,
     "hp": 0,
@@ -5432,7 +5194,6 @@
       "M309": 1
     },
     "smithCost": "M309",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 198,
     "hp": 0,
@@ -5452,9 +5213,8 @@
       "bone",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M310",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 216,
     "hp": 0,
@@ -5472,9 +5232,8 @@
     "rcost": [
       "herb"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M501",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -5496,7 +5255,6 @@
       "M602": 1
     },
     "smithCost": "M602",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -5518,7 +5276,6 @@
       "M203": 1
     },
     "smithCost": "M203",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -5536,9 +5293,8 @@
     "rcost": [
       "herb"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M404",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -5561,7 +5317,6 @@
       "M405": 1
     },
     "smithCost": "M405",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 420,
@@ -5584,7 +5339,6 @@
       "M106": 1
     },
     "smithCost": "M106",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 480,
@@ -5607,7 +5361,6 @@
       "M307": 1
     },
     "smithCost": "M307",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 540,
@@ -5630,7 +5383,6 @@
       "M508": 1
     },
     "smithCost": "M508",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 600,
@@ -5649,9 +5401,8 @@
       "herb",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M409",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 660,
@@ -5674,7 +5425,6 @@
       "M610": 1
     },
     "smithCost": "M610",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 720,
@@ -5692,9 +5442,8 @@
     "rcost": [
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M601",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -5716,7 +5465,6 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -5738,7 +5486,6 @@
       "M303": 1
     },
     "smithCost": "M303",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -5756,9 +5503,8 @@
     "rcost": [
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M504",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -5781,7 +5527,6 @@
       "M505": 1
     },
     "smithCost": "M505",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 420,
@@ -5804,7 +5549,6 @@
       "M206": 1
     },
     "smithCost": "M206",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 480,
@@ -5827,7 +5571,6 @@
       "M407": 1
     },
     "smithCost": "M407",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 540,
@@ -5850,7 +5593,6 @@
       "M608": 1
     },
     "smithCost": "M608",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 600,
@@ -5869,9 +5611,8 @@
       "fabric",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M509",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 660,
@@ -5894,7 +5635,6 @@
       "M110": 1
     },
     "smithCost": "M110",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 720,
@@ -5917,7 +5657,6 @@
       "M201": 1
     },
     "smithCost": "M201",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -5940,7 +5679,6 @@
       "M302": 1
     },
     "smithCost": "M302",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -5963,7 +5701,6 @@
       "M403": 1
     },
     "smithCost": "M403",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -5982,9 +5719,8 @@
       "ore",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M604",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -6007,7 +5743,6 @@
       "M605": 1
     },
     "smithCost": "M605",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 420,
@@ -6030,7 +5765,6 @@
       "M306": 1
     },
     "smithCost": "M306",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 480,
@@ -6053,7 +5787,6 @@
       "M507": 1
     },
     "smithCost": "M507",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 540,
@@ -6076,7 +5809,6 @@
       "M108": 1
     },
     "smithCost": "M108",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 600,
@@ -6095,9 +5827,8 @@
       "ore",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M609",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 660,
@@ -6120,7 +5851,6 @@
       "M210": 1
     },
     "smithCost": "M210",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 720,
@@ -6143,7 +5873,6 @@
       "M301": 1
     },
     "smithCost": "M301",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -6166,7 +5895,6 @@
       "M402": 1
     },
     "smithCost": "M402",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -6189,7 +5917,6 @@
       "M503": 1
     },
     "smithCost": "M503",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -6212,7 +5939,6 @@
       "M104": 1
     },
     "smithCost": "M104",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -6231,9 +5957,8 @@
       "fabric",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M405",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 420,
@@ -6256,7 +5981,6 @@
       "M406": 1
     },
     "smithCost": "M406",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 480,
@@ -6279,7 +6003,6 @@
       "M607": 1
     },
     "smithCost": "M607",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 540,
@@ -6302,7 +6025,6 @@
       "M208": 1
     },
     "smithCost": "M208",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 600,
@@ -6325,7 +6047,6 @@
       "M409": 1
     },
     "smithCost": "M409",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 660,
@@ -6344,9 +6065,8 @@
       "fabric",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M410",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 720,
@@ -6369,7 +6089,6 @@
       "M401": 1
     },
     "smithCost": "M401",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -6392,7 +6111,6 @@
       "M502": 1
     },
     "smithCost": "M502",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -6415,7 +6133,6 @@
       "M603": 1
     },
     "smithCost": "M603",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -6438,7 +6155,6 @@
       "M204": 1
     },
     "smithCost": "M204",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -6457,9 +6173,8 @@
       "leather",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M505",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 420,
@@ -6482,7 +6197,6 @@
       "M506": 1
     },
     "smithCost": "M506",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 480,
@@ -6505,7 +6219,6 @@
       "M107": 1
     },
     "smithCost": "M107",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 540,
@@ -6528,7 +6241,6 @@
       "M308": 1
     },
     "smithCost": "M308",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 600,
@@ -6551,7 +6263,6 @@
       "M509": 1
     },
     "smithCost": "M509",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 660,
@@ -6570,9 +6281,8 @@
       "leather",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M510",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 720,
@@ -6595,7 +6305,6 @@
       "M501": 1
     },
     "smithCost": "M501",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
@@ -6618,7 +6327,6 @@
       "M102": 1
     },
     "smithCost": "M102",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 120,
@@ -6641,7 +6349,6 @@
       "M103": 1
     },
     "smithCost": "M103",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 240,
@@ -6664,7 +6371,6 @@
       "M304": 1
     },
     "smithCost": "M304",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 360,
@@ -6683,9 +6389,8 @@
       "silver",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M605",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 420,
@@ -6708,7 +6413,6 @@
       "M606": 1
     },
     "smithCost": "M606",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 480,
@@ -6731,7 +6435,6 @@
       "M207": 1
     },
     "smithCost": "M207",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 540,
@@ -6754,7 +6457,6 @@
       "M408": 1
     },
     "smithCost": "M408",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 600,
@@ -6777,7 +6479,6 @@
       "M609": 1
     },
     "smithCost": "M609",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 660,
@@ -6796,9 +6497,8 @@
       "silver",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M610",
-    "actTime": 0,
     "apAdd": 0,
     "pow": 0,
     "hp": 720,
@@ -6816,9 +6516,8 @@
     "rcost": [
       "ore"
     ],
-    "mcost": "",
-    "smithCost": "",
-    "actTime": 0,
+    "mcost": null,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -6839,8 +6538,7 @@
     "mcost": {
       "M101": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -6861,8 +6559,7 @@
     "mcost": {
       "M201": 2
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -6883,8 +6580,7 @@
     "mcost": {
       "M301": 5
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -6905,8 +6601,7 @@
     "mcost": {
       "M401": 4
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -6928,8 +6623,7 @@
       "M501": 20,
       "M601": 20
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -6952,8 +6646,7 @@
       "R99101": 6,
       "R99102": 4
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -6976,8 +6669,7 @@
       "R99105": 5,
       "R99107": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7000,8 +6692,7 @@
       "R99103": 10,
       "R99104": 3
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7028,8 +6719,7 @@
       "R99108": 4,
       "R99109": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7047,9 +6737,8 @@
     "rcost": [
       "ore"
     ],
-    "mcost": "",
-    "smithCost": "",
-    "actTime": 0,
+    "mcost": null,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7070,8 +6759,7 @@
     "mcost": {
       "M202": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7092,8 +6780,7 @@
     "mcost": {
       "M302": 2
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7114,8 +6801,7 @@
     "mcost": {
       "M402": 5
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7136,8 +6822,7 @@
     "mcost": {
       "M502": 4
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7160,8 +6845,7 @@
       "M602": 20,
       "M102": 20
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7184,8 +6868,7 @@
       "R99201": 6,
       "R99202": 4
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7208,8 +6891,7 @@
       "R99205": 5,
       "R99207": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7232,8 +6914,7 @@
       "R99203": 10,
       "R99204": 3
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7260,8 +6941,7 @@
       "R99208": 4,
       "R99209": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7279,9 +6959,8 @@
     "rcost": [
       "ore"
     ],
-    "mcost": "",
-    "smithCost": "",
-    "actTime": 0,
+    "mcost": null,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7302,8 +6981,7 @@
     "mcost": {
       "M303": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7324,8 +7002,7 @@
     "mcost": {
       "M403": 2
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7346,8 +7023,7 @@
     "mcost": {
       "M503": 5
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7368,8 +7044,7 @@
     "mcost": {
       "M603": 4
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7393,8 +7068,7 @@
       "M103": 20,
       "M203": 20
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7417,8 +7091,7 @@
       "R99301": 6,
       "R99302": 4
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7441,8 +7114,7 @@
       "R99305": 5,
       "R99307": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7465,8 +7137,7 @@
       "R99303": 10,
       "R99304": 3
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7493,8 +7164,7 @@
       "R99308": 4,
       "R99309": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7512,9 +7182,8 @@
     "rcost": [
       "ore"
     ],
-    "mcost": "",
-    "smithCost": "",
-    "actTime": 0,
+    "mcost": null,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7535,8 +7204,7 @@
     "mcost": {
       "M505": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7557,8 +7225,7 @@
     "mcost": {
       "M605": 2
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7579,8 +7246,7 @@
     "mcost": {
       "M105": 5
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7601,8 +7267,7 @@
     "mcost": {
       "M205": 4
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7626,8 +7291,7 @@
       "M305": 20,
       "M405": 20
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7650,8 +7314,7 @@
       "R99501": 6,
       "R99502": 4
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7674,8 +7337,7 @@
       "R99505": 5,
       "R99507": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7698,8 +7360,7 @@
       "R99503": 10,
       "R99504": 3
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
@@ -7726,8 +7387,7 @@
       "R99508": 4,
       "R99509": 1
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,

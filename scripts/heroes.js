@@ -22,7 +22,7 @@ class Hero {
         this.hp = levelCurves.getLvlStats(this.lvl).hp;
         this.maxHPseen = this.hp;
         this.ap = 0;
-        this.apmax = 120;
+        this.apmax = 100;
         this.armor = 0;
         this.crit = 5;
         this.critdmg = 2;
@@ -135,7 +135,6 @@ class Hero {
         else {
             this.ap += this.slot1.apAdd;
         }
-        this.ap = Math.min(120,this.ap);
     }
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.maxHP());
@@ -542,7 +541,7 @@ function examineHeroPossibleEquip(slot,heroID) {
     const table = $('<div/>').addClass('EHPE');
     const htd1 = $('<div/>').addClass('EHPEHeaderName').html("NAME");
     const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("LVL");
-    const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("ACT");
+    const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("AP");
     const htd4 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
     const htd5 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
     const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3,htd4,htd5);
@@ -560,18 +559,19 @@ function examineHeroPossibleEquip(slot,heroID) {
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
         const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());
         let level = itemContainer.lvl;
-        const td1a = $('<div/>').addClass('EHPEstat');
-        const td1b = $('<div/>').addClass('EHPEstat');
         const td2 = $('<div/>').addClass('EHPEstat');
         const td3 = $('<div/>').addClass('EHPEstat');
-        td1b.html(level);
-        if (relPow > 0) td2.addClass("EHPEstatPositive").html(itemContainer.pow() + " (+" + relPow + ")");
-        else if (relPow < 0) td2.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relPow + ")");
-        else td2.html(itemContainer.pow() + " (+" + relPow + ")");
-        if (relHP > 0) td3.addClass("EHPEstatPositive").html(itemContainer.hp() + " (+" + relHP + ")");
-        else if (relHP < 0) td3.addClass("EHPEstatNegative").html(itemContainer.hp() + " (" + relHP + ")");
-        else td3.html(itemContainer.hp());
-        const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td1b,td1a,td2,td3);
+        const td4 = $('<div/>').addClass('EHPEstat');
+        const td5 = $('<div/>').addClass('EHPEstat');
+        td2.html(level);
+        td3.html(itemContainer.ap());
+        if (relPow > 0) td4.addClass("EHPEstatPositive").html(itemContainer.pow() + " (+" + relPow + ")");
+        else if (relPow < 0) td4.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relPow + ")");
+        else td4.html(itemContainer.pow() + " (+" + relPow + ")");
+        if (relHP > 0) td5.addClass("EHPEstatPositive").html(itemContainer.hp() + " (+" + relHP + ")");
+        else if (relHP < 0) td35.addClass("EHPEstatNegative").html(itemContainer.hp() + " (" + relHP + ")");
+        else td5.html(itemContainer.hp());
+        const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2,td3,td4,td5);
         table.append(row);
     });
 

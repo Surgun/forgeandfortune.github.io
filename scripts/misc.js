@@ -72,7 +72,7 @@ function createArray(len, itm) {
 const miscIcons = {
     hp : '<img src="images/DungeonIcons/hp.png">',
     pow : '<img src="images/DungeonIcons/pow.png">',
-    act : '<img src="images/DungeonIcons/act.png">',
+    ap : '<img src="images/DungeonIcons/ap.png">',
     gold : '<img src="images/DungeonIcons/gold.png">'
 }
 

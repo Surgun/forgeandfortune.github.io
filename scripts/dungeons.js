@@ -131,6 +131,7 @@ class Dungeon {
         this.status = DungeonStatus.EMPTY;
         this.order = null;
         this.dungeonTime = 0;
+        this.floorCount = 0;
         return;
     }
     addDungeonDrop(drops) {
@@ -142,7 +143,7 @@ class Dungeon {
     }
     nextFloor() {
         this.floorCount += 1;
-        this.mobs = MobManager.generateDungeonFloor(this.floorCount);
+        this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
         this.order = new TurnOrder(this.party.heroes,this.mobs);
     }
 }

@@ -10,11 +10,9 @@ const MobManager = {
     idToMob(id) {
         return this.monsterDB.find(mob => mob.id === id);
     },
-    generateDungeonMob(dungeonID, difficulty) {
+    generateDungeonMob(mobID, difficulty) {
         disableEventLayers();
-        console.log(dungeonID);
-        const possibleMonster = this.monsterDB.filter(mob => mob.event === "normal" && mob.minFloor <= difficulty && mob.maxFloor >= difficulty && mob.dungeons.includes(dungeonID));
-        const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
+        const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
         const mob = new Mob(difficulty, mobTemplate);
         this.addActiveMob(mob);
         return mob;
@@ -36,11 +34,12 @@ const MobManager = {
         }
         return i;
     },
-    generateDungeonFloor(floorNum) {
+    generateDungeonFloor(dungeonid,floorNum) {
         const mobFloor = [];
-        for (let i=0;i<4;i++) {
-            mobFloor.push(this.generateDungeonMob("D001",floorNum));
-        }
+        const floor = FloorManager.getFloor(dungeonid,floorNum);
+        floor.mobs.forEach(mob => {
+            mobFloor.push(this.generateDungeonMob(mob,floorNum));
+        })
         return mobFloor;
     }
 }
@@ -50,6 +49,25 @@ class MobTemplate {
         Object.assign(this, props);
         this.image = '<img src="images/enemies/' + this.id + '.gif">';
         this.head = '<img src="images/enemies/heads/' + this.id + '.png">';
+    }
+}
+
+class FloorTemplate {
+    constructor (props) {
+        Object.assign(this, props);
+    }
+}
+
+const FloorManager = {
+    floors : [],
+    addFloor(floor) {
+        this.floors.push(floor);
+    },
+    getFloor(dungeon,floor) {
+        const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
+        const rand = DungeonSeedManager.getFloorSeed(dungeon,floor);
+        console.log(rand)
+        return possibleFloors[Math.floor(rand*possibleFloors.length)];
     }
 }
 

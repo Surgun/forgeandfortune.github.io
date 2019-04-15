@@ -8,11 +8,11 @@ Math.seededRandom = () => {
     return Math.seed / 233280;
 }
 
-function randomNormal(a,b) {
+/*function randomNormal(a,b) {
     const adj = ((Math.random() + Math.random() + Math.random() + Math.random() + Math.random() + Math.random()) - 3) / 3
     const adjFull = (b*(1+adj)+a*(1-adj))/2
     return Math.round(adjFull);
-}
+}*/
 
 function seedCreateSave() {
     return [wsSeed,hbSeed,wbSeed];
@@ -22,4 +22,18 @@ function seedLoadSave(save) {
     wsSeed = save[0];
     hbSeed = save[1];
     wbSeed = save[2];
+}
+
+const DungeonSeedManager = {
+    D001 : [784],
+    D002 : [7576],
+    D003 : [7236],
+    getFloorSeed(dungeonID,floor) {
+        dungeonSeedList = this[dungeonID];
+        while (dungeonSeedList.length < floor) {
+            const num = dungeonSeedList[dungeonSeedList.length-1];
+            dungeonSeedList.push((num * 9301 + 49297) % 233280)
+        };
+        return dungeonSeedList[dungeonSeedList.length-1] / 233280;
+    }
 }

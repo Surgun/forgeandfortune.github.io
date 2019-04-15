@@ -108,7 +108,6 @@ class BattleMessage {
     }
     defenderDiv() {
         const d = $("<div/>").addClass("blDefender").html(this.defender.name);
-        console.log(this.defender.name);
         if (!this.isHero) d.addClass("blHero");
         return d;
     }

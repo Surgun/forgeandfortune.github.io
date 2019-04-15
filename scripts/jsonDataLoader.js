@@ -98,10 +98,23 @@ function loadDungeons() {
     $.ajax({
         url: "json/dungeons.json",
     }).done((data) => {
-        console.log("event load complete");
+        console.log("dungeon load complete");
         $.each(data, function(i,props){
             const event = new Dungeon(props)
             DungeonManager.addDungeon(event);
+        });
+        loadDungeonFloors();
+    });
+}
+
+function loadDungeonFloors() {
+    $.ajax({
+        url: "json/dungeonFloors.json",
+    }).done((data) => {
+        console.log("dungeon floors load complete");
+        $.each(data, function(i,props){
+            const floor = new FloorTemplate(props);
+            FloorManager.addFloor(floor);
         });
         afterLoad();
     });

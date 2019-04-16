@@ -85,7 +85,7 @@ class Dungeon {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
-        while (this.dungeonTime >= 3000) {
+        while (this.dungeonTime >= DungeonManager.speed) {
             const unit = this.order.nextTurn();
             if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
             else CombatManager.launchAttack(unit, this.mobs, this.party.heroes, this.id);
@@ -95,7 +95,7 @@ class Dungeon {
                 this.resetDungeon();
                 return;
             }
-            this.dungeonTime -= 3000;
+            this.dungeonTime -= DungeonManager.speed;
             refreshTurnOrder();
         }
     }
@@ -152,12 +152,14 @@ const DungeonManager = {
     dungeons : [],
     dungeonCreatingID : null,
     dungeonView : null,
+    speed : 1250,
     createSave() {
         const save = {};
         save.dungeons = [];
         this.dungeons.forEach(d => {
             save.dungeons.push(d.createSave());
         });
+        save.speed = this.speed;
         return save;
     },
     addDungeon(dungeon) {
@@ -168,6 +170,7 @@ const DungeonManager = {
             const dungeon = DungeonManager.dungeonByID(d.id);
             dungeon.loadSave(d);
         });
+        this.speed = save.speed;
     },
     addTime(t) {
         this.dungeons.forEach(dungeon => {

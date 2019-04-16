@@ -24,6 +24,19 @@ const $DungeonSideBarTeam = $("#DungeonSideBarTeam");
 
 const $dsd1 = $("#dsd1");
 
+const $dungeonSpeedButtons = $(".dungeonSpeedButtons");
+
+$(document).on("click", ".dungeonSpeedButtons", (e) => {
+    e.preventDefault();
+    $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
+    $(e.currentTarget).addClass("dungeonSpeedActive");
+    const id = $(e.currentTarget).attr("id");
+    console.log(id);
+    if (id === "dungeonSpeedSlow") DungeonManager.speed = 3000;
+    if (id === "dungeonSpeedNormal") DungeonManager.speed = 1500;
+    if (id === "dungeonSpeedFast") DungeonManager.speed = 750;
+});
+
 //click on a dungeon to start making a team!
 $(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();

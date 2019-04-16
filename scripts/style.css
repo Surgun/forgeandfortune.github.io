@@ -2887,32 +2887,63 @@ Rarities
 }
 
 .drTurnOrderLogContainer {
-    display: flex;
+    display: grid;
+    grid-template: auto / 1fr 1fr;
     justify-content: center;
     align-items: start;
+    height: 100%;
     border-top: 1px solid var(--border-primary);
-}
-
-#drTurnOrder {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
     overflow: auto;
 }
 
-.turnOrderDiv {
-    border: 1px solid pink;
+#drTurnOrder {
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    grid-gap: 10px;
+    align-items: start;
+    align-content: start;
+    padding: 10px;
+    height: 100%;
+    overflow: auto;
+}
+
+.orderUnit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 125px;
+    padding: 10px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+}
+
+.orderUnit.orderUnitActive {
+    background-color: var(--border-primary);
+    border-color: var(--border-tertiary);
+    color: var(--highlight);
+}
+
+.orderUnitHead {
+    flex: 1;
 }
 
 #drLog {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    height: 100%;
+    border-left: 2px solid var(--border-primary);
     overflow: auto;
 }
 
 .battleLog {
-    border: 1px solid greenyellow;
+    border: 0;
+    padding: 10px;
+    background-color: var(--bg-primary);
+}
+
+.battleLog:nth-of-type(odd) {
+    background-color: var(--bg-secondary);
 }
 
 #drLogHero {

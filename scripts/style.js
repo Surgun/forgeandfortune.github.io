@@ -210,7 +210,7 @@ function assignLogLength() {
 }
 
 function resetLogLength() {
-    settings.battleLogLength = 15;
+    settings.battleLogLength = 30;
     BattleLog.logLength = settings.battleLogLength;
     battleLogLengthInput.value = settings.battleLogLength;
     BattleLog.clear();

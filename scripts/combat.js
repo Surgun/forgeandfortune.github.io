@@ -20,17 +20,21 @@ const CombatManager = {
     },
     specialAttack(attacker,allies,enemies, dungeonid) {
         if (attacker.special === "parry") SAparry(attacker, dungeonid);
-        if (attacker.special === "armor") SAarmor(attacker, dungeonid);
-        if (attacker.special === "bloodlet") SAbloodLet(attacker, enemies, dungeonid);
-        if (attacker.special === "ravage") SAravage(attacker, enemies, dungeonid);
-        if (attacker.special === "blast") SAblast(attacker, enemies, dungeonid);
-        if (attacker.special === "meteor") SAmeteor(attacker, enemies, dungeonid);
-        if (attacker.special === "heal") SAheal(attacker, allies, dungeonid);
-        if (attacker.special === "massHeal") SAmassHeal(attacker, allies, dungeonid);
-        if (attacker.special === "sniper") SAsniper(attacker, enemies, dungeonid);
-        if (attacker.special === "double") SAdouble(attacker, enemies, dungeonid);
-        if (attacker.special === "amplify") SAamplify(attacker, enemies, dungeonid);
-        if (attacker.special === "stun") SAstun(attacker, enemies, dungeonid) //stun chance based off damage?
+        else if (attacker.special === "armor") SAarmor(attacker, dungeonid);
+        else if (attacker.special === "bloodlet") SAbloodLet(attacker, enemies, dungeonid);
+        else if (attacker.special === "ravage") SAravage(attacker, enemies, dungeonid);
+        else if (attacker.special === "blast") SAblast(attacker, enemies, dungeonid);
+        else if (attacker.special === "meteor") SAmeteor(attacker, enemies, dungeonid);
+        else if (attacker.special === "heal") SAheal(attacker, allies, dungeonid);
+        else if (attacker.special === "massHeal") SAmassHeal(attacker, allies, dungeonid);
+        else if (attacker.special === "sniper") SAsniper(attacker, enemies, dungeonid);
+        else if (attacker.special === "double") SAdouble(attacker, enemies, dungeonid);
+        else if (attacker.special === "amplify") SAamplify(attacker, enemies, dungeonid);
+        else if (attacker.special === "stun") SAstun(attacker, enemies, dungeonid) //stun chance based off damage?
+        else {
+            const target = getTarget(enemies, attacker.target);
+            this.normalAttack(attacker, target, dungeonid);
+        }
         attacker.ap -= 100;
     },
     normalAttack(attacker, defender, dungeonid) {

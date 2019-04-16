@@ -17,13 +17,6 @@
     "drops": {
       "M101": 100
     },
-    "minFloor": 0,
-    "maxFloor": 100,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -44,13 +37,6 @@
     "drops": {
       "M102": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -71,13 +57,6 @@
     "drops": {
       "M103": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -98,13 +77,6 @@
     "drops": {
       "M104": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -125,13 +97,6 @@
     "drops": {
       "M105": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -152,13 +117,6 @@
     "drops": {
       "M106": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -179,13 +137,6 @@
     "drops": {
       "M107": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -206,13 +157,6 @@
     "drops": {
       "M108": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -233,13 +177,6 @@
     "drops": {
       "M109": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -260,13 +197,6 @@
     "drops": {
       "M110": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -287,13 +217,6 @@
     "drops": {
       "M201": 100
     },
-    "minFloor": 0,
-    "maxFloor": 100,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -314,13 +237,6 @@
     "drops": {
       "M202": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -341,13 +257,6 @@
     "drops": {
       "M203": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -368,13 +277,6 @@
     "drops": {
       "M204": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -395,13 +297,6 @@
     "drops": {
       "M205": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -422,13 +317,6 @@
     "drops": {
       "M206": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -449,13 +337,6 @@
     "drops": {
       "M207": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -476,13 +357,6 @@
     "drops": {
       "M208": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -503,13 +377,6 @@
     "drops": {
       "M209": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -530,13 +397,6 @@
     "drops": {
       "M210": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -557,13 +417,6 @@
     "drops": {
       "M301": 100
     },
-    "minFloor": 0,
-    "maxFloor": 100,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -584,13 +437,6 @@
     "drops": {
       "M302": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -611,13 +457,6 @@
     "drops": {
       "M303": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -638,13 +477,6 @@
     "drops": {
       "M304": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -665,13 +497,6 @@
     "drops": {
       "M305": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -692,13 +517,6 @@
     "drops": {
       "M306": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -719,13 +537,6 @@
     "drops": {
       "M307": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -746,13 +557,6 @@
     "drops": {
       "M308": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -773,13 +577,6 @@
     "drops": {
       "M309": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -800,13 +597,6 @@
     "drops": {
       "M310": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -827,13 +617,6 @@
     "drops": {
       "M401": 100
     },
-    "minFloor": 0,
-    "maxFloor": 100,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -854,13 +637,6 @@
     "drops": {
       "M402": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -881,13 +657,6 @@
     "drops": {
       "M403": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -908,13 +677,6 @@
     "drops": {
       "M404": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -935,13 +697,6 @@
     "drops": {
       "M405": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -962,13 +717,6 @@
     "drops": {
       "M406": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -989,13 +737,6 @@
     "drops": {
       "M407": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1016,13 +757,6 @@
     "drops": {
       "M408": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1043,13 +777,6 @@
     "drops": {
       "M409": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1070,13 +797,6 @@
     "drops": {
       "M410": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1097,13 +817,6 @@
     "drops": {
       "M501": 100
     },
-    "minFloor": 0,
-    "maxFloor": 100,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1124,13 +837,6 @@
     "drops": {
       "M502": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1151,13 +857,6 @@
     "drops": {
       "M503": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1178,13 +877,6 @@
     "drops": {
       "M504": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1205,13 +897,6 @@
     "drops": {
       "M505": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1232,13 +917,6 @@
     "drops": {
       "M506": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1259,13 +937,6 @@
     "drops": {
       "M507": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1286,13 +957,6 @@
     "drops": {
       "M508": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1313,13 +977,6 @@
     "drops": {
       "M509": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1340,13 +997,6 @@
     "drops": {
       "M510": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1367,13 +1017,6 @@
     "drops": {
       "M601": 100
     },
-    "minFloor": 0,
-    "maxFloor": 100,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1394,13 +1037,6 @@
     "drops": {
       "M602": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1421,13 +1057,6 @@
     "drops": {
       "M603": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1448,13 +1077,6 @@
     "drops": {
       "M604": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1475,13 +1097,6 @@
     "drops": {
       "M605": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1502,13 +1117,6 @@
     "drops": {
       "M606": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1529,13 +1137,6 @@
     "drops": {
       "M607": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1556,13 +1157,6 @@
     "drops": {
       "M608": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1583,13 +1177,6 @@
     "drops": {
       "M609": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1610,13 +1197,6 @@
     "drops": {
       "M610": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "normal"
   },
   {
@@ -1642,13 +1222,6 @@
       "M501": 100,
       "M601": 100
     },
-    "minFloor": 0,
-    "maxFloor": 100,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "christmas"
   },
   {
@@ -1674,13 +1247,6 @@
       "M502": 100,
       "M602": 100
     },
-    "minFloor": 101,
-    "maxFloor": 200,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "christmas"
   },
   {
@@ -1706,13 +1272,6 @@
       "M503": 100,
       "M603": 100
     },
-    "minFloor": 201,
-    "maxFloor": 300,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "christmas"
   },
   {
@@ -1738,13 +1297,6 @@
       "M504": 100,
       "M604": 100
     },
-    "minFloor": 301,
-    "maxFloor": 400,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "christmas"
   },
   {
@@ -1770,13 +1322,6 @@
       "M505": 100,
       "M605": 100
     },
-    "minFloor": 401,
-    "maxFloor": 500,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "christmas"
   },
   {
@@ -1802,13 +1347,6 @@
       "M506": 100,
       "M606": 100
     },
-    "minFloor": 501,
-    "maxFloor": 600,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "christmas"
   },
   {
@@ -1834,13 +1372,6 @@
       "M507": 100,
       "M607": 100
     },
-    "minFloor": 601,
-    "maxFloor": 700,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "christmas"
   },
   {
@@ -1866,13 +1397,6 @@
       "M508": 100,
       "M608": 100
     },
-    "minFloor": 701,
-    "maxFloor": 800,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "christmas"
   },
   {
@@ -1898,13 +1422,6 @@
       "M509": 100,
       "M609": 100
     },
-    "minFloor": 801,
-    "maxFloor": 900,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "christmas"
   },
   {
@@ -1930,13 +1447,1206 @@
       "M510": 100,
       "M610": 100
     },
-    "minFloor": 901,
-    "maxFloor": 10000,
-    "dungeons": [
-      "D001",
-      "D002",
-      "D003"
-    ],
     "event": "christmas"
+  },
+  {
+    "id": "B0101",
+    "name": "Dusty Alien",
+    "hpBase": 30,
+    "hpLvl": 1.2,
+    "powBase": 4,
+    "powLvl": 0.75,
+    "actTime": 13,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M101": 100
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0102",
+    "name": "Boney Alien",
+    "hpBase": 30,
+    "hpLvl": 1,
+    "powBase": 4,
+    "powLvl": 0.6,
+    "actTime": 13,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M102": 60
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0103",
+    "name": "Grimy Alien",
+    "hpBase": 30,
+    "hpLvl": 0.8,
+    "powBase": 4,
+    "powLvl": 0.45,
+    "actTime": 13,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M103": 40
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0104",
+    "name": "Loamy Alien",
+    "hpBase": 30,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.3,
+    "actTime": 13,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M104": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0105",
+    "name": "Foamy Alien",
+    "hpBase": 30,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.3,
+    "actTime": 13,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M105": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0106",
+    "name": "Deadly Alien",
+    "hpBase": 30,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.3,
+    "actTime": 13,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M106": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0107",
+    "name": "Creepy Alien",
+    "hpBase": 30,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.3,
+    "actTime": 13,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M107": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0108",
+    "name": "Chilly Alien",
+    "hpBase": 30,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.3,
+    "actTime": 13,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M108": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0109",
+    "name": "Fruity Alien",
+    "hpBase": 30,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.3,
+    "actTime": 13,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M109": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0110",
+    "name": "Funky Alien",
+    "hpBase": 30,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.3,
+    "actTime": 13,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M110": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0201",
+    "name": "Violet Death",
+    "hpBase": 80,
+    "hpLvl": 5,
+    "powBase": 2,
+    "powLvl": 1,
+    "actTime": 14,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M201": 100
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0202",
+    "name": "Rusted Evil",
+    "hpBase": 80,
+    "hpLvl": 4.2,
+    "powBase": 2,
+    "powLvl": 0.8,
+    "actTime": 14,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M202": 60
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0203",
+    "name": "Emerald Horror",
+    "hpBase": 80,
+    "hpLvl": 3.4,
+    "powBase": 2,
+    "powLvl": 0.6,
+    "actTime": 14,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M203": 40
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0204",
+    "name": "Cerulean Curse",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "actTime": 14,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M204": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0205",
+    "name": "Magenta Meanie",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "actTime": 14,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M205": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0206",
+    "name": "Cyan Abomination",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "actTime": 14,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M206": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0207",
+    "name": "Orange Crush",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "actTime": 14,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M207": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0208",
+    "name": "Wicked Greens",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "actTime": 14,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M208": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0209",
+    "name": "Plum Torment",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "actTime": 14,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M209": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0210",
+    "name": "Teal Terror",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "actTime": 14,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M210": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0301",
+    "name": "Flood",
+    "hpBase": 35,
+    "hpLvl": 1.5,
+    "powBase": 4,
+    "powLvl": 1.25,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M501": 100
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0302",
+    "name": "Blaze",
+    "hpBase": 35,
+    "hpLvl": 1.2,
+    "powBase": 4,
+    "powLvl": 1,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M502": 60
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0303",
+    "name": "Blight",
+    "hpBase": 35,
+    "hpLvl": 0.9,
+    "powBase": 4,
+    "powLvl": 0.75,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M503": 40
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0304",
+    "name": "Rockfall",
+    "hpBase": 35,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.5,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M504": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0305",
+    "name": "Toxin",
+    "hpBase": 35,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.5,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M505": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0306",
+    "name": "Contagion",
+    "hpBase": 35,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.5,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M506": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0307",
+    "name": "Venom",
+    "hpBase": 35,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.5,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M507": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0308",
+    "name": "Mudslide",
+    "hpBase": 35,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.5,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M508": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0309",
+    "name": "Monsoon",
+    "hpBase": 35,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.5,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M509": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0310",
+    "name": "Fabulous Elemental",
+    "hpBase": 35,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.5,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M510": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0401",
+    "name": "Minimush",
+    "hpBase": 80,
+    "hpLvl": 5,
+    "powBase": 1,
+    "powLvl": 0.5,
+    "actTime": 15,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M401": 100
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0402",
+    "name": "Maximush",
+    "hpBase": 80,
+    "hpLvl": 4.2,
+    "powBase": 1,
+    "powLvl": 0.4,
+    "actTime": 15,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M402": 60
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0403",
+    "name": "Flowering Doom",
+    "hpBase": 80,
+    "hpLvl": 3.4,
+    "powBase": 1,
+    "powLvl": 0.3,
+    "actTime": 15,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M403": 40
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0404",
+    "name": "Coco Nutty",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "actTime": 15,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M404": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0405",
+    "name": "Shyshroom",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "actTime": 15,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M405": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0406",
+    "name": "Shredshroom",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "actTime": 15,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M406": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0407",
+    "name": "Shrunkshroom",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "actTime": 15,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M407": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0408",
+    "name": "Shrubshroom",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "actTime": 15,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M408": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0409",
+    "name": "Shrimpshroom",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "actTime": 15,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M409": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0410",
+    "name": "Shrewdshroom",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "actTime": 15,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M410": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0501",
+    "name": "Stinkie",
+    "hpBase": 10,
+    "hpLvl": 0.5,
+    "powBase": 1.1,
+    "powLvl": 0.5,
+    "actTime": 5,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M501": 100
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0502",
+    "name": "Smokie",
+    "hpBase": 10,
+    "hpLvl": 0.4,
+    "powBase": 1.1,
+    "powLvl": 0.4,
+    "actTime": 5,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M502": 60
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0503",
+    "name": "Pinkie",
+    "hpBase": 10,
+    "hpLvl": 0.3,
+    "powBase": 1.1,
+    "powLvl": 0.3,
+    "actTime": 5,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M503": 40
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0504",
+    "name": "Pokie",
+    "hpBase": 10,
+    "hpLvl": 0.2,
+    "powBase": 1.1,
+    "powLvl": 0.2,
+    "actTime": 5,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M504": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0505",
+    "name": "Blinkie",
+    "hpBase": 10,
+    "hpLvl": 0.2,
+    "powBase": 1.1,
+    "powLvl": 0.2,
+    "actTime": 5,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M505": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0506",
+    "name": "Honkie",
+    "hpBase": 10,
+    "hpLvl": 0.2,
+    "powBase": 1.1,
+    "powLvl": 0.2,
+    "actTime": 5,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M506": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0507",
+    "name": "Inkie",
+    "hpBase": 10,
+    "hpLvl": 0.2,
+    "powBase": 1.1,
+    "powLvl": 0.2,
+    "actTime": 5,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M507": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0508",
+    "name": "Tonkie",
+    "hpBase": 10,
+    "hpLvl": 0.2,
+    "powBase": 1.1,
+    "powLvl": 0.2,
+    "actTime": 5,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M508": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0509",
+    "name": "Clyde",
+    "hpBase": 10,
+    "hpLvl": 0.2,
+    "powBase": 1.1,
+    "powLvl": 0.2,
+    "actTime": 5,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M509": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0510",
+    "name": "Dale",
+    "hpBase": 10,
+    "hpLvl": 0.2,
+    "powBase": 1.1,
+    "powLvl": 0.2,
+    "actTime": 5,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M510": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0601",
+    "name": "Fred Femur",
+    "hpBase": 50,
+    "hpLvl": 1,
+    "powBase": 3,
+    "powLvl": 0.5,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M601": 100
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0602",
+    "name": "Robert Rib",
+    "hpBase": 50,
+    "hpLvl": 0.8,
+    "powBase": 3,
+    "powLvl": 0.4,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M602": 60
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0603",
+    "name": "Phil Phalange",
+    "hpBase": 50,
+    "hpLvl": 0.6,
+    "powBase": 3,
+    "powLvl": 0.3,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M603": 40
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0604",
+    "name": "Vern Vertebrae",
+    "hpBase": 50,
+    "hpLvl": 0.4,
+    "powBase": 3,
+    "powLvl": 0.2,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M604": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0605",
+    "name": "Terry Temporal",
+    "hpBase": 50,
+    "hpLvl": 0.4,
+    "powBase": 3,
+    "powLvl": 0.2,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M605": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0606",
+    "name": "Manny Mandible",
+    "hpBase": 50,
+    "hpLvl": 0.4,
+    "powBase": 3,
+    "powLvl": 0.2,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M606": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0607",
+    "name": "Colin Collar",
+    "hpBase": 50,
+    "hpLvl": 0.4,
+    "powBase": 3,
+    "powLvl": 0.2,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M607": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0608",
+    "name": "Homer Humerus",
+    "hpBase": 50,
+    "hpLvl": 0.4,
+    "powBase": 3,
+    "powLvl": 0.2,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M608": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0609",
+    "name": "Clive Clavicle",
+    "hpBase": 50,
+    "hpLvl": 0.4,
+    "powBase": 3,
+    "powLvl": 0.2,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M609": 25
+    },
+    "event": "normal"
+  },
+  {
+    "id": "B0610",
+    "name": "Zeus Zygomatic",
+    "hpBase": 50,
+    "hpLvl": 0.4,
+    "powBase": 3,
+    "powLvl": 0.2,
+    "actTime": 9,
+    "apAdd": 30,
+    "intAct": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M610": 25
+    },
+    "event": "normal"
   }
 ]

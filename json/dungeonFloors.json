@@ -3,201 +3,7536 @@
     "id": "F0001",
     "dungeon": "D001",
     "minFloor": 0,
-    "maxFloor": 50,
+    "maxFloor": 100,
     "mobs": [
-      "B101"
+      "B201"
     ]
   },
   {
     "id": "F0002",
     "dungeon": "D001",
     "minFloor": 0,
-    "maxFloor": 50,
+    "maxFloor": 100,
     "mobs": [
-      "B201"
+      "B601"
     ]
   },
   {
     "id": "F0003",
     "dungeon": "D001",
     "minFloor": 0,
-    "maxFloor": 50,
+    "maxFloor": 100,
+    "mobs": [
+      "B0401"
+    ]
+  },
+  {
+    "id": "F0004",
+    "dungeon": "D001",
+    "minFloor": 0,
+    "maxFloor": 100,
+    "mobs": [
+      "B0301"
+    ]
+  },
+  {
+    "id": "F0005",
+    "dungeon": "D001",
+    "minFloor": 80,
+    "maxFloor": 100,
+    "mobs": [
+      "B202"
+    ]
+  },
+  {
+    "id": "F0006",
+    "dungeon": "D001",
+    "minFloor": 80,
+    "maxFloor": 100,
+    "mobs": [
+      "B602"
+    ]
+  },
+  {
+    "id": "F0007",
+    "dungeon": "D001",
+    "minFloor": 80,
+    "maxFloor": 100,
+    "mobs": [
+      "B0402"
+    ]
+  },
+  {
+    "id": "F0008",
+    "dungeon": "D001",
+    "minFloor": 80,
+    "maxFloor": 100,
+    "mobs": [
+      "B0302"
+    ]
+  },
+  {
+    "id": "F0009",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B202",
+      "B202"
+    ]
+  },
+  {
+    "id": "F0010",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B602",
+      "B602"
+    ]
+  },
+  {
+    "id": "F0011",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0402",
+      "B0402"
+    ]
+  },
+  {
+    "id": "F0012",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0302",
+      "B0302"
+    ]
+  },
+  {
+    "id": "F0013",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B202",
+      "B602"
+    ]
+  },
+  {
+    "id": "F0014",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B202",
+      "B0402"
+    ]
+  },
+  {
+    "id": "F0015",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B202",
+      "B0302"
+    ]
+  },
+  {
+    "id": "F0016",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B602",
+      "B0402"
+    ]
+  },
+  {
+    "id": "F0017",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B602",
+      "B0302"
+    ]
+  },
+  {
+    "id": "F0018",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0402",
+      "B0302"
+    ]
+  },
+  {
+    "id": "F0019",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B602",
+      "B202"
+    ]
+  },
+  {
+    "id": "F0020",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0402",
+      "B202"
+    ]
+  },
+  {
+    "id": "F0021",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0302",
+      "B202"
+    ]
+  },
+  {
+    "id": "F0022",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0402",
+      "B602"
+    ]
+  },
+  {
+    "id": "F0023",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0302",
+      "B602"
+    ]
+  },
+  {
+    "id": "F0024",
+    "dungeon": "D001",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0302",
+      "B0402"
+    ]
+  },
+  {
+    "id": "F0025",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B203",
+      "B203"
+    ]
+  },
+  {
+    "id": "F0026",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B603",
+      "B603"
+    ]
+  },
+  {
+    "id": "F0027",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0403",
+      "B0403"
+    ]
+  },
+  {
+    "id": "F0028",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0303",
+      "B0303"
+    ]
+  },
+  {
+    "id": "F0029",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B203",
+      "B603"
+    ]
+  },
+  {
+    "id": "F0030",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B203",
+      "B0403"
+    ]
+  },
+  {
+    "id": "F0031",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B203",
+      "B0303"
+    ]
+  },
+  {
+    "id": "F0032",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B603",
+      "B0403"
+    ]
+  },
+  {
+    "id": "F0033",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B603",
+      "B0303"
+    ]
+  },
+  {
+    "id": "F0034",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0403",
+      "B0303"
+    ]
+  },
+  {
+    "id": "F0035",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B603",
+      "B203"
+    ]
+  },
+  {
+    "id": "F0036",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0403",
+      "B203"
+    ]
+  },
+  {
+    "id": "F0037",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0303",
+      "B203"
+    ]
+  },
+  {
+    "id": "F0038",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0403",
+      "B603"
+    ]
+  },
+  {
+    "id": "F0039",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0303",
+      "B603"
+    ]
+  },
+  {
+    "id": "F0040",
+    "dungeon": "D001",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0303",
+      "B0403"
+    ]
+  },
+  {
+    "id": "F0041",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B203",
+      "B203",
+      "B203"
+    ]
+  },
+  {
+    "id": "F0042",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B603",
+      "B603",
+      "B603"
+    ]
+  },
+  {
+    "id": "F0043",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0403",
+      "B0403",
+      "B0403"
+    ]
+  },
+  {
+    "id": "F0044",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0303",
+      "B0303",
+      "B0303"
+    ]
+  },
+  {
+    "id": "F0045",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0403",
+      "B203",
+      "B203"
+    ]
+  },
+  {
+    "id": "F0046",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0403",
+      "B603",
+      "B603"
+    ]
+  },
+  {
+    "id": "F0047",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0403",
+      "B0303",
+      "B0303"
+    ]
+  },
+  {
+    "id": "F0048",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B203",
+      "B603",
+      "B0403"
+    ]
+  },
+  {
+    "id": "F0049",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0403",
+      "B0403",
+      "B203"
+    ]
+  },
+  {
+    "id": "F0050",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B603",
+      "B0303",
+      "B603"
+    ]
+  },
+  {
+    "id": "F0051",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0403",
+      "B0303",
+      "B203"
+    ]
+  },
+  {
+    "id": "F0052",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B203",
+      "B203",
+      "B603"
+    ]
+  },
+  {
+    "id": "F0053",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0403",
+      "B603",
+      "B0303"
+    ]
+  },
+  {
+    "id": "F0054",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0303",
+      "B0303",
+      "B0403"
+    ]
+  },
+  {
+    "id": "F0055",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0403",
+      "B0403",
+      "B603"
+    ]
+  },
+  {
+    "id": "F0056",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B203",
+      "B0303",
+      "B203"
+    ]
+  },
+  {
+    "id": "F0057",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B603",
+      "B603",
+      "B0403"
+    ]
+  },
+  {
+    "id": "F0058",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0303",
+      "B203",
+      "B0303"
+    ]
+  },
+  {
+    "id": "F0059",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B603",
+      "B0303",
+      "B0303"
+    ]
+  },
+  {
+    "id": "F0060",
+    "dungeon": "D001",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B203",
+      "B203",
+      "B603"
+    ]
+  },
+  {
+    "id": "F0061",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B204",
+      "B204",
+      "B204"
+    ]
+  },
+  {
+    "id": "F0062",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B604",
+      "B604",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0063",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0404",
+      "B0404",
+      "B0404"
+    ]
+  },
+  {
+    "id": "F0064",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0304",
+      "B0304",
+      "B0304"
+    ]
+  },
+  {
+    "id": "F0065",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0404",
+      "B204",
+      "B204"
+    ]
+  },
+  {
+    "id": "F0066",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0404",
+      "B604",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0067",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0404",
+      "B0304",
+      "B0304"
+    ]
+  },
+  {
+    "id": "F0068",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B204",
+      "B604",
+      "B0404"
+    ]
+  },
+  {
+    "id": "F0069",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0404",
+      "B0404",
+      "B204"
+    ]
+  },
+  {
+    "id": "F0070",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B604",
+      "B0304",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0071",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0404",
+      "B0304",
+      "B204"
+    ]
+  },
+  {
+    "id": "F0072",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B204",
+      "B204",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0073",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0404",
+      "B604",
+      "B0304"
+    ]
+  },
+  {
+    "id": "F0074",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0304",
+      "B0304",
+      "B0404"
+    ]
+  },
+  {
+    "id": "F0075",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0404",
+      "B0404",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0076",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B204",
+      "B0304",
+      "B204"
+    ]
+  },
+  {
+    "id": "F0077",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B604",
+      "B604",
+      "B0404"
+    ]
+  },
+  {
+    "id": "F0078",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0304",
+      "B204",
+      "B0304"
+    ]
+  },
+  {
+    "id": "F0079",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B604",
+      "B0304",
+      "B0304"
+    ]
+  },
+  {
+    "id": "F0080",
+    "dungeon": "D001",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B204",
+      "B204",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0081",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B204",
+      "B204",
+      "B204",
+      "B204"
+    ]
+  },
+  {
+    "id": "F0082",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B604",
+      "B604",
+      "B604",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0083",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0404",
+      "B0404",
+      "B0404",
+      "B0404"
+    ]
+  },
+  {
+    "id": "F0084",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0304",
+      "B0304",
+      "B0304",
+      "B0304"
+    ]
+  },
+  {
+    "id": "F0085",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0404",
+      "B0404",
+      "B204",
+      "B204"
+    ]
+  },
+  {
+    "id": "F0086",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0304",
+      "B0304",
+      "B604",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0087",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0404",
+      "B0304",
+      "B604",
+      "B204"
+    ]
+  },
+  {
+    "id": "F0088",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B204",
+      "B604",
+      "B0304",
+      "B0404"
+    ]
+  },
+  {
+    "id": "F0089",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B204",
+      "B0404",
+      "B604",
+      "B0304"
+    ]
+  },
+  {
+    "id": "F0090",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0304",
+      "B204",
+      "B0404",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0091",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0404",
+      "B0304",
+      "B0304",
+      "B0404"
+    ]
+  },
+  {
+    "id": "F0092",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0304",
+      "B0404",
+      "B0404",
+      "B0304"
+    ]
+  },
+  {
+    "id": "F0093",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B204",
+      "B604",
+      "B604",
+      "B204"
+    ]
+  },
+  {
+    "id": "F0094",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B604",
+      "B204",
+      "B204",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0095",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B204",
+      "B0304",
+      "B0404",
+      "B0404"
+    ]
+  },
+  {
+    "id": "F0096",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B204",
+      "B0404",
+      "B0304",
+      "B0304"
+    ]
+  },
+  {
+    "id": "F0097",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B604",
+      "B204",
+      "B204",
+      "B0404"
+    ]
+  },
+  {
+    "id": "F0098",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B604",
+      "B604",
+      "B0404",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0099",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0304",
+      "B204",
+      "B0304",
+      "B204"
+    ]
+  },
+  {
+    "id": "F0100",
+    "dungeon": "D001",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0304",
+      "B0404",
+      "B604",
+      "B604"
+    ]
+  },
+  {
+    "id": "F0101",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B205",
+      "B205",
+      "B205",
+      "B205"
+    ]
+  },
+  {
+    "id": "F0102",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B605",
+      "B605",
+      "B605",
+      "B605"
+    ]
+  },
+  {
+    "id": "F0103",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0405",
+      "B0405",
+      "B0405",
+      "B0405"
+    ]
+  },
+  {
+    "id": "F0104",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0305",
+      "B0305",
+      "B0305",
+      "B0305"
+    ]
+  },
+  {
+    "id": "F0105",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0405",
+      "B0405",
+      "B205",
+      "B205"
+    ]
+  },
+  {
+    "id": "F0106",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0305",
+      "B0305",
+      "B605",
+      "B605"
+    ]
+  },
+  {
+    "id": "F0107",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0405",
+      "B0305",
+      "B605",
+      "B205"
+    ]
+  },
+  {
+    "id": "F0108",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B205",
+      "B605",
+      "B0305",
+      "B0405"
+    ]
+  },
+  {
+    "id": "F0109",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B205",
+      "B0405",
+      "B605",
+      "B0305"
+    ]
+  },
+  {
+    "id": "F0110",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0305",
+      "B205",
+      "B0405",
+      "B605"
+    ]
+  },
+  {
+    "id": "F0111",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0405",
+      "B0305",
+      "B0305",
+      "B0405"
+    ]
+  },
+  {
+    "id": "F0112",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0305",
+      "B0405",
+      "B0405",
+      "B0305"
+    ]
+  },
+  {
+    "id": "F0113",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B205",
+      "B605",
+      "B605",
+      "B205"
+    ]
+  },
+  {
+    "id": "F0114",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B605",
+      "B205",
+      "B205",
+      "B605"
+    ]
+  },
+  {
+    "id": "F0115",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B205",
+      "B0305",
+      "B0405",
+      "B0405"
+    ]
+  },
+  {
+    "id": "F0116",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B205",
+      "B0405",
+      "B0305",
+      "B0305"
+    ]
+  },
+  {
+    "id": "F0117",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B605",
+      "B205",
+      "B205",
+      "B0405"
+    ]
+  },
+  {
+    "id": "F0118",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B605",
+      "B605",
+      "B0405",
+      "B605"
+    ]
+  },
+  {
+    "id": "F0119",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0305",
+      "B205",
+      "B0305",
+      "B205"
+    ]
+  },
+  {
+    "id": "F0120",
+    "dungeon": "D001",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0305",
+      "B0405",
+      "B605",
+      "B605"
+    ]
+  },
+  {
+    "id": "F0121",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B206",
+      "B206",
+      "B206",
+      "B206"
+    ]
+  },
+  {
+    "id": "F0122",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B606",
+      "B606",
+      "B606",
+      "B606"
+    ]
+  },
+  {
+    "id": "F0123",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0406",
+      "B0406",
+      "B0406",
+      "B0406"
+    ]
+  },
+  {
+    "id": "F0124",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0306",
+      "B0306",
+      "B0306",
+      "B0306"
+    ]
+  },
+  {
+    "id": "F0125",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0406",
+      "B0406",
+      "B206",
+      "B206"
+    ]
+  },
+  {
+    "id": "F0126",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0306",
+      "B0306",
+      "B606",
+      "B606"
+    ]
+  },
+  {
+    "id": "F0127",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0406",
+      "B0306",
+      "B606",
+      "B206"
+    ]
+  },
+  {
+    "id": "F0128",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B206",
+      "B606",
+      "B0306",
+      "B0406"
+    ]
+  },
+  {
+    "id": "F0129",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B206",
+      "B0406",
+      "B606",
+      "B0306"
+    ]
+  },
+  {
+    "id": "F0130",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0306",
+      "B206",
+      "B0406",
+      "B606"
+    ]
+  },
+  {
+    "id": "F0131",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0406",
+      "B0306",
+      "B0306",
+      "B0406"
+    ]
+  },
+  {
+    "id": "F0132",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0306",
+      "B0406",
+      "B0406",
+      "B0306"
+    ]
+  },
+  {
+    "id": "F0133",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B206",
+      "B606",
+      "B606",
+      "B206"
+    ]
+  },
+  {
+    "id": "F0134",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B606",
+      "B206",
+      "B206",
+      "B606"
+    ]
+  },
+  {
+    "id": "F0135",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B206",
+      "B0306",
+      "B0406",
+      "B0406"
+    ]
+  },
+  {
+    "id": "F0136",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B206",
+      "B0406",
+      "B0306",
+      "B0306"
+    ]
+  },
+  {
+    "id": "F0137",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B606",
+      "B206",
+      "B206",
+      "B0406"
+    ]
+  },
+  {
+    "id": "F0138",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B606",
+      "B606",
+      "B0406",
+      "B606"
+    ]
+  },
+  {
+    "id": "F0139",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0306",
+      "B206",
+      "B0306",
+      "B206"
+    ]
+  },
+  {
+    "id": "F0140",
+    "dungeon": "D001",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0306",
+      "B0406",
+      "B606",
+      "B606"
+    ]
+  },
+  {
+    "id": "F0141",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B207",
+      "B207",
+      "B207",
+      "B207"
+    ]
+  },
+  {
+    "id": "F0142",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B607",
+      "B607",
+      "B607",
+      "B607"
+    ]
+  },
+  {
+    "id": "F0143",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0407",
+      "B0407",
+      "B0407",
+      "B0407"
+    ]
+  },
+  {
+    "id": "F0144",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0307",
+      "B0307",
+      "B0307",
+      "B0307"
+    ]
+  },
+  {
+    "id": "F0145",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0407",
+      "B0407",
+      "B207",
+      "B207"
+    ]
+  },
+  {
+    "id": "F0146",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0307",
+      "B0307",
+      "B607",
+      "B607"
+    ]
+  },
+  {
+    "id": "F0147",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0407",
+      "B0307",
+      "B607",
+      "B207"
+    ]
+  },
+  {
+    "id": "F0148",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B207",
+      "B607",
+      "B0307",
+      "B0407"
+    ]
+  },
+  {
+    "id": "F0149",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B207",
+      "B0407",
+      "B607",
+      "B0307"
+    ]
+  },
+  {
+    "id": "F0150",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0307",
+      "B207",
+      "B0407",
+      "B607"
+    ]
+  },
+  {
+    "id": "F0151",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0407",
+      "B0307",
+      "B0307",
+      "B0407"
+    ]
+  },
+  {
+    "id": "F0152",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0307",
+      "B0407",
+      "B0407",
+      "B0307"
+    ]
+  },
+  {
+    "id": "F0153",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B207",
+      "B607",
+      "B607",
+      "B207"
+    ]
+  },
+  {
+    "id": "F0154",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B607",
+      "B207",
+      "B207",
+      "B607"
+    ]
+  },
+  {
+    "id": "F0155",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B207",
+      "B0307",
+      "B0407",
+      "B0407"
+    ]
+  },
+  {
+    "id": "F0156",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B207",
+      "B0407",
+      "B0307",
+      "B0307"
+    ]
+  },
+  {
+    "id": "F0157",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B607",
+      "B207",
+      "B207",
+      "B0407"
+    ]
+  },
+  {
+    "id": "F0158",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B607",
+      "B607",
+      "B0407",
+      "B607"
+    ]
+  },
+  {
+    "id": "F0159",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0307",
+      "B207",
+      "B0307",
+      "B207"
+    ]
+  },
+  {
+    "id": "F0160",
+    "dungeon": "D001",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0307",
+      "B0407",
+      "B607",
+      "B607"
+    ]
+  },
+  {
+    "id": "F0161",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B208",
+      "B208",
+      "B208",
+      "B208"
+    ]
+  },
+  {
+    "id": "F0162",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B608",
+      "B608",
+      "B608",
+      "B608"
+    ]
+  },
+  {
+    "id": "F0163",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0408",
+      "B0408",
+      "B0408",
+      "B0408"
+    ]
+  },
+  {
+    "id": "F0164",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0308",
+      "B0308",
+      "B0308",
+      "B0308"
+    ]
+  },
+  {
+    "id": "F0165",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0408",
+      "B0408",
+      "B208",
+      "B208"
+    ]
+  },
+  {
+    "id": "F0166",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0308",
+      "B0308",
+      "B608",
+      "B608"
+    ]
+  },
+  {
+    "id": "F0167",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0408",
+      "B0308",
+      "B608",
+      "B208"
+    ]
+  },
+  {
+    "id": "F0168",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B208",
+      "B608",
+      "B0308",
+      "B0408"
+    ]
+  },
+  {
+    "id": "F0169",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B208",
+      "B0408",
+      "B608",
+      "B0308"
+    ]
+  },
+  {
+    "id": "F0170",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0308",
+      "B208",
+      "B0408",
+      "B608"
+    ]
+  },
+  {
+    "id": "F0171",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0408",
+      "B0308",
+      "B0308",
+      "B0408"
+    ]
+  },
+  {
+    "id": "F0172",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0308",
+      "B0408",
+      "B0408",
+      "B0308"
+    ]
+  },
+  {
+    "id": "F0173",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B208",
+      "B608",
+      "B608",
+      "B208"
+    ]
+  },
+  {
+    "id": "F0174",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B608",
+      "B208",
+      "B208",
+      "B608"
+    ]
+  },
+  {
+    "id": "F0175",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B208",
+      "B0308",
+      "B0408",
+      "B0408"
+    ]
+  },
+  {
+    "id": "F0176",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B208",
+      "B0408",
+      "B0308",
+      "B0308"
+    ]
+  },
+  {
+    "id": "F0177",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B608",
+      "B208",
+      "B208",
+      "B0408"
+    ]
+  },
+  {
+    "id": "F0178",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B608",
+      "B608",
+      "B0408",
+      "B608"
+    ]
+  },
+  {
+    "id": "F0179",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0308",
+      "B208",
+      "B0308",
+      "B208"
+    ]
+  },
+  {
+    "id": "F0180",
+    "dungeon": "D001",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0308",
+      "B0408",
+      "B608",
+      "B608"
+    ]
+  },
+  {
+    "id": "F0181",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B209",
+      "B209",
+      "B209",
+      "B209"
+    ]
+  },
+  {
+    "id": "F0182",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B609",
+      "B609",
+      "B609",
+      "B609"
+    ]
+  },
+  {
+    "id": "F0183",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0409",
+      "B0409",
+      "B0409",
+      "B0409"
+    ]
+  },
+  {
+    "id": "F0184",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0309",
+      "B0309",
+      "B0309",
+      "B0309"
+    ]
+  },
+  {
+    "id": "F0185",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0409",
+      "B0409",
+      "B209",
+      "B209"
+    ]
+  },
+  {
+    "id": "F0186",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0309",
+      "B0309",
+      "B609",
+      "B609"
+    ]
+  },
+  {
+    "id": "F0187",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0409",
+      "B0309",
+      "B609",
+      "B209"
+    ]
+  },
+  {
+    "id": "F0188",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B209",
+      "B609",
+      "B0309",
+      "B0409"
+    ]
+  },
+  {
+    "id": "F0189",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B209",
+      "B0409",
+      "B609",
+      "B0309"
+    ]
+  },
+  {
+    "id": "F0190",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0309",
+      "B209",
+      "B0409",
+      "B609"
+    ]
+  },
+  {
+    "id": "F0191",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0409",
+      "B0309",
+      "B0309",
+      "B0409"
+    ]
+  },
+  {
+    "id": "F0192",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0309",
+      "B0409",
+      "B0409",
+      "B0309"
+    ]
+  },
+  {
+    "id": "F0193",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B209",
+      "B609",
+      "B609",
+      "B209"
+    ]
+  },
+  {
+    "id": "F0194",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B609",
+      "B209",
+      "B209",
+      "B609"
+    ]
+  },
+  {
+    "id": "F0195",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B209",
+      "B0309",
+      "B0409",
+      "B0409"
+    ]
+  },
+  {
+    "id": "F0196",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B209",
+      "B0409",
+      "B0309",
+      "B0309"
+    ]
+  },
+  {
+    "id": "F0197",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B609",
+      "B209",
+      "B209",
+      "B0409"
+    ]
+  },
+  {
+    "id": "F0198",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B609",
+      "B609",
+      "B0409",
+      "B609"
+    ]
+  },
+  {
+    "id": "F0199",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0309",
+      "B209",
+      "B0309",
+      "B209"
+    ]
+  },
+  {
+    "id": "F0200",
+    "dungeon": "D001",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0309",
+      "B0409",
+      "B609",
+      "B609"
+    ]
+  },
+  {
+    "id": "F0201",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B210",
+      "B210",
+      "B210",
+      "B210"
+    ]
+  },
+  {
+    "id": "F0202",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B610",
+      "B610",
+      "B610",
+      "B610"
+    ]
+  },
+  {
+    "id": "F0203",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0410",
+      "B0410",
+      "B0410",
+      "B0410"
+    ]
+  },
+  {
+    "id": "F0204",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0310",
+      "B0310",
+      "B0310",
+      "B0310"
+    ]
+  },
+  {
+    "id": "F0205",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0410",
+      "B0410",
+      "B210",
+      "B210"
+    ]
+  },
+  {
+    "id": "F0206",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0310",
+      "B0310",
+      "B610",
+      "B610"
+    ]
+  },
+  {
+    "id": "F0207",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0410",
+      "B0310",
+      "B610",
+      "B210"
+    ]
+  },
+  {
+    "id": "F0208",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B210",
+      "B610",
+      "B0310",
+      "B0410"
+    ]
+  },
+  {
+    "id": "F0209",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B210",
+      "B0410",
+      "B610",
+      "B0310"
+    ]
+  },
+  {
+    "id": "F0210",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0310",
+      "B210",
+      "B0410",
+      "B610"
+    ]
+  },
+  {
+    "id": "F0211",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0410",
+      "B0310",
+      "B0310",
+      "B0410"
+    ]
+  },
+  {
+    "id": "F0212",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0310",
+      "B0410",
+      "B0410",
+      "B0310"
+    ]
+  },
+  {
+    "id": "F0213",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B210",
+      "B610",
+      "B610",
+      "B210"
+    ]
+  },
+  {
+    "id": "F0214",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B610",
+      "B210",
+      "B210",
+      "B610"
+    ]
+  },
+  {
+    "id": "F0215",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B210",
+      "B0310",
+      "B0410",
+      "B0410"
+    ]
+  },
+  {
+    "id": "F0216",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B210",
+      "B0410",
+      "B0310",
+      "B0310"
+    ]
+  },
+  {
+    "id": "F0217",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B610",
+      "B210",
+      "B210",
+      "B0410"
+    ]
+  },
+  {
+    "id": "F0218",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B610",
+      "B610",
+      "B0410",
+      "B610"
+    ]
+  },
+  {
+    "id": "F0219",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0310",
+      "B210",
+      "B0310",
+      "B210"
+    ]
+  },
+  {
+    "id": "F0220",
+    "dungeon": "D001",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0310",
+      "B0410",
+      "B610",
+      "B610"
+    ]
+  },
+  {
+    "id": "F2001",
+    "dungeon": "D002",
+    "minFloor": 0,
+    "maxFloor": 100,
+    "mobs": [
+      "B0501"
+    ]
+  },
+  {
+    "id": "F2002",
+    "dungeon": "D002",
+    "minFloor": 0,
+    "maxFloor": 100,
+    "mobs": [
+      "B101"
+    ]
+  },
+  {
+    "id": "F2003",
+    "dungeon": "D002",
+    "minFloor": 0,
+    "maxFloor": 100,
+    "mobs": [
+      "B0201"
+    ]
+  },
+  {
+    "id": "F2004",
+    "dungeon": "D002",
+    "minFloor": 0,
+    "maxFloor": 100,
     "mobs": [
       "B301"
     ]
   },
   {
-    "id": "F0004",
+    "id": "F2005",
     "dungeon": "D002",
+    "minFloor": 80,
+    "maxFloor": 100,
+    "mobs": [
+      "B0502"
+    ]
+  },
+  {
+    "id": "F2006",
+    "dungeon": "D002",
+    "minFloor": 80,
+    "maxFloor": 100,
+    "mobs": [
+      "B102"
+    ]
+  },
+  {
+    "id": "F2007",
+    "dungeon": "D002",
+    "minFloor": 80,
+    "maxFloor": 100,
+    "mobs": [
+      "B0202"
+    ]
+  },
+  {
+    "id": "F2008",
+    "dungeon": "D002",
+    "minFloor": 80,
+    "maxFloor": 100,
+    "mobs": [
+      "B302"
+    ]
+  },
+  {
+    "id": "F2009",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0502",
+      "B0502"
+    ]
+  },
+  {
+    "id": "F2010",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B102",
+      "B102"
+    ]
+  },
+  {
+    "id": "F2011",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0202",
+      "B0202"
+    ]
+  },
+  {
+    "id": "F2012",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B302",
+      "B302"
+    ]
+  },
+  {
+    "id": "F2013",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0502",
+      "B102"
+    ]
+  },
+  {
+    "id": "F2014",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0502",
+      "B0202"
+    ]
+  },
+  {
+    "id": "F2015",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0502",
+      "B302"
+    ]
+  },
+  {
+    "id": "F2016",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B102",
+      "B0202"
+    ]
+  },
+  {
+    "id": "F2017",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B102",
+      "B302"
+    ]
+  },
+  {
+    "id": "F2018",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0202",
+      "B302"
+    ]
+  },
+  {
+    "id": "F2019",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B102",
+      "B0502"
+    ]
+  },
+  {
+    "id": "F2020",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0202",
+      "B0502"
+    ]
+  },
+  {
+    "id": "F2021",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B302",
+      "B0502"
+    ]
+  },
+  {
+    "id": "F2022",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0202",
+      "B102"
+    ]
+  },
+  {
+    "id": "F2023",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B302",
+      "B102"
+    ]
+  },
+  {
+    "id": "F2024",
+    "dungeon": "D002",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B302",
+      "B0202"
+    ]
+  },
+  {
+    "id": "F2025",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0503",
+      "B0503"
+    ]
+  },
+  {
+    "id": "F2026",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B103",
+      "B103"
+    ]
+  },
+  {
+    "id": "F2027",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0203",
+      "B0203"
+    ]
+  },
+  {
+    "id": "F2028",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B303",
+      "B303"
+    ]
+  },
+  {
+    "id": "F2029",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0503",
+      "B103"
+    ]
+  },
+  {
+    "id": "F2030",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0503",
+      "B0203"
+    ]
+  },
+  {
+    "id": "F2031",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0503",
+      "B303"
+    ]
+  },
+  {
+    "id": "F2032",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B103",
+      "B0203"
+    ]
+  },
+  {
+    "id": "F2033",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B103",
+      "B303"
+    ]
+  },
+  {
+    "id": "F2034",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0203",
+      "B303"
+    ]
+  },
+  {
+    "id": "F2035",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B103",
+      "B0503"
+    ]
+  },
+  {
+    "id": "F2036",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0203",
+      "B0503"
+    ]
+  },
+  {
+    "id": "F2037",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B303",
+      "B0503"
+    ]
+  },
+  {
+    "id": "F2038",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0203",
+      "B103"
+    ]
+  },
+  {
+    "id": "F2039",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B303",
+      "B103"
+    ]
+  },
+  {
+    "id": "F2040",
+    "dungeon": "D002",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B303",
+      "B0203"
+    ]
+  },
+  {
+    "id": "F2041",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0503",
+      "B0503",
+      "B0503"
+    ]
+  },
+  {
+    "id": "F2042",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B103",
+      "B103",
+      "B103"
+    ]
+  },
+  {
+    "id": "F2043",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0203",
+      "B0203",
+      "B0203"
+    ]
+  },
+  {
+    "id": "F2044",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B303",
+      "B303",
+      "B303"
+    ]
+  },
+  {
+    "id": "F2045",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0203",
+      "B0503",
+      "B0503"
+    ]
+  },
+  {
+    "id": "F2046",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0203",
+      "B103",
+      "B103"
+    ]
+  },
+  {
+    "id": "F2047",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0203",
+      "B303",
+      "B303"
+    ]
+  },
+  {
+    "id": "F2048",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0503",
+      "B103",
+      "B0203"
+    ]
+  },
+  {
+    "id": "F2049",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0203",
+      "B0203",
+      "B0503"
+    ]
+  },
+  {
+    "id": "F2050",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B103",
+      "B303",
+      "B103"
+    ]
+  },
+  {
+    "id": "F2051",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0203",
+      "B303",
+      "B0503"
+    ]
+  },
+  {
+    "id": "F2052",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0503",
+      "B0503",
+      "B103"
+    ]
+  },
+  {
+    "id": "F2053",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0203",
+      "B103",
+      "B303"
+    ]
+  },
+  {
+    "id": "F2054",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B303",
+      "B303",
+      "B0203"
+    ]
+  },
+  {
+    "id": "F2055",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0203",
+      "B0203",
+      "B103"
+    ]
+  },
+  {
+    "id": "F2056",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0503",
+      "B303",
+      "B0503"
+    ]
+  },
+  {
+    "id": "F2057",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B103",
+      "B103",
+      "B0203"
+    ]
+  },
+  {
+    "id": "F2058",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B303",
+      "B0503",
+      "B303"
+    ]
+  },
+  {
+    "id": "F2059",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B103",
+      "B303",
+      "B303"
+    ]
+  },
+  {
+    "id": "F2060",
+    "dungeon": "D002",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0503",
+      "B0503",
+      "B103"
+    ]
+  },
+  {
+    "id": "F2061",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0504",
+      "B0504",
+      "B0504"
+    ]
+  },
+  {
+    "id": "F2062",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B104",
+      "B104",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2063",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0204",
+      "B0204",
+      "B0204"
+    ]
+  },
+  {
+    "id": "F2064",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B304",
+      "B304",
+      "B304"
+    ]
+  },
+  {
+    "id": "F2065",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0204",
+      "B0504",
+      "B0504"
+    ]
+  },
+  {
+    "id": "F2066",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0204",
+      "B104",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2067",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0204",
+      "B304",
+      "B304"
+    ]
+  },
+  {
+    "id": "F2068",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0504",
+      "B104",
+      "B0204"
+    ]
+  },
+  {
+    "id": "F2069",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0204",
+      "B0204",
+      "B0504"
+    ]
+  },
+  {
+    "id": "F2070",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B104",
+      "B304",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2071",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0204",
+      "B304",
+      "B0504"
+    ]
+  },
+  {
+    "id": "F2072",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0504",
+      "B0504",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2073",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0204",
+      "B104",
+      "B304"
+    ]
+  },
+  {
+    "id": "F2074",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B304",
+      "B304",
+      "B0204"
+    ]
+  },
+  {
+    "id": "F2075",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0204",
+      "B0204",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2076",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0504",
+      "B304",
+      "B0504"
+    ]
+  },
+  {
+    "id": "F2077",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B104",
+      "B104",
+      "B0204"
+    ]
+  },
+  {
+    "id": "F2078",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B304",
+      "B0504",
+      "B304"
+    ]
+  },
+  {
+    "id": "F2079",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B104",
+      "B304",
+      "B304"
+    ]
+  },
+  {
+    "id": "F2080",
+    "dungeon": "D002",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0504",
+      "B0504",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2081",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0504",
+      "B0504",
+      "B0504",
+      "B0504"
+    ]
+  },
+  {
+    "id": "F2082",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B104",
+      "B104",
+      "B104",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2083",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0204",
+      "B0204",
+      "B0204",
+      "B0204"
+    ]
+  },
+  {
+    "id": "F2084",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B304",
+      "B304",
+      "B304",
+      "B304"
+    ]
+  },
+  {
+    "id": "F2085",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0204",
+      "B0204",
+      "B0504",
+      "B0504"
+    ]
+  },
+  {
+    "id": "F2086",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B304",
+      "B304",
+      "B104",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2087",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0204",
+      "B304",
+      "B104",
+      "B0504"
+    ]
+  },
+  {
+    "id": "F2088",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0504",
+      "B104",
+      "B304",
+      "B0204"
+    ]
+  },
+  {
+    "id": "F2089",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0504",
+      "B0204",
+      "B104",
+      "B304"
+    ]
+  },
+  {
+    "id": "F2090",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B304",
+      "B0504",
+      "B0204",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2091",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0204",
+      "B304",
+      "B304",
+      "B0204"
+    ]
+  },
+  {
+    "id": "F2092",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B304",
+      "B0204",
+      "B0204",
+      "B304"
+    ]
+  },
+  {
+    "id": "F2093",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0504",
+      "B104",
+      "B104",
+      "B0504"
+    ]
+  },
+  {
+    "id": "F2094",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B104",
+      "B0504",
+      "B0504",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2095",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0504",
+      "B304",
+      "B0204",
+      "B0204"
+    ]
+  },
+  {
+    "id": "F2096",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0504",
+      "B0204",
+      "B304",
+      "B304"
+    ]
+  },
+  {
+    "id": "F2097",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B104",
+      "B0504",
+      "B0504",
+      "B0204"
+    ]
+  },
+  {
+    "id": "F2098",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B104",
+      "B104",
+      "B0204",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2099",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B304",
+      "B0504",
+      "B304",
+      "B0504"
+    ]
+  },
+  {
+    "id": "F2100",
+    "dungeon": "D002",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B304",
+      "B0204",
+      "B104",
+      "B104"
+    ]
+  },
+  {
+    "id": "F2101",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0505",
+      "B0505",
+      "B0505",
+      "B0505"
+    ]
+  },
+  {
+    "id": "F2102",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B105",
+      "B105",
+      "B105",
+      "B105"
+    ]
+  },
+  {
+    "id": "F2103",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0205",
+      "B0205",
+      "B0205",
+      "B0205"
+    ]
+  },
+  {
+    "id": "F2104",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B305",
+      "B305",
+      "B305",
+      "B305"
+    ]
+  },
+  {
+    "id": "F2105",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0205",
+      "B0205",
+      "B0505",
+      "B0505"
+    ]
+  },
+  {
+    "id": "F2106",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B305",
+      "B305",
+      "B105",
+      "B105"
+    ]
+  },
+  {
+    "id": "F2107",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0205",
+      "B305",
+      "B105",
+      "B0505"
+    ]
+  },
+  {
+    "id": "F2108",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0505",
+      "B105",
+      "B305",
+      "B0205"
+    ]
+  },
+  {
+    "id": "F2109",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0505",
+      "B0205",
+      "B105",
+      "B305"
+    ]
+  },
+  {
+    "id": "F2110",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B305",
+      "B0505",
+      "B0205",
+      "B105"
+    ]
+  },
+  {
+    "id": "F2111",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0205",
+      "B305",
+      "B305",
+      "B0205"
+    ]
+  },
+  {
+    "id": "F2112",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B305",
+      "B0205",
+      "B0205",
+      "B305"
+    ]
+  },
+  {
+    "id": "F2113",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0505",
+      "B105",
+      "B105",
+      "B0505"
+    ]
+  },
+  {
+    "id": "F2114",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B105",
+      "B0505",
+      "B0505",
+      "B105"
+    ]
+  },
+  {
+    "id": "F2115",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0505",
+      "B305",
+      "B0205",
+      "B0205"
+    ]
+  },
+  {
+    "id": "F2116",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0505",
+      "B0205",
+      "B305",
+      "B305"
+    ]
+  },
+  {
+    "id": "F2117",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B105",
+      "B0505",
+      "B0505",
+      "B0205"
+    ]
+  },
+  {
+    "id": "F2118",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B105",
+      "B105",
+      "B0205",
+      "B105"
+    ]
+  },
+  {
+    "id": "F2119",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B305",
+      "B0505",
+      "B305",
+      "B0505"
+    ]
+  },
+  {
+    "id": "F2120",
+    "dungeon": "D002",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B305",
+      "B0205",
+      "B105",
+      "B105"
+    ]
+  },
+  {
+    "id": "F2121",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0506",
+      "B0506",
+      "B0506",
+      "B0506"
+    ]
+  },
+  {
+    "id": "F2122",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B106",
+      "B106",
+      "B106",
+      "B106"
+    ]
+  },
+  {
+    "id": "F2123",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0206",
+      "B0206",
+      "B0206",
+      "B0206"
+    ]
+  },
+  {
+    "id": "F2124",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B306",
+      "B306",
+      "B306",
+      "B306"
+    ]
+  },
+  {
+    "id": "F2125",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0206",
+      "B0206",
+      "B0506",
+      "B0506"
+    ]
+  },
+  {
+    "id": "F2126",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B306",
+      "B306",
+      "B106",
+      "B106"
+    ]
+  },
+  {
+    "id": "F2127",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0206",
+      "B306",
+      "B106",
+      "B0506"
+    ]
+  },
+  {
+    "id": "F2128",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0506",
+      "B106",
+      "B306",
+      "B0206"
+    ]
+  },
+  {
+    "id": "F2129",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0506",
+      "B0206",
+      "B106",
+      "B306"
+    ]
+  },
+  {
+    "id": "F2130",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B306",
+      "B0506",
+      "B0206",
+      "B106"
+    ]
+  },
+  {
+    "id": "F2131",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0206",
+      "B306",
+      "B306",
+      "B0206"
+    ]
+  },
+  {
+    "id": "F2132",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B306",
+      "B0206",
+      "B0206",
+      "B306"
+    ]
+  },
+  {
+    "id": "F2133",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0506",
+      "B106",
+      "B106",
+      "B0506"
+    ]
+  },
+  {
+    "id": "F2134",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B106",
+      "B0506",
+      "B0506",
+      "B106"
+    ]
+  },
+  {
+    "id": "F2135",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0506",
+      "B306",
+      "B0206",
+      "B0206"
+    ]
+  },
+  {
+    "id": "F2136",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0506",
+      "B0206",
+      "B306",
+      "B306"
+    ]
+  },
+  {
+    "id": "F2137",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B106",
+      "B0506",
+      "B0506",
+      "B0206"
+    ]
+  },
+  {
+    "id": "F2138",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B106",
+      "B106",
+      "B0206",
+      "B106"
+    ]
+  },
+  {
+    "id": "F2139",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B306",
+      "B0506",
+      "B306",
+      "B0506"
+    ]
+  },
+  {
+    "id": "F2140",
+    "dungeon": "D002",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B306",
+      "B0206",
+      "B106",
+      "B106"
+    ]
+  },
+  {
+    "id": "F2141",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0507",
+      "B0507",
+      "B0507",
+      "B0507"
+    ]
+  },
+  {
+    "id": "F2142",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B107",
+      "B107",
+      "B107",
+      "B107"
+    ]
+  },
+  {
+    "id": "F2143",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0207",
+      "B0207",
+      "B0207",
+      "B0207"
+    ]
+  },
+  {
+    "id": "F2144",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B307",
+      "B307",
+      "B307",
+      "B307"
+    ]
+  },
+  {
+    "id": "F2145",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0207",
+      "B0207",
+      "B0507",
+      "B0507"
+    ]
+  },
+  {
+    "id": "F2146",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B307",
+      "B307",
+      "B107",
+      "B107"
+    ]
+  },
+  {
+    "id": "F2147",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0207",
+      "B307",
+      "B107",
+      "B0507"
+    ]
+  },
+  {
+    "id": "F2148",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0507",
+      "B107",
+      "B307",
+      "B0207"
+    ]
+  },
+  {
+    "id": "F2149",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0507",
+      "B0207",
+      "B107",
+      "B307"
+    ]
+  },
+  {
+    "id": "F2150",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B307",
+      "B0507",
+      "B0207",
+      "B107"
+    ]
+  },
+  {
+    "id": "F2151",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0207",
+      "B307",
+      "B307",
+      "B0207"
+    ]
+  },
+  {
+    "id": "F2152",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B307",
+      "B0207",
+      "B0207",
+      "B307"
+    ]
+  },
+  {
+    "id": "F2153",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0507",
+      "B107",
+      "B107",
+      "B0507"
+    ]
+  },
+  {
+    "id": "F2154",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B107",
+      "B0507",
+      "B0507",
+      "B107"
+    ]
+  },
+  {
+    "id": "F2155",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0507",
+      "B307",
+      "B0207",
+      "B0207"
+    ]
+  },
+  {
+    "id": "F2156",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0507",
+      "B0207",
+      "B307",
+      "B307"
+    ]
+  },
+  {
+    "id": "F2157",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B107",
+      "B0507",
+      "B0507",
+      "B0207"
+    ]
+  },
+  {
+    "id": "F2158",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B107",
+      "B107",
+      "B0207",
+      "B107"
+    ]
+  },
+  {
+    "id": "F2159",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B307",
+      "B0507",
+      "B307",
+      "B0507"
+    ]
+  },
+  {
+    "id": "F2160",
+    "dungeon": "D002",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B307",
+      "B0207",
+      "B107",
+      "B107"
+    ]
+  },
+  {
+    "id": "F2161",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0508",
+      "B0508",
+      "B0508",
+      "B0508"
+    ]
+  },
+  {
+    "id": "F2162",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B108",
+      "B108",
+      "B108",
+      "B108"
+    ]
+  },
+  {
+    "id": "F2163",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0208",
+      "B0208",
+      "B0208",
+      "B0208"
+    ]
+  },
+  {
+    "id": "F2164",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B308",
+      "B308",
+      "B308",
+      "B308"
+    ]
+  },
+  {
+    "id": "F2165",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0208",
+      "B0208",
+      "B0508",
+      "B0508"
+    ]
+  },
+  {
+    "id": "F2166",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B308",
+      "B308",
+      "B108",
+      "B108"
+    ]
+  },
+  {
+    "id": "F2167",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0208",
+      "B308",
+      "B108",
+      "B0508"
+    ]
+  },
+  {
+    "id": "F2168",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0508",
+      "B108",
+      "B308",
+      "B0208"
+    ]
+  },
+  {
+    "id": "F2169",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0508",
+      "B0208",
+      "B108",
+      "B308"
+    ]
+  },
+  {
+    "id": "F2170",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B308",
+      "B0508",
+      "B0208",
+      "B108"
+    ]
+  },
+  {
+    "id": "F2171",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0208",
+      "B308",
+      "B308",
+      "B0208"
+    ]
+  },
+  {
+    "id": "F2172",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B308",
+      "B0208",
+      "B0208",
+      "B308"
+    ]
+  },
+  {
+    "id": "F2173",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0508",
+      "B108",
+      "B108",
+      "B0508"
+    ]
+  },
+  {
+    "id": "F2174",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B108",
+      "B0508",
+      "B0508",
+      "B108"
+    ]
+  },
+  {
+    "id": "F2175",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0508",
+      "B308",
+      "B0208",
+      "B0208"
+    ]
+  },
+  {
+    "id": "F2176",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0508",
+      "B0208",
+      "B308",
+      "B308"
+    ]
+  },
+  {
+    "id": "F2177",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B108",
+      "B0508",
+      "B0508",
+      "B0208"
+    ]
+  },
+  {
+    "id": "F2178",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B108",
+      "B108",
+      "B0208",
+      "B108"
+    ]
+  },
+  {
+    "id": "F2179",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B308",
+      "B0508",
+      "B308",
+      "B0508"
+    ]
+  },
+  {
+    "id": "F2180",
+    "dungeon": "D002",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B308",
+      "B0208",
+      "B108",
+      "B108"
+    ]
+  },
+  {
+    "id": "F2181",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0509",
+      "B0509",
+      "B0509",
+      "B0509"
+    ]
+  },
+  {
+    "id": "F2182",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B109",
+      "B109",
+      "B109",
+      "B109"
+    ]
+  },
+  {
+    "id": "F2183",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0209",
+      "B0209",
+      "B0209",
+      "B0209"
+    ]
+  },
+  {
+    "id": "F2184",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B309",
+      "B309",
+      "B309",
+      "B309"
+    ]
+  },
+  {
+    "id": "F2185",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0209",
+      "B0209",
+      "B0509",
+      "B0509"
+    ]
+  },
+  {
+    "id": "F2186",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B309",
+      "B309",
+      "B109",
+      "B109"
+    ]
+  },
+  {
+    "id": "F2187",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0209",
+      "B309",
+      "B109",
+      "B0509"
+    ]
+  },
+  {
+    "id": "F2188",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0509",
+      "B109",
+      "B309",
+      "B0209"
+    ]
+  },
+  {
+    "id": "F2189",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0509",
+      "B0209",
+      "B109",
+      "B309"
+    ]
+  },
+  {
+    "id": "F2190",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B309",
+      "B0509",
+      "B0209",
+      "B109"
+    ]
+  },
+  {
+    "id": "F2191",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0209",
+      "B309",
+      "B309",
+      "B0209"
+    ]
+  },
+  {
+    "id": "F2192",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B309",
+      "B0209",
+      "B0209",
+      "B309"
+    ]
+  },
+  {
+    "id": "F2193",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0509",
+      "B109",
+      "B109",
+      "B0509"
+    ]
+  },
+  {
+    "id": "F2194",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B109",
+      "B0509",
+      "B0509",
+      "B109"
+    ]
+  },
+  {
+    "id": "F2195",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0509",
+      "B309",
+      "B0209",
+      "B0209"
+    ]
+  },
+  {
+    "id": "F2196",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0509",
+      "B0209",
+      "B309",
+      "B309"
+    ]
+  },
+  {
+    "id": "F2197",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B109",
+      "B0509",
+      "B0509",
+      "B0209"
+    ]
+  },
+  {
+    "id": "F2198",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B109",
+      "B109",
+      "B0209",
+      "B109"
+    ]
+  },
+  {
+    "id": "F2199",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B309",
+      "B0509",
+      "B309",
+      "B0509"
+    ]
+  },
+  {
+    "id": "F2200",
+    "dungeon": "D002",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B309",
+      "B0209",
+      "B109",
+      "B109"
+    ]
+  },
+  {
+    "id": "F2201",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0510",
+      "B0510",
+      "B0510",
+      "B0510"
+    ]
+  },
+  {
+    "id": "F2202",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B110",
+      "B110",
+      "B110",
+      "B110"
+    ]
+  },
+  {
+    "id": "F2203",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0210",
+      "B0210",
+      "B0210",
+      "B0210"
+    ]
+  },
+  {
+    "id": "F2204",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B310",
+      "B310",
+      "B310",
+      "B310"
+    ]
+  },
+  {
+    "id": "F2205",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0210",
+      "B0210",
+      "B0510",
+      "B0510"
+    ]
+  },
+  {
+    "id": "F2206",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B310",
+      "B310",
+      "B110",
+      "B110"
+    ]
+  },
+  {
+    "id": "F2207",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0210",
+      "B310",
+      "B110",
+      "B0510"
+    ]
+  },
+  {
+    "id": "F2208",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0510",
+      "B110",
+      "B310",
+      "B0210"
+    ]
+  },
+  {
+    "id": "F2209",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0510",
+      "B0210",
+      "B110",
+      "B310"
+    ]
+  },
+  {
+    "id": "F2210",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B310",
+      "B0510",
+      "B0210",
+      "B110"
+    ]
+  },
+  {
+    "id": "F2211",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0210",
+      "B310",
+      "B310",
+      "B0210"
+    ]
+  },
+  {
+    "id": "F2212",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B310",
+      "B0210",
+      "B0210",
+      "B310"
+    ]
+  },
+  {
+    "id": "F2213",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0510",
+      "B110",
+      "B110",
+      "B0510"
+    ]
+  },
+  {
+    "id": "F2214",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B110",
+      "B0510",
+      "B0510",
+      "B110"
+    ]
+  },
+  {
+    "id": "F2215",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0510",
+      "B310",
+      "B0210",
+      "B0210"
+    ]
+  },
+  {
+    "id": "F2216",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0510",
+      "B0210",
+      "B310",
+      "B310"
+    ]
+  },
+  {
+    "id": "F2217",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B110",
+      "B0510",
+      "B0510",
+      "B0210"
+    ]
+  },
+  {
+    "id": "F2218",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B110",
+      "B110",
+      "B0210",
+      "B110"
+    ]
+  },
+  {
+    "id": "F2219",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B310",
+      "B0510",
+      "B310",
+      "B0510"
+    ]
+  },
+  {
+    "id": "F2220",
+    "dungeon": "D002",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B310",
+      "B0210",
+      "B110",
+      "B110"
+    ]
+  },
+  {
+    "id": "F4001",
+    "dungeon": "D003",
     "minFloor": 0,
-    "maxFloor": 50,
+    "maxFloor": 100,
+    "mobs": [
+      "B0101"
+    ]
+  },
+  {
+    "id": "F4002",
+    "dungeon": "D003",
+    "minFloor": 0,
+    "maxFloor": 100,
+    "mobs": [
+      "B0601"
+    ]
+  },
+  {
+    "id": "F4003",
+    "dungeon": "D003",
+    "minFloor": 0,
+    "maxFloor": 100,
     "mobs": [
       "B401"
     ]
   },
   {
-    "id": "F0005",
-    "dungeon": "D002",
+    "id": "F4004",
+    "dungeon": "D003",
     "minFloor": 0,
-    "maxFloor": 50,
+    "maxFloor": 100,
     "mobs": [
       "B501"
     ]
   },
   {
-    "id": "F0006",
-    "dungeon": "D002",
-    "minFloor": 0,
-    "maxFloor": 50,
-    "mobs": [
-      "B601"
-    ]
-  },
-  {
-    "id": "F0007",
+    "id": "F4005",
     "dungeon": "D003",
-    "minFloor": 0,
-    "maxFloor": 50,
+    "minFloor": 80,
+    "maxFloor": 100,
     "mobs": [
-      "B701"
+      "B0102"
     ]
   },
   {
-    "id": "F0008",
+    "id": "F4006",
     "dungeon": "D003",
-    "minFloor": 0,
-    "maxFloor": 50,
+    "minFloor": 80,
+    "maxFloor": 100,
     "mobs": [
-      "B801"
+      "B0602"
     ]
   },
   {
-    "id": "F0009",
+    "id": "F4007",
     "dungeon": "D003",
-    "minFloor": 0,
-    "maxFloor": 50,
+    "minFloor": 80,
+    "maxFloor": 100,
     "mobs": [
-      "B901"
+      "B402"
     ]
   },
   {
-    "id": "F0010",
-    "dungeon": "D001",
-    "minFloor": 51,
-    "maxFloor": 150,
-    "mobs": [
-      "B102",
-      "B202"
-    ]
-  },
-  {
-    "id": "F0010",
-    "dungeon": "D001",
-    "minFloor": 51,
-    "maxFloor": 150,
-    "mobs": [
-      "B202",
-      "B302"
-    ]
-  },
-  {
-    "id": "F0010",
-    "dungeon": "D001",
-    "minFloor": 51,
-    "maxFloor": 150,
-    "mobs": [
-      "B302",
-      "B202"
-    ]
-  },
-  {
-    "id": "F0011",
-    "dungeon": "D001",
-    "minFloor": 51,
-    "maxFloor": 150,
-    "mobs": [
-      "B102",
-      "B102"
-    ]
-  },
-  {
-    "id": "F0010",
-    "dungeon": "D002",
-    "minFloor": 51,
-    "maxFloor": 150,
-    "mobs": [
-      "B102",
-      "B202"
-    ]
-  },
-  {
-    "id": "F0010",
-    "dungeon": "D002",
-    "minFloor": 51,
-    "maxFloor": 150,
-    "mobs": [
-      "B202",
-      "B302"
-    ]
-  },
-  {
-    "id": "F0010",
-    "dungeon": "D002",
-    "minFloor": 51,
-    "maxFloor": 150,
-    "mobs": [
-      "B302",
-      "B202"
-    ]
-  },
-  {
-    "id": "F0011",
-    "dungeon": "D002",
-    "minFloor": 51,
-    "maxFloor": 150,
-    "mobs": [
-      "B102",
-      "B102"
-    ]
-  },
-  {
-    "id": "F0010",
+    "id": "F4008",
     "dungeon": "D003",
-    "minFloor": 51,
-    "maxFloor": 150,
+    "minFloor": 80,
+    "maxFloor": 100,
     "mobs": [
-      "B102",
-      "B202"
+      "B502"
     ]
   },
   {
-    "id": "F0010",
+    "id": "F4009",
     "dungeon": "D003",
-    "minFloor": 51,
-    "maxFloor": 150,
+    "minFloor": 101,
+    "maxFloor": 200,
     "mobs": [
-      "B202",
-      "B302"
+      "B0102",
+      "B0102"
     ]
   },
   {
-    "id": "F0010",
+    "id": "F4010",
     "dungeon": "D003",
-    "minFloor": 51,
-    "maxFloor": 150,
+    "minFloor": 101,
+    "maxFloor": 200,
     "mobs": [
-      "B302",
-      "B202"
+      "B0602",
+      "B0602"
     ]
   },
   {
-    "id": "F0011",
+    "id": "F4011",
     "dungeon": "D003",
-    "minFloor": 51,
-    "maxFloor": 150,
+    "minFloor": 101,
+    "maxFloor": 200,
     "mobs": [
-      "B102",
-      "B102"
+      "B402",
+      "B402"
+    ]
+  },
+  {
+    "id": "F4012",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B502",
+      "B502"
+    ]
+  },
+  {
+    "id": "F4013",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0102",
+      "B0602"
+    ]
+  },
+  {
+    "id": "F4014",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0102",
+      "B402"
+    ]
+  },
+  {
+    "id": "F4015",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0102",
+      "B502"
+    ]
+  },
+  {
+    "id": "F4016",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0602",
+      "B402"
+    ]
+  },
+  {
+    "id": "F4017",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0602",
+      "B502"
+    ]
+  },
+  {
+    "id": "F4018",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B402",
+      "B502"
+    ]
+  },
+  {
+    "id": "F4019",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B0602",
+      "B0102"
+    ]
+  },
+  {
+    "id": "F4020",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B402",
+      "B0102"
+    ]
+  },
+  {
+    "id": "F4021",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B502",
+      "B0102"
+    ]
+  },
+  {
+    "id": "F4022",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B402",
+      "B0602"
+    ]
+  },
+  {
+    "id": "F4023",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B502",
+      "B0602"
+    ]
+  },
+  {
+    "id": "F4024",
+    "dungeon": "D003",
+    "minFloor": 101,
+    "maxFloor": 200,
+    "mobs": [
+      "B502",
+      "B402"
+    ]
+  },
+  {
+    "id": "F4025",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0103",
+      "B0103"
+    ]
+  },
+  {
+    "id": "F4026",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0603",
+      "B0603"
+    ]
+  },
+  {
+    "id": "F4027",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B403",
+      "B403"
+    ]
+  },
+  {
+    "id": "F4028",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B503",
+      "B503"
+    ]
+  },
+  {
+    "id": "F4029",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0103",
+      "B0603"
+    ]
+  },
+  {
+    "id": "F4030",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0103",
+      "B403"
+    ]
+  },
+  {
+    "id": "F4031",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0103",
+      "B503"
+    ]
+  },
+  {
+    "id": "F4032",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0603",
+      "B403"
+    ]
+  },
+  {
+    "id": "F4033",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0603",
+      "B503"
+    ]
+  },
+  {
+    "id": "F4034",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B403",
+      "B503"
+    ]
+  },
+  {
+    "id": "F4035",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B0603",
+      "B0103"
+    ]
+  },
+  {
+    "id": "F4036",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B403",
+      "B0103"
+    ]
+  },
+  {
+    "id": "F4037",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B503",
+      "B0103"
+    ]
+  },
+  {
+    "id": "F4038",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B403",
+      "B0603"
+    ]
+  },
+  {
+    "id": "F4039",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B503",
+      "B0603"
+    ]
+  },
+  {
+    "id": "F4040",
+    "dungeon": "D003",
+    "minFloor": 180,
+    "maxFloor": 200,
+    "mobs": [
+      "B503",
+      "B403"
+    ]
+  },
+  {
+    "id": "F4041",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0103",
+      "B0103",
+      "B0103"
+    ]
+  },
+  {
+    "id": "F4042",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0603",
+      "B0603",
+      "B0603"
+    ]
+  },
+  {
+    "id": "F4043",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B403",
+      "B403",
+      "B403"
+    ]
+  },
+  {
+    "id": "F4044",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B503",
+      "B503",
+      "B503"
+    ]
+  },
+  {
+    "id": "F4045",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B403",
+      "B0103",
+      "B0103"
+    ]
+  },
+  {
+    "id": "F4046",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B403",
+      "B0603",
+      "B0603"
+    ]
+  },
+  {
+    "id": "F4047",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B403",
+      "B503",
+      "B503"
+    ]
+  },
+  {
+    "id": "F4048",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0103",
+      "B0603",
+      "B403"
+    ]
+  },
+  {
+    "id": "F4049",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B403",
+      "B403",
+      "B0103"
+    ]
+  },
+  {
+    "id": "F4050",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0603",
+      "B503",
+      "B0603"
+    ]
+  },
+  {
+    "id": "F4051",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B403",
+      "B503",
+      "B0103"
+    ]
+  },
+  {
+    "id": "F4052",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0103",
+      "B0103",
+      "B0603"
+    ]
+  },
+  {
+    "id": "F4053",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B403",
+      "B0603",
+      "B503"
+    ]
+  },
+  {
+    "id": "F4054",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B503",
+      "B503",
+      "B403"
+    ]
+  },
+  {
+    "id": "F4055",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B403",
+      "B403",
+      "B0603"
+    ]
+  },
+  {
+    "id": "F4056",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0103",
+      "B503",
+      "B0103"
+    ]
+  },
+  {
+    "id": "F4057",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0603",
+      "B0603",
+      "B403"
+    ]
+  },
+  {
+    "id": "F4058",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B503",
+      "B0103",
+      "B503"
+    ]
+  },
+  {
+    "id": "F4059",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0603",
+      "B503",
+      "B503"
+    ]
+  },
+  {
+    "id": "F4060",
+    "dungeon": "D003",
+    "minFloor": 201,
+    "maxFloor": 300,
+    "mobs": [
+      "B0103",
+      "B0103",
+      "B0603"
+    ]
+  },
+  {
+    "id": "F4061",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0104",
+      "B0104",
+      "B0104"
+    ]
+  },
+  {
+    "id": "F4062",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0604",
+      "B0604",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4063",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B404",
+      "B404",
+      "B404"
+    ]
+  },
+  {
+    "id": "F4064",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B504",
+      "B504",
+      "B504"
+    ]
+  },
+  {
+    "id": "F4065",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B404",
+      "B0104",
+      "B0104"
+    ]
+  },
+  {
+    "id": "F4066",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B404",
+      "B0604",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4067",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B404",
+      "B504",
+      "B504"
+    ]
+  },
+  {
+    "id": "F4068",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0104",
+      "B0604",
+      "B404"
+    ]
+  },
+  {
+    "id": "F4069",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B404",
+      "B404",
+      "B0104"
+    ]
+  },
+  {
+    "id": "F4070",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0604",
+      "B504",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4071",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B404",
+      "B504",
+      "B0104"
+    ]
+  },
+  {
+    "id": "F4072",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0104",
+      "B0104",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4073",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B404",
+      "B0604",
+      "B504"
+    ]
+  },
+  {
+    "id": "F4074",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B504",
+      "B504",
+      "B404"
+    ]
+  },
+  {
+    "id": "F4075",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B404",
+      "B404",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4076",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0104",
+      "B504",
+      "B0104"
+    ]
+  },
+  {
+    "id": "F4077",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0604",
+      "B0604",
+      "B404"
+    ]
+  },
+  {
+    "id": "F4078",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B504",
+      "B0104",
+      "B504"
+    ]
+  },
+  {
+    "id": "F4079",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0604",
+      "B504",
+      "B504"
+    ]
+  },
+  {
+    "id": "F4080",
+    "dungeon": "D003",
+    "minFloor": 280,
+    "maxFloor": 300,
+    "mobs": [
+      "B0104",
+      "B0104",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4081",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0104",
+      "B0104",
+      "B0104",
+      "B0104"
+    ]
+  },
+  {
+    "id": "F4082",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0604",
+      "B0604",
+      "B0604",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4083",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B404",
+      "B404",
+      "B404",
+      "B404"
+    ]
+  },
+  {
+    "id": "F4084",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B504",
+      "B504",
+      "B504",
+      "B504"
+    ]
+  },
+  {
+    "id": "F4085",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B404",
+      "B404",
+      "B0104",
+      "B0104"
+    ]
+  },
+  {
+    "id": "F4086",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B504",
+      "B504",
+      "B0604",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4087",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B404",
+      "B504",
+      "B0604",
+      "B0104"
+    ]
+  },
+  {
+    "id": "F4088",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0104",
+      "B0604",
+      "B504",
+      "B404"
+    ]
+  },
+  {
+    "id": "F4089",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0104",
+      "B404",
+      "B0604",
+      "B504"
+    ]
+  },
+  {
+    "id": "F4090",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B504",
+      "B0104",
+      "B404",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4091",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B404",
+      "B504",
+      "B504",
+      "B404"
+    ]
+  },
+  {
+    "id": "F4092",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B504",
+      "B404",
+      "B404",
+      "B504"
+    ]
+  },
+  {
+    "id": "F4093",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0104",
+      "B0604",
+      "B0604",
+      "B0104"
+    ]
+  },
+  {
+    "id": "F4094",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0604",
+      "B0104",
+      "B0104",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4095",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0104",
+      "B504",
+      "B404",
+      "B404"
+    ]
+  },
+  {
+    "id": "F4096",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0104",
+      "B404",
+      "B504",
+      "B504"
+    ]
+  },
+  {
+    "id": "F4097",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0604",
+      "B0104",
+      "B0104",
+      "B404"
+    ]
+  },
+  {
+    "id": "F4098",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B0604",
+      "B0604",
+      "B404",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4099",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B504",
+      "B0104",
+      "B504",
+      "B0104"
+    ]
+  },
+  {
+    "id": "F4100",
+    "dungeon": "D003",
+    "minFloor": 301,
+    "maxFloor": 400,
+    "mobs": [
+      "B504",
+      "B404",
+      "B0604",
+      "B0604"
+    ]
+  },
+  {
+    "id": "F4101",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0105",
+      "B0105",
+      "B0105",
+      "B0105"
+    ]
+  },
+  {
+    "id": "F4102",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0605",
+      "B0605",
+      "B0605",
+      "B0605"
+    ]
+  },
+  {
+    "id": "F4103",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B405",
+      "B405",
+      "B405",
+      "B405"
+    ]
+  },
+  {
+    "id": "F4104",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B505",
+      "B505",
+      "B505",
+      "B505"
+    ]
+  },
+  {
+    "id": "F4105",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B405",
+      "B405",
+      "B0105",
+      "B0105"
+    ]
+  },
+  {
+    "id": "F4106",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B505",
+      "B505",
+      "B0605",
+      "B0605"
+    ]
+  },
+  {
+    "id": "F4107",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B405",
+      "B505",
+      "B0605",
+      "B0105"
+    ]
+  },
+  {
+    "id": "F4108",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0105",
+      "B0605",
+      "B505",
+      "B405"
+    ]
+  },
+  {
+    "id": "F4109",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0105",
+      "B405",
+      "B0605",
+      "B505"
+    ]
+  },
+  {
+    "id": "F4110",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B505",
+      "B0105",
+      "B405",
+      "B0605"
+    ]
+  },
+  {
+    "id": "F4111",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B405",
+      "B505",
+      "B505",
+      "B405"
+    ]
+  },
+  {
+    "id": "F4112",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B505",
+      "B405",
+      "B405",
+      "B505"
+    ]
+  },
+  {
+    "id": "F4113",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0105",
+      "B0605",
+      "B0605",
+      "B0105"
+    ]
+  },
+  {
+    "id": "F4114",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0605",
+      "B0105",
+      "B0105",
+      "B0605"
+    ]
+  },
+  {
+    "id": "F4115",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0105",
+      "B505",
+      "B405",
+      "B405"
+    ]
+  },
+  {
+    "id": "F4116",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0105",
+      "B405",
+      "B505",
+      "B505"
+    ]
+  },
+  {
+    "id": "F4117",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0605",
+      "B0105",
+      "B0105",
+      "B405"
+    ]
+  },
+  {
+    "id": "F4118",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B0605",
+      "B0605",
+      "B405",
+      "B0605"
+    ]
+  },
+  {
+    "id": "F4119",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B505",
+      "B0105",
+      "B505",
+      "B0105"
+    ]
+  },
+  {
+    "id": "F4120",
+    "dungeon": "D003",
+    "minFloor": 380,
+    "maxFloor": 500,
+    "mobs": [
+      "B505",
+      "B405",
+      "B0605",
+      "B0605"
+    ]
+  },
+  {
+    "id": "F4121",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0106",
+      "B0106",
+      "B0106",
+      "B0106"
+    ]
+  },
+  {
+    "id": "F4122",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0606",
+      "B0606",
+      "B0606",
+      "B0606"
+    ]
+  },
+  {
+    "id": "F4123",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B406",
+      "B406",
+      "B406",
+      "B406"
+    ]
+  },
+  {
+    "id": "F4124",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B506",
+      "B506",
+      "B506",
+      "B506"
+    ]
+  },
+  {
+    "id": "F4125",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B406",
+      "B406",
+      "B0106",
+      "B0106"
+    ]
+  },
+  {
+    "id": "F4126",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B506",
+      "B506",
+      "B0606",
+      "B0606"
+    ]
+  },
+  {
+    "id": "F4127",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B406",
+      "B506",
+      "B0606",
+      "B0106"
+    ]
+  },
+  {
+    "id": "F4128",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0106",
+      "B0606",
+      "B506",
+      "B406"
+    ]
+  },
+  {
+    "id": "F4129",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0106",
+      "B406",
+      "B0606",
+      "B506"
+    ]
+  },
+  {
+    "id": "F4130",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B506",
+      "B0106",
+      "B406",
+      "B0606"
+    ]
+  },
+  {
+    "id": "F4131",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B406",
+      "B506",
+      "B506",
+      "B406"
+    ]
+  },
+  {
+    "id": "F4132",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B506",
+      "B406",
+      "B406",
+      "B506"
+    ]
+  },
+  {
+    "id": "F4133",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0106",
+      "B0606",
+      "B0606",
+      "B0106"
+    ]
+  },
+  {
+    "id": "F4134",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0606",
+      "B0106",
+      "B0106",
+      "B0606"
+    ]
+  },
+  {
+    "id": "F4135",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0106",
+      "B506",
+      "B406",
+      "B406"
+    ]
+  },
+  {
+    "id": "F4136",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0106",
+      "B406",
+      "B506",
+      "B506"
+    ]
+  },
+  {
+    "id": "F4137",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0606",
+      "B0106",
+      "B0106",
+      "B406"
+    ]
+  },
+  {
+    "id": "F4138",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B0606",
+      "B0606",
+      "B406",
+      "B0606"
+    ]
+  },
+  {
+    "id": "F4139",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B506",
+      "B0106",
+      "B506",
+      "B0106"
+    ]
+  },
+  {
+    "id": "F4140",
+    "dungeon": "D003",
+    "minFloor": 480,
+    "maxFloor": 600,
+    "mobs": [
+      "B506",
+      "B406",
+      "B0606",
+      "B0606"
+    ]
+  },
+  {
+    "id": "F4141",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0107",
+      "B0107",
+      "B0107",
+      "B0107"
+    ]
+  },
+  {
+    "id": "F4142",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0607",
+      "B0607",
+      "B0607",
+      "B0607"
+    ]
+  },
+  {
+    "id": "F4143",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B407",
+      "B407",
+      "B407",
+      "B407"
+    ]
+  },
+  {
+    "id": "F4144",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B507",
+      "B507",
+      "B507",
+      "B507"
+    ]
+  },
+  {
+    "id": "F4145",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B407",
+      "B407",
+      "B0107",
+      "B0107"
+    ]
+  },
+  {
+    "id": "F4146",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B507",
+      "B507",
+      "B0607",
+      "B0607"
+    ]
+  },
+  {
+    "id": "F4147",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B407",
+      "B507",
+      "B0607",
+      "B0107"
+    ]
+  },
+  {
+    "id": "F4148",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0107",
+      "B0607",
+      "B507",
+      "B407"
+    ]
+  },
+  {
+    "id": "F4149",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0107",
+      "B407",
+      "B0607",
+      "B507"
+    ]
+  },
+  {
+    "id": "F4150",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B507",
+      "B0107",
+      "B407",
+      "B0607"
+    ]
+  },
+  {
+    "id": "F4151",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B407",
+      "B507",
+      "B507",
+      "B407"
+    ]
+  },
+  {
+    "id": "F4152",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B507",
+      "B407",
+      "B407",
+      "B507"
+    ]
+  },
+  {
+    "id": "F4153",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0107",
+      "B0607",
+      "B0607",
+      "B0107"
+    ]
+  },
+  {
+    "id": "F4154",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0607",
+      "B0107",
+      "B0107",
+      "B0607"
+    ]
+  },
+  {
+    "id": "F4155",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0107",
+      "B507",
+      "B407",
+      "B407"
+    ]
+  },
+  {
+    "id": "F4156",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0107",
+      "B407",
+      "B507",
+      "B507"
+    ]
+  },
+  {
+    "id": "F4157",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0607",
+      "B0107",
+      "B0107",
+      "B407"
+    ]
+  },
+  {
+    "id": "F4158",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B0607",
+      "B0607",
+      "B407",
+      "B0607"
+    ]
+  },
+  {
+    "id": "F4159",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B507",
+      "B0107",
+      "B507",
+      "B0107"
+    ]
+  },
+  {
+    "id": "F4160",
+    "dungeon": "D003",
+    "minFloor": 580,
+    "maxFloor": 700,
+    "mobs": [
+      "B507",
+      "B407",
+      "B0607",
+      "B0607"
+    ]
+  },
+  {
+    "id": "F4161",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0108",
+      "B0108",
+      "B0108",
+      "B0108"
+    ]
+  },
+  {
+    "id": "F4162",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0608",
+      "B0608",
+      "B0608",
+      "B0608"
+    ]
+  },
+  {
+    "id": "F4163",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B408",
+      "B408",
+      "B408",
+      "B408"
+    ]
+  },
+  {
+    "id": "F4164",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B508",
+      "B508",
+      "B508",
+      "B508"
+    ]
+  },
+  {
+    "id": "F4165",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B408",
+      "B408",
+      "B0108",
+      "B0108"
+    ]
+  },
+  {
+    "id": "F4166",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B508",
+      "B508",
+      "B0608",
+      "B0608"
+    ]
+  },
+  {
+    "id": "F4167",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B408",
+      "B508",
+      "B0608",
+      "B0108"
+    ]
+  },
+  {
+    "id": "F4168",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0108",
+      "B0608",
+      "B508",
+      "B408"
+    ]
+  },
+  {
+    "id": "F4169",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0108",
+      "B408",
+      "B0608",
+      "B508"
+    ]
+  },
+  {
+    "id": "F4170",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B508",
+      "B0108",
+      "B408",
+      "B0608"
+    ]
+  },
+  {
+    "id": "F4171",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B408",
+      "B508",
+      "B508",
+      "B408"
+    ]
+  },
+  {
+    "id": "F4172",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B508",
+      "B408",
+      "B408",
+      "B508"
+    ]
+  },
+  {
+    "id": "F4173",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0108",
+      "B0608",
+      "B0608",
+      "B0108"
+    ]
+  },
+  {
+    "id": "F4174",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0608",
+      "B0108",
+      "B0108",
+      "B0608"
+    ]
+  },
+  {
+    "id": "F4175",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0108",
+      "B508",
+      "B408",
+      "B408"
+    ]
+  },
+  {
+    "id": "F4176",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0108",
+      "B408",
+      "B508",
+      "B508"
+    ]
+  },
+  {
+    "id": "F4177",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0608",
+      "B0108",
+      "B0108",
+      "B408"
+    ]
+  },
+  {
+    "id": "F4178",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B0608",
+      "B0608",
+      "B408",
+      "B0608"
+    ]
+  },
+  {
+    "id": "F4179",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B508",
+      "B0108",
+      "B508",
+      "B0108"
+    ]
+  },
+  {
+    "id": "F4180",
+    "dungeon": "D003",
+    "minFloor": 680,
+    "maxFloor": 800,
+    "mobs": [
+      "B508",
+      "B408",
+      "B0608",
+      "B0608"
+    ]
+  },
+  {
+    "id": "F4181",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0109",
+      "B0109",
+      "B0109",
+      "B0109"
+    ]
+  },
+  {
+    "id": "F4182",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0609",
+      "B0609",
+      "B0609",
+      "B0609"
+    ]
+  },
+  {
+    "id": "F4183",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B409",
+      "B409",
+      "B409",
+      "B409"
+    ]
+  },
+  {
+    "id": "F4184",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B509",
+      "B509",
+      "B509",
+      "B509"
+    ]
+  },
+  {
+    "id": "F4185",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B409",
+      "B409",
+      "B0109",
+      "B0109"
+    ]
+  },
+  {
+    "id": "F4186",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B509",
+      "B509",
+      "B0609",
+      "B0609"
+    ]
+  },
+  {
+    "id": "F4187",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B409",
+      "B509",
+      "B0609",
+      "B0109"
+    ]
+  },
+  {
+    "id": "F4188",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0109",
+      "B0609",
+      "B509",
+      "B409"
+    ]
+  },
+  {
+    "id": "F4189",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0109",
+      "B409",
+      "B0609",
+      "B509"
+    ]
+  },
+  {
+    "id": "F4190",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B509",
+      "B0109",
+      "B409",
+      "B0609"
+    ]
+  },
+  {
+    "id": "F4191",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B409",
+      "B509",
+      "B509",
+      "B409"
+    ]
+  },
+  {
+    "id": "F4192",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B509",
+      "B409",
+      "B409",
+      "B509"
+    ]
+  },
+  {
+    "id": "F4193",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0109",
+      "B0609",
+      "B0609",
+      "B0109"
+    ]
+  },
+  {
+    "id": "F4194",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0609",
+      "B0109",
+      "B0109",
+      "B0609"
+    ]
+  },
+  {
+    "id": "F4195",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0109",
+      "B509",
+      "B409",
+      "B409"
+    ]
+  },
+  {
+    "id": "F4196",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0109",
+      "B409",
+      "B509",
+      "B509"
+    ]
+  },
+  {
+    "id": "F4197",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0609",
+      "B0109",
+      "B0109",
+      "B409"
+    ]
+  },
+  {
+    "id": "F4198",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B0609",
+      "B0609",
+      "B409",
+      "B0609"
+    ]
+  },
+  {
+    "id": "F4199",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B509",
+      "B0109",
+      "B509",
+      "B0109"
+    ]
+  },
+  {
+    "id": "F4200",
+    "dungeon": "D003",
+    "minFloor": 780,
+    "maxFloor": 900,
+    "mobs": [
+      "B509",
+      "B409",
+      "B0609",
+      "B0609"
+    ]
+  },
+  {
+    "id": "F4201",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0110",
+      "B0110",
+      "B0110",
+      "B0110"
+    ]
+  },
+  {
+    "id": "F4202",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0610",
+      "B0610",
+      "B0610",
+      "B0610"
+    ]
+  },
+  {
+    "id": "F4203",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B410",
+      "B410",
+      "B410",
+      "B410"
+    ]
+  },
+  {
+    "id": "F4204",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B510",
+      "B510",
+      "B510",
+      "B510"
+    ]
+  },
+  {
+    "id": "F4205",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B410",
+      "B410",
+      "B0110",
+      "B0110"
+    ]
+  },
+  {
+    "id": "F4206",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B510",
+      "B510",
+      "B0610",
+      "B0610"
+    ]
+  },
+  {
+    "id": "F4207",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B410",
+      "B510",
+      "B0610",
+      "B0110"
+    ]
+  },
+  {
+    "id": "F4208",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0110",
+      "B0610",
+      "B510",
+      "B410"
+    ]
+  },
+  {
+    "id": "F4209",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0110",
+      "B410",
+      "B0610",
+      "B510"
+    ]
+  },
+  {
+    "id": "F4210",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B510",
+      "B0110",
+      "B410",
+      "B0610"
+    ]
+  },
+  {
+    "id": "F4211",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B410",
+      "B510",
+      "B510",
+      "B410"
+    ]
+  },
+  {
+    "id": "F4212",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B510",
+      "B410",
+      "B410",
+      "B510"
+    ]
+  },
+  {
+    "id": "F4213",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0110",
+      "B0610",
+      "B0610",
+      "B0110"
+    ]
+  },
+  {
+    "id": "F4214",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0610",
+      "B0110",
+      "B0110",
+      "B0610"
+    ]
+  },
+  {
+    "id": "F4215",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0110",
+      "B510",
+      "B410",
+      "B410"
+    ]
+  },
+  {
+    "id": "F4216",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0110",
+      "B410",
+      "B510",
+      "B510"
+    ]
+  },
+  {
+    "id": "F4217",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0610",
+      "B0110",
+      "B0110",
+      "B410"
+    ]
+  },
+  {
+    "id": "F4218",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B0610",
+      "B0610",
+      "B410",
+      "B0610"
+    ]
+  },
+  {
+    "id": "F4219",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B510",
+      "B0110",
+      "B510",
+      "B0110"
+    ]
+  },
+  {
+    "id": "F4220",
+    "dungeon": "D003",
+    "minFloor": 880,
+    "maxFloor": 10000,
+    "mobs": [
+      "B510",
+      "B410",
+      "B0610",
+      "B0610"
     ]
   }
 ]

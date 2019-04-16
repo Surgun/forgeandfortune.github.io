@@ -1,51 +1,80 @@
 "use strict";
-const EnhanceTypes = Object.freeze({PARRY:0,ARMOR:1,BLOODLET:2,SURGE:3});
 
 const CombatManager = {
-    heroAttack(hero, dungeonID) {
-        const dungeon = DungeonManager.dungeonByID(dungeonID);
-        const enemies = dungeon.mobs;
-        const target = getTarget(enemies, hero.target);
-        const battleMessage = new BattleMessage(dungeonID, hero, target);
-        this.executeAttack(hero,target,battleMessage);
+    launchAttack(attacker, allies, enemies, dungeonid) {
+        //clear buffs since it's for one round
+        attacker.parry = false;
+        attacker.armorBuff = false;
+        //clear buffs since it's for one round
+        if (attacker.stunned) {
+            attacker.stunned = false;
+            const battleMessage = `${attacker.name} is stunned and can't attack!`
+            BattleLog.addEntry(dungeonid,battleMessage);
+            return;
+        }
+        if (attacker.ap >= 100) this.specialAttack(attacker, allies, enemies, dungeonid);
+        else {
+            const target = getTarget(enemies, attacker.target);
+            this.normalAttack(attacker, target, dungeonid);
+        }
     },
-    mobAttack(mob, dungeonID) {
-        const dungeon = DungeonManager.dungeonByID(dungeonID);
-        const enemies = dungeon.party.heroes;
-        const target = getTarget(enemies, mob.target);
-        const battleMessage = new BattleMessage(dungeonID, mob, target);
-        this.executeAttack(mob, target, battleMessage);
+    specialAttack(attacker,allies,enemies, dungeonid) {
+        if (attacker.special === "parry") SAparry(attacker, dungeonid);
+        if (attacker.special === "armor") SAarmor(attacker, dungeonid);
+        if (attacker.special === "bloodlet") SAbloodLet(attacker, enemies, dungeonid);
+        if (attacker.special === "ravage") SAravage(attacker, enemies, dungeonid);
+        if (attacker.special === "blast") SAblast(attacker, enemies, dungeonid);
+        if (attacker.special === "meteor") SAmeteor(attacker, enemies, dungeonid);
+        if (attacker.special === "heal") SAheal(attacker, allies, dungeonid);
+        if (attacker.special === "massHeal") SAmassHeal(attacker, allies, dungeonid);
+        if (attacker.special === "sniper") SAsniper(attacker, enemies, dungeonid);
+        if (attacker.special === "double") SAdouble(attacker, enemies, dungeonid);
+        if (attacker.special === "amplify") SAamplify(attacker, enemies, dungeonid);
+        if (attacker.special === "stun") SAstun(attacker, enemies, dungeonid) //stun chance based off damage?
+        attacker.ap -= 100;
     },
-    executeAttack(attacker, defender, battleMessage) {
+    normalAttack(attacker, defender, dungeonid) {
+        let battleMessage = "";
         const critical = this.rollStat(attacker.crit);
-        battleMessage.critical = critical;
         let damage = attacker.getAdjPow();
-        if (critical) damage = Math.round(damage*attacker.critdmg);
-        if (attacker.ap >= 100) {
-            battleMessage.apAttack = true;
-            damage = Math.round(damage * 2);
-            attacker.ap -= 100;
+        if (critical) {
+            damage = Math.round(damage*attacker.critdmg);
+            battleMessage = "Critical! ";
         }
-        else attacker.addAP();
+        attacker.addAP();
         refreshAPBar(attacker);
-        battleMessage.damage = damage;
-        this.takeDamage(damage, defender, battleMessage);
+        battleMessage += `${attacker.name} attacks ${defender.name} for ${damage} damage!`
+        BattleLog.addEntry(dungeonid,battleMessage);
+        this.takeDamage(damage, defender, attacker, dungeonid);
     },
-    takeDamage(damage,defender,battleMessage) {
-        damage -= defender.armor;
-        battleMessage.damage = damage;
-        battleMessage.armor = defender.armor;
-        const dodge = this.rollStat(defender.dodgeChance);
-        battleMessage.dodge = dodge;
-        if (!dodge) {
-            defender.hp = Math.max(defender.hp - damage, 0);
+    takeDamage(damage, defender, attacker, dungeonid) {
+        if (defender.amplify) damage = Math.round(1.25 * damage);
+        let battleMessage = "";
+        if (defender.parry) {
+            defender.parry = false;
+            battleMessage = `${defender.name} parries the attack!`
+            BattleLog.addEntry(dungeonid,battleMessage);
+            const newdamage = Math.round(attacker.getAdjPow() * 1.2);
+            return this.takeDamage(newdamage, attacker, defender, dungeonid);
         }
-        battleMessage.defenderDead = defender.hp === 0;
+        const dodge = this.rollStat(defender.dodgeChance);
+        if (dodge) {
+            battleMessage = `${defender.name} dodges!`;
+            BattleLog.addEntry(dungeonid,battleMessage);
+            return;
+        }
+        if (defender.amplify) battleMessage = `${defender.name} takes an amplified ${Math.max(0,damage-defender.getArmor())} damage.`;
+        else battleMessage = `${defender.name} takes ${Math.max(0,damage-defender.getArmor())} damage.`;
+        if (defender.getArmor() > 0) battleMessage += ` (${defender.getArmor()} blocked)`;
+        damage = Math.max(0,damage - defender.getArmor())
+        defender.hp = Math.max(defender.hp - damage, 0);
+        if (defender.hp === 0) battleMessage += ` ${defender.name} died!`;
         refreshHPBar(defender);
-        BattleLog.addBattleLog(battleMessage);
+        BattleLog.addEntry(dungeonid,battleMessage);
+        defender.ignoredArmor = false;
     },
-    rollStat(critChance) {
-        return critChance > Math.floor(Math.random()*100) + 1
+    rollStat(stat) {
+        return stat > Math.floor(Math.random()*100) + 1
     },
 }
 
@@ -64,7 +93,8 @@ const $drLog = $("#drLog");
 const BattleLog = {
     log : [],
     logLength : settings.battleLogLength,
-    addLog(m) {
+    addEntry(dungeonid,m) {
+        if (dungeonid !== DungeonManager.dungeonView) return;
         if (this.log.length >= this.logLength) {
             this.log.shift();
         }
@@ -82,47 +112,6 @@ const BattleLog = {
     mobDrops(name,drops) {
         if (drops.length === 0) return;
         const dropnames = drops.map(m=>ResourceManager.idToMaterial(m).name);
-        this.addLog(`${name} dropped ${dropnames.join(", ")}`)
+        this.addEntry(`${name} dropped ${dropnames.join(", ")}`)
     },
-    addBattleLog(battleMessage) {
-        if (battleMessage.dungeonID !== DungeonManager.dungeonView) return;
-        this.addLog(battleMessage.message());
-    },
-}
-
-class BattleMessage {
-    constructor (dungeonID, attacker, defender, isHero) {
-        this.dungeonID = dungeonID;
-        this.isHero = isHero;
-        this.attacker = attacker;
-        this.defender = defender;
-        this.defenderDead = false;
-        this.critical = false;
-        this.apAttack = false;
-        this.damage = 0;
-    }
-    attackerDiv() {
-        const d = $("<div/>").addClass("blAttacker").html(this.attacker.name);
-        if (this.isHero) d.addClass("blHero");
-        return d
-    }
-    defenderDiv() {
-        const d = $("<div/>").addClass("blDefender").html(this.defender.name);
-        if (!this.isHero) d.addClass("blHero");
-        return d;
-    }
-    message() {
-        const attacker = this.attackerDiv();
-        const defender = this.defenderDiv();
-        const damage = $("<div/>").addClass("blDamage").html(`${this.damage} damage. `)
-        const message = $("<div/>").addClass("battleMessage").html(attacker);
-        if (this.critical) message.append(" crits ");
-        else message.append(" attacks ")
-        message.append(defender);
-        if (this.apAttack) message.append("for an enhanced ");
-        else message.append("for ");
-        message.append(damage);
-        if (this.defenderDead) message.append(" ",defender.clone()," died!");
-        return message;
-    }
 }

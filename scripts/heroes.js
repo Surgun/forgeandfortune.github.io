@@ -97,6 +97,11 @@ class Hero {
         if (save.maxHPseen !== undefined) this.maxHPseen = save.maxHPseen;
         this.owned = save.owned;
     }
+    getArmor() {
+        if (this.ignoredArmor) return 0;
+        if (this.armorBuff) return this.armor + Math.round(this.getAdjPow() * 0.2);
+        return this.armor;
+    }
     getPow() {
         let pow = levelCurves.getLvlStats(this.lvl).pow;
         if (this.slot1 !== null) pow += this.slot1.pow();
@@ -130,7 +135,7 @@ class Hero {
     }
     addAP() {
         if (this.slot1 === null) {
-            this.ap += 30;
+            this.ap += 50;
         }
         else {
             this.ap += this.slot1.apAdd;
@@ -139,12 +144,19 @@ class Hero {
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.maxHP());
         refreshHPBar(this);
-        updateHeroCounter()
+        updateHeroCounter();
     }
     healPercent(hpPercent) {
-        let hp = Math.floor(this.maxHP()*hpPercent/100);
-        hp = Math.max(1,hp);
-        this.heal(hp);
+        this.hp += Math.floor(this.maxHP()*hpPercent/100);
+        this.hp = Math.min(this.maxHP(),this.hp);
+        refreshHPBar(this);
+        updateHeroCounter();
+    }
+    damageCurrentPercent(dmgPercent) {
+        this.hp = Math.floor(this.hp*dmgPercent/100)
+        this.hp = Math.max(1,this.hp)
+        refreshHPBar(this);
+        updateHeroCounter();
     }
     dead() {
         return this.hp === 0;
@@ -470,7 +482,7 @@ function examineHero(ID) {
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
     upperRightDiv.append(htd.append(htd1));
-    const stats = [hero.maxHP(),hero.getPow(), hero.apmax, hero.armor, hero.crit+"%", hero.critdmg*100+"%", hero.dodgeChance+"%"];
+    const stats = [hero.maxHP(),hero.getPow(), hero.apmax, hero.getArmor(), hero.crit+"%", hero.critdmg*100+"%", hero.dodgeChance+"%"];
     const statName = ["MAX HP","POW","AP","ARMOR","CRIT","CRDMG","DODGE"];
     for (let i=0;i<stats.length;i++) {
         upperRightDiv.append(statRow(statName[i],stats[i]));

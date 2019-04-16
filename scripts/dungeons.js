@@ -85,17 +85,17 @@ class Dungeon {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
-        while (this.dungeonTime >= 750) {
+        while (this.dungeonTime >= 3000) {
             const unit = this.order.nextTurn();
-            if (unit.unitType === "hero") CombatManager.heroAttack(unit,this.id);
-            else CombatManager.mobAttack(unit,this.id);
+            if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
+            else CombatManager.launchAttack(unit, this.mobs, this.party.heroes, this.id);
             this.order.nextPosition();
             this.checkDeadMobs();
             if (this.party.isDead()) {
                 this.resetDungeon();
                 return;
             }
-            this.dungeonTime -= 750;
+            this.dungeonTime -= 3000;
             refreshTurnOrder();
         }
     }

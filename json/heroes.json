@@ -23,7 +23,8 @@
     ],
     "slot6Type": [
       "Rings"
-    ]
+    ],
+    "special": "armor"
   },
   {
     "id": "H002",
@@ -49,7 +50,8 @@
     ],
     "slot6Type": [
       "Belts"
-    ]
+    ],
+    "special": "parry"
   },
   {
     "id": "H003",
@@ -78,7 +80,8 @@
     ],
     "slot6Type": [
       "Pendants"
-    ]
+    ],
+    "special": "bloodlet"
   },
   {
     "id": "H004",
@@ -107,7 +110,8 @@
     ],
     "slot6Type": [
       "Potions"
-    ]
+    ],
+    "special": "ravage"
   },
   {
     "id": "H101",
@@ -133,7 +137,8 @@
     ],
     "slot6Type": [
       "Pendants"
-    ]
+    ],
+    "special": "meteor"
   },
   {
     "id": "H102",
@@ -159,7 +164,8 @@
     ],
     "slot6Type": [
       "Earrings"
-    ]
+    ],
+    "special": "blast"
   },
   {
     "id": "H103",
@@ -185,7 +191,8 @@
     ],
     "slot6Type": [
       "Rings"
-    ]
+    ],
+    "special": "heal"
   },
   {
     "id": "H104",
@@ -211,7 +218,8 @@
     ],
     "slot6Type": [
       "Instruments"
-    ]
+    ],
+    "special": "massHeal"
   },
   {
     "id": "H201",
@@ -237,7 +245,8 @@
     ],
     "slot6Type": [
       "Instruments"
-    ]
+    ],
+    "special": "amplify"
   },
   {
     "id": "H202",
@@ -263,7 +272,8 @@
     ],
     "slot6Type": [
       "Belts"
-    ]
+    ],
+    "special": "sniper"
   },
   {
     "id": "H203",
@@ -289,7 +299,8 @@
     ],
     "slot6Type": [
       "Earrings"
-    ]
+    ],
+    "special": "double"
   },
   {
     "id": "H204",
@@ -315,6 +326,7 @@
     ],
     "slot6Type": [
       "Potions"
-    ]
+    ],
+    "special": "stun"
   }
 ]

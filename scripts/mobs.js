@@ -66,7 +66,6 @@ const FloorManager = {
     getFloor(dungeon,floor) {
         const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
         const rand = DungeonSeedManager.getFloorSeed(dungeon,floor);
-        console.log(rand)
         return possibleFloors[Math.floor(rand*possibleFloors.length)];
     }
 }
@@ -104,6 +103,11 @@ class Mob {
     }
     getAdjPow() {
         return this.getPow();
+    }
+    getArmor() {
+        if (this.ignoredArmor) return 0;
+        if (this.armorBuff) return this.armor + Math.round(this.getAdjPow() * 0.2);
+        return this.armor;
     }
     pic() {
         return this.image;

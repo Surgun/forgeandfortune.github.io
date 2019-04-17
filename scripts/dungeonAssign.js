@@ -230,6 +230,7 @@ function initiateDungeonFloor() {
         const d4c = $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung"));
         const d4d = $("<div/>").addClass("dsmAP").html(createAPBar(mob,"Dung"));
         d4.append(d4a,d4b,d4c,d4d);
+        if (mob.apAdd === 0) d4d.hide();
         $drStatsMob.prepend(d4);
     });
     refreshTurnOrder();

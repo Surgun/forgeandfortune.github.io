@@ -64,6 +64,11 @@ body.lightmode {
 
 /* Scrollbar */
 
+#side-content, #RecipeFilter, #right-side-content, .dialog_body, #recipes-list, #inventory-container, .workerList-container, #heroList, .heroTabContent, #dungeon-container, #dungeonCloseup, #drTurnOrder, #drLog, #townContainer, #eventContainer, #eventListContainer, #progresslist {
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+    scrollbar-width: thin;
+}
+
 ::-webkit-scrollbar-thumb {
     background-color: var(--scroll-thumb);
     border-radius: 20px;
@@ -145,7 +150,7 @@ body {
 }
 
 .dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container {
-    font-family: 'Varela Round', 'Open Sans', sans-serif;    
+    font-family: 'Varela Round', 'Open Sans', sans-serif;
 }
 
 /* General Content */

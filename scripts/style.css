@@ -404,7 +404,7 @@ body {
     width: 100%;
 }
 
-.invActionButton, #sortBank, #sortInventoryBank, .recipeActionButton {
+.invActionButton, #sortBank, #sortInventoryBank, .recipeActionButton, .dungeonSpeedButtons {
     position: relative;
     display: flex;
     justify-content: center;
@@ -419,7 +419,7 @@ body {
     animation: 0.2s scale-in forwards;
 }
 
-.invActionButton:hover, #sortBank:hover, #sortInventoryBank:hover, .recipeActionButton:hover, .recipeSortInput:hover {
+.invActionButton:hover, #sortBank:hover, #sortInventoryBank:hover, .recipeActionButton:hover, .recipeSortInput:hover, .dungeonSpeedButtons:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -430,6 +430,27 @@ body {
 
 .invActionButton > span {
     margin-left: 5px;
+}
+
+#dungeonSpeed {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.dungeonSpeedButtons {
+    background-color: rgba(255,255,255,.15);
+    padding: 10px 15px;
+}
+
+.dungeonSpeedButtons:hover {
+    background-color: rgba(255,255,255,.25);
+}
+
+.dungeonSpeedActive, .dungeonSpeedActive:hover {
+    background-color: var(--green-tertiary);
 }
 
 #inventory, #ietEquip, #ietHero {
@@ -1276,6 +1297,29 @@ Rarities
     grid-auto-rows: auto;
     grid-gap: 10px;
     margin: 10px 20px 10px 10px;
+}
+
+.recipeActionButton.filterActive {
+    color: var(--highlight);
+    padding-right: 25px;
+}
+
+.recipeActionButton .filterStatus > i {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.recipeActionButton.filterActive .filterStatus > i {
+    opacity: 1;
+}
+
+.recipeActionButton.filterActive.toggleFilter .filterStatus > i {
+    top: 13px;
+    transform: rotateZ(-180deg);
 }
 
 .brecipeTable {

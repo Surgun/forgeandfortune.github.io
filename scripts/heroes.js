@@ -2,24 +2,10 @@
 
 const $heroTab = $("#heroTab");
 
-const levelCurves = { 
-    getLvlStats(lvl) {
-        return {xp:this.xpCurve[lvl-1],hp:this.hpCurve[lvl-1],pow:this.powCurve[lvl-1]};
-    },
-    initialize() {
-        this.xpCurve = miscLoadedValues.xpCurve.slice();
-        this.hpCurve = miscLoadedValues.hpCurve.slice();
-        this.powCurve = miscLoadedValues.powCurve.slice();
-    },
-}
-
 class Hero {
     constructor (props) {
         Object.assign(this, props);
         this.uniqueid = this.id;
-        this.lvl = 1;
-        this.xp = 0;
-        this.hp = levelCurves.getLvlStats(this.lvl).hp;
         this.maxHPseen = this.hp;
         this.ap = 0;
         this.apmax = 100;
@@ -43,8 +29,6 @@ class Hero {
     createSave() {
         const save = {};
         save.id = this.id;
-        save.lvl = this.lvl;
-        save.xp = this.xp;
         save.hp = this.hp;
         save.ap = this.ap;
         save.maxHPseen = this.maxHPseen;
@@ -65,8 +49,6 @@ class Hero {
         return save;
     }
     loadSave(save) {
-        this.lvl = save.lvl;
-        this.xp = save.xp;
         this.hp = save.hp;
         this.ap = save.ap;
         this.inDungeon = save.inDungeon;
@@ -103,7 +85,7 @@ class Hero {
         return this.armor;
     }
     getPow() {
-        let pow = levelCurves.getLvlStats(this.lvl).pow;
+        let pow = this.initialPow;
         if (this.slot1 !== null) pow += this.slot1.pow();
         if (this.slot2 !== null) pow += this.slot2.pow();
         if (this.slot3 !== null) pow += this.slot3.pow();
@@ -135,7 +117,7 @@ class Hero {
     }
     addAP() {
         if (this.slot1 === null) {
-            this.ap += 50;
+            this.ap += 30;
         }
         else {
             this.ap += this.slot1.apAdd;
@@ -207,11 +189,8 @@ class Hero {
     getSlot(slot) {
         return this.getEquipSlots()[slot];
     }
-    maxXP() {
-        return levelCurves.getLvlStats(this.lvl).xp;
-    }
     maxHP() {
-        let hp = levelCurves.getLvlStats(this.lvl).hp;
+        let hp = this.initialHP;
         if (this.slot1 !== null) hp += this.slot1.hp();
         if (this.slot2 !== null) hp += this.slot2.hp();
         if (this.slot3 !== null) hp += this.slot3.hp();
@@ -219,25 +198,6 @@ class Hero {
         if (this.slot5 !== null) hp += this.slot5.hp();
         if (this.slot6 !== null) hp += this.slot6.hp();
         return hp;
-    }
-    addXP(xp) {
-        if (this.dead() || this.xp === this.maxXP()) return;
-        this.xp = Math.min(this.xp + xp,this.maxXP());
-        if (this.xp === this.maxXP()) initializeHeroList();
-        if (HeroManager.heroView !== this.id) return;
-        $(".heroExamineExp").html(`Exp: ${this.xp}/${this.maxXP()}`)
-        if (this.xp === this.maxXP()) {        
-            $(".heroExamineLvlButton").show();
-            $(".heroExamineExp").hide();
-        }
-    }
-    levelup() {
-        this.lvl += 1;
-        this.xp = 0;
-        this.checkHealth();
-        refreshProgress();
-        initializeHeroList();
-        examineHero(this.id);
     }
     unequip(slot) {
         if (Inventory.full()) {
@@ -266,7 +226,7 @@ class Hero {
         if (this.slot6Type.includes(type)) return this.slot6;
     }
     healCost() {
-        return Math.floor(Math.pow(1.07, (this.lvl-1))*(this.maxHP()-this.hp)/miscLoadedValues.hltFactor);
+        return Math.floor(Math.pow(1.05, (this.maxHP()-this.hp)/miscLoadedValues.hltFactor));
     }
     healPay() {
         const amt = this.healCost();
@@ -398,15 +358,6 @@ const HeroManager = {
         refreshHeroSelect();
         updateHeroCounter();
     },
-    heroLevelCount() {
-        return this.heroes.filter(w=>w.owned).map(w=>w.lvl).reduce((a,b) => a+b,0);
-    },
-    heroMaxLevelCount() {
-        return this.heroes.length*50;
-    },
-    heroLevel(hero) {
-        return `<div class="level_text">LVL</div><div class="level_integer">${hero.lvl}</div>`;
-    },
     heroPower(hero) {
         return `<div class="pow_img">${miscIcons.pow}</div><div class="pow_interger">${hero.getPow()}</div>`
     },
@@ -425,9 +376,6 @@ const HeroManager = {
         });
         return results;
     },
-    levelup(heroID) {
-        this.idToHero(heroID).levelup();
-    }
 }
 
 const $heroList = $("#heroList");
@@ -436,12 +384,10 @@ function initializeHeroList() {
     $heroList.empty();
     HeroManager.heroes.forEach(hero => {
         const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",hero.id);
-        if (hero.xp === hero.maxXP()) d.addClass("hasEvent");
         const d1 = $("<div/>").addClass("heroOwnedImage").html(hero.head);
         const d2 = $("<div/>").addClass("heroOwnedName").html(hero.name);
-        const d3 = $("<div/>").addClass("heroLevel").html(HeroManager.heroLevel(hero));
-        const d4 = $("<div/>").addClass("heroPower").html(HeroManager.heroPower(hero));
-        d.append(d1,d2,d3,d4);
+        const d3 = $("<div/>").addClass("heroPower").html(HeroManager.heroPower(hero));
+        d.append(d1,d2,d3);
         if (!hero.owned) d.hide();
         $heroList.append(d);
     });
@@ -454,8 +400,6 @@ function initializeHeroList() {
         bh1.append(bh2,bh3,bh4);
         $heroList.append(bh1);
     }
-    if (!HeroManager.heroes.some(h=>h.xp === h.maxXP())) $heroTab.removeClass("hasEvent");
-    else $heroTab.addClass("hasEvent");
 }
 
 const $heroDetails = $("#heroDetails");
@@ -468,16 +412,8 @@ function examineHero(ID) {
     const upperLeftDiv = $("<div/>").addClass("heroExamineTop");
     const d1 = $("<div/>").addClass("heroExamineImage").html(hero.image);
     const d2 = $("<div/>").addClass("heroExamineName").html(hero.name);
-    const d3 = $("<div/>").addClass("heroExamineLvlClass").html("Lv&nbsp;"+hero.lvl+"&nbsp;"+hero.class);
-    const d4 = $("<div/>").addClass("heroExamineExp").html(`Exp: ${hero.xp}/${hero.maxXP()}`);
-    const d4a = $("<div/>").addClass("heroExamineLvlButton").attr("heroID",hero.id).html("LEVEL UP");
-    if (hero.lvl === 50) {
-        d4.hide();
-        d4a.hide();
-    }
-    if (hero.xp === hero.maxXP()) d4.hide();
-    else d4a.hide();
-    upperLeftDiv.append(d1,d2,d3,d4,d4a);
+    const d3 = $("<div/>").addClass("heroExamineLvlClass").html(hero.class);
+    upperLeftDiv.append(d1,d2,d3);
     const upperRightDiv = $("<div/>").addClass("heroExamineStats");
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
@@ -658,12 +594,6 @@ $(document).on('click', "div.EHPErow", (e) => {
 $(document).on('click', ".buyNewHeroCard", (e) => {
     e.preventDefault();
     HeroManager.purchaseHero();    
-})
-
-$(document).on('click', ".heroExamineLvlButton", (e) => {
-    e.preventDefault();
-    const heroID = $(e.currentTarget).attr("heroID");
-    HeroManager.levelup(heroID);
 })
 
 $(document).on('click', ".heroTab", (e) => {

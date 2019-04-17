@@ -10,7 +10,6 @@ function loadMisc() {
                 miscLoadedValues[name] = val;
             })
         });
-        levelCurves.initialize();
         loadMaterials();
     });
 }

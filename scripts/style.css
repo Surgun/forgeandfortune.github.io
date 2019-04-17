@@ -404,7 +404,7 @@ body {
     width: 100%;
 }
 
-.invActionButton, #sortBank, #sortInventoryBank, .recipeActionButton {
+.invActionButton, #sortBank, #sortInventoryBank, .recipeActionButton, .dungeonSpeedButtons {
     position: relative;
     display: flex;
     justify-content: center;
@@ -419,7 +419,7 @@ body {
     animation: 0.2s scale-in forwards;
 }
 
-.invActionButton:hover, #sortBank:hover, #sortInventoryBank:hover, .recipeActionButton:hover, .recipeSortInput:hover {
+.invActionButton:hover, #sortBank:hover, #sortInventoryBank:hover, .recipeActionButton:hover, .recipeSortInput:hover, .dungeonSpeedButtons:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -430,6 +430,27 @@ body {
 
 .invActionButton > span {
     margin-left: 5px;
+}
+
+#dungeonSpeed {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.dungeonSpeedButtons {
+    background-color: rgba(255,255,255,.15);
+    padding: 10px 15px;
+}
+
+.dungeonSpeedButtons:hover {
+    background-color: rgba(255,255,255,.25);
+}
+
+.dungeonSpeedActive, .dungeonSpeedActive:hover {
+    background-color: var(--green-tertiary);
 }
 
 #inventory, #ietEquip, #ietHero {

@@ -147,6 +147,18 @@ class Item{
 
 $(document).on("click",".recipeActionButton",(e) => {
     e.preventDefault();
+    const recipeButtons = document.querySelectorAll(".recipeActionButton");
+    if (e.currentTarget.classList.contains("toggleFilter")) {
+        e.currentTarget.classList.remove("toggleFilter");
+    } else if (e.currentTarget.classList.contains("filterActive")) {
+        e.currentTarget.classList.add("toggleFilter");
+    } else {
+        recipeButtons.forEach((button)=>{
+            button.classList.remove("filterActive");
+            button.classList.remove("toggleFilter");
+        });
+        e.currentTarget.classList.add("filterActive");
+    }
     const filter = e.currentTarget.getAttribute("data-filter");
     sortRecipesByHeading(filter);
     recipeCanCraft();

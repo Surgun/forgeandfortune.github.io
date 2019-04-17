@@ -1278,6 +1278,29 @@ Rarities
     margin: 10px 20px 10px 10px;
 }
 
+.recipeActionButton.filterActive {
+    color: var(--highlight);
+    padding-right: 25px;
+}
+
+.recipeActionButton .filterStatus > i {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.recipeActionButton.filterActive .filterStatus > i {
+    opacity: 1;
+}
+
+.recipeActionButton.filterActive.toggleFilter .filterStatus > i {
+    top: 13px;
+    transform: rotateZ(-180deg);
+}
+
 .brecipeTable {
     margin: 10px 40px 10px 10px;
     grid-template: auto / repeat(auto-fill, minmax(275px, 1fr));

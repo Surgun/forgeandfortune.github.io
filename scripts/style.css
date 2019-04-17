@@ -80,7 +80,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardContainer, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardContainer, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -88,7 +88,7 @@ body.lightmode {
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard, .orderUnit {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     -ms-box-shadow: var(--box-shadow);
@@ -134,7 +134,7 @@ body {
 
 /* Font Stack */
 
-#Actions > h1, .heading, .tab-heading, footer,  #progresslist, .tablinks, .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes, .ASBlock, #dungeon-container, .lighttheme-btn.tooltip:after, .itemSac, .BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after, .WorkerDesc:after {
+#Actions > h1, .heading, .tab-heading, footer,  #progresslist, .tablinks, .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes, .ASBlock, .lighttheme-btn.tooltip:after, .itemSac, .BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after, .WorkerDesc:after {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
@@ -144,7 +144,7 @@ body {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container {
     font-family: 'Varela Round', 'Open Sans', sans-serif;    
 }
 
@@ -2905,9 +2905,10 @@ Rarities
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
+    border-radius: 10px;
 }
 
 .dsm {
@@ -2932,12 +2933,31 @@ Rarities
 
 .drTurnOrderLogContainer {
     display: grid;
-    grid-template: auto / 1fr 1fr;
+    grid-template: auto 1fr / 1fr 1fr;
     justify-content: center;
     align-items: start;
     height: 100%;
-    border-top: 1px solid var(--border-primary);
+    border-top: 2px solid var(--border-primary);
     overflow: auto;
+}
+
+.drTurnOrderLogTitles {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--bg-primary);
+    border-bottom: 2px solid var(--border-primary);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+
+.drTurnOrderLogTitles h2 {
+    font-weight: normal;
+}
+
+.drTurnOrderLogTitles h2 > i {
+    margin-right: 5px;
 }
 
 #drTurnOrder {

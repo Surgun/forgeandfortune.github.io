@@ -172,12 +172,11 @@ function characterCard(prefix,dv,ID) {
     const hero = HeroManager.idToHero(ID);
     const d1 = $("<div/>").addClass(prefix+"Image").html(hero.image);
     const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
-    const d3 = $("<div/>").addClass(prefix+"Lvl").html("Level "+hero.lvl);
     const d4 = $("<div/>").addClass(prefix+"Pow").html(miscIcons.pow+"&nbsp;"+hero.getPow())
     const d5 = createHPBar(hero,"Party");    
     const d6 = $("<div/>").addClass("healHero").attr("id","hh"+hero.uniqueid).html(`Heal - <div class="healHeroCost">${miscIcons.gold} ${hero.healCost()}</div>`);
     if (hero.healCost() === 0) d6.hide();
-    dclick.append(d1,d2,d3,d4,d5);
+    dclick.append(d1,d2,d4,d5);
     return d.append(dclick,d6);
 }
 

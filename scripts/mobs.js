@@ -128,7 +128,6 @@ class Mob {
         if (this.hp > 0 || this.status === MobState.DEAD) return;
         this.status = MobState.DEAD;
         this.rollDrops();
-        party.addXP(this.lvl);
     }
     rollDrops() {
         const mobDrops = [];

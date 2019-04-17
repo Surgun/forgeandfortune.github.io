@@ -22,11 +22,6 @@ class Party {
     isDead() {
         return this.heroes.every(hero => hero.dead());
     }
-    addXP(xp) {
-        this.heroes.forEach(hero => {
-            hero.addXP(xp);
-        });
-    }
     addTime(t) {
         this.heroes.forEach(h=> {
             h.addTime(t, dungeonID);

@@ -97,7 +97,7 @@ class Dungeon {
                 return;
             }
             this.dungeonTime -= DungeonManager.speed;
-            refreshTurnOrder();
+            if (this.id === DungeonManager.dungeonView) refreshTurnOrder();
         }
     }
     checkDeadMobs() {
@@ -129,6 +129,7 @@ class Dungeon {
             openTab("dungeonsTab");
         }
         initializeSideBarDungeon();
+        refreshDungeonSelect();
         BattleLog.clear();
         this.status = DungeonStatus.EMPTY;
         this.order = null;
@@ -147,6 +148,8 @@ class Dungeon {
         this.floorCount += 1;
         this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
         this.order = new TurnOrder(this.party.heroes,this.mobs);
+        $("#floorStatus"+this.id).html(`Floor ${this.floorCount}`);
+        $("#DungeonSideBarStatus").html(`${this.name} - Floor ${this.floorCount}`);
     }
 }
 

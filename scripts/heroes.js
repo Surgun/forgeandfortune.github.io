@@ -11,6 +11,8 @@ class Hero {
         this.apmax = 100;
         this.armor = 0;
         this.crit = 5;
+        this.hp = this.initialHP;
+        this.pow = this.initialPow;
         this.critdmg = 2;
         this.dodgeChance = 0;
         this.target = "first";
@@ -260,7 +262,6 @@ class Hero {
 const HeroManager = {
     heroes : [],
     heroOrder : [],
-    healTime : 0,
     heroView : null,
     addHero(hero) {
         this.heroes.push(hero);
@@ -320,22 +321,6 @@ const HeroManager = {
     },
     ownedHeroes() {
         return this.heroes.filter(hero => hero.owned);
-    },
-    healTimer(ms) {
-        //once it reaches 6 seconds, heals all non-active party members 1%
-        this.healTime += ms;
-        if (this.healTime >= 6000) {
-            this.healTime -= 6000;
-            this.restBeat();
-            refreshHealPartyCost();
-        }
-    },
-    restBeat() {
-        //heal up all non-current partying members by 1% of their maxhp
-        this.heroes.forEach(hero => {
-            if (hero.inDungeon) return;
-            hero.heal(2);
-        });
     },
     relativePow(heroID,slot,pow) {
         const hero = this.idToHero(heroID);

@@ -122,12 +122,6 @@ function refreshHeroSelect() {
     $dtsBottom.append(d2);
 }
 
-function refreshHealPartyCost() {
-    const button = $("#dungeonTeamHeal");
-    button.html(`Heal Party - <div class="healHeroCost">${miscIcons.gold} ${PartyCreator.healCost()}</div>`);
-    if (PartyCreator.noheal()) button.hide();
-}
-
 const $dungeonListings = $("#dungeonListings");
 
 function refreshDungeonSelect() {
@@ -137,10 +131,17 @@ function refreshDungeonSelect() {
         const d1 = $("<div/>").addClass("dungeonContainer").attr("id",dungeon.id);
         const d2 = $("<div/>").addClass("dungeonHeader").html(dungeon.name);
         const d3 = $("<div/>").addClass("dungeonStatus").attr("id","ds"+dungeon.id);
-        if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").html("In Progress");
+        if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").attr("id", "floorStatus"+dungeon.id).html(`Floor ${dungeon.floorCount}`);
         else d3.removeClass("dungeonInProgress").html("Idle");
         const d4 = $("<div/>").addClass("dungeonBackground");
-        d1.append(d2,d3,d4);
+        const d5 = $("<div/>").addClass("dungeonAdventurers");
+        d1.append(d2,d3,d4,d5);
+        if (dungeon.status === DungeonStatus.ADVENTURING) {
+            dungeon.party.heroes.forEach(h=> {
+                const d5a = $("<div/>").addClass("dungeonHeroDungeonSelect").html(h.head);
+                d5.append(d5a);
+            });
+        }
         $dungeonListings.append(d1);
     })
 }
@@ -170,14 +171,6 @@ const $dungeonMobList = $("#dungeonMobList");
 const $drStatsHero = $("#drStatsHero");
 const $drStatsMob = $("#drStatsMob");
 const $drTurnOrder = $("#drTurnOrder");
-
-function floorStateChange(dungeonID) {
-    const dungeon = DungeonManager.dungeonByID(dungeonID);
-    if (dungeonID === DungeonManager.dungeonView) {
-        initiateDungeonFloor();
-    }
-    $("#DungeonSideBarStatus").html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
-}
 
 function initiateDungeonFloor() {
     const dungeon = DungeonManager.getCurrentDungeon();

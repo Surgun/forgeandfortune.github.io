@@ -98,7 +98,6 @@ function mainLoop() {
     FusionManager.addTime(elapsedTime);
     bloopSmith.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
-    HeroManager.healTimer(elapsedTime);
     FortuneManager.resetFortune();
     if (TownManager.purgeSlots) {
         actionSlotManager.removeBldgSlots();

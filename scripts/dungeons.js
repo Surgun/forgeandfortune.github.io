@@ -85,6 +85,7 @@ class Dungeon {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
+        refreshBeatBar(this.dungeonTime);
         while (this.dungeonTime >= DungeonManager.speed) {
             const unit = this.order.nextTurn();
             if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
@@ -120,6 +121,7 @@ class Dungeon {
         this.party.heroes.forEach(h=>{
             h.inDungeon = false;
             h.ap = 0;
+            h.hp = h.maxHP()
         });
         EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorCount);
         DungeonManager.removeDungeon(this.id);

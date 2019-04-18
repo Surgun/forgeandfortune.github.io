@@ -91,19 +91,6 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
     }
 });
 
-//pay for heal
-$(document).on('click', ".healHero", (e) => {
-    e.preventDefault();
-    const ID = $(e.currentTarget).attr("id").substring(2);
-    HeroManager.idToHero(ID).healPay();
-});
-
-$(document).on('click',"#dungeonTeamHeal", (e) => {
-    e.preventDefault();
-    PartyCreator.payHealPart();
-    refreshHealPartyCost();
-});
-
 function refreshHeroSelect() {
     //builds the div that we hide and can show when we're selecting for that area
     $dtsTop.empty();
@@ -120,10 +107,8 @@ function refreshHeroSelect() {
     }
     $dtsTop.append(d);
     const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("Launch Adventure");
-    const dbutton2 = $("<div/>").attr("id","dungeonTeamHeal").html(`Heal Party - <div class="healHeroCost">${miscIcons.gold} ${PartyCreator.healCost()}</div>`);
     if (PartyCreator.heroes.length === 0) dbutton.addClass('dungeonStartNotAvailable')
-    if (PartyCreator.noheal()) dbutton2.hide();
-    $dtsTop.append(dbutton, dbutton2);
+    $dtsTop.append(dbutton);
     $dtsBottom.empty();
     const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Your Available Heroes</h3>");
     $dtsBottom.append(d1bot);
@@ -172,12 +157,11 @@ function characterCard(prefix,dv,ID) {
     const hero = HeroManager.idToHero(ID);
     const d1 = $("<div/>").addClass(prefix+"Image").html(hero.image);
     const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
-    const d4 = $("<div/>").addClass(prefix+"Pow").html(miscIcons.pow+"&nbsp;"+hero.getPow())
-    const d5 = createHPBar(hero,"Party");    
-    const d6 = $("<div/>").addClass("healHero").attr("id","hh"+hero.uniqueid).html(`Heal - <div class="healHeroCost">${miscIcons.gold} ${hero.healCost()}</div>`);
-    if (hero.healCost() === 0) d6.hide();
-    dclick.append(d1,d2,d4,d5);
-    return d.append(dclick,d6);
+    const d3 = $("<div/>").addClass(prefix+"Pow").html(`${miscIcons.pow} ${hero.getPow()}`);
+    const d4 = $("<div/>").addClass(prefix+"HP").html(`${miscIcons.hp} ${hero.maxHP()}`);
+    const d5 = $("<div/>").addClass(prefix+"HP").html(`${miscIcons.ap} ${hero.apmax}`);
+    dclick.append(d1,d2,d3,d4,d5);
+    return d.append(dclick);
 }
 
 const $floorID = $("#floorID");
@@ -246,8 +230,7 @@ function refreshTurnOrder() {
         const d1b = $("<div/>").addClass("orderUnitHead").html(unit.name);
         d1.append(d1a,d1b);
         if (dungeon.order.position === i) {
-            const d1c = $("<div/>").addClass("unitActive").html("(Next)");
-            d1.addClass("orderUnitActive").append(d1c);
+            d1.addClass("orderUnitActive").append(createBeatBar(dungeon.dungeonTime));
         };
         $drTurnOrder.append(d1);
     });
@@ -287,6 +270,19 @@ function createHPBar(hero,tag) {
     const d1a = $("<div/>").addClass("hpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hp"+tag+hero.uniqueid);
     const s1 = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+tag+hero.uniqueid).css('width', hpWidth);
     return d1.append(d1a,s1);
+}
+
+function createBeatBar(dungeonTime) {
+    const beatWidth = (dungeonTime/DungeonManager.speed*100).toFixed(1)+"%";
+    const d1 = $("<div/>").addClass("beatBarDiv");
+    const s1 = $("<span/>").addClass("beatBarFill").attr("id","beatbar").css('width', beatWidth);
+    return d1.append(s1);
+}
+
+function refreshBeatBar(dungeonTime) {
+    const beatFill = $("#beatbar");
+    const beatWidth = (dungeonTime/DungeonManager.speed*100).toFixed(1)+"%";
+    beatFill.css('width',beatWidth);
 }
 
 function createAPBar(hero) {

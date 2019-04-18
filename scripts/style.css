@@ -2612,7 +2612,8 @@ Rarities
 .dungeonContainer {
     position: relative;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
     text-align: center;
     padding: 15px;
     cursor: pointer;
@@ -2695,6 +2696,24 @@ Rarities
 #dungeonTeamSelect {
     -webkit-animation: 0.2s fade-in;
     animation: 0.2s fade-in;
+}
+
+.dungeonAdventurers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dungeonHeroDungeonSelect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2.5px;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
 }
 
 #dungeonRun {

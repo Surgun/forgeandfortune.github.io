@@ -3167,7 +3167,7 @@ Rarities
     margin: 0 2px;
 }
 
-.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv  {
     position: relative;
     display: flex;
     align-items: center;
@@ -3217,7 +3217,7 @@ Rarities
     z-index: 0;
 }
 
-.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill, #swFill, .masteryBarFill {
+.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill {
     display: block;
     position: relative;
     height: 100%;
@@ -3466,7 +3466,7 @@ Rarities
     padding: 10px 0;
 }
 
-.fuseBarDiv, #swBarDiv, .masteryBarDiv {
+.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv  {
     width: 100%;
     height: 26px;
     line-height: 26px;
@@ -3498,7 +3498,7 @@ Rarities
     bottom: 50%;
 }
 
-.fuseBarFill, #swFill, .masteryBarFill {
+.fuseBarFill, #swFill, .masteryBarFill, .beatBarFill {
     background-color: rgba(255,255,255,0.15);
 }
 

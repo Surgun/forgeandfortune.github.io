@@ -85,7 +85,12 @@ class Dungeon {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
-        refreshBeatBar(this.dungeonTime);
+        if (this.floorComplete() && this.dungeonTime >= DungeonManager.speed) {
+            this.nextFloor();
+            initiateDungeonFloor();
+            this.dungeonTime -= DungeonManager.speed;
+        }
+        else if (!this.floorComplete()) refreshBeatBar(this.dungeonTime);
         while (this.dungeonTime >= DungeonManager.speed) {
             const unit = this.order.nextTurn();
             if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
@@ -100,6 +105,9 @@ class Dungeon {
             if (this.id === DungeonManager.dungeonView) refreshTurnOrder();
         }
     }
+    floorComplete() {
+        return this.mobs.every(m=>m.looted());
+    }
     checkDeadMobs() {
         let needrefresh = false;
         this.mobs.forEach(mob => {
@@ -108,10 +116,10 @@ class Dungeon {
                 needrefresh = true;
             }
         })
-        if (this.mobs.every(m=>m.dead())) {
+        /*if (this.mobs.every(m=>m.dead())) {
             this.nextFloor();
             needrefresh = true;
-        }
+        }*/
         if (needrefresh) initiateDungeonFloor();
     }
     initializeParty(party) {

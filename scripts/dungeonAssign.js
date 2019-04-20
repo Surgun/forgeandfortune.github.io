@@ -35,6 +35,13 @@ $(document).on("click", ".dungeonSpeedButtons", (e) => {
     if (id === "dungeonSpeedFast") DungeonManager.speed = 750;
 });
 
+function refreshSpeedButton(speed) {
+    $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
+    if (speed === 3000) $("#dungeonSpeedSlow").addClass("dungeonSpeedActive");
+    if (speed === 1500) $("#dungeonSpeedNormal").addClass("dungeonSpeedActive");
+    if (speed === 750) $("#dungeonSpeedFast").addClass("dungeonSpeedActive");
+};
+
 //click on a dungeon to start making a team!
 $(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();

@@ -244,7 +244,6 @@ turnOrderSettings.forEach((selection) => {
 
 function assignTurnOrderPref(e) {
     const option = e.target.getAttribute("value");
-    console.log(e.target)
     turnOrderSettings.forEach((selection) => {
         selection.querySelector("input").removeAttribute("checked")
     });

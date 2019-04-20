@@ -206,7 +206,7 @@ function refreshTurnOrder() {
     dungeon.order.getOrder().forEach((unit,i) => {
         const d1 = $("<div/>").addClass("orderUnit");
         if (unit.dead()) d1.addClass("orderUnitDead");
-        const d1a = $("<div/>").addClass("orderUnitHead").html(unit.head);
+        const d1a = $("<div/>").addClass("orderUnitHeadImg").html(unit.head);
         const d1b = $("<div/>").addClass("orderUnitHead").html(unit.name);
         const d1c = $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder"));
         const d1d = $("<div/>").addClass("orderUnitAP").html(createAPBar(unit,"turnOrder"));

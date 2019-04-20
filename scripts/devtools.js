@@ -26,6 +26,9 @@ const devtools = {
         forceSave();
         location.replace('/');
     },
+    hyperSpeed() {
+        DungeonManager.speed = 50;
+    },
     materials : function() {
         ResourceManager.materials.forEach(material => {
             ResourceManager.addMaterial(material.id,10000);

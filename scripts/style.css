@@ -3005,9 +3005,7 @@ Rarities
     border-radius: 10px;
 }
 
-.orderUnit.orderUnitActive {
-    background-color: var(--border-primary);
-    border-color: var(--border-tertiary);
+.orderUnitActive .orderUnitHead {
     color: var(--highlight);
 }
 
@@ -3021,7 +3019,6 @@ Rarities
 }
 
 .orderUnitHP, .orderUnitAP {
-    /*display: none;*/ /* TEMP: Include option to hide in settings */
     width: 100%;
 }
 
@@ -3521,6 +3518,8 @@ Rarities
     height: 100%;
     margin: 0;
     pointer-events: none;
+    background-color: transparent;
+    overflow: hidden;
 }
 
 .masteryBarDiv {
@@ -3532,19 +3531,12 @@ Rarities
     margin-top: 5px;
 }
 
-/* .fuseBar:before, #swBar:before, .masteryBar:before {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    left: unset;
-    top: 55%;
-    bottom: 50%;
-} */
-
 .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill {
     background-color: rgba(255,255,255,0.15);
+}
+
+.beatBarFill {
+    background-color: rgba(255,255,255,0.1);
 }
 
 .possibleFuseHead {

@@ -194,8 +194,9 @@ function initiateDungeonFloor() {
         const d9 = $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung"));
         const d10 = $("<div/>").addClass("dsmAP").html(createAPBar(mob,"Dung"));
         d6.append(d7,d8,d9,d10);
-        if (mob.hp === 0) d3.addClass("mobDead");
+        if (mob.hp === 0) d6.addClass("mobDead");
         if (mob.apAdd === 0) d10.hide();
+        $dungeonMobList.append(d6);
     });
     refreshTurnOrder();
 }

@@ -284,7 +284,7 @@ function initializeRecipes(type,sortType,heading,query) {
     //filtering
     let rFilter = recipeList.recipes.filter(r => r.owned);
     if (type === "Matless") {
-        rFilter = rFilter.filter(r => r.mcost.length === 0 || r.isMastered());
+        rFilter = rFilter.filter(r => r.mcost === null || r.isMastered());
         if (rFilter.length === 0) {
             Notifications.noItemFilter();
             return;

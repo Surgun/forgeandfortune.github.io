@@ -439,7 +439,8 @@ body {
 
 #dungeonSpeed {
     position: absolute;
-    top: 0;
+    top: 10px;
+    left: 10px;
     display: flex;
     justify-content: left;
     align-items: center;

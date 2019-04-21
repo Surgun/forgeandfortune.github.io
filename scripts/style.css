@@ -3052,7 +3052,7 @@ Rarities
 
 #drTurnOrder {
     display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(150px,1fr));
+    grid-template: auto / repeat(auto-fit, minmax(150px,1fr));
     grid-gap: 10px;
     align-items: start;
     align-content: start;

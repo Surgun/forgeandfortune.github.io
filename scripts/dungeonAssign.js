@@ -179,8 +179,8 @@ const $drTurnOrder = $("#drTurnOrder");
 
 function initiateDungeonFloor() {
     const dungeon = DungeonManager.getCurrentDungeon();
-    $dungeonRun.removeClass().addClass(dungeon.id);
     if (dungeon === undefined) return;
+    $dungeonRun.removeClass().addClass(dungeon.id);
     $floorID.html("Floor "+dungeon.floorCount);
     $dungeonHeroList.empty();
     $dungeonMobList.empty();

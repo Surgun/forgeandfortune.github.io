@@ -61,7 +61,7 @@ function showDungeon(dungeonID) {
     BattleLog.clear();
     initiateDungeonFloor();
     $dungeonSelect.hide();
-    $dungeonRun.show();
+    $dungeonRun.show().removeClass().addClass(dungeonID);
 }
 
 //clicking a hero to remove them from your party
@@ -179,6 +179,7 @@ const $drTurnOrder = $("#drTurnOrder");
 
 function initiateDungeonFloor() {
     const dungeon = DungeonManager.getCurrentDungeon();
+    $dungeonRun.removeClass().addClass(dungeon.id);
     if (dungeon === undefined) return;
     $floorID.html("Floor "+dungeon.floorCount);
     $dungeonHeroList.empty();

@@ -2655,7 +2655,7 @@ Rarities
     bottom: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_2.png');
     background-size: cover;
-    background-position: 50% 40%;
+    background-position: center 70%;
     opacity: 1;
     z-index: -1;
 }
@@ -2668,7 +2668,7 @@ Rarities
     bottom: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_3.png');
     background-size: cover;
-    background-position: 50% 40%;
+    background-position: center;
     opacity: 1;
     z-index: -1;
 }
@@ -2813,6 +2813,8 @@ Rarities
 .D002 .bgContainer .layer3 {
     background: url('../../images/dungeonBackgrounds/dungeon_2/layer3.png');
     background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: right -50px;
 }
 
 .D002 .bgContainer .layer4 {
@@ -2828,6 +2830,29 @@ Rarities
 .D002 .bgContainer .layer6 {
     background: url('../../images/dungeonBackgrounds/dungeon_2/layer6.png');
     background-size: 500px;
+}
+
+.D002 .bgContainer .layer7 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer7.png');
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.D002 .bgContainer .layer8 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer8.png');
+    background-size: 500px;
+    background-repeat: repeat-x;
+    background-position: 0 100px;
+    -webkit-animation: 5s 3s ascend-hands infinite;
+    animation: 5s 3s ascend-hands infinite;
+    opacity: 0.75;
+}
+
+.D002 .bgContainer .layer9 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer9.png');
+    background-size: 800px;
+    background-position: bottom;
 }
 
 /* Creepy Crag Background */
@@ -2855,11 +2880,30 @@ Rarities
 .D003 .bgContainer .layer5 {
     background: url('../../images/dungeonBackgrounds/dungeon_3/layer5.png');
     background-size: 500px;
+    background-position: 30% -300px;
+    background-repeat: repeat-x;
+    -webkit-animation: 5s 6s descend-spiders-1 infinite;
+    animation: 5s 6s descend-spiders-1 infinite;
 }
 
 .D003 .bgContainer .layer6 {
     background: url('../../images/dungeonBackgrounds/dungeon_3/layer6.png');
     background-size: 500px;
+    background-position: center -300px;
+    background-repeat: repeat-x;
+    -webkit-animation: 5s 4s descend-spiders-2 infinite;
+    animation: 5s 4s descend-spiders-2 infinite;
+}
+
+.D003 .bgContainer .layer7 {
+    background: url('../../images/dungeonBackgrounds/dungeon_3/layer7.png');
+    background-size: 500px;
+}
+
+.D003 .bgContainer .layer8 {
+    background: url('../../images/dungeonBackgrounds/dungeon_3/layer8.png');
+    background-size: 800px;
+    background-position: bottom;
 }
 
 /* Christmas Event Background */
@@ -5081,6 +5125,51 @@ span.beta-tag {
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes ascend-hands {
+    0% {
+        background-position: 0 100px;
+    }
+    20% {
+        background-position: 0 0;
+    }
+    80% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100px;
+    }
+}
+
+@keyframes descend-spiders-1 {
+    0% {
+        background-position: 30% -300px;
+    }
+    20% {
+        background-position: 30% -150px;
+    }
+    80% {
+        background-position: 30% -150px;
+    }
+    100% {
+        background-position: 30% -300px;
+    }
+}
+
+@keyframes descend-spiders-2 {
+    0% {
+        background-position: center -300px;
+    }
+    20% {
+        background-position: center 0;
+    }
+    80% {
+        background-position: center 0;
+    }
+    100% {
+        background-position: center -300px;
     }
 }
 

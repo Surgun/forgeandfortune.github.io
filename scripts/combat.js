@@ -8,7 +8,8 @@ const CombatManager = {
         //clear buffs since it's for one round
         if (attacker.stunned) {
             attacker.stunned = false;
-            const battleMessage = `<span class="logSpecial"><i class="fas fa-bolt"></i> <span class="logName">${attacker.name}</span> is stunned and can't attack!</span>`
+            const battleMessage = $("<span/>").addClass("logSpecial");
+            battleMessage.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} is stunned and can't attack!`);
             BattleLog.addEntry(dungeonid,battleMessage);
             return;
         }
@@ -38,12 +39,13 @@ const CombatManager = {
         attacker.ap -= 100;
     },
     normalAttack(attacker, defender, dungeonid) {
-        const battleMessage = $("<span/>").addClass("logSpecial");
+        const battleMessage = $("<span/>");
         const critical = this.rollStat(attacker.crit);
         let damage = attacker.getAdjPow();
         if (critical) {
             damage = Math.round(damage*attacker.critdmg);
-            battleMessage.append(`${logIcon("fas fa-claw-marks")} Critical!`);
+            battleMessage.addClass("logSpecial");
+            battleMessage.append(`${logIcon("fas fa-claw-marks")} Critical! `);
         }
         attacker.addAP();
         refreshAPBar(attacker);
@@ -53,7 +55,7 @@ const CombatManager = {
     },
     takeDamage(damage, defender, attacker, dungeonid) {
         if (defender.amplify) damage = Math.round(1.25 * damage);
-        const battleMessage = $("<span/>").addClass("logSpecial");
+        const battleMessage = $("<span/>");
         if (defender.parry) {
             defender.parry = false;
             battleMessage.append(`${logName(defender.name)} parries the attack!`);
@@ -68,12 +70,12 @@ const CombatManager = {
             return;
         }
         const reducedDmg = Math.max(0,damage-defender.getArmor());
-        if (defender.amplify) battleMessage.append(`${logName(defender.name)} takes an amplified ${logDmg(reducedDmg)}`);
-        else battleMessage.append(`${logName(defender.name)} takes ${logDmg(reducedDmg)}`);
+        if (defender.amplify) battleMessage.append(`${logName(defender.name)} takes an amplified ${logDmg(reducedDmg)}!`);
+        else battleMessage.append(`${logName(defender.name)} takes ${logDmg(reducedDmg)}!`);
         if (defender.getArmor() > 0) battleMessage.append(` ${logBlock(defender.getArmor())}`);
         damage = Math.max(0,damage - defender.getArmor())
         defender.hp = Math.max(defender.hp - damage, 0);
-        if (defender.hp === 0) battleMessage.append(` ${logDead(defender.name)}`);
+        if (defender.hp === 0) battleMessage.append(` ${logDead(defender.name)}!`);
         refreshHPBar(defender);
         BattleLog.addEntry(dungeonid,battleMessage);
         defender.ignoredArmor = false;
@@ -104,7 +106,7 @@ function logBlock(amt) {
 }
 
 function logDead(name) {
-    return $("<span/>").addClass("logDied").html(`${logName(name)} ${logIcon("fas fa-skull-crossbones")} died!`).prop('outerHTML');
+    return $("<span/>").addClass("logDied").html(`${logName(name)} ${logIcon("fas fa-skull-crossbones")} died`).prop('outerHTML');
 }
 
 

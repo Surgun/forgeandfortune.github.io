@@ -94,7 +94,7 @@ function logDmg(amt) {
 }
 
 function logHeal(amt) {
-    return $("<span/>").addClass("logHeal").html(`${amt} HP`);
+    return $("<span/>").addClass("logHeal").html(`${amt} HP`).prop('outerHTML');
 }
 
 function logIcon(name) {

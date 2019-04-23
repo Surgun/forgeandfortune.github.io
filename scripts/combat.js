@@ -8,7 +8,7 @@ const CombatManager = {
         //clear buffs since it's for one round
         if (attacker.stunned) {
             attacker.stunned = false;
-            const battleMessage = `${attacker.name} is stunned and can't attack!`
+            const battleMessage = `<span class="logSpecial"><i class="fas fa-bolt"></i> <span class="logName">${attacker.name}</span> is stunned and can't attack!</span>`
             BattleLog.addEntry(dungeonid,battleMessage);
             return;
         }
@@ -43,11 +43,11 @@ const CombatManager = {
         let damage = attacker.getAdjPow();
         if (critical) {
             damage = Math.round(damage*attacker.critdmg);
-            battleMessage = "Critical! ";
+            battleMessage = `<span class="logSpecial"><i class="fas fa-claw-marks"></i> Critical!</span> `;
         }
         attacker.addAP();
         refreshAPBar(attacker);
-        battleMessage += `${attacker.name} attacks ${defender.name} for ${damage} damage!`
+        battleMessage += `<span class="logName">${attacker.name}</span> attacks <span class="logName">${defender.name}</span> for <span class="logDamage"><i class="fas fa-sword"></i> ${damage} damage</span>!`
         BattleLog.addEntry(dungeonid,battleMessage);
         this.takeDamage(damage, defender, attacker, dungeonid);
     },
@@ -56,23 +56,23 @@ const CombatManager = {
         let battleMessage = "";
         if (defender.parry) {
             defender.parry = false;
-            battleMessage = `${defender.name} parries the attack!`
+            battleMessage = `<span class="logSpecial"><span class="logName">${defender.name}</span> parries the attack!</span>`
             BattleLog.addEntry(dungeonid,battleMessage);
             const newdamage = Math.round(attacker.getAdjPow() * 1.2);
             return this.takeDamage(newdamage, attacker, defender, dungeonid);
         }
         const dodge = this.rollStat(defender.dodgeChance);
         if (dodge) {
-            battleMessage = `${defender.name} dodges!`;
+            battleMessage = `<span class="logName">${defender.name}</span> dodges!`;
             BattleLog.addEntry(dungeonid,battleMessage);
             return;
         }
-        if (defender.amplify) battleMessage = `${defender.name} takes an amplified ${Math.max(0,damage-defender.getArmor())} damage.`;
-        else battleMessage = `${defender.name} takes ${Math.max(0,damage-defender.getArmor())} damage.`;
-        if (defender.getArmor() > 0) battleMessage += ` (${defender.getArmor()} blocked)`;
+        if (defender.amplify) battleMessage = `<span class="logName">${defender.name}</span> takes an amplified <span class="logDamage"><i class="fas fa-sword"></i> ${Math.max(0,damage-defender.getArmor())} damage</span>.`;
+        else battleMessage = `<span class="logName">${defender.name}</span> takes <span class="logDamage"><i class="fas fa-sword"></i> ${Math.max(0,damage-defender.getArmor())} damage</span>.`;
+        if (defender.getArmor() > 0) battleMessage += ` <span class="logBlocked">(<i class="fas fa-shield-alt"></i> ${defender.getArmor()} blocked)</span>`;
         damage = Math.max(0,damage - defender.getArmor())
         defender.hp = Math.max(defender.hp - damage, 0);
-        if (defender.hp === 0) battleMessage += ` ${defender.name} died!`;
+        if (defender.hp === 0) battleMessage += ` <span class="logName">${defender.name}</span> <span class="logDied"><i class="fas fa-skull-crossbones"></i> died</span>!`;
         refreshHPBar(defender);
         BattleLog.addEntry(dungeonid,battleMessage);
         defender.ignoredArmor = false;

@@ -2795,7 +2795,7 @@ Rarities
     background: url('../../images/dungeonBackgrounds/dungeon_1/layer6.jpg');
     background-repeat: repeat-x;
     background-position-y: bottom;
-    background-size: 500px;
+    background-size: 400px;
 }
 
 /* Spooky Spot Backgorund */
@@ -3146,10 +3146,35 @@ Rarities
     border: 0;
     padding: 10px;
     background-color: var(--bg-primary);
+    color: var(--text-secondary);
 }
 
 .battleLog:nth-of-type(odd) {
     background-color: var(--bg-secondary);
+}
+
+.logName {
+    color: var(--text-primary);
+}
+
+.logDamage {
+    color: #ffa9a9;
+}
+
+.logBlocked {
+    color: #7fb2ff;
+}
+
+.logHeal {
+    color: #7fffaa;
+}
+
+.logDied {
+    color: #f54343;
+}
+
+.logSpecial {
+    color: var(--highlight);
 }
 
 #drLogHero {

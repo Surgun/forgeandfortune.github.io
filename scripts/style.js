@@ -198,7 +198,7 @@ if (battleLogSetBtn && battleLogResetBtn && battleLogLengthInput) {
 }
 
 function assignLogLength() {
-    if (battleLogLengthInput.value < 5 || battleLogLengthInput.value > 100) {
+    if (battleLogLengthInput.value < 5 || battleLogLengthInput.value > 999) {
         addLogNotice("Invalid Value!");
     } else {
         BattleLog.logLength = battleLogLengthInput.value;

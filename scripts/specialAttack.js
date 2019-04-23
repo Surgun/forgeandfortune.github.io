@@ -2,13 +2,15 @@
 
 function SAparry(attacker, dungeonid) {
     attacker.parry = true;
-    const battleMessage = `<span class="logSpecial"><i class="far fa-swords"></i> <span class="logName">${attacker.name}</span> readies a parry attack!</span>` //parry handled in takeDamage function
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("far fa-swords")} ${logName(attacker.name)} readies a parry attack!`); //parry handled in takeDamage function
     BattleLog.addEntry(dungeonid,battleMessage);
 };
 
 function SAarmor(attacker, dungeonid) {
     attacker.armorBuff = true;
-    const battleMessage = `<span class="logSpecial"><i class="fas fa-user-shield"></i> <span class="logName">${attacker.name}</span> stands their ground!</span>` //parry handled in takeDamage function
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-user-shield")} ${logName(attacker.name)} stands their ground!`); //parry handled in takeDamage function
     BattleLog.addEntry(dungeonid,battleMessage);
 }
 
@@ -16,7 +18,8 @@ function SAbloodLet(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, attacker.target);
     attacker.damageCurrentPercent(95);
     const damage = attacker.getAdjPow()*3;
-    const battleMessage = `<span class="logSpecial"><i class="fas fa-tired"></i> <span class="logName">${attacker.name}</span> lets out a scream and attacks <span class="logName">${target.name}</span> for <span class="logDamage"><i class="fas fa-sword"></i> ${damage} damage</span></span>!`
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-tired")} ${logName(attacker.name)} lets out a scream and attacks ${logName(target.name)} for ${logDmg(damage)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
     CombatManager.takeDamage(damage, target, attacker, dungeonid);    
 }
@@ -24,7 +27,8 @@ function SAbloodLet(attacker, enemies, dungeonid) {
 function SAravage(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, attacker.target);
     const damage = Math.round(attacker.getAdjPow()*1.5);
-    const battleMessage = `<span class="logSpecial"><i class="fas fa-fist-raised"></i> Energy soars through <span class="logName">${attacker.name}</span> as they attack <span class="logName">${target.name}</span> for <span class="logDamage"><i class="fas fa-sword"></i> ${damage} damage</span>!</span>`
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-fist-raised")} Energy soars through ${logName(attacker.name)} as they attack ${logName(target.name)} for ${logDmg(damage)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
     CombatManager.takeDamage(damage, target, attacker, dungeonid);
     if (target.dead()) {
@@ -38,7 +42,8 @@ function SAblast(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, attacker.target);
     target.ignoredArmor = true;
     const damage = Math.round(attacker.getAdjPow()*1.5);
-    const battleMessage = `<span class="logSpecial"><i class="fas fa-fire-smoke"></i> <span class="logName">${attacker.name}</span> unleashes a blast at <span class="logName">${target.name}</span> for <span class="logDamage"><i class="fas fa-sword"></i> ${damage} damage</span>!</span>`
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-fire-smoke")} ${logName(attacker.name)} unleashes a blast at ${logName(target.name)} for ${logDmg(damage)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
     CombatManager.takeDamage(damage, target, attacker, dungeonid);
 };
@@ -47,7 +52,8 @@ function SAmeteor(attacker, enemies, dungeonid) {
     const damage = Math.round(attacker.getAdjPow()*1.2);
     const targets = enemies.filter(e => !e.dead());
     const dividedDmg = damage/targets.length;
-    const battleMessage = `<span class="logSpecial"><i class="fas fa-meteor"></i> <span class="logName">${attacker.name}</span> unleashes a meteor attack!</span>`;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-meteor")} ${logName(attacker.name)} unleashes a meteor attack!`);
     BattleLog.addEntry(dungeonid,battleMessage); 
     targets.forEach(enemy => {
         CombatManager.takeDamage(dividedDmg, enemy, attacker, dungeonid);
@@ -57,7 +63,8 @@ function SAmeteor(attacker, enemies, dungeonid) {
 function SAheal(attacker, allies, dungeonid) {
     const target = getTarget(allies, "lowhp");
     const healamt = attacker.getAdjPow();
-    const battleMessage = `<span class="logSpecial"><i class="fas fa-heart-circle"></i> <span class="logName">${attacker.name}</span> heals <span class="logName">${target.name}</span> for <span class="logHeal">${healamt} HP</span>!</span>`;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-heart-circle")} ${logName(attacker.name)} heals ${logName(target.name)} for ${logHeal(healamt)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
     target.heal(healamt);
 }
@@ -66,7 +73,8 @@ function SAmassHeal(attacker, allies, dungeonid) {
     const healamt = Math.round(attacker.getAdjPow()*0.8);
     const targets = allies.filter(a => !a.dead());
     const dividedHeal = Math.round(healamt/targets.length);
-    const battleMessage = `<span class="logSpecial"><i class="fas fa-hands-heart"></i> <span class="logName">${attacker.name}</span> heals everyone for <span class="logHeal">${dividedHeal} HP</span>!</span>`;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-hands-heart")} ${logName(attacker.name)} heals everyone for ${logHeal(healamt)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
     targets.forEach(ally => {
         ally.heal(dividedHeal);
@@ -76,7 +84,8 @@ function SAmassHeal(attacker, allies, dungeonid) {
 function SAsniper(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, "lowhp");
     const damage = attacker.getAdjPow();
-    const battleMessage = `<span class="logSpecial"><i class="fas fa-bullseye-arrow"></i> <span class="logName">${attacker.name}</span> snipes <span class="logName">${target.name}</span> for <span class="logDamage"><i class="fas fa-sword"></i> ${damage} damage</span>!</span>`;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-bullseye-arrow")} ${logName(attacker.name)} snipes ${logName(target.name)} for ${logDmg(damage)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
     CombatManager.takeDamage(damage, target, attacker, dungeonid);
 }
@@ -84,7 +93,8 @@ function SAsniper(attacker, enemies, dungeonid) {
 function SAdouble(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, attacker.target);
     const damage = attacker.getAdjPow();
-    const battleMessage = `<span class="logSpecial"><i class="far fa-swords"></i> <span class="logName">${attacker.name}</span> attacks <span class="logName">${target.name}</span> twice for <span class="logDamage"><i class="fas fa-sword"></i> ${damage} damage</span>!</span>`;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("far fa-swords")} ${logName(attacker.name)} attacks ${logName(target.name)} twice for ${logDmg(damage)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
     CombatManager.takeDamage(damage, target, attacker, dungeonid);
     CombatManager.takeDamage(damage, target, attacker, dungeonid);
@@ -92,13 +102,15 @@ function SAdouble(attacker, enemies, dungeonid) {
 
 function SAamplify(attacker, enemies, dungeonid) {
     enemies.forEach(e => e.amplify = true);
-    const battleMessage = `<span class="logSpecial"><i class="fas fa-flame"></i> <span class="logName">${attacker.name}</span> amps it up!</span>`;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-flame")} ${logName(attacker.name)} amps it up!`);
     BattleLog.addEntry(dungeonid,battleMessage);
 }
 
 function SAstun(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, attacker.target);
     target.stunned = true;
-    const battleMessage = `<span class="logSpecial"><i class="fas fa-bolt"></i> <span class="logName">${attacker.name}</span> stuns <span class="logName">${target.name}</span></span>!`;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} stuns ${logName(target.name)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
 }

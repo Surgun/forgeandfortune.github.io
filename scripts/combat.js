@@ -8,7 +8,8 @@ const CombatManager = {
         //clear buffs since it's for one round
         if (attacker.stunned) {
             attacker.stunned = false;
-            const battleMessage = `${attacker.name} is stunned and can't attack!`
+            const battleMessage = $("<span/>").addClass("logSpecial");
+            battleMessage.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} is stunned and can't attack!`);
             BattleLog.addEntry(dungeonid,battleMessage);
             return;
         }
@@ -38,41 +39,43 @@ const CombatManager = {
         attacker.ap -= 100;
     },
     normalAttack(attacker, defender, dungeonid) {
-        let battleMessage = "";
+        const battleMessage = $("<span/>");
         const critical = this.rollStat(attacker.crit);
         let damage = attacker.getAdjPow();
         if (critical) {
             damage = Math.round(damage*attacker.critdmg);
-            battleMessage = "Critical! ";
+            battleMessage.addClass("logSpecial");
+            battleMessage.append(`${logIcon("fas fa-claw-marks")} Critical! `);
         }
         attacker.addAP();
         refreshAPBar(attacker);
-        battleMessage += `${attacker.name} attacks ${defender.name} for ${damage} damage!`
+        battleMessage.append(`${logName(attacker.name)} attacks ${logName(defender.name)} for ${logDmg(damage)}!`);
         BattleLog.addEntry(dungeonid,battleMessage);
         this.takeDamage(damage, defender, attacker, dungeonid);
     },
     takeDamage(damage, defender, attacker, dungeonid) {
         if (defender.amplify) damage = Math.round(1.25 * damage);
-        let battleMessage = "";
+        const battleMessage = $("<span/>");
         if (defender.parry) {
             defender.parry = false;
-            battleMessage = `${defender.name} parries the attack!`
+            battleMessage.append(`${logName(defender.name)} parries the attack!`);
             BattleLog.addEntry(dungeonid,battleMessage);
             const newdamage = Math.round(attacker.getAdjPow() * 1.2);
             return this.takeDamage(newdamage, attacker, defender, dungeonid);
         }
         const dodge = this.rollStat(defender.dodgeChance);
         if (dodge) {
-            battleMessage = `${defender.name} dodges!`;
+            battleMessage = `${logName(defender.name)} dodges!`;
             BattleLog.addEntry(dungeonid,battleMessage);
             return;
         }
-        if (defender.amplify) battleMessage = `${defender.name} takes an amplified ${Math.max(0,damage-defender.getArmor())} damage.`;
-        else battleMessage = `${defender.name} takes ${Math.max(0,damage-defender.getArmor())} damage.`;
-        if (defender.getArmor() > 0) battleMessage += ` (${defender.getArmor()} blocked)`;
+        const reducedDmg = Math.max(0,damage-defender.getArmor());
+        if (defender.amplify) battleMessage.append(`${logName(defender.name)} takes an amplified ${logDmg(reducedDmg)}!`);
+        else battleMessage.append(`${logName(defender.name)} takes ${logDmg(reducedDmg)}!`);
+        if (defender.getArmor() > 0) battleMessage.append(` ${logBlock(defender.getArmor())}`);
         damage = Math.max(0,damage - defender.getArmor())
         defender.hp = Math.max(defender.hp - damage, 0);
-        if (defender.hp === 0) battleMessage += ` ${defender.name} died!`;
+        if (defender.hp === 0) battleMessage.append(` ${logDead(defender.name)}!`);
         refreshHPBar(defender);
         BattleLog.addEntry(dungeonid,battleMessage);
         defender.ignoredArmor = false;
@@ -80,6 +83,30 @@ const CombatManager = {
     rollStat(stat) {
         return stat > Math.floor(Math.random()*100) + 1
     },
+}
+
+function logName(name) {
+    return $("<span/>").addClass("logName").html(name).prop('outerHTML');
+}
+
+function logDmg(amt) {
+    return $("<span/>").addClass("logDamage").html(`${logIcon("fas fa-sword")} ${amt} damage`).prop('outerHTML');
+}
+
+function logHeal(amt) {
+    return $("<span/>").addClass("logHeal").html(`${amt} HP`).prop('outerHTML');
+}
+
+function logIcon(name) {
+    return $("<i/>").addClass(name).prop('outerHTML');
+}
+
+function logBlock(amt) {
+    return $("<span/>").addClass("logBlocked").html(`(${logIcon("fas fa-shield-alt")} ${amt} blocked)`).prop('outerHTML');
+}
+
+function logDead(name) {
+    return $("<span/>").addClass("logDied").html(`${logName(name)} ${logIcon("fas fa-skull-crossbones")} died`).prop('outerHTML');
 }
 
 

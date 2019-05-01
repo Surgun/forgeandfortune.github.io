@@ -191,11 +191,27 @@
                         </div>
                         <div id="settings_logLength" class="setting-container">
                             <h3 class="settings-title">Battle Log Length</h3>
-                            <p class="settings-description">Set the maximum amount of lines to be displayed in the battle log for Adventures. Default value is 30, minimum accepted value of 5, maximum accepted value of 100.</p>
+                            <p class="settings-description">Set the maximum amount of lines to be displayed in the battle log for Adventures. Default value is 30, minimum accepted value of 5, maximum accepted value of 999.</p>
                             <div class="settings-content">
                                 <input type="number" name="battleLog" id="battleLogValue" min="5" max="100">
                                 <button id="battleLogSet">Set Value</button>
                                 <button id="battleLogReset">Reset to Default</button>
+                            </div>
+                        </div>
+                        <div id="settings_turnOrderDisplay" class="setting-container">
+                            <h3 class="settings-title">Toggle HP &amp; AP Bars in Turn Order</h3>
+                            <p class="settings-description">Toggle whether to display or hide the HP and AP bars on Turn Order cards during Adventures. This option is recommended to remain enabled on smaller screens.</p>
+                            <div class="settings-content">
+                                <div class="selections-grid">
+                                    <label class="selection-container">Display Bars
+                                        <input type="radio" name="hp-ap-bar" value="1" checked="checked">
+                                        <span class="selection"></span>
+                                    </label>
+                                    <label class="selection-container">Hide Bars
+                                        <input type="radio" name="hp-ap-bar" value="0">
+                                        <span class="selection"></span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -353,10 +369,13 @@
                                                 <div class="layer layer4"></div>
                                                 <div class="layer layer5"></div>
                                                 <div class="layer layer6"></div>
+                                                <div class="layer layer7"></div>
+                                                <div class="layer layer8"></div>
+                                                <div class="layer layer9"></div>
                                             </div>
                                             <div id="dungeonSpeed">
                                                 <div id="dungeonSpeedSlow" class="dungeonSpeedButtons">Slow</div>
-                                                <div id="dungeonSpeedNormal" class="dungeonSpeedButtons dungeonSpeedActive">Normal</div>
+                                                <div id="dungeonSpeedNormal" class="dungeonSpeedButtons">Normal</div>
                                                 <div id="dungeonSpeedFast" class="dungeonSpeedButtons">Fast</div>
                                             </div>
                                             <h3><div id="floorID">Floor 1</div></h3>
@@ -364,10 +383,6 @@
                                                 <div id="dungeonHeroList"></div>
                                                 <div id="dungeonMobList"></div>
                                             </div>
-                                        </div>
-                                        <div id="drStats">
-                                            <div id="drStatsHero"></div>
-                                            <div id="drStatsMob"></div>
                                         </div>
                                         <div class="drTurnOrderLogContainer">
                                             <div class="drTurnOrderLogTitles">

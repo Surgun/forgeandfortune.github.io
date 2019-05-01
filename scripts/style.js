@@ -198,7 +198,7 @@ if (battleLogSetBtn && battleLogResetBtn && battleLogLengthInput) {
 }
 
 function assignLogLength() {
-    if (battleLogLengthInput.value < 5 || battleLogLengthInput.value > 100) {
+    if (battleLogLengthInput.value < 5 || battleLogLengthInput.value > 999) {
         addLogNotice("Invalid Value!");
     } else {
         BattleLog.logLength = battleLogLengthInput.value;
@@ -229,6 +229,42 @@ function addLogNotice(notice) {
     setTimeout(()=>{
         document.querySelector(".battleLogNotice").style.opacity = 0;
     }, 2500);
+}
+
+// Toggle Turn Order Bars Setting
+
+const turnOrderSettings = document.querySelectorAll("#settings_turnOrderDisplay .selection-container");
+
+turnOrderSettings.forEach((selection) => {
+    selection.addEventListener("input", assignTurnOrderPref);
+    if(parseInt(selection.querySelector("input").value) === settings.toggleTurnOrderBars) {
+        selection.querySelector("input").setAttribute("checked", "checked");
+    }
+});
+
+function assignTurnOrderPref(e) {
+    const option = e.target.getAttribute("value");
+    turnOrderSettings.forEach((selection) => {
+        selection.querySelector("input").removeAttribute("checked")
+    });
+    e.target.setAttribute("checked", "checked");
+    settings.toggleTurnOrderBars = parseInt(option);;
+    saveSettings();
+    checkTurnOrderPref();
+}
+
+function checkTurnOrderPref() {
+    const containers = document.querySelectorAll(".orderUnitHP, .orderUnitAP");
+    if (settings.toggleTurnOrderBars === 1) {
+        containers.forEach((container) => {
+            container.classList.remove("none");
+        });
+        
+    } else if (settings.toggleTurnOrderBars === 0) {
+        containers.forEach((container) => {
+            container.classList.add("none");
+        });
+    }
 }
 
 // Logo Easter Egg
@@ -362,6 +398,8 @@ $(document).on('click', '.recipeCraft', (e) => {
     $button.addClass('btn-press');
     resetBtnPressAnimation();
 });
+
+// Animation for Craft button clicks
 
 function resetBtnPressAnimation() {
     const btns = document.getElementsByClassName('btn-press');

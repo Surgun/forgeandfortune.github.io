@@ -184,6 +184,7 @@ const DungeonManager = {
             dungeon.loadSave(d);
         });
         this.speed = save.speed;
+        refreshSpeedButton(this.speed);
     },
     addTime(t) {
         this.dungeons.forEach(dungeon => {

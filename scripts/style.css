@@ -85,7 +85,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardContainer, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardContainer, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -93,7 +93,7 @@ body.lightmode {
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard, .orderUnit {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     -ms-box-shadow: var(--box-shadow);
@@ -439,7 +439,8 @@ body {
 
 #dungeonSpeed {
     position: absolute;
-    top: 0;
+    top: 10px;
+    left: 10px;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -2639,7 +2640,7 @@ Rarities
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_blue.png');
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_1.png');
     background-size: cover;
     background-position: 50% 40%;
     opacity: 1;
@@ -2652,9 +2653,9 @@ Rarities
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_blue.png');
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_2.png');
     background-size: cover;
-    background-position: 50% 40%;
+    background-position: center 70%;
     opacity: 1;
     z-index: -1;
 }
@@ -2665,9 +2666,9 @@ Rarities
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_blue.png');
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_3.png');
     background-size: cover;
-    background-position: 50% 40%;
+    background-position: center;
     opacity: 1;
     z-index: -1;
 }
@@ -2759,73 +2760,185 @@ Rarities
     left: 0;
 }
 
-.bgContainer .layer1 {
-    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer1.jpg');
+/* Groovy Grove Background */
+
+.D001 .bgContainer .layer1 {
+    background: url('../../images/dungeonBackgrounds/dungeon_1/layer1.jpg');
     background-size: 500px;
 }
 
-.bgContainer .layer2 {
-    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer2.png');
+.D001 .bgContainer .layer2 {
+    background: url('../../images/dungeonBackgrounds/dungeon_1/layer2.png');
     background-size: 500px;
 }
 
-.bgContainer .layer3 {
-    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer3.png');
+.D001 .bgContainer .layer3 {
+    background: url('../../images/dungeonBackgrounds/dungeon_1/layer3.png');
     background-size: 500px;
 }
 
-.bgContainer .layer4 {
-    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer4.png');
+.D001 .bgContainer .layer4 {
+    background: url('../../images/dungeonBackgrounds/dungeon_1/layer4.png');
     background-size: 500px;
-    -webkit-animation: 8s linear infinite gleam;
-    animation: 8s linear infinite gleam;
+    -webkit-animation: 2s linear infinite gleam;
+    animation: 2s linear infinite gleam;
 }
 
-.bgContainer .layer5 {
-    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer5.png');
+.D001 .bgContainer .layer5 {
+    background: url('../../images/dungeonBackgrounds/dungeon_1/layer5.png');
     background-size: 500px;
     -webkit-animation: 5s linear infinite gleam;
     animation: 5s linear infinite gleam;
 }
 
-.bgContainer .layer6 {
-    background: url('../../images/dungeonBackgrounds/dungeon_blue/layer6.jpg');
+.D001 .bgContainer .layer6 {
+    background: url('../../images/dungeonBackgrounds/dungeon_1/layer6.jpg');
     background-repeat: repeat-x;
     background-position-y: bottom;
+    background-size: 400px;
+}
+
+/* Spooky Spot Backgorund */
+
+.D002 .bgContainer .layer1 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer1.png');
     background-size: 500px;
 }
 
+.D002 .bgContainer .layer2 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer2.png');
+    background-size: 500px;
+}
+
+.D002 .bgContainer .layer3 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer3.png');
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: right -50px;
+}
+
+.D002 .bgContainer .layer4 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer4.png');
+    background-size: 500px;
+}
+
+.D002 .bgContainer .layer5 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer5.png');
+    background-size: 500px;
+}
+
+.D002 .bgContainer .layer6 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer6.png');
+    background-size: 500px;
+}
+
+.D002 .bgContainer .layer7 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer7.png');
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.D002 .bgContainer .layer8 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer8.png');
+    background-size: 500px;
+    background-repeat: repeat-x;
+    background-position: 0 100px;
+    -webkit-animation: 5s 3s ascend-hands infinite;
+    animation: 5s 3s ascend-hands infinite;
+    opacity: 0.75;
+}
+
+.D002 .bgContainer .layer9 {
+    background: url('../../images/dungeonBackgrounds/dungeon_2/layer9.png');
+    background-size: 800px;
+    background-position: bottom;
+}
+
+/* Creepy Crag Background */
+
+.D003 .bgContainer .layer1 {
+    background: url('../../images/dungeonBackgrounds/dungeon_3/layer1.png');
+    background-size: 500px;
+}
+
+.D003 .bgContainer .layer2 {
+    background: url('../../images/dungeonBackgrounds/dungeon_3/layer2.png');
+    background-size: 500px;
+}
+
+.D003 .bgContainer .layer3 {
+    background: url('../../images/dungeonBackgrounds/dungeon_3/layer3.png');
+    background-size: 500px;
+}
+
+.D003 .bgContainer .layer4 {
+    background: url('../../images/dungeonBackgrounds/dungeon_3/layer4.png');
+    background-size: 500px;
+}
+
+.D003 .bgContainer .layer5 {
+    background: url('../../images/dungeonBackgrounds/dungeon_3/layer5.png');
+    background-size: 500px;
+    background-position: 30% -300px;
+    background-repeat: repeat-x;
+    -webkit-animation: 5s 6s descend-spiders-1 infinite;
+    animation: 5s 6s descend-spiders-1 infinite;
+}
+
+.D003 .bgContainer .layer6 {
+    background: url('../../images/dungeonBackgrounds/dungeon_3/layer6.png');
+    background-size: 500px;
+    background-position: center -300px;
+    background-repeat: repeat-x;
+    -webkit-animation: 5s 4s descend-spiders-2 infinite;
+    animation: 5s 4s descend-spiders-2 infinite;
+}
+
+.D003 .bgContainer .layer7 {
+    background: url('../../images/dungeonBackgrounds/dungeon_3/layer7.png');
+    background-size: 500px;
+}
+
+.D003 .bgContainer .layer8 {
+    background: url('../../images/dungeonBackgrounds/dungeon_3/layer8.png');
+    background-size: 800px;
+    background-position: bottom;
+}
+
+/* Christmas Event Background */
+
 .bgContainer .layer1.christmasEvent {
-    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer1.jpg');
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_1/layer1.jpg');
     background-size: 500px;
 }
 
 .bgContainer .layer2.christmasEvent {
-    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer2.png');
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_1/layer2.png');
     background-size: 500px;
 }
 
 .bgContainer .layer3.christmasEvent {
-    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer3.png');
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_1/layer3.png');
     background-size: 500px;
 }
 
 .bgContainer .layer4.christmasEvent {
-    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer4.png');
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_1/layer4.png');
     background-size: 500px;
     -webkit-animation: 8s linear infinite gleam;
     animation: 8s linear infinite gleam;
 }
 
 .bgContainer .layer5.christmasEvent {
-    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer5.png');
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_1/layer5.png');
     background-size: 500px;
     -webkit-animation: 5s linear infinite gleam;
     animation: 5s linear infinite gleam;
 }
 
 .bgContainer .layer6.christmasEvent {
-    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_blue/layer6.png');
+    background: url('../../images/dungeonBackgrounds/christmas_event/dungeon_1/layer6.png');
     background-repeat: repeat-x;
     background-position-y: bottom;
     background-size: 500px;
@@ -2849,7 +2962,6 @@ Rarities
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-    margin-top: 65px;
 }
 
 #dungeonHeroList, #dungeonMobList {
@@ -2863,7 +2975,7 @@ Rarities
 #dungeonHeroList > .dfc, #dungeonMobList > .dfm {
     text-align: center;
     padding: 10px;
-    max-width: 94px;
+    width: 100%;
     -webkit-filter: drop-shadow(0 0 5px black);
     -moz-filter: drop-shadow(0 0 5px black);
     -ms-filter: drop-shadow(0 0 5px black);
@@ -2961,7 +3073,6 @@ Rarities
     justify-content: center;
     align-items: start;
     height: 100%;
-    border-top: 2px solid var(--border-primary);
     overflow: auto;
 }
 
@@ -2986,7 +3097,7 @@ Rarities
 
 #drTurnOrder {
     display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(150px,1fr));
+    grid-template: auto / repeat(auto-fit, minmax(150px,1fr));
     grid-gap: 10px;
     align-items: start;
     align-content: start;
@@ -2996,24 +3107,31 @@ Rarities
 }
 
 .orderUnit {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 125px;
     padding: 10px;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
     border-radius: 10px;
 }
 
-.orderUnit.orderUnitActive {
-    background-color: var(--border-primary);
-    border-color: var(--border-tertiary);
+.orderUnitActive .orderUnitHead {
     color: var(--highlight);
 }
 
 .orderUnitHead {
+    margin: 10px 0;
     flex: 1;
+}
+
+.orderUnitHeadImg, .orderUnitHead, .orderUnitHP, .orderUnitAP {
+    z-index: 2;
+}
+
+.orderUnitHP, .orderUnitAP {
+    width: 100%;
 }
 
 #drLog {
@@ -3028,10 +3146,35 @@ Rarities
     border: 0;
     padding: 10px;
     background-color: var(--bg-primary);
+    color: var(--text-secondary);
 }
 
 .battleLog:nth-of-type(odd) {
     background-color: var(--bg-secondary);
+}
+
+.logName {
+    color: var(--text-primary);
+}
+
+.logDamage {
+    color: #ffa9a9;
+}
+
+.logBlocked {
+    color: #7fb2ff;
+}
+
+.logHeal {
+    color: #7fffaa;
+}
+
+.logDied {
+    color: #f54343;
+}
+
+.logSpecial {
+    color: var(--highlight);
 }
 
 #drLogHero {
@@ -3186,7 +3329,7 @@ Rarities
     margin: 0 2px;
 }
 
-.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv  {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv {
     position: relative;
     display: flex;
     align-items: center;
@@ -3218,16 +3361,22 @@ Rarities
 .hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img, .fuseBarDiv > img, #swBarDiv > img {
     position: absolute;
     left: 8px;
-    bottom: 2px;
     z-index: 1;
+}
+
+.hpBar, .apBar, .masteryBar, .fuseBar, #swBar, .dsbhpBar {
+    height: 100%;
 }
 
 .hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before, .masteryBar:before {
     content: " " attr(data-label);
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     font-size: 0.9em;
-    left: 25px;
-    bottom: 2px;
     white-space: pre;
     z-index: 2;
 }
@@ -3485,7 +3634,7 @@ Rarities
     padding: 10px 0;
 }
 
-.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv  {
+.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv {
     width: 100%;
     height: 26px;
     line-height: 26px;
@@ -3497,6 +3646,19 @@ Rarities
     text-align: center;
 }
 
+.beatBarDiv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    margin: 0;
+    pointer-events: none;
+    background-color: transparent;
+    overflow: hidden;
+}
+
 .masteryBarDiv {
     margin-bottom: 0;
     height: 100%;
@@ -3506,19 +3668,12 @@ Rarities
     margin-top: 5px;
 }
 
-.fuseBar:before, #swBar:before, .masteryBar:before {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    left: unset;
-    top: 55%;
-    bottom: 50%;
-}
-
 .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill {
     background-color: rgba(255,255,255,0.15);
+}
+
+.beatBarFill {
+    background-color: rgba(255,255,255,0.1);
 }
 
 .possibleFuseHead {
@@ -4846,11 +5001,11 @@ span.beta-tag {
     position: relative;
     margin: auto;
     top: 50%;
-    -webkit-transform: translateY(-50%) scale(0);
-    -moz-transform: translateY(-50%) scale(0);
-    -ms-transform: translateY(-50%) scale(0);
-    -o-transform: translateY(-50%) scale(0);
-    transform: translateY(-50%) scale(0);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
     width: 100%;
     max-width: 500px;
     height: auto;
@@ -4865,19 +5020,15 @@ span.beta-tag {
 }
 
 .dialog:target .dialog_content {
-    -webkit-transform: translateY(-50%) scale(1);
-    -moz-transform: translateY(-50%) scale(1);
-    -ms-transform: translateY(-50%) scale(1);
-    -o-transform: translateY(-50%) scale(1);
-    transform: translateY(-50%) scale(1);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .dialog:target ~ .game-content {
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -ms-filter: blur(10px);
-    -o-filter: blur(10px);
-    filter: blur(10px);
+    opacity: 0.1;
 }
 
 .dialog_header {
@@ -4995,6 +5146,51 @@ span.beta-tag {
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes ascend-hands {
+    0% {
+        background-position: 0 100px;
+    }
+    20% {
+        background-position: 0 0;
+    }
+    80% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100px;
+    }
+}
+
+@keyframes descend-spiders-1 {
+    0% {
+        background-position: 30% -300px;
+    }
+    20% {
+        background-position: 30% -150px;
+    }
+    80% {
+        background-position: 30% -150px;
+    }
+    100% {
+        background-position: 30% -300px;
+    }
+}
+
+@keyframes descend-spiders-2 {
+    0% {
+        background-position: center -300px;
+    }
+    20% {
+        background-position: center 0;
+    }
+    80% {
+        background-position: center 0;
+    }
+    100% {
+        background-position: center -300px;
     }
 }
 

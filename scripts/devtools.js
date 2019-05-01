@@ -26,6 +26,9 @@ const devtools = {
         forceSave();
         location.replace('/');
     },
+    hyperSpeed() {
+        DungeonManager.speed = 50;
+    },
     materials : function() {
         ResourceManager.materials.forEach(material => {
             ResourceManager.addMaterial(material.id,10000);
@@ -52,13 +55,14 @@ const devtools = {
     addItem(itemID, rarity) {
         Inventory.addToInventory(itemID,rarity,-1)
     },
-    gearHeroes(lvl,rarity) {
+    gearHeroes(lvl,rarity,sharp) {
         const recipes = recipeList.recipes.filter(r => r.lvl === lvl);
         HeroManager.heroes.forEach(hero => {
             const slots = hero.getSlotTypes();
             slots.forEach((slotType,i) => {
                 const item = recipes.find(r => r.type === slotType[0]);
                 const container = new itemContainer(item.id,rarity);
+                container.sharp = sharp;
                 hero.equip(container,i);
             })
         })

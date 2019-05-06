@@ -12,6 +12,7 @@
     ],
     "openCost": null,
     "preReq": null,
+    "seed": 784,
     "type": "regular"
   },
   {
@@ -27,6 +28,7 @@
     ],
     "openCost": null,
     "preReq": null,
+    "seed": 7576,
     "type": "regular"
   },
   {
@@ -48,6 +50,7 @@
     ],
     "openCost": null,
     "preReq": null,
+    "seed": 7236,
     "type": "regular"
   },
   {
@@ -69,6 +72,7 @@
     ],
     "openCost": 100,
     "preReq": null,
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -90,6 +94,7 @@
     ],
     "openCost": 1000,
     "preReq": "D010",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -111,6 +116,7 @@
     ],
     "openCost": 10000,
     "preReq": "D011",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -132,6 +138,7 @@
     ],
     "openCost": 100000,
     "preReq": "D012",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -153,6 +160,7 @@
     ],
     "openCost": 1000000,
     "preReq": "D013",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -174,6 +182,7 @@
     ],
     "openCost": 10000000,
     "preReq": "D014",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -195,6 +204,7 @@
     ],
     "openCost": 100000000,
     "preReq": "D015",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -216,6 +226,7 @@
     ],
     "openCost": 1000000000,
     "preReq": "D016",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -237,6 +248,7 @@
     ],
     "openCost": 10000000000,
     "preReq": "D017",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -258,6 +270,7 @@
     ],
     "openCost": 100000000000,
     "preReq": "D018",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -279,6 +292,7 @@
     ],
     "openCost": 100,
     "preReq": null,
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -300,6 +314,7 @@
     ],
     "openCost": 1000,
     "preReq": "D020",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -321,6 +336,7 @@
     ],
     "openCost": 10000,
     "preReq": "D021",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -342,6 +358,7 @@
     ],
     "openCost": 100000,
     "preReq": "D022",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -363,6 +380,7 @@
     ],
     "openCost": 1000000,
     "preReq": "D023",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -384,6 +402,7 @@
     ],
     "openCost": 10000000,
     "preReq": "D024",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -405,6 +424,7 @@
     ],
     "openCost": 100000000,
     "preReq": "D025",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -426,6 +446,7 @@
     ],
     "openCost": 1000000000,
     "preReq": "D026",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -447,6 +468,7 @@
     ],
     "openCost": 10000000000,
     "preReq": "D027",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -468,6 +490,7 @@
     ],
     "openCost": 100000000000,
     "preReq": "D028",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -489,6 +512,7 @@
     ],
     "openCost": 100,
     "preReq": null,
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -510,6 +534,7 @@
     ],
     "openCost": 1000,
     "preReq": "D030",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -531,6 +556,7 @@
     ],
     "openCost": 10000,
     "preReq": "D031",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -552,6 +578,7 @@
     ],
     "openCost": 100000,
     "preReq": "D032",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -573,6 +600,7 @@
     ],
     "openCost": 1000000,
     "preReq": "D033",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -594,6 +622,7 @@
     ],
     "openCost": 10000000,
     "preReq": "D034",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -615,6 +644,7 @@
     ],
     "openCost": 100000000,
     "preReq": "D035",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -636,6 +666,7 @@
     ],
     "openCost": 1000000000,
     "preReq": "D036",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -657,6 +688,7 @@
     ],
     "openCost": 10000000000,
     "preReq": "D037",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -678,6 +710,7 @@
     ],
     "openCost": 100000000000,
     "preReq": "D038",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -699,6 +732,7 @@
     ],
     "openCost": 100,
     "preReq": null,
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -720,6 +754,7 @@
     ],
     "openCost": 1000,
     "preReq": "D040",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -741,6 +776,7 @@
     ],
     "openCost": 10000,
     "preReq": "D041",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -762,6 +798,7 @@
     ],
     "openCost": 100000,
     "preReq": "D042",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -783,6 +820,7 @@
     ],
     "openCost": 1000000,
     "preReq": "D043",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -804,6 +842,7 @@
     ],
     "openCost": 10000000,
     "preReq": "D044",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -825,6 +864,7 @@
     ],
     "openCost": 100000000,
     "preReq": "D045",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -846,6 +886,7 @@
     ],
     "openCost": 1000000000,
     "preReq": "D046",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -867,6 +908,7 @@
     ],
     "openCost": 10000000000,
     "preReq": "D047",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -888,6 +930,7 @@
     ],
     "openCost": 100000000000,
     "preReq": "D048",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -909,6 +952,7 @@
     ],
     "openCost": 100,
     "preReq": null,
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -930,6 +974,7 @@
     ],
     "openCost": 1000,
     "preReq": "D050",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -951,6 +996,7 @@
     ],
     "openCost": 10000,
     "preReq": "D051",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -972,6 +1018,7 @@
     ],
     "openCost": 100000,
     "preReq": "D052",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -993,6 +1040,7 @@
     ],
     "openCost": 1000000,
     "preReq": "D053",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1014,6 +1062,7 @@
     ],
     "openCost": 10000000,
     "preReq": "D054",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1035,6 +1084,7 @@
     ],
     "openCost": 100000000,
     "preReq": "D055",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1056,6 +1106,7 @@
     ],
     "openCost": 1000000000,
     "preReq": "D056",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1077,6 +1128,7 @@
     ],
     "openCost": 10000000000,
     "preReq": "D057",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1098,6 +1150,7 @@
     ],
     "openCost": 100000000000,
     "preReq": "D058",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1119,6 +1172,7 @@
     ],
     "openCost": 100,
     "preReq": null,
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1140,6 +1194,7 @@
     ],
     "openCost": 1000,
     "preReq": "D060",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1161,6 +1216,7 @@
     ],
     "openCost": 10000,
     "preReq": "D061",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1182,6 +1238,7 @@
     ],
     "openCost": 100000,
     "preReq": "D062",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1203,6 +1260,7 @@
     ],
     "openCost": 1000000,
     "preReq": "D063",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1224,6 +1282,7 @@
     ],
     "openCost": 10000000,
     "preReq": "D064",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1245,6 +1304,7 @@
     ],
     "openCost": 100000000,
     "preReq": "D065",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1266,6 +1326,7 @@
     ],
     "openCost": 1000000000,
     "preReq": "D066",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1287,6 +1348,7 @@
     ],
     "openCost": 10000000000,
     "preReq": "D067",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1308,6 +1370,7 @@
     ],
     "openCost": 100000000000,
     "preReq": "D068",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1329,6 +1392,7 @@
     ],
     "openCost": 100,
     "preReq": null,
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1350,6 +1414,7 @@
     ],
     "openCost": 1000,
     "preReq": "D070",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1371,6 +1436,7 @@
     ],
     "openCost": 10000,
     "preReq": "D071",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1392,6 +1458,7 @@
     ],
     "openCost": 100000,
     "preReq": "D072",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1413,6 +1480,7 @@
     ],
     "openCost": 1000000,
     "preReq": "D073",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1434,6 +1502,7 @@
     ],
     "openCost": 10000000,
     "preReq": "D074",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1455,6 +1524,7 @@
     ],
     "openCost": 100000000,
     "preReq": "D075",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1476,6 +1546,7 @@
     ],
     "openCost": 1000000000,
     "preReq": "D076",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1497,6 +1568,7 @@
     ],
     "openCost": 10000000000,
     "preReq": "D077",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1518,6 +1590,7 @@
     ],
     "openCost": 100000000000,
     "preReq": "D078",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1539,6 +1612,7 @@
     ],
     "openCost": 100,
     "preReq": null,
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1560,6 +1634,7 @@
     ],
     "openCost": 1000,
     "preReq": "D080",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1581,6 +1656,7 @@
     ],
     "openCost": 10000,
     "preReq": "D081",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1602,6 +1678,7 @@
     ],
     "openCost": 100000,
     "preReq": "D082",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1623,6 +1700,7 @@
     ],
     "openCost": 1000000,
     "preReq": "D083",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1644,6 +1722,7 @@
     ],
     "openCost": 10000000,
     "preReq": "D084",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1665,6 +1744,7 @@
     ],
     "openCost": 100000000,
     "preReq": "D085",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1686,6 +1766,7 @@
     ],
     "openCost": 1000000000,
     "preReq": "D086",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1707,6 +1788,7 @@
     ],
     "openCost": 10000000000,
     "preReq": "D087",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1728,6 +1810,7 @@
     ],
     "openCost": 100000000000,
     "preReq": "D088",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1749,6 +1832,7 @@
     ],
     "openCost": 100,
     "preReq": null,
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1770,6 +1854,7 @@
     ],
     "openCost": 1000,
     "preReq": "D090",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1791,6 +1876,7 @@
     ],
     "openCost": 10000,
     "preReq": "D091",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1812,6 +1898,7 @@
     ],
     "openCost": 100000,
     "preReq": "D092",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1833,6 +1920,7 @@
     ],
     "openCost": 1000000,
     "preReq": "D093",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1854,6 +1942,7 @@
     ],
     "openCost": 10000000,
     "preReq": "D094",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1875,6 +1964,7 @@
     ],
     "openCost": 100000000,
     "preReq": "D095",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1896,6 +1986,7 @@
     ],
     "openCost": 1000000000,
     "preReq": "D096",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1917,6 +2008,7 @@
     ],
     "openCost": 10000000000,
     "preReq": "D097",
+    "seed": 0,
     "type": "boss"
   },
   {
@@ -1938,6 +2030,7 @@
     ],
     "openCost": 100000000000,
     "preReq": "D098",
+    "seed": 0,
     "type": "boss"
   }
 ]

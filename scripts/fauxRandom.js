@@ -25,10 +25,8 @@ function seedLoadSave(save) {
 }
 
 const DungeonSeedManager = {
-    D001 : [784],
-    D002 : [7576],
-    D003 : [7236],
     getFloorSeed(dungeonID,floor) {
+        if (this[dungeonID] === undefined) this[dungeonID] = [DungeonManager.dungeonByID(dungeonID).seed];
         dungeonSeedList = this[dungeonID];
         while (dungeonSeedList.length < floor) {
             const num = dungeonSeedList[dungeonSeedList.length-1];

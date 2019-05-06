@@ -66,6 +66,16 @@ const EventManager = {
         this.events.push(event);
         refreshEvents();
     },
+    addEventBoss(id,time) {
+        const eventTemplate = this.idToEventDB("E013");
+        const event = new Event(eventTemplate);
+        event.bossKill = id;
+        event.time = time;
+        event.eventNum = this.eventNum;
+        this.eventNum += 1;
+        this.events.push(event);
+        refreshEvents();
+    },
     addEventFuse(container) {
         const eventTemplate = this.idToEventDB("E009")
         const event = new Event(eventTemplate);
@@ -131,6 +141,8 @@ class Event {
         this.itemReward = null;
         this.time = null;
         this.floor = null;
+        this.recipeRewards = null;
+        this.bossKill = null;
         Object.assign(this, props);
         this.date = currentDate();
     }
@@ -142,6 +154,7 @@ class Event {
         save.floor = this.floor;
         save.date = this.date;
         save.itemReward = this.itemReward;
+        save.bossKill = this.bossKill;
         return save;
     }
     loadSave(save) {
@@ -149,6 +162,7 @@ class Event {
         this.time = save.time;
         this.floor = save.floor;
         this.date = save.date;
+        if (save.bossKill !== undefined) this.bossKill = save.bossKill;
         if (save.itemReward !== undefined) this.itemReward = save.itemReward;
     }
 };
@@ -188,13 +202,29 @@ function dungeonDrops(event) {
     return d;
 }
 
+function bossRecipeUnlocks(recipes) {
+    console.log("hey this loaded?");
+    const d = $("<div/>").addClass("rewardDiv");
+    const d1 = $("<div/>").addClass("rewardDivTitle").html("Rewards");
+    d.append(d1);
+    recipes.forEach(recipe => {
+        console.log(recipe);
+        const d2 = $("<div/>").addClass("rewardCard tooltip").attr("data-tooltip",recipe.name);
+        const d3 = $("<div/>").addClass("rewardImage").html(recipe.itemPic());
+        d.append(d2.append(d3));
+    })
+    return d;
+}
+
 $(document).on('click', "div.eventList", (e) => {
     //display the text for a clicked event
     e.preventDefault();
     $("div.eventList").removeClass("highlight");
     $(e.currentTarget).addClass("highlight");
     const eventNum = parseInt($(e.currentTarget).attr("eventNum"));
+    console.log(eventNum);
     const event = EventManager.eventNumToEvent(eventNum);
+    console.log(event);
     $eventContent.empty();
     const d = $("<div/>").addClass("eventBody");
     const d1 = $("<div/>").addClass("eventAuthor").html(`FROM: ${event.author}`);
@@ -215,6 +245,13 @@ $(document).on('click', "div.eventList", (e) => {
     if (event.reward !== null ) {
         const d7 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
         d.append(d7);
+    }
+    if (event.bossKill !== null) {
+        console.log(event.bossKill);
+        const recipeRewards = recipeList.unlockedByDungeon(event.bossKill);
+        console.log(recipeRewards);
+        const d7a = $("<div/>").addClass("recipeReward").html(bossRecipeUnlocks(recipeRewards));
+        d.append(d7a);
     }
     if (event.itemReward !== null) {
         const item = recipeList.idToItem(event.itemReward.id);

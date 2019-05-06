@@ -131,7 +131,10 @@ class Mob {
     }
     rollDrops() {
         const mobDrops = [];
-        if (this.drops === null) return mobDrops;
+        if (this.drops === null) {
+            this.gotloot = true;
+            return mobDrops;
+        }
         for (const [material, success] of Object.entries(this.drops)) {
             const roll = Math.floor(Math.random() * 100);
 

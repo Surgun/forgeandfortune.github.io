@@ -130,14 +130,16 @@ class Dungeon {
             h.ap = 0;
             h.hp = h.maxHP()
         });
-        EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorCount);
+        if (this.type === "boss") EventManager.addEventBoss(this.id,this.dungeonTime);
+        else EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorCount);
         DungeonManager.removeDungeon(this.id);
-        if (DungeonManager.dungeonView !== null) {
+        console.log(DungeonManager.dungeonView,this.id)
+        if (DungeonManager.dungeonView !== this.id) {
+            BattleLog.clear();
             openTab("dungeonsTab");
         }
         initializeSideBarDungeon();
         refreshDungeonSelect();
-        BattleLog.clear();
         this.status = DungeonStatus.EMPTY;
         this.order = null;
         this.dungeonTime = 0;
@@ -152,6 +154,10 @@ class Dungeon {
         })
     }
     nextFloor() {
+        if (this.type === "boss" && this.floorCount === 1) {
+            this.resetDungeon();
+            return;
+        }
         this.floorCount += 1;
         this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
         this.order = new TurnOrder(this.party.heroes,this.mobs);

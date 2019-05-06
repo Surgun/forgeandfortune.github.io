@@ -265,6 +265,9 @@ const recipeList = {
     maxTier() {
         const lvls = this.recipes.filter(r=>r.owned).map(r=>r.lvl);
         return Math.max(...lvls);
+    },
+    unlockedByDungeon(dungeonID) {
+        return this.recipes.filter(r=>r.dungeonUnlock === dungeonID);
     }
 }
 

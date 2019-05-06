@@ -42,6 +42,7 @@ function refreshDungeonSelect() {
     $dungeonListingBoss.empty();
     DungeonManager.dungeons.filter(d=>d.type === "boss").forEach(dungeon => {
         if (!DungeonManager.bossDungeonCanSee(dungeon.id)) return;
+        if (DungeonManager.bossesBeat.includes(dungeon.id)) return;
         $dungeonListingBoss.append(dungeonBlock(dungeon));
     });
 }

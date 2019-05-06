@@ -130,7 +130,10 @@ class Dungeon {
             h.ap = 0;
             h.hp = h.maxHP()
         });
-        if (this.type === "boss") EventManager.addEventBoss(this.id,this.dungeonTime);
+        if (this.type === "boss") {
+            EventManager.addEventBoss(this.id,this.dungeonTime);
+            DungeonManager.bossesBeat.push(this.id);
+        }
         else EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorCount);
         DungeonManager.removeDungeon(this.id);
         console.log(DungeonManager.dungeonView,this.id)
@@ -173,6 +176,7 @@ const DungeonManager = {
     dungeonView : null,
     speed : 1250,
     dungeonPaid : [],
+    bossesBeat : [],
     bossDungeonCanJoin(id) {
         if (this.dungeonByID(id).type === "regular") return true;
         return this.dungeonPaid.includes(id);
@@ -193,6 +197,7 @@ const DungeonManager = {
         });
         save.dungeonPaid = this.dungeonPaid;
         save.speed = this.speed;
+        save.bossesBeat = this.bossesBeat;
         return save;
     },
     addDungeon(dungeon) {
@@ -205,6 +210,7 @@ const DungeonManager = {
         });
         this.speed = save.speed;
         if (typeof save.dungeonPaid !== "undefined") this.dungeonPaid = save.dungeonPaid;
+        if (typeof save.bossesBeat !== "undefined") this.bossesBeat = save.bossesBeat;
         refreshSpeedButton(this.speed);
     },
     addTime(t) {

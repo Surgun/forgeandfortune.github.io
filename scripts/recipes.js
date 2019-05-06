@@ -143,6 +143,11 @@ class Item{
     autoSacrificeToggle() {
         this.autoSacrifice = !this.autoSacrifice;
     }
+    canSee() {
+        const dungeonID = this.dungeonUnlock;
+        if (dungeonID === null) return true;
+        return DungeonManager.bossesBeat.includes(dungeonID);
+    }
 }
 
 $(document).on("click",".recipeActionButton",(e) => {
@@ -285,7 +290,7 @@ function refreshRecipeFilters() {
 function initializeRecipes(type,sortType,heading,query) {
     recipeList.recipePop = type;
     //filtering
-    let rFilter = recipeList.recipes.filter(r => r.owned);
+    let rFilter = recipeList.recipes.filter(r => r.owned && r.canSee());
     if (type === "Matless") {
         rFilter = rFilter.filter(r => r.mcost === null || r.isMastered());
         if (rFilter.length === 0) {

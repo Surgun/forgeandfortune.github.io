@@ -147,6 +147,12 @@ const Notifications = {
         const icon = "error";
         popToast(text,heading,icon);
     },
+    dungeonGoldReq() {
+        const text = "You do not have enough gold.";
+        const heading = "Cannot Unlock Dungeon";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
     noFuseSlots() {
         const text = "No fuse slots are available."; // Text that is to be shown in the toast
         const heading = 'Cannot Start Fuse'; // Optional heading to be shown on the toast

@@ -120,6 +120,7 @@ class itemContainer {
         }
         return d;
     }
+    
     goldValueFormatted() {
         return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue(),2);
     }

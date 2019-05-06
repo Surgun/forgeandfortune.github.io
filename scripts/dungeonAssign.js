@@ -15,6 +15,7 @@ const $dungeonSelect = $("#dungeonSelect");
 const $dungeonTeamSelect = $("#dungeonTeamSelect");
 const $dungeonRun = $("#dungeonRun");
 
+//dungeon team select
 const $dtsTop = $("#dtsTop");
 const $dtsBottom = $("#dtsBottom");
 
@@ -24,29 +25,69 @@ const $dsd1 = $("#dsd1");
 
 const $dungeonSpeedButtons = $(".dungeonSpeedButtons");
 
-$(document).on("click", ".dungeonSpeedButtons", (e) => {
-    e.preventDefault();
-    $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
-    $(e.currentTarget).addClass("dungeonSpeedActive");
-    const id = $(e.currentTarget).attr("id");
-    console.log(id);
-    if (id === "dungeonSpeedSlow") DungeonManager.speed = 3000;
-    if (id === "dungeonSpeedNormal") DungeonManager.speed = 1500;
-    if (id === "dungeonSpeedFast") DungeonManager.speed = 750;
-});
+/*---------------------------
+/*-   DUNGEON SELECT CODE   -
+/*---------------------------*/
 
-function refreshSpeedButton(speed) {
-    $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
-    if (speed === 3000) $("#dungeonSpeedSlow").addClass("dungeonSpeedActive");
-    if (speed === 1500) $("#dungeonSpeedNormal").addClass("dungeonSpeedActive");
-    if (speed === 750) $("#dungeonSpeedFast").addClass("dungeonSpeedActive");
-};
+const $dungeonListings = $("#dungeonListings");
+const $dungeonListingBoss = $("#dungeonListingBoss");
+
+function refreshDungeonSelect() {
+    //shows each dungeon so you can select that shit...
+    $dungeonListings.empty();
+    DungeonManager.dungeons.filter(d=>d.type === "regular").forEach(dungeon => {
+        if (!DungeonManager.bossDungeonCanSee(dungeon.id)) return;
+        $dungeonListings.append(dungeonBlock(dungeon));
+    });
+    $dungeonListingBoss.empty();
+    DungeonManager.dungeons.filter(d=>d.type === "boss").forEach(dungeon => {
+        if (!DungeonManager.bossDungeonCanSee(dungeon.id)) return;
+        $dungeonListingBoss.append(dungeonBlock(dungeon));
+    });
+}
+
+function dungeonBlock(dungeon) {
+    const d1 = $("<div/>").addClass("dungeonContainer").attr("id",dungeon.id);
+    if (dungeon.type === "boss") d1.addClass("dungeonTypeBoss");
+    const d2 = $("<div/>").addClass("dungeonHeader").html(dungeon.name);
+    const d3 = $("<div/>").addClass("dungeonStatus").attr("id","ds"+dungeon.id);
+    if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").html(`Fight in Progress`);
+    else if (!DungeonManager.bossDungeonCanJoin(dungeon.id)) d3.addClass("dungeonNotOpened").html("Not Opened");
+    else d3.addClass("dungeonIdle").html("Idle");
+    const d4 = $("<div/>").addClass("dungeonBackground");
+    const d5 = $("<div/>").addClass("dungeonAdventurers");
+    const d6 = $("<div/>").addClass("dungeonGoldCost");
+    d1.append(d2,d3,d4,d5,d6);
+    if (dungeon.status === DungeonStatus.ADVENTURING) {
+        dungeon.party.heroes.forEach(h=> {
+            const d5a = $("<div/>").addClass("dungeonHeroDungeonSelect").html(h.head);
+            d5.append(d5a);
+        });
+    }
+    if (!DungeonManager.bossDungeonCanJoin(dungeon.id)) {
+        const money = ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(dungeon.openCost,2);
+        d6.html(`<span class="dungeon_upgrade_text">Unlock</span><span class="dungeon_cost">${money}</span>`);
+    }
+    return d1;
+}
+
 
 //click on a dungeon to start making a team!
 $(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();
-    $dungeonSelect.hide();
     const dungeonID = $(e.currentTarget).attr("id");
+    const dungeon = DungeonManager.dungeonByID(dungeonID);
+    if (!DungeonManager.bossDungeonCanJoin(dungeon.id)) {
+        if (ResourceManager.materialAvailable("M001") < dungeon.openCost) {
+            Notifications.dungeonGoldReq();
+            return;
+        }
+        ResourceManager.deductMoney(dungeon.openCost);
+        DungeonManager.payDungeonUnlock(dungeonID);
+        refreshDungeonSelect();
+        return;
+    }
+    $dungeonSelect.hide();
     if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.ADVENTURING) showDungeon(dungeonID);
     else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.EMPTY) {
         refreshHeroSelect(dungeonID);
@@ -56,12 +97,38 @@ $(document).on("click", ".dungeonContainer", (e) => {
     }
 });
 
-function showDungeon(dungeonID) {
-    DungeonManager.dungeonView = dungeonID;
-    BattleLog.clear();
-    initiateDungeonFloor();
-    $dungeonSelect.hide();
-    $dungeonRun.show().removeClass().addClass(dungeonID);
+/*------------------------
+/*-   TEAM SELECT CODE   -
+/*------------------------*/
+function refreshHeroSelect() {
+    //builds the div that we hide and can show when we're selecting for that area
+    $dtsTop.empty();
+    const d1top = $("<div/>").addClass("dtsTopTitle").html("<h3>Assemble your Team!</h3>");
+    $dtsTop.append(d1top);
+    const d = $("<div/>").addClass("dungeonTeamCollection");
+    PartyCreator.heroes.forEach((hero,i) => {
+        const d1 = characterCard("dungeonTeam",i,hero);
+        d.append(d1);
+    });
+    for (let i=0;i<PartyCreator.emptyPartySlots();i++) {
+        const d1a = characterCard("dungeonTeam",i).addClass("noHeroDungeonSelect");
+        d.append(d1a);
+    }
+    $dtsTop.append(d);
+    const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("Launch Adventure");
+    if (PartyCreator.heroes.length === 0) dbutton.addClass('dungeonStartNotAvailable')
+    $dtsTop.append(dbutton);
+    $dtsBottom.empty();
+    const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Your Available Heroes</h3>");
+    $dtsBottom.append(d1bot);
+    const d2 = $("<div/>").addClass("dungeonAvailableCollection");
+    HeroManager.ownedHeroes().forEach(hero => {
+        if (!hero.inDungeon && !PartyCreator.heroes.includes(hero.id)) {
+            const d3 = characterCard("dungeonAvailable",hero.uniqueid,hero.id);
+            d2.append(d3);  
+        }
+    });
+    $dtsBottom.append(d2);
 }
 
 //clicking a hero to remove them from your party
@@ -96,62 +163,6 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
     }
 });
 
-function refreshHeroSelect() {
-    //builds the div that we hide and can show when we're selecting for that area
-    $dtsTop.empty();
-    const d1top = $("<div/>").addClass("dtsTopTitle").html("<h3>Assemble your Team!</h3>");
-    $dtsTop.append(d1top);
-    const d = $("<div/>").addClass("dungeonTeamCollection");
-    PartyCreator.heroes.forEach((hero,i) => {
-        const d1 = characterCard("dungeonTeam",i,hero);
-        d.append(d1);
-    });
-    for (let i=0;i<PartyCreator.emptyPartySlots();i++) {
-        const d1a = characterCard("dungeonTeam",i).addClass("noHeroDungeonSelect");
-        d.append(d1a);
-    }
-    $dtsTop.append(d);
-    const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("Launch Adventure");
-    if (PartyCreator.heroes.length === 0) dbutton.addClass('dungeonStartNotAvailable')
-    $dtsTop.append(dbutton);
-    $dtsBottom.empty();
-    const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Your Available Heroes</h3>");
-    $dtsBottom.append(d1bot);
-    const d2 = $("<div/>").addClass("dungeonAvailableCollection");
-    HeroManager.ownedHeroes().forEach(hero => {
-        if (!hero.inDungeon && !PartyCreator.heroes.includes(hero.id)) {
-            const d3 = characterCard("dungeonAvailable",hero.uniqueid,hero.id);
-            d2.append(d3);  
-        }
-    });
-    $dtsBottom.append(d2);
-}
-
-const $dungeonListings = $("#dungeonListings");
-
-function refreshDungeonSelect() {
-    //shows each dungeon so you can select that shit...
-    $dungeonListings.empty();
-    DungeonManager.dungeons.forEach(dungeon => {
-        const d1 = $("<div/>").addClass("dungeonContainer").attr("id",dungeon.id);
-        const d2 = $("<div/>").addClass("dungeonHeader").html(dungeon.name);
-        const d3 = $("<div/>").addClass("dungeonStatus").attr("id","ds"+dungeon.id);
-        if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").attr("id", "floorStatus"+dungeon.id).html(`Floor ${dungeon.floorCount}`);
-        else d3.removeClass("dungeonInProgress").html("Idle");
-        const d4 = $("<div/>").addClass("dungeonBackground");
-        const d5 = $("<div/>").addClass("dungeonAdventurers");
-        d1.append(d2,d3,d4,d5);
-        if (dungeon.status === DungeonStatus.ADVENTURING) {
-            dungeon.party.heroes.forEach(h=> {
-                const d5a = $("<div/>").addClass("dungeonHeroDungeonSelect").html(h.head);
-                d5.append(d5a);
-            });
-        }
-        $dungeonListings.append(d1);
-    })
-}
-
-
 function characterCard(prefix,dv,ID) {
     const d = $("<div/>").addClass(prefix+"Card").attr("data-value",dv);
     const dclick = $("<div/>").addClass(prefix+"CardClick").attr("heroID",dv);
@@ -169,6 +180,36 @@ function characterCard(prefix,dv,ID) {
     dclick.append(d1,d2,d3,d4,d5);
     return d.append(dclick);
 }
+
+/*-----------------------------------------
+/*-   DUNGEON RUNNING CODE
+/*-----------------------------------------*/
+
+function showDungeon(dungeonID) {
+    DungeonManager.dungeonView = dungeonID;
+    BattleLog.clear();
+    initiateDungeonFloor();
+    $dungeonSelect.hide();
+    $dungeonRun.show().removeClass().addClass(dungeonID);
+}
+
+$(document).on("click", ".dungeonSpeedButtons", (e) => {
+    e.preventDefault();
+    $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
+    $(e.currentTarget).addClass("dungeonSpeedActive");
+    const id = $(e.currentTarget).attr("id");
+    console.log(id);
+    if (id === "dungeonSpeedSlow") DungeonManager.speed = 3000;
+    if (id === "dungeonSpeedNormal") DungeonManager.speed = 1500;
+    if (id === "dungeonSpeedFast") DungeonManager.speed = 750;
+});
+
+function refreshSpeedButton(speed) {
+    $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
+    if (speed === 3000) $("#dungeonSpeedSlow").addClass("dungeonSpeedActive");
+    if (speed === 1500) $("#dungeonSpeedNormal").addClass("dungeonSpeedActive");
+    if (speed === 750) $("#dungeonSpeedFast").addClass("dungeonSpeedActive");
+};
 
 const $floorID = $("#floorID");
 const $dungeonHeroList = $("#dungeonHeroList");

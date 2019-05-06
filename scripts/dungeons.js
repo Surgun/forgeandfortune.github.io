@@ -87,7 +87,6 @@ class Dungeon {
         this.dungeonTime += t;
         if (this.floorComplete() && this.dungeonTime >= DungeonManager.speed) {
             this.nextFloor();
-            initiateDungeonFloor();
             this.dungeonTime -= DungeonManager.speed;
         }
         else if (!this.floorComplete()) refreshBeatBar(this.dungeonTime);
@@ -156,6 +155,7 @@ class Dungeon {
         this.floorCount += 1;
         this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
         this.order = new TurnOrder(this.party.heroes,this.mobs);
+        if (DungeonManager.dungeonView === this.id) initiateDungeonFloor();
         $("#floorStatus"+this.id).html(`Floor ${this.floorCount}`);
         $("#DungeonSideBarStatus").html(`${this.name} - Floor ${this.floorCount}`);
     }
@@ -166,12 +166,26 @@ const DungeonManager = {
     dungeonCreatingID : null,
     dungeonView : null,
     speed : 1250,
+    dungeonPaid : [],
+    bossDungeonCanJoin(id) {
+        if (this.dungeonByID(id).type === "regular") return true;
+        return this.dungeonPaid.includes(id);
+    },
+    bossDungeonCanSee(id) {
+        const dungeon = this.dungeonByID(id);
+        if (dungeon.type === "regular" || this.dungeonPaid.includes(id) || dungeon.preReq === null) return true;
+        return this.dungeonPaid.includes(dungeon.preReq);
+    },
+    payDungeonUnlock(id) {
+        this.dungeonPaid.push(id);
+    },
     createSave() {
         const save = {};
         save.dungeons = [];
         this.dungeons.forEach(d => {
             save.dungeons.push(d.createSave());
         });
+        save.dungeonPaid = this.dungeonPaid;
         save.speed = this.speed;
         return save;
     },
@@ -184,6 +198,7 @@ const DungeonManager = {
             dungeon.loadSave(d);
         });
         this.speed = save.speed;
+        if (typeof save.dungeonPaid !== "undefined") this.dungeonPaid = save.dungeonPaid;
         refreshSpeedButton(this.speed);
     },
     addTime(t) {

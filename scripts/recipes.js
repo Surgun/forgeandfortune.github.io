@@ -111,36 +111,11 @@ class Item{
         else if (this.autoSell === "Great") this.autoSell = "Epic";
         else this.autoSell = "None";
     }
-    found() { //CHANGE TO FOUND
+    found() {
         const dungeonID = this.dungeonUnlock;
         if (dungeonID === null) return true;
         return DungeonManager.bossesBeat.includes(dungeonID);
     }
-}
-
-$(document).on("click",".recipeActionButton",(e) => {
-    e.preventDefault();
-    const recipeButtons = document.querySelectorAll(".recipeActionButton");
-    if (e.currentTarget.classList.contains("toggleFilter")) {
-        e.currentTarget.classList.remove("toggleFilter");
-    } else if (e.currentTarget.classList.contains("filterActive")) {
-        e.currentTarget.classList.add("toggleFilter");
-    } else {
-        recipeButtons.forEach((button)=>{
-            button.classList.remove("filterActive");
-            button.classList.remove("toggleFilter");
-        });
-        e.currentTarget.classList.add("filterActive");
-    }
-    const filter = e.currentTarget.getAttribute("data-filter");
-    sortRecipesByHeading(filter);
-    recipeCanCraft();
-});
-
-function sortRecipesByHeading(heading) {
-    if (recipeList.recipeCategory === heading) heading = heading+"Asc";
-    recipeList.recipeCategory = heading;
-    initializeRecipes(recipeList.recipePop, recipeList.recipeCategory, heading, queriedRecipes);
 }
 
 const recipeList = {
@@ -180,7 +155,7 @@ const recipeList = {
         return this.recipes.some(r=>r.type === type && r.found());
     },
     moreRecipes(type) {
-        return this.recipes.filter(r => !r.found() && type === r.type).length > 0;
+        return this.recipes.some(r => !r.found() && type === r.type);
     },
     remainingReqs(type) {
         const item = this.getNextBuyable(type);
@@ -208,12 +183,31 @@ const recipeList = {
     }
 }
 
+const $recipeActionButton = $(".recipeActionButton");
+
+//the sort buttons at the top 
+$(document).on("click",".recipeActionButton",(e) => {
+    e.preventDefault();
+    const toggleFilter = $(e.currentTarget).hasClass("filterActive");
+    $recipeActionButton.removeClass("filterActive");
+    $recipeActionButton.removeClass("toggleFilter");
+    $(e.currentTarget).addClass("filterActive");
+    if (toggleFilter) $(e.currentTarget).addClass("toggleFilter");
+    const filter = $(e.currentTarget).attr("data-filter");
+    sortRecipesByHeading(filter);
+    recipeCanCraft();
+});
+
+function sortRecipesByHeading(heading) {
+    if (recipeList.recipeCategory === heading) heading = heading+"Asc";
+    recipeList.recipeCategory = heading;
+    initializeRecipes(recipeList.recipePop, recipeList.recipeCategory, heading, queriedRecipes);
+}
+
 function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
     ItemType.forEach(type => {
         const recipeIcon = $("#rf"+type);
-        //if (recipeList.canBuy(type)) recipeIcon.addClass("hasEvent");
-        //else recipeIcon.removeClass("hasEvent");
         if (recipeList.ownAtLeastOne(type)) recipeIcon.show();
         else recipeIcon.hide();
     });
@@ -222,7 +216,7 @@ function refreshRecipeFilters() {
 function initializeRecipes(type,sortType,heading,query) {
     recipeList.recipePop = type;
     //filtering
-    let rFilter = recipeList.recipes.filter(r => r.found());
+    let rFilter = recipeList.recipes.filter(r => r.found() && WorkerManager.couldCraft(r));
     if (type === "Matless") {
         rFilter = rFilter.filter(r => r.mcost === null || r.isMastered());
         if (rFilter.length === 0) {
@@ -231,7 +225,7 @@ function initializeRecipes(type,sortType,heading,query) {
         }
     }
     else if (ResourceManager.isAMaterial(type)) {
-        rFilter = rFilter.filter(r => r.mcost.hasOwnProperty(type) && !r.isMastered());
+        rFilter = rFilter.filter(r => r.mcost !== null && r.mcost.hasOwnProperty(type) && !r.isMastered());
         if (rFilter.length === 0) {
             Notifications.noItemFilter();
             return;
@@ -382,7 +376,7 @@ function refreshMasteryBar() {
 }
 
 function refreshCraftedCount() {
-    recipeList.recipes.forEach((recipe) => {
+    recipeList.recipes.forEach(recipe => {
         const rr = $("#rr"+recipe.id);
         rr.find(".recipeTotalCrafted").html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
     });
@@ -418,7 +412,7 @@ function refreshBlueprint(type) {
         const d2 = $("<div/>").addClass('recipeName').html(recipe.itemPicName());
         const d3 = $("<div/>").addClass('bpReq');
         const d3a = $("<div/>").addClass('bpReqHeading').html("Prerequisite Workers Needed");
-        const d3b = $("<div/>").addClass('bpReqNeeded').html(needed);
+        const d3b = $("<div/>").addClass('bpReqNeeded').html(recipe.remainingReqs());
         d3.append(d3a,d3b);
         d.append(d1,d2,d3);
         $blueprintUnlock.append(d);
@@ -430,9 +424,8 @@ function refreshBlueprint(type) {
 $(document).on('click', '.recipeCraft', (e) => {
     //click on a recipe to slot it
     e.preventDefault();
-    const type = $(e.currentTarget).attr("id");
-    //const item = recipeList.idToItem(type);
-    actionSlotManager.addSlot(type);
+    const itemID = $(e.currentTarget).attr("id");
+    actionSlotManager.addSlot(itemID);
 });
 
 $(document).on('click', '.recipeSelect', (e) => {

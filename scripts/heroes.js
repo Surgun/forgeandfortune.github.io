@@ -6,7 +6,6 @@ class Hero {
     constructor (props) {
         Object.assign(this, props);
         this.uniqueid = this.id;
-        this.maxHPseen = this.hp;
         this.ap = 0;
         this.apmax = 100;
         this.armor = 0;
@@ -33,7 +32,6 @@ class Hero {
         save.id = this.id;
         save.hp = this.hp;
         save.ap = this.ap;
-        save.maxHPseen = this.maxHPseen;
         save.inDungeon = this.inDungeon;
         if (this.slot1 === null) save.slot1 = null;
         else save.slot1 = this.slot1.createSave();
@@ -78,7 +76,6 @@ class Hero {
             this.slot6 = new itemContainer(save.slot6.id,save.slot6.rarity);
             this.slot6.loadSave(save.slot6);
         }
-        if (save.maxHPseen !== undefined) this.maxHPseen = save.maxHPseen;
         this.owned = save.owned;
     }
     getArmor() {
@@ -148,8 +145,6 @@ class Hero {
     alive() {
         return this.hp > 0;
     }
-    addTime() {
-    }
     getEquipSlots() {
         //return an object with 
         return [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6];
@@ -161,7 +156,6 @@ class Hero {
         if (slot === 3) this.slot4 = item;
         if (slot === 4) this.slot5 = item;
         if (slot === 5) this.slot6 = item;
-        this.checkHealth();
     }
     removeSlot(slot) {
         if (slot === 0) this.slot1 = null;
@@ -250,12 +244,6 @@ class Hero {
     }
     canEquipType(type) {
         return this.slot1Type.includes(type) || this.slot2Type.includes(type) || this.slot3Type.includes(type) || this.slot4Type.includes(type) || this.slot5Type.includes(type) || this.slot6Type.includes(type);
-    }
-    checkHealth() {
-        if (this.maxHP() <= this.maxHPseen) return;
-        const hpDelta = this.maxHP() - this.maxHPseen;
-        this.maxHPseen = this.maxHP();
-        this.heal(hpDelta);
     }
 }
 

@@ -59,6 +59,7 @@ const PartyCreator = {
     lockParty() {
         this.heroes.map(hid => HeroManager.idToHero(hid)).forEach(h=>{
             h.inDungeon = true;
+            h.hp = h.maxHP();
         });
         const party = new Party(this.heroes);
         this.heroes = [];

@@ -7,25 +7,19 @@ const $RecipeResults = $("#RecipeResults");
 class Item{
     constructor (props) {
         Object.assign(this, props);
-        this.owned = false;
         this.craftCount = 0;
         this.autoSell = "None";
-        this.autoSacrifice = false;
     }
     createSave() {
         const save = {};
         save.id = this.id;
-        save.owned = this.owned;
         save.craftCount = this.craftCount;
         save.autoSell = this.autoSell;
-        save.autoSacrifice = this.autoSacrifice;
         return save;
     }
     loadSave(save) {
-        this.owned = save.owned;
         this.craftCount = save.craftCount;
         this.autoSell = save.autoSell;
-        if (save.autoSacrifice !== undefined) this.autoSacrifice = save.autoSacrifice;
     }
     itemDescription() {
         return this.description;
@@ -42,31 +36,11 @@ class Item{
     itemLevel() {
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
-    imageValue() {
-        return ResourceManager.formatCost("M001",formatToUnits(this.value,1));
-    }
     itemValueFormatted() {
         return formatToUnits(this.value,2);
     }
     itemValue() {
         return this.value;
-    }
-    visualizeRes() {
-        const d = $("<div/>").addClass("itemCost")
-        this.rcost.forEach(resource => {
-            const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
-            d.append($("<div/>").addClass("indvCost tooltip").attr("data-tooltip",resourceNameForTooltips).html('<img src="images/resources/'+resource+'.png">'));
-        })
-        return d;
-    }
-    visualizeMat() {
-        const d = $("<div/>").addClass("itemCost");
-        for (const [material, amt] of Object.entries(this.mcost)) {
-            const mat = ResourceManager.idToMaterial(material);
-            const d1 = $("<div/>").addClass("indvCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt));
-            d.append(d1);
-        }
-        return d;
     }
     visualizeResAndMat() {
         const d = $("<div/>").addClass("itemCost")
@@ -85,9 +59,6 @@ class Item{
     getCost(resource) {
         if (resource in this.rcost) return this.rcost[resource];
         return 0;
-    }
-    act() {
-        return this.actTime;
     }
     recipeListStats() {
         const d = $("<div/>").addClass("recipeStatList");
@@ -140,10 +111,7 @@ class Item{
         else if (this.autoSell === "Great") this.autoSell = "Epic";
         else this.autoSell = "None";
     }
-    autoSacrificeToggle() {
-        this.autoSacrifice = !this.autoSacrifice;
-    }
-    canSee() {
+    found() { //CHANGE TO FOUND
         const dungeonID = this.dungeonUnlock;
         if (dungeonID === null) return true;
         return DungeonManager.bossesBeat.includes(dungeonID);
@@ -208,47 +176,11 @@ const recipeList = {
     idToItem(id) {
         return this.recipes.find(recipe => recipe.id === id);
     },
-    getNextBuyable(type) {
-        const itemlvls = this.recipes.filter(r => r.owned && r.type === type).map(f => f.lvl);
-        itemlvls.push(0);
-        const maxLvl = Math.max(...itemlvls)
-        return this.recipes.find(recipe => recipe.type === type && recipe.lvl === maxLvl+1);
-    },
-    buyable() {
-        return true;
-    },
-    buyBP(id) {
-        const item = this.idToItem(id);
-        const amt = item.recipeBuy;
-        //const amt = miscLoadedValues.recipeBuy[item.lvl-1]
-        if (ResourceManager.materialAvailable("M001") < amt) {
-            Notifications.cantAffordBlueprint();
-            return;
-        }
-        ResourceManager.deductMoney(amt);
-        item.owned = true;
-        initializeRecipes(recipeList.recipePop, "default")
-        refreshWorkers();
-    },
-    ownAtLeastOneOrCanBuy(type) {
-        let returnVal = true;
-        const owned = this.recipes.filter(recipe => recipe.type === type && recipe.owned).length;
-        if (owned === 0) {
-            const item = this.getNextBuyable(type);
-            item.rcost.forEach(r => {
-                if (WorkerManager.lvlByType(r) >= item.lvl) return;
-                returnVal = false;
-            });
-        }
-        return returnVal;
-    },
-    canBuy(type) {
-        const item = this.getNextBuyable(type);
-        if (item === undefined) return false;
-        return item.rcost.every(r => WorkerManager.lvlByType(r) >= item.lvl)
+    ownAtLeastOne(type) {
+        return this.recipes.some(r=>r.type === type && r.found());
     },
     moreRecipes(type) {
-        return this.recipes.filter(r => !r.owned && type === r.type).length > 0;
+        return this.recipes.filter(r => !r.found() && type === r.type).length > 0;
     },
     remainingReqs(type) {
         const item = this.getNextBuyable(type);
@@ -265,10 +197,10 @@ const recipeList = {
         return this.recipes.filter(r=>r.recipeType==="normal").length;
     },
     advancedWorkerUnlock() {
-        return this.recipes.filter(r => r.owned).some(recipe => recipe.lvl >= 5);
+        return this.recipes.filter(r => r.found()).some(recipe => recipe.lvl >= 5);
     },
     maxTier() {
-        const lvls = this.recipes.filter(r=>r.owned).map(r=>r.lvl);
+        const lvls = this.recipes.filter(r=>r.found()).map(r=>r.lvl);
         return Math.max(...lvls);
     },
     unlockedByDungeon(dungeonID) {
@@ -280,9 +212,9 @@ function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
     ItemType.forEach(type => {
         const recipeIcon = $("#rf"+type);
-        if (recipeList.canBuy(type)) recipeIcon.addClass("hasEvent");
-        else recipeIcon.removeClass("hasEvent");
-        if (recipeList.ownAtLeastOneOrCanBuy(type)) recipeIcon.show();
+        //if (recipeList.canBuy(type)) recipeIcon.addClass("hasEvent");
+        //else recipeIcon.removeClass("hasEvent");
+        if (recipeList.ownAtLeastOne(type)) recipeIcon.show();
         else recipeIcon.hide();
     });
 }
@@ -290,7 +222,7 @@ function refreshRecipeFilters() {
 function initializeRecipes(type,sortType,heading,query) {
     recipeList.recipePop = type;
     //filtering
-    let rFilter = recipeList.recipes.filter(r => r.owned && r.canSee());
+    let rFilter = recipeList.recipes.filter(r => r.found());
     if (type === "Matless") {
         rFilter = rFilter.filter(r => r.mcost === null || r.isMastered());
         if (rFilter.length === 0) {
@@ -480,38 +412,18 @@ function refreshBlueprint(type) {
     type = type || cacheBlueprintType;
     cacheBlueprintType = type;
     $blueprintUnlock.empty();
-    const d = $("<div/>").addClass('bpShop');
-    const nextRecipe = recipeList.getNextBuyable(type);
-    if (recipeList.moreRecipes(type)) {
-        const d1 = $("<div/>").addClass('recipeItemLevel').html(nextRecipe.itemLevel());
-        const d2 = $("<div/>").addClass('recipeName').html(nextRecipe.itemPicName());
-        d.append(d1,d2);
-    }
-    else {
-        return;
-    }
-    const needed = recipeList.remainingReqs(type);
-    if (needed.length === 0) {
-        let amt = `<span class="unlockbp_text">Unlock</span><span class="unlockbp_cost">${miscIcons.gold}&nbsp;${formatToUnits(nextRecipe.recipeBuy,2)}</span>`
-        let notice = `To unlock this recipe you'll need to pay a gold cost.`
-        if (nextRecipe.recipeBuy === 0) {
-            amt = "Unlock";
-            notice = `You can unlock this recipe now for free.`
-        }
-        const b1 = $("<div/>").addClass('bpShopDescription').html(`${notice}`);
-        const b2 = $("<div/>").addClass('bpShopButton').attr("id",nextRecipe.id).html(`${amt}`);
-        d.append(b1,b2);
-    }
-    else {
+    recipeList.listByType(type).filter(r => r.found() && r.remainingReqs().length > 0).forEach(recipe => {
+        const d = $("<div/>").addClass('bpShop');
+        const d1 = $("<div/>").addClass('recipeItemLevel').html(recipe.itemLevel());
+        const d2 = $("<div/>").addClass('recipeName').html(recipe.itemPicName());
         const d3 = $("<div/>").addClass('bpReq');
         const d3a = $("<div/>").addClass('bpReqHeading').html("Prerequisite Workers Needed");
         const d3b = $("<div/>").addClass('bpReqNeeded').html(needed);
         d3.append(d3a,d3b);
-        d.append(d3);
-    }
-    $blueprintUnlock.append(d);
-
-    const $RecipeContents= $(".recipeContents");
+        d.append(d1,d2,d3);
+        $blueprintUnlock.append(d);
+    });
+    const $RecipeContents = $(".recipeContents");
     $RecipeContents.append($blueprintUnlock);
 }
 

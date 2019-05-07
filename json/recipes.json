@@ -1345,7 +1345,7 @@
     "hp": 0,
     "recipeBuy": 0,
     "recipeType": "normal",
-    "dungeonUnlock": "D070"
+    "dungeonUnlock": null
   },
   {
     "id": "R0702",

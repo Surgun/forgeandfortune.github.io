@@ -88,8 +88,8 @@ class Dungeon {
         if (this.floorComplete() && this.dungeonTime >= DungeonManager.speed) {
             this.nextFloor();
             this.dungeonTime -= DungeonManager.speed;
+            return;
         }
-        else if (!this.floorComplete()) refreshBeatBar(this.dungeonTime);
         while (this.dungeonTime >= DungeonManager.speed) {
             const unit = this.order.nextTurn();
             if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
@@ -103,6 +103,7 @@ class Dungeon {
             this.dungeonTime -= DungeonManager.speed;
             if (this.id === DungeonManager.dungeonView) refreshTurnOrder();
         }
+        if (!this.floorComplete()) refreshBeatBar(this.dungeonTime);
     }
     floorComplete() {
         return this.mobs.every(m=>m.looted());
@@ -133,11 +134,11 @@ class Dungeon {
         if (this.type === "boss") {
             EventManager.addEventBoss(this.id,this.dungeonTime);
             DungeonManager.bossesBeat.push(this.id);
+            refreshRecipeFilters();
         }
         else EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorCount);
         DungeonManager.removeDungeon(this.id);
-        console.log(DungeonManager.dungeonView,this.id)
-        if (DungeonManager.dungeonView !== this.id) {
+        if (DungeonManager.dungeonView === this.id) {
             BattleLog.clear();
             openTab("dungeonsTab");
         }

@@ -43,7 +43,6 @@ function createSave() {
     saveFile["h"] = HeroManager.createSave();
     saveFile["i"] = Inventory.createSave();
     saveFile["r"] = recipeList.createSave();
-    saveFile["rf"] = recipeList.createFilterSave();
     saveFile["rs"] = ResourceManager.createSave();
     saveFile["w"] = WorkerManager.createSave();
     saveFile["se"] = seedCreateSave();
@@ -75,7 +74,6 @@ function loadGame() {
     if (typeof loadGame["h"] !== "undefined") HeroManager.loadSave(loadGame["h"]);
     if (typeof loadGame["i"] !== "undefined") Inventory.loadSave(loadGame["i"]);
     if (typeof loadGame["r"] !== "undefined") recipeList.loadSave(loadGame["r"]);
-    if (typeof loadGame["rf"] !== "undefined") recipeList.loadRecipeFilterSave(loadGame["rf"]);
     if (typeof loadGame["rs"] !== "undefined") ResourceManager.loadSave(loadGame["rs"]);
     if (typeof loadGame["w"] !== "undefined") WorkerManager.loadSave(loadGame["w"]);
     if (typeof loadGame["se"] !== "undefined") seedLoadSave(loadGame["se"]);

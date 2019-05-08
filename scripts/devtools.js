@@ -14,6 +14,7 @@ const devtools = {
         ResourceManager.materials.forEach(material => {
             ResourceManager.addMaterial(material.id,9999999);
         })
+        DungeonManager.bossesBeat = DungeonManager.dungeons.filter(d=>d.type==="boss").map(d=>d.id);
         TownManager.bankSee = true;
         TownManager.bankUnlock = true;
         TownManager.fuseSee = true;

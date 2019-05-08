@@ -7,6 +7,7 @@ const player = {
 }
 
 function afterLoad() {
+    initializeRecipes();
     initializeMats();
     if (!loadGame()) {
         WorkerManager.generateWorkerSac();
@@ -19,7 +20,6 @@ function afterLoad() {
         HeroManager.heroOrder.shift();
         achievementStats.startTime = Date.now();
         EventManager.addEvent("E001");
-        ItemType.forEach(type => recipeList.recipeNewFilter.push(type));
     }
     else {
         WorkerManager.generateWorkerSac();
@@ -27,7 +27,6 @@ function afterLoad() {
         HeroManager.heroBuySeed();
     }
     refreshMasteryBar()
-    //refreshCraftCount();
     refreshInventory();
     refreshWorkers();
     refreshSideWorkers();
@@ -38,7 +37,6 @@ function afterLoad() {
     refreshRecipeFilters();
     refreshEvents();
     hardMatRefresh();
-    initializeRecipes("Knives","default");
     refreshProgress();
     initializeSideBarDungeon();
     recipeCanCraft();

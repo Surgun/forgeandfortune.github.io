@@ -69,6 +69,7 @@ const ResourceManager = {
         }
     },
     refundMaterial(item) {
+        if (item.mcost === null) return;
         for (const [resource,amt] of Object.entries(item.mcost)) {
             this.addMaterial(resource,amt);
         }

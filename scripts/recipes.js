@@ -92,8 +92,6 @@ class Item{
         this.craftCount += 1;
         if (this.craftCount === 100) {
             masteredItem = true;
-            refreshMasteryBar();
-            refreshCraftedCount();
             initializeActionSlots();
             refreshProgress();
         }
@@ -120,9 +118,9 @@ class Item{
 
 const recipeList = {
     recipes : [],
-    recipeNewFilter : [],
-    recipeCategory : "default",
-    recipePop : "knives",
+    recipeFilterType : "default",
+    recipeFilterString : "",
+    recipeSortType : "default",
     createSave() {
         const save = [];
         this.recipes.forEach(r=> {
@@ -130,17 +128,24 @@ const recipeList = {
         });
         return save;
     },
-    createFilterSave() {
-        return this.recipeNewFilter;
+    filteredRecipeList() {
+        console.log(this.recipeFilterType)
+        const cleanString = this.recipeFilterString.toLowerCase().replace(/\s+/g, '');
+        if (this.recipeFilterType === "default") return this.recipes.filter(r => r.found() && r.name.toLowerCase().includes(cleanString));
+        if (this.recipeFilterType === "Matless") return this.recipes.filter(r => r.found() && (r.mcost === null || r.isMastered()));
+        return this.recipes.filter(r => r.found() && r.type === this.recipeFilterType);
+    },  
+    setSortOrder(filter) {
+        if (this.recipeSortType === filter) this.recipeSortType = this.recipeSortType+"Asc";
+        else this.recipeSortType = filter;
+        console.log(this.recipeSortType);
+        recipeSort();
     },
     loadSave(save) {
         save.forEach(i => {
             const rec = this.idToItem(i.id);
             rec.loadSave(i);
         });
-    },
-    loadRecipeFilterSave(save) {
-        this.recipeNewFilter = save;
     },
     addItem(item) {
         this.recipes.push(item);
@@ -185,24 +190,17 @@ const recipeList = {
 
 const $recipeActionButton = $(".recipeActionButton");
 
-//the sort buttons at the top 
+//click the sort by name value etc at the top
 $(document).on("click",".recipeActionButton",(e) => {
     e.preventDefault();
-    const toggleFilter = $(e.currentTarget).hasClass("filterActive");
-    $recipeActionButton.removeClass("filterActive");
+    const toggleFilterA = $(e.currentTarget).hasClass("filterActive") && !$(e.currentTarget).hasClass("toggleFilter");
+    $recipeActionButton.removeClass("filterActive toggleFilter");
     $recipeActionButton.removeClass("toggleFilter");
     $(e.currentTarget).addClass("filterActive");
-    if (toggleFilter) $(e.currentTarget).addClass("toggleFilter");
+    if (toggleFilterA) $(e.currentTarget).addClass("toggleFilter");
     const filter = $(e.currentTarget).attr("data-filter");
-    sortRecipesByHeading(filter);
-    recipeCanCraft();
+    recipeList.setSortOrder(filter);
 });
-
-function sortRecipesByHeading(heading) {
-    if (recipeList.recipeCategory === heading) heading = heading+"Asc";
-    recipeList.recipeCategory = heading;
-    initializeRecipes(recipeList.recipePop, recipeList.recipeCategory, heading, queriedRecipes);
-}
 
 function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
@@ -213,165 +211,141 @@ function refreshRecipeFilters() {
     });
 }
 
-function initializeRecipes(type,sortType,heading,query) {
-    recipeList.recipePop = type;
-    //filtering
-    let rFilter = recipeList.recipes.filter(r => r.found() && WorkerManager.couldCraft(r));
-    if (type === "Matless") {
-        rFilter = rFilter.filter(r => r.mcost === null || r.isMastered());
-        if (rFilter.length === 0) {
-            Notifications.noItemFilter();
-            return;
-        }
-    }
-    else if (ResourceManager.isAMaterial(type)) {
-        rFilter = rFilter.filter(r => r.mcost !== null && r.mcost.hasOwnProperty(type) && !r.isMastered());
-        if (rFilter.length === 0) {
-            Notifications.noItemFilter();
-            return;
-        }
-    }
-    else if (type === "search") {
-        rFilter =  rFilter.filter(r => query.indexOf(r) > -1);
-        if (rFilter.length === 0) {
-            Notifications.noSearchFound();
-            return;
-        }
-        $(".recipeSelect").removeClass("selected");
-    }
-    else rFilter = rFilter.filter(r => r.type === type);
-    if (sortType === "default") rFilter.sort((a, b) => a.id.localeCompare(b.id))
-    if (sortType === "defaultAsc") rFilter.sort((a, b) => b.id.localeCompare(a.id))
-    if (sortType === "name") rFilter.sort((a, b) => a.name.localeCompare(b.name))
-    if (sortType === "nameAsc") rFilter.sort((a, b) => b.name.localeCompare(a.name))
-    if (sortType === "mastery") rFilter.sort((a,b) => Math.min(100,a.craftCount)-Math.min(100,b.craftCount));
-    if (sortType === "masteryAsc") rFilter.sort((a,b) => Math.min(100,b.craftCount)-Math.min(100,a.craftCount));
-    if (sortType === "lvl") rFilter.sort((a,b) => a.lvl - b.lvl);
-    if (sortType === "lvlAsc") rFilter.sort((a,b) => b.lvl - a.lvl);
-    if (sortType === "value") rFilter.sort((a,b) => a.value - b.value);
-    if (sortType === "valueAsc") rFilter.sort((a,b) => b.value - a.value);
-    if (sortType === "time") rFilter.sort((a,b) => a.craftTime - b.craftTime);
-    if (sortType === "timeAsc") rFilter.sort((a,b) => b.craftTime - a.craftTime);
-    //generate the lists
-    $RecipeResults.empty();
-    //cycle through everything in bp's and make the div for it
-    const table = $('<div/>').addClass('recipeTable');
-    const tableHeader = $('<div/>').addClass('recipeHeader');
-    const htd1 = $('<div/>').addClass('recipeHeadName isSortableHead').html("NAME");
-    const htd2 = $('<div/>').addClass('recipeHeadLvl isSortableHead').html("LVL");
-    const htd3 = $('<div/>').addClass('recipeHeadRes').html("RESOURCES");
-    const htd4 = $('<div/>').addClass('recipeHeadCost').html("MATS");
-    const htd5 = $('<div/>').addClass('recipeHeadStats').html("STATS");
-    const htd6 = $('<div/>').addClass('recipeHeadTime isSortableHead').html("TIME");
-    const htd7 = $('<div/>').addClass('recipeHeadValue isSortableHead').html("VALUE");
-    const htd8 = $('<div/>').addClass('recipeHeadCount isSortableHead').html("MASTERY");
-    tableHeader.append(htd1,htd2,htd3,htd4,htd5,htd6,htd7,htd8);
-    //add that stupid arrow class
-    if (heading === "name") htd1.addClass("sortDesc");
-    else if (heading === "nameAsc") htd1.addClass("sortAsc");
-    else if (heading === "mastery") htd8.addClass("sortDesc");
-    else if (heading === "masteryAsc") htd8.addClass("sortAsc");
-    else if (heading === "lvl") htd2.addClass("sortDesc");
-    else if (heading === "lvlAsc") htd2.addClass("sortAsc");
-    else if (heading === "value") htd7.addClass("sortDesc");
-    else if (heading === "valueAsc") htd7.addClass("sortAsc");
-    else if (heading === "time") htd6.addClass("sortDesc");
-    else if (heading === "timeAsc") htd6.addClass("sortAsc");
-    //table.append(tableHeader);
-    
-    const tableContents = $('<div/>').addClass('recipeContents');
-    //rows of table
-    let alternate = false;
-    let lastRow = null;
+const $recipeContents = $("#recipeContents");
 
-    rFilter.forEach((recipe) => {
-        const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
-        const td1a = $('<div/>').addClass('recipeDescription').html("<i class='fas fa-info-circle'></i>");
-        const td2 = $('<div/>').addClass('recipeItemLevel').html(recipe.itemLevel());
-        const td3 = $('<div/>').addClass('recipecostdiv');
-        const td3a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
-        td3.append(td3a);
+const sortOrder = {
+    default : [],
+    defaultAsc : [],
+    name : [],
+    nameAsc : [],
+    mastery : [],
+    masteryAsc : [],
+    lvl : [],
+    lvlAsc : [],
+    time : [],
+    timeAsc : [],
+    value : [],
+    valueAsc : [],
+    recipeDivDict : {},
+    recipeDivs : null,
+}
 
-        const td4 = $('<div/>').addClass('recipeTimeAndValue');
-            const td4a = $('<div/>').addClass('recipeTimeContainer tooltip').attr("data-tooltip", "Craft Time")
-                const td4a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader").html(`<i class="fas fa-clock"></i>`);
-                const td4a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
-            td4a.append(td4a1,td4a2);
-
-            const td4b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "In Inventory");
-                const td4b1 = $("<div/>").addClass("recipeAmountHeader recipeCardHeader").html(`<i class="fas fa-cube"></i>`);
-                const td4b2 = $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`);
-            td4b.append(td4b1,td4b2);
-
-            const td4c = $('<div/>').addClass('recipeValueContainer tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`);
-                const td4c1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`);
-                const td4c2 = $('<div/>').addClass('recipeValue').html(recipe.itemValueFormatted());
-            td4c.append(td4c1,td4c2);
-        td4.append(td4a,td4b,td4c);
-
-        const td5 = $('<div/>').addClass('recipeCountAndCraft');
-            const craftCount = Math.min(100,recipe.craftCount);
-        const td5a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id);
-            const masteryWidth = (craftCount).toFixed(1)+"%";
-            const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
-            const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",`${craftCount} / 100`).attr("id","masteryBar");
-            const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
-            masteryBarDiv.append(masteryBar,masteryBarFill);
-        td5a.append(masteryBarDiv);
-        const td5b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
-        td5.append(td5a,td5b);
-
-        const td6 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
-        const td7 = $('<div/>').addClass('recipeBackTabContainer');
-            const td7a = $('<div/>').addClass('recipeBackTab backTab1 selected').html(`Details`);
-            const td7b = $('<div/>').addClass('recipeBackTab backTab2').html(`Mastery`);
-        td7.append(td7a,td7b);
-
-            const td8 = $('<div/>').addClass('recipeTabContainer recipeTabDetails');
-                const td8a = $('<div/>').addClass('recipeDetailsContainer');
-                    const td8a1 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
-                    const td8a2 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
-                    const td8a3 = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
-                td8a.append(td8a1,td8a2,td8a3);
-            td8.append(td8a);
-
-            const td9 = $('<div/>').addClass('recipeTabContainer recipeTabMastery');
-                const td9a = $('<div/>').addClass('recipeMasteryContainer');
-                    const td9a1 = $("<div/>").addClass("masteryBlockContainer");
-                    /* This is psuedo code meant for simply displaying how mastery progression will look. A proper function will need to be created once mastery tiers have been designed and implemented */
-                        const td9a1a = $("<div/>").addClass("masteryBlock masteryObtained").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">Material Cost Removal</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 100</div>`);
-                        const td9a1b = $("<div/>").addClass("masteryBlock").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">+25% Rarity Chance</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 250</div>`);
-                        const td9a1c = $("<div/>").addClass("masteryBlock").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">-25% Craft Time Reduction</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 999</div>`);
-                    td9a1.append(td9a1a,td9a1b,td9a1c);
-                    /* End */
-                td9a.append(td9a1);
-            td9.append(td9a);
-        const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5);
-        const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9);
-        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').append(recipeCardFront,recipeCardBack);
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardContainer);
-
-        lastRow = row;
-        if (alternate) row.addClass("recipeRowHighlight");
-        alternate = !alternate;
-        tableContents.append(row);
+function initializeRecipes() { //this is run once at the beginning to load ALL the recipes
+    recipeList.recipes.filter(r=>r.recipeType === "normal").forEach(recipe => {
+        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardFront(recipe),recipeCardBack(recipe)).hide();
+        $recipeContents.append(recipeCardContainer);
+        sortOrder.recipeDivDict[recipe.id] = recipeCardContainer;
     });
-    table.append(tableContents);
-    if (lastRow !== null) lastRow.addClass("recipeRowLast");
-    $RecipeResults.append(table);
-    refreshBlueprint(type);
+    const tempList = recipeList.recipes.filter(r=>r.recipeType === "normal");
+    sortOrder.default = tempList.sort((a, b) => a.id.localeCompare(b.id)).map(r => r.id);
+    sortOrder.defaultAsc = tempList.sort((a, b) => b.id.localeCompare(a.id)).map(r => r.id);
+    sortOrder.name = tempList.sort((a, b) => a.name.localeCompare(b.name)).map(r => r.id);
+    sortOrder.nameAsc = tempList.sort((a, b) => b.name.localeCompare(a.name)).map(r => r.id);
+    sortOrder.mastery = tempList.sort((a,b) => Math.min(100,a.craftCount)-Math.min(100,b.craftCount)).map(r => r.id);
+    sortOrder.masteryAsc = tempList.sort((a,b) => Math.min(100,b.craftCount)-Math.min(100,a.craftCount)).map(r => r.id);
+    sortOrder.lvl = tempList.sort((a,b) => a.lvl - b.lvl).map(r => r.id);
+    sortOrder.lvlAsc = tempList.sort((a,b) => b.lvl - a.lvl).map(r => r.id);
+    sortOrder.time = tempList.sort((a,b) => a.craftTime - b.craftTime).map(r => r.id);
+    sortOrder.timeAsc = tempList.sort((a,b) => b.craftTime - a.craftTime).map(r => r.id);
+    sortOrder.value = tempList.sort((a,b) => a.value - b.value).map(r => r.id);
+    sortOrder.valueAsc = tempList.sort((a,b) => b.value - a.value).map(r => r.id);
+    sortOrder.recipeDivs = $(".recipeCardContainer");
     recipeCanCraft();
+}
+
+function recipeSort() {
+    //assign a data-sort value to each div then re-order as appropriate
+    const sortedList = sortOrder[recipeList.recipeSortType];
+    $(".recipeCardContainer").sort((a,b) => {
+        const aval = sortedList.indexOf($(a).data("recipeID"));
+        const bval = sortedList.indexOf($(b).data("recipeID"));
+        return aval > bval ? 1 : -1;
+    }).appendTo($recipeContents);
+}
+
+function recipeFilterList() {
+    //uses two recipeLists to cycle through all the items and display as appropriate
+    $(".recipeCardContainer").hide();
+    recipeList.filteredRecipeList().map(r=>r.id).forEach(recipe => {
+        sortOrder.recipeDivDict[recipe].show();
+    })
+};
+
+function recipeCardFront(recipe) {
+    const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
+    const td2 = $('<div/>').addClass('recipeDescription').html("<i class='fas fa-info-circle'></i>");
+    const td3 = $('<div/>').addClass('recipeItemLevel').html(recipe.itemLevel());
+    const td4 = $('<div/>').addClass('recipecostdiv');
+        const td4a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
+    td4.append(td4a);
+
+    const td5 = $('<div/>').addClass('recipeTimeAndValue');
+        const td5a = $('<div/>').addClass('recipeTimeContainer tooltip').attr("data-tooltip", "Craft Time")
+            const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader").html(`<i class="fas fa-clock"></i>`);
+            const td5a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
+        td5a.append(td5a1,td5a2);
+
+        const td5b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "In Inventory");
+            const td5b1 = $("<div/>").addClass("recipeAmountHeader recipeCardHeader").html(`<i class="fas fa-cube"></i>`);
+            const td5b2 = $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`);
+        td5b.append(td5b1,td5b2);
+
+        const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`);
+            const td5c1 = $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`);
+            const td5c2 = $('<div/>').addClass('recipeValue').html(recipe.itemValueFormatted());
+        td5c.append(td5c1,td5c2);
+    td5.append(td5a,td5b,td5c);
+
+    const td6 = $('<div/>').addClass('recipeCountAndCraft');
+        const td6a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(recipeMasteryBar(recipe.craftCount));
+        const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
+    td6.append(td6a,td6b);
+    return $('<div/>').addClass('recipeCardFront').append(td1,td2,td3,td4,td5,td6);
+}
+
+function recipeCardBack(recipe) {
+    const td6 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
+        
+    const td7 = $('<div/>').addClass('recipeBackTabContainer');
+        const td7a = $('<div/>').addClass('recipeBackTab backTab1 selected').html(`Details`);
+        const td7b = $('<div/>').addClass('recipeBackTab backTab2').html(`Mastery`);
+    td7.append(td7a,td7b);
+
+    const td8 = $('<div/>').addClass('recipeTabContainer recipeTabDetails');
+        const td8a = $('<div/>').addClass('recipeDetailsContainer');
+            const td8a1 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
+            const td8a2 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
+            const td8a3 = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
+        td8a.append(td8a1,td8a2,td8a3);
+    td8.append(td8a);
+
+    const td9 = $('<div/>').addClass('recipeTabContainer recipeTabMastery');
+        const td9a = $('<div/>').addClass('recipeMasteryContainer');
+            const td9a1 = $("<div/>").addClass("masteryBlockContainer");
+            /* This is psuedo code meant for simply displaying how mastery progression will look. A proper function will need to be created once mastery tiers have been designed and implemented */
+                const td9a1a = $("<div/>").addClass("masteryBlock masteryObtained").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">Material Cost Removal</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 100</div>`);
+                const td9a1b = $("<div/>").addClass("masteryBlock").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">+25% Rarity Chance</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 250</div>`);
+                const td9a1c = $("<div/>").addClass("masteryBlock").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">-25% Craft Time Reduction</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 999</div>`);
+            td9a1.append(td9a1a,td9a1b,td9a1c);
+            /* End */
+        td9a.append(td9a1);
+    td9.append(td9a);
+    return $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9);
+}
+
+function recipeMasteryBar(craftCount) {
+    craftCount = Math.min(100,craftCount);
+    const masteryWidth = (craftCount).toFixed(1)+"%";
+    const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
+    const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",`${craftCount} / 100`).attr("id","masteryBar");
+    const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
+    return masteryBarDiv.append(masteryBar,masteryBarFill);
 }
 
 function refreshMasteryBar() {
     recipeList.recipes.forEach((recipe) => {
         const rr = $("#rc"+recipe.id)
-        const masteryWidth = (recipe.craftCount).toFixed(1)+"%";
-        const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
-        const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",`${recipe.craftCount} / 100`).attr("id","masteryBar");
-        const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
-        masteryBarDiv.append(masteryBar,masteryBarFill);
-        rr.html(masteryBarDiv);
+        rr.html(recipeMasteryBar(recipe.craftCount));
     });
 }
 
@@ -382,6 +356,7 @@ function refreshCraftedCount() {
     });
 }
 
+//wtf is this for?
 function refreshCardInvCount() {
     recipeList.recipes.forEach((recipe) => {
         const rr = $("#rr"+recipe.id+" .recipeAmount");
@@ -390,16 +365,17 @@ function refreshCardInvCount() {
     });
 }
 
+const $recipeCraft = $(".recipeCraft");
+
 function recipeCanCraft() {
     //loops through recipes, adds class if disabled
-    $(".recipeCraft").removeClass("recipeCraftDisable");
+    $recipeCraft.removeClass("recipeCraftDisable");
     recipeList.recipes.forEach(recipe => {
         if (!WorkerManager.canCurrentlyCraft(recipe)) $(".rr"+recipe.id).addClass("recipeCraftDisable");
     }) 
 }
 
 const $blueprintUnlock = $("#BlueprintUnlock");
-
 let cacheBlueprintType = null;
 
 function refreshBlueprint(type) {
@@ -432,21 +408,10 @@ $(document).on('click', '.recipeSelect', (e) => {
     //click on a recipe filter
     e.preventDefault();
     const type = $(e.target).attr("id").substring(2);
-    recipeList.recipeNewFilter = recipeList.recipeNewFilter.filter(t => t !== type);
-    refreshRecipeFilters();
-    if (recipeList.recipeCategory !== "default") {
-        recipeList.recipeCategory = "default";
-        initializeRecipes("default");
-    }
-    initializeRecipes(type,"default");
+    recipeList.recipeFilterType = type;
+    recipeList.recipeFilterString = "";
+    recipeFilterList();
 })
-
-$(document).on('click','.bpShopButton', (e) => {
-    e.preventDefault();
-    const id = $(e.currentTarget).attr('id');
-    recipeList.buyBP(id);
-    refreshRecipeFilters();
-});
 
 $(document).on('click','.recipeDescription', (e) => {
     e.preventDefault();
@@ -475,29 +440,26 @@ $(document).on('click','.recipeBackTab', (e) => {
     $(e.currentTarget).addClass("selected");
 });
 
-function cleanString(string) {
-    const newString = (string).toLowerCase().replace(/\s+/g, '');
-    return newString;
-}
 
-let queriedRecipes = null;
+const $recipeSortInput = $("#recipeSortInput");
 
-function runSortSearch() {
-    const searchTerm = cleanString(document.getElementById("recipeSortInput").value);
-    if (searchTerm.length >= 2) {
-        queriedRecipes = recipeList.recipes.filter(recipe => cleanString(recipe.name).indexOf(searchTerm) > -1);
-        initializeRecipes("search","lvl","lvl",queriedRecipes);
-    } else {
-        Notifications.searchLengthInvalid();
-    }
-}
-
+//clicking button runs search
 $(document).on('click','.recipeSortButton', (e) => {
     e.preventDefault();
-    runSortSearch();
+    const searchString = $recipeSortInput.val();
+    if (searchString.length < 3) return Notifications.searchLengthInvalid();
+    recipeList.recipeFilterString = searchString;
+    recipeList.recipeFilterType = "default";
+    recipeFilterList();
 });
 
+//enter key searches if you're in sort input
 $(document).on('keydown','.recipeSortInput', (e) => {
-    if (e.keyCode === 13) runSortSearch();
+    if (e.keyCode !== 13) return;
+    e.preventDefault();
+    const searchString = $recipeSortInput.val();
+    if (searchString.length < 3) return Notifications.searchLengthInvalid();
+    recipeList.recipeFilterString = searchString;
+    recipeList.recipeFilterType = "default";
+    recipeFilterList();
 });
-

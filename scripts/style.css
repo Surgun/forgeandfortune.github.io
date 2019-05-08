@@ -1333,7 +1333,7 @@ Rarities
     grid-template: auto / repeat(auto-fill, minmax(275px, 1fr));
 }
 
-.recipeCardContainer {
+.recipeCardContainer, .recipeCardContainerBuilding {
     position: relative;
     border-radius: 10px;
     min-height: 216px;

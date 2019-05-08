@@ -310,7 +310,7 @@ function buildScreen(type) {
         const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5);
         const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8);
         const recipeCardInfo = $('<div/>').addClass('recipeCardInfo').append(recipeCardFront,recipeCardBack);
-        const row = $('<div/>').addClass('recipeCardContainer').attr("id","rr"+recipe.id).append(recipeCardInfo);
+        const row = $('<div/>').addClass('recipeCardContainerBuilding').attr("id","rr"+recipe.id).append(recipeCardInfo);
         table.append(row);
     });
     d4.append(table);

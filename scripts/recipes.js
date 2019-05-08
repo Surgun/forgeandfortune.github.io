@@ -232,7 +232,8 @@ const sortOrder = {
 
 function initializeRecipes() { //this is run once at the beginning to load ALL the recipes
     recipeList.recipes.filter(r=>r.recipeType === "normal").forEach(recipe => {
-        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardFront(recipe),recipeCardBack(recipe)).hide();
+        const recipeCardInfo = $('<div/>').addClass('recipeCardInfo').append(recipeCardFront(recipe),recipeCardBack(recipe))
+        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardInfo).hide();
         $recipeContents.append(recipeCardContainer);
         sortOrder.recipeDivDict[recipe.id] = recipeCardContainer;
     });

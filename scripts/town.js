@@ -309,15 +309,10 @@ function buildScreen(type) {
 
         const recipeCardFront = $('<div/>').addClass('recipeCardFront').append(td1,td1a,td2,td3,td4,td5);
         const recipeCardBack = $('<div/>').addClass('recipeCardBack').append(td6,td7,td8);
-        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').append(recipeCardFront,recipeCardBack);
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(recipeCardContainer);
-
-        lastRow = row;
-        if (alternate) row.addClass("recipeRowHighlight");
-        alternate = !alternate;
+        const recipeCardInfo = $('<div/>').addClass('recipeCardInfo').append(recipeCardFront,recipeCardBack);
+        const row = $('<div/>').addClass('recipeCardContainer').attr("id","rr"+recipe.id).append(recipeCardInfo);
         table.append(row);
     });
-    if (lastRow !== null) lastRow.addClass("recipeRowLast");
     d4.append(table);
     $buildingRecipes.append(d4);
     const d5 = $("<div/>").addClass("buildingInstr");

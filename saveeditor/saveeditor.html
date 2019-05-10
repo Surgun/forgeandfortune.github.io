@@ -2,11 +2,17 @@
 <body>
 <head>
     <title>Save Editor lolz</title>
+    <link href="../scripts/saveeditor.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 <body>
-    <div id="saveInput"><input type="text" name="save" id="save"></div>
-    <input type="button" name="Load this Save" id="saveLoad" onclick="ImportSaveButton()" value="Load this Save">
-    <div>Hero List</div>
+    <div class="saveImportContainer">
+        <div id="saveInput"><input type="text" name="save" id="save"></div>
+        <input type="button" name="Load this Save" id="saveLoad" onclick="ImportSaveButton()" value="Load this Save">
+    </div>
+    
+    <div class="heroListTitle">Hero List</div>
     <div id="heroList"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>

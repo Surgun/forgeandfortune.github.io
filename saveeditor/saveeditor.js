@@ -63,7 +63,10 @@ const Sharp = ["+0","+1","+2","+3","+4","+5","+6","+7","+8","+9","+10"];
 
 function getType(hero,i) {
     const slot = hero["slot"+i];
-    if (slot === null) return hero[`slot${i}Type`][0];
+    if (slot === null) {
+        const heroContainer = Heroes.find(h=> h.id === hero.id);
+        return heroContainer[`slot${i}Type`][0];
+    }
     return Recipes.find(r=>r.id===slot.id).type;
 }
 

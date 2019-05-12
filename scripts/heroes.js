@@ -402,11 +402,11 @@ function examineHero(ID) {
     $.each(slots, (slotNum,equip) => {
         let equipText = "";
         let equipRarity = 0
-        let equipLevel = "";
+        let equipLevel = null;
         if (equip !== null) {
             equipText = equip.picName();
             equipRarity = equip.rarity;
-            equipLevel = "LVL " + equip.lvl;
+            equipLevel = `<div class="level_text">LVL</div><div class="level_integer">${equip.lvl}</div>`;
         }
         else {
             equipText = hero.slotTypeIcons(slotNum);
@@ -415,8 +415,10 @@ function examineHero(ID) {
         if (hero.equipUpgradeAvailable(slotNum)) d5.addClass("equipUpgradeAvailable")
         const d5a = $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]);
         const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+equipRarity).html(equipText);
-        const d5b1 = $("<div/>").addClass("equipLevel").html(equipLevel);
-        d5b.append(d5b1);
+        if (equipLevel !== null) {
+            const d5b1 = $("<div/>").addClass("equipLevel").html(equipLevel);
+            d5b.append(d5b1);
+        }
         let d5c = "";
         if (equip === null) {
             d5c = "";

@@ -93,7 +93,7 @@ body.lightmode {
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     -ms-box-shadow: var(--box-shadow);
@@ -2188,12 +2188,11 @@ Rarities
 }
 
 #heroList {
-    display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(125px, 1fr));
-    grid-gap: 10px;
-    align-items: start;
-    padding: 10px;
-    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 5px;
+    height: 100%;
     width: 100%;
     max-width: 325px;
     align-self: start;
@@ -2221,12 +2220,11 @@ Rarities
 .heroOwnedCard, .buyNewHeroCard {
     position: relative;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    min-height: 125px;
+    padding: 5px;
+    margin: 2.5px 0;
     text-align: center;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
@@ -2238,6 +2236,10 @@ Rarities
 
 .buyNewHeroCard {
     grid-column: 1 / -1;
+}
+
+.heroOwnedName {
+    padding: 0 10px;
 }
 
 .dungeonTeamCard:hover, .dungeonAvailableCard:hover, .drHeroCard:hover {
@@ -2255,15 +2257,14 @@ Rarities
     border-color: var(--border-tertiary);
 }
 
-.heroOwnedImage {
-    margin-top: 5px;
+.heroOwnedCard.highlight .heroOwnedName, .heroOwnedCard.highlight:hover .heroOwnedName {
+    color: var(--highlight);
 }
 
 .heroPower {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: auto;
     padding: 3px 10px;
     background-color: var(--border-primary);
     border-radius: 5px;
@@ -2413,11 +2414,11 @@ Rarities
 }
 
 .heroExamineEquip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
     width: 100%;
-    display: grid;
-    grid-template: repeat(3, 175px) / repeat(3, 175px);
-    grid-gap: 10px;
-    margin: 0;
+    max-width: 600px;
 }
 
 .heroExamineEquipment {
@@ -2426,57 +2427,13 @@ Rarities
     flex-direction: column;
     align-items: center;
     margin: 5px 2.5px;
-    max-width: 190px;
-    min-height: 150px;
+    min-width: 175px;
+    min-height: 175px;
     text-align: center;
-    background-color: var(--bg-tertiary);
-    border: 2px solid var(--border-primary);
+    border: 1px solid var(--border-primary);
     border-radius: 10px;
     cursor: pointer;
-    overflow: hidden;  
-}
-
-.heroExamineEquipment:first-of-type {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-.heroExamineEquipment:nth-of-type(2) {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.heroExamineEquipment:nth-of-type(3) {
-    grid-column: 3;
-    grid-row: 3;
-}
-
-.heroExamineEquipment:nth-of-type(4) {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.heroExamineEquipment:nth-of-type(5) {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-.heroExamineEquipment:nth-of-type(6) {
-    grid-column: 1;
-    grid-row: 3;
-}
-
-.heroExamineEquipment.hEEactive {
-    border-bottom-color: var(--highlight);
-}
-
-.heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes {
-    font-size: 0.9em;
-    color: var(--text-tertiary);
-}
-
-.heroExamineEquipmentEquip:hover + .heroExamineEquipmentEquipTypes {
-    top: 26px;
+    overflow: hidden;
 }
 
 .heroExamineEquipmentList + .heroExamineEquipment {
@@ -2484,11 +2441,15 @@ Rarities
 }
 
 .heroExamineEquipmentSlot {
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-primary);
+    background-color: var(--border-primary);
     width: 100%;
+    color: var(--text-primary);
     text-align: center;
-    padding: 3px 5px;
+    padding: 10px 5px;
+}
+
+.heroExamineEquipment.hEEactive .heroExamineEquipmentSlot {
+    color: var(--highlight);
 }
 
 .heroExamineEquipmentEquip {
@@ -2499,7 +2460,6 @@ Rarities
     padding: 5px;
     width: 100%;
     flex-grow: 1;
-    font-size: 0.85em;
 }
 
 .heroExamineEquipmentEquip > .item-name {
@@ -2521,7 +2481,7 @@ Rarities
 .heroExamineEquipmentEquipTypes {
     display: flex;
     position: absolute;
-    top: 200%;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -2530,10 +2490,12 @@ Rarities
     align-items: center;
     background-color: var(--bg-tertiary);
     pointer-events: none;
+    opacity: 0;
 }
 
 .heroExamineEquipmentEquip:hover + .heroExamineEquipmentEquipTypes {
-    top: 26px;
+    top: 0;
+    opacity: 1;
 }
 
 #heroEquipmentList {
@@ -3802,7 +3764,7 @@ Rarities
 }
 
 .equipLevel {
-    top: 30px;
+    top: 45px;
     left: 5px;
 }
 
@@ -5274,6 +5236,16 @@ span.beta-tag {
     display: none;
 }
 
+@media screen and (max-width: 1415px) {
+    #heroList {
+        max-width: 200px;
+    }
+
+    #heroList .heroOwnedCard .heroOwnedImage {
+        display: none;
+    }
+}
+
 /* Enables mobile notice on screens game is not supported on */
 @media screen and (max-width: 1250px) {
 
@@ -5362,9 +5334,7 @@ span.beta-tag {
 
 /* Disables mobile notice on screens game is supported on */
 @media screen and (min-width: 1251px) {
-
     #mobile-content {display: none!important;}
-
 }
 
 /* Hover feedback for back to top button on desktops */
@@ -5374,8 +5344,11 @@ span.beta-tag {
     }
 }
 
-/* Reduces content width of workers and heroes tab elements on smaller screens */
-@media screen and (max-width: 1475px) {
+/* Expand equip slots to use all available space on large displays */
+@media screen and (min-width: 1915px) {
+    .heroExamineEquip {
+        max-width: unset;
+    }
 }
 
 /* For desktop/laptop screens with enough width to display vertical recipe filter listing */

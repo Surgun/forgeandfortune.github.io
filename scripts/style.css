@@ -2236,6 +2236,8 @@ Rarities
 
 .buyNewHeroCard {
     grid-column: 1 / -1;
+    padding: 10px;
+    justify-content: center;
 }
 
 .heroOwnedName {

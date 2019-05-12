@@ -38,7 +38,7 @@ body {
 }
 
 input[type="button"] {
-    margin: 0 10px;
+    margin: 0 0 0 10px;
     padding: 10px 25px;
     font-family: var(--font-stack);
     text-transform: uppercase;
@@ -58,7 +58,15 @@ input[type="button"]:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
-.heroListTitle {
+.buttons {
+    margin: 10px 0;
+}
+
+.buttons > input[type="button"] {
+    margin: 0;
+}
+
+.presetsHeading, .heroListTitle {
     padding: 10px 0 5px 5px;
     margin-bottom: 10px;
     font-size: 1.5rem;

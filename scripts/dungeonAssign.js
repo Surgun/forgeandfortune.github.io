@@ -199,7 +199,6 @@ $(document).on("click", ".dungeonSpeedButtons", (e) => {
     $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
     $(e.currentTarget).addClass("dungeonSpeedActive");
     const id = $(e.currentTarget).attr("id");
-    console.log(id);
     if (id === "dungeonSpeedSlow") DungeonManager.speed = 3000;
     if (id === "dungeonSpeedNormal") DungeonManager.speed = 1500;
     if (id === "dungeonSpeedFast") DungeonManager.speed = 750;
@@ -339,7 +338,7 @@ function refreshHPBar(hero) {
 }
 
 function refreshAPBar(hero) {
-    const apTypes = ["dung","turnOrder"];
+    const apTypes = ["Dung","turnOrder"];
     const apPercent = hero.ap/hero.apmax;
     const apWidth = (apPercent*100).toFixed(1)+"%";
     apTypes.forEach(type => {

@@ -131,16 +131,16 @@ class Mob {
     }
     rollDrops() {
         const mobDrops = [];
-        if (this.drops === null) {
+        if (this.drops === null || this.gotloot) {
             this.gotloot = true;
             return mobDrops;
         }
         for (const [material, success] of Object.entries(this.drops)) {
             const roll = Math.floor(Math.random() * 100);
-
             if (success > roll) mobDrops.push(material);
         }
         this.gotloot = true;
+        console.log(`${this.name} dropped ${mobDrops}`)
         return mobDrops;
     }
     looted() {

@@ -94,6 +94,7 @@ class Dungeon {
             const unit = this.order.nextTurn();
             if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
             else CombatManager.launchAttack(unit, this.mobs, this.party.heroes, this.id);
+            refreshAPBar(unit);
             this.order.nextPosition();
             this.checkDeadMobs();
             if (this.party.isDead()) {
@@ -148,6 +149,7 @@ class Dungeon {
         this.order = null;
         this.dungeonTime = 0;
         this.floorCount = 0;
+        this.dropList = [];
         return;
     }
     addDungeonDrop(drops) {

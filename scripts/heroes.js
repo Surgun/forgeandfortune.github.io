@@ -115,12 +115,8 @@ class Hero {
         return 0;
     }
     addAP() {
-        if (this.slot1 === null) {
-            this.ap += 30;
-        }
-        else {
-            this.ap += this.slot1.ap();
-        }
+        if (this.slot1 === null) return;
+        this.ap += this.slot1.ap();
     }
     heal(hp) {
         this.hp = Math.min(this.hp+hp,this.maxHP());

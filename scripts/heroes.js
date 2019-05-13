@@ -119,7 +119,7 @@ class Hero {
             this.ap += 30;
         }
         else {
-            this.ap += this.slot1.apAdd;
+            this.ap += this.slot1.ap();
         }
     }
     heal(hp) {

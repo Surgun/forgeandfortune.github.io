@@ -32,6 +32,6 @@ const DungeonSeedManager = {
             const num = dungeonSeedList[dungeonSeedList.length-1];
             dungeonSeedList.push((num * 9301 + 49297) % 233280)
         };
-        return dungeonSeedList[dungeonSeedList.length-1] / 233280;
+        return dungeonSeedList[floor-1] / 233280;
     }
 }

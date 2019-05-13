@@ -5718,7 +5718,7 @@
     "smithCost": "M202",
     "apAdd": 0,
     "pow": 0,
-    "hp": 120,
+    "hp": 82,
     "recipeBuy": 500,
     "recipeType": "normal",
     "dungeonUnlock": "D081"
@@ -5740,7 +5740,7 @@
     "smithCost": "M303",
     "apAdd": 0,
     "pow": 0,
-    "hp": 240,
+    "hp": 114,
     "recipeBuy": 1000,
     "recipeType": "normal",
     "dungeonUnlock": "D082"
@@ -5760,7 +5760,7 @@
     "smithCost": "M504",
     "apAdd": 0,
     "pow": 0,
-    "hp": 360,
+    "hp": 158,
     "recipeBuy": 7500,
     "recipeType": "normal",
     "dungeonUnlock": "D083"
@@ -5783,7 +5783,7 @@
     "smithCost": "M505",
     "apAdd": 0,
     "pow": 0,
-    "hp": 420,
+    "hp": 216,
     "recipeBuy": 52500,
     "recipeType": "normal",
     "dungeonUnlock": "D084"
@@ -5806,7 +5806,7 @@
     "smithCost": "M206",
     "apAdd": 0,
     "pow": 0,
-    "hp": 480,
+    "hp": 296,
     "recipeBuy": 367500,
     "recipeType": "normal",
     "dungeonUnlock": "D085"
@@ -5829,7 +5829,7 @@
     "smithCost": "M407",
     "apAdd": 0,
     "pow": 0,
-    "hp": 540,
+    "hp": 404,
     "recipeBuy": 2572500,
     "recipeType": "normal",
     "dungeonUnlock": "D086"
@@ -5852,7 +5852,7 @@
     "smithCost": "M608",
     "apAdd": 0,
     "pow": 0,
-    "hp": 600,
+    "hp": 552,
     "recipeBuy": 18007500,
     "recipeType": "normal",
     "dungeonUnlock": "D087"
@@ -5873,7 +5873,7 @@
     "smithCost": "M509",
     "apAdd": 0,
     "pow": 0,
-    "hp": 660,
+    "hp": 756,
     "recipeBuy": 126052500,
     "recipeType": "normal",
     "dungeonUnlock": "D088"
@@ -5896,7 +5896,7 @@
     "smithCost": "M110",
     "apAdd": 0,
     "pow": 0,
-    "hp": 720,
+    "hp": 1040,
     "recipeBuy": 882367500,
     "recipeType": "normal",
     "dungeonUnlock": "D089"

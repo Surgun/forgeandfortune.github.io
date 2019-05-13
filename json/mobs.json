@@ -2,7 +2,7 @@
   {
     "id": "B101",
     "name": "Green Ooze",
-    "hpBase": 10,
+    "hpBase": 40,
     "hpLvl": 0.4,
     "powBase": 2,
     "powLvl": 0.3,
@@ -20,7 +20,7 @@
   {
     "id": "B102",
     "name": "Pink Ooze",
-    "hpBase": 20,
+    "hpBase": 40,
     "hpLvl": 0.4,
     "powBase": 2,
     "powLvl": 0.3,
@@ -182,7 +182,7 @@
   {
     "id": "B201",
     "name": "Bumbling Bee",
-    "hpBase": 6,
+    "hpBase": 25,
     "hpLvl": 0.2,
     "powBase": 2,
     "powLvl": 0.2,
@@ -200,7 +200,7 @@
   {
     "id": "B202",
     "name": "Crazy Cobra",
-    "hpBase": 12,
+    "hpBase": 25,
     "hpLvl": 0.2,
     "powBase": 2,
     "powLvl": 0.2,
@@ -362,7 +362,7 @@
   {
     "id": "B301",
     "name": "Earth Shaman",
-    "hpBase": 15,
+    "hpBase": 60,
     "hpLvl": 0.8,
     "powBase": 2,
     "powLvl": 0.4,
@@ -380,7 +380,7 @@
   {
     "id": "B302",
     "name": "Psychic Shaman",
-    "hpBase": 30,
+    "hpBase": 60,
     "hpLvl": 0.8,
     "powBase": 2,
     "powLvl": 0.4,
@@ -542,7 +542,7 @@
   {
     "id": "B401",
     "name": "Crusty Crab",
-    "hpBase": 15,
+    "hpBase": 60,
     "hpLvl": 1.8,
     "powBase": 3,
     "powLvl": 0.65,
@@ -560,7 +560,7 @@
   {
     "id": "B402",
     "name": "Tepid Turtle",
-    "hpBase": 30,
+    "hpBase": 60,
     "hpLvl": 1.8,
     "powBase": 3,
     "powLvl": 0.65,
@@ -722,7 +722,7 @@
   {
     "id": "B501",
     "name": "Dwarf Minor",
-    "hpBase": 15,
+    "hpBase": 60,
     "hpLvl": 1.2,
     "powBase": 3,
     "powLvl": 0.75,
@@ -740,7 +740,7 @@
   {
     "id": "B502",
     "name": "Dwarf Cadet",
-    "hpBase": 30,
+    "hpBase": 60,
     "hpLvl": 1.2,
     "powBase": 3,
     "powLvl": 0.75,
@@ -902,7 +902,7 @@
   {
     "id": "B601",
     "name": "Elf Adventurer",
-    "hpBase": 12,
+    "hpBase": 50,
     "hpLvl": 0.4,
     "powBase": 2,
     "powLvl": 0.3,
@@ -920,7 +920,7 @@
   {
     "id": "B602",
     "name": "Elf Scout",
-    "hpBase": 25,
+    "hpBase": 50,
     "hpLvl": 0.4,
     "powBase": 2,
     "powLvl": 0.3,
@@ -1312,7 +1312,7 @@
   {
     "id": "B0101",
     "name": "Dusty Alien",
-    "hpBase": 8,
+    "hpBase": 30,
     "hpLvl": 0.6,
     "powBase": 3,
     "powLvl": 0.3,
@@ -1330,7 +1330,7 @@
   {
     "id": "B0102",
     "name": "Boney Alien",
-    "hpBase": 15,
+    "hpBase": 30,
     "hpLvl": 0.6,
     "powBase": 3,
     "powLvl": 0.3,
@@ -1492,7 +1492,7 @@
   {
     "id": "B0201",
     "name": "Violet Death",
-    "hpBase": 20,
+    "hpBase": 80,
     "hpLvl": 2.8,
     "powBase": 2,
     "powLvl": 0.4,
@@ -1510,7 +1510,7 @@
   {
     "id": "B0202",
     "name": "Rusted Evil",
-    "hpBase": 40,
+    "hpBase": 80,
     "hpLvl": 2.8,
     "powBase": 2,
     "powLvl": 0.4,
@@ -1672,7 +1672,7 @@
   {
     "id": "B0301",
     "name": "Flood",
-    "hpBase": 9,
+    "hpBase": 35,
     "hpLvl": 0.6,
     "powBase": 3,
     "powLvl": 0.5,
@@ -1690,7 +1690,7 @@
   {
     "id": "B0302",
     "name": "Blaze",
-    "hpBase": 18,
+    "hpBase": 35,
     "hpLvl": 0.6,
     "powBase": 3,
     "powLvl": 0.5,
@@ -1852,7 +1852,7 @@
   {
     "id": "B0401",
     "name": "Minimush",
-    "hpBase": 20,
+    "hpBase": 80,
     "hpLvl": 2.8,
     "powBase": 1,
     "powLvl": 0.2,
@@ -1870,7 +1870,7 @@
   {
     "id": "B0402",
     "name": "Maximush",
-    "hpBase": 40,
+    "hpBase": 80,
     "hpLvl": 2.8,
     "powBase": 1,
     "powLvl": 0.2,
@@ -2032,7 +2032,7 @@
   {
     "id": "B0501",
     "name": "Stinkie",
-    "hpBase": 3,
+    "hpBase": 10,
     "hpLvl": 0.2,
     "powBase": 1,
     "powLvl": 0.2,
@@ -2050,7 +2050,7 @@
   {
     "id": "B0502",
     "name": "Smokie",
-    "hpBase": 5,
+    "hpBase": 10,
     "hpLvl": 0.2,
     "powBase": 1,
     "powLvl": 0.2,
@@ -2212,7 +2212,7 @@
   {
     "id": "B0601",
     "name": "Fred Femur",
-    "hpBase": 12,
+    "hpBase": 50,
     "hpLvl": 0.4,
     "powBase": 2,
     "powLvl": 0.2,
@@ -2230,7 +2230,7 @@
   {
     "id": "B0602",
     "name": "Richard Rib",
-    "hpBase": 25,
+    "hpBase": 50,
     "hpLvl": 0.4,
     "powBase": 2,
     "powLvl": 0.2,

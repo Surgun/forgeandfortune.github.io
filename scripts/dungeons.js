@@ -111,7 +111,7 @@ class Dungeon {
             this.dungeonTime -= DungeonManager.speed;
             refreshTurnOrder(this.id);
         }
-        if (!this.floorComplete()) refreshBeatBar(this.dungeonTime);
+        if (!this.floorComplete() && DungeonManager.dungeonView === this.id) refreshBeatBar(this.dungeonTime);
     }
     floorComplete() {
         return this.mobs.every(m=>m.looted());

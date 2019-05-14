@@ -266,7 +266,7 @@ function refreshTurnOrder(dungeonID) {
         d1.append(d1a,d1b);
         if (settings.toggleTurnOrderBars === 1) d1.append(d1c,d1d);
         if (dungeon.order.position === i) {
-            d1.addClass("orderUnitActive").append(createBeatBar(dungeon.dungeonTime));
+            d1.addClass("orderUnitActive").append(createBeatBar(0));
         };
         $drTurnOrder.append(d1);
     });

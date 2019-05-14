@@ -262,6 +262,7 @@ function refreshTurnOrder(dungeonID) {
         const d1b = $("<div/>").addClass("orderUnitHead").html(unit.name);
         const d1c = $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder"));
         const d1d = $("<div/>").addClass("orderUnitAP").html(createAPBar(unit,"turnOrder"));
+        if (unit.apAdd === 0) d1d.hide();
         d1.append(d1a,d1b);
         if (settings.toggleTurnOrderBars === 1) d1.append(d1c,d1d);
         if (dungeon.order.position === i) {

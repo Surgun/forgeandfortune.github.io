@@ -357,7 +357,7 @@ function refreshCraftedCount() {
     });
 }
  
-// Refresh and show current number of item in invenotry on recipe card
+// Refresh and show current number of item in inventory on recipe card
 function refreshCardInvCount() {
     recipeList.recipes.forEach((recipe) => {
         const rr = $("#rr"+recipe.id+" .recipeAmount");

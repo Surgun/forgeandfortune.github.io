@@ -366,13 +366,14 @@ function refreshCardInvCount() {
     });
 }
 
-const $recipeCraft = $(".recipeCraft");
-
 function recipeCanCraft() {
     //loops through recipes, adds class if disabled
+    const $recipeCraft = $(".recipeCraft");
     $recipeCraft.removeClass("recipeCraftDisable");
     recipeList.recipes.forEach(recipe => {
-        if (!WorkerManager.canCurrentlyCraft(recipe)) $(".rr"+recipe.id).addClass("recipeCraftDisable");
+        if (!WorkerManager.canCurrentlyCraft(recipe)) {
+            $(".rr"+recipe.id).addClass("recipeCraftDisable");
+        } 
     }) 
 }
 
@@ -408,6 +409,8 @@ $(document).on('click', '.recipeCraft', (e) => {
 $(document).on('click', '.recipeSelect', (e) => {
     //click on a recipe filter
     e.preventDefault();
+    $(".recipeCardInfo").removeClass("recipeCardFlipped");
+    $(".recipeCardFront").removeClass("recipeCardDisabled");
     const type = $(e.target).attr("id").substring(2);
     recipeList.recipeFilterType = type;
     recipeList.recipeFilterString = "";
@@ -424,12 +427,6 @@ $(document).on('click','.recipeDescription', (e) => {
     $(".recipeTabDetails").removeClass("none");
     $(e.currentTarget).parent().addClass("recipeCardDisabled");
     $(e.currentTarget).parent().parent().addClass("recipeCardFlipped");
-});
-
-$(document).on('click','.recipeSelect', (e) => {
-    e.preventDefault();
-    $(".recipeCardInfo").removeClass("recipeCardFlipped");
-    $(".recipeCardFront").removeClass("recipeCardDisabled");
 });
 
 $(document).on('click','.recipeClose', (e) => {

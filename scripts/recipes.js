@@ -451,7 +451,7 @@ const $recipeSortInput = $("#recipeSortInput");
 $(document).on('click','.recipeSortButton', (e) => {
     e.preventDefault();
     const searchString = $recipeSortInput.val();
-    if (searchString.length < 3) return Notifications.searchLengthInvalid();
+    if (searchString.length < 2) return Notifications.searchLengthInvalid();
     recipeList.recipeFilterString = searchString;
     recipeList.recipeFilterType = "default";
     recipeFilterList();
@@ -462,7 +462,7 @@ $(document).on('keydown','.recipeSortInput', (e) => {
     if (e.keyCode !== 13) return;
     e.preventDefault();
     const searchString = $recipeSortInput.val();
-    if (searchString.length < 3) return Notifications.searchLengthInvalid();
+    if (searchString.length < 2) return Notifications.searchLengthInvalid();
     recipeList.recipeFilterString = searchString;
     recipeList.recipeFilterType = "default";
     recipeFilterList();

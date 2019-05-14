@@ -8,6 +8,10 @@ class TurnOrder {
         this.mobs = mobs;
         this.order =  interlace(heroes,mobs);
         this.position = 0;
+        this.nextNotDead();
+    }
+    nextNotDead() {
+        while (this.order[this.position].dead()) this.position++;
     }
     getOrder() {
         return this.order;
@@ -85,15 +89,18 @@ class Dungeon {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
-        if (this.floorComplete() && this.dungeonTime >= DungeonManager.speed) {
-            this.nextFloor();
-            this.dungeonTime -= DungeonManager.speed;
-            return;
-        }
         while (this.dungeonTime >= DungeonManager.speed) {
+            this.checkDeadMobs(); //workaround for when you killed a monster but haven't looted it and refreshed
+            if (this.floorComplete() && this.dungeonTime >= DungeonManager.speed) {
+                this.nextFloor();
+                this.dungeonTime -= DungeonManager.speed;
+                return;
+            }
             const unit = this.order.nextTurn();
-            if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
-            else CombatManager.launchAttack(unit, this.mobs, this.party.heroes, this.id);
+            if (!unit.dead()) {
+                if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
+                else CombatManager.launchAttack(unit, this.mobs, this.party.heroes, this.id);         
+            }
             refreshAPBar(unit);
             this.order.nextPosition();
             this.checkDeadMobs();
@@ -102,9 +109,9 @@ class Dungeon {
                 return;
             }
             this.dungeonTime -= DungeonManager.speed;
-            if (this.id === DungeonManager.dungeonView) refreshTurnOrder();
+            refreshTurnOrder(this.id);
         }
-        if (!this.floorComplete()) refreshBeatBar(this.dungeonTime);
+        if (!this.floorComplete() && DungeonManager.dungeonView === this.id) refreshBeatBar(this.dungeonTime);
     }
     floorComplete() {
         return this.mobs.every(m=>m.looted());
@@ -116,12 +123,8 @@ class Dungeon {
                 this.addDungeonDrop(mob.rollDrops());
                 needrefresh = true;
             }
-        })
-        /*if (this.mobs.every(m=>m.dead())) {
-            this.nextFloor();
-            needrefresh = true;
-        }*/
-        if (needrefresh) initiateDungeonFloor();
+        });
+        if (needrefresh) initiateDungeonFloor(this.id);
     }
     initializeParty(party) {
         this.party = party;
@@ -145,6 +148,7 @@ class Dungeon {
         }
         initializeSideBarDungeon();
         refreshDungeonSelect();
+        updateHeroCounter();
         this.status = DungeonStatus.EMPTY;
         this.order = null;
         this.dungeonTime = 0;
@@ -167,9 +171,8 @@ class Dungeon {
         this.floorCount += 1;
         this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
         this.order = new TurnOrder(this.party.heroes,this.mobs);
-        if (DungeonManager.dungeonView === this.id) initiateDungeonFloor();
-        $("#floorStatus"+this.id).html(`Floor ${this.floorCount}`);
-        $("#DungeonSideBarStatus").html(`${this.name} - Floor ${this.floorCount}`);
+        initiateDungeonFloor(this.id);
+        refreshDSB(this.id);
     }
 }
 
@@ -237,6 +240,7 @@ const DungeonManager = {
         this.dungeonView = this.dungeonCreatingID;
         dungeon.initializeParty(party);
         dungeon.nextFloor();
+        updateHeroCounter();
     },
     dungeonByID(dungeonID) {
         return this.dungeons.find(d => d.id === dungeonID);

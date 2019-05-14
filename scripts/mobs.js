@@ -140,7 +140,6 @@ class Mob {
             if (success > roll) mobDrops.push(material);
         }
         this.gotloot = true;
-        console.log(`${this.name} dropped ${mobDrops}`)
         return mobDrops;
     }
     looted() {

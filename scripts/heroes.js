@@ -7,6 +7,7 @@ class Hero {
         Object.assign(this, props);
         this.uniqueid = this.id;
         this.ap = 0;
+        this.apAdd = 5;
         this.apmax = 100;
         this.armor = 0;
         this.crit = 5;
@@ -115,7 +116,10 @@ class Hero {
         return 0;
     }
     addAP() {
-        if (this.slot1 === null) return;
+        if (this.slot1 === null) {
+            this.ap += 5;
+            return;
+        };
         this.ap += this.slot1.ap();
     }
     heal(hp) {

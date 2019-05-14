@@ -89,12 +89,13 @@ class Dungeon {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
-        if (this.floorComplete() && this.dungeonTime >= DungeonManager.speed) {
-            this.nextFloor();
-            this.dungeonTime -= DungeonManager.speed;
-            return;
-        }
         while (this.dungeonTime >= DungeonManager.speed) {
+            this.checkDeadMobs(); //workaround for when you killed a monster but haven't looted it and refreshed
+            if (this.floorComplete() && this.dungeonTime >= DungeonManager.speed) {
+                this.nextFloor();
+                this.dungeonTime -= DungeonManager.speed;
+                return;
+            }
             const unit = this.order.nextTurn();
             if (!unit.dead()) {
                 if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);

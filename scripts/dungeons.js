@@ -232,6 +232,7 @@ const DungeonManager = {
     createDungeon() {
         const party = PartyCreator.lockParty();
         const dungeon = this.dungeonByID(this.dungeonCreatingID);
+        if (devtools.dungeonStart !== undefined) dungeon.floorCount = devtools.dungeonStart;
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = this.dungeonCreatingID;
         dungeon.initializeParty(party);

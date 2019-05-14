@@ -3578,7 +3578,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     padding: 10px 0;
 }
 
-.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, #progresslist .plProgressBar {
+.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv {
     width: 100%;
     height: 26px;
     line-height: 26px;

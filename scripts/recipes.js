@@ -278,6 +278,7 @@ function recipeCardFront(recipe) {
     const td3 = $('<div/>').addClass('recipeItemLevel').html(recipe.itemLevel());
     const td4 = $('<div/>').addClass('recipecostdiv');
         const td4a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
+        if (recipe.isMastered()) td4a.addClass('isMastered');
     td4.append(td4a);
 
     const td5 = $('<div/>').addClass('recipeTimeAndValue');

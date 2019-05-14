@@ -479,7 +479,7 @@ body {
     position: relative;
     padding: 10px;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
     border-radius: 10px;
     color: var(--text-primary);
     min-height: 212px;
@@ -625,7 +625,7 @@ body {
 .heroEquipBlockEquip + .heroEquipBlockEquip {
     margin-top: 20px;
     padding: 15px 0;
-    border-top: 1px solid var(--border-primary);
+    border-top: 2px solid var(--border-primary);
 }
 
 .heroEquipBlockEquipStat {
@@ -912,13 +912,6 @@ Rarities
 
 .plProgressBarPercent {
     z-index: 1;
-}
-
-.ASType {
-    text-align: center;
-    background-color: var(--bg-tertiary);
-    border-bottom: 1px solid var(--border-primary);
-    padding: 5px 20px;
 }
 
 .ASName {
@@ -1361,7 +1354,7 @@ Rarities
     height: 100%;
     padding: 10px;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
     border-radius: 10px;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -1856,7 +1849,7 @@ Rarities
     min-height: 229px;
     padding: 10px;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
     border-radius: 10px;
 }
 
@@ -2108,11 +2101,13 @@ Rarities
     align-items: center;
     position: relative;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
     min-width: 250px;
     max-width: 250px;
     margin: 0 15px 10px 0;
     padding: 15px 15px 30px 15px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 #progresslist .plProgressBar {
@@ -2158,7 +2153,8 @@ Rarities
     flex-direction: column;
     padding: 15px;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
 }
 
 .statHeading {
@@ -2227,7 +2223,7 @@ Rarities
     margin: 2.5px 0;
     text-align: center;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
     border-radius: 10px;
     cursor: pointer;
     -webkit-animation: 0.2s scale-in;
@@ -2303,20 +2299,6 @@ Rarities
 
 #heroTab {
     position: relative;
-}
-
-.heroExamineLvlButton {
-    position: relative;
-    background-color: var(--green-secondary);
-    border: 1px solid var(--green-tertiary);
-    margin-top: 5px;
-    padding: 5px 15px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.heroExamineLvlButton:hover {
-    background-color: var(--green-tertiary);
 }
 
 #heroCard {
@@ -2437,7 +2419,7 @@ Rarities
     min-width: 175px;
     min-height: 175px;
     text-align: center;
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
     border-radius: 10px;
     cursor: pointer;
     overflow: hidden;
@@ -2991,7 +2973,7 @@ Rarities
     min-width: 125px;
     max-width: 125px;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
 }
 
 #drStats {
@@ -3016,7 +2998,7 @@ Rarities
     text-align: center;
     padding: 10px;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
     border-radius: 10px;
 }
 
@@ -3086,7 +3068,7 @@ Rarities
     align-items: center;
     padding: 10px;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
     border-radius: 10px;
 }
 
@@ -3191,20 +3173,20 @@ Rarities
     padding: 20px;
 }
 
-#dungeonTeamButton {
+div#dungeonTeamButton {
     display: inline-flex;
+    justify-content: center;
     position: relative;
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 15px;
     font-size: 0.85rem;
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
-    border: 1px solid var(--green-tertiary);
-    background-color: var(--green-secondary);
+    max-width: 200px;
 }
 
-#dungeonTeamButton:not(.dungeonStartNotAvailable):after, .heroExamineLvlButton:after {
+div#dungeonTeamButton:not(.dungeonStartNotAvailable):after, .heroExamineLvlButton:after {
     display: block;
     position: absolute;
     top: 0;
@@ -3214,7 +3196,8 @@ Rarities
     content: "";
     width: 100%;
     height: 100%;
-    background: var(--green-primary);
+    background: var(--green-tertiary);
+    border-radius: 5px;
     z-index: -1;
     opacity: 1;
     -webkit-transform: scaleY(1) scaleX(1);
@@ -3226,30 +3209,11 @@ Rarities
     animation: 1s button-active infinite;
 }
 
-#dungeonTeamButton:hover {
-    background-color: var(--green-tertiary);
-    color: var(--text-white);
-}
-
-#dungeonTeamButton.dungeonStartNotAvailable {
+div#dungeonTeamButton.dungeonStartNotAvailable {
     border-color: var(--border-primary);
     background-color: var(--bg-primary);
     cursor: not-allowed;
     opacity: 0.5;
-}
-
-#dungeonTeamHeal {
-    display: inline-flex;
-    padding: 10px 20px;
-    margin-left: 15px;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
-    cursor: pointer;
-}
-
-#dungeonTeamHeal:hover {
-    background-color: var(--bg-primary);
-    border-color: var(--border-tertiary);
 }
 
 .dungeonAvailableStats, .dungeonTeamStats {
@@ -3295,29 +3259,13 @@ Rarities
     color: var(--green-primary);
 }
 
-.healHero {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    padding: 5px;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-primary);
-    border-radius: 15px;
-}
-
-.healHero:hover {
-    border-color: var(--border-tertiary);
-}
-
-.healHeroCost, .buyHeroCost {
+.buyHeroCost {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.healHeroCost > img, .buyHeroCost > img {
+.buyHeroCost > img {
     margin: 0 2px;
 }
 
@@ -3602,7 +3550,7 @@ Rarities
     align-items: center;
     padding: 10px;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
     border-radius: 10px;
 }
 
@@ -3798,7 +3746,7 @@ Rarities
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .eventConfirm, #dungeonTeamButton {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -3809,7 +3757,7 @@ Rarities
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .eventConfirm:hover, #dungeonTeamButton:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -3884,7 +3832,7 @@ Rarities
     margin: 0 10px;
 }
 
-#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover {
+#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .eventConfirm:hover, #dungeonTeamButton:hover {
     background-color: var(--green-tertiary);
 }
 
@@ -4243,13 +4191,9 @@ Rarities
     padding: 15px;
     max-width: 200px;
     text-align: center;
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
 }
 
 .eventConfirm:hover {
-    background-color: var(--green-secondary);
-    border-color: var(--green-tertiary);
     cursor: pointer;
 }
 

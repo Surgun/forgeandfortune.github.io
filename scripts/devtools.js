@@ -26,6 +26,17 @@ const devtools = {
         forceSave();
         location.replace('/');
     },
+    // This is for sir hamster, sets some things differently to test UI/UX
+    designmode() {
+        devtools.godmode();
+        recipeList.recipes.filter(r=>r.recipeType === "normal").forEach(recipe => {
+            recipe.craftCount = 99;
+        })
+        WorkerManager.workers[0].lvl = 9;
+        HeroManager.heroes[0].owned = false;
+        TownManager.fortuneUnlock = false;
+        forceSave();  
+    },
     hyperSpeed() {
         DungeonManager.speed = 50;
     },

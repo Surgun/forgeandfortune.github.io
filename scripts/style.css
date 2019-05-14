@@ -1655,6 +1655,16 @@ Rarities
     border-radius: 5px;
 }
 
+.isMastered .matCost {
+    background-color: rgba(255,255,255,.01);
+    border-color: rgba(255,255,255,.02);
+    color:  rgba(255,255,255,.5);
+}
+
+.isMastered .matCost > img {
+    opacity: 0.5;
+}
+
 .recipeStatList {
     display: flex;
     justify-content: space-between;

@@ -369,7 +369,7 @@ body {
     padding: 5px 20px;
 }
 
-#DungeonSideBarStatus, #inventorySidebar {
+.DungeonSideBarStatus, #inventorySidebar {
     position: relative;
     text-align: center;
     background-color: var(--bg-tertiary);

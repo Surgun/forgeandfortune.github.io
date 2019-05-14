@@ -104,7 +104,7 @@ class Dungeon {
                 return;
             }
             this.dungeonTime -= DungeonManager.speed;
-            if (this.id === DungeonManager.dungeonView) refreshTurnOrder();
+            refreshTurnOrder(this.id);
         }
         if (!this.floorComplete()) refreshBeatBar(this.dungeonTime);
     }
@@ -118,12 +118,8 @@ class Dungeon {
                 this.addDungeonDrop(mob.rollDrops());
                 needrefresh = true;
             }
-        })
-        /*if (this.mobs.every(m=>m.dead())) {
-            this.nextFloor();
-            needrefresh = true;
-        }*/
-        if (needrefresh) initiateDungeonFloor();
+        });
+        if (needrefresh) initiateDungeonFloor(this.id);
     }
     initializeParty(party) {
         this.party = party;
@@ -169,9 +165,8 @@ class Dungeon {
         this.floorCount += 1;
         this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
         this.order = new TurnOrder(this.party.heroes,this.mobs);
-        if (DungeonManager.dungeonView === this.id) initiateDungeonFloor();
-        $("#floorStatus"+this.id).html(`Floor ${this.floorCount}`);
-        $("#DungeonSideBarStatus").html(`${this.name} - Floor ${this.floorCount}`);
+        initiateDungeonFloor(this.id);
+        refreshDSB(this.id);
     }
 }
 

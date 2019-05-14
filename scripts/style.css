@@ -388,6 +388,10 @@ body {
     cursor: pointer;
 }
 
+.dungeonGroup {
+    margin-bottom: 20px;
+}
+
 .dungeonSideBarMember {
     display: flex;
     align-items: center;
@@ -3574,7 +3578,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     padding: 10px 0;
 }
 
-.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv {
+.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, #progresslist .plProgressBar {
     width: 100%;
     height: 26px;
     line-height: 26px;

@@ -119,11 +119,13 @@ class Hero {
         this.ap += this.slot1.ap();
     }
     heal(hp) {
+        if (this.hp ===0) return;
         this.hp = Math.min(this.hp+hp,this.maxHP());
         refreshHPBar(this);
         updateHeroCounter();
     }
     healPercent(hpPercent) {
+        if (this.hp === 0) return;
         this.hp += Math.floor(this.maxHP()*hpPercent/100);
         this.hp = Math.min(this.maxHP(),this.hp);
         refreshHPBar(this);

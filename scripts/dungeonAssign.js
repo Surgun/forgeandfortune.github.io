@@ -58,6 +58,7 @@ function dungeonBlock(dungeon) {
     const d4 = $("<div/>").addClass("dungeonBackground");
     const d5 = $("<div/>").addClass("dungeonAdventurers");
     const d6 = $("<div/>").addClass("dungeonGoldCost");
+    if (dungeon.type === "regular") d6.hide();
     d1.append(d2,d3,d4,d5,d6);
     if (dungeon.status === DungeonStatus.ADVENTURING) {
         dungeon.party.heroes.forEach(h=> {

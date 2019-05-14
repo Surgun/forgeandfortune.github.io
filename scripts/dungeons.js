@@ -8,6 +8,10 @@ class TurnOrder {
         this.mobs = mobs;
         this.order =  interlace(heroes,mobs);
         this.position = 0;
+        this.nextNotDead();
+    }
+    nextNotDead() {
+        while (this.order[this.position].dead()) this.position++;
     }
     getOrder() {
         return this.order;

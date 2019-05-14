@@ -356,8 +356,8 @@ function refreshCraftedCount() {
         rr.find(".recipeTotalCrafted").html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
     });
 }
-
-//wtf is this for?
+ 
+// Refresh and show current number of item in invenotry on recipe card
 function refreshCardInvCount() {
     recipeList.recipes.forEach((recipe) => {
         const rr = $("#rr"+recipe.id+" .recipeAmount");

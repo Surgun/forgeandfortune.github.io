@@ -416,7 +416,7 @@ $(document).on('click', '.recipeSelect', (e) => {
 
 $(document).on('click','.recipeDescription', (e) => {
     e.preventDefault();
-    $(".recipeCardContainer").removeClass("recipeCardFlipped");
+    $(".recipeCardInfo").removeClass("recipeCardFlipped");
     $(".recipeCardFront").removeClass("recipeCardDisabled");
     $(".recipeTabContainer").addClass("none");
     $(".recipeBackTab").removeClass("selected");
@@ -424,6 +424,12 @@ $(document).on('click','.recipeDescription', (e) => {
     $(".recipeTabDetails").removeClass("none");
     $(e.currentTarget).parent().addClass("recipeCardDisabled");
     $(e.currentTarget).parent().parent().addClass("recipeCardFlipped");
+});
+
+$(document).on('click','.recipeSelect', (e) => {
+    e.preventDefault();
+    $(".recipeCardInfo").removeClass("recipeCardFlipped");
+    $(".recipeCardFront").removeClass("recipeCardDisabled");
 });
 
 $(document).on('click','.recipeClose', (e) => {

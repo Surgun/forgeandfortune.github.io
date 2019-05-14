@@ -157,7 +157,6 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
         initializeSideBarDungeon();
         $dungeonTeamSelect.hide();
         $dungeonRun.show();
-        updateHeroCounter();
     }
     else {
         Notifications.noPartySelected();

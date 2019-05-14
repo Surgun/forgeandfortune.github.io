@@ -143,6 +143,7 @@ class Dungeon {
         }
         initializeSideBarDungeon();
         refreshDungeonSelect();
+        updateHeroCounter();
         this.status = DungeonStatus.EMPTY;
         this.order = null;
         this.dungeonTime = 0;
@@ -234,6 +235,7 @@ const DungeonManager = {
         this.dungeonView = this.dungeonCreatingID;
         dungeon.initializeParty(party);
         dungeon.nextFloor();
+        updateHeroCounter();
     },
     dungeonByID(dungeonID) {
         return this.dungeons.find(d => d.id === dungeonID);

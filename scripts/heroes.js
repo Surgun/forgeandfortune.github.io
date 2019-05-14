@@ -122,20 +122,17 @@ class Hero {
         if (this.hp ===0) return;
         this.hp = Math.min(this.hp+hp,this.maxHP());
         refreshHPBar(this);
-        updateHeroCounter();
     }
     healPercent(hpPercent) {
         if (this.hp === 0) return;
         this.hp += Math.floor(this.maxHP()*hpPercent/100);
         this.hp = Math.min(this.maxHP(),this.hp);
         refreshHPBar(this);
-        updateHeroCounter();
     }
     damageCurrentPercent(dmgPercent) {
         this.hp = Math.floor(this.hp*dmgPercent/100)
         this.hp = Math.max(1,this.hp)
         refreshHPBar(this);
-        updateHeroCounter();
     }
     dead() {
         return this.hp === 0;
@@ -506,24 +503,20 @@ function unequipSlot(slot,heroID) {
     examineHero(heroID);
 }
 
+const $heroCount = $(".heroCount");
+const $heroCountText = $(".heroCountText");
+const $heroCounter = $(".heroCounter");
+
 function updateHeroCounter() {
-    let count = 0;
-    HeroManager.heroes.forEach((hero)=>{
-        if (hero.owned && !hero.inDungeon && hero.hp == hero.maxHP()) count++;
-    });
-    if (count > 0) {
-        if (count == 1) {
-            $(".heroCountText").html(" Hero Fully Healed");
-        } else {
-            $(".heroCountText").html(" Heroes Fully Healed");
-        }
-        $(".heroCounter").removeClass("heroesCountZero");
-        $(".heroCounter").addClass("heroesCountActive");
-        $(".heroCount").html(count);
-    } else {
-        $(".heroCounter").removeClass("heroesCountActive");
-        $(".heroCounter").addClass("heroesCountZero");
+    const count = HeroManager.heroes.filter(h=>h.owned && !h.inDungeon).length;
+    if (count === 0) {
+        $heroCounter.addClass("heroesCountZero").removeClass("heroesCountActive");
+        return;
     }
+    $heroCounter.addClass("heroesCountActive").removeClass("heroesCountZero");
+    $heroCount.html(count);
+    if (count == 1) $heroCountText.html(" Hero Available");
+    else $heroCountText.html(" Heroes Available");
 }
 
 $(document).on('click',".heroCounter", (e) => {

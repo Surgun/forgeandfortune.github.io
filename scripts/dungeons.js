@@ -92,9 +92,10 @@ class Dungeon {
         }
         while (this.dungeonTime >= DungeonManager.speed) {
             const unit = this.order.nextTurn();
-            if (unit.dead()) return;
-            if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
-            else CombatManager.launchAttack(unit, this.mobs, this.party.heroes, this.id);
+            if (!unit.dead()) {
+                if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
+                else CombatManager.launchAttack(unit, this.mobs, this.party.heroes, this.id);         
+            }
             refreshAPBar(unit);
             this.order.nextPosition();
             this.checkDeadMobs();

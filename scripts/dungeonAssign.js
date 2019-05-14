@@ -176,10 +176,12 @@ function characterCard(prefix,dv,ID) {
     const hero = HeroManager.idToHero(ID);
     const d1 = $("<div/>").addClass(prefix+"Image").html(hero.image);
     const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
-    const d3 = $("<div/>").addClass(prefix+"Pow").html(`${miscIcons.pow} ${hero.getPow()}`);
-    const d4 = $("<div/>").addClass(prefix+"HP").html(`${miscIcons.hp} ${hero.maxHP()}`);
-    const d5 = $("<div/>").addClass(prefix+"HP").html(`${miscIcons.ap} ${hero.apmax}`);
-    dclick.append(d1,d2,d3,d4,d5);
+    const d3 = $("<div/>").addClass(prefix+"Stats");
+        const d3a = $("<div/>").addClass(prefix+"HP"+" heroStat"+" tooltip").attr("data-tooltip","HP").html(`${miscIcons.hp} ${hero.maxHP()}`);
+        const d3b = $("<div/>").addClass(prefix+"AP"+" heroStat"+" tooltip").attr("data-tooltip","AP").html(`${miscIcons.ap} ${hero.apmax}`);
+        d3.append(d3a,d3b);
+    const d4 = $("<div/>").addClass(prefix+"Pow"+" heroPowStat"+" tooltip").attr("data-tooltip","POW").html(`${miscIcons.pow} ${hero.getPow()}`);
+    dclick.append(d1,d2,d3,d4);
     return d.append(dclick);
 }
 

@@ -144,7 +144,7 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .dungeonTeamName, .dungeonAvailableName, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader, .Worker .itemContributions {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader, .Worker .itemContributions {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
@@ -2204,17 +2204,17 @@ Rarities
     display: flex;
     flex-direction: column;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
     min-width: 125px;
-    min-height: 195px;
+    min-height: 210px;
     text-align: center;
     justify-content: center;
-    padding: 15px;
-    margin: 1px;
+    border-radius: 10px;
 }
 
 .dungeonTeamName, .dungeonAvailableName {
-    text-transform: uppercase;
+    margin: 10px;
+    color: var(--highlight);
 }
 
 .heroOwnedCard, .buyNewHeroCard {
@@ -2234,6 +2234,10 @@ Rarities
     animation: 0.2s scale-in;
 }
 
+.heroOwnedCard:hover {
+    border-color: var(--border-tertiary);
+}
+
 .buyNewHeroCard {
     grid-column: 1 / -1;
     padding: 10px;
@@ -2245,12 +2249,13 @@ Rarities
 }
 
 .dungeonTeamCard:hover, .dungeonAvailableCard:hover, .drHeroCard:hover {
-    background-color: var(--bg-secondary);
+    border-color: var(--border-tertiary);
     cursor: pointer;
 }
 
 .dungeonTeamCard.noHeroDungeonSelect:hover {
     background-color: var(--bg-primary);
+    border-color: var(--border-primary);
     cursor: default;
 }
 
@@ -2263,7 +2268,7 @@ Rarities
     color: var(--highlight);
 }
 
-.heroPower {
+.heroPower, .dungeonAvailablePow, .dungeonTeamPow {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3191,6 +3196,7 @@ Rarities
     position: relative;
     margin-top: 20px;
     padding: 10px 20px;
+    font-size: 0.85rem;
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
@@ -3208,7 +3214,7 @@ Rarities
     content: "";
     width: 100%;
     height: 100%;
-    background: var(--green-tertiary);
+    background: var(--green-primary);
     z-index: -1;
     opacity: 1;
     -webkit-transform: scaleY(1) scaleX(1);
@@ -3246,21 +3252,39 @@ Rarities
     border-color: var(--border-tertiary);
 }
 
-.dungeonAvailablePow, .dungeonTeamPow {
-    position: absolute;
-    top: 0;
-    right: 5px;
+.dungeonAvailableStats, .dungeonTeamStats {
     display: flex;
-    justify-content: space-between;
-    margin: 5px auto;
-    padding: 5px 15px;
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-primary);
-    border-radius: 15px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+.heroStat {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin: 2.5px;
+    padding: 5px;
+    background-color: var(--border-primary);
+    border-radius: 5px;
+}
+
+.heroStat > img {
+    margin-right: 5px;
+}
+
+.dungeonAvailablePow, .dungeonTeamPow {
+    position: relative;
+    margin: 10px;
+    padding: 5px;
 }
 
 .dungeonAvailablePow > img, .dungeonTeamPow > img {
     vertical-align: middle;
+    margin-right: 5px;
 }
 
 .dungeonAvailableImage, .dungeonTeamImage {
@@ -4707,6 +4731,11 @@ footer a[href*="discord.gg"]:hover {
     left: unset;
     right: 0;
     transform-origin: center bottom;
+}
+
+.heroStat.tooltip:after, .heroPowStat.tooltip:after {
+    width: 50px;
+    margin: 0 auto;
 }
 
 /* Firefox-Specific Fixes */

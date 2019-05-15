@@ -43,6 +43,7 @@ class Dungeon {
         this.mobs = [];
         this.dropList = [];
         this.dungeonTime = 0;
+        this.dungeonTotalTime = 0;
         this.floorCount = 0;
         this.order = null;
         this.status = DungeonStatus.EMPTY;
@@ -89,6 +90,7 @@ class Dungeon {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
+        this.dungeonTotalTime += t;
         while (this.dungeonTime >= DungeonManager.speed) {
             this.checkDeadMobs(); //workaround for when you killed a monster but haven't looted it and refreshed
             if (this.floorComplete() && this.dungeonTime >= DungeonManager.speed) {
@@ -104,6 +106,7 @@ class Dungeon {
             refreshAPBar(unit);
             this.order.nextPosition();
             this.checkDeadMobs();
+            this.beatTotal += 1;
             if (this.party.isDead()) {
                 this.resetDungeon();
                 return;
@@ -140,7 +143,7 @@ class Dungeon {
             DungeonManager.bossesBeat.push(this.id);
             refreshRecipeFilters();
         }
-        else EventManager.addEventDungeon(this.dropList,this.dungeonTime,this.floorCount);
+        else EventManager.addEventDungeon(this.eventLetter,this.dropList,this.dungeonTotalTime,this.floorCount, this.beatTotal);
         DungeonManager.removeDungeon(this.id);
         if (DungeonManager.dungeonView === this.id) {
             BattleLog.clear();
@@ -153,6 +156,7 @@ class Dungeon {
         this.order = null;
         this.dungeonTime = 0;
         this.floorCount = 0;
+        this.dungeonTotalTime = 0;
         this.dropList = [];
         return;
     }
@@ -210,8 +214,10 @@ const DungeonManager = {
         this.dungeons.push(dungeon);
     },
     loadSave(save) {
+        console.log(save.dungeons);
         save.dungeons.forEach(d => {
             const dungeon = DungeonManager.dungeonByID(d.id);
+            console.log(dungeon.name);
             dungeon.loadSave(d);
         });
         this.speed = save.speed;
@@ -235,6 +241,7 @@ const DungeonManager = {
     createDungeon() {
         const party = PartyCreator.lockParty();
         const dungeon = this.dungeonByID(this.dungeonCreatingID);
+        dungeon.beatTotal = 0;
         if (devtools.dungeonStart !== undefined) dungeon.floorCount = devtools.dungeonStart;
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = this.dungeonCreatingID;

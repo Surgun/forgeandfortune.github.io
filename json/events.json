@@ -34,16 +34,6 @@
     "type": "letter"
   },
   {
-    "id": "E004",
-    "title": "Adventure Reward",
-    "author": "The Action League",
-    "message": [
-      "<p>Thanks to your efforts, our group made it back safe and sound",
-      "Here's a cut of the loot as a reward.</p><p>Warm Regards,</p><p>The Adventure League</p>"
-    ],
-    "type": "dungeon"
-  },
-  {
     "id": "E005",
     "title": "A Mysterious Letter",
     "author": "Abqu",
@@ -132,5 +122,35 @@
     "author": "The Action League",
     "message": "<p>With your help we were finally able to kill that pesky monster. As a token of thanks, here's some new blueprints we've been working on.</p><p>Warm Regards,</p><p>The Adventure League</p>",
     "type": "boss"
+  },
+  {
+    "id": "E014",
+    "title": "Groovy Grove",
+    "author": "The Action League",
+    "message": [
+      "<p>Thanks to your efforts, our group made it back from the Groovy Grove safe and sound",
+      "Here's a cut of the loot as a reward.</p><p>Warm Regards,</p><p>The Adventure League</p>"
+    ],
+    "type": "dungeon"
+  },
+  {
+    "id": "E015",
+    "title": "Spooky Spot",
+    "author": "The Action League",
+    "message": [
+      "<p>Thanks to your efforts, our group made it back from the Spooky Spot safe and sound",
+      "Here's a cut of the loot as a reward.</p><p>Warm Regards,</p><p>The Adventure League</p>"
+    ],
+    "type": "dungeon"
+  },
+  {
+    "id": "E016",
+    "title": "Creepy Crag",
+    "author": "The Action League",
+    "message": [
+      "<p>Thanks to your efforts, our group made it back from the Creepy Crag safe and sound",
+      "Here's a cut of the loot as a reward.</p><p>Warm Regards,</p><p>The Adventure League</p>"
+    ],
+    "type": "dungeon"
   }
 ]

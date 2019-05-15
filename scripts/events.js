@@ -55,12 +55,13 @@ const EventManager = {
         this.events.push(event);
         refreshEvents();
     },
-    addEventDungeon(reward,time,floor) {
-        const eventTemplate = this.idToEventDB("E004");
+    addEventDungeon(id, reward,time,floor,beats) {
+        const eventTemplate = this.idToEventDB(id);
         const event = new Event(eventTemplate);
         event.reward = reward;
         event.time = time;
         event.floor = floor;
+        event.beats = beats;
         event.eventNum = this.eventNum;
         this.eventNum += 1;
         this.events.push(event);
@@ -132,6 +133,9 @@ class EventTemplate {
     constructor (props) {
         Object.assign(this, props);
         this.image = '<img src="images/DungeonIcons/event.png" alt="Event">';
+        const event2icons = ["E014", "E015", "E016"];
+        if (event2icons.includes(this.id)) this.image = '<img src="images/DungeonIcons/event2.png" alt="Event">';
+        else this.image = '<img src="images/DungeonIcons/event.png" alt="Event">';
     }
 }
 
@@ -155,6 +159,7 @@ class Event {
         save.date = this.date;
         save.itemReward = this.itemReward;
         save.bossKill = this.bossKill;
+        save.beats = this.beats;
         return save;
     }
     loadSave(save) {
@@ -164,6 +169,7 @@ class Event {
         this.date = save.date;
         if (save.bossKill !== undefined) this.bossKill = save.bossKill;
         if (save.itemReward !== undefined) this.itemReward = save.itemReward;
+        if (save.beats !== undefined) this.beats = save.beats;
     }
 };
 
@@ -234,7 +240,7 @@ $(document).on('click', "div.eventList", (e) => {
     if (event.time !== null) {
         const d3a = $("<div/>").addClass("eventStatTitle").html("Adventure Statistics");
         const d3 = $("<div/>").addClass("eventTimeHeading").html("Total Time:");
-        const d4 = $("<div/>").addClass("eventTime").html(msToTime(event.time));
+        const d4 = $("<div/>").addClass("eventTime").html(timeSince(0,event.time));
         d.append(d3a,d3,d4);
     }
     if (event.floor !== null) {
@@ -242,14 +248,17 @@ $(document).on('click', "div.eventList", (e) => {
         const d6 = $("<div/>").addClass("eventFloor").html("Floor " + event.floor);
         d.append(d5,d6);
     }
+    if (event.beats !== null) {
+        const d10 = $("<div/>").addClass("eventBeatHeading").html("Turns Taken:");
+        const d11 = $("<div/>").addClass("eventBeat").html(event.beats + " turns");
+        d.append(d10,d11);
+    }
     if (event.reward !== null ) {
         const d7 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
         d.append(d7);
     }
     if (event.bossKill !== null) {
-        console.log(event.bossKill);
         const recipeRewards = recipeList.unlockedByDungeon(event.bossKill);
-        console.log(recipeRewards);
         const d7a = $("<div/>").addClass("recipeReward").html(bossRecipeUnlocks(recipeRewards));
         d.append(d7a);
     }

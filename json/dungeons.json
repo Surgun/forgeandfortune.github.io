@@ -13,7 +13,8 @@
     "openCost": null,
     "preReq": null,
     "seed": 784,
-    "type": "regular"
+    "type": "regular",
+    "eventLetter": "E014"
   },
   {
     "id": "D002",
@@ -29,7 +30,8 @@
     "openCost": null,
     "preReq": null,
     "seed": 7576,
-    "type": "regular"
+    "type": "regular",
+    "eventLetter": "E015"
   },
   {
     "id": "D003",
@@ -51,7 +53,8 @@
     "openCost": null,
     "preReq": null,
     "seed": 7236,
-    "type": "regular"
+    "type": "regular",
+    "eventLetter": "E016"
   },
   {
     "id": "D010",
@@ -73,7 +76,8 @@
     "openCost": 100,
     "preReq": null,
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
     "id": "D011",
@@ -95,7 +99,8 @@
     "openCost": 1000,
     "preReq": "D010",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
     "id": "D012",
@@ -117,7 +122,8 @@
     "openCost": 10000,
     "preReq": "D011",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
     "id": "D013",
@@ -139,7 +145,8 @@
     "openCost": 100000,
     "preReq": "D012",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
     "id": "D014",
@@ -161,120 +168,11 @@
     "openCost": 1000000,
     "preReq": "D013",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
     "id": "D015",
-    "name": "A Boss VI",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000,
-    "preReq": "D014",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D016",
-    "name": "A Boss VII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000,
-    "preReq": "D015",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D017",
-    "name": "A Boss VIII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 1000000000,
-    "preReq": "D016",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D018",
-    "name": "A Boss XI",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000000,
-    "preReq": "D017",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D019",
-    "name": "A Boss X",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000000,
-    "preReq": "D018",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D020",
     "name": "B Boss I",
     "allowedHero": [
       "H001",
@@ -290,13 +188,14 @@
       "H203",
       "H204"
     ],
-    "openCost": 100,
+    "openCost": "t",
     "preReq": null,
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D021",
+    "id": "D016",
     "name": "B Boss II",
     "allowedHero": [
       "H001",
@@ -313,12 +212,13 @@
       "H204"
     ],
     "openCost": 1000,
-    "preReq": "D020",
+    "preReq": "D015",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D022",
+    "id": "D017",
     "name": "B Boss III",
     "allowedHero": [
       "H001",
@@ -335,12 +235,13 @@
       "H204"
     ],
     "openCost": 10000,
-    "preReq": "D021",
+    "preReq": "D016",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D023",
+    "id": "D018",
     "name": "B Boss IV",
     "allowedHero": [
       "H001",
@@ -357,12 +258,13 @@
       "H204"
     ],
     "openCost": 100000,
-    "preReq": "D022",
+    "preReq": "D017",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D024",
+    "id": "D019",
     "name": "B Boss V",
     "allowedHero": [
       "H001",
@@ -379,122 +281,13 @@
       "H204"
     ],
     "openCost": 1000000,
-    "preReq": "D023",
+    "preReq": "D018",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D025",
-    "name": "B Boss VI",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000,
-    "preReq": "D024",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D026",
-    "name": "B Boss VII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000,
-    "preReq": "D025",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D027",
-    "name": "B Boss VIII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 1000000000,
-    "preReq": "D026",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D028",
-    "name": "B Boss IX",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000000,
-    "preReq": "D027",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D029",
-    "name": "B Boss X",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000000,
-    "preReq": "D028",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D030",
+    "id": "D020",
     "name": "C Boss I",
     "allowedHero": [
       "H001",
@@ -513,10 +306,11 @@
     "openCost": 100,
     "preReq": null,
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D031",
+    "id": "D021",
     "name": "C Boss II",
     "allowedHero": [
       "H001",
@@ -533,12 +327,13 @@
       "H204"
     ],
     "openCost": 1000,
-    "preReq": "D030",
+    "preReq": "D020",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D032",
+    "id": "D022",
     "name": "C Boss III",
     "allowedHero": [
       "H001",
@@ -555,12 +350,13 @@
       "H204"
     ],
     "openCost": 10000,
-    "preReq": "D031",
+    "preReq": "D021",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D033",
+    "id": "D023",
     "name": "C Boss IV",
     "allowedHero": [
       "H001",
@@ -577,12 +373,13 @@
       "H204"
     ],
     "openCost": 100000,
-    "preReq": "D032",
+    "preReq": "D022",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D034",
+    "id": "D024",
     "name": "C Boss V",
     "allowedHero": [
       "H001",
@@ -599,122 +396,13 @@
       "H204"
     ],
     "openCost": 1000000,
-    "preReq": "D033",
+    "preReq": "D023",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D035",
-    "name": "C Boss VI",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000,
-    "preReq": "D034",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D036",
-    "name": "C Boss VII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000,
-    "preReq": "D035",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D037",
-    "name": "C Boss VIII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 1000000000,
-    "preReq": "D036",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D038",
-    "name": "C Boss IX",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000000,
-    "preReq": "D037",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D039",
-    "name": "C Boss X",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000000,
-    "preReq": "D038",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D040",
+    "id": "D025",
     "name": "D Boss I",
     "allowedHero": [
       "H001",
@@ -733,10 +421,11 @@
     "openCost": 100,
     "preReq": null,
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D041",
+    "id": "D026",
     "name": "D Boss II",
     "allowedHero": [
       "H001",
@@ -753,12 +442,13 @@
       "H204"
     ],
     "openCost": 1000,
-    "preReq": "D040",
+    "preReq": "D025",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D042",
+    "id": "D027",
     "name": "D Boss III",
     "allowedHero": [
       "H001",
@@ -775,12 +465,13 @@
       "H204"
     ],
     "openCost": 10000,
-    "preReq": "D041",
+    "preReq": "D026",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D043",
+    "id": "D028",
     "name": "D Boss IV",
     "allowedHero": [
       "H001",
@@ -797,12 +488,13 @@
       "H204"
     ],
     "openCost": 100000,
-    "preReq": "D042",
+    "preReq": "D027",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D044",
+    "id": "D029",
     "name": "D Boss V",
     "allowedHero": [
       "H001",
@@ -819,122 +511,13 @@
       "H204"
     ],
     "openCost": 1000000,
-    "preReq": "D043",
+    "preReq": "D028",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D045",
-    "name": "D Boss VI",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000,
-    "preReq": "D044",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D046",
-    "name": "D Boss VII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000,
-    "preReq": "D045",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D047",
-    "name": "D Boss VIII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 1000000000,
-    "preReq": "D046",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D048",
-    "name": "D Boss IX",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000000,
-    "preReq": "D047",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D049",
-    "name": "D Boss X",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000000,
-    "preReq": "D048",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D050",
+    "id": "D030",
     "name": "E Boss I",
     "allowedHero": [
       "H001",
@@ -953,10 +536,11 @@
     "openCost": 100,
     "preReq": null,
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D051",
+    "id": "D031",
     "name": "E Boss II",
     "allowedHero": [
       "H001",
@@ -973,12 +557,13 @@
       "H204"
     ],
     "openCost": 1000,
-    "preReq": "D050",
+    "preReq": "D030",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D052",
+    "id": "D032",
     "name": "E Boss III",
     "allowedHero": [
       "H001",
@@ -995,12 +580,13 @@
       "H204"
     ],
     "openCost": 10000,
-    "preReq": "D051",
+    "preReq": "D031",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D053",
+    "id": "D033",
     "name": "E Boss IV",
     "allowedHero": [
       "H001",
@@ -1017,12 +603,13 @@
       "H204"
     ],
     "openCost": 100000,
-    "preReq": "D052",
+    "preReq": "D032",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D054",
+    "id": "D034",
     "name": "E Boss V",
     "allowedHero": [
       "H001",
@@ -1039,122 +626,13 @@
       "H204"
     ],
     "openCost": 1000000,
-    "preReq": "D053",
+    "preReq": "D033",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D055",
-    "name": "E Boss VI",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000,
-    "preReq": "D054",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D056",
-    "name": "E Boss VII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000,
-    "preReq": "D055",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D057",
-    "name": "E Boss VIII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 1000000000,
-    "preReq": "D056",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D058",
-    "name": "E Boss IX",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000000,
-    "preReq": "D057",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D059",
-    "name": "E Boss X",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000000,
-    "preReq": "D058",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D060",
+    "id": "D035",
     "name": "F Boss I",
     "allowedHero": [
       "H001",
@@ -1173,10 +651,11 @@
     "openCost": 100,
     "preReq": null,
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D061",
+    "id": "D036",
     "name": "F Boss II",
     "allowedHero": [
       "H001",
@@ -1193,12 +672,13 @@
       "H204"
     ],
     "openCost": 1000,
-    "preReq": "D060",
+    "preReq": "D035",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D062",
+    "id": "D037",
     "name": "F Boss III",
     "allowedHero": [
       "H001",
@@ -1215,12 +695,13 @@
       "H204"
     ],
     "openCost": 10000,
-    "preReq": "D061",
+    "preReq": "D036",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D063",
+    "id": "D038",
     "name": "F Boss IV",
     "allowedHero": [
       "H001",
@@ -1237,12 +718,13 @@
       "H204"
     ],
     "openCost": 100000,
-    "preReq": "D062",
+    "preReq": "D037",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D064",
+    "id": "D039",
     "name": "F Boss V",
     "allowedHero": [
       "H001",
@@ -1259,122 +741,13 @@
       "H204"
     ],
     "openCost": 1000000,
-    "preReq": "D063",
+    "preReq": "D038",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D065",
-    "name": "F Boss VI",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000,
-    "preReq": "D064",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D066",
-    "name": "F Boss VII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000,
-    "preReq": "D065",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D067",
-    "name": "F Boss VIII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 1000000000,
-    "preReq": "D066",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D068",
-    "name": "F Boss IX",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000000,
-    "preReq": "D067",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D069",
-    "name": "F Boss X",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000000,
-    "preReq": "D068",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D070",
+    "id": "D040",
     "name": "G Boss I",
     "allowedHero": [
       "H001",
@@ -1393,10 +766,11 @@
     "openCost": 100,
     "preReq": null,
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D071",
+    "id": "D041",
     "name": "G Boss II",
     "allowedHero": [
       "H001",
@@ -1413,12 +787,13 @@
       "H204"
     ],
     "openCost": 1000,
-    "preReq": "D070",
+    "preReq": "D040",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D072",
+    "id": "D042",
     "name": "G Boss III",
     "allowedHero": [
       "H001",
@@ -1435,12 +810,13 @@
       "H204"
     ],
     "openCost": 10000,
-    "preReq": "D071",
+    "preReq": "D041",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D073",
+    "id": "D043",
     "name": "G Boss IV",
     "allowedHero": [
       "H001",
@@ -1457,12 +833,13 @@
       "H204"
     ],
     "openCost": 100000,
-    "preReq": "D072",
+    "preReq": "D042",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D074",
+    "id": "D044",
     "name": "G Boss V",
     "allowedHero": [
       "H001",
@@ -1479,122 +856,13 @@
       "H204"
     ],
     "openCost": 1000000,
-    "preReq": "D073",
+    "preReq": "D043",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D075",
-    "name": "G Boss VI",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000,
-    "preReq": "D074",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D076",
-    "name": "G Boss VII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000,
-    "preReq": "D075",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D077",
-    "name": "G Boss VIII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 1000000000,
-    "preReq": "D076",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D078",
-    "name": "G Boss IX",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000000,
-    "preReq": "D077",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D079",
-    "name": "G Boss X",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000000,
-    "preReq": "D078",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D080",
+    "id": "D045",
     "name": "H Boss I",
     "allowedHero": [
       "H001",
@@ -1613,10 +881,11 @@
     "openCost": 100,
     "preReq": null,
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D081",
+    "id": "D046",
     "name": "H Boss II",
     "allowedHero": [
       "H001",
@@ -1633,12 +902,13 @@
       "H204"
     ],
     "openCost": 1000,
-    "preReq": "D080",
+    "preReq": "D045",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D082",
+    "id": "D047",
     "name": "H Boss III",
     "allowedHero": [
       "H001",
@@ -1655,12 +925,13 @@
       "H204"
     ],
     "openCost": 10000,
-    "preReq": "D081",
+    "preReq": "D046",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D083",
+    "id": "D048",
     "name": "H Boss IV",
     "allowedHero": [
       "H001",
@@ -1677,12 +948,13 @@
       "H204"
     ],
     "openCost": 100000,
-    "preReq": "D082",
+    "preReq": "D047",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D084",
+    "id": "D049",
     "name": "H Boss V",
     "allowedHero": [
       "H001",
@@ -1699,122 +971,13 @@
       "H204"
     ],
     "openCost": 1000000,
-    "preReq": "D083",
+    "preReq": "D048",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D085",
-    "name": "H Boss VI",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000,
-    "preReq": "D084",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D086",
-    "name": "H Boss VII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000,
-    "preReq": "D085",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D087",
-    "name": "H Boss VIII",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 1000000000,
-    "preReq": "D086",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D088",
-    "name": "H Boss IX",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 10000000000,
-    "preReq": "D087",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D089",
-    "name": "H Boss X",
-    "allowedHero": [
-      "H001",
-      "H002",
-      "H003",
-      "H004",
-      "H101",
-      "H102",
-      "H103",
-      "H104",
-      "H201",
-      "H202",
-      "H203",
-      "H204"
-    ],
-    "openCost": 100000000000,
-    "preReq": "D088",
-    "seed": 0,
-    "type": "boss"
-  },
-  {
-    "id": "D090",
+    "id": "D050",
     "name": "I Boss I",
     "allowedHero": [
       "H001",
@@ -1833,10 +996,11 @@
     "openCost": 100,
     "preReq": null,
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D091",
+    "id": "D051",
     "name": "I Boss II",
     "allowedHero": [
       "H001",
@@ -1853,12 +1017,13 @@
       "H204"
     ],
     "openCost": 1000,
-    "preReq": "D090",
+    "preReq": "D050",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D092",
+    "id": "D052",
     "name": "I Boss III",
     "allowedHero": [
       "H001",
@@ -1875,12 +1040,13 @@
       "H204"
     ],
     "openCost": 10000,
-    "preReq": "D091",
+    "preReq": "D051",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D093",
+    "id": "D053",
     "name": "I Boss IV",
     "allowedHero": [
       "H001",
@@ -1897,12 +1063,13 @@
       "H204"
     ],
     "openCost": 100000,
-    "preReq": "D092",
+    "preReq": "D052",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D094",
+    "id": "D054",
     "name": "I Boss V",
     "allowedHero": [
       "H001",
@@ -1919,13 +1086,14 @@
       "H204"
     ],
     "openCost": 1000000,
-    "preReq": "D093",
+    "preReq": "D053",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D095",
-    "name": "I Boss VI",
+    "id": "D055",
+    "name": "J Boss I",
     "allowedHero": [
       "H001",
       "H002",
@@ -1940,14 +1108,15 @@
       "H203",
       "H204"
     ],
-    "openCost": 10000000,
-    "preReq": "D094",
+    "openCost": 100,
+    "preReq": null,
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D096",
-    "name": "I Boss VII",
+    "id": "D056",
+    "name": "J Boss II",
     "allowedHero": [
       "H001",
       "H002",
@@ -1962,14 +1131,15 @@
       "H203",
       "H204"
     ],
-    "openCost": 100000000,
-    "preReq": "D095",
+    "openCost": 1000,
+    "preReq": "D055",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D097",
-    "name": "I Boss VIII",
+    "id": "D057",
+    "name": "J Boss III",
     "allowedHero": [
       "H001",
       "H002",
@@ -1984,14 +1154,15 @@
       "H203",
       "H204"
     ],
-    "openCost": 1000000000,
-    "preReq": "D096",
+    "openCost": 10000,
+    "preReq": "D056",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D098",
-    "name": "I Boss IX",
+    "id": "D058",
+    "name": "J Boss IV",
     "allowedHero": [
       "H001",
       "H002",
@@ -2006,14 +1177,15 @@
       "H203",
       "H204"
     ],
-    "openCost": 10000000000,
-    "preReq": "D097",
+    "openCost": 100000,
+    "preReq": "D057",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   },
   {
-    "id": "D099",
-    "name": "I Boss X",
+    "id": "D059",
+    "name": "J Boss V",
     "allowedHero": [
       "H001",
       "H002",
@@ -2028,9 +1200,10 @@
       "H203",
       "H204"
     ],
-    "openCost": 100000000000,
-    "preReq": "D098",
+    "openCost": 1000000,
+    "preReq": "D058",
     "seed": 0,
-    "type": "boss"
+    "type": "boss",
+    "eventLetter": "E013"
   }
 ]

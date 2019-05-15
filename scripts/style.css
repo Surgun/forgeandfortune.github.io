@@ -379,6 +379,10 @@ body {
     border-radius: 15px;
 }
 
+.DungeonSideBarStatus {
+    cursor: pointer;
+}
+
 #inventorySidebar.inventoryFullSide {
     background-color: rgb(72, 9, 0);
     border-color: #820000;

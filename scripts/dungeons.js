@@ -214,10 +214,8 @@ const DungeonManager = {
         this.dungeons.push(dungeon);
     },
     loadSave(save) {
-        console.log(save.dungeons);
         save.dungeons.forEach(d => {
             const dungeon = DungeonManager.dungeonByID(d.id);
-            console.log(dungeon.name);
             dungeon.loadSave(d);
         });
         this.speed = save.speed;

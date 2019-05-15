@@ -2540,6 +2540,10 @@ div.EquipmentCardsContainer {
     margin: 0 10px;
 }
 
+.gearItem {
+    cursor: pointer;
+}
+
 .gearStatContainer {
     display: flex;
     flex-wrap: wrap;

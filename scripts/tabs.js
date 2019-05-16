@@ -50,10 +50,10 @@ $comptitle3.click((e) => {
     tabClick(e, "dungeonsTab");
 });
 
-$(document).on('click', "#DungeonSideBarStatus", (e) => {
+$(document).on('click', ".DungeonSideBarStatus", (e) => {
     e.preventDefault();
     tabClick(e, "dungeonsTab");
-    const dungeonID = $(e.currentTarget).attr("dungeonID");
+    const dungeonID = $(e.currentTarget).attr("id").substring(3);
     showDungeon(dungeonID);
 });
 

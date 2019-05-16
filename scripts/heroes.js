@@ -465,46 +465,39 @@ function examineHeroPossibleEquip(slot,heroID) {
     examineGearTypesCache = types;
     $heroEquipmentList.empty();
     //cycle through everything in bp's and make the div for it
-    const table = $('<div/>').addClass('EHPE');
-    const htd1 = $('<div/>').addClass('EHPEHeaderName').html("NAME");
-    const htd2 = $('<div/>').addClass('EHPEHeaderStat').html("LVL");
-    const htd3 = $('<div/>').addClass('EHPEHeaderStat').html("AP");
-    const htd4 = $('<div/>').addClass('EHPEHeaderStat').html("POW");
-    const htd5 = $('<div/>').addClass('EHPEHeaderStat').html("HP");
-    const hrow = $('<div/>').addClass('EHPEHeader').append(htd1,htd2,htd3,htd4,htd5);
-    table.append(hrow);
+    const equipCardsContainer = $('<div/>').addClass('EquipmentCardsContainer');
+    const equipCardsHeader = $('<div/>').addClass('EquipmentCardsHeader').html("Select Your Equipment");
+    equipCardsContainer.append(equipCardsHeader);
     // Check if gear available to display in list
     if (Inventory.listbyType(types).length === 0) {
         const noGearMessage = $('<div/>').addClass('noGearMessage').html(`You have no gear available to equip in this slot.`);
-        $heroEquipmentList.append(table,noGearMessage);
+        $heroEquipmentList.append(equipCardsContainer,noGearMessage);
         return;
     }
     
     let upgradeAvaialable = false;
     Inventory.listbyType(types).forEach((itemContainer) => {
-        const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName());
+        const td1 = $('<div/>').addClass('gearItemName').html(itemContainer.picName());
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
         const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());
-        const relAP = HeroManager.relativeAP(hero,slot,itemContainer.ap());
-        let level = itemContainer.lvl;
-        const td2 = $('<div/>').addClass('EHPEstat');
-        const td3 = $('<div/>').addClass('EHPEstat');
-        const td4 = $('<div/>').addClass('EHPEstat');
-        const td5 = $('<div/>').addClass('EHPEstat');
-        td2.html(level);
-        if (relPow > 0) td3.addClass("EHPEstatPositive").html(itemContainer.ap() + " (+" + relAP + ")");
-        else if (relPow < 0) td3.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relAP + ")");
-        if (relPow > 0) td4.addClass("EHPEstatPositive").html(itemContainer.pow() + " (+" + relPow + ")");
-        else if (relPow < 0) td4.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relPow + ")");
-        else td4.html(itemContainer.pow() + " (+" + relPow + ")");
-        if (relHP > 0) td5.addClass("EHPEstatPositive").html(itemContainer.hp() + " (+" + relHP + ")");
-        else if (relHP < 0) td35.addClass("EHPEstatNegative").html(itemContainer.hp() + " (" + relHP + ")");
-        else td5.html(itemContainer.hp());
-        const row = $('<div/>').addClass('EHPErow').attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2,td3,td4,td5);
-        table.append(row);
+        const td2 = $('<div/>').addClass('gearItemLevel').html(itemContainer.itemLevel());
+        // Sets container for HP and AP, keep POW seperate to emphasize POW 
+        const td3 = $('<div/>').addClass('gearStatContainer');
+            const td3a = $('<div/>').addClass('gearStat gearStatHP tooltip').attr("data-tooltip","HP");
+            const td3b = $('<div/>').addClass('gearStat gearStatAP tooltip').attr("data-tooltip","AP").html(miscIcons.ap + itemContainer.ap());
+            td3.append(td3a,td3b);
+        const td4 = $('<div/>').addClass('gearStat gearStatPow tooltip').attr("data-tooltip","POW");
+        if (relHP > 0) td3a.addClass("gearStatPositive").html(miscIcons.hp + itemContainer.hp() + " (+" + relHP + ")");
+        else if (relHP < 0) td3a.addClass("gearStatNegative").html(miscIcons.hp + itemContainer.hp() + " (" + relHP + ")");
+        else td3a.html(miscIcons.hp + itemContainer.hp());
+        if (relPow > 0) td4.addClass("gearStatPositive").html(miscIcons.pow + itemContainer.pow() + " (+" + relPow + ")");
+        else if (relPow < 0) td4.addClass("gearStatNegative").html(miscIcons.pow + itemContainer.pow() + " (" + relPow + ")");
+        else td4.html(miscIcons.pow + itemContainer.pow() + " (+" + relPow + ")");
+        const row = $('<div/>').addClass('gearItem').addClass("R"+itemContainer.rarity).attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2,td3,td4);
+        equipCardsContainer.append(row);
     });
 
-    $heroEquipmentList.append(table);
+    $heroEquipmentList.append(equipCardsContainer);
     //returns a value if this slot has an upgrade available
     return upgradeAvaialable;
 };
@@ -558,7 +551,7 @@ $(document).on('click', "div.heroExamineEquipment", (e) => {
     examineHeroPossibleEquip(slot,heroID)
 });
 
-$(document).on('click', "div.EHPErow", (e) => {
+$(document).on('click', "div.gearItem", (e) => {
     //equip the clicked item
     e.preventDefault();
     const heroID = $(e.currentTarget).attr("heroID");

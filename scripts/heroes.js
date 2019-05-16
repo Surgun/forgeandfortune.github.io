@@ -317,6 +317,11 @@ const HeroManager = {
         const hero = this.idToHero(heroID);
         return hp - hero.getHPSlot(slot);
     },
+    relativeAP(heroID,slot,ap) {
+        if (slot !== 1) return 0;
+        const hero = this.idToHero(heroID);
+        return ap - hero.slot1.apAdd;
+    },
     purchaseHero() {
         const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];
         if (ResourceManager.materialAvailable("M001") < amt) {
@@ -480,13 +485,15 @@ function examineHeroPossibleEquip(slot,heroID) {
         const td1 = $('<div/>').addClass('EHPEname').addClass("R"+itemContainer.rarity).html(itemContainer.picName());
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
         const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());
+        const relAP = HeroManager.relativeAP(hero,slot,itemContainer.ap());
         let level = itemContainer.lvl;
         const td2 = $('<div/>').addClass('EHPEstat');
         const td3 = $('<div/>').addClass('EHPEstat');
         const td4 = $('<div/>').addClass('EHPEstat');
         const td5 = $('<div/>').addClass('EHPEstat');
         td2.html(level);
-        td3.html(itemContainer.ap());
+        if (relPow > 0) td3.addClass("EHPEstatPositive").html(itemContainer.ap() + " (+" + relAP + ")");
+        else if (relPow < 0) td3.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relAP + ")");
         if (relPow > 0) td4.addClass("EHPEstatPositive").html(itemContainer.pow() + " (+" + relPow + ")");
         else if (relPow < 0) td4.addClass("EHPEstatNegative").html(itemContainer.pow() + " (" + relPow + ")");
         else td4.html(itemContainer.pow() + " (+" + relPow + ")");

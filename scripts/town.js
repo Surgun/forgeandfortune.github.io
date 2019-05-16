@@ -264,8 +264,6 @@ function buildScreen(type) {
     }
     const d4 = $("<div/>").addClass("bRecipes");
     const table = $('<div/>').addClass('brecipeTable');
-    let alternate = false;
-    let lastRow = null;
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
         const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
         const td1a = $('<div/>').addClass('recipeDescription').html("<i class='fas fa-info-circle'></i>");

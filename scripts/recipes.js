@@ -276,7 +276,7 @@ function recipeCardFront(recipe) {
     const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
     const td2 = $('<div/>').addClass('recipeDescription').html("<i class='fas fa-info-circle'></i>");
     const td3 = $('<div/>').addClass('recipeItemLevel').html(recipe.itemLevel());
-    const td4 = $('<div/>').addClass('recipecostdiv');
+    const td4 = $('<div/>').addClass('recipecostdiv').attr("id",recipe.id+"rcd");
         const td4a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
         if (recipe.isMastered()) td4a.addClass('isMastered');
     td4.append(td4a);
@@ -355,6 +355,7 @@ function refreshCraftedCount() {
     recipeList.recipes.forEach(recipe => {
         const rr = $("#rr"+recipe.id);
         rr.find(".recipeTotalCrafted").html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
+        if (recipe.craftCount >= 100) $("#"+recipe.id+"rcd").addClass("isMastered");
     });
 }
  

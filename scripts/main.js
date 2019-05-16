@@ -42,6 +42,7 @@ function afterLoad() {
     recipeCanCraft();
     refreshSideTown();
     refreshFilterListLucky();
+    refreshCraftedCount();
     setInterval(mainLoop, 10);
     loading_screen.finish();
 }

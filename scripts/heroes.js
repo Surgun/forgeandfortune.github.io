@@ -115,6 +115,15 @@ class Hero {
         if (slot === 5 && this.slot6 !== null) return this.slot6.hp();
         return 0;
     }
+    getAPSlot(slot) {
+        if (slot === 0 && this.slot1 !== null) return this.slot1.ap();
+        if (slot === 1 && this.slot2 !== null) return this.slot2.ap();
+        if (slot === 2 && this.slot3 !== null) return this.slot3.ap();
+        if (slot === 3 && this.slot4 !== null) return this.slot4.ap();
+        if (slot === 4 && this.slot5 !== null) return this.slot5.ap();
+        if (slot === 5 && this.slot6 !== null) return this.slot6.ap();
+        return 0;
+    }
     addAP() {
         if (this.slot1 === null) {
             this.ap += 5;
@@ -318,9 +327,8 @@ const HeroManager = {
         return hp - hero.getHPSlot(slot);
     },
     relativeAP(heroID,slot,ap) {
-        if (slot !== 1) return 0;
         const hero = this.idToHero(heroID);
-        return ap - hero.slot1.apAdd;
+        return ap - hero.getAPSlot(slot);
     },
     purchaseHero() {
         const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];
@@ -480,19 +488,27 @@ function examineHeroPossibleEquip(slot,heroID) {
         const td1 = $('<div/>').addClass('gearItemName').html(itemContainer.picName());
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
         const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());
+        const relAP = HeroManager.relativeAP(heroID,slot,itemContainer.ap());
         const td2 = $('<div/>').addClass('gearItemLevel').html(itemContainer.itemLevel());
         // Sets container for HP and AP, keep POW seperate to emphasize POW 
         const td3 = $('<div/>').addClass('gearStatContainer');
             const td3a = $('<div/>').addClass('gearStat gearStatHP tooltip').attr("data-tooltip","HP");
-            const td3b = $('<div/>').addClass('gearStat gearStatAP tooltip').attr("data-tooltip","AP").html(miscIcons.ap + itemContainer.ap());
+            const td3b = $('<div/>').addClass('gearStat gearStatAP tooltip').attr("data-tooltip","AP");
             td3.append(td3a,td3b);
         const td4 = $('<div/>').addClass('gearStat gearStatPow tooltip').attr("data-tooltip","POW");
+        // Populate HP value and compare to currently equipped item, if applicable
         if (relHP > 0) td3a.addClass("gearStatPositive").html(miscIcons.hp + itemContainer.hp() + " (+" + relHP + ")");
         else if (relHP < 0) td3a.addClass("gearStatNegative").html(miscIcons.hp + itemContainer.hp() + " (" + relHP + ")");
         else td3a.html(miscIcons.hp + itemContainer.hp());
+        // Populate AP value and compare to currently equipped item, if applicable
+        if (relAP > 0) td3b.addClass("gearStatPositive").html(miscIcons.ap + itemContainer.ap() + " (+" + relAP + ")");
+        else if (relAP < 0) td3b.addClass("gearStatNegative").html(miscIcons.ap + itemContainer.ap() + " (" + relAP + ")");
+        else td3b.html(miscIcons.ap + itemContainer.ap());
+        // Populate POW value and compare to currently equipped item, if applicable
         if (relPow > 0) td4.addClass("gearStatPositive").html(miscIcons.pow + itemContainer.pow() + " (+" + relPow + ")");
         else if (relPow < 0) td4.addClass("gearStatNegative").html(miscIcons.pow + itemContainer.pow() + " (" + relPow + ")");
         else td4.html(miscIcons.pow + itemContainer.pow() + " (+" + relPow + ")");
+
         const row = $('<div/>').addClass('gearItem').addClass("R"+itemContainer.rarity).attr("id",itemContainer.containerID).attr("heroID",heroID).append(td1,td2,td3,td4);
         equipCardsContainer.append(row);
     });

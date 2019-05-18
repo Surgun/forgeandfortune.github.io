@@ -2360,11 +2360,10 @@ Rarities
 }
 
 #heroDetails {
-    max-width: 275px;
     overflow: auto;
 }
 
-.hero-placeholder-details, .events-placeholder-details {
+.hero-placeholder-details, .hero-placeholder-equip, .events-placeholder-details {
     display: block;
     padding: 20px;
 }

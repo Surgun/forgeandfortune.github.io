@@ -2321,6 +2321,7 @@ Rarities
     padding: 5px;
     border-radius: 15px;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .heroesCountActive {
@@ -2549,6 +2550,7 @@ div.EquipmentCardsContainer {
 
 .gearItem {
     cursor: pointer;
+    animation: 0.2s scale-in forwards;
 }
 
 .gearStatContainer {
@@ -3307,10 +3309,6 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 .dungeonAvailablePow > img, .dungeonTeamPow > img{
     vertical-align: middle;
     margin-right: 5px;
-}
-
-.dungeonAvailableImage, .dungeonTeamImage {
-    margin-top: 10px;
 }
 
 .dungeonAvailableLvl, .dungeonTeamLvl {

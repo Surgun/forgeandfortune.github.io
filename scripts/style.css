@@ -3381,6 +3381,12 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     z-index: 0;
 }
 
+.masteryBarDiv.isMastered {
+    text-transform: uppercase;
+    background: var(--gradient-secondary);
+    text-shadow: 0 0 5px black;
+}
+
 .hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill {
     display: block;
     position: relative;

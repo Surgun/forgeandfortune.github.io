@@ -3279,7 +3279,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin: 10px;
+    margin: 5px;
 }
 
 .heroStat {
@@ -3300,7 +3300,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .dungeonAvailablePow, .dungeonTeamPow {
     position: relative;
-    margin: 10px;
+    margin: 0 7.5px;
     padding: 5px;
 }
 

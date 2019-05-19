@@ -2450,7 +2450,7 @@ Rarities
     align-items: center;
     margin: 5px 2.5px;
     min-width: 175px;
-    min-height: 175px;
+    min-height: 212px;
     text-align: center;
     border: 2px solid var(--border-primary);
     border-radius: 10px;
@@ -2492,7 +2492,11 @@ Rarities
 .heroExamineEquipmentEquip > img {
     display: block;
     margin: auto auto 5px auto;
-    height: 20px;
+}
+
+.equipStats {
+    width: 100%;
+    color: var(--text-primary);
 }
 
 .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes {
@@ -2553,7 +2557,11 @@ div.EquipmentCardsContainer {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 10px;
+}
+
+.gearStatContainer + .gearStatContainer {
+    margin-top: 0;
 }
 
 .gearStat {
@@ -2570,7 +2578,6 @@ div.EquipmentCardsContainer {
 
 .gearStatPow {
     width: 100%;
-    margin: 10px 0 0;
 }
 
 .gearStat > img {

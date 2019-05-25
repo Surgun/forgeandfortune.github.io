@@ -149,7 +149,7 @@ body {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container, #right-side-content {
     font-family: 'Varela Round', 'Open Sans', sans-serif;
 }
 
@@ -2321,6 +2321,7 @@ Rarities
     padding: 5px;
     border-radius: 15px;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .heroesCountActive {
@@ -2360,11 +2361,10 @@ Rarities
 }
 
 #heroDetails {
-    max-width: 275px;
     overflow: auto;
 }
 
-.hero-placeholder-details, .events-placeholder-details {
+.hero-placeholder-details, .hero-placeholder-equip, .events-placeholder-details {
     display: block;
     padding: 20px;
 }
@@ -2451,7 +2451,7 @@ Rarities
     align-items: center;
     margin: 5px 2.5px;
     min-width: 175px;
-    min-height: 175px;
+    min-height: 212px;
     text-align: center;
     border: 2px solid var(--border-primary);
     border-radius: 10px;
@@ -2493,7 +2493,11 @@ Rarities
 .heroExamineEquipmentEquip > img {
     display: block;
     margin: auto auto 5px auto;
-    height: 20px;
+}
+
+.equipStats {
+    width: 100%;
+    color: var(--text-primary);
 }
 
 .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes {
@@ -2546,6 +2550,7 @@ div.EquipmentCardsContainer {
 
 .gearItem {
     cursor: pointer;
+    animation: 0.2s scale-in forwards;
 }
 
 .gearStatContainer {
@@ -2554,7 +2559,11 @@ div.EquipmentCardsContainer {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 10px;
+}
+
+.gearStatContainer + .gearStatContainer {
+    margin-top: 0;
 }
 
 .gearStat {
@@ -2571,7 +2580,6 @@ div.EquipmentCardsContainer {
 
 .gearStatPow {
     width: 100%;
-    margin: 10px 0 0;
 }
 
 .gearStat > img {
@@ -2630,7 +2638,7 @@ div.EquipmentCardsContainer {
 }
 
 .dungeonHeader {
-    border-color: rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.15);
 }
 
 .dungeonStatus {
@@ -3273,7 +3281,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin: 10px;
+    margin: 5px;
 }
 
 .heroStat {
@@ -3294,17 +3302,13 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .dungeonAvailablePow, .dungeonTeamPow {
     position: relative;
-    margin: 10px;
+    margin: 0 7.5px;
     padding: 5px;
 }
 
 .dungeonAvailablePow > img, .dungeonTeamPow > img{
     vertical-align: middle;
     margin-right: 5px;
-}
-
-.dungeonAvailableImage, .dungeonTeamImage {
-    margin-top: 10px;
 }
 
 .dungeonAvailableLvl, .dungeonTeamLvl {
@@ -3375,6 +3379,12 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .masteryBar:before {
     z-index: 0;
+}
+
+.masteryBarDiv.isMastered {
+    text-transform: uppercase;
+    background: var(--gradient-secondary);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3), 1px 0 0 rgba(0,0,0,0.3), 1px 2px 0 rgba(0,0,0,0.3), 2px 1px 0 rgba(0,0,0,0.3), 1px 1px 0 rgba(0,0,0,0.3), 0 0 10px rgba(0,0,0,1);
 }
 
 .hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill {

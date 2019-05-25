@@ -17,7 +17,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 0,
+<<<<<<< HEAD
     "repReq": 5,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -40,7 +43,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 10,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -63,7 +69,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 15,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -86,7 +95,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 20,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -110,7 +122,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 25,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -132,7 +147,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 30,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -156,7 +174,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 35,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -180,7 +201,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 40,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -204,7 +228,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 45,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -228,7 +255,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 50,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -251,7 +281,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 4,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -272,7 +305,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 9,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -295,7 +331,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 14,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -318,7 +357,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 19,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -342,7 +384,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 24,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -366,7 +411,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 29,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -388,7 +436,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 34,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -412,7 +463,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 39,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -436,7 +490,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 44,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -460,7 +517,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 49,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -481,7 +541,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 0,
+<<<<<<< HEAD
     "repReq": 3,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -504,7 +567,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 8,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -525,7 +591,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 13,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -548,7 +617,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 18,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -572,7 +644,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 23,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -596,7 +671,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 28,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -620,7 +698,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 33,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -642,7 +723,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 38,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -666,7 +750,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 43,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -690,7 +777,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 48,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -711,7 +801,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 0,
+<<<<<<< HEAD
     "repReq": 2,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -734,7 +827,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 7,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -757,7 +853,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 12,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -780,7 +879,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 17,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -804,7 +906,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 22,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -826,7 +931,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 27,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -850,7 +958,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 32,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -874,7 +985,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 37,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -898,7 +1012,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 42,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -922,7 +1039,10 @@
     "hp": 0,
     "guildUnlock": "G005",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 47,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -943,7 +1063,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 0,
+<<<<<<< HEAD
     "repReq": 1,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -966,7 +1089,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 6,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -987,7 +1113,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 11,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1010,7 +1139,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 16,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1034,7 +1166,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 21,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1058,7 +1193,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 26,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1082,7 +1220,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 31,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1104,7 +1245,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 36,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1128,7 +1272,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 41,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1152,7 +1299,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 46,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1175,7 +1325,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 0,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1196,7 +1349,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 5,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1219,7 +1375,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 10,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1242,7 +1401,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 15,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1266,7 +1428,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 20,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1290,7 +1455,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 25,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1312,7 +1480,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 30,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1336,7 +1507,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 35,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1360,7 +1534,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 40,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1384,7 +1561,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 45,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1405,7 +1585,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 0,
+<<<<<<< HEAD
     "repReq": 5,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1428,7 +1611,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 10,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1451,7 +1637,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 15,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1474,7 +1663,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 20,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1498,7 +1690,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 25,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1520,7 +1715,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 30,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1544,7 +1742,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 35,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1568,7 +1769,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 40,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1592,7 +1796,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 45,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1616,7 +1823,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 50,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1639,7 +1849,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 4,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1660,7 +1873,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 9,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1683,7 +1899,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 14,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1706,7 +1925,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 19,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1730,7 +1952,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 24,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1754,7 +1979,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 29,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1776,7 +2004,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 34,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1800,7 +2031,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 39,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1824,7 +2058,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 44,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1848,7 +2085,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 49,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1869,7 +2109,10 @@
     "hp": 0,
     "guildUnlock": "G004",
     "goldCost": 0,
+<<<<<<< HEAD
     "repReq": 3,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1892,7 +2135,10 @@
     "hp": 0,
     "guildUnlock": "G004",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 8,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1913,7 +2159,10 @@
     "hp": 0,
     "guildUnlock": "G004",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 13,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1936,7 +2185,10 @@
     "hp": 0,
     "guildUnlock": "G004",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 18,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1960,7 +2212,10 @@
     "hp": 0,
     "guildUnlock": "G004",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 23,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -1984,7 +2239,10 @@
     "hp": 0,
     "guildUnlock": "G004",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 28,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2008,7 +2266,10 @@
     "hp": 0,
     "guildUnlock": "G004",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 33,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2030,7 +2291,10 @@
     "hp": 0,
     "guildUnlock": "G004",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 38,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2054,7 +2318,10 @@
     "hp": 0,
     "guildUnlock": "G004",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 43,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2078,7 +2345,10 @@
     "hp": 0,
     "guildUnlock": "G004",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 48,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2099,7 +2369,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 0,
+<<<<<<< HEAD
     "repReq": 2,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2122,7 +2395,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 7,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2145,7 +2421,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 12,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2168,7 +2447,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 17,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2190,7 +2472,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 22,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2214,7 +2499,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 27,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2238,7 +2526,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 32,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2262,7 +2553,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 37,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2286,7 +2580,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 42,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2308,7 +2605,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 47,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2330,7 +2630,10 @@
     "hp": 30,
     "guildUnlock": "G001",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 1,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2354,7 +2657,10 @@
     "hp": 41,
     "guildUnlock": "G001",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 6,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2378,7 +2684,10 @@
     "hp": 57,
     "guildUnlock": "G001",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 11,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2402,7 +2711,10 @@
     "hp": 79,
     "guildUnlock": "G001",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 16,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2427,7 +2739,10 @@
     "hp": 108,
     "guildUnlock": "G001",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 21,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2450,7 +2765,10 @@
     "hp": 148,
     "guildUnlock": "G001",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 26,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2475,7 +2793,10 @@
     "hp": 202,
     "guildUnlock": "G001",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 31,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2500,7 +2821,10 @@
     "hp": 276,
     "guildUnlock": "G001",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 36,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2525,7 +2849,10 @@
     "hp": 378,
     "guildUnlock": "G001",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 41,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2550,7 +2877,10 @@
     "hp": 520,
     "guildUnlock": "G001",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 46,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2572,7 +2902,10 @@
     "hp": 30,
     "guildUnlock": "G003",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 0,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2596,7 +2929,10 @@
     "hp": 41,
     "guildUnlock": "G003",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 5,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2620,7 +2956,10 @@
     "hp": 57,
     "guildUnlock": "G003",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 10,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2644,7 +2983,10 @@
     "hp": 79,
     "guildUnlock": "G003",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 15,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2669,7 +3011,10 @@
     "hp": 108,
     "guildUnlock": "G003",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 20,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2692,7 +3037,10 @@
     "hp": 148,
     "guildUnlock": "G003",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 25,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2717,7 +3065,10 @@
     "hp": 202,
     "guildUnlock": "G003",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 30,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2742,7 +3093,10 @@
     "hp": 276,
     "guildUnlock": "G003",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 35,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2767,7 +3121,10 @@
     "hp": 378,
     "guildUnlock": "G003",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 40,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2792,7 +3149,10 @@
     "hp": 520,
     "guildUnlock": "G003",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 45,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2814,7 +3174,10 @@
     "hp": 30,
     "guildUnlock": "G004",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 5,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2838,7 +3201,10 @@
     "hp": 41,
     "guildUnlock": "G004",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 10,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2862,7 +3228,10 @@
     "hp": 57,
     "guildUnlock": "G004",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 15,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2886,7 +3255,10 @@
     "hp": 79,
     "guildUnlock": "G004",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 20,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2910,7 +3282,10 @@
     "hp": 108,
     "guildUnlock": "G004",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 25,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2933,7 +3308,10 @@
     "hp": 148,
     "guildUnlock": "G004",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 30,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2958,7 +3336,10 @@
     "hp": 202,
     "guildUnlock": "G004",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 35,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -2983,7 +3364,10 @@
     "hp": 276,
     "guildUnlock": "G004",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 40,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3008,7 +3392,10 @@
     "hp": 378,
     "guildUnlock": "G004",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 45,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3033,7 +3420,10 @@
     "hp": 520,
     "guildUnlock": "G004",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 50,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3057,7 +3447,10 @@
     "hp": 30,
     "guildUnlock": "G004",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 4,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3079,7 +3472,10 @@
     "hp": 41,
     "guildUnlock": "G004",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 9,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3103,7 +3499,10 @@
     "hp": 57,
     "guildUnlock": "G004",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 14,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3127,7 +3526,10 @@
     "hp": 79,
     "guildUnlock": "G004",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 19,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3152,7 +3554,10 @@
     "hp": 108,
     "guildUnlock": "G004",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 24,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3177,7 +3582,10 @@
     "hp": 148,
     "guildUnlock": "G004",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 29,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3200,7 +3608,10 @@
     "hp": 202,
     "guildUnlock": "G004",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 34,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3225,7 +3636,10 @@
     "hp": 276,
     "guildUnlock": "G004",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 39,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3250,7 +3664,10 @@
     "hp": 378,
     "guildUnlock": "G004",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 44,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3275,7 +3692,10 @@
     "hp": 520,
     "guildUnlock": "G004",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 49,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3299,7 +3719,10 @@
     "hp": 30,
     "guildUnlock": "G003",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 3,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3321,7 +3744,10 @@
     "hp": 41,
     "guildUnlock": "G003",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 8,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3345,7 +3771,10 @@
     "hp": 57,
     "guildUnlock": "G003",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 13,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3369,7 +3798,10 @@
     "hp": 79,
     "guildUnlock": "G003",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 18,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3394,7 +3826,10 @@
     "hp": 108,
     "guildUnlock": "G003",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 23,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3419,7 +3854,10 @@
     "hp": 148,
     "guildUnlock": "G003",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 28,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3442,7 +3880,10 @@
     "hp": 202,
     "guildUnlock": "G003",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 33,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3467,7 +3908,10 @@
     "hp": 276,
     "guildUnlock": "G003",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 38,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3492,7 +3936,10 @@
     "hp": 378,
     "guildUnlock": "G003",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 43,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3517,7 +3964,10 @@
     "hp": 520,
     "guildUnlock": "G003",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 48,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3541,7 +3991,10 @@
     "hp": 30,
     "guildUnlock": "G004",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 2,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3563,7 +4016,10 @@
     "hp": 41,
     "guildUnlock": "G004",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 7,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3587,7 +4043,10 @@
     "hp": 57,
     "guildUnlock": "G004",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 12,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3611,7 +4070,10 @@
     "hp": 79,
     "guildUnlock": "G004",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 17,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3636,7 +4098,10 @@
     "hp": 108,
     "guildUnlock": "G004",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 22,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3661,7 +4126,10 @@
     "hp": 148,
     "guildUnlock": "G004",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 27,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3684,7 +4152,10 @@
     "hp": 202,
     "guildUnlock": "G004",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 32,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3709,7 +4180,10 @@
     "hp": 276,
     "guildUnlock": "G004",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 37,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3734,7 +4208,10 @@
     "hp": 378,
     "guildUnlock": "G004",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 42,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3759,7 +4236,10 @@
     "hp": 520,
     "guildUnlock": "G004",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 47,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3784,7 +4264,10 @@
     "hp": 60,
     "guildUnlock": "G001",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 1,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3809,7 +4292,10 @@
     "hp": 82,
     "guildUnlock": "G001",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 6,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3832,7 +4318,10 @@
     "hp": 114,
     "guildUnlock": "G001",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 11,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3857,7 +4346,10 @@
     "hp": 158,
     "guildUnlock": "G001",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 16,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3882,7 +4374,10 @@
     "hp": 216,
     "guildUnlock": "G001",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 21,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3907,7 +4402,10 @@
     "hp": 296,
     "guildUnlock": "G001",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 26,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3932,7 +4430,10 @@
     "hp": 404,
     "guildUnlock": "G001",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 31,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3955,7 +4456,10 @@
     "hp": 552,
     "guildUnlock": "G001",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 36,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -3980,7 +4484,10 @@
     "hp": 756,
     "guildUnlock": "G001",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 41,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4005,7 +4512,10 @@
     "hp": 1040,
     "guildUnlock": "G001",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 46,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4030,7 +4540,10 @@
     "hp": 60,
     "guildUnlock": "G003",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 0,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4055,7 +4568,10 @@
     "hp": 82,
     "guildUnlock": "G003",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 5,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4078,7 +4594,10 @@
     "hp": 114,
     "guildUnlock": "G003",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 10,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4103,7 +4622,10 @@
     "hp": 158,
     "guildUnlock": "G003",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 15,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4128,7 +4650,10 @@
     "hp": 216,
     "guildUnlock": "G003",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 20,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4153,7 +4678,10 @@
     "hp": 296,
     "guildUnlock": "G003",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 25,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4178,7 +4706,10 @@
     "hp": 404,
     "guildUnlock": "G003",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 30,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4201,7 +4732,10 @@
     "hp": 552,
     "guildUnlock": "G003",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 35,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4226,7 +4760,10 @@
     "hp": 756,
     "guildUnlock": "G003",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 40,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4251,7 +4788,10 @@
     "hp": 1040,
     "guildUnlock": "G003",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 45,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4276,7 +4816,10 @@
     "hp": 60,
     "guildUnlock": "G005",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 5,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4301,7 +4844,10 @@
     "hp": 82,
     "guildUnlock": "G005",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 10,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4324,7 +4870,10 @@
     "hp": 114,
     "guildUnlock": "G005",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 15,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4349,7 +4898,10 @@
     "hp": 158,
     "guildUnlock": "G005",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 20,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4374,7 +4926,10 @@
     "hp": 216,
     "guildUnlock": "G005",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 25,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4399,7 +4954,10 @@
     "hp": 296,
     "guildUnlock": "G005",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 30,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4424,7 +4982,10 @@
     "hp": 404,
     "guildUnlock": "G005",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 35,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4447,7 +5008,10 @@
     "hp": 552,
     "guildUnlock": "G005",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 40,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4472,7 +5036,10 @@
     "hp": 756,
     "guildUnlock": "G005",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 45,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4497,7 +5064,10 @@
     "hp": 1040,
     "guildUnlock": "G005",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 50,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4520,7 +5090,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 4,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4543,7 +5116,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 9,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4567,7 +5143,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 14,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4589,7 +5168,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 19,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4614,7 +5196,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 24,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4639,7 +5224,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 29,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4664,7 +5252,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 34,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4689,7 +5280,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 39,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4712,7 +5306,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 44,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4737,7 +5334,10 @@
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 49,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4760,7 +5360,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 3,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4783,7 +5386,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 8,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4807,7 +5413,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 13,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4829,7 +5438,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 18,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4854,7 +5466,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 23,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4879,7 +5494,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 28,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4904,7 +5522,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 33,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4929,7 +5550,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 38,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4952,7 +5576,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 43,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -4977,7 +5604,10 @@
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 48,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5000,7 +5630,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 2,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5023,7 +5656,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 7,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5047,7 +5683,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 12,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5069,7 +5708,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 17,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5094,7 +5736,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 22,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5119,7 +5764,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 27,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5144,7 +5792,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 32,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5169,7 +5820,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 37,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5192,7 +5846,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 42,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5217,7 +5874,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 47,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5238,7 +5898,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 0,
+<<<<<<< HEAD
     "repReq": 1,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5261,7 +5924,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 6,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5285,7 +5951,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 11,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5309,7 +5978,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 16,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5332,7 +6004,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 21,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5360,7 +6035,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 26,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5385,7 +6063,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 31,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5410,7 +6091,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 36,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5435,7 +6119,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 41,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5458,7 +6145,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 46,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5481,7 +6171,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 0,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5504,7 +6197,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 5,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5528,7 +6224,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 10,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5552,7 +6251,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 15,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5575,7 +6277,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 20,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5600,7 +6305,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 25,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5625,7 +6333,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 30,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5650,7 +6361,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 35,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5675,7 +6389,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 40,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5698,7 +6415,10 @@
     "hp": 0,
     "guildUnlock": "G002",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 45,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5719,7 +6439,10 @@
     "hp": 60,
     "guildUnlock": "G003",
     "goldCost": 0,
+<<<<<<< HEAD
     "repReq": 5,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5742,7 +6465,10 @@
     "hp": 82,
     "guildUnlock": "G003",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 10,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5765,7 +6491,10 @@
     "hp": 114,
     "guildUnlock": "G003",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 15,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5786,7 +6515,10 @@
     "hp": 158,
     "guildUnlock": "G003",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 20,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5810,7 +6542,10 @@
     "hp": 216,
     "guildUnlock": "G003",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 25,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5834,7 +6569,10 @@
     "hp": 296,
     "guildUnlock": "G003",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 30,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5858,7 +6596,10 @@
     "hp": 404,
     "guildUnlock": "G003",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 35,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5882,7 +6623,10 @@
     "hp": 552,
     "guildUnlock": "G003",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 40,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5904,7 +6648,10 @@
     "hp": 756,
     "guildUnlock": "G003",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 45,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5928,7 +6675,10 @@
     "hp": 1040,
     "guildUnlock": "G003",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 50,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5949,7 +6699,10 @@
     "hp": 60,
     "guildUnlock": "G004",
     "goldCost": 0,
+<<<<<<< HEAD
     "repReq": 4,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5972,7 +6725,10 @@
     "hp": 82,
     "guildUnlock": "G004",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 9,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -5995,7 +6751,10 @@
     "hp": 114,
     "guildUnlock": "G004",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 14,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6016,7 +6775,10 @@
     "hp": 158,
     "guildUnlock": "G004",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 19,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6040,7 +6802,10 @@
     "hp": 216,
     "guildUnlock": "G004",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 24,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6064,7 +6829,10 @@
     "hp": 296,
     "guildUnlock": "G004",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 29,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6088,7 +6856,10 @@
     "hp": 404,
     "guildUnlock": "G004",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 34,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6112,7 +6883,10 @@
     "hp": 552,
     "guildUnlock": "G004",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 39,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6134,7 +6908,10 @@
     "hp": 756,
     "guildUnlock": "G004",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 44,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6158,7 +6935,10 @@
     "hp": 1040,
     "guildUnlock": "G004",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 49,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6182,7 +6962,10 @@
     "hp": 60,
     "guildUnlock": "G005",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 3,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6206,7 +6989,10 @@
     "hp": 82,
     "guildUnlock": "G005",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 8,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6230,7 +7016,10 @@
     "hp": 114,
     "guildUnlock": "G005",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 13,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6252,7 +7041,10 @@
     "hp": 158,
     "guildUnlock": "G005",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 18,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6276,7 +7068,10 @@
     "hp": 216,
     "guildUnlock": "G005",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 23,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6300,7 +7095,10 @@
     "hp": 296,
     "guildUnlock": "G005",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 28,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6324,7 +7122,10 @@
     "hp": 404,
     "guildUnlock": "G005",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 33,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6348,7 +7149,10 @@
     "hp": 552,
     "guildUnlock": "G005",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 38,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6370,7 +7174,10 @@
     "hp": 756,
     "guildUnlock": "G005",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 43,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6394,7 +7201,10 @@
     "hp": 1040,
     "guildUnlock": "G005",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 48,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6418,7 +7228,10 @@
     "hp": 60,
     "guildUnlock": "G005",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 2,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6442,7 +7255,10 @@
     "hp": 82,
     "guildUnlock": "G005",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 7,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6466,7 +7282,10 @@
     "hp": 114,
     "guildUnlock": "G005",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 12,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6490,7 +7309,10 @@
     "hp": 158,
     "guildUnlock": "G005",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 17,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6512,7 +7334,10 @@
     "hp": 216,
     "guildUnlock": "G005",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 22,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6536,7 +7361,10 @@
     "hp": 296,
     "guildUnlock": "G005",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 27,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6560,7 +7388,10 @@
     "hp": 404,
     "guildUnlock": "G005",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 32,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6584,7 +7415,10 @@
     "hp": 552,
     "guildUnlock": "G005",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 37,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6608,7 +7442,10 @@
     "hp": 756,
     "guildUnlock": "G005",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 42,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6630,7 +7467,10 @@
     "hp": 1040,
     "guildUnlock": "G005",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 47,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6654,7 +7494,10 @@
     "hp": 60,
     "guildUnlock": "G004",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 1,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6678,7 +7521,10 @@
     "hp": 82,
     "guildUnlock": "G004",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 6,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6702,7 +7548,10 @@
     "hp": 114,
     "guildUnlock": "G004",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 11,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6726,7 +7575,10 @@
     "hp": 158,
     "guildUnlock": "G004",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 16,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6748,7 +7600,10 @@
     "hp": 216,
     "guildUnlock": "G004",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 21,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6772,7 +7627,10 @@
     "hp": 296,
     "guildUnlock": "G004",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 26,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6796,7 +7654,10 @@
     "hp": 404,
     "guildUnlock": "G004",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 31,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6820,7 +7681,10 @@
     "hp": 552,
     "guildUnlock": "G004",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 36,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6844,7 +7708,10 @@
     "hp": 756,
     "guildUnlock": "G004",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 41,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6866,7 +7733,10 @@
     "hp": 1040,
     "guildUnlock": "G004",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 46,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6890,7 +7760,10 @@
     "hp": 60,
     "guildUnlock": "G005",
     "goldCost": 100,
+<<<<<<< HEAD
     "repReq": 0,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6914,7 +7787,10 @@
     "hp": 82,
     "guildUnlock": "G005",
     "goldCost": 500,
+<<<<<<< HEAD
     "repReq": 5,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6938,7 +7814,10 @@
     "hp": 114,
     "guildUnlock": "G005",
     "goldCost": 1000,
+<<<<<<< HEAD
     "repReq": 10,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6962,7 +7841,10 @@
     "hp": 158,
     "guildUnlock": "G005",
     "goldCost": 7500,
+<<<<<<< HEAD
     "repReq": 15,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -6984,7 +7866,10 @@
     "hp": 216,
     "guildUnlock": "G005",
     "goldCost": 52500,
+<<<<<<< HEAD
     "repReq": 20,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -7008,7 +7893,10 @@
     "hp": 296,
     "guildUnlock": "G005",
     "goldCost": 367500,
+<<<<<<< HEAD
     "repReq": 25,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -7032,7 +7920,10 @@
     "hp": 404,
     "guildUnlock": "G005",
     "goldCost": 2572500,
+<<<<<<< HEAD
     "repReq": 30,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -7056,7 +7947,10 @@
     "hp": 552,
     "guildUnlock": "G005",
     "goldCost": 18007500,
+<<<<<<< HEAD
     "repReq": 35,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -7080,7 +7974,10 @@
     "hp": 756,
     "guildUnlock": "G005",
     "goldCost": 126052500,
+<<<<<<< HEAD
     "repReq": 40,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -7102,7 +7999,10 @@
     "hp": 1040,
     "guildUnlock": "G005",
     "goldCost": 882367500,
+<<<<<<< HEAD
     "repReq": 45,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "normal"
   },
   {
@@ -7123,7 +8023,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7146,7 +8049,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7169,7 +8075,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7192,7 +8101,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7215,7 +8127,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7239,7 +8154,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7264,7 +8182,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7289,7 +8210,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7311,7 +8235,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7340,7 +8267,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7361,7 +8291,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7384,7 +8317,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7407,7 +8343,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7430,7 +8369,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7453,7 +8395,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7478,7 +8423,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7503,7 +8451,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7528,7 +8479,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7553,7 +8507,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7582,7 +8539,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7603,7 +8563,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7626,7 +8589,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7649,7 +8615,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7672,7 +8641,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7695,7 +8667,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7721,7 +8696,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7746,7 +8724,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7771,7 +8752,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7796,7 +8780,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7825,7 +8812,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7846,7 +8836,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7869,7 +8862,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7892,7 +8888,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7915,7 +8914,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7938,7 +8940,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7964,7 +8969,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -7989,7 +8997,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -8014,7 +9025,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -8039,7 +9053,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   },
   {
@@ -8068,7 +9085,10 @@
     "hp": 0,
     "guildUnlock": 0,
     "goldCost": null,
+<<<<<<< HEAD
     "repReq": null,
+=======
+>>>>>>> 8066d445cc752139eae73d2e6b03a51c7886e600
     "recipeType": "building"
   }
 ]

@@ -318,7 +318,7 @@ function recipeCardBack(recipe) {
     const td7 = $('<div/>').addClass('recipeBackTabContainer');
         const td7a = $('<div/>').addClass('recipeBackTab backTab1 selected').html(`Details`);
         const td7b = $('<div/>').addClass('recipeBackTab backTab2').html(`Mastery`);
-    td7.append(td7a,td7b);
+    td7.append(td7a);
 
     const td8 = $('<div/>').addClass('recipeTabContainer recipeTabDetails');
         const td8a = $('<div/>').addClass('recipeDetailsContainer');
@@ -346,7 +346,11 @@ function recipeMasteryBar(craftCount) {
     craftCount = Math.min(100,craftCount);
     const masteryWidth = (craftCount).toFixed(1)+"%";
     const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
-    const masteryBar = $("<div/>").addClass("masteryBar").attr("data-label",`${craftCount} / 100`).attr("id","masteryBar");
+    const masteryBar = $("<div/>").addClass("masteryBar").attr("id","masteryBar");
+    if (craftCount >= 100) {
+        masteryBarDiv.addClass("isMastered");
+        masteryBar.attr("data-label",`Mastered`);
+    } else masteryBar.attr("data-label",`${craftCount} / 100`);
     const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
     return masteryBarDiv.append(masteryBar,masteryBarFill);
 }

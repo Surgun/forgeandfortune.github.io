@@ -201,6 +201,8 @@ function createWorkerBuyCard(worker) {
 //click guild tab button
 $(document).on("click",".guildListButton",(e) => {
     e.preventDefault();
+    $(".guildListButton").removeClass("selected");
+    $(e.currentTarget).addClass("selected");
     const gid = $(e.currentTarget).data("gid");
     GuildManager.lastClicked = gid;
     $(".guildContainer").hide();

@@ -62,6 +62,19 @@ function loadHeroes() {
             const hero = new Hero(props);
             HeroManager.addHero(hero);
         });
+        loadGuilds();
+    });
+}
+
+function loadGuilds() {
+    $.ajax({
+        url: "json/guilds.json",
+    }).done((data) => {
+        console.log("guild load complete");
+        $.each(data, function(i,props){
+            const guild = new Guild(props)
+            GuildManager.addGuild(guild);
+        });
         loadMobs();
     });
 }

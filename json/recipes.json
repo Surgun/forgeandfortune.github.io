@@ -15,9 +15,10 @@
     "apAdd": 30,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "normal",
-    "dungeonUnlock": "D010"
+    "guildUnlock": "G002",
+    "goldCost": 0,
+    "repReq": 5,
+    "recipeType": "normal"
   },
   {
     "id": "R0102",
@@ -37,9 +38,10 @@
     "apAdd": 30,
     "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D011"
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 10,
+    "recipeType": "normal"
   },
   {
     "id": "R0103",
@@ -59,9 +61,10 @@
     "apAdd": 30,
     "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D012"
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 15,
+    "recipeType": "normal"
   },
   {
     "id": "R0104",
@@ -81,9 +84,10 @@
     "apAdd": 30,
     "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D013"
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 20,
+    "recipeType": "normal"
   },
   {
     "id": "R0105",
@@ -104,9 +108,10 @@
     "apAdd": 30,
     "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D014"
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 25,
+    "recipeType": "normal"
   },
   {
     "id": "R0106",
@@ -125,9 +130,10 @@
     "apAdd": 30,
     "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D015"
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 30,
+    "recipeType": "normal"
   },
   {
     "id": "R0107",
@@ -148,9 +154,10 @@
     "apAdd": 30,
     "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D016"
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 35,
+    "recipeType": "normal"
   },
   {
     "id": "R0108",
@@ -171,9 +178,10 @@
     "apAdd": 30,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D017"
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 40,
+    "recipeType": "normal"
   },
   {
     "id": "R0109",
@@ -194,9 +202,10 @@
     "apAdd": 30,
     "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D018"
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 45,
+    "recipeType": "normal"
   },
   {
     "id": "R0110",
@@ -217,9 +226,10 @@
     "apAdd": 30,
     "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D019"
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 50,
+    "recipeType": "normal"
   },
   {
     "id": "R0201",
@@ -239,9 +249,10 @@
     "apAdd": 40,
     "pow": 14,
     "hp": 0,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D020"
+    "guildUnlock": "G001",
+    "goldCost": 100,
+    "repReq": 4,
+    "recipeType": "normal"
   },
   {
     "id": "R0202",
@@ -259,9 +270,10 @@
     "apAdd": 40,
     "pow": 20,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D021"
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 9,
+    "recipeType": "normal"
   },
   {
     "id": "R0203",
@@ -281,9 +293,10 @@
     "apAdd": 40,
     "pow": 28,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D022"
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 14,
+    "recipeType": "normal"
   },
   {
     "id": "R0204",
@@ -303,9 +316,10 @@
     "apAdd": 40,
     "pow": 40,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D023"
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 19,
+    "recipeType": "normal"
   },
   {
     "id": "R0205",
@@ -326,9 +340,10 @@
     "apAdd": 40,
     "pow": 55,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D024"
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 24,
+    "recipeType": "normal"
   },
   {
     "id": "R0206",
@@ -349,9 +364,10 @@
     "apAdd": 40,
     "pow": 75,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D025"
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 29,
+    "recipeType": "normal"
   },
   {
     "id": "R0207",
@@ -370,9 +386,10 @@
     "apAdd": 40,
     "pow": 104,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D026"
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 34,
+    "recipeType": "normal"
   },
   {
     "id": "R0208",
@@ -393,9 +410,10 @@
     "apAdd": 40,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D027"
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 39,
+    "recipeType": "normal"
   },
   {
     "id": "R0209",
@@ -416,9 +434,10 @@
     "apAdd": 40,
     "pow": 200,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D028"
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 44,
+    "recipeType": "normal"
   },
   {
     "id": "R0210",
@@ -439,9 +458,10 @@
     "apAdd": 40,
     "pow": 280,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D029"
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 49,
+    "recipeType": "normal"
   },
   {
     "id": "R0301",
@@ -459,9 +479,10 @@
     "apAdd": 25,
     "pow": 22,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "normal",
-    "dungeonUnlock": "D030"
+    "guildUnlock": "G005",
+    "goldCost": 0,
+    "repReq": 3,
+    "recipeType": "normal"
   },
   {
     "id": "R0302",
@@ -481,9 +502,10 @@
     "apAdd": 25,
     "pow": 30,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D031"
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 8,
+    "recipeType": "normal"
   },
   {
     "id": "R0303",
@@ -501,9 +523,10 @@
     "apAdd": 25,
     "pow": 42,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D032"
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 13,
+    "recipeType": "normal"
   },
   {
     "id": "R0304",
@@ -523,9 +546,10 @@
     "apAdd": 25,
     "pow": 59,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D033"
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 18,
+    "recipeType": "normal"
   },
   {
     "id": "R0305",
@@ -546,9 +570,10 @@
     "apAdd": 25,
     "pow": 81,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D034"
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 23,
+    "recipeType": "normal"
   },
   {
     "id": "R0306",
@@ -569,9 +594,10 @@
     "apAdd": 25,
     "pow": 113,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D035"
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 28,
+    "recipeType": "normal"
   },
   {
     "id": "R0307",
@@ -592,9 +618,10 @@
     "apAdd": 25,
     "pow": 156,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D036"
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 33,
+    "recipeType": "normal"
   },
   {
     "id": "R0308",
@@ -613,9 +640,10 @@
     "apAdd": 25,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D037"
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 38,
+    "recipeType": "normal"
   },
   {
     "id": "R0309",
@@ -636,9 +664,10 @@
     "apAdd": 25,
     "pow": 300,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D038"
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 43,
+    "recipeType": "normal"
   },
   {
     "id": "R0310",
@@ -659,9 +688,10 @@
     "apAdd": 25,
     "pow": 420,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D039"
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 48,
+    "recipeType": "normal"
   },
   {
     "id": "R0401",
@@ -679,9 +709,10 @@
     "apAdd": 30,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "normal",
-    "dungeonUnlock": "D040"
+    "guildUnlock": "G005",
+    "goldCost": 0,
+    "repReq": 2,
+    "recipeType": "normal"
   },
   {
     "id": "R0402",
@@ -701,9 +732,10 @@
     "apAdd": 30,
     "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D041"
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 7,
+    "recipeType": "normal"
   },
   {
     "id": "R0403",
@@ -723,9 +755,10 @@
     "apAdd": 30,
     "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D042"
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 12,
+    "recipeType": "normal"
   },
   {
     "id": "R0404",
@@ -745,9 +778,10 @@
     "apAdd": 30,
     "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D043"
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 17,
+    "recipeType": "normal"
   },
   {
     "id": "R0405",
@@ -768,9 +802,10 @@
     "apAdd": 30,
     "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D044"
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 22,
+    "recipeType": "normal"
   },
   {
     "id": "R0406",
@@ -789,9 +824,10 @@
     "apAdd": 30,
     "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D045"
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 27,
+    "recipeType": "normal"
   },
   {
     "id": "R0407",
@@ -812,9 +848,10 @@
     "apAdd": 30,
     "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D046"
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 32,
+    "recipeType": "normal"
   },
   {
     "id": "R0408",
@@ -835,9 +872,10 @@
     "apAdd": 30,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D047"
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 37,
+    "recipeType": "normal"
   },
   {
     "id": "R0409",
@@ -858,9 +896,10 @@
     "apAdd": 30,
     "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D048"
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 42,
+    "recipeType": "normal"
   },
   {
     "id": "R0410",
@@ -881,9 +920,10 @@
     "apAdd": 30,
     "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D049"
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 47,
+    "recipeType": "normal"
   },
   {
     "id": "R0501",
@@ -901,9 +941,10 @@
     "apAdd": 25,
     "pow": 22,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "normal",
-    "dungeonUnlock": "D050"
+    "guildUnlock": "G003",
+    "goldCost": 0,
+    "repReq": 1,
+    "recipeType": "normal"
   },
   {
     "id": "R0502",
@@ -923,9 +964,10 @@
     "apAdd": 25,
     "pow": 30,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D051"
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 6,
+    "recipeType": "normal"
   },
   {
     "id": "R0503",
@@ -943,9 +985,10 @@
     "apAdd": 25,
     "pow": 42,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D052"
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 11,
+    "recipeType": "normal"
   },
   {
     "id": "R0504",
@@ -965,9 +1008,10 @@
     "apAdd": 25,
     "pow": 59,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D053"
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 16,
+    "recipeType": "normal"
   },
   {
     "id": "R0505",
@@ -988,9 +1032,10 @@
     "apAdd": 25,
     "pow": 81,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D054"
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 21,
+    "recipeType": "normal"
   },
   {
     "id": "R0506",
@@ -1011,9 +1056,10 @@
     "apAdd": 25,
     "pow": 113,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D055"
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 26,
+    "recipeType": "normal"
   },
   {
     "id": "R0507",
@@ -1034,9 +1080,10 @@
     "apAdd": 25,
     "pow": 156,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D056"
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 31,
+    "recipeType": "normal"
   },
   {
     "id": "R0508",
@@ -1055,9 +1102,10 @@
     "apAdd": 25,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D057"
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 36,
+    "recipeType": "normal"
   },
   {
     "id": "R0509",
@@ -1078,9 +1126,10 @@
     "apAdd": 25,
     "pow": 300,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D058"
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 41,
+    "recipeType": "normal"
   },
   {
     "id": "R0510",
@@ -1101,9 +1150,10 @@
     "apAdd": 25,
     "pow": 420,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D059"
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 46,
+    "recipeType": "normal"
   },
   {
     "id": "R0601",
@@ -1123,9 +1173,10 @@
     "apAdd": 40,
     "pow": 14,
     "hp": 0,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D060"
+    "guildUnlock": "G002",
+    "goldCost": 100,
+    "repReq": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R0602",
@@ -1143,9 +1194,10 @@
     "apAdd": 40,
     "pow": 20,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D061"
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 5,
+    "recipeType": "normal"
   },
   {
     "id": "R0603",
@@ -1165,9 +1217,10 @@
     "apAdd": 40,
     "pow": 28,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D062"
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 10,
+    "recipeType": "normal"
   },
   {
     "id": "R0604",
@@ -1187,9 +1240,10 @@
     "apAdd": 40,
     "pow": 40,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D063"
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 15,
+    "recipeType": "normal"
   },
   {
     "id": "R0605",
@@ -1210,9 +1264,10 @@
     "apAdd": 40,
     "pow": 55,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D064"
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 20,
+    "recipeType": "normal"
   },
   {
     "id": "R0606",
@@ -1233,9 +1288,10 @@
     "apAdd": 40,
     "pow": 75,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D065"
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 25,
+    "recipeType": "normal"
   },
   {
     "id": "R0607",
@@ -1254,9 +1310,10 @@
     "apAdd": 40,
     "pow": 104,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D066"
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 30,
+    "recipeType": "normal"
   },
   {
     "id": "R0608",
@@ -1277,9 +1334,10 @@
     "apAdd": 40,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D067"
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 35,
+    "recipeType": "normal"
   },
   {
     "id": "R0609",
@@ -1300,9 +1358,10 @@
     "apAdd": 40,
     "pow": 200,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D068"
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 40,
+    "recipeType": "normal"
   },
   {
     "id": "R0610",
@@ -1323,9 +1382,10 @@
     "apAdd": 40,
     "pow": 280,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D069"
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 45,
+    "recipeType": "normal"
   },
   {
     "id": "R0701",
@@ -1343,9 +1403,10 @@
     "apAdd": 25,
     "pow": 22,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "normal",
-    "dungeonUnlock": null
+    "guildUnlock": "G001",
+    "goldCost": 0,
+    "repReq": 5,
+    "recipeType": "normal"
   },
   {
     "id": "R0702",
@@ -1365,9 +1426,10 @@
     "apAdd": 25,
     "pow": 30,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D071"
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 10,
+    "recipeType": "normal"
   },
   {
     "id": "R0703",
@@ -1387,9 +1449,10 @@
     "apAdd": 25,
     "pow": 42,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D072"
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 15,
+    "recipeType": "normal"
   },
   {
     "id": "R0704",
@@ -1409,9 +1472,10 @@
     "apAdd": 25,
     "pow": 59,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D073"
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 20,
+    "recipeType": "normal"
   },
   {
     "id": "R0705",
@@ -1432,9 +1496,10 @@
     "apAdd": 25,
     "pow": 81,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D074"
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 25,
+    "recipeType": "normal"
   },
   {
     "id": "R0706",
@@ -1453,9 +1518,10 @@
     "apAdd": 25,
     "pow": 113,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D075"
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 30,
+    "recipeType": "normal"
   },
   {
     "id": "R0707",
@@ -1476,9 +1542,10 @@
     "apAdd": 25,
     "pow": 156,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D076"
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 35,
+    "recipeType": "normal"
   },
   {
     "id": "R0708",
@@ -1499,9 +1566,10 @@
     "apAdd": 25,
     "pow": 216,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D077"
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 40,
+    "recipeType": "normal"
   },
   {
     "id": "R0709",
@@ -1522,9 +1590,10 @@
     "apAdd": 25,
     "pow": 300,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D078"
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 45,
+    "recipeType": "normal"
   },
   {
     "id": "R0710",
@@ -1545,9 +1614,10 @@
     "apAdd": 25,
     "pow": 420,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D079"
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 50,
+    "recipeType": "normal"
   },
   {
     "id": "R0801",
@@ -1567,9 +1637,10 @@
     "apAdd": 40,
     "pow": 14,
     "hp": 0,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D080"
+    "guildUnlock": "G002",
+    "goldCost": 100,
+    "repReq": 4,
+    "recipeType": "normal"
   },
   {
     "id": "R0802",
@@ -1587,9 +1658,10 @@
     "apAdd": 40,
     "pow": 20,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D081"
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 9,
+    "recipeType": "normal"
   },
   {
     "id": "R0803",
@@ -1609,9 +1681,10 @@
     "apAdd": 40,
     "pow": 28,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D082"
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 14,
+    "recipeType": "normal"
   },
   {
     "id": "R0804",
@@ -1631,9 +1704,10 @@
     "apAdd": 40,
     "pow": 40,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D083"
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 19,
+    "recipeType": "normal"
   },
   {
     "id": "R0805",
@@ -1645,7 +1719,7 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": {
       "M405": 1
@@ -1654,9 +1728,10 @@
     "apAdd": 40,
     "pow": 55,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D084"
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 24,
+    "recipeType": "normal"
   },
   {
     "id": "R0806",
@@ -1668,7 +1743,7 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": {
       "M306": 1
@@ -1677,9 +1752,10 @@
     "apAdd": 40,
     "pow": 75,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D085"
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 29,
+    "recipeType": "normal"
   },
   {
     "id": "R0807",
@@ -1691,16 +1767,17 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": null,
     "smithCost": "M307",
     "apAdd": 40,
     "pow": 104,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D086"
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 34,
+    "recipeType": "normal"
   },
   {
     "id": "R0808",
@@ -1712,7 +1789,7 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": {
       "M608": 1
@@ -1721,9 +1798,10 @@
     "apAdd": 40,
     "pow": 144,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D087"
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 39,
+    "recipeType": "normal"
   },
   {
     "id": "R0809",
@@ -1735,7 +1813,7 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": {
       "M409": 1
@@ -1744,9 +1822,10 @@
     "apAdd": 40,
     "pow": 200,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D088"
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 44,
+    "recipeType": "normal"
   },
   {
     "id": "R0810",
@@ -1758,7 +1837,7 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": {
       "M610": 1
@@ -1767,9 +1846,10 @@
     "apAdd": 40,
     "pow": 280,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D089"
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 49,
+    "recipeType": "normal"
   },
   {
     "id": "R0901",
@@ -1787,9 +1867,10 @@
     "apAdd": 30,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "normal",
-    "dungeonUnlock": "D090"
+    "guildUnlock": "G004",
+    "goldCost": 0,
+    "repReq": 3,
+    "recipeType": "normal"
   },
   {
     "id": "R0902",
@@ -1809,9 +1890,10 @@
     "apAdd": 30,
     "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D091"
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 8,
+    "recipeType": "normal"
   },
   {
     "id": "R0903",
@@ -1829,9 +1911,10 @@
     "apAdd": 30,
     "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D092"
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 13,
+    "recipeType": "normal"
   },
   {
     "id": "R0904",
@@ -1851,9 +1934,10 @@
     "apAdd": 30,
     "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D093"
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 18,
+    "recipeType": "normal"
   },
   {
     "id": "R0905",
@@ -1865,7 +1949,7 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": {
       "M505": 1
@@ -1874,9 +1958,10 @@
     "apAdd": 30,
     "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D094"
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 23,
+    "recipeType": "normal"
   },
   {
     "id": "R0906",
@@ -1888,7 +1973,7 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": {
       "M406": 1
@@ -1897,9 +1982,10 @@
     "apAdd": 30,
     "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D095"
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 28,
+    "recipeType": "normal"
   },
   {
     "id": "R0907",
@@ -1911,7 +1997,7 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": {
       "M307": 1
@@ -1920,9 +2006,10 @@
     "apAdd": 30,
     "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D096"
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 33,
+    "recipeType": "normal"
   },
   {
     "id": "R0908",
@@ -1934,16 +2021,17 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": null,
     "smithCost": "M308",
     "apAdd": 30,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D097"
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 38,
+    "recipeType": "normal"
   },
   {
     "id": "R0909",
@@ -1955,7 +2043,7 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": {
       "M509": 1
@@ -1964,9 +2052,10 @@
     "apAdd": 30,
     "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D098"
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 43,
+    "recipeType": "normal"
   },
   {
     "id": "R0910",
@@ -1978,7 +2067,7 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": {
       "M110": 1
@@ -1987,9 +2076,10 @@
     "apAdd": 30,
     "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D099"
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 48,
+    "recipeType": "normal"
   },
   {
     "id": "R1001",
@@ -2007,9 +2097,10 @@
     "apAdd": 30,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "normal",
-    "dungeonUnlock": "D010"
+    "guildUnlock": "G001",
+    "goldCost": 0,
+    "repReq": 2,
+    "recipeType": "normal"
   },
   {
     "id": "R1002",
@@ -2029,9 +2120,10 @@
     "apAdd": 30,
     "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D011"
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 7,
+    "recipeType": "normal"
   },
   {
     "id": "R1003",
@@ -2051,9 +2143,10 @@
     "apAdd": 30,
     "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D012"
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 12,
+    "recipeType": "normal"
   },
   {
     "id": "R1004",
@@ -2073,9 +2166,10 @@
     "apAdd": 30,
     "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D013"
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 17,
+    "recipeType": "normal"
   },
   {
     "id": "R1005",
@@ -2094,9 +2188,10 @@
     "apAdd": 30,
     "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D014"
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 22,
+    "recipeType": "normal"
   },
   {
     "id": "R1006",
@@ -2117,9 +2212,10 @@
     "apAdd": 30,
     "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D015"
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 27,
+    "recipeType": "normal"
   },
   {
     "id": "R1007",
@@ -2140,9 +2236,10 @@
     "apAdd": 30,
     "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D016"
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 32,
+    "recipeType": "normal"
   },
   {
     "id": "R1008",
@@ -2163,9 +2260,10 @@
     "apAdd": 30,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D017"
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 37,
+    "recipeType": "normal"
   },
   {
     "id": "R1009",
@@ -2186,9 +2284,10 @@
     "apAdd": 30,
     "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D018"
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 42,
+    "recipeType": "normal"
   },
   {
     "id": "R1010",
@@ -2207,9 +2306,10 @@
     "apAdd": 30,
     "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D019"
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 47,
+    "recipeType": "normal"
   },
   {
     "id": "R2101",
@@ -2228,9 +2328,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D020"
+    "guildUnlock": "G001",
+    "goldCost": 100,
+    "repReq": 1,
+    "recipeType": "normal"
   },
   {
     "id": "R2102",
@@ -2251,9 +2352,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D021"
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 6,
+    "recipeType": "normal"
   },
   {
     "id": "R2103",
@@ -2274,9 +2376,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D022"
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 11,
+    "recipeType": "normal"
   },
   {
     "id": "R2104",
@@ -2297,9 +2400,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D023"
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 16,
+    "recipeType": "normal"
   },
   {
     "id": "R2105",
@@ -2321,9 +2425,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D024"
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 21,
+    "recipeType": "normal"
   },
   {
     "id": "R2106",
@@ -2343,9 +2448,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D025"
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 26,
+    "recipeType": "normal"
   },
   {
     "id": "R2107",
@@ -2367,9 +2473,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D026"
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 31,
+    "recipeType": "normal"
   },
   {
     "id": "R2108",
@@ -2391,9 +2498,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D027"
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 36,
+    "recipeType": "normal"
   },
   {
     "id": "R2109",
@@ -2415,9 +2523,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D028"
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 41,
+    "recipeType": "normal"
   },
   {
     "id": "R2110",
@@ -2439,9 +2548,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D029"
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 46,
+    "recipeType": "normal"
   },
   {
     "id": "R2201",
@@ -2460,9 +2570,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D030"
+    "guildUnlock": "G003",
+    "goldCost": 100,
+    "repReq": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R2202",
@@ -2483,9 +2594,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D031"
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 5,
+    "recipeType": "normal"
   },
   {
     "id": "R2203",
@@ -2506,9 +2618,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D032"
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 10,
+    "recipeType": "normal"
   },
   {
     "id": "R2204",
@@ -2529,9 +2642,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D033"
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 15,
+    "recipeType": "normal"
   },
   {
     "id": "R2205",
@@ -2553,9 +2667,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D034"
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 20,
+    "recipeType": "normal"
   },
   {
     "id": "R2206",
@@ -2575,9 +2690,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D035"
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 25,
+    "recipeType": "normal"
   },
   {
     "id": "R2207",
@@ -2599,9 +2715,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D036"
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 30,
+    "recipeType": "normal"
   },
   {
     "id": "R2208",
@@ -2623,9 +2740,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D037"
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 35,
+    "recipeType": "normal"
   },
   {
     "id": "R2209",
@@ -2647,9 +2765,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D038"
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 40,
+    "recipeType": "normal"
   },
   {
     "id": "R2210",
@@ -2671,9 +2790,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D039"
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 45,
+    "recipeType": "normal"
   },
   {
     "id": "R2301",
@@ -2692,9 +2812,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D040"
+    "guildUnlock": "G004",
+    "goldCost": 100,
+    "repReq": 5,
+    "recipeType": "normal"
   },
   {
     "id": "R2302",
@@ -2715,9 +2836,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D041"
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 10,
+    "recipeType": "normal"
   },
   {
     "id": "R2303",
@@ -2738,9 +2860,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D042"
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 15,
+    "recipeType": "normal"
   },
   {
     "id": "R2304",
@@ -2761,9 +2884,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D043"
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 20,
+    "recipeType": "normal"
   },
   {
     "id": "R2305",
@@ -2784,9 +2908,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D044"
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 25,
+    "recipeType": "normal"
   },
   {
     "id": "R2306",
@@ -2806,9 +2931,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D045"
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 30,
+    "recipeType": "normal"
   },
   {
     "id": "R2307",
@@ -2830,9 +2956,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D046"
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 35,
+    "recipeType": "normal"
   },
   {
     "id": "R2308",
@@ -2854,9 +2981,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D047"
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 40,
+    "recipeType": "normal"
   },
   {
     "id": "R2309",
@@ -2878,9 +3006,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D048"
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 45,
+    "recipeType": "normal"
   },
   {
     "id": "R2310",
@@ -2902,9 +3031,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D049"
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 50,
+    "recipeType": "normal"
   },
   {
     "id": "R3101",
@@ -2925,9 +3055,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D050"
+    "guildUnlock": "G004",
+    "goldCost": 100,
+    "repReq": 4,
+    "recipeType": "normal"
   },
   {
     "id": "R3102",
@@ -2946,9 +3077,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D051"
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 9,
+    "recipeType": "normal"
   },
   {
     "id": "R3103",
@@ -2969,9 +3101,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D052"
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 14,
+    "recipeType": "normal"
   },
   {
     "id": "R3104",
@@ -2992,9 +3125,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D053"
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 19,
+    "recipeType": "normal"
   },
   {
     "id": "R3105",
@@ -3016,9 +3150,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D054"
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 24,
+    "recipeType": "normal"
   },
   {
     "id": "R3106",
@@ -3040,9 +3175,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D055"
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 29,
+    "recipeType": "normal"
   },
   {
     "id": "R3107",
@@ -3062,9 +3198,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D056"
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 34,
+    "recipeType": "normal"
   },
   {
     "id": "R3108",
@@ -3086,9 +3223,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D057"
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 39,
+    "recipeType": "normal"
   },
   {
     "id": "R3109",
@@ -3110,9 +3248,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D058"
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 44,
+    "recipeType": "normal"
   },
   {
     "id": "R3110",
@@ -3134,9 +3273,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D059"
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 49,
+    "recipeType": "normal"
   },
   {
     "id": "R3201",
@@ -3157,9 +3297,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D060"
+    "guildUnlock": "G003",
+    "goldCost": 100,
+    "repReq": 3,
+    "recipeType": "normal"
   },
   {
     "id": "R3202",
@@ -3178,9 +3319,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D061"
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 8,
+    "recipeType": "normal"
   },
   {
     "id": "R3203",
@@ -3201,9 +3343,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D062"
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 13,
+    "recipeType": "normal"
   },
   {
     "id": "R3204",
@@ -3224,9 +3367,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D063"
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 18,
+    "recipeType": "normal"
   },
   {
     "id": "R3205",
@@ -3248,9 +3392,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D064"
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 23,
+    "recipeType": "normal"
   },
   {
     "id": "R3206",
@@ -3272,9 +3417,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D065"
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 28,
+    "recipeType": "normal"
   },
   {
     "id": "R3207",
@@ -3294,9 +3440,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D066"
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 33,
+    "recipeType": "normal"
   },
   {
     "id": "R3208",
@@ -3318,9 +3465,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D067"
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 38,
+    "recipeType": "normal"
   },
   {
     "id": "R3209",
@@ -3342,9 +3490,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D068"
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 43,
+    "recipeType": "normal"
   },
   {
     "id": "R3210",
@@ -3366,9 +3515,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D069"
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 48,
+    "recipeType": "normal"
   },
   {
     "id": "R3301",
@@ -3389,9 +3539,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D070"
+    "guildUnlock": "G004",
+    "goldCost": 100,
+    "repReq": 2,
+    "recipeType": "normal"
   },
   {
     "id": "R3302",
@@ -3410,9 +3561,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D071"
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 7,
+    "recipeType": "normal"
   },
   {
     "id": "R3303",
@@ -3433,9 +3585,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D072"
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 12,
+    "recipeType": "normal"
   },
   {
     "id": "R3304",
@@ -3456,9 +3609,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D073"
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 17,
+    "recipeType": "normal"
   },
   {
     "id": "R3305",
@@ -3480,9 +3634,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D074"
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 22,
+    "recipeType": "normal"
   },
   {
     "id": "R3306",
@@ -3504,9 +3659,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D075"
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 27,
+    "recipeType": "normal"
   },
   {
     "id": "R3307",
@@ -3526,9 +3682,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D076"
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 32,
+    "recipeType": "normal"
   },
   {
     "id": "R3308",
@@ -3550,9 +3707,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D077"
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 37,
+    "recipeType": "normal"
   },
   {
     "id": "R3309",
@@ -3574,9 +3732,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D078"
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 42,
+    "recipeType": "normal"
   },
   {
     "id": "R3310",
@@ -3598,9 +3757,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D079"
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 47,
+    "recipeType": "normal"
   },
   {
     "id": "R4101",
@@ -3622,9 +3782,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D080"
+    "guildUnlock": "G001",
+    "goldCost": 100,
+    "repReq": 1,
+    "recipeType": "normal"
   },
   {
     "id": "R4102",
@@ -3646,9 +3807,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D081"
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 6,
+    "recipeType": "normal"
   },
   {
     "id": "R4103",
@@ -3668,9 +3830,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D082"
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 11,
+    "recipeType": "normal"
   },
   {
     "id": "R4104",
@@ -3692,9 +3855,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D083"
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 16,
+    "recipeType": "normal"
   },
   {
     "id": "R4105",
@@ -3716,9 +3880,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D084"
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 21,
+    "recipeType": "normal"
   },
   {
     "id": "R4106",
@@ -3740,9 +3905,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D085"
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 26,
+    "recipeType": "normal"
   },
   {
     "id": "R4107",
@@ -3764,9 +3930,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D086"
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 31,
+    "recipeType": "normal"
   },
   {
     "id": "R4108",
@@ -3786,9 +3953,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D087"
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 36,
+    "recipeType": "normal"
   },
   {
     "id": "R4109",
@@ -3810,9 +3978,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D088"
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 41,
+    "recipeType": "normal"
   },
   {
     "id": "R4110",
@@ -3834,9 +4003,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D089"
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 46,
+    "recipeType": "normal"
   },
   {
     "id": "R4201",
@@ -3858,9 +4028,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D090"
+    "guildUnlock": "G003",
+    "goldCost": 100,
+    "repReq": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R4202",
@@ -3882,9 +4053,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D091"
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 5,
+    "recipeType": "normal"
   },
   {
     "id": "R4203",
@@ -3904,9 +4076,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D092"
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 10,
+    "recipeType": "normal"
   },
   {
     "id": "R4204",
@@ -3928,9 +4101,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D093"
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 15,
+    "recipeType": "normal"
   },
   {
     "id": "R4205",
@@ -3952,9 +4126,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D094"
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 20,
+    "recipeType": "normal"
   },
   {
     "id": "R4206",
@@ -3976,9 +4151,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D095"
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 25,
+    "recipeType": "normal"
   },
   {
     "id": "R4207",
@@ -4000,9 +4176,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D096"
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 30,
+    "recipeType": "normal"
   },
   {
     "id": "R4208",
@@ -4022,9 +4199,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D097"
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 35,
+    "recipeType": "normal"
   },
   {
     "id": "R4209",
@@ -4046,9 +4224,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D098"
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 40,
+    "recipeType": "normal"
   },
   {
     "id": "R4210",
@@ -4070,9 +4249,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D099"
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 45,
+    "recipeType": "normal"
   },
   {
     "id": "R4301",
@@ -4094,9 +4274,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D010"
+    "guildUnlock": "G005",
+    "goldCost": 100,
+    "repReq": 5,
+    "recipeType": "normal"
   },
   {
     "id": "R4302",
@@ -4118,9 +4299,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D011"
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 10,
+    "recipeType": "normal"
   },
   {
     "id": "R4303",
@@ -4140,9 +4322,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D012"
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 15,
+    "recipeType": "normal"
   },
   {
     "id": "R4304",
@@ -4164,9 +4347,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D013"
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 20,
+    "recipeType": "normal"
   },
   {
     "id": "R4305",
@@ -4188,9 +4372,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D014"
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 25,
+    "recipeType": "normal"
   },
   {
     "id": "R4306",
@@ -4212,9 +4397,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D015"
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 30,
+    "recipeType": "normal"
   },
   {
     "id": "R4307",
@@ -4236,9 +4422,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D016"
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 35,
+    "recipeType": "normal"
   },
   {
     "id": "R4308",
@@ -4258,9 +4445,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D017"
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 40,
+    "recipeType": "normal"
   },
   {
     "id": "R4309",
@@ -4282,9 +4470,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D018"
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 45,
+    "recipeType": "normal"
   },
   {
     "id": "R4310",
@@ -4306,9 +4495,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D019"
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 50,
+    "recipeType": "normal"
   },
   {
     "id": "R5101",
@@ -4328,9 +4518,10 @@
     "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D020"
+    "guildUnlock": "G001",
+    "goldCost": 100,
+    "repReq": 4,
+    "recipeType": "normal"
   },
   {
     "id": "R5102",
@@ -4350,9 +4541,10 @@
     "apAdd": 0,
     "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D021"
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 9,
+    "recipeType": "normal"
   },
   {
     "id": "R5103",
@@ -4373,9 +4565,10 @@
     "apAdd": 0,
     "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D022"
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 14,
+    "recipeType": "normal"
   },
   {
     "id": "R5104",
@@ -4394,9 +4587,10 @@
     "apAdd": 0,
     "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D023"
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 19,
+    "recipeType": "normal"
   },
   {
     "id": "R5105",
@@ -4418,9 +4612,10 @@
     "apAdd": 0,
     "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D024"
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 24,
+    "recipeType": "normal"
   },
   {
     "id": "R5106",
@@ -4442,9 +4637,10 @@
     "apAdd": 0,
     "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D025"
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 29,
+    "recipeType": "normal"
   },
   {
     "id": "R5107",
@@ -4466,9 +4662,10 @@
     "apAdd": 0,
     "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D026"
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 34,
+    "recipeType": "normal"
   },
   {
     "id": "R5108",
@@ -4490,9 +4687,10 @@
     "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D027"
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 39,
+    "recipeType": "normal"
   },
   {
     "id": "R5109",
@@ -4512,9 +4710,10 @@
     "apAdd": 0,
     "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D028"
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 44,
+    "recipeType": "normal"
   },
   {
     "id": "R5110",
@@ -4536,9 +4735,10 @@
     "apAdd": 0,
     "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D029"
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 49,
+    "recipeType": "normal"
   },
   {
     "id": "R5201",
@@ -4558,9 +4758,10 @@
     "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D030"
+    "guildUnlock": "G003",
+    "goldCost": 100,
+    "repReq": 3,
+    "recipeType": "normal"
   },
   {
     "id": "R5202",
@@ -4580,9 +4781,10 @@
     "apAdd": 0,
     "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D031"
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 8,
+    "recipeType": "normal"
   },
   {
     "id": "R5203",
@@ -4603,9 +4805,10 @@
     "apAdd": 0,
     "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D032"
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 13,
+    "recipeType": "normal"
   },
   {
     "id": "R5204",
@@ -4624,9 +4827,10 @@
     "apAdd": 0,
     "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D033"
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 18,
+    "recipeType": "normal"
   },
   {
     "id": "R5205",
@@ -4648,9 +4852,10 @@
     "apAdd": 0,
     "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D034"
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 23,
+    "recipeType": "normal"
   },
   {
     "id": "R5206",
@@ -4672,9 +4877,10 @@
     "apAdd": 0,
     "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D035"
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 28,
+    "recipeType": "normal"
   },
   {
     "id": "R5207",
@@ -4696,9 +4902,10 @@
     "apAdd": 0,
     "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D036"
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 33,
+    "recipeType": "normal"
   },
   {
     "id": "R5208",
@@ -4720,9 +4927,10 @@
     "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D037"
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 38,
+    "recipeType": "normal"
   },
   {
     "id": "R5209",
@@ -4742,9 +4950,10 @@
     "apAdd": 0,
     "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D038"
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 43,
+    "recipeType": "normal"
   },
   {
     "id": "R5210",
@@ -4766,9 +4975,10 @@
     "apAdd": 0,
     "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D039"
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 48,
+    "recipeType": "normal"
   },
   {
     "id": "R5301",
@@ -4788,9 +4998,10 @@
     "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D040"
+    "guildUnlock": "G002",
+    "goldCost": 100,
+    "repReq": 2,
+    "recipeType": "normal"
   },
   {
     "id": "R5302",
@@ -4810,9 +5021,10 @@
     "apAdd": 0,
     "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D041"
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 7,
+    "recipeType": "normal"
   },
   {
     "id": "R5303",
@@ -4833,9 +5045,10 @@
     "apAdd": 0,
     "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D042"
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 12,
+    "recipeType": "normal"
   },
   {
     "id": "R5304",
@@ -4854,9 +5067,10 @@
     "apAdd": 0,
     "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D043"
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 17,
+    "recipeType": "normal"
   },
   {
     "id": "R5305",
@@ -4878,9 +5092,10 @@
     "apAdd": 0,
     "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D044"
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 22,
+    "recipeType": "normal"
   },
   {
     "id": "R5306",
@@ -4902,9 +5117,10 @@
     "apAdd": 0,
     "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D045"
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 27,
+    "recipeType": "normal"
   },
   {
     "id": "R5307",
@@ -4926,9 +5142,10 @@
     "apAdd": 0,
     "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D046"
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 32,
+    "recipeType": "normal"
   },
   {
     "id": "R5308",
@@ -4950,9 +5167,10 @@
     "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D047"
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 37,
+    "recipeType": "normal"
   },
   {
     "id": "R5309",
@@ -4972,9 +5190,10 @@
     "apAdd": 0,
     "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D048"
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 42,
+    "recipeType": "normal"
   },
   {
     "id": "R5310",
@@ -4996,9 +5215,10 @@
     "apAdd": 0,
     "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D049"
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 47,
+    "recipeType": "normal"
   },
   {
     "id": "R5501",
@@ -5016,9 +5236,10 @@
     "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "normal",
-    "dungeonUnlock": "D050"
+    "guildUnlock": "G002",
+    "goldCost": 0,
+    "repReq": 1,
+    "recipeType": "normal"
   },
   {
     "id": "R5502",
@@ -5038,9 +5259,10 @@
     "apAdd": 0,
     "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D051"
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 6,
+    "recipeType": "normal"
   },
   {
     "id": "R5503",
@@ -5061,9 +5283,10 @@
     "apAdd": 0,
     "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D052"
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 11,
+    "recipeType": "normal"
   },
   {
     "id": "R5504",
@@ -5084,9 +5307,10 @@
     "apAdd": 0,
     "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D053"
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 16,
+    "recipeType": "normal"
   },
   {
     "id": "R5505",
@@ -5106,9 +5330,10 @@
     "apAdd": 0,
     "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D054"
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 21,
+    "recipeType": "normal"
   },
   {
     "id": "R5506",
@@ -5133,9 +5358,10 @@
     "apAdd": 0,
     "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D055"
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 26,
+    "recipeType": "normal"
   },
   {
     "id": "R5507",
@@ -5157,9 +5383,10 @@
     "apAdd": 0,
     "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D056"
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 31,
+    "recipeType": "normal"
   },
   {
     "id": "R5508",
@@ -5181,9 +5408,10 @@
     "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D057"
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 36,
+    "recipeType": "normal"
   },
   {
     "id": "R5509",
@@ -5205,9 +5433,10 @@
     "apAdd": 0,
     "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D058"
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 41,
+    "recipeType": "normal"
   },
   {
     "id": "R5510",
@@ -5227,9 +5456,10 @@
     "apAdd": 0,
     "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D059"
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 46,
+    "recipeType": "normal"
   },
   {
     "id": "R5601",
@@ -5249,9 +5479,10 @@
     "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D060"
+    "guildUnlock": "G002",
+    "goldCost": 100,
+    "repReq": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R5602",
@@ -5271,9 +5502,10 @@
     "apAdd": 0,
     "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D061"
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 5,
+    "recipeType": "normal"
   },
   {
     "id": "R5603",
@@ -5294,9 +5526,10 @@
     "apAdd": 0,
     "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D062"
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 10,
+    "recipeType": "normal"
   },
   {
     "id": "R5604",
@@ -5317,9 +5550,10 @@
     "apAdd": 0,
     "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D063"
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 15,
+    "recipeType": "normal"
   },
   {
     "id": "R5605",
@@ -5339,9 +5573,10 @@
     "apAdd": 0,
     "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D064"
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 20,
+    "recipeType": "normal"
   },
   {
     "id": "R5606",
@@ -5363,9 +5598,10 @@
     "apAdd": 0,
     "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D065"
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 25,
+    "recipeType": "normal"
   },
   {
     "id": "R5607",
@@ -5387,9 +5623,10 @@
     "apAdd": 0,
     "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D066"
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 30,
+    "recipeType": "normal"
   },
   {
     "id": "R5608",
@@ -5411,9 +5648,10 @@
     "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D067"
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 35,
+    "recipeType": "normal"
   },
   {
     "id": "R5609",
@@ -5435,9 +5673,10 @@
     "apAdd": 0,
     "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D068"
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 40,
+    "recipeType": "normal"
   },
   {
     "id": "R5610",
@@ -5457,9 +5696,10 @@
     "apAdd": 0,
     "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D069"
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 45,
+    "recipeType": "normal"
   },
   {
     "id": "R6101",
@@ -5477,9 +5717,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 0,
-    "recipeType": "normal",
-    "dungeonUnlock": "D070"
+    "guildUnlock": "G003",
+    "goldCost": 0,
+    "repReq": 5,
+    "recipeType": "normal"
   },
   {
     "id": "R6102",
@@ -5499,9 +5740,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D071"
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 10,
+    "recipeType": "normal"
   },
   {
     "id": "R6103",
@@ -5521,9 +5763,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D072"
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 15,
+    "recipeType": "normal"
   },
   {
     "id": "R6104",
@@ -5541,9 +5784,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D073"
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 20,
+    "recipeType": "normal"
   },
   {
     "id": "R6105",
@@ -5564,9 +5808,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D074"
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 25,
+    "recipeType": "normal"
   },
   {
     "id": "R6106",
@@ -5587,9 +5832,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D075"
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 30,
+    "recipeType": "normal"
   },
   {
     "id": "R6107",
@@ -5610,9 +5856,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D076"
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 35,
+    "recipeType": "normal"
   },
   {
     "id": "R6108",
@@ -5633,9 +5880,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D077"
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 40,
+    "recipeType": "normal"
   },
   {
     "id": "R6109",
@@ -5654,9 +5902,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D078"
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 45,
+    "recipeType": "normal"
   },
   {
     "id": "R6110",
@@ -5677,9 +5926,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D079"
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 50,
+    "recipeType": "normal"
   },
   {
     "id": "R6201",
@@ -5697,9 +5947,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 0,
-    "recipeType": "normal",
-    "dungeonUnlock": "D080"
+    "guildUnlock": "G004",
+    "goldCost": 0,
+    "repReq": 4,
+    "recipeType": "normal"
   },
   {
     "id": "R6202",
@@ -5719,9 +5970,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D081"
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 9,
+    "recipeType": "normal"
   },
   {
     "id": "R6203",
@@ -5741,9 +5993,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D082"
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 14,
+    "recipeType": "normal"
   },
   {
     "id": "R6204",
@@ -5761,9 +6014,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D083"
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 19,
+    "recipeType": "normal"
   },
   {
     "id": "R6205",
@@ -5784,9 +6038,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D084"
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 24,
+    "recipeType": "normal"
   },
   {
     "id": "R6206",
@@ -5807,9 +6062,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D085"
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 29,
+    "recipeType": "normal"
   },
   {
     "id": "R6207",
@@ -5830,9 +6086,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D086"
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 34,
+    "recipeType": "normal"
   },
   {
     "id": "R6208",
@@ -5853,9 +6110,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D087"
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 39,
+    "recipeType": "normal"
   },
   {
     "id": "R6209",
@@ -5874,9 +6132,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D088"
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 44,
+    "recipeType": "normal"
   },
   {
     "id": "R6210",
@@ -5897,9 +6156,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D089"
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 49,
+    "recipeType": "normal"
   },
   {
     "id": "R6301",
@@ -5920,9 +6180,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D090"
+    "guildUnlock": "G005",
+    "goldCost": 100,
+    "repReq": 3,
+    "recipeType": "normal"
   },
   {
     "id": "R6302",
@@ -5943,9 +6204,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D091"
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 8,
+    "recipeType": "normal"
   },
   {
     "id": "R6303",
@@ -5966,9 +6228,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D092"
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 13,
+    "recipeType": "normal"
   },
   {
     "id": "R6304",
@@ -5987,9 +6250,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D093"
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 18,
+    "recipeType": "normal"
   },
   {
     "id": "R6305",
@@ -6010,9 +6274,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D094"
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 23,
+    "recipeType": "normal"
   },
   {
     "id": "R6306",
@@ -6033,9 +6298,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D095"
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 28,
+    "recipeType": "normal"
   },
   {
     "id": "R6307",
@@ -6056,9 +6322,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D096"
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 33,
+    "recipeType": "normal"
   },
   {
     "id": "R6308",
@@ -6079,9 +6346,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D097"
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 38,
+    "recipeType": "normal"
   },
   {
     "id": "R6309",
@@ -6100,9 +6368,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D098"
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 43,
+    "recipeType": "normal"
   },
   {
     "id": "R6310",
@@ -6123,9 +6392,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D099"
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 48,
+    "recipeType": "normal"
   },
   {
     "id": "R6401",
@@ -6146,9 +6416,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D010"
+    "guildUnlock": "G005",
+    "goldCost": 100,
+    "repReq": 2,
+    "recipeType": "normal"
   },
   {
     "id": "R6402",
@@ -6169,9 +6440,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D011"
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 7,
+    "recipeType": "normal"
   },
   {
     "id": "R6403",
@@ -6192,9 +6464,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D012"
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 12,
+    "recipeType": "normal"
   },
   {
     "id": "R6404",
@@ -6215,9 +6488,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D013"
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 17,
+    "recipeType": "normal"
   },
   {
     "id": "R6405",
@@ -6236,9 +6510,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D014"
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 22,
+    "recipeType": "normal"
   },
   {
     "id": "R6406",
@@ -6259,9 +6534,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D015"
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 27,
+    "recipeType": "normal"
   },
   {
     "id": "R6407",
@@ -6282,9 +6558,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D016"
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 32,
+    "recipeType": "normal"
   },
   {
     "id": "R6408",
@@ -6305,9 +6582,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D017"
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 37,
+    "recipeType": "normal"
   },
   {
     "id": "R6409",
@@ -6328,9 +6606,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D018"
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 42,
+    "recipeType": "normal"
   },
   {
     "id": "R6410",
@@ -6349,9 +6628,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D019"
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 47,
+    "recipeType": "normal"
   },
   {
     "id": "R6501",
@@ -6372,9 +6652,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D020"
+    "guildUnlock": "G004",
+    "goldCost": 100,
+    "repReq": 1,
+    "recipeType": "normal"
   },
   {
     "id": "R6502",
@@ -6395,9 +6676,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D021"
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 6,
+    "recipeType": "normal"
   },
   {
     "id": "R6503",
@@ -6418,9 +6700,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D022"
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 11,
+    "recipeType": "normal"
   },
   {
     "id": "R6504",
@@ -6441,9 +6724,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D023"
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 16,
+    "recipeType": "normal"
   },
   {
     "id": "R6505",
@@ -6462,9 +6746,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D024"
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 21,
+    "recipeType": "normal"
   },
   {
     "id": "R6506",
@@ -6485,9 +6770,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D025"
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 26,
+    "recipeType": "normal"
   },
   {
     "id": "R6507",
@@ -6508,9 +6794,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D026"
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 31,
+    "recipeType": "normal"
   },
   {
     "id": "R6508",
@@ -6531,9 +6818,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D027"
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 36,
+    "recipeType": "normal"
   },
   {
     "id": "R6509",
@@ -6554,9 +6842,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D028"
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 41,
+    "recipeType": "normal"
   },
   {
     "id": "R6510",
@@ -6575,9 +6864,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D029"
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 46,
+    "recipeType": "normal"
   },
   {
     "id": "R6601",
@@ -6598,9 +6888,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
-    "recipeType": "normal",
-    "dungeonUnlock": "D030"
+    "guildUnlock": "G005",
+    "goldCost": 100,
+    "repReq": 0,
+    "recipeType": "normal"
   },
   {
     "id": "R6602",
@@ -6621,9 +6912,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "recipeBuy": 500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D031"
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 5,
+    "recipeType": "normal"
   },
   {
     "id": "R6603",
@@ -6644,9 +6936,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "recipeBuy": 1000,
-    "recipeType": "normal",
-    "dungeonUnlock": "D032"
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 10,
+    "recipeType": "normal"
   },
   {
     "id": "R6604",
@@ -6667,9 +6960,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "recipeBuy": 7500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D033"
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 15,
+    "recipeType": "normal"
   },
   {
     "id": "R6605",
@@ -6688,9 +6982,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "recipeBuy": 52500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D034"
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 20,
+    "recipeType": "normal"
   },
   {
     "id": "R6606",
@@ -6711,9 +7006,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "recipeBuy": 367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D035"
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 25,
+    "recipeType": "normal"
   },
   {
     "id": "R6607",
@@ -6734,9 +7030,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "recipeBuy": 2572500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D036"
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 30,
+    "recipeType": "normal"
   },
   {
     "id": "R6608",
@@ -6757,9 +7054,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "recipeBuy": 18007500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D037"
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 35,
+    "recipeType": "normal"
   },
   {
     "id": "R6609",
@@ -6780,9 +7078,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "recipeBuy": 126052500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D038"
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 40,
+    "recipeType": "normal"
   },
   {
     "id": "R6610",
@@ -6801,9 +7100,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "recipeBuy": 882367500,
-    "recipeType": "normal",
-    "dungeonUnlock": "D039"
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 45,
+    "recipeType": "normal"
   },
   {
     "id": "R99101",
@@ -6821,9 +7121,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D040"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99102",
@@ -6843,9 +7144,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D041"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99103",
@@ -6865,9 +7167,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D042"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99104",
@@ -6887,9 +7190,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D043"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99105",
@@ -6909,9 +7213,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D044"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99106",
@@ -6932,9 +7237,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D045"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99107",
@@ -6956,9 +7262,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D046"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99108",
@@ -6980,9 +7287,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D047"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99109",
@@ -6996,17 +7304,15 @@
       "bone",
       "steel"
     ],
-    "mcost": {
-      "R99103": 10,
-      "R99104": 3
-    },
+    "mcost": null,
     "smithCost": null,
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D048"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99110",
@@ -7032,9 +7338,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D049"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99201",
@@ -7052,9 +7359,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D050"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99202",
@@ -7074,9 +7382,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D051"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99203",
@@ -7096,9 +7405,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D052"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99204",
@@ -7118,9 +7428,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D053"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99205",
@@ -7140,9 +7451,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D054"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99206",
@@ -7164,9 +7476,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D055"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99207",
@@ -7188,9 +7501,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D056"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99208",
@@ -7212,9 +7526,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D057"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99209",
@@ -7236,9 +7551,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D058"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99210",
@@ -7264,9 +7580,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D059"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99301",
@@ -7284,9 +7601,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D060"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99302",
@@ -7306,9 +7624,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D061"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99303",
@@ -7328,9 +7647,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D062"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99304",
@@ -7350,9 +7670,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D063"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99305",
@@ -7372,9 +7693,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D064"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99306",
@@ -7397,9 +7719,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D065"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99307",
@@ -7421,9 +7744,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D066"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99308",
@@ -7445,9 +7769,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D067"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99309",
@@ -7469,9 +7794,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D068"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99310",
@@ -7497,9 +7823,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D069"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99501",
@@ -7517,9 +7844,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D070"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99502",
@@ -7539,9 +7867,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D071"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99503",
@@ -7561,9 +7890,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D072"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99504",
@@ -7583,9 +7913,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D073"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99505",
@@ -7605,9 +7936,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D074"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99506",
@@ -7630,9 +7962,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D075"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99507",
@@ -7654,9 +7987,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D076"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99508",
@@ -7678,9 +8012,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D077"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99509",
@@ -7702,9 +8037,10 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D078"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   },
   {
     "id": "R99510",
@@ -7730,8 +8066,9 @@
     "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building",
-    "dungeonUnlock": "D079"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "building"
   }
 ]

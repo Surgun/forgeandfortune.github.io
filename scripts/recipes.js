@@ -9,17 +9,20 @@ class Item{
         Object.assign(this, props);
         this.craftCount = 0;
         this.autoSell = "None";
+        this.owned = false;
     }
     createSave() {
         const save = {};
         save.id = this.id;
         save.craftCount = this.craftCount;
         save.autoSell = this.autoSell;
+        save.owned = this.owned;
         return save;
     }
     loadSave(save) {
         this.craftCount = save.craftCount;
         this.autoSell = save.autoSell;
+        this.owned = save.owned;
     }
     itemDescription() {
         return this.description;
@@ -109,11 +112,6 @@ class Item{
         else if (this.autoSell === "Great") this.autoSell = "Epic";
         else this.autoSell = "None";
     }
-    found() {
-        const dungeonID = this.dungeonUnlock;
-        if (dungeonID === null) return true;
-        return DungeonManager.bossesBeat.includes(dungeonID);
-    }
 }
 
 const recipeList = {
@@ -121,6 +119,9 @@ const recipeList = {
     recipeFilterType : "default",
     recipeFilterString : "",
     recipeSortType : "default",
+    addItem(item) {
+        this.recipes.push(item);
+    },
     createSave() {
         const save = [];
         this.recipes.forEach(r=> {
@@ -128,12 +129,18 @@ const recipeList = {
         });
         return save;
     },
+    loadSave(save) {
+        save.forEach(i => {
+            const rec = this.idToItem(i.id);
+            rec.loadSave(i);
+        });
+    },
     filteredRecipeList() {
         console.log(this.recipeFilterType)
         const cleanString = this.recipeFilterString.toLowerCase().replace(/\s+/g, '');
-        if (this.recipeFilterType === "default") return this.recipes.filter(r => r.found() && r.name.toLowerCase().includes(cleanString));
-        if (this.recipeFilterType === "Matless") return this.recipes.filter(r => r.found() && (r.mcost === null || r.isMastered()));
-        return this.recipes.filter(r => r.found() && r.type === this.recipeFilterType);
+        if (this.recipeFilterType === "default") return this.recipes.filter(r => r.owned && r.name.toLowerCase().includes(cleanString));
+        if (this.recipeFilterType === "Matless") return this.recipes.filter(r => r.owned && (r.mcost === null || r.isMastered()));
+        return this.recipes.filter(r => r.owned && r.type === this.recipeFilterType);
     },  
     setSortOrder(filter) {
         if (this.recipeSortType === filter) this.recipeSortType = this.recipeSortType+"Asc";
@@ -141,14 +148,14 @@ const recipeList = {
         console.log(this.recipeSortType);
         recipeSort();
     },
-    loadSave(save) {
-        save.forEach(i => {
-            const rec = this.idToItem(i.id);
-            rec.loadSave(i);
-        });
-    },
-    addItem(item) {
-        this.recipes.push(item);
+    buyRecipe(recipeID) {
+        const recipe = this.idToItem(recipeID);
+        if (ResourceManager.materialAvailable("M001") < recipe.goldCost) {
+            Notifications.recipeGoldReq();
+            return;
+        }
+        ResourceManager.deductMoney(recipe.goldCost);
+        recipe.owned = true;
     },
     listByType(type) {
         return this.recipes.filter(recipe => recipe.type === type);
@@ -157,10 +164,10 @@ const recipeList = {
         return this.recipes.find(recipe => recipe.id === id);
     },
     ownAtLeastOne(type) {
-        return this.recipes.some(r=>r.type === type && r.found());
+        return this.recipes.some(r=>r.type === type && r.owned);
     },
     moreRecipes(type) {
-        return this.recipes.some(r => !r.found() && type === r.type);
+        return this.recipes.some(r => !r.owned && type === r.type);
     },
     remainingReqs(type) {
         const item = this.getNextBuyable(type);
@@ -177,14 +184,14 @@ const recipeList = {
         return this.recipes.filter(r=>r.recipeType==="normal").length;
     },
     advancedWorkerUnlock() {
-        return this.recipes.filter(r => r.found()).some(recipe => recipe.lvl >= 5);
+        return this.recipes.filter(r => r.owned).some(recipe => recipe.lvl >= 5);
     },
     maxTier() {
-        const lvls = this.recipes.filter(r=>r.found()).map(r=>r.lvl);
+        const lvls = this.recipes.filter(r=>r.owned).map(r=>r.lvl);
         return Math.max(...lvls);
     },
-    unlockedByDungeon(dungeonID) {
-        return this.recipes.filter(r=>r.dungeonUnlock === dungeonID);
+    filterByGuild(guildID) {
+        return this.recipes.filter(r=>r.guildUnlock === guildID);
     }
 }
 
@@ -384,7 +391,7 @@ function refreshBlueprint(type) {
     type = type || cacheBlueprintType;
     cacheBlueprintType = type;
     $blueprintUnlock.empty();
-    recipeList.listByType(type).filter(r => r.found() && r.remainingReqs().length > 0).forEach(recipe => {
+    recipeList.listByType(type).filter(r => r.owned && r.remainingReqs().length > 0).forEach(recipe => {
         const d = $("<div/>").addClass('bpShop');
         const d1 = $("<div/>").addClass('recipeItemLevel').html(recipe.itemLevel());
         const d2 = $("<div/>").addClass('recipeName').html(recipe.itemPicName());

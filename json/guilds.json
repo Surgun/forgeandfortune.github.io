@@ -1,0 +1,32 @@
+[
+  {
+    "id": "G001",
+    "name": "The Iron Vanguard",
+    "description": "We make ore/steel"
+  },
+  {
+    "id": "G002",
+    "name": "Arborist Clan",
+    "description": "We make wood/paper"
+  },
+  {
+    "id": "G003",
+    "name": "The Magik Group",
+    "description": "We make herb/mana"
+  },
+  {
+    "id": "G004",
+    "name": "The Weaver's Guild",
+    "description": "We make leather/fabric"
+  },
+  {
+    "id": "G005",
+    "name": "The Exotic Sect",
+    "description": "We make silver/bone"
+  },
+  {
+    "id": "G006",
+    "name": "The Action League",
+    "description": "We make heroes and other shit"
+  }
+]

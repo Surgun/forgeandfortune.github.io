@@ -238,8 +238,8 @@
                 <div id="tabs" class="tab">
                     <button class="tablinks" id="inventoryTabLink" onclick="openTab('inventoryTab')"><div><i class="fas fa-cube"></i> Inventory</div></button>
                     <button class="tablinks tab-selected" id="recipesTabLink" onclick="openTab('recipesTab')"><div><i class="fas fa-book"></i> Recipes</div></button>
-                    <button class="tablinks" id="workersTabLink" onclick="openTab('workersTab')"><div><i class="fas fa-fist-raised"></i> Workers</div></button>
                     <button class="tablinks" id="heroesTabLink" onclick="openTab('heroesTab')"><div id="heroTab"><i class="fas fa-helmet-battle"></i> Heroes</div></button>
+                    <button class="tablinks" id="guildTabLink" onclick="openTab('guildTab')"><div><i class="fas fa-fist-raised"></i> Guilds</div></button>
                     <button class="tablinks" id="dungeonsTabLink" onclick="openTab('dungeonsTab')"><div><i class="fas fa-swords"></i> Adventures</div></button>
                     <button class="tablinks" id="townTabLink" onclick="openTab('townsTab')"><div id="townTab"><i class="fas fa-city"></i> Town</div></button>
                     <button class="tablinks" id="eventsTabLink" onclick="openTab('eventsTab')"><div id="eventTab"><i class="fas fa-envelope"></i> Mail</div></button>
@@ -320,11 +320,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="workersTab" class="tabcontent">
-                    <div class="workerList-container">
-                        <div id="workerList"></div>
-                    </div>
-                </div>
                 <div id="heroesTab" class="tabcontent">
                     <div id="heroContainer">
                         <div id="heroList"></div>
@@ -342,6 +337,65 @@
                                     <div id="heroEquipmentList"></div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="guildTab" class="tabcontent">
+                    <div id="guildsContainer">
+                        <div id="guildList"></div>
+                        <div id="G001" class="guildContainer">
+                            <div id="G001Summary" class="guildSummary">
+                                <div id="G001Name" class="guildName"></div>
+                                <div id="G001Desc" class="guildDesc"></div>
+                            </div>
+                            <div id="G001Order" class="guildOrder"></div>
+                            <div id="G001Sales" class="guildSales"></div>
+                            <div id="G001Workers" class="guildWorkers"></div>
+                        </div>
+                        <div id="G002" class="guildContainer">
+                            <div id="G002Summary" class="guildSummary">
+                                <div id="G002Name" class="guildName"></div>
+                                <div id="G002Desc" class="guildDesc"></div>
+                            </div>
+                            <div id="G002Order" class="guildOrder"></div>
+                            <div id="G002Sales" class="guildSales"></div>
+                            <div id="G002Workers" class="guildWorkers"></div>
+                        </div>
+                        <div id="G003" class="guildContainer">
+                            <div id="G003Summary" class="guildSummary">
+                                <div id="G003Name" class="guildName"></div>
+                                <div id="G003Desc" class="guildDesc"></div>
+                            </div>
+                            <div id="G003Order" class="guildOrder"></div>
+                            <div id="G003Sales" class="guildSales"></div>
+                            <div id="G003Workers" class="guildWorkers"></div>
+                        </div>
+                        <div id="G004" class="guildContainer">
+                            <div id="G004Summary" class="guildSummary">
+                                <div id="G004Name" class="guildName"></div>
+                                <div id="G004Desc" class="guildDesc"></div>
+                            </div>
+                            <div id="G004Order" class="guildOrder"></div>
+                            <div id="G004Sales" class="guildSales"></div>
+                            <div id="G004Workers" class="guildWorkers"></div>
+                        </div>
+                        <div id="G005" class="guildContainer">
+                            <div id="G005Summary" class="guildSummary">
+                                <div id="G005Name" class="guildName"></div>
+                                <div id="G005Desc" class="guildDesc"></div>
+                            </div>
+                            <div id="G005Order" class="guildOrder"></div>
+                            <div id="G005Sales" class="guildSales"></div>
+                            <div id="G005Workers" class="guildWorkers"></div>
+                        </div>
+                        <div id="G006" class="guildContainer">
+                            <div id="G006Summary" class="guildSummary">
+                                <div id="G006Name" class="guildName"></div>
+                                <div id="G006Desc" class="guildDesc"></div>
+                            </div>
+                            <div id="G006Order" class="guildOrder"></div>
+                            <div id="G006Sales" class="guildSales"></div>
+                            <div id="G006Workers" class="guildWorkers"></div>
                         </div>
                     </div>
                 </div>
@@ -610,6 +664,7 @@
     <script src="scripts/blacksmith.js"></script>
     <script src="scripts/fortune.js"></script>
     <script src="scripts/town.js"></script>
+    <script src="scripts/guilds.js"></script>
     <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
     <script src="scripts/playfab.js"></script>
     <script type="text/javascript" src="scripts/pako.min.js"></script>

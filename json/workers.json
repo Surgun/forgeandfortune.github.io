@@ -5,7 +5,32 @@
     "production": "ore",
     "type": "standard",
     "description": "Oren comes from a long line of miners and specializes in gathering Ore.",
-    "defaultRecipeLine": "Knives"
+    "defaultRecipeLine": "Knives",
+    "guildUnlock": "G001",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W002",
@@ -13,7 +38,32 @@
     "production": "wood",
     "type": "standard",
     "description": "Eryn carefully chooses which trees to chop down to produce Wood.",
-    "defaultRecipeLine": "Maces"
+    "defaultRecipeLine": "Maces",
+    "guildUnlock": "G002",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W003",
@@ -21,7 +71,32 @@
     "production": "herb",
     "type": "standard",
     "description": "Herbie is a fledgling botanist and spends his days collecting Herbs.",
-    "defaultRecipeLine": "Potions"
+    "defaultRecipeLine": "Potions",
+    "guildUnlock": "G003",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W004",
@@ -29,7 +104,32 @@
     "production": "leather",
     "type": "standard",
     "description": "Lakur is a skilled hunter and earns her living by producing Leather.",
-    "defaultRecipeLine": "Whips"
+    "defaultRecipeLine": "Whips",
+    "guildUnlock": "G004",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W005",
@@ -37,7 +137,32 @@
     "production": "bone",
     "type": "standard",
     "description": "Harmony has a black market supplier, and expertly refines Bone.",
-    "defaultRecipeLine": "Spears"
+    "defaultRecipeLine": "Spears",
+    "guildUnlock": "G005",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W006",
@@ -45,7 +170,32 @@
     "production": "fabric",
     "type": "standard",
     "description": "Frederik hopes to become a designer, but for now, creates Fabric.",
-    "defaultRecipeLine": "Pendants"
+    "defaultRecipeLine": "Pendants",
+    "guildUnlock": "G004",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W007",
@@ -53,7 +203,32 @@
     "production": "steel",
     "type": "standard",
     "description": "Magnolia was taught by her mother to produce high quality Steel.",
-    "defaultRecipeLine": "Swords"
+    "defaultRecipeLine": "Swords",
+    "guildUnlock": "G001",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W008",
@@ -61,7 +236,32 @@
     "production": "silver",
     "type": "standard",
     "description": "Sylvester relies on reputable ore traders to smelts his Silver.",
-    "defaultRecipeLine": "Rods"
+    "defaultRecipeLine": "Rods",
+    "guildUnlock": "G005",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W009",
@@ -69,7 +269,32 @@
     "production": "paper",
     "type": "standard",
     "description": "Pippa has excellent attention to detail, and it shows in her Paper.",
-    "defaultRecipeLine": "Tomes"
+    "defaultRecipeLine": "Tomes",
+    "guildUnlock": "G002",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W010",
@@ -77,7 +302,32 @@
     "production": "mana",
     "type": "standard",
     "description": "Manny has perfected a very delicate technique to gather Mana.",
-    "defaultRecipeLine": "Wands"
+    "defaultRecipeLine": "Wands",
+    "guildUnlock": "G003",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W101",
@@ -85,7 +335,32 @@
     "production": "ore",
     "type": "advanced",
     "description": "Hardy has two passions: being a good big brother, and mining Ore.",
-    "defaultRecipeLine": "Knives"
+    "defaultRecipeLine": "Knives",
+    "guildUnlock": "G001",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W102",
@@ -93,7 +368,32 @@
     "production": "wood",
     "type": "advanced",
     "description": "Wendy is trying to emulate Eryn, and the second step is making Wood.",
-    "defaultRecipeLine": "Maces"
+    "defaultRecipeLine": "Maces",
+    "guildUnlock": "G002",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W103",
@@ -101,7 +401,32 @@
     "production": "herb",
     "type": "advanced",
     "description": "Blossom loves being outdoors, and enjoys her time collecting Herbs.",
-    "defaultRecipeLine": "Potions"
+    "defaultRecipeLine": "Potions",
+    "guildUnlock": "G003",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W104",
@@ -109,7 +434,32 @@
     "production": "leather",
     "type": "advanced",
     "description": "Rocky finds it's best not to think too hard about how he makes Leather.",
-    "defaultRecipeLine": "Whips"
+    "defaultRecipeLine": "Whips",
+    "guildUnlock": "G004",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W105",
@@ -117,7 +467,32 @@
     "production": "bone",
     "type": "advanced",
     "description": "Floyd has a special, one-of-a-kind relationship with Bone.",
-    "defaultRecipeLine": "Spears"
+    "defaultRecipeLine": "Spears",
+    "guildUnlock": "G005",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W106",
@@ -125,7 +500,32 @@
     "production": "fabric",
     "type": "advanced",
     "description": "Tricia is a hard-working student, hoping to learn all she can about Fabric.",
-    "defaultRecipeLine": "Pendants"
+    "defaultRecipeLine": "Pendants",
+    "guildUnlock": "G004",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W107",
@@ -133,7 +533,32 @@
     "production": "steel",
     "type": "advanced",
     "description": "Remington works very hard, providing only the highest quality Steel.",
-    "defaultRecipeLine": "Swords"
+    "defaultRecipeLine": "Swords",
+    "guildUnlock": "G001",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W108",
@@ -141,7 +566,32 @@
     "production": "silver",
     "type": "advanced",
     "description": "Renae enjoys getting her hands dirty when she processes Silver.",
-    "defaultRecipeLine": "Rods"
+    "defaultRecipeLine": "Rods",
+    "guildUnlock": "G005",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W109",
@@ -149,7 +599,32 @@
     "production": "paper",
     "type": "advanced",
     "description": "Paula is an excellent understudy, and is getting better at making Paper.",
-    "defaultRecipeLine": "Tomes"
+    "defaultRecipeLine": "Tomes",
+    "guildUnlock": "G002",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   },
   {
     "workerID": "W110",
@@ -157,6 +632,31 @@
     "production": "mana",
     "type": "advanced",
     "description": "Jewel doesn't enjoy her job, but her bills get paid by gathering Mana.",
-    "defaultRecipeLine": "Wands"
+    "defaultRecipeLine": "Wands",
+    "guildUnlock": "G003",
+    "goldCost": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ],
+    "repReq": [
+      10,
+      100,
+      150,
+      200,
+      250,
+      350,
+      500,
+      900,
+      1000,
+      2000
+    ]
   }
 ]

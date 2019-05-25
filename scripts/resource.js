@@ -120,6 +120,7 @@ const ResourceManager = {
     },
     fortuneResource(lvl) {
         const resources = this.materials.filter(r=>r.fortuneLvl===lvl);
+        console.log(lvl, resources);
         const week = currentWeek();
         const good = resources[week%resources.length].id;
         const great = resources[(week+1)%resources.length].id;

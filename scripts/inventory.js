@@ -50,6 +50,9 @@ class itemContainer {
         this.sharpbreak = this.rollFail();
         containerid += 1;
     }
+    uniqueID() {
+        return this.id+this.rarity+this.sharp;
+    }
     createSave() {
         const save = {};
         save.id = this.id;
@@ -334,6 +337,9 @@ const Inventory = {
     removePrecraft(id,amt) {
         if (this.itemCount(id,0) < amt) return;
         for (let i=0;i<amt;i++) this.removeFromInventory(id,0);
+    },
+    findCraftMatch(uniqueID) {
+        return this.nonblank().find(i => i.uniqueID() === uniqueID);
     }
 }
 
@@ -435,7 +441,6 @@ function gearEquipFromInventory(invID) {
 function refreshInventoryPlaces() {
     refreshInventory();
     refreshCardInvCount();
-    refreshWorkerAmts();
     refreshPossibleFuse();
     refreshBankInventory();
     refreshSmithInventory();

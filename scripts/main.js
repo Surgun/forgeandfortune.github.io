@@ -10,25 +10,15 @@ function afterLoad() {
     initializeRecipes();
     initializeMats();
     if (!loadGame()) {
-        WorkerManager.generateWorkerSac();
-        WorkerManager.workerBuySeed();
-        HeroManager.heroBuySeed();
-        WorkerManager.gainWorker("W001");
-        WorkerManager.workerOrder.shift();
+        WorkerManager.gainWorker("W001");;
         recipeList.idToItem("R0701").owned = true;
         HeroManager.idToHero("H203").owned = true;
         HeroManager.heroOrder.shift();
         achievementStats.startTime = Date.now();
         EventManager.addEvent("E001");
     }
-    else {
-        WorkerManager.generateWorkerSac();
-        WorkerManager.workerBuySeed();
-        HeroManager.heroBuySeed();
-    }
     refreshMasteryBar()
     refreshInventory();
-    refreshWorkers();
     refreshSideWorkers();
     initializeActionSlots();
     initializeHeroList();
@@ -43,6 +33,7 @@ function afterLoad() {
     refreshSideTown();
     refreshFilterListLucky();
     refreshCraftedCount();
+    initializeGuilds();
     setInterval(mainLoop, 10);
     loading_screen.finish();
 }

@@ -171,6 +171,12 @@ const Notifications = {
         const icon = "error";
         popToast(text,heading,icon);
     },
+    cantFindMatch() {
+        const text = "You do not have this item.";
+        const heading = "Cannot Fufill Order";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
 }
 
 function popToast(text,heading,icon) {

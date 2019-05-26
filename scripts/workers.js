@@ -152,7 +152,12 @@ const WorkerManager = {
     },
     filterByGuild(guildID) {
         return this.workers.filter(r=>r.guildUnlock === guildID);
-    }
+    },
+    getNextGuildLevel(id,lvl) {
+        const guilds = this.filterByGuild(id);
+        const left = guilds.filter(g => g.repReqForBuy() > lvl);
+        return left.sort((a,b) => a.repReqForBuy() - b.repReqForBuy())[0];
+    },
 }
 
 const $workersUse = $("#workersUse");

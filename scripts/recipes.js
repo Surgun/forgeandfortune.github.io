@@ -192,7 +192,12 @@ const recipeList = {
     },
     filterByGuild(guildID) {
         return this.recipes.filter(r=>r.guildUnlock === guildID);
-    }
+    },
+    getNextGuildLevel(id,lvl) {
+        const guilds = this.filterByGuild(id);
+        const left = guilds.filter(g => g.repReq > lvl);
+        return left.sort((a,b) => a.repReq() - b.repReq())[0];
+    },
 }
 
 const $recipeActionButton = $(".recipeActionButton");

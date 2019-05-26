@@ -88,6 +88,12 @@ class Guild {
         submitContainer.fufilled += 1;
         refreshAllOrders();
     }
+    nextTierUnlock() {
+        const worker = WorkerManager.getNextGuildLevel(this.id,this.repLvl());
+        const recipe = recipeList.getNextGuildLevel(this.id,this.repLvl());
+        if (recipe.repReq < worker.repReqForBuy()) return recipe;
+        return worker; 
+    }
 }
 
 class guildOrderItem {
@@ -131,11 +137,34 @@ function initializeGuilds() {
         $("#"+GuildManager.lastClicked).show();
         refreshguildOrder(g);
         refreshSales(g);
-        //refreshWorkers(g);
     });
 };
 
+function refreshAllProgress() {
+    GuildManager.guilds.forEach(g => refreshguildprogress(g));
+}
 
+function refreshguildprogress(guild) {
+    const id = guild.id;
+    const $gp = $(`#${id}Progress`);
+    $gp.empty();
+    $gp.append(createGuildBar(guild));
+    $gp.append(nextUnlock(guild));
+}
+
+function createGuildBar(guild) {
+    const repPercent = guild.rep/guild.repForLevel();
+    const repWidth = (repPercent*100).toFixed(1)+"%";
+    const d1 = $("<div/>").addClass("hpBarDiv");
+    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Level ${guild.level()} (${guild.rep}/${guild.repForLevel()})`);
+    const s1 = $("<span/>").addClass("repBarFill").css('width', repWidth);
+    return d1.append(d2,s1);
+}
+
+function nextUnlock(guild) {
+    const unlock = guild.nextUnlock();
+
+}
 
 function refreshAllOrders() {
     GuildManager.guilds.forEach(g => refreshguildOrder(g));

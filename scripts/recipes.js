@@ -196,7 +196,7 @@ const recipeList = {
     getNextGuildLevel(id,lvl) {
         const guilds = this.filterByGuild(id);
         const left = guilds.filter(g => g.repReq > lvl);
-        return left.sort((a,b) => a.repReq() - b.repReq())[0];
+        return left.sort((a,b) => a.repReq - b.repReq)[0];
     },
 }
 

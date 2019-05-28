@@ -28,6 +28,7 @@ const GuildManager = {
 class Guild {
     constructor (props) {
         Object.assign(this, props);
+        this.rep = 0;
         this.order = this.generateNewOrder();
     }
     createSave() {
@@ -49,7 +50,7 @@ class Guild {
         this.rep += points;
     }
     repLvl() {
-        return Math.floor(this.rep/1000)+1;
+        return 2;
     }
     recipeListID() {
         return recipeList.filterByGuild(this.id).map(r=>r.id);
@@ -94,6 +95,12 @@ class Guild {
         if (recipe.repReq < worker.repReqForBuy()) return recipe;
         return worker; 
     }
+    repForLevel() {
+        return 5;
+    }
+    level() {
+        return 3;
+    }
 }
 
 class guildOrderItem {
@@ -135,6 +142,7 @@ function initializeGuilds() {
         $(`#${g.id}Desc`).html(g.description);
         $(".guildContainer").hide();
         $("#"+GuildManager.lastClicked).show();
+        refreshguildprogress(g);
         refreshguildOrder(g);
         refreshSales(g);
     });
@@ -155,15 +163,18 @@ function refreshguildprogress(guild) {
 function createGuildBar(guild) {
     const repPercent = guild.rep/guild.repForLevel();
     const repWidth = (repPercent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("hpBarDiv");
+    const d1 = $("<div/>").addClass("repBarDiv");
     const d2 = $("<div/>").addClass("repBar").attr("data-label",`Level ${guild.level()} (${guild.rep}/${guild.repForLevel()})`);
     const s1 = $("<span/>").addClass("repBarFill").css('width', repWidth);
     return d1.append(d2,s1);
 }
 
 function nextUnlock(guild) {
-    const unlock = guild.nextUnlock();
-
+    if (guild.id === "G006") return;
+    const unlock = guild.nextTierUnlock();
+    const d1 = $("<div/>").addClass("nextTierUnlock")
+    const d2 = $("<div/>").addClass("nextTierUnlockContents").html(`${unlock.itemPicName()}`);
+    return d1.append(d2);
 }
 
 function refreshAllOrders() {
@@ -181,7 +192,6 @@ function refreshguildOrder(guild) {
 
 function createOrderCard(item,id,index) {
     const d1 = $("<div/>").addClass("orderCard").data({"slot":index,"gid":id});
-    console.log(item);
     const d2 = $("<div/>").addClass("orderName").html(item.item.name);
     const d3 = $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id));
     const d4 = $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id));

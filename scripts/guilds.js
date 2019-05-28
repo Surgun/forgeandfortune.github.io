@@ -29,6 +29,7 @@ class Guild {
     constructor (props) {
         Object.assign(this, props);
         this.rep = 0;
+        this.lvl = 0;
         this.order = this.generateNewOrder();
     }
     createSave() {
@@ -46,20 +47,29 @@ class Guild {
             this.order.push(container);
         });
     }
-    addRep(points) {
-        this.rep += points;
+    addRep() {
+        this.order.forEach(o => {
+            this.rep += o.repgain;
+        });
+        if (this.rep >= this.repLvl()) {
+            this.rep -= this.repLvl();
+            this.lvl += 1;
+            refreshSales(this);
+        }
+        refreshguildprogress(this);
     }
-    repLvl() {
-        return 2;
+    repLvl(givenlvl) {
+        givenlvl = givenlvl || this.lvl;
+        return miscLoadedValues["guildRepForLvls"][givenlvl];
     }
     recipeListID() {
         return recipeList.filterByGuild(this.id).map(r=>r.id);
     }
     recipeToBuy() {
-        return recipeList.filterByGuild(this.id).filter(r=>!r.owned && r.repReq <= this.rep);
+        return recipeList.filterByGuild(this.id).filter(r=>!r.owned && r.repReq <= this.lvl);
     }
     workerToBuy() {
-        return WorkerManager.filterByGuild(this.id).filter(w=> w.repReqForBuy() <= this.rep);
+        return WorkerManager.filterByGuild(this.id).filter(w=> w.repReqForBuy() <= this.lvl);
     }
     recipeListOwnedID() {
         return this.recipeList().filter(r=>r.owned).map(r=>r.id);
@@ -87,6 +97,10 @@ class Guild {
         if (itemMatch === undefined) return Notifications.cantFindMatch();
         Inventory.removeContainerFromInventory(itemMatch.containerid);
         submitContainer.fufilled += 1;
+        if (this.orderComplete()) {
+            this.addRep();
+            this.order = this.generateNewOrder();
+        }
         refreshAllOrders();
     }
     nextTierUnlock() {
@@ -94,12 +108,6 @@ class Guild {
         const recipe = recipeList.getNextGuildLevel(this.id,this.repLvl());
         if (recipe.repReq < worker.repReqForBuy()) return recipe;
         return worker; 
-    }
-    repForLevel() {
-        return 5;
-    }
-    level() {
-        return 3;
     }
 }
 
@@ -111,6 +119,7 @@ class guildOrderItem {
         this.rarity = rarity;
         this.sharp = sharp;
         this.fufilled = 0;
+        this.repgain = 1;
     }
     createSave() {
         const save = {};
@@ -161,10 +170,10 @@ function refreshguildprogress(guild) {
 }
 
 function createGuildBar(guild) {
-    const repPercent = guild.rep/guild.repForLevel();
+    const repPercent = guild.rep/guild.repLvl();
     const repWidth = (repPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("repBarDiv");
-    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Level ${guild.level()} (${guild.rep}/${guild.repForLevel()})`);
+    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Level ${guild.lvl} (${guild.rep}/${guild.repLvl()})`);
     const s1 = $("<span/>").addClass("repBarFill").css('width', repWidth);
     return d1.append(d2,s1);
 }
@@ -253,7 +262,6 @@ $(document).on("click",".guildListButton",(e) => {
 $(document).on("click",".orderCard",(e) => {
     e.preventDefault();
     const itemData = $(e.currentTarget).data();
-    console.log(itemData);
     GuildManager.idToGuild(itemData.gid).submitItem(itemData.slot);
 });
 

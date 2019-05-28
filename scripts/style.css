@@ -2165,6 +2165,10 @@ Rarities
     color: var(--text-secondary);
 }
 
+.recipeBuyCardBody {
+    text-align: center;
+}
+
 .recipeBuyCardBody > img {
     margin: 10px 0;
 }
@@ -3419,6 +3423,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     border: 1px solid rgb(100, 100, 100);
     border-radius: 15px;
     overflow: hidden;
+}
+
+.repBarDiv {
+    max-width: 300px;
 }
 
 .apBarDiv {

@@ -2234,6 +2234,8 @@ Rarities
     padding: 15px 15px 30px 15px;
     border-radius: 10px;
     overflow: hidden;
+    -webkit-animation: 0.2s scale-in;
+    animation: 0.2s scale-in;
 }
 
 #progresslist .plProgressBar {
@@ -2281,6 +2283,8 @@ Rarities
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
+    -webkit-animation: 0.2s scale-in;
+    animation: 0.2s scale-in;
 }
 
 .statHeading {
@@ -2332,6 +2336,8 @@ Rarities
     text-align: center;
     justify-content: center;
     border-radius: 10px;
+    -webkit-animation: 0.2s scale-in;
+    animation: 0.2s scale-in;
 }
 
 .dungeonTeamName, .dungeonAvailableName {
@@ -2727,6 +2733,8 @@ div.EquipmentCardsContainer {
     cursor: pointer;
     overflow: hidden;
     z-index: 1;
+    -webkit-animation: 0.2s scale-in;
+    animation: 0.2s scale-in;
 }
 
 .dungeonHeader {
@@ -2801,7 +2809,7 @@ div.EquipmentCardsContainer {
     vertical-align: text-bottom;
 }
 
-#dungeonTeamSelect {
+#dungeonSelect, #dungeonTeamSelect {
     -webkit-animation: 0.2s fade-in;
     animation: 0.2s fade-in;
 }

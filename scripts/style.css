@@ -2370,6 +2370,7 @@ Rarities
     grid-column: 1 / -1;
     padding: 10px;
     justify-content: center;
+    cursor: default;
 }
 
 .heroOwnedName {

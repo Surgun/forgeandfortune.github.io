@@ -196,11 +196,13 @@ const Inventory = {
             return;
         }
         const roll = Math.floor(Math.random() * 1000)
-        let sellToggle = -1
-        if (autoSell === "Common") sellToggle = 0;
-        if (autoSell === "Good") sellToggle = 1;
-        if (autoSell === "Great") sellToggle = 2;
-        if (autoSell === "Epic") sellToggle = 3;
+        const sellToggleChart = {
+            "Common" : 0,
+            "Good" : 1,
+            "Great" : 2,
+            "Epic" : 3,
+        }
+        const sellToggle = sellToggleChart[autoSell];
         if (roll < this.craftChance(item,"Epic")) {
             this.addToInventory(id,3,sellToggle);
             achievementStats.craftedItem("Epic");
@@ -269,6 +271,7 @@ const Inventory = {
         return this.nonblank().filter(r=>r.id === id && r.rarity === rarity && r.sharp === 0).length > 0
     },
     full() {
+        console.log(this.nonblank().length, this.inv.length);
         return this.nonblank().length === this.inv.length;
     },
     inventoryCount() {

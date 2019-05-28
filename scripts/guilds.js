@@ -63,16 +63,16 @@ class Guild {
         return miscLoadedValues["guildRepForLvls"][givenlvl];
     }
     recipeListID() {
-        return recipeList.filterByGuild(this.id).map(r=>r.id);
+        return recipeList.filterByGuild(this.id).map(r => r.id);
     }
     recipeToBuy() {
-        return recipeList.filterByGuild(this.id).filter(r=>!r.owned && r.repReq <= this.lvl);
+        return recipeList.filterByGuild(this.id).filter(r =>!r.owned && r.repReq <= this.lvl);
     }
-    workerToBuy() {
-        return WorkerManager.filterByGuild(this.id).filter(w=> w.repReqForBuy() <= this.lvl);
+    recipeNextLevel() {
+        return recipeList.filterByGuild(this.id).filter(r => r.repReq === this.lvl + 1 );
     }
     recipeListOwnedID() {
-        return this.recipeList().filter(r=>r.owned).map(r=>r.id);
+        return this.recipeList().filter(r=>r.owned).map(r => r.id);
     }
     orderComplete() {
         return this.order.every(o=>o.complete());
@@ -104,9 +104,8 @@ class Guild {
         refreshAllOrders();
     }
     nextTierUnlock() {
-        const worker = WorkerManager.getNextGuildLevel(this.id,this.repLvl());
         const recipe = recipeList.getNextGuildLevel(this.id,this.repLvl());
-        if (recipe.repReq < worker.repReqForBuy()) return recipe;
+        i
         return worker; 
     }
 }
@@ -166,7 +165,6 @@ function refreshguildprogress(guild) {
     const $gp = $(`#${id}Progress`);
     $gp.empty();
     $gp.append(createGuildBar(guild));
-    $gp.append(nextUnlock(guild));
 }
 
 function createGuildBar(guild) {
@@ -176,14 +174,6 @@ function createGuildBar(guild) {
     const d2 = $("<div/>").addClass("repBar").attr("data-label",`Level ${guild.lvl} (${guild.rep}/${guild.repLvl()})`);
     const s1 = $("<span/>").addClass("repBarFill").css('width', repWidth);
     return d1.append(d2,s1);
-}
-
-function nextUnlock(guild) {
-    if (guild.id === "G006") return;
-    const unlock = guild.nextTierUnlock();
-    const d1 = $("<div/>").addClass("nextTierUnlock")
-    const d2 = $("<div/>").addClass("nextTierUnlockContents").html(`${unlock.itemPicName()}`);
-    return d1.append(d2);
 }
 
 function refreshAllOrders() {
@@ -217,21 +207,25 @@ function refreshSales(guild) {
     const $gs = $(`#${guild.id}Sales`);
     $gs.empty();
     guild.recipeToBuy().forEach(recipe => {
-        $gs.append(createRecipeBuyCard(recipe));
+        $gs.append(createRecipeBuyCard(recipe,false));
     });
-    guild.workerToBuy().forEach(worker => {
-        $gs.append(createWorkerBuyCard(worker));
-    });
+    guild.recipeNextLevel().forEach(recipe => {
+        $gs.append(createRecipeBuyCard(recipe,true));
+    })
 };
 
-function createRecipeBuyCard(recipe) {
+function createRecipeBuyCard(recipe,buyLater) {
     const d1 = $("<div/>").addClass("recipeBuyCard");
     const d2 = $("<div/>").addClass("recipeBuyCardHead").html(recipe.type);
     const d3 = $("<div/>").addClass("recipeBuyCardBody").html(recipe.itemPicName());
-    const d4 = $("<div/>").addClass("recipeBuyCardBuy").data("rid",recipe.id);;
-        $("<div/>").addClass("recipeBuyCardBuyText").html("Purchase").appendTo(d4);
-        $("<div/>").addClass("recipeBuyCardBuyCost").html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d4);
-    return d1.append(d2,d3,d4);
+    if (buyLater) {
+        const d4 = $("<div/>").addClass("recipeBuyCardBuyLater").html("Reach next Guild Level to Unlock");
+        return d1.append(d2,d3,d4);
+    }
+    const d5 = $("<div/>").addClass("recipeBuyCardBuy").data("rid",recipe.id);
+        $("<div/>").addClass("recipeBuyCardBuyText").html("Purchase").appendTo(d5);
+        $("<div/>").addClass("recipeBuyCardBuyCost").html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
+    return d1.append(d2,d3,d5);
 };
 
 function createWorkerBuyCard(worker) {

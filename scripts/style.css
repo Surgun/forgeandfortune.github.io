@@ -2370,6 +2370,7 @@ Rarities
     grid-column: 1 / -1;
     padding: 10px;
     justify-content: center;
+    cursor: default;
 }
 
 .heroOwnedName {
@@ -2481,6 +2482,7 @@ Rarities
     justify-content: center;
     align-items: center;
     width: 100%;
+    max-width: 500px;
 }
 
 .heroExamineImage {
@@ -2512,17 +2514,19 @@ Rarities
     flex-wrap: wrap;
     justify-content: center;
     align-content: start;
+    max-width: 500px;
 }
 
 .heroExamineStatRow {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin: 2px 0;
+    margin: 5px;
     padding: 10px 20px;
     width: 100%;
-    background-color: var(--bg-tertiary);
-    font-size: 0.9em;
+    max-width: 200px;
+    background-color:  var(--bg-secondary);
+    border-radius: 5px;
 }
 
 .heroExamineStatRowName {

@@ -592,7 +592,7 @@ $(document).on('click', "div.gearItem", (e) => {
     clearExaminePossibleEquip();
 });
 
-$(document).on('click', ".buyNewHeroCard", (e) => {
+$(document).on('click', ".buyNewHeroButton", (e) => {
     e.preventDefault();
     HeroManager.purchaseHero();    
 })

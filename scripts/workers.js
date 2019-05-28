@@ -44,8 +44,8 @@ class Worker {
     productionText() {
         return `<span class="production_type">${ResourceManager.materialIcon(this.production)}</span><span class="production_text">Worker</span>`;
     }
-    repReqForBuy() {
-        return this.repReq[this.lvl];
+    goldCostLvl() {
+        return this.goldCost[this.lvl];
     }
 }
 

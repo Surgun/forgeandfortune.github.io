@@ -74,6 +74,9 @@ class Guild {
     recipeListOwnedID() {
         return this.recipeList().filter(r=>r.owned).map(r => r.id);
     }
+    workers() {
+        return WorkerManager.filterByGuild(this.id).filter(w => w.owned);
+    }
     orderComplete() {
         return this.order.every(o=>o.complete());
     }
@@ -154,6 +157,7 @@ function initializeGuilds() {
         refreshguildprogress(g);
         refreshguildOrder(g);
         refreshSales(g);
+        refreshGuildWorkers(g);
     });
 };
 
@@ -229,15 +233,27 @@ function createRecipeBuyCard(recipe,buyLater) {
     return d1.append(d2,d3,d5);
 };
 
+function refreshAllGuildWorkers() {
+    GuildManager.guilds.forEach(g=>refreshGuildWorkers(g));
+}
+
+function refreshGuildWorkers(guild) {
+    const $gw = $(`#${guild.id}Workers`);
+    $gw.empty();
+    guild.workers().forEach(worker => {
+        $gw.append(createWorkerBuyCard(worker));
+    })
+}
+
 function createWorkerBuyCard(worker) {
     const d1 = $("<div/>").addClass("workerBuyCard");
     const d2 = $("<div/>").addClass("workerBuyCardHead").html(`Level ${worker.lvl}`);
     const d3 = $("<div/>").addClass("workerBuyCardBodyImage").html(worker.pic);
     const d4 = $("<div/>").addClass("workerBuyCardBodyName").html(worker.name);
     const d5 = $("<div/>").addClass("workerBuyCardBodyProduction").html(worker.productionText());
-    const d6 = $("<div/>").addClass("workerBuyCardBuy").data("wid",recipe.id);
-        $("<div/>").addClass("recipeBuyCardBuyText").html("Purchase").appendTo(d6);
-        $("<div/>").addClass("recipeBuyCardBuyCost").html(`${miscIcons.gold} ${formatToUnits(worker.goldCost(),2)}`).appendTo(d6);
+    const d6 = $("<div/>").addClass("workerBuyCardBuy").data("wid",worker.id);
+        $("<div/>").addClass("recipeBuyCardBuyText").html("Upgrade").appendTo(d6);
+        $("<div/>").addClass("recipeBuyCardBuyCost").html(`${miscIcons.gold} ${formatToUnits(worker.goldCostLvl(),2)}`).appendTo(d6);
     return d1.append(d2,d3,d4,d5,d6);
 };
 

@@ -2101,6 +2101,8 @@ Rarities
 }
 
 #guildList {
+    position: sticky;
+    top: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -2140,6 +2142,7 @@ Rarities
     opacity: 0;
     -webkit-animation: 0.2s .15s fade-in forwards;
     animation: 0.2s .15s fade-in forwards;
+    overflow: auto;
 }
 
 .guildSummary {

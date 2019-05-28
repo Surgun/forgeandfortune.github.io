@@ -95,7 +95,8 @@ class Guild {
         const itemString = submitContainer.id+submitContainer.rarity+submitContainer.sharp;
         const itemMatch = Inventory.findCraftMatch(itemString);
         if (itemMatch === undefined) return Notifications.cantFindMatch();
-        Inventory.removeContainerFromInventory(itemMatch.containerid);
+        console.log(itemMatch);
+        Inventory.removeContainerFromInventory(itemMatch.containerID);
         submitContainer.fufilled += 1;
         if (this.orderComplete()) {
             this.addRep();

@@ -183,9 +183,6 @@ const recipeList = {
     recipeCount() {
         return this.recipes.filter(r=>r.recipeType==="normal").length;
     },
-    advancedWorkerUnlock() {
-        return this.recipes.filter(r => r.owned).some(recipe => recipe.lvl >= 5);
-    },
     maxTier() {
         const lvls = this.recipes.filter(r=>r.owned).map(r=>r.lvl);
         return Math.max(...lvls);

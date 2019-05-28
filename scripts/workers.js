@@ -128,28 +128,6 @@ const WorkerManager = {
     workerMaxLevelCount() {
         return this.workers.length*10;
     },
-    craftToSac(id) { //???
-        const item = recipeList.idToItem(id)
-        let rarity = 0;
-        item.addCount();
-        const roll = Math.floor(Math.random() * 1000)
-        let mod = 1;
-        if (item.isMastered()) mod = 2;
-        if (roll < miscLoadedValues.qualityCheck[3]*mod) {
-            rarity = 3;
-            achievementStats.craftedItem("Epic");
-        }
-        else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2])*mod) {
-            rarity = 2;
-            achievementStats.craftedItem("Great");
-        }
-        else if (roll < (miscLoadedValues.qualityCheck[3]+miscLoadedValues.qualityCheck[2]+miscLoadedValues.qualityCheck[1])*mod) {
-            rarity = 1;
-            achievementStats.craftedItem("Good");
-        }
-        else achievementStats.craftedItem("Common");
-        this.attemptSacrifice(id,rarity);
-    },
     filterByGuild(guildID) {
         return this.workers.filter(r=>r.guildUnlock === guildID);
     },

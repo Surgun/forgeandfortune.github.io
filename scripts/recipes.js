@@ -136,7 +136,6 @@ const recipeList = {
         });
     },
     filteredRecipeList() {
-        console.log(this.recipeFilterType)
         const cleanString = this.recipeFilterString.toLowerCase().replace(/\s+/g, '');
         if (this.recipeFilterType === "default") return this.recipes.filter(r => r.owned && r.name.toLowerCase().includes(cleanString));
         if (this.recipeFilterType === "Matless") return this.recipes.filter(r => r.owned && (r.mcost === null || r.isMastered()));
@@ -145,7 +144,6 @@ const recipeList = {
     setSortOrder(filter) {
         if (this.recipeSortType === filter) this.recipeSortType = this.recipeSortType+"Asc";
         else this.recipeSortType = filter;
-        console.log(this.recipeSortType);
         recipeSort();
     },
     buyRecipe(recipeID) {
@@ -156,6 +154,9 @@ const recipeList = {
         }
         ResourceManager.deductMoney(recipe.goldCost);
         recipe.owned = true;
+        refreshAllSales();
+
+        //refreshBlueprint(recipe.type);
     },
     listByType(type) {
         return this.recipes.filter(recipe => recipe.type === type);
@@ -393,7 +394,7 @@ function recipeCanCraft() {
 const $blueprintUnlock = $("#BlueprintUnlock");
 let cacheBlueprintType = null;
 
-function refreshBlueprint(type) {
+/*function refreshBlueprint(type) {
     type = type || cacheBlueprintType;
     cacheBlueprintType = type;
     $blueprintUnlock.empty();
@@ -410,7 +411,7 @@ function refreshBlueprint(type) {
     });
     const $RecipeContents = $(".recipeContents");
     $RecipeContents.append($blueprintUnlock);
-}
+}*/
 
 $(document).on('click', '.recipeCraft', (e) => {
     //click on a recipe to slot it

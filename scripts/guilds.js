@@ -251,9 +251,13 @@ function createWorkerBuyCard(worker) {
     const d3 = $("<div/>").addClass("workerBuyCardBodyImage").html(worker.pic);
     const d4 = $("<div/>").addClass("workerBuyCardBodyName").html(worker.name);
     const d5 = $("<div/>").addClass("workerBuyCardBodyProduction").html(worker.productionText());
-    const d6 = $("<div/>").addClass("workerBuyCardBuy").data("wid",worker.id);
+    const d6 = $("<div/>").addClass("workerBuyCardBuy").data("wid",worker.workerID);
         $("<div/>").addClass("recipeBuyCardBuyText").html("Upgrade").appendTo(d6);
         $("<div/>").addClass("recipeBuyCardBuyCost").html(`${miscIcons.gold} ${formatToUnits(worker.goldCostLvl(),2)}`).appendTo(d6);
+    if (worker.maxlvl()) {
+        const d7 = $("<div/>").addClass("workerBuyCardMax").html("Max Level!");
+        return d1.append(d2,d3,d4,d5,d7);
+    }
     return d1.append(d2,d3,d4,d5,d6);
 };
 
@@ -281,7 +285,6 @@ $(document).on("click",".recipeBuyCardBuy", (e) => {
     e.preventDefault();
     const recipeId = $(e.currentTarget).data("rid");
     recipeList.buyRecipe(recipeId);
-    refreshAllSales();
 });
 
 //buy a worker from guild

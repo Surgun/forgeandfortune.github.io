@@ -10,7 +10,6 @@ class Worker {
         this.owned = false;
         this.assigned = false;
         this.status = "idle";
-        this.maxlvl = 10;
     }
     createSave() {
         const save = {};
@@ -31,21 +30,27 @@ class Worker {
         return 0;
     }
     upgradeWorker() {
-        if (ResourceManager.materialAvailable("M001") < this.numToDonate("M001")) {
+        if (ResourceManager.materialAvailable("M001") < this.goldCostLvl()) {
             Notifications.workerGoldReq();
             return;
         }
-        if (!this.canUpgrade()) return;
-        ResourceManager.deductMoney(this.numToDonate("M001"));
+        ResourceManager.deductMoney(this.goldCostLvl());
         this.lvl += 1;
-        this.clearDonation();
-        refreshWorkers();
+        refreshAllGuildWorkers();
+        //refreshRecipeFilters();
+        refreshSideWorkers();
+        //recipeCanCraft(); <---- THIS TAKES TOO LONG
+        //refreshBlueprint();
+        refreshProgress();
     }
     productionText() {
         return `<span class="production_type">${ResourceManager.materialIcon(this.production)}</span><span class="production_text">Worker</span>`;
     }
     goldCostLvl() {
         return this.goldCost[this.lvl];
+    }
+    maxlvl() {
+        return this.lvl === this.goldCost.length;
     }
 }
 
@@ -73,11 +78,6 @@ const WorkerManager = {
     upgradeWorker(workerID) {
         const worker = this.workerByID(workerID);
         worker.upgradeWorker();
-        refreshRecipeFilters();
-        refreshSideWorkers();
-        recipeCanCraft();
-        refreshBlueprint();
-        refreshProgress();
     },
     gainWorker(workerID) {
         const worker = this.workerByID(workerID);

@@ -391,7 +391,7 @@ function recipeCanCraft() {
     const $recipeCraft = $(".recipeCraft");
     $recipeCraft.removeClass("recipeCraftDisable");
     recipeList.recipes.forEach(recipe => {
-        if (!WorkerManager.canCurrentlyCraft(recipe)) $("#rr"+recipe.id).addClass("recipeCraftDisable");
+        if (!WorkerManager.canCurrentlyCraft(recipe)) $(".rr"+recipe.id).addClass("recipeCraftDisable");
     }) 
 }
 

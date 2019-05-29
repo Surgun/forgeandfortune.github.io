@@ -39,7 +39,7 @@ class Worker {
         refreshAllGuildWorkers();
         //refreshRecipeFilters();
         refreshSideWorkers();
-        //recipeCanCraft(); <---- THIS TAKES TOO LONG
+        recipeCanCraft();
         //refreshBlueprint();
         refreshProgress();
     }

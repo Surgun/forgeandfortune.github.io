@@ -2,6 +2,7 @@ const devtools = {
     godmode : function() {
         recipeList.recipes.filter(r=>r.recipeType === "normal").forEach(recipe => {
             recipe.craftCount = 100;
+            recipe.owned = true;
         })
         WorkerManager.workers.forEach(worker => {
             worker.owned = true;
@@ -9,7 +10,6 @@ const devtools = {
         })
         HeroManager.heroes.forEach(hero => {
             hero.owned = true;
-            hero.lvl = 50;
         })
         ResourceManager.materials.forEach(material => {
             ResourceManager.addMaterial(material.id,9999999);

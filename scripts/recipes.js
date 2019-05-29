@@ -191,6 +191,9 @@ const recipeList = {
     filterByGuild(guildID) {
         return this.recipes.filter(r=>r.guildUnlock === guildID);
     },
+    filterByGuildOwned(guildID) {
+        return this.filterByGuild(guildID).filter(r=>r.owned);
+    },
     getNextGuildLevel(id,lvl) {
         const guilds = this.filterByGuild(id);
         const left = guilds.filter(g => g.repReq > lvl);
@@ -267,7 +270,8 @@ function initializeRecipes() { //this is run once at the beginning to load ALL t
 function recipeSort() {
     //assign a data-sort value to each div then re-order as appropriate
     const sortedList = sortOrder[recipeList.recipeSortType];
-    $(".recipeCardContainer").sort((a,b) => {
+    sortOrder.recipeDivs.sort((a,b) => {
+    //$(".recipeCardContainer").sort((a,b) => {
         const aval = sortedList.indexOf($(a).data("recipeID"));
         const bval = sortedList.indexOf($(b).data("recipeID"));
         return aval > bval ? 1 : -1;
@@ -387,7 +391,7 @@ function recipeCanCraft() {
     const $recipeCraft = $(".recipeCraft");
     $recipeCraft.removeClass("recipeCraftDisable");
     recipeList.recipes.forEach(recipe => {
-        if (!WorkerManager.canCurrentlyCraft(recipe)) $(".rr"+recipe.id).addClass("recipeCraftDisable");
+        if (!WorkerManager.canCurrentlyCraft(recipe)) $("#rr"+recipe.id).addClass("recipeCraftDisable");
     }) 
 }
 

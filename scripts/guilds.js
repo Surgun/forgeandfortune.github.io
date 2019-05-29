@@ -81,14 +81,18 @@ class Guild {
         return this.order.every(o=>o.complete());
     }
     generateNewOrder() {
-        /*if (this.rep < 100) {
-            const possibleItems = this.recipeListOwned();
-            const itemID = possibleItems[Math.florr(Math.random()*possibleItems.length)];
-            const item = new guildOrderItem(itemID,1,0,0);
-            this.order.push(item);
-        }*/
-        const item = new guildOrderItem("R0701",3,0,0);
-        return [item];
+        const order = [];
+        const possibleItems = recipeList.recipes.filter(r => r.repReq === this.lvl);
+        const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
+        const chosenFirst = possibleGuildItems[Math.floor(Math.random()*possibleGuildItems.length)];
+        const chosenSecond = possibleItems[Math.floor(Math.random()*possibleItems.length)];
+        const chosenThird = possibleItems[Math.floor(Math.random()*possibleItems.length)];
+        order.push(new guildOrderItem(chosenFirst.id,3,0,0));
+        if (this.lvl === 0) return order;
+        order.push(new guildOrderItem(chosenSecond.id,3,0,0));
+        if (this.lvl === 1) return order;
+        order.push(new guildOrderItem(chosenThird,3,0,0));
+        return order;
     }
     getItem(slot) {
         return this.order[slot];
@@ -98,7 +102,6 @@ class Guild {
         const itemString = submitContainer.id+submitContainer.rarity+submitContainer.sharp;
         const itemMatch = Inventory.findCraftMatch(itemString);
         if (itemMatch === undefined) return Notifications.cantFindMatch();
-        console.log(itemMatch);
         Inventory.removeContainerFromInventory(itemMatch.containerID);
         submitContainer.fufilled += 1;
         if (this.orderComplete()) {
@@ -106,11 +109,6 @@ class Guild {
             this.order = this.generateNewOrder();
         }
         refreshAllOrders();
-    }
-    nextTierUnlock() {
-        const recipe = recipeList.getNextGuildLevel(this.id,this.repLvl());
-        i
-        return worker; 
     }
 }
 

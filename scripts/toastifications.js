@@ -177,6 +177,12 @@ const Notifications = {
         const icon = "error";
         popToast(text,heading,icon);
     },
+    recipeGoldReq() {
+        const text = "You do not have enough gold.";
+        const heading = "Cannot Purchase Recipe";
+        const icon = "error";
+        popToast(text,heading,icon);
+    }
 }
 
 function popToast(text,heading,icon) {

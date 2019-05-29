@@ -2172,9 +2172,19 @@ Rarities
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
-    margin: 20px 0;
-    padding-top: 10px;
-    border-top: 2px solid var(--border-primary);
+}
+
+.guildHeading {
+    margin: 15px 0;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.progressHeading {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
 }
 
 .orderCard {

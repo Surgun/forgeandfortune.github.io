@@ -2168,12 +2168,30 @@ Rarities
     color: var(--text-secondary);
 }
 
-.recipeBuyCardBody {
+.guildOrder, .guildSales, .guildWorkers {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
+    grid-gap: 10px;
+    margin: 20px 0;
+    padding-top: 10px;
+    border-top: 2px solid var(--border-primary);
+}
+
+.orderCard {
+    min-height: 155px;
+}
+
+.recipeBuyCardBody, .recipeBuyCardBuyLater {
     text-align: center;
 }
 
-.recipeBuyCardBody > img {
+.recipeBuyCardBody > img, .orderIcon {
     margin: 10px 0;
+}
+
+.recipeBuyCardBuyLater {
+    margin-top: 10px;
+    color: var(--highlight);
 }
 
 .guildProgress {
@@ -2183,6 +2201,17 @@ Rarities
     align-items: center;
     text-align: center;
 }
+
+.workerBuyCardBodyProduction {
+    display: flex;
+    margin: 10px;
+}
+
+.workerBuyCardMax {
+    color: var(--highlight);
+}
+
+/* Progress */
 
 #progresslist {
     height: 100%;
@@ -3705,20 +3734,14 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     filter: grayscale(1);
 }
 
-#fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithWorkingArea, .EquipmentCardsContainer, .guildOrder, .guildSales {
+#fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithWorkingArea, .EquipmentCardsContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
     margin: 0;
 }
 
-.guildOrder, .guildSales {
-    margin: 20px 0 10px;
-    padding-top: 10px;
-    border-top: 2px solid var(--border-primary);
-}
-
-.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -3901,7 +3924,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     animation: none;
 }
 
-.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl, .heroLevel, .gearItemLevel {
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl, .heroLevel, .gearItemLevel, .workerBuyCardLevel {
     position: absolute;
     top: 10px;
     left: 10px;

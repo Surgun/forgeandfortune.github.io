@@ -247,7 +247,7 @@ function refreshGuildWorkers(guild) {
 
 function createWorkerBuyCard(worker) {
     const d1 = $("<div/>").addClass("workerBuyCard");
-    const d2 = $("<div/>").addClass("workerBuyCardHead").html(`Level ${worker.lvl}`);
+    const d2 = $("<div/>").addClass("workerBuyCardLevel").html(`<div class="level_text">LVL</div><div class="level_integer">${worker.lvl}</div>`);
     const d3 = $("<div/>").addClass("workerBuyCardBodyImage").html(worker.pic);
     const d4 = $("<div/>").addClass("workerBuyCardBodyName").html(worker.name);
     const d5 = $("<div/>").addClass("workerBuyCardBodyProduction").html(worker.productionText());

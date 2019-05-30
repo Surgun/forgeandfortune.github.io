@@ -1,297 +1,533 @@
 [
   {
     "id": "AL001",
+    "title": "title",
+    "description": "Unlock new worker: Oren",
     "fame": 0,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W001"
   },
   {
     "id": "AL002",
+    "title": "title",
+    "description": "Unlock new worker: Eryn",
     "fame": 0,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W002"
   },
   {
     "id": "AL003",
+    "title": "title",
+    "description": "Unlock new worker: Herbie",
     "fame": 0,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W003"
   },
   {
     "id": "AL004",
+    "title": "title",
+    "description": "Unlock new worker: Lakur",
     "fame": 0,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W004"
   },
   {
     "id": "AL005",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 0,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W005"
   },
   {
     "id": "AL006",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 0,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W006"
   },
   {
     "id": "AL007",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 0,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W007"
   },
   {
     "id": "AL008",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 0,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W008"
   },
   {
     "id": "AL009",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 0,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W009"
   },
   {
     "id": "AL010",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 0,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W010"
   },
   {
     "id": "AL011",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 1,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W101"
   },
   {
     "id": "AL012",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 1,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W102"
   },
   {
     "id": "AL013",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 1,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W103"
   },
   {
     "id": "AL014",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 1,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W104"
   },
   {
     "id": "AL015",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 1,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W105"
   },
   {
     "id": "AL016",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 1,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W106"
   },
   {
     "id": "AL017",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 1,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W107"
   },
   {
     "id": "AL018",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 1,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W108"
   },
   {
     "id": "AL019",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 1,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W109"
   },
   {
     "id": "AL020",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 1,
-    "npCost": 1
+    "npCost": 1,
+    "type": "worker",
+    "subtype": "W110"
   },
   {
     "id": "AL021",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H001"
   },
   {
     "id": "AL022",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H002"
   },
   {
     "id": "AL023",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H003"
   },
   {
     "id": "AL024",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H004"
   },
   {
     "id": "AL025",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H101"
   },
   {
     "id": "AL026",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H102"
   },
   {
     "id": "AL027",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H103"
   },
   {
     "id": "AL028",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H104"
   },
   {
     "id": "AL029",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H201"
   },
   {
     "id": "AL030",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H202"
   },
   {
     "id": "AL031",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 2,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H203"
   },
   {
     "id": "AL032",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 3,
-    "npCost": 1
+    "npCost": 1,
+    "type": "hero",
+    "subtype": "H204"
   },
   {
     "id": "AL033",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 3,
-    "npCost": 1
+    "npCost": 1,
+    "type": "boss",
+    "subtype": "D010"
   },
   {
     "id": "AL034",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 3,
-    "npCost": 1
+    "npCost": 1,
+    "type": "boss",
+    "subtype": "D011"
   },
   {
     "id": "AL035",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 3,
-    "npCost": 1
+    "npCost": 1,
+    "type": "boss",
+    "subtype": "D012"
   },
   {
     "id": "AL036",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 3,
-    "npCost": 1
+    "npCost": 1,
+    "type": "boss",
+    "subtype": "D013"
   },
   {
     "id": "AL037",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 3,
-    "npCost": 1
+    "npCost": 1,
+    "type": "boss",
+    "subtype": "D014"
   },
   {
     "id": "AL038",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 3,
-    "npCost": 1
+    "npCost": 1,
+    "type": "boss",
+    "subtype": "D015"
   },
   {
     "id": "AL039",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 3,
-    "npCost": 1
+    "npCost": 1,
+    "type": "boss",
+    "subtype": "D016"
   },
   {
     "id": "AL040",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 3,
-    "npCost": 1
+    "npCost": 1,
+    "type": "boss",
+    "subtype": "D017"
   },
   {
     "id": "AL041",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 3,
-    "npCost": 1
+    "npCost": 1,
+    "type": "boss",
+    "subtype": "D018"
   },
   {
     "id": "AL042",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "boss",
+    "subtype": "D019"
   },
   {
     "id": "AL043",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "craft",
+    "subtype": null
   },
   {
     "id": "AL044",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "craft",
+    "subtype": null
   },
   {
     "id": "AL045",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "craft",
+    "subtype": null
   },
   {
     "id": "AL046",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "craft",
+    "subtype": null
   },
   {
     "id": "AL047",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "bank",
+    "subtype": null
   },
   {
     "id": "AL048",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "cauldron",
+    "subtype": null
   },
   {
     "id": "AL049",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "forge",
+    "subtype": null
   },
   {
     "id": "AL050",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "fortune",
+    "subtype": null
   },
   {
     "id": "AL051",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "sanctuary",
+    "subtype": null
   },
   {
     "id": "AL052",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 4,
-    "npCost": 1
+    "npCost": 1,
+    "type": "sanctuary",
+    "subtype": null
   },
   {
     "id": "AL053",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 5,
-    "npCost": 1
+    "npCost": 1,
+    "type": "sanctuary",
+    "subtype": null
   },
   {
     "id": "AL054",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 5,
-    "npCost": 1
+    "npCost": 1,
+    "type": "sanctuary",
+    "subtype": null
   },
   {
     "id": "AL055",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 5,
-    "npCost": 1
+    "npCost": 1,
+    "type": "sanctuary",
+    "subtype": null
   },
   {
     "id": "AL056",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 5,
-    "npCost": 1
+    "npCost": 1,
+    "type": "sanctuary",
+    "subtype": null
   },
   {
     "id": "AL057",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 5,
-    "npCost": 1
+    "npCost": 1,
+    "type": "sanctuary",
+    "subtype": null
   },
   {
     "id": "AL058",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 5,
-    "npCost": 1
+    "npCost": 1,
+    "type": "sanctuary",
+    "subtype": null
   },
   {
     "id": "AL059",
+    "title": "title",
+    "description": "More descriptions",
     "fame": 5,
-    "npCost": 1
+    "npCost": 1,
+    "type": "sanctuary",
+    "subtype": null
   }
 ]

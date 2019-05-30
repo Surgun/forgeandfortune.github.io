@@ -2766,12 +2766,14 @@ div.EquipmentCardsContainer {
 }
 
 .dungeonContainer {
+    display: flex;
+    flex-direction: column;
     position: relative;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
     overflow: hidden;
     z-index: 1;

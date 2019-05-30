@@ -164,12 +164,12 @@ const actionSlotManager = {
     },
     upgradeSlot() {
         if (this.maxSlots === 5) return;
-        const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
+        /*const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
         if (ResourceManager.materialAvailable("M001") < amt) {
             Notifications.cantAffordSlot();
             return;
         }
-        ResourceManager.deductMoney(amt);
+        ResourceManager.deductMoney(amt);*/
         this.maxSlots += 1;
         initializeActionSlots();
     },

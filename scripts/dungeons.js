@@ -187,6 +187,9 @@ const DungeonManager = {
     speed : 1250,
     dungeonPaid : [],
     bossesBeat : [],
+    unlockDungeon(id) {
+        this.dungeonPaid.push(id);
+    },
     bossDungeonCanJoin(id) {
         if (this.dungeonByID(id).type === "regular") return true;
         return this.dungeonPaid.includes(id);
@@ -195,9 +198,6 @@ const DungeonManager = {
         const dungeon = this.dungeonByID(id);
         if (dungeon.type === "regular" || this.dungeonPaid.includes(id) || dungeon.preReq === null) return true;
         return this.dungeonPaid.includes(dungeon.preReq);
-    },
-    payDungeonUnlock(id) {
-        this.dungeonPaid.push(id);
     },
     createSave() {
         const save = {};

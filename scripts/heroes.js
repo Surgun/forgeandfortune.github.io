@@ -257,7 +257,6 @@ class Hero {
 
 const HeroManager = {
     heroes : [],
-    heroOrder : [],
     heroView : null,
     addHero(hero) {
         this.heroes.push(hero);
@@ -274,18 +273,6 @@ const HeroManager = {
             const hero = this.idToHero(h.id);
             hero.loadSave(h);
         })
-    },
-    heroBuySeed() {
-        //pre-populate the hero buy order so you can't savescum
-        Math.seed = hbSeed;
-        this.heroOrder = ["H203"];
-        while (this.heroOrder.length < this.heroes.length) {
-            const possibleHeroes = this.heroes.map(h=>h.id).filter(h=>!this.heroOrder.includes(h));
-            const heroID = possibleHeroes[Math.floor(Math.seededRandom() * possibleHeroes.length)];
-            this.heroOrder.push(heroID);            
-        }
-        const alreadyBought = this.heroes.filter(w=>w.owned).map(h=>h.id);
-        this.heroOrder = this.heroOrder.filter(h=>!alreadyBought.includes(h));
     },
     heroOwned(ID) {
         return this.idToHero(ID).owned;
@@ -330,14 +317,7 @@ const HeroManager = {
         const hero = this.idToHero(heroID);
         return ap - hero.getAPSlot(slot);
     },
-    purchaseHero() {
-        const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];
-        if (ResourceManager.materialAvailable("M001") < amt) {
-            Notifications.cantAffordHero();
-            return;
-        }
-        ResourceManager.deductMoney(amt);
-        const heroID = this.heroOrder.shift();
+    gainHero(heroID) {
         this.idToHero(heroID).owned = true;
         initializeHeroList();
         refreshHeroSelect();

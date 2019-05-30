@@ -351,12 +351,35 @@ const ActionLeague = {
         if (this.np < perk.npCost) return Notifications.alRewardCost();
         this.np -= perk.npCost;
         this.purchased.push(id);
+        perk.activate();
     },
 }
 
 class alRewards {
     constructor (props) {
         Object.assign(this, props);
+    }
+    activate() {
+        if (this.type === "hero") HeroManager.gainHero(this.subtype);
+        if (this.type === "worker") WorkerManager.gainWorker(this.subtype);
+        if (this.type === "boss") DungeonManager.unlockDungeon(this.subtype);
+        if (this.type === "craft") actionSlotManager.upgradeSlot();
+        if (this.type === "bank") {
+            TownManager.bankOnce = true;
+            TownManager.bankSee = true;
+        }
+        if (this.type === "cauldron") {
+            TownManager.fuseOnce = true;
+            TownManager.fuseSee = true;
+        }
+        if (this.type === "forge") {
+            TownManager.smithOnce = true;
+            TownManager.smithSee = true;
+        }
+        if (this.type === "fortune") {
+            TownManager.fortuneOnce = true;
+            TownManager.fortuneSee = true;
+        }
     }
 }
 

@@ -15,9 +15,11 @@ const GuildManager = {
         return save;
     },
     loadSave(save) {
+        console.log(save);
         save.guilds.forEach(guildSave => {
+            
             const guild = this.idToGuild(guildSave.id);
-            guild.loadsave(guildSave);
+            guild.loadSave(guildSave);
         });
     },
     idToGuild(id) {
@@ -34,6 +36,7 @@ class Guild {
     }
     createSave() {
         const save = {};
+        save.id = this.id;
         save.rep = this.rep;
         save.order = [];
         this.order.forEach(o=>save.order.push(o.createSave()));
@@ -142,10 +145,13 @@ class guildOrderItem {
     }
 }
 
+
+
 const $guildList = $("#guildList");
 
 function initializeGuilds() {
     $guildList.empty();
+    $("<div/>").addClass("guildListButton").data("gid","ActionLeague").html("Action League").appendTo($guildList);
     GuildManager.guilds.forEach(g => {
         $("<div/>").addClass("guildListButton").data("gid",g.id).html(g.name).appendTo($guildList);
         $(`#${g.id}Name`).html(g.name);
@@ -169,6 +175,8 @@ function refreshguildprogress(guild) {
     $gp.empty();
     $gp.append(createGuildBar(guild));
 }
+
+
 
 function createGuildBar(guild) {
     const repPercent = guild.rep/guild.repLvl();
@@ -267,7 +275,9 @@ $(document).on("click",".guildListButton",(e) => {
     const gid = $(e.currentTarget).data("gid");
     GuildManager.lastClicked = gid;
     $(".guildContainer").hide();
-    $("#"+gid).show();
+    console.log(gid);
+    if (gid === "ActionLeague") $("#actionLeague").show();
+    else $("#"+gid).show();
 });
 
 
@@ -290,4 +300,105 @@ $(document).on("click",".workerBuyCardBuy", (e) => {
     e.preventDefault();
     const workerId = $(e.currentTarget).data("wid");
     WorkerManager.upgradeWorker(workerId);
+});
+
+//********************************
+// ACTION LEAGUE STUFF
+//********************************/
+
+const ActionLeague = {
+    notoriety : 0,
+    np : 0,
+    lvl : 0,
+    purchased : [],
+    perks : [],
+    addPerk(reward) {
+        this.perks.push(reward);
+    },
+    createSave() {
+        const save = {};
+        save.notoriety = this.notoriety;
+        save.np = this.np;
+        save.lvl = this.lvl;
+        save.purchased = this.purchased;
+        return save;
+    },
+    loadSave(save) {
+        this.notoriety = save.notoriety;
+        this.np = save.np;
+        this.lvl = save.lvl;
+        this.purchased = save.purchased;
+    },
+    idToPerk(id) {
+        return this.perk.find(r=>r.id === id);
+    },
+    addNoto(amt) {
+        if (this.fame === this.maxfame()) return;
+        this.notoriety += amt
+        if (this.notoriety < this.fameLvl()) return;
+        this.notoriety -= this.fameLvl();
+        this.lvl += 1;
+        this.np += 1;
+    },
+    maxfame() {
+        return DungeonManager.bossesBeat.length*10;
+    },
+    fameLvl() {
+        return miscLoadedValues["alFameReq"][this.lvl];
+    },
+    buyPerk(id) {
+        const perk = this.idToPerk(id);
+        if (this.np < perk.npCost) return Notifications.alRewardCost();
+        this.np -= perk.npCost;
+        this.purchased.push(id);
+    },
+}
+
+class alRewards {
+    constructor (props) {
+        Object.assign(this, props);
+    }
+}
+
+const $algp = $("#ALProgress");
+const $alp = $("#ALPerks");
+
+function refreshALprogress() {
+    $algp.empty();
+    $algp.append(createALGuildBar());
+}
+
+function createALGuildBar() {
+    const notoPercent = ActionLeague.notoriety/ActionLeague.fameLvl();
+    const notoWidth = (notoPercent*100).toFixed(1)+"%";
+    const d1 = $("<div/>").addClass("notoBarDiv");
+    const d2 = $("<div/>").addClass("notoBar").attr("data-label",`Level ${ActionLeague.lvl} (${ActionLeague.notoriety}/${ActionLeague.fameLvl()})`);
+    const s1 = $("<span/>").addClass("notoBarFill").css('width',notoWidth);
+    return d1.append(d2,s1);
+}
+
+function refreshALperks() {
+    $alp.empty();
+    const perks = ActionLeague.perks.filter(p=>o.fame >= ActionLeague.lvl && !ActionLeague.purchased.includes(o.id));
+    perks.forEach(perk => {
+        $alp.append(createALPerk(perk));
+    });
+}
+
+function createALperk(perk) {
+    const d1 = $("<div/>").addClass("alPerk");
+    const d2 = $("<div/>").addClass("alTitle").html(perk.title);
+    const d3 = $("<div/>").addClass("alImage").html(perk.image);
+    const d4 = $("<div/>").addClass("alDesc").html(perk.description);
+    const d5 = $("<div/>").addClass("alPerkBuy").data("pid",perk.id);
+        $("<div/>").addClass("alPerkBuyText").html("Unlock").appendTo(d5);
+        $("<div/>").addClass("alPerkBuyCost").html(`${formatToUnits(perk.npCost,2)}`).appendTo(d6);
+    return d1.append(d2,d3,d4,d5);
+}
+
+//buy a perk
+$(document).on("click",".alPerkBuy", (e) => {
+    e.preventDefault();
+    const perkid = $(e.currentTarget).data("pid");
+    ActionLeague.buyPerk(perkid);
 });

@@ -1,0 +1,297 @@
+[
+  {
+    "id": "AL001",
+    "fame": 0,
+    "npCost": 1
+  },
+  {
+    "id": "AL002",
+    "fame": 0,
+    "npCost": 1
+  },
+  {
+    "id": "AL003",
+    "fame": 0,
+    "npCost": 1
+  },
+  {
+    "id": "AL004",
+    "fame": 0,
+    "npCost": 1
+  },
+  {
+    "id": "AL005",
+    "fame": 0,
+    "npCost": 1
+  },
+  {
+    "id": "AL006",
+    "fame": 0,
+    "npCost": 1
+  },
+  {
+    "id": "AL007",
+    "fame": 0,
+    "npCost": 1
+  },
+  {
+    "id": "AL008",
+    "fame": 0,
+    "npCost": 1
+  },
+  {
+    "id": "AL009",
+    "fame": 0,
+    "npCost": 1
+  },
+  {
+    "id": "AL010",
+    "fame": 0,
+    "npCost": 1
+  },
+  {
+    "id": "AL011",
+    "fame": 1,
+    "npCost": 1
+  },
+  {
+    "id": "AL012",
+    "fame": 1,
+    "npCost": 1
+  },
+  {
+    "id": "AL013",
+    "fame": 1,
+    "npCost": 1
+  },
+  {
+    "id": "AL014",
+    "fame": 1,
+    "npCost": 1
+  },
+  {
+    "id": "AL015",
+    "fame": 1,
+    "npCost": 1
+  },
+  {
+    "id": "AL016",
+    "fame": 1,
+    "npCost": 1
+  },
+  {
+    "id": "AL017",
+    "fame": 1,
+    "npCost": 1
+  },
+  {
+    "id": "AL018",
+    "fame": 1,
+    "npCost": 1
+  },
+  {
+    "id": "AL019",
+    "fame": 1,
+    "npCost": 1
+  },
+  {
+    "id": "AL020",
+    "fame": 1,
+    "npCost": 1
+  },
+  {
+    "id": "AL021",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL022",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL023",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL024",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL025",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL026",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL027",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL028",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL029",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL030",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL031",
+    "fame": 2,
+    "npCost": 1
+  },
+  {
+    "id": "AL032",
+    "fame": 3,
+    "npCost": 1
+  },
+  {
+    "id": "AL033",
+    "fame": 3,
+    "npCost": 1
+  },
+  {
+    "id": "AL034",
+    "fame": 3,
+    "npCost": 1
+  },
+  {
+    "id": "AL035",
+    "fame": 3,
+    "npCost": 1
+  },
+  {
+    "id": "AL036",
+    "fame": 3,
+    "npCost": 1
+  },
+  {
+    "id": "AL037",
+    "fame": 3,
+    "npCost": 1
+  },
+  {
+    "id": "AL038",
+    "fame": 3,
+    "npCost": 1
+  },
+  {
+    "id": "AL039",
+    "fame": 3,
+    "npCost": 1
+  },
+  {
+    "id": "AL040",
+    "fame": 3,
+    "npCost": 1
+  },
+  {
+    "id": "AL041",
+    "fame": 3,
+    "npCost": 1
+  },
+  {
+    "id": "AL042",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL043",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL044",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL045",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL046",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL047",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL048",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL049",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL050",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL051",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL052",
+    "fame": 4,
+    "npCost": 1
+  },
+  {
+    "id": "AL053",
+    "fame": 5,
+    "npCost": 1
+  },
+  {
+    "id": "AL054",
+    "fame": 5,
+    "npCost": 1
+  },
+  {
+    "id": "AL055",
+    "fame": 5,
+    "npCost": 1
+  },
+  {
+    "id": "AL056",
+    "fame": 5,
+    "npCost": 1
+  },
+  {
+    "id": "AL057",
+    "fame": 5,
+    "npCost": 1
+  },
+  {
+    "id": "AL058",
+    "fame": 5,
+    "npCost": 1
+  },
+  {
+    "id": "AL059",
+    "fame": 5,
+    "npCost": 1
+  }
+]

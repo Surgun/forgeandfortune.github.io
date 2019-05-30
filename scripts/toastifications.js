@@ -182,6 +182,12 @@ const Notifications = {
         const heading = "Cannot Purchase Recipe";
         const icon = "error";
         popToast(text,heading,icon);
+    },
+    alRewardCost() {
+        const text = "You do not have enough notoriety points.";
+        const heading = "Cannot Purchase Reward";
+        const icon = "error";
+        popToast(text,heading,icon);
     }
 }
 

@@ -2191,6 +2191,13 @@ Rarities
     min-height: 155px;
 }
 
+.itemToSacReq {
+    margin-top: 10px;
+    padding: 5px 20px;
+    background-color: var(--border-secondary);
+    border-radius: 10px;
+}
+
 .recipeBuyCardBody, .recipeBuyCardBuyLater {
     text-align: center;
 }
@@ -2210,7 +2217,9 @@ Rarities
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .workerBuyCardBodyProduction {
@@ -2219,6 +2228,17 @@ Rarities
 }
 
 .workerBuyCardMax {
+    color: var(--highlight);
+}
+
+.guildHelpText {
+    padding: 0 10px;
+    width: 100%;
+    max-width: 800px;
+    color: var(--text-secondary);
+}
+
+.guildHelpText .highlight {
     color: var(--highlight);
 }
 
@@ -3469,7 +3489,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 0 2px;
 }
 
-.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .repBarDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .repBarDiv, .notoBarDiv {
     position: relative;
     display: flex;
     align-items: center;
@@ -3478,10 +3498,6 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     border: 1px solid rgb(100, 100, 100);
     border-radius: 15px;
     overflow: hidden;
-}
-
-.repBarDiv {
-    max-width: 300px;
 }
 
 .apBarDiv {
@@ -3502,17 +3518,17 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin-top: 10px;
 }
 
-.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img, .fuseBarDiv > img, #swBarDiv > img, .repBarDiv > img {
+.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img, .fuseBarDiv > img, #swBarDiv > img, .repBarDiv > img, .notoBarDiv > img {
     position: absolute;
     left: 8px;
     z-index: 1;
 }
 
-.hpBar, .apBar, .masteryBar, .fuseBar, #swBar, .dsbhpBar, .repBar {
+.hpBar, .apBar, .masteryBar, .fuseBar, #swBar, .dsbhpBar, .repBar, .notoBar {
     height: 100%;
 }
 
-.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before, .masteryBar:before, .repBar:before {
+.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before, .masteryBar:before, .repBar:before, .notoBar:before {
     content: " " attr(data-label);
     position: absolute;
     display: flex;
@@ -3535,7 +3551,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     text-shadow: 0 1px 0 rgba(0,0,0,0.3), 1px 0 0 rgba(0,0,0,0.3), 1px 2px 0 rgba(0,0,0,0.3), 2px 1px 0 rgba(0,0,0,0.3), 1px 1px 0 rgba(0,0,0,0.3), 0 0 10px rgba(0,0,0,1);
 }
 
-.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill {
+.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill, .notoBarFill {
     display: block;
     position: relative;
     height: 100%;
@@ -3784,7 +3800,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     padding: 10px 0;
 }
 
-.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, .repBarDiv {
+.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, .repBarDiv, .notoBarDiv {
     width: 100%;
     height: 26px;
     line-height: 26px;
@@ -3818,7 +3834,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin-top: 5px;
 }
 
-.fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill {
+.fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill, .notoBarFill {
     background-color: rgba(255,255,255,0.15);
 }
 

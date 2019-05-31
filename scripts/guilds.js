@@ -202,8 +202,8 @@ function refreshguildOrder(guild) {
 
 function createOrderCard(item,id,index) {
     const d1 = $("<div/>").addClass("orderCard").data({"slot":index,"gid":id});
-    const d2 = $("<div/>").addClass("orderName").html(item.item.name);
-    const d3 = $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id));
+    const d2 = $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id));
+    const d3 = $("<div/>").addClass("orderName").html(item.item.name);
     const d4 = $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id));
     const d5 = $("<div/>").addClass("itemToSacReq").html(formatToUnits(item.left(),2));
     if (item.complete()) d1.hide();

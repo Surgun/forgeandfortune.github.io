@@ -13,7 +13,6 @@ function afterLoad() {
         WorkerManager.gainWorker("W001");;
         recipeList.idToItem("R0701").owned = true;
         HeroManager.idToHero("H203").owned = true;
-        HeroManager.heroOrder.shift();
         achievementStats.startTime = Date.now();
         EventManager.addEvent("E001");
     }

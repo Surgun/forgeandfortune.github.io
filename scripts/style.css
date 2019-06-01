@@ -85,7 +85,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -93,7 +93,7 @@ body.lightmode {
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     -ms-box-shadow: var(--box-shadow);
@@ -149,7 +149,7 @@ body {
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container, #right-side-content, #guildsContainer {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container, #right-side-content, #guildsContainer, #db-panel, .dbActionButton {
     font-family: 'Varela Round', 'Open Sans', sans-serif;
 }
 
@@ -5675,25 +5675,19 @@ span.beta-tag {
 
 #db-panel {
     position: absolute;
-    top: 0;
     right: 0;
-    bottom: 0;
+    bottom: 50px;
     left: 0;
     display: none;
-    margin: auto;
-    padding: 10px 20px;
+    margin: 0 auto;
+    padding: 20px;
     width: 100%;
-    max-width: 500px;
+    max-width: calc(100% - 500px);
     height: 100%;
-    max-height: 500px;
-    background-color: var(--bg-tertiary);
-    border: 2px solid var(--border-primary);
+    max-height: 400px;
+    background-color: rgba(0,0,0,0.9);
+    border-top: 2px solid var(--border-primary);
     color: var(--text-primary);
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
-    -ms-box-shadow: var(--box-shadow);
-    -o-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
     overflow-y: auto;
     z-index: 9999;
 }
@@ -5707,11 +5701,11 @@ span.beta-tag {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 15px;
+    right: 15px;
     padding: 8px 12px;
     color: var(--text-white);
-    background-color: var(--bg-primary);
+    background-color: rgba(255,255,255,.15);
     border: 0;
     font-size: 1.5em;
     text-decoration: none;
@@ -5721,5 +5715,39 @@ span.beta-tag {
 }
 
 .dbClose:hover {
-    background-color: var(--border-primary);
+    background-color: rgba(255,255,255,.25);
+}
+
+.dbActionContainer {
+    margin: 10px;
+}
+
+.dbActionButton {
+    padding: 10px 25px;
+    text-transform: uppercase;
+    background-color: rgba(255,255,255,.15);
+    color: var(--text-primary);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.dbActionButton:hover {
+    background-color: rgba(255,255,255,.25);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+.singleActionContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.singleActionContainer .dbActionButton {
+    margin: 5px;
 }

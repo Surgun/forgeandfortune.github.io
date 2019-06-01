@@ -310,45 +310,54 @@ function dbEnable() {
 
     const d = $("<button/>").addClass("dbClose").html(`<i class="fas fa-times"></i>`);
 
-    const d1 = $("<div/>").addClass("gmContainer");
-        const d1a = $("<button/>").addClass("gmOption").html("Enable God Mode");
-    d1.append(d1a);
+    const d1 = $("<div/>").addClass("singleActionContainer");
+        const d1a = $("<div/>").addClass("gmContainer");
+            const d1a1 = $("<button/>").addClass("gmOption dbActionButton").html("God Mode");
+            d1a.append(d1a1);
+        const d1b = $("<div/>").addClass("heroTestContainer");
+            const d2a1 = $("<button/>").addClass("heroTestOption dbActionButton").html("Hero Equipment Test");
+            d1b.append(d2a1);
+        const d1c = $("<div/>").addClass("materialContainer");
+            const d3a1 = $("<button/>").addClass("materialOption dbActionButton").html("Add Materials");
+            d1c.append(d3a1);
+        const d1d = $("<div/>").addClass("dmContainer");
+            const d3d1 = $("<button/>").addClass("dmOption dbActionButton").html("UI / UX Mode");
+            d1d.append(d3d1);
+        const d1e = $("<div/>").addClass("hyperSpeedContainer");
+            const d3e1 = $("<button/>").addClass("hyperSpeedOption dbActionButton").html("Hyper Speed");
+            d1e.append(d3e1);
+        const d1f = $("<div/>").addClass("forceTownontainer");
+            const d3f1 = $("<button/>").addClass("forceTownOption dbActionButton").html("Unlock Town");
+            d1f.append(d3f1);
+        d1.append(d1a,d1b,d1c,d1d,d1e,d1f);
 
-    const d2 = $("<div/>").addClass("heroTestContainer");
-        const d2a = $("<button/>").addClass("heroTestOption").html("Enable Hero Test");
-    d2.append(d2a);
-
-    const d3 = $("<div/>").addClass("materialContainer");
-        const d3a = $("<button/>").addClass("materialOption").html("Add Materials");
-    d3.append(d3a);
-
-    const d4 = $("<div/>").addClass("addItemContainer");
-        const d4a = $("<h5/>").addClass("addItemTitle").html("Add Item to Inventory");
+    const d4 = $("<div/>").addClass("addItemContainer dbActionContainer");
+        const d4a = $("<div/>").addClass("addItemTitle").html("Add Item to Inventory");
         const d4b = $("<input/>").addClass("addItemName").attr("placeholder", "Item ID");
         const d4c = $("<input/>").addClass("addItemRarity").attr("placeholder", "Item Rarity");
-        const d4d = $("<button/>").addClass("addItemBtn").html("Add");
+        const d4d = $("<button/>").addClass("addItemBtn dbActionButton").html("Add");
     d4.append(d4a,d4b,d4c,d4d);
 
-    const d5 = $("<div/>").addClass("gearHeroesContainer");
-        const d5a = $("<h5/>").addClass("gearHeroesTitle").html("Add Gear to Heroes");
+    const d5 = $("<div/>").addClass("gearHeroesContainer dbActionContainer");
+        const d5a = $("<div/>").addClass("gearHeroesTitle").html("Add Gear to Heroes");
         const d5b = $("<input/>").addClass("gearHeroesLevel").attr("placeholder", "Gear Level");
         const d5c = $("<input/>").addClass("gearHeroesRarity").attr("placeholder", "Gear Rarity");
-        const d5d = $("<button/>").addClass("gearHeroesBtn").html("Gear");
+        const d5d = $("<button/>").addClass("gearHeroesBtn dbActionButton").html("Gear");
     d5.append(d5a,d5b,d5c,d5d);
 
-    const d6 = $("<div/>").addClass("addGoldContainer");
-        const d6a = $("<h5/>").addClass("addGoldTitle").html("Add Gold");
+    const d6 = $("<div/>").addClass("addGoldContainer dbActionContainer");
+        const d6a = $("<div/>").addClass("addGoldTitle").html("Add Gold");
         const d6b = $("<input/>").addClass("addGoldInput").attr("placeholder", "0");
-        const d6c = $("<button/>").addClass("addGoldBtn").html("Add");
+        const d6c = $("<button/>").addClass("addGoldBtn dbActionButton").html("Add");
     d6.append(d6a,d6b,d6c);
 
-    const d7 = $("<div/>").addClass("adjustSpeedContainer");
-        const d7a = $("<h5/>").addClass("adjustSpeedTitle").html("Adjust Speed");
+    const d7 = $("<div/>").addClass("adjustSpeedContainer dbActionContainer");
+        const d7a = $("<div/>").addClass("adjustSpeedTitle").html("Adjust Speed");
         const d7b = $("<input/>").addClass("adjustSpeedInput").attr("placeholder", "0.0");
-        const d7c = $("<button/>").addClass("adjustSpeedBtn").html("Adjust");
+        const d7c = $("<button/>").addClass("adjustSpeedBtn dbActionButton").html("Adjust");
     d7.append(d7a,d7b,d7c);
 
-    $dbpanel.append(d,d1,d2,d3,d4,d5,d6,d7);
+    $dbpanel.append(d,d1,d4,d5,d6,d7);
     $dbpanel.css("display", "block");
 
     settings.db = 1;
@@ -360,7 +369,7 @@ function addButtonDB() {
     const footer = $("#bottom-left");
     let dbButton = $("#debug");
     if (!dbButton.length) {
-        dbButton = $("<a/>").attr("id","debug").addClass("isDialog tooltip").attr("data-tooltip","Development Options").html(`<i class="fas fa-bug"></i> Debug`)
+        dbButton = $("<a/>").attr("id","debug").addClass("isDialog tooltip").attr("data-tooltip","Development options for tesing various functions, mechanics and interfaces.").html(`<i class="fas fa-bug"></i> Debug`)
         footer.append(dbButton);
     }
 }
@@ -373,6 +382,18 @@ checkDB();
 
 $(document).on('click', '.materialOption', (e) => {
     devtools.materials();
+});
+
+$(document).on('click', '.forceTownOption', (e) => {
+    devtools.forceTown();
+});
+
+$(document).on('click', '.hyperSpeedOption', (e) => {
+    devtools.hyperSpeed();
+});
+
+$(document).on('click', '.dmOption', (e) => {
+    devtools.designmode();
 });
 
 $(document).on('click', '.addGoldBtn', (e) => {

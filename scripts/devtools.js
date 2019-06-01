@@ -129,6 +129,8 @@ const devtools = {
         TownManager.smithUnlock = true;
         TownManager.fortuneSee = true;
         TownManager.fortuneUnlock = true;
+        forceSave();
+        location.replace('/');
     },
     skipSac : false,
 }

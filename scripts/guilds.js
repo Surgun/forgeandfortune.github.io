@@ -205,7 +205,7 @@ function createOrderCard(item,id,index) {
     const d2 = $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id));
     const d3 = $("<div/>").addClass("orderName").html(item.item.name);
     const d4 = $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id));
-    const d5 = $("<div/>").addClass("itemToSacReq").html(formatToUnits(item.left(),2));
+    const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Needed`);
     if (item.complete()) d1.hide();
     return d1.append(d2,d3,d4,d5);
 };

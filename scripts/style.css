@@ -2195,6 +2195,7 @@ Rarities
     margin-top: 10px;
     padding: 5px 20px;
     background-color: var(--border-secondary);
+    color: var(--highlight);
     border-radius: 10px;
 }
 

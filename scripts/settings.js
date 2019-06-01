@@ -7,7 +7,8 @@ const settings = {
     dialogStatus: 0,
     battleLogLength: 30,
     theme: 0,
-    toggleTurnOrderBars: 1
+    toggleTurnOrderBars: 1,
+    db: 0
 }
 
 function saveSettings() {
@@ -20,6 +21,11 @@ function loadSettings() {
         settings[setting] = obj[setting];
     }
     localStorage.setItem("settings", JSON.stringify(settings));
+}
+
+function clearSettings() {
+    localStorage.removeItem("settings");
+    location.replace('/');
 }
 
 loadSettings();

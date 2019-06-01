@@ -4563,7 +4563,7 @@ footer a[href*="discord.gg"]:hover {
     text-align: center;
 }
 
-#clearSave, #exportSave, #importSave, #cloudSave, #settings {
+.isDialog {
     position: relative;
 }
 
@@ -5676,4 +5676,30 @@ span.beta-tag {
     box-shadow: var(--box-shadow);
     overflow-y: auto;
     z-index: 9999;
+}
+
+#debug {
+    cursor: pointer;
+}
+
+.dbClose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 8px 12px;
+    color: var(--text-white);
+    background-color: var(--bg-primary);
+    border: 0;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.dbClose:hover {
+    background-color: var(--border-primary);
 }

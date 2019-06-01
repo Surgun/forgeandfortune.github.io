@@ -304,9 +304,11 @@ const $dbpanel = $("#db-panel");
 let dbi = 0;
 
 function dbEnable() {
+    setDialogOpen();
     $dbpanel.empty();
     dbi = 0;
-    const d = $("<button/>").addClass("dbClose").html("Close Debug");
+
+    const d = $("<button/>").addClass("dbClose").html(`<i class="fas fa-times"></i>`);
 
     const d1 = $("<div/>").addClass("gmContainer");
         const d1a = $("<button/>").addClass("gmOption").html("Enable God Mode");
@@ -348,7 +350,26 @@ function dbEnable() {
 
     $dbpanel.append(d,d1,d2,d3,d4,d5,d6,d7);
     $dbpanel.css("display", "block");
+
+    settings.db = 1;
+    saveSettings();
+    checkDB();
 }
+
+function addButtonDB() {
+    const footer = $("#bottom-left");
+    let dbButton = $("#debug");
+    if (!dbButton.length) {
+        dbButton = $("<a/>").attr("id","debug").addClass("isDialog tooltip").attr("data-tooltip","Development Options").html(`<i class="fas fa-bug"></i> Debug`)
+        footer.append(dbButton);
+    }
+}
+
+function checkDB() {
+    if (settings.db === 1) addButtonDB();
+}
+
+checkDB();
 
 $(document).on('click', '.materialOption', (e) => {
     devtools.materials();
@@ -385,11 +406,12 @@ $(document).on('click', '.heroTestOption', (e) => {
 });
 
 $(document).on('click', '.dbClose', (e) => {
+    setDialogClose();
     $dbpanel.css("display", "none");
 });
 
-$(document).on('click', '#db-init', (e) => {
-    (dbi >= 6) ? dbEnable() : dbi++;
+$(document).on('click', '#debug', (e) => {
+    dbEnable();
 });
 
 $(document).on('click', '.recipeCraft', (e) => {

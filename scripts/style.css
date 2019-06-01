@@ -144,7 +144,7 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, #floorID, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .heroEquipBlockName, .dungeonListingsHeading, .dungeonHeader, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader, .Worker .itemContributions {
+.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .equipHeading, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dscName, .dsmName, .heroExamineName, .heroExamineHeading, .heroEquipBlockName, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader, .Worker .itemContributions {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
@@ -3132,12 +3132,18 @@ div.EquipmentCardsContainer {
 }
 
 #floorID {
+    padding: 5px 15px;
     text-transform: uppercase;
     text-shadow: 3px 3px 0 black;
+    font-weight: normal;
     font-size: 1.5rem;
+    color: var(--highlight);
+    background-color: #21262b;
+    border-radius: 5px;
     -webkit-animation: 0.2s scale-in;
-    animation: 0.2s scale-in;
+    animation: 0.2s scale-in
 }
+
 #dungeonListContainer {
     display: flex;
     justify-content: space-between;
@@ -5445,6 +5451,19 @@ span.beta-tag {
 
     #heroList .heroOwnedCard .heroOwnedImage {
         display: none;
+    }
+
+    .buyNewHeroButton {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buyHeroText {
+        margin-right: 0;
+    }
+
+    .buyHeroCost {
+        margin-top: 5px;
     }
 }
 

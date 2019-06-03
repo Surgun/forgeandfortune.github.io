@@ -75,6 +75,19 @@ function loadGuilds() {
             const guild = new Guild(props)
             GuildManager.addGuild(guild);
         });
+        loadPerks();
+    });
+}
+
+function loadPerks() {
+    $.ajax({
+        url: "json/perks.json",
+    }).done((data) => {
+        console.log("perk load complete");
+        $.each(data, function(i,props){
+            const perk = new alRewards(props);
+            ActionLeague.addPerk(perk);
+        });
         loadMobs();
     });
 }

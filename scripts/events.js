@@ -103,6 +103,9 @@ const EventManager = {
             }
             Inventory.addToInventory(event.itemReward.id,event.itemReward.rarity,-1);
         }
+        if (event.notoriety !== null) {
+            ActionLeague.addNoto(event.notoriety);
+        }
         if (event.id === "E009") {
             TownManager.bankOnce = true;
             TownManager.bankSee = true;
@@ -209,7 +212,6 @@ function dungeonDrops(event) {
 }
 
 function bossRecipeUnlocks(recipes) {
-    console.log("hey this loaded?");
     const d = $("<div/>").addClass("rewardDiv");
     const d1 = $("<div/>").addClass("rewardDivTitle").html("Rewards");
     d.append(d1);
@@ -228,9 +230,7 @@ $(document).on('click', "div.eventList", (e) => {
     $("div.eventList").removeClass("highlight");
     $(e.currentTarget).addClass("highlight");
     const eventNum = parseInt($(e.currentTarget).attr("eventNum"));
-    console.log(eventNum);
     const event = EventManager.eventNumToEvent(eventNum);
-    console.log(event);
     $eventContent.empty();
     const d = $("<div/>").addClass("eventBody");
     const d1 = $("<div/>").addClass("eventAuthor").html(`FROM: ${event.author}`);
@@ -266,6 +266,10 @@ $(document).on('click', "div.eventList", (e) => {
         const item = recipeList.idToItem(event.itemReward.id);
         const d8 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());
         d.append(d8);
+    }
+    if (event.notoriety !== null) {
+        const d8a = $("<div/>").addClass("eventNotoriety").html(`Notoriety Earned: ${event.notoriety}`);
+        d.append(d8a);
     }
     const d9 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
     if (EventManager.seeOld) d9.hide();
@@ -304,10 +308,6 @@ function eventChecker() {
     if (!EventManager.hasSeen("E010") && TownManager.bankUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[1]) EventManager.addEvent("E010");
     if (!EventManager.hasSeen("E011") && TownManager.fuseUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[2]) EventManager.addEvent("E011");
     if (!EventManager.hasSeen("E012") && TownManager.smithUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[3]) EventManager.addEvent("E012");
-}
-
-function autoSacEvent() {
-    if (!EventManager.hasSeen("E008")) EventManager.addEvent("E008");
 }
 
 let masteredItem = false;

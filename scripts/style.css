@@ -5529,7 +5529,7 @@ span.beta-tag {
 }
 
 /* Enables mobile notice on screens game is not supported on */
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1099px) {
 
     main {display: none!important;}
 
@@ -5615,7 +5615,7 @@ span.beta-tag {
 }
 
 /* Disables mobile notice on screens game is supported on */
-@media screen and (min-width: 1251px) {
+@media screen and (min-width: 1099px) {
     #mobile-content {display: none!important;}
 }
 
@@ -5736,14 +5736,13 @@ span.beta-tag {
 
 #db-panel {
     position: absolute;
-    right: 0;
     bottom: 50px;
     left: 0;
     display: none;
     margin: 0 auto;
     padding: 20px;
     width: 100%;
-    max-width: calc(100% - 500px);
+    max-width: calc(100% - 250px);
     height: 100%;
     max-height: 400px;
     background-color: rgba(0,0,0,0.9);

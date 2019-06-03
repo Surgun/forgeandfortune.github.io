@@ -129,7 +129,9 @@
     "author": "The Action League",
     "message": [
       "<p>Thanks to your efforts, our group made it back from the Groovy Grove safe and sound",
-      "Here's a cut of the loot as a reward.</p><p>Warm Regards,</p><p>The Adventure League</p>"
+      "Here's a 10% cut of the loot as a reward. We'll be sure to tell everyone what great work you did",
+      "As always, thanks for working with The Action League",
+      "</p><p>Kindest Regards,</p><p>The Adventure League</p>"
     ],
     "type": "dungeon"
   },
@@ -139,7 +141,9 @@
     "author": "The Action League",
     "message": [
       "<p>Thanks to your efforts, our group made it back from the Spooky Spot safe and sound",
-      "Here's a cut of the loot as a reward.</p><p>Warm Regards,</p><p>The Adventure League</p>"
+      "Here's a 10% cut of the loot as a reward. We'll be sure to tell everyone what great work you did",
+      "As always, thanks for working with The Action League",
+      "</p><p>Kindest Regards,</p><p>The Adventure League</p>"
     ],
     "type": "dungeon"
   },
@@ -149,7 +153,9 @@
     "author": "The Action League",
     "message": [
       "<p>Thanks to your efforts, our group made it back from the Creepy Crag safe and sound",
-      "Here's a cut of the loot as a reward.</p><p>Warm Regards,</p><p>The Adventure League</p>"
+      "Here's a 10% cut of the loot as a reward. We'll be sure to tell everyone what great work you did",
+      "As always, thanks for working with The Action League",
+      "</p><p>Kindest Regards,</p><p>The Adventure League</p>"
     ],
     "type": "dungeon"
   }

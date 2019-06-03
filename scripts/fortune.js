@@ -95,8 +95,6 @@ const FortuneManager = {
 
         this.setPaid = true;
         refreshFortuneInfo();
-
-        console.log(this.goodLine,this.greatLine,this.epicLine);
     },
     propsByType(type) {
         const props = {};

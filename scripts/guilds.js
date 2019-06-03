@@ -30,7 +30,7 @@ class Guild {
         Object.assign(this, props);
         this.rep = 0;
         this.lvl = 0;
-        this.order = this.generateNewOrder();
+        this.order = [];
     }
     createSave() {
         const save = {};
@@ -82,18 +82,15 @@ class Guild {
         return this.order.every(o=>o.complete());
     }
     generateNewOrder() {
-        const order = [];
+        this.order = [];
         const possibleItems = recipeList.recipes.filter(r => r.repReq === this.lvl);
         const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
         const chosenFirst = possibleGuildItems[Math.floor(Math.random()*possibleGuildItems.length)];
         const chosenSecond = possibleItems[Math.floor(Math.random()*possibleItems.length)];
         const chosenThird = possibleItems[Math.floor(Math.random()*possibleItems.length)];
-        order.push(new guildOrderItem(chosenFirst.id,3,0,0));
-        if (this.lvl === 0) return order;
-        order.push(new guildOrderItem(chosenSecond.id,3,0,0));
-        if (this.lvl === 1) return order;
-        order.push(new guildOrderItem(chosenThird,3,0,0));
-        return order;
+        this.order.push(new guildOrderItem(chosenFirst.id,3,0,0));
+        if (this.lvl >= 1) this.order.push(new guildOrderItem(chosenSecond.id,3,0,0));
+        if (this.lvl >= 2) this.order.push(new guildOrderItem(chosenThird,3,0,0));
     }
     getItem(slot) {
         return this.order[slot];
@@ -107,7 +104,7 @@ class Guild {
         submitContainer.fufilled += 1;
         if (this.orderComplete()) {
             this.addRep();
-            this.order = this.generateNewOrder();
+            this.generateNewOrder();
         }
         refreshAllOrders();
     }
@@ -275,7 +272,6 @@ $(document).on("click",".guildListButton",(e) => {
     const gid = $(e.currentTarget).data("gid");
     GuildManager.lastClicked = gid;
     $(".guildContainer").hide();
-    console.log(gid);
     if (gid === "ActionLeague") $("#actionLeague").show();
     else $("#"+gid).show();
 });
@@ -353,6 +349,13 @@ const ActionLeague = {
         this.purchased.push(id);
         perk.activate();
     },
+    generateNoto(rewards) {
+        //takes the rewards list and generates how many pts you should get
+        const noto = rewards.map(r => {
+            ResourceManager.idToMaterial(r.id).notoAdd;
+        });
+        return noto.reduce((a,b) => a+b , 0);
+    }
 }
 
 class alRewards {
@@ -404,12 +407,10 @@ function createALGuildBar() {
 function refreshALperks() {
     $alp.empty();
     const perks = ActionLeague.perks.filter(p=> p.fame <= ActionLeague.lvl && !ActionLeague.purchased.includes(p.id));
-    console.log(perks);
     perks.forEach(perk => {
         $alp.append(createALperk(perk,true));
     });
     const perks2 = ActionLeague.perks.filter(p=> p.fame === ActionLeague.lvl+1);
-    console.log(perks2);
     perks2.forEach(perk => {
         $alp.append(createALperk(perk,false));
     });

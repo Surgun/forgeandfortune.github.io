@@ -59,6 +59,7 @@ const EventManager = {
         const eventTemplate = this.idToEventDB(id);
         const event = new Event(eventTemplate);
         event.reward = reward;
+        event.notoriety = ActionLeague.generateNoto(event.reward);
         event.time = time;
         event.floor = floor;
         event.beats = beats;
@@ -216,11 +217,10 @@ function bossRecipeUnlocks(recipes) {
     const d1 = $("<div/>").addClass("rewardDivTitle").html("Rewards");
     d.append(d1);
     recipes.forEach(recipe => {
-        console.log(recipe);
         const d2 = $("<div/>").addClass("rewardCard tooltip").attr("data-tooltip",recipe.name);
         const d3 = $("<div/>").addClass("rewardImage").html(recipe.itemPic());
         d.append(d2.append(d3));
-    })
+    });
     return d;
 }
 

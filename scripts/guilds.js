@@ -15,9 +15,7 @@ const GuildManager = {
         return save;
     },
     loadSave(save) {
-        console.log(save);
         save.guilds.forEach(guildSave => {
-            
             const guild = this.idToGuild(guildSave.id);
             guild.loadSave(guildSave);
         });
@@ -151,7 +149,7 @@ const $guildList = $("#guildList");
 
 function initializeGuilds() {
     $guildList.empty();
-    $("<div/>").addClass("guildListButton").data("gid","ActionLeague").html("Action League").appendTo($guildList);
+    $("<div/>").addClass("guildListButton").data("gid","ActionLeague").html("The Action League").appendTo($guildList);
     GuildManager.guilds.forEach(g => {
         $("<div/>").addClass("guildListButton").data("gid",g.id).html(g.name).appendTo($guildList);
         $(`#${g.id}Name`).html(g.name);
@@ -163,6 +161,8 @@ function initializeGuilds() {
         refreshSales(g);
         refreshGuildWorkers(g);
     });
+    refreshALperks();
+    refreshALprogress();
 };
 
 function refreshAllProgress() {
@@ -402,22 +402,33 @@ function createALGuildBar() {
 
 function refreshALperks() {
     $alp.empty();
-    const perks = ActionLeague.perks.filter(p=>o.fame >= ActionLeague.lvl && !ActionLeague.purchased.includes(o.id));
+    const perks = ActionLeague.perks.filter(p=> p.fame <= ActionLeague.lvl && !ActionLeague.purchased.includes(p.id));
+    console.log(perks);
     perks.forEach(perk => {
-        $alp.append(createALPerk(perk));
+        $alp.append(createALperk(perk,true));
+    });
+    const perks2 = ActionLeague.perks.filter(p=> p.fame === ActionLeague.lvl+1);
+    console.log(perks2);
+    perks2.forEach(perk => {
+        $alp.append(createALperk(perk,false));
     });
 }
 
-function createALperk(perk) {
+function createALperk(perk,canbuy) {
     const d1 = $("<div/>").addClass("alPerk");
     const d2 = $("<div/>").addClass("alTitle").html(perk.title);
     const d3 = $("<div/>").addClass("alImage").html(perk.image);
     const d4 = $("<div/>").addClass("alDesc").html(perk.description);
-    const d5 = $("<div/>").addClass("alPerkBuy").data("pid",perk.id);
-        $("<div/>").addClass("alPerkBuyText").html("Unlock").appendTo(d5);
-        $("<div/>").addClass("alPerkBuyCost").html(`${formatToUnits(perk.npCost,2)}`).appendTo(d6);
-    return d1.append(d2,d3,d4,d5);
+    if (canbuy) {
+        const d5 = $("<div/>").addClass("alPerkBuy").data("pid",perk.id);
+            $("<div/>").addClass("alPerkBuyText").html("Unlock").appendTo(d5);
+            $("<div/>").addClass("alPerkBuyCost").html(`${formatToUnits(perk.npCost,2)}`).appendTo(d5);
+        return d1.append(d2,d3,d4,d5);
+    }
+    const d6 = $("<div/>").addClass("alPerkCantBuy").html("Available Next Level");
+    return d1.append(d2,d3,d4,d6)
 }
+
 
 //buy a perk
 $(document).on("click",".alPerkBuy", (e) => {

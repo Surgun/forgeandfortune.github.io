@@ -85,7 +85,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -369,7 +369,32 @@ body {
     padding: 5px 20px;
 }
 
-.DungeonSideBarStatus, #inventorySidebar {
+.sidebarContentContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.invSideContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-grow: 1;
+    text-align: center;
+    background-color: var(--bg-tertiary);
+    border: 1px solid transparent;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 2.5px;
+}
+
+.invSideContainer > img {
+    margin-right: 5px;
+}
+
+.DungeonSideBarStatus {
     position: relative;
     text-align: center;
     background-color: var(--bg-tertiary);
@@ -377,9 +402,6 @@ body {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 15px;
-}
-
-.DungeonSideBarStatus {
     cursor: pointer;
 }
 
@@ -417,7 +439,7 @@ body {
     width: 100%;
 }
 
-.invActionButton, #sortBank, #sortInventoryBank, .recipeActionButton, .dungeonSpeedButtons {
+.invActionButton, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .dungeonSpeedButtons {
     position: relative;
     display: flex;
     justify-content: center;
@@ -432,7 +454,7 @@ body {
     animation: 0.2s scale-in forwards;
 }
 
-.invActionButton:hover, #sortBank:hover, #sortInventoryBank:hover, .recipeActionButton:hover, .recipeSortInput:hover, .dungeonSpeedButtons:hover {
+.invActionButton:hover, #sortBank:hover, #sortInventoryBank:hover, .recipeActionButton:hover, .recipeDropdownButton:hover, .recipeSortInput:hover, .dungeonSpeedButtons:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -1066,11 +1088,64 @@ Rarities
     overflow: auto;
 }
 
-.recipe-sort-container {
+.recipeDropdownContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.recipeDropdownContainer:after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 10px;
+    right: -10px;
+    width: 2px;
+    height: calc(100% - 10px);
+    background-color: var(--border-tertiary);
+}
+
+.recipeSortContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
+}
+
+.recipeActionButton.filterActive {
+    color: var(--highlight);
+    padding-right: 25px;
+}
+
+.recipeDropdownButton {
+    padding-right: 25px;
+}
+
+.recipeDropdownButton .activeStatus > i {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 12px;
+}
+
+.recipeActionButton .filterStatus > i {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.recipeActionButton.filterActive .filterStatus > i {
+    opacity: 1;
+}
+
+.recipeActionButton.filterActive.toggleFilter .filterStatus > i {
+    top: 13px;
+    transform: rotateZ(-180deg);
 }
 
 .recipeSortSearch {
@@ -1320,29 +1395,6 @@ Rarities
     grid-auto-rows: auto;
     grid-gap: 10px;
     margin: 10px 20px 10px 10px;
-}
-
-.recipeActionButton.filterActive {
-    color: var(--highlight);
-    padding-right: 25px;
-}
-
-.recipeActionButton .filterStatus > i {
-    position: absolute;
-    top: 15px;
-    right: 10px;
-    font-size: 12px;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.recipeActionButton.filterActive .filterStatus > i {
-    opacity: 1;
-}
-
-.recipeActionButton.filterActive.toggleFilter .filterStatus > i {
-    top: 13px;
-    transform: rotateZ(-180deg);
 }
 
 .brecipeTable {

@@ -17,6 +17,9 @@
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
     <!-- End Google Analytics -->
+    <!-- Font Awesome Integration -->
+    <script src="https://kit.fontawesome.com/f1907b3369.js"></script>
+    <!-- End Font Awesome -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Forge &amp; Fortune</title>
@@ -41,7 +44,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1" crossorigin="anonymous">
     <!-- Favicons & Application Styling -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
@@ -300,15 +302,21 @@
                             <a class="recipeSelect" id="rfWhips" href="WhipSelector">Whips</a>
                         </div>
                         <div id="recipes-list">
-                            <div id="RecipeSorting" class="recipe-sort-container">
-                                <div class="recipeActionButton" data-filter="name">Name <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
-                                <div class="recipeActionButton" data-filter="lvl">Level <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
-                                <div class="recipeActionButton" data-filter="value">Value <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
-                                <div class="recipeActionButton" data-filter="time">Craft Time <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
-                                <div class="recipeActionButton" data-filter="mastery">Mastery <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
-                                <div class="recipeSortSearch">
-                                    <input id="recipeSortInput" class="recipeSortInput" type="text" name="recipe-search" placeholder="Search for a recipe...">
-                                    <div class="recipeSortButton"><i class="fas fa-search"></i></div>
+                            <div id="RecipeTop" class="recipeTopContainer">
+                                <div id="RecipeSorting" class="recipeSortContainer">
+                                    <div id="RecipeDropdownDetails" class="recipeDropdownContainer">
+                                        <div class="recipeDropdownButton">Materials <div class="activeStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                        <div class="recipeDropdownButton">Workers <div class="activeStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    </div>
+                                    <div class="recipeActionButton" data-filter="name">Name <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton" data-filter="lvl">Level <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton" data-filter="value">Value <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton" data-filter="time">Craft Time <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton" data-filter="mastery">Mastery <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeSortSearch">
+                                        <input id="recipeSortInput" class="recipeSortInput" type="text" name="recipe-search" placeholder="Search for a recipe...">
+                                        <div class="recipeSortButton"><i class="fas fa-search"></i></div>
+                                    </div>
                                 </div>
                             </div>
                             <div id="RecipeResults">
@@ -661,8 +669,11 @@
             </footer>
             <div id='right-side-content' role="complementary" aria-labelledby="comptitle2">
                 <div id="as-header">
-                    <h2 id="comptitle1" class="heading">Inventory</h2>
-                    <div id="inventorySidebar">0/20</div>
+                    <h2 id="comptitle1" class="heading">Gold &amp; Inventory</h2>
+                    <div class="sidebarContentContainer">
+                        <div id="goldSidebar" class="invSideContainer"><img src="images/resources/M001.png" alt="Gold"> 0</div>
+                        <div id="inventorySidebar" class="invSideContainer">0/20</div>
+                    </div>
                 </div>
                 <div id="as-header">
                     <h2 id="comptitle2" class="heading">Crafting Slots</h2>

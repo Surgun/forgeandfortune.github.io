@@ -358,7 +358,7 @@ const ActionLeague = {
 class alRewards {
     constructor (props) {
         Object.assign(this, props);
-        this.image = `<img src='images/perks/"${this.id}.png'>`;
+        this.image = `<img src='images/perks/${this.id}.png'>`;
     }
     activate() {
         if (this.type === "hero") HeroManager.gainHero(this.subtype);

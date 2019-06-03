@@ -380,7 +380,7 @@ function refreshInventory() {
         itemdiv.append(itemName,itemLevel,itemCost,itemProps,actionBtns);
         $inventory.append(itemdiv);
     });
-    $sideInventory.html(`${Inventory.inventoryCount()}/20`)
+    $sideInventory.html(`<i class="fas fa-cube"></i> ${Inventory.inventoryCount()}/20`)
     if (Inventory.inventoryCount() === 20) $sideInventory.addClass("inventoryFullSide");
     else $sideInventory.removeClass("inventoryFullSide");
 }

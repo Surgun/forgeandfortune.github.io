@@ -134,12 +134,14 @@ const $materials = $("#materials");
 function initializeMats() {
     ResourceManager.reOrderMats();
     ResourceManager.materials.forEach(mat => {
-        const d = $("<div/>").addClass("material tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
-        const d1 = $("<div/>").addClass("materialName").html(mat.img);
-        const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(formatToUnits(mat.amt,2));
-        d.append(d1,d2);
-        d.hide();
-        $materials.append(d);
+        if (mat.id != "M001") {
+            const d = $("<div/>").addClass("material tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
+            const d1 = $("<div/>").addClass("materialName").html(mat.img);
+            const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(formatToUnits(mat.amt,2));
+            d.append(d1,d2);
+            d.hide();
+            $materials.append(d);
+        }
     })
 }
 

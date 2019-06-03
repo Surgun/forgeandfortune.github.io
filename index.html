@@ -222,19 +222,6 @@
         </div>
         <!-- End of Dialogs -->
         <section class="game-content">
-            <div class="status">
-                <div id="game-logo"><h1>Forge &amp; Fortune</h1></div>
-                <div id="side-content">
-                    <div id="workers-container">
-                        <p class="heading">Workers<span class="heading-arrow"><i class="fas fa-angle-down"></i></span></p>
-                        <div id ="workersUse"></div>
-                    </div>
-                    <div id="materials-container">
-                        <p class="heading">Materials<span class="heading-arrow"><i class="fas fa-angle-down"></i></span></p>
-                        <div id="materials"></div>
-                    </div>
-                </div>
-            </div>
             <div class="game-wrapper" role="main">
                 
                 <div id="tabs" class="tab">
@@ -305,8 +292,8 @@
                             <div id="RecipeTop" class="recipeTopContainer">
                                 <div id="RecipeSorting" class="recipeSortContainer">
                                     <div id="RecipeDropdownDetails" class="recipeDropdownContainer">
-                                        <div class="recipeDropdownButton">Materials <div class="activeStatus"><i class="fas fa-chevron-down"></i></div></div>
-                                        <div class="recipeDropdownButton">Workers <div class="activeStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                        <div class="recipeDropdownButton" data-filter="materials">Materials <div class="activeStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                        <div class="recipeDropdownButton" data-filter="workers">Workers <div class="activeStatus"><i class="fas fa-chevron-down"></i></div></div>
                                     </div>
                                     <div class="recipeActionButton" data-filter="name">Name <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
                                     <div class="recipeActionButton" data-filter="lvl">Level <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
@@ -318,6 +305,10 @@
                                         <div class="recipeSortButton"><i class="fas fa-search"></i></div>
                                     </div>
                                 </div>
+                            </div>
+                            <div id="RecipeLogistics" class="recipeLogisticsContainer">
+                                <div id="workersUse" class="logisticContainer logWorkers"></div>
+                                <div id="materials" class="logisticContainer logMaterials"></div>
                             </div>
                             <div id="RecipeResults">
                                 <div id="recipeTable" class="recipeTable">
@@ -672,7 +663,7 @@
                     <h2 id="comptitle1" class="heading">Gold &amp; Inventory</h2>
                     <div class="sidebarContentContainer">
                         <div id="goldSidebar" class="invSideContainer"><img src="images/resources/M001.png" alt="Gold"> 0</div>
-                        <div id="inventorySidebar" class="invSideContainer">0/20</div>
+                        <div id="inventorySidebar" class="invSideContainer"><i class="fas fa-cube"></i> 0/20</div>
                     </div>
                 </div>
                 <div id="as-header">

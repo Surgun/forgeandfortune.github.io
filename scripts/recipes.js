@@ -485,3 +485,31 @@ $(document).on('keydown','.recipeSortInput', (e) => {
     recipeList.recipeFilterType = "default";
     recipeFilterList();
 });
+
+const $RecipeLogistics = $("#RecipeLogistics");
+const $recipeDropdownButton = $(".recipeDropdownButton");
+
+$(document).on('click','.recipeDropdownButton', (e) => {
+    e.preventDefault(); 
+    const toggleFilter = $(e.currentTarget).hasClass("filterActive");
+    const filter = $(e.currentTarget).attr("data-filter");
+    $RecipeLogistics.show();
+    if (filter === "workers") {
+        $recipeDropdownButton.removeClass("filterActive")
+        $(e.currentTarget).addClass("filterActive");
+        $(".logisticContainer ").removeClass("expanded");
+        $("#workersUse").addClass("expanded");
+    }
+    if (filter === "materials") {
+        $recipeDropdownButton.removeClass("filterActive")
+        $(e.currentTarget).addClass("filterActive");
+        $(".logisticContainer ").removeClass("expanded");
+        $("#materials").addClass("expanded");
+        
+    }
+    if (toggleFilter) {
+        $(e.currentTarget).removeClass("filterActive");
+        $(".logisticContainer ").removeClass("expanded");
+        $RecipeLogistics.hide();
+    }
+});

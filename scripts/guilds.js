@@ -91,7 +91,7 @@ class Guild {
         this.order.push(new guildOrderItem(chosenFirst.id, this.lvl));
         if (this.lvl >= 1) this.order.push(new guildOrderItem(chosenSecond.id, this.lvl));
         if (this.lvl >= 2) this.order.push(new guildOrderItem(chosenThird.id, this.lvl));
-        console.log(this.order);
+        refreshguildOrder(this);
     }
     getItem(slot) {
         return this.order[slot];
@@ -122,6 +122,7 @@ class guildOrderItem {
         this.sharp = this.generateSharp(lvl);
         this.fufilled = 0;
         this.repgain = 1;
+        this.displayName = this.generateName();
     }
     createSave() {
         const save = {};
@@ -166,6 +167,10 @@ class guildOrderItem {
         const sharpMax = miscLoadedValues["goSharpMax"][lvl];
         if (sharpChance < Math.floor(Math.random() * 100)) return 0;
         return bellCurve(sharpMin,sharpMax);
+    }
+    generateName() {
+        if (this.sharp > 0) return `+${this.sharp} ${this.item.name}</span>`
+        return `${this.item.name}`
     }
 }
 
@@ -217,8 +222,8 @@ function refreshguildOrder(guild) {
     const id = guild.id;
     const $go = $(`#${id}Order`);
     $go.empty();
+    console.log(guild.order);
     guild.order.forEach((item,i) => {
-        console.log(item);
         $go.append(createOrderCard(item,id,i));
     });
 };
@@ -226,7 +231,7 @@ function refreshguildOrder(guild) {
 function createOrderCard(item,id,index) {
     const d1 = $("<div/>").addClass("orderCard").data({"slot":index,"gid":id});
     const d2 = $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id));
-    const d3 = $("<div/>").addClass("orderName").html(item.item.name);
+    const d3 = $("<div/>").addClass("orderName").addClass("orderName"+item.rarity).html(item.displayName);
     const d4 = $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id));
     const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Needed`);
     if (item.complete()) d1.hide();

@@ -329,17 +329,18 @@ const ActionLeague = {
         return this.perk.find(r=>r.id === id);
     },
     addNoto(amt) {
-        if (this.fame === this.maxfame()) return;
+        if (this.lvl === this.maxfame()) return;
         this.notoriety += amt
         while (this.notoriety > this.fameLvl()) {
             this.notoriety -= this.fameLvl();
             this.lvl += 1;
             this.np += 1;
+            if (this.lvl === this.maxfame())  this.notoriety = 0;
         }
         refreshALprogress();
     },
     maxfame() {
-        return DungeonManager.bossesBeat.length*10;
+        return 10+DungeonManager.bossesBeat.length*10;
     },
     fameLvl() {
         return miscLoadedValues["alFameReq"][this.lvl];
@@ -357,8 +358,6 @@ const ActionLeague = {
         const noto = rewards.map(r => {
             return r.amt*ResourceManager.idToMaterial(r.id).notoAdd;
         });
-        console.log(noto);
-        console.log(noto.reduce((a,b) => a+b , 0));
         return noto.reduce((a,b) => a+b , 0);
     }
 }
@@ -398,12 +397,18 @@ const $alp = $("#ALPerks");
 function refreshALprogress() {
     $algp.empty();
     $algp.append(createALGuildBar());
+    $("<div/>").addClass("progressNP").html(`Notoriety Points (NP): ${ActionLeague.np}`).appendTo($algp);
 }
 
 function createALGuildBar() {
     const notoPercent = ActionLeague.notoriety/ActionLeague.fameLvl();
     const notoWidth = (notoPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("notoBarDiv");
+    if (ActionLeague.lvl === ActionLeague.maxfame()) {
+        const d2a = $("<div/>").addClass("notoBar").attr("data-label",`Level ${ActionLeague.lvl} (Max Notoriety)`);
+        const s1a = $("<span/>").addClass("notoBarFill").css('width',"100%");
+        return d1.append(d2a,s1a);
+    }
     const d2 = $("<div/>").addClass("notoBar").attr("data-label",`Level ${ActionLeague.lvl} (${ActionLeague.notoriety}/${ActionLeague.fameLvl()})`);
     const s1 = $("<span/>").addClass("notoBarFill").css('width',notoWidth);
     return d1.append(d2,s1);

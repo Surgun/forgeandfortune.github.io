@@ -413,7 +413,8 @@ $(document).on('click', '.adjustSpeedBtn', (e) => {
 $(document).on('click', '.gearHeroesBtn', (e) => {
     const itemLevel = parseInt(document.querySelector(".gearHeroesLevel").value);
     const itemRarity = parseInt(document.querySelector(".gearHeroesRarity").value);
-    devtools.gearHeroes(itemLevel,itemRarity);
+    const itemSharp = parseInt(document.querySelector(".gearHeroesSharp").value);
+    devtools.gearHeroes(itemLevel,itemRarity,itemSharp);
 });
 
 $(document).on('click', '.addItemBtn', (e) => {

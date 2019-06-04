@@ -2673,11 +2673,10 @@ Rarities
 }
 
 .heroExamineEquip {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
+    display: grid;
+    grid-template: auto / repeat(3,195px);
+    justify-content: center;
     width: 100%;
-    max-width: 600px;
 }
 
 .heroExamineEquipment {
@@ -2722,7 +2721,7 @@ Rarities
 }
 
 .heroExamineEquipmentEquip > .item-name, .heroExamineEquipmentEquip > .item-prefix-name {
-    max-width: 110px;
+    max-width: 140px;
     margin: auto;
 }
 
@@ -5670,7 +5669,10 @@ span.beta-tag {
 /* Expand equip slots to use all available space on large displays */
 @media screen and (min-width: 1550px) {
     .heroExamineEquip {
-        max-width: unset;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        max-width: 1100px;
     }
 }
 
@@ -5838,6 +5840,7 @@ span.beta-tag {
 
 .dbActionButton:hover {
     background-color: rgba(255,255,255,.25);
+    color: var(--highlight);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 

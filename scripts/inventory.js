@@ -336,6 +336,9 @@ const Inventory = {
     itemCountAll(id) {
         return this.nonblank().filter(r=>r.id === id).length;
     },
+    itemCountSpecific(id,rarity,sharp) {
+        return this.nonblank().filter(r=>r.id === id && r.rarity === rarity && r.sharp === sharp).length;
+    },
     removePrecraft(id,amt) {
         if (this.itemCount(id,0) < amt) return;
         for (let i=0;i<amt;i++) this.removeFromInventory(id,0);
@@ -443,6 +446,7 @@ function gearEquipFromInventory(invID) {
 function refreshInventoryPlaces() {
     refreshInventory();
     refreshCardInvCount();
+    refreshOrderInvCount()
     refreshPossibleFuse();
     refreshBankInventory();
     refreshSmithInventory();

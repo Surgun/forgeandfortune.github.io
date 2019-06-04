@@ -141,9 +141,10 @@ class Dungeon {
             h.ap = 0;
             h.hp = h.maxHP()
         });
-        if (this.type === "boss") {
+        if (this.type === "boss" && this.mobs.every(m=>m.dead())) {
             EventManager.addEventBoss(this.id,this.dungeonTime);
             DungeonManager.bossesBeat.push(this.id);
+            refreshALprogress();
             refreshRecipeFilters();
         }
         else EventManager.addEventDungeon(this.eventLetter,this.dropList,this.dungeonTotalTime,this.floorCount, this.beatTotal);

@@ -228,7 +228,8 @@ function initiateDungeonFloor(dungeonID) {
         const d3 = $("<div/>").addClass("dfcImage").html(hero.image);
         const d4 = $("<div/>").addClass("dscHP").html(createHPBar(hero,"Dung"));
         const d5 = $("<div/>").addClass("dscAP").html(createAPBar(hero,"Dung"));
-        d1.append(d2,d3,d4,d5);
+        d1.append(d2,d3);
+        if (settings.toggleTurnOrderBars === 1) d1.append(d4,d5);
         $dungeonHeroList.prepend(d1);
     });
     dungeon.mobs.forEach((mob) => {
@@ -237,11 +238,13 @@ function initiateDungeonFloor(dungeonID) {
         const d8 = $("<div/>").addClass("dfmImage").html(mob.image);
         const d9 = $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung"));
         const d10 = $("<div/>").addClass("dsmAP").html(createAPBar(mob,"Dung"));
-        d6.append(d7,d8,d9,d10);
+        d6.append(d7,d8);
+        if (settings.toggleTurnOrderBars === 1) d6.append(d9,d10);
         if (mob.hp === 0) d6.addClass("mobDead");
         if (mob.apAdd === 0) d10.hide();
         $dungeonMobList.append(d6);
     });
+    checkTurnOrderPref();
     refreshTurnOrder(dungeonID);
 }
 
@@ -257,8 +260,7 @@ function refreshTurnOrder(dungeonID) {
         const d1c = $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder"));
         const d1d = $("<div/>").addClass("orderUnitAP").html(createAPBar(unit,"turnOrder"));
         if (unit.apAdd === 0) d1d.hidden();
-        d1.append(d1a,d1b);
-        if (settings.toggleTurnOrderBars === 1) d1.append(d1c,d1d);
+        d1.append(d1a,d1b,d1c,d1d);
         if (dungeon.order.position === i) {
             d1.addClass("orderUnitActive").append(createBeatBar(0));
         };

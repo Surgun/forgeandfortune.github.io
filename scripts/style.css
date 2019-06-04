@@ -2283,6 +2283,7 @@ Rarities
 
 .recipeBuyCardBuyLater, .alPerkCantBuy {
     margin-top: 10px;
+    flex-grow: 1;
     color: var(--highlight);
 }
 
@@ -2997,6 +2998,11 @@ div.EquipmentCardsContainer {
     overflow: hidden;
 }
 
+#drArena.reducedHeight {
+    min-height: 250px;
+    max-height: 250px;
+}
+
 .bgContainer {
     position: absolute;
     top: 0;
@@ -3357,7 +3363,7 @@ div.EquipmentCardsContainer {
 
 #drTurnOrder {
     display: grid;
-    grid-template: auto / repeat(auto-fit, minmax(150px,1fr));
+    grid-template: auto / repeat(auto-fill, minmax(175px,1fr));
     grid-gap: 10px;
     align-items: start;
     align-content: start;
@@ -5680,15 +5686,6 @@ span.beta-tag {
 
     .brecipeTable .recipeCraft > span {
         display: inline;
-    }
-
-    #drArena {
-        min-height: 230px;
-        max-height: 230px;
-    }
-
-    .dscHP, .dscAP, .dsmHP, .dsmAP {
-        display: none;
     }
 }
 

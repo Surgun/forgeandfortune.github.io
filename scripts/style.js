@@ -254,16 +254,19 @@ function assignTurnOrderPref(e) {
 }
 
 function checkTurnOrderPref() {
-    const containers = document.querySelectorAll(".orderUnitHP, .orderUnitAP");
+    const containers = document.querySelectorAll(".dscHP, .dscAP, .dsmHP, .dsmAP");
+    const combatArea = document.querySelector("#drArena");
     if (settings.toggleTurnOrderBars === 1) {
         containers.forEach((container) => {
             container.classList.remove("none");
         });
+        combatArea.classList.remove("reducedHeight");
         
     } else if (settings.toggleTurnOrderBars === 0) {
         containers.forEach((container) => {
             container.classList.add("none");
         });
+        combatArea.classList.add("reducedHeight");
     }
 }
 

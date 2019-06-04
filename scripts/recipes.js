@@ -154,6 +154,7 @@ const recipeList = {
         }
         ResourceManager.deductMoney(recipe.goldCost);
         recipe.owned = true;
+        Notifications.buyRecipe(recipe.name);
         refreshRecipeFilters();
         refreshAllSales();
 

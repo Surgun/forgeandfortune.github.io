@@ -188,6 +188,12 @@ const Notifications = {
         const heading = "Cannot Purchase Reward";
         const icon = "error";
         popToast(text,heading,icon);
+    },
+    buyRecipe(name) {
+        const text = `Craft your new ${name} on the recipe tab!`; // Text that is to be shown in the toast
+        const heading = 'You purchased a recipe!'; // Optional heading to be shown on the toast
+        const icon = 'info'; // Type of toast icon
+        popToast(text,heading,icon);
     }
 }
 

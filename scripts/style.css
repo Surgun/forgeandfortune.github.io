@@ -85,7 +85,7 @@ body.lightmode {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, .alPerkBuy {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -2102,7 +2102,7 @@ Rarities
     border-radius: 5px;
 }
 
-.Worker .BuyWorker, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost {
+.Worker .BuyWorker, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .alPerkBuy {
     position: relative;
     border: 0;
     font-size: 1em;
@@ -2111,7 +2111,7 @@ Rarities
     align-items: center;
 }
 
-.upgrade_text, .unlockbp_text, .buyWorkerText, .buyHeroText, .ASBuySlotText, .dungeon_upgrade_text {
+.upgrade_text, .unlockbp_text, .buyWorkerText, .buyHeroText, .ASBuySlotText, .dungeon_upgrade_text, .alPerkBuyText {
     padding: 0 10px;
     margin-right: 10px;
 }
@@ -2221,6 +2221,27 @@ Rarities
     color: var(--text-secondary);
 }
 
+#ALPerks {
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.alPerk {
+    text-align: center;
+}
+
+.alTitle {
+    color: var(--highlight);
+}
+
+.alImage {
+    margin: 5px 0;
+}
+
+.alDesc {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
 .guildOrder, .guildSales, .guildWorkers {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
@@ -2260,7 +2281,7 @@ Rarities
     margin: 10px 0;
 }
 
-.recipeBuyCardBuyLater {
+.recipeBuyCardBuyLater, .alPerkCantBuy {
     margin-top: 10px;
     color: var(--highlight);
 }
@@ -3828,7 +3849,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 0;
 }
 
-.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .alPerk {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -4032,7 +4053,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .eventConfirm, #dungeonTeamButton, .recipeBuyCardBuy, .workerBuyCardBuy {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .eventConfirm, #dungeonTeamButton, .recipeBuyCardBuy, .workerBuyCardBuy, .alPerkBuy {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -4043,7 +4064,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .eventConfirm:hover, #dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .eventConfirm:hover, #dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -4118,18 +4139,18 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 0 10px;
 }
 
-#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .eventConfirm:hover, #dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover {
+#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .eventConfirm:hover, #dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover  {
     background-color: var(--green-tertiary);
 }
 
-#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .dungeon_cost, .recipeBuyCardBuyCost {
+#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .dungeon_cost, .recipeBuyCardBuyCost, .alPerkBuyCost {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .recipeBuyCardBuyCost {
+.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .recipeBuyCardBuyCost, .alPerkBuyCost {
     position: relative;
     margin-top: 5px;
     padding: 5px;
@@ -4138,11 +4159,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     border-radius: 5px;
 }
 
-.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img, .dungeon_cost > img, .recipeBuyCardBuyCost > img {
+.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img, .dungeon_cost > img, .recipeBuyCardBuyCost > img, .alPerkBuyCost > img {
     margin: 0 5px;
 }
 
-.worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost {
+.worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .alPerkBuyCost {
     margin-top: 0;
     max-width: 120px;
 }

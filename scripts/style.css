@@ -345,6 +345,10 @@ body {
     align-items: center;
 }
 
+#inventorySidebar {
+    max-width: 90px;
+}
+
 .invSideContainer {
     display: flex;
     justify-content: center;
@@ -1084,18 +1088,6 @@ Rarities
     background-color: var(--bg-primary);
 }
 
-.recipeLogisticsContainer:before {
-    position: absolute;
-    top: -55px;
-    left: 5px;
-    content: "";
-    width: 233px;
-    height: 60px;
-    background-color: var(--bg-primary);
-    border-radius: 5px;
-    z-index: -1;
-}
-
 .logisticContainer {
     display: none;
     grid-template: auto / repeat(auto-fill, minmax(225px,1fr));
@@ -1108,7 +1100,7 @@ Rarities
 }
 
 .logMaterials {
-    grid-template: auto / repeat(auto-fill, minmax(100px,1fr));
+    grid-template: auto / repeat(auto-fill, minmax(110px,1fr));
 }
 
 .recipeSortContainer {
@@ -4973,6 +4965,11 @@ footer a[href*="discord.gg"]:hover {
 
 .heroStat.tooltip:after, .heroPowStat.tooltip:after, .gearStat.tooltip:after {
     width: 50px;
+    margin: 0 auto;
+}
+
+.invSideContainer.tooltip:after {
+    width: 130px;
     margin: 0 auto;
 }
 

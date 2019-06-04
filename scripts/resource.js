@@ -19,6 +19,7 @@ class Material{
     }
 }
 
+const $goldSidebar = $("#goldSidebar");
 const $goldSidebarAmt = $("#goldSidebarAmt");
 
 const ResourceManager = {
@@ -48,8 +49,9 @@ const ResourceManager = {
         mat.amt += amt;
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
-        $("#amt"+mat.id).html(formatToUnits(mat.amt,3));
-        $goldSidebarAmt.html(formatToUnits(mat.amt,3));
+        $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
+        $goldSidebarAmt.html(formatToUnits(mat.amt,2));
+        $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);
     },
     canAffordMaterial(item) {
         if (item.mcost === null) return true;
@@ -153,6 +155,8 @@ function hardMatRefresh() {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
+        $goldSidebarAmt.html(formatToUnits(mat.amt,2));
+        $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);
     })
 }
 

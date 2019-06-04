@@ -190,14 +190,9 @@ const DungeonManager = {
     unlockDungeon(id) {
         this.dungeonPaid.push(id);
     },
-    bossDungeonCanJoin(id) {
-        if (this.dungeonByID(id).type === "regular") return true;
-        return this.dungeonPaid.includes(id);
-    },
     bossDungeonCanSee(id) {
-        const dungeon = this.dungeonByID(id);
-        if (dungeon.type === "regular" || this.dungeonPaid.includes(id) || dungeon.preReq === null) return true;
-        return this.dungeonPaid.includes(dungeon.preReq);
+        if (this.bossesBeat.includes(id)) return false;
+        return this.dungeonByID(id).type === "regular" || this.dungeonPaid.includes(id);
     },
     createSave() {
         const save = {};

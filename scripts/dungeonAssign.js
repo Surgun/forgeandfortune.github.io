@@ -35,15 +35,9 @@ const $dungeonListingBoss = $("#dungeonListingBoss");
 function refreshDungeonSelect() {
     //shows each dungeon so you can select that shit...
     $dungeonListings.empty();
-    DungeonManager.dungeons.filter(d=>d.type === "regular").forEach(dungeon => {
+    DungeonManager.dungeons.forEach(dungeon => {
         if (!DungeonManager.bossDungeonCanSee(dungeon.id)) return;
         $dungeonListings.append(dungeonBlock(dungeon));
-    });
-    $dungeonListingBoss.empty();
-    DungeonManager.dungeons.filter(d=>d.type === "boss").forEach(dungeon => {
-        if (!DungeonManager.bossDungeonCanSee(dungeon.id)) return;
-        if (DungeonManager.bossesBeat.includes(dungeon.id)) return;
-        $dungeonListingBoss.append(dungeonBlock(dungeon));
     });
 }
 
@@ -53,7 +47,7 @@ function dungeonBlock(dungeon) {
     const d2 = $("<div/>").addClass("dungeonHeader").html(dungeon.name);
     const d3 = $("<div/>").addClass("dungeonStatus").attr("id","ds"+dungeon.id);
     if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").html(`Fight in Progress`);
-    else if (!DungeonManager.bossDungeonCanJoin(dungeon.id)) d3.addClass("dungeonNotOpened").html("Not Opened");
+    else if (!DungeonManager.bossDungeonCanSee(dungeon.id)) d3.addClass("dungeonNotOpened").html("Not Opened");
     else d3.addClass("dungeonIdle").html("Idle");
     const d4 = $("<div/>").addClass("dungeonBackground");
     const d5 = $("<div/>").addClass("dungeonAdventurers");
@@ -66,7 +60,7 @@ function dungeonBlock(dungeon) {
             d5.append(d5a);
         });
     }
-    if (!DungeonManager.bossDungeonCanJoin(dungeon.id)) {
+    if (!DungeonManager.bossDungeonCanSee(dungeon.id)) {
         const money = ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(dungeon.openCost,2);
         d6.html(`<span class="dungeon_upgrade_text">Unlock</span><span class="dungeon_cost">${money}</span>`);
     }
@@ -79,7 +73,7 @@ $(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();
     const dungeonID = $(e.currentTarget).attr("id");
     const dungeon = DungeonManager.dungeonByID(dungeonID);
-    if (!DungeonManager.bossDungeonCanJoin(dungeon.id)) {
+    if (!DungeonManager.bossDungeonCanSee(dungeon.id)) {
         if (ResourceManager.materialAvailable("M001") < dungeon.openCost) {
             Notifications.dungeonGoldReq();
             return;

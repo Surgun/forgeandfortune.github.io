@@ -331,10 +331,11 @@ const ActionLeague = {
     addNoto(amt) {
         if (this.fame === this.maxfame()) return;
         this.notoriety += amt
-        if (this.notoriety < this.fameLvl()) return;
-        this.notoriety -= this.fameLvl();
-        this.lvl += 1;
-        this.np += 1;
+        while (this.notoriety > this.fameLvl()) {
+            this.notoriety -= this.fameLvl();
+            this.lvl += 1;
+            this.np += 1;
+        }
         refreshALprogress();
     },
     maxfame() {

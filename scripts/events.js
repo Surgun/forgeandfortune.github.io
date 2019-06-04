@@ -252,7 +252,6 @@ $(document).on('click', "div.eventList", (e) => {
         const d6 = $("<div/>").addClass("eventFloor").html("Floor " + event.floor);
         d.append(d5,d6);
     }
-    console.log(event.beats);
     if (event.beats !== null) {
         const d10 = $("<div/>").addClass("eventBeatHeading").html("Turns Taken:");
         const d11 = $("<div/>").addClass("eventBeat").html(event.beats + " turns");

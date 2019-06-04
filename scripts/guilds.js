@@ -304,8 +304,6 @@ $(document).on("click",".workerBuyCardBuy", (e) => {
 
 const ActionLeague = {
     notoriety : 0,
-    np : 0,
-    lvl : 0,
     purchased : [],
     perks : [],
     addPerk(reward) {
@@ -314,52 +312,48 @@ const ActionLeague = {
     createSave() {
         const save = {};
         save.notoriety = this.notoriety;
-        save.np = this.np;
-        save.lvl = this.lvl;
         save.purchased = this.purchased;
         return save;
     },
     loadSave(save) {
         this.notoriety = save.notoriety;
-        this.np = save.np;
-        this.lvl = save.lvl;
         this.purchased = save.purchased;
     },
     idToPerk(id) {
         return this.perks.find(r=>r.id === id);
     },
     addNoto(amt) {
-        if (this.lvl === this.maxfame()) return;
         this.notoriety += amt
-        while (this.notoriety > this.fameLvl()) {
-            this.notoriety -= this.fameLvl();
-            this.lvl += 1;
-            this.np += 1;
-            if (this.lvl === this.maxfame())  this.notoriety = 0;
-        }
+        this.notoriety = Math.min(this.notoriety, this.maxNoto());
         refreshALprogress();
+        refreshALperks();
     },
-    maxfame() {
-        return 10+DungeonManager.bossesBeat.length*10;
-    },
-    fameLvl() {
-        return miscLoadedValues["alFameReq"][this.lvl];
+    maxNoto() {
+        return miscLoadedValues["notoCap"][DungeonManager.bossesBeat.length];
     },
     buyPerk(id) {
         const perk = this.idToPerk(id);
-        if (this.np < perk.npCost) return Notifications.alRewardCost();
-        this.np -= perk.npCost;
+        if (ResourceManager.materialAvailable("M001") < perk.goldCost) {
+            Notifications.alRewardCost();
+            return;
+        }
+        ResourceManager.deductMoney(perk.goldCost);
         this.purchased.push(id);
         perk.activate();
         refreshALperks();
     },
     generateNoto(rewards) {
-        console.log(rewards);
         //takes the rewards list and generates how many pts you should get
         const noto = rewards.map(r => {
             return r.amt*ResourceManager.idToMaterial(r.id).notoAdd;
         });
         return noto.reduce((a,b) => a+b , 0);
+    },
+    nextUnlock() {
+        const perks = this.perks.filter(p => p.notoReq > this.notoriety);
+        const perkNoto = perks.map(p=>p.notoReq);
+        const lowest = Math.min(...perkNoto);
+        return this.perks.find(p => p.notoReq === lowest);
     }
 }
 
@@ -398,33 +392,24 @@ const $alp = $("#ALPerks");
 function refreshALprogress() {
     $algp.empty();
     $algp.append(createALGuildBar());
-    $("<div/>").addClass("progressNP").html(`Notoriety Points (NP): ${ActionLeague.np}`).appendTo($algp);
 }
 
 function createALGuildBar() {
-    const notoPercent = ActionLeague.notoriety/ActionLeague.fameLvl();
+    const notoPercent = ActionLeague.notoriety/ActionLeague.maxNoto();
     const notoWidth = (notoPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("notoBarDiv");
-    if (ActionLeague.lvl === ActionLeague.maxfame()) {
-        const d2a = $("<div/>").addClass("notoBar").attr("data-label",`Level ${ActionLeague.lvl} (Max Notoriety)`);
-        const s1a = $("<span/>").addClass("notoBarFill").css('width',"100%");
-        return d1.append(d2a,s1a);
-    }
-    const d2 = $("<div/>").addClass("notoBar").attr("data-label",`Level ${ActionLeague.lvl} (${ActionLeague.notoriety}/${ActionLeague.fameLvl()})`);
+    const d2 = $("<div/>").addClass("notoBar").attr("data-label",`Notoriety - ${ActionLeague.notoriety}/${ActionLeague.maxNoto()}`);
     const s1 = $("<span/>").addClass("notoBarFill").css('width',notoWidth);
     return d1.append(d2,s1);
 }
 
 function refreshALperks() {
     $alp.empty();
-    const perks = ActionLeague.perks.filter(p=> p.fame <= ActionLeague.lvl && !ActionLeague.purchased.includes(p.id));
+    const perks = ActionLeague.perks.filter(p=> p.notoReq <= ActionLeague.notoriety && !ActionLeague.purchased.includes(p.id));
     perks.forEach(perk => {
         $alp.append(createALperk(perk,true));
     });
-    const perks2 = ActionLeague.perks.filter(p=> p.fame === ActionLeague.lvl+1);
-    perks2.forEach(perk => {
-        $alp.append(createALperk(perk,false));
-    });
+    $alp.append(createALperk(ActionLeague.nextUnlock(),false));
 }
 
 function createALperk(perk,canbuy) {
@@ -435,10 +420,10 @@ function createALperk(perk,canbuy) {
     if (canbuy) {
         const d5 = $("<div/>").addClass("alPerkBuy").data("pid",perk.id);
             $("<div/>").addClass("alPerkBuyText").html("Unlock").appendTo(d5);
-            $("<div/>").addClass("alPerkBuyCost").html(`${formatToUnits(perk.npCost,2)}`).appendTo(d5);
+            $("<div/>").addClass("alPerkBuyCost").html(`${miscIcons.gold} ${formatToUnits(perk.goldCost,2)}`).appendTo(d5);
         return d1.append(d2,d3,d4,d5);
     }
-    const d6 = $("<div/>").addClass("alPerkCantBuy").html("Available Next Level");
+    const d6 = $("<div/>").addClass("alPerkCantBuy").html(`Available at ${perk.notoReq} Notoriety`);
     return d1.append(d2,d3,d4,d6)
 }
 

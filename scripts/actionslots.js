@@ -210,12 +210,12 @@ function initializeActionSlots() {
         d.append(d1,d2.append(a2),d3.append(s3),d4);
         $ActionSlots.append(d);
     }
-    if (actionSlotManager.maxSlots < 5) {
+    /*if (actionSlotManager.maxSlots < 5) {
         const d4 = $("<div/>").addClass("ASBuySlot");
         const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
         const d5 = $("<div/>").addClass("ASBuySlotTitle").html(`Unlock Crafting Slot`);
         const d6 = $("<div/>").addClass("ASBuySlotButton").html(`<div class="ASBuySlotText">Purchase</div><div class="ASBuySlotCost">${miscIcons.gold} ${formatToUnits(amt,2)}</div>`);
         d4.append(d5, d6);
         $ActionSlots.append(d4);
-    }
+    }*/
 }

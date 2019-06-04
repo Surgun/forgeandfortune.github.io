@@ -359,10 +359,9 @@ function initializeHeroList() {
     if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
         const amt = miscLoadedValues.heroCost[HeroManager.heroes.filter(h=>h.owned).length];
         const bh1 = $("<div/>").addClass("buyNewHeroCard")
-        const bh2 = $("<div/>").addClass("buyNewHeroTitle").html(`Unlock New Hero`);
-        const bh3 = $("<div/>").addClass("buyNewHeroDesc").html(`Purchase another hero to help with adventures.`);
-        const bh4 = $("<div/>").addClass("buyNewHeroButton").html(`<div class="buyHeroText">Purchase</div><div class="buyHeroCost">${miscIcons.gold} ${formatToUnits(amt,2)}</div>`);
-        bh1.append(bh2,bh3,bh4);
+        const bh2 = $("<div/>").addClass("buyNewHeroTitle").html(`Looking for more Heroes?`);
+        const bh3 = $("<div/>").addClass("buyNewHeroDesc").html(`Gain notoriety with the Action League to unlock more!`);
+        bh1.append(bh2,bh3);
         $heroList.append(bh1);
     }
 }

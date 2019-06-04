@@ -201,6 +201,18 @@ const recipeList = {
         const left = guilds.filter(g => g.repReq > lvl);
         return left.sort((a,b) => a.repReq - b.repReq)[0];
     },
+    guildOrderItems(lvl) {
+        const items = [];
+        ItemType.forEach(type => {
+            const typeList = this.recipes.filter(r=>r.type === type);
+            const guildWork = typeList.filter(r => r.repReq <= lvl);
+            const guildWorkRepReq = guildWork.map(r => r.repReq);
+            const chosenRepReq = Math.max(...guildWorkRepReq);
+            const item = guildWork.find(r => r.repReq === chosenRepReq);
+            if (item !== undefined) items.push(item);
+        });
+        return items;
+    }
 }
 
 const $recipeActionButton = $(".recipeActionButton");

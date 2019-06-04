@@ -83,7 +83,8 @@ class Guild {
     }
     generateNewOrder() {
         this.order = [];
-        const possibleItems = recipeList.recipes.filter(r => r.repReq === this.lvl);
+        const possibleItems = recipeList.guildOrderItems(this.lvl);
+        console.log(possibleItems);
         const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
         const chosenFirst = possibleGuildItems[Math.floor(Math.random()*possibleGuildItems.length)];
         const chosenSecond = possibleItems[Math.floor(Math.random()*possibleItems.length)];
@@ -109,6 +110,7 @@ class Guild {
         }
         refreshAllOrders();
     }
+
 }
 
 class guildOrderItem {
@@ -156,9 +158,9 @@ class guildOrderItem {
         const greatChance = miscLoadedValues["goGreat"][lvl]+epicChance;
         const goodChance = miscLoadedValues["goGood"][lvl]+greatChance;     
         const sharpRoll = Math.floor(Math.random() * 100);
-        if (epicChance < sharpRoll) return 3;
-        if (greatChance < sharpRoll) return 2;
-        if (goodChance < sharpRoll) return 1;
+        if (epicChance > sharpRoll) return 3;
+        if (greatChance > sharpRoll) return 2;
+        if (goodChance > sharpRoll) return 1;
         return 0;
     }
     generateSharp(lvl) {

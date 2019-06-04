@@ -282,7 +282,7 @@
     "id": "AL3001",
     "title": "Boss I",
     "description": "Boss I description will go here when we pick it.",
-    "notoReq": 160,
+    "notoReq": 100,
     "goldCost": 500,
     "type": "boss",
     "subtype": "D010"
@@ -291,7 +291,7 @@
     "id": "AL3002",
     "title": "Boss II",
     "description": "Boss II description will go here when we pick it.",
-    "notoReq": 165,
+    "notoReq": 1000,
     "goldCost": 500,
     "type": "boss",
     "subtype": "D011"
@@ -300,7 +300,7 @@
     "id": "AL3003",
     "title": "Boss III",
     "description": "Boss III description will go here when we pick it.",
-    "notoReq": 170,
+    "notoReq": 10000,
     "goldCost": 500,
     "type": "boss",
     "subtype": "D012"
@@ -309,7 +309,7 @@
     "id": "AL3004",
     "title": "Boss IV",
     "description": "Boss IV description will go here when we pick it.",
-    "notoReq": 175,
+    "notoReq": 10000,
     "goldCost": 500,
     "type": "boss",
     "subtype": "D013"
@@ -318,7 +318,7 @@
     "id": "AL3005",
     "title": "Boss V",
     "description": "Boss V description will go here when we pick it.",
-    "notoReq": 180,
+    "notoReq": 10000,
     "goldCost": 500,
     "type": "boss",
     "subtype": "D014"
@@ -327,7 +327,7 @@
     "id": "AL3006",
     "title": "Boss VI",
     "description": "Boss VI description will go here when we pick it.",
-    "notoReq": 185,
+    "notoReq": 10000,
     "goldCost": 500,
     "type": "boss",
     "subtype": "D015"
@@ -336,7 +336,7 @@
     "id": "AL3007",
     "title": "Boss VII",
     "description": "Boss VII description will go here when we pick it.",
-    "notoReq": 190,
+    "notoReq": 10000,
     "goldCost": 500,
     "type": "boss",
     "subtype": "D016"
@@ -345,7 +345,7 @@
     "id": "AL3008",
     "title": "Boss VIII",
     "description": "Boss VIII description will go here when we pick it.",
-    "notoReq": 195,
+    "notoReq": 10000,
     "goldCost": 500,
     "type": "boss",
     "subtype": "D017"
@@ -354,7 +354,7 @@
     "id": "AL3009",
     "title": "Boss IX",
     "description": "Boss IX description will go here when we pick it.",
-    "notoReq": 200,
+    "notoReq": 10000,
     "goldCost": 500,
     "type": "boss",
     "subtype": "D018"
@@ -363,7 +363,7 @@
     "id": "AL3010",
     "title": "Boss X",
     "description": "Boss X description will go here when we pick it.",
-    "notoReq": 205,
+    "notoReq": 10000,
     "goldCost": 500,
     "type": "boss",
     "subtype": "D019"

@@ -13,6 +13,20 @@ const CombatManager = {
             BattleLog.addEntry(dungeonid,battleMessage);
             return;
         }
+        if (attacker.stunLinger) {
+            if (Math.random() <= 0.4) {
+                const battleMessage = $("<span/>").addClass("logSpecial");
+                battleMessage.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} is stunned and can't attack!`);
+                BattleLog.addEntry(dungeonid,battleMessage);
+                return;
+            }
+            else {
+                attacker.stunLinger = false;
+                const battleMessage2 = $("<span/>").addClass("logSpecial");
+                battleMessage.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} snaps out of it!`);
+                BattleLog.addEntry(dungeonid,battleMessage2);
+            }
+        }
         if (attacker.ap >= 100) this.specialAttack(attacker, allies, enemies, dungeonid);
         else {
             const target = getTarget(enemies, attacker.target);
@@ -32,6 +46,11 @@ const CombatManager = {
         else if (attacker.special === "double") SAdouble(attacker, enemies, dungeonid);
         else if (attacker.special === "amplify") SAamplify(attacker, enemies, dungeonid);
         else if (attacker.special === "stun") SAstun(attacker, enemies, dungeonid) //stun chance based off damage?
+        else if (attacker.special === "second") SAsecond(attacker, enemies, dungeonid);
+        else if (attacker.special === "birdflame") SAbirdflame(attacker, enemies, dungeonid);
+        else if (attacker.special === "defenseStance") SAdefenseStance(attacker, dungeonid);
+        else if (attacker.special === "summon") SAsummon(attacker, dungeonid);
+        else if (attacker.special === "stunLinger") SAstunLinger(attacker,enemies, dungeonid);
         else {
             const target = getTarget(enemies, attacker.target);
             this.normalAttack(attacker, target, dungeonid);
@@ -114,7 +133,10 @@ function getTarget(party,type) {
     party = party.filter(h => h.alive());
     if (type === "first") return party[0]
     else if (type === "reverse") return party.reverse()[0];
-    else if (type === "random") return party[Math.floor(Math.random()*party.length)];
+    else if (type === "random") {
+        const alive = party.filter(p => !p.dead());
+        return alive[Math.floor(Math.random()*alive.length)];
+    }
     else if (type === "highhp") return party.sort((a,b) => {return b.hp - a.hp})[0];
     else if (type === "lowhp") return party.sort((a,b) => {return a.hp - b.hp})[0];
 }

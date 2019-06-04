@@ -15,7 +15,8 @@
     "drops": {
       "M101": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B102",
@@ -33,7 +34,8 @@
     "drops": {
       "M102": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B103",
@@ -51,7 +53,8 @@
     "drops": {
       "M103": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B104",
@@ -69,7 +72,8 @@
     "drops": {
       "M104": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B105",
@@ -87,7 +91,8 @@
     "drops": {
       "M105": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B106",
@@ -105,7 +110,8 @@
     "drops": {
       "M106": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B107",
@@ -123,7 +129,8 @@
     "drops": {
       "M107": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B108",
@@ -141,7 +148,8 @@
     "drops": {
       "M108": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B109",
@@ -159,7 +167,8 @@
     "drops": {
       "M109": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B110",
@@ -177,7 +186,8 @@
     "drops": {
       "M110": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B201",
@@ -195,7 +205,8 @@
     "drops": {
       "M201": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B202",
@@ -213,7 +224,8 @@
     "drops": {
       "M202": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B203",
@@ -231,7 +243,8 @@
     "drops": {
       "M203": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B204",
@@ -249,7 +262,8 @@
     "drops": {
       "M204": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B205",
@@ -267,7 +281,8 @@
     "drops": {
       "M205": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B206",
@@ -285,7 +300,8 @@
     "drops": {
       "M206": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B207",
@@ -303,7 +319,8 @@
     "drops": {
       "M207": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B208",
@@ -321,7 +338,8 @@
     "drops": {
       "M208": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B209",
@@ -339,7 +357,8 @@
     "drops": {
       "M209": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B210",
@@ -357,7 +376,8 @@
     "drops": {
       "M210": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B301",
@@ -375,7 +395,8 @@
     "drops": {
       "M301": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B302",
@@ -393,7 +414,8 @@
     "drops": {
       "M302": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B303",
@@ -411,7 +433,8 @@
     "drops": {
       "M303": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B304",
@@ -429,7 +452,8 @@
     "drops": {
       "M304": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B305",
@@ -447,7 +471,8 @@
     "drops": {
       "M305": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B306",
@@ -465,7 +490,8 @@
     "drops": {
       "M306": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B307",
@@ -483,7 +509,8 @@
     "drops": {
       "M307": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B308",
@@ -501,7 +528,8 @@
     "drops": {
       "M308": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B309",
@@ -519,7 +547,8 @@
     "drops": {
       "M309": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B310",
@@ -537,7 +566,8 @@
     "drops": {
       "M310": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B401",
@@ -555,7 +585,8 @@
     "drops": {
       "M401": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B402",
@@ -573,7 +604,8 @@
     "drops": {
       "M402": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B403",
@@ -591,7 +623,8 @@
     "drops": {
       "M403": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B404",
@@ -609,7 +642,8 @@
     "drops": {
       "M404": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B405",
@@ -627,7 +661,8 @@
     "drops": {
       "M405": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B406",
@@ -645,7 +680,8 @@
     "drops": {
       "M406": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B407",
@@ -663,7 +699,8 @@
     "drops": {
       "M407": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B408",
@@ -681,7 +718,8 @@
     "drops": {
       "M408": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B409",
@@ -699,7 +737,8 @@
     "drops": {
       "M409": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B410",
@@ -717,7 +756,8 @@
     "drops": {
       "M410": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B501",
@@ -735,7 +775,8 @@
     "drops": {
       "M501": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B502",
@@ -753,7 +794,8 @@
     "drops": {
       "M502": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B503",
@@ -771,7 +813,8 @@
     "drops": {
       "M503": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B504",
@@ -789,7 +832,8 @@
     "drops": {
       "M504": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B505",
@@ -807,7 +851,8 @@
     "drops": {
       "M505": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B506",
@@ -825,7 +870,8 @@
     "drops": {
       "M506": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B507",
@@ -843,7 +889,8 @@
     "drops": {
       "M507": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B508",
@@ -861,7 +908,8 @@
     "drops": {
       "M508": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B509",
@@ -879,7 +927,8 @@
     "drops": {
       "M509": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B510",
@@ -897,7 +946,8 @@
     "drops": {
       "M510": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B601",
@@ -915,7 +965,8 @@
     "drops": {
       "M601": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B602",
@@ -933,7 +984,8 @@
     "drops": {
       "M602": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B603",
@@ -951,7 +1003,8 @@
     "drops": {
       "M603": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B604",
@@ -969,7 +1022,8 @@
     "drops": {
       "M604": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B605",
@@ -987,7 +1041,8 @@
     "drops": {
       "M605": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B606",
@@ -1005,7 +1060,8 @@
     "drops": {
       "M606": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B607",
@@ -1023,7 +1079,8 @@
     "drops": {
       "M607": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B608",
@@ -1041,7 +1098,8 @@
     "drops": {
       "M608": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B609",
@@ -1059,7 +1117,8 @@
     "drops": {
       "M609": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B610",
@@ -1077,7 +1136,8 @@
     "drops": {
       "M610": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B901",
@@ -1100,7 +1160,8 @@
       "M501": 100,
       "M601": 100
     },
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B902",
@@ -1123,7 +1184,8 @@
       "M502": 100,
       "M602": 100
     },
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B903",
@@ -1146,7 +1208,8 @@
       "M503": 100,
       "M603": 100
     },
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B904",
@@ -1169,7 +1232,8 @@
       "M504": 100,
       "M604": 100
     },
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B905",
@@ -1192,7 +1256,8 @@
       "M505": 100,
       "M605": 100
     },
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B906",
@@ -1215,7 +1280,8 @@
       "M506": 100,
       "M606": 100
     },
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B907",
@@ -1238,7 +1304,8 @@
       "M507": 100,
       "M607": 100
     },
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B908",
@@ -1261,7 +1328,8 @@
       "M508": 100,
       "M608": 100
     },
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B909",
@@ -1284,7 +1352,8 @@
       "M509": 100,
       "M609": 100
     },
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B910",
@@ -1307,7 +1376,8 @@
       "M510": 100,
       "M610": 100
     },
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B0101",
@@ -1325,7 +1395,8 @@
     "drops": {
       "M101": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0102",
@@ -1343,7 +1414,8 @@
     "drops": {
       "M102": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0103",
@@ -1361,7 +1433,8 @@
     "drops": {
       "M103": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0104",
@@ -1379,7 +1452,8 @@
     "drops": {
       "M104": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0105",
@@ -1397,7 +1471,8 @@
     "drops": {
       "M105": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0106",
@@ -1415,7 +1490,8 @@
     "drops": {
       "M106": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0107",
@@ -1433,7 +1509,8 @@
     "drops": {
       "M107": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0108",
@@ -1451,7 +1528,8 @@
     "drops": {
       "M108": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0109",
@@ -1469,7 +1547,8 @@
     "drops": {
       "M109": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0110",
@@ -1487,7 +1566,8 @@
     "drops": {
       "M110": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0201",
@@ -1505,7 +1585,8 @@
     "drops": {
       "M201": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0202",
@@ -1523,7 +1604,8 @@
     "drops": {
       "M202": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0203",
@@ -1541,7 +1623,8 @@
     "drops": {
       "M203": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0204",
@@ -1559,7 +1642,8 @@
     "drops": {
       "M204": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0205",
@@ -1577,7 +1661,8 @@
     "drops": {
       "M205": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0206",
@@ -1595,7 +1680,8 @@
     "drops": {
       "M206": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0207",
@@ -1613,7 +1699,8 @@
     "drops": {
       "M207": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0208",
@@ -1631,7 +1718,8 @@
     "drops": {
       "M208": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0209",
@@ -1649,7 +1737,8 @@
     "drops": {
       "M209": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0210",
@@ -1667,7 +1756,8 @@
     "drops": {
       "M210": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0301",
@@ -1685,7 +1775,8 @@
     "drops": {
       "M501": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0302",
@@ -1703,7 +1794,8 @@
     "drops": {
       "M502": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0303",
@@ -1721,7 +1813,8 @@
     "drops": {
       "M503": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0304",
@@ -1739,7 +1832,8 @@
     "drops": {
       "M504": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0305",
@@ -1757,7 +1851,8 @@
     "drops": {
       "M505": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0306",
@@ -1775,7 +1870,8 @@
     "drops": {
       "M506": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0307",
@@ -1793,7 +1889,8 @@
     "drops": {
       "M507": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0308",
@@ -1811,7 +1908,8 @@
     "drops": {
       "M508": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0309",
@@ -1829,7 +1927,8 @@
     "drops": {
       "M509": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0310",
@@ -1847,7 +1946,8 @@
     "drops": {
       "M510": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0401",
@@ -1865,7 +1965,8 @@
     "drops": {
       "M401": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0402",
@@ -1883,7 +1984,8 @@
     "drops": {
       "M402": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0403",
@@ -1901,7 +2003,8 @@
     "drops": {
       "M403": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0404",
@@ -1919,7 +2022,8 @@
     "drops": {
       "M404": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0405",
@@ -1937,7 +2041,8 @@
     "drops": {
       "M405": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0406",
@@ -1955,7 +2060,8 @@
     "drops": {
       "M406": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0407",
@@ -1973,7 +2079,8 @@
     "drops": {
       "M407": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0408",
@@ -1991,7 +2098,8 @@
     "drops": {
       "M408": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0409",
@@ -2009,7 +2117,8 @@
     "drops": {
       "M409": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0410",
@@ -2027,7 +2136,8 @@
     "drops": {
       "M410": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0501",
@@ -2045,7 +2155,8 @@
     "drops": {
       "M501": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0502",
@@ -2063,7 +2174,8 @@
     "drops": {
       "M502": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0503",
@@ -2081,7 +2193,8 @@
     "drops": {
       "M503": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0504",
@@ -2099,7 +2212,8 @@
     "drops": {
       "M504": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0505",
@@ -2117,7 +2231,8 @@
     "drops": {
       "M505": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0506",
@@ -2135,7 +2250,8 @@
     "drops": {
       "M506": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0507",
@@ -2153,7 +2269,8 @@
     "drops": {
       "M507": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0508",
@@ -2171,7 +2288,8 @@
     "drops": {
       "M508": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0509",
@@ -2189,7 +2307,8 @@
     "drops": {
       "M509": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0510",
@@ -2207,7 +2326,8 @@
     "drops": {
       "M510": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0601",
@@ -2225,7 +2345,8 @@
     "drops": {
       "M601": 100
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0602",
@@ -2243,7 +2364,8 @@
     "drops": {
       "M602": 60
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0603",
@@ -2261,7 +2383,8 @@
     "drops": {
       "M603": 40
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0604",
@@ -2279,7 +2402,8 @@
     "drops": {
       "M604": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0605",
@@ -2297,7 +2421,8 @@
     "drops": {
       "M605": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0606",
@@ -2315,7 +2440,8 @@
     "drops": {
       "M606": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0607",
@@ -2333,7 +2459,8 @@
     "drops": {
       "M607": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0608",
@@ -2351,7 +2478,8 @@
     "drops": {
       "M608": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0609",
@@ -2369,7 +2497,8 @@
     "drops": {
       "M609": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B0610",
@@ -2387,12 +2516,13 @@
     "drops": {
       "M610": 25
     },
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "BB010",
-    "name": "A Boss",
-    "hpBase": 100,
+    "name": "Kirby Tree",
+    "hpBase": 1000,
     "hpLvl": 0,
     "powBase": 15,
     "powLvl": 0,
@@ -2403,12 +2533,13 @@
     "dodge": 0,
     "target": "first",
     "drops": null,
-    "event": "boss"
+    "event": "boss",
+    "special": "second"
   },
   {
     "id": "BB011",
-    "name": "A Boss",
-    "hpBase": 100,
+    "name": "Flame Bird",
+    "hpBase": 1000,
     "hpLvl": 0,
     "powBase": 15,
     "powLvl": 0,
@@ -2419,12 +2550,13 @@
     "dodge": 0,
     "target": "first",
     "drops": null,
-    "event": "boss"
+    "event": "boss",
+    "special": "birdflame"
   },
   {
     "id": "BB012",
-    "name": "A Boss",
-    "hpBase": 100,
+    "name": "Blue Knight",
+    "hpBase": 1000,
     "hpLvl": 0,
     "powBase": 15,
     "powLvl": 0,
@@ -2435,12 +2567,13 @@
     "dodge": 0,
     "target": "first",
     "drops": null,
-    "event": "boss"
+    "event": "boss",
+    "special": "defenseStance"
   },
   {
     "id": "BB013",
-    "name": "A Boss",
-    "hpBase": 100,
+    "name": "Lich Man",
+    "hpBase": 1000,
     "hpLvl": 0,
     "powBase": 15,
     "powLvl": 0,
@@ -2451,12 +2584,13 @@
     "dodge": 0,
     "target": "first",
     "drops": null,
-    "event": "boss"
+    "event": "boss",
+    "special": "summon"
   },
   {
     "id": "BB014",
-    "name": "A Boss",
-    "hpBase": 100,
+    "name": "Beclutcher",
+    "hpBase": 1000,
     "hpLvl": 0,
     "powBase": 15,
     "powLvl": 0,
@@ -2467,12 +2601,13 @@
     "dodge": 0,
     "target": "first",
     "drops": null,
-    "event": "boss"
+    "event": "boss",
+    "special": "stunLinger"
   },
   {
     "id": "BB015",
-    "name": "A Boss",
-    "hpBase": 100,
+    "name": "Enhanced Kirby Tree",
+    "hpBase": 1000,
     "hpLvl": 0,
     "powBase": 15,
     "powLvl": 0,
@@ -2483,12 +2618,13 @@
     "dodge": 0,
     "target": "first",
     "drops": null,
-    "event": "boss"
+    "event": "boss",
+    "special": null
   },
   {
     "id": "BB016",
-    "name": "A Boss",
-    "hpBase": 100,
+    "name": "Enhanced Flame Bird",
+    "hpBase": 1000,
     "hpLvl": 0,
     "powBase": 15,
     "powLvl": 0,
@@ -2499,12 +2635,13 @@
     "dodge": 0,
     "target": "first",
     "drops": null,
-    "event": "boss"
+    "event": "boss",
+    "special": null
   },
   {
     "id": "BB017",
-    "name": "A Boss",
-    "hpBase": 100,
+    "name": "Enhanced Blue Knight",
+    "hpBase": 1000,
     "hpLvl": 0,
     "powBase": 15,
     "powLvl": 0,
@@ -2515,12 +2652,13 @@
     "dodge": 0,
     "target": "first",
     "drops": null,
-    "event": "boss"
+    "event": "boss",
+    "special": null
   },
   {
     "id": "BB018",
-    "name": "A Boss",
-    "hpBase": 100,
+    "name": "Enhanced Lich Man",
+    "hpBase": 1000,
     "hpLvl": 0,
     "powBase": 15,
     "powLvl": 0,
@@ -2531,12 +2669,13 @@
     "dodge": 0,
     "target": "first",
     "drops": null,
-    "event": "boss"
+    "event": "boss",
+    "special": null
   },
   {
     "id": "BB019",
-    "name": "A Boss",
-    "hpBase": 100,
+    "name": "Enhanced Beclutcher",
+    "hpBase": 1000,
     "hpLvl": 0,
     "powBase": 15,
     "powLvl": 0,
@@ -2547,1286 +2686,7 @@
     "dodge": 0,
     "target": "first",
     "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB020",
-    "name": "B Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB021",
-    "name": "B Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB022",
-    "name": "B Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB023",
-    "name": "B Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB024",
-    "name": "B Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB025",
-    "name": "B Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB026",
-    "name": "B Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB027",
-    "name": "B Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB028",
-    "name": "B Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB029",
-    "name": "B Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB030",
-    "name": "C Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB031",
-    "name": "C Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB032",
-    "name": "C Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB033",
-    "name": "C Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB034",
-    "name": "C Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB035",
-    "name": "C Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB036",
-    "name": "C Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB037",
-    "name": "C Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB038",
-    "name": "C Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB039",
-    "name": "C Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB040",
-    "name": "D Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB041",
-    "name": "D Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB042",
-    "name": "D Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB043",
-    "name": "D Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB044",
-    "name": "D Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB045",
-    "name": "D Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB046",
-    "name": "D Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB047",
-    "name": "D Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB048",
-    "name": "D Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB049",
-    "name": "D Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB050",
-    "name": "E Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB051",
-    "name": "E Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB052",
-    "name": "E Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB053",
-    "name": "E Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB054",
-    "name": "E Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB055",
-    "name": "E Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB056",
-    "name": "E Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB057",
-    "name": "E Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB058",
-    "name": "E Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB059",
-    "name": "E Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB060",
-    "name": "F Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB061",
-    "name": "F Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB062",
-    "name": "F Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB063",
-    "name": "F Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB064",
-    "name": "F Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB065",
-    "name": "F Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB066",
-    "name": "F Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB067",
-    "name": "F Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB068",
-    "name": "F Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB069",
-    "name": "F Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB070",
-    "name": "G Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB071",
-    "name": "G Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB072",
-    "name": "G Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB073",
-    "name": "G Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB074",
-    "name": "G Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB075",
-    "name": "G Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB076",
-    "name": "G Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB077",
-    "name": "G Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB078",
-    "name": "G Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB079",
-    "name": "G Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB080",
-    "name": "H Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB081",
-    "name": "H Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB082",
-    "name": "H Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB083",
-    "name": "H Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB084",
-    "name": "H Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB085",
-    "name": "H Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB086",
-    "name": "H Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB087",
-    "name": "H Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB088",
-    "name": "H Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB089",
-    "name": "H Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB090",
-    "name": "I Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB091",
-    "name": "I Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB092",
-    "name": "I Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB093",
-    "name": "I Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB094",
-    "name": "I Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB095",
-    "name": "I Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB096",
-    "name": "I Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB097",
-    "name": "I Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB098",
-    "name": "I Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
-  },
-  {
-    "id": "BB099",
-    "name": "I Boss",
-    "hpBase": 100,
-    "hpLvl": 0,
-    "powBase": 15,
-    "powLvl": 0,
-    "apAdd": 20,
-    "armor": 0,
-    "crit": 25,
-    "critdmg": 2,
-    "dodge": 0,
-    "target": "first",
-    "drops": null,
-    "event": "boss"
+    "event": "boss",
+    "special": null
   }
 ]

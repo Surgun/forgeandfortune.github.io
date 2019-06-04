@@ -51,7 +51,7 @@ function SAblast(attacker, enemies, dungeonid) {
 function SAmeteor(attacker, enemies, dungeonid) {
     const damage = Math.round(attacker.getAdjPow()*1.2);
     const targets = enemies.filter(e => !e.dead());
-    const dividedDmg = damage/targets.length;
+    const dividedDmg = Math.round(damage/targets.length);
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-meteor")} ${logName(attacker.name)} unleashes a meteor attack!`);
     BattleLog.addEntry(dungeonid,battleMessage); 
@@ -112,5 +112,48 @@ function SAstun(attacker, enemies, dungeonid) {
     target.stunned = true;
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} stuns ${logName(target.name)}!`);
+    BattleLog.addEntry(dungeonid,battleMessage);
+}
+
+function SAsecond(attacker, enemies, dungeonid) {
+    const target = getTarget(enemies, attacker.target);
+    const damage = Math.round(attacker.getAdjPow()*1.5);
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-meteor")} ${logName(attacker.name)} unleashes an enhanced attack!`);
+    BattleLog.addEntry(dungeonid,battleMessage); 
+    CombatManager.takeDamage(damage, target, attacker, dungeonid);
+}
+
+function SAbirdflame(attacker, enemies, dungeonid) {
+    const damage = Math.round(attacker.getAdjPow()*2);
+    const targets = enemies.filter(e => !e.dead());
+    const dividedDmg = Math.round(damage/targets.length);
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-meteor")} ${logName(attacker.name)} unleashes a flaming bird attack!`);
+    BattleLog.addEntry(dungeonid,battleMessage); 
+    targets.forEach(enemy => {
+        CombatManager.takeDamage(dividedDmg, enemy, attacker, dungeonid);
+    });
+}
+
+function SAdefenseStance(attacker, dungeonid) {
+    attacker.armor += 5;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-user-shield")} The enemy ${logName(attacker.name)} used Harden!`); //parry handled in takeDamage function
+    BattleLog.addEntry(dungeonid,battleMessage);
+}
+
+function SAsummon(attacker, dungeonid) {
+    DungeonManager.dungeonByID(dungeonID).addSummon();
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-user-shield")} ${attacker.name} summons a friend!`);
+    BattleLog.addEntry(dungeonid, battleMessage);
+}
+
+function SAstunLinger(attacker, enemies, dungeonid) {
+    const target = getTarget(enemies, "random");
+    target.stunLinger = true;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} stuns ${logName(target.name)} really bad!`);
     BattleLog.addEntry(dungeonid,battleMessage);
 }

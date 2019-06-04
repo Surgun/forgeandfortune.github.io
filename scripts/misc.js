@@ -31,6 +31,12 @@ function rollDice(number, sides) {
     return total;
 }
 
+function bellCurve(min,max) {
+    const total = rollDice(3,6);
+    const percent = (total-6)/30;
+    return Math.round(percent*(max-min)+min);
+}
+
 function round(number, precision) {
     var shift = function (number, precision) {
       var numArray = ("" + number).split("e");

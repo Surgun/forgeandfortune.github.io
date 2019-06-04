@@ -88,9 +88,10 @@ class Guild {
         const chosenFirst = possibleGuildItems[Math.floor(Math.random()*possibleGuildItems.length)];
         const chosenSecond = possibleItems[Math.floor(Math.random()*possibleItems.length)];
         const chosenThird = possibleItems[Math.floor(Math.random()*possibleItems.length)];
-        this.order.push(new guildOrderItem(chosenFirst.id,3,0,0));
-        if (this.lvl >= 1) this.order.push(new guildOrderItem(chosenSecond.id,3,0,0));
-        if (this.lvl >= 2) this.order.push(new guildOrderItem(chosenThird,3,0,0));
+        this.order.push(new guildOrderItem(chosenFirst.id, this.lvl));
+        if (this.lvl >= 1) this.order.push(new guildOrderItem(chosenSecond.id, this.lvl));
+        if (this.lvl >= 2) this.order.push(new guildOrderItem(chosenThird.id, this.lvl));
+        console.log(this.order);
     }
     getItem(slot) {
         return this.order[slot];
@@ -111,18 +112,21 @@ class Guild {
 }
 
 class guildOrderItem {
-    constructor (id,amt,rarity,sharp) {
+    constructor (id,lvl) {
+        console.log(id);
         this.id = id;
         this.item = recipeList.idToItem(id);
-        this.amt = amt;
-        this.rarity = rarity;
-        this.sharp = sharp;
+        this.lvl = lvl;
+        this.amt = this.generateAmt(lvl);
+        this.rarity = this.generateRarity(lvl);
+        this.sharp = this.generateSharp(lvl);
         this.fufilled = 0;
         this.repgain = 1;
     }
     createSave() {
         const save = {};
         save.id = this.id;
+        save.lvl = this.lvl;
         save.amt = this.amt;
         save.rarity = this.rarity;
         save.sharp = this.sharp;
@@ -130,6 +134,9 @@ class guildOrderItem {
         return save;
     }
     loadSave(save) {
+        this.amt = save.amt;
+        this.rarity = save.rarity;
+        this.sharp = save.sharp;
         this.fufilled = save.fufilled;
     }
     complete() {
@@ -138,9 +145,29 @@ class guildOrderItem {
     left() {
         return this.amt - this.fufilled;
     }
+    generateAmt(lvl) {
+        const min = miscLoadedValues["goMin"][lvl];
+        const max = miscLoadedValues["goMax"][lvl];
+        return bellCurve(min,max);
+    }
+    generateRarity(lvl) {
+        const epicChance = miscLoadedValues["goEpic"][lvl];
+        const greatChance = miscLoadedValues["goGreat"][lvl]+epicChance;
+        const goodChance = miscLoadedValues["goGood"][lvl]+greatChance;     
+        const sharpRoll = Math.floor(Math.random() * 100);
+        if (epicChance < sharpRoll) return 3;
+        if (greatChance < sharpRoll) return 2;
+        if (goodChance < sharpRoll) return 1;
+        return 0;
+    }
+    generateSharp(lvl) {
+        const sharpChance = miscLoadedValues["goSharp"][lvl];
+        const sharpMin = miscLoadedValues["goSharpMin"][lvl];
+        const sharpMax = miscLoadedValues["goSharpMax"][lvl];
+        if (sharpChance < Math.floor(Math.random() * 100)) return 0;
+        return bellCurve(sharpMin,sharpMax);
+    }
 }
-
-
 
 const $guildList = $("#guildList");
 
@@ -173,8 +200,6 @@ function refreshguildprogress(guild) {
     $gp.append(createGuildBar(guild));
 }
 
-
-
 function createGuildBar(guild) {
     const repPercent = guild.rep/guild.repLvl();
     const repWidth = (repPercent*100).toFixed(1)+"%";
@@ -193,6 +218,7 @@ function refreshguildOrder(guild) {
     const $go = $(`#${id}Order`);
     $go.empty();
     guild.order.forEach((item,i) => {
+        console.log(item);
         $go.append(createOrderCard(item,id,i));
     });
 };

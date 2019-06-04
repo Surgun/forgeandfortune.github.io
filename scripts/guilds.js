@@ -35,6 +35,7 @@ class Guild {
     createSave() {
         const save = {};
         save.id = this.id;
+        save.lvl = this.lvl;
         save.rep = this.rep;
         save.order = [];
         this.order.forEach(o=>save.order.push(o.createSave()));
@@ -42,6 +43,7 @@ class Guild {
     }
     loadSave(save) {
         this.rep = save.rep;
+        this.lvl = save.lvl;
         save.order.forEach(o => {
             const container = new guildOrderItem(o.id, o.amt, o.rarity, o.sharp);
             container.loadSave(o);
@@ -119,9 +121,9 @@ class guildOrderItem {
         this.id = id;
         this.item = recipeList.idToItem(id);
         this.lvl = lvl;
-        this.amt = this.generateAmt(lvl);
         this.rarity = this.generateRarity(lvl);
         this.sharp = this.generateSharp(lvl);
+        this.amt = this.generateAmt(lvl);
         this.fufilled = 0;
         this.repgain = 1;
         this.displayName = this.generateName();
@@ -151,7 +153,10 @@ class guildOrderItem {
     generateAmt(lvl) {
         const min = miscLoadedValues["goMin"][lvl];
         const max = miscLoadedValues["goMax"][lvl];
-        return bellCurve(min,max);
+        let startAmt = bellCurve(min,max);
+        startAmt -= this.rarity
+        if (this.sharp > 0) startAmt -= 1;
+        return Math.max(1,startAmt);
     }
     generateRarity(lvl) {
         const epicChance = miscLoadedValues["goEpic"][lvl];

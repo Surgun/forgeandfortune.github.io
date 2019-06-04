@@ -184,8 +184,8 @@ const Notifications = {
         popToast(text,heading,icon);
     },
     alRewardCost() {
-        const text = "You do not have enough notoriety points.";
-        const heading = "Cannot Purchase Reward";
+        const text = "You do not have enough gold.";
+        const heading = "Cannot Purchase Perk";
         const icon = "error";
         popToast(text,heading,icon);
     },

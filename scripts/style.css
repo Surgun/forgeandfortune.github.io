@@ -2721,7 +2721,7 @@ Rarities
     flex-grow: 1;
 }
 
-.heroExamineEquipmentEquip > .item-name {
+.heroExamineEquipmentEquip > .item-name, .heroExamineEquipmentEquip > .item-prefix-name {
     max-width: 110px;
     margin: auto;
 }
@@ -3347,6 +3347,7 @@ div.EquipmentCardsContainer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 10px;
     background-color: var(--bg-primary);
     border-bottom: 2px solid var(--border-primary);
     font-size: 0.6rem;
@@ -5545,7 +5546,7 @@ span.beta-tag {
     display: none;
 }
 
-@media screen and (max-width: 1415px) {
+@media screen and (max-width: 1679px) {
     #heroList {
         max-width: 200px;
     }
@@ -5667,7 +5668,7 @@ span.beta-tag {
 }
 
 /* Expand equip slots to use all available space on large displays */
-@media screen and (min-width: 1915px) {
+@media screen and (min-width: 1550px) {
     .heroExamineEquip {
         max-width: unset;
     }
@@ -5675,10 +5676,6 @@ span.beta-tag {
 
 /* For desktop/laptop screens with enough width to display vertical recipe filter listing */
 @media screen and (max-width: 1308px) {
-    .tabcontent {
-        --tab-height: 58px;
-    }
-
     #RecipeFilter {
         max-width: 170px;
     }

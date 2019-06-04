@@ -345,8 +345,9 @@ function dbEnable() {
         const d5a = $("<div/>").addClass("gearHeroesTitle").html("Add Gear to Heroes");
         const d5b = $("<input/>").addClass("gearHeroesLevel").attr("placeholder", "Gear Level");
         const d5c = $("<input/>").addClass("gearHeroesRarity").attr("placeholder", "Gear Rarity");
-        const d5d = $("<button/>").addClass("gearHeroesBtn dbActionButton").html("Gear");
-    d5.append(d5a,d5b,d5c,d5d);
+        const d5d = $("<input/>").addClass("gearHeroesSharp").attr("placeholder", "Gear Sharp");
+        const d5e = $("<button/>").addClass("gearHeroesBtn dbActionButton").html("Gear");
+    d5.append(d5a,d5b,d5c,d5d,d5e);
 
     const d6 = $("<div/>").addClass("addGoldContainer dbActionContainer");
         const d6a = $("<div/>").addClass("addGoldTitle").html("Add Gold");

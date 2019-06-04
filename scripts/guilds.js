@@ -335,6 +335,7 @@ const ActionLeague = {
         this.notoriety -= this.fameLvl();
         this.lvl += 1;
         this.np += 1;
+        refreshALprogress();
     },
     maxfame() {
         return DungeonManager.bossesBeat.length*10;
@@ -350,10 +351,13 @@ const ActionLeague = {
         perk.activate();
     },
     generateNoto(rewards) {
+        console.log(rewards);
         //takes the rewards list and generates how many pts you should get
         const noto = rewards.map(r => {
-            ResourceManager.idToMaterial(r.id).notoAdd;
+            return r.amt*ResourceManager.idToMaterial(r.id).notoAdd;
         });
+        console.log(noto);
+        console.log(noto.reduce((a,b) => a+b , 0));
         return noto.reduce((a,b) => a+b , 0);
     }
 }

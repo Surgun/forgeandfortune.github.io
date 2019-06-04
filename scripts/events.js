@@ -59,7 +59,6 @@ const EventManager = {
         const eventTemplate = this.idToEventDB(id);
         const event = new Event(eventTemplate);
         event.reward = reward;
-        event.notoriety = ActionLeague.generateNoto(event.reward);
         event.time = time;
         event.floor = floor;
         event.beats = beats;
@@ -95,7 +94,10 @@ const EventManager = {
     },
     readEvent(eventNum) {
         const event = this.eventNumToEvent(eventNum);
-        if (event.reward !== null) ResourceManager.addDungeonDrops(event.reward);
+        if (event.reward !== null) {
+            ResourceManager.addDungeonDrops(event.reward);
+            ActionLeague.addNoto(event.notoriety());
+        }
         event.reward = null;
         if (event.itemReward !== null) {
             if (Inventory.full()) {
@@ -103,9 +105,6 @@ const EventManager = {
                 return;
             }
             Inventory.addToInventory(event.itemReward.id,event.itemReward.rarity,-1);
-        }
-        if (event.notoriety !== null) {
-            ActionLeague.addNoto(event.notoriety);
         }
         if (event.id === "E009") {
             TownManager.bankOnce = true;
@@ -174,6 +173,10 @@ class Event {
         if (save.bossKill !== undefined) this.bossKill = save.bossKill;
         if (save.itemReward !== undefined) this.itemReward = save.itemReward;
         if (save.beats !== undefined) this.beats = save.beats;
+    }
+    notoriety() {
+        if (this.reward === null) return;
+        return ActionLeague.generateNoto(this.reward);
     }
 };
 
@@ -267,8 +270,8 @@ $(document).on('click', "div.eventList", (e) => {
         const d8 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());
         d.append(d8);
     }
-    if (event.notoriety !== null) {
-        const d8a = $("<div/>").addClass("eventNotoriety").html(`Notoriety Earned: ${event.notoriety}`);
+    if (event.reward !== null) {
+        const d8a = $("<div/>").addClass("eventNotoriety").html(`Notoriety Earned: ${event.notoriety()}`);
         d.append(d8a);
     }
     const d9 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");

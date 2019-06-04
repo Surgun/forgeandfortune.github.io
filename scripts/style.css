@@ -722,7 +722,8 @@ Rarities
 .smithItem > .smithItemName, 
 .fuseSlot > .fuseSlotName, 
 .gearItem > .gearItemName, 
-.heroExamineEquipmentEquip {
+.heroExamineEquipmentEquip,
+.orderCard > .orderName {
     text-shadow: 1px 2px 0 black;
 }
 
@@ -732,7 +733,8 @@ Rarities
 .smithItem.R1 > .smithItemName, 
 .fuseSlot.R1 > .fuseSlotName, 
 .gearItem.R1 > .gearItemName, 
-.heroExamineEquipmentEquip.R1 {
+.heroExamineEquipmentEquip.R1,
+.orderCard.R1 > .orderName {
     color: rgb(44, 255, 89);
 }
 
@@ -742,7 +744,8 @@ Rarities
 .smithItem.R2 > .smithItemName, 
 .fuseSlot.R2 > .fuseSlotName, 
 .gearItem.R2 > .gearItemName, 
-.heroExamineEquipmentEquip.R2 {
+.heroExamineEquipmentEquip.R2,
+.orderCard.R2 > .orderName {
     color: rgb(8, 173, 255);
 }
 
@@ -752,7 +755,8 @@ Rarities
 .smithItem.R3 > .smithItemName, 
 .fuseSlot.R3 > .fuseSlotName, 
 .gearItem.R3 > .gearItemName, 
-.heroExamineEquipmentEquip.R3 {
+.heroExamineEquipmentEquip.R3,
+.orderCard.R3 > .orderName {
     color: rgb(255, 79, 167);
 }
 
@@ -2268,7 +2272,7 @@ Rarities
 .itemToSacReq {
     margin-top: 10px;
     padding: 5px 20px;
-    background-color: var(--border-secondary);
+    background-color: rgba(255,255,255,0.1);
     color: var(--highlight);
     border-radius: 10px;
 }
@@ -3346,7 +3350,6 @@ div.EquipmentCardsContainer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
     background-color: var(--bg-primary);
     border-bottom: 2px solid var(--border-primary);
     font-size: 0.6rem;
@@ -3354,7 +3357,8 @@ div.EquipmentCardsContainer {
 }
 
 .drTurnOrderLogTitles h2 {
-    font-weight: normal;
+    margin: 0;
+    padding: 10px;
 }
 
 .drTurnOrderLogTitles h2 > i {

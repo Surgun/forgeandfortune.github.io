@@ -326,7 +326,7 @@ const ActionLeague = {
         this.purchased = save.purchased;
     },
     idToPerk(id) {
-        return this.perk.find(r=>r.id === id);
+        return this.perks.find(r=>r.id === id);
     },
     addNoto(amt) {
         if (this.lvl === this.maxfame()) return;
@@ -351,6 +351,7 @@ const ActionLeague = {
         this.np -= perk.npCost;
         this.purchased.push(id);
         perk.activate();
+        refreshALperks();
     },
     generateNoto(rewards) {
         console.log(rewards);

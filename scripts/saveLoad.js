@@ -53,6 +53,7 @@ function createSave() {
     saveFile["fo"] = FortuneManager.createSave();
     saveFile["tm"] = TownManager.createSave();
     saveFile["g"] = GuildManager.createSave();
+    saveFile["al"] = ActionLeague.createSave();
     saveFile["saveTime"] = Date.now();
     return JSON.stringify(saveFile);
 }
@@ -84,6 +85,7 @@ function loadGame() {
     if (typeof loadGame["fo"] !== "undefined") FortuneManager.loadSave(loadGame["fo"]);
     if (typeof loadGame["tm"] !== "undefined") TownManager.loadSave(loadGame["tm"]);
     if (typeof loadGame["g"] !== "undefined") GuildManager.loadSave(loadGame["g"]);
+    if (typeof loadGame["al"] !== "undefined") ActionLeague.loadSave(loadGame["al"]);
     return true;
 }
 

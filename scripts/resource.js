@@ -19,6 +19,8 @@ class Material{
     }
 }
 
+const $goldSidebarAmt = $("#goldSidebarAmt");
+
 const ResourceManager = {
     materials : [],
     createSave() {
@@ -47,6 +49,7 @@ const ResourceManager = {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(formatToUnits(mat.amt,3));
+        $goldSidebarAmt.html(formatToUnits(mat.amt,3));
     },
     canAffordMaterial(item) {
         if (item.mcost === null) return true;

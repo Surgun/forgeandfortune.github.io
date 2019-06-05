@@ -2219,28 +2219,28 @@ Rarities
     padding: 10px;
     height: 150px;
     background-color: var(--bg-tertiary);
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/default.png);
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/default.png);
     border-bottom: 2px solid var(--border-primary);
 }
 
 #G001Summary.guildSummary {
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/G001.png);
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/G001.png);
 }
 
 #G002Summary.guildSummary {
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/G002.png);
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/G002.png);
 }
 
 #G003Summary.guildSummary {
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/G003.png);
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/G003.png);
 }
 
 #G004Summary.guildSummary {
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/G004.png);
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/G004.png);
 }
 
 #G005Summary.guildSummary {
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/G005.png);
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/G005.png);
 }
 
 .guildName {

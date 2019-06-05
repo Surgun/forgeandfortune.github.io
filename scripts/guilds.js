@@ -86,7 +86,6 @@ class Guild {
     generateNewOrder() {
         this.order = [];
         const possibleItems = recipeList.guildOrderItems(this.lvl);
-        console.log(possibleItems);
         const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
         const chosenFirst = possibleGuildItems[Math.floor(Math.random()*possibleGuildItems.length)];
         const chosenSecond = possibleItems[Math.floor(Math.random()*possibleItems.length)];
@@ -117,7 +116,6 @@ class Guild {
 
 class guildOrderItem {
     constructor (id,lvl) {
-        console.log(id);
         this.id = id;
         this.item = recipeList.idToItem(id);
         this.lvl = lvl;
@@ -232,7 +230,6 @@ function refreshguildOrder(guild) {
     const id = guild.id;
     const $go = $(`#${id}Order`);
     $go.empty();
-    console.log(guild.order);
     guild.order.forEach((item,i) => {
         $go.append(createOrderCard(item,id,i));
     });

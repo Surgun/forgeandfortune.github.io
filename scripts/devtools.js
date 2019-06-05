@@ -132,5 +132,8 @@ const devtools = {
         forceSave();
         location.replace('/');
     },
+    dungeonUnlock() {
+        DungeonManager.dungeonPaid.push("D010","D011","D012","D013","D014","D015","D016","D017","D018","D019");
+    },
     skipSac : false,
 }

@@ -23,7 +23,7 @@ const CombatManager = {
             else {
                 attacker.stunLinger = false;
                 const battleMessage2 = $("<span/>").addClass("logSpecial");
-                battleMessage.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} snaps out of it!`);
+                battleMessage2.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} snaps out of it!`);
                 BattleLog.addEntry(dungeonid,battleMessage2);
             }
         }

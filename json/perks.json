@@ -244,7 +244,7 @@
   },
   {
     "id": "AL2201",
-    "title": "Real Moxie ",
+    "title": "Real Moxie II",
     "description": "Unlocks Alok, the crafty impairer.",
     "notoReq": 1000,
     "goldCost": 2000,
@@ -253,21 +253,12 @@
   },
   {
     "id": "AL2202",
-    "title": "Real Moxie II",
+    "title": "Real Moxie III",
     "description": "Unlocks Grogmar, the trustworthy sniper.",
     "notoReq": 5000,
     "goldCost": 15000,
     "type": "hero",
     "subtype": "H202"
-  },
-  {
-    "id": "AL2203",
-    "title": "Real Moxie III",
-    "description": "Unlocks Revere, the brutal brawler.",
-    "notoReq": 1,
-    "goldCost": 1,
-    "type": "hero",
-    "subtype": "H203"
   },
   {
     "id": "AL2204",

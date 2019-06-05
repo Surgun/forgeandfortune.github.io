@@ -207,7 +207,9 @@ function initializeGuilds() {
     $guildList.empty();
     $("<div/>").addClass("guildListButton").data("gid","ActionLeague").html("The Action League").appendTo($guildList);
     GuildManager.guilds.forEach(g => {
-        $("<div/>").addClass("guildListButton").data("gid",g.id).html(g.name).appendTo($guildList);
+        const d1 = $("<div/>").addClass("guildListButton").data("gid",g.id).html(g.name);
+        if (GuildManager.lastClicked === g.id) d1.addClass("selected");
+        d1.appendTo($guildList);
         $(`#${g.id}Name`).html(g.name);
         $(`#${g.id}Desc`).html(g.description);
         $(".guildContainer").hide();

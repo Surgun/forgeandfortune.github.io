@@ -325,7 +325,7 @@ function dbEnable() {
         const d1e = $("<div/>").addClass("hyperSpeedContainer");
             $("<button/>").addClass("hyperSpeedOption dbActionButton").html("Hyper Speed").appendTo(d1e);
         const d1f = $("<div/>").addClass("forceTownContainer");
-            const d3f1 = $("<button/>").addClass("forceTownOption dbActionButton").html("Unlock Town").appendTo(d1f);
+            $("<button/>").addClass("forceTownOption dbActionButton").html("Unlock Town").appendTo(d1f);
         const d1g = $("<div>").addClass("dungeonUnlockContainer");
             $("<button/>").addClass("dungeonUnlockOption dbActionButton").html("Unlock Dungeons").appendTo(d1g);
         d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g);

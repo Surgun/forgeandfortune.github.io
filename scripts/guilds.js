@@ -254,7 +254,7 @@ function refreshguildOrder(guild) {
     });
     const d1 = $("<div/>").addClass('guildOrderSubmit').data("gid", id);
         $("<div/>").addClass("guildOrderSubmitText").html("Submit").appendTo(d1);
-        $("<div/>").addClass("guildOrderSubmitValue").html(`${miscIcons.gold} ${formatToUnits(guild.goldValue(),2)}`).appendTo(d1);
+        $("<div/>").addClass("guildOrderSubmitValue").html(`${miscIcons.gold} +${formatToUnits(guild.goldValue(),2)}`).appendTo(d1);
     if (!guild.orderComplete()) d1.addClass("guildOrderIncomplete");
     $go.append(d1);
 };
@@ -267,7 +267,7 @@ function createOrderCard(item,id,index) {
     const d4 = $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id));
     const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Needed`);
     if (item.complete()) {
-        d5.html("Complete!")
+        d5.html(`<i class="fas fa-check-circle"></i> Completed`)
         return d1.append(d2,d3,d4,d5);
     }
     const d6 = $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`);

@@ -364,7 +364,7 @@
     "title": "Second Slot",
     "description": "Unlocks the second crafting slot.",
     "notoReq": 100,
-    "goldCost": 750,
+    "goldCost": 250,
     "type": "craft",
     "subtype": null
   },
@@ -373,7 +373,7 @@
     "title": "Third Slot",
     "description": "Unlocks the third crafting slot.",
     "notoReq": 250,
-    "goldCost": 1500,
+    "goldCost": 1000,
     "type": "craft",
     "subtype": null
   },

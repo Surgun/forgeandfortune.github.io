@@ -265,8 +265,11 @@ function createOrderCard(item,id,index) {
     const d2 = $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id));
     const d3 = $("<div/>").addClass("orderName").addClass(`orderName`).html(item.displayName);
     const d4 = $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id));
-    if (item.complete()) return d1.append(d2,d3,d4);
     const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Needed`);
+    if (item.complete()) {
+        d5.html("Complete!")
+        return d1.append(d2,d3,d4,d5);
+    }
     const d6 = $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`);
     return d1.append(d2,d3,d4,d5,d6);
 };

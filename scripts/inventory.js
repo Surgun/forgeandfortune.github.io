@@ -162,8 +162,8 @@ const Inventory = {
         });
     },
     addToInventory(id,rarity,autoSell) {
-        if (this.full()) this.sellItem(id,rarity);
-        else if (autoSell >= rarity) this.sellItem(id,rarity);
+        if (this.full()) this.sellItem(id,rarity,0);
+        else if (autoSell >= rarity) this.sellItem(id,rarity,0);
         else {
             const container = new itemContainer(id,rarity);
             this.findempty(container);
@@ -174,7 +174,7 @@ const Inventory = {
         }
     },
     addItemContainerToInventory(container) {
-        if (this.full()) this.sellItem(id,rarity);
+        if (this.full()) this.sellItem(id,rarity,0);
         else this.findempty(container);
     },
     findempty(item) {
@@ -253,10 +253,10 @@ const Inventory = {
     sellInventory(indx) {
         const item = this.inv[indx];
         this.inv[indx] = null;
-        this.sellItem(item.id,item.rarity);
+        this.sellItem(item.id,item.rarity,item.sharp);
         refreshInventoryPlaces()
     },
-    sellItem(id,rarity) {
+    sellItem(id,rarity,sharp) {
         const gold = Math.round(recipeList.idToItem(id).value*(rarity+1)*(1+sharp*0.1));
         achievementStats.gold(gold);
         ResourceManager.addMaterial("M001",gold);

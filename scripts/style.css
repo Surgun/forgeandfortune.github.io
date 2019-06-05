@@ -2219,34 +2219,35 @@ Rarities
     padding: 10px;
     height: 150px;
     background-color: var(--bg-tertiary);
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/default.png);
+    background: linear-gradient(to right, transparent 0%, rgb(84, 127, 139) 40%, rgb(84, 127, 139) 60%, transparent 100%), url(/images/guildImages/default.png);
     border-bottom: 2px solid var(--border-primary);
 }
 
 #G001Summary.guildSummary {
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/G001.png);
+    background: linear-gradient(to right, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/images/guildImages/G001.png);
 }
 
 #G002Summary.guildSummary {
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/G002.png);
+    background: linear-gradient(to right, transparent 0%, rgb(112, 73, 47) 40%, rgb(112, 73, 47)  60%, transparent 100%), url(/images/guildImages/G002.png);
 }
 
 #G003Summary.guildSummary {
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/G003.png);
+    background: linear-gradient(to right, transparent 0%, rgb(37, 30, 47) 40%, rgb(37, 30, 47) 60%, transparent 100%), url(/images/guildImages/G003.png);
 }
 
 #G004Summary.guildSummary {
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/G004.png);
+    background: linear-gradient(to right, transparent 0%, rgb(111, 103, 68) 40%, rgb(111, 103, 68) 60%, transparent 100%), url(/images/guildImages/G004.png);
 }
 
 #G005Summary.guildSummary {
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.65) 40%, rgba(0,0,0,0.65) 60%, transparent 100%), url(/images/guildImages/G005.png);
+    background: linear-gradient(to right, transparent 0%,rgb(83, 99, 94) 40%, rgb(83, 99, 94) 60%, transparent 100%), url(/images/guildImages/G005.png);
 }
 
 .guildName {
     font-size: 2rem;
     padding: 10px;
     color: var(--text-white);
+    text-shadow: 2px 2px 0 black;
 }
 
 .guildDesc {

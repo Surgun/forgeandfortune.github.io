@@ -242,7 +242,7 @@ function initiateDungeonFloor(dungeonID) {
         if (settings.toggleTurnOrderBars === 1) d6.append(d9,d10);
         if (mob.hp === 0) d6.addClass("mobDead");
         if (mob.apAdd === 0) d10.hide();
-        $dungeonMobList.append(d6);
+        $dungeonMobList.prepend(d6);
     });
     checkTurnOrderPref();
     refreshTurnOrder(dungeonID);

@@ -33,7 +33,7 @@ class TurnOrder {
         this.position = save.position;
     }
     addMob(mob) {
-        this.order.splice(this.position,0,mob);
+        this.order.splice(this.position+1,0,mob);
     }
 }
 
@@ -183,8 +183,9 @@ class Dungeon {
         refreshDSB(this.id);
     }
     addSummon() {
-        const newMob = MobManager.generateDungeonMob("B0501",this.floorCount);
-        this.mobs.push(newMob);
+        if (this.mobs.length === 4) return;
+        const newMob = MobManager.generateDungeonMob("B0501",500);
+        this.mobs.unshift(newMob);
         this.order.addMob(newMob);
         initiateDungeonFloor(this.id);
     }

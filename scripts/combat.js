@@ -132,6 +132,16 @@ function logDead(name) {
 function getTarget(party,type) {
     party = party.filter(h => h.alive());
     if (type === "first") return party[0]
+    if (type === "second") {
+        if (party.lenght === 1) return party[0];
+        return party[1];
+    }
+    if (type === "third") {
+        if (party.length === 1) return party[0];
+        if (party.length === 2) return party[2];
+        return party[3]
+    }
+    if (type === "last") return party[party.length-1];
     else if (type === "reverse") return party.reverse()[0];
     else if (type === "random") {
         const alive = party.filter(p => !p.dead());

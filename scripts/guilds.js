@@ -487,10 +487,13 @@ function createALGuildBar() {
 function refreshALperks() {
     $alp.empty();
     const perks = ActionLeague.perks.filter(p=> p.notoReq <= ActionLeague.notoriety && !ActionLeague.purchased.includes(p.id));
-    perks.forEach(perk => {
+    perks.forEach((perk,i) => {
+        console.log(i);
         $alp.append(createALperk(perk,true));
     });
-    $alp.append(createALperk(ActionLeague.nextUnlock(),false));
+    const nextperk = ActionLeague.nextUnlock();
+    if (nextperk === undefined) return;
+    $alp.append(createALperk(nextperk,false));
 }
 
 function createALperk(perk,canbuy) {

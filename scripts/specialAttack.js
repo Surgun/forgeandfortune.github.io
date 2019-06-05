@@ -125,15 +125,13 @@ function SAsecond(attacker, enemies, dungeonid) {
 }
 
 function SAbirdflame(attacker, enemies, dungeonid) {
-    const damage = Math.round(attacker.getAdjPow()*2);
-    const targets = enemies.filter(e => !e.dead());
-    const dividedDmg = Math.round(damage/targets.length);
     const battleMessage = $("<span/>").addClass("logSpecial");
-    battleMessage.html(`${logIcon("fas fa-meteor")} ${logName(attacker.name)} unleashes a flaming bird attack!`);
+    battleMessage.html(`${logIcon("fas fa-meteor")} ${logName(attacker.name)} unleashes a cool flaming bird attack!`);
     BattleLog.addEntry(dungeonid,battleMessage); 
-    targets.forEach(enemy => {
-        CombatManager.takeDamage(dividedDmg, enemy, attacker, dungeonid);
-    });
+    for (let i=0;i<3;i++) {
+        const target = getTarget(enemies, "random");
+        CombatManager.takeDamage(dividedDmg, target, attacker, dungeonid);
+    }
 }
 
 function SAdefenseStance(attacker, dungeonid) {

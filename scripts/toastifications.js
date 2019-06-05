@@ -194,6 +194,18 @@ const Notifications = {
         const heading = 'You purchased a recipe!'; // Optional heading to be shown on the toast
         const icon = 'info'; // Type of toast icon
         popToast(text,heading,icon);
+    },
+    insufficientGuildOrderSubmit() {
+        const text = "You have not submitted all guild order items.";
+        const heading = "Cannot Complete Guild Order";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
+    submitOrder(gold) {
+        const text = `You earned ${gold} gold and some reputation!`; // Text that is to be shown in the toast
+        const heading = 'You submitted a guild order!'; // Optional heading to be shown on the toast
+        const icon = 'info'; // Type of toast icon
+        popToast(text,heading,icon);
     }
 }
 

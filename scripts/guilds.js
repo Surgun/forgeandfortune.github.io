@@ -23,6 +23,10 @@ const GuildManager = {
     idToGuild(id) {
         return this.guilds.find(g=>g.id === id);
     },
+    submitOrder(gid) {
+        const guild = this.idToGuild(gid);
+        guild.submitOrder();
+    }
 }
 
 class Guild {
@@ -105,14 +109,28 @@ class Guild {
         if (itemMatch === undefined) return Notifications.cantFindMatch();
         Inventory.removeContainerFromInventory(itemMatch.containerID);
         submitContainer.fufilled += 1;
-        if (this.orderComplete()) {
-            this.addRep();
-            this.generateNewOrder();
-        }
         refreshAllOrders();
     }
-
+    submitOrder() {
+        if (!this.orderComplete()) return Notifications.insufficientGuildOrderSubmit();
+        this.addRep();
+        achievementStats.gold(this.goldValue());
+        ResourceManager.addMaterial("M001",this.goldValue());
+        Notifications.submitOrder(this.goldValue());
+        this.generateNewOrder();
+        refreshAllOrders();
+    }
+    goldValue() {
+        const gold = this.order.map(o => o.goldvalue);
+        return gold.reduce((a,b) => a+b)*2;
+    }
 }
+
+/*
+        const gold = Math.round(recipeList.idToItem(id).value*(rarity+1)*(1=sharp*0.1));
+        achievementStats.gold(gold);
+        ResourceManager.addMaterial("M001",gold);
+*/
 
 class guildOrderItem {
     constructor (id,lvl) {
@@ -125,6 +143,7 @@ class guildOrderItem {
         this.fufilled = 0;
         this.repgain = 1;
         this.displayName = this.generateName();
+        this.goldvalue = Math.round(this.item.value*(1+this.rarity)*(1+this.sharp*0.1)*this.amt);
     }
     createSave() {
         const save = {};
@@ -233,16 +252,22 @@ function refreshguildOrder(guild) {
     guild.order.forEach((item,i) => {
         $go.append(createOrderCard(item,id,i));
     });
+    const d1 = $("<div/>").addClass('guildOrderSubmit').data("gid", id);
+        $("<div/>").addClass("guildOrderSubmitText").html("Submit").appendTo(d1);
+        $("<div/>").addClass("guildOrderSubmitValue").html(`${miscIcons.gold} ${formatToUnits(guild.goldValue(),2)}`).appendTo(d1);
+    if (!guild.orderComplete()) d1.addClass("guildOrderIncomplete");
+    $go.append(d1);
 };
 
 function createOrderCard(item,id,index) {
     const d1 = $("<div/>").addClass(`orderCard R${item.rarity}`).data({"slot":index,"gid":id});
+    if (item.complete()) d1.addClass('orderComplete');
     const d2 = $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id));
     const d3 = $("<div/>").addClass("orderName").addClass(`orderName`).html(item.displayName);
     const d4 = $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id));
+    if (item.complete()) return d1.append(d2,d3,d4);
     const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Needed`);
     const d6 = $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`);
-    if (item.complete()) d1.hide();
     return d1.append(d2,d3,d4,d5,d6);
 };
 
@@ -309,6 +334,13 @@ function createWorkerBuyCard(worker) {
     }
     return d1.append(d2,d3,d4,d5,d6);
 };
+
+//submit a guild order
+$(document).on("click",".guildOrderSubmit",(e) => {
+    e.preventDefault();
+    const gid = $(e.currentTarget).data("gid");
+    GuildManager.submitOrder(gid);
+});
 
 //click guild tab button
 $(document).on("click",".guildListButton",(e) => {

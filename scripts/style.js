@@ -315,24 +315,20 @@ function dbEnable() {
 
     const d1 = $("<div/>").addClass("singleActionContainer");
         const d1a = $("<div/>").addClass("gmContainer");
-            const d1a1 = $("<button/>").addClass("gmOption dbActionButton").html("God Mode");
-            d1a.append(d1a1);
+            $("<button/>").addClass("gmOption dbActionButton").html("God Mode").appendTo(d1a);
         const d1b = $("<div/>").addClass("heroTestContainer");
-            const d2a1 = $("<button/>").addClass("heroTestOption dbActionButton").html("Hero Equipment Test");
-            d1b.append(d2a1);
+            $("<button/>").addClass("heroTestOption dbActionButton").html("Hero Equipment Test").appendTo(d1b);
         const d1c = $("<div/>").addClass("materialContainer");
-            const d3a1 = $("<button/>").addClass("materialOption dbActionButton").html("Add Materials");
-            d1c.append(d3a1);
+            $("<button/>").addClass("materialOption dbActionButton").html("Add Materials").appendTo(d1c);
         const d1d = $("<div/>").addClass("dmContainer");
-            const d3d1 = $("<button/>").addClass("dmOption dbActionButton").html("UI / UX Mode");
-            d1d.append(d3d1);
+            $("<button/>").addClass("dmOption dbActionButton").html("UI / UX Mode").appendTo(d1d);
         const d1e = $("<div/>").addClass("hyperSpeedContainer");
-            const d3e1 = $("<button/>").addClass("hyperSpeedOption dbActionButton").html("Hyper Speed");
-            d1e.append(d3e1);
-        const d1f = $("<div/>").addClass("forceTownontainer");
-            const d3f1 = $("<button/>").addClass("forceTownOption dbActionButton").html("Unlock Town");
-            d1f.append(d3f1);
-        d1.append(d1a,d1b,d1c,d1d,d1e,d1f);
+            $("<button/>").addClass("hyperSpeedOption dbActionButton").html("Hyper Speed").appendTo(d1e);
+        const d1f = $("<div/>").addClass("forceTownContainer");
+            const d3f1 = $("<button/>").addClass("forceTownOption dbActionButton").html("Unlock Town").appendTo(d1f);
+        const d1g = $("<div>").addClass("dungeonUnlockContainer");
+            $("<button/>").addClass("dungeonUnlockOption dbActionButton").html("Unlock Dungeons").appendTo(d1g);
+        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g);
 
     const d4 = $("<div/>").addClass("addItemContainer dbActionContainer");
         const d4a = $("<div/>").addClass("addItemTitle").html("Add Item to Inventory");
@@ -399,6 +395,10 @@ $(document).on('click', '.hyperSpeedOption', (e) => {
 $(document).on('click', '.dmOption', (e) => {
     devtools.designmode();
 });
+
+$(document).on('click', '.dungeonUnlockOption', (e) => {
+    devtools.dungeonUnlock();
+})
 
 $(document).on('click', '.addGoldBtn', (e) => {
     const goldAmount = parseInt(document.querySelector(".addGoldInput").value);

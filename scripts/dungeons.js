@@ -142,13 +142,12 @@ class Dungeon {
             h.hp = h.maxHP()
         });
         if (this.type === "boss" && this.mobs.every(m=>m.dead())) {
-            console.log("heyyy");
             EventManager.addEventBoss(this.id,this.dungeonTime);
             DungeonManager.bossesBeat.push(this.id);
             refreshALprogress();
             refreshRecipeFilters();
         }
-        else if (this.type === "normal") EventManager.addEventDungeon(this.eventLetter,this.dropList,this.dungeonTotalTime,this.floorCount, this.beatTotal);
+        else if (this.type === "regular") EventManager.addEventDungeon(this.eventLetter,this.dropList,this.dungeonTotalTime,this.floorCount, this.beatTotal);
         DungeonManager.removeDungeon(this.id);
         if (DungeonManager.dungeonView === this.id) {
             BattleLog.clear();

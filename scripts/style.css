@@ -2219,7 +2219,33 @@ Rarities
     padding: 10px;
     height: 150px;
     background-color: var(--bg-tertiary);
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/default.png);
     border-bottom: 2px solid var(--border-primary);
+}
+
+#G001Summary.guildSummary {
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/G001.png);
+    background-size: contain;
+}
+
+#G002Summary.guildSummary {
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/G002.png);
+    background-size: contain;
+}
+
+#G003Summary.guildSummary {
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/G003.png);
+    background-size: contain;
+}
+
+#G004Summary.guildSummary {
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/G004.png);
+    background-size: contain;
+}
+
+#G005Summary.guildSummary {
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 50%, transparent 100%), url(/images/guildImages/G004.png);
+    background-size: contain;
 }
 
 .guildName {

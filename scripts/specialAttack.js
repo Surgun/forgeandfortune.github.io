@@ -116,7 +116,7 @@ function SAstun(attacker, enemies, dungeonid) {
 }
 
 function SAsecond(attacker, enemies, dungeonid) {
-    const target = getTarget(enemies, attacker.target);
+    const target = getTarget(enemies, "second");
     const damage = Math.round(attacker.getAdjPow()*1.5);
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-meteor")} ${logName(attacker.name)} unleashes an enhanced attack!`);

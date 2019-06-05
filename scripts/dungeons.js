@@ -184,9 +184,17 @@ class Dungeon {
     }
     addSummon() {
         if (this.mobs.length === 4) return;
-        const newMob = MobManager.generateDungeonMob("B0501",500);
+        const newMob = MobManager.generateDungeonMob("LKH001",0);
         this.mobs.unshift(newMob);
         this.order.addMob(newMob);
+        if (this.mobs.length === 4) return initiateDungeonFloor(this.id);
+        const newMob2 = MobManager.generateDungeonMob("LKH002",0);
+        this.mobs.unshift(newMob2);
+        this.order.addMob(newMob2);
+        if (this.mobs.length === 4) return initiateDungeonFloor(this.id);
+        const newMob3 = MobManager.generateDungeonMob("LKH003",0);
+        this.mobs.unshift(newMob3);
+        this.order.addMob(newMob3);
         initiateDungeonFloor(this.id);
     }
 }

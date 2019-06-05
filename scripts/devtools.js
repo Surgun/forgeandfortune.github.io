@@ -136,5 +136,8 @@ const devtools = {
         DungeonManager.dungeonPaid.push("D010","D011","D012","D013","D014","D015","D016","D017","D018","D019");
         refreshDungeonSelect();
     },
+    heroUnlock() {
+        HeroManager.heroes.forEach(h=> h.owned = true);
+    },
     skipSac : false,
 }

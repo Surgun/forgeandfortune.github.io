@@ -328,7 +328,9 @@ function dbEnable() {
             $("<button/>").addClass("forceTownOption dbActionButton").html("Unlock Town").appendTo(d1f);
         const d1g = $("<div>").addClass("dungeonUnlockContainer");
             $("<button/>").addClass("dungeonUnlockOption dbActionButton").html("Unlock Dungeons").appendTo(d1g);
-        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g);
+        const d1h = $("<div/>").addClass("heroUnlockContainer");
+            $("<button/>").addClass("heroUnlockOption dbActionButton").html("Unlock Heroes").appendTo(d1h);
+        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g,d1h);
 
     const d4 = $("<div/>").addClass("addItemContainer dbActionContainer");
         const d4a = $("<div/>").addClass("addItemTitle").html("Add Item to Inventory");
@@ -398,6 +400,10 @@ $(document).on('click', '.dmOption', (e) => {
 
 $(document).on('click', '.dungeonUnlockOption', (e) => {
     devtools.dungeonUnlock();
+})
+
+$(document).on('click', '.heroUnlockOption', (e) => {
+    devtools.heroUnlock();
 })
 
 $(document).on('click', '.addGoldBtn', (e) => {

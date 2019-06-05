@@ -4427,10 +4427,27 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 #emptyTown {
+    position: relative;
+    padding: 20px 20px 20px 60px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
     background-color: var(--bg-tertiary);
     color: var(--highlight);
-    text-align: center;
-    padding: 20px;
+    border: 2px solid var(--border-primary);
+    border-radius: 5px;
+    -webkit-animation: 0.2s scale-in forwards;
+    animation: 0.2s scale-in forwards;
+}
+
+#emptyTown > i {
+    position: absolute;
+    left: 20px;
+    font-size: 3rem;
+    color: var(--text-white);
+    opacity: 0.25;
+    transform: rotate(-30deg);
 }
 
 /* Events / Mail Content */

@@ -85,7 +85,8 @@ const TownManager = {
 const $emptyTown = $("#emptyTown");
 
 function refreshSideTown() {
-    $buildingList.empty();
+    $buildingList.empty().hide();
+    $buildBuilding.hide();
     if (TownManager.unseenLeft()) $("#townTab").addClass("hasEvent");
     else $("#townTab").removeClass("hasEvent");
     if (!TownManager.bankSee) return;
@@ -93,7 +94,7 @@ function refreshSideTown() {
     const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`<div><i class="fas fa-university"></i> Bank</div>`);
     if (TownManager.lastBldg === "bank") d1.addClass("selected");
     if (TownManager.bankOnce) d1.addClass("hasEvent");
-    $buildingList.append(d1);
+    $buildingList.show().append(d1);
     if (!TownManager.bankUnlock || !TownManager.fuseSee) return;
     const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`<div><i class="fas fa-cauldron"></i> Cauldron</div>`);
     if (TownManager.lastBldg === "fuse") d2.addClass("selected");

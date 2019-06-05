@@ -244,16 +244,15 @@ function createOrderCard(item,id,index) {
     const d3 = $("<div/>").addClass("orderName").addClass(`orderName`).html(item.displayName);
     const d4 = $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id));
     const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Needed`);
-    const d6 = $("<div/>").addClass("orderInv2").data("uid",item.uniqueID()).html(Inventory.itemCountSpecific(item.uniqueID()));
-    console.log(d6.data("uid"));
+    const d6 = $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`);
     if (item.complete()) d1.hide();
     return d1.append(d2,d3,d4,d5,d6);
 };
 
 function refreshOrderInvCount() {
-    $(".orderInv2").each(function() {
+    $(".orderInv").each(function() {
         const uniqueID = $(this).data("uid");
-        $(this).html(Inventory.itemCountSpecific(uniqueID));
+        $(this).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(uniqueID)}`);
     });
 }
 

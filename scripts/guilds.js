@@ -179,6 +179,9 @@ class guildOrderItem {
         if (this.sharp > 0) return `+${this.sharp} ${this.item.name}</span>`
         return `${this.item.name}`
     }
+    uniqueID() {
+        return this.id+this.rarity+this.sharp;
+    }
 }
 
 const $guildList = $("#guildList");
@@ -241,18 +244,16 @@ function createOrderCard(item,id,index) {
     const d3 = $("<div/>").addClass("orderName").addClass(`orderName`).html(item.displayName);
     const d4 = $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id));
     const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Needed`);
-    const d6 = $("<div/>").addClass("orderInv").html(`${Inventory.itemCountSpecific(item.id,item.rarity,item.sharp)}`);
+    const d6 = $("<div/>").addClass("orderInv2").data("uid",item.uniqueID()).html(Inventory.itemCountSpecific(item.uniqueID()));
+    console.log(d6.data("uid"));
     if (item.complete()) d1.hide();
     return d1.append(d2,d3,d4,d5,d6);
 };
 
 function refreshOrderInvCount() {
-    GuildManager.guilds.forEach(guild => {
-        const guildCard = $(`#G${guild.id}Order .orderInv`);
-        console.log(guildCard);
-        const guildOrder = guild.order[0];
-        const invCount = Inventory.itemCountSpecific(guildOrder.id,guildOrder.rarity,guildOrder.sharp);
-        guildCard.html(invCount);
+    $(".orderInv2").each(function() {
+        const uniqueID = $(this).data("uid");
+        $(this).html(Inventory.itemCountSpecific(uniqueID));
     });
 }
 

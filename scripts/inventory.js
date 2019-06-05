@@ -336,8 +336,8 @@ const Inventory = {
     itemCountAll(id) {
         return this.nonblank().filter(r=>r.id === id).length;
     },
-    itemCountSpecific(id,rarity,sharp) {
-        return this.nonblank().filter(r=>r.id === id && r.rarity === rarity && r.sharp === sharp).length;
+    itemCountSpecific(uniqueID) {
+        return this.nonblank().filter(i => i.uniqueID() === uniqueID).length;
     },
     removePrecraft(id,amt) {
         if (this.itemCount(id,0) < amt) return;

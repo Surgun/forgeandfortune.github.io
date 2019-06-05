@@ -3968,6 +3968,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     text-align: center;
 }
 
+.repBarDiv, .notoBarDiv {
+    background-color: rgba(255,255,255,0.15);
+}
+
 .beatBarDiv {
     position: absolute;
     top: 0;
@@ -3992,6 +3996,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill, .notoBarFill {
     background-color: rgba(255,255,255,0.15);
+}
+
+.repBarFill, .notoBarFill {
+    background-color: rgba(255,255,255,0.25);
 }
 
 .beatBarFill {

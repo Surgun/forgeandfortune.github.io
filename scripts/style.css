@@ -93,7 +93,7 @@ body.lightmode {
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     -ms-box-shadow: var(--box-shadow);
@@ -638,7 +638,7 @@ body {
     margin: 10px 0;
 }
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .EquipmentCardsHeader {
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .EquipmentCardsHeader, .eventNotorietyHeading {
     font-weight: normal;
     font-size: 1rem;
     padding: 0 5px 5px;
@@ -4568,7 +4568,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 #eventContent {
     flex: 1;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     padding: 15px;
     opacity: 0;
     -webkit-animation: 0.2s .15s fade-in forwards;
@@ -4576,18 +4576,21 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .eventBody {
+    opacity: 0;
     -webkit-animation: 0.2s .15s fade-in forwards;
     animation: 0.2s .15s fade-in forwards;
-    opacity: 0;
 }
 
 .eventAuthor {
     display: inline-flex;
     padding: 5px 10px;
-    margin: 0 10px 0 0;
-    color: var(--highlight);
-    background-color: var(--border-primary);
-    border: 1px solid var(--border-tertiary);
+    color: var(--text-tertiary);
+}
+
+.eventAuthor > span {
+    font-weight: bold;
+    color: var(--text-secondary);
+    margin-right: 5px;
 }
 
 .eventMessage {
@@ -4596,11 +4599,50 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     padding: 15px;
     margin: 10px 10px 10px 0;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
 }
 
-.eventTimeHeading, .eventTime, .eventFloorHeading, .eventFloor {
-    margin-left: 5px;
+.eventStatsContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fill,minmax(300px,1fr));
+    grid-gap: 5px;
+}
+
+.eventContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    -webkit-animation: 0.2s scale-in;
+    animation: 0.2s scale-in;
+}
+
+.eventHeading {
+    padding: 5px;
+    border-bottom: 2px solid var(--border-primary);
+    max-width: 300px;
+}
+
+.eventDescription {
+    padding: 10px 5px;
+    color: var(--text-secondary);
+}
+
+.eventNotorietyContainer {
+    margin: 20px 0 0 0;
+}
+
+.eventNotoriety {
+    padding: 5px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.eventNotoriety > span {
+    color: var(--highlight);
 }
 
 .eventConfirm {

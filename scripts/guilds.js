@@ -255,7 +255,7 @@ function refreshguildOrder(guild) {
         $go.append(createOrderCard(item,id,i));
     });
     const d1 = $("<div/>").addClass('guildOrderSubmit').data("gid", id);
-        $("<div/>").addClass("guildOrderSubmitText").html("Submit").appendTo(d1);
+        $("<div/>").addClass("guildOrderSubmitText").html("Claim Reward").appendTo(d1);
         $("<div/>").addClass("guildOrderSubmitValue").html(`${miscIcons.gold} +${formatToUnits(guild.goldValue(),2)}`).appendTo(d1);
     if (!guild.orderComplete()) d1.addClass("guildOrderIncomplete");
     $go.append(d1);

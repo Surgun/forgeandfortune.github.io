@@ -237,42 +237,47 @@ $(document).on('click', "div.eventList", (e) => {
     const event = EventManager.eventNumToEvent(eventNum);
     $eventContent.empty();
     const d = $("<div/>").addClass("eventBody");
-    const d1 = $("<div/>").addClass("eventAuthor").html(`FROM: ${event.author}`);
-    const d1a = $("<div/>").addClass("eventAuthor").html(`DATE: ${event.date}`);
+    const d1 = $("<div/>").addClass("eventAuthor").html(`<span>Received from:</span> ${event.author}`);
+    const d1a = $("<div/>").addClass("eventAuthor").html(`<span>Date:</span> ${event.date}`);
     const d2 = $("<div/>").addClass("eventMessage").html(event.message);
-    d.append(d1,d1a,d2);
+    const d3 = $("<div/>").addClass("eventStatsContainer");
+    d.append(d1,d1a,d2,d3);
     if (event.time !== null) {
-        const d3a = $("<div/>").addClass("eventStatTitle").html("Adventure Statistics");
-        const d3 = $("<div/>").addClass("eventTimeHeading").html("Total Time:");
-        const d4 = $("<div/>").addClass("eventTime").html(timeSince(0,event.time));
-        d.append(d3a,d3,d4);
+        const d3a = $("<div/>").addClass("eventTimeContainer eventContainer");
+        const d3a1 = $("<div/>").addClass("eventTimeHeading eventHeading").html("Total Time");
+        const d3a2 = $("<div/>").addClass("eventTime eventDescription").html(timeSince(0,event.time));
+        d3.append(d3a.append(d3a1,d3a2));
     }
     if (event.floor !== null) {
-        const d5 = $("<div/>").addClass("eventFloorHeading").html("Floor Reached:");
-        const d6 = $("<div/>").addClass("eventFloor").html("Floor " + event.floor);
-        d.append(d5,d6);
+        const d3b = $("<div/>").addClass("eventFloorContainer eventContainer");
+        const d3b1 = $("<div/>").addClass("eventFloorHeading eventHeading").html("Floor Reached");
+        const d3b2 = $("<div/>").addClass("eventFloor eventDescription").html("Floor " + event.floor);
+        d3.append(d3b.append(d3b1,d3b2));
     }
     if (event.beats !== null) {
-        const d10 = $("<div/>").addClass("eventBeatHeading").html("Turns Taken:");
-        const d11 = $("<div/>").addClass("eventBeat").html(event.beats + " turns");
-        d.append(d10,d11);
+        const d3c = $("<div/>").addClass("eventBeatContainer eventContainer");
+        const d3c1 = $("<div/>").addClass("eventBeatHeading eventHeading").html("Turns Taken");
+        const d3c2 = $("<div/>").addClass("eventBeat eventDescription").html(event.beats + " turns");
+        d3.append(d3c.append(d3c1,d3c2));
     }
     if (event.reward !== null ) {
-        const d7 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
-        d.append(d7);
+        const d4 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
+        d.append(d4);
     }
     if (event.itemReward !== null) {
         const item = recipeList.idToItem(event.itemReward.id);
-        const d8 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());
-        d.append(d8);
+        const d5 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());
+        d.append(d5);
     }
     if (event.reward !== null) {
-        const d8a = $("<div/>").addClass("eventNotoriety").html(`Notoriety Earned: ${event.notoriety()}`);
-        d.append(d8a);
+        const d6 = $("<div/>").addClass("eventNotorietyContainer")
+        const d6a = $("<div/>").addClass("eventNotorietyHeading").html(`Notoriety Earned`);
+        const d6b = $("<div/>").addClass("eventNotoriety").html(` You have earned <span>${event.notoriety()} Notoriety</span>. Make use of it in The Action League. `)
+        d.append(d6.append(d6a,d6b));
     }
-    const d9 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
-    if (EventManager.seeOld) d9.hide();
-    d.append(d9);
+    const d7 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
+    if (EventManager.seeOld) d7.hide();
+    d.append(d7);
     $eventContent.append(d);
 });
 

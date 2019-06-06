@@ -51,18 +51,12 @@ function dungeonBlock(dungeon) {
     else d3.addClass("dungeonIdle").html("Idle");
     const d4 = $("<div/>").addClass("dungeonBackground");
     const d5 = $("<div/>").addClass("dungeonAdventurers");
-    const d6 = $("<div/>").addClass("dungeonGoldCost");
-    if (dungeon.type === "regular") d6.hide();
-    d1.append(d2,d3,d4,d5,d6);
+    d1.append(d2,d3,d4,d5);
     if (dungeon.status === DungeonStatus.ADVENTURING) {
         dungeon.party.heroes.forEach(h=> {
             const d5a = $("<div/>").addClass("dungeonHeroDungeonSelect").html(h.head);
             d5.append(d5a);
         });
-    }
-    if (!DungeonManager.bossDungeonCanSee(dungeon.id)) {
-        const money = ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(dungeon.openCost,2);
-        d6.html(`<span class="dungeon_upgrade_text">Unlock</span><span class="dungeon_cost">${money}</span>`);
     }
     return d1;
 }
@@ -73,16 +67,6 @@ $(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();
     const dungeonID = $(e.currentTarget).attr("id");
     const dungeon = DungeonManager.dungeonByID(dungeonID);
-    if (!DungeonManager.bossDungeonCanSee(dungeon.id)) {
-        if (ResourceManager.materialAvailable("M001") < dungeon.openCost) {
-            Notifications.dungeonGoldReq();
-            return;
-        }
-        ResourceManager.deductMoney(dungeon.openCost);
-        DungeonManager.payDungeonUnlock(dungeonID);
-        refreshDungeonSelect();
-        return;
-    }
     $dungeonSelect.hide();
     if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.ADVENTURING) showDungeon(dungeonID);
     else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.EMPTY) {
@@ -98,15 +82,18 @@ $(document).on("click", ".dungeonContainer", (e) => {
 /*------------------------*/
 function refreshHeroSelect(dungeonID) {
     const dungeon = DungeonManager.dungeonByID(dungeonID);
+    console.log(dungeonID);
     //builds the div that we hide and can show when we're selecting for that area
     $dtsTop.empty();
     const d1top = $("<div/>").addClass("dtsTopTitle").html("<h3>Assemble your Team!</h3>");
     $dtsTop.append(d1top);
     const d = $("<div/>").addClass("dungeonTeamCollection");
+    //actual members
     PartyCreator.heroes.forEach((hero,i) => {
         const d1 = characterCard("dungeonTeam",i,hero);
         d.append(d1);
     });
+    //empty slots
     for (let i=0;i<PartyCreator.emptyPartySlots(dungeon.type);i++) {
         const d1a = characterCard("dungeonTeam",i).addClass("noHeroDungeonSelect");
         d.append(d1a);
@@ -116,14 +103,15 @@ function refreshHeroSelect(dungeonID) {
     if (PartyCreator.heroes.length === 0) dbutton.addClass('dungeonStartNotAvailable')
     $dtsTop.append(dbutton);
     $dtsBottom.empty();
+    //available heroes
     const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Your Available Heroes</h3>");
     $dtsBottom.append(d1bot);
     const d2 = $("<div/>").addClass("dungeonAvailableCollection");
     HeroManager.ownedHeroes().forEach(hero => {
-        if (!hero.inDungeon && !PartyCreator.heroes.includes(hero.id)) {
-            const d3 = characterCard("dungeonAvailable",hero.uniqueid,hero.id);
-            d2.append(d3);  
-        }
+        if (hero.inDungeon) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"In Dungeon").appendTo(d2);
+        else if (dungeon.bannedHero.includes(hero.id)) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id, "Banned from Here").appendTo(d2);
+        else if (PartyCreator.heroes.includes(hero.id)) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id, "Already in Party").appendTo(d2);
+        else characterCard("dungeonAvailable",hero.uniqueid,hero.id,null).appendTo(d2);
     });
     $dtsBottom.append(d2);
 }
@@ -158,7 +146,7 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
     }
 });
 
-function characterCard(prefix,dv,ID) {
+function characterCard(prefix,dv,ID,status) {
     const d = $("<div/>").addClass(prefix+"Card").attr("data-value",dv);
     const dclick = $("<div/>").addClass(prefix+"CardClick").attr("heroID",dv);
     if (!ID) {
@@ -174,7 +162,10 @@ function characterCard(prefix,dv,ID) {
         const d3b = $("<div/>").addClass(prefix+"AP"+" heroStat"+" tooltip").attr("data-tooltip","AP").html(`${miscIcons.ap} ${hero.apmax}`);
         d3.append(d3a,d3b);
     const d4 = $("<div/>").addClass(prefix+"Pow"+" heroPowStat"+" tooltip").attr("data-tooltip","POW").html(`${miscIcons.pow} ${hero.getPow()}`);
-    dclick.append(d1,d2,d3,d4);
+    const d5 = $("<div/>").addClass("heroStatus").html(status);
+    if (status === null) d5.hide();
+    else d.addClass("heroUnavailable");
+    dclick.append(d1,d2,d3,d4,d5);
     return d.append(dclick);
 }
 

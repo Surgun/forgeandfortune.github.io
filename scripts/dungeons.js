@@ -294,6 +294,11 @@ const DungeonManager = {
     },
     getCurrentDungeon() {
         return this.dungeonByID(this.dungeonView);
+    },
+    dungeonSlotCount() {
+        const dungeon = this.dungeonByID(this.dungeonCreatingID);
+        if (dungeon.type == "boss") return 4;
+        return this.partySize;
     }
 };
 

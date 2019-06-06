@@ -273,7 +273,8 @@ function createOrderCard(item,id,index) {
         return d1.append(d2,d3,d4,d5);
     }
     const d6 = $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`);
-    return d1.append(d2,d3,d4,d5,d6);
+    const d7 = $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i>`);
+    return d1.append(d2,d3,d4,d5,d6,d7);
 };
 
 function refreshOrderInvCount() {
@@ -379,6 +380,14 @@ $(document).on("click",".workerBuyCardBuy", (e) => {
     e.preventDefault();
     const workerId = $(e.currentTarget).data("wid");
     WorkerManager.upgradeWorker(workerId);
+});
+
+//Craft from Order Card
+$(document).on('click', '.orderCraft', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const itemID = $(e.currentTarget).attr("id");
+    actionSlotManager.addSlot(itemID);
 });
 
 //********************************

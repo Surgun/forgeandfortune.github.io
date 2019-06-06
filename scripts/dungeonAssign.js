@@ -91,13 +91,15 @@ function refreshHeroSelect() {
         $("<div/>").addClass("dts"+dungeon.id).html(dungeon.name).appendTo($dtsBanner);
     //Materials in Dungeon
     $dtsMaterials.empty();
+    if (dungeon.type !== "boss") {
         $("<div/>").addClass("dtsMaterialTitle").html("Materials in Dungeon:").appendTo($dtsMaterials);
-    ResourceManager.materialSeenDungeon(dungeon.id).forEach(m => {
-        const dm = $("<div/>").addClass("dtsMaterialContainer");
-            $("<div/>").addClass("dtsMaterialIcon").html(m.img).appendTo(dm);
-            $("<div/>").addClass("dtsMaterialName").html(m.name).appendTo(dm);
-        $dtsMaterials.append(dm);
-    });
+        ResourceManager.materialSeenDungeon(dungeon.id).forEach(m => {
+            const dm = $("<div/>").addClass("dtsMaterialContainer");
+                $("<div/>").addClass("dtsMaterialIcon").html(m.img).appendTo(dm);
+                $("<div/>").addClass("dtsMaterialName").html(m.name).appendTo(dm);
+            $dtsMaterials.append(dm);
+        });
+    }
     $dtsTop.empty();
     const d1top = $("<div/>").addClass("dtsTopTitle").html("<h3>Assemble your Team!</h3>");
     $dtsTop.append(d1top);

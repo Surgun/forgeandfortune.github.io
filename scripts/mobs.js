@@ -46,6 +46,7 @@ const MobManager = {
         const mobids = FloorManager.mobsByDungeon(dungeonID);
         const mobs = mobids.map(m => this.idToMob(m));
         const materials = mobs.map(m=>m.drops);
+        if (materials === [null]) return null;
         const matNames = materials.map(m => Object.keys(m)).flat()
         return [...new Set(matNames)];
     }

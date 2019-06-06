@@ -261,11 +261,6 @@ $(document).on('click', "div.eventList", (e) => {
         const d7 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
         d.append(d7);
     }
-    if (event.bossKill !== null) {
-        const recipeRewards = recipeList.unlockedByDungeon(event.bossKill);
-        const d7a = $("<div/>").addClass("recipeReward").html(bossRecipeUnlocks(recipeRewards));
-        d.append(d7a);
-    }
     if (event.itemReward !== null) {
         const item = recipeList.idToItem(event.itemReward.id);
         const d8 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());

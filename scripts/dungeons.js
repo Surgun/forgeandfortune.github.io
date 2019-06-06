@@ -102,9 +102,7 @@ class Dungeon {
                     battleMessage.html(`${logIcon("far fa-swords")} ${logName(hero.name)} is healed at the Sanctuary!`);
                     hero.healPercent(ActionLeague.sanctuaryHeal);
                 });
-                console.log(DungeonManager.bossesBeat, this.sanctuary, DungeonManager.bossesBeat.includes(this.sancutary))
-                console.log(typeof(DungeonManager.bossesBeat),typeof(this.sanctuary),DungeonManager.bossesBeat[0] === this.sanctuary, DungeonManager.bossesBeat[0] == this.sanctuary)
-                if (DungeonManager.bossesBeat.includes(this.sancutary)) {
+                if (DungeonManager.bossesBeat.filter(b => b === this.sanctuary).length > 0) { //idk why this works over .includes()
                     console.log('fuck yea')
                     this.nextFloor();
                     this.dungeonTime -= DungeonManager.speed;

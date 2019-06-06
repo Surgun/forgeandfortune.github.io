@@ -130,7 +130,8 @@ function SAbirdflame(attacker, enemies, dungeonid) {
     BattleLog.addEntry(dungeonid,battleMessage); 
     for (let i=0;i<3;i++) {
         const target = getTarget(enemies, "random");
-        CombatManager.takeDamage(dividedDmg, target, attacker, dungeonid);
+        const damage = attacker.getAdjPow();
+        CombatManager.takeDamage(damage, target, attacker, dungeonid);
     }
 }
 

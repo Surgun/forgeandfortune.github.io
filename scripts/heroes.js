@@ -387,6 +387,9 @@ function examineHero(ID) {
     for (let i=0;i<stats.length;i++) {
         upperRightDiv.append(statRow(statName[i],stats[i]));
     }
+    const d4 = $("<div/>").addClass("heroAbilityHeading").html("Hero Ability");
+        $("<div/>").addClass("heroAbilityText").html(hero.abilityDesc).appendTo(d4);
+    upperRightDiv.append(d4);
     const lowerDiv = $("<div/>").addClass("heroExamineEquip");
     const slots = hero.getEquipSlots();
     const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory"]

@@ -26,7 +26,11 @@
     "slot6Type": [
       "Rings"
     ],
-    "special": "armor"
+    "special": "armor",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Beorn harnesses the power of the sun to gain temporary armor until his next turn."
   },
   {
     "id": "H002",
@@ -55,7 +59,11 @@
     "slot6Type": [
       "Belts"
     ],
-    "special": "parry"
+    "special": "parry",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Cedric uses his tactical prowess to parry an attack, negating the damage of the first attack before his next turn and dealing a blow to the attacker."
   },
   {
     "id": "H003",
@@ -87,7 +95,11 @@
     "slot6Type": [
       "Pendants"
     ],
-    "special": "bloodlet"
+    "special": "bloodlet",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Grim unleashes a powerful attack, taking 5% of his current HP to deal a massive blow."
   },
   {
     "id": "H004",
@@ -119,7 +131,11 @@
     "slot6Type": [
       "Potions"
     ],
-    "special": "ravage"
+    "special": "ravage",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Lambug eyes narrow as she strikes her target for additional damage, healing if she kills her target."
   },
   {
     "id": "H101",
@@ -148,7 +164,11 @@
     "slot6Type": [
       "Pendants"
     ],
-    "special": "meteor"
+    "special": "meteor",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Zoe unleashes a meteor attack, damaging all enemies on the field."
   },
   {
     "id": "H102",
@@ -177,7 +197,11 @@
     "slot6Type": [
       "Earrings"
     ],
-    "special": "blast"
+    "special": "blast",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Neve's eyes glow as she unleashes a powerful attack against her target, ignoring armor."
   },
   {
     "id": "H103",
@@ -206,7 +230,11 @@
     "slot6Type": [
       "Rings"
     ],
-    "special": "heal"
+    "special": "heal",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Titus's spirit radiates as he heals the lowest HP member of the party."
   },
   {
     "id": "H104",
@@ -235,7 +263,11 @@
     "slot6Type": [
       "Instruments"
     ],
-    "special": "massHeal"
+    "special": "massHeal",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Troy channels his dvinity to heal all party members."
   },
   {
     "id": "H201",
@@ -264,7 +296,11 @@
     "slot6Type": [
       "Instruments"
     ],
-    "special": "amplify"
+    "special": "amplify",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Alok plays his instrument to boost his allie's spirits - bosting the damage they deal to the current threats."
   },
   {
     "id": "H202",
@@ -293,7 +329,11 @@
     "slot6Type": [
       "Belts"
     ],
-    "special": "sniper"
+    "special": "sniper",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Grogmar snekas in the shadows to deal massive damage to the lowest HP enemy."
   },
   {
     "id": "H203",
@@ -322,7 +362,11 @@
     "slot6Type": [
       "Earrings"
     ],
-    "special": "double"
+    "special": "double",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Revere uses her nimbleness to attack the enemy twice."
   },
   {
     "id": "H204",
@@ -351,6 +395,10 @@
     "slot6Type": [
       "Potions"
     ],
-    "special": "stun"
+    "special": "stun",
+    "guildUnlock": null,
+    "gpCost": null,
+    "tierUnlock": null,
+    "abilityDesc": "Caeda steathily deals a crippling blow to the enemy, stunning them so they skip their next turn."
   }
 ]

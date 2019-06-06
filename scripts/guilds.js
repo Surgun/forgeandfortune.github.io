@@ -389,6 +389,7 @@ const ActionLeague = {
     notoriety : 0,
     purchased : [],
     perks : [],
+    sanctuaryHeal : 10,
     addPerk(reward) {
         this.perks.push(reward);
     },
@@ -396,11 +397,13 @@ const ActionLeague = {
         const save = {};
         save.notoriety = this.notoriety;
         save.purchased = this.purchased;
+        save.sanctuaryHeal = this.sanctuaryHeal;
         return save;
     },
     loadSave(save) {
         this.notoriety = save.notoriety;
         this.purchased = save.purchased;
+        this.sanctuaryHeal = save.sanctuaryHeal;
     },
     idToPerk(id) {
         return this.perks.find(r=>r.id === id);
@@ -465,6 +468,9 @@ class alRewards {
         if (this.type === "fortune") {
             TownManager.fortuneOnce = true;
             TownManager.fortuneSee = true;
+        }
+        if (this.type === "sanctuary") {
+            ActionLeague.sanctuaryHeal += 10;
         }
     }
 }

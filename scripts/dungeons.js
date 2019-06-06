@@ -95,6 +95,26 @@ class Dungeon {
         this.dungeonTime += t;
         this.dungeonTotalTime += t;
         while (this.dungeonTime >= DungeonManager.speed) {
+            if (this.sanctuary !== null) {
+                //lol hax, this.sanctuary holds gate keeping
+                this.party.heroes.forEach(hero => {
+                    const battleMessage = $("<span/>").addClass("logSpecial");
+                    battleMessage.html(`${logIcon("far fa-swords")} ${logName(hero.name)} is healed at the Sanctuary!`);
+                    hero.healPercent(ActionLeague.sanctuaryHeal);
+                });
+                console.log(DungeonManager.bossesBeat, this.sanctuary, DungeonManager.bossesBeat.includes(this.sancutary))
+                console.log(typeof(DungeonManager.bossesBeat),typeof(this.sanctuary),DungeonManager.bossesBeat[0] === this.sanctuary, DungeonManager.bossesBeat[0] == this.sanctuary)
+                if (DungeonManager.bossesBeat.includes(this.sancutary)) {
+                    console.log('fuck yea')
+                    this.nextFloor();
+                    this.dungeonTime -= DungeonManager.speed;
+                    return;
+                }
+                else {
+                    this.resetDungeon();
+                    return;
+                }
+            }
             this.checkDeadMobs(); //workaround for when you killed a monster but haven't looted it and refreshed
             if (this.floorComplete() && this.dungeonTime >= DungeonManager.speed) {
                 this.nextFloor();
@@ -177,8 +197,15 @@ class Dungeon {
             return;
         }
         this.floorCount += 1;
-        this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
-        this.order = new TurnOrder(this.party.heroes,this.mobs);
+        this.sanctuary = FloorManager.isSanctuary(this.id,this.floorCount);
+        if (this.sanctuary) {
+            this.mobs = [];
+            this.order = new TurnOrder(this.party.heroes,[]);
+        }
+        else {
+            this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
+            this.order = new TurnOrder(this.party.heroes,this.mobs);
+        }
         initiateDungeonFloor(this.id);
         refreshDSB(this.id);
     }

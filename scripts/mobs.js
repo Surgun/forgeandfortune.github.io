@@ -67,7 +67,13 @@ const FloorManager = {
         const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
         const rand = DungeonSeedManager.getFloorSeed(dungeon,floor);
         return possibleFloors[Math.floor(rand*possibleFloors.length)];
-    }
+    },
+    isSanctuary(dungeon,floor) {
+        //so hackish
+        const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
+        if (possibleFloors.every(f => f.type === "sanctuary")) return possibleFloors[0].gate;
+        return null;
+    }  
 }
 
 class Mob {

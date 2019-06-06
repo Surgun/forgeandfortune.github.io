@@ -133,7 +133,7 @@ function getTarget(party,type) {
     party = party.filter(h => h.alive());
     if (type === "first") return party[0]
     if (type === "second") {
-        if (party.lenght === 1) return party[0];
+        if (party.length === 1) return party[0];
         return party[1];
     }
     if (type === "third") {

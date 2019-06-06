@@ -206,6 +206,12 @@ const Notifications = {
         const heading = 'You submitted a guild order!'; // Optional heading to be shown on the toast
         const icon = 'info'; // Type of toast icon
         popToast(text,heading,icon);
+    },
+    recipeNotOwned() {
+        const text = `You have not bought this recipe from te guild sales.`; // Text that is to be shown in the toast
+        const heading = 'Cannot start craft'; // Optional heading to be shown on the toast
+        const icon = 'error'; // Type of toast icon
+        popToast(text,heading,icon);
     }
 }
 

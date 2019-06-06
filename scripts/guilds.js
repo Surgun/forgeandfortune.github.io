@@ -122,6 +122,7 @@ class Guild {
     }
     goldValue() {
         const gold = this.order.map(o => o.goldvalue);
+        if (gold.length === 0) return 0;
         return gold.reduce((a,b) => a+b)*2;
     }
 }

@@ -308,10 +308,10 @@ function eventChecker() {
     if (!EventManager.hasSeen("E005") && achievementStats.totalItemsCrafted >= 10000) EventManager.addEvent("E005");
     if (!EventManager.hasSeen("E006") && masteredItem) EventManager.addEvent("E006");
     if (!EventManager.hasSeen("E007") && Inventory.full()) EventManager.addEvent("E007");
-    if (!EventManager.hasSeen("E009") && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[0]) EventManager.addEvent("E009");
-    if (!EventManager.hasSeen("E010") && TownManager.bankUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[1]) EventManager.addEvent("E010");
-    if (!EventManager.hasSeen("E011") && TownManager.fuseUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[2]) EventManager.addEvent("E011");
-    if (!EventManager.hasSeen("E012") && TownManager.smithUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[3]) EventManager.addEvent("E012");
+    if (!EventManager.hasSeen("E009") && ActionLeague.purchased.includes("AL4101")) EventManager.addEvent("E009");
+    if (!EventManager.hasSeen("E010") && ActionLeague.purchased.includes("AL4102")) EventManager.addEvent("E010");
+    if (!EventManager.hasSeen("E011") && ActionLeague.purchased.includes("AL4103")) EventManager.addEvent("E011");
+    if (!EventManager.hasSeen("E012") && ActionLeague.purchased.includes("AL4104")) EventManager.addEvent("E012");
 }
 
 let masteredItem = false;

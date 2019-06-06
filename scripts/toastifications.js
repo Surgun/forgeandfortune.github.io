@@ -209,7 +209,7 @@ const Notifications = {
     },
     recipeNotOwned() {
         const text = `You have not bought this recipe from the guild sales.`; // Text that is to be shown in the toast
-        const heading = 'Cannot start craft'; // Optional heading to be shown on the toast
+        const heading = 'Cannot Start Craft'; // Optional heading to be shown on the toast
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
     }

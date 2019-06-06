@@ -88,17 +88,23 @@ function refreshHeroSelect() {
     //builds the div that we hide and can show when we're selecting for that area
     //Team Banner
     $dtsBanner.empty();
-        $("<div/>").addClass("dts"+dungeon.id).html(dungeon.name).appendTo($dtsBanner);
+        $("<div/>").addClass(`dts${dungeon.id} dtsBackground`).appendTo($dtsBanner);
+        $("<div/>").addClass(`dts${dungeon.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
     //Materials in Dungeon
     $dtsMaterials.empty();
     if (dungeon.type !== "boss") {
-        $("<div/>").addClass("dtsMaterialTitle").html("Materials in Dungeon:").appendTo($dtsMaterials);
-        ResourceManager.materialSeenDungeon(dungeon.id).forEach(m => {
-            const dm = $("<div/>").addClass("dtsMaterialContainer");
-                $("<div/>").addClass("dtsMaterialIcon").html(m.img).appendTo(dm);
-                $("<div/>").addClass("dtsMaterialName").html(m.name).appendTo(dm);
+        $("<div/>").addClass("dtsMaterialTitle").html(`Materials Found In This Dungeon <i class="fas fa-chevron-down"></i>`).appendTo($dtsMaterials);
+        if (ResourceManager.materialSeenDungeon(dungeon.id).length === 0) {
+            const dm = $("<div/>").addClass("dtsMaterialNone").html("You have not discovered any materials.");
             $dtsMaterials.append(dm);
+        }
+        const dm = $("<div/>").addClass("dtsMaterialContainer");
+        ResourceManager.materialSeenDungeon(dungeon.id).forEach(m => {
+            const dm1 = $("<div/>").addClass("dtsMaterial").appendTo(dm);
+                $("<div/>").addClass("dtsMaterialIcon").html(m.img).appendTo(dm1);
+                $("<div/>").addClass("dtsMaterialName").html(m.name).appendTo(dm1);
         });
+        $dtsMaterials.append(dm);
     }
     $dtsTop.empty();
     const d1top = $("<div/>").addClass("dtsTopTitle").html("<h3>Assemble your Team!</h3>");
@@ -131,6 +137,18 @@ function refreshHeroSelect() {
     });
     $dtsBottom.append(d2);
 }
+
+// Toggle displaying dungeon materials on select screen
+$(document).on('click','.dtsMaterialTitle', (e) => {
+    e.preventDefault();
+    const toggleActive = $(e.currentTarget).hasClass("toggleActive");
+    $(".dtsMaterialContainer").addClass("expanded");
+    $(".dtsMaterialTitle").addClass("toggleActive");
+    if (toggleActive) {
+        $(e.currentTarget).removeClass("toggleActive");
+        $(".dtsMaterialContainer").removeClass("expanded");
+    }
+});
 
 //clicking a hero to remove them from your party
 $(document).on('click', "div.dungeonTeamCardClick", (e) => {

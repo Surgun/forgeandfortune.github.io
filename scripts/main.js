@@ -22,7 +22,7 @@ function afterLoad() {
     refreshSideWorkers();
     initializeActionSlots();
     initializeHeroList();
-    refreshHeroSelect();
+    //refreshHeroSelect();
     updateHeroCounter();
     refreshRecipeFilters();
     refreshEvents();

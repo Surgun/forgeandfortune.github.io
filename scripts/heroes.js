@@ -320,7 +320,7 @@ const HeroManager = {
     gainHero(heroID) {
         this.idToHero(heroID).owned = true;
         initializeHeroList();
-        refreshHeroSelect();
+        //refreshHeroSelect();
         updateHeroCounter();
     },
     heroPower(hero) {

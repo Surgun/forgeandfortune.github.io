@@ -31,8 +31,9 @@ class Party {
 
 const PartyCreator = {
     heroes : [],
-    emptyPartySlots() {
-        return this.partySize()-this.heroes.length;;
+    emptyPartySlots(type) {
+        if (type === "boss") return 4 - this.heroes.length;
+        return this.partySize() - this.heroes.length;
     },
     removeMember(slotNum) {
         this.heroes.splice(slotNum,1);
@@ -45,11 +46,9 @@ const PartyCreator = {
         this.heroes = [];
     },
     partySize() {
-        const heroesOwned = HeroManager.ownedHeroes().length;
-        if (heroesOwned < 4) return 1;
-        if (heroesOwned < 8) return 2;
-        if (heroesOwned < 12) return 3;
-        return 4;
+        //const dungeonType = DungeonManager.dungeonByID(DungeonManager.dungeonCreatingID).type
+        //if (dungeonType === "boss") return 4;
+        return DungeonManager.partySize;
     },
     validTeam() {
         if (this.heroes.length === 0) return false;

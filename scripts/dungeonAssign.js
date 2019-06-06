@@ -86,8 +86,8 @@ $(document).on("click", ".dungeonContainer", (e) => {
     $dungeonSelect.hide();
     if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.ADVENTURING) showDungeon(dungeonID);
     else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.EMPTY) {
-        refreshHeroSelect(dungeonID);
         DungeonManager.dungeonCreatingID = dungeonID;
+        refreshHeroSelect(dungeonID);
         $dungeonSelect.hide();
         $dungeonTeamSelect.show();
     }
@@ -96,7 +96,8 @@ $(document).on("click", ".dungeonContainer", (e) => {
 /*------------------------
 /*-   TEAM SELECT CODE   -
 /*------------------------*/
-function refreshHeroSelect() {
+function refreshHeroSelect(dungeonID) {
+    const dungeon = DungeonManager.dungeonByID(dungeonID);
     //builds the div that we hide and can show when we're selecting for that area
     $dtsTop.empty();
     const d1top = $("<div/>").addClass("dtsTopTitle").html("<h3>Assemble your Team!</h3>");
@@ -106,7 +107,7 @@ function refreshHeroSelect() {
         const d1 = characterCard("dungeonTeam",i,hero);
         d.append(d1);
     });
-    for (let i=0;i<PartyCreator.emptyPartySlots();i++) {
+    for (let i=0;i<PartyCreator.emptyPartySlots(dungeon.type);i++) {
         const d1a = characterCard("dungeonTeam",i).addClass("noHeroDungeonSelect");
         d.append(d1a);
     }
@@ -132,7 +133,7 @@ $(document).on('click', "div.dungeonTeamCardClick", (e) => {
     e.preventDefault();
     const heroID = $(e.currentTarget).attr("heroID");
     PartyCreator.removeMember(heroID);
-    refreshHeroSelect();
+    refreshHeroSelect(DungeonManager.dungeonCreatingID);
 });
 
 //clicking a hero to add them to your party
@@ -140,7 +141,7 @@ $(document).on('click', "div.dungeonAvailableCardClick", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("heroid");
     PartyCreator.addMember(ID);
-    refreshHeroSelect();
+    refreshHeroSelect(DungeonManager.dungeonCreatingID);
 });
 
 //locking in a team to start a dungeon

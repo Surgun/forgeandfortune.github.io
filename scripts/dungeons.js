@@ -231,6 +231,7 @@ const DungeonManager = {
     speed : 1250,
     dungeonPaid : [],
     bossesBeat : [],
+    partySize : 1,
     unlockDungeon(id) {
         this.dungeonPaid.push(id);
     },
@@ -247,6 +248,7 @@ const DungeonManager = {
         save.dungeonPaid = this.dungeonPaid;
         save.speed = this.speed;
         save.bossesBeat = this.bossesBeat;
+        save.partySize = this.partySize;
         return save;
     },
     addDungeon(dungeon) {
@@ -260,6 +262,7 @@ const DungeonManager = {
         this.speed = save.speed;
         if (typeof save.dungeonPaid !== "undefined") this.dungeonPaid = save.dungeonPaid;
         if (typeof save.bossesBeat !== "undefined") this.bossesBeat = save.bossesBeat;
+        if (typeof save.partySize !== "undefined") this.partySize = save.partySize
         refreshSpeedButton(this.speed);
     },
     addTime(t) {

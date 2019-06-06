@@ -482,6 +482,7 @@ class alRewards {
         if (this.type === "sanctuary") {
             ActionLeague.sanctuaryHeal += 10;
         }
+        if(this.type === "adventure") DungeonManager.partySize += 1;
     }
 }
 

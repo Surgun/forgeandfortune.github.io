@@ -511,5 +511,32 @@
     "goldCost": 32500000000,
     "type": "sanctuary",
     "subtype": null
+  },
+  {
+    "id": "AL6001",
+    "title": "Big Parties",
+    "description": "Increases party size for dungeons to 2",
+    "notoReq": 500,
+    "goldCost": 1500,
+    "type": "adventure",
+    "subtype": null
+  },
+  {
+    "id": "AL6002",
+    "title": "Bigger Parties",
+    "description": "Increases party size for dungeons to 3",
+    "notoReq": 4000,
+    "goldCost": 15000,
+    "type": "adventure",
+    "subtype": null
+  },
+  {
+    "id": "AL6003",
+    "title": "Biggest Parties",
+    "description": "Increases party size for dungeons to 4",
+    "notoReq": 15000,
+    "goldCost": 75000,
+    "type": "adventure",
+    "subtype": null
   }
 ]

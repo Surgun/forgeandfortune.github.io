@@ -49,7 +49,7 @@ class Guild {
         this.rep = save.rep;
         this.lvl = save.lvl;
         save.order.forEach(o => {
-            const container = new guildOrderItem(o.id, o.amt, o.rarity, o.sharp);
+            const container = new guildOrderItem(o.gid, o.id, o.amt, o.rarity, o.sharp);
             container.loadSave(o);
             this.order.push(container);
         });
@@ -91,12 +91,12 @@ class Guild {
         this.order = [];
         const possibleItems = recipeList.guildOrderItems(this.lvl);
         const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
-        const chosenFirst = possibleGuildItems[Math.floor(Math.random()*possibleGuildItems.length)];
-        const chosenSecond = possibleItems[Math.floor(Math.random()*possibleItems.length)];
-        const chosenThird = possibleItems[Math.floor(Math.random()*possibleItems.length)];
-        this.order.push(new guildOrderItem(chosenFirst.id, this.lvl));
-        if (this.lvl >= 1) this.order.push(new guildOrderItem(chosenSecond.id, this.lvl));
-        if (this.lvl >= 2) this.order.push(new guildOrderItem(chosenThird.id, this.lvl));
+        const chosenFirst = possibleGuildItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleGuildItems.length)];
+        const chosenSecond = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
+        const chosenThird = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
+        this.order.push(new guildOrderItem(this.id,chosenFirst.id, this.lvl));
+        if (this.lvl >= 1) this.order.push(new guildOrderItem(this.id, chosenSecond.id, this.lvl));
+        if (this.lvl >= 2) this.order.push(new guildOrderItem(this.id, chosenThird.id, this.lvl));
         refreshguildOrder(this);
     }
     getItem(slot) {
@@ -134,7 +134,8 @@ class Guild {
 */
 
 class guildOrderItem {
-    constructor (id,lvl) {
+    constructor (gid,id,lvl) {
+        this.gid = gid;
         this.id = id;
         this.item = recipeList.idToItem(id);
         this.lvl = lvl;
@@ -148,6 +149,7 @@ class guildOrderItem {
     }
     createSave() {
         const save = {};
+        save.gid = this.gid;
         save.id = this.id;
         save.lvl = this.lvl;
         save.amt = this.amt;
@@ -171,27 +173,30 @@ class guildOrderItem {
     generateAmt(lvl) {
         const min = miscLoadedValues["goMin"][lvl];
         const max = miscLoadedValues["goMax"][lvl];
-        let startAmt = bellCurve(min,max);
+        let startAmt = bellCurveSeed(this.gid, min, max);
+        console.log("amt:",startAmt);
         startAmt -= this.rarity
         if (this.sharp > 0) startAmt -= 1;
         return Math.max(1,startAmt);
     }
     generateRarity(lvl) {
+        console.log(lvl);
         const epicChance = miscLoadedValues["goEpic"][lvl];
         const greatChance = miscLoadedValues["goGreat"][lvl]+epicChance;
         const goodChance = miscLoadedValues["goGood"][lvl]+greatChance;     
-        const sharpRoll = Math.floor(Math.random() * 100);
+        const sharpRoll = Math.floor(GuildSeedManager.fauxRand(this.gid) * 100);
         if (epicChance > sharpRoll) return 3;
         if (greatChance > sharpRoll) return 2;
         if (goodChance > sharpRoll) return 1;
         return 0;
     }
     generateSharp(lvl) {
+        console.log(lvl);
         const sharpChance = miscLoadedValues["goSharp"][lvl];
         const sharpMin = miscLoadedValues["goSharpMin"][lvl];
         const sharpMax = miscLoadedValues["goSharpMax"][lvl];
-        if (sharpChance < Math.floor(Math.random() * 100)) return 0;
-        return bellCurve(sharpMin,sharpMax);
+        if (sharpChance < Math.floor(GuildSeedManager.fauxRand(this.gid) * 100)) return 0;
+        return bellCurveSeed(this.gid, sharpMin,sharpMax);
     }
     generateName() {
         if (this.sharp > 0) return `+${this.sharp} ${this.item.name}</span>`

@@ -31,9 +31,23 @@ function rollDice(number, sides) {
     return total;
 }
 
+function rollDiceSeed(gid, number, sides) {
+    let total = 0;
+    while(number-- > 0) total += Math.floor(GuildSeedManager.fauxRand(gid) * sides) + 1;
+    return total;
+}
+
 function bellCurve(min,max) {
     const total = rollDice(3,6);
     const percent = (total-6)/30;
+    return Math.round(percent*(max-min)+min);
+}
+
+function bellCurveSeed(gid,min,max) {
+    const total = rollDiceSeed(gid, 6,6);
+    console.log("Total:",total);
+    const percent = (total-6)/30;
+    console.log ("Percent:",percent,min,max,percent*(max-min)+min);
     return Math.round(percent*(max-min)+min);
 }
 

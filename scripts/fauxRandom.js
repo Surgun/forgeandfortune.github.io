@@ -1,8 +1,3 @@
-//not used currently
-let wsSeed = Math.floor(Math.random() * 10000);
-let hbSeed = Math.floor(Math.random() * 10000);
-let wbSeed = Math.floor(Math.random() * 10000);
-
 Math.seededRandom = () => {
     Math.seed = (Math.seed * 9301 + 49297) % 233280;
     return Math.seed / 233280;
@@ -18,12 +13,6 @@ function seedCreateSave() {
     return [wsSeed,hbSeed,wbSeed];
 }
 
-function seedLoadSave(save) {
-    wsSeed = save[0];
-    hbSeed = save[1];
-    wbSeed = save[2];
-}
-
 const DungeonSeedManager = {
     getFloorSeed(dungeonID,floor) {
         if (this[dungeonID] === undefined) this[dungeonID] = [DungeonManager.dungeonByID(dungeonID).seed];
@@ -33,5 +22,33 @@ const DungeonSeedManager = {
             dungeonSeedList.push((num * 9301 + 49297) % 233280)
         };
         return dungeonSeedList[floor-1] / 233280;
+    }
+}
+
+const GuildSeedManager = {
+    G001 : 1,
+    G002 : 2,
+    G003 : 3,
+    G004 : 4,
+    G005 : 5,
+    createSave() {
+        const save = {};
+        save.G001 = this.G001;
+        save.G002 = this.G002;
+        save.G003 = this.G003;
+        save.G004 = this.G004;
+        save.G005 = this.G005;
+        return save;
+    },
+    loadSave(save) {
+        this.G001 = save.G001;
+        this.G002 = save.G002;
+        this.G003 = save.G003;
+        this.G004 = save.G004;
+        this.G005 = save.G005;
+    },
+    fauxRand(gid) {
+        this[gid] = (this[gid] * 9301 + 49297) % 233280;
+        return this[gid] / 233280;
     }
 }

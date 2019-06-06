@@ -174,13 +174,11 @@ class guildOrderItem {
         const min = miscLoadedValues["goMin"][lvl];
         const max = miscLoadedValues["goMax"][lvl];
         let startAmt = bellCurveSeed(this.gid, min, max);
-        console.log("amt:",startAmt);
         startAmt -= this.rarity
         if (this.sharp > 0) startAmt -= 1;
         return Math.max(1,startAmt);
     }
     generateRarity(lvl) {
-        console.log(lvl);
         const epicChance = miscLoadedValues["goEpic"][lvl];
         const greatChance = miscLoadedValues["goGreat"][lvl]+epicChance;
         const goodChance = miscLoadedValues["goGood"][lvl]+greatChance;     
@@ -191,7 +189,6 @@ class guildOrderItem {
         return 0;
     }
     generateSharp(lvl) {
-        console.log(lvl);
         const sharpChance = miscLoadedValues["goSharp"][lvl];
         const sharpMin = miscLoadedValues["goSharpMin"][lvl];
         const sharpMax = miscLoadedValues["goSharpMax"][lvl];
@@ -512,7 +509,6 @@ function refreshALperks() {
     $alp.empty();
     const perks = ActionLeague.perks.filter(p=> p.notoReq <= ActionLeague.notoriety && !ActionLeague.purchased.includes(p.id));
     perks.forEach((perk,i) => {
-        console.log(i);
         $alp.append(createALperk(perk,true));
     });
     const nextperk = ActionLeague.nextUnlock();

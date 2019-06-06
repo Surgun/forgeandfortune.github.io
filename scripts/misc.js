@@ -45,9 +45,7 @@ function bellCurve(min,max) {
 
 function bellCurveSeed(gid,min,max) {
     const total = rollDiceSeed(gid, 6,6);
-    console.log("Total:",total);
     const percent = (total-6)/30;
-    console.log ("Percent:",percent,min,max,percent*(max-min)+min);
     return Math.round(percent*(max-min)+min);
 }
 

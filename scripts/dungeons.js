@@ -103,7 +103,6 @@ class Dungeon {
                     hero.healPercent(ActionLeague.sanctuaryHeal);
                 });
                 if (DungeonManager.bossesBeat.filter(b => b === this.sanctuary).length > 0) { //idk why this works over .includes()
-                    console.log('fuck yea')
                     this.nextFloor();
                     this.dungeonTime -= DungeonManager.speed;
                     return;

@@ -94,11 +94,11 @@ function refreshHeroSelect() {
     $dtsMaterials.empty();
     if (dungeon.type !== "boss") {
         $("<div/>").addClass("dtsMaterialTitle").html(`Materials Found In This Dungeon <i class="fas fa-chevron-down"></i>`).appendTo($dtsMaterials);
-        if (ResourceManager.materialSeenDungeon(dungeon.id).length === 0) {
-            const dm = $("<div/>").addClass("dtsMaterialNone").html("You have not discovered any materials.");
-            $dtsMaterials.append(dm);
-        }
         const dm = $("<div/>").addClass("dtsMaterialContainer");
+        if (ResourceManager.materialSeenDungeon(dungeon.id).length === 0) {
+            const dm1 = $("<div/>").addClass("dtsMaterialNone").html("You have not discovered any materials.");
+            dm.append(dm1);
+        }
         ResourceManager.materialSeenDungeon(dungeon.id).forEach(m => {
             const dm1 = $("<div/>").addClass("dtsMaterial").appendTo(dm);
                 $("<div/>").addClass("dtsMaterialIcon").html(m.img).appendTo(dm1);

@@ -2588,8 +2588,8 @@ Rarities
 }
 
 .dtsMaterialNone {
-    padding: 0 25px 10px;
     color: var(--text-tertiary);
+    grid-column: 1 / -1;
 }
 
 .dtsMaterialContainer {

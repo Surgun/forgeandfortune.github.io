@@ -272,7 +272,7 @@ $(document).on('click', "div.eventList", (e) => {
     if (event.reward !== null && event.id !== "E001") {
         const d6 = $("<div/>").addClass("eventNotorietyContainer")
         const d6a = $("<div/>").addClass("eventNotorietyHeading").html(`Notoriety Earned`);
-        const d6b = $("<div/>").addClass("eventNotoriety").html(` You have earned <span>${event.notoriety()} Notoriety</span>. Make use of it in The Action League. `)
+        const d6b = $("<div/>").addClass("eventNotoriety").html(` You have earned <span>${event.notoriety()} Notoriety</span>. Make use of it in The Action League.`)
         d.append(d6.append(d6a,d6b));
     }
     const d7 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
@@ -312,6 +312,7 @@ function eventChecker() {
     if (!EventManager.hasSeen("E010") && ActionLeague.purchased.includes("AL4102")) EventManager.addEvent("E010");
     if (!EventManager.hasSeen("E011") && ActionLeague.purchased.includes("AL4103")) EventManager.addEvent("E011");
     if (!EventManager.hasSeen("E012") && ActionLeague.purchased.includes("AL4104")) EventManager.addEvent("E012");
+    if (!EventManager.hasSeen("E017") && achievementStats.maxFloor >= 50) EventManager.addEvent("E017");
 }
 
 let masteredItem = false;

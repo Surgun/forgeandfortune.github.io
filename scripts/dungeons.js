@@ -195,6 +195,7 @@ class Dungeon {
             return;
         }
         this.floorCount += 1;
+        achievementStats.maxFloor = Math.max(achievementStats.maxFloor, this.floorCount);
         this.sanctuary = FloorManager.isSanctuary(this.id,this.floorCount);
         if (this.sanctuary) {
             this.mobs = [];

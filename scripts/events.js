@@ -269,7 +269,7 @@ $(document).on('click', "div.eventList", (e) => {
         const d5 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());
         d.append(d5);
     }
-    if (event.reward !== null) {
+    if (event.reward !== null && event.id !== "E001") {
         const d6 = $("<div/>").addClass("eventNotorietyContainer")
         const d6a = $("<div/>").addClass("eventNotorietyHeading").html(`Notoriety Earned`);
         const d6b = $("<div/>").addClass("eventNotoriety").html(` You have earned <span>${event.notoriety()} Notoriety</span>. Make use of it in The Action League. `)

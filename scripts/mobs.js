@@ -41,6 +41,13 @@ const MobManager = {
             mobFloor.push(this.generateDungeonMob(mob,floorNum));
         })
         return mobFloor;
+    },
+    allMobDropsByDungeon(dungeonID) {
+        const mobids = FloorManager.mobsByDungeon(dungeonID);
+        const mobs = mobids.map(m => this.idToMob(m));
+        const materials = mobs.map(m=>m.drops);
+        const matNames = materials.map(m => Object.keys(m)).flat()
+        return [...new Set(matNames)];
     }
 }
 
@@ -73,7 +80,12 @@ const FloorManager = {
         const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
         if (possibleFloors.every(f => f.type === "sanctuary")) return possibleFloors[0].gate;
         return null;
-    }  
+    },
+    mobsByDungeon(dungeonid) {
+        const floors = this.floors.filter(f=>f.dungeon === dungeonid);
+        const mobs = floors.map(f => f.mobs).flat();
+        return [...new Set(mobs)]; 
+    }
 }
 
 class Mob {

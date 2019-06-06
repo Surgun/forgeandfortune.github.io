@@ -16,6 +16,8 @@ const $dungeonTeamSelect = $("#dungeonTeamSelect");
 const $dungeonRun = $("#dungeonRun");
 
 //dungeon team select
+const $dtsBanner = $("#dtsBanner");
+const $dtsMaterials = $("#dtsMaterials");
 const $dtsTop = $("#dtsTop");
 const $dtsBottom = $("#dtsBottom");
 
@@ -84,6 +86,18 @@ $(document).on("click", ".dungeonContainer", (e) => {
 function refreshHeroSelect() {
     const dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonCreatingID);
     //builds the div that we hide and can show when we're selecting for that area
+    //Team Banner
+    $dtsBanner.empty();
+        $("<div/>").addClass("dts"+dungeon.id).html(dungeon.name).appendTo($dtsBanner);
+    //Materials in Dungeon
+    $dtsMaterials.empty();
+        $("<div/>").addClass("dtsMaterialTitle").html("Materials in Dungeon:").appendTo($dtsMaterials);
+    ResourceManager.materialSeenDungeon(dungeon.id).forEach(m => {
+        const dm = $("<div/>").addClass("dtsMaterialContainer");
+            $("<div/>").addClass("dtsMaterialIcon").html(m.img).appendTo(dm);
+            $("<div/>").addClass("dtsMaterialName").html(m.name).appendTo(dm);
+        $dtsMaterials.append(dm);
+    });
     $dtsTop.empty();
     const d1top = $("<div/>").addClass("dtsTopTitle").html("<h3>Assemble your Team!</h3>");
     $dtsTop.append(d1top);

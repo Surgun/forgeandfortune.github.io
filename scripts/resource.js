@@ -12,10 +12,12 @@ class Material{
         const save = {};
         save.id = this.id;
         save.amt = this.amt;
+        save.seen = this.seen;
         return save;
     }
     loadSave(save) {
         this.amt = save.amt;
+        this.seen = save.seen;
     }
 }
 
@@ -47,6 +49,7 @@ const ResourceManager = {
         }
         const mat = this.materials.find(mat => mat.id === res); 
         mat.amt += amt;
+        mat.seen = true;
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
@@ -131,6 +134,12 @@ const ResourceManager = {
         const great = resources[(week+1)%resources.length].id;
         const epic = resources[(week+2)%resources.length].id;
         return [good,great,epic];
+    },
+    materialSeenDungeon(dungeonID) {
+        //returns a list of materials you've seen
+        const matids = MobManager.allMobDropsByDungeon(dungeonID);
+        const materials = matids.map(m => this.idToMaterial(m));
+        return materials.filter(m => m.seen);
     }
 }
 

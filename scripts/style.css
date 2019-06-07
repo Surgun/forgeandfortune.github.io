@@ -5109,6 +5109,16 @@ footer a[href*="discord.gg"]:hover {
     transform: rotate(180deg) translateX(50%);
 }
 
+.isDialog.tooltip:after {
+    width: 250px;
+    margin: 0 auto;
+}
+
+#clearSave.tooltip:after {
+    left: 10px;
+    transform-origin: 10% bottom;
+}
+
 .ASauto.tooltip:before, .WSAuto.tooltip:before {
     top: 2px;
     left: 105%;

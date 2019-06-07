@@ -16,14 +16,14 @@ const CombatManager = {
         if (attacker.fear) {
             if (Math.random() <= 0.4) {
                 const battleMessage = $("<span/>").addClass("logSpecial");
-                battleMessage.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} is feared and can't attack!`);
+                battleMessage.append(`${logIcon("fas fa-scarecrow")} ${logName(attacker.name)} is feared and can't attack!`);
                 BattleLog.addEntry(dungeonid,battleMessage);
                 return;
             }
             else {
                 attacker.fear = false;
                 const battleMessage2 = $("<span/>").addClass("logSpecial");
-                battleMessage2.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} snaps out of it!`);
+                battleMessage2.append(`${logIcon("fas fa-sparkles")} ${logName(attacker.name)} snaps out of it!`);
                 BattleLog.addEntry(dungeonid,battleMessage2);
             }
         }

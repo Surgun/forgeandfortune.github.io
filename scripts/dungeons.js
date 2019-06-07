@@ -6,7 +6,7 @@ class TurnOrder {
     constructor(heroes,mobs) {
         this.heroes = heroes;
         this.mobs = mobs;
-        this.order =  interlace(heroes,mobs);
+        this.order = interlace(heroes,mobs);
         this.position = 0;
         this.nextNotDead();
     }
@@ -208,18 +208,18 @@ class Dungeon {
         refreshDSB(this.id);
     }
     addSummon() {
-        if (this.mobs.length === 4) return;
+        this.mobs = this.mobs.filter(mob => !mob.clearImmediately);
         const newMob = MobManager.generateDungeonMob("LKH001",0);
-        this.mobs.unshift(newMob);
-        this.order.addMob(newMob);
-        if (this.mobs.length === 4) return initiateDungeonFloor(this.id);
+        newMob.clearImmediately = true;
+        this.mobs.push(newMob);
         const newMob2 = MobManager.generateDungeonMob("LKH002",0);
-        this.mobs.unshift(newMob2);
-        this.order.addMob(newMob2);
-        if (this.mobs.length === 4) return initiateDungeonFloor(this.id);
+        newMob2.clearImmediately = true;
+        this.mobs.push(newMob2);
         const newMob3 = MobManager.generateDungeonMob("LKH003",0);
-        this.mobs.unshift(newMob3);
-        this.order.addMob(newMob3);
+        newMob3.clearImmediately = true;
+        this.mobs.push(newMob3);
+        this.order = new TurnOrder(this.party.heroes,this.mobs);
+        this.order.position += 1;
         initiateDungeonFloor(this.id);
     }
 }

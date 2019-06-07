@@ -88,8 +88,12 @@ function refreshHeroSelect() {
     //builds the div that we hide and can show when we're selecting for that area
     //Team Banner
     $dtsBanner.empty();
-        $("<div/>").addClass(`dts${dungeon.id} dtsBackground`).appendTo($dtsBanner);
-        $("<div/>").addClass(`dts${dungeon.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
+        const b1 = $("<div/>").addClass(`dts${dungeon.id} dtsBackground`).appendTo($dtsBanner);
+        const b2 = $("<div/>").addClass(`dts${dungeon.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
+        if (dungeon.type === "boss") {
+            b1.addClass("DBoss");
+            b2.addClass("DBoss");
+        }
     //Materials in Dungeon
     $dtsMaterials.empty();
     if (dungeon.type !== "boss") {

@@ -3377,7 +3377,8 @@ div.EquipmentCardsContainer {
 
 .DBoss .bgContainer .layer7 {
     background: url('../../images/dungeonBackgrounds/dungeon_boss/layer7.png');
-    background-size: 500px;
+    background-size: 800px;
+    background-position: bottom;
 }
 
 .DBoss .bgContainer .layer8 {

@@ -90,6 +90,7 @@ function refreshHeroSelect() {
     $dtsBanner.empty();
         const b1 = $("<div/>").addClass(`dts${dungeon.id} dtsBackground`).appendTo($dtsBanner);
         const b2 = $("<div/>").addClass(`dts${dungeon.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
+            $("<div/>").addClass(`dts${dungeon.id} dtsBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($dtsBanner);
         if (dungeon.type === "boss") {
             b1.addClass("DBoss");
             b2.addClass("DBoss");
@@ -152,6 +153,12 @@ $(document).on('click','.dtsMaterialTitle', (e) => {
         $(e.currentTarget).removeClass("toggleActive");
         $(".dtsMaterialContainer").removeClass("expanded");
     }
+});
+
+//Go back to dungeon select screen
+$(document).on('click', ".dtsBackButton", (e) => {
+    e.preventDefault();
+    tabClick(e, "dungeonsTab");
 });
 
 //clicking a hero to remove them from your party

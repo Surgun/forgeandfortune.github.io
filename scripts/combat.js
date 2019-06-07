@@ -13,15 +13,15 @@ const CombatManager = {
             BattleLog.addEntry(dungeonid,battleMessage);
             return;
         }
-        if (attacker.stunLinger) {
+        if (attacker.fear) {
             if (Math.random() <= 0.4) {
                 const battleMessage = $("<span/>").addClass("logSpecial");
-                battleMessage.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} is stunned and can't attack!`);
+                battleMessage.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} is feared and can't attack!`);
                 BattleLog.addEntry(dungeonid,battleMessage);
                 return;
             }
             else {
-                attacker.stunLinger = false;
+                attacker.fear = false;
                 const battleMessage2 = $("<span/>").addClass("logSpecial");
                 battleMessage2.append(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} snaps out of it!`);
                 BattleLog.addEntry(dungeonid,battleMessage2);
@@ -50,7 +50,11 @@ const CombatManager = {
         else if (attacker.special === "birdflame") SAbirdflame(attacker, enemies, dungeonid);
         else if (attacker.special === "defenseStance") SAdefenseStance(attacker, dungeonid);
         else if (attacker.special === "summon") SAsummon(attacker, dungeonid);
-        else if (attacker.special === "stunLinger") SAstunLinger(attacker,enemies, dungeonid);
+        else if (attacker.special === "fear") SAfear(attacker,enemies, dungeonid);
+        else if (attacker.special === "lowHPstun") SAlowmaxHPStun(attacker, enemies, dungeonid);
+        else if (attacker.special === "defenseStancePlus") SAdefenseStancePlus(attacker, enemies, dungeonid);
+        else if (attacker.special === "summon2") SAsummon2(attacker, enemies, dungeonid);
+        else if (attacker.special === "fearap") SAfearap(attacker, enemies, dungeonid);
         else {
             const target = getTarget(enemies, attacker.target);
             this.normalAttack(attacker, target, dungeonid);
@@ -149,6 +153,7 @@ function getTarget(party,type) {
     }
     else if (type === "highhp") return party.sort((a,b) => {return b.hp - a.hp})[0];
     else if (type === "lowhp") return party.sort((a,b) => {return a.hp - b.hp})[0];
+    else if (type === "lowmaxHP") return party.sort((a,b) => {return b.maxHP() - a.maxHP()})[0];
 }
 
 const $drLog = $("#drLog");

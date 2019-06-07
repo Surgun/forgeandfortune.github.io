@@ -149,10 +149,44 @@ function SAsummon(attacker, dungeonid) {
     BattleLog.addEntry(dungeonid, battleMessage);
 }
 
-function SAstunLinger(attacker, enemies, dungeonid) {
+function SAfear(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, "random");
-    target.stunLinger = true;
+    target.fear = true;
     const battleMessage = $("<span/>").addClass("logSpecial");
-    battleMessage.html(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} stuns ${logName(target.name)} really bad!`);
+    battleMessage.html(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} strikes fear in the heart of ${logName(target.name)}!`);
+    BattleLog.addEntry(dungeonid,battleMessage);
+}
+
+function SAlowmaxHPStun(attacker, enemies, dungeonid) {
+    const target = getTarget(enemies, "lowmaxHP");
+    const damage = Math.round(attacker.getAdjPow()*1.5);
+    target.stunned = true;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-meteor")} ${logName(attacker.name)} wallops ${logName(target.name)}!`);
+    BattleLog.addEntry(dungeonid,battleMessage); 
+    CombatManager.takeDamage(damage, target, attacker, dungeonid);
+}
+
+function SAdefenseStancePlus(attacker, dungeonid) {
+    attacker.armor += 5;
+    attacker.enhance += 1;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-user-shield")} The enemy ${logName(attacker.name)} is charging!`);
+    BattleLog.addEntry(dungeonid,battleMessage);
+}
+
+function SAsummon2(attacker, dungeonid) {
+    DungeonManager.dungeonByID(dungeonid).addSummon2();
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-user-shield")} ${attacker.name} summons some bigger friends!`);
+    BattleLog.addEntry(dungeonid, battleMessage);
+}
+
+function SAfearap(attacker, enemies, dungeonid) {
+    const target = getTarget(enemies, "random");
+    target.fear = true;
+    target.ap = 0;
+    const battleMessage = $("<span/>").addClass("logSpecial");
+    battleMessage.html(`${logIcon("fas fa-bolt")} ${logName(attacker.name)} really strikes fear in the heart of ${logName(target.name)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
 }

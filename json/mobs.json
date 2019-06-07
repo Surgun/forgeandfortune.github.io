@@ -2602,7 +2602,7 @@
     "target": "first",
     "drops": null,
     "event": "boss",
-    "special": "stunLinger"
+    "special": "fear"
   },
   {
     "id": "BB015",
@@ -2619,7 +2619,7 @@
     "target": "first",
     "drops": null,
     "event": "boss",
-    "special": null
+    "special": "lowHPstun"
   },
   {
     "id": "BB016",
@@ -2636,7 +2636,7 @@
     "target": "first",
     "drops": null,
     "event": "boss",
-    "special": null
+    "special": "birdflame"
   },
   {
     "id": "BB017",
@@ -2653,7 +2653,7 @@
     "target": "first",
     "drops": null,
     "event": "boss",
-    "special": null
+    "special": "defenseStancePlus"
   },
   {
     "id": "BB018",
@@ -2670,7 +2670,7 @@
     "target": "first",
     "drops": null,
     "event": "boss",
-    "special": null
+    "special": "summon2"
   },
   {
     "id": "BB019",
@@ -2687,7 +2687,7 @@
     "target": "first",
     "drops": null,
     "event": "boss",
-    "special": null
+    "special": "fearap"
   },
   {
     "id": "LKH001",
@@ -2726,6 +2726,57 @@
   {
     "id": "LKH003",
     "name": "Sierra",
+    "hpBase": 70,
+    "hpLvl": 0,
+    "powBase": 25,
+    "powLvl": 0,
+    "apAdd": 0,
+    "armor": 50,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "random",
+    "drops": null,
+    "event": "temp",
+    "special": null
+  },
+  {
+    "id": "LKH004",
+    "name": "Super Albert",
+    "hpBase": 50,
+    "hpLvl": 0,
+    "powBase": 25,
+    "powLvl": 0,
+    "apAdd": 0,
+    "armor": 50,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "random",
+    "drops": null,
+    "event": "temp",
+    "special": null
+  },
+  {
+    "id": "LKH005",
+    "name": "Super Lowe",
+    "hpBase": 60,
+    "hpLvl": 0,
+    "powBase": 25,
+    "powLvl": 0,
+    "apAdd": 0,
+    "armor": 50,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "random",
+    "drops": null,
+    "event": "temp",
+    "special": null
+  },
+  {
+    "id": "LKH006",
+    "name": "Super Sierra",
     "hpBase": 70,
     "hpLvl": 0,
     "powBase": 25,

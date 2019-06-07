@@ -64,7 +64,7 @@ body.lightmode {
 
 /* Scrollbar */
 
-#side-content, #RecipeFilter, #right-side-content, .dialog_body, #recipes-list, #inventory-container, .workerList-container, #heroList, .heroTabContent, #dungeon-container, #dungeonCloseup, #drTurnOrder, #drLog, #townContainer, #eventContainer, #eventListContainer, #progresslist {
+#side-content, #RecipeFilter, #right-side-content, .dialog_body, #recipes-list, #inventory-container, .workerList-container, #heroList, .heroTabContent, #dungeon-container, #dungeonCloseup, #drTurnOrder, #drLog, #townContainer, #eventContainer, #eventListContainer, #progresslist, .guildContainer {
     scrollbar-color: var(--scroll-thumb) var(--scroll-track);
     scrollbar-width: thin;
 }

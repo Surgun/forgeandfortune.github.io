@@ -2556,6 +2556,11 @@ Rarities
     background-size: contain;
 }
 
+.dtsDBoss.dtsBackground {
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%), url(/images/dungeonPreviews/dungeon_boss.png);
+    background-size: contain;
+}
+
 .dtsHeader {
     padding: 30px 20px 10px;
     font-size: 3rem;
@@ -3357,6 +3362,26 @@ div.EquipmentCardsContainer {
 
 .DBoss .bgContainer .layer4 {
     background: url('../../images/dungeonBackgrounds/dungeon_boss/layer4.png');
+    background-size: 500px;
+}
+
+.DBoss .bgContainer .layer5 {
+    background: url('../../images/dungeonBackgrounds/dungeon_boss/layer5.png');
+    background-size: 500px;
+}
+
+.DBoss .bgContainer .layer6 {
+    background: url('../../images/dungeonBackgrounds/dungeon_boss/layer6.png');
+    background-size: 500px;
+}
+
+.DBoss .bgContainer .layer7 {
+    background: url('../../images/dungeonBackgrounds/dungeon_boss/layer7.png');
+    background-size: 500px;
+}
+
+.DBoss .bgContainer .layer8 {
+    background: url('../../images/dungeonBackgrounds/dungeon_boss/layer8.png');
     background-size: 500px;
 }
 

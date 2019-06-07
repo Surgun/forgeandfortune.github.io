@@ -2327,11 +2327,11 @@ Rarities
     top: 5px;
     left: 5px;
     padding: 5px 7px;
-    border-radius: 10px;
+    color: var(--text-secondary);
 }
 
 .orderCraft:hover {
-    background-color: var(--green-tertiary);
+    color: var(--text-primary);
 }
 
 .guildOrderSubmit {
@@ -5285,6 +5285,11 @@ footer a[href*="discord.gg"]:hover {
 
 .invSideContainer.tooltip:after {
     width: 130px;
+    margin: 0 auto;
+}
+
+.orderCraft.tooltip:after {
+    width: 35px;
     margin: 0 auto;
 }
 

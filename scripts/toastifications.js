@@ -212,7 +212,13 @@ const Notifications = {
         const heading = 'Cannot Start Craft'; // Optional heading to be shown on the toast
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
-    }
+    },
+    cantAffordSmithRes() {
+        const text = "You do not have enough resources.";
+        const heading = "Cannot Start Smithing";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
 }
 
 function popToast(text,heading,icon) {

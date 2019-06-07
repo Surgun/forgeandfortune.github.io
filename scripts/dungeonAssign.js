@@ -135,8 +135,8 @@ function refreshHeroSelect() {
     const d2 = $("<div/>").addClass("dungeonAvailableCollection");
     HeroManager.ownedHeroes().forEach(hero => {
         if (hero.inDungeon) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"In Dungeon").appendTo(d2);
-        else if (dungeon.bannedHero.includes(hero.id)) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id, "Banned from Here").appendTo(d2);
-        else if (PartyCreator.heroes.includes(hero.id)) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id, "Already in Party").appendTo(d2);
+        else if (dungeon.bannedHero.includes(hero.id)) characterCard("heroBanned dungeonNotAvailable",hero.uniqueid,hero.id, "Banned from Here").appendTo(d2);
+        else if (PartyCreator.heroes.includes(hero.id)) characterCard("partyHero dungeonNotAvailable",hero.uniqueid,hero.id, "Already in Party").appendTo(d2);
         else characterCard("dungeonAvailable",hero.uniqueid,hero.id,null).appendTo(d2);
     });
     $dtsBottom.append(d2);

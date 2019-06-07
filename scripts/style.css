@@ -2626,20 +2626,24 @@ Rarities
     margin-right: 10px;
 }
 
-.dungeonTeamCard, .dungeonAvailableCard, .drHeroCard {
+.dungeonTeamCard, .dungeonAvailableCard, .dungeonNotAvailableCard, .drHeroCard {
     position: relative;
     display: flex;
     flex-direction: column;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     min-width: 125px;
-    min-height: 210px;
+    min-height: 220px;
     text-align: center;
     justify-content: center;
     border-radius: 10px;
 }
 
-.dungeonTeamName, .dungeonAvailableName {
+.dungeonAvailableImage, .dungeonNotAvailableImage {
+    margin-top: 10px;
+}
+
+.dungeonTeamName, .dungeonAvailableName, .dungeonNotAvailableName {
     margin: 10px;
     color: var(--highlight);
 }
@@ -2696,7 +2700,31 @@ Rarities
     color: var(--highlight);
 }
 
-.heroPower, .dungeonAvailablePow, .dungeonTeamPow {
+.heroStatus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    background: linear-gradient(to bottom, rgba(17, 220, 130, 0.25), transparent);
+    color: var(--green-primary);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.heroBanned .heroStatus {
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.25), transparent);
+    color: #ff9090;
+}
+
+.dungeonTeamCard .heroStatus {
+    display: none;
+}
+
+.heroPower, .dungeonAvailablePow, .dungeonNotAvailablePow , .dungeonTeamPow {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2799,7 +2827,7 @@ Rarities
     margin-bottom: 10px;
 }
 
-.heroExamineName:after, .heroExamineHeading:after, .dungeonTeamName:after, .dungeonAvailableName:after {
+.heroExamineName:after, .heroExamineHeading:after, .dungeonTeamName:after, .dungeonAvailableName:after, .dungeonNotAvailableName:after {
     content: "";
     display: block;
     height: 2px;
@@ -3749,7 +3777,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     opacity: 0.5;
 }
 
-.dungeonAvailableStats, .dungeonTeamStats {
+.dungeonAvailableStats, .dungeonNotAvailableStats, .dungeonTeamStats {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -3773,13 +3801,13 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin-right: 5px;
 }
 
-.dungeonAvailablePow, .dungeonTeamPow {
+.dungeonAvailablePow, .dungeonNotAvailablePow, .dungeonTeamPow {
     position: relative;
     margin: 0 7.5px;
     padding: 5px;
 }
 
-.dungeonAvailablePow > img, .dungeonTeamPow > img{
+.dungeonAvailablePow > img, .dungeonNotAvailablePow > img, .dungeonTeamPow > img{
     vertical-align: middle;
     margin-right: 5px;
 }

@@ -2556,7 +2556,7 @@ Rarities
     background-size: contain;
 }
 
-.dtsDBoss.dtsBackground {
+.DBoss.dtsBackground {
     background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%), url(/images/dungeonPreviews/dungeon_boss.png);
     background-size: contain;
 }

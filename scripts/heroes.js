@@ -373,23 +373,27 @@ function examineHero(ID) {
     const hero = HeroManager.idToHero(ID);
     $heroDetails.empty();
     $heroGearSlots.empty();
-    const upperLeftDiv = $("<div/>").addClass("heroExamineTop");
-    const d1 = $("<div/>").addClass("heroExamineImage").html(hero.image);
-    const d2 = $("<div/>").addClass("heroExamineName").html(hero.name);
-    const d3 = $("<div/>").addClass("heroExamineLvlClass").html(hero.class);
-    upperLeftDiv.append(d1,d2,d3);
-    const upperRightDiv = $("<div/>").addClass("heroExamineStats");
+    const heroExamineTop = $("<div/>").addClass("heroExamineTop heroExamineContainer");
+    const d1 = $("<div/>").addClass("heroExamineName").html(hero.name);
+    const d2 = $("<div/>").addClass("heroExamineImage").html(hero.image);
+    const d3 = $("<div/>").addClass("heroExamineDescription").html(/*hero.description*/"Oh look at me I am a placeholder description, I'm so cool and shiny but my dad doesn't love me so I hate my life and this description is the only joy I get.");
+    const d4 = $("<div/>").addClass("heroExamineLvlClassContainer");
+        $("<div/>").addClass("heroClassHeading").html("Hero Class").appendTo(d4);
+        $("<div/>").addClass("heroClassText").html(hero.class).appendTo(d4);
+    const d5 = $("<div/>").addClass("heroAbilityContainer");
+        $("<div/>").addClass("heroAbilityHeading").html("Hero Ability").appendTo(d5);
+        $("<div/>").addClass("heroAbilityText").html(hero.abilityDesc).appendTo(d5);
+    heroExamineTop.append(d1,d2,d3,d4,d5);
+    const heroExamineStats = $("<div/>").addClass("heroExamineStats heroExamineContainer");
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
-    upperRightDiv.append(htd.append(htd1));
+    heroExamineStats.append(htd.append(htd1));
     const stats = [hero.maxHP(),hero.getPow(), hero.apmax, hero.getArmor(), hero.crit+"%", hero.critdmg*100+"%", hero.dodgeChance+"%"];
     const statName = ["MAX HP","POW","AP","ARMOR","CRIT","CRDMG","DODGE"];
     for (let i=0;i<stats.length;i++) {
-        upperRightDiv.append(statRow(statName[i],stats[i]));
+        heroExamineStats.append(statRow(statName[i],stats[i]));
     }
-    const d4 = $("<div/>").addClass("heroAbilityHeading").html("Hero Ability");
-        $("<div/>").addClass("heroAbilityText").html(hero.abilityDesc).appendTo(d4);
-    upperRightDiv.append(d4);
+
     const lowerDiv = $("<div/>").addClass("heroExamineEquip");
     const slots = hero.getEquipSlots();
     const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory"]
@@ -437,7 +441,7 @@ function examineHero(ID) {
         lowerDiv.append(d5.append(d5a,d5b,d5c));
     });
     
-    $heroDetails.append(upperLeftDiv,upperRightDiv);
+    $heroDetails.append(heroExamineTop,heroExamineStats);
     $heroGearSlots.append(lowerDiv);
 }
 

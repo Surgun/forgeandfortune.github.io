@@ -217,6 +217,7 @@ function showDungeon(dungeonID) {
     initiateDungeonFloor(dungeonID);
     $dungeonSelect.hide();
     $dungeonRun.show().removeClass().addClass(dungeonID);
+    if (DungeonManager.dungeonByID(dungeonID).type === "boss") $dungeonRun.addClass("DBoss");
 }
 
 $(document).on("click", ".dungeonSpeedButtons", (e) => {
@@ -247,6 +248,7 @@ function initiateDungeonFloor(dungeonID) {
     if (DungeonManager.dungeonView !== dungeonID) return;
     const dungeon = DungeonManager.getCurrentDungeon();
     $dungeonRun.removeClass().addClass(dungeon.id);
+    if (dungeon.type === "boss") $dungeonRun.addClass("DBoss");
     $floorID.html("Floor "+dungeon.floorCount);
     $dungeonHeroList.empty();
     $dungeonMobList.empty();

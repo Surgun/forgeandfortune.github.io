@@ -461,44 +461,44 @@
   {
     "id": "AL5001",
     "title": "Slight Haven",
-    "description": "Sanctuaries now heal adventurers.",
-    "notoReq": 50000,
-    "goldCost": 200000,
+    "description": "Floor 50 now becomes a Sanctuary, a place for adventurers to rest.",
+    "notoReq": 1625,
+    "goldCost": 4000,
     "type": "sanctuary",
     "subtype": null
   },
   {
     "id": "AL5002",
     "title": "Safe-ish Haven",
-    "description": "Improved sanctuary healing.",
-    "notoReq": 100000,
-    "goldCost": 400000,
+    "description": "Floor 100 now becomes a Sanctuary, a place for adventurers to rest.",
+    "notoReq": 7250,
+    "goldCost": 30000,
     "type": "sanctuary",
     "subtype": null
   },
   {
     "id": "AL5003",
     "title": "Safe Haven",
-    "description": "Improved sanctuary healing.",
-    "notoReq": 150000,
-    "goldCost": 800000,
+    "description": "Floor 150 now becomes a Sanctuary, a place for adventurers to rest.",
+    "notoReq": 19750,
+    "goldCost": 200000,
     "type": "sanctuary",
     "subtype": null
   },
   {
     "id": "AL5004",
     "title": "Safer Haven",
-    "description": "Improved sanctuary healing.",
-    "notoReq": 200000,
-    "goldCost": 1600000,
+    "description": "Floor 200 now becomes a Sanctuary.",
+    "notoReq": 42250,
+    "goldCost": 800000,
     "type": "sanctuary",
     "subtype": null
   },
   {
     "id": "AL5005",
     "title": "Most Safer Haven",
-    "description": "Improved sanctuary healing.",
-    "notoReq": 250000,
+    "description": "Floor 250 now becomes a Sanctuary.",
+    "notoReq": 82250,
     "goldCost": 3000000,
     "type": "sanctuary",
     "subtype": null
@@ -506,8 +506,8 @@
   {
     "id": "AL5006",
     "title": "Really Safe Haven",
-    "description": "Improved sanctuary healing.",
-    "notoReq": 300000,
+    "description": "Floor 300 now becomes a Sanctuary.",
+    "notoReq": 139750,
     "goldCost": 30000000,
     "type": "sanctuary",
     "subtype": null
@@ -515,8 +515,8 @@
   {
     "id": "AL5007",
     "title": "Super Safe Haven",
-    "description": "Improved sanctuary healing.",
-    "notoReq": 350000,
+    "description": "Floor 350 now becomes a Sanctuary.",
+    "notoReq": 213750,
     "goldCost": 150000000,
     "type": "sanctuary",
     "subtype": null
@@ -524,8 +524,8 @@
   {
     "id": "AL5008",
     "title": "Extremely Safe Haven",
-    "description": "Improved sanctuary healing.",
-    "notoReq": 400000,
+    "description": "Floor 400 now becomes a Sanctuary.",
+    "notoReq": 310250,
     "goldCost": 625000000,
     "type": "sanctuary",
     "subtype": null
@@ -533,8 +533,8 @@
   {
     "id": "AL5009",
     "title": "Mega Safe Haven",
-    "description": "Improved sanctuary healing.",
-    "notoReq": 450000,
+    "description": "Floor 450 now becomes a Sanctuary.",
+    "notoReq": 432250,
     "goldCost": 32500000000,
     "type": "sanctuary",
     "subtype": null

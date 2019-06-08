@@ -5981,7 +5981,30 @@ span.beta-tag {
     display: none;
 }
 
-@media screen and (max-width: 1679px) {
+@media screen and (max-width: 1679px) and (min-width: 1550px) {
+    #heroList {
+        max-width: 200px;
+    }
+
+    #heroList .heroOwnedCard .heroOwnedImage {
+        display: none;
+    }
+
+    .buyNewHeroButton {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buyHeroText {
+        margin-right: 0;
+    }
+
+    .buyHeroCost {
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 1170px) {
     #heroList {
         max-width: 200px;
     }

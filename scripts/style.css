@@ -1415,7 +1415,7 @@ Rarities
     grid-template: auto / repeat(auto-fill, minmax(275px, 1fr));
 }
 
-.recipeCardContainer, .recipeCardContainerBuilding {
+.recipeCardContainer {
     position: relative;
     border-radius: 10px;
     min-height: 216px;
@@ -1425,6 +1425,10 @@ Rarities
     transform: rotateX(360deg);
     -webkit-animation: 0.2s scale-in;
     animation: 0.2s scale-in;
+}
+
+.recipeCardContainer.buildingCard {
+    width: 100%;
 }
 
 .recipeCardInfo {
@@ -4015,6 +4019,14 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     overflow: auto;
 }
 
+#buildingRecipes {
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
 #buildingList {
     position: sticky;
     top: 0;
@@ -4693,11 +4705,12 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .buildingInstr {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    color: var(--highlight);
     margin-top: 10px;
     padding: 15px;
+    width: 100%;
+    color: var(--highlight);
 }
 
 .buildingInstrHead {
@@ -5398,6 +5411,11 @@ footer a[href*="discord.gg"]:hover {
 
 .indvCost.tooltip:nth-child(4n+1):after {
     left: -25px;
+}
+
+.buildingCard .indvCost.tooltip:after {
+    left: unset;
+    right: unset;
 }
 
 .recipeTimeContainer.tooltip:before, .recipeAmountContainer.tooltip:before, .recipeValueContainer.tooltip:before {

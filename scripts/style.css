@@ -1616,6 +1616,10 @@ Rarities
     background-color: rgba(255, 0, 0, .5);
 }
 
+.buildingCard .recipeCraft {
+    grid-column: 1 / -1;
+}
+
 .recipeName, .recipeBackTabContainer {
     display: flex;
     justify-content: left;

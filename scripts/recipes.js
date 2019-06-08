@@ -318,17 +318,17 @@ function recipeCardFront(recipe) {
         const td5b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "In Inventory");
             $("<div/>").addClass("recipeAmountHeader recipeCardHeader").html(`<i class="fas fa-cube"></i>`).appendTo(td5b);
             $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`).appendTo(td5b);
-        if (recipe.type !== "normal") td5b.hide();
+        if (recipe.recipeType !== "normal") td5b.hide();
 
         const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`);
             $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`).appendTo(td5c);
             $('<div/>').addClass('recipeValue').html(recipe.itemValueFormatted()).appendTo(td5c);
-        if (recipe.type !== "normal") td5c.hide();
+        if (recipe.recipeType !== "normal") td5c.hide();
     td5.append(td5a,td5b,td5c);
 
     const td6 = $('<div/>').addClass('recipeCountAndCraft');
         const td6a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(recipeMasteryBar(recipe.craftCount));
-        if (recipe.type !== "normal") td6a.hide();
+        if (recipe.recipeType !== "normal") td6a.hide();
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
     td6.append(td6a,td6b);
     return $('<div/>').addClass('recipeCardFront').append(td1,td2,td3,td4,td5,td6);
@@ -347,7 +347,7 @@ function recipeCardBack(recipe) {
             const td8a1 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
             const td8a2 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
             const td8a3 = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
-            if (recipe.type !== "normal") td8a3.hide();
+            if (recipe.recipeType !== "normal") td8a3.hide();
         td8a.append(td8a1,td8a2,td8a3);
     td8.append(td8a);
 

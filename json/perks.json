@@ -464,7 +464,7 @@
     "description": "Floor 50 now becomes a Sanctuary, a place for adventurers to rest.",
     "notoReq": 1625,
     "goldCost": 4000,
-    "type": "sanctuary",
+    "type": "sanctuary1",
     "subtype": null
   },
   {
@@ -473,7 +473,7 @@
     "description": "Floor 100 now becomes a Sanctuary, a place for adventurers to rest.",
     "notoReq": 7250,
     "goldCost": 30000,
-    "type": "sanctuary",
+    "type": "sanctuary2",
     "subtype": null
   },
   {
@@ -482,7 +482,7 @@
     "description": "Floor 150 now becomes a Sanctuary, a place for adventurers to rest.",
     "notoReq": 19750,
     "goldCost": 200000,
-    "type": "sanctuary",
+    "type": "sanctuary3",
     "subtype": null
   },
   {
@@ -491,7 +491,7 @@
     "description": "Floor 200 now becomes a Sanctuary.",
     "notoReq": 42250,
     "goldCost": 800000,
-    "type": "sanctuary",
+    "type": "sanctuary4",
     "subtype": null
   },
   {
@@ -500,7 +500,7 @@
     "description": "Floor 250 now becomes a Sanctuary.",
     "notoReq": 82250,
     "goldCost": 3000000,
-    "type": "sanctuary",
+    "type": "sanctuary5",
     "subtype": null
   },
   {
@@ -509,7 +509,7 @@
     "description": "Floor 300 now becomes a Sanctuary.",
     "notoReq": 139750,
     "goldCost": 30000000,
-    "type": "sanctuary",
+    "type": "sanctuary6",
     "subtype": null
   },
   {
@@ -518,7 +518,7 @@
     "description": "Floor 350 now becomes a Sanctuary.",
     "notoReq": 213750,
     "goldCost": 150000000,
-    "type": "sanctuary",
+    "type": "sanctuary7",
     "subtype": null
   },
   {
@@ -527,7 +527,7 @@
     "description": "Floor 400 now becomes a Sanctuary.",
     "notoReq": 310250,
     "goldCost": 625000000,
-    "type": "sanctuary",
+    "type": "sanctuary8",
     "subtype": null
   },
   {
@@ -536,7 +536,7 @@
     "description": "Floor 450 now becomes a Sanctuary.",
     "notoReq": 432250,
     "goldCost": 32500000000,
-    "type": "sanctuary",
+    "type": "sanctuary9",
     "subtype": null
   }
 ]

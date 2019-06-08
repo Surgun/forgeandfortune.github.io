@@ -401,7 +401,7 @@ const ActionLeague = {
     notoriety : 0,
     purchased : [],
     perks : [],
-    sanctuaryHeal : 10,
+    sanctuaryHeal : [0,0,0,0,0,0,0,0,0,0],
     addPerk(reward) {
         this.perks.push(reward);
     },
@@ -466,7 +466,15 @@ class alRewards {
         if (this.type === "boss") DungeonManager.unlockDungeon(this.subtype);
         if (this.type === "craft") actionSlotManager.upgradeSlot();
         if (this.type === "adventure") DungeonManager.partySize += 1;
-        if (this.type === "sanctuary") ActionLeague.sanctuaryHeal += 10;
+        if (this.type === "sanctuary1") ActionLeague.sanctuaryHeal[1] = 100;
+        if (this.type === "sanctuary2") ActionLeague.sanctuaryHeal[2] = 100;
+        if (this.type === "sanctuary3") ActionLeague.sanctuaryHeal[3] = 100;
+        if (this.type === "sanctuary4") ActionLeague.sanctuaryHeal[4] = 100;
+        if (this.type === "sanctuary5") ActionLeague.sanctuaryHeal[5] = 100;
+        if (this.type === "sanctuary6") ActionLeague.sanctuaryHeal[6] = 100;
+        if (this.type === "sanctuary7") ActionLeague.sanctuaryHeal[7] = 100;
+        if (this.type === "sanctuary8") ActionLeague.sanctuaryHeal[8] = 100;
+        if (this.type === "sanctuary9") ActionLeague.sanctuaryHeal[9] = 100;
         if (this.type === "bank") TownManager.buildingPerk("bank");
         if (this.type === "cauldron") TownManager.buildingPerk("fuse");
         if (this.type === "forge") TownManager.buildingPerk("smith");

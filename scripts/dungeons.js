@@ -97,11 +97,15 @@ class Dungeon {
         while (this.dungeonTime >= DungeonManager.speed) {
             if (this.sanctuary !== null) {
                 //lol hax, this.sanctuary holds gate keeping
-                this.party.heroes.forEach(hero => {
+                const healPercent = ActionLeague.sanctuaryHeal[this.floorCount/50];
+                if (healPercent > 0) {
                     const battleMessage = $("<span/>").addClass("logSpecial");
-                    battleMessage.html(`${logIcon("far fa-swords")} ${logName(hero.name)} is healed at the Sanctuary!`);
-                    hero.healPercent(ActionLeague.sanctuaryHeal);
-                });
+                    battleMessage.html(`${logIcon("far fa-swords")} Your party is healed at the Sanctuary!`);
+                    BattleLog.addEntry(this.id,battleMessage);
+                    this.party.heroes.forEach(hero => {
+                        hero.healPercent(healPercent);
+                    });
+                }
                 if (DungeonManager.bossesBeat.filter(b => b === this.sanctuary).length > 0) { //idk why this works over .includes()
                     this.nextFloor();
                     this.dungeonTime -= DungeonManager.speed;

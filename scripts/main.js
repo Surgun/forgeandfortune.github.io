@@ -35,6 +35,9 @@ function afterLoad() {
     refreshCraftedCount();
     initializeGuilds();
     setInterval(mainLoop, 10);
+    recipeList.recipeFilterType = "Knives";
+    recipeList.recipeFilterString = "";
+    recipeFilterList();
     loading_screen.finish();
 }
 

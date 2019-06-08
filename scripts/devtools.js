@@ -121,16 +121,9 @@ const devtools = {
         Inventory.addToInventory("R99509",0,-1);
     },
     forceTown() {
-        TownManager.bankSee = true;
-        TownManager.bankUnlock = true;
-        TownManager.fuseSee = true;
-        TownManager.fuseUnlock = true;
-        TownManager.smithSee = true;
-        TownManager.smithUnlock = true;
-        TownManager.fortuneSee = true;
-        TownManager.fortuneUnlock = true;
-        forceSave();
-        location.replace('/');
+        const types = ["bank","fuse","smith","fusion"];
+        types.forEach(t => TownManager.buildingPerk(t));
+        refreshSideTown();
     },
     dungeonUnlock() {
         DungeonManager.dungeonPaid.push("D010","D011","D012","D013","D014","D015","D016","D017","D018","D019");

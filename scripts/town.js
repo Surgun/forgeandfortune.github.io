@@ -36,10 +36,22 @@ const TownManager = {
         return bldgs.includes(BuildingState.unseen);
     },
     buildingPerk(type) {
-        if (type === "bank") this.bankStatus = BuildingState.unseen;
-        if (type === "fuse") this.fuseStatus = BuildingState.unseen;
-        if (type === "smith") this.smithStatus = BuildingState.unseen;
-        if (type === "fortune") this.fortuneStatus = BuildingState.unseen;
+        if (type === "bank") {
+            this.bankStatus = BuildingState.unseen;
+            recipeList.idToItem("R99110").owned = true;
+        }
+        if (type === "fuse") {
+            this.fuseStatus = BuildingState.unseen;
+            recipeList.idToItem("R99210").owned = true;
+        }
+        if (type === "smith") {
+            this.smithStatus = BuildingState.unseen;
+            recipeList.idToItem("R99310").owned = true;
+        }
+        if (type === "fortune") {
+            this.fortuneStatus = BuildingState.unseen;
+            recipeList.idToItem("R99510").owned = true;
+        }
         refreshSideTown();
     }
 }
@@ -51,23 +63,23 @@ function refreshSideTown() {
     $buildBuilding.hide();
     if (TownManager.unseenLeft()) $("#townTab").addClass("hasEvent");
     else $("#townTab").removeClass("hasEvent");
-    if (!TownManager.bankSee) return;
+    if (TownManager.bankStatus === BuildingState.hidden) return;
     $emptyTown.hide();
     const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`<div><i class="fas fa-university"></i> Bank</div>`);
     if (TownManager.lastBldg === "bank") d1.addClass("selected");
     if (TownManager.bankOnce) d1.addClass("hasEvent");
     $buildingList.show().append(d1);
-    if (!TownManager.fuseSee) return;
+    if (TownManager.fuseStatus === BuildingState.hidden) return;
     const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`<div><i class="fas fa-cauldron"></i> Cauldron</div>`);
     if (TownManager.lastBldg === "fuse") d2.addClass("selected");
     if (TownManager.fuseOnce) d2.addClass("hasEvent");
     $buildingList.append(d2);
-    if (!TownManager.fuseUnlock || !TownManager.smithSee) return;
+    if (TownManager.smithStatus === BuildingState.hidden) return;
     const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`<div><i class="fas fa-hammer-war"></i> Forge</div>`);
     if (TownManager.lastBldg === "smith") d3.addClass("selected");
     if (TownManager.smithOnce) d3.addClass("hasEvent");
     $buildingList.append(d3);
-    if (!TownManager.smithUnlock || !TownManager.fortuneSee) return;
+    if (TownManager.fortuneStatus === BuildingState.hidden) return;
     const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html(`<div><i class="fas fa-hat-wizard"></i> Fortune</div>`);
     if (TownManager.lastBldg === "fortune") d4.addClass("selected");
     if (TownManager.fortuneOnce) d4.addClass("hasEvent");
@@ -211,21 +223,20 @@ $(document).on('click', '#fortuneBldg', (e) => {
 });
 
 const $buildingRecipes = $("#buildingRecipes");
-const $buildingMats = $("#buildingMats");
 
 function buildScreen(type) {
     $buildingRecipes.empty();
     TownManager.lastType = type;
-    const d4 = $("<div/>").addClass("bRecipes");
-    const table = $('<div/>').addClass('brecipeTable');
+    //const d4 = $("<div/>").addClass("bRecipes");
+    //const table = $('<div/>').addClass('brecipeTable');
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
         const recipeCardInfo = $('<div/>').addClass('recipeCardInfo').append(recipeCardFront(recipe),recipeCardBack(recipe))
-        const row = $('<div/>').addClass('recipeCardContainerBuilding').attr("id","rr"+recipe.id).append(recipeCardInfo);
-        table.append(row);
-        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardInfo).hide();
+        //const row = $('<div/>').addClass('recipeCardContainerBuilding').attr("id","rr"+recipe.id).append(recipeCardInfo);
+        //table.append(row);
+        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardInfo);
         $buildingRecipes.append(recipeCardContainer);
     });
-    $buildingRecipes.append(row);
+    //$buildingRecipes.append(row);
 
     const d5 = $("<div/>").addClass("buildingInstr");
         $("<div/>").addClass("buildingInstrHead").html("Instruction").appendTo(d5);

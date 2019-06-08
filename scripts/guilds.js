@@ -465,26 +465,12 @@ class alRewards {
         if (this.type === "worker") WorkerManager.gainWorker(this.subtype);
         if (this.type === "boss") DungeonManager.unlockDungeon(this.subtype);
         if (this.type === "craft") actionSlotManager.upgradeSlot();
-        if (this.type === "bank") {
-            TownManager.bankOnce = true;
-            TownManager.bankSee = true;
-        }
-        if (this.type === "cauldron") {
-            TownManager.fuseOnce = true;
-            TownManager.fuseSee = true;
-        }
-        if (this.type === "forge") {
-            TownManager.smithOnce = true;
-            TownManager.smithSee = true;
-        }
-        if (this.type === "fortune") {
-            TownManager.fortuneOnce = true;
-            TownManager.fortuneSee = true;
-        }
-        if (this.type === "sanctuary") {
-            ActionLeague.sanctuaryHeal += 10;
-        }
-        if(this.type === "adventure") DungeonManager.partySize += 1;
+        if (this.type === "adventure") DungeonManager.partySize += 1;
+        if (this.type === "sanctuary") ActionLeague.sanctuaryHeal += 10;
+        if (this.type === "bank") TownManager.buildingPerk("bank");
+        if (this.type === "cauldron") TownManager.buildingPerk("fuse");
+        if (this.type === "forge") TownManager.buildingPerk("smith");
+        if (this.type === "fortune") TownManager.buildingPerk("fortune");
     }
 }
 

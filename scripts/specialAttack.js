@@ -131,6 +131,7 @@ function SAbirdflame(attacker, enemies, dungeonid) {
     for (let i=0;i<3;i++) {
         const target = getTarget(enemies, "random");
         const damage = attacker.getAdjPow();
+        if (target === undefined) return;
         CombatManager.takeDamage(damage, target, attacker, dungeonid);
     }
 }

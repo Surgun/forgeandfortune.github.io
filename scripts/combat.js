@@ -148,8 +148,7 @@ function getTarget(party,type) {
     if (type === "last") return party[party.length-1];
     else if (type === "reverse") return party.reverse()[0];
     else if (type === "random") {
-        const alive = party.filter(p => !p.dead());
-        return alive[Math.floor(Math.random()*alive.length)];
+        return party[Math.floor(Math.random()*party.length)];
     }
     else if (type === "highhp") return party.sort((a,b) => {return b.hp - a.hp})[0];
     else if (type === "lowhp") return party.sort((a,b) => {return a.hp - b.hp})[0];

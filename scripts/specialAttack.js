@@ -175,7 +175,7 @@ function SAdefenseStancePlus(attacker, dungeonid) {
     BattleLog.addEntry(dungeonid,battleMessage);
 }
 
-function SAsummon2(attacker, dungeonid) {
+function SAsummon2(attacker, enemies, dungeonid) {
     DungeonManager.dungeonByID(dungeonid).addSummon2();
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-user-shield")} ${attacker.name} summons some bigger friends!`);

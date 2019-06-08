@@ -376,7 +376,7 @@ function examineHero(ID) {
     const heroExamineTop = $("<div/>").addClass("heroExamineTop heroExamineContainer");
     const d1 = $("<div/>").addClass("heroExamineName").html(hero.name);
     const d2 = $("<div/>").addClass("heroExamineImage").html(hero.image);
-    const d3 = $("<div/>").addClass("heroExamineDescription").html(/*hero.description*/"Oh look at me I am a placeholder description, I'm so cool and shiny but my dad doesn't love me so I hate my life and this description is the only joy I get.");
+    const d3 = $("<div/>").addClass("heroExamineDescription").html(hero.description);
     const d4 = $("<div/>").addClass("heroExamineLvlClassContainer");
         $("<div/>").addClass("heroClassHeading").html("Hero Class").appendTo(d4);
         $("<div/>").addClass("heroClassText").html(hero.class).appendTo(d4);

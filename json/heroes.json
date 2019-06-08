@@ -30,6 +30,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Beorn is the model all young warriors strive to become.  He's quite the celebrity.",
     "abilityDesc": "Beorn harnesses the power of the sun to gain temporary armor until his next turn."
   },
   {
@@ -63,6 +64,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Cedric's parents died mysteriously, and will do anything to find out what happened.",
     "abilityDesc": "Cedric uses his tactical prowess to parry an attack, negating the damage of the first attack before his next turn and dealing a blow to the attacker."
   },
   {
@@ -99,6 +101,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Grim knows what happened to Cedric's parents, but must keep the secret at all costs.",
     "abilityDesc": "Grim unleashes a powerful attack, taking 5% of his current HP to deal a massive blow."
   },
   {
@@ -135,6 +138,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Lambug's family are poor fisherman, and she's looking to improve her lot in life.",
     "abilityDesc": "Lambug eyes narrow as she strikes her target for additional damage, healing if she kills her target."
   },
   {
@@ -168,6 +172,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Zoe was born with the gift of magic, and is unaware of the sheer power she possesses.",
     "abilityDesc": "Zoe unleashes a meteor attack, damaging all enemies on the field."
   },
   {
@@ -201,6 +206,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Neve's goal in life is to spread the word of love, peace and harmony through magic.",
     "abilityDesc": "Neve's eyes glow as she unleashes a powerful attack against her target, ignoring armor."
   },
   {
@@ -234,6 +240,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Titus is totally a human, with real human skin and hair and everything.",
     "abilityDesc": "Titus's spirit radiates as he heals the lowest HP member of the party."
   },
   {
@@ -267,6 +274,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Troy is a magician's apprentice, looking to make a name for himself.",
     "abilityDesc": "Troy channels his dvinity to heal all party members."
   },
   {
@@ -300,6 +308,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Alok comes from a wealthy family, and enjoys stealing worthless items from the poor.",
     "abilityDesc": "Alok plays his instrument to boost his allie's spirits - bosting the damage they deal to the current threats."
   },
   {
@@ -333,6 +342,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Grogmar has a long list of offenses, and is hoping they don't catch up with him.",
     "abilityDesc": "Grogmar snekas in the shadows to deal massive damage to the lowest HP enemy."
   },
   {
@@ -366,6 +376,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Revere has nothing to prove, because she knows the truth: she can do anything.",
     "abilityDesc": "Revere uses her nimbleness to attack the enemy twice."
   },
   {
@@ -399,6 +410,7 @@
     "guildUnlock": null,
     "gpCost": null,
     "tierUnlock": null,
+    "description": "Caeda uses both her charm and charisma to get almost anything she wants.",
     "abilityDesc": "Caeda steathily deals a crippling blow to the enemy, stunning them so they skip their next turn."
   }
 ]

@@ -2451,10 +2451,7 @@ Rarities
     max-width: 90%;
     border-radius: 5px;
     background-color: var(--bg-tertiary);
-}
-
-.plProgressBarPercent {
-    border-radius: 5px;
+    overflow: hidden;
 }
 
 .plProgressBarPercent.Completed {

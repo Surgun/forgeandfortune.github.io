@@ -439,6 +439,7 @@ const ActionLeague = {
         this.purchased.push(id);
         perk.activate();
         refreshALperks();
+        refreshProgress();
     },
     generateNoto(rewards) {
         //takes the rewards list and generates how many pts you should get
@@ -452,6 +453,12 @@ const ActionLeague = {
         const perkNoto = perks.map(p=>p.notoReq);
         const lowest = Math.min(...perkNoto);
         return this.perks.find(p => p.notoReq === lowest);
+    },
+    perkCount() {
+        return this.purchased.length;
+    },
+    perkMaxCount() {
+        return this.perks.length;
     }
 }
 

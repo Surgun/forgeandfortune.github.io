@@ -166,7 +166,7 @@ class Dungeon {
             EventManager.addEventBoss(this.id,this.dungeonTime);
             DungeonManager.bossesBeat.push(this.id);
             refreshALprogress();
-            refreshRecipeFilters();
+            refreshProgress();
         }
         else if (this.type === "regular") EventManager.addEventDungeon(this.eventLetter,this.dropList,this.dungeonTotalTime,this.floorCount, this.beatTotal);
         DungeonManager.removeDungeon(this.id);
@@ -198,7 +198,7 @@ class Dungeon {
             return;
         }
         this.floorCount += 1;
-        achievementStats.maxFloor = Math.max(achievementStats.maxFloor, this.floorCount);
+        achievementStats.floorRecord(this.id, this.floorCount);
         this.sanctuary = FloorManager.isSanctuary(this.id,this.floorCount);
         if (this.sanctuary) {
             this.mobs = [];
@@ -318,7 +318,13 @@ const DungeonManager = {
         const dungeon = this.dungeonByID(this.dungeonCreatingID);
         if (dungeon.type == "boss") return 4;
         return this.partySize;
-    }
+    },
+    bossCount() {
+        return this.bossesBeat.length;
+    },
+    bossMaxCount() {
+        return this.dungeons.filter(d => d.type === "boss").length;
+    },
 };
 
 const dungeonIcons = {

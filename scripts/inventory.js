@@ -444,6 +444,5 @@ function refreshInventoryPlaces() {
     refreshPossibleFuse();
     refreshBankInventory();
     refreshSmithInventory();
-    buildBuildMats();
     wipeSmithStage();
 }

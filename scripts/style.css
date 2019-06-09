@@ -144,12 +144,12 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, .equipHeading, .rewardDiv:before, .eventMessage:before, .dscName, .dsmName, .heroEquipBlockName, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader, .Worker .itemContributions {
+.dialog_title, .settings-title, .masteryBlockHeader {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container, #right-side-content, #guildsContainer, #db-panel, .dbActionButton, #progresslist  {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container, #right-side-content, #guildsContainer, #db-panel, .dbActionButton, #progresslist, .equipHeading, .heroEquipBlockName {
     font-family: 'Varela Round', 'Open Sans', sans-serif;
 }
 
@@ -602,9 +602,9 @@ body {
 
 .heroEquipBlockName {
     margin-top: 10px;
-    text-transform: uppercase;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1rem;
+    color: var(--highlight);
 }
 
 .heroEquipBlockName:after {
@@ -621,14 +621,12 @@ body {
 }
 
 .heroEquipBlockEquipSlot {
-    text-transform: uppercase;
     margin-bottom: 10px;
+    color: var(--text-secondary);
 }
 
 .heroEquipBlockEquip + .heroEquipBlockEquip {
     margin-top: 20px;
-    padding: 15px 0;
-    border-top: 2px solid var(--border-primary);
 }
 
 .heroEquipBlockEquipStat {
@@ -636,6 +634,9 @@ body {
     justify-content: center;
     align-items: center;
     margin: 10px 0;
+    background-color: var(--bg-secondary);
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .EquipmentCardsHeader, .eventNotorietyHeading {
@@ -2113,16 +2114,16 @@ Rarities
     border-radius: 5px;
 }
 
-.Worker .BuyWorker, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .alPerkBuy {
+.Worker .BuyWorker, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .alPerkBuy, .fuseStart {
     position: relative;
     border: 0;
-    font-size: 1em;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.upgrade_text, .unlockbp_text, .buyWorkerText, .buyHeroText, .ASBuySlotText, .dungeon_upgrade_text, .alPerkBuyText {
+.upgrade_text, .unlockbp_text, .buyWorkerText, .buyHeroText, .ASBuySlotText, .dungeon_upgrade_text, .alPerkBuyText, .fuseStartText {
     padding: 0 10px;
     margin-right: 10px;
 }
@@ -4148,16 +4149,15 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .buildingInfoName {
     display: inline-block;
-    text-transform: uppercase;
     color: var(--text-primary);
     animation: 0.3s scale-in forwards;
 }
 
 .buildingInfoName > h2 {
     margin: 0;
-    padding: 0 15px;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: normal;
+    text-shadow: 2px 2px 0 black;
 }
 
 .buildingInfoName:after {
@@ -4297,17 +4297,19 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
 }
 
 .possibleFusegroupHeader {
     display: block;
     width: 100%;
-    margin-bottom: 5px;
     padding: 5px;
     background-color: var(--bg-secondary);
     border-bottom: 1px solid var(--border-primary);
+    border-radius: 5px;
     color: var(--text-primary);
     text-align: center;
 }
@@ -4335,28 +4337,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .fuseTime {
-    padding: 10px 0 0 0;
-    color: var(--text-3);
-    border-top: 2px solid var(--border);
-}
-
-.fuseStart {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 5px;
-    padding: 10px;
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-primary);
+    position: relative;
+    padding: 10px 5px;
     color: var(--text-primary);
-    font-size: .8em;
-    cursor: pointer;
-}
-
-.fuseStart:hover {
-    background-color: var(--bg-tertiary);
+    border-top: 2px solid var(--border-primary);
 }
 
 #bankContainer {
@@ -4411,7 +4395,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .eventConfirm, #dungeonTeamButton, .recipeBuyCardBuy, .workerBuyCardBuy, .alPerkBuy, .guildOrderSubmit {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .eventConfirm, #dungeonTeamButton, .recipeBuyCardBuy, .workerBuyCardBuy, .alPerkBuy, .guildOrderSubmit, .fuseStart {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -4422,7 +4406,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .eventConfirm:hover, #dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .eventConfirm:hover, #dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -4527,18 +4511,18 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     width: 100%;
 }
 
-#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .eventConfirm:hover, #dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover  {
+#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .bpShopButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .eventConfirm:hover, #dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover {
     background-color: var(--green-tertiary);
 }
 
-#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .dungeon_cost, .recipeBuyCardBuyCost, .alPerkBuyCost, .guildOrderSubmitValue {
+#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .dungeon_cost, .recipeBuyCardBuyCost, .alPerkBuyCost, .guildOrderSubmitValue, .fuseStartCost {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .recipeBuyCardBuyCost, .alPerkBuyCost, .guildOrderSubmitValue {
+.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .recipeBuyCardBuyCost, .alPerkBuyCost, .guildOrderSubmitValue, .fuseStartCost {
     position: relative;
     margin-top: 5px;
     padding: 5px;
@@ -4556,11 +4540,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin-left: 10px;
 }
 
-.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img, .dungeon_cost > img, .recipeBuyCardBuyCost > img, .alPerkBuyCost > img, .guildOrderSubmitValue > img {
+.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img, .dungeon_cost > img, .recipeBuyCardBuyCost > img, .alPerkBuyCost > img, .guildOrderSubmitValue > img, .fuseStartCost > img {
     margin: 0 5px;
 }
 
-.worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .alPerkBuyCost {
+.worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .alPerkBuyCost, .fuseStartCost {
     margin-top: 0;
     max-width: 120px;
 }
@@ -5477,6 +5461,11 @@ footer a[href*="discord.gg"]:hover {
 
 .orderCraft.tooltip:after {
     width: 35px;
+    margin: 0 auto;
+}
+
+.fuseTime.tooltip:after {
+    width: 75px;
     margin: 0 auto;
 }
 

@@ -22,7 +22,6 @@ function refreshProgress() {
 
     $plBoss.html(`${DungeonManager.bossCount()}/${DungeonManager.bossMaxCount()}`);
     const bossPercent = (DungeonManager.bossCount()/DungeonManager.bossMaxCount()*100).toFixed(2);
-    console.log(typeof bossPercent)
     $pbBoss.css('width', bossPercent+"%");
     if (bossPercent === "100.00") $pbBoss.addClass("Completed");
     tally += DungeonManager.bossCount();

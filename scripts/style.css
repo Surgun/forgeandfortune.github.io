@@ -89,7 +89,7 @@ body {
     right: 1.5%;
     padding: 20px 25px;
     border-radius: 50%;
-    background-color: var(--bg-primary);
+    background-color: var(--border-primary);
     color: var(--text-primary);
     -webkit-transform: scale(0);
     -moz-transform: scale(0);

@@ -144,12 +144,12 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, #progress_container > div > h2, .statHeading, .MilestoneTitle, .equipHeading, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dscName, .dsmName, .heroEquipBlockName, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader, .Worker .itemContributions {
+.dialog_title, .equipHeading, .rewardDiv:before, .eventMessage:before, .dscName, .dsmName, .heroEquipBlockName, .settings-title, .fuseHead, .possibleFuseHead, .buildingInfoName, .battleLogFloor, .bankInvHead, .bankBankHead, .smithInvHead, .masteryBlockHeader, .Worker .itemContributions {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
 
-.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container, #right-side-content, #guildsContainer, #db-panel, .dbActionButton {
+.dialog_description, #pfButtons>input, #pfImportExport>input, #pfLoadButtons>input, #pfLoginRegister, #pfEmail > input, #pfPassword > input, #pfStatusSave, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #importSaveText, #exportSaveText, .loadSureDescription, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container, #right-side-content, #guildsContainer, #db-panel, .dbActionButton, #progresslist  {
     font-family: 'Varela Round', 'Open Sans', sans-serif;
 }
 
@@ -889,10 +889,6 @@ Rarities
     pointer-events: none;
 }
 
-.plProgressBar {
-    background-color: var(--bg-secondary);
-}
-
 .ASProgressBar:before {
     content: attr(data-label);
     position: absolute;
@@ -918,7 +914,10 @@ Rarities
     font-size: 0.70em;
     text-transform: uppercase;
     background: none;
+}
 
+.ASProgressBar .ProgressBarFill.ProgressBarFillMaster {
+    background: var(--gradient-secondary);
 }
 
 .ProgressBarFill, .plProgressBarPercent {
@@ -926,14 +925,6 @@ Rarities
     position: relative;
     height: 100%;
     background: var(--gradient-primary);
-    z-index: 1;
-}
-
-.ASProgressBar .ProgressBarFill.ProgressBarFillMaster {
-    background: var(--gradient-secondary);
-}
-
-.plProgressBarPercent {
     z-index: 1;
 }
 
@@ -2400,12 +2391,14 @@ Rarities
 }
 
 #progress_container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template: auto / repeat(auto-fill,minmax(250px,1fr));
+    grid-gap: 10px;
 }
 
 #progress_container > .progress-section-title {
     margin-top: 0;
+    grid-column: 1 / -1;
 }
 
 .progress-section-title {
@@ -2418,16 +2411,21 @@ Rarities
 }
 
 #progress_container > div > h2 {
-    font-size: 1em;
+    font-size: 1rem;
+    font-weight: normal;
     margin-bottom: 0;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--border-primary);
 }
 
+#progress_container > div > span {
+    margin-bottom: 10px;
+}
+
 .progress-desc {
-    font-size: .9em;
+    font-size: .9rem;
     text-align: center;
-    color: var(--text-tertiary);
+    color: var(--text-secondary);
     flex-grow: 1;
 }
 
@@ -2438,9 +2436,6 @@ Rarities
     position: relative;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
-    min-width: 250px;
-    max-width: 250px;
-    margin: 0 15px 10px 0;
     padding: 15px 15px 30px 15px;
     border-radius: 10px;
     overflow: hidden;
@@ -2448,13 +2443,26 @@ Rarities
     animation: 0.2s scale-in;
 }
 
-#progresslist .plProgressBar {
+.plProgressBar {
     display: block;
     position: absolute;
-    bottom: 0;
-    border-top: 1px solid var(--border-primary)!important;
+    bottom: 10px;
     width: 100%;
-    margin: 0;
+    max-width: 90%;
+    border-radius: 5px;
+    background-color: var(--bg-tertiary);
+}
+
+.plProgressBarPercent {
+    border-radius: 5px;
+}
+
+.plProgressBarPercent.Completed {
+    background: var(--gradient-secondary);
+}
+
+.plProgressBarPercent {
+    z-index: 1;
 }
 
 .progress-card-container, .stat-box-container {
@@ -4024,11 +4032,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 #buildingRecipes {
-    padding: 20px;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    display: flex;
+    padding: 20px;
 }
 
 #buildingList {

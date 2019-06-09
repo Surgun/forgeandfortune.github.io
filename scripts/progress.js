@@ -22,25 +22,30 @@ function refreshProgress() {
 
     $plBoss.html(`${DungeonManager.bossCount()}/${DungeonManager.bossMaxCount()}`);
     const bossPercent = (DungeonManager.bossCount()/DungeonManager.bossMaxCount()*100).toFixed(2);
+    console.log(typeof bossPercent)
     $pbBoss.css('width', bossPercent+"%");
+    if (bossPercent === "100.00") $pbBoss.addClass("Completed");
     tally += DungeonManager.bossCount();
     max += DungeonManager.bossMaxCount();
 
     $plRecipeMastery.html(`${recipeList.masteryCount()}/${recipeList.recipeCount()}`);
     const recipePercent = (recipeList.masteryCount()/recipeList.recipeCount()*100).toFixed(2);
     $pbRecipe.css('width', recipePercent+"%");
+    if (recipePercent === "100.00") $pbRecipe.addClass("Completed");
     tally += recipeList.masteryCount();
     max += recipeList.recipeCount();
 
     $plWorkerLevel.html(`${WorkerManager.workerLevelCount()}/${WorkerManager.workerMaxLevelCount()}`);
     const workerPercent = (WorkerManager.workerLevelCount()/WorkerManager.workerMaxLevelCount()*100).toFixed(2);
     $pbWorker.css('width', workerPercent+"%");
+    if (workerPercent === "100.00") $pbWorker.addClass("Completed");
     tally += WorkerManager.workerLevelCount();
     max += WorkerManager.workerMaxLevelCount();
     
     $plPerk.html(`${ActionLeague.perkCount()}/${ActionLeague.perkMaxCount()}`);
     const perkPercent = (ActionLeague.perkCount()/ActionLeague.perkMaxCount()*100).toFixed(2);
     $pbPerk.css('width', perkPercent+"%");
+    if (perkPercent === "100.00") $pbPerk.addClass("Completed");
     tally += ActionLeague.perkCount();
     max += ActionLeague.perkMaxCount();
 
@@ -48,6 +53,7 @@ function refreshProgress() {
     if (overallPercent === 1 && achievementStats.endTime === -1) achievementStats.endTime = Date.now();
     $plOverall.html((overallPercent * 100).toFixed(2)+"%");
     $pbOverall.css('width', (overallPercent*100).toFixed(2)+"%");
+    if (overallPercent === "100.00") $pbOverall.addClass("Completed");
 }
 
 const $statMaxFloor = $("#statMaxFloor");

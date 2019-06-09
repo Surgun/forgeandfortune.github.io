@@ -28,7 +28,7 @@ const devtools = {
     },
     // This is for sir hamster, sets some things differently to test UI/UX
     designmode() {
-        devtools.godmode();
+        this.godmode();
         recipeList.recipes.filter(r=>r.recipeType === "normal").forEach(recipe => {
             recipe.craftCount = 99;
         })

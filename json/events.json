@@ -4,8 +4,8 @@
     "title": "A Mysterious Letter",
     "author": "Abqu",
     "message": [
-      "<p>If you're reading this letter, then I'm already gone.</p><p>But don't worry, you've got this",
-      "</p><p>I had to leave unexpectedly, for reasons I cannot disclose.  But here's what you need to know:</p><p>First, this is your shop.  Feel free to use it as you see fit.</p><p>Oren, the miner, and Revere, the daring thief, should be around to help you get started.</p><p>I've also included some gold for you to start your operations.</p><p>Here's what you should do:<br>- Start making Knives, for income;<br>- Give Revere one of those Knives to make her stronger;<br>- Send her out on an adventure, to get crafting materials;<br>- Hire a new worker, and;<br>- Purchase another crafting slot</p><p>If you follow these steps, you should be well on your way to success.</p><p>Remember, all playstyles are viable (whatever that means).</p><p>You may hear from me again in the future.</p><p>Your friend,</p><p>ABQU</p><p>P.S. I've left descriptions of the wares and my thoughts on the residents of the town.  You'll do great",
+      "<p>If you’re reading this letter, then I’m already gone. But don’t worry, you’ve got this",
+      "</p>\n      I had to leave unexpectedly, for reasons I cannot disclose.  But here’s what you need to know:<br>\n      <p>First, this is your shop. Feel free to use it as you see fit. Oren, the miner, and Revere, the daring thief, should be around to help you get started. I’ve also included some gold for you to start your operations.</p>\n      <p>Here’s what you should do:</p>\n      <li>Start making Knives, for income;</li>\n      <li>Give Revere one of those Knives to make her stronger;</li>\n      <li>Send her out on an adventure, to get crafting materials;</li>\n      </ul>\n      <p>Also, make sure you check out the guilds around here -- They're the best way to gain some fame and fortune around here and pick up some new recipes. Keep in mind no meals free, they'll want some honest work for the goodies.</p>\n      <p>If you follow these steps, you should be well on your way to success. Remember, all playstyles are viable (whatever that means).</p>\n      <p>You may hear from me again in the future.</p>\n      <p>Your friend,<br>\n      ABQU</p>\n      <p>P.S. I’ve left descriptions of the wares and my thoughts on the residents of the town.  You’ll do great",
       "Okay, bye.</p>"
     ],
     "type": "letter"
@@ -17,8 +17,8 @@
     "message": [
       "<p>Hey, I'm totally gone and not watching you, so this is a total coincidence, but...</p><p>I just noticed you unlocked all ten of the workers",
       "That's incredible",
-      "</p><p>If you haven't already, you should start leveling your workers.</p><p>Oh, I almost forgot",
-      "</p><p>There are more workers to be discovered.  Rumor has it, once your original workers reach a certain level, advanced workers will become available.</p><p>Isn't that a neat little progression system?</p><p>If anyone asks, I've gone missing.</p><p>Not watching you,</p><p>ABQU</p>"
+      "</p><p>If you haven't already, you should start leveling your workers. Stronger recipes require stronger workers to make them.</p><p>Oh, I almost forgot",
+      "</p><p>Rumor has it the Action League has more workers if they like you enough.</p><p>Isn't that a neat little progression system?</p><p>If anyone asks, I've gone missing.</p><p>Not watching you,</p><p>ABQU</p>"
     ],
     "type": "letter"
   },
@@ -28,7 +28,8 @@
     "author": "Abqu",
     "message": [
       "<p>Hi.</p><p>It's me, Abqu, your resident .... person.</p><p>Congrats on unlocking your first advanced worker",
-      "What a doozy that was, huh.</p><p>Anyway, they also will level up just like those other lackeys, but with one key difference:</p><p>Advanced workers take higher quality items to level up.</p><p>The standard workers took common items; these advanced workers will expect good quality stuff.</p><p>Keep up the great work",
+      "What a doozy that was, huh.</p><p>Anyway, they also will level up just like those other lackeys, but now you can make two recipes that require a resource at once",
+      "Isn't that great? Of course it's great.</p><p>Keep up the great work",
       "</p><p>Your mentor,</p><p>ABQU</p>"
     ],
     "type": "letter"
@@ -58,16 +59,6 @@
     "message": [
       "<p>Oh, one more thing.</p><p>You may notice your inventory is filling up with a lot of stuff, and your carpal tunnel is flaring up, but you can't walk to the drugstore because of the plantar fasciitis, so you try to take a nap but your sleep apnea is out of control, and, er, uh.</p><p>If you click on the $ emblem on your action slot, you will AUTOSELL stuff your workers make.  Make sure to click it a few times, it has a bunch of neat settings",
       "</p><p>Talk to you soon,</p><p>ABQU</p>"
-    ],
-    "type": "letter"
-  },
-  {
-    "id": "E008",
-    "title": "A Mysterious Letter",
-    "author": "Abqu",
-    "message": [
-      "<p>Hey, there.... dude? Dudette?  Dudeself?  Eh, whatever.</p><p>It looks like you've noticed a magical enhancement.</p><p>You see, your workers need stuff to level up.  Call it a bribe, or motivation, whichever makes you feel better.</p><p>Instead of going to your inventory and giving the workers the items manually, you can click the HAMMER button, and wah lah, the items will be AUTOMAGICALLY CONTRIBUTED to the corresponding worker.</p><p>Now you're cookin",
-      "</p><p>See ya later, dudeself.</p><p>ABQU</p>"
     ],
     "type": "letter"
   },

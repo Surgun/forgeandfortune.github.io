@@ -345,10 +345,9 @@ body {
     position: relative;
     text-align: center;
     background-color: var(--bg-tertiary);
-    border: 1px solid transparent;
     padding: 5px;
     margin-bottom: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -2754,7 +2753,7 @@ Rarities
     color: var(--text-white);
     text-align: center;
     padding: 5px;
-    border-radius: 15px;
+    border-radius: 5px;
     margin-bottom: 5px;
     cursor: pointer;
 }

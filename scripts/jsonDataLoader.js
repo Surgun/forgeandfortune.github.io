@@ -10,6 +10,19 @@ function loadMisc() {
                 miscLoadedValues[name] = val;
             })
         });
+        loadPatchnotes();
+    });
+}
+
+function loadPatchnotes() {
+    $.ajax({
+        url: "json/patchNotes.json",
+    }).done((data) => {
+        console.log("patch notes load complete");
+        $.each(data, function(i,props){
+            const patch = new PatchNote(props);
+            PatchManager.addPatch(patch);
+        });
         loadMaterials();
     });
 }

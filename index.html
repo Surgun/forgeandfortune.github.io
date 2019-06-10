@@ -210,10 +210,13 @@
             <div class="dialog_content">
                 <div class="dialog_header">
                     <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
-                    <h2 id="titlePatch" class="dialog_title">Check for Latest Version</h2>
+                    <h2 id="titlePatch" class="dialog_title">Patch Notes</h2>
                 </div>
-                <div class="dialog_body">
+                <div class="dialog_body" id="patchList">
                     <p id="descPatch" class="dialog_description">You are running the latest version of Forge & Fortune.</p>
+                </div>
+                <div class="dialog_footer">
+                    <div id="updateRefresh">Refresh Game to Update</div>
                 </div>
             </div>
         </div>
@@ -652,7 +655,7 @@
                     <a id="settings" class="isDialog tooltip" href="#dialogSettings" data-tooltip="Change your game preferences and settings."><i class="fas fa-cog"></i> Settings</a>
                 </div>
                 <div id="bottom-right">
-                    <a class="isDialog" href="#dialogPatch">v0.2.2.0</a>
+                    <a class="isDialog" href="#dialogPatch" id="versionNum">v0.2.2.0</a>
                     <div class="footer_more-container">
                         <span class="footer_more-btn">View Links &amp; Resources<i class="fas fa-angle-up"></i></span>
                         <ul class="footer_more-list">
@@ -709,6 +712,7 @@
     <script src="scripts/jquery.toast.js"></script>
     <script src="scripts/jsonDataLoader.js"></script>
     <script src="scripts/settings.js"></script>
+    <script src="scripts/patch.js"></script>
     <script src="scripts/misc.js"></script>
     <script src="scripts/tabs.js"></script>
     <script src="scripts/fauxRandom.js"></script>

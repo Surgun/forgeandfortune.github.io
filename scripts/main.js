@@ -7,6 +7,7 @@ const player = {
 }
 
 function afterLoad() {
+    refreshPatchNotes();
     initializeRecipes();
     initializeMats();
     if (!loadGame()) {
@@ -91,6 +92,7 @@ function mainLoop() {
     FusionManager.addTime(elapsedTime);
     bloopSmith.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
+    PatchManager.patchTimer(elapsedTime);
     FortuneManager.resetFortune();
     if (TownManager.purgeSlots) {
         actionSlotManager.removeBldgSlots();

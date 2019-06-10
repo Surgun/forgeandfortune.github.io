@@ -132,7 +132,7 @@ const recipeList = {
     loadSave(save) {
         save.forEach(i => {
             const rec = this.idToItem(i.id);
-            rec.loadSave(i);
+            if (rec !== undefined) rec.loadSave(i);
         });
     },
     filteredRecipeList() {

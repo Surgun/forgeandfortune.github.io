@@ -48,11 +48,16 @@ class Guild {
     loadSave(save) {
         this.rep = save.rep;
         this.lvl = save.lvl;
-        save.order.forEach(o => {
+        if (save.order !== undefined) {
+            save.order.forEach(o => {
             const container = new guildOrderItem(o.gid, o.id, o.amt, o.rarity, o.sharp);
             container.loadSave(o);
             this.order.push(container);
-        });
+            });
+        }
+        else {
+            this.generateNewOrder();
+        }
     }
     addRep() {
         this.order.forEach(o => {
@@ -449,7 +454,7 @@ const ActionLeague = {
         return noto.reduce((a,b) => a+b , 0);
     },
     nextUnlock() {
-        const perks = this.perks.filter(p => p.notoReq > this.notoriety);
+        const perks = this.perks.filter(p => p.notoReq > this.notoriety && !this.purchased.includes(p.id));
         const perkNoto = perks.map(p=>p.notoReq);
         const lowest = Math.min(...perkNoto);
         return this.perks.find(p => p.notoReq === lowest);

@@ -49,7 +49,6 @@ const $patchList = $("#patchList");
 const $updateRefresh = $("#updateRefresh");
 
 function refreshPatchNotes() {
-    $versionNum.html(PatchManager.lastVersion());
     if (PatchManager.updateNeeded()) $versionNum.addClass("hasEvent");
     $patchList.empty();
     PatchManager.patchList.forEach(patch => {

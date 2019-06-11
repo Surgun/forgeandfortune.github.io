@@ -86,6 +86,7 @@ const WorkerManager = {
         refreshRecipeFilters();
         recipeCanCraft();
         refreshProgress();
+        refreshAllGuildWorkers();
     },
     assignWorker(item) {
         const lvl = item.lvl;

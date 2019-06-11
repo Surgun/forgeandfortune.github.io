@@ -165,8 +165,10 @@ function hardMatRefresh() {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
-        $goldSidebarAmt.html(formatToUnits(mat.amt,2));
-        $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);
+        if (mat.id === "M001") {
+            $goldSidebarAmt.html(formatToUnits(mat.amt,2));
+            $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);
+        }
     })
 }
 

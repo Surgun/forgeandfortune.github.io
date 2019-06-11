@@ -181,7 +181,7 @@ const recipeList = {
         return this.recipes.find(r => r.type === type && r.lvl === lvl).id;
     },
     masteryCount() {
-        return this.recipes.filter(r=>r.isMastered()).length;
+        return this.recipes.filter(r=>r.isMastered() && r.recipeType==="normal").length;
     },
     recipeCount() {
         return this.recipes.filter(r=>r.recipeType==="normal").length;

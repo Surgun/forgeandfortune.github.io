@@ -50,6 +50,9 @@ class itemContainer {
         this.seed = Math.floor(Math.random() * 1000000);
         containerid += 1;
     }
+    uniqueID() {
+        return this.id+this.rarity+this.sharp;
+    }
     createSave() {
         const save = {};
         save.id = this.id;
@@ -83,23 +86,20 @@ class itemContainer {
     hp() {
         return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*this.sharp));
     }
+    ap() {
+        return this.item.apAdd;
+    }
     hpPlus() {
         return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*(this.sharp+1)));
     }
-    act() {
-        return this.item.act();
-    }
     propDiv() {
         const d = $("<div/>").addClass("invProp");
-        if (this.act() > 0) {
-            let speed = "Fair";
-            if (this.act() > 5000) speed = "Slow";
-            else if (this.act() < 5000) speed = "Fast";
-            const d1 = $("<div/>").addClass("invPropAct tooltip").attr("data-tooltip", "ACT").html(miscIcons.act + "&nbsp;" + speed)
+        if (this.pow() > 0) {
+            const d1 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + "&nbsp;" + this.pow())
             d.append(d1);
         }
-        if (this.pow() > 0) {
-            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + "&nbsp;" + this.pow())
+        if (this.ap() > 0) {
+            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip", "AP").html(miscIcons.ap + "&nbsp;" + this.ap())
             d.append(d2);
         }
         if (this.hp() > 0) {
@@ -124,6 +124,7 @@ class itemContainer {
         }
         return d;
     }
+    
     goldValueFormatted() {
         return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue(),2);
     }
@@ -155,8 +156,8 @@ const Inventory = {
         });
     },
     addToInventory(id,rarity,autoSell) {
-        if (this.full()) this.sellItem(id,rarity);
-        else if (autoSell >= rarity) this.sellItem(id,rarity);
+        if (this.full()) this.sellItem(id,rarity,0);
+        else if (autoSell >= rarity) this.sellItem(id,rarity,0);
         else {
             const container = new itemContainer(id,rarity);
             this.findempty(container);
@@ -167,7 +168,7 @@ const Inventory = {
         }
     },
     addItemContainerToInventory(container) {
-        if (this.full()) this.sellItem(id,rarity);
+        if (this.full()) this.sellItem(id,rarity,0);
         else this.findempty(container);
     },
     findempty(item) {
@@ -189,11 +190,13 @@ const Inventory = {
             return;
         }
         const roll = Math.floor(Math.random() * 1000)
-        let sellToggle = -1
-        if (autoSell === "Common") sellToggle = 0;
-        if (autoSell === "Good") sellToggle = 1;
-        if (autoSell === "Great") sellToggle = 2;
-        if (autoSell === "Epic") sellToggle = 3;
+        const sellToggleChart = {
+            "Common" : 0,
+            "Good" : 1,
+            "Great" : 2,
+            "Epic" : 3,
+        }
+        const sellToggle = sellToggleChart[autoSell];
         if (roll < this.craftChance(item,"Epic")) {
             this.addToInventory(id,3,sellToggle);
             achievementStats.craftedItem("Epic");
@@ -244,11 +247,11 @@ const Inventory = {
     sellInventory(indx) {
         const item = this.inv[indx];
         this.inv[indx] = null;
-        this.sellItem(item.id,item.rarity);
+        this.sellItem(item.id,item.rarity,item.sharp);
         refreshInventoryPlaces()
     },
-    sellItem(id,rarity) {
-        const gold = recipeList.idToItem(id).value*(rarity+1);
+    sellItem(id,rarity,sharp) {
+        const gold = Math.round(recipeList.idToItem(id).value*(rarity+1)*(1+sharp*0.1));
         achievementStats.gold(gold);
         ResourceManager.addMaterial("M001",gold);
     },
@@ -324,10 +327,19 @@ const Inventory = {
     itemCount(id,rarity) {
         return this.nonblank().filter(r=>r.id === id && r.rarity === rarity).length;
     },
+    itemCountAll(id) {
+        return this.nonblank().filter(r=>r.id === id).length;
+    },
+    itemCountSpecific(uniqueID) {
+        return this.nonblank().filter(i => i.uniqueID() === uniqueID).length;
+    },
     removePrecraft(id,amt) {
         if (this.itemCount(id,0) < amt) return;
         for (let i=0;i<amt;i++) this.removeFromInventory(id,0);
     },
+    findCraftMatch(uniqueID) {
+        return this.nonblank().find(i => i.uniqueID() === uniqueID);
+    }
 }
 
 $inventory = $("#inventory");
@@ -345,7 +357,7 @@ function refreshInventory() {
         }
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
-        const itemCost = $("<div/>").addClass("inventoryItemValue").html(item.goldValueFormatted());
+        const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr("data-tooltip", `${item.goldValue()} Gold`).html(item.goldValueFormatted());
         const itemLevel = $("<div/>").addClass("inventoryItemLevel").html(item.itemLevel());
         if (item.goldValue() === 0) {
             itemCost.hide();
@@ -365,7 +377,7 @@ function refreshInventory() {
         itemdiv.append(itemName,itemLevel,itemCost,itemProps,actionBtns);
         $inventory.append(itemdiv);
     });
-    $sideInventory.html(`${Inventory.inventoryCount()}/20`)
+    $sideInventory.html(`<i class="fas fa-cube"></i> ${Inventory.inventoryCount()}/20`)
     if (Inventory.inventoryCount() === 20) $sideInventory.addClass("inventoryFullSide");
     else $sideInventory.removeClass("inventoryFullSide");
 }
@@ -382,9 +394,10 @@ function gearEquipFromInventory(invID) {
     const item = equipContainerTarget.item;
     const itemdiv = $("<div/>").addClass("equipItem");
     itemdiv.addClass("R"+equipContainerTarget.rarity)
-    const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
+    const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName())
+    const itemLevel = $("<div/>").addClass("equipItemLevel").html(item.itemLevel());
     const itemProps = $("<div/>").addClass("equipItemProps").html(equipContainerTarget.propDiv());
-    itemdiv.append(itemName,itemProps);
+    itemdiv.append(itemName,itemLevel,itemProps);
     $ietEquip.html(itemdiv);
     const heroBlocks = HeroManager.slotsByItem(item);
     heroBlocks.forEach(hb=> {
@@ -399,10 +412,6 @@ function gearEquipFromInventory(invID) {
             const d4a = $("<div/>").addClass("heroEquipBlockEquipSlot").html(slotName[i]);
             const relPow = HeroManager.relativePow(hb.id,i,equipContainerTarget.pow());
             const relHP = HeroManager.relativeHP(hb.id,i,equipContainerTarget.hp());
-            const slotSpeed = HeroManager.slotSpeed(hb.id,i);
-
-            const d4aa = $("<div/>").addClass("heroEquipBlockEquipStat").html(miscIcons.act + "&nbsp;" + slotSpeed);
-            if (slotSpeed === null) d4aa.hide();
 
             const d4b = $("<div/>").addClass("heroEquipBlockEquipStat")
             if (relPow > 0) d4b.addClass("hebPositive").html(miscIcons.pow + "&nbsp;+" + relPow);
@@ -418,7 +427,7 @@ function gearEquipFromInventory(invID) {
             if (relPow !== 0 || relHP !== 0) d4d.hide();
 
             const d4e = $("<div/>").addClass("heroEquipBlockEquipButton").attr("hid",hb.id).attr("sid",i).html("Equip");
-            d4.append(d4a,d4aa,d4b,d4c,d4d,d4e);
+            d4.append(d4a,d4b,d4c,d4d,d4e);
             d3.append(d4);
         });
         d.append(d1,d2,d3);
@@ -430,10 +439,10 @@ function gearEquipFromInventory(invID) {
 
 function refreshInventoryPlaces() {
     refreshInventory();
-    refreshWorkerAmts();
+    refreshCardInvCount();
+    refreshOrderInvCount()
     refreshPossibleFuse();
     refreshBankInventory();
     refreshSmithInventory();
-    buildBuildMats();
     wipeSmithStage();
 }

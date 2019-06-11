@@ -10,7 +10,19 @@ function loadMisc() {
                 miscLoadedValues[name] = val;
             })
         });
-        levelCurves.initialize();
+        loadPatchnotes();
+    });
+}
+
+function loadPatchnotes() {
+    $.ajax({
+        url: "json/patchNotes.json",
+    }).done((data) => {
+        console.log("patch notes load complete");
+        $.each(data, function(i,props){
+            const patch = new PatchNote(props);
+            PatchManager.addPatch(patch);
+        });
         loadMaterials();
     });
 }
@@ -63,6 +75,32 @@ function loadHeroes() {
             const hero = new Hero(props);
             HeroManager.addHero(hero);
         });
+        loadGuilds();
+    });
+}
+
+function loadGuilds() {
+    $.ajax({
+        url: "json/guilds.json",
+    }).done((data) => {
+        console.log("guild load complete");
+        $.each(data, function(i,props){
+            const guild = new Guild(props)
+            GuildManager.addGuild(guild);
+        });
+        loadPerks();
+    });
+}
+
+function loadPerks() {
+    $.ajax({
+        url: "json/perks.json",
+    }).done((data) => {
+        console.log("perk load complete");
+        $.each(data, function(i,props){
+            const perk = new alRewards(props);
+            ActionLeague.addPerk(perk);
+        });
         loadMobs();
     });
 }
@@ -88,6 +126,33 @@ function loadEvents() {
         $.each(data, function(i,props){
             const event = new Event(props)
             EventManager.loadEvent(event);
+        });
+        loadDungeons();
+        //afterLoad();
+    });
+}
+
+function loadDungeons() {
+    $.ajax({
+        url: "json/dungeons.json",
+    }).done((data) => {
+        console.log("dungeon load complete");
+        $.each(data, function(i,props){
+            const event = new Dungeon(props)
+            DungeonManager.addDungeon(event);
+        });
+        loadDungeonFloors();
+    });
+}
+
+function loadDungeonFloors() {
+    $.ajax({
+        url: "json/dungeonFloors.json",
+    }).done((data) => {
+        console.log("dungeon floors load complete");
+        $.each(data, function(i,props){
+            const floor = new FloorTemplate(props);
+            FloorManager.addFloor(floor);
         });
         afterLoad();
     });

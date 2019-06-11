@@ -125,14 +125,15 @@ body.pg-loaded > #content, body.pg-loaded > #mobile-content {
 }
 
 .loadingMessage {
-  color: var(--text-3);
+  font-family: 'Varela Round', sans-serif;
+  color: var(--text-tertiary);
 }
 
 .spinner {
   width: 40px;
   height: 40px;
   margin: 35px auto;
-  background-color: var(--border-3);
+  background-color: var(--border-tertiary);
   border-radius: 100%;  
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
   animation: sk-scaleout 1.0s infinite ease-in-out;

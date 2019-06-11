@@ -55,12 +55,23 @@ const EventManager = {
         this.events.push(event);
         refreshEvents();
     },
-    addEventDungeon(reward,time,floor) {
-        const eventTemplate = this.idToEventDB("E004");
+    addEventDungeon(id, reward,time,floor,beats) {
+        const eventTemplate = this.idToEventDB(id);
         const event = new Event(eventTemplate);
         event.reward = reward;
         event.time = time;
         event.floor = floor;
+        event.beats = beats;
+        event.eventNum = this.eventNum;
+        this.eventNum += 1;
+        this.events.push(event);
+        refreshEvents();
+    },
+    addEventBoss(id,time) {
+        const eventTemplate = this.idToEventDB("E013");
+        const event = new Event(eventTemplate);
+        event.bossKill = id;
+        event.time = time;
         event.eventNum = this.eventNum;
         this.eventNum += 1;
         this.events.push(event);
@@ -83,7 +94,10 @@ const EventManager = {
     },
     readEvent(eventNum) {
         const event = this.eventNumToEvent(eventNum);
-        if (event.reward !== null) ResourceManager.addDungeonDrops(event.reward);
+        if (event.reward !== null) {
+            ResourceManager.addDungeonDrops(event.reward);
+            ActionLeague.addNoto(event.notoriety());
+        }
         event.reward = null;
         if (event.itemReward !== null) {
             if (Inventory.full()) {
@@ -115,6 +129,9 @@ const EventManager = {
         if (event.type === "letter" && !this.oldEvents.map(e=>e.id).includes(event.id)) this.oldEvents.push(event);
         this.events = this.events.filter(e=>e.eventNum !== eventNum);
         refreshEvents();
+    },
+    badCraft() {
+        if (!EventManager.hasSeen("E018")) EventManager.addEvent("E018");
     }
 };
 
@@ -122,6 +139,9 @@ class EventTemplate {
     constructor (props) {
         Object.assign(this, props);
         this.image = '<img src="images/DungeonIcons/event.png" alt="Event">';
+        const event2icons = ["E014", "E015", "E016"];
+        if (event2icons.includes(this.id)) this.image = '<img src="images/DungeonIcons/event2.png" alt="Event">';
+        else this.image = '<img src="images/DungeonIcons/event.png" alt="Event">';
     }
 }
 
@@ -131,6 +151,9 @@ class Event {
         this.itemReward = null;
         this.time = null;
         this.floor = null;
+        this.recipeRewards = null;
+        this.bossKill = null;
+        this.beats = null;
         Object.assign(this, props);
         this.date = currentDate();
     }
@@ -142,6 +165,8 @@ class Event {
         save.floor = this.floor;
         save.date = this.date;
         save.itemReward = this.itemReward;
+        save.bossKill = this.bossKill;
+        save.beats = this.beats;
         return save;
     }
     loadSave(save) {
@@ -149,7 +174,13 @@ class Event {
         this.time = save.time;
         this.floor = save.floor;
         this.date = save.date;
+        if (save.bossKill !== undefined) this.bossKill = save.bossKill;
         if (save.itemReward !== undefined) this.itemReward = save.itemReward;
+        if (save.beats !== undefined) this.beats = save.beats;
+    }
+    notoriety() {
+        if (this.reward === null) return;
+        return ActionLeague.generateNoto(this.reward);
     }
 };
 
@@ -188,6 +219,18 @@ function dungeonDrops(event) {
     return d;
 }
 
+function bossRecipeUnlocks(recipes) {
+    const d = $("<div/>").addClass("rewardDiv");
+    const d1 = $("<div/>").addClass("rewardDivTitle").html("Rewards");
+    d.append(d1);
+    recipes.forEach(recipe => {
+        const d2 = $("<div/>").addClass("rewardCard tooltip").attr("data-tooltip",recipe.name);
+        const d3 = $("<div/>").addClass("rewardImage").html(recipe.itemPic());
+        d.append(d2.append(d3));
+    });
+    return d;
+}
+
 $(document).on('click', "div.eventList", (e) => {
     //display the text for a clicked event
     e.preventDefault();
@@ -197,33 +240,47 @@ $(document).on('click', "div.eventList", (e) => {
     const event = EventManager.eventNumToEvent(eventNum);
     $eventContent.empty();
     const d = $("<div/>").addClass("eventBody");
-    const d1 = $("<div/>").addClass("eventAuthor").html(`FROM: ${event.author}`);
-    const d1a = $("<div/>").addClass("eventAuthor").html(`DATE: ${event.date}`);
+    const d1 = $("<div/>").addClass("eventAuthor").html(`<span>Received from:</span> ${event.author}`);
+    const d1a = $("<div/>").addClass("eventAuthor").html(`<span>Date:</span> ${event.date}`);
     const d2 = $("<div/>").addClass("eventMessage").html(event.message);
-    d.append(d1,d1a,d2);
+    const d3 = $("<div/>").addClass("eventStatsContainer");
+    d.append(d1,d1a,d2,d3);
     if (event.time !== null) {
-        const d3a = $("<div/>").addClass("eventStatTitle").html("Adventure Statistics");
-        const d3 = $("<div/>").addClass("eventTimeHeading").html("Total Time:");
-        const d4 = $("<div/>").addClass("eventTime").html(msToTime(event.time));
-        d.append(d3a,d3,d4);
+        const d3a = $("<div/>").addClass("eventTimeContainer eventContainer");
+        const d3a1 = $("<div/>").addClass("eventTimeHeading eventHeading").html("Total Time");
+        const d3a2 = $("<div/>").addClass("eventTime eventDescription").html(timeSince(0,event.time));
+        d3.append(d3a.append(d3a1,d3a2));
     }
     if (event.floor !== null) {
-        const d5 = $("<div/>").addClass("eventFloorHeading").html("Floor Reached:");
-        const d6 = $("<div/>").addClass("eventFloor").html("Floor " + event.floor);
-        d.append(d5,d6);
+        const d3b = $("<div/>").addClass("eventFloorContainer eventContainer");
+        const d3b1 = $("<div/>").addClass("eventFloorHeading eventHeading").html("Floor Reached");
+        const d3b2 = $("<div/>").addClass("eventFloor eventDescription").html("Floor " + event.floor);
+        d3.append(d3b.append(d3b1,d3b2));
+    }
+    if (event.beats !== null) {
+        const d3c = $("<div/>").addClass("eventBeatContainer eventContainer");
+        const d3c1 = $("<div/>").addClass("eventBeatHeading eventHeading").html("Turns Taken");
+        const d3c2 = $("<div/>").addClass("eventBeat eventDescription").html(event.beats + " turns");
+        d3.append(d3c.append(d3c1,d3c2));
     }
     if (event.reward !== null ) {
-        const d7 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
-        d.append(d7);
+        const d4 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
+        d.append(d4);
     }
     if (event.itemReward !== null) {
         const item = recipeList.idToItem(event.itemReward.id);
-        const d8 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());
-        d.append(d8);
+        const d5 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());
+        d.append(d5);
     }
-    const d9 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
-    if (EventManager.seeOld) d9.hide();
-    d.append(d9);
+    if (event.reward !== null && event.id !== "E001") {
+        const d6 = $("<div/>").addClass("eventNotorietyContainer")
+        const d6a = $("<div/>").addClass("eventNotorietyHeading").html(`Notoriety Earned`);
+        const d6b = $("<div/>").addClass("eventNotoriety").html(` You have earned <span>${event.notoriety()} Notoriety</span>. Make use of it in The Action League.`)
+        d.append(d6.append(d6a,d6b));
+    }
+    const d7 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
+    if (EventManager.seeOld) d7.hide();
+    d.append(d7);
     $eventContent.append(d);
 });
 
@@ -254,14 +311,11 @@ function eventChecker() {
     if (!EventManager.hasSeen("E005") && achievementStats.totalItemsCrafted >= 10000) EventManager.addEvent("E005");
     if (!EventManager.hasSeen("E006") && masteredItem) EventManager.addEvent("E006");
     if (!EventManager.hasSeen("E007") && Inventory.full()) EventManager.addEvent("E007");
-    if (!EventManager.hasSeen("E009") && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[0]) EventManager.addEvent("E009");
-    if (!EventManager.hasSeen("E010") && TownManager.bankUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[1]) EventManager.addEvent("E010");
-    if (!EventManager.hasSeen("E011") && TownManager.fuseUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[2]) EventManager.addEvent("E011");
-    if (!EventManager.hasSeen("E012") && TownManager.smithUnlock && achievementStats.maxFloor >= miscLoadedValues.buildingFloorUnlock[3]) EventManager.addEvent("E012");
-}
-
-function autoSacEvent() {
-    if (!EventManager.hasSeen("E008")) EventManager.addEvent("E008");
+    if (!EventManager.hasSeen("E009") && ActionLeague.purchased.includes("AL4101")) EventManager.addEvent("E009");
+    if (!EventManager.hasSeen("E010") && ActionLeague.purchased.includes("AL4102")) EventManager.addEvent("E010");
+    if (!EventManager.hasSeen("E011") && ActionLeague.purchased.includes("AL4103")) EventManager.addEvent("E011");
+    if (!EventManager.hasSeen("E012") && ActionLeague.purchased.includes("AL4104")) EventManager.addEvent("E012");
+    if (!EventManager.hasSeen("E017") && achievementStats.maxFloor >= 50) EventManager.addEvent("E017");
 }
 
 let masteredItem = false;

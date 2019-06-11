@@ -7,43 +7,39 @@ const player = {
 }
 
 function afterLoad() {
+    $versionNum.html(PatchManager.lastVersion());
+    refreshPatchNotes();
+    initializeRecipes();
     initializeMats();
     if (!loadGame()) {
-        WorkerManager.generateWorkerSac();
-        WorkerManager.workerBuySeed();
-        HeroManager.heroBuySeed();
         WorkerManager.gainWorker("W001");
-        WorkerManager.workerOrder.shift();
         recipeList.idToItem("R0701").owned = true;
         HeroManager.idToHero("H203").owned = true;
-        HeroManager.heroOrder.shift();
         achievementStats.startTime = Date.now();
         EventManager.addEvent("E001");
-        ItemType.forEach(type => recipeList.recipeNewFilter.push(type));
+        GuildManager.guilds.forEach(g=>g.generateNewOrder());
     }
-    else {
-        WorkerManager.generateWorkerSac();
-        WorkerManager.workerBuySeed();
-        HeroManager.heroBuySeed();
-    }
-    refreshCraftCount();
+    refreshMasteryBar()
     refreshInventory();
-    refreshWorkers();
     refreshSideWorkers();
     initializeActionSlots();
     initializeHeroList();
-    refreshHeroSelect();
+    //refreshHeroSelect();
+    updateHeroCounter();
     refreshRecipeFilters();
     refreshEvents();
     hardMatRefresh();
-    initializeRecipes("Knives","default");
     refreshProgress();
     initializeSideBarDungeon();
     recipeCanCraft();
     refreshSideTown();
     refreshFilterListLucky();
+    refreshCraftedCount();
+    initializeGuilds();
     setInterval(mainLoop, 10);
-    if (HeroManager.heroes.some(h=>h.xp === h.maxXP())) $("#heroTab").addClass("hasEvent");
+    recipeList.recipeFilterType = "Knives";
+    recipeList.recipeFilterString = "";
+    recipeFilterList();
     loading_screen.finish();
 }
 
@@ -65,7 +61,10 @@ const loadMessages = [
     "Sourcing locally grown lettuce.",
     "Finding cute animal gifs.",
     "Introducing game breaking bugs.",
-    "Lowering self esteem."
+    "Lowering self esteem.",
+    "Redesigning game...again.",
+    "Deleting important files.",
+    "2 + 2 = 4 - 1 = 3"
 ];
 
 function selectLoadMessage() {
@@ -75,7 +74,7 @@ function selectLoadMessage() {
 
 const loading_screen = pleaseWait({
     logo: "images/site-logo.png",
-    backgroundColor: 'var(--bg)',
+    backgroundColor: 'var(--bg-primary)',
     loadingHtml: `
     <div class="loadingMessage">${selectLoadMessage()}</div>
     <div class="spinner"></div>
@@ -94,7 +93,7 @@ function mainLoop() {
     FusionManager.addTime(elapsedTime);
     bloopSmith.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
-    HeroManager.healTimer(elapsedTime);
+    PatchManager.patchTimer(elapsedTime);
     FortuneManager.resetFortune();
     if (TownManager.purgeSlots) {
         actionSlotManager.removeBldgSlots();

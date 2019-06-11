@@ -3,29 +3,22 @@
     "id": "E001",
     "title": "A Mysterious Letter",
     "author": "Abqu",
-    "message": "<p>If you're reading this letter, then I'm already gone.</p><p>But don't worry, you've got this!</p><p>I had to leave unexpectedly, for reasons I cannot disclose.  But here's what you need to know:</p><p>First, this is your shop.  Feel free to use it as you see fit.</p><p>Oren, the miner, and Revere, the daring thief, should be around to help you get started.</p><p>I've also included some gold for you to start your operations.</p><p>Here's what you should do:<br>- Start making Knives, for income;<br>- Give Revere one of those Knives to make her stronger;<br>- Send her out on an adventure, to get crafting materials;<br>- Hire a new worker, and;<br>- Purchase another crafting slot</p><p>If you follow these steps, you should be well on your way to success.</p><p>Remember, all playstyles are viable (whatever that means).</p><p>You may hear from me again in the future.</p><p>Your friend,</p><p>ABQU</p><p>P.S. I've left descriptions of the wares and my thoughts on the residents of the town.  You'll do great! Okay, bye.</p>",
+    "message": "<p>If you’re reading this letter, then I’m already gone. But don’t worry, you’ve got this!</p>\n      I had to leave unexpectedly, for reasons I cannot disclose.  But here’s what you need to know:<br>\n      <p>First, this is your shop. Feel free to use it as you see fit. Oren, the miner, and Revere, the daring thief, should be around to help you get started. I’ve also included some gold for you to start your operations.</p>\n      <p>Here’s what you should do:</p>\n      <li>Start making Knives, for income;</li>\n      <li>Give Revere one of those Knives to make her stronger;</li>\n      <li>Send her out on an adventure, to get crafting materials;</li>\n      </ul>\n      <p>Also, make sure you check out the guilds around here -- They're the best way to gain some fame and fortune around here and pick up some new recipes. Keep in mind no meals free, they'll want some honest work for the goodies.</p>\n      <p>If you follow these steps, you should be well on your way to success. Remember, all playstyles are viable (whatever that means).</p>\n      <p>You may hear from me again in the future.</p>\n      <p>Your friend,<br>\n      ABQU</p>\n      <p>P.S. I’ve left descriptions of the wares and my thoughts on the residents of the town.  You’ll do great! Okay, bye.</p>",
     "type": "letter"
   },
   {
     "id": "E002",
     "title": "A Mysterious Letter",
     "author": "Abqu",
-    "message": "<p>Hey, I'm totally gone and not watching you, so this is a total coincidence, but...</p><p>I just noticed you unlocked all ten of the workers!  That's incredible!</p><p>If you haven't already, you should start leveling your workers.</p><p>Oh, I almost forgot!</p><p>There are more workers to be discovered.  Rumor has it, once your original workers reach a certain level, advanced workers will become available.</p><p>Isn't that a neat little progression system?</p><p>If anyone asks, I've gone missing.</p><p>Not watching you,</p><p>ABQU</p>",
+    "message": "<p>Hey, I'm totally gone and not watching you, so this is a total coincidence, but...</p><p>I just noticed you unlocked all ten of the workers!  That's incredible!</p><p>If you haven't already, you should start leveling your workers. Stronger recipes require stronger workers to make them.</p><p>Oh, I almost forgot!</p><p>Rumor has it the Action League has more workers if they like you enough.</p><p>Isn't that a neat little progression system?</p><p>If anyone asks, I've gone missing.</p><p>Not watching you,</p><p>ABQU</p>",
     "type": "letter"
   },
   {
     "id": "E003",
     "title": "A Mysterious Letter",
     "author": "Abqu",
-    "message": "<p>Hi.</p><p>It's me, Abqu, your resident .... person.</p><p>Congrats on unlocking your first advanced worker!  What a doozy that was, huh.</p><p>Anyway, they also will level up just like those other lackeys, but with one key difference:</p><p>Advanced workers take higher quality items to level up.</p><p>The standard workers took common items; these advanced workers will expect good quality stuff.</p><p>Keep up the great work!</p><p>Your mentor,</p><p>ABQU</p>",
+    "message": "<p>Hi.</p><p>It's me, Abqu, your resident .... person.</p><p>Congrats on unlocking your first advanced worker!  What a doozy that was, huh.</p><p>Anyway, they also will level up just like those other lackeys, but now you can make two recipes that require a resource at once! Isn't that great? Of course it's great.</p><p>Keep up the great work!</p><p>Your mentor,</p><p>ABQU</p>",
     "type": "letter"
-  },
-  {
-    "id": "E004",
-    "title": "Adventure Reward",
-    "author": "The Action League",
-    "message": "<p>Thanks to your efforts, our group made it back safe and sound! Here's a cut of the loot as a reward.</p><p>Warm Regards,</p><p>The Adventure League</p>",
-    "type": "dungeon"
   },
   {
     "id": "E005",
@@ -49,17 +42,10 @@
     "type": "letter"
   },
   {
-    "id": "E008",
-    "title": "A Mysterious Letter",
-    "author": "Abqu",
-    "message": "<p>Hey, there.... dude? Dudette?  Dudeself?  Eh, whatever.</p><p>It looks like you've noticed a magical enhancement.</p><p>You see, your workers need stuff to level up.  Call it a bribe, or motivation, whichever makes you feel better.</p><p>Instead of going to your inventory and giving the workers the items manually, you can click the HAMMER button, and wah lah, the items will be AUTOMAGICALLY CONTRIBUTED to the corresponding worker.</p><p>Now you're cookin!</p><p>See ya later, dudeself.</p><p>ABQU</p>",
-    "type": "letter"
-  },
-  {
     "id": "E009",
     "title": "A Mysterious Letter",
     "author": "Abqu",
-    "message": "<p>Ohohohohoho!</p><p>Look at what you've found! That's a strange blueprint to be left on the ground.</p><p>Oh my, isn't it pretty.  I bet we could use this to start up a city.</p><p>Come by the town to start the construction, and then we can talk about world destruction!</p><p>Erm, my bad.  I meant to say, let's start on this building straight away.</p><p>You and I will see this through (to the bitter end).</p><p>Warmest regards,</p><p>Abqu</p><p>(your best friend)</p>",
+    "message": "<p>Ohohohohoho!</p><p>Look at what you've found! That's a strange blueprint from the Action League.</p><p>Oh my, isn't it pretty.  I bet we could use this to start up a city.</p><p>Come by the town to start the construction, and then we can talk about world destruction!</p><p>Erm, my bad.  I meant to say, let's start on this building straight away.</p><p>You and I will see this through (to the bitter end).</p><p>Warmest regards,</p><p>Abqu</p><p>(your best friend)</p>",
     "type": "letter"
   },
   {
@@ -81,6 +67,48 @@
     "title": "A Mysterious Letter",
     "author": "Abqu",
     "message": "<p>My best friend, come on down!</p><p>You got the next set of plans for the town, and this one is pretty good, great, maybe even epic!</p><p>Hop on over to the town, and let's start working towards a better future.</p><p>You and me, together.</p><p>You and me, forever!</p><p>We're so in sych, it's like we finish each other's love letters.</p><p>Your soulmate,</p><p>Abqu</p>",
+    "type": "letter"
+  },
+  {
+    "id": "E013",
+    "title": "Boss Reward",
+    "author": "The Action League",
+    "message": "<p>With your help we were finally able to kill that big monster. The Action League owes you a token of thanks -- we're sure your notoriety will spread far..</p><p>Warm Regards,</p><p>The Adventure League</p>",
+    "type": "boss"
+  },
+  {
+    "id": "E014",
+    "title": "Groovy Grove",
+    "author": "The Action League",
+    "message": "<p>Thanks to your efforts, our group made it back from the Groovy Grove safe and sound! Here's a 10% cut of the loot as a reward. We'll be sure to tell everyone what great work you did! As always, thanks for working with The Action League!</p><p>Kindest Regards,</p><p>The Adventure League</p>",
+    "type": "dungeon"
+  },
+  {
+    "id": "E015",
+    "title": "Spooky Spot",
+    "author": "The Action League",
+    "message": "<p>Thanks to your efforts, our group made it back from the Spooky Spot safe and sound! Here's a 10% cut of the loot as a reward. We'll be sure to tell everyone what great work you did! As always, thanks for working with The Action League!</p><p>Kindest Regards,</p><p>The Adventure League</p>",
+    "type": "dungeon"
+  },
+  {
+    "id": "E016",
+    "title": "Creepy Crag",
+    "author": "The Action League",
+    "message": "<p>Thanks to your efforts, our group made it back from the Creepy Crag safe and sound! Here's a 10% cut of the loot as a reward. We'll be sure to tell everyone what great work you did! As always, thanks for working with The Action League!</p><p>Kindest Regards,</p><p>The Adventure League</p>",
+    "type": "dungeon"
+  },
+  {
+    "id": "E017",
+    "title": "A Mysterious Letter",
+    "author": "Abqu",
+    "message": "<p>Hey guys, it's me, Abqu!</p><p>It seems so long since I sent you a letter.  Where has all the time gone?</p><p>I took a trip to the next kingdom over to visit my sister.  My brother-in-law tried to make me eat some weird burrito thing.  Other than that, pretty great trip.  Anyway, what's new with you?</p><p>Oh, wait, it looks like you've hit some sort of WALL IN ADVENTURING.  Let me see here...</p><p>According to my master data sheets, you've encountered a special BOSS FLOOR.  What I suggest you do is somehow get rid of whatever baddie is in your way, if you want to keep progressing.</p><p>Maybe once you've gotten rid of the obstacle, something else can be put in it's place?</p><p>Forever yours,</p><p>ABQU</p>",
+    "type": "letter"
+  },
+  {
+    "id": "E018",
+    "title": "A Mysterious Letter",
+    "author": "Abqu",
+    "message": "<p>Oh hey there, I see you're having trouble with that craft!</p><p>Don't worry, it's a little complicated but your proud boy Abqu is here to help!</p><p>Sometimes it's a matter of you not having a worker for that resource yet. Recipes require workers, which are unlocked in the guilds. More importantly, a worker can only work on one craft at a time -- good luck getting ol' Oren to make two knives at once.</p><p>But sometimes, you need to level those workers up. See, recipes have levels, and your workers need to be a high enough level to match it. Level 1 Oren ain't making no Butter Knives no matter how nicely you ask. Forge & Fortunately, you can also upgrade them right where you hired them -- in their guilds -- for just a small gold payment.</p><p>Hope that doesn't discourage you!</p><p>Keep crafting and overdrafting,</p><p>ABQU</p>",
     "type": "letter"
   }
 ]

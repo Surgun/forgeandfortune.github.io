@@ -10,12 +10,14 @@
     "rcost": [
       "wood"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M101",
-    "actTime": 5000,
+    "apAdd": 30,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0,
+    "guildUnlock": "G002",
+    "goldCost": 0,
+    "repReq": 0,
     "recipeType": "normal"
   },
   {
@@ -33,10 +35,12 @@
       "M602": 1
     },
     "smithCost": "M602",
-    "actTime": 5000,
-    "pow": 36,
+    "apAdd": 30,
+    "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
@@ -54,10 +58,12 @@
       "M203": 1
     },
     "smithCost": "M203",
-    "actTime": 5000,
-    "pow": 72,
+    "apAdd": 30,
+    "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 16,
     "recipeType": "normal"
   },
   {
@@ -75,10 +81,12 @@
       "M404": 1
     },
     "smithCost": "M404",
-    "actTime": 5000,
-    "pow": 108,
+    "apAdd": 30,
+    "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 21,
     "recipeType": "normal"
   },
   {
@@ -97,10 +105,12 @@
       "M105": 1
     },
     "smithCost": "M105",
-    "actTime": 5000,
-    "pow": 126,
+    "apAdd": 30,
+    "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 26,
     "recipeType": "normal"
   },
   {
@@ -115,12 +125,14 @@
       "wood",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M106",
-    "actTime": 5000,
-    "pow": 144,
+    "apAdd": 30,
+    "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -139,10 +151,12 @@
       "M307": 1
     },
     "smithCost": "M307",
-    "actTime": 5000,
-    "pow": 162,
+    "apAdd": 30,
+    "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 36,
     "recipeType": "normal"
   },
   {
@@ -161,10 +175,12 @@
       "M508": 1
     },
     "smithCost": "M508",
-    "actTime": 5000,
+    "apAdd": 30,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 47,
     "recipeType": "normal"
   },
   {
@@ -183,10 +199,12 @@
       "M109": 1
     },
     "smithCost": "M109",
-    "actTime": 5000,
-    "pow": 198,
+    "apAdd": 30,
+    "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 52,
     "recipeType": "normal"
   },
   {
@@ -205,10 +223,12 @@
       "M310": 1
     },
     "smithCost": "M310",
-    "actTime": 5000,
-    "pow": 216,
+    "apAdd": 30,
+    "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 57,
     "recipeType": "normal"
   },
   {
@@ -226,10 +246,12 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "actTime": 6000,
-    "pow": 18,
+    "apAdd": 40,
+    "pow": 14,
     "hp": 0,
-    "recipeBuy": 100,
+    "guildUnlock": "G001",
+    "goldCost": 100,
+    "repReq": 3,
     "recipeType": "normal"
   },
   {
@@ -243,12 +265,14 @@
     "rcost": [
       "ore"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M102",
-    "actTime": 6000,
-    "pow": 36,
+    "apAdd": 40,
+    "pow": 20,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 8,
     "recipeType": "normal"
   },
   {
@@ -266,10 +290,12 @@
       "M303": 1
     },
     "smithCost": "M303",
-    "actTime": 6000,
-    "pow": 72,
+    "apAdd": 40,
+    "pow": 28,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 13,
     "recipeType": "normal"
   },
   {
@@ -287,10 +313,12 @@
       "M504": 1
     },
     "smithCost": "M504",
-    "actTime": 6000,
-    "pow": 108,
+    "apAdd": 40,
+    "pow": 40,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 18,
     "recipeType": "normal"
   },
   {
@@ -309,10 +337,12 @@
       "M205": 1
     },
     "smithCost": "M205",
-    "actTime": 6000,
-    "pow": 126,
+    "apAdd": 40,
+    "pow": 55,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 29,
     "recipeType": "normal"
   },
   {
@@ -331,10 +361,12 @@
       "M306": 1
     },
     "smithCost": "M306",
-    "actTime": 6000,
-    "pow": 144,
+    "apAdd": 40,
+    "pow": 75,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 34,
     "recipeType": "normal"
   },
   {
@@ -349,12 +381,14 @@
       "ore",
       "wood"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M107",
-    "actTime": 6000,
-    "pow": 162,
+    "apAdd": 40,
+    "pow": 104,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 39,
     "recipeType": "normal"
   },
   {
@@ -373,10 +407,12 @@
       "M608": 1
     },
     "smithCost": "M608",
-    "actTime": 6000,
-    "pow": 180,
+    "apAdd": 40,
+    "pow": 144,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 44,
     "recipeType": "normal"
   },
   {
@@ -395,10 +431,12 @@
       "M209": 1
     },
     "smithCost": "M209",
-    "actTime": 6000,
-    "pow": 198,
+    "apAdd": 40,
+    "pow": 200,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 49,
     "recipeType": "normal"
   },
   {
@@ -417,10 +455,12 @@
       "M410": 1
     },
     "smithCost": "M410",
-    "actTime": 6000,
-    "pow": 216,
+    "apAdd": 40,
+    "pow": 280,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 54,
     "recipeType": "normal"
   },
   {
@@ -434,12 +474,14 @@
     "rcost": [
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M201",
-    "actTime": 4000,
-    "pow": 18,
+    "apAdd": 25,
+    "pow": 22,
     "hp": 0,
-    "recipeBuy": 0,
+    "guildUnlock": "G005",
+    "goldCost": 0,
+    "repReq": 0,
     "recipeType": "normal"
   },
   {
@@ -457,10 +499,12 @@
       "M102": 1
     },
     "smithCost": "M102",
-    "actTime": 4000,
-    "pow": 36,
+    "apAdd": 25,
+    "pow": 30,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
@@ -474,12 +518,14 @@
     "rcost": [
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M103",
-    "actTime": 4000,
-    "pow": 72,
+    "apAdd": 25,
+    "pow": 42,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 16,
     "recipeType": "normal"
   },
   {
@@ -497,10 +543,12 @@
       "M604": 1
     },
     "smithCost": "M604",
-    "actTime": 4000,
-    "pow": 108,
+    "apAdd": 25,
+    "pow": 59,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 21,
     "recipeType": "normal"
   },
   {
@@ -519,10 +567,12 @@
       "M305": 1
     },
     "smithCost": "M305",
-    "actTime": 4000,
-    "pow": 126,
+    "apAdd": 25,
+    "pow": 81,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 26,
     "recipeType": "normal"
   },
   {
@@ -541,10 +591,12 @@
       "M406": 1
     },
     "smithCost": "M406",
-    "actTime": 4000,
-    "pow": 144,
+    "apAdd": 25,
+    "pow": 113,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -563,10 +615,12 @@
       "M507": 1
     },
     "smithCost": "M507",
-    "actTime": 4000,
-    "pow": 162,
+    "apAdd": 25,
+    "pow": 156,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 36,
     "recipeType": "normal"
   },
   {
@@ -581,12 +635,14 @@
       "wood",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M108",
-    "actTime": 4000,
-    "pow": 180,
+    "apAdd": 25,
+    "pow": 216,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 47,
     "recipeType": "normal"
   },
   {
@@ -605,10 +661,12 @@
       "M309": 1
     },
     "smithCost": "M309",
-    "actTime": 4000,
-    "pow": 198,
+    "apAdd": 25,
+    "pow": 300,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 52,
     "recipeType": "normal"
   },
   {
@@ -627,10 +685,12 @@
       "M510": 1
     },
     "smithCost": "M510",
-    "actTime": 4000,
-    "pow": 216,
+    "apAdd": 25,
+    "pow": 420,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 57,
     "recipeType": "normal"
   },
   {
@@ -644,12 +704,14 @@
     "rcost": [
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M301",
-    "actTime": 5000,
+    "apAdd": 30,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0,
+    "guildUnlock": "G005",
+    "goldCost": 0,
+    "repReq": 1,
     "recipeType": "normal"
   },
   {
@@ -667,10 +729,12 @@
       "M602": 1
     },
     "smithCost": "M602",
-    "actTime": 5000,
-    "pow": 36,
+    "apAdd": 30,
+    "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 6,
     "recipeType": "normal"
   },
   {
@@ -688,10 +752,12 @@
       "M203": 1
     },
     "smithCost": "M203",
-    "actTime": 5000,
-    "pow": 72,
+    "apAdd": 30,
+    "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 17,
     "recipeType": "normal"
   },
   {
@@ -709,10 +775,12 @@
       "M504": 1
     },
     "smithCost": "M504",
-    "actTime": 5000,
-    "pow": 108,
+    "apAdd": 30,
+    "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 22,
     "recipeType": "normal"
   },
   {
@@ -731,10 +799,12 @@
       "M205": 1
     },
     "smithCost": "M205",
-    "actTime": 5000,
-    "pow": 126,
+    "apAdd": 30,
+    "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 27,
     "recipeType": "normal"
   },
   {
@@ -749,12 +819,14 @@
       "steel",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M206",
-    "actTime": 5000,
-    "pow": 144,
+    "apAdd": 30,
+    "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 32,
     "recipeType": "normal"
   },
   {
@@ -773,10 +845,12 @@
       "M107": 1
     },
     "smithCost": "M107",
-    "actTime": 5000,
-    "pow": 162,
+    "apAdd": 30,
+    "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 37,
     "recipeType": "normal"
   },
   {
@@ -795,10 +869,12 @@
       "M408": 1
     },
     "smithCost": "M408",
-    "actTime": 5000,
+    "apAdd": 30,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 42,
     "recipeType": "normal"
   },
   {
@@ -817,10 +893,12 @@
       "M209": 1
     },
     "smithCost": "M209",
-    "actTime": 5000,
-    "pow": 198,
+    "apAdd": 30,
+    "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 53,
     "recipeType": "normal"
   },
   {
@@ -839,10 +917,12 @@
       "M410": 1
     },
     "smithCost": "M410",
-    "actTime": 5000,
-    "pow": 216,
+    "apAdd": 30,
+    "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 58,
     "recipeType": "normal"
   },
   {
@@ -856,12 +936,14 @@
     "rcost": [
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M401",
-    "actTime": 4000,
-    "pow": 18,
+    "apAdd": 25,
+    "pow": 22,
     "hp": 0,
-    "recipeBuy": 0,
+    "guildUnlock": "G003",
+    "goldCost": 0,
+    "repReq": 1,
     "recipeType": "normal"
   },
   {
@@ -879,10 +961,12 @@
       "M102": 1
     },
     "smithCost": "M102",
-    "actTime": 4000,
-    "pow": 36,
+    "apAdd": 25,
+    "pow": 30,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 6,
     "recipeType": "normal"
   },
   {
@@ -896,12 +980,14 @@
     "rcost": [
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M203",
-    "actTime": 4000,
-    "pow": 72,
+    "apAdd": 25,
+    "pow": 42,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 17,
     "recipeType": "normal"
   },
   {
@@ -919,10 +1005,12 @@
       "M604": 1
     },
     "smithCost": "M604",
-    "actTime": 4000,
-    "pow": 108,
+    "apAdd": 25,
+    "pow": 59,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 22,
     "recipeType": "normal"
   },
   {
@@ -941,10 +1029,12 @@
       "M305": 1
     },
     "smithCost": "M305",
-    "actTime": 4000,
-    "pow": 126,
+    "apAdd": 25,
+    "pow": 81,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 27,
     "recipeType": "normal"
   },
   {
@@ -963,10 +1053,12 @@
       "M306": 1
     },
     "smithCost": "M306",
-    "actTime": 4000,
-    "pow": 144,
+    "apAdd": 25,
+    "pow": 113,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 32,
     "recipeType": "normal"
   },
   {
@@ -985,10 +1077,12 @@
       "M207": 1
     },
     "smithCost": "M207",
-    "actTime": 4000,
-    "pow": 162,
+    "apAdd": 25,
+    "pow": 156,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 37,
     "recipeType": "normal"
   },
   {
@@ -1003,12 +1097,14 @@
       "wood",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M208",
-    "actTime": 4000,
-    "pow": 180,
+    "apAdd": 25,
+    "pow": 216,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 42,
     "recipeType": "normal"
   },
   {
@@ -1027,10 +1123,12 @@
       "M309": 1
     },
     "smithCost": "M309",
-    "actTime": 4000,
-    "pow": 198,
+    "apAdd": 25,
+    "pow": 300,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 53,
     "recipeType": "normal"
   },
   {
@@ -1049,10 +1147,12 @@
       "M510": 1
     },
     "smithCost": "M510",
-    "actTime": 4000,
-    "pow": 216,
+    "apAdd": 25,
+    "pow": 420,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 58,
     "recipeType": "normal"
   },
   {
@@ -1070,10 +1170,12 @@
       "M501": 1
     },
     "smithCost": "M501",
-    "actTime": 6000,
-    "pow": 18,
+    "apAdd": 40,
+    "pow": 14,
     "hp": 0,
-    "recipeBuy": 100,
+    "guildUnlock": "G002",
+    "goldCost": 100,
+    "repReq": 3,
     "recipeType": "normal"
   },
   {
@@ -1087,12 +1189,14 @@
     "rcost": [
       "wood"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M302",
-    "actTime": 6000,
-    "pow": 36,
+    "apAdd": 40,
+    "pow": 20,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 8,
     "recipeType": "normal"
   },
   {
@@ -1110,10 +1214,12 @@
       "M303": 1
     },
     "smithCost": "M303",
-    "actTime": 6000,
-    "pow": 72,
+    "apAdd": 40,
+    "pow": 28,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 13,
     "recipeType": "normal"
   },
   {
@@ -1131,10 +1237,12 @@
       "M104": 1
     },
     "smithCost": "M104",
-    "actTime": 6000,
-    "pow": 108,
+    "apAdd": 40,
+    "pow": 40,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 18,
     "recipeType": "normal"
   },
   {
@@ -1153,10 +1261,12 @@
       "M405": 1
     },
     "smithCost": "M405",
-    "actTime": 6000,
-    "pow": 126,
+    "apAdd": 40,
+    "pow": 55,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 29,
     "recipeType": "normal"
   },
   {
@@ -1175,10 +1285,12 @@
       "M406": 1
     },
     "smithCost": "M406",
-    "actTime": 6000,
-    "pow": 144,
+    "apAdd": 40,
+    "pow": 75,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 34,
     "recipeType": "normal"
   },
   {
@@ -1193,12 +1305,14 @@
       "wood",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M207",
-    "actTime": 6000,
-    "pow": 162,
+    "apAdd": 40,
+    "pow": 104,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 39,
     "recipeType": "normal"
   },
   {
@@ -1217,10 +1331,12 @@
       "M608": 1
     },
     "smithCost": "M608",
-    "actTime": 6000,
-    "pow": 180,
+    "apAdd": 40,
+    "pow": 144,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 44,
     "recipeType": "normal"
   },
   {
@@ -1239,10 +1355,12 @@
       "M409": 1
     },
     "smithCost": "M409",
-    "actTime": 6000,
-    "pow": 198,
+    "apAdd": 40,
+    "pow": 200,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 49,
     "recipeType": "normal"
   },
   {
@@ -1261,10 +1379,12 @@
       "M610": 1
     },
     "smithCost": "M610",
-    "actTime": 6000,
-    "pow": 216,
+    "apAdd": 40,
+    "pow": 280,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 54,
     "recipeType": "normal"
   },
   {
@@ -1278,12 +1398,14 @@
     "rcost": [
       "ore"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M401",
-    "actTime": 4000,
-    "pow": 18,
+    "apAdd": 25,
+    "pow": 22,
     "hp": 0,
-    "recipeBuy": 0,
+    "guildUnlock": "G001",
+    "goldCost": 0,
+    "repReq": 0,
     "recipeType": "normal"
   },
   {
@@ -1301,10 +1423,12 @@
       "M602": 1
     },
     "smithCost": "M602",
-    "actTime": 4000,
-    "pow": 36,
+    "apAdd": 25,
+    "pow": 30,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
@@ -1322,10 +1446,12 @@
       "M203": 1
     },
     "smithCost": "M203",
-    "actTime": 4000,
-    "pow": 72,
+    "apAdd": 25,
+    "pow": 42,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 16,
     "recipeType": "normal"
   },
   {
@@ -1343,10 +1469,12 @@
       "M604": 1
     },
     "smithCost": "M604",
-    "actTime": 4000,
-    "pow": 108,
+    "apAdd": 25,
+    "pow": 59,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 21,
     "recipeType": "normal"
   },
   {
@@ -1365,10 +1493,12 @@
       "M305": 1
     },
     "smithCost": "M305",
-    "actTime": 4000,
-    "pow": 126,
+    "apAdd": 25,
+    "pow": 81,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 26,
     "recipeType": "normal"
   },
   {
@@ -1383,12 +1513,14 @@
       "ore",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M306",
-    "actTime": 4000,
-    "pow": 144,
+    "apAdd": 25,
+    "pow": 113,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -1407,10 +1539,12 @@
       "M107": 1
     },
     "smithCost": "M107",
-    "actTime": 4000,
-    "pow": 162,
+    "apAdd": 25,
+    "pow": 156,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 36,
     "recipeType": "normal"
   },
   {
@@ -1429,10 +1563,12 @@
       "M408": 1
     },
     "smithCost": "M408",
-    "actTime": 4000,
-    "pow": 180,
+    "apAdd": 25,
+    "pow": 216,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 47,
     "recipeType": "normal"
   },
   {
@@ -1451,10 +1587,12 @@
       "M309": 1
     },
     "smithCost": "M309",
-    "actTime": 4000,
-    "pow": 198,
+    "apAdd": 25,
+    "pow": 300,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 52,
     "recipeType": "normal"
   },
   {
@@ -1473,10 +1611,12 @@
       "M510": 1
     },
     "smithCost": "M510",
-    "actTime": 4000,
-    "pow": 216,
+    "apAdd": 25,
+    "pow": 420,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 57,
     "recipeType": "normal"
   },
   {
@@ -1494,10 +1634,12 @@
       "M301": 1
     },
     "smithCost": "M301",
-    "actTime": 6000,
-    "pow": 18,
+    "apAdd": 40,
+    "pow": 14,
     "hp": 0,
-    "recipeBuy": 100,
+    "guildUnlock": "G002",
+    "goldCost": 100,
+    "repReq": 4,
     "recipeType": "normal"
   },
   {
@@ -1511,12 +1653,14 @@
     "rcost": [
       "wood"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M402",
-    "actTime": 6000,
-    "pow": 36,
+    "apAdd": 40,
+    "pow": 20,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 9,
     "recipeType": "normal"
   },
   {
@@ -1534,10 +1678,12 @@
       "M303": 1
     },
     "smithCost": "M303",
-    "actTime": 6000,
-    "pow": 72,
+    "apAdd": 40,
+    "pow": 28,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 14,
     "recipeType": "normal"
   },
   {
@@ -1555,10 +1701,12 @@
       "M104": 1
     },
     "smithCost": "M104",
-    "actTime": 6000,
-    "pow": 108,
+    "apAdd": 40,
+    "pow": 40,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -1571,16 +1719,18 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": {
       "M405": 1
     },
     "smithCost": "M405",
-    "actTime": 6000,
-    "pow": 126,
+    "apAdd": 40,
+    "pow": 55,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 24,
     "recipeType": "normal"
   },
   {
@@ -1593,16 +1743,18 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": {
       "M306": 1
     },
     "smithCost": "M306",
-    "actTime": 6000,
-    "pow": 144,
+    "apAdd": 40,
+    "pow": 75,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -1615,14 +1767,16 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M307",
-    "actTime": 6000,
-    "pow": 162,
+    "apAdd": 40,
+    "pow": 104,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 40,
     "recipeType": "normal"
   },
   {
@@ -1635,16 +1789,18 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": {
       "M608": 1
     },
     "smithCost": "M608",
-    "actTime": 6000,
-    "pow": 180,
+    "apAdd": 40,
+    "pow": 144,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 45,
     "recipeType": "normal"
   },
   {
@@ -1657,16 +1813,18 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": {
       "M409": 1
     },
     "smithCost": "M409",
-    "actTime": 6000,
-    "pow": 198,
+    "apAdd": 40,
+    "pow": 200,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 50,
     "recipeType": "normal"
   },
   {
@@ -1679,16 +1837,18 @@
     "type": "Bows",
     "rcost": [
       "wood",
-      "leather"
+      "herb"
     ],
     "mcost": {
       "M610": 1
     },
     "smithCost": "M610",
-    "actTime": 6000,
-    "pow": 216,
+    "apAdd": 40,
+    "pow": 280,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 55,
     "recipeType": "normal"
   },
   {
@@ -1702,12 +1862,14 @@
     "rcost": [
       "leather"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M501",
-    "actTime": 5000,
+    "apAdd": 30,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0,
+    "guildUnlock": "G004",
+    "goldCost": 0,
+    "repReq": 0,
     "recipeType": "normal"
   },
   {
@@ -1725,10 +1887,12 @@
       "M102": 1
     },
     "smithCost": "M102",
-    "actTime": 5000,
-    "pow": 36,
+    "apAdd": 30,
+    "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
@@ -1742,12 +1906,14 @@
     "rcost": [
       "leather"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M303",
-    "actTime": 5000,
-    "pow": 72,
+    "apAdd": 30,
+    "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 16,
     "recipeType": "normal"
   },
   {
@@ -1765,10 +1931,12 @@
       "M204": 1
     },
     "smithCost": "M204",
-    "actTime": 5000,
-    "pow": 108,
+    "apAdd": 30,
+    "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 21,
     "recipeType": "normal"
   },
   {
@@ -1781,16 +1949,18 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": {
       "M505": 1
     },
     "smithCost": "M505",
-    "actTime": 5000,
-    "pow": 126,
+    "apAdd": 30,
+    "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 26,
     "recipeType": "normal"
   },
   {
@@ -1803,16 +1973,18 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": {
       "M406": 1
     },
     "smithCost": "M406",
-    "actTime": 5000,
-    "pow": 144,
+    "apAdd": 30,
+    "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -1825,16 +1997,18 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": {
       "M307": 1
     },
     "smithCost": "M307",
-    "actTime": 5000,
-    "pow": 162,
+    "apAdd": 30,
+    "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 36,
     "recipeType": "normal"
   },
   {
@@ -1847,14 +2021,16 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M308",
-    "actTime": 5000,
+    "apAdd": 30,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 47,
     "recipeType": "normal"
   },
   {
@@ -1867,16 +2043,18 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": {
       "M509": 1
     },
     "smithCost": "M509",
-    "actTime": 5000,
-    "pow": 198,
+    "apAdd": 30,
+    "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 52,
     "recipeType": "normal"
   },
   {
@@ -1889,16 +2067,18 @@
     "type": "Whips",
     "rcost": [
       "leather",
-      "fabric"
+      "paper"
     ],
     "mcost": {
       "M110": 1
     },
     "smithCost": "M110",
-    "actTime": 5000,
-    "pow": 216,
+    "apAdd": 30,
+    "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 57,
     "recipeType": "normal"
   },
   {
@@ -1912,12 +2092,14 @@
     "rcost": [
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M601",
-    "actTime": 5000,
+    "apAdd": 30,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0,
+    "guildUnlock": "G001",
+    "goldCost": 0,
+    "repReq": 1,
     "recipeType": "normal"
   },
   {
@@ -1935,10 +2117,12 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "actTime": 5000,
-    "pow": 36,
+    "apAdd": 30,
+    "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 6,
     "recipeType": "normal"
   },
   {
@@ -1956,10 +2140,12 @@
       "M403": 1
     },
     "smithCost": "M403",
-    "actTime": 5000,
-    "pow": 72,
+    "apAdd": 30,
+    "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 17,
     "recipeType": "normal"
   },
   {
@@ -1977,10 +2163,12 @@
       "M104": 1
     },
     "smithCost": "M104",
-    "actTime": 5000,
-    "pow": 108,
+    "apAdd": 30,
+    "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 22,
     "recipeType": "normal"
   },
   {
@@ -1995,12 +2183,14 @@
       "steel",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M105",
-    "actTime": 5000,
-    "pow": 126,
+    "apAdd": 30,
+    "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 27,
     "recipeType": "normal"
   },
   {
@@ -2019,10 +2209,12 @@
       "M506": 1
     },
     "smithCost": "M506",
-    "actTime": 5000,
-    "pow": 144,
+    "apAdd": 30,
+    "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 32,
     "recipeType": "normal"
   },
   {
@@ -2041,10 +2233,12 @@
       "M607": 1
     },
     "smithCost": "M607",
-    "actTime": 5000,
-    "pow": 162,
+    "apAdd": 30,
+    "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 37,
     "recipeType": "normal"
   },
   {
@@ -2063,10 +2257,12 @@
       "M108": 1
     },
     "smithCost": "M108",
-    "actTime": 5000,
+    "apAdd": 30,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 42,
     "recipeType": "normal"
   },
   {
@@ -2085,10 +2281,12 @@
       "M409": 1
     },
     "smithCost": "M409",
-    "actTime": 5000,
-    "pow": 198,
+    "apAdd": 30,
+    "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 53,
     "recipeType": "normal"
   },
   {
@@ -2103,12 +2301,14 @@
       "steel",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M110",
-    "actTime": 5000,
-    "pow": 216,
+    "apAdd": 30,
+    "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 58,
     "recipeType": "normal"
   },
   {
@@ -2123,12 +2323,14 @@
       "ore",
       "leather"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M101",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
+    "guildUnlock": "G001",
+    "goldCost": 100,
+    "repReq": 2,
     "recipeType": "normal"
   },
   {
@@ -2147,10 +2349,12 @@
       "M302": 1
     },
     "smithCost": "M302",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 60,
-    "recipeBuy": 500,
+    "hp": 41,
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 7,
     "recipeType": "normal"
   },
   {
@@ -2169,10 +2373,12 @@
       "M503": 1
     },
     "smithCost": "M503",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 1000,
+    "hp": 57,
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 12,
     "recipeType": "normal"
   },
   {
@@ -2191,10 +2397,12 @@
       "M204": 1
     },
     "smithCost": "M204",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 180,
-    "recipeBuy": 7500,
+    "hp": 79,
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 23,
     "recipeType": "normal"
   },
   {
@@ -2214,10 +2422,12 @@
       "M405": 1
     },
     "smithCost": "M405",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 210,
-    "recipeBuy": 52500,
+    "hp": 108,
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 28,
     "recipeType": "normal"
   },
   {
@@ -2233,12 +2443,14 @@
       "leather",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M406",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 367500,
+    "hp": 148,
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 33,
     "recipeType": "normal"
   },
   {
@@ -2258,10 +2470,12 @@
       "M107": 1
     },
     "smithCost": "M107",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 270,
-    "recipeBuy": 2572500,
+    "hp": 202,
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 38,
     "recipeType": "normal"
   },
   {
@@ -2281,10 +2495,12 @@
       "M208": 1
     },
     "smithCost": "M208",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 300,
-    "recipeBuy": 18007500,
+    "hp": 276,
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 43,
     "recipeType": "normal"
   },
   {
@@ -2304,10 +2520,12 @@
       "M509": 1
     },
     "smithCost": "M509",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 330,
-    "recipeBuy": 126052500,
+    "hp": 378,
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 48,
     "recipeType": "normal"
   },
   {
@@ -2327,10 +2545,12 @@
       "M210": 1
     },
     "smithCost": "M210",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 882367500,
+    "hp": 520,
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 59,
     "recipeType": "normal"
   },
   {
@@ -2345,12 +2565,14 @@
       "fabric",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M201",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
+    "guildUnlock": "G003",
+    "goldCost": 100,
+    "repReq": 2,
     "recipeType": "normal"
   },
   {
@@ -2369,10 +2591,12 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 60,
-    "recipeBuy": 500,
+    "hp": 41,
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 7,
     "recipeType": "normal"
   },
   {
@@ -2391,10 +2615,12 @@
       "M403": 1
     },
     "smithCost": "M403",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 1000,
+    "hp": 57,
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 12,
     "recipeType": "normal"
   },
   {
@@ -2413,10 +2639,12 @@
       "M204": 1
     },
     "smithCost": "M204",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 180,
-    "recipeBuy": 7500,
+    "hp": 79,
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 23,
     "recipeType": "normal"
   },
   {
@@ -2436,10 +2664,12 @@
       "M505": 1
     },
     "smithCost": "M505",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 210,
-    "recipeBuy": 52500,
+    "hp": 108,
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 28,
     "recipeType": "normal"
   },
   {
@@ -2455,12 +2685,14 @@
       "fabric",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M506",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 367500,
+    "hp": 148,
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 33,
     "recipeType": "normal"
   },
   {
@@ -2480,10 +2712,12 @@
       "M307": 1
     },
     "smithCost": "M307",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 270,
-    "recipeBuy": 2572500,
+    "hp": 202,
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 38,
     "recipeType": "normal"
   },
   {
@@ -2503,10 +2737,12 @@
       "M208": 1
     },
     "smithCost": "M208",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 300,
-    "recipeBuy": 18007500,
+    "hp": 276,
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 43,
     "recipeType": "normal"
   },
   {
@@ -2526,10 +2762,12 @@
       "M509": 1
     },
     "smithCost": "M509",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 330,
-    "recipeBuy": 126052500,
+    "hp": 378,
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 48,
     "recipeType": "normal"
   },
   {
@@ -2549,10 +2787,12 @@
       "M110": 1
     },
     "smithCost": "M110",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 882367500,
+    "hp": 520,
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 59,
     "recipeType": "normal"
   },
   {
@@ -2567,12 +2807,14 @@
       "leather",
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M301",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
+    "guildUnlock": "G004",
+    "goldCost": 100,
+    "repReq": 2,
     "recipeType": "normal"
   },
   {
@@ -2591,10 +2833,12 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 60,
-    "recipeBuy": 500,
+    "hp": 41,
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 7,
     "recipeType": "normal"
   },
   {
@@ -2613,10 +2857,12 @@
       "M403": 1
     },
     "smithCost": "M403",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 1000,
+    "hp": 57,
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 12,
     "recipeType": "normal"
   },
   {
@@ -2635,10 +2881,12 @@
       "M304": 1
     },
     "smithCost": "M304",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 180,
-    "recipeBuy": 7500,
+    "hp": 79,
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 23,
     "recipeType": "normal"
   },
   {
@@ -2657,10 +2905,12 @@
       "M605": 1
     },
     "smithCost": "M605",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 210,
-    "recipeBuy": 52500,
+    "hp": 108,
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 28,
     "recipeType": "normal"
   },
   {
@@ -2676,12 +2926,14 @@
       "fabric",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M606",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 367500,
+    "hp": 148,
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 33,
     "recipeType": "normal"
   },
   {
@@ -2701,10 +2953,12 @@
       "M507": 1
     },
     "smithCost": "M507",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 270,
-    "recipeBuy": 2572500,
+    "hp": 202,
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 38,
     "recipeType": "normal"
   },
   {
@@ -2724,10 +2978,12 @@
       "M208": 1
     },
     "smithCost": "M208",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 300,
-    "recipeBuy": 18007500,
+    "hp": 276,
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 43,
     "recipeType": "normal"
   },
   {
@@ -2747,10 +3003,12 @@
       "M609": 1
     },
     "smithCost": "M609",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 330,
-    "recipeBuy": 126052500,
+    "hp": 378,
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 48,
     "recipeType": "normal"
   },
   {
@@ -2770,10 +3028,12 @@
       "M210": 1
     },
     "smithCost": "M210",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 882367500,
+    "hp": 520,
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 59,
     "recipeType": "normal"
   },
   {
@@ -2792,10 +3052,12 @@
       "M201": 1
     },
     "smithCost": "M201",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
+    "guildUnlock": "G004",
+    "goldCost": 100,
+    "repReq": 4,
     "recipeType": "normal"
   },
   {
@@ -2810,12 +3072,14 @@
       "fabric",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M202",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 60,
-    "recipeBuy": 500,
+    "hp": 41,
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 9,
     "recipeType": "normal"
   },
   {
@@ -2834,10 +3098,12 @@
       "M603": 1
     },
     "smithCost": "M603",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 1000,
+    "hp": 57,
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 14,
     "recipeType": "normal"
   },
   {
@@ -2856,10 +3122,12 @@
       "M304": 1
     },
     "smithCost": "M304",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 180,
-    "recipeBuy": 7500,
+    "hp": 79,
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -2879,10 +3147,12 @@
       "M505": 1
     },
     "smithCost": "M505",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 210,
-    "recipeBuy": 52500,
+    "hp": 108,
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 24,
     "recipeType": "normal"
   },
   {
@@ -2902,10 +3172,12 @@
       "M606": 1
     },
     "smithCost": "M606",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 367500,
+    "hp": 148,
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -2921,12 +3193,14 @@
       "fabric",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M407",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 270,
-    "recipeBuy": 2572500,
+    "hp": 202,
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 40,
     "recipeType": "normal"
   },
   {
@@ -2946,10 +3220,12 @@
       "M408": 1
     },
     "smithCost": "M408",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 300,
-    "recipeBuy": 18007500,
+    "hp": 276,
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 45,
     "recipeType": "normal"
   },
   {
@@ -2969,10 +3245,12 @@
       "M609": 1
     },
     "smithCost": "M609",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 330,
-    "recipeBuy": 126052500,
+    "hp": 378,
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 50,
     "recipeType": "normal"
   },
   {
@@ -2992,10 +3270,12 @@
       "M110": 1
     },
     "smithCost": "M110",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 882367500,
+    "hp": 520,
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 55,
     "recipeType": "normal"
   },
   {
@@ -3014,10 +3294,12 @@
       "M601": 1
     },
     "smithCost": "M601",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
+    "guildUnlock": "G003",
+    "goldCost": 100,
+    "repReq": 4,
     "recipeType": "normal"
   },
   {
@@ -3032,12 +3314,14 @@
       "leather",
       "herb"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M502",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 60,
-    "recipeBuy": 500,
+    "hp": 41,
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 9,
     "recipeType": "normal"
   },
   {
@@ -3056,10 +3340,12 @@
       "M503": 1
     },
     "smithCost": "M503",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 1000,
+    "hp": 57,
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 14,
     "recipeType": "normal"
   },
   {
@@ -3078,10 +3364,12 @@
       "M304": 1
     },
     "smithCost": "M304",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 180,
-    "recipeBuy": 7500,
+    "hp": 79,
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -3101,10 +3389,12 @@
       "M605": 1
     },
     "smithCost": "M605",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 210,
-    "recipeBuy": 52500,
+    "hp": 108,
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 24,
     "recipeType": "normal"
   },
   {
@@ -3124,10 +3414,12 @@
       "M506": 1
     },
     "smithCost": "M506",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 367500,
+    "hp": 148,
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -3143,12 +3435,14 @@
       "herb",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M507",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 270,
-    "recipeBuy": 2572500,
+    "hp": 202,
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 40,
     "recipeType": "normal"
   },
   {
@@ -3168,10 +3462,12 @@
       "M108": 1
     },
     "smithCost": "M108",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 300,
-    "recipeBuy": 18007500,
+    "hp": 276,
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 45,
     "recipeType": "normal"
   },
   {
@@ -3191,10 +3487,12 @@
       "M609": 1
     },
     "smithCost": "M609",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 330,
-    "recipeBuy": 126052500,
+    "hp": 378,
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 50,
     "recipeType": "normal"
   },
   {
@@ -3214,10 +3512,12 @@
       "M210": 1
     },
     "smithCost": "M210",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 882367500,
+    "hp": 520,
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 55,
     "recipeType": "normal"
   },
   {
@@ -3236,10 +3536,12 @@
       "M401": 1
     },
     "smithCost": "M401",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "recipeBuy": 100,
+    "guildUnlock": "G004",
+    "goldCost": 100,
+    "repReq": 3,
     "recipeType": "normal"
   },
   {
@@ -3254,12 +3556,14 @@
       "wood",
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M602",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 60,
-    "recipeBuy": 500,
+    "hp": 41,
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 8,
     "recipeType": "normal"
   },
   {
@@ -3278,10 +3582,12 @@
       "M503": 1
     },
     "smithCost": "M503",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 1000,
+    "hp": 57,
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 13,
     "recipeType": "normal"
   },
   {
@@ -3300,10 +3606,12 @@
       "M404": 1
     },
     "smithCost": "M404",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 180,
-    "recipeBuy": 7500,
+    "hp": 79,
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 18,
     "recipeType": "normal"
   },
   {
@@ -3323,10 +3631,12 @@
       "M105": 1
     },
     "smithCost": "M105",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 210,
-    "recipeBuy": 52500,
+    "hp": 108,
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 29,
     "recipeType": "normal"
   },
   {
@@ -3346,10 +3656,12 @@
       "M606": 1
     },
     "smithCost": "M606",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 367500,
+    "hp": 148,
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 34,
     "recipeType": "normal"
   },
   {
@@ -3365,12 +3677,14 @@
       "leather",
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M607",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 270,
-    "recipeBuy": 2572500,
+    "hp": 202,
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 39,
     "recipeType": "normal"
   },
   {
@@ -3390,10 +3704,12 @@
       "M108": 1
     },
     "smithCost": "M108",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 300,
-    "recipeBuy": 18007500,
+    "hp": 276,
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 44,
     "recipeType": "normal"
   },
   {
@@ -3413,10 +3729,12 @@
       "M209": 1
     },
     "smithCost": "M209",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 330,
-    "recipeBuy": 126052500,
+    "hp": 378,
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 49,
     "recipeType": "normal"
   },
   {
@@ -3436,10 +3754,12 @@
       "M310": 1
     },
     "smithCost": "M310",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 882367500,
+    "hp": 520,
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 54,
     "recipeType": "normal"
   },
   {
@@ -3459,10 +3779,12 @@
       "M301": 1
     },
     "smithCost": "M301",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
+    "guildUnlock": "G001",
+    "goldCost": 100,
+    "repReq": 5,
     "recipeType": "normal"
   },
   {
@@ -3482,10 +3804,12 @@
       "M402": 1
     },
     "smithCost": "M402",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 500,
+    "hp": 82,
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 10,
     "recipeType": "normal"
   },
   {
@@ -3501,12 +3825,14 @@
       "leather",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M403",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 1000,
+    "hp": 114,
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -3526,10 +3852,12 @@
       "M404": 1
     },
     "smithCost": "M404",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 7500,
+    "hp": 158,
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 20,
     "recipeType": "normal"
   },
   {
@@ -3549,10 +3877,12 @@
       "M605": 1
     },
     "smithCost": "M605",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 420,
-    "recipeBuy": 52500,
+    "hp": 216,
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 25,
     "recipeType": "normal"
   },
   {
@@ -3572,10 +3902,12 @@
       "M106": 1
     },
     "smithCost": "M106",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 480,
-    "recipeBuy": 367500,
+    "hp": 296,
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 30,
     "recipeType": "normal"
   },
   {
@@ -3595,10 +3927,12 @@
       "M207": 1
     },
     "smithCost": "M207",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 540,
-    "recipeBuy": 2572500,
+    "hp": 404,
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 41,
     "recipeType": "normal"
   },
   {
@@ -3614,12 +3948,14 @@
       "leather",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M408",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 600,
-    "recipeBuy": 18007500,
+    "hp": 552,
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 46,
     "recipeType": "normal"
   },
   {
@@ -3639,10 +3975,12 @@
       "M109": 1
     },
     "smithCost": "M109",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 660,
-    "recipeBuy": 126052500,
+    "hp": 756,
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 51,
     "recipeType": "normal"
   },
   {
@@ -3662,10 +4000,12 @@
       "M610": 1
     },
     "smithCost": "M610",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 720,
-    "recipeBuy": 882367500,
+    "hp": 1040,
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 56,
     "recipeType": "normal"
   },
   {
@@ -3685,10 +4025,12 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
+    "guildUnlock": "G003",
+    "goldCost": 100,
+    "repReq": 5,
     "recipeType": "normal"
   },
   {
@@ -3708,10 +4050,12 @@
       "M302": 1
     },
     "smithCost": "M302",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 500,
+    "hp": 82,
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 10,
     "recipeType": "normal"
   },
   {
@@ -3727,12 +4071,14 @@
       "fabric",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M503",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 1000,
+    "hp": 114,
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -3752,10 +4098,12 @@
       "M404": 1
     },
     "smithCost": "M404",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 7500,
+    "hp": 158,
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 20,
     "recipeType": "normal"
   },
   {
@@ -3775,10 +4123,12 @@
       "M105": 1
     },
     "smithCost": "M105",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 420,
-    "recipeBuy": 52500,
+    "hp": 216,
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 25,
     "recipeType": "normal"
   },
   {
@@ -3798,10 +4148,12 @@
       "M606": 1
     },
     "smithCost": "M606",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 480,
-    "recipeBuy": 367500,
+    "hp": 296,
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 30,
     "recipeType": "normal"
   },
   {
@@ -3821,10 +4173,12 @@
       "M507": 1
     },
     "smithCost": "M507",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 540,
-    "recipeBuy": 2572500,
+    "hp": 404,
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 41,
     "recipeType": "normal"
   },
   {
@@ -3840,12 +4194,14 @@
       "fabric",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M508",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 600,
-    "recipeBuy": 18007500,
+    "hp": 552,
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 46,
     "recipeType": "normal"
   },
   {
@@ -3865,10 +4221,12 @@
       "M109": 1
     },
     "smithCost": "M109",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 660,
-    "recipeBuy": 126052500,
+    "hp": 756,
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 51,
     "recipeType": "normal"
   },
   {
@@ -3888,10 +4246,12 @@
       "M310": 1
     },
     "smithCost": "M310",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 720,
-    "recipeBuy": 882367500,
+    "hp": 1040,
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 56,
     "recipeType": "normal"
   },
   {
@@ -3911,10 +4271,12 @@
       "M501": 1
     },
     "smithCost": "M501",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
+    "guildUnlock": "G005",
+    "goldCost": 100,
+    "repReq": 5,
     "recipeType": "normal"
   },
   {
@@ -3934,10 +4296,12 @@
       "M302": 1
     },
     "smithCost": "M302",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 500,
+    "hp": 82,
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 10,
     "recipeType": "normal"
   },
   {
@@ -3953,12 +4317,14 @@
       "leather",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M603",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 1000,
+    "hp": 114,
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -3978,10 +4344,12 @@
       "M504": 1
     },
     "smithCost": "M504",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 7500,
+    "hp": 158,
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 20,
     "recipeType": "normal"
   },
   {
@@ -4001,10 +4369,12 @@
       "M205": 1
     },
     "smithCost": "M205",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 420,
-    "recipeBuy": 52500,
+    "hp": 216,
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 25,
     "recipeType": "normal"
   },
   {
@@ -4024,10 +4394,12 @@
       "M506": 1
     },
     "smithCost": "M506",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 480,
-    "recipeBuy": 367500,
+    "hp": 296,
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 30,
     "recipeType": "normal"
   },
   {
@@ -4047,10 +4419,12 @@
       "M407": 1
     },
     "smithCost": "M407",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 540,
-    "recipeBuy": 2572500,
+    "hp": 404,
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 41,
     "recipeType": "normal"
   },
   {
@@ -4066,12 +4440,14 @@
       "leather",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M608",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 600,
-    "recipeBuy": 18007500,
+    "hp": 552,
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 46,
     "recipeType": "normal"
   },
   {
@@ -4091,10 +4467,12 @@
       "M109": 1
     },
     "smithCost": "M109",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 660,
-    "recipeBuy": 126052500,
+    "hp": 756,
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 51,
     "recipeType": "normal"
   },
   {
@@ -4114,10 +4492,12 @@
       "M410": 1
     },
     "smithCost": "M410",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 720,
-    "recipeBuy": 882367500,
+    "hp": 1040,
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 56,
     "recipeType": "normal"
   },
   {
@@ -4135,10 +4515,12 @@
       "M401": 1
     },
     "smithCost": "M401",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100,
+    "guildUnlock": "G001",
+    "goldCost": 100,
+    "repReq": 4,
     "recipeType": "normal"
   },
   {
@@ -4156,10 +4538,12 @@
       "M502": 1
     },
     "smithCost": "M502",
-    "actTime": 0,
-    "pow": 36,
+    "apAdd": 0,
+    "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G001",
+    "goldCost": 500,
+    "repReq": 9,
     "recipeType": "normal"
   },
   {
@@ -4178,10 +4562,12 @@
       "M103": 1
     },
     "smithCost": "M103",
-    "actTime": 0,
-    "pow": 72,
+    "apAdd": 0,
+    "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G001",
+    "goldCost": 1000,
+    "repReq": 14,
     "recipeType": "normal"
   },
   {
@@ -4196,12 +4582,14 @@
       "steel",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M104",
-    "actTime": 0,
-    "pow": 108,
+    "apAdd": 0,
+    "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G001",
+    "goldCost": 7500,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -4221,10 +4609,12 @@
       "M105": 1
     },
     "smithCost": "M105",
-    "actTime": 0,
-    "pow": 126,
+    "apAdd": 0,
+    "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G001",
+    "goldCost": 52500,
+    "repReq": 24,
     "recipeType": "normal"
   },
   {
@@ -4244,10 +4634,12 @@
       "M206": 1
     },
     "smithCost": "M206",
-    "actTime": 0,
-    "pow": 144,
+    "apAdd": 0,
+    "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G001",
+    "goldCost": 367500,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -4267,10 +4659,12 @@
       "M407": 1
     },
     "smithCost": "M407",
-    "actTime": 0,
-    "pow": 162,
+    "apAdd": 0,
+    "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G001",
+    "goldCost": 2572500,
+    "repReq": 40,
     "recipeType": "normal"
   },
   {
@@ -4290,10 +4684,12 @@
       "M308": 1
     },
     "smithCost": "M308",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G001",
+    "goldCost": 18007500,
+    "repReq": 45,
     "recipeType": "normal"
   },
   {
@@ -4309,12 +4705,14 @@
       "silver",
       "herb"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M109",
-    "actTime": 0,
-    "pow": 198,
+    "apAdd": 0,
+    "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G001",
+    "goldCost": 126052500,
+    "repReq": 50,
     "recipeType": "normal"
   },
   {
@@ -4334,10 +4732,12 @@
       "M310": 1
     },
     "smithCost": "M310",
-    "actTime": 0,
-    "pow": 216,
+    "apAdd": 0,
+    "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G001",
+    "goldCost": 882367500,
+    "repReq": 55,
     "recipeType": "normal"
   },
   {
@@ -4355,10 +4755,12 @@
       "M201": 1
     },
     "smithCost": "M201",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100,
+    "guildUnlock": "G003",
+    "goldCost": 100,
+    "repReq": 3,
     "recipeType": "normal"
   },
   {
@@ -4376,10 +4778,12 @@
       "M402": 1
     },
     "smithCost": "M402",
-    "actTime": 0,
-    "pow": 36,
+    "apAdd": 0,
+    "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 8,
     "recipeType": "normal"
   },
   {
@@ -4398,10 +4802,12 @@
       "M603": 1
     },
     "smithCost": "M603",
-    "actTime": 0,
-    "pow": 72,
+    "apAdd": 0,
+    "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 13,
     "recipeType": "normal"
   },
   {
@@ -4416,12 +4822,14 @@
       "herb",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M204",
-    "actTime": 0,
-    "pow": 108,
+    "apAdd": 0,
+    "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 18,
     "recipeType": "normal"
   },
   {
@@ -4441,10 +4849,12 @@
       "M205": 1
     },
     "smithCost": "M205",
-    "actTime": 0,
-    "pow": 126,
+    "apAdd": 0,
+    "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 29,
     "recipeType": "normal"
   },
   {
@@ -4464,10 +4874,12 @@
       "M106": 1
     },
     "smithCost": "M106",
-    "actTime": 0,
-    "pow": 144,
+    "apAdd": 0,
+    "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 34,
     "recipeType": "normal"
   },
   {
@@ -4487,10 +4899,12 @@
       "M407": 1
     },
     "smithCost": "M407",
-    "actTime": 0,
-    "pow": 162,
+    "apAdd": 0,
+    "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 39,
     "recipeType": "normal"
   },
   {
@@ -4510,10 +4924,12 @@
       "M308": 1
     },
     "smithCost": "M308",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 44,
     "recipeType": "normal"
   },
   {
@@ -4529,12 +4945,14 @@
       "herb",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M209",
-    "actTime": 0,
-    "pow": 198,
+    "apAdd": 0,
+    "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 49,
     "recipeType": "normal"
   },
   {
@@ -4554,10 +4972,12 @@
       "M410": 1
     },
     "smithCost": "M410",
-    "actTime": 0,
-    "pow": 216,
+    "apAdd": 0,
+    "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 54,
     "recipeType": "normal"
   },
   {
@@ -4575,10 +4995,12 @@
       "M601": 1
     },
     "smithCost": "M601",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100,
+    "guildUnlock": "G002",
+    "goldCost": 100,
+    "repReq": 2,
     "recipeType": "normal"
   },
   {
@@ -4596,10 +5018,12 @@
       "M402": 1
     },
     "smithCost": "M402",
-    "actTime": 0,
-    "pow": 36,
+    "apAdd": 0,
+    "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 7,
     "recipeType": "normal"
   },
   {
@@ -4618,10 +5042,12 @@
       "M603": 1
     },
     "smithCost": "M603",
-    "actTime": 0,
-    "pow": 72,
+    "apAdd": 0,
+    "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 12,
     "recipeType": "normal"
   },
   {
@@ -4636,12 +5062,14 @@
       "wood",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M304",
-    "actTime": 0,
-    "pow": 108,
+    "apAdd": 0,
+    "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 23,
     "recipeType": "normal"
   },
   {
@@ -4661,10 +5089,12 @@
       "M305": 1
     },
     "smithCost": "M305",
-    "actTime": 0,
-    "pow": 126,
+    "apAdd": 0,
+    "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 28,
     "recipeType": "normal"
   },
   {
@@ -4684,10 +5114,12 @@
       "M106": 1
     },
     "smithCost": "M106",
-    "actTime": 0,
-    "pow": 144,
+    "apAdd": 0,
+    "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 33,
     "recipeType": "normal"
   },
   {
@@ -4707,10 +5139,12 @@
       "M207": 1
     },
     "smithCost": "M207",
-    "actTime": 0,
-    "pow": 162,
+    "apAdd": 0,
+    "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 38,
     "recipeType": "normal"
   },
   {
@@ -4730,10 +5164,12 @@
       "M308": 1
     },
     "smithCost": "M308",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 43,
     "recipeType": "normal"
   },
   {
@@ -4749,12 +5185,14 @@
       "steel",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M309",
-    "actTime": 0,
-    "pow": 198,
+    "apAdd": 0,
+    "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 48,
     "recipeType": "normal"
   },
   {
@@ -4774,10 +5212,12 @@
       "M510": 1
     },
     "smithCost": "M510",
-    "actTime": 0,
-    "pow": 216,
+    "apAdd": 0,
+    "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 59,
     "recipeType": "normal"
   },
   {
@@ -4791,12 +5231,14 @@
     "rcost": [
       "paper"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M401",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 0,
+    "guildUnlock": "G002",
+    "goldCost": 0,
+    "repReq": 1,
     "recipeType": "normal"
   },
   {
@@ -4814,10 +5256,12 @@
       "M502": 1
     },
     "smithCost": "M502",
-    "actTime": 0,
-    "pow": 36,
+    "apAdd": 0,
+    "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 6,
     "recipeType": "normal"
   },
   {
@@ -4836,10 +5280,12 @@
       "M103": 1
     },
     "smithCost": "M103",
-    "actTime": 0,
-    "pow": 72,
+    "apAdd": 0,
+    "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 17,
     "recipeType": "normal"
   },
   {
@@ -4858,10 +5304,12 @@
       "M504": 1
     },
     "smithCost": "M504",
-    "actTime": 0,
-    "pow": 108,
+    "apAdd": 0,
+    "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 22,
     "recipeType": "normal"
   },
   {
@@ -4877,12 +5325,14 @@
       "paper",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M205",
-    "actTime": 0,
-    "pow": 126,
+    "apAdd": 0,
+    "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 27,
     "recipeType": "normal"
   },
   {
@@ -4905,10 +5355,12 @@
       "M206": 1
     },
     "smithCost": "M206",
-    "actTime": 0,
-    "pow": 144,
+    "apAdd": 0,
+    "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 32,
     "recipeType": "normal"
   },
   {
@@ -4928,10 +5380,12 @@
       "M607": 1
     },
     "smithCost": "M607",
-    "actTime": 0,
-    "pow": 162,
+    "apAdd": 0,
+    "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 37,
     "recipeType": "normal"
   },
   {
@@ -4951,10 +5405,12 @@
       "M508": 1
     },
     "smithCost": "M508",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 42,
     "recipeType": "normal"
   },
   {
@@ -4974,10 +5430,12 @@
       "M209": 1
     },
     "smithCost": "M209",
-    "actTime": 0,
-    "pow": 198,
+    "apAdd": 0,
+    "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 53,
     "recipeType": "normal"
   },
   {
@@ -4993,12 +5451,14 @@
       "paper",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M210",
-    "actTime": 0,
-    "pow": 216,
+    "apAdd": 0,
+    "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 58,
     "recipeType": "normal"
   },
   {
@@ -5016,10 +5476,12 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "recipeBuy": 100,
+    "guildUnlock": "G002",
+    "goldCost": 100,
+    "repReq": 5,
     "recipeType": "normal"
   },
   {
@@ -5037,10 +5499,12 @@
       "M502": 1
     },
     "smithCost": "M502",
-    "actTime": 0,
-    "pow": 36,
+    "apAdd": 0,
+    "pow": 25,
     "hp": 0,
-    "recipeBuy": 500,
+    "guildUnlock": "G002",
+    "goldCost": 500,
+    "repReq": 10,
     "recipeType": "normal"
   },
   {
@@ -5059,10 +5523,12 @@
       "M103": 1
     },
     "smithCost": "M103",
-    "actTime": 0,
-    "pow": 72,
+    "apAdd": 0,
+    "pow": 35,
     "hp": 0,
-    "recipeBuy": 1000,
+    "guildUnlock": "G002",
+    "goldCost": 1000,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -5081,10 +5547,12 @@
       "M604": 1
     },
     "smithCost": "M604",
-    "actTime": 0,
-    "pow": 108,
+    "apAdd": 0,
+    "pow": 49,
     "hp": 0,
-    "recipeBuy": 7500,
+    "guildUnlock": "G002",
+    "goldCost": 7500,
+    "repReq": 20,
     "recipeType": "normal"
   },
   {
@@ -5100,12 +5568,14 @@
       "bone",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M305",
-    "actTime": 0,
-    "pow": 126,
+    "apAdd": 0,
+    "pow": 68,
     "hp": 0,
-    "recipeBuy": 52500,
+    "guildUnlock": "G002",
+    "goldCost": 52500,
+    "repReq": 25,
     "recipeType": "normal"
   },
   {
@@ -5125,10 +5595,12 @@
       "M206": 1
     },
     "smithCost": "M206",
-    "actTime": 0,
-    "pow": 144,
+    "apAdd": 0,
+    "pow": 94,
     "hp": 0,
-    "recipeBuy": 367500,
+    "guildUnlock": "G002",
+    "goldCost": 367500,
+    "repReq": 30,
     "recipeType": "normal"
   },
   {
@@ -5148,10 +5620,12 @@
       "M607": 1
     },
     "smithCost": "M607",
-    "actTime": 0,
-    "pow": 162,
+    "apAdd": 0,
+    "pow": 130,
     "hp": 0,
-    "recipeBuy": 2572500,
+    "guildUnlock": "G002",
+    "goldCost": 2572500,
+    "repReq": 41,
     "recipeType": "normal"
   },
   {
@@ -5171,10 +5645,12 @@
       "M508": 1
     },
     "smithCost": "M508",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "recipeBuy": 18007500,
+    "guildUnlock": "G002",
+    "goldCost": 18007500,
+    "repReq": 46,
     "recipeType": "normal"
   },
   {
@@ -5194,10 +5670,12 @@
       "M309": 1
     },
     "smithCost": "M309",
-    "actTime": 0,
-    "pow": 198,
+    "apAdd": 0,
+    "pow": 250,
     "hp": 0,
-    "recipeBuy": 126052500,
+    "guildUnlock": "G002",
+    "goldCost": 126052500,
+    "repReq": 51,
     "recipeType": "normal"
   },
   {
@@ -5213,12 +5691,14 @@
       "bone",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M310",
-    "actTime": 0,
-    "pow": 216,
+    "apAdd": 0,
+    "pow": 350,
     "hp": 0,
-    "recipeBuy": 882367500,
+    "guildUnlock": "G002",
+    "goldCost": 882367500,
+    "repReq": 56,
     "recipeType": "normal"
   },
   {
@@ -5232,12 +5712,14 @@
     "rcost": [
       "herb"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M501",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 0,
+    "guildUnlock": "G003",
+    "goldCost": 0,
+    "repReq": 0,
     "recipeType": "normal"
   },
   {
@@ -5255,10 +5737,12 @@
       "M602": 1
     },
     "smithCost": "M602",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 500,
+    "hp": 82,
+    "guildUnlock": "G003",
+    "goldCost": 500,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
@@ -5276,10 +5760,12 @@
       "M203": 1
     },
     "smithCost": "M203",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 1000,
+    "hp": 114,
+    "guildUnlock": "G003",
+    "goldCost": 1000,
+    "repReq": 16,
     "recipeType": "normal"
   },
   {
@@ -5293,12 +5779,14 @@
     "rcost": [
       "herb"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M404",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 7500,
+    "hp": 158,
+    "guildUnlock": "G003",
+    "goldCost": 7500,
+    "repReq": 21,
     "recipeType": "normal"
   },
   {
@@ -5317,10 +5805,12 @@
       "M405": 1
     },
     "smithCost": "M405",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 420,
-    "recipeBuy": 52500,
+    "hp": 216,
+    "guildUnlock": "G003",
+    "goldCost": 52500,
+    "repReq": 26,
     "recipeType": "normal"
   },
   {
@@ -5339,10 +5829,12 @@
       "M106": 1
     },
     "smithCost": "M106",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 480,
-    "recipeBuy": 367500,
+    "hp": 296,
+    "guildUnlock": "G003",
+    "goldCost": 367500,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -5361,10 +5853,12 @@
       "M307": 1
     },
     "smithCost": "M307",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 540,
-    "recipeBuy": 2572500,
+    "hp": 404,
+    "guildUnlock": "G003",
+    "goldCost": 2572500,
+    "repReq": 36,
     "recipeType": "normal"
   },
   {
@@ -5383,10 +5877,12 @@
       "M508": 1
     },
     "smithCost": "M508",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 600,
-    "recipeBuy": 18007500,
+    "hp": 552,
+    "guildUnlock": "G003",
+    "goldCost": 18007500,
+    "repReq": 47,
     "recipeType": "normal"
   },
   {
@@ -5401,12 +5897,14 @@
       "herb",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M409",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 660,
-    "recipeBuy": 126052500,
+    "hp": 756,
+    "guildUnlock": "G003",
+    "goldCost": 126052500,
+    "repReq": 52,
     "recipeType": "normal"
   },
   {
@@ -5425,10 +5923,12 @@
       "M610": 1
     },
     "smithCost": "M610",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 720,
-    "recipeBuy": 882367500,
+    "hp": 1040,
+    "guildUnlock": "G003",
+    "goldCost": 882367500,
+    "repReq": 57,
     "recipeType": "normal"
   },
   {
@@ -5442,12 +5942,14 @@
     "rcost": [
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M601",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 0,
+    "guildUnlock": "G004",
+    "goldCost": 0,
+    "repReq": 1,
     "recipeType": "normal"
   },
   {
@@ -5465,10 +5967,12 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 500,
+    "hp": 82,
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 6,
     "recipeType": "normal"
   },
   {
@@ -5486,10 +5990,12 @@
       "M303": 1
     },
     "smithCost": "M303",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 1000,
+    "hp": 114,
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 17,
     "recipeType": "normal"
   },
   {
@@ -5503,12 +6009,14 @@
     "rcost": [
       "fabric"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M504",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 7500,
+    "hp": 158,
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 22,
     "recipeType": "normal"
   },
   {
@@ -5527,10 +6035,12 @@
       "M505": 1
     },
     "smithCost": "M505",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 420,
-    "recipeBuy": 52500,
+    "hp": 216,
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 27,
     "recipeType": "normal"
   },
   {
@@ -5549,10 +6059,12 @@
       "M206": 1
     },
     "smithCost": "M206",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 480,
-    "recipeBuy": 367500,
+    "hp": 296,
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 32,
     "recipeType": "normal"
   },
   {
@@ -5571,10 +6083,12 @@
       "M407": 1
     },
     "smithCost": "M407",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 540,
-    "recipeBuy": 2572500,
+    "hp": 404,
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 37,
     "recipeType": "normal"
   },
   {
@@ -5593,10 +6107,12 @@
       "M608": 1
     },
     "smithCost": "M608",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 600,
-    "recipeBuy": 18007500,
+    "hp": 552,
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 42,
     "recipeType": "normal"
   },
   {
@@ -5611,12 +6127,14 @@
       "fabric",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M509",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 660,
-    "recipeBuy": 126052500,
+    "hp": 756,
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 53,
     "recipeType": "normal"
   },
   {
@@ -5635,10 +6153,12 @@
       "M110": 1
     },
     "smithCost": "M110",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 720,
-    "recipeBuy": 882367500,
+    "hp": 1040,
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 58,
     "recipeType": "normal"
   },
   {
@@ -5657,10 +6177,12 @@
       "M201": 1
     },
     "smithCost": "M201",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
+    "guildUnlock": "G005",
+    "goldCost": 100,
+    "repReq": 3,
     "recipeType": "normal"
   },
   {
@@ -5679,10 +6201,12 @@
       "M302": 1
     },
     "smithCost": "M302",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 500,
+    "hp": 82,
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 8,
     "recipeType": "normal"
   },
   {
@@ -5701,10 +6225,12 @@
       "M403": 1
     },
     "smithCost": "M403",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 1000,
+    "hp": 114,
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 13,
     "recipeType": "normal"
   },
   {
@@ -5719,12 +6245,14 @@
       "ore",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M604",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 7500,
+    "hp": 158,
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 18,
     "recipeType": "normal"
   },
   {
@@ -5743,10 +6271,12 @@
       "M605": 1
     },
     "smithCost": "M605",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 420,
-    "recipeBuy": 52500,
+    "hp": 216,
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 29,
     "recipeType": "normal"
   },
   {
@@ -5765,10 +6295,12 @@
       "M306": 1
     },
     "smithCost": "M306",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 480,
-    "recipeBuy": 367500,
+    "hp": 296,
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 34,
     "recipeType": "normal"
   },
   {
@@ -5787,10 +6319,12 @@
       "M507": 1
     },
     "smithCost": "M507",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 540,
-    "recipeBuy": 2572500,
+    "hp": 404,
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 39,
     "recipeType": "normal"
   },
   {
@@ -5809,10 +6343,12 @@
       "M108": 1
     },
     "smithCost": "M108",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 600,
-    "recipeBuy": 18007500,
+    "hp": 552,
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 44,
     "recipeType": "normal"
   },
   {
@@ -5827,12 +6363,14 @@
       "ore",
       "silver"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M609",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 660,
-    "recipeBuy": 126052500,
+    "hp": 756,
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 49,
     "recipeType": "normal"
   },
   {
@@ -5851,10 +6389,12 @@
       "M210": 1
     },
     "smithCost": "M210",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 720,
-    "recipeBuy": 882367500,
+    "hp": 1040,
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 54,
     "recipeType": "normal"
   },
   {
@@ -5873,10 +6413,12 @@
       "M301": 1
     },
     "smithCost": "M301",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
+    "guildUnlock": "G005",
+    "goldCost": 100,
+    "repReq": 4,
     "recipeType": "normal"
   },
   {
@@ -5895,10 +6437,12 @@
       "M402": 1
     },
     "smithCost": "M402",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 500,
+    "hp": 82,
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 9,
     "recipeType": "normal"
   },
   {
@@ -5917,10 +6461,12 @@
       "M503": 1
     },
     "smithCost": "M503",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 1000,
+    "hp": 114,
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 14,
     "recipeType": "normal"
   },
   {
@@ -5939,10 +6485,12 @@
       "M104": 1
     },
     "smithCost": "M104",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 7500,
+    "hp": 158,
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -5957,12 +6505,14 @@
       "fabric",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M405",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 420,
-    "recipeBuy": 52500,
+    "hp": 216,
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 24,
     "recipeType": "normal"
   },
   {
@@ -5981,10 +6531,12 @@
       "M406": 1
     },
     "smithCost": "M406",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 480,
-    "recipeBuy": 367500,
+    "hp": 296,
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -6003,10 +6555,12 @@
       "M607": 1
     },
     "smithCost": "M607",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 540,
-    "recipeBuy": 2572500,
+    "hp": 404,
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 40,
     "recipeType": "normal"
   },
   {
@@ -6025,10 +6579,12 @@
       "M208": 1
     },
     "smithCost": "M208",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 600,
-    "recipeBuy": 18007500,
+    "hp": 552,
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 45,
     "recipeType": "normal"
   },
   {
@@ -6047,10 +6603,12 @@
       "M409": 1
     },
     "smithCost": "M409",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 660,
-    "recipeBuy": 126052500,
+    "hp": 756,
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 50,
     "recipeType": "normal"
   },
   {
@@ -6065,12 +6623,14 @@
       "fabric",
       "bone"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M410",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 720,
-    "recipeBuy": 882367500,
+    "hp": 1040,
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 55,
     "recipeType": "normal"
   },
   {
@@ -6089,10 +6649,12 @@
       "M401": 1
     },
     "smithCost": "M401",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
+    "guildUnlock": "G004",
+    "goldCost": 100,
+    "repReq": 5,
     "recipeType": "normal"
   },
   {
@@ -6111,10 +6673,12 @@
       "M502": 1
     },
     "smithCost": "M502",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 500,
+    "hp": 82,
+    "guildUnlock": "G004",
+    "goldCost": 500,
+    "repReq": 10,
     "recipeType": "normal"
   },
   {
@@ -6133,10 +6697,12 @@
       "M603": 1
     },
     "smithCost": "M603",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 1000,
+    "hp": 114,
+    "guildUnlock": "G004",
+    "goldCost": 1000,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -6155,10 +6721,12 @@
       "M204": 1
     },
     "smithCost": "M204",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 7500,
+    "hp": 158,
+    "guildUnlock": "G004",
+    "goldCost": 7500,
+    "repReq": 20,
     "recipeType": "normal"
   },
   {
@@ -6173,12 +6741,14 @@
       "leather",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M505",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 420,
-    "recipeBuy": 52500,
+    "hp": 216,
+    "guildUnlock": "G004",
+    "goldCost": 52500,
+    "repReq": 25,
     "recipeType": "normal"
   },
   {
@@ -6197,10 +6767,12 @@
       "M506": 1
     },
     "smithCost": "M506",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 480,
-    "recipeBuy": 367500,
+    "hp": 296,
+    "guildUnlock": "G004",
+    "goldCost": 367500,
+    "repReq": 30,
     "recipeType": "normal"
   },
   {
@@ -6219,10 +6791,12 @@
       "M107": 1
     },
     "smithCost": "M107",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 540,
-    "recipeBuy": 2572500,
+    "hp": 404,
+    "guildUnlock": "G004",
+    "goldCost": 2572500,
+    "repReq": 41,
     "recipeType": "normal"
   },
   {
@@ -6241,10 +6815,12 @@
       "M308": 1
     },
     "smithCost": "M308",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 600,
-    "recipeBuy": 18007500,
+    "hp": 552,
+    "guildUnlock": "G004",
+    "goldCost": 18007500,
+    "repReq": 46,
     "recipeType": "normal"
   },
   {
@@ -6263,10 +6839,12 @@
       "M509": 1
     },
     "smithCost": "M509",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 660,
-    "recipeBuy": 126052500,
+    "hp": 756,
+    "guildUnlock": "G004",
+    "goldCost": 126052500,
+    "repReq": 51,
     "recipeType": "normal"
   },
   {
@@ -6281,12 +6859,14 @@
       "leather",
       "steel"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M510",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 720,
-    "recipeBuy": 882367500,
+    "hp": 1040,
+    "guildUnlock": "G004",
+    "goldCost": 882367500,
+    "repReq": 56,
     "recipeType": "normal"
   },
   {
@@ -6305,10 +6885,12 @@
       "M501": 1
     },
     "smithCost": "M501",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "recipeBuy": 100,
+    "guildUnlock": "G005",
+    "goldCost": 100,
+    "repReq": 2,
     "recipeType": "normal"
   },
   {
@@ -6327,10 +6909,12 @@
       "M102": 1
     },
     "smithCost": "M102",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 120,
-    "recipeBuy": 500,
+    "hp": 82,
+    "guildUnlock": "G005",
+    "goldCost": 500,
+    "repReq": 7,
     "recipeType": "normal"
   },
   {
@@ -6349,10 +6933,12 @@
       "M103": 1
     },
     "smithCost": "M103",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 240,
-    "recipeBuy": 1000,
+    "hp": 114,
+    "guildUnlock": "G005",
+    "goldCost": 1000,
+    "repReq": 12,
     "recipeType": "normal"
   },
   {
@@ -6371,10 +6957,12 @@
       "M304": 1
     },
     "smithCost": "M304",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 360,
-    "recipeBuy": 7500,
+    "hp": 158,
+    "guildUnlock": "G005",
+    "goldCost": 7500,
+    "repReq": 23,
     "recipeType": "normal"
   },
   {
@@ -6389,12 +6977,14 @@
       "silver",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M605",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 420,
-    "recipeBuy": 52500,
+    "hp": 216,
+    "guildUnlock": "G005",
+    "goldCost": 52500,
+    "repReq": 28,
     "recipeType": "normal"
   },
   {
@@ -6413,10 +7003,12 @@
       "M606": 1
     },
     "smithCost": "M606",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 480,
-    "recipeBuy": 367500,
+    "hp": 296,
+    "guildUnlock": "G005",
+    "goldCost": 367500,
+    "repReq": 33,
     "recipeType": "normal"
   },
   {
@@ -6435,10 +7027,12 @@
       "M207": 1
     },
     "smithCost": "M207",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 540,
-    "recipeBuy": 2572500,
+    "hp": 404,
+    "guildUnlock": "G005",
+    "goldCost": 2572500,
+    "repReq": 38,
     "recipeType": "normal"
   },
   {
@@ -6457,10 +7051,12 @@
       "M408": 1
     },
     "smithCost": "M408",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 600,
-    "recipeBuy": 18007500,
+    "hp": 552,
+    "guildUnlock": "G005",
+    "goldCost": 18007500,
+    "repReq": 43,
     "recipeType": "normal"
   },
   {
@@ -6479,10 +7075,12 @@
       "M609": 1
     },
     "smithCost": "M609",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 660,
-    "recipeBuy": 126052500,
+    "hp": 756,
+    "guildUnlock": "G005",
+    "goldCost": 126052500,
+    "repReq": 48,
     "recipeType": "normal"
   },
   {
@@ -6497,207 +7095,15 @@
       "silver",
       "mana"
     ],
-    "mcost": "",
+    "mcost": null,
     "smithCost": "M610",
-    "actTime": 0,
+    "apAdd": 0,
     "pow": 0,
-    "hp": 720,
-    "recipeBuy": 882367500,
+    "hp": 1040,
+    "guildUnlock": "G005",
+    "goldCost": 882367500,
+    "repReq": 59,
     "recipeType": "normal"
-  },
-  {
-    "id": "R99101",
-    "name": "Nail",
-    "description": "Try not to get too hammered.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 6000,
-    "type": "bank",
-    "rcost": [
-      "ore"
-    ],
-    "mcost": "",
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99102",
-    "name": "Lumber",
-    "description": "Made from the knottiest pine.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 15000,
-    "type": "bank",
-    "rcost": [
-      "wood"
-    ],
-    "mcost": {
-      "M101": 1
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99103",
-    "name": "Shingle",
-    "description": "You should put a ring on it.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 30000,
-    "type": "bank",
-    "rcost": [
-      "bone"
-    ],
-    "mcost": {
-      "M201": 2
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99104",
-    "name": "Beam",
-    "description": "Don't cross them.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 60000,
-    "type": "bank",
-    "rcost": [
-      "steel"
-    ],
-    "mcost": {
-      "M301": 5
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99105",
-    "name": "Insulation",
-    "description": "Protects against solar radiation.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 9000,
-    "type": "bank",
-    "rcost": [
-      "paper"
-    ],
-    "mcost": {
-      "M401": 4
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99106",
-    "name": "Vault",
-    "description": "Security not guaranteed.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 900000,
-    "type": "bank",
-    "rcost": [
-      "silver"
-    ],
-    "mcost": {
-      "M501": 20,
-      "M601": 20
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99107",
-    "name": "Frame",
-    "description": "It wasn't me, I swear.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 30000,
-    "type": "bank",
-    "rcost": [
-      "ore",
-      "wood"
-    ],
-    "mcost": {
-      "R99101": 6,
-      "R99102": 4
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99108",
-    "name": "Wall",
-    "description": "All in all, it's another brick.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 30000,
-    "type": "bank",
-    "rcost": [
-      "wood",
-      "paper"
-    ],
-    "mcost": {
-      "R99105": 5,
-      "R99107": 1
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99109",
-    "name": "Roof",
-    "description": "Keep your overheads low.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 150000,
-    "type": "bank",
-    "rcost": [
-      "bone",
-      "steel"
-    ],
-    "mcost": {
-      "R99103": 10,
-      "R99104": 3
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
   },
   {
     "id": "R99110",
@@ -6714,212 +7120,21 @@
       "silver"
     ],
     "mcost": {
-      "R99101": 10,
-      "R99106": 1,
-      "R99108": 4,
-      "R99109": 1
+      "M102": 30,
+      "M202": 30,
+      "M302": 30,
+      "M402": 30,
+      "M502": 30,
+      "M602": 30
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99201",
-    "name": "Sturdy Nail",
-    "description": "Try not to get too hammered.",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 9000,
-    "type": "fuse",
-    "rcost": [
-      "ore"
-    ],
-    "mcost": "",
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99202",
-    "name": "Sturdy Lumber",
-    "description": "Made from the knottiest pine.",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 22500,
-    "type": "fuse",
-    "rcost": [
-      "wood"
-    ],
-    "mcost": {
-      "M202": 1
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99203",
-    "name": "Sturdy Shingle",
-    "description": "You should put a ring on it.",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 45000,
-    "type": "fuse",
-    "rcost": [
-      "bone"
-    ],
-    "mcost": {
-      "M302": 2
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99204",
-    "name": "Sturdy Beam",
-    "description": "Don't cross them.",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 90000,
-    "type": "fuse",
-    "rcost": [
-      "steel"
-    ],
-    "mcost": {
-      "M402": 5
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99205",
-    "name": "Sturdy Insulation",
-    "description": "Protects against solar radiation.",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 13500,
-    "type": "fuse",
-    "rcost": [
-      "paper"
-    ],
-    "mcost": {
-      "M502": 4
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99206",
-    "name": "Cauldron",
-    "description": "Think of it as a really big crock pot.",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 1350000,
-    "type": "fuse",
-    "rcost": [
-      "herb",
-      "silver"
-    ],
-    "mcost": {
-      "M602": 20,
-      "M102": 20
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99207",
-    "name": "Sturdy Frame",
-    "description": "It wasn't me, I swear.",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 45000,
-    "type": "fuse",
-    "rcost": [
-      "ore",
-      "wood"
-    ],
-    "mcost": {
-      "R99201": 6,
-      "R99202": 4
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99208",
-    "name": "Sturdy Wall",
-    "description": "All in all, it's another brick.",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 45000,
-    "type": "fuse",
-    "rcost": [
-      "wood",
-      "paper"
-    ],
-    "mcost": {
-      "R99205": 5,
-      "R99207": 1
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99209",
-    "name": "Sturdy Roof",
-    "description": "Keep your overheads low.",
-    "lvl": 2,
-    "value": 0,
-    "craftTime": 225000,
-    "type": "fuse",
-    "rcost": [
-      "bone",
-      "steel"
-    ],
-    "mcost": {
-      "R99203": 10,
-      "R99204": 3
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "bank"
   },
   {
     "id": "R99210",
@@ -6936,213 +7151,21 @@
       "steel"
     ],
     "mcost": {
-      "R99201": 10,
-      "R99206": 1,
-      "R99208": 4,
-      "R99209": 1
+      "M103": 30,
+      "M203": 30,
+      "M303": 30,
+      "M403": 30,
+      "M503": 30,
+      "M603": 30
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99301",
-    "name": "Heavy Nail",
-    "description": "Try not to get too hammered.",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 12000,
-    "type": "smith",
-    "rcost": [
-      "ore"
-    ],
-    "mcost": "",
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99302",
-    "name": "Heavy Lumber",
-    "description": "Made from the knottiest pine.",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 30000,
-    "type": "smith",
-    "rcost": [
-      "wood"
-    ],
-    "mcost": {
-      "M303": 1
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99303",
-    "name": "Heavy Shingle",
-    "description": "You should put a ring on it.",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 60000,
-    "type": "smith",
-    "rcost": [
-      "bone"
-    ],
-    "mcost": {
-      "M403": 2
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99304",
-    "name": "Heavy Beam",
-    "description": "Don't cross them.",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 120000,
-    "type": "smith",
-    "rcost": [
-      "steel"
-    ],
-    "mcost": {
-      "M503": 5
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99305",
-    "name": "Heavy nsulation",
-    "description": "Protects against solar radiation.",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 18000,
-    "type": "smith",
-    "rcost": [
-      "paper"
-    ],
-    "mcost": {
-      "M603": 4
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99306",
-    "name": "Forge",
-    "description": "Also doubles as a paperweight.",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 1800000,
-    "type": "smith",
-    "rcost": [
-      "ore",
-      "steel",
-      "silver"
-    ],
-    "mcost": {
-      "M103": 20,
-      "M203": 20
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99307",
-    "name": "Heavy Frame",
-    "description": "It wasn't me, I swear.",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 60000,
-    "type": "smith",
-    "rcost": [
-      "ore",
-      "wood"
-    ],
-    "mcost": {
-      "R99301": 6,
-      "R99302": 4
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99308",
-    "name": "Heavy Wall",
-    "description": "All in all, it's another brick.",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 60000,
-    "type": "smith",
-    "rcost": [
-      "wood",
-      "paper"
-    ],
-    "mcost": {
-      "R99305": 5,
-      "R99307": 1
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99309",
-    "name": "Heavy Roof",
-    "description": "Keep your overheads low.",
-    "lvl": 3,
-    "value": 0,
-    "craftTime": 300000,
-    "type": "smith",
-    "rcost": [
-      "bone",
-      "steel"
-    ],
-    "mcost": {
-      "R99303": 10,
-      "R99304": 3
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "fuse"
   },
   {
     "id": "R99310",
@@ -7159,213 +7182,21 @@
       "paper"
     ],
     "mcost": {
-      "R99301": 10,
-      "R99306": 1,
-      "R99308": 4,
-      "R99309": 1
+      "M104": 30,
+      "M204": 30,
+      "M304": 30,
+      "M404": 30,
+      "M504": 30,
+      "M604": 30
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99501",
-    "name": "Tough Nail",
-    "description": "Try not to get too hammered.",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 18000,
-    "type": "fortune",
-    "rcost": [
-      "ore"
-    ],
-    "mcost": "",
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99502",
-    "name": "Tough Lumber",
-    "description": "Made from the knottiest pine.",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 45000,
-    "type": "fortune",
-    "rcost": [
-      "wood"
-    ],
-    "mcost": {
-      "M505": 1
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99503",
-    "name": "Tough Shingle",
-    "description": "You should put a ring on it.",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 90000,
-    "type": "fortune",
-    "rcost": [
-      "bone"
-    ],
-    "mcost": {
-      "M605": 2
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99504",
-    "name": "Tough Beam",
-    "description": "Don't cross them.",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 180000,
-    "type": "fortune",
-    "rcost": [
-      "steel"
-    ],
-    "mcost": {
-      "M105": 5
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99505",
-    "name": "Tough Insulation",
-    "description": "Protects against solar radiation.",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 27000,
-    "type": "fortune",
-    "rcost": [
-      "paper"
-    ],
-    "mcost": {
-      "M205": 4
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99506",
-    "name": "Crystal Ball",
-    "description": "Also the name of my date for junior prom.",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 2700000,
-    "type": "fortune",
-    "rcost": [
-      "herb",
-      "silver",
-      "mana"
-    ],
-    "mcost": {
-      "M305": 20,
-      "M405": 20
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99507",
-    "name": "Tough Frame",
-    "description": "It wasn't me, I swear.",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 90000,
-    "type": "fortune",
-    "rcost": [
-      "ore",
-      "wood"
-    ],
-    "mcost": {
-      "R99501": 6,
-      "R99502": 4
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99508",
-    "name": "Tough Wall",
-    "description": "All in all, it's another brick.",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 90000,
-    "type": "fortune",
-    "rcost": [
-      "wood",
-      "paper"
-    ],
-    "mcost": {
-      "R99505": 5,
-      "R99507": 1
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
-  },
-  {
-    "id": "R99509",
-    "name": "Tough Roof",
-    "description": "Keep your overheads low.",
-    "lvl": 5,
-    "value": 0,
-    "craftTime": 450000,
-    "type": "fortune",
-    "rcost": [
-      "bone",
-      "steel"
-    ],
-    "mcost": {
-      "R99503": 10,
-      "R99504": 3
-    },
-    "smithCost": "",
-    "actTime": 0,
-    "pow": 0,
-    "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "smith"
   },
   {
     "id": "R99510",
@@ -7376,23 +7207,26 @@
     "craftTime": 5400000,
     "type": "fortune",
     "rcost": [
-      "ore",
       "herb",
       "steel",
       "silver",
       "mana"
     ],
     "mcost": {
-      "R99501": 10,
-      "R99506": 1,
-      "R99508": 4,
-      "R99509": 1
+      "M105": 30,
+      "M205": 30,
+      "M305": 30,
+      "M405": 30,
+      "M505": 30,
+      "M605": 30
     },
-    "smithCost": "",
-    "actTime": 0,
+    "smithCost": null,
+    "apAdd": 0,
     "pow": 0,
     "hp": 0,
-    "recipeBuy": 0,
-    "recipeType": "building"
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "fortune"
   }
 ]

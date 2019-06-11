@@ -9,7 +9,7 @@ $('#ActionSlots').on("click", "a.ASCancelText", (e) => {
     actionSlotManager.removeSlot(slot);
 });
 
-$(document).on("click", ".ASBuySlot", (e) => {
+$(document).on("click", ".ASBuySlotButton", (e) => {
     e.preventDefault();
     actionSlotManager.upgradeSlot();
 })
@@ -18,13 +18,6 @@ $(document).on("click", ".ASauto", (e) => {
     e.preventDefault();
     const slot = $(e.currentTarget).attr("id");
     actionSlotManager.toggleAuto(slot);
-});
-
-$(document).on("click", ".WSAuto", (e) => {
-    e.preventDefault();
-    const slot = $(e.currentTarget).attr("id");
-    actionSlotManager.toggleAutoSacrifice(slot);
-    autoSacEvent();
 });
 
 class actionSlot {
@@ -56,8 +49,7 @@ class actionSlot {
         this.craftTime += t;
         if (this.craftTime > this.maxCraft) {
             this.craftTime = 0;
-            if (this.item.autoSacrifice) WorkerManager.craftToSac(this.itemid);
-            else Inventory.craftToInventory(this.itemid);
+            Inventory.craftToInventory(this.itemid);
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart();
         }
@@ -82,14 +74,8 @@ class actionSlot {
     autoSellToggle() {
         return this.item.autoSellToggle();
     }
-    autoSacrificeToggle() {
-        return this.item.autoSacrificeToggle();
-    }
     autoSell() {
         return this.item.autoSell;
-    }
-    autoSacrifice() {
-        return this.item.autoSacrifice;
     }
     refundMaterial() {
         if (this.status !== slotState.CRAFTING || this.item.isMastered()) return;
@@ -123,7 +109,9 @@ const actionSlotManager = {
             return;
         }
         const item = recipeList.idToItem(itemid);
+        if (!item.owned) return Notifications.recipeNotOwned();
         if (!WorkerManager.canCurrentlyCraft(item)) {
+            EventManager.badCraft();
             Notifications.craftWarning();
             return;
         }
@@ -178,12 +166,12 @@ const actionSlotManager = {
     },
     upgradeSlot() {
         if (this.maxSlots === 5) return;
-        const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
+        /*const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
         if (ResourceManager.materialAvailable("M001") < amt) {
             Notifications.cantAffordSlot();
             return;
         }
-        ResourceManager.deductMoney(amt);
+        ResourceManager.deductMoney(amt);*/
         this.maxSlots += 1;
         initializeActionSlots();
     },
@@ -191,16 +179,8 @@ const actionSlotManager = {
         if (this.slots.length <= i) return "";
         return this.slots[i].autoSell();
     },
-    autoSacrifice(i) {
-        if (this.slots.length <= i) return "";
-        return this.slots[i].autoSacrifice();
-    },
     toggleAuto(i) {
         this.slots[i].autoSellToggle();
-        initializeActionSlots();
-    },
-    toggleAutoSacrifice(i) {
-        this.slots[i].autoSacrificeToggle();
         initializeActionSlots();
     },
     isMastered(i) {
@@ -227,19 +207,17 @@ function initializeActionSlots() {
         let autoSellTooltip;
         actionSlotManager.autoSell(i) !== "None" ? autoSellTooltip = actionSlotManager.autoSell(i) + " and lesser rarities" : autoSellTooltip = "None";
         const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${autoSellTooltip}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
-        const d5 = $("<div/>").addClass("WSAuto tooltip").attr("data-tooltip", `Toggle Worker Auto-Contribute`).attr("id",i).html(`<i class="fas fa-hammer"></i>`);
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
-        if (actionSlotManager.autoSacrifice(i)) d5.addClass("WSautoEnabled");
-        if (!actionSlotManager.hasSlot(i) || actionSlotManager.isBuildingMaterial(i)) d4.hide(), d5.hide();
-        d.append(d1,d2.append(a2),d3.append(s3),d4,d5);
+        if (!actionSlotManager.hasSlot(i) || actionSlotManager.isBuildingMaterial(i)) d4.hide();
+        d.append(d1,d2.append(a2),d3.append(s3),d4);
         $ActionSlots.append(d);
     }
-    if (actionSlotManager.maxSlots < 5) {
+    /*if (actionSlotManager.maxSlots < 5) {
         const d4 = $("<div/>").addClass("ASBuySlot");
         const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
-        const d5 = $("<div/>").addClass("ASBuySlotText").html(`Purchase Crafting Slot`);
-        const d6 = $("<div/>").addClass("ASBuySlotCost").html(`${miscIcons.gold}&nbsp;&nbsp;${amt}`);
+        const d5 = $("<div/>").addClass("ASBuySlotTitle").html(`Unlock Crafting Slot`);
+        const d6 = $("<div/>").addClass("ASBuySlotButton").html(`<div class="ASBuySlotText">Purchase</div><div class="ASBuySlotCost">${miscIcons.gold} ${formatToUnits(amt,2)}</div>`);
         d4.append(d5, d6);
         $ActionSlots.append(d4);
-    }
+    }*/
 }

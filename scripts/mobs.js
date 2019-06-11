@@ -2,36 +2,52 @@
 
 const MobManager = {
     monsterDB : [],
+    activeMobs : [],
     addMob(mob) {
         this.monsterDB.push(mob);
+        this.unitType = "mob";
     },
     idToMob(id) {
         return this.monsterDB.find(mob => mob.id === id);
     },
-    generateDungeonMobs(dungeonID, floorNum) {
+    generateDungeonMob(mobID, difficulty) {
         disableEventLayers();
-        if (dungeonID !== "d1") return;
-        if (isItChristmas() && randomChance(5,100)) {
-            enableChristmasLayers();
-            return this.christmasFloor(floorNum);
-        }
-        const mobs = [];
-        let mobCount = 1;
-        if (floorNum >= 100) mobCount += 1;
-        if (floorNum >= 200) mobCount += 1;
-        if (floorNum >= 300) mobCount += 1;
-        while (mobCount > 0) {
-            const possibleMonster = this.monsterDB.filter(mob => mob.event === "normal" && mob.minFloor <= floorNum && mob.maxFloor >= floorNum);
-            const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
-            mobs.push(new Mob(floorNum, mobTemplate));
-            mobCount -=1;
-        }
-        return mobs;        
+        const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
+        const mob = new Mob(difficulty, mobTemplate);
+        this.addActiveMob(mob);
+        return mob;
     },
-    christmasFloor(floorNum) {
-        const possibleMonster = this.monsterDB.filter(mob => mob.event === "christmas" && mob.minFloor <= floorNum && mob.maxFloor >= floorNum);
-        const mobTemplate = possibleMonster[Math.floor(Math.random()*possibleMonster.length)];
-        return [new Mob(floorNum, mobTemplate)];
+    addActiveMob(mob) {
+        this.activeMobs.push(mob);
+    },
+    removeMob(mob) {
+        this.activeMobs = this.activeMobs.filter(m => m.uniqueid !== mob.uniqueid);
+    },
+    uniqueidToMob(id) {
+        return this.activeMobs.find(mob => mob.uniqueid === id);
+    },
+    getUniqueID() {
+        let i = 0;
+        const mobIds = this.activeMobs.map(m=>m.uniqueid);
+        while (mobIds.includes(i)) {
+            i += 1;
+        }
+        return i;
+    },
+    generateDungeonFloor(dungeonid,floorNum) {
+        const mobFloor = [];
+        const floor = FloorManager.getFloor(dungeonid,floorNum);
+        floor.mobs.forEach(mob => {
+            mobFloor.push(this.generateDungeonMob(mob,floorNum));
+        })
+        return mobFloor;
+    },
+    allMobDropsByDungeon(dungeonID) {
+        const mobids = FloorManager.mobsByDungeon(dungeonID);
+        const mobs = mobids.map(m => this.idToMob(m));
+        const materials = mobs.map(m=>m.drops);
+        const matNames = materials.map(m => Object.keys(m)).flat()
+        return [...new Set(matNames)];
     }
 }
 
@@ -43,7 +59,35 @@ class MobTemplate {
     }
 }
 
-let mobID = 0;
+class FloorTemplate {
+    constructor (props) {
+        Object.assign(this, props);
+    }
+}
+
+const FloorManager = {
+    floors : [],
+    addFloor(floor) {
+        this.floors.push(floor);
+    },
+    getFloor(dungeon,floor) {
+        const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
+        const rand = DungeonSeedManager.getFloorSeed(dungeon,floor);
+        return possibleFloors[Math.floor(rand*possibleFloors.length)];
+    },
+    isSanctuary(dungeon,floor) {
+        //so hackish
+        const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
+        if (possibleFloors.every(f => f.type === "sanctuary")) return possibleFloors[0].gate;
+        return null;
+    },
+    mobsByDungeon(dungeonid) {
+        const floors = this.floors.filter(f=>f.dungeon === dungeonid);
+        const mobs = floors.map(f => f.mobs).flat();
+        return [...new Set(mobs)]; 
+    }
+}
+
 class Mob {
     constructor (lvl,mobTemplate) {
         Object.assign(this, mobTemplate);
@@ -51,49 +95,37 @@ class Mob {
         this.pow = Math.floor(mobTemplate.powBase + mobTemplate.powLvl*lvl);
         this.hpmax = Math.floor(mobTemplate.hpBase + mobTemplate.hpLvl*lvl);
         this.hp = this.hpmax;
-        this.act = 0;
         this.ap = 0;
-        this.uniqueid = mobID;
-        this.alreadydead = false;
-        mobID += 1;
+        this.apmax = 120;
+        this.uniqueid = MobManager.getUniqueID();
+        this.gotloot = false;
     }
     createSave() {
         const save = {};
         save.lvl = this.lvl;
         save.id = this.id;
+        save.uniqueid = this.uniqueid;
         save.hp = this.hp;
-        save.act = this.act;
         save.ap = this.ap
-        save.alreadydead = this.alreadydead;
         return save;
     }
     loadSave(save) {
-        this.lvl = save.lvl;
         this.hp = save.hp;
-        this.act = save.act;
         this.ap = save.ap;
-        if (save.alreadydead !== undefined) this.alreadydead = save.alreadydead;
+        this.uniqueid = save.uniqueid;
     }
-    addTime(t, dungeonID) {
-        if (this.dead()) {
-            this.act = 0;
-            this.ap = 0;
-            return;
-        }
-        this.act += t;
-        if (this.act >= this.actmax()) {
-            this.act = 0;
-            CombatManager.mobAttack(this, dungeonID);
-        }
-    }
-    actmax() {
-        return this.actTime;
+    addTime() {
     }
     getPow() {
         return this.pow;
     }
     getAdjPow() {
         return this.getPow();
+    }
+    getArmor() {
+        if (this.ignoredArmor) return 0;
+        if (this.armorBuff) return this.armor + Math.round(this.getAdjPow() * 0.2);
+        return this.armor;
     }
     pic() {
         return this.image;
@@ -107,21 +139,29 @@ class Mob {
     maxHP() {
         return this.hpmax;
     }
+    addAP() {
+        this.ap += this.apAdd;
+    }
     deadCheck() {
         if (this.hp > 0 || this.status === MobState.DEAD) return;
         this.status = MobState.DEAD;
         this.rollDrops();
-        party.addXP(this.lvl);
     }
     rollDrops() {
         const mobDrops = [];
-        if (this.drops === null) return mobDrops;
+        if (this.drops === null || this.gotloot) {
+            this.gotloot = true;
+            return mobDrops;
+        }
         for (const [material, success] of Object.entries(this.drops)) {
             const roll = Math.floor(Math.random() * 100);
-
             if (success > roll) mobDrops.push(material);
         }
+        this.gotloot = true;
         return mobDrops;
+    }
+    looted() {
+        return this.gotloot;
     }
     healCost() {
         return 0;

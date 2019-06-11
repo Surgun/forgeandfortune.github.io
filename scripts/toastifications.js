@@ -1,6 +1,6 @@
 //https://kamranahmed.info/toast 
 
-let toastPosition = localStorage.getItem("toastPreference") || "top-left";
+let toastPosition = settings.toastPosition;
 
 const Notifications = {
     craftWarning() {
@@ -105,6 +105,18 @@ const Notifications = {
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
     },
+    noSearchFound() {
+        const text = `Your search yielded no results.`; // Text that is to be shown in the toast
+        const heading = 'No Recipes Found'; // Optional heading to be shown on the toast
+        const icon = 'error'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
+    searchLengthInvalid() {
+        const text = `Your search must contain at least two characters.`; // Text that is to be shown in the toast
+        const heading = 'Invalid Search Parameters'; // Optional heading to be shown on the toast
+        const icon = 'error'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
     autoWorkerSac(worker,item) {
         const text = `${item} contributed to ${worker}`; // Text that is to be shown in the toast
         const heading = 'Worker Auto-Contribution'; // Optional heading to be shown on the toast
@@ -135,9 +147,9 @@ const Notifications = {
         const icon = "error";
         popToast(text,heading,icon);
     },
-    cantAffordSmithRes() {
-        const text = "You do not have enough resources.";
-        const heading = "Cannot Start Smithing";
+    dungeonGoldReq() {
+        const text = "You do not have enough gold.";
+        const heading = "Cannot Unlock Dungeon";
         const icon = "error";
         popToast(text,heading,icon);
     },
@@ -156,6 +168,54 @@ const Notifications = {
     cantReadFortune() {
         const text = "You do not have enough gold.";
         const heading = "Cannot Read Fortune";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
+    cantFindMatch() {
+        const text = "You do not have this item.";
+        const heading = "Cannot Fufill Order";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
+    recipeGoldReq() {
+        const text = "You do not have enough gold.";
+        const heading = "Cannot Purchase Recipe";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
+    alRewardCost() {
+        const text = "You do not have enough gold.";
+        const heading = "Cannot Purchase Perk";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
+    buyRecipe(name) {
+        const text = `Craft your new ${name} on the recipe tab!`; // Text that is to be shown in the toast
+        const heading = 'You purchased a recipe!'; // Optional heading to be shown on the toast
+        const icon = 'info'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
+    insufficientGuildOrderSubmit() {
+        const text = "You have not submitted all guild order items.";
+        const heading = "Cannot Complete Guild Order";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
+    submitOrder(gold) {
+        const text = `You earned ${gold} gold and some reputation!`; // Text that is to be shown in the toast
+        const heading = 'You submitted a guild order!'; // Optional heading to be shown on the toast
+        const icon = 'info'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
+    recipeNotOwned() {
+        const text = `You have not bought this recipe from the guild sales.`; // Text that is to be shown in the toast
+        const heading = 'Cannot Start Craft'; // Optional heading to be shown on the toast
+        const icon = 'error'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
+    cantAffordSmithRes() {
+        const text = "You do not have enough resources.";
+        const heading = "Cannot Start Smithing";
         const icon = "error";
         popToast(text,heading,icon);
     },

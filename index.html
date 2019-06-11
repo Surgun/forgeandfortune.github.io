@@ -17,32 +17,52 @@
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
     <!-- End Google Analytics -->
+    <!-- Font Awesome Integration -->
+    <script src="https://kit.fontawesome.com/f1907b3369.js"></script>
+    <!-- End Font Awesome -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Forge &amp; Fortune</title>
+    <!-- SEO -->
+    <meta name='subject' content="Incremental Idle Game">
+    <meta name="description" content="Forge & Fortune is an idle and/or active-play incremental crafting and adventuring game.">
+    <meta name="keywords" content="Idle, Incremental, Game, Dungeon, Questing, Crafting, Heroes, Adventures, HTML5, JavaScript">
+    <meta name='language' content='en'>
+    <meta name="robots" content="index, follow">
+    <!-- Social Media -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="og:url" content="https://www.forgeandfortune.com"/>
+    <meta property="og:title" content="Forge & Fortune - Incremental Game"/>
+    <meta property="og:description" content="Forge & Fortune is an idle and/or active-play incremental crafting and adventuring game."/>
+    <meta property="og:image" content="images/site-logo.png"/>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <!-- CSS & Fonts -->
     <link href="scripts/style.css" rel="stylesheet">
     <link href="scripts/jquery.toast.css" rel="stylesheet">
     <link href="scripts/please-wait.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous">
-    <!-- Favicons -->
-    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicons/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicons/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicons/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicons/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicons/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicons/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicons/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="favicons/favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="favicons/favicon-128.png" sizes="128x128" />
-    <!-- End of Favicons -->
+    <!-- Favicons & Application Styling -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#21262b">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#21262b">
+    <!-- End of Favicons & Application Styling -->
 </head>
 <body>
     <main id="content">
@@ -54,7 +74,9 @@
                     <h2 id="titlePlayfab" class="dialog_title"><img class="playfabLogo" src="images/PlayFab_logo_small.png" oncontextmenu="return false;">PlayfabCloud Save</h2>
                 </div>
                 <div class="dialog_body">
-                    <p id="descPlayfab" class="dialog_description">Login or Register your PlayFab account below, and then import or export your cloud save on any computer or device!</p>
+                    <p id="descPlayfab" class="dialog_description">
+                        Login or Register your PlayFab account below, and then import or export your cloud save on any computer or device!
+                    </p>
                     <div id="pfLoginRegister">
                         <form autocomplete="on">
                             <div id="pfEmail"><h2>Email</h2><input type="text" name="email" id="email" autocomplete="email"></div>
@@ -123,77 +145,109 @@
                     <h2 id="titleSettings" class="dialog_title">Settings</h2>
                 </div>
                 <div class="dialog_body">
-                    <p id="descSettings" class="dialog_description">Adjust your game preferences and settings.</p>
+                    <p id="descSettings" class="dialog_description">Adjust your game preferences and settings. These settings will only be applied to this browser.</p>
                     <div class="settings-grid">
-                        <div id="settings_notificationLocation">
+                        <div id="settings_notificationLocation" class="setting-container">
                             <h3 class="settings-title">Notification Location</h3>
                             <p class="settings-description">Designates where the notifications for various events (such as exceptional crafts) will appear.</p>
                             <div class="selections-grid">
                                 <label class="selection-container">Top-Left
-                                    <input type="radio" name="selection" value="top-left">
+                                    <input type="radio" name="toast" value="top-left" checked="checked">
                                     <span class="selection"></span>
                                 </label>
                                 <label class="selection-container">Top-Center
-                                    <input type="radio" name="selection" value="top-center">
+                                    <input type="radio" name="toast" value="top-center">
                                     <span class="selection"></span>
                                 </label>
                                 <label class="selection-container">Top-Right
-                                    <input type="radio" name="selection" value="top-right">
+                                    <input type="radio" name="toast" value="top-right">
                                     <span class="selection"></span>
                                 </label>
                                 <label class="selection-container">Bottom-Left
-                                    <input type="radio" name="selection" value="bottom-left">
+                                    <input type="radio" name="toast" value="bottom-left">
                                     <span class="selection"></span>
                                 </label>
                                 <label class="selection-container">Bottom-Center
-                                    <input type="radio" name="selection" value="bottom-center">
+                                    <input type="radio" name="toast" value="bottom-center">
                                     <span class="selection"></span>
                                 </label>
                                 <label class="selection-container">Bottom-Right
-                                    <input type="radio" name="selection" value="bottom-right">
+                                    <input type="radio" name="toast" value="bottom-right">
                                     <span class="selection"></span>
                                 </label>
+                            </div>
+                        </div>
+                        <div id="settings_logLength" class="setting-container">
+                            <h3 class="settings-title">Battle Log Length</h3>
+                            <p class="settings-description">Set the maximum amount of lines to be displayed in the battle log for Adventures. Default value is 30, minimum accepted value of 5, maximum accepted value of 999.</p>
+                            <div class="settings-content">
+                                <input type="number" name="battleLog" id="battleLogValue" min="5" max="100">
+                                <button id="battleLogSet">Set Value</button>
+                                <button id="battleLogReset">Reset to Default</button>
+                            </div>
+                        </div>
+                        <div id="settings_turnOrderDisplay" class="setting-container">
+                            <h3 class="settings-title">Toggle HP &amp; AP Bars in Combat Area</h3>
+                            <p class="settings-description">Toggle whether to display or hide the HP and AP bars in Combat Area during Adventures.</p>
+                            <div class="settings-content">
+                                <div class="selections-grid">
+                                    <label class="selection-container">Display Bars
+                                        <input type="radio" name="hp-ap-bar" value="1" checked="checked">
+                                        <span class="selection"></span>
+                                    </label>
+                                    <label class="selection-container">Hide Bars
+                                        <input type="radio" name="hp-ap-bar" value="0">
+                                        <span class="selection"></span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End of Dialogs -->
-        <section class="game-content">
-            <div class="status">
-                <div id="game-logo"><h1>Forge &amp; Fortune</h1></div>
-                <div id="side-content">
-                    <div id="workers-container">
-                        <p class="heading">Workers<span class="heading-arrow"><i class="fas fa-angle-down"></i></span></p>
-                        <div id ="workersUse"></div>
-                    </div>
-                    <div id="materials-container">
-                        <p class="heading">Materials<span class="heading-arrow"><i class="fas fa-angle-down"></i></span></p>
-                        <div id ="materials"></div>
-                    </div>
+        <div id="dialogPatch" class="dialog" role="dialog" aria-labelledby="titlePatch" aria-describedby="descPatch">
+            <div class="dialog_content">
+                <div class="dialog_header">
+                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
+                    <h2 id="titlePatch" class="dialog_title">Patch Notes</h2>
+                </div>
+                <div class="dialog_body" id="patchList">
+                    <p id="descPatch" class="dialog_description">You are not running the latest version of Forge &amp; Fortune.</p>
+                </div>
+                <div class="dialog_footer">
+                    <div id="updateRefresh">Refresh Game to Update</div>
                 </div>
             </div>
+        </div>
+        <!-- End of Dialogs -->
+        <section class="game-content">
             <div class="game-wrapper" role="main">
                 
                 <div id="tabs" class="tab">
-                    <button class="tablinks" id="inventoryTabLink" onclick="openTab('inventoryTab')"><div>Inventory</div></button>
-                    <button class="tablinks tab-selected" id="recipesTabLink" onclick="openTab('recipesTab')"><div>Recipes</div></button>
-                    <button class="tablinks" id="workersTabLink" onclick="openTab('workersTab')"><div>Workers</div></button>
-                    <button class="tablinks" id="heroesTabLink" onclick="openTab('heroesTab')"><div id="heroTab">Heroes</div></button>
-                    <button class="tablinks" id="dungeonsTabLink" onclick="openTab('dungeonsTab')"><div>Adventures</div></button>
-                    <button class="tablinks" id="townTabLink" onclick="openTab('townsTab')"><div id="townTab">Town</div></button>
-                    <button class="tablinks" id="eventsTabLink" onclick="openTab('eventsTab')"><div id="eventTab">Mail</div></button>
-                    <button class="tablinks" id="progressTabLink"onclick="openTab('progressTab')"><div>Progress</div></button>
+                    <button class="tablinks" id="inventoryTabLink" onclick="openTab('inventoryTab')"><div><i class="fas fa-cube"></i> Inventory</div></button>
+                    <button class="tablinks" id="guildTabLink" onclick="openTab('guildTab')"><div><i class="fas fa-fist-raised"></i> Guilds</div></button>
+                    <button class="tablinks tab-selected" id="recipesTabLink" onclick="openTab('recipesTab')"><div><i class="fas fa-book"></i> Recipes</div></button>
+                    <button class="tablinks" id="heroesTabLink" onclick="openTab('heroesTab')"><div id="heroTab"><i class="fas fa-helmet-battle"></i> Heroes</div></button>
+                    <button class="tablinks" id="dungeonsTabLink" onclick="openTab('dungeonsTab')"><div><i class="fas fa-swords"></i> Adventures</div></button>
+                    <button class="tablinks" id="townTabLink" onclick="openTab('townsTab')"><div id="townTab"><i class="fas fa-city"></i> Town</div></button>
+                    <button class="tablinks" id="eventsTabLink" onclick="openTab('eventsTab')"><div id="eventTab"><i class="fas fa-envelope"></i> Mail</div></button>
+                    <button class="tablinks" id="progressTabLink"onclick="openTab('progressTab')"><div><i class="fas fa-tasks"></i> Progress</div></button>
                 </div>
                 <div id="inventoryTab" class="tabcontent">
-                    <div id="goToBank" class="invActionButton"><i class="fas fa-university"></i><span>Bank</span></div>
-                    <div id="sellAllCommons" class="invActionButton">Sell All Commons</div>
-                    <div id="sortInventory" class="invActionButton">Sort Inventory</div>
-                    <div id="inventory"></div>
+                    <div id="inventory-container">
+                        <div class="inventoryActions">
+                            <div id="goToBank" class="invActionButton"><i class="fas fa-university"></i><span>View Bank</span></div>
+                            <div id="sellAllCommons" class="invActionButton">Sell All Commons</div>
+                            <div id="sortInventory" class="invActionButton">Sort Inventory</div>
+                        </div>
+                        <div id="inventory"></div>
+                    </div>
                 </div>
                 <div id="inventoryEquipTab" class="tabcontent">
-                    <div id="closeEquipItem" class="invActionButton">Close</div>
+                    <div class="inventoryActions">
+                        <div id="closeEquipItem" class="invActionButton">Back to Inventory</div>
+                    </div>
                     <div class="equipHeading">Equipping Item</div>
                     <div id="ietEquip"></div>
                     <div class="equipHeading">Possible Heroes</div>
@@ -215,7 +269,7 @@
                             <a class="recipeSelect" id="rfHats" href="HatSelector">Hats</a>
                             <a class="recipeSelect" id="rfHelmets" href="HelmetSelector">Helmets</a>
                             <a class="recipeSelect" id="rfInstruments" href="InstrumentSelector">Instruments</a>
-                            <a class="recipeSelect" id="rfKnives" href="KnifeSelector">Knives</a>
+                            <a class="recipeSelect selected" id="rfKnives" href="KnifeSelector">Knives</a>
                             <a class="recipeSelect" id="rfMaces" href="MaceSelector">Maces</a>
                             <a class="recipeSelect" id="rfMasks" href="MaskSelector">Masks</a>
                             <a class="recipeSelect" id="rfPendants" href="PendantSelector">Pendants</a>
@@ -235,24 +289,165 @@
                             <a class="recipeSelect" id="rfWhips" href="WhipSelector">Whips</a>
                         </div>
                         <div id="recipes-list">
-                            <div id="RecipeResults"></div>
+                            <div id="RecipeTop" class="recipeTopContainer">
+                                <div id="RecipeSorting" class="recipeSortContainer">
+                                    <div id="RecipeDropdownDetails" class="recipeDropdownContainer">
+                                        <div class="recipeDropdownButton" data-filter="materials"><div class="activeStatus"><i class="far fa-box"></i></div>Materials</div>
+                                        <div class="recipeDropdownButton" data-filter="workers"><div class="activeStatus"><i class="far fa-user-hard-hat"></i></div>Workers</div>
+                                    </div>
+                                    <div class="recipeActionButton" data-filter="name">Name <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton" data-filter="lvl">Level <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton" data-filter="value">Value <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton" data-filter="time">Craft Time <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton" data-filter="mastery">Mastery <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeSortSearch">
+                                        <input id="recipeSortInput" class="recipeSortInput" type="text" name="recipe-search" placeholder="Search for a recipe...">
+                                        <div class="recipeSortButton"><i class="fas fa-search"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="RecipeLogistics" class="recipeLogisticsContainer">
+                                <div id="workersUse" class="logisticContainer logWorkers"></div>
+                                <div id="materials" class="logisticContainer logMaterials"></div>
+                            </div>
+                            <div id="RecipeResults">
+                                <div id="recipeTable" class="recipeTable">
+                                    <div id="recipeContents" class="recipeContents"></div>
+                                </div>
+                            </div>
                             <div id="BlueprintUnlock"></div>
                         </div>
                     </div>
-                </div>
-                <div id="workersTab" class="tabcontent">
-                    <div id="workerList"></div>
                 </div>
                 <div id="heroesTab" class="tabcontent">
                     <div id="heroContainer">
                         <div id="heroList"></div>
                         <div id="heroCard">
-                            <div id="heroDetails">
-                                <span class="hero-placeholder-details">Select a Hero from the list to see their details.</span>
+                            <div class="heroTabContainer">
+                                <div class="heroTab heroTab1 selected">Details</div>
+                                <div class="heroTab heroTab2">Equipment</div>
                             </div>
-                            <div id="heroGear">
-                                <div id="heroGearSlots"></div>
-                                <div id="heroEquipmentList"></div>
+                            <div class="heroTabContent">
+                                <div id="heroDetails" class="heroDetailsContainer">
+                                    <span class="hero-placeholder-details">Select a Hero from the list to see their details.</span>
+                                </div>
+                                <div id="heroGear" class="none">
+                                    <div id="heroGearSlots">
+                                        <span class="hero-placeholder-equip">Select a Hero from the list to see their equipment.</span>
+                                    </div>
+                                    <div id="heroEquipmentList"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="guildTab" class="tabcontent">
+                    <div id="guildsContainer">
+                        <div id="guildList"></div>
+                        <div id="G001" class="guildContainer">
+                            <div id="G001Summary" class="guildSummary">
+                                <div id="G001Name" class="guildName"></div>
+                                <div id="G001Desc" class="guildDesc"></div>
+                                <div id="G001Progress" class="guildProgress"></div>
+                            </div>
+                            <div class="guildOrderContainer">
+                                <div class="guildHeading">Guild Orders</div>
+                                <div id="G001Order" class="guildOrder"></div>
+                            </div>
+                            <div class="guildSalesContainer">
+                                <div class="guildHeading">Guild Sales</div>
+                                <div id="G001Sales" class="guildSales"></div>
+                            </div>
+                            <div class="guildWorkersContainer">
+                                <div class="guildHeading">Guild Workers</div>
+                                <div id="G001Workers" class="guildWorkers"></div>
+                            </div>
+                        </div>
+                        <div id="G002" class="guildContainer">
+                            <div id="G002Summary" class="guildSummary">
+                                <div id="G002Name" class="guildName"></div>
+                                <div id="G002Desc" class="guildDesc"></div>
+                                <div id="G002Progress" class="guildProgress"></div>
+                            </div> 
+                            <div class="guildOrderContainer">
+                                <div class="guildHeading">Guild Orders</div>
+                                <div id="G002Order" class="guildOrder"></div>
+                            </div>
+                            <div class="guildSalesContainer">
+                                <div class="guildHeading">Guild Sales</div>
+                                <div id="G002Sales" class="guildSales"></div>
+                            </div>
+                            <div class="guildWorkersContainer">
+                                <div class="guildHeading">Guild Workers</div>
+                                <div id="G002Workers" class="guildWorkers"></div>
+                            </div>
+                        </div>
+                        <div id="G003" class="guildContainer">
+                            <div id="G003Summary" class="guildSummary">
+                                <div id="G003Name" class="guildName"></div>
+                                <div id="G003Desc" class="guildDesc"></div>
+                                <div id="G003Progress" class="guildProgress"></div>
+                            </div>
+                            <div class="guildOrderContainer">
+                                <div class="guildHeading">Guild Orders</div>
+                                <div id="G003Order" class="guildOrder"></div>
+                            </div>
+                            <div class="guildSalesContainer">
+                                <div class="guildHeading">Guild Sales</div>
+                                <div id="G003Sales" class="guildSales"></div>
+                            </div>
+                            <div class="guildWorkersContainer">
+                                <div class="guildHeading">Guild Workers</div>
+                                <div id="G003Workers" class="guildWorkers"></div>
+                            </div>
+                        </div>
+                        <div id="G004" class="guildContainer">
+                            <div id="G004Summary" class="guildSummary">
+                                <div id="G004Name" class="guildName"></div>
+                                <div id="G004Desc" class="guildDesc"></div>
+                                <div id="G004Progress" class="guildProgress"></div>
+                            </div>
+                            <div class="guildOrderContainer">
+                                <div class="guildHeading">Guild Orders</div>
+                                <div id="G004Order" class="guildOrder"></div>
+                            </div>
+                            <div class="guildSalesContainer">
+                                <div class="guildHeading">Guild Sales</div>
+                                <div id="G004Sales" class="guildSales"></div>
+                            </div>
+                            <div class="guildWorkersContainer">
+                                <div class="guildHeading">Guild Workers</div>
+                                <div id="G004Workers" class="guildWorkers"></div>
+                            </div>
+                        </div>
+                        <div id="G005" class="guildContainer">
+                            <div id="G005Summary" class="guildSummary">
+                                <div id="G005Name" class="guildName"></div>
+                                <div id="G005Desc" class="guildDesc"></div>
+                                <div id="G005Progress" class="guildProgress"></div>
+                            </div>                            
+                            <div class="guildOrderContainer">
+                                <div class="guildHeading">Guild Orders</div>
+                                <div id="G005Order" class="guildOrder"></div>
+                            </div>
+                            <div class="guildSalesContainer">
+                                <div class="guildHeading">Guild Sales</div>
+                                <div id="G005Sales" class="guildSales"></div>
+                            </div>
+                            <div class="guildWorkersContainer">
+                                <div class="guildHeading">Guild Workers</div>
+                                <div id="G005Workers" class="guildWorkers"></div>
+                            </div>
+                        </div>
+                        <div id="actionLeague" class="guildContainer">
+                            <div class="guildSummary">
+                                <div class="guildName">The Action League</div>
+                                <div class="guildDesc">Adventure for us and we'll bring you riches!</div>
+                                <div id="ALProgress" class="guildProgress"></div>
+                            </div>
+                            <div class="guildSalesContainer">
+                                <div class="guildHeading">Guild Perks</div>
+                                <div id="ALPerks" class="guildSales"></div>
                             </div>
                         </div>
                     </div>
@@ -261,16 +456,12 @@
                     <div id="dungeon-container">
                         <div id="dungeonCloseup">
                             <div id="dungeonSelect">
-                                <div class="dungeonListingsHeading">Select an Adventure...</div>
-                                <div class="dungeonListings">
-                                    <div class="dungeonContainer" id="dungeon1">
-                                        <div class="dungeonHeader">Groovy Grove</div>
-                                        <div class="dungeonStatus" id="dsd1">Idle</div>
-                                        <div class="dungeonBackground"></div>
-                                    </div>
-                                </div>
+                                <div class="dungeonListingsHeading">Dungeons</div>
+                                <div class="dungeonListings" id="dungeonListings"></div>
                             </div>
                             <div id="dungeonTeamSelect">
+                                <div id="dtsBanner"></div>
+                                <div id="dtsMaterials"></div>
                                 <div id="dtsTop"></div>
                                 <div id="dtsBottom"></div>
                             </div>
@@ -285,6 +476,14 @@
                                                 <div class="layer layer4"></div>
                                                 <div class="layer layer5"></div>
                                                 <div class="layer layer6"></div>
+                                                <div class="layer layer7"></div>
+                                                <div class="layer layer8"></div>
+                                                <div class="layer layer9"></div>
+                                            </div>
+                                            <div id="dungeonSpeed">
+                                                <div id="dungeonSpeedSlow" class="dungeonSpeedButtons">Slow</div>
+                                                <div id="dungeonSpeedNormal" class="dungeonSpeedButtons">Normal</div>
+                                                <div id="dungeonSpeedFast" class="dungeonSpeedButtons">Fast</div>
                                             </div>
                                             <h3><div id="floorID">Floor 1</div></h3>
                                             <div id="dungeonListContainer">
@@ -292,13 +491,13 @@
                                                 <div id="dungeonMobList"></div>
                                             </div>
                                         </div>
-                                        <div id="drStats">
-                                            <div id="drStatsHero"></div>
-                                            <div id="drStatsMob"></div>
-                                        </div>
-                                        <div id="drLog">
-                                            <div id="drLogHero"></div>
-                                            <div id="drLogMob"></div>
+                                        <div class="drTurnOrderLogContainer">
+                                            <div class="drTurnOrderLogTitles">
+                                                <h2 class="drTitle"><i class="far fa-hourglass"></i>Turn Order</h2>
+                                                <h2 class="drTitle"><i class="fas fa-align-left"></i>Battle Log</h2>
+                                            </div>
+                                            <div id="drTurnOrder"></div>
+                                            <div id="drLog"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -308,11 +507,10 @@
                 </div>
                 <div id="townsTab" class="tabcontent">
                     <div id="townContainer">
-                        <div id="emptyTown">The town looks empty - except for your Shop, of course. Perhaps there's a way to craft new buildings?</div>
+                        <div id="emptyTown"><i class="fas fa-question"></i> The town looks empty - except for your Shop, of course. Perhaps the Action League can help with that?</div>
                         <div id="buildingList"></div>
                         <div id="buildingHeader"></div>
                         <div id="buildBuilding">
-                            <div id="buildingMats"></div>
                             <div id="buildingRecipes"></div>
                         </div>
                         <div id="fuseBuilding" class="buildingTab">
@@ -349,12 +547,15 @@
                 </div>
                 <div id="eventsTab" class="tabcontent">
                     <div id="eventContainer">
-                        <div id="readUnread">
-                            <div id="readNew" class="readActive">Unread</div><div id="readOld">Saved</div>
-                        </div>
-                        <div id="eventList">
-                            <div id="eventListMail">
-                                <div class="events-placeholder-details">You have no mail to read at the moment.</div>
+                        <div id="eventListContainer">
+                            <div id="readUnread">
+                                <div id="readNew" class="readOption readActive">Unread</div>
+                                <div id="readOld" class="readOption">Saved</div>
+                            </div>
+                            <div id="eventList">
+                                <div id="eventListMail">
+                                    <div class="events-placeholder-details">You have no mail to read at the moment.</div>
+                                </div>
                             </div>
                         </div>
                         <div id="eventContent"></div>
@@ -363,19 +564,32 @@
                 <div id="progressTab" class="tabcontent">
                     <div id="progresslist">
                         <div id="progress_container">
-                            <h3 class="progress-section-title">Progress Tracker for v0.2x</h3>
+                            <h3 class="progress-section-title">Progress Tracker</h3>
+                            <div class="progressRecipe"><h2>Bosses Beat</h2><p class="progress-desc">Your progress for bosses beat.</p><span id="plBoss">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbBoss"></span></div></div>
                             <div class="progressRecipe"><h2>Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/300</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
-                            <div class="progressWorker"><h2>Worker Levels</h2><p class="progress-desc">Your progress for total worker levels.</p><span id="plWorkerLevel">0/200</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbWorker"></span></div></div>
-                            <div class="progressHero"><h2>Hero Levels</h2><p class="progress-desc">Your progress for hero levels.</p><span id="plHeroLevel">0/600</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbHero"></span></div></div>
+                            <div class="progressRecipe"><h2>Worker Levels</h2><p class="progress-desc">Your progress for total worker levels.</p><span id="plWorkerLevel">0/200</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbWorker"></span></div></div>
+                            <div class="progressRecipe"><h2>Perks Bought</h2><p class="progress-desc"> Your progress for Action League perks bought.</p><span id="plPerk">0/60</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbPerk"></span></div></div>
                             <div class="progressOverall"><h2>Overall</h2><p class="progress-desc">Your overall game progress.</p><span id="plOverall">0%</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbOverall"></span></div></div>
                         </div>
                         <div id="achievements">
-                            <h3 class="progress-section-title">Statistics</h3>
+                            <h3 id="db-init" class="progress-section-title">Statistics</h3>
                             <div class="stat-box-container">
+ 
                                 <div class="statBox">
-                                    <div class="statHeading">Max Floor Reached</div>
-                                    <div class="statNormal" id="statMaxFloor">?</div>
+                                    <div class="statHeading">Groovy Grove Floor Reached</div>
+                                    <div class="statNormal" id="statMaxFloorD001">?</div>
                                 </div>
+
+                                <div class="statBox">
+                                    <div class="statHeading">Spooky Spot Floor Reached</div>
+                                    <div class="statNormal" id="statMaxFloorD002">?</div>
+                                </div>
+
+                                <div class="statBox">
+                                    <div class="statHeading">Creepy Crag Floor Reached</div>
+                                    <div class="statNormal" id="statMaxFloorD003">?</div>
+                                </div>
+
                                 <div class="statBox">
                                     <div class="statHeading">Total Floors Beaten</div>
                                     <div class="statNormal" id="statFloors">?</div>
@@ -434,22 +648,31 @@
             </div>
             <footer role="contentinfo">
                 <div id="bottom-left">
-                    <a id="clearSave" class="tooltip" href="#dialogClearSave" data-tooltip="Permanently delete your current saved game data. This action is irreversible.">Clear Save</a>
-                    <a id="exportSave" class="tooltip" href="#dialogExportSave" data-tooltip="Export your current game data for sharing or importing at a later time.">Export Save</a>
-                    <a id="importSave" class="tooltip" href="#dialogImportSave" data-tooltip="Import your own previously exported data or shared game data.">Import Save</a>
-                    <a id="cloudSave" class="tooltip" href="#dialogPlayfab" data-tooltip="Save or load your game data from the Cloud using Playfab.">Cloud Save</a>
-                    <a id="settings" class="tooltip" href="#dialogSettings" data-tooltip="Change your game preferences and settings.">Settings</a>
+                    <a id="clearSave" class="isDialog tooltip" href="#dialogClearSave" data-tooltip="Permanently delete your current saved game data. This action is irreversible."><i class="fas fa-file-times"></i> Clear Save</a>
+                    <a id="exportSave" class="isDialog tooltip" href="#dialogExportSave" data-tooltip="Export your current game data for sharing or importing at a later time."><i class="fas fa-file-export"></i> Export Save</a>
+                    <a id="importSave" class="isDialog tooltip" href="#dialogImportSave" data-tooltip="Import your own previously exported data or shared game data."><i class="fas fa-file-import"></i> Import Save</a>
+                    <a id="cloudSave" class="isDialog tooltip" href="#dialogPlayfab" data-tooltip="Save or load your game data from the Cloud using Playfab."><i class="fas fa-cloud-download"></i> Cloud Save</a>
+                    <a id="settings" class="isDialog tooltip" href="#dialogSettings" data-tooltip="Change your game preferences and settings."><i class="fas fa-cog"></i> Settings</a>
                 </div>
                 <div id="bottom-right">
-                    <a href="/patchnotes/latest.html" id="version-scale">v0.2.1.9</a>
-                    <a href="about.html" target="_blank">About &amp; Crediting <i class="fas fa-external-link-square-alt"></i></a>
-                    <a href="http://www.discord.gg/qGBAVNR" target="_blank">Discord Server <i class="fas fa-external-link-square-alt"></i></a>
+                    <a class="isDialog" href="#dialogPatch" id="versionNum">v0.2.2.0</a>
+                    <div class="footer_more-container">
+                        <span class="footer_more-btn">View Links &amp; Resources<i class="fas fa-angle-up"></i></span>
+                        <ul class="footer_more-list">
+                            <li><a href="/patchnotes/latest.html" rel="noopener"><i class="fas fa-file-alt"></i>Release Notes</a></li>
+                            <li><a href="about.html" target="_blank" rel="noopener"><i class="fas fa-users"></i>About &amp; Crediting</a></li>
+                            <li><a href="http://www.discord.gg/qGBAVNR" target="_blank" rel="noopener"><i class="fab fa-discord"></i>Discord Server</a></li>
+                        </ul>
+                    </div>
                 </div>
             </footer>
             <div id='right-side-content' role="complementary" aria-labelledby="comptitle2">
                 <div id="as-header">
-                    <h2 id="comptitle1" class="heading">Inventory</h2>
-                    <div id="inventorySidebar">0/20</div>
+                    <h2 id="comptitle1" class="heading">Gold &amp; Inventory</h2>
+                    <div class="sidebarContentContainer">
+                        <div id="goldSidebar" class="invSideContainer"><img src="images/resources/M001.png" alt="Gold"> <span id="goldSidebarAmt">0</span></div>
+                        <div id="inventorySidebar" class="invSideContainer"><i class="fas fa-cube"></i> 0/20</div>
+                    </div>
                 </div>
                 <div id="as-header">
                     <h2 id="comptitle2" class="heading">Crafting Slots</h2>
@@ -457,6 +680,9 @@
                 <div id="ActionSlots"></div>
                 <div id="dung-header">
                     <h2 id="comptitle3" class="heading">Adventures</h2>
+                    <div class="heroCounter">
+                        <span class="heroCount">?</span><span class="heroCountText"> Loading...</span>
+                    </div>
                 </div>
                 <div id="DungeonSideBar">
                     <div id="DungeonSideBarTeam"></div>
@@ -467,9 +693,9 @@
     <section id="mobile-content">
         <nav class="mobile-nav">
             <ul class="mobile-nav-listing">
-                <li class="nav-item"><a href="/about.html">About &amp; Crediting</a></li>
-                <li class="nav-item"><a href="/patchnotes/latest.html">Release Notes</a></li>
-                <li class="nav-item"><a href="http://www.discord.gg/qGBAVNR">Discord Server</a></li>
+                <li class="nav-item"><a href="/about.html" rel="noopener">About &amp; Crediting</a></li>
+                <li class="nav-item"><a href="/patchnotes/latest.html" rel="noopener">Release Notes</a></li>
+                <li class="nav-item"><a href="http://www.discord.gg/qGBAVNR" rel="noopener">Discord Server</a></li>
             </ul>
         </nav>
         <div class="mobile-notice">
@@ -479,40 +705,45 @@
             <p class="mobile-notice-description">Feel free to read the latest release notes, check out our About &amp; Crediting page or join us on Discord.</p>
         </div>
     </section>
+    <div id="db-panel"></div>
 
-<script type="text/javascript" src="scripts/please-wait.min.js"></script>
-<script src="external/jquery/jquery.js"></script>
-<script src="scripts/jquery.toast.js"></script>
-<script src="scripts/jsonDataLoader.js"></script>
-<script src="scripts/misc.js"></script>
-<script src="scripts/tabs.js"></script>
-<script src="scripts/fauxRandom.js"></script>
-<script src="scripts/recipes.js"></script>
-<script src="scripts/resource.js"></script>
-<script src="scripts/heroes.js"></script>
-<script src="scripts/mobs.js"></script>
-<script src="scripts/party.js"></script>
-<script src="scripts/dungeons.js"></script>
-<script src="scripts/dungeonAssign.js"></script>
-<script src="scripts/workers.js"></script>
-<script src="scripts/inventory.js"></script>
-<script src="scripts/actionslots.js"></script>
-<script src="scripts/devtools.js"></script>
-<script src="scripts/events.js"></script>
-<script src="scripts/fuse.js"></script>
-<script src="scripts/bank.js"></script>
-<script src="scripts/blacksmith.js"></script>
-<script src="scripts/fortune.js"></script>
-<script src="scripts/town.js"></script>
-<script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
-<script src="scripts/playfab.js"></script>
-<script type="text/javascript" src="scripts/pako.min.js"></script>
-<script src="scripts/main.js"></script>
-<script src="scripts/toastifications.js"></script>
-<script src="scripts/saveLoad.js"></script>
-<script src="scripts/progress.js"></script>
-<script src="scripts/combat.js"></script>
-<script language="javascript" src="scripts/lz-string.js"></script>
-<script src="scripts/style.js"></script>
+    <script type="text/javascript" src="scripts/please-wait.min.js"></script>
+    <script src="external/jquery/jquery.js"></script>
+    <script src="scripts/jquery.toast.js"></script>
+    <script src="scripts/jsonDataLoader.js"></script>
+    <script src="scripts/settings.js"></script>
+    <script src="scripts/patch.js"></script>
+    <script src="scripts/misc.js"></script>
+    <script src="scripts/tabs.js"></script>
+    <script src="scripts/fauxRandom.js"></script>
+    <script src="scripts/recipes.js"></script>
+    <script src="scripts/resource.js"></script>
+    <script src="scripts/heroes.js"></script>
+    <script src="scripts/mobs.js"></script>
+    <script src="scripts/party.js"></script>
+    <script src="scripts/dungeons.js"></script>
+    <script src="scripts/dungeonAssign.js"></script>
+    <script src="scripts/workers.js"></script>
+    <script src="scripts/inventory.js"></script>
+    <script src="scripts/actionslots.js"></script>
+    <script src="scripts/devtools.js"></script>
+    <script src="scripts/events.js"></script>
+    <script src="scripts/fuse.js"></script>
+    <script src="scripts/bank.js"></script>
+    <script src="scripts/blacksmith.js"></script>
+    <script src="scripts/fortune.js"></script>
+    <script src="scripts/town.js"></script>
+    <script src="scripts/guilds.js"></script>
+    <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
+    <script src="scripts/playfab.js"></script>
+    <script type="text/javascript" src="scripts/pako.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/saveLoad.js"></script>
+    <script src="scripts/progress.js"></script>
+    <script src="scripts/combat.js"></script>
+    <script src="scripts/specialAttack.js"></script>
+    <script language="javascript" src="scripts/lz-string.js"></script>
+    <script src="scripts/toastifications.js"></script>
+    <script src="scripts/style.js"></script>
 </body>
 </html>

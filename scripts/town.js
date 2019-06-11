@@ -1,5 +1,7 @@
 "use strict";
 
+const BuildingState = Object.freeze({hidden:-1,unseen:0,seen:1,built:2});
+
 const $buildingList = $("#buildingList");
 const $buildingHeader = $("#buildingHeader");
 const $fuseBuilding = $("#fuseBuilding");
@@ -10,102 +12,75 @@ const $fortuneBuilding = $("#fortuneBuilding");
 const TownManager = {
     lastBldg : null,
     lastType : null,
-    bankSee : false,
-    bankOnce : false,
-    bankUnlock : false,
-    bankCost : false,
-    fuseSee : false,
-    fuseOnce : false,
-    fuseUnlock : false,
-    fuseCost : false,
-    smithSee : false,
-    smithOnce : false,
-    smithUnlock : false,
-    smithCost : false,
-    fortuneSee : false,
-    fortuneOnce : false,
-    fortuneUnlock : false,
-    fortuneCost : false,
+    bankStatus : BuildingState.hidden,
+    fuseStatus : BuildingState.hidden,
+    smithStatus : BuildingState.hidden,
+    fortuneStatus : BuildingState.hidden,
     purgeSlots : false,
     createSave() {
         const save = {};
-        save.bankSee = this.bankSee;
-        save.bankOnce = this.bankOnce;
-        save.bankUnlock = this.bankUnlock;
-        save.bankCost = this.bankCost;
-        save.fuseSee = this.fuseSee;
-        save.fuseOnce = this.fuseOnce;
-        save.fuseUnlock = this.fuseUnlock;
-        save.fuseCost = this.fuseCost;
-        save.smithSee = this.smithSee;
-        save.smithOnce = this.smithOnce;
-        save.smithUnlock = this.smithUnlock;
-        save.smithCost = this.smithCost;
-        save.fortuneSee = this.fortuneSee;
-        save.fortuneOnce = this.fortuneOnce;
-        save.fortuneUnlock = this.fortuneUnlock;
-        save.fortuneCost = this.fortuneCost;
+        save.bankStatus = this.bankStatus;
+        save.fuseStatus = this.fuseStatus;
+        save.smithStatus = this.smithStatus;
+        save.fortuneStatus = this.fortuneStatus;
         return save;
     },
     loadSave(save) {
-        this.bankSee = save.bankSee;
-        this.bankOnce = save.bankOnce
-        this.bankUnlock = save.bankUnlock;
-        this.bankCost = save.bankCost;
-        this.fuseSee = save.fuseSee;
-        this.fuseOnce = save.fuseOnce;
-        this.fuseUnlock = save.fuseUnlock;
-        this.fuseCost = save.fuseCost;
-        this.smithSee = save.smithSee;
-        this.smithOnce = save.smithOnce;
-        this.smithUnlock = save.smithUnlock;
-        this.smithCost = save.smithCost;
-        this.fortuneSee = save.fortuneSee;
-        this.fortuneOnce = save.fortuneOnce;
-        this.fortuneUnlock = save.fortuneUnlock;
-        this.fortuneCost = save.fortuneCost;
-    },
-    paidCost(type) {
-        if (type === "bank") return this.bankCost;
-        if (type === "fuse") return this.fuseCost;
-        if (type === "smith") return this.smithCost;
-        if (type === "fortune") return this.fortuneCost;
-    },
-    setCost(type) {
-        if (type === "bank") this.bankCost = true;
-        if (type === "fuse") this.fuseCost = true;
-        if (type === "smith") this.smithCost = true;
-        if (type === "fortune") this.fortuneCost = true;
+        if (save.bankStatus !== undefined) this.bankStatus = save.bankStatus;
+        if (save.fuseStatus !== undefined) this.fuseStatus = save.fuseStatus;
+        if (save.smithStatus !== undefined) this.smithStatus = save.smithStatus;
+        if (save.fortuneStatus !== undefined) this.fortuneStatus = save.fortuneStatus;
     },
     unseenLeft() {
-        return this.bankOnce || this.fuseOnce || this.smithOnce || this.fortuneOnce;
+        const bldgs = [this.bankStatus,this.fuseStatus,this.smithStatus,this.fortuneStatus]
+        return bldgs.includes(BuildingState.unseen);
+    },
+    buildingPerk(type) {
+        if (type === "bank") {
+            this.bankStatus = BuildingState.unseen;
+            recipeList.idToItem("R99110").owned = true;
+        }
+        if (type === "fuse") {
+            this.fuseStatus = BuildingState.unseen;
+            recipeList.idToItem("R99210").owned = true;
+        }
+        if (type === "smith") {
+            this.smithStatus = BuildingState.unseen;
+            recipeList.idToItem("R99310").owned = true;
+        }
+        if (type === "fortune") {
+            this.fortuneStatus = BuildingState.unseen;
+            recipeList.idToItem("R99510").owned = true;
+        }
+        refreshSideTown();
     }
 }
 
 const $emptyTown = $("#emptyTown");
 
 function refreshSideTown() {
-    $buildingList.empty();
+    $buildingList.empty().hide();
+    $buildBuilding.hide();
     if (TownManager.unseenLeft()) $("#townTab").addClass("hasEvent");
     else $("#townTab").removeClass("hasEvent");
-    if (!TownManager.bankSee) return;
+    if (TownManager.bankStatus === BuildingState.hidden) return;
     $emptyTown.hide();
-    const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`<i class="fas fa-university"></i> Bank`);
+    const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`<div><i class="fas fa-university"></i> Bank</div>`);
     if (TownManager.lastBldg === "bank") d1.addClass("selected");
     if (TownManager.bankOnce) d1.addClass("hasEvent");
-    $buildingList.append(d1);
-    if (!TownManager.bankUnlock || !TownManager.fuseSee) return;
-    const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`<i class="fas fa-cauldron"></i> Cauldron`);
+    $buildingList.show().append(d1);
+    if (TownManager.fuseStatus === BuildingState.hidden) return;
+    const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`<div><i class="fas fa-cauldron"></i> Cauldron</div>`);
     if (TownManager.lastBldg === "fuse") d2.addClass("selected");
     if (TownManager.fuseOnce) d2.addClass("hasEvent");
     $buildingList.append(d2);
-    if (!TownManager.fuseUnlock || !TownManager.smithSee) return;
-    const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`<i class="fas fa-hammer-war"></i> Forge`);
+    if (TownManager.smithStatus === BuildingState.hidden) return;
+    const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`<div><i class="fas fa-hammer-war"></i> Forge</div>`);
     if (TownManager.lastBldg === "smith") d3.addClass("selected");
     if (TownManager.smithOnce) d3.addClass("hasEvent");
     $buildingList.append(d3);
-    if (!TownManager.smithUnlock || !TownManager.fortuneSee) return;
-    const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html(`<i class="fas fa-hat-wizard"></i> Fortune`);
+    if (TownManager.fortuneStatus === BuildingState.hidden) return;
+    const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html(`<div><i class="fas fa-hat-wizard"></i> Fortune</div>`);
     if (TownManager.lastBldg === "fortune") d4.addClass("selected");
     if (TownManager.fortuneOnce) d4.addClass("hasEvent");
     $buildingList.append(d4);
@@ -119,13 +94,13 @@ function showFuseBldg() {
     const d = $("<div/>").addClass("buildingInfo buildingFusion");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
-        if (TownManager.fuseUnlock) db.html("<img src='images/townImages/fuseBuilding/fusion_building.png'>");
+        if (TownManager.fuseStatus === BuildingState.built) db.html("<img src='images/townImages/fuseBuilding/fusion_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Cauldron</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Fuse three of the same item into a rarity higher of the same item.");
-        if (!TownManager.fuseUnlock) d.addClass("buildInProgress");
+        if (!TownManager.fuseStatus === BuildingState.built) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
-    if (TownManager.fuseUnlock) initiateFuseBldg();
+    if (TownManager.fuseStatus === BuildingState.built) initiateFuseBldg();
     else {
         $buildBuilding.show();
         buildScreen("fuse");
@@ -142,13 +117,13 @@ function showBankBldg() {
     const d = $("<div/>").addClass("buildingInfo buildingBank");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
-        if (TownManager.bankUnlock) db.html("<img src='images/townImages/bankBuilding/bank_building.png'>")
+        if (TownManager.bankStatus === BuildingState.built) db.html("<img src='images/townImages/bankBuilding/bank_building.png'>")
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Bank</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Store important items at the bank.");
-        if (!TownManager.bankUnlock) d.addClass("buildInProgress");
+        if (!TownManager.bankStatus === BuildingState.built) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
-    if (TownManager.bankUnlock) initiateBankBldg();
+    if (TownManager.bankStatus === BuildingState.built) initiateBankBldg();
     else {
         $buildBuilding.show();
         buildScreen("bank");
@@ -163,13 +138,13 @@ function showSmithBldg() {
     const d = $("<div/>").addClass("buildingInfo buildingSmith");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
-        if (TownManager.smithUnlock) db.html("<img src='images/townImages/smithBuilding/smith_building.png'>");
+        if (TownManager.smithStatus === BuildingState.built) db.html("<img src='images/townImages/smithBuilding/smith_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>The Forge</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Upgrade your gear at the forge.");
-        if (!TownManager.smithUnlock) d.addClass("buildInProgress");
+        if (!TownManager.smithStatus === BuildingState.built) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
-    if (TownManager.smithUnlock) initiateSmithBldg();    
+    if (TownManager.smithStatus === BuildingState.built) initiateSmithBldg();    
     else {
         $buildBuilding.show();
         buildScreen("smith");
@@ -184,13 +159,13 @@ function showFortuneBldg() {
     const d = $("<div/>").addClass("buildingInfo buildingFortune");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
-        if (TownManager.fortuneUnlock) db.html("<img src='images/townImages/fortuneBuilding/fortune_building.png'>");
+        if (TownManager.fortuneStatus === BuildingState.built) db.html("<img src='images/townImages/fortuneBuilding/fortune_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fortune Teller</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Find which crafts are lucky this week!");
-        if (!TownManager.fortuneUnlock) d.addClass("buildInProgress");
+        if (TownManager.fortuneStatus === BuildingState.built) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
-    if (TownManager.fortuneUnlock) initiateFortuneBldg();
+    if (TownManager.fortuneStatus === BuildingState.built) initiateFortuneBldg();
     else {
         $buildBuilding.show();
         buildScreen("fortune");
@@ -201,7 +176,7 @@ $(document).on('click', "#fusionBldg", (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "fusion") return;
     TownManager.lastBldg = "fusion";
-    TownManager.fuseOnce = false;
+    if (TownManager.fuseStatus === BuildingState.unseen) TownManager.fuseStatus = BuildingState.seen;
     $(".buildingName").removeClass("selected");
     if (!TownManager.unseenLeft()) $("#townTab").removeClass("hasEvent");
     $("#fusionBldg").addClass("selected");
@@ -213,7 +188,7 @@ $(document).on('click', '#bankBldg', (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "bank") return;
     TownManager.lastBldg = "bank";
-    TownManager.bankOnce = false;
+    if (TownManager.bankStatus === BuildingState.unseen) TownManager.bankStatus = BuildingState.seen;
     $(".buildingName").removeClass("selected");
     if (!TownManager.unseenLeft()) {
         $("#townTab").removeClass("hasEvent");
@@ -227,7 +202,7 @@ $(document).on('click', '#smithBldg', (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "smith") return;
     TownManager.lastBldg = "smith";
-    TownManager.smithOnce = false;
+    if (TownManager.smithStatus === BuildingState.unseen) TownManager.smithStatus = BuildingState.seen;
     $(".buildingName").removeClass("selected");
     if (!TownManager.unseenLeft()) $("#townTab").removeClass("hasEvent");
     $("#smithBldg").addClass("selected");
@@ -239,7 +214,7 @@ $(document).on('click', '#fortuneBldg', (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "fortune") return;
     TownManager.lastBldg = "fortune";
-    TownManager.fortuneOnce = false;
+    if (TownManager.fortuneStatus === BuildingState.unseen) TownManager.fortuneStatus = BuildingState.seen;
     $(".buildingName").removeClass("selected");
     if (!TownManager.unseenLeft()) $("#townTab").removeClass("hasEvent");
     $("#fortuneBldg").addClass("selected");
@@ -248,52 +223,26 @@ $(document).on('click', '#fortuneBldg', (e) => {
 });
 
 const $buildingRecipes = $("#buildingRecipes");
-const $buildingMats = $("#buildingMats");
 
 function buildScreen(type) {
     $buildingRecipes.empty();
-    $buildingMats.empty();
     TownManager.lastType = type;
-    if (!TownManager.paidCost(type)) {
-        const d1 = $("<div/>").addClass("buyBuildingBP").attr("type",type).html(`Buy Blueprint<span class="buybp_cost">${ResourceManager.materialIcon("M001")} ${formatToUnits(getBuildingCost(type),2)}</span>`)
-        $buildingRecipes.append(d1);
-        return;
-    }
-    else {
-        buildBuildMats(type);
-    }
-    const d4 = $("<div/>").addClass("bRecipes");
-    const table = $('<div/>').addClass('brecipeTable');
-    const htd1 = $('<div/>').addClass('brecipeHeadName').html("NAME");
-    const htd2 = $('<div/>').addClass('brecipeHeadLvl').html("LVL");
-    const htd3 = $('<div/>').addClass('brecipeHeadRes').html("RESOURCES");
-    const htd4 = $('<div/>').addClass('brecipeHeadCost').html("MATS");
-    const htd5 = $('<div/>').addClass('brecipeHeadTime').html("TIME");
-    const hrow = $('<div/>').addClass('brecipeHeader').append(htd1,htd2,htd3,htd4,htd5);
-    table.append(hrow);
-    let alternate = false;
-    let lastRow = null;
+    //const d4 = $("<div/>").addClass("bRecipes");
+    //const table = $('<div/>').addClass('brecipeTable');
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
-        const td1 = $('<div/>').addClass('recipeName').attr("id",recipe.id).append(recipe.itemPicName());
-        const td2 = $('<div/>').addClass('recipeLvl').html(recipe.lvl);
-        const td3 = $('<div/>').addClass('recipeDescription tooltip').attr("data-tooltip",recipe.itemDescription()).html("<i class='fas fa-info-circle'></i>");
-        const td4 = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeRes());
-        const td5 = $('<div/>').addClass('recipematdiv').html(recipe.visualizeMat());
-        const td6 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
-        const row = $('<div/>').addClass('recipeRow').attr("id","rr"+recipe.id).append(td1,td2,td3,td4,td5,td6);
-        lastRow = row;
-        if (alternate) row.addClass("recipeRowHighlight");
-        alternate = !alternate;
-        table.append(row);
+        const recipeCardInfo = $('<div/>').addClass('recipeCardInfo').append(recipeCardFront(recipe),recipeCardBack(recipe))
+        //const row = $('<div/>').addClass('recipeCardContainerBuilding').attr("id","rr"+recipe.id).append(recipeCardInfo);
+        //table.append(row);
+        const recipeCardContainer = $('<div/>').addClass('recipeCardContainer buildingCard').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardInfo);
+        $buildingRecipes.append(recipeCardContainer);
     });
-    if (lastRow !== null) lastRow.addClass("recipeRowLast");
-    d4.append(table);
-    $buildingRecipes.append(d4);
+    //$buildingRecipes.append(row);
+
     const d5 = $("<div/>").addClass("buildingInstr");
-        const d5a = $("<div/>").addClass("buildingInstrHead").html("Instruction");
-        const d5b = $("<div/>").addClass("buildingInstrDesc").html("Construct the final recipe to unlock this building permanently!");
-    d5.append(d5a,d5b);
+        $("<div/>").addClass("buildingInstrHead").html("Instruction").appendTo(d5);
+        const d5b = $("<div/>").addClass("buildingInstrDesc").html("Construct the building recipe to unlock this building permanently!").appendTo(d5);
     $buildingRecipes.append(d5);
+    recipeCanCraft();
 }
 
 $(document).on('click', ".buyBuildingBP", (e) => {
@@ -302,48 +251,8 @@ $(document).on('click', ".buyBuildingBP", (e) => {
     buyBuildingBP(type);
 });
 
-function buyBuildingBP(type) {
-    const cost = getBuildingCost(type);
-    if (ResourceManager.materialAvailable("M001") < cost) {
-        Notifications.cantAffordBlueprint();
-        return;
-    }
-    ResourceManager.deductMoney(cost);
-    TownManager.setCost(type);
-    showBuilding(type);
-}
-
-function getBuildingCost(type) {
-    if (type === "bank") return miscLoadedValues["buildingCost"][0];
-    if (type === "fuse") return miscLoadedValues["buildingCost"][1];
-    if (type === "smith") return miscLoadedValues["buildingCost"][2];
-    if (type === "fortune") return miscLoadedValues["buildingCost"][3];
-}
-
-function showBuilding(type) {
-    if (type === "bank") showBankBldg();
-    if (type === "fuse") showFuseBldg();
-    if (type === "smith") showSmithBldg();
-    if (type === "fortune") showFortuneBldg();
-}
-
-function buildBuildMats() {
-    $buildingMats.empty();
-    if (!TownManager.paidCost(TownManager.lastType)) return;
-    const d1 = $("<div/>").addClass("buildingMatTable");
-    recipeList.recipes.filter(r=>r.type===TownManager.lastType).forEach(recipe => {
-        const d2 = $("<div/>").addClass("buildingMatDiv tooltip").attr("data-tooltip",recipe.name);
-        const d3 = $("<div/>").addClass('buildingMatImage').html(recipe.itemPic());
-        const d4 = $("<div/>").addClass("buildingMatAmt").html(Inventory.itemCount(recipe.id,0));
-        d2.append(d3,d4);
-        d1.append(d2);
-    });
-    $buildingMats.append(d1);
-}
-
 function unlockBank() {
-    TownManager.bankUnlock = true;
-    TownManager.bankCost = true;
+    TownManager.bankStatus = BuildingState.built;
     TownManager.lastBldg = "bank";
     TownManager.purgeSlots = true;
     $(".buildingName").removeClass("selected");
@@ -353,8 +262,7 @@ function unlockBank() {
 }
 
 function unlockFuse() {
-    TownManager.fuseCost = true;
-    TownManager.fuseUnlock = true;
+    TownManager.fuseStatus = BuildingState.built;
     TownManager.lastBldg = "fuse";
     TownManager.purgeSlots = true;
     $(".buildingName").removeClass("selected");
@@ -364,8 +272,7 @@ function unlockFuse() {
 }
 
 function unlockSmith() {
-    TownManager.smithUnlock = true;
-    TownManager.smithCost = true;
+    TownManager.smithStatus = BuildingState.built;
     TownManager.lastBldg = "smith";
     TownManager.purgeSlots = true;
     $(".buildingName").removeClass("selected");
@@ -375,10 +282,9 @@ function unlockSmith() {
 }
 
 function unlockFortune() {
-    TownManager.fortuneCost = true;
-    TownManager.fortuneUnlock = true;
+    TownManager.fortuneStatus = BuildingState.built;
     TownManager.lastBldg = "fortune";
-    TownManager.purgeSlots;
+    TownManager.purgeSlots = true;
     $(".buildingName").removeClass("selected");
     $("#fortuneBldg").addClass("selected");
     refreshSideTown();

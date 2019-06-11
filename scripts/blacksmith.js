@@ -132,7 +132,7 @@ function refreshSmithArea() {
     if (bloopSmith.smithState === "waiting") {
         if (bloopSmith.smithStage === null) {
             $swItemStage.html("No Item Selected").removeClass("collectTextBox");
-            $swItemResult.html("No Item Selected")
+            $swItemResult.html("No Item Selected");
             $swMiddleText.html("Waiting for an Item to Smith").removeClass("smithFailed smithSucceed").show();
             resetSmithBar();
             $swSuccess.hide();

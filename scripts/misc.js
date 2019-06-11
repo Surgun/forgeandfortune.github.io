@@ -31,6 +31,24 @@ function rollDice(number, sides) {
     return total;
 }
 
+function rollDiceSeed(gid, number, sides) {
+    let total = 0;
+    while(number-- > 0) total += Math.floor(GuildSeedManager.fauxRand(gid) * sides) + 1;
+    return total;
+}
+
+function bellCurve(min,max) {
+    const total = rollDice(3,6);
+    const percent = (total-6)/30;
+    return Math.round(percent*(max-min)+min);
+}
+
+function bellCurveSeed(gid,min,max) {
+    const total = rollDiceSeed(gid, 6,6);
+    const percent = (total-6)/30;
+    return Math.round(percent*(max-min)+min);
+}
+
 function round(number, precision) {
     var shift = function (number, precision) {
       var numArray = ("" + number).split("e");
@@ -72,7 +90,7 @@ function createArray(len, itm) {
 const miscIcons = {
     hp : '<img src="images/DungeonIcons/hp.png">',
     pow : '<img src="images/DungeonIcons/pow.png">',
-    act : '<img src="images/DungeonIcons/act.png">',
+    ap : '<img src="images/DungeonIcons/ap.png">',
     gold : '<img src="images/DungeonIcons/gold.png">'
 }
 
@@ -109,11 +127,6 @@ function randomChance(num,total) {
     return num > Math.floor(Math.random() * total);
 }
 
-function isItChristmas() {
-    const d = new Date();
-    return d.getMonth() === 10 || d.getMonth() === 11;
-}
-
 function inventorySort(a, b) {
     const ai = a.item;
     const bi = b.item;
@@ -128,4 +141,15 @@ function inventorySort(a, b) {
     if (a.sharp > b.sharp) return -1;
     if (b.sharp < a.sharp) return 1;
     return 0;
+}
+
+function interlace(a1,a2) {
+    //returns a new array mixed between two
+    const length = Math.max(a1.length,a2.length);
+    const result = [];
+    for (let i=0;i<length;i++) {
+        if (a1.length > i) result.push(a1[i]);
+        if (a2.length > i) result.push(a2[i]);
+    }
+    return result;
 }

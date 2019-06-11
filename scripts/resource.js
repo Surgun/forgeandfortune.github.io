@@ -12,12 +12,17 @@ class Material{
         const save = {};
         save.id = this.id;
         save.amt = this.amt;
+        save.seen = this.seen;
         return save;
     }
     loadSave(save) {
         this.amt = save.amt;
+        this.seen = save.seen;
     }
 }
+
+const $goldSidebar = $("#goldSidebar");
+const $goldSidebarAmt = $("#goldSidebarAmt");
 
 const ResourceManager = {
     materials : [],
@@ -44,11 +49,16 @@ const ResourceManager = {
         }
         const mat = this.materials.find(mat => mat.id === res); 
         mat.amt += amt;
+        mat.seen = true;
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
-        $("#amt"+mat.id).html(formatToUnits(mat.amt,3));
+        $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
+        if (mat.id !== "M001") return;
+        $goldSidebarAmt.html(formatToUnits(mat.amt,2));
+        $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);
     },
     canAffordMaterial(item) {
+        if (item.mcost === null) return true;
         for (const [material, amt] of Object.entries(item.mcost)) {
             if (amt > this.materialAvailable(material)) return false;
         }
@@ -58,6 +68,7 @@ const ResourceManager = {
         this.addMaterial("M001",-amt);
     },
     deductMaterial(item) {
+        if (item.mcost === null) return;
         for (const [resource, amt] of Object.entries(item.mcost)) {
             if (resource.charAt(0) === "R") {
                 Inventory.removePrecraft(resource, amt);
@@ -67,6 +78,7 @@ const ResourceManager = {
         }
     },
     refundMaterial(item) {
+        if (item.mcost === null) return;
         for (const [resource,amt] of Object.entries(item.mcost)) {
             this.addMaterial(resource,amt);
         }
@@ -122,6 +134,12 @@ const ResourceManager = {
         const great = resources[(week+1)%resources.length].id;
         const epic = resources[(week+2)%resources.length].id;
         return [good,great,epic];
+    },
+    materialSeenDungeon(dungeonID) {
+        //returns a list of materials you've seen
+        const matids = MobManager.allMobDropsByDungeon(dungeonID);
+        const materials = matids.map(m => this.idToMaterial(m));
+        return materials.filter(m => m.seen);
     }
 }
 
@@ -130,12 +148,14 @@ const $materials = $("#materials");
 function initializeMats() {
     ResourceManager.reOrderMats();
     ResourceManager.materials.forEach(mat => {
-        const d = $("<div/>").addClass("material tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
-        const d1 = $("<div/>").addClass("materialName").html(mat.img);
-        const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(formatToUnits(mat.amt,2));
-        d.append(d1,d2);
-        d.hide();
-        $materials.append(d);
+        if (mat.id != "M001") {
+            const d = $("<div/>").addClass("material tooltip").attr("data-tooltip", mat.name).attr("id",mat.id);
+            const d1 = $("<div/>").addClass("materialName").html(mat.img);
+            const d2 = $("<div/>").addClass("materialAmt").attr("id","amt"+mat.id).html(formatToUnits(mat.amt,2));
+            d.append(d1,d2);
+            d.hide();
+            $materials.append(d);
+        }
     })
 }
 
@@ -145,12 +165,14 @@ function hardMatRefresh() {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
+        $goldSidebarAmt.html(formatToUnits(mat.amt,2));
+        $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);
     })
 }
 
 $(document).on("click",".material",(e) => {
     e.preventDefault();
-    tabClick(e,"recipesTab");
+    tabClick(e, "recipesTab");
     const matID = $(e.currentTarget).attr("id");
     initializeRecipes(matID,"default");
 });

@@ -1,0 +1,542 @@
+[
+  {
+    "id": "AL1002",
+    "title": "An Axe To Grind",
+    "description": "Unlock Wood worker: Eryn",
+    "notoReq": 25,
+    "goldCost": 200,
+    "type": "worker",
+    "subtype": "W002"
+  },
+  {
+    "id": "AL1003",
+    "title": "A Big Dill",
+    "description": "Unlock Herb worker: Herbie",
+    "notoReq": 50,
+    "goldCost": 200,
+    "type": "worker",
+    "subtype": "W003"
+  },
+  {
+    "id": "AL1004",
+    "title": "Nowhere to Hide",
+    "description": "Unlock Leather worker: Lakur",
+    "notoReq": 75,
+    "goldCost": 200,
+    "type": "worker",
+    "subtype": "W004"
+  },
+  {
+    "id": "AL1005",
+    "title": "Skeleton Crew",
+    "description": "Unlock Bone worker: Harmony",
+    "notoReq": 100,
+    "goldCost": 200,
+    "type": "worker",
+    "subtype": "W005"
+  },
+  {
+    "id": "AL1006",
+    "title": "Seams Important",
+    "description": "Unlock Fabric worker: Frederic",
+    "notoReq": 125,
+    "goldCost": 500,
+    "type": "worker",
+    "subtype": "W006"
+  },
+  {
+    "id": "AL1007",
+    "title": "In Need Of Alloys",
+    "description": "Unlock Steel worker: Magnolia",
+    "notoReq": 150,
+    "goldCost": 500,
+    "type": "worker",
+    "subtype": "W007"
+  },
+  {
+    "id": "AL1008",
+    "title": "Earring Aides",
+    "description": "Unlock Silver worker: Sylvester",
+    "notoReq": 175,
+    "goldCost": 500,
+    "type": "worker",
+    "subtype": "W008"
+  },
+  {
+    "id": "AL1009",
+    "title": "To A Pulp",
+    "description": "Unlock Paper worker: Pippa",
+    "notoReq": 200,
+    "goldCost": 500,
+    "type": "worker",
+    "subtype": "W009"
+  },
+  {
+    "id": "AL1010",
+    "title": "Spell Ya Later",
+    "description": "Unlock Mana worker: Manny",
+    "notoReq": 225,
+    "goldCost": 500,
+    "type": "worker",
+    "subtype": "W010"
+  },
+  {
+    "id": "AL1011",
+    "title": "Rain Ore Shine",
+    "description": "Unlock Ore worker: Hardy",
+    "notoReq": 57000,
+    "goldCost": 12500,
+    "type": "worker",
+    "subtype": "W101"
+  },
+  {
+    "id": "AL1012",
+    "title": "Out On A Limb",
+    "description": "Unlock Wood worker: Wendy",
+    "notoReq": 62000,
+    "goldCost": 12500,
+    "type": "worker",
+    "subtype": "W102"
+  },
+  {
+    "id": "AL1013",
+    "title": "You Grow Girl",
+    "description": "Unlock Herb worker: Blossom",
+    "notoReq": 67000,
+    "goldCost": 12500,
+    "type": "worker",
+    "subtype": "W103"
+  },
+  {
+    "id": "AL1014",
+    "title": "I've Been Cured",
+    "description": "Unlock Leather worker: Rocky",
+    "notoReq": 72000,
+    "goldCost": 12500,
+    "type": "worker",
+    "subtype": "W104"
+  },
+  {
+    "id": "AL1015",
+    "title": "A Star Is Bone",
+    "description": "Unlock Bone worker: Floyd",
+    "notoReq": 77000,
+    "goldCost": 12500,
+    "type": "worker",
+    "subtype": "W105"
+  },
+  {
+    "id": "AL1016",
+    "title": "Clothes The Shop",
+    "description": "Unlock Fabric worker: Tricia",
+    "notoReq": 82000,
+    "goldCost": 12500,
+    "type": "worker",
+    "subtype": "W106"
+  },
+  {
+    "id": "AL1017",
+    "title": "Those Metalling Kids",
+    "description": "Unlock Steel worker: Remington",
+    "notoReq": 87000,
+    "goldCost": 12500,
+    "type": "worker",
+    "subtype": "W107"
+  },
+  {
+    "id": "AL1018",
+    "title": "AG-mazing",
+    "description": "Unlock Silver worker: Renae",
+    "notoReq": 92000,
+    "goldCost": 12500,
+    "type": "worker",
+    "subtype": "W108"
+  },
+  {
+    "id": "AL1019",
+    "title": "Origlamorous",
+    "description": "Unlock Paper worker: Paula",
+    "notoReq": 97000,
+    "goldCost": 12500,
+    "type": "worker",
+    "subtype": "W109"
+  },
+  {
+    "id": "AL1020",
+    "title": "Arithmagicians",
+    "description": "Unlock Mana worker: Jewel",
+    "notoReq": 102000,
+    "goldCost": 12500,
+    "type": "worker",
+    "subtype": "W110"
+  },
+  {
+    "id": "AL2001",
+    "title": "Mighty Allies",
+    "description": "Unlocks Beorn, the noble warrior.",
+    "notoReq": 80,
+    "goldCost": 500,
+    "type": "hero",
+    "subtype": "H001"
+  },
+  {
+    "id": "AL2002",
+    "title": "Mighty Allies II",
+    "description": "Unlocks Cedric, the dutiful protector.",
+    "notoReq": 1750,
+    "goldCost": 2000,
+    "type": "hero",
+    "subtype": "H002"
+  },
+  {
+    "id": "AL2003",
+    "title": "Mighty Allies III",
+    "description": "Unlocks Grim, the bloodythirsty barbarian.",
+    "notoReq": 7000,
+    "goldCost": 15000,
+    "type": "hero",
+    "subtype": "H003"
+  },
+  {
+    "id": "AL2004",
+    "title": "Mighty Allies IV",
+    "description": "Unlocks Lambug, the ferocious attacker.",
+    "notoReq": 22000,
+    "goldCost": 100000,
+    "type": "hero",
+    "subtype": "H004"
+  },
+  {
+    "id": "AL2101",
+    "title": "Mindful Bond",
+    "description": "Unlocks Zoe, the cunning sorcerer.",
+    "notoReq": 160,
+    "goldCost": 500,
+    "type": "hero",
+    "subtype": "H101"
+  },
+  {
+    "id": "AL2102",
+    "title": "Mindful Bond II",
+    "description": "Unlocks Neve, the focused mage.",
+    "notoReq": 2500,
+    "goldCost": 2000,
+    "type": "hero",
+    "subtype": "H102"
+  },
+  {
+    "id": "AL2103",
+    "title": "Mindful Bond III",
+    "description": "Unlocks Titus, the generous mender.",
+    "notoReq": 9000,
+    "goldCost": 15000,
+    "type": "hero",
+    "subtype": "H103"
+  },
+  {
+    "id": "AL2104",
+    "title": "Mindful Bond IV",
+    "description": "Unlocks Troy, the adept healer.",
+    "notoReq": 27000,
+    "goldCost": 100000,
+    "type": "hero",
+    "subtype": "H104"
+  },
+  {
+    "id": "AL2201",
+    "title": "Real Moxie II",
+    "description": "Unlocks Alok, the crafty impairer.",
+    "notoReq": 1000,
+    "goldCost": 2000,
+    "type": "hero",
+    "subtype": "H201"
+  },
+  {
+    "id": "AL2202",
+    "title": "Real Moxie III",
+    "description": "Unlocks Grogmar, the trustworthy sniper.",
+    "notoReq": 5000,
+    "goldCost": 15000,
+    "type": "hero",
+    "subtype": "H202"
+  },
+  {
+    "id": "AL2204",
+    "title": "Real Moxie IV",
+    "description": "Unlocks Caeda, the skilled immobilizer.",
+    "notoReq": 17000,
+    "goldCost": 100000,
+    "type": "hero",
+    "subtype": "H204"
+  },
+  {
+    "id": "AL3001",
+    "title": "Chance Of Splinters",
+    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "notoReq": 250,
+    "goldCost": 1000,
+    "type": "boss",
+    "subtype": "D010"
+  },
+  {
+    "id": "AL3002",
+    "title": "Wear Sunscreen",
+    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "notoReq": 3000,
+    "goldCost": 4000,
+    "type": "boss",
+    "subtype": "D011"
+  },
+  {
+    "id": "AL3003",
+    "title": "He Who Walks Softly",
+    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "notoReq": 11500,
+    "goldCost": 30000,
+    "type": "boss",
+    "subtype": "D012"
+  },
+  {
+    "id": "AL3004",
+    "title": "Clown Car",
+    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "notoReq": 28000,
+    "goldCost": 200000,
+    "type": "boss",
+    "subtype": "D013"
+  },
+  {
+    "id": "AL3005",
+    "title": "Heterochromia",
+    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "notoReq": 56500,
+    "goldCost": 800000,
+    "type": "boss",
+    "subtype": "D014"
+  },
+  {
+    "id": "AL3006",
+    "title": "Just A Broken Limb",
+    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "notoReq": 108000,
+    "goldCost": 3000000,
+    "type": "boss",
+    "subtype": "D015"
+  },
+  {
+    "id": "AL3007",
+    "title": "Unextinguished",
+    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "notoReq": 171500,
+    "goldCost": 30000000,
+    "type": "boss",
+    "subtype": "D016"
+  },
+  {
+    "id": "AL3008",
+    "title": "He Who Now Limps",
+    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "notoReq": 256000,
+    "goldCost": 150000000,
+    "type": "boss",
+    "subtype": "D017"
+  },
+  {
+    "id": "AL3009",
+    "title": "Swagger Wagon",
+    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "notoReq": 364500,
+    "goldCost": 625000000,
+    "type": "boss",
+    "subtype": "D018"
+  },
+  {
+    "id": "AL3010",
+    "title": "Nystagmus",
+    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "notoReq": 500000,
+    "goldCost": 32500000000,
+    "type": "boss",
+    "subtype": "D019"
+  },
+  {
+    "id": "AL4001",
+    "title": "Second Slot",
+    "description": "Unlocks the second crafting slot.",
+    "notoReq": 100,
+    "goldCost": 250,
+    "type": "craft",
+    "subtype": null
+  },
+  {
+    "id": "AL4002",
+    "title": "Third Slot",
+    "description": "Unlocks the third crafting slot.",
+    "notoReq": 250,
+    "goldCost": 1000,
+    "type": "craft",
+    "subtype": null
+  },
+  {
+    "id": "AL4003",
+    "title": "Fourth Slot",
+    "description": "Unlocks the fourth crafting slot.",
+    "notoReq": 2500,
+    "goldCost": 4000,
+    "type": "craft",
+    "subtype": null
+  },
+  {
+    "id": "AL4004",
+    "title": "Jackslot",
+    "description": "Unlocks the fifth crafting slot.",
+    "notoReq": 10000,
+    "goldCost": 20000,
+    "type": "craft",
+    "subtype": null
+  },
+  {
+    "id": "AL4101",
+    "title": "Take It To the Bank",
+    "description": "Unlocks the Bank Building, so you can store your stuff.",
+    "notoReq": 251,
+    "goldCost": 1000,
+    "type": "bank",
+    "subtype": null
+  },
+  {
+    "id": "AL4102",
+    "title": "Offer You Can't Re-Fuse",
+    "description": "Unlocks the Fusion Cauldron Building, so you can increase item quality.",
+    "notoReq": 3001,
+    "goldCost": 4000,
+    "type": "cauldron",
+    "subtype": null
+  },
+  {
+    "id": "AL4103",
+    "title": "Can I Be Your Plus One",
+    "description": "Unlocks the Forge Building, so you can improve item stats.",
+    "notoReq": 11501,
+    "goldCost": 20000,
+    "type": "forge",
+    "subtype": null
+  },
+  {
+    "id": "AL4104",
+    "title": "Your Future Is Green",
+    "description": "Unlocks the Fortune Teller Building, to increase exceptional craft odds.",
+    "notoReq": 56501,
+    "goldCost": 500000,
+    "type": "fortune",
+    "subtype": null
+  },
+  {
+    "id": "AL4201",
+    "title": "Big Parties",
+    "description": "Increases party size for dungeons to 2",
+    "notoReq": 300,
+    "goldCost": 1500,
+    "type": "adventure",
+    "subtype": null
+  },
+  {
+    "id": "AL4202",
+    "title": "Bigger Parties",
+    "description": "Increases party size for dungeons to 3",
+    "notoReq": 3500,
+    "goldCost": 15000,
+    "type": "adventure",
+    "subtype": null
+  },
+  {
+    "id": "AL4203",
+    "title": "Biggest Parties",
+    "description": "Increases party size for dungeons to 4",
+    "notoReq": 12000,
+    "goldCost": 75000,
+    "type": "adventure",
+    "subtype": null
+  },
+  {
+    "id": "AL5001",
+    "title": "Slight Haven",
+    "description": "Floor 50 now becomes a Sanctuary, a place for adventurers to rest.",
+    "notoReq": 1625,
+    "goldCost": 4000,
+    "type": "sanctuary1",
+    "subtype": null
+  },
+  {
+    "id": "AL5002",
+    "title": "Safe-ish Haven",
+    "description": "Floor 100 now becomes a Sanctuary, a place for adventurers to rest.",
+    "notoReq": 7250,
+    "goldCost": 30000,
+    "type": "sanctuary2",
+    "subtype": null
+  },
+  {
+    "id": "AL5003",
+    "title": "Safe Haven",
+    "description": "Floor 150 now becomes a Sanctuary, a place for adventurers to rest.",
+    "notoReq": 19750,
+    "goldCost": 200000,
+    "type": "sanctuary3",
+    "subtype": null
+  },
+  {
+    "id": "AL5004",
+    "title": "Safer Haven",
+    "description": "Floor 200 now becomes a Sanctuary.",
+    "notoReq": 42250,
+    "goldCost": 800000,
+    "type": "sanctuary4",
+    "subtype": null
+  },
+  {
+    "id": "AL5005",
+    "title": "Most Safer Haven",
+    "description": "Floor 250 now becomes a Sanctuary.",
+    "notoReq": 82250,
+    "goldCost": 3000000,
+    "type": "sanctuary5",
+    "subtype": null
+  },
+  {
+    "id": "AL5006",
+    "title": "Really Safe Haven",
+    "description": "Floor 300 now becomes a Sanctuary.",
+    "notoReq": 139750,
+    "goldCost": 30000000,
+    "type": "sanctuary6",
+    "subtype": null
+  },
+  {
+    "id": "AL5007",
+    "title": "Super Safe Haven",
+    "description": "Floor 350 now becomes a Sanctuary.",
+    "notoReq": 213750,
+    "goldCost": 150000000,
+    "type": "sanctuary7",
+    "subtype": null
+  },
+  {
+    "id": "AL5008",
+    "title": "Extremely Safe Haven",
+    "description": "Floor 400 now becomes a Sanctuary.",
+    "notoReq": 310250,
+    "goldCost": 625000000,
+    "type": "sanctuary8",
+    "subtype": null
+  },
+  {
+    "id": "AL5009",
+    "title": "Mega Safe Haven",
+    "description": "Floor 450 now becomes a Sanctuary.",
+    "notoReq": 432250,
+    "goldCost": 32500000000,
+    "type": "sanctuary9",
+    "subtype": null
+  }
+]

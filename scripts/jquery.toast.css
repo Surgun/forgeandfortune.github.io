@@ -48,8 +48,9 @@
 }
 
 .jq-toast-single {
-    box-shadow: 0 0 15px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.75);
-    -o-box-shadow: 0 0 15px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.75);
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    -ms-box-shadow: var(--box-shadow);
+    -o-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
 }

@@ -3,18 +3,18 @@
 class Party {
     constructor (heroID) {
         this.heroID = heroID;
-        this.heroes = this.createHeroList();
+        this.heroes = heroID.map(h => HeroManager.idToHero(h));
     }
     createSave() {
         const save = {};
         save.heroID = this.heroID;
         return save;
     }
-    createHeroList() {
-        return this.heroID.map(h => HeroManager.idToHero(h));
-    }
     hasMember(member) {
         return this.heroes.includes(member);
+    }
+    size() {
+        return this.heroes.length;
     }
     alive() {
         return this.heroes.some(hero => !hero.dead());
@@ -22,12 +22,7 @@ class Party {
     isDead() {
         return this.heroes.every(hero => hero.dead());
     }
-    addXP(xp) {
-        this.heroes.forEach(hero => {
-            hero.addXP(xp);
-        });
-    }
-    addTime(t, dungeonID) {
+    addTime(t) {
         this.heroes.forEach(h=> {
             h.addTime(t, dungeonID);
         })
@@ -37,7 +32,7 @@ class Party {
 const PartyCreator = {
     heroes : [],
     emptyPartySlots() {
-        return this.partySize()-this.heroes.length;;
+        return DungeonManager.dungeonSlotCount() - this.heroes.length;
     },
     removeMember(slotNum) {
         this.heroes.splice(slotNum,1);
@@ -49,13 +44,6 @@ const PartyCreator = {
     clearMembers() {
         this.heroes = [];
     },
-    partySize() {
-        const heroesOwned = HeroManager.ownedHeroes().length;
-        if (heroesOwned < 4) return 1;
-        if (heroesOwned < 8) return 2;
-        if (heroesOwned < 12) return 3;
-        return 4;
-    },
     validTeam() {
         if (this.heroes.length === 0) return false;
         const heroesReal = this.heroes.map(hid => HeroManager.idToHero(hid));
@@ -64,7 +52,7 @@ const PartyCreator = {
     lockParty() {
         this.heroes.map(hid => HeroManager.idToHero(hid)).forEach(h=>{
             h.inDungeon = true;
-            h.act = Math.floor((Math.random() * 0.2*h.actmax()));
+            h.hp = h.maxHP();
         });
         const party = new Party(this.heroes);
         this.heroes = [];

@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: var(--bg-2);
+    background-color: var(--bg-secondary);
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -25,21 +25,21 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bg);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-primary);
 }
 
 .back-to {
     display: inline-block;
     padding: 15px 20px;
-    color: var(--text);
+    color: var(--text-primary);
     font-size: 0.8em;
     text-decoration: none;
     text-transform: uppercase;
 }
 
 .back-to:hover {
-    background-color: var(--bg-2);
+    background-color: var(--bg-secondary);
 }
 
 #wrapper {
@@ -54,10 +54,20 @@ nav {
 }
 
 .header .section-heading {
+    position: relative;
     margin: 35px 0 15px;
     font-size: 2.25em;
     font-weight: normal;
     text-transform: uppercase;
+}
+
+.header .section-heading:after {
+    display: block;
+    content: "";
+    height: 2px;
+    background-color: var(--border-secondary);
+    max-width: 125px;
+    margin: 10px auto;
 }
 
 .header .section-desc {
@@ -72,7 +82,7 @@ nav {
     margin: 10px auto;
     padding-bottom: 10px;
     font-weight: normal;
-    border-bottom: 2px solid var(--border-2);
+    border-bottom: 2px solid var(--border-secondary);
     width: 100%;
     max-width: 150px;
     cursor: pointer;
@@ -100,23 +110,22 @@ nav {
     -ms-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    
 }
 
 .user-card, .player-card, .asset-card {
     margin: 10px;
     padding: 20px;
     max-width: 350px;
-    background-color: var(--bg);
-    border: 1px solid var(--border);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
 }
 
 .user-card .user-pic {
     width: 100%;
     max-width: 150px;
     border-radius: 50%;
-    background-color: var(--bg-2);
-    border: 2px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-primary);
     transform: scale(0);
 }
 
@@ -143,12 +152,12 @@ nav {
     top: -11px;
     height: 2px;
     width: 75%;
-    background-color: var(--border-2);
+    background-color: var(--border-secondary);
 }
 
 .user-card .user-desc {
     position: relative;
-    color: var(--text-3);
+    color: var(--text-tertiary);
     margin-top: 20px;
     padding: 0 10px;
     font-size: .85em;
@@ -156,7 +165,7 @@ nav {
 }
 
 .external-link_inline {
-    color: var(--text-3);
+    color: var(--text-tertiary);
     text-decoration: none;
 }
 
@@ -178,8 +187,8 @@ nav {
     max-width: 50px;
     max-height: 50px;
     border-radius: 50%;
-    background-color: var(--bg-2);
-    border: 2px solid var(--border);
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-primary);
     transform: scale(0);
 }
 
@@ -221,24 +230,24 @@ nav {
     flex-grow: 1;
     font-family: 'Varela Round', sans-serif;
     font-size: 0.9em;
-    color: var(--text-3);
+    color: var(--text-tertiary);
 }
 
 .asset-card .asset-link {
     bottom: 0;
     display: block;
-    background-color: var(--bg-2);
-    border-top: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-primary);
     margin-top: 15px;
     padding: 10px 20px;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 0.9em;
-    color: var(--text);
+    color: var(--text-primary);
 }
 
 .asset-card .asset-link:hover {
-    background-color: var(--bg-3);
+    background-color: var(--bg-tertiary);
 }
 
 /* ANIMATIONS AND KEYFRAMING */

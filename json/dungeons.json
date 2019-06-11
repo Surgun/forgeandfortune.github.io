@@ -1,0 +1,183 @@
+[
+  {
+    "id": "D001",
+    "name": "Groovy Grove",
+    "bannedHero": [
+      "H101",
+      "H002",
+      "H202",
+      "H104"
+    ],
+    "seed": 784,
+    "type": "regular",
+    "eventLetter": "E014"
+  },
+  {
+    "id": "D002",
+    "name": "Spooky Spot",
+    "bannedHero": [
+      "H001",
+      "H201",
+      "H103",
+      "H004"
+    ],
+    "seed": 7576,
+    "type": "regular",
+    "eventLetter": "E015"
+  },
+  {
+    "id": "D003",
+    "name": "Creepy Crag",
+    "bannedHero": [
+      "H203",
+      "H102",
+      "H003",
+      "H204"
+    ],
+    "seed": 7236,
+    "type": "regular",
+    "eventLetter": "E016"
+  },
+  {
+    "id": "D010",
+    "name": "Boss I",
+    "bannedHero": [
+      "H002",
+      "H003",
+      "H004",
+      "H102",
+      "H103",
+      "H104",
+      "H201",
+      "H202",
+      "H204"
+    ],
+    "seed": 0,
+    "type": "boss",
+    "eventLetter": "E013"
+  },
+  {
+    "id": "D011",
+    "name": "Boss II",
+    "bannedHero": [
+      "H003",
+      "H004",
+      "H103",
+      "H104",
+      "H202",
+      "H204"
+    ],
+    "seed": 0,
+    "type": "boss",
+    "eventLetter": "E013"
+  },
+  {
+    "id": "D012",
+    "name": "Boss III",
+    "bannedHero": [
+      "H001",
+      "H101",
+      "H203",
+      "H004",
+      "H104",
+      "H204"
+    ],
+    "seed": 0,
+    "type": "boss",
+    "eventLetter": "E013"
+  },
+  {
+    "id": "D013",
+    "name": "Boss IV",
+    "bannedHero": [
+      "H001",
+      "H101",
+      "H203",
+      "H002",
+      "H102",
+      "H201"
+    ],
+    "seed": 0,
+    "type": "boss",
+    "eventLetter": "E013"
+  },
+  {
+    "id": "D014",
+    "name": "Boss V",
+    "bannedHero": [
+      "H101",
+      "H002",
+      "H202",
+      "H104",
+      "H003"
+    ],
+    "seed": 0,
+    "type": "boss",
+    "eventLetter": "E013"
+  },
+  {
+    "id": "D015",
+    "name": "Boss VI",
+    "bannedHero": [
+      "H001",
+      "H201",
+      "H103",
+      "H004"
+    ],
+    "seed": 0,
+    "type": "boss",
+    "eventLetter": "E013"
+  },
+  {
+    "id": "D016",
+    "name": "Boss VII",
+    "bannedHero": [
+      "H203",
+      "H102",
+      "H003",
+      "H204"
+    ],
+    "seed": 0,
+    "type": "boss",
+    "eventLetter": "E013"
+  },
+  {
+    "id": "D017",
+    "name": "Boss VIII",
+    "bannedHero": [
+      "H101",
+      "H002",
+      "H202",
+      "H104"
+    ],
+    "seed": 0,
+    "type": "boss",
+    "eventLetter": "E013"
+  },
+  {
+    "id": "D018",
+    "name": "Boss IX",
+    "bannedHero": [
+      "H001",
+      "H201",
+      "H103",
+      "H004"
+    ],
+    "seed": 0,
+    "type": "boss",
+    "eventLetter": "E013"
+  },
+  {
+    "id": "D019",
+    "name": "Boss X",
+    "bannedHero": [
+      "H203",
+      "H102",
+      "H003",
+      "H204"
+    ],
+    "seed": 0,
+    "type": "boss",
+    "eventLetter": "E013"
+  }
+]

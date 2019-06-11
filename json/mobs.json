@@ -3,11 +3,10 @@
     "id": "B101",
     "name": "Green Ooze",
     "hpBase": 40,
-    "hpLvl": 1,
-    "powBase": 4,
-    "powLvl": 0.75,
-    "apmax": 3,
-    "actTime": 6000,
+    "hpLvl": 0.4,
+    "powBase": 2,
+    "powLvl": 0.3,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -16,19 +15,17 @@
     "drops": {
       "M101": 100
     },
-    "minFloor": 1,
-    "maxFloor": 100,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B102",
     "name": "Pink Ooze",
     "hpBase": 40,
-    "hpLvl": 0.8,
-    "powBase": 4,
-    "powLvl": 0.6,
-    "apmax": 3,
-    "actTime": 6000,
+    "hpLvl": 0.4,
+    "powBase": 2,
+    "powLvl": 0.3,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -37,19 +34,17 @@
     "drops": {
       "M102": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B103",
     "name": "Navy Ooze",
     "hpBase": 40,
-    "hpLvl": 0.6,
-    "powBase": 4,
-    "powLvl": 0.45,
-    "apmax": 3,
-    "actTime": 6000,
+    "hpLvl": 0.3,
+    "powBase": 3,
+    "powLvl": 0.23,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -58,19 +53,17 @@
     "drops": {
       "M103": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B104",
     "name": "Orange Ooze",
     "hpBase": 40,
-    "hpLvl": 0.4,
+    "hpLvl": 0.3,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 3,
-    "actTime": 6000,
+    "powLvl": 0.23,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -79,9 +72,8 @@
     "drops": {
       "M104": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B105",
@@ -90,8 +82,7 @@
     "hpLvl": 0.4,
     "powBase": 4,
     "powLvl": 0.3,
-    "apmax": 3,
-    "actTime": 6000,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -100,19 +91,17 @@
     "drops": {
       "M105": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B106",
     "name": "Transparent Ooze",
     "hpBase": 40,
-    "hpLvl": 0.4,
+    "hpLvl": 0.5,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 3,
-    "actTime": 6000,
+    "powLvl": 0.38,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -121,19 +110,17 @@
     "drops": {
       "M106": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B107",
     "name": "Red Ooze",
     "hpBase": 40,
-    "hpLvl": 0.4,
+    "hpLvl": 0.6,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 3,
-    "actTime": 6000,
+    "powLvl": 0.45,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -142,19 +129,17 @@
     "drops": {
       "M107": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B108",
     "name": "Gray Ooze",
     "hpBase": 40,
-    "hpLvl": 0.4,
+    "hpLvl": 0.72,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 3,
-    "actTime": 6000,
+    "powLvl": 0.54,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -163,19 +148,17 @@
     "drops": {
       "M108": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B109",
     "name": "Blue Ooze",
     "hpBase": 40,
-    "hpLvl": 0.4,
+    "hpLvl": 0.9,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 3,
-    "actTime": 6000,
+    "powLvl": 0.68,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -184,19 +167,17 @@
     "drops": {
       "M109": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B110",
     "name": "Rainbow Ooze",
     "hpBase": 40,
-    "hpLvl": 0.4,
+    "hpLvl": 1.18,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 3,
-    "actTime": 6000,
+    "powLvl": 0.88,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -205,19 +186,17 @@
     "drops": {
       "M110": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B201",
     "name": "Bumbling Bee",
     "hpBase": 25,
-    "hpLvl": 0.5,
-    "powBase": 1,
-    "powLvl": 0.5,
-    "apmax": 7,
-    "actTime": 2500,
+    "hpLvl": 0.2,
+    "powBase": 2,
+    "powLvl": 0.2,
+    "apAdd": 0,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -226,19 +205,17 @@
     "drops": {
       "M201": 100
     },
-    "minFloor": 1,
-    "maxFloor": 100,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B202",
     "name": "Crazy Cobra",
     "hpBase": 25,
-    "hpLvl": 0.4,
-    "powBase": 1,
-    "powLvl": 0.4,
-    "apmax": 7,
-    "actTime": 2500,
+    "hpLvl": 0.2,
+    "powBase": 2,
+    "powLvl": 0.2,
+    "apAdd": 0,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -247,19 +224,17 @@
     "drops": {
       "M202": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B203",
     "name": "Wiggle Worm",
     "hpBase": 25,
-    "hpLvl": 0.3,
-    "powBase": 1,
-    "powLvl": 0.3,
-    "apmax": 7,
-    "actTime": 2500,
+    "hpLvl": 0.15,
+    "powBase": 2,
+    "powLvl": 0.15,
+    "apAdd": 0,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -268,19 +243,17 @@
     "drops": {
       "M203": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B204",
     "name": "Reckless Rat",
     "hpBase": 25,
-    "hpLvl": 0.2,
-    "powBase": 1,
-    "powLvl": 0.2,
-    "apmax": 7,
-    "actTime": 2500,
+    "hpLvl": 0.15,
+    "powBase": 2,
+    "powLvl": 0.15,
+    "apAdd": 0,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -289,19 +262,17 @@
     "drops": {
       "M204": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B205",
     "name": "Scary Scorpion",
     "hpBase": 25,
     "hpLvl": 0.2,
-    "powBase": 1,
+    "powBase": 2,
     "powLvl": 0.2,
-    "apmax": 7,
-    "actTime": 2500,
+    "apAdd": 0,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -310,19 +281,17 @@
     "drops": {
       "M205": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B206",
     "name": "Stinky Spider",
     "hpBase": 25,
-    "hpLvl": 0.2,
-    "powBase": 1,
-    "powLvl": 0.2,
-    "apmax": 7,
-    "actTime": 2500,
+    "hpLvl": 0.25,
+    "powBase": 2,
+    "powLvl": 0.25,
+    "apAdd": 0,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -331,19 +300,17 @@
     "drops": {
       "M206": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B207",
     "name": "Slinky Snake",
     "hpBase": 25,
-    "hpLvl": 0.2,
-    "powBase": 1,
-    "powLvl": 0.2,
-    "apmax": 7,
-    "actTime": 2500,
+    "hpLvl": 0.3,
+    "powBase": 2,
+    "powLvl": 0.3,
+    "apAdd": 0,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -352,19 +319,17 @@
     "drops": {
       "M207": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B208",
     "name": "Pure Parasite",
     "hpBase": 25,
-    "hpLvl": 0.2,
-    "powBase": 1,
-    "powLvl": 0.2,
-    "apmax": 7,
-    "actTime": 2500,
+    "hpLvl": 0.36,
+    "powBase": 2,
+    "powLvl": 0.36,
+    "apAdd": 0,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -373,19 +338,17 @@
     "drops": {
       "M208": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B209",
     "name": "Wistful Wasp",
     "hpBase": 25,
-    "hpLvl": 0.2,
-    "powBase": 1,
-    "powLvl": 0.2,
-    "apmax": 7,
-    "actTime": 2500,
+    "hpLvl": 0.45,
+    "powBase": 2,
+    "powLvl": 0.45,
+    "apAdd": 0,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -394,19 +357,17 @@
     "drops": {
       "M209": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B210",
     "name": "Badgering Bat",
     "hpBase": 25,
-    "hpLvl": 0.2,
-    "powBase": 1,
-    "powLvl": 0.2,
-    "apmax": 7,
-    "actTime": 2500,
+    "hpLvl": 0.59,
+    "powBase": 2,
+    "powLvl": 0.59,
+    "apAdd": 0,
     "armor": 0,
     "crit": 20,
     "critdmg": 1.2,
@@ -415,19 +376,17 @@
     "drops": {
       "M210": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B301",
     "name": "Earth Shaman",
     "hpBase": 60,
-    "hpLvl": 2,
-    "powBase": 3,
-    "powLvl": 1,
-    "apmax": 4,
-    "actTime": 4500,
+    "hpLvl": 0.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "apAdd": 0,
     "armor": 0,
     "crit": 10,
     "critdmg": 2,
@@ -436,19 +395,17 @@
     "drops": {
       "M301": 100
     },
-    "minFloor": 1,
-    "maxFloor": 100,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B302",
     "name": "Psychic Shaman",
     "hpBase": 60,
-    "hpLvl": 1.6,
-    "powBase": 3,
-    "powLvl": 0.8,
-    "apmax": 4,
-    "actTime": 4500,
+    "hpLvl": 0.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "apAdd": 0,
     "armor": 0,
     "crit": 10,
     "critdmg": 2,
@@ -457,19 +414,17 @@
     "drops": {
       "M302": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B303",
     "name": "Life Shaman",
     "hpBase": 60,
-    "hpLvl": 1.2,
+    "hpLvl": 0.6,
     "powBase": 3,
-    "powLvl": 0.6,
-    "apmax": 4,
-    "actTime": 4500,
+    "powLvl": 0.3,
+    "apAdd": 0,
     "armor": 0,
     "crit": 10,
     "critdmg": 2,
@@ -478,19 +433,17 @@
     "drops": {
       "M303": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B304",
     "name": "Wind Shaman",
     "hpBase": 60,
-    "hpLvl": 0.8,
+    "hpLvl": 0.6,
     "powBase": 3,
-    "powLvl": 0.4,
-    "apmax": 4,
-    "actTime": 4500,
+    "powLvl": 0.3,
+    "apAdd": 0,
     "armor": 0,
     "crit": 10,
     "critdmg": 2,
@@ -499,9 +452,8 @@
     "drops": {
       "M304": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B305",
@@ -510,8 +462,7 @@
     "hpLvl": 0.8,
     "powBase": 3,
     "powLvl": 0.4,
-    "apmax": 4,
-    "actTime": 4500,
+    "apAdd": 0,
     "armor": 0,
     "crit": 10,
     "critdmg": 2,
@@ -520,19 +471,17 @@
     "drops": {
       "M305": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B306",
     "name": "Fire Shaman",
     "hpBase": 60,
-    "hpLvl": 0.8,
+    "hpLvl": 1.01,
     "powBase": 3,
-    "powLvl": 0.4,
-    "apmax": 4,
-    "actTime": 4500,
+    "powLvl": 0.5,
+    "apAdd": 0,
     "armor": 0,
     "crit": 10,
     "critdmg": 2,
@@ -541,19 +490,17 @@
     "drops": {
       "M306": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B307",
     "name": "Ice Shaman",
     "hpBase": 60,
-    "hpLvl": 0.8,
+    "hpLvl": 1.21,
     "powBase": 3,
-    "powLvl": 0.4,
-    "apmax": 4,
-    "actTime": 4500,
+    "powLvl": 0.6,
+    "apAdd": 0,
     "armor": 0,
     "crit": 10,
     "critdmg": 2,
@@ -562,19 +509,17 @@
     "drops": {
       "M307": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B308",
     "name": "Poison Shaman",
     "hpBase": 60,
-    "hpLvl": 0.8,
+    "hpLvl": 1.45,
     "powBase": 3,
-    "powLvl": 0.4,
-    "apmax": 4,
-    "actTime": 4500,
+    "powLvl": 0.72,
+    "apAdd": 0,
     "armor": 0,
     "crit": 10,
     "critdmg": 2,
@@ -583,19 +528,17 @@
     "drops": {
       "M308": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B309",
     "name": "Storm Shaman",
     "hpBase": 60,
-    "hpLvl": 0.8,
+    "hpLvl": 1.81,
     "powBase": 3,
-    "powLvl": 0.4,
-    "apmax": 4,
-    "actTime": 4500,
+    "powLvl": 0.9,
+    "apAdd": 0,
     "armor": 0,
     "crit": 10,
     "critdmg": 2,
@@ -604,19 +547,17 @@
     "drops": {
       "M309": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B310",
     "name": "Death Shaman",
     "hpBase": 60,
-    "hpLvl": 0.8,
+    "hpLvl": 2.35,
     "powBase": 3,
-    "powLvl": 0.4,
-    "apmax": 4,
-    "actTime": 4500,
+    "powLvl": 1.18,
+    "apAdd": 0,
     "armor": 0,
     "crit": 10,
     "critdmg": 2,
@@ -625,19 +566,17 @@
     "drops": {
       "M310": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B401",
     "name": "Crusty Crab",
     "hpBase": 60,
-    "hpLvl": 4,
-    "powBase": 4,
-    "powLvl": 1.25,
-    "apmax": 2,
-    "actTime": 8000,
+    "hpLvl": 1.8,
+    "powBase": 3,
+    "powLvl": 0.65,
+    "apAdd": 0,
     "armor": 0,
     "crit": 2,
     "critdmg": 1.6,
@@ -646,19 +585,17 @@
     "drops": {
       "M401": 100
     },
-    "minFloor": 1,
-    "maxFloor": 100,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B402",
     "name": "Tepid Turtle",
     "hpBase": 60,
-    "hpLvl": 3.2,
-    "powBase": 4,
-    "powLvl": 1.05,
-    "apmax": 2,
-    "actTime": 8000,
+    "hpLvl": 1.8,
+    "powBase": 3,
+    "powLvl": 0.65,
+    "apAdd": 0,
     "armor": 0,
     "crit": 2,
     "critdmg": 1.6,
@@ -667,19 +604,17 @@
     "drops": {
       "M402": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B403",
     "name": "Obese Octopus",
     "hpBase": 60,
-    "hpLvl": 2.4,
+    "hpLvl": 1.35,
     "powBase": 4,
-    "powLvl": 0.85,
-    "apmax": 2,
-    "actTime": 8000,
+    "powLvl": 0.49,
+    "apAdd": 0,
     "armor": 0,
     "crit": 2,
     "critdmg": 1.6,
@@ -688,19 +623,17 @@
     "drops": {
       "M403": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B404",
     "name": "Fiesty Frog",
     "hpBase": 60,
-    "hpLvl": 1.8,
+    "hpLvl": 1.35,
     "powBase": 4,
-    "powLvl": 0.65,
-    "apmax": 2,
-    "actTime": 8000,
+    "powLvl": 0.49,
+    "apAdd": 0,
     "armor": 0,
     "crit": 2,
     "critdmg": 1.6,
@@ -709,19 +642,17 @@
     "drops": {
       "M404": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B405",
     "name": "Amphabulous",
     "hpBase": 60,
-    "hpLvl": 1.8,
+    "hpLvl": 1.81,
     "powBase": 4,
     "powLvl": 0.65,
-    "apmax": 2,
-    "actTime": 8000,
+    "apAdd": 0,
     "armor": 0,
     "crit": 2,
     "critdmg": 1.6,
@@ -730,19 +661,17 @@
     "drops": {
       "M405": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B406",
     "name": "Beefy Bear",
     "hpBase": 60,
-    "hpLvl": 1.8,
+    "hpLvl": 2.26,
     "powBase": 4,
-    "powLvl": 0.65,
-    "apmax": 2,
-    "actTime": 8000,
+    "powLvl": 0.82,
+    "apAdd": 0,
     "armor": 0,
     "crit": 2,
     "critdmg": 1.6,
@@ -751,19 +680,17 @@
     "drops": {
       "M406": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B407",
     "name": "Shroom Toad",
     "hpBase": 60,
-    "hpLvl": 1.8,
+    "hpLvl": 2.71,
     "powBase": 4,
-    "powLvl": 0.65,
-    "apmax": 2,
-    "actTime": 8000,
+    "powLvl": 0.98,
+    "apAdd": 0,
     "armor": 0,
     "crit": 2,
     "critdmg": 1.6,
@@ -772,19 +699,17 @@
     "drops": {
       "M407": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B408",
     "name": "Mean Moose",
     "hpBase": 60,
-    "hpLvl": 1.8,
+    "hpLvl": 3.26,
     "powBase": 4,
-    "powLvl": 0.65,
-    "apmax": 2,
-    "actTime": 8000,
+    "powLvl": 1.18,
+    "apAdd": 0,
     "armor": 0,
     "crit": 2,
     "critdmg": 1.6,
@@ -793,19 +718,17 @@
     "drops": {
       "M408": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B409",
     "name": "Achy Alligator",
     "hpBase": 60,
-    "hpLvl": 1.8,
+    "hpLvl": 4.07,
     "powBase": 4,
-    "powLvl": 0.65,
-    "apmax": 2,
-    "actTime": 8000,
+    "powLvl": 1.47,
+    "apAdd": 0,
     "armor": 0,
     "crit": 2,
     "critdmg": 1.6,
@@ -814,19 +737,17 @@
     "drops": {
       "M409": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B410",
     "name": "Dinky Dinosaur",
     "hpBase": 60,
-    "hpLvl": 1.8,
+    "hpLvl": 5.29,
     "powBase": 4,
-    "powLvl": 0.65,
-    "apmax": 2,
-    "actTime": 8000,
+    "powLvl": 1.91,
+    "apAdd": 0,
     "armor": 0,
     "crit": 2,
     "critdmg": 1.6,
@@ -835,19 +756,17 @@
     "drops": {
       "M410": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B501",
     "name": "Dwarf Minor",
     "hpBase": 60,
-    "hpLvl": 3,
-    "powBase": 4,
-    "powLvl": 1.5,
-    "apmax": 5,
-    "actTime": 5500,
+    "hpLvl": 1.2,
+    "powBase": 3,
+    "powLvl": 0.75,
+    "apAdd": 0,
     "armor": 0,
     "crit": 15,
     "critdmg": 1.4,
@@ -856,19 +775,17 @@
     "drops": {
       "M501": 100
     },
-    "minFloor": 1,
-    "maxFloor": 100,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B502",
     "name": "Dwarf Cadet",
     "hpBase": 60,
-    "hpLvl": 2.4,
-    "powBase": 4,
-    "powLvl": 1.25,
-    "apmax": 5,
-    "actTime": 5500,
+    "hpLvl": 1.2,
+    "powBase": 3,
+    "powLvl": 0.75,
+    "apAdd": 0,
     "armor": 0,
     "crit": 15,
     "critdmg": 1.4,
@@ -877,19 +794,17 @@
     "drops": {
       "M502": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B503",
     "name": "Dwarf Sentry",
     "hpBase": 60,
-    "hpLvl": 1.8,
+    "hpLvl": 0.9,
     "powBase": 4,
-    "powLvl": 1,
-    "apmax": 5,
-    "actTime": 5500,
+    "powLvl": 0.56,
+    "apAdd": 0,
     "armor": 0,
     "crit": 15,
     "critdmg": 1.4,
@@ -898,19 +813,17 @@
     "drops": {
       "M503": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B504",
     "name": "Dwarf Captain",
     "hpBase": 60,
-    "hpLvl": 1.2,
+    "hpLvl": 0.9,
     "powBase": 4,
-    "powLvl": 0.75,
-    "apmax": 5,
-    "actTime": 5500,
+    "powLvl": 0.56,
+    "apAdd": 0,
     "armor": 0,
     "crit": 15,
     "critdmg": 1.4,
@@ -919,19 +832,17 @@
     "drops": {
       "M504": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B505",
     "name": "Dwarf Warrior",
     "hpBase": 60,
-    "hpLvl": 1.2,
+    "hpLvl": 1.21,
     "powBase": 4,
     "powLvl": 0.75,
-    "apmax": 5,
-    "actTime": 5500,
+    "apAdd": 0,
     "armor": 0,
     "crit": 15,
     "critdmg": 1.4,
@@ -940,19 +851,17 @@
     "drops": {
       "M505": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B506",
     "name": "Dwarf Berserker",
     "hpBase": 60,
-    "hpLvl": 1.2,
+    "hpLvl": 1.51,
     "powBase": 4,
-    "powLvl": 0.75,
-    "apmax": 5,
-    "actTime": 5500,
+    "powLvl": 0.94,
+    "apAdd": 0,
     "armor": 0,
     "crit": 15,
     "critdmg": 1.4,
@@ -961,19 +870,17 @@
     "drops": {
       "M506": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B507",
     "name": "Dwarf Magus",
     "hpBase": 60,
-    "hpLvl": 1.2,
+    "hpLvl": 1.81,
     "powBase": 4,
-    "powLvl": 0.75,
-    "apmax": 5,
-    "actTime": 5500,
+    "powLvl": 1.13,
+    "apAdd": 0,
     "armor": 0,
     "crit": 15,
     "critdmg": 1.4,
@@ -982,19 +889,17 @@
     "drops": {
       "M507": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B508",
     "name": "Dwarf Knight",
     "hpBase": 60,
-    "hpLvl": 1.2,
+    "hpLvl": 2.17,
     "powBase": 4,
-    "powLvl": 0.75,
-    "apmax": 5,
-    "actTime": 5500,
+    "powLvl": 1.36,
+    "apAdd": 0,
     "armor": 0,
     "crit": 15,
     "critdmg": 1.4,
@@ -1003,19 +908,17 @@
     "drops": {
       "M508": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B509",
     "name": "Dwarf Templar",
     "hpBase": 60,
-    "hpLvl": 1.2,
+    "hpLvl": 2.71,
     "powBase": 4,
-    "powLvl": 0.75,
-    "apmax": 5,
-    "actTime": 5500,
+    "powLvl": 1.7,
+    "apAdd": 0,
     "armor": 0,
     "crit": 15,
     "critdmg": 1.4,
@@ -1024,19 +927,17 @@
     "drops": {
       "M509": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B510",
     "name": "Dwarf Champion",
     "hpBase": 60,
-    "hpLvl": 1.2,
+    "hpLvl": 3.53,
     "powBase": 4,
-    "powLvl": 0.75,
-    "apmax": 5,
-    "actTime": 5500,
+    "powLvl": 2.2,
+    "apAdd": 0,
     "armor": 0,
     "crit": 15,
     "critdmg": 1.4,
@@ -1045,19 +946,17 @@
     "drops": {
       "M510": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B601",
     "name": "Elf Adventurer",
     "hpBase": 50,
-    "hpLvl": 1,
-    "powBase": 4,
-    "powLvl": 0.6,
-    "apmax": 4,
-    "actTime": 4000,
+    "hpLvl": 0.4,
+    "powBase": 2,
+    "powLvl": 0.3,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -1066,19 +965,17 @@
     "drops": {
       "M601": 100
     },
-    "minFloor": 1,
-    "maxFloor": 100,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B602",
     "name": "Elf Scout",
     "hpBase": 50,
-    "hpLvl": 0.8,
-    "powBase": 4,
-    "powLvl": 0.5,
-    "apmax": 4,
-    "actTime": 4000,
+    "hpLvl": 0.4,
+    "powBase": 2,
+    "powLvl": 0.3,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -1087,19 +984,17 @@
     "drops": {
       "M602": 60
     },
-    "minFloor": 80,
-    "maxFloor": 200,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B603",
     "name": "Elf Sniper",
     "hpBase": 50,
-    "hpLvl": 0.6,
-    "powBase": 4,
-    "powLvl": 0.4,
-    "apmax": 4,
-    "actTime": 4000,
+    "hpLvl": 0.3,
+    "powBase": 3,
+    "powLvl": 0.23,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -1108,19 +1003,17 @@
     "drops": {
       "M603": 40
     },
-    "minFloor": 180,
-    "maxFloor": 300,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B604",
     "name": "Elf Mender",
     "hpBase": 50,
-    "hpLvl": 0.4,
+    "hpLvl": 0.3,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 4,
-    "actTime": 4000,
+    "powLvl": 0.23,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -1129,9 +1022,8 @@
     "drops": {
       "M604": 25
     },
-    "minFloor": 280,
-    "maxFloor": 400,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B605",
@@ -1140,8 +1032,7 @@
     "hpLvl": 0.4,
     "powBase": 4,
     "powLvl": 0.3,
-    "apmax": 4,
-    "actTime": 4000,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -1150,19 +1041,17 @@
     "drops": {
       "M605": 25
     },
-    "minFloor": 380,
-    "maxFloor": 500,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B606",
     "name": "Elf Assassin",
     "hpBase": 50,
-    "hpLvl": 0.4,
+    "hpLvl": 0.5,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 4,
-    "actTime": 4000,
+    "powLvl": 0.38,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -1171,19 +1060,17 @@
     "drops": {
       "M606": 25
     },
-    "minFloor": 480,
-    "maxFloor": 600,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B607",
     "name": "Elf Monk",
     "hpBase": 50,
-    "hpLvl": 0.4,
+    "hpLvl": 0.6,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 4,
-    "actTime": 4000,
+    "powLvl": 0.45,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -1192,19 +1079,17 @@
     "drops": {
       "M607": 25
     },
-    "minFloor": 580,
-    "maxFloor": 700,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B608",
     "name": "Elf Sorcerer",
     "hpBase": 50,
-    "hpLvl": 0.4,
+    "hpLvl": 0.72,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 4,
-    "actTime": 4000,
+    "powLvl": 0.54,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -1213,19 +1098,17 @@
     "drops": {
       "M608": 25
     },
-    "minFloor": 680,
-    "maxFloor": 800,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B609",
     "name": "Elf Ranger",
     "hpBase": 50,
-    "hpLvl": 0.4,
+    "hpLvl": 0.9,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 4,
-    "actTime": 4000,
+    "powLvl": 0.68,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -1234,19 +1117,17 @@
     "drops": {
       "M609": 25
     },
-    "minFloor": 780,
-    "maxFloor": 900,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B610",
     "name": "Elf Noble",
     "hpBase": 50,
-    "hpLvl": 0.4,
+    "hpLvl": 1.18,
     "powBase": 4,
-    "powLvl": 0.3,
-    "apmax": 4,
-    "actTime": 4000,
+    "powLvl": 0.88,
+    "apAdd": 0,
     "armor": 0,
     "crit": 5,
     "critdmg": 1.5,
@@ -1255,9 +1136,8 @@
     "drops": {
       "M610": 25
     },
-    "minFloor": 880,
-    "maxFloor": 10000,
-    "event": "normal"
+    "event": "normal",
+    "special": null
   },
   {
     "id": "B901",
@@ -1266,8 +1146,7 @@
     "hpLvl": 4,
     "powBase": 1,
     "powLvl": 0,
-    "apmax": 10,
-    "actTime": 3333,
+    "apAdd": 0,
     "armor": 0,
     "crit": 0,
     "critdmg": 0,
@@ -1281,9 +1160,8 @@
       "M501": 100,
       "M601": 100
     },
-    "minFloor": 1,
-    "maxFloor": 100,
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B902",
@@ -1292,8 +1170,7 @@
     "hpLvl": 8,
     "powBase": 1,
     "powLvl": 0,
-    "apmax": 10,
-    "actTime": 3333,
+    "apAdd": 0,
     "armor": 0,
     "crit": 0,
     "critdmg": 0,
@@ -1307,9 +1184,8 @@
       "M502": 100,
       "M602": 100
     },
-    "minFloor": 101,
-    "maxFloor": 200,
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B903",
@@ -1318,8 +1194,7 @@
     "hpLvl": 12,
     "powBase": 1,
     "powLvl": 0,
-    "apmax": 10,
-    "actTime": 3333,
+    "apAdd": 0,
     "armor": 0,
     "crit": 0,
     "critdmg": 0,
@@ -1333,9 +1208,8 @@
       "M503": 100,
       "M603": 100
     },
-    "minFloor": 201,
-    "maxFloor": 300,
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B904",
@@ -1344,8 +1218,7 @@
     "hpLvl": 16,
     "powBase": 1,
     "powLvl": 0,
-    "apmax": 10,
-    "actTime": 3333,
+    "apAdd": 0,
     "armor": 0,
     "crit": 0,
     "critdmg": 0,
@@ -1359,9 +1232,8 @@
       "M504": 100,
       "M604": 100
     },
-    "minFloor": 301,
-    "maxFloor": 400,
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B905",
@@ -1370,8 +1242,7 @@
     "hpLvl": 20,
     "powBase": 1,
     "powLvl": 0,
-    "apmax": 10,
-    "actTime": 3333,
+    "apAdd": 0,
     "armor": 0,
     "crit": 0,
     "critdmg": 0,
@@ -1385,9 +1256,8 @@
       "M505": 100,
       "M605": 100
     },
-    "minFloor": 401,
-    "maxFloor": 500,
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B906",
@@ -1396,8 +1266,7 @@
     "hpLvl": 24,
     "powBase": 1,
     "powLvl": 0,
-    "apmax": 10,
-    "actTime": 3333,
+    "apAdd": 0,
     "armor": 0,
     "crit": 0,
     "critdmg": 0,
@@ -1411,9 +1280,8 @@
       "M506": 100,
       "M606": 100
     },
-    "minFloor": 501,
-    "maxFloor": 600,
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B907",
@@ -1422,8 +1290,7 @@
     "hpLvl": 28,
     "powBase": 1,
     "powLvl": 0,
-    "apmax": 10,
-    "actTime": 3333,
+    "apAdd": 0,
     "armor": 0,
     "crit": 0,
     "critdmg": 0,
@@ -1437,9 +1304,8 @@
       "M507": 100,
       "M607": 100
     },
-    "minFloor": 601,
-    "maxFloor": 700,
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B908",
@@ -1448,8 +1314,7 @@
     "hpLvl": 32,
     "powBase": 1,
     "powLvl": 0,
-    "apmax": 10,
-    "actTime": 3333,
+    "apAdd": 0,
     "armor": 0,
     "crit": 0,
     "critdmg": 0,
@@ -1463,9 +1328,8 @@
       "M508": 100,
       "M608": 100
     },
-    "minFloor": 701,
-    "maxFloor": 800,
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B909",
@@ -1474,8 +1338,7 @@
     "hpLvl": 36,
     "powBase": 1,
     "powLvl": 0,
-    "apmax": 10,
-    "actTime": 3333,
+    "apAdd": 0,
     "armor": 0,
     "crit": 0,
     "critdmg": 0,
@@ -1489,9 +1352,8 @@
       "M509": 100,
       "M609": 100
     },
-    "minFloor": 801,
-    "maxFloor": 900,
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
   },
   {
     "id": "B910",
@@ -1500,8 +1362,7 @@
     "hpLvl": 40,
     "powBase": 1,
     "powLvl": 0,
-    "apmax": 10,
-    "actTime": 3333,
+    "apAdd": 0,
     "armor": 0,
     "crit": 0,
     "critdmg": 0,
@@ -1515,8 +1376,1419 @@
       "M510": 100,
       "M610": 100
     },
-    "minFloor": 901,
-    "maxFloor": 10000,
-    "event": "christmas"
+    "event": "christmas",
+    "special": null
+  },
+  {
+    "id": "B0101",
+    "name": "Dusty Alien",
+    "hpBase": 30,
+    "hpLvl": 0.6,
+    "powBase": 3,
+    "powLvl": 0.3,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M101": 100
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0102",
+    "name": "Boney Alien",
+    "hpBase": 30,
+    "hpLvl": 0.6,
+    "powBase": 3,
+    "powLvl": 0.3,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M102": 60
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0103",
+    "name": "Grimy Alien",
+    "hpBase": 30,
+    "hpLvl": 0.45,
+    "powBase": 4,
+    "powLvl": 0.23,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M103": 40
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0104",
+    "name": "Loamy Alien",
+    "hpBase": 30,
+    "hpLvl": 0.45,
+    "powBase": 4,
+    "powLvl": 0.23,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M104": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0105",
+    "name": "Foamy Alien",
+    "hpBase": 30,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.3,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M105": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0106",
+    "name": "Deadly Alien",
+    "hpBase": 30,
+    "hpLvl": 0.75,
+    "powBase": 4,
+    "powLvl": 0.38,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M106": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0107",
+    "name": "Creepy Alien",
+    "hpBase": 30,
+    "hpLvl": 0.9,
+    "powBase": 4,
+    "powLvl": 0.45,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M107": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0108",
+    "name": "Chilly Alien",
+    "hpBase": 30,
+    "hpLvl": 1.09,
+    "powBase": 4,
+    "powLvl": 0.54,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M108": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0109",
+    "name": "Fruity Alien",
+    "hpBase": 30,
+    "hpLvl": 1.36,
+    "powBase": 4,
+    "powLvl": 0.68,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M109": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0110",
+    "name": "Funky Alien",
+    "hpBase": 30,
+    "hpLvl": 1.76,
+    "powBase": 4,
+    "powLvl": 0.88,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 5,
+    "critdmg": 1.5,
+    "dodge": 5,
+    "target": "first",
+    "drops": {
+      "M110": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0201",
+    "name": "Violet Death",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M201": 100
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0202",
+    "name": "Rusted Evil",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M202": 60
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0203",
+    "name": "Emerald Horror",
+    "hpBase": 80,
+    "hpLvl": 2.1,
+    "powBase": 2,
+    "powLvl": 0.3,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M203": 40
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0204",
+    "name": "Cerulean Curse",
+    "hpBase": 80,
+    "hpLvl": 2.1,
+    "powBase": 2,
+    "powLvl": 0.3,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M204": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0205",
+    "name": "Magenta Meanie",
+    "hpBase": 80,
+    "hpLvl": 2.81,
+    "powBase": 2,
+    "powLvl": 0.4,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M205": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0206",
+    "name": "Cyan Abomination",
+    "hpBase": 80,
+    "hpLvl": 3.52,
+    "powBase": 2,
+    "powLvl": 0.5,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M206": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0207",
+    "name": "Orange Crush",
+    "hpBase": 80,
+    "hpLvl": 4.22,
+    "powBase": 2,
+    "powLvl": 0.6,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M207": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0208",
+    "name": "Wicked Greens",
+    "hpBase": 80,
+    "hpLvl": 5.07,
+    "powBase": 2,
+    "powLvl": 0.72,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M208": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0209",
+    "name": "Plum Torment",
+    "hpBase": 80,
+    "hpLvl": 6.33,
+    "powBase": 2,
+    "powLvl": 0.9,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M209": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0210",
+    "name": "Teal Terror",
+    "hpBase": 80,
+    "hpLvl": 8.23,
+    "powBase": 2,
+    "powLvl": 1.18,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 2,
+    "critdmg": 1.6,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M210": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0301",
+    "name": "Flood",
+    "hpBase": 35,
+    "hpLvl": 0.6,
+    "powBase": 3,
+    "powLvl": 0.5,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M501": 100
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0302",
+    "name": "Blaze",
+    "hpBase": 35,
+    "hpLvl": 0.6,
+    "powBase": 3,
+    "powLvl": 0.5,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M502": 60
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0303",
+    "name": "Blight",
+    "hpBase": 35,
+    "hpLvl": 0.45,
+    "powBase": 4,
+    "powLvl": 0.38,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M503": 40
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0304",
+    "name": "Rockfall",
+    "hpBase": 35,
+    "hpLvl": 0.45,
+    "powBase": 4,
+    "powLvl": 0.38,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M504": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0305",
+    "name": "Toxin",
+    "hpBase": 35,
+    "hpLvl": 0.6,
+    "powBase": 4,
+    "powLvl": 0.5,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M505": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0306",
+    "name": "Contagion",
+    "hpBase": 35,
+    "hpLvl": 0.75,
+    "powBase": 4,
+    "powLvl": 0.63,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M506": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0307",
+    "name": "Venom",
+    "hpBase": 35,
+    "hpLvl": 0.9,
+    "powBase": 4,
+    "powLvl": 0.75,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M507": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0308",
+    "name": "Mudslide",
+    "hpBase": 35,
+    "hpLvl": 1.09,
+    "powBase": 4,
+    "powLvl": 0.9,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M508": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0309",
+    "name": "Monsoon",
+    "hpBase": 35,
+    "hpLvl": 1.36,
+    "powBase": 4,
+    "powLvl": 1.13,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M509": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0310",
+    "name": "Fabulous Elemental",
+    "hpBase": 35,
+    "hpLvl": 1.76,
+    "powBase": 4,
+    "powLvl": 1.47,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 15,
+    "critdmg": 1.4,
+    "dodge": 15,
+    "target": "lowhp",
+    "drops": {
+      "M510": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0401",
+    "name": "Minimush",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M401": 100
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0402",
+    "name": "Maximush",
+    "hpBase": 80,
+    "hpLvl": 2.8,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M402": 60
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0403",
+    "name": "Flowering Doom",
+    "hpBase": 80,
+    "hpLvl": 2.1,
+    "powBase": 1,
+    "powLvl": 0.15,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M403": 40
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0404",
+    "name": "Coco Nutty",
+    "hpBase": 80,
+    "hpLvl": 2.1,
+    "powBase": 1,
+    "powLvl": 0.15,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M404": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0405",
+    "name": "Shyshroom",
+    "hpBase": 80,
+    "hpLvl": 2.81,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M405": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0406",
+    "name": "Shredshroom",
+    "hpBase": 80,
+    "hpLvl": 3.52,
+    "powBase": 1,
+    "powLvl": 0.25,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M406": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0407",
+    "name": "Shrunkshroom",
+    "hpBase": 80,
+    "hpLvl": 4.22,
+    "powBase": 1,
+    "powLvl": 0.3,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M407": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0408",
+    "name": "Shrubshroom",
+    "hpBase": 80,
+    "hpLvl": 5.07,
+    "powBase": 1,
+    "powLvl": 0.36,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M408": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0409",
+    "name": "Shrimpshroom",
+    "hpBase": 80,
+    "hpLvl": 6.33,
+    "powBase": 1,
+    "powLvl": 0.45,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M409": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0410",
+    "name": "Shrewdshroom",
+    "hpBase": 80,
+    "hpLvl": 8.23,
+    "powBase": 1,
+    "powLvl": 0.59,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M410": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0501",
+    "name": "Stinkie",
+    "hpBase": 10,
+    "hpLvl": 0.2,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M501": 100
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0502",
+    "name": "Smokie",
+    "hpBase": 10,
+    "hpLvl": 0.2,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M502": 60
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0503",
+    "name": "Pinkie",
+    "hpBase": 10,
+    "hpLvl": 0.15,
+    "powBase": 1,
+    "powLvl": 0.15,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M503": 40
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0504",
+    "name": "Pokie",
+    "hpBase": 10,
+    "hpLvl": 0.15,
+    "powBase": 1,
+    "powLvl": 0.15,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M504": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0505",
+    "name": "Blinkie",
+    "hpBase": 10,
+    "hpLvl": 0.2,
+    "powBase": 1,
+    "powLvl": 0.2,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M505": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0506",
+    "name": "Honkie",
+    "hpBase": 10,
+    "hpLvl": 0.25,
+    "powBase": 1,
+    "powLvl": 0.25,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M506": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0507",
+    "name": "Inkie",
+    "hpBase": 10,
+    "hpLvl": 0.3,
+    "powBase": 1,
+    "powLvl": 0.3,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M507": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0508",
+    "name": "Tonkie",
+    "hpBase": 10,
+    "hpLvl": 0.36,
+    "powBase": 1,
+    "powLvl": 0.36,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M508": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0509",
+    "name": "Clyde",
+    "hpBase": 10,
+    "hpLvl": 0.45,
+    "powBase": 1,
+    "powLvl": 0.45,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M509": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0510",
+    "name": "Dale",
+    "hpBase": 10,
+    "hpLvl": 0.59,
+    "powBase": 1,
+    "powLvl": 0.59,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 20,
+    "critdmg": 1.2,
+    "dodge": 5,
+    "target": "random",
+    "drops": {
+      "M510": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0601",
+    "name": "Femur Fred",
+    "hpBase": 50,
+    "hpLvl": 0.4,
+    "powBase": 2,
+    "powLvl": 0.2,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M601": 100
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0602",
+    "name": "Rib Richard",
+    "hpBase": 50,
+    "hpLvl": 0.4,
+    "powBase": 2,
+    "powLvl": 0.2,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M602": 60
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0603",
+    "name": "Jaw Johnny",
+    "hpBase": 50,
+    "hpLvl": 0.3,
+    "powBase": 3,
+    "powLvl": 0.15,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M603": 40
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0604",
+    "name": "Kneecap Katie",
+    "hpBase": 50,
+    "hpLvl": 0.3,
+    "powBase": 3,
+    "powLvl": 0.15,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M604": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0605",
+    "name": "Temporay Tiff",
+    "hpBase": 50,
+    "hpLvl": 0.4,
+    "powBase": 3,
+    "powLvl": 0.2,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M605": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0606",
+    "name": "Mandible Manny",
+    "hpBase": 50,
+    "hpLvl": 0.5,
+    "powBase": 3,
+    "powLvl": 0.25,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M606": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0607",
+    "name": "Philange Phil",
+    "hpBase": 50,
+    "hpLvl": 0.6,
+    "powBase": 3,
+    "powLvl": 0.3,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M607": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0608",
+    "name": "Humerus Henry",
+    "hpBase": 50,
+    "hpLvl": 0.72,
+    "powBase": 3,
+    "powLvl": 0.36,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M608": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0609",
+    "name": "Clavicle Clive",
+    "hpBase": 50,
+    "hpLvl": 0.9,
+    "powBase": 3,
+    "powLvl": 0.45,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M609": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "B0610",
+    "name": "Ziggy Zygo",
+    "hpBase": 50,
+    "hpLvl": 1.18,
+    "powBase": 3,
+    "powLvl": 0.59,
+    "apAdd": 0,
+    "armor": 0,
+    "crit": 25,
+    "critdmg": 3,
+    "dodge": 0,
+    "target": "first",
+    "drops": {
+      "M610": 25
+    },
+    "event": "normal",
+    "special": null
+  },
+  {
+    "id": "BB010",
+    "name": "Loathing Oak",
+    "hpBase": 1000,
+    "hpLvl": 0,
+    "powBase": 200,
+    "powLvl": 0,
+    "apAdd": 20,
+    "armor": 75,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "first",
+    "drops": null,
+    "event": "boss",
+    "special": "second"
+  },
+  {
+    "id": "BB011",
+    "name": "Lost Phoenix",
+    "hpBase": 1500,
+    "hpLvl": 0,
+    "powBase": 250,
+    "powLvl": 0,
+    "apAdd": 20,
+    "armor": 150,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "first",
+    "drops": null,
+    "event": "boss",
+    "special": "birdflame"
+  },
+  {
+    "id": "BB012",
+    "name": "Blue Knight",
+    "hpBase": 2000,
+    "hpLvl": 0,
+    "powBase": 350,
+    "powLvl": 0,
+    "apAdd": 50,
+    "armor": 400,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "first",
+    "drops": null,
+    "event": "boss",
+    "special": "defenseStance"
+  },
+  {
+    "id": "BB013",
+    "name": "Lich Suit Lawrence",
+    "hpBase": 3000,
+    "hpLvl": 0,
+    "powBase": 200,
+    "powLvl": 0,
+    "apAdd": 40,
+    "armor": 500,
+    "crit": 40,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "first",
+    "drops": null,
+    "event": "boss",
+    "special": "summon"
+  },
+  {
+    "id": "BB014",
+    "name": "Beclutcher",
+    "hpBase": 6666,
+    "hpLvl": 0,
+    "powBase": 400,
+    "powLvl": 0,
+    "apAdd": 30,
+    "armor": 400,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "first",
+    "drops": null,
+    "event": "boss",
+    "special": "fear"
+  },
+  {
+    "id": "BB015",
+    "name": "Agressive Oak",
+    "hpBase": 10000,
+    "hpLvl": 0,
+    "powBase": 1000,
+    "powLvl": 0,
+    "apAdd": 30,
+    "armor": 400,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "first",
+    "drops": null,
+    "event": "boss",
+    "special": "lowHPstun"
+  },
+  {
+    "id": "BB016",
+    "name": "Enraged Phoenix",
+    "hpBase": 15000,
+    "hpLvl": 0,
+    "powBase": 1000,
+    "powLvl": 0,
+    "apAdd": 60,
+    "armor": 500,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "first",
+    "drops": null,
+    "event": "boss",
+    "special": "birdflame"
+  },
+  {
+    "id": "BB017",
+    "name": "Melancholy Knight",
+    "hpBase": 25000,
+    "hpLvl": 0,
+    "powBase": 2500,
+    "powLvl": 0,
+    "apAdd": 80,
+    "armor": 900,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "first",
+    "drops": null,
+    "event": "boss",
+    "special": "defenseStancePlus"
+  },
+  {
+    "id": "BB018",
+    "name": "Lich Suit Lawrence II",
+    "hpBase": 30000,
+    "hpLvl": 0,
+    "powBase": 2000,
+    "powLvl": 0,
+    "apAdd": 40,
+    "armor": 800,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "first",
+    "drops": null,
+    "event": "boss",
+    "special": "summon2"
+  },
+  {
+    "id": "BB019",
+    "name": "Begrasper",
+    "hpBase": 66666,
+    "hpLvl": 0,
+    "powBase": 3333,
+    "powLvl": 0,
+    "apAdd": 50,
+    "armor": 1111,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "first",
+    "drops": null,
+    "event": "boss",
+    "special": "fearap"
+  },
+  {
+    "id": "LKH001",
+    "name": "Albert",
+    "hpBase": 50,
+    "hpLvl": 0,
+    "powBase": 25,
+    "powLvl": 0,
+    "apAdd": 0,
+    "armor": 50,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "random",
+    "drops": null,
+    "event": "temp",
+    "special": null
+  },
+  {
+    "id": "LKH002",
+    "name": "Lowe",
+    "hpBase": 60,
+    "hpLvl": 0,
+    "powBase": 25,
+    "powLvl": 0,
+    "apAdd": 0,
+    "armor": 50,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "random",
+    "drops": null,
+    "event": "temp",
+    "special": null
+  },
+  {
+    "id": "LKH003",
+    "name": "Sierra",
+    "hpBase": 70,
+    "hpLvl": 0,
+    "powBase": 25,
+    "powLvl": 0,
+    "apAdd": 0,
+    "armor": 50,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "random",
+    "drops": null,
+    "event": "temp",
+    "special": null
+  },
+  {
+    "id": "LKH004",
+    "name": "Super Albert",
+    "hpBase": 490,
+    "hpLvl": 0,
+    "powBase": 500,
+    "powLvl": 0,
+    "apAdd": 0,
+    "armor": 50,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "random",
+    "drops": null,
+    "event": "temp",
+    "special": null
+  },
+  {
+    "id": "LKH005",
+    "name": "Super Lowe",
+    "hpBase": 495,
+    "hpLvl": 0,
+    "powBase": 500,
+    "powLvl": 0,
+    "apAdd": 0,
+    "armor": 50,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "random",
+    "drops": null,
+    "event": "temp",
+    "special": null
+  },
+  {
+    "id": "LKH006",
+    "name": "Super Sierra",
+    "hpBase": 500,
+    "hpLvl": 0,
+    "powBase": 500,
+    "powLvl": 0,
+    "apAdd": 0,
+    "armor": 50,
+    "crit": 25,
+    "critdmg": 2,
+    "dodge": 0,
+    "target": "random",
+    "drops": null,
+    "event": "temp",
+    "special": null
   }
 ]

@@ -17,7 +17,6 @@ function ImportSaveButton() {
     stopSave = true;
     const unpako = atob($('#importSaveText').val());
     const saveFile = JSON.parse(pako.ungzip(unpako,{ to: 'string' }));
-    console.log(saveFile);
     localStorage.setItem('ffgs1', saveFile);
     location.replace('/');
 }
@@ -70,11 +69,9 @@ function createSaveExport() {
 function loadGame() {
     //populate itemCount with blueprints as a base
     let loadGame = JSON.parse(localStorage.getItem("ffgs1"));
-    console.log(loadGame);
     if (loadGame === null) return false;
     //aka there IS a file
     loadGame = saveUpdate(loadGame);
-    console.log(loadGame);
     if (typeof loadGame["as"] !== "undefined") actionSlotManager.loadSave(loadGame["as"]);
     if (typeof loadGame["d"] !== "undefined") DungeonManager.loadSave(loadGame["d"]);
     if (typeof loadGame["e"] !== "undefined") EventManager.loadSave(loadGame["e"]);
@@ -119,10 +116,8 @@ function saveUpdate(loadGame) {
         loadGame["g"] = {};
         loadGame["g"].guilds = [];
         const locked = loadGame["r"].filter(r => r.owned).map(r => r.id);
-        console.log(locked);
         GuildManager.guilds.map(g => g.id).forEach(gid => {
             const repReq = recipeList.recipes.filter(r => r.guildUnlock === gid && locked.includes(r.id)).map(r=>r.repReq);
-            console.log(repReq);
             const lowest = Math.max(...repReq);
             const guildSave  = {}
             guildSave.id = gid;

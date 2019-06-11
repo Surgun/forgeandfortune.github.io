@@ -26,7 +26,6 @@ const PatchManager = {
             $.ajax({
                 url: "json/patchNotes.json",
             }).done((data) => {
-                console.log("patch notes refresh complete");
                 $.each(data, function(i,props){
                     const patch = new PatchNote(props);
                     PatchManager.addPatch(patch);

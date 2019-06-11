@@ -5735,6 +5735,11 @@ span.beta-tag {
     transform: translateY(-50%);
 }
 
+#dialogPatch .dialog_content {
+    max-width: 800px;
+    max-height: 600px;
+}
+
 .dialog:target ~ .game-content {
     opacity: 0.1;
 }

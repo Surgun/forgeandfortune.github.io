@@ -111,6 +111,7 @@ const actionSlotManager = {
         const item = recipeList.idToItem(itemid);
         if (!item.owned) return Notifications.recipeNotOwned();
         if (!WorkerManager.canCurrentlyCraft(item)) {
+            EventManager.badCraft();
             Notifications.craftWarning();
             return;
         }

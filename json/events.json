@@ -159,5 +159,18 @@
       "</p><p>It seems so long since I sent you a letter.  Where has all the time gone?</p><p>I took a trip to the next kingdom over to visit my sister.  My brother-in-law tried to make me eat some weird burrito thing.  Other than that, pretty great trip.  Anyway, what's new with you?</p><p>Oh, wait, it looks like you've hit some sort of WALL IN ADVENTURING.  Let me see here...</p><p>According to my master data sheets, you've encountered a special BOSS FLOOR.  What I suggest you do is somehow get rid of whatever baddie is in your way, if you want to keep progressing.</p><p>Maybe once you've gotten rid of the obstacle, something else can be put in it's place?</p><p>Forever yours,</p><p>ABQU</p>"
     ],
     "type": "letter"
+  },
+  {
+    "id": "E018",
+    "title": "A Mysterious Letter",
+    "author": "Abqu",
+    "message": [
+      "<p>Oh hey there, I see you're having trouble with that craft",
+      "</p><p>Don't worry, it's a little complicated but your proud boy Abqu is here to help",
+      "</p><p>Sometimes it's a matter of you not having a worker for that resource yet. Recipes require workers, which are unlocked in the guilds. More importantly, a worker can only work on one craft at a time -- good luck getting ol' Oren to make two knives at once. The good news is you can view your available materials and workers RIGHT on the recipe screen, just click the materials and workers buttons",
+      "</p><p>But sometimes, you need to level those workers up. See, recipes have levels, and your workers need to be a high enough level to match it. Level 1 Oren ain't making no Butter Knives no matter how nicely you ask. Forge & Fortunately, you can also upgrade them right where you hired them -- in their guilds -- for just a small gold payment.</p><p>Hope that doesn't discourage you",
+      "</p><p>Keep crafting and overdrafting,<p><p>ABQU</p>"
+    ],
+    "type": "letter"
   }
 ]

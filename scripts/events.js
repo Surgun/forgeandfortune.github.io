@@ -129,6 +129,9 @@ const EventManager = {
         if (event.type === "letter" && !this.oldEvents.map(e=>e.id).includes(event.id)) this.oldEvents.push(event);
         this.events = this.events.filter(e=>e.eventNum !== eventNum);
         refreshEvents();
+    },
+    badCraft() {
+        if (!EventManager.hasSeen("E018")) EventManager.addEvent("E018");
     }
 };
 

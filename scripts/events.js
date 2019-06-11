@@ -315,7 +315,7 @@ function eventChecker() {
     if (!EventManager.hasSeen("E010") && ActionLeague.purchased.includes("AL4102")) EventManager.addEvent("E010");
     if (!EventManager.hasSeen("E011") && ActionLeague.purchased.includes("AL4103")) EventManager.addEvent("E011");
     if (!EventManager.hasSeen("E012") && ActionLeague.purchased.includes("AL4104")) EventManager.addEvent("E012");
-    if (!EventManager.hasSeen("E017") && achievementStats.maxFloor >= 50) EventManager.addEvent("E017");
+    if (!EventManager.hasSeen("E017") && achievementStats.highestFloor() >= 50) EventManager.addEvent("E017");
 }
 
 let masteredItem = false;

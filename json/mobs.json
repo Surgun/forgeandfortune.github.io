@@ -1773,7 +1773,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M501": 100
+      "M301": 100
     },
     "event": "normal",
     "special": null
@@ -1792,7 +1792,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M502": 60
+      "M302": 60
     },
     "event": "normal",
     "special": null
@@ -1811,7 +1811,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M503": 40
+      "M303": 40
     },
     "event": "normal",
     "special": null
@@ -1830,7 +1830,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M504": 25
+      "M304": 25
     },
     "event": "normal",
     "special": null
@@ -1849,7 +1849,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M505": 25
+      "M305": 25
     },
     "event": "normal",
     "special": null
@@ -1868,7 +1868,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M506": 25
+      "M306": 25
     },
     "event": "normal",
     "special": null
@@ -1887,7 +1887,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M507": 25
+      "M307": 25
     },
     "event": "normal",
     "special": null
@@ -1906,7 +1906,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M508": 25
+      "M308": 25
     },
     "event": "normal",
     "special": null
@@ -1925,7 +1925,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M509": 25
+      "M309": 25
     },
     "event": "normal",
     "special": null
@@ -1944,7 +1944,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M510": 25
+      "M310": 25
     },
     "event": "normal",
     "special": null

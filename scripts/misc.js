@@ -153,3 +153,7 @@ function interlace(a1,a2) {
     }
     return result;
 }
+
+function flattenArray(a) {
+    return [].concat.apply([], a);
+}

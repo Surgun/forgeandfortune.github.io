@@ -46,7 +46,7 @@ const MobManager = {
         const mobids = FloorManager.mobsByDungeon(dungeonID);
         const mobs = mobids.map(m => this.idToMob(m));
         const materials = mobs.map(m=>m.drops);
-        const matNames = materials.map(m => Object.keys(m)).flat()
+        const matNames = flattenArray(materials.map(m => Object.keys(m)))
         return [...new Set(matNames)];
     }
 }
@@ -83,7 +83,7 @@ const FloorManager = {
     },
     mobsByDungeon(dungeonid) {
         const floors = this.floors.filter(f=>f.dungeon === dungeonid);
-        const mobs = floors.map(f => f.mobs).flat();
+        const mobs = flattenArray(floors.map(f => f.mobs));
         return [...new Set(mobs)]; 
     }
 }

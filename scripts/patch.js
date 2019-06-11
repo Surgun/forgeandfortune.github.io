@@ -16,8 +16,11 @@ const PatchManager = {
     lastVersion() {
         return this.lastPatch().version;
     },
+    lastPatchCount() {
+        return this.lastPatch().patchCount;
+    },
     updateNeeded() {
-        return this.current < this.lastVersion();
+        return this.current < this.lastPatchCount();
     },
     patchTimer(elapsed) {
         this.time += elapsed;

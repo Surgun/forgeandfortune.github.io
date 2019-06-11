@@ -173,6 +173,9 @@ const achievementStats = {
         $statGoods.html(this.goodsCrafted);
         $statGreats.html(this.greatsCrafted);
         $statEpics.html(this.epicsCrafted);
+    },
+    highestFloor() {
+        return Math.max(this.D001floor, this.D002floor, this.D003floor);
     }
 }
 

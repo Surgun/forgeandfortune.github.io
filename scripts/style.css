@@ -130,6 +130,12 @@ body {
 
 /* General Content */
 
+p.hamster {
+    color: var(--text-tertiary);
+    font-size: .65rem;
+    opacity: 0.25;
+}
+
 #content, footer {
     padding: 0;
     -webkit-user-select: none;

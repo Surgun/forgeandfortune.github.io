@@ -1099,19 +1099,24 @@ Rarities
 }
 
 .recipeDropdownButton {
-    padding-right: 25px;
+    padding-left: 30px;
+    background-color: rgba(255,255,255,.1);
+}
+
+.recipeDropdownButton:hover {
+    background-color: rgba(255,255,255,.15);
 }
 
 .recipeDropdownButton.filterActive {
     color: var(--highlight);
+    background-color: var(--border-tertiary);
 }
 
 .recipeDropdownButton .activeStatus > i {
     position: absolute;
-    top: 15px;
-    right: 10px;
-    font-size: 12px;
-    transition: transform 0.2s ease-in-out;
+    top: 12px;
+    left: 10px;
+    font-size: .95rem;
 }
 
 .recipeActionButton .filterStatus > i {
@@ -1127,7 +1132,7 @@ Rarities
     opacity: 1;
 }
 
-.recipeActionButton.filterActive.toggleFilter .filterStatus > i, .recipeDropdownButton.filterActive .activeStatus > i {
+.recipeActionButton.filterActive.toggleFilter .filterStatus > i {
     top: 13px;
     transform: rotateZ(-180deg);
 }

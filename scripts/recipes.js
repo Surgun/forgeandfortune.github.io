@@ -79,15 +79,6 @@ class Item{
         }
         return d;
     }
-    remainingReqs() {
-        let s = ""
-        this.rcost.forEach(r => {
-            if (WorkerManager.lvlByType(r) >= this.lvl) return;
-            const mat = r.charAt(0).toUpperCase() + r.slice(1);
-            s += `<span class="bpReqWorker">LVL ${this.lvl} ${mat} Worker</span>`
-        });
-        return s.slice(0, -2);
-    }
     count() {
         return Math.min(this.craftCount,100);
     }
@@ -171,11 +162,6 @@ const recipeList = {
     },
     moreRecipes(type) {
         return this.recipes.some(r => !r.owned && type === r.type);
-    },
-    remainingReqs(type) {
-        const item = this.getNextBuyable(type);
-        if (item === undefined) return null;
-        return item.remainingReqs();
     },
     recipeIDByTypeLvl(type,lvl) {
         return this.recipes.find(r => r.type === type && r.lvl === lvl).id;
@@ -413,25 +399,6 @@ function recipeCanCraft() {
 
 const $blueprintUnlock = $("#BlueprintUnlock");
 let cacheBlueprintType = null;
-
-/*function refreshBlueprint(type) {
-    type = type || cacheBlueprintType;
-    cacheBlueprintType = type;
-    $blueprintUnlock.empty();
-    recipeList.listByType(type).filter(r => r.owned && r.remainingReqs().length > 0).forEach(recipe => {
-        const d = $("<div/>").addClass('bpShop');
-        const d1 = $("<div/>").addClass('recipeItemLevel').html(recipe.itemLevel());
-        const d2 = $("<div/>").addClass('recipeName').html(recipe.itemPicName());
-        const d3 = $("<div/>").addClass('bpReq');
-        const d3a = $("<div/>").addClass('bpReqHeading').html("Prerequisite Workers Needed");
-        const d3b = $("<div/>").addClass('bpReqNeeded').html(recipe.remainingReqs());
-        d3.append(d3a,d3b);
-        d.append(d1,d2,d3);
-        $blueprintUnlock.append(d);
-    });
-    const $RecipeContents = $(".recipeContents");
-    $RecipeContents.append($blueprintUnlock);
-}*/
 
 $(document).on('click', '.recipeCraft', (e) => {
     //click on a recipe to slot it

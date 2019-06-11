@@ -6,9 +6,6 @@ const $pbBoss = $("#pbBoss");
 const $plRecipeMastery = $("#plRecipeMastery");
 const $pbRecipe = $("#pbRecipe");
 
-const $plWorkerLevel = $("#plWorkerLevel");
-const $pbWorker = $("#pbWorker");
-
 const $plPerk = $("#plPerk");
 const $pbPerk = $("#pbPerk");
 
@@ -33,13 +30,6 @@ function refreshProgress() {
     if (recipePercent === "100.00") $pbRecipe.addClass("Completed");
     tally += recipeList.masteryCount();
     max += recipeList.recipeCount();
-
-    $plWorkerLevel.html(`${WorkerManager.workerLevelCount()}/${WorkerManager.workerMaxLevelCount()}`);
-    const workerPercent = (WorkerManager.workerLevelCount()/WorkerManager.workerMaxLevelCount()*100).toFixed(2);
-    $pbWorker.css('width', workerPercent+"%");
-    if (workerPercent === "100.00") $pbWorker.addClass("Completed");
-    tally += WorkerManager.workerLevelCount();
-    max += WorkerManager.workerMaxLevelCount();
     
     $plPerk.html(`${ActionLeague.perkCount()}/${ActionLeague.perkMaxCount()}`);
     const perkPercent = (ActionLeague.perkCount()/ActionLeague.perkMaxCount()*100).toFixed(2);

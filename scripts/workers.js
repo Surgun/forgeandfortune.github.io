@@ -3,54 +3,22 @@
 class Worker {
     constructor(props) {
         Object.assign(this, props);
-        this.lvl = 1;
         this.pic = '<img src="images/workers/'+this.name+'.gif">';
         this.prodpic = '<img src="images/resources/'+this.production+'.png">';
-        this.donated = {};
         this.owned = false;
-        this.assigned = false;
         this.status = "idle";
     }
     createSave() {
         const save = {};
         save.id = this.workerID;
-        save.lvl = this.lvl;
-        save.donated = this.donated;
         save.owned = this.owned;
         return save;
     }
     loadSave(save) {
-        this.lvl = save.lvl;
-        this.donated = save.donated;
         this.owned = save.owned;
-    }
-    produces(resource) {
-        if (!this.owned) return 0;
-        if (resource in this.production) return this.production[resource] * this.lvl;
-        return 0;
-    }
-    upgradeWorker() {
-        if (ResourceManager.materialAvailable("M001") < this.goldCostLvl()) {
-            Notifications.workerGoldReq();
-            return;
-        }
-        ResourceManager.deductMoney(this.goldCostLvl());
-        this.lvl += 1;
-        refreshAllGuildWorkers();
-        //refreshRecipeFilters();
-        refreshSideWorkers();
-        recipeCanCraft();
-        //refreshBlueprint();
-        refreshProgress();
     }
     productionText() {
         return `<span class="production_type">${ResourceManager.materialIcon(this.production)}</span><span class="production_text">Worker</span>`;
-    }
-    goldCostLvl() {
-        return this.goldCost[this.lvl];
-    }
-    maxlvl() {
-        return this.lvl === this.goldCost.length;
     }
 }
 
@@ -75,10 +43,6 @@ const WorkerManager = {
     workerByID(id) {
         return this.workers.find(worker => worker.workerID === id);
     },
-    upgradeWorker(workerID) {
-        const worker = this.workerByID(workerID);
-        worker.upgradeWorker();
-    },
     gainWorker(workerID) {
         const worker = this.workerByID(workerID);
         worker.owned = true;
@@ -89,45 +53,29 @@ const WorkerManager = {
         refreshAllGuildWorkers();
     },
     assignWorker(item) {
-        const lvl = item.lvl;
         item.rcost.forEach(res => {
             const freeworkers = this.workers.filter(worker=>worker.status === "idle");
-            const chosenworker = freeworkers.filter(worker => worker.production === res && worker.owned && worker.lvl >= lvl).sort((a,b) => a.lvl - b.lvl)[0];
+            const chosenworker = freeworkers.filter(worker => worker.production === res && worker.owned)[0];
             chosenworker.status = item.id;
         });
-    },
-    nextAvailable(res,lvl) {
-        const freeworkers = this.workers.filter(worker => worker.status === "idle" && worker.owned && worker.production === res && worker.lvl >= lvl)
-        if (freeworkers.length == 0) return false;
-        return freeworkers.sort((a,b) => a.lvl-b.lvl)[0]
     },
     reallocate() {
         //reassign workers as appropriate
         this.workers.forEach(worker => worker.status = "idle");
-        const items = actionSlotManager.itemList().sort((a,b) => b.lvl-a.lvl);
+        const items = actionSlotManager.itemList();
         items.forEach(item => {
             this.assignWorker(item);
         })
     },
     couldCraft(item) {
-        const canProduce = this.workers.filter(w=> w.lvl >= item.lvl && w.owned).map(w=>w.production);
+        const canProduce = this.workers.filter(w=>  w.owned).map(w=>w.production);
         const difference = item.rcost.filter(x => !canProduce.includes(x));
         return difference.length === 0;
     },
     canCurrentlyCraft(item) {
-        const canProduce = this.workers.filter(w=> w.lvl >= item.lvl && w.owned && w.status === "idle").map(w=>w.production);
+        const canProduce = this.workers.filter(w=> w.owned && w.status === "idle").map(w=>w.production);
         const difference = item.rcost.filter(x => !canProduce.includes(x));
         return difference.length === 0;
-    },
-    lvlByType(production) {
-        const workerLvls = this.workers.filter(w=> w.owned && w.production === production).map(w=>w.lvl);
-        return Math.max(...workerLvls);
-    },
-    workerLevelCount() {
-        return this.workers.filter(w=>w.owned).map(w=>w.lvl).reduce((a,b) => a+b,0);
-    },
-    workerMaxLevelCount() {
-        return this.workers.length*10;
     },
     filterByGuild(guildID) {
         return this.workers.filter(r=>r.guildUnlock === guildID);

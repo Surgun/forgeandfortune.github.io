@@ -341,18 +341,10 @@ function refreshGuildWorkers(guild) {
 
 function createWorkerBuyCard(worker) {
     const d1 = $("<div/>").addClass("workerBuyCard");
-    const d2 = $("<div/>").addClass("workerBuyCardLevel").html(`<div class="level_text">LVL</div><div class="level_integer">${worker.lvl}</div>`);
-    const d3 = $("<div/>").addClass("workerBuyCardBodyImage").html(worker.pic);
-    const d4 = $("<div/>").addClass("workerBuyCardBodyName").html(worker.name);
-    const d5 = $("<div/>").addClass("workerBuyCardBodyProduction").html(worker.productionText());
-    const d6 = $("<div/>").addClass("workerBuyCardBuy").data("wid",worker.workerID);
-        $("<div/>").addClass("recipeBuyCardBuyText").html("Upgrade").appendTo(d6);
-        $("<div/>").addClass("recipeBuyCardBuyCost").html(`${miscIcons.gold} ${formatToUnits(worker.goldCostLvl(),2)}`).appendTo(d6);
-    if (worker.maxlvl()) {
-        const d7 = $("<div/>").addClass("workerBuyCardMax").html("Max Level!");
-        return d1.append(d2,d3,d4,d5,d7);
-    }
-    return d1.append(d2,d3,d4,d5,d6);
+    const d2 = $("<div/>").addClass("workerBuyCardBodyImage").html(worker.pic);
+    const d3 = $("<div/>").addClass("workerBuyCardBodyName").html(worker.name);
+    const d4 = $("<div/>").addClass("workerBuyCardBodyProduction").html(worker.productionText());
+    return d1.append(d2,d3,d4);
 };
 
 //submit a guild order
@@ -387,13 +379,6 @@ $(document).on("click",".recipeBuyCardBuy", (e) => {
     e.preventDefault();
     const recipeId = $(e.currentTarget).data("rid");
     recipeList.buyRecipe(recipeId);
-});
-
-//buy a worker from guild
-$(document).on("click",".workerBuyCardBuy", (e) => {
-    e.preventDefault();
-    const workerId = $(e.currentTarget).data("wid");
-    WorkerManager.upgradeWorker(workerId);
 });
 
 //Craft from Order Card

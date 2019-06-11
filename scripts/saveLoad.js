@@ -1,3 +1,5 @@
+"use strict";
+
 let stopSave = false;
 
 function ClearSave() {
@@ -89,16 +91,26 @@ function loadGame() {
     if (typeof loadGame["tm"] !== "undefined") TownManager.loadSave(loadGame["tm"]);
     if (typeof loadGame["gsm"] !== "undefined") GuildSeedManager.loadSave(loadGame["gsm"]);
     if (typeof loadGame["g"] !== "undefined") GuildManager.loadSave(loadGame["g"]);
-    if (typeof loadGame["al"] !== "undefined") {
-        console.log("LOADEM");
-        ActionLeague.loadSave(loadGame["al"]);
-    }
+    if (typeof loadGame["al"] !== "undefined") ActionLeague.loadSave(loadGame["al"]);
     return true;
 }
 
 function saveUpdate(loadGame) {
     if (loadGame.v === "0202") {
         loadGame.v = "03";
+        //remove E008 because we killed it (it was auto craft sac)
+        loadGame["e"].events = loadGame["e"].events.filter(e => e.id !== "E008");
+        loadGame["e"].oldEvents = loadGame["e"].oldEvents.filter(e => e.id !== "E008");
+
+        //deslot all dungeons too because the format changed
+        //and reset all heroes
+        delete loadGame["d"];
+        loadGame["h"].forEach(hero => {
+            hero.ap = 0;
+            hero.hp = HeroManager.idToHero(hero.id).maxHP();
+            hero.inDungeon = false;
+        });
+
         //deslot crafts just in case they had building  mats crafting
         loadGame["as"].slots = [];
 
@@ -183,7 +195,56 @@ function saveUpdate(loadGame) {
         if (loadGame["tm"].smithStatus !== BuildingState.hidden) loadGame["al"].purchased.push("AL4103");
         if (loadGame["tm"].fortuneStatus !== BuildingState.hidden) loadGame["al"].purchased.push("AL4104");
 
-        console.log(loadGame["al"]);
+        //now we have to take the highest perk you've bought, and make sure your notoriety matches it... or you have materials higher than the cap... ugh
+        const notoReq = loadGame["al"].purchased.map(p => ActionLeague.idToPerk(p).notoReq);
+        const maxNoto = Math.max(...notoReq);
+
+        const materialTier = loadGame["rs"].map(r => ResourceManager.idToMaterial(r.id).notoAdd);
+        const maxTier = Math.max(...materialTier);
+
+            //we can't just set max notoriety, we have to fix the cap too which is killing the bosses...
+            //i just do a bunch of if statements for each because it's easier than a weird for loop
+        if (ActionLeague.maxNoto() < maxNoto || maxTier > 1) {
+            loadGame["al"].purchased.push("AL3001");
+            DungeonManager.bossesBeat.push("D010");
+        }
+        if (ActionLeague.maxNoto() < maxNoto || maxTier > 2) {
+            loadGame["al"].purchased.push("AL3002");
+            DungeonManager.bossesBeat.push("D011");
+        }
+        if (ActionLeague.maxNoto() < maxNoto || maxTier > 3) {
+            loadGame["al"].purchased.push("AL3003");
+            DungeonManager.bossesBeat.push("D012");
+        }
+        if (ActionLeague.maxNoto() < maxNoto || maxTier > 4) {
+            loadGame["al"].purchased.push("AL3004");
+            DungeonManager.bossesBeat.push("D013");
+        }
+        if (ActionLeague.maxNoto() < maxNoto || maxTier > 5) {
+            loadGame["al"].purchased.push("AL3005");
+            DungeonManager.bossesBeat.push("D014");
+        }
+        if (ActionLeague.maxNoto() < maxNoto || maxTier > 6) {
+            loadGame["al"].purchased.push("AL3006");
+            DungeonManager.bossesBeat.push("D015");
+        }
+        if (ActionLeague.maxNoto() < maxNoto || maxTier > 7) {
+            loadGame["al"].purchased.push("AL3007");
+            DungeonManager.bossesBeat.push("D016");
+        }
+        if (ActionLeague.maxNoto() < maxNoto || maxTier > 8) {
+            loadGame["al"].purchased.push("AL3008");
+            DungeonManager.bossesBeat.push("D017");
+        }
+        if (ActionLeague.maxNoto() < maxNoto || maxTier > 9) {
+            loadGame["al"].purchased.push("AL3009");
+            DungeonManager.bossesBeat.push("D018");
+        }
+
+        //add the missing notoriety based of boss kills (that's why we recalculate)
+        const notoReq2 = loadGame["al"].purchased.map(p => ActionLeague.idToPerk(p).notoReq);
+        const maxNoto2 = Math.max(...notoReq2);
+        loadGame["al"].notoriety = maxNoto2;
     }
     return loadGame;
 }

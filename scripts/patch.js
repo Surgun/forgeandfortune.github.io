@@ -4,9 +4,9 @@ const PatchManager = {
     patchList: [],
     current : 0,
     time : 0,
-    addPatch(patchNote) {
+    addPatch(patchNote,firstLoad) {
         this.patchList.push(patchNote);
-        this.current = Math.max(this.current,patchNote.patchCount);
+        if (firstLoad) this.current = Math.max(this.current,patchNote.patchCount);
     },
     lastPatch() {
         const patchCount = this.patchList.map(p=>p.patchCount);
@@ -31,7 +31,7 @@ const PatchManager = {
             }).done((data) => {
                 $.each(data, function(i,props){
                     const patch = new PatchNote(props);
-                    PatchManager.addPatch(patch);
+                    PatchManager.addPatch(patch,false);
                 });
                 refreshPatchNotes();
             });

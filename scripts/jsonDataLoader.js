@@ -21,7 +21,7 @@ function loadPatchnotes() {
         console.log("patch notes load complete");
         $.each(data, function(i,props){
             const patch = new PatchNote(props);
-            PatchManager.addPatch(patch);
+            PatchManager.addPatch(patch,true);
         });
         loadMaterials();
     });

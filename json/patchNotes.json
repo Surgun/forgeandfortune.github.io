@@ -22,5 +22,11 @@
     "version": "v0.3.0.3",
     "date": "June 11th, 2019",
     "body": "<p>Is four patches in one day too much? We think not!</p><ul><li>Lowered armor on Boss 1 and Boss 2 to make it less impossible</li><li>Updated the notoriety cap love letter to be less unclear</li><li>Removed worker levels -- who needs 'em anyway?</li></ul>"
+  },
+  {
+    "patchCount": 5,
+    "version": "v0.3.0.4",
+    "date": "June 12th, 2019",
+    "body": "<p><b>User Interface</b></p><ul><li>Changed Guild Order craft button to be more prominent, explicitly mention it's for crafting and be reactive to craftable status (will be green when you can craft, red when you can't)</li><li>Hero Power now updates immediately after equipping an item</li></ul><p><b>Fixes</b></p><ul><li>Fixed typo in Troy's hero ability description</li><li>Fixed typo in Alok's hero ability description</li><li>Fixed typo in Grogmar's hero ability description</li></ul>"
   }
 ]

@@ -18,7 +18,7 @@
     "body": "<ul><li>Fixed Abqu Love Letter of notoriety cap not displaying</li><li>Fixed Flood (& subsequent mobs in the line) to drop correct resource</li><li>Removed flat function for browser compatibility</li><li>New patch notifications should work now</li></ul>"
   },
   {
-    "patchCount": 4,
+    "patchCount": 3,
     "version": "v0.3.0.3",
     "date": "June 11th, 2019",
     "body": "<p>Is four patches in one day too much? We think not!</p><ul><li>Lowered armor on Boss 1 and Boss 2 to make it less impossible</li><li>Updated the notoriety cap love letter to be less unclear</li><li>Removed worker levels -- who needs 'em anyway?</li></ul>"

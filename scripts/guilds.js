@@ -237,7 +237,7 @@ function checkCraftableStatus() {
     const $orderCraft = $(".orderCraft");
     $orderCraft.removeClass("recipeCraftDisable");
     recipeList.recipes.forEach(recipe => {
-        if (!WorkerManager.canCurrentlyCraft(recipe)) $("#"+recipe.id+".orderCraft").addClass("recipeCraftDisable");
+        if (!WorkerManager.canCurrentlyCraft(recipe) || !recipe.owned) $("#"+recipe.id+".orderCraft").addClass("recipeCraftDisable");
     }) 
 }
 
@@ -374,6 +374,7 @@ $(document).on("click",".guildListButton",(e) => {
     $(".guildContainer").hide();
     if (gid === "ActionLeague") $("#actionLeague").show();
     else $("#"+gid).show();
+    checkCraftableStatus();
 });
 
 
@@ -397,6 +398,7 @@ $(document).on('click', '.orderCraft', (e) => {
     e.stopPropagation();
     const itemID = $(e.currentTarget).attr("id");
     actionSlotManager.addSlot(itemID);
+    checkCraftableStatus();
 });
 
 //********************************

@@ -119,6 +119,7 @@ const actionSlotManager = {
         initializeActionSlots();
         refreshSideWorkers();
         recipeCanCraft();
+        checkCraftableStatus();
     },
     removeSlot(slot) {
         this.slots[slot].refundMaterial();

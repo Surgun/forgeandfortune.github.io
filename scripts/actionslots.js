@@ -127,12 +127,14 @@ const actionSlotManager = {
         initializeActionSlots();
         refreshSideWorkers();
         recipeCanCraft();
+        checkCraftableStatus();
     },
     removeBldgSlots() {
         this.slots = this.slots.filter(s => s.item.recipeType === "normal");
         refreshSideWorkers();
         recipeCanCraft();
         initializeActionSlots();
+        checkCraftableStatus();
     },
     removeID(itemID) {
         const num = this.slots.findIndex(a=>a.itemid === itemID);
@@ -140,6 +142,7 @@ const actionSlotManager = {
         refreshSideWorkers();
         initializeActionSlots();
         recipeCanCraft();
+        checkCraftableStatus();
     },
     hasSlot(slotnum) {
         return this.slots.length > slotnum;

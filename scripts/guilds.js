@@ -226,10 +226,20 @@ function initializeGuilds() {
         refreshguildOrder(g);
         refreshSales(g);
         refreshGuildWorkers(g);
+        checkCraftableStatus();
     });
     refreshALperks();
     refreshALprogress();
 };
+
+function checkCraftableStatus() {
+    // Check if item in guild order can be crafted
+    const $orderCraft = $(".orderCraft");
+    $orderCraft.removeClass("recipeCraftDisable");
+    recipeList.recipes.forEach(recipe => {
+        if (!WorkerManager.canCurrentlyCraft(recipe)) $("#"+recipe.id+".orderCraft").addClass("recipeCraftDisable");
+    }) 
+}
 
 function refreshAllProgress() {
     GuildManager.guilds.forEach(g => refreshguildprogress(g));
@@ -287,7 +297,7 @@ function createOrderCard(item,id,index) {
         return d1.append(d2,d3,d4,d5);
     }
     const d6 = $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`);
-    const d7 = $("<div/>").attr("id",item.id).addClass("orderCraft tooltip").attr("data-tooltip","Craft").html(`<i class="fas fa-hammer"></i>`);
+    const d7 = $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`);
     return d1.append(d2,d3,d4,d5,d6,d7);
 };
 

@@ -94,10 +94,12 @@ class Guild {
     }
     generateNewOrder() {
         this.order = [];
-        const possibleItems = recipeList.guildOrderItems(this.lvl);
+        let possibleItems = recipeList.guildOrderItems(this.lvl);
         const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
         const chosenFirst = possibleGuildItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleGuildItems.length)];
+        possibleItems = possibleItems.filter(r => r.id !== chosenFirst.id);
         const chosenSecond = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
+        possibleItems = possibleItems.filter(r => r.id !== chosenSecond.id);
         const chosenThird = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
         this.order.push(new guildOrderItem(this.id,chosenFirst.id, this.lvl));
         if (this.lvl >= 1) this.order.push(new guildOrderItem(this.id, chosenSecond.id, this.lvl));

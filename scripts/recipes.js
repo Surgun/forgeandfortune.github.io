@@ -269,6 +269,14 @@ function initializeRecipes() { //this is run once at the beginning to load ALL t
 
 function recipeSort() {
     //assign a data-sort value to each div then re-order as appropriate
+    if (recipeList.recipeSortType === "mastery") {
+        const tempList = recipeList.recipes.filter(r=>r.recipeType === "normal");
+        sortOrder.mastery = tempList.sort((a,b) => Math.min(100,a.craftCount)-Math.min(100,b.craftCount)).map(r => r.id);
+    }
+    if (recipeList.recipeSortType === "masteryAsc") {
+        const tempList = recipeList.recipes.filter(r=>r.recipeType === "normal");
+        sortOrder.masteryAsc = tempList.sort((a,b) => Math.min(100,b.craftCount)-Math.min(100,a.craftCount)).map(r => r.id);
+    }
     const sortedList = sortOrder[recipeList.recipeSortType];
     sortOrder.recipeDivs.sort((a,b) => {
     //$(".recipeCardContainer").sort((a,b) => {

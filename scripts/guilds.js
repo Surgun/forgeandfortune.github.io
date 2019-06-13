@@ -170,6 +170,8 @@ class guildOrderItem {
         this.rarity = save.rarity;
         this.sharp = save.sharp;
         this.fufilled = save.fufilled;
+        this.displayName = this.generateName();
+        this.goldvalue = Math.round(this.item.value*(1+this.rarity)*(1+this.sharp*0.1)*this.amt);
     }
     complete() {
         return this.fufilled >= this.amt;

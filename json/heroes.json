@@ -275,7 +275,7 @@
     "gpCost": null,
     "tierUnlock": null,
     "description": "Troy is a magician's apprentice, looking to make a name for himself.",
-    "abilityDesc": "Troy channels his dvinity to heal all party members."
+    "abilityDesc": "Troy channels his divinity to heal all party members."
   },
   {
     "id": "H201",
@@ -309,7 +309,7 @@
     "gpCost": null,
     "tierUnlock": null,
     "description": "Alok comes from a wealthy family, and enjoys stealing worthless items from the poor.",
-    "abilityDesc": "Alok plays his instrument to boost his allie's spirits - bosting the damage they deal to the current threats."
+    "abilityDesc": "Alok plays his instrument to boost his allie's spirits - boosting the damage they deal to the current threats."
   },
   {
     "id": "H202",
@@ -343,7 +343,7 @@
     "gpCost": null,
     "tierUnlock": null,
     "description": "Grogmar has a long list of offenses, and is hoping they don't catch up with him.",
-    "abilityDesc": "Grogmar snekas in the shadows to deal massive damage to the lowest HP enemy."
+    "abilityDesc": "Grogmar sneaks in the shadows to deal massive damage to the lowest HP enemy."
   },
   {
     "id": "H203",

@@ -580,7 +580,15 @@ $(document).on('click', "div.gearItem", (e) => {
     HeroManager.equipItem(containerID,heroID,equippingTo);
     examineHero(heroID);
     clearExaminePossibleEquip();
+    updateHeroPower();
 });
+
+function updateHeroPower() {
+    HeroManager.heroes.forEach(hero => {
+        const heroCard = $(`.heroOwnedCard[data-value=${hero.id}]`);
+        $(heroCard).find(".heroPower").html(HeroManager.heroPower(hero));
+    });
+}
 
 $(document).on('click', ".buyNewHeroButton", (e) => {
     e.preventDefault();

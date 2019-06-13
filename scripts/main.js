@@ -32,6 +32,7 @@ function afterLoad() {
     refreshProgress();
     initializeSideBarDungeon();
     recipeCanCraft();
+    checkCraftableStatus();
     refreshSideTown();
     refreshFilterListLucky();
     refreshCraftedCount();

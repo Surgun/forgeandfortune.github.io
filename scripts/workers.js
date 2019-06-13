@@ -94,7 +94,6 @@ function refreshSideWorkers() {
     WorkerManager.reallocate();
     WorkerManager.workers.filter(w=>w.owned).forEach(worker => {
         const d = $("<div/>").addClass("workerSideBar").attr("id",worker.status);
-        const d1 = $("<div/>").addClass("wsbLvl tooltip").attr("data-tooltip", "Worker Level").html(worker.lvl);
         const d2 = $("<div/>").addClass("wsbType").html(worker.prodpic+"&nbsp;"+worker.name);
         const d3 = $("<div/>").addClass("wsbCraft");
         if (worker.status === "idle") {
@@ -106,7 +105,7 @@ function refreshSideWorkers() {
             d.addClass("wsbActive");
             d3.html(item.itemPic()).addClass("tooltip").attr("data-tooltip","Cancel crafting " + item.name);
         }
-        d.append(d1,d2,d3);
+        d.append(d2,d3);
         $workersUse.append(d);
     });
 };

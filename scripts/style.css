@@ -1057,7 +1057,6 @@ Rarities
 
 .recipeLogisticsContainer {
     position: relative;
-    display: none;
     margin-top: 10px;
     padding: 10px;
     background-color: var(--bg-primary);
@@ -2616,7 +2615,7 @@ Rarities
 
 .dtsMaterialContainer {
     display: none;
-    grid-template: auto / repeat(auto-fill,minmax(175px,1fr));
+    grid-template: auto / repeat(auto-fill,minmax(200px,1fr));
     grid-gap: 5px;
     padding: 0 25px;
     transform-origin: top;
@@ -2629,18 +2628,27 @@ Rarities
 }
 
 .dtsMaterial {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 10px;
     background-color: rgba(255,255,255,0.05);
     border-radius: 5px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
 }
 
 .dtsMaterialIcon {
     margin-bottom: -3px;
     margin-right: 10px;
+}
+
+.dtsMaterialAmt {
+    position: absolute;
+    background-color: rgba(255,255,255,0.1);
+    padding: 5px 10px;
+    border-radius: 10px;
+    right: 5px;
 }
 
 .dungeonTeamCard, .dungeonAvailableCard, .dungeonNotAvailableCard, .drHeroCard {

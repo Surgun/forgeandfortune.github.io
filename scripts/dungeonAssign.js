@@ -98,15 +98,19 @@ function refreshHeroSelect() {
     //Materials in Dungeon
     $dtsMaterials.empty();
     if (dungeon.type !== "boss") {
-        $("<div/>").addClass("dtsMaterialTitle").html(`Materials Found In This Dungeon <i class="fas fa-chevron-down"></i>`).appendTo($dtsMaterials);
+        const dmTitle = $("<div/>").addClass("dtsMaterialTitle").attr("data-value",dungeon.id).html(`Materials Found In This Dungeon <i class="fas fa-chevron-down"></i>`).appendTo($dtsMaterials);
         const dm = $("<div/>").addClass("dtsMaterialContainer");
+        if (settings.expandedMaterials[dungeon.id] === 1) {
+            dmTitle.addClass("toggleActive");
+            dm.addClass("expanded");
+        }
         if (ResourceManager.materialSeenDungeon(dungeon.id).length === 0) {
             const dm1 = $("<div/>").addClass("dtsMaterialNone").html("You have not discovered any materials.");
             dm.append(dm1);
         }
         ResourceManager.materialSeenDungeon(dungeon.id).forEach(m => {
             const dm1 = $("<div/>").addClass("dtsMaterial").appendTo(dm);
-                $("<div/>").addClass("dtsMaterialAmt").html(formatToUnits(m.amt,2)).appendTo(dm1);
+                $("<div/>").addClass("dtsMaterialAmt tooltip").attr("data-tooltip","Amount Owned").html(formatToUnits(m.amt,2)).appendTo(dm1);
                 $("<div/>").addClass("dtsMaterialIcon").html(m.img).appendTo(dm1);
                 $("<div/>").addClass("dtsMaterialName").html(m.name).appendTo(dm1);
         });
@@ -148,12 +152,17 @@ function refreshHeroSelect() {
 $(document).on('click','.dtsMaterialTitle', (e) => {
     e.preventDefault();
     const toggleActive = $(e.currentTarget).hasClass("toggleActive");
+    const title = $(".dtsMaterialTitle");
+    const dungeonID = title.attr("data-value");
     $(".dtsMaterialContainer").addClass("expanded");
-    $(".dtsMaterialTitle").addClass("toggleActive");
+    title.addClass("toggleActive");
+    settings.expandedMaterials[dungeonID] = 1;
     if (toggleActive) {
         $(e.currentTarget).removeClass("toggleActive");
         $(".dtsMaterialContainer").removeClass("expanded");
+        settings.expandedMaterials[dungeonID] = 0;
     }
+    saveSettings();
 });
 
 //Go back to dungeon select screen

@@ -106,6 +106,7 @@ function refreshHeroSelect() {
         }
         ResourceManager.materialSeenDungeon(dungeon.id).forEach(m => {
             const dm1 = $("<div/>").addClass("dtsMaterial").appendTo(dm);
+                $("<div/>").addClass("dtsMaterialAmt").html(formatToUnits(m.amt,2)).appendTo(dm1);
                 $("<div/>").addClass("dtsMaterialIcon").html(m.img).appendTo(dm1);
                 $("<div/>").addClass("dtsMaterialName").html(m.name).appendTo(dm1);
         });

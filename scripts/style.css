@@ -5536,14 +5536,14 @@ footer a[href*="discord.gg"]:hover {
     appearance: none;
 }
 
+#pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover, #importSaveButton:hover, #declineSaveButton:hover, #exportSaveCopy:hover, #updateRefresh:hover, #deleteSaveButton:hover, #clearSettings:hover {
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
 #deleteSaveButton:hover, #clearSettings:hover {
     background-color: rgba(255, 0, 0, 0.5);
     border-color: rgba(162, 21, 0, 1);
-}
-
-#pfButtons>input:hover, #pfImportExport>input:hover, #pfLoadButtons>input:hover, #importSaveButton:hover, #declineSaveButton:hover, #exportSaveCopy:hover, #updateRefresh:hover {
-    background-color: rgba(255,255,255,.1);
-    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
 #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input {

@@ -60,7 +60,7 @@ const $emptyTown = $("#emptyTown");
 
 function refreshSideTown() {
     $buildingList.empty().hide();
-    $buildBuilding.hide();
+    //$buildBuilding.hide();
     if (TownManager.unseenLeft()) $("#townTab").addClass("hasEvent");
     else $("#townTab").removeClass("hasEvent");
     if (TownManager.bankStatus === BuildingState.hidden) return;

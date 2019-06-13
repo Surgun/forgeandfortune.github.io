@@ -139,6 +139,9 @@ class Mob {
     maxHP() {
         return this.hpmax;
     }
+    missingHP() {
+        return this.maxHP()-this.hp;
+    }
     addAP() {
         this.ap += this.apAdd;
     }

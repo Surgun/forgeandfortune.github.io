@@ -153,6 +153,7 @@ function getTarget(party,type) {
     else if (type === "highhp") return party.sort((a,b) => {return b.hp - a.hp})[0];
     else if (type === "lowhp") return party.sort((a,b) => {return a.hp - b.hp})[0];
     else if (type === "lowmaxHP") return party.sort((a,b) => {return b.maxHP() - a.maxHP()})[0];
+    else if (type === "lowMissingHp") return party.sort((a,b) => {return b.missingHP() - a.missingHP()})[0];
 }
 
 const $drLog = $("#drLog");

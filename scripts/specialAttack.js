@@ -61,7 +61,7 @@ function SAmeteor(attacker, enemies, dungeonid) {
 }
 
 function SAheal(attacker, allies, dungeonid) {
-    const target = getTarget(allies, "lowhp");
+    const target = getTarget(allies, "lowMissingHp");
     const healamt = attacker.getAdjPow();
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-heart-circle")} ${logName(attacker.name)} heals ${logName(target.name)} for ${logHeal(healamt)}!`);

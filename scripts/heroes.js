@@ -207,6 +207,9 @@ class Hero {
         if (this.slot6 !== null) hp += this.slot6.hp();
         return hp;
     }
+    missingHP() {
+        return this.maxHP()-this.hp;
+    }
     unequip(slot) {
         if (Inventory.full()) {
             Notifications.inventoryFull();

@@ -7,7 +7,16 @@ const settings = {
     dialogStatus: 0,
     battleLogLength: 30,
     toggleTurnOrderBars: 1,
-    db: 0
+    db: 0,
+    expandedLogistics: {
+        workers: 1, 
+        materials: 0
+    },
+    expandedMaterials: {
+        D001: 1, 
+        D002: 1, 
+        D003: 1
+    }
 }
 
 function saveSettings() {

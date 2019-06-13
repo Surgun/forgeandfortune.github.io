@@ -490,17 +490,38 @@ $(document).on('click','.recipeDropdownButton', (e) => {
         $(e.currentTarget).addClass("filterActive");
         $(".logisticContainer ").removeClass("expanded");
         $("#workersUse").addClass("expanded");
+        settings.expandedLogistics.workers = 1;
     }
     if (filter === "materials") {
         $recipeDropdownButton.removeClass("filterActive")
         $(e.currentTarget).addClass("filterActive");
         $(".logisticContainer ").removeClass("expanded");
         $("#materials").addClass("expanded");
-        
+        settings.expandedLogistics.materials = 1;
     }
     if (toggleFilter) {
         $(e.currentTarget).removeClass("filterActive");
         $(".logisticContainer ").removeClass("expanded");
         $RecipeLogistics.hide();
+        settings.expandedLogistics[filter] = 0;
     }
+    saveSettings();
 });
+
+function checkLogisticsStatus() {
+    $RecipeLogistics.hide();
+    if (settings.expandedLogistics.workers === 1) {
+        $RecipeLogistics.show();
+        $(".recipeDropdownButton[data-filter=workers]").addClass("filterActive");
+        $("#workersUse").addClass("expanded");
+        settings.expandedLogistics.materials = 0;
+    }
+    if (settings.expandedLogistics.materials === 1) {
+        $RecipeLogistics.show();
+        $(".recipeDropdownButton[data-filter=materials]").addClass("filterActive");
+        $("#materials").addClass("expanded");
+        settings.expandedLogistics.workers = 0;
+    }
+}
+
+checkLogisticsStatus();

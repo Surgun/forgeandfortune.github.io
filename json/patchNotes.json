@@ -34,5 +34,11 @@
     "version": "v0.3.0.5",
     "date": "June 12th, 2019",
     "body": "<p><b>Features</b></p><ul><li>Parties are saved between dungeon adventures and automatically set if you re-enter a dungeon. If a member of the party is unavailable (say for example because they're in another dungeon) this feature won't take effect</li><li>Material count is shown next to the material on the dungeon screen</li></ul><p><b>Bug Fixes</b></p><ul><li>Fixed the bug where enhanced items in guild orders didn't show their \"+\" number</li><li>Updated craft button on guild screen to color properly (sometimes)</li><li>Corrected guild orders requesting multiples of the same item</li><li>Sort by mastery in recipes now works</li><li>Titus now correct heals the person with the highest missing HP, not the person with the lowest HP</li><li>Mail you have open won't disappear when a new piece of mail comes in</li><li>Fixed building recipes sometimes mysteriously disappearing</li><li>Removed the last of the worker level references (maybe)</li><li>Fixed a bug where refreshing the game terminated all parties adventuring rather than progressing them to where they should be</li></ul>"
+  },
+  {
+    "patchCount": 7,
+    "version": "v0.3.0.6",
+    "date": "June 13th, 2019",
+    "body": "<p><b>General Improvements</b></p><ul><li>Your expanded dropdown preferences are now saved for the \"Materials\" and Workers\" dropdwon in the Recipes screen. By default, Workers will be expanded.</li><li>Your expanded dropdown preferences are now saved for the \"Materials Found In This Dungeon\" dropdown for each Dungeon seeparately.</li></ul><p><b>User Interface</b></p><ul><li>Improved display for material amounts in \"Materials Found In This Dungeon\" dropdown.</li></ul><p><b>New Setting: Reset All Settings</b></p><p>You can now reset your settings including preferences such as expanded dropdowns (like dungeon material dropdowns in adventures). Should your settings ever be corrupted this option can also be used to restore a usable state.</p>"
   }
 ]

@@ -431,3 +431,10 @@ function resetBtnPressAnimation() {
         btn.style.animation = null; 
     });
 }
+
+// Clear Settings
+
+$(document).on('click', '#clearSettings', (e) => {
+    e.preventDefault();
+    clearSettings();
+});

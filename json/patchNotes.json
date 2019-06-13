@@ -28,5 +28,11 @@
     "version": "v0.3.0.4",
     "date": "June 12th, 2019",
     "body": "<p><b>User Interface</b></p><ul><li>Changed Guild Order craft button to be more prominent, explicitly mention it's for crafting and be reactive to craftable status (will be green when you can craft, red when you can't)</li><li>Hero Power now updates immediately after equipping an item</li></ul><p><b>Fixes</b></p><ul><li>Fixed typo in Troy's hero ability description</li><li>Fixed typo in Alok's hero ability description</li><li>Fixed typo in Grogmar's hero ability description</li></ul>"
+  },
+  {
+    "patchCount": 6,
+    "version": "v0.3.0.5",
+    "date": "June 12th, 2019",
+    "body": "<p><b>Features</b></p><ul><li>Parties are saved between dungeon adventures and automatically set if you re-enter a dungeon. If a member of the party is unavailable (say for example because they're in another dungeon) this feature won't take effect</li><li>Material count is shown next to the material on the dungeon screen</li></ul><p><b>Bug Fixes</b></p><li>Fixed the bug where enhanced items in guild orders didn't show their \"+\" number</li><li>Updated craft button on guild screen to color properly (sometimes)</li><li>Corrected guild orders requesting multiples of the same item</li><li>Sort by mastery in recipes now works</li><li>Titus now correct heals the person with the highest missing HP, not the person with the lowest HP</li><li>Mail you have open won't disappear when a new piece of mail comes in</li><li>Fixed building recipes sometimes mysteriously disappearing</li><li>Removed the last of the worker level references (maybe)</li><li>Fixed a bug where refreshing the game terminated all parties adventuring rather than progressing them to where they should be</li></ul>"
   }
 ]

@@ -10,14 +10,14 @@
     "id": "E002",
     "title": "A Mysterious Letter",
     "author": "Abqu",
-    "message": "<p>Hey, I'm totally gone and not watching you, so this is a total coincidence, but...</p><p>I just noticed you unlocked all ten of the workers!  That's incredible!</p><p>If you haven't already, you should start leveling your workers. Stronger recipes require stronger workers to make them.</p><p>Oh, I almost forgot!</p><p>Rumor has it the Action League has more workers if they like you enough.</p><p>Isn't that a neat little progression system?</p><p>If anyone asks, I've gone missing.</p><p>Not watching you,</p><p>ABQU</p>",
+    "message": "<p>Hey, I'm totally gone and not watching you, so this is a total coincidence, but...</p><p>I just noticed you unlocked all ten of the workers!  That's incredible!</p><p>Oh, I almost forgot!</p><p>Rumor has it the Action League has more workers if they like you enough.</p><p>Isn't that a neat little progression system?</p><p>If anyone asks, I've gone missing.</p><p>Not watching you,</p><p>ABQU</p>",
     "type": "letter"
   },
   {
     "id": "E003",
     "title": "A Mysterious Letter",
     "author": "Abqu",
-    "message": "<p>Hi.</p><p>It's me, Abqu, your resident .... person.</p><p>Congrats on unlocking your first advanced worker!  What a doozy that was, huh.</p><p>Anyway, they also will level up just like those other lackeys, but now you can make two recipes that require a resource at once! Isn't that great? Of course it's great.</p><p>Keep up the great work!</p><p>Your mentor,</p><p>ABQU</p>",
+    "message": "<p>Hi.</p><p>It's me, Abqu, your resident .... person.</p><p>Congrats on unlocking your first advanced worker!  What a doozy that was, huh.</p><p>Anyway, they behave like normal workers, but now you can make two recipes that require a resource at once! Isn't that great? Of course it's great.</p><p>Keep up the great work!</p><p>Your mentor,</p><p>ABQU</p>",
     "type": "letter"
   },
   {
@@ -108,7 +108,7 @@
     "id": "E018",
     "title": "A Mysterious Letter",
     "author": "Abqu",
-    "message": "<p>Oh hey there, I see you're having trouble with that craft!</p><p>Don't worry, it's a little complicated but your proud boy Abqu is here to help!</p><p>Sometimes it's a matter of you not having a worker for that resource yet. Recipes require workers, which are unlocked in the guilds. More importantly, a worker can only work on one craft at a time -- good luck getting ol' Oren to make two knives at once.</p><p>But sometimes, you need to level those workers up. See, recipes have levels, and your workers need to be a high enough level to match it. Level 1 Oren ain't making no Butter Knives no matter how nicely you ask. Forge & Fortunately, you can also upgrade them right where you hired them -- in their guilds -- for just a small gold payment.</p><p>Hope that doesn't discourage you!</p><p>Keep crafting and overdrafting,</p><p>ABQU</p>",
+    "message": "<p>Oh hey there, I see you're having trouble with that craft!</p><p>Don't worry, it's a little complicated but your proud boy Abqu is here to help!</p><p>Sometimes it's a matter of you not having a worker for that resource yet. Recipes require workers, which are unlocked in the guilds. More importantly, a worker can only work on one craft at a time -- good luck getting ol' Oren to make two knives at once.</p><p>Hope that doesn't discourage you!</p><p>Keep crafting and overdrafting,</p><p>ABQU</p>",
     "type": "letter"
   }
 ]

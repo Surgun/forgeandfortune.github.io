@@ -50,10 +50,12 @@ class Dungeon {
         this.floorCount = 0;
         this.order = null;
         this.status = DungeonStatus.EMPTY;
+        this.lastParty = null;
     }
     createSave() {
         const save = {};
         save.id = this.id;
+        save.lastParty = this.lastParty;
         if (this.party === null) save.party = null;
         else save.party = this.party.createSave();
         save.mobs = [];
@@ -72,6 +74,7 @@ class Dungeon {
     loadSave(save) {
         if (save.party !== null) this.party = new Party(save.party.heroID);
         else save.party = null;
+        if (save.lastParty !== undefined) this.lastParty = save.lastParty;
         this.mobs = [];
         save.mobs.forEach(mobSave => {
             const mobTemplate = MobManager.idToMob(mobSave.id);
@@ -158,6 +161,7 @@ class Dungeon {
     }
     initializeParty(party) {
         this.party = party;
+        this.lastParty = party.heroID;
     }
     resetDungeon() {
         this.party.heroes.forEach(h=>{

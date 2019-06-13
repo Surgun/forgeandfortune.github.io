@@ -68,12 +68,13 @@ function dungeonBlock(dungeon) {
 $(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();
     const dungeonID = $(e.currentTarget).attr("id");
-    const dungeon = DungeonManager.dungeonByID(dungeonID);
+    const lastParty = DungeonManager.dungeonByID(dungeonID).lastParty;
     $dungeonSelect.hide();
     if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.ADVENTURING) showDungeon(dungeonID);
     else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.EMPTY) {
         DungeonManager.dungeonCreatingID = dungeonID;
         PartyCreator.clearMembers();
+        PartyCreator.startingTeam(lastParty);
         refreshHeroSelect();
         $dungeonSelect.hide();
         $dungeonTeamSelect.show();

@@ -74,5 +74,12 @@ const PartyCreator = {
         }
         ResourceManager.deductMoney(amt);
         this.heroes.map(h=>HeroManager.idToHero(h)).forEach(h=>h.healPercent(100));
+    },
+    startingTeam(team) {
+        if (team === null) return;
+        const statuses = team.map(h=>HeroManager.idToHero(h).inDungeon)
+        console.log(statuses);
+        if (statuses.some(h=>h)) return;
+        team.forEach(h => this.addMember(h));
     }
 }

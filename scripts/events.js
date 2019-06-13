@@ -128,6 +128,7 @@ const EventManager = {
         }
         if (event.type === "letter" && !this.oldEvents.map(e=>e.id).includes(event.id)) this.oldEvents.push(event);
         this.events = this.events.filter(e=>e.eventNum !== eventNum);
+        $eventContent.empty();
         refreshEvents();
     },
     badCraft() {
@@ -189,7 +190,7 @@ const $eventContent = $("#eventContent");
 const $eventTab = $("#eventTab");
 
 function refreshEvents() {
-    $eventContent.empty();
+    //$eventContent.empty();
     if (EventManager.hasEvents()) $eventTab.addClass("hasEvent");
     else $eventTab.removeClass("hasEvent");
     $eventList.empty();

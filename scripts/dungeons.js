@@ -88,6 +88,7 @@ class Dungeon {
         this.dungeonTime = save.dungeonTime;
         this.floorCount = save.floorCount;
         this.status = save.status;
+        this.sanctuary = FloorManager.isSanctuary(this.id,this.floorCount);
     }
     addTime(t) {
         //if there's enough time, grab the next guy and do some combat
@@ -106,12 +107,14 @@ class Dungeon {
                         hero.healPercent(healPercent);
                     });
                 }
+                console.log(DungeonManager.bossesBeat);
                 if (DungeonManager.bossesBeat.filter(b => b === this.sanctuary).length > 0) { //idk why this works over .includes()
                     this.nextFloor();
                     this.dungeonTime -= DungeonManager.speed;
                     return;
                 }
                 else {
+                    console.log("sanctuary down!");
                     this.resetDungeon();
                     return;
                 }

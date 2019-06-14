@@ -97,6 +97,7 @@ const achievementStats = {
             $statMaxFloorD003.html("Floor " + this.D003floor);
         }
         this.totalFloorsBeaten += 1;
+        $statFloors.html(this.totalFloorsBeaten);
     },
     craftedItem(rarity) {
         this.totalItemsCrafted += 1;

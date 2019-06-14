@@ -2381,6 +2381,10 @@ Rarities
     color: var(--highlight);
 }
 
+.guildWorkersContainer {
+    margin-bottom: 30px;
+}
+
 /* Progress */
 
 #progresslist {

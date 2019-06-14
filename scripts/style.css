@@ -2266,9 +2266,21 @@ Rarities
 }
 
 .guildHeading {
-    margin: 15px 0;
-    padding: 10px;
+    margin: 15px 0 0;
+    padding: 0 5px;
+}
+
+.guildContext {
+    margin-bottom: 15px;
+    padding: 0 5px 10px;
+    color: var(--text-tertiary);
     border-bottom: 2px solid var(--border-primary);
+}
+
+.guildLevel {
+    margin-bottom: 5px;
+    color: var(--highlight);
+    text-shadow: 2px 2px 0 black;
 }
 
 .progressHeading {
@@ -3896,6 +3908,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     border: 1px solid rgb(100, 100, 100);
     border-radius: 15px;
     overflow: hidden;
+}
+
+.repBar {
+    font-size: .9rem;
 }
 
 .apBarDiv {

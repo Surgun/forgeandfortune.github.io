@@ -266,8 +266,8 @@ function createGuildBar(guild) {
     const repPercent = guild.rep/guild.repLvl();
     const repWidth = (repPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("repBarDiv");
-    const plural = ((guild.repLvl() - guild.rep) > 1 ? "orders" : "order");
-    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Complete ${guild.repLvl()-guild.rep} guild ${plural} to advance`);
+    const plural = ((guild.repLvl() - guild.rep) > 1 ? "Orders" : "Order");
+    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Complete ${guild.repLvl()-guild.rep} Guild ${plural} to Advance!`);
     const s1 = $("<span/>").addClass("repBarFill").css('width', repWidth);
     return d1.append(d2,s1);
 }

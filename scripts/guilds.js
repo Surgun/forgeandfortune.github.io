@@ -60,9 +60,7 @@ class Guild {
         }
     }
     addRep() {
-        this.order.forEach(o => {
-            this.rep += o.repgain;
-        });
+        this.rep += 1;
         if (this.rep >= this.repLvl()) {
             this.rep -= this.repLvl();
             this.lvl += 1;
@@ -111,6 +109,7 @@ class Guild {
     }
     submitItem(slot) {
         const submitContainer = this.order[slot];
+        if (submitContainer.complete()) return;
         const itemString = submitContainer.id+submitContainer.rarity+submitContainer.sharp;
         const itemMatch = Inventory.findCraftMatch(itemString);
         if (itemMatch === undefined) return Notifications.cantFindMatch();
@@ -253,20 +252,22 @@ function refreshguildprogress(guild) {
     const id = guild.id;
     const $gp = $(`#${id}Progress`);
     $gp.empty();
+    $("<div/>").addClass("guildLevel").html(`Level ${inWords(guild.lvl+1)}`).appendTo($gp);
     $gp.append(createGuildBar(guild));
 }
 
 function createGuildBar(guild) {
     if (guild.lvl === 59) {
         const d1a = $("<div/>").addClass("repBarDiv");
-        const d2a = $("<div/>").addClass("repBar").attr("data-label",`Level 60 - Max Level`);
+        const d2a = $("<div/>").addClass("repBar").attr("data-label",`Max Level`);
         const s1a = $("<span/>").addClass("repBarFill").css('width',"100%");
         return d1a.append(d2a,s1a);
     }
     const repPercent = guild.rep/guild.repLvl();
     const repWidth = (repPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("repBarDiv");
-    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Level ${guild.lvl+1} (${guild.rep}/${guild.repLvl()})`);
+    const plural = ((guild.repLvl() - guild.rep) > 1 ? "orders" : "order");
+    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Complete ${guild.repLvl()-guild.rep} guild ${plural} to advance`);
     const s1 = $("<span/>").addClass("repBarFill").css('width', repWidth);
     return d1.append(d2,s1);
 }

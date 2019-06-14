@@ -49,7 +49,7 @@ function afterLoad() {
 const loadMessages = [
     "Spreading misinformation.",
     "Rewriting all of the code.",
-    "Delaying Version 0.3.",
+    "Delaying Version 0.4.",
     "Getting ducks in a row.",
     "Increasing functionality by 19%.",
     "Making bad puns.",

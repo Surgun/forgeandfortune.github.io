@@ -39,6 +39,12 @@
     "patchCount": 7,
     "version": "v0.3.0.6",
     "date": "June 13th, 2019",
-    "body": "<p><b>General Improvements</b></p><ul><li>Your expanded dropdown preferences are now saved for the \"Materials\" and \"Workers\" dropdown on the Recipes screen. By default, Workers will be expanded.</li><li>Your expanded dropdown preferences are now saved for the \"Materials Found In This Dungeon\" dropdown for each Dungeon separately.</li></ul><p><b>User Interface</b></p><ul><li>Improved display for material amounts in \"Materials Found In This Dungeon\" dropdown.</li></ul><p><b>New Setting: Reset All Settings</b></p><p>You can now reset your settings including preferences such as expanded dropdowns (like dungeon material dropdowns in adventures). Should your settings ever be corrupted this option can also be used to restore a usable state.</p>"
+    "body": "<p><b>General Improvements</b></p><ul><li>Your expanded dropdown preferences are now saved for the \"Materials\" and Workers\" dropdOWn in the Recipes screen. By default, Workers will be expanded.</li><li>Your expanded dropdown preferences are now saved for the \"Materials Found In This Dungeon\" dropdown for each Dungeon separately.</li></ul><p><b>User Interface</b></p><ul><li>Improved display for material amounts in \"Materials Found In This Dungeon\" dropdown.</li></ul><p><b>New Setting: Reset All Settings</b></p><p>You can now reset your settings including preferences such as expanded dropdowns (like dungeon material dropdowns in adventures). Should your settings ever be corrupted this option can also be used to restore a usable state.</p>"
+  },
+  {
+    "patchCount": 8,
+    "version": "v0.3.0.7",
+    "date": "June 14th, 2019",
+    "body": "<ul><li>Reduced crit damage on bosses</li><li>Fixed bug making guild orders contribute 3x as many points as they should</li><li>Added AP on recipe cards</li><li>Updated guilds with descriptions to make it more clear what they do</li><li>Fixed bug with guild order over-submitting and fixed coloring of craft button once you generate new orders or submit items</li></ul>"
   }
 ]

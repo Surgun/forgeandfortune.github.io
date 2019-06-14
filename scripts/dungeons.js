@@ -98,7 +98,8 @@ class Dungeon {
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
         this.dungeonTotalTime += t;
-        while (this.dungeonTime >= DungeonManager.speed) {
+        const dungeonWaitTime = ((DungeonManager.dungeonView === this.id) ? DungeonManager.speed : 750);
+        while (this.dungeonTime >= dungeonWaitTime) {
             if (this.sanctuary !== null) {
                 //lol hax, this.sanctuary holds gate keeping
                 const healPercent = ActionLeague.sanctuaryHeal[this.floorCount/50];
@@ -109,23 +110,15 @@ class Dungeon {
                     this.party.heroes.forEach(hero => {
                         hero.healPercent(healPercent);
                     });
-                }
-                console.log(DungeonManager.bossesBeat);
                 if (DungeonManager.bossesBeat.filter(b => b === this.sanctuary).length > 0) { //idk why this works over .includes()
-                    this.nextFloor();
-                    this.dungeonTime -= DungeonManager.speed;
-                    return;
-                }
-                else {
-                    console.log("sanctuary down!");
-                    this.resetDungeon();
-                    return;
-                }
+                this.nextFloor();
+                this.dungeonTime -= dungeonWaitTime;
+                return;
             }
             this.checkDeadMobs(); //workaround for when you killed a monster but haven't looted it and refreshed
-            if (this.floorComplete() && this.dungeonTime >= DungeonManager.speed) {
+            if (this.floorComplete() && this.dungeonTime >= dungeonWaitTime) {
                 this.nextFloor();
-                this.dungeonTime -= DungeonManager.speed;
+                this.dungeonTime -= dungeonWaitTime;
                 return;
             }
             const unit = this.order.nextTurn();
@@ -141,7 +134,7 @@ class Dungeon {
                 this.resetDungeon();
                 return;
             }
-            this.dungeonTime -= DungeonManager.speed;
+            this.dungeonTime -= dungeonWaitTime;
             refreshTurnOrder(this.id);
         }
         if (!this.floorComplete() && DungeonManager.dungeonView === this.id) refreshBeatBar(this.dungeonTime);

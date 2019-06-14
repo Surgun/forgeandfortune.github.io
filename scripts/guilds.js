@@ -310,7 +310,9 @@ function createOrderCard(item,id,index) {
 function refreshOrderInvCount() {
     $(".orderInv").each(function() {
         const uniqueID = $(this).data("uid");
-        $(this).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(uniqueID)}`);
+        const invCount = Inventory.itemCountSpecific(uniqueID);
+        $(this).removeClass("canContribute").html(`<i class="fas fa-cube"></i> ${invCount}`);
+        if (invCount > 0) $(this).addClass("canContribute");
     });
 }
 
@@ -368,6 +370,7 @@ $(document).on("click",".guildOrderSubmit",(e) => {
     e.preventDefault();
     const gid = $(e.currentTarget).data("gid");
     GuildManager.submitOrder(gid);
+    refreshInventoryPlaces();
 });
 
 //click guild tab button
@@ -389,6 +392,7 @@ $(document).on("click",".orderCard",(e) => {
     e.preventDefault();
     const itemData = $(e.currentTarget).data();
     GuildManager.idToGuild(itemData.gid).submitItem(itemData.slot);
+    refreshInventoryPlaces();
 });
 
 //buy a recipe from guild

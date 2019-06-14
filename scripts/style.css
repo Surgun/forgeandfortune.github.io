@@ -2318,6 +2318,10 @@ Rarities
     padding: 5px;
 }
 
+.orderInv.canContribute {
+    color: var(--green-primary);
+}
+
 .orderCraft {
     position: absolute;
     top: 5px;

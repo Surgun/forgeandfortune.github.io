@@ -37,6 +37,7 @@ function afterLoad() {
     refreshFilterListLucky();
     refreshCraftedCount();
     initializeGuilds();
+    refreshInventoryPlaces();
     setInterval(mainLoop, 10);
     recipeList.recipeFilterType = "Knives";
     recipeList.recipeFilterString = "";

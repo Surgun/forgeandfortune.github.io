@@ -96,6 +96,7 @@ const achievementStats = {
             achievementStats.D003floor = Math.max(achievementStats.D003floor, floor);
             $statMaxFloorD003.html("Floor " + this.D003floor);
         }
+        this.totalFloorsBeaten += 1;
     },
     craftedItem(rarity) {
         this.totalItemsCrafted += 1;
@@ -151,7 +152,7 @@ const achievementStats = {
             $statMaxFloorD002.html("Floor " + this.D002floor);
         }
         if (save.D003floor !== undefined) {
-            this.D001floor = save.D003floor;
+            this.D003floor = save.D003floor;
             $statMaxFloorD003.html("Floor " + this.D003floor);
         }        
         $statMaxFloor.html("Floor " + this.maxFloor);

@@ -288,6 +288,7 @@ function refreshguildOrder(guild) {
         $("<div/>").addClass("guildOrderSubmitValue").html(`${miscIcons.gold} +${formatToUnits(guild.goldValue(),2)}`).appendTo(d1);
     if (!guild.orderComplete()) d1.addClass("guildOrderIncomplete");
     $go.append(d1);
+    checkCraftableStatus();
 };
 
 function createOrderCard(item,id,index) {

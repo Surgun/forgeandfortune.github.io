@@ -110,7 +110,7 @@ class Dungeon {
                     this.party.heroes.forEach(hero => {
                         hero.healPercent(healPercent);
                     });
-                if (DungeonManager.bossesBeat.filter(b => b === this.sanctuary).length > 0) { //idk why this works over .includes()
+                }
                 this.nextFloor();
                 this.dungeonTime -= dungeonWaitTime;
                 return;

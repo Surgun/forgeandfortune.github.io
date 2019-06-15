@@ -88,10 +88,12 @@ class Guild {
         return WorkerManager.filterByGuild(this.id).filter(w => w.owned);
     }
     orderComplete() {
+        if (devtools.orderBypass) return true;
         return this.order.every(o=>o.complete());
     }
     generateNewOrder() {
         this.order = [];
+        if (this.maxLvlReached()) return refreshguildOrder(this);
         let possibleItems = recipeList.guildOrderItems(this.lvl);
         const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
         const chosenFirst = possibleGuildItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleGuildItems.length)];
@@ -100,8 +102,8 @@ class Guild {
         possibleItems = possibleItems.filter(r => r.id !== chosenSecond.id);
         const chosenThird = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
         this.order.push(new guildOrderItem(this.id,chosenFirst.id, this.lvl));
-        if (this.lvl >= 1) this.order.push(new guildOrderItem(this.id, chosenSecond.id, this.lvl));
-        if (this.lvl >= 2) this.order.push(new guildOrderItem(this.id, chosenThird.id, this.lvl));
+        if (this.lvl >= 7) this.order.push(new guildOrderItem(this.id, chosenSecond.id, this.lvl));
+        if (this.lvl >= 13) this.order.push(new guildOrderItem(this.id, chosenThird.id, this.lvl));
         refreshguildOrder(this);
     }
     getItem(slot) {
@@ -130,6 +132,10 @@ class Guild {
         const gold = this.order.map(o => o.goldvalue);
         if (gold.length === 0) return 0;
         return gold.reduce((a,b) => a+b)*2;
+    }
+    maxLvlReached() {
+        if (this.lvl === 59) return true;
+        return this.lvl >= 5 + 6 * DungeonManager.bossesBeat.length;
     }
 }
 
@@ -257,9 +263,9 @@ function refreshguildprogress(guild) {
 }
 
 function createGuildBar(guild) {
-    if (guild.lvl === 59) {
+    if (guild.maxLvlReached()) {
         const d1a = $("<div/>").addClass("repBarDiv");
-        const d2a = $("<div/>").addClass("repBar").attr("data-label",`Max Level`);
+        const d2a = $("<div/>").addClass("repBar").attr("data-label",`Max Level Reached`);
         const s1a = $("<span/>").addClass("repBarFill").css('width',"100%");
         return d1a.append(d2a,s1a);
     }
@@ -267,7 +273,7 @@ function createGuildBar(guild) {
     const repWidth = (repPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("repBarDiv");
     const plural = ((guild.repLvl() - guild.rep) > 1 ? "Orders" : "Order");
-    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Complete ${guild.repLvl()-guild.rep} Guild ${plural} to Advance!`);
+    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Complete ${guild.repLvl()-guild.rep} Guild ${plural} to Advance`);
     const s1 = $("<span/>").addClass("repBarFill").css('width', repWidth);
     return d1.append(d2,s1);
 }
@@ -280,6 +286,10 @@ function refreshguildOrder(guild) {
     const id = guild.id;
     const $go = $(`#${id}Order`);
     $go.empty();
+    if (guild.maxLvlReached()) {
+        $("<div/>").addClass("guildMaxLvl").html("Max Guild Level Reached - Open more levels in the Action League").appendTo($go);
+        return;
+    }
     guild.order.forEach((item,i) => {
         $go.append(createOrderCard(item,id,i));
     });

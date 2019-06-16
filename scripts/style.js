@@ -298,7 +298,9 @@ function dbEnable() {
             $("<button/>").addClass("dungeonUnlockOption dbActionButton").html("Unlock Dungeons").appendTo(d1g);
         const d1h = $("<div/>").addClass("heroUnlockContainer");
             $("<button/>").addClass("heroUnlockOption dbActionButton").html("Unlock Heroes").appendTo(d1h);
-        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g,d1h);
+        const d1i = $("<div/>").addClass("perkUnlockContainer");
+            $("<button/>").addClass("perkUnlockOption dbActionButton").html("Unlock Perks").appendTo(d1i);
+        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g,d1h,d1i);
 
     const d4 = $("<div/>").addClass("addItemContainer dbActionContainer");
         const d4a = $("<div/>").addClass("addItemTitle").html("Add Item to Inventory");
@@ -372,6 +374,10 @@ $(document).on('click', '.dungeonUnlockOption', (e) => {
 
 $(document).on('click', '.heroUnlockOption', (e) => {
     devtools.heroUnlock();
+})
+
+$(document).on('click', '.perkUnlockOption', (e) => {
+    devtools.allPerks();
 })
 
 $(document).on('click', '.addGoldBtn', (e) => {

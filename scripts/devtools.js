@@ -89,4 +89,8 @@ const devtools = {
     heroUnlock() {
         HeroManager.heroes.forEach(h=> h.owned = true);
     },
+    allPerks() {
+        this.addGold(1000000000000000);
+        ActionLeague.perks.forEach(p=>ActionLeague.buyPerk(p.id));
+    }
 }

@@ -42,7 +42,7 @@ function refreshProgress() {
     if (overallPercent === 1 && achievementStats.endTime === -1) achievementStats.endTime = Date.now();
     $plOverall.html((overallPercent * 100).toFixed(2)+"%");
     $pbOverall.css('width', (overallPercent*100).toFixed(2)+"%");
-    if (overallPercent === "100.00") $pbOverall.addClass("Completed");
+    if (overallPercent === 1) $pbOverall.addClass("Completed");
 }
 
 const $statMaxFloor = $("#statMaxFloor");

@@ -354,6 +354,7 @@ const $heroList = $("#heroList");
 
 function initializeHeroList() {
     $heroList.empty();
+    $("<div/>").attr("id","heroOverviewButton").addClass("heroOverviewButton highlight").html(`<i class="fas fa-info-circle"></i> Hero Overview`).appendTo($heroList);
     HeroManager.heroes.forEach(hero => {
         const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",hero.id);
         const d1 = $("<div/>").addClass("heroOwnedImage").html(hero.head);
@@ -371,10 +372,32 @@ function initializeHeroList() {
         bh1.append(bh2,bh3);
         $heroList.append(bh1);
     }
+    viewHeroOverview();
 }
 
 const $heroDetails = $("#heroDetails");
 const $heroGearSlots = $("#heroGearSlots");
+const $heroOverview = $("#heroOverview");
+
+function viewHeroOverview() {
+    $heroOverview.empty();
+    const overviewContainer = $("<div/>").addClass("overviewContainer");
+    const overviewTitle = $("<div/>").addClass("overviewTitle").html("Hero Overview");
+    const overviewDesc = $("<div/>").addClass("overviewDescription").html("A quick glance at all your heroes and their stats.");
+    HeroManager.heroes.forEach(hero => {
+        const d = $("<div/>").addClass("heroOverviewCard");
+            const heroInfo = $("<div/>").addClass("heroOverviewInfo").appendTo(d);
+                $("<div/>").addClass("heroOverviewImage").html(hero.image).appendTo(heroInfo);
+                $("<div/>").addClass("heroOverviewName").html(hero.name).appendTo(heroInfo);
+                $("<div/>").addClass("heroOverviewClass").html(hero.class).appendTo(heroInfo);
+            const heroStats = $("<div/>").addClass("heroOverviewStats").appendTo(d);
+                $("<div/>").addClass("heroOverviewHP overviewStat tooltip").attr("data-tooltip","HP").html(`${miscIcons.hp} ${hero.maxHP()}`).appendTo(heroStats);
+                $("<div/>").addClass("heroOverviewAP overviewStat tooltip").attr("data-tooltip","AP").html(`${miscIcons.ap} ${hero.apmax}`).appendTo(heroStats);
+            $("<div/>").addClass("heroOverviewPow overviewStat tooltip").attr("data-tooltip","POW").html(`${miscIcons.pow} ${hero.getPow()}`).appendTo(d);
+            d.appendTo(overviewContainer)
+    });
+    $heroOverview.append(overviewTitle,overviewDesc,overviewContainer);
+}
 
 function examineHero(ID) {
     const hero = HeroManager.idToHero(ID);
@@ -552,17 +575,93 @@ $(document).on('click',".heroCounter", (e) => {
     tabClick(e, "dungeonsTab");
 });
 
+// Show or hide hero's info
+function showHeroInfo(show) {
+    if (show) {
+        $(".heroTabContainer").addClass("grid-show");
+        $(".heroOwnedCard").removeClass("highlight");
+        $("#heroOverviewButton").removeClass("highlight");
+        $("#heroOverview").hide();
+    }
+    else {
+        $(".heroOwnedCard").removeClass("highlight");
+        $(".heroTabContainer").removeClass("grid-show");
+        $(".heroContentContainer").addClass("none");
+        $("#heroOverviewButton").addClass("highlight");
+        $("#heroOverview").show();
+    }
+}
+
+// Show details tab of selected hero
+function showHeroDetailsTab() {
+    const heroDetails = document.querySelector("#heroDetails");
+    const heroGear = document.querySelector("#heroGear");
+    heroDetails.classList.remove("none");
+    heroGear.classList.add("none");
+}
+
+// Show gear tab of selected hero
+function showHeroGearTab() {
+    const heroDetails = document.querySelector("#heroDetails");
+    const heroGear = document.querySelector("#heroGear");
+    heroDetails.classList.add("none");
+    heroGear.classList.remove("none");
+}
+
+$(document).on('click',"#heroOverviewButton", (e) => {
+    e.preventDefault();
+    showHeroInfo(false);
+    const heroTabs = document.querySelectorAll(".heroTab");
+    heroTabs.forEach(tab => {
+        tab.classList.remove("selected");
+    });
+    viewHeroOverview();
+});
+
 $(document).on('click', "div.heroOwnedCard", (e) => {
     //pop up the detailed character card
     e.preventDefault();
     equippingTo = null;
+    showHeroInfo(true);
+    //Checks if no tab would be selected and defaults to tab 1, if true
+    const heroTabs = document.querySelectorAll(".heroTab");
+    let isSelected = 0;
+    heroTabs.forEach(tab => {
+        if(tab.classList.contains("selected")) {
+            isSelected = 1;
+        }
+    }); 
+    if (isSelected === 0) {
+        $(".heroTab1").addClass("selected");
+        showHeroDetailsTab();
+    }
+    //
     const ID = $(e.currentTarget).attr("data-value");
-    $(".heroOwnedCard").removeClass("highlight");
     $(e.currentTarget).addClass("highlight");
     HeroManager.heroView = ID;
     examineHero(ID);
     clearExaminePossibleEquip();
 });
+
+$(document).on('click', ".heroTab", (e) => {
+    e.preventDefault();
+    const heroTabs = document.querySelectorAll(".heroTab");
+    const currentTab = e.currentTarget;
+    heroTabs.forEach(tab => {
+        tab.classList.remove("selected");
+    });
+    currentTab.classList.add("selected");
+})
+
+$(document).on('click', ".heroTab1", (e) => {
+    e.preventDefault();
+    showHeroDetailsTab();
+})
+
+$(document).on('click', ".heroTab2", (e) => {
+    e.preventDefault();
+    showHeroGearTab();
+})
 
 $(document).on('click', "div.heroExamineEquipment", (e) => {
     //select an item type to display what you can equip
@@ -596,30 +695,6 @@ function updateHeroPower() {
 $(document).on('click', ".buyNewHeroButton", (e) => {
     e.preventDefault();
     HeroManager.purchaseHero();    
-})
-
-$(document).on('click', ".heroTab", (e) => {
-    e.preventDefault();
-    const heroTabs = document.querySelectorAll(".heroTab");
-    const currentTab = e.currentTarget;
-    heroTabs.forEach( tab => tab.classList.remove("selected"));
-    currentTab.classList.add("selected");
-})
-
-$(document).on('click', ".heroTab1", (e) => {
-    e.preventDefault();
-    const heroDetails = document.querySelector("#heroDetails");
-    const heroGear = document.querySelector("#heroGear");
-    heroDetails.classList.remove("none");
-    heroGear.classList.add("none");
-})
-
-$(document).on('click', ".heroTab2", (e) => {
-    e.preventDefault();
-    const heroDetails = document.querySelector("#heroDetails");
-    const heroGear = document.querySelector("#heroGear");
-    heroDetails.classList.add("none");
-    heroGear.classList.remove("none");
 })
 
 //global variable to hold where we're looking to equip to for the equipping shit.

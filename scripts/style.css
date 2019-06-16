@@ -60,7 +60,7 @@ body {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .buildingName:after, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, #db-panel input, .alPerkBuy, .guildOrderSubmit, .orderCraft, .dtsMaterialTitle, .dtsBackButton, #updateRefresh, #clearSettings {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, .heroOverviewButton, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .eventConfirm, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .buildingName:after, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .WorkerDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, #db-panel input, .alPerkBuy, .guildOrderSubmit, .orderCraft, .dtsMaterialTitle, .dtsBackButton, #updateRefresh, #clearSettings {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
@@ -68,7 +68,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .eventConfirm, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     -ms-box-shadow: var(--box-shadow);
@@ -2696,7 +2696,7 @@ Rarities
     color: var(--highlight);
 }
 
-.heroOwnedCard, .buyNewHeroCard {
+.heroOwnedCard, .buyNewHeroCard, .heroOverviewButton {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -2713,8 +2713,17 @@ Rarities
     animation: 0.2s scale-in;
 }
 
-.heroOwnedCard:hover {
+.heroOwnedCard:hover, .heroOverviewButton:hover {
     border-color: var(--border-tertiary);
+}
+
+.heroOverviewButton {
+    padding: 12px;
+    justify-content: center;
+}
+
+.heroOverviewButton > i {
+    margin-right: 5px;
 }
 
 .buyNewHeroCard {
@@ -2739,12 +2748,12 @@ Rarities
     cursor: default;
 }
 
-.heroOwnedCard.highlight, .heroOwnedCard.highlight:hover {
+.heroOwnedCard.highlight, .heroOwnedCard.highlight:hover, .heroOverviewButton.highlight, .heroOverviewButton.highlight:hover {
     background-color: var(--border-primary);
     border-color: var(--border-tertiary);
 }
 
-.heroOwnedCard.highlight .heroOwnedName, .heroOwnedCard.highlight:hover .heroOwnedName {
+.heroOwnedCard.highlight .heroOwnedName, .heroOwnedCard.highlight:hover .heroOwnedName, .heroOverviewButton.highlight, .heroOverviewButton.highlight:hover {
     color: var(--highlight);
 }
 
@@ -2823,9 +2832,13 @@ Rarities
 }
 
 .heroTabContainer {
-    display: grid;
+    display: none;
     grid-template: auto / repeat(auto-fill, 125px);
     border: 1px solid var(--border-primary);
+}
+
+.heroTabContainer.grid-show {
+    display: grid;
 }
 
 .heroTabContent {
@@ -2838,6 +2851,78 @@ Rarities
     display: flex;
     justify-content: flex-start;
     overflow: auto;
+}
+
+.heroOverviewContainer {
+    padding: 20px;
+}
+
+.overviewContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fill,minmax(175px,1fr));
+    grid-gap: 10px;
+}
+
+.overviewTitle {
+    padding: 0 5px 5px;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    color: var(--highlight);
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.overviewDescription {
+    padding: 5px;
+    margin-bottom: 5px;
+    color: var(--text-secondary);
+}
+
+.heroOverviewCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    -webkit-animation: 0.2s scale-in forwards;
+    animation: 0.2s scale-in forwards;
+}
+
+.heroOverviewInfo {
+    align-self: center;
+    text-align: center;
+}
+
+.heroOverviewName {
+    color: var(--highlight);
+    padding: 5px;
+}
+
+.heroOverviewClass {
+    color: var(--text-secondary);
+    padding-bottom: 5px;
+}
+
+.heroOverviewStats {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.overviewStat {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin: 2.5px;
+    padding: 5px 10px;
+    background-color: var(--border-primary);
+    border-radius: 5px;
+}
+
+.overviewStat > img {
+    margin-right: 5px;
 }
 
 .heroExamineContainer {
@@ -2914,7 +2999,7 @@ Rarities
     color: var(--text-secondary);
 }
 
-.dungeonTeamName:after, .dungeonAvailableName:after, .dungeonNotAvailableName:after {
+.dungeonTeamName:after, .dungeonAvailableName:after, .dungeonNotAvailableName:after, .heroOverviewName:after {
     content: "";
     display: block;
     height: 2px;
@@ -5488,6 +5573,11 @@ footer a[href*="discord.gg"]:hover {
 
 .dtsMaterialAmt.tooltip:after {
     width: 55px;
+    margin: 0 auto;
+}
+
+.overviewStat.tooltip:after {
+    width: 60px;
     margin: 0 auto;
 }
 

@@ -2882,7 +2882,6 @@ Rarities
     flex-direction: column;
     justify-content: center;
     padding: 10px;
-    background-color: var(--bg-secondary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
     -webkit-animation: 0.2s scale-in forwards;

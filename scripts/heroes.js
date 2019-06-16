@@ -384,7 +384,7 @@ function viewHeroOverview() {
     const overviewContainer = $("<div/>").addClass("overviewContainer");
     const overviewTitle = $("<div/>").addClass("overviewTitle").html("Hero Overview");
     const overviewDesc = $("<div/>").addClass("overviewDescription").html("A quick glance at all your heroes and their stats.");
-    HeroManager.heroes.forEach(hero => {
+    HeroManager.heroes.filter(hero => hero.owned).forEach(hero => {
         const d = $("<div/>").addClass("heroOverviewCard");
             const heroInfo = $("<div/>").addClass("heroOverviewInfo").appendTo(d);
                 $("<div/>").addClass("heroOverviewImage").html(hero.image).appendTo(heroInfo);

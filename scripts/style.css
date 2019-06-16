@@ -3577,11 +3577,6 @@ div.EquipmentCardsContainer {
     background-position: bottom;
 }
 
-.DBoss .bgContainer .layer8 {
-    background: url('../../images/dungeonBackgrounds/dungeon_boss/layer8.png');
-    background-size: 500px;
-}
-
 /* Christmas Event Background */
 
 .bgContainer .layer1.christmasEvent {

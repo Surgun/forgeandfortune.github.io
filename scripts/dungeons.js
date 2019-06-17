@@ -100,7 +100,7 @@ class Dungeon {
         this.dungeonTotalTime += t;
         const dungeonWaitTime = ((DungeonManager.dungeonView === this.id) ? DungeonManager.speed : 750);
         while (this.dungeonTime >= dungeonWaitTime) {
-            if (this.sanctuary !== null) {
+            if (this.sanctuary) {
                 //lol hax, this.sanctuary holds gate keeping
                 const healPercent = ActionLeague.sanctuaryHeal[this.floorCount/50];
                 if (healPercent > 0) {
@@ -182,6 +182,8 @@ class Dungeon {
         this.dungeonTime = 0;
         this.floorCount = 0;
         this.dungeonTotalTime = 0;
+        this.beatTotal = 0;
+        MobManager.removeMobs(this.mobs);
         this.dropList = [];
         return;
     }
@@ -205,6 +207,7 @@ class Dungeon {
             this.order = new TurnOrder(this.party.heroes,[]);
         }
         else {
+            MobManager.removeMobs(this.mobs);
             this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
             this.order = new TurnOrder(this.party.heroes,this.mobs);
         }

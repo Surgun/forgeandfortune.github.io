@@ -18,10 +18,12 @@ const MobManager = {
         return mob;
     },
     addActiveMob(mob) {
+        console.log(mob.id);
         this.activeMobs.push(mob);
     },
-    removeMob(mob) {
-        this.activeMobs = this.activeMobs.filter(m => m.uniqueid !== mob.uniqueid);
+    removeMobs(mobs) {
+        const ids = mobs.map(m=>m.uniqueid);
+        this.activeMobs = this.activeMobs.filter(m => !ids.includes(m.uniqueid));
     },
     uniqueidToMob(id) {
         return this.activeMobs.find(mob => mob.uniqueid === id);
@@ -77,9 +79,10 @@ const FloorManager = {
     },
     isSanctuary(dungeon,floor) {
         //so hackish
+        console.log(dungeon,floor);
         const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
-        if (possibleFloors.every(f => f.type === "sanctuary")) return possibleFloors[0].gate;
-        return null;
+        if (possibleFloors.every(f => f.type === "sanctuary")) return true;
+        return false;
     },
     mobsByDungeon(dungeonid) {
         const floors = this.floors.filter(f=>f.dungeon === dungeonid);

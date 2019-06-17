@@ -69,7 +69,24 @@
   },
   {
     "patchCount": 10,
+<<<<<<< Updated upstream
     "version": "v0.0.3.9",
     "date": "June 17th, 2019",
     "body": "<ul><li>Default to banned on party list rather than \"in dungeon\"</li><li>Guilds with progress over the current cap of 3 should \"level up\"</li></ul>"
   }]
+=======
+    "version": "v0.3.0.9",
+    "date": "June 17th, 2019",
+    "body": "<ul><li>Default to banned on party list rather than \"in dungeon\"</li><li>Guilds with progress over the current cap of 3 should \"level up\"</li></ul>"
+  },
+  {
+    "patchCount": 11,
+    "version": "v0.3.0.10",
+    "date": "June 17th, 2019",
+    "body": [
+      "<p>Dungeon balance changes:</p><ul><li>Greatly reduced strength of all dungeon enemies.</li><li>Reduced Demon-type enemy's base health.</li></ul><p>Boss balance changes:</p><ul><li>Boss I and Boss II are now easier.</li><li>Boss IX and Boss X have become more difficult.</li><li>All other bosses remain the same.</li></ul><p>Materials have been renamed to fit a standardized nomenclature.  This should help players better predict where materials come from.</p><p>Also some enemy renaming and small typo corrections.  Enjoy",
+      "</p>"
+    ]
+  }
+]
+>>>>>>> Stashed changes

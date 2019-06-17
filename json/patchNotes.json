@@ -68,6 +68,12 @@
     "body": "<ul><li>Reduced guild orders required for a level from 5 to 3</li></ul>"
   },
   {
+    "patchCount": 10,
+    "version": "v0.0.3.9",
+    "date": "June 17th, 2019",
+    "body": "<ul><li>Default to banned on party list rather than \"in dungeon\"</li><li>Guilds with progress over the current cap of 3 should \"level up\"</li></ul>"
+  },
+  {
     "patchCount": null,
     "version": null,
     "date": null,

@@ -79,7 +79,6 @@ const FloorManager = {
     },
     isSanctuary(dungeon,floor) {
         //so hackish
-        console.log(dungeon,floor);
         const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
         if (possibleFloors.every(f => f.type === "sanctuary")) return true;
         return false;

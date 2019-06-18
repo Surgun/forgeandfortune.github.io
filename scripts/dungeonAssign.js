@@ -258,8 +258,6 @@ function refreshSpeedButton(speed) {
 const $floorID = $("#floorID");
 const $dungeonHeroList = $("#dungeonHeroList");
 const $dungeonMobList = $("#dungeonMobList");
-const $drStatsHero = $("#drStatsHero");
-const $drStatsMob = $("#drStatsMob");
 const $drTurnOrder = $("#drTurnOrder");
 
 function initiateDungeonFloor(dungeonID) {
@@ -270,31 +268,30 @@ function initiateDungeonFloor(dungeonID) {
     $floorID.html("Floor "+dungeon.floorCount);
     $dungeonHeroList.empty();
     $dungeonMobList.empty();
-    $drStatsHero.empty();
-    $drStatsMob.empty();
     dungeon.party.heroes.forEach((hero) => {
         const d1 = $("<div/>").addClass("dfc");
         const d2 = $("<div/>").addClass("dfcName").html(hero.name);
         const d3 = $("<div/>").addClass("dfcImage").html(hero.image);
-        const d4 = $("<div/>").addClass("dscHP").html(createHPBar(hero,"Dung"));
-        const d5 = $("<div/>").addClass("dscAP").html(createAPBar(hero,"Dung"));
-        d1.append(d2,d3);
-        if (settings.toggleTurnOrderBars === 1) d1.append(d4,d5);
+        d1.append(d2,d3);        
+        if (settings.toggleTurnOrderBars === 1) {
+            $("<div/>").addClass("dscHP").html(createHPBar(hero,"Dung")).appendTo(d1);
+            $("<div/>").addClass("dscAP").html(createAPBar(hero,"Dung")).appendTo(d1);
+        }
         $dungeonHeroList.prepend(d1);
     });
     dungeon.mobs.forEach((mob) => {
         const d6 = $("<div/>").addClass("dfm").attr("id","dfm"+mob.uniqueid);
         const d7 = $("<div/>").addClass("dfmName").html(mob.name);
         const d8 = $("<div/>").addClass("dfmImage").html(mob.image);
-        const d9 = $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung"));
-        const d10 = $("<div/>").addClass("dsmAP").html(createAPBar(mob,"Dung"));
         d6.append(d7,d8);
-        if (settings.toggleTurnOrderBars === 1) d6.append(d9,d10);
+        if (settings.toggleTurnOrderBars === 1) {
+            $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung")).appendTo(d6);
+            const d10 = $("<div/>").addClass("dsmAP").html(createAPBar(mob,"Dung")).appendTo(d6);
+            if (mob.apAdd === 0) d10.hide();
+        }
         if (mob.hp === 0) d6.addClass("mobDead");
-        if (mob.apAdd === 0) d10.hide();
         $dungeonMobList.prepend(d6);
     });
-    checkTurnOrderPref();
     refreshTurnOrder(dungeonID);
 }
 

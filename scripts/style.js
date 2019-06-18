@@ -210,32 +210,19 @@ turnOrderSettings.forEach((selection) => {
     }
 });
 
+const $drArena = $("#drArena");
+
 function assignTurnOrderPref(e) {
     const option = e.target.getAttribute("value");
     turnOrderSettings.forEach((selection) => {
         selection.querySelector("input").removeAttribute("checked")
     });
     e.target.setAttribute("checked", "checked");
-    settings.toggleTurnOrderBars = parseInt(option);;
+    settings.toggleTurnOrderBars = parseInt(option);
     saveSettings();
-    checkTurnOrderPref();
-}
-
-function checkTurnOrderPref() {
-    const containers = document.querySelectorAll(".dscHP, .dscAP, .dsmHP, .dsmAP");
-    const combatArea = document.querySelector("#drArena");
-    if (settings.toggleTurnOrderBars === 1) {
-        containers.forEach((container) => {
-            container.classList.remove("none");
-        });
-        combatArea.classList.remove("reducedHeight");
-        
-    } else if (settings.toggleTurnOrderBars === 0) {
-        containers.forEach((container) => {
-            container.classList.add("none");
-        });
-        combatArea.classList.add("reducedHeight");
-    }
+    if (settings.toggleTurnOrderBars === 1) $drArena.removeClass("reducedHeight");
+    if (settings.toggleTurnOrderBars === 0) $drArena.addClass("reducedHeight");
+    initiateDungeonFloor(DungeonManager.dungeonView);
 }
 
 // Logo Easter Egg

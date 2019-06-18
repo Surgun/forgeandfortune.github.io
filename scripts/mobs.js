@@ -14,19 +14,7 @@ const MobManager = {
         disableEventLayers();
         const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
         const mob = new Mob(difficulty, mobTemplate);
-        this.addActiveMob(mob);
         return mob;
-    },
-    addActiveMob(mob) {
-        console.log(mob.id);
-        this.activeMobs.push(mob);
-    },
-    removeMobs(mobs) {
-        const ids = mobs.map(m=>m.uniqueid);
-        this.activeMobs = this.activeMobs.filter(m => !ids.includes(m.uniqueid));
-    },
-    uniqueidToMob(id) {
-        return this.activeMobs.find(mob => mob.uniqueid === id);
     },
     getUniqueID() {
         let i = 0;

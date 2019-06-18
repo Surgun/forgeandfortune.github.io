@@ -81,7 +81,6 @@ class Dungeon {
             const mob = new Mob(mobSave.lvl, mobTemplate);
             mob.loadSave(mobSave);
             this.mobs.push(mob);
-            MobManager.addActiveMob(mob);
         });
         if (save.order !== null) {
             this.order = new TurnOrder(this.party.heroes,this.mobs);
@@ -99,6 +98,8 @@ class Dungeon {
         this.dungeonTime += t;
         this.dungeonTotalTime += t;
         const dungeonWaitTime = ((DungeonManager.dungeonView === this.id) ? DungeonManager.speed : 750);
+        const refreshLater = this.dungeonTime >= 2*dungeonWaitTime;
+        CombatManager.refreshLater = refreshLater;
         while (this.dungeonTime >= dungeonWaitTime) {
             if (this.sanctuary) {
                 //lol hax, this.sanctuary holds gate keeping
@@ -111,13 +112,13 @@ class Dungeon {
                         hero.healPercent(healPercent);
                     });
                 }
-                this.nextFloor();
+                this.nextFloor(refreshLater);
                 this.dungeonTime -= dungeonWaitTime;
                 return;
             }
-            this.checkDeadMobs(); //workaround for when you killed a monster but haven't looted it and refreshed
+            this.checkDeadMobs(refreshLater); //workaround for when you killed a monster but haven't looted it and refreshed
             if (this.floorComplete() && this.dungeonTime >= dungeonWaitTime) {
-                this.nextFloor();
+                this.nextFloor(refreshLater);
                 this.dungeonTime -= dungeonWaitTime;
                 return;
             }
@@ -126,23 +127,27 @@ class Dungeon {
                 if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
                 else CombatManager.launchAttack(unit, this.mobs, this.party.heroes, this.id);         
             }
-            refreshAPBar(unit);
+            if (!refreshLater) refreshAPBar(unit);
             this.order.nextPosition();
-            this.checkDeadMobs();
+            this.checkDeadMobs(refreshLater);
             this.beatTotal += 1;
             if (this.party.isDead()) {
                 this.resetDungeon();
                 return;
             }
             this.dungeonTime -= dungeonWaitTime;
-            refreshTurnOrder(this.id);
+            if (!refreshLater) refreshTurnOrder(this.id);
+        }
+        if (refreshLater) {
+            initiateDungeonFloor(this.id);
+            BattleLog.refresh();
         }
         if (!this.floorComplete() && DungeonManager.dungeonView === this.id) refreshBeatBar(this.dungeonTime);
     }
     floorComplete() {
         return this.mobs.every(m=>m.looted());
     }
-    checkDeadMobs() {
+    checkDeadMobs(refreshLater) {
         let needrefresh = false;
         this.mobs.forEach(mob => {
             if (mob.dead() && !mob.looted()) {
@@ -150,6 +155,7 @@ class Dungeon {
                 needrefresh = true;
             }
         });
+        if (refreshLater) return;
         if (needrefresh) initiateDungeonFloor(this.id);
     }
     initializeParty(party) {
@@ -183,7 +189,6 @@ class Dungeon {
         this.floorCount = 0;
         this.dungeonTotalTime = 0;
         this.beatTotal = 0;
-        MobManager.removeMobs(this.mobs);
         this.dropList = [];
         return;
     }
@@ -194,7 +199,7 @@ class Dungeon {
             else found.amt += 1;
         })
     }
-    nextFloor() {
+    nextFloor(refreshLater) {
         if (this.type === "boss" && this.floorCount === 1) {
             this.resetDungeon();
             return;
@@ -207,10 +212,10 @@ class Dungeon {
             this.order = new TurnOrder(this.party.heroes,[]);
         }
         else {
-            MobManager.removeMobs(this.mobs);
             this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
             this.order = new TurnOrder(this.party.heroes,this.mobs);
         }
+        if (refreshLater) return;
         initiateDungeonFloor(this.id);
         refreshDSB(this.id);
     }

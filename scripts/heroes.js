@@ -138,18 +138,18 @@ class Hero {
     heal(hp) {
         if (this.hp ===0) return;
         this.hp = Math.min(this.hp+hp,this.maxHP());
-        refreshHPBar(this);
+        if (CombatManager.refreshLater) refreshHPBar(this);
     }
     healPercent(hpPercent) {
         if (this.hp === 0) return;
         this.hp += Math.floor(this.maxHP()*hpPercent/100);
         this.hp = Math.min(this.maxHP(),this.hp);
-        refreshHPBar(this);
+        if (CombatManager.refreshLater) refreshHPBar(this);
     }
     damageCurrentPercent(dmgPercent) {
         this.hp = Math.floor(this.hp*dmgPercent/100)
         this.hp = Math.max(1,this.hp)
-        refreshHPBar(this);
+        if (CombatManager.refreshLater) refreshHPBar(this);
     }
     dead() {
         return this.hp === 0;
@@ -235,19 +235,6 @@ class Hero {
         if (this.slot4Type.includes(type)) return this.slot4;
         if (this.slot5Type.includes(type)) return this.slot5;
         if (this.slot6Type.includes(type)) return this.slot6;
-    }
-    healCost() {
-        return Math.floor(Math.pow(1.05, (this.maxHP()-this.hp)/miscLoadedValues.hltFactor));
-    }
-    healPay() {
-        const amt = this.healCost();
-        if (ResourceManager.materialAvailable("M001") < amt) {
-            Notifications.cantAffordHealHero();
-            return;
-        }
-        ResourceManager.deductMoney(amt);
-        this.healPercent(100);
-        refreshHealPartyCost();
     }
     equipUpgradeAvailable(slot) {
         const types = this.slotTypesByNum(slot)

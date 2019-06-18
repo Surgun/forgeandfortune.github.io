@@ -1,6 +1,7 @@
 "use strict";
 
 const CombatManager = {
+    refreshLater : false,
     launchAttack(attacker, allies, enemies, dungeonid) {
         //clear buffs since it's for one round
         attacker.parry = false;
@@ -71,7 +72,7 @@ const CombatManager = {
             battleMessage.append(`${logIcon("fas fa-claw-marks")} Critical! `);
         }
         attacker.addAP();
-        refreshAPBar(attacker);
+        if (!this.refreshLater) refreshAPBar(attacker);
         battleMessage.append(`${logName(attacker.name)} attacks ${logName(defender.name)} for ${logDmg(damage)}!`);
         BattleLog.addEntry(dungeonid,battleMessage);
         this.takeDamage(damage, defender, attacker, dungeonid);
@@ -99,7 +100,7 @@ const CombatManager = {
         damage = Math.max(0,damage - defender.getArmor())
         defender.hp = Math.max(defender.hp - damage, 0);
         if (defender.hp === 0) battleMessage.append(` ${logDead(defender.name)}!`);
-        refreshHPBar(defender);
+        if (!this.refreshLater) refreshHPBar(defender);
         BattleLog.addEntry(dungeonid,battleMessage);
         defender.ignoredArmor = false;
     },
@@ -167,15 +168,19 @@ const BattleLog = {
             this.log.shift();
         }
         this.log.push(m);
+        if (CombatManager.refreshLater) return;
+        this.refresh();
+    },
+    clear() {
+        this.log = [];
+        $drLog.empty();
+    },
+    refresh() {
         $drLog.empty();
         this.log.forEach(m=> {
             const d = $("<div/>").addClass("battleLog").html(m);
             $drLog.prepend(d);
         });
-    },
-    clear() {
-        this.log = [];
-        $drLog.empty();
     },
     mobDrops(name,drops) {
         if (drops.length === 0) return;

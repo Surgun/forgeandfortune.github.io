@@ -241,6 +241,19 @@ function saveUpdate(loadGame) {
         const maxNoto2 = Math.max(...notoReq2);
         loadGame["al"].notoriety = maxNoto2;
     }
+    if (loadGame.v === "03") {
+        loadGame.v = "0308";
+        loadGame["g"].guilds.forEach(guild => {
+            if (guild.rep >= 3) {
+                guild.rep = 0;
+                guild.lvl += 1;
+                guild.order = undefined;
+            }
+        })
+        refreshAllOrders();
+        refreshAllSales();
+        refreshAllProgress();
+    }
     return loadGame;
 }
 

@@ -118,7 +118,7 @@ function logDmg(amt) {
 }
 
 function logHeal(amt) {
-    return $("<span/>").addClass("logHeal").html(`${amt} HP`).prop('outerHTML');
+    return $("<span/>").addClass("logHeal").html(`${logIcon("fas fa-heart")} ${amt} HP`).prop('outerHTML');
 }
 
 function logIcon(name) {

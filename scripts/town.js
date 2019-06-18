@@ -227,16 +227,11 @@ const $buildingRecipes = $("#buildingRecipes");
 function buildScreen(type) {
     $buildingRecipes.empty();
     TownManager.lastType = type;
-    //const d4 = $("<div/>").addClass("bRecipes");
-    //const table = $('<div/>').addClass('brecipeTable');
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
         const recipeCardInfo = $('<div/>').addClass('recipeCardInfo').append(recipeCardFront(recipe),recipeCardBack(recipe))
-        //const row = $('<div/>').addClass('recipeCardContainerBuilding').attr("id","rr"+recipe.id).append(recipeCardInfo);
-        //table.append(row);
         const recipeCardContainer = $('<div/>').addClass('recipeCardContainer buildingCard').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardInfo);
         $buildingRecipes.append(recipeCardContainer);
     });
-    //$buildingRecipes.append(row);
 
     const d5 = $("<div/>").addClass("buildingInstr");
         $("<div/>").addClass("buildingInstrHead").html("Instruction").appendTo(d5);

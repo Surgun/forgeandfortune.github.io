@@ -53,7 +53,7 @@ const WorkerManager = {
         refreshAllGuildWorkers();
     },
     assignWorker(item) {
-        item.rcost.forEach(res => {
+        item.gcost.forEach(res => {
             const freeworkers = this.workers.filter(worker=>worker.status === "idle");
             const chosenworker = freeworkers.filter(worker => worker.production === res && worker.owned)[0];
             chosenworker.status = item.id;
@@ -68,22 +68,17 @@ const WorkerManager = {
         })
     },
     couldCraft(item) {
-        const canProduce = this.workers.filter(w=>  w.owned).map(w=>w.production);
-        const difference = item.rcost.filter(x => !canProduce.includes(x));
+        const canProduce = this.workers.filter(w=> w.owned).map(w=>w.production);
+        const difference = item.gcost.filter(x => !canProduce.includes(x));
         return difference.length === 0;
     },
     canCurrentlyCraft(item) {
         const canProduce = this.workers.filter(w=> w.owned && w.status === "idle").map(w=>w.production);
-        const difference = item.rcost.filter(x => !canProduce.includes(x));
+        const difference = item.gcost.filter(x => !canProduce.includes(x));
         return difference.length === 0;
     },
     filterByGuild(guildID) {
         return this.workers.filter(r=>r.guildUnlock === guildID);
-    },
-    getNextGuildLevel(id,lvl) {
-        const guilds = this.filterByGuild(id);
-        const left = guilds.filter(g => g.repReqForBuy() > lvl);
-        return left.sort((a,b) => a.repReqForBuy() - b.repReqForBuy())[0];
     },
 }
 

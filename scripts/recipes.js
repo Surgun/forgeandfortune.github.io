@@ -47,7 +47,7 @@ class Item{
     }
     visualizeResAndMat() {
         const d = $("<div/>").addClass("itemCost")
-        this.rcost.forEach(resource => {
+        this.gcost.forEach(resource => {
             const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
             d.append($("<div/>").addClass("indvCost resCost tooltip").attr("data-tooltip",resourceNameForTooltips).html('<img src="images/resources/'+resource+'.png">'));
         })
@@ -58,10 +58,6 @@ class Item{
             d.append(d1);
         }
         return d;
-    }
-    getCost(resource) {
-        if (resource in this.rcost) return this.rcost[resource];
-        return 0;
     }
     recipeListStats() {
         const d = $("<div/>").addClass("recipeStatList");
@@ -131,7 +127,7 @@ const recipeList = {
         if (this.recipeFilterType === "default") return this.recipes.filter(r => r.owned && r.name.toLowerCase().includes(cleanString));
         if (this.recipeFilterType === "Matless") return this.recipes.filter(r => r.owned && (r.mcost === null || r.isMastered()));
         return this.recipes.filter(r => r.owned && r.type === this.recipeFilterType);
-    },  
+    },
     setSortOrder(filter) {
         if (this.recipeSortType === filter) this.recipeSortType = this.recipeSortType+"Asc";
         else this.recipeSortType = filter;
@@ -148,23 +144,12 @@ const recipeList = {
         Notifications.buyRecipe(recipe.name);
         refreshRecipeFilters();
         refreshAllSales();
-
-        //refreshBlueprint(recipe.type);
-    },
-    listByType(type) {
-        return this.recipes.filter(recipe => recipe.type === type);
     },
     idToItem(id) {
         return this.recipes.find(recipe => recipe.id === id);
     },
     ownAtLeastOne(type) {
         return this.recipes.some(r=>r.type === type && r.owned);
-    },
-    moreRecipes(type) {
-        return this.recipes.some(r => !r.owned && type === r.type);
-    },
-    recipeIDByTypeLvl(type,lvl) {
-        return this.recipes.find(r => r.type === type && r.lvl === lvl).id;
     },
     masteryCount() {
         return this.recipes.filter(r=>r.isMastered() && r.recipeType==="normal").length;
@@ -178,14 +163,6 @@ const recipeList = {
     },
     filterByGuild(guildID) {
         return this.recipes.filter(r=>r.guildUnlock === guildID);
-    },
-    filterByGuildOwned(guildID) {
-        return this.filterByGuild(guildID).filter(r=>r.owned);
-    },
-    getNextGuildLevel(id,lvl) {
-        const guilds = this.filterByGuild(id);
-        const left = guilds.filter(g => g.repReq > lvl);
-        return left.sort((a,b) => a.repReq - b.repReq)[0];
     },
     guildOrderItems(lvl) {
         const items = [];
@@ -298,6 +275,7 @@ function recipeCardFront(recipe) {
     const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
     const td2 = $('<div/>').addClass('recipeDescription').html("<i class='fas fa-info-circle'></i>");
     const td3 = $('<div/>').addClass('recipeItemLevel').html(recipe.itemLevel());
+    if (recipe.recipeType !== "normal") td3.hide();
     const td4 = $('<div/>').addClass('recipecostdiv').attr("id",recipe.id+"rcd");
         const td4a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
         if (recipe.isMastered()) td4a.addClass('isMastered');

@@ -58,9 +58,6 @@ class actionSlot {
     timeRemaining() {
         return this.maxCraft-this.craftTime;
     }
-    getCost(resource) {
-        return this.item.getCost(resource);
-    }
     attemptStart() {
         //attempts to consume requried material, if successful start crafting
         if (this.item.isMastered()) {

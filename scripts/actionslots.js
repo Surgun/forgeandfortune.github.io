@@ -145,8 +145,9 @@ const actionSlotManager = {
         return this.slots.length > slotnum;
     },
     isBuildingMaterial(slotnum) {
+        const types = ["bank", "fuse", "smith", "fortune"];
         if (!this.hasSlot(slotnum)) return false;
-        return this.slots[slotnum].item.recipeType === "building";
+        return types.includes(this.slots[slotnum].item.recipeType);
     },
     isEmptySlot() {
         return `<img class='ASEmptyImg' src='images/recipes/noitem.png' /> Empty Slot`;
@@ -187,6 +188,10 @@ const actionSlotManager = {
     isMastered(i) {
         if (i >= this.slots.length) return false;
         return this.slots[i].item.isMastered();
+    },
+    resList(i) {
+        if (i >= this.slots.length) return null;
+        return this.slots[i].item.gcost;
     }
 }
 
@@ -200,17 +205,23 @@ function initializeActionSlots() {
         if (actionSlotManager.hasSlot(i)) d1.html(actionSlotManager.asPicName(i));
         else d1.html(actionSlotManager.isEmptySlot());
         const d2 = $("<div/>").addClass("ASCancel").attr("id",i);
-        const a2 = $("<a/>").addClass("ASCancelText").attr("href",i).html('<i class="fas fa-times"></i>')
+            $("<a/>").addClass("ASCancelText").attr("href",i).html('<i class="fas fa-times"></i>').appendTo(d2);
         if (!actionSlotManager.hasSlot(i)) d2.hide();
         const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","");
-        const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i);
+            const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i).appendTo(d3);
         if (actionSlotManager.isMastered(i)) s3.addClass("ProgressBarFillMaster");
         let autoSellTooltip;
         actionSlotManager.autoSell(i) !== "None" ? autoSellTooltip = actionSlotManager.autoSell(i) + " and lesser rarities" : autoSellTooltip = "None";
         const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${autoSellTooltip}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
         if (!actionSlotManager.hasSlot(i) || actionSlotManager.isBuildingMaterial(i)) d4.hide();
-        d.append(d1,d2.append(a2),d3.append(s3),d4);
+        d.append(d1,d2,d3,d4);
+        if (actionSlotManager.resList(i) !== null) {
+            const d5 = $("<div/>").addClass("asRes").appendTo(d);
+            actionSlotManager.resList(i).forEach(g => {
+                $("<div/>").addClass("asResIcon").html(`<img src="images/resources/${g}.png" alt="${g}">`).appendTo(d5);
+            });
+        };
         $ActionSlots.append(d);
     }
     /*if (actionSlotManager.maxSlots < 5) {

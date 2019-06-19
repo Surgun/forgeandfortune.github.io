@@ -80,9 +80,23 @@ const WorkerManager = {
     filterByGuild(guildID) {
         return this.workers.filter(r=>r.guildUnlock === guildID);
     },
+    getNextGuildLevel(id,lvl) {
+        const guilds = this.filterByGuild(id);
+        const left = guilds.filter(g => g.repReqForBuy() > lvl);
+        return left.sort((a,b) => a.repReqForBuy() - b.repReqForBuy())[0];
+    },
+    freeByGuild(gid) {
+        return this.workers.filter(w => w.production === gid && w.status === "idle").length;
+    }
 }
 
 const $workersUse = $("#workersUse");
+
+const $G001WorkerFree = $("#G001WorkerFree");
+const $G002WorkerFree = $("#G002WorkerFree");
+const $G003WorkerFree = $("#G003WorkerFree");
+const $G004WorkerFree = $("#G004WorkerFree");
+const $G005WorkerFree = $("#G005WorkerFree");
 
 function refreshSideWorkers() {
     $workersUse.empty();
@@ -103,6 +117,11 @@ function refreshSideWorkers() {
         d.append(d2,d3);
         $workersUse.append(d);
     });
+    $G001WorkerFree.html(WorkerManager.freeByGuild("G001"));
+    $G002WorkerFree.html(WorkerManager.freeByGuild("G002"));
+    $G003WorkerFree.html(WorkerManager.freeByGuild("G003"));
+    $G004WorkerFree.html(WorkerManager.freeByGuild("G004"));
+    $G005WorkerFree.html(WorkerManager.freeByGuild("G005"));
 };
 
 $(document).on("click", ".workerSideBar", (e) => {

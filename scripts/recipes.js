@@ -70,10 +70,6 @@ class Item{
             const d1 = $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + this.pow);
             d.append(d1);
         }
-        if (this.apAdd > 0) {
-            const d2 = $("<div/>").addClass("recipeStatListAP tooltip").attr("data-tooltip", "AP").html(miscIcons.ap + this.apAdd);
-            d.append(d2);
-        }
         if (this.hp > 0) {
             const d3 = $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "HP").html(miscIcons.hp + this.hp);
             d.append(d3);

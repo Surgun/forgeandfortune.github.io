@@ -86,9 +86,6 @@ class itemContainer {
     hp() {
         return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*this.sharp));
     }
-    ap() {
-        return this.item.apAdd;
-    }
     hpPlus() {
         return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*(this.sharp+1)));
     }
@@ -97,10 +94,6 @@ class itemContainer {
         if (this.pow() > 0) {
             const d1 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + "&nbsp;" + this.pow())
             d.append(d1);
-        }
-        if (this.ap() > 0) {
-            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip", "AP").html(miscIcons.ap + "&nbsp;" + this.ap())
-            d.append(d2);
         }
         if (this.hp() > 0) {
             const d3 = $("<div/>").addClass("invPropHP tooltip").attr("data-tooltip", "HP").html(miscIcons.hp + "&nbsp;" + this.hp())

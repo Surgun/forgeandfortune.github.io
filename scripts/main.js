@@ -12,12 +12,11 @@ function afterLoad() {
     initializeRecipes();
     initializeMats();
     if (!loadGame()) {
-        WorkerManager.gainWorker("W001");
+        WorkerManager.gainWorker("W003");
         recipeList.idToItem("R13001").owned = true;
         HeroManager.idToHero("H203").owned = true;
         achievementStats.startTime = Date.now();
         EventManager.addEvent("E001");
-        console.log(GuildManager.guilds);
         GuildManager.guilds.forEach(g=>g.generateNewOrder());
     }
     refreshMasteryBar()

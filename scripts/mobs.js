@@ -135,6 +135,9 @@ class Mob {
     addAP() {
         this.ap += this.apAdd;
     }
+    apAdded() {
+        return this.apAdd;
+    }
     deadCheck() {
         if (this.hp > 0 || this.status === MobState.DEAD) return;
         this.status = MobState.DEAD;

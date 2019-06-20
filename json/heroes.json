@@ -7,9 +7,7 @@
     "initialHP": 50,
     "initialPow": 10,
     "slot1Type": [
-      "Swords",
-      "Maces",
-      "Spears"
+      "Heavy"
     ],
     "slot2Type": [
       "Helmets"
@@ -24,7 +22,7 @@
       "Shields"
     ],
     "slot6Type": [
-      "Rings"
+      "Belts"
     ],
     "special": "armor",
     "guildUnlock": null,
@@ -41,9 +39,7 @@
     "initialHP": 50,
     "initialPow": 10,
     "slot1Type": [
-      "Swords",
-      "Maces",
-      "Axes"
+      "Heavy"
     ],
     "slot2Type": [
       "Helmets"
@@ -75,9 +71,7 @@
     "initialHP": 50,
     "initialPow": 10,
     "slot1Type": [
-      "Maces",
-      "Axes",
-      "Spears"
+      "Heavy"
     ],
     "slot2Type": [
       "Helmets"
@@ -89,13 +83,10 @@
       "Armor"
     ],
     "slot5Type": [
-      "Swords",
-      "Maces",
-      "Axes",
-      "Spears"
+      "Shields"
     ],
     "slot6Type": [
-      "Pendants"
+      "Belts"
     ],
     "special": "bloodlet",
     "guildUnlock": null,
@@ -112,9 +103,7 @@
     "initialHP": 50,
     "initialPow": 10,
     "slot1Type": [
-      "Swords",
-      "Axes",
-      "Spears"
+      "Heavy"
     ],
     "slot2Type": [
       "Helmets"
@@ -126,13 +115,10 @@
       "Armor"
     ],
     "slot5Type": [
-      "Swords",
-      "Maces",
-      "Axes",
-      "Spears"
+      "Shields"
     ],
     "slot6Type": [
-      "Potions"
+      "Belts"
     ],
     "special": "ravage",
     "guildUnlock": null,
@@ -149,9 +135,7 @@
     "initialHP": 25,
     "initialPow": 20,
     "slot1Type": [
-      "Rods",
-      "Wands",
-      "Staves"
+      "Arcane"
     ],
     "slot2Type": [
       "Hats"
@@ -163,7 +147,7 @@
       "Cloaks"
     ],
     "slot5Type": [
-      "Wards"
+      "Tomes"
     ],
     "slot6Type": [
       "Pendants"
@@ -183,9 +167,7 @@
     "initialHP": 25,
     "initialPow": 20,
     "slot1Type": [
-      "Rods",
-      "Wands",
-      "Staves"
+      "Arcane"
     ],
     "slot2Type": [
       "Hats"
@@ -197,10 +179,10 @@
       "Cloaks"
     ],
     "slot5Type": [
-      "Wards"
+      "Tomes"
     ],
     "slot6Type": [
-      "Earrings"
+      "Pendants"
     ],
     "special": "blast",
     "guildUnlock": null,
@@ -217,9 +199,7 @@
     "initialHP": 25,
     "initialPow": 20,
     "slot1Type": [
-      "Rods",
-      "Wands",
-      "Staves"
+      "Arcane"
     ],
     "slot2Type": [
       "Hats"
@@ -234,7 +214,7 @@
       "Tomes"
     ],
     "slot6Type": [
-      "Rings"
+      "Pendants"
     ],
     "special": "heal",
     "guildUnlock": null,
@@ -251,9 +231,7 @@
     "initialHP": 25,
     "initialPow": 20,
     "slot1Type": [
-      "Rods",
-      "Wands",
-      "Staves"
+      "Arcane"
     ],
     "slot2Type": [
       "Hats"
@@ -268,7 +246,7 @@
       "Tomes"
     ],
     "slot6Type": [
-      "Instruments"
+      "Pendants"
     ],
     "special": "massHeal",
     "guildUnlock": null,
@@ -285,9 +263,7 @@
     "initialHP": 35,
     "initialPow": 15,
     "slot1Type": [
-      "Knives",
-      "Bows",
-      "Whips"
+      "Light"
     ],
     "slot2Type": [
       "Masks"
@@ -302,7 +278,7 @@
       "Thrown"
     ],
     "slot6Type": [
-      "Instruments"
+      "Rings"
     ],
     "special": "amplify",
     "guildUnlock": null,
@@ -319,9 +295,7 @@
     "initialHP": 35,
     "initialPow": 15,
     "slot1Type": [
-      "Knives",
-      "Bows",
-      "Whips"
+      "Light"
     ],
     "slot2Type": [
       "Masks"
@@ -336,7 +310,7 @@
       "Thrown"
     ],
     "slot6Type": [
-      "Belts"
+      "Rings"
     ],
     "special": "sniper",
     "guildUnlock": null,
@@ -353,9 +327,7 @@
     "initialHP": 35,
     "initialPow": 15,
     "slot1Type": [
-      "Knives",
-      "Bows",
-      "Whips"
+      "Light"
     ],
     "slot2Type": [
       "Masks"
@@ -367,10 +339,10 @@
       "Vests"
     ],
     "slot5Type": [
-      "Darts"
+      "Thrown"
     ],
     "slot6Type": [
-      "Earrings"
+      "Rings"
     ],
     "special": "double",
     "guildUnlock": null,
@@ -387,9 +359,7 @@
     "initialHP": 35,
     "initialPow": 15,
     "slot1Type": [
-      "Knives",
-      "Bows",
-      "Whips"
+      "Light"
     ],
     "slot2Type": [
       "Masks"
@@ -401,10 +371,10 @@
       "Vests"
     ],
     "slot5Type": [
-      "Darts"
+      "Thrown"
     ],
     "slot6Type": [
-      "Potions"
+      "Rings"
     ],
     "special": "stun",
     "guildUnlock": null,

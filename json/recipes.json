@@ -1,2112 +1,447 @@
 [
   {
-    "id": "R0101",
-    "name": "Club",
-    "description": "It may be crude, but it gets the job done.",
-    "lvl": 1,
-    "value": 6,
-    "craftTime": 9258,
-    "type": "Maces",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": null,
-    "smithCost": "M101",
-    "apAdd": 30,
-    "pow": 18,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 0,
-    "repReq": 0,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0102",
-    "name": "Maul",
-    "description": "At last, we will have revenge.",
-    "lvl": 2,
-    "value": 72,
-    "craftTime": 17226,
-    "type": "Maces",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": {
-      "M602": 1
-    },
-    "smithCost": "M602",
-    "apAdd": 30,
-    "pow": 25,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 500,
-    "repReq": 11,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0103",
-    "name": "Brawler",
-    "description": "For smashing faces and taking names.",
-    "lvl": 3,
-    "value": 518,
-    "craftTime": 32027,
-    "type": "Maces",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": {
-      "M203": 1
-    },
-    "smithCost": "M203",
-    "apAdd": 30,
-    "pow": 35,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 1000,
-    "repReq": 16,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0104",
-    "name": "The Broominator",
-    "description": "For sweeping sidewalks and clearing cobwebs.",
-    "lvl": 4,
-    "value": 3732,
-    "craftTime": 59629,
-    "type": "Maces",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": {
-      "M404": 1
-    },
-    "smithCost": "M404",
-    "apAdd": 30,
-    "pow": 49,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 7500,
-    "repReq": 21,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0105",
-    "name": "Blackjack",
-    "description": "Hitting fifteen enemies is easy, but it really gets tricky deciding to hit on sixteen.",
-    "lvl": 5,
-    "value": 26870,
-    "craftTime": 110944,
-    "type": "Maces",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M105": 1
-    },
-    "smithCost": "M105",
-    "apAdd": 30,
-    "pow": 68,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 52500,
-    "repReq": 26,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0106",
-    "name": "Bludgeon",
-    "description": "Perfect tool when you need the enemy to experience \"broke, blind, and bedlam.\"",
-    "lvl": 6,
-    "value": 106406,
-    "craftTime": 206425,
-    "type": "Maces",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M106",
-    "apAdd": 30,
-    "pow": 94,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 367500,
-    "repReq": 31,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0107",
-    "name": "Striped Club",
-    "description": "When used as a scratching post, it brings out all the cats and kittens.",
-    "lvl": 7,
-    "value": 1025141,
-    "craftTime": 282664,
-    "type": "Maces",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M307": 1
-    },
-    "smithCost": "M307",
-    "apAdd": 30,
-    "pow": 130,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 2572500,
-    "repReq": 36,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0108",
-    "name": "Night Club",
-    "description": "Nothing good ever happens with this club after two in the morning, so be careful.",
-    "lvl": 8,
-    "value": 4875124,
-    "craftTime": 347373,
-    "type": "Maces",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M508": 1
-    },
-    "smithCost": "M508",
-    "apAdd": 30,
-    "pow": 180,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 18007500,
-    "repReq": 47,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0109",
-    "name": "Fact Finder",
-    "description": "Also known in some circles as the Stick of Enhanced Interrogation.",
-    "lvl": 9,
-    "value": 21251125,
-    "craftTime": 391307,
-    "type": "Maces",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M109": 1
-    },
-    "smithCost": "M109",
-    "apAdd": 30,
-    "pow": 250,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 126052500,
-    "repReq": 52,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0110",
-    "name": "Knife Club",
-    "description": "It's the most exclusive Knife in town.",
-    "lvl": 10,
-    "value": 108215963,
-    "craftTime": 514933,
-    "type": "Maces",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M310": 1
-    },
-    "smithCost": "M310",
-    "apAdd": 30,
-    "pow": 350,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 882367500,
-    "repReq": 57,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0201",
-    "name": "Rage Maker",
-    "description": "If you want to see this axe in full display, tell your wife that your mother's cooking is better.",
-    "lvl": 1,
-    "value": 13,
-    "craftTime": 13240,
-    "type": "Axes",
-    "gcost": [
-      "G001"
-    ],
-    "mcost": {
-      "M101": 1
-    },
-    "smithCost": "M101",
-    "apAdd": 40,
-    "pow": 14,
-    "hp": 0,
-    "guildUnlock": "G001",
-    "goldCost": 100,
-    "repReq": 3,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0202",
-    "name": "Fury Bringer",
-    "description": "Enthusiasts of this axe come from around the land to discuss cryptozoology and costume design.",
-    "lvl": 2,
-    "value": 52,
-    "craftTime": 24476,
-    "type": "Axes",
-    "gcost": [
-      "G001"
-    ],
-    "mcost": null,
-    "smithCost": "M102",
-    "apAdd": 40,
-    "pow": 20,
-    "hp": 0,
-    "guildUnlock": "G001",
-    "goldCost": 500,
-    "repReq": 8,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0203",
-    "name": "Vengeance",
-    "description": "This axe is fairly common, and is used mostly to settle grieveances.",
-    "lvl": 3,
-    "value": 673,
-    "craftTime": 45772,
-    "type": "Axes",
-    "gcost": [
-      "G001"
-    ],
-    "mcost": {
-      "M303": 1
-    },
-    "smithCost": "M303",
-    "apAdd": 40,
-    "pow": 28,
-    "hp": 0,
-    "guildUnlock": "G001",
-    "goldCost": 1000,
-    "repReq": 13,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0204",
-    "name": "Pride",
-    "description": "Hard to know if this axe is noble or corrupt, but it looks really great.",
-    "lvl": 4,
-    "value": 4851,
-    "craftTime": 85258,
-    "type": "Axes",
-    "gcost": [
-      "G001"
-    ],
-    "mcost": {
-      "M504": 1
-    },
-    "smithCost": "M504",
-    "apAdd": 40,
-    "pow": 40,
-    "hp": 0,
-    "guildUnlock": "G001",
-    "goldCost": 7500,
-    "repReq": 18,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0205",
-    "name": "Greedy Pickaxe",
-    "description": "I'm not saying it's a gold digger, but it has been used in such activities in the past.",
-    "lvl": 5,
-    "value": 34931,
-    "craftTime": 144228,
-    "type": "Axes",
-    "gcost": [
-      "G001",
-      "G002"
-    ],
-    "mcost": {
-      "M205": 1
-    },
-    "smithCost": "M205",
-    "apAdd": 40,
-    "pow": 55,
-    "hp": 0,
-    "guildUnlock": "G001",
-    "goldCost": 52500,
-    "repReq": 29,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0206",
-    "name": "Slothslayer",
-    "description": "Sloths don't move very fast, but they are mean and will bite.",
-    "lvl": 6,
-    "value": 251503,
-    "craftTime": 268352,
-    "type": "Axes",
-    "gcost": [
-      "G001",
-      "G002"
-    ],
-    "mcost": {
-      "M306": 1
-    },
-    "smithCost": "M306",
-    "apAdd": 40,
-    "pow": 75,
-    "hp": 0,
-    "guildUnlock": "G001",
-    "goldCost": 367500,
-    "repReq": 34,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0207",
-    "name": "Lusty Handaxe",
-    "description": "Lore states that it belonged to a famous Argonian Maid.",
-    "lvl": 7,
-    "value": 732976,
-    "craftTime": 367463,
-    "type": "Axes",
-    "gcost": [
-      "G001",
-      "G002"
-    ],
-    "mcost": null,
-    "smithCost": "M107",
-    "apAdd": 40,
-    "pow": 104,
-    "hp": 0,
-    "guildUnlock": "G001",
-    "goldCost": 2572500,
-    "repReq": 39,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0208",
-    "name": "Envy",
-    "description": "Apply some venom the the edges of this axe, and you can turn your enemies green, with Envy. ",
-    "lvl": 8,
-    "value": 6337661,
-    "craftTime": 451585,
-    "type": "Axes",
-    "gcost": [
-      "G001",
-      "G002"
-    ],
-    "mcost": {
-      "M608": 1
-    },
-    "smithCost": "M608",
-    "apAdd": 40,
-    "pow": 144,
-    "hp": 0,
-    "guildUnlock": "G001",
-    "goldCost": 18007500,
-    "repReq": 44,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0209",
-    "name": "Gluttonous Axe",
-    "description": "Gluttonous Axe is not very balanced, and probably should lose some weight around the belly.",
-    "lvl": 9,
-    "value": 27626462,
-    "craftTime": 508699,
-    "type": "Axes",
-    "gcost": [
-      "G001",
-      "G002"
-    ],
-    "mcost": {
-      "M209": 1
-    },
-    "smithCost": "M209",
-    "apAdd": 40,
-    "pow": 200,
-    "hp": 0,
-    "guildUnlock": "G001",
-    "goldCost": 126052500,
-    "repReq": 49,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0210",
-    "name": "Wrath",
-    "description": "This axe's name varies by region. In some places it is known as Crusade, and in others, Cataclysm.",
-    "lvl": 10,
-    "value": 140680751,
-    "craftTime": 669413,
-    "type": "Axes",
-    "gcost": [
-      "G001",
-      "G002"
-    ],
-    "mcost": {
-      "M410": 1
-    },
-    "smithCost": "M410",
-    "apAdd": 40,
-    "pow": 280,
-    "hp": 0,
-    "guildUnlock": "G001",
-    "goldCost": 882367500,
-    "repReq": 54,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0301",
-    "name": "Lonely Spear",
-    "description": "If this spear comes for you, there could be one less lonely adventurer, so be careful.",
-    "lvl": 1,
-    "value": 4,
-    "craftTime": 7129,
-    "type": "Spears",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M201",
-    "apAdd": 25,
-    "pow": 22,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 0,
-    "repReq": 0,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0302",
-    "name": "Scary Spear",
-    "description": "While it started out as a member in a group of spears, Scary has gone on to become a real X-factor.",
-    "lvl": 2,
-    "value": 50,
-    "craftTime": 13159,
-    "type": "Spears",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M102": 1
-    },
-    "smithCost": "M102",
-    "apAdd": 25,
-    "pow": 30,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 500,
-    "repReq": 11,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0303",
-    "name": "Crazy Spear",
-    "description": "Knowing too much about this weapon could lead to detrimental outcomes.  ",
-    "lvl": 3,
-    "value": 200,
-    "craftTime": 24620,
-    "type": "Spears",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M103",
-    "apAdd": 25,
-    "pow": 42,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 1000,
-    "repReq": 16,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0304",
-    "name": "Intimidating Spear",
-    "description": "It really is the sincerest form of flattery.  ",
-    "lvl": 4,
-    "value": 2612,
-    "craftTime": 45907,
-    "type": "Spears",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M604": 1
-    },
-    "smithCost": "M604",
-    "apAdd": 25,
-    "pow": 59,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 7500,
-    "repReq": 21,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0305",
-    "name": "Moody Spear",
-    "description": "A well-balanced spear, so long as it takes it's medication.",
-    "lvl": 5,
-    "value": 18809,
-    "craftTime": 77661,
-    "type": "Spears",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M305": 1
-    },
-    "smithCost": "M305",
-    "apAdd": 25,
-    "pow": 81,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 52500,
-    "repReq": 26,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0306",
-    "name": "Shadow Spear",
-    "description": "If you are going to use a spear, you would just enjoy it more if you knew no one else used it.",
-    "lvl": 6,
-    "value": 135424,
-    "craftTime": 144497,
-    "type": "Spears",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M406": 1
-    },
-    "smithCost": "M406",
-    "apAdd": 25,
-    "pow": 113,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 367500,
-    "repReq": 31,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0307",
-    "name": "Lucky Spear",
-    "description": "Sometimes being lucky is better than being good, but both are better than being alone.",
-    "lvl": 7,
-    "value": 717598,
-    "craftTime": 197864,
-    "type": "Spears",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M507": 1
-    },
-    "smithCost": "M507",
-    "apAdd": 25,
-    "pow": 156,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 2572500,
-    "repReq": 36,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0308",
-    "name": "Pickle Spear",
-    "description": "A little salty, but it goes really well with tequila.",
-    "lvl": 8,
-    "value": 1876923,
-    "craftTime": 243161,
-    "type": "Spears",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M108",
-    "apAdd": 25,
-    "pow": 216,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 18007500,
-    "repReq": 47,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0309",
-    "name": "Alien Spear",
-    "description": "Use this spear to destroy your enemies -- not to study, not to bring back, but to wipe them out.",
-    "lvl": 9,
-    "value": 14875787,
-    "craftTime": 273915,
-    "type": "Spears",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M309": 1
-    },
-    "smithCost": "M309",
-    "apAdd": 25,
-    "pow": 300,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 126052500,
-    "repReq": 52,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0310",
-    "name": "Toxic Spear",
-    "description": "Caution: do not keep many of these in one place.  The last thing you want is a Toxic Community.",
-    "lvl": 10,
-    "value": 75751174,
-    "craftTime": 360453,
-    "type": "Spears",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M510": 1
-    },
-    "smithCost": "M510",
-    "apAdd": 25,
-    "pow": 420,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 882367500,
-    "repReq": 57,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0401",
-    "name": "Servant Rod",
-    "description": "Customarily given by employers as a sign of gratitude and appreciation for years of service.",
-    "lvl": 1,
-    "value": 3,
-    "craftTime": 5092,
-    "type": "Rods",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M301",
-    "apAdd": 30,
-    "pow": 18,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 0,
-    "repReq": 1,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0402",
-    "name": "Envoy Rod",
-    "description": "This rod is given to foreign dignitaries, as a sign of friendship and respect.",
-    "lvl": 2,
-    "value": 36,
-    "craftTime": 9475,
-    "type": "Rods",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M602": 1
-    },
-    "smithCost": "M602",
-    "apAdd": 30,
-    "pow": 25,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 500,
-    "repReq": 6,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0403",
-    "name": "Actor Rod",
-    "description": "Technically it's a Barista Rod, but as long as the dream is still alive, I guess it counts.",
-    "lvl": 3,
-    "value": 259,
-    "craftTime": 17615,
-    "type": "Rods",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M203": 1
-    },
-    "smithCost": "M203",
-    "apAdd": 30,
-    "pow": 35,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 1000,
-    "repReq": 17,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0404",
-    "name": "Officer Rod",
-    "description": "Pranksters frequently put this rod in a gelatinous mold.  ",
-    "lvl": 4,
-    "value": 1866,
-    "craftTime": 32796,
-    "type": "Rods",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M504": 1
-    },
-    "smithCost": "M504",
-    "apAdd": 30,
-    "pow": 49,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 7500,
-    "repReq": 22,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0405",
-    "name": "Manager Rod",
-    "description": "It's not very functional or elegant, and it's output stinks.  Use it diligently.",
-    "lvl": 5,
-    "value": 13435,
-    "craftTime": 61019,
-    "type": "Rods",
-    "gcost": [
-      "G001",
-      "G005",
-      ""
-    ],
-    "mcost": {
-      "M205": 1
-    },
-    "smithCost": "M205",
-    "apAdd": 30,
-    "pow": 68,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 52500,
-    "repReq": 27,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0406",
-    "name": "Stewart Rod",
-    "description": "Some rods have all the luck, and the Stewart Rod gets all the breaks.",
-    "lvl": 6,
-    "value": 53203,
-    "craftTime": 113534,
-    "type": "Rods",
-    "gcost": [
-      "G001",
-      "G005",
-      ""
-    ],
-    "mcost": null,
-    "smithCost": "M206",
-    "apAdd": 30,
-    "pow": 94,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 367500,
-    "repReq": 32,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0407",
-    "name": "Finicky Rod",
-    "description": "It's very tricky to master and has a really confusing balance.",
-    "lvl": 7,
-    "value": 512570,
-    "craftTime": 155465,
-    "type": "Rods",
-    "gcost": [
-      "G001",
-      "G005",
-      ""
-    ],
-    "mcost": {
-      "M107": 1
-    },
-    "smithCost": "M107",
-    "apAdd": 30,
-    "pow": 130,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 2572500,
-    "repReq": 37,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0408",
-    "name": "Funky Rod",
-    "description": "Just as you hit an enemy, it's best to turn around and shout, \"Lay down the boogie!\"",
-    "lvl": 8,
-    "value": 2437562,
-    "craftTime": 191055,
-    "type": "Rods",
-    "gcost": [
-      "G001",
-      "G005",
-      ""
-    ],
-    "mcost": {
-      "M408": 1
-    },
-    "smithCost": "M408",
-    "apAdd": 30,
-    "pow": 180,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 18007500,
-    "repReq": 42,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0409",
-    "name": "Flashy Rod",
-    "description": "This rod appears to be very powerful, but just below the surface, there isn't much substance.",
-    "lvl": 9,
-    "value": 10625562,
-    "craftTime": 215219,
-    "type": "Rods",
-    "gcost": [
-      "G001",
-      "G005",
-      ""
-    ],
-    "mcost": {
-      "M209": 1
-    },
-    "smithCost": "M209",
-    "apAdd": 30,
-    "pow": 250,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 126052500,
-    "repReq": 53,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0410",
-    "name": "Fishing Rod",
-    "description": "Don't teach a man to fish, feed yourself.  Fishing isn't that hard.",
-    "lvl": 10,
-    "value": 54107981,
-    "craftTime": 283213,
-    "type": "Rods",
-    "gcost": [
-      "G001",
-      "G005",
-      ""
-    ],
-    "mcost": {
-      "M410": 1
-    },
-    "smithCost": "M410",
-    "apAdd": 30,
-    "pow": 350,
-    "hp": 0,
-    "guildUnlock": "G005",
-    "goldCost": 882367500,
-    "repReq": 58,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0501",
-    "name": "Basic Wand",
-    "description": "Interests include pumpkin spice, ugly boots, and yoga pants.",
-    "lvl": 1,
-    "value": 2,
-    "craftTime": 2910,
-    "type": "Wands",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": null,
-    "smithCost": "M401",
-    "apAdd": 25,
-    "pow": 22,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 0,
-    "repReq": 1,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0502",
-    "name": "Forest Wand",
-    "description": "Yelling \"run\" while using this wand, no matter how hilarious, is a cheap attempt at a joke.",
-    "lvl": 2,
-    "value": 21,
-    "craftTime": 5264,
-    "type": "Wands",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": {
-      "M102": 1
-    },
-    "smithCost": "M102",
-    "apAdd": 25,
-    "pow": 30,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 500,
-    "repReq": 6,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0503",
-    "name": "Wind Wand",
-    "description": "Wendy wondered when, or where, her wind wand wandered.",
-    "lvl": 3,
-    "value": 86,
-    "craftTime": 10040,
-    "type": "Wands",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": null,
-    "smithCost": "M203",
-    "apAdd": 25,
-    "pow": 42,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 1000,
-    "repReq": 17,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0504",
-    "name": "Soul Wand",
-    "description": "Crafting this wand will give you great power, but it may cost you everything.",
-    "lvl": 4,
-    "value": 1119,
-    "craftTime": 18730,
-    "type": "Wands",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": {
-      "M604": 1
-    },
-    "smithCost": "M604",
-    "apAdd": 25,
-    "pow": 59,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 7500,
-    "repReq": 22,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0505",
-    "name": "Rain Wand",
-    "description": "The secret is the hidden compartment which houses the silver iodide.",
-    "lvl": 5,
-    "value": 8061,
-    "craftTime": 31836,
-    "type": "Wands",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M305": 1
-    },
-    "smithCost": "M305",
-    "apAdd": 25,
-    "pow": 81,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 52500,
-    "repReq": 27,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0506",
-    "name": "Frozen Wand",
-    "description": "If you can thaw a frozen wand, there may be no challenge you can't overcome.",
-    "lvl": 6,
-    "value": 58039,
-    "craftTime": 59235,
-    "type": "Wands",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M306": 1
-    },
-    "smithCost": "M306",
-    "apAdd": 25,
-    "pow": 113,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 367500,
-    "repReq": 32,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0507",
-    "name": "Ocean Wand",
-    "description": "It is similar to the Rain Wand, but has key elements that make it more powerful.",
-    "lvl": 7,
-    "value": 307542,
-    "craftTime": 81112,
-    "type": "Wands",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M207": 1
-    },
-    "smithCost": "M207",
-    "apAdd": 25,
-    "pow": 156,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 2572500,
-    "repReq": 37,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0508",
-    "name": "Thunder Wand",
-    "description": "Speaking scientifically, it's probably lightning, but the person who named it wasn't that bright.",
-    "lvl": 8,
-    "value": 804396,
-    "craftTime": 99681,
-    "type": "Wands",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": null,
-    "smithCost": "M208",
-    "apAdd": 25,
-    "pow": 216,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 18007500,
-    "repReq": 42,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0509",
-    "name": "Hate Wand",
-    "description": "Most wizards use this wand out of anger, which unsurprisingly leads to suffering.",
-    "lvl": 9,
-    "value": 6375337,
-    "craftTime": 112288,
-    "type": "Wands",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M309": 1
-    },
-    "smithCost": "M309",
-    "apAdd": 25,
-    "pow": 300,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 126052500,
-    "repReq": 53,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0510",
-    "name": "Love Wand",
-    "description": "Romantic comedies are right: trading in glasses for contacts counts as a total makeover.",
-    "lvl": 10,
-    "value": 32464788,
-    "craftTime": 147763,
-    "type": "Wands",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M510": 1
-    },
-    "smithCost": "M510",
-    "apAdd": 25,
-    "pow": 420,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 882367500,
-    "repReq": 58,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0601",
-    "name": "Earth Staff",
-    "description": "It's a dirty staff, but someone has got to use it.",
+    "id": "R11001",
+    "name": "Water Staff",
+    "description": "Expert water staff users can use floods in expertly timed, awe inspiring bursts of magic.",
     "lvl": 1,
     "value": 9,
     "craftTime": 8333,
-    "type": "Staves",
+    "type": "Arcane",
     "gcost": [
-      "G002"
+      "G001"
     ],
-    "mcost": {
-      "M501": 1
-    },
+    "mcost": null,
     "smithCost": "M501",
-    "apAdd": 40,
     "pow": 14,
     "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 100,
-    "repReq": 3,
+    "guildUnlock": "G001",
+    "goldCost": 0,
+    "repReq": 0,
     "recipeType": "normal"
   },
   {
-    "id": "R0602",
-    "name": "Wind Staff",
-    "description": "If you spin the Wind Staff quickly over your head, you won't fly, but it will look really cool.",
+    "id": "R11002",
+    "name": "Actor Rod",
+    "description": "Technically it's a Barista Rod, but as long as the dream is still alive, I guess it counts.",
     "lvl": 2,
     "value": 36,
     "craftTime": 15312,
-    "type": "Staves",
+    "type": "Arcane",
     "gcost": [
-      "G002"
+      "G001"
     ],
     "mcost": null,
     "smithCost": "M302",
-    "apAdd": 40,
     "pow": 20,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G001",
     "goldCost": 500,
-    "repReq": 8,
+    "repReq": 7,
     "recipeType": "normal"
   },
   {
-    "id": "R0603",
-    "name": "Fire Staff",
-    "description": "Street performers have been dazzling audiences for years using this special staff.",
+    "id": "R11003",
+    "name": "Hate Wand",
+    "description": "Most wizards use this wand out of anger, which unsurprisingly leads to suffering.",
     "lvl": 3,
     "value": 466,
     "craftTime": 28812,
-    "type": "Staves",
+    "type": "Arcane",
     "gcost": [
-      "G002"
+      "G001"
     ],
     "mcost": {
       "M303": 1
     },
     "smithCost": "M303",
-    "apAdd": 40,
     "pow": 28,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G001",
     "goldCost": 1000,
-    "repReq": 13,
+    "repReq": 10,
     "recipeType": "normal"
   },
   {
-    "id": "R0604",
-    "name": "September Staff",
-    "description": "Better than the Month of May Staff, that's for sure.",
+    "id": "R11004",
+    "name": "Heart Staff",
+    "description": "Honestly the weirdest of the staves, and kind of a boring superpower.",
     "lvl": 4,
     "value": 3358,
     "craftTime": 53653,
-    "type": "Staves",
+    "type": "Arcane",
     "gcost": [
-      "G002"
+      "G001"
     ],
     "mcost": {
       "M104": 1
     },
     "smithCost": "M104",
-    "apAdd": 40,
     "pow": 40,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G001",
     "goldCost": 7500,
-    "repReq": 18,
+    "repReq": 13,
     "recipeType": "normal"
   },
   {
-    "id": "R0605",
-    "name": "Water Staff",
-    "description": "Expert water staff users can use floods in expertly timed, awe inspiring bursts of magic.",
+    "id": "R11005",
+    "name": "Stewart Rod",
+    "description": "Some rods have all the luck, and the Stewart Rod gets all the breaks.",
     "lvl": 5,
     "value": 24183,
     "craftTime": 95509,
-    "type": "Staves",
+    "type": "Arcane",
     "gcost": [
-      "G002",
-      "G003",
-      ""
+      "G001"
     ],
     "mcost": {
       "M405": 1
     },
     "smithCost": "M405",
-    "apAdd": 40,
     "pow": 55,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G001",
     "goldCost": 52500,
-    "repReq": 29,
+    "repReq": 16,
     "recipeType": "normal"
   },
   {
-    "id": "R0606",
-    "name": "Heart Staff",
-    "description": "Honestly the weirdest of the staves, and kind of a boring superpower.",
+    "id": "R11006",
+    "name": "Thunder Wand",
+    "description": "Speaking scientifically, it's probably lightning, but the person who named it wasn't that bright.",
     "lvl": 6,
     "value": 174117,
     "craftTime": 177704,
-    "type": "Staves",
+    "type": "Arcane",
     "gcost": [
-      "G002",
-      "G003",
-      ""
+      "G001"
     ],
     "mcost": {
       "M406": 1
     },
     "smithCost": "M406",
-    "apAdd": 40,
     "pow": 75,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G001",
     "goldCost": 367500,
-    "repReq": 34,
+    "repReq": 23,
     "recipeType": "normal"
   },
   {
-    "id": "R0607",
-    "name": "Planet Staff",
-    "description": "There aren't many of these to go around, so make sure you treat this one with care.",
+    "id": "R11007",
+    "name": "Lunar Staff",
+    "description": "Possibly fake.  It casts an odd shadow.  Could be a movie studio knockoff.",
     "lvl": 7,
     "value": 507445,
     "craftTime": 243336,
-    "type": "Staves",
+    "type": "Arcane",
     "gcost": [
-      "G002",
-      "G003",
-      ""
+      "G001"
     ],
     "mcost": null,
     "smithCost": "M207",
-    "apAdd": 40,
     "pow": 104,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G001",
     "goldCost": 2572500,
-    "repReq": 39,
+    "repReq": 26,
     "recipeType": "normal"
   },
   {
-    "id": "R0608",
-    "name": "Lunar Staff",
-    "description": "Possibly fake.  It casts an odd shadow.  Could be a movie studio knockoff.",
+    "id": "R11008",
+    "name": "Love Wand",
+    "description": "Romantic comedies are right: trading in glasses for contacts counts as a total makeover.",
     "lvl": 8,
     "value": 4387611,
     "craftTime": 299043,
-    "type": "Staves",
+    "type": "Arcane",
     "gcost": [
-      "G002",
-      "G003",
-      ""
+      "G001"
     ],
     "mcost": {
       "M608": 1
     },
     "smithCost": "M608",
-    "apAdd": 40,
     "pow": 144,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G001",
     "goldCost": 18007500,
-    "repReq": 44,
+    "repReq": 29,
     "recipeType": "normal"
   },
   {
-    "id": "R0609",
-    "name": "Support Staff",
-    "description": "Having somewhere between five and seven of these at all times is highly efficient.",
+    "id": "R11009",
+    "name": "Fishing Rod",
+    "description": "Don't teach a man to fish, feed yourself.  Fishing isn't that hard.",
     "lvl": 9,
     "value": 19126012,
     "craftTime": 336864,
-    "type": "Staves",
+    "type": "Arcane",
     "gcost": [
-      "G002",
-      "G003",
-      ""
+      "G001"
     ],
     "mcost": {
       "M409": 1
     },
     "smithCost": "M409",
-    "apAdd": 40,
     "pow": 200,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G001",
     "goldCost": 126052500,
-    "repReq": 49,
+    "repReq": 32,
     "recipeType": "normal"
   },
   {
-    "id": "R0610",
+    "id": "R11010",
     "name": "Janitorial Staff",
     "description": "Janitorial Staves may be underappreciated, but befriend them early and often.",
     "lvl": 10,
     "value": 97394366,
     "craftTime": 443290,
-    "type": "Staves",
+    "type": "Arcane",
     "gcost": [
-      "G002",
-      "G003",
-      ""
+      "G001"
     ],
     "mcost": {
       "M610": 1
     },
     "smithCost": "M610",
-    "apAdd": 40,
     "pow": 280,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G001",
     "goldCost": 882367500,
-    "repReq": 54,
+    "repReq": 39,
     "recipeType": "normal"
   },
   {
-    "id": "R0701",
+    "id": "R13001",
     "name": "Knife",
     "description": "Even the mighty oak starts as a simple acorn.",
     "lvl": 1,
     "value": 4,
     "craftTime": 6111,
-    "type": "Knives",
+    "type": "Light",
     "gcost": [
-      "G001"
+      "G003"
     ],
     "mcost": null,
     "smithCost": "M401",
-    "apAdd": 25,
     "pow": 22,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G003",
     "goldCost": 0,
     "repReq": 0,
     "recipeType": "normal"
   },
   {
-    "id": "R0702",
-    "name": "Butter Knife",
-    "description": "Check out the low calorie version -- Hard To Believe This Isn't A Butter Knife.",
+    "id": "R13002",
+    "name": "El Bow",
+    "description": "Named by someone who took too many hits to their funny bone.",
     "lvl": 2,
     "value": 43,
     "craftTime": 11317,
-    "type": "Knives",
+    "type": "Light",
     "gcost": [
-      "G001"
+      "G003"
     ],
     "mcost": {
       "M602": 1
     },
     "smithCost": "M602",
-    "apAdd": 25,
     "pow": 30,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G003",
     "goldCost": 500,
-    "repReq": 11,
+    "repReq": 7,
     "recipeType": "normal"
   },
   {
-    "id": "R0703",
-    "name": "Kitchen Knife",
-    "description": "I'm knifin around... cut, cut, cut, cut, cut.",
+    "id": "R13003",
+    "name": "Cool Whip",
+    "description": "This is a dish best served cold.",
     "lvl": 3,
     "value": 310,
     "craftTime": 21084,
-    "type": "Knives",
+    "type": "Light",
     "gcost": [
-      "G001"
+      "G003"
     ],
     "mcost": {
       "M203": 1
     },
     "smithCost": "M203",
-    "apAdd": 25,
     "pow": 42,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G003",
     "goldCost": 1000,
-    "repReq": 16,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
-    "id": "R0704",
-    "name": "Chef's Knife",
-    "description": "Also known in some circles as Everybody's Grudge.",
+    "id": "R13004",
+    "name": "Butter Knife",
+    "description": "Check out the low calorie version -- Hard To Believe This Isn't A Butter Knife.",
     "lvl": 4,
     "value": 2239,
     "craftTime": 39351,
-    "type": "Knives",
+    "type": "Light",
     "gcost": [
-      "G001"
+      "G003"
     ],
     "mcost": {
       "M604": 1
     },
     "smithCost": "M604",
-    "apAdd": 25,
     "pow": 59,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G003",
     "goldCost": 7500,
-    "repReq": 21,
+    "repReq": 14,
     "recipeType": "normal"
   },
   {
-    "id": "R0705",
-    "name": "Fishing Knife",
-    "description": "Named for the common technique of \"Water Stabbing,\" which is the best way to catch a fish.",
+    "id": "R13005",
+    "name": "Rain Bow",
+    "description": "Now you can shoot enemies with all the colors of the wind.",
     "lvl": 5,
     "value": 16122,
     "craftTime": 73223,
-    "type": "Knives",
+    "type": "Light",
     "gcost": [
-      "G001",
-      "G001"
+      "G003"
     ],
     "mcost": {
       "M305": 1
     },
     "smithCost": "M305",
-    "apAdd": 25,
     "pow": 81,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G003",
     "goldCost": 52500,
-    "repReq": 26,
+    "repReq": 17,
     "recipeType": "normal"
   },
   {
-    "id": "R0706",
-    "name": "That's Not A Knife",
-    "description": "Sure, a talking dog and a duck who refuses to wear pants is fine, but the weapon is breaking immersion.",
+    "id": "R13006",
+    "name": "Shaped Whip",
+    "description": "Try to detect this whip, not before it's too late, or else you'll get whipped good.",
     "lvl": 6,
     "value": 63843,
     "craftTime": 136240,
-    "type": "Knives",
+    "type": "Light",
     "gcost": [
-      "G001",
-      "G001"
+      "G003"
     ],
     "mcost": null,
     "smithCost": "M306",
-    "apAdd": 25,
     "pow": 113,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G003",
     "goldCost": 367500,
-    "repReq": 31,
+    "repReq": 20,
     "recipeType": "normal"
   },
   {
-    "id": "R0707",
-    "name": "That's A Knife",
-    "description": "Some suggest that the original name is actually \"This Is A Knife\" -- they're wrong.",
+    "id": "R13007",
+    "name": "Club Knife",
+    "description": "It's the most exclusive Club in town.",
     "lvl": 7,
     "value": 615084,
     "craftTime": 186558,
-    "type": "Knives",
+    "type": "Light",
     "gcost": [
-      "G001",
-      "G001"
+      "G003"
     ],
     "mcost": {
       "M107": 1
     },
     "smithCost": "M107",
-    "apAdd": 25,
     "pow": 156,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G003",
     "goldCost": 2572500,
-    "repReq": 36,
+    "repReq": 27,
     "recipeType": "normal"
   },
   {
-    "id": "R0708",
-    "name": "Club Knife",
-    "description": "It's the most exclusive Club in town.",
+    "id": "R13008",
+    "name": "Disintegrator",
+    "description": "This bow is unlicensed.  I'd stand back if I were you.",
     "lvl": 8,
     "value": 2925074,
     "craftTime": 229266,
-    "type": "Knives",
+    "type": "Light",
     "gcost": [
-      "G001",
-      "G001"
+      "G003"
     ],
     "mcost": {
       "M408": 1
     },
     "smithCost": "M408",
-    "apAdd": 25,
     "pow": 216,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G003",
     "goldCost": 18007500,
-    "repReq": 47,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
-    "id": "R0709",
-    "name": "Dark Knife",
-    "description": "One popular urban legend mentions that this blade is involved in fowl play.",
+    "id": "R13009",
+    "name": "Qilinbian",
+    "description": "The qilinbian is mostly used for exercise, but certain instructors can wield it with lethal force.",
     "lvl": 9,
     "value": 12750675,
     "craftTime": 258262,
-    "type": "Knives",
+    "type": "Light",
     "gcost": [
-      "G001",
-      "G001"
+      "G003"
     ],
     "mcost": {
       "M309": 1
     },
     "smithCost": "M309",
-    "apAdd": 25,
     "pow": 300,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G003",
     "goldCost": 126052500,
-    "repReq": 52,
+    "repReq": 34,
     "recipeType": "normal"
   },
   {
-    "id": "R0710",
+    "id": "R13010",
     "name": "The Bloopinator",
     "description": "This magical knife can slay overlords and tyrants, but using it comes with a price.",
     "lvl": 10,
     "value": 64929577,
     "craftTime": 339856,
-    "type": "Knives",
+    "type": "Light",
     "gcost": [
-      "G001",
-      "G001"
+      "G003"
     ],
     "mcost": {
       "M510": 1
     },
     "smithCost": "M510",
-    "apAdd": 25,
     "pow": 420,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G003",
     "goldCost": 882367500,
-    "repReq": 57,
+    "repReq": 37,
     "recipeType": "normal"
   },
   {
-    "id": "R0801",
-    "name": "Shatterer",
-    "description": "You can't fire arrows through a force field.  So, don't try it.",
-    "lvl": 1,
-    "value": 11,
-    "craftTime": 10184,
-    "type": "Bows",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": {
-      "M301": 1
-    },
-    "smithCost": "M301",
-    "apAdd": 40,
-    "pow": 14,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 100,
-    "repReq": 4,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0802",
-    "name": "Fragmenter",
-    "description": "Fire at a spine to deconcatenate the discs.  Reversing this process may take time.",
-    "lvl": 2,
-    "value": 44,
-    "craftTime": 18901,
-    "type": "Bows",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": null,
-    "smithCost": "M402",
-    "apAdd": 40,
-    "pow": 20,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 500,
-    "repReq": 9,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0803",
-    "name": "Disintegrator",
-    "description": "This bow is unlicensed.  I'd stand back if I were you.",
-    "lvl": 3,
-    "value": 569,
-    "craftTime": 35180,
-    "type": "Bows",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": {
-      "M303": 1
-    },
-    "smithCost": "M303",
-    "apAdd": 40,
-    "pow": 28,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 1000,
-    "repReq": 14,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0804",
-    "name": "Bone Breaker",
-    "description": "No frills way of incapacitating an enemy combatant.",
-    "lvl": 4,
-    "value": 4105,
-    "craftTime": 65588,
-    "type": "Bows",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": {
-      "M104": 1
-    },
-    "smithCost": "M104",
-    "apAdd": 40,
-    "pow": 40,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 7500,
-    "repReq": 19,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0805",
-    "name": "Fracture Finder",
-    "description": "The perfect bow to use when precision is required.",
-    "lvl": 5,
-    "value": 29557,
-    "craftTime": 111869,
-    "type": "Bows",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M405": 1
-    },
-    "smithCost": "M405",
-    "apAdd": 40,
-    "pow": 55,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 52500,
-    "repReq": 24,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0806",
-    "name": "Demolisher",
-    "description": "A versatile bow, it damages all enemies and can be a big problem if left unchecked.",
-    "lvl": 6,
-    "value": 212810,
-    "craftTime": 208145,
-    "type": "Bows",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M306": 1
-    },
-    "smithCost": "M306",
-    "apAdd": 40,
-    "pow": 75,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 367500,
-    "repReq": 35,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0807",
-    "name": "Shocker",
-    "description": "Able to shoot two arrows at once, but be extremely careful.",
-    "lvl": 7,
-    "value": 620211,
-    "craftTime": 285019,
-    "type": "Bows",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": null,
-    "smithCost": "M307",
-    "apAdd": 40,
-    "pow": 104,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 2572500,
-    "repReq": 40,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0808",
-    "name": "Stunner",
-    "description": "Don't anger Stunner, or it will open an eight million gold can of whoop and serve it to ya cold.",
-    "lvl": 8,
-    "value": 5362636,
-    "craftTime": 350268,
-    "type": "Bows",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M608": 1
-    },
-    "smithCost": "M608",
-    "apAdd": 40,
-    "pow": 144,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 18007500,
-    "repReq": 45,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0809",
-    "name": "Splinterer",
-    "description": "The legends say the owner of this bow trained renaissance painters to be ninjas and eat pizza.",
-    "lvl": 9,
-    "value": 23376237,
-    "craftTime": 394567,
-    "type": "Bows",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M409": 1
-    },
-    "smithCost": "M409",
-    "apAdd": 40,
-    "pow": 200,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 126052500,
-    "repReq": 50,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0810",
-    "name": "Ruiner",
-    "description": "I used to think arrow to the knee jokes were funny, but then I took an arrow to the knee.  Still not funny.",
-    "lvl": 10,
-    "value": 119037559,
-    "craftTime": 519224,
-    "type": "Bows",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M610": 1
-    },
-    "smithCost": "M610",
-    "apAdd": 40,
-    "pow": 280,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 882367500,
-    "repReq": 55,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0901",
-    "name": "Riding Crop",
-    "description": "Sometimes used as a weapon, more often it is utilized in horse racing.",
-    "lvl": 1,
-    "value": 5,
-    "craftTime": 7407,
-    "type": "Whips",
-    "gcost": [
-      "G004"
-    ],
-    "mcost": null,
-    "smithCost": "M501",
-    "apAdd": 30,
-    "pow": 18,
-    "hp": 0,
-    "guildUnlock": "G004",
-    "goldCost": 0,
-    "repReq": 0,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0902",
-    "name": "Bull Whip",
-    "description": "The favorite weapon of a world-class archaeologist.",
-    "lvl": 2,
-    "value": 57,
-    "craftTime": 13638,
-    "type": "Whips",
-    "gcost": [
-      "G004"
-    ],
-    "mcost": {
-      "M102": 1
-    },
-    "smithCost": "M102",
-    "apAdd": 30,
-    "pow": 25,
-    "hp": 0,
-    "guildUnlock": "G004",
-    "goldCost": 500,
-    "repReq": 11,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0903",
-    "name": "Snake Whip",
-    "description": "Given its name because of the shape it takes when coiled.",
-    "lvl": 3,
-    "value": 228,
-    "craftTime": 25597,
-    "type": "Whips",
-    "gcost": [
-      "G004"
-    ],
-    "mcost": null,
-    "smithCost": "M303",
-    "apAdd": 30,
-    "pow": 35,
-    "hp": 0,
-    "guildUnlock": "G004",
-    "goldCost": 1000,
-    "repReq": 16,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0904",
-    "name": "Cool Whip",
-    "description": "This is a dish best served cold.",
-    "lvl": 4,
-    "value": 2985,
-    "craftTime": 47693,
-    "type": "Whips",
-    "gcost": [
-      "G004"
-    ],
-    "mcost": {
-      "M204": 1
-    },
-    "smithCost": "M204",
-    "apAdd": 30,
-    "pow": 49,
-    "hp": 0,
-    "guildUnlock": "G004",
-    "goldCost": 7500,
-    "repReq": 21,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0905",
-    "name": "Readied Whip",
-    "description": "A few years ago, this weapon's production was halted due to a deadly gas explosion.",
-    "lvl": 5,
-    "value": 21496,
-    "craftTime": 84897,
-    "type": "Whips",
-    "gcost": [
-      "G001",
-      "G004"
-    ],
-    "mcost": {
-      "M505": 1
-    },
-    "smithCost": "M505",
-    "apAdd": 30,
-    "pow": 68,
-    "hp": 0,
-    "guildUnlock": "G004",
-    "goldCost": 52500,
-    "repReq": 26,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0906",
-    "name": "Quirt",
-    "description": "Quirts are used often for punishment rather than encouragement.",
-    "lvl": 6,
-    "value": 154771,
-    "craftTime": 157960,
-    "type": "Whips",
-    "gcost": [
-      "G001",
-      "G004"
-    ],
-    "mcost": {
-      "M406": 1
-    },
-    "smithCost": "M406",
-    "apAdd": 30,
-    "pow": 94,
-    "hp": 0,
-    "guildUnlock": "G004",
-    "goldCost": 367500,
-    "repReq": 31,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0907",
-    "name": "Qilinbian",
-    "description": "The qilinbian is mostly used for exercise, but certain instructors can wield it with lethal force.",
-    "lvl": 7,
-    "value": 820112,
-    "craftTime": 216299,
-    "type": "Whips",
-    "gcost": [
-      "G001",
-      "G004"
-    ],
-    "mcost": {
-      "M307": 1
-    },
-    "smithCost": "M307",
-    "apAdd": 30,
-    "pow": 130,
-    "hp": 0,
-    "guildUnlock": "G004",
-    "goldCost": 2572500,
-    "repReq": 36,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0908",
-    "name": "Sjambok",
-    "description": "Traditionally made from hippopotamus or rhinoceros hides.",
-    "lvl": 8,
-    "value": 2145055,
-    "craftTime": 265816,
-    "type": "Whips",
-    "gcost": [
-      "G001",
-      "G004"
-    ],
-    "mcost": null,
-    "smithCost": "M308",
-    "apAdd": 30,
-    "pow": 180,
-    "hp": 0,
-    "guildUnlock": "G004",
-    "goldCost": 18007500,
-    "repReq": 47,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0909",
-    "name": "Cat O Nine Tails",
-    "description": "This whip's name is a bit of a misnomer -- it's made from fox fur.",
-    "lvl": 9,
-    "value": 17000900,
-    "craftTime": 299435,
-    "type": "Whips",
-    "gcost": [
-      "G001",
-      "G004"
-    ],
-    "mcost": {
-      "M509": 1
-    },
-    "smithCost": "M509",
-    "apAdd": 30,
-    "pow": 250,
-    "hp": 0,
-    "guildUnlock": "G004",
-    "goldCost": 126052500,
-    "repReq": 52,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R0910",
-    "name": "Shaped Whip",
-    "description": "Try to detect this whip, not before it's too late, or else you'll get whipped good.",
-    "lvl": 10,
-    "value": 86572770,
-    "craftTime": 394036,
-    "type": "Whips",
-    "gcost": [
-      "G001",
-      "G004"
-    ],
-    "mcost": {
-      "M110": 1
-    },
-    "smithCost": "M110",
-    "apAdd": 30,
-    "pow": 350,
-    "hp": 0,
-    "guildUnlock": "G004",
-    "goldCost": 882367500,
-    "repReq": 57,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R1001",
+    "id": "R12001",
     "name": "Meager Sword",
     "description": "Use it.  Abuse it.  Lose it.  That's the Meager Sword Motto.",
     "lvl": 1,
     "value": 7,
     "craftTime": 22406,
-    "type": "Swords",
+    "type": "Heavy",
     "gcost": [
       "G001"
     ],
     "mcost": null,
     "smithCost": "M601",
-    "apAdd": 30,
     "pow": 18,
     "hp": 0,
     "guildUnlock": "G001",
@@ -2115,13 +450,13 @@
     "recipeType": "normal"
   },
   {
-    "id": "R1002",
-    "name": "Modest Sabre",
-    "description": "It may not look like much, but it does the job.  Eventually.",
+    "id": "R12002",
+    "name": "Greedy Pickaxe",
+    "description": "I'm not saying it's a gold digger, but it has been used in such activities in the past.",
     "lvl": 2,
     "value": 79,
     "craftTime": 41583,
-    "type": "Swords",
+    "type": "Heavy",
     "gcost": [
       "G001"
     ],
@@ -2129,22 +464,21 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "apAdd": 30,
     "pow": 25,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 500,
-    "repReq": 6,
+    "repReq": 4,
     "recipeType": "normal"
   },
   {
-    "id": "R1003",
-    "name": "Sailor Cutlass",
-    "description": "Because what new sailors need is a heavy object that sinks. ",
+    "id": "R12003",
+    "name": "Striped Club",
+    "description": "When used as a scratching post, it brings out all the cats and kittens.",
     "lvl": 3,
     "value": 569,
     "craftTime": 77397,
-    "type": "Swords",
+    "type": "Heavy",
     "gcost": [
       "G001"
     ],
@@ -2152,22 +486,21 @@
       "M403": 1
     },
     "smithCost": "M403",
-    "apAdd": 30,
     "pow": 35,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 1000,
-    "repReq": 17,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
-    "id": "R1004",
-    "name": "Salty Sword",
-    "description": "A weapon for the eternally angry and margarita fans alike.",
+    "id": "R12004",
+    "name": "Buzzblade",
+    "description": "Set this blade to stun, instead of kill, and have a blast.",
     "lvl": 4,
     "value": 4105,
     "craftTime": 144294,
-    "type": "Swords",
+    "type": "Heavy",
     "gcost": [
       "G001"
     ],
@@ -2175,152 +508,139 @@
       "M104": 1
     },
     "smithCost": "M104",
-    "apAdd": 30,
     "pow": 49,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 7500,
-    "repReq": 22,
+    "repReq": 14,
     "recipeType": "normal"
   },
   {
-    "id": "R1005",
-    "name": "Lakekeeper",
-    "description": "The Lakekeeper may be a bit rusty, but a little tetanus never hurt anyone.",
+    "id": "R12005",
+    "name": "Gluttonous Axe",
+    "description": "Gluttonous Axe is not very balanced, and probably should lose some weight around the belly.",
     "lvl": 5,
     "value": 16257,
     "craftTime": 268485,
-    "type": "Swords",
+    "type": "Heavy",
     "gcost": [
-      "G001",
-      "G005"
+      "G001"
     ],
     "mcost": null,
     "smithCost": "M105",
-    "apAdd": 30,
     "pow": 68,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 52500,
-    "repReq": 27,
+    "repReq": 17,
     "recipeType": "normal"
   },
   {
-    "id": "R1006",
-    "name": "Buzzblade",
-    "description": "Set this blade to stun, instead of kill, and have a blast.",
+    "id": "R12006",
+    "name": "Night Club",
+    "description": "Nothing good ever happens with this club after two in the morning, so be careful.",
     "lvl": 6,
     "value": 212810,
     "craftTime": 499547,
-    "type": "Swords",
+    "type": "Heavy",
     "gcost": [
-      "G001",
-      "G005"
+      "G001"
     ],
     "mcost": {
       "M506": 1
     },
     "smithCost": "M506",
-    "apAdd": 30,
     "pow": 94,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 367500,
-    "repReq": 32,
+    "repReq": 20,
     "recipeType": "normal"
   },
   {
-    "id": "R1007",
-    "name": "Feverbreaker",
-    "description": "It's hard to have a fever when your head is missing.",
+    "id": "R12007",
+    "name": "Salty Sword",
+    "description": "A weapon for the eternally angry and margarita fans alike.",
     "lvl": 7,
     "value": 1127655,
     "craftTime": 684046,
-    "type": "Swords",
+    "type": "Heavy",
     "gcost": [
-      "G001",
-      "G005"
+      "G001"
     ],
     "mcost": {
       "M607": 1
     },
     "smithCost": "M607",
-    "apAdd": 30,
     "pow": 130,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 2572500,
-    "repReq": 37,
+    "repReq": 27,
     "recipeType": "normal"
   },
   {
-    "id": "R1008",
-    "name": "Balmungous",
-    "description": "Having two or three of these in a group will make a giant difference.",
+    "id": "R12008",
+    "name": "Wrath",
+    "description": "This axe's name varies by region. In some places it is known as Crusade, and in others, Cataclysm.",
     "lvl": 8,
     "value": 5362636,
     "craftTime": 840643,
-    "type": "Swords",
+    "type": "Heavy",
     "gcost": [
-      "G001",
-      "G005"
+      "G001"
     ],
     "mcost": {
       "M108": 1
     },
     "smithCost": "M108",
-    "apAdd": 30,
     "pow": 180,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 18007500,
-    "repReq": 42,
+    "repReq": 30,
     "recipeType": "normal"
   },
   {
-    "id": "R1009",
-    "name": "Cannonballer",
-    "description": "The favorite weapon of pirates and gunpowder enthusiasts.",
+    "id": "R12009",
+    "name": "Knife Club",
+    "description": "It's the most exclusive Knife in town.",
     "lvl": 9,
     "value": 23376237,
     "craftTime": 946962,
-    "type": "Swords",
+    "type": "Heavy",
     "gcost": [
-      "G001",
-      "G005"
+      "G001"
     ],
     "mcost": {
       "M409": 1
     },
     "smithCost": "M409",
-    "apAdd": 30,
     "pow": 250,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 126052500,
-    "repReq": 53,
+    "repReq": 33,
     "recipeType": "normal"
   },
   {
-    "id": "R1010",
-    "name": "Jawstriker",
-    "description": "A blow to the jaw from this blade will do serious, long lasting damage.",
+    "id": "R12010",
+    "name": "Balmungous",
+    "description": "Having two or three of these in a group will make a giant difference.",
     "lvl": 10,
     "value": 65470658,
     "craftTime": 1246139,
-    "type": "Swords",
+    "type": "Heavy",
     "gcost": [
-      "G001",
-      "G005"
+      "G001"
     ],
     "mcost": null,
     "smithCost": "M110",
-    "apAdd": 30,
     "pow": 350,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 882367500,
-    "repReq": 58,
+    "repReq": 36,
     "recipeType": "normal"
   },
   {
@@ -2332,16 +652,15 @@
     "craftTime": 18517,
     "type": "Helmets",
     "gcost": [
-      "G001"
+      "G002"
     ],
     "mcost": null,
     "smithCost": "M101",
-    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 100,
-    "repReq": 2,
+    "repReq": 0,
     "recipeType": "normal"
   },
   {
@@ -2353,16 +672,15 @@
     "craftTime": 32778,
     "type": "Helmets",
     "gcost": [
-      "G001"
+      "G002"
     ],
     "mcost": {
       "M302": 1
     },
     "smithCost": "M302",
-    "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 500,
     "repReq": 7,
     "recipeType": "normal"
@@ -2376,18 +694,17 @@
     "craftTime": 58675,
     "type": "Helmets",
     "gcost": [
-      "G001"
+      "G002"
     ],
     "mcost": {
       "M503": 1
     },
     "smithCost": "M503",
-    "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 1000,
-    "repReq": 12,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
@@ -2399,18 +716,17 @@
     "craftTime": 104366,
     "type": "Helmets",
     "gcost": [
-      "G001"
+      "G002"
     ],
     "mcost": {
       "M204": 1
     },
     "smithCost": "M204",
-    "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 7500,
-    "repReq": 23,
+    "repReq": 14,
     "recipeType": "normal"
   },
   {
@@ -2422,19 +738,17 @@
     "craftTime": 185558,
     "type": "Helmets",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M405": 1
     },
     "smithCost": "M405",
-    "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 52500,
-    "repReq": 28,
+    "repReq": 17,
     "recipeType": "normal"
   },
   {
@@ -2446,17 +760,15 @@
     "craftTime": 329430,
     "type": "Helmets",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": null,
     "smithCost": "M406",
-    "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 367500,
-    "repReq": 33,
+    "repReq": 20,
     "recipeType": "normal"
   },
   {
@@ -2468,19 +780,17 @@
     "craftTime": 451195,
     "type": "Helmets",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M107": 1
     },
     "smithCost": "M107",
-    "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 2572500,
-    "repReq": 38,
+    "repReq": 27,
     "recipeType": "normal"
   },
   {
@@ -2492,19 +802,17 @@
     "craftTime": 548008,
     "type": "Helmets",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M208": 1
     },
     "smithCost": "M208",
-    "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 18007500,
-    "repReq": 43,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -2516,19 +824,17 @@
     "craftTime": 608947,
     "type": "Helmets",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M509": 1
     },
     "smithCost": "M509",
-    "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 126052500,
-    "repReq": 48,
+    "repReq": 34,
     "recipeType": "normal"
   },
   {
@@ -2540,19 +846,17 @@
     "craftTime": 802554,
     "type": "Helmets",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M210": 1
     },
     "smithCost": "M210",
-    "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 882367500,
-    "repReq": 59,
+    "repReq": 37,
     "recipeType": "normal"
   },
   {
@@ -2568,12 +872,11 @@
     ],
     "mcost": null,
     "smithCost": "M201",
-    "apAdd": 0,
     "pow": 0,
     "hp": 30,
     "guildUnlock": "G003",
     "goldCost": 100,
-    "repReq": 2,
+    "repReq": 1,
     "recipeType": "normal"
   },
   {
@@ -2591,12 +894,11 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "apAdd": 0,
     "pow": 0,
     "hp": 41,
     "guildUnlock": "G003",
     "goldCost": 500,
-    "repReq": 7,
+    "repReq": 4,
     "recipeType": "normal"
   },
   {
@@ -2614,12 +916,11 @@
       "M403": 1
     },
     "smithCost": "M403",
-    "apAdd": 0,
     "pow": 0,
     "hp": 57,
     "guildUnlock": "G003",
     "goldCost": 1000,
-    "repReq": 12,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
@@ -2637,12 +938,11 @@
       "M204": 1
     },
     "smithCost": "M204",
-    "apAdd": 0,
     "pow": 0,
     "hp": 79,
     "guildUnlock": "G003",
     "goldCost": 7500,
-    "repReq": 23,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -2654,19 +954,17 @@
     "craftTime": 136077,
     "type": "Hats",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M505": 1
     },
     "smithCost": "M505",
-    "apAdd": 0,
     "pow": 0,
     "hp": 108,
     "guildUnlock": "G003",
     "goldCost": 52500,
-    "repReq": 28,
+    "repReq": 18,
     "recipeType": "normal"
   },
   {
@@ -2678,17 +976,15 @@
     "craftTime": 241582,
     "type": "Hats",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": null,
     "smithCost": "M506",
-    "apAdd": 0,
     "pow": 0,
     "hp": 148,
     "guildUnlock": "G003",
     "goldCost": 367500,
-    "repReq": 33,
+    "repReq": 21,
     "recipeType": "normal"
   },
   {
@@ -2700,19 +996,17 @@
     "craftTime": 330876,
     "type": "Hats",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M307": 1
     },
     "smithCost": "M307",
-    "apAdd": 0,
     "pow": 0,
     "hp": 202,
     "guildUnlock": "G003",
     "goldCost": 2572500,
-    "repReq": 38,
+    "repReq": 24,
     "recipeType": "normal"
   },
   {
@@ -2724,19 +1018,17 @@
     "craftTime": 401872,
     "type": "Hats",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M208": 1
     },
     "smithCost": "M208",
-    "apAdd": 0,
     "pow": 0,
     "hp": 276,
     "guildUnlock": "G003",
     "goldCost": 18007500,
-    "repReq": 43,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -2748,19 +1040,17 @@
     "craftTime": 446561,
     "type": "Hats",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M509": 1
     },
     "smithCost": "M509",
-    "apAdd": 0,
     "pow": 0,
     "hp": 378,
     "guildUnlock": "G003",
     "goldCost": 126052500,
-    "repReq": 48,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -2772,19 +1062,17 @@
     "craftTime": 588539,
     "type": "Hats",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M110": 1
     },
     "smithCost": "M110",
-    "apAdd": 0,
     "pow": 0,
     "hp": 520,
     "guildUnlock": "G003",
     "goldCost": 882367500,
-    "repReq": 59,
+    "repReq": 38,
     "recipeType": "normal"
   },
   {
@@ -2796,14 +1084,13 @@
     "craftTime": 15941,
     "type": "Masks",
     "gcost": [
-      "G004"
+      "G003"
     ],
     "mcost": null,
     "smithCost": "M301",
-    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 100,
     "repReq": 2,
     "recipeType": "normal"
@@ -2817,18 +1104,17 @@
     "craftTime": 28378,
     "type": "Masks",
     "gcost": [
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M202": 1
     },
     "smithCost": "M202",
-    "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 500,
-    "repReq": 7,
+    "repReq": 5,
     "recipeType": "normal"
   },
   {
@@ -2840,18 +1126,17 @@
     "craftTime": 50506,
     "type": "Masks",
     "gcost": [
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M403": 1
     },
     "smithCost": "M403",
-    "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 1000,
-    "repReq": 12,
+    "repReq": 8,
     "recipeType": "normal"
   },
   {
@@ -2863,18 +1148,17 @@
     "craftTime": 89833,
     "type": "Masks",
     "gcost": [
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M304": 1
     },
     "smithCost": "M304",
-    "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 7500,
-    "repReq": 23,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -2886,19 +1170,17 @@
     "craftTime": 159742,
     "type": "Masks",
     "gcost": [
-      "G004",
-      "G005"
+      "G003"
     ],
     "mcost": {
       "M605": 1
     },
     "smithCost": "M605",
-    "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 52500,
-    "repReq": 28,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -2910,17 +1192,15 @@
     "craftTime": 283596,
     "type": "Masks",
     "gcost": [
-      "G004",
-      "G005"
+      "G003"
     ],
     "mcost": null,
     "smithCost": "M606",
-    "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 367500,
-    "repReq": 33,
+    "repReq": 22,
     "recipeType": "normal"
   },
   {
@@ -2932,19 +1212,17 @@
     "craftTime": 388420,
     "type": "Masks",
     "gcost": [
-      "G004",
-      "G005"
+      "G003"
     ],
     "mcost": {
       "M507": 1
     },
     "smithCost": "M507",
-    "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 2572500,
-    "repReq": 38,
+    "repReq": 25,
     "recipeType": "normal"
   },
   {
@@ -2956,19 +1234,17 @@
     "craftTime": 471763,
     "type": "Masks",
     "gcost": [
-      "G004",
-      "G005"
+      "G003"
     ],
     "mcost": {
       "M208": 1
     },
     "smithCost": "M208",
-    "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 18007500,
-    "repReq": 43,
+    "repReq": 28,
     "recipeType": "normal"
   },
   {
@@ -2980,19 +1256,17 @@
     "craftTime": 524224,
     "type": "Masks",
     "gcost": [
-      "G004",
-      "G005"
+      "G003"
     ],
     "mcost": {
       "M609": 1
     },
     "smithCost": "M609",
-    "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 126052500,
-    "repReq": 48,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -3004,19 +1278,17 @@
     "craftTime": 690894,
     "type": "Masks",
     "gcost": [
-      "G004",
-      "G005"
+      "G003"
     ],
     "mcost": {
       "M210": 1
     },
     "smithCost": "M210",
-    "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 882367500,
-    "repReq": 59,
+    "repReq": 39,
     "recipeType": "normal"
   },
   {
@@ -3028,18 +1300,17 @@
     "craftTime": 14549,
     "type": "Gauntlets",
     "gcost": [
-      "G004"
+      "G001"
     ],
     "mcost": {
       "M201": 1
     },
     "smithCost": "M201",
-    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "guildUnlock": "G004",
+    "guildUnlock": "G001",
     "goldCost": 100,
-    "repReq": 4,
+    "repReq": 2,
     "recipeType": "normal"
   },
   {
@@ -3051,16 +1322,15 @@
     "craftTime": 27822,
     "type": "Gauntlets",
     "gcost": [
-      "G004"
+      "G001"
     ],
     "mcost": null,
     "smithCost": "M202",
-    "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "guildUnlock": "G004",
+    "guildUnlock": "G001",
     "goldCost": 500,
-    "repReq": 9,
+    "repReq": 5,
     "recipeType": "normal"
   },
   {
@@ -3072,18 +1342,17 @@
     "craftTime": 33876,
     "type": "Gauntlets",
     "gcost": [
-      "G004"
+      "G001"
     ],
     "mcost": {
       "M603": 1
     },
     "smithCost": "M603",
-    "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "guildUnlock": "G004",
+    "guildUnlock": "G001",
     "goldCost": 1000,
-    "repReq": 14,
+    "repReq": 8,
     "recipeType": "normal"
   },
   {
@@ -3095,18 +1364,17 @@
     "craftTime": 102004,
     "type": "Gauntlets",
     "gcost": [
-      "G004"
+      "G001"
     ],
     "mcost": {
       "M304": 1
     },
     "smithCost": "M304",
-    "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "guildUnlock": "G004",
+    "guildUnlock": "G001",
     "goldCost": 7500,
-    "repReq": 19,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -3118,19 +1386,17 @@
     "craftTime": 194823,
     "type": "Gauntlets",
     "gcost": [
-      "G001",
-      "G004"
+      "G001"
     ],
     "mcost": {
       "M505": 1
     },
     "smithCost": "M505",
-    "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "guildUnlock": "G004",
+    "guildUnlock": "G001",
     "goldCost": 52500,
-    "repReq": 24,
+    "repReq": 18,
     "recipeType": "normal"
   },
   {
@@ -3142,19 +1408,17 @@
     "craftTime": 371557,
     "type": "Gauntlets",
     "gcost": [
-      "G001",
-      "G004"
+      "G001"
     ],
     "mcost": {
       "M606": 1
     },
     "smithCost": "M606",
-    "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "guildUnlock": "G004",
+    "guildUnlock": "G001",
     "goldCost": 367500,
-    "repReq": 35,
+    "repReq": 21,
     "recipeType": "normal"
   },
   {
@@ -3166,17 +1430,15 @@
     "craftTime": 508892,
     "type": "Gauntlets",
     "gcost": [
-      "G001",
-      "G004"
+      "G001"
     ],
     "mcost": null,
     "smithCost": "M407",
-    "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "guildUnlock": "G004",
+    "guildUnlock": "G001",
     "goldCost": 2572500,
-    "repReq": 40,
+    "repReq": 24,
     "recipeType": "normal"
   },
   {
@@ -3188,19 +1450,17 @@
     "craftTime": 618085,
     "type": "Gauntlets",
     "gcost": [
-      "G001",
-      "G004"
+      "G001"
     ],
     "mcost": {
       "M408": 1
     },
     "smithCost": "M408",
-    "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "guildUnlock": "G004",
+    "guildUnlock": "G001",
     "goldCost": 18007500,
-    "repReq": 45,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -3212,19 +1472,17 @@
     "craftTime": 686817,
     "type": "Gauntlets",
     "gcost": [
-      "G001",
-      "G004"
+      "G001"
     ],
     "mcost": {
       "M609": 1
     },
     "smithCost": "M609",
-    "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "guildUnlock": "G004",
+    "guildUnlock": "G001",
     "goldCost": 126052500,
-    "repReq": 50,
+    "repReq": 34,
     "recipeType": "normal"
   },
   {
@@ -3236,19 +1494,17 @@
     "craftTime": 905181,
     "type": "Gauntlets",
     "gcost": [
-      "G001",
-      "G004"
+      "G001"
     ],
     "mcost": {
       "M110": 1
     },
     "smithCost": "M110",
-    "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "guildUnlock": "G004",
+    "guildUnlock": "G001",
     "goldCost": 882367500,
-    "repReq": 55,
+    "repReq": 37,
     "recipeType": "normal"
   },
   {
@@ -3260,18 +1516,17 @@
     "craftTime": 15055,
     "type": "Gloves",
     "gcost": [
-      "G003"
+      "G002"
     ],
     "mcost": {
       "M601": 1
     },
     "smithCost": "M601",
-    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "guildUnlock": "G003",
+    "guildUnlock": "G002",
     "goldCost": 100,
-    "repReq": 4,
+    "repReq": 1,
     "recipeType": "normal"
   },
   {
@@ -3283,16 +1538,15 @@
     "craftTime": 28607,
     "type": "Gloves",
     "gcost": [
-      "G003"
+      "G002"
     ],
     "mcost": null,
     "smithCost": "M502",
-    "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "guildUnlock": "G003",
+    "guildUnlock": "G002",
     "goldCost": 500,
-    "repReq": 9,
+    "repReq": 4,
     "recipeType": "normal"
   },
   {
@@ -3304,18 +1558,17 @@
     "craftTime": 55178,
     "type": "Gloves",
     "gcost": [
-      "G003"
+      "G002"
     ],
     "mcost": {
       "M503": 1
     },
     "smithCost": "M503",
-    "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "guildUnlock": "G003",
+    "guildUnlock": "G002",
     "goldCost": 1000,
-    "repReq": 14,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
@@ -3327,18 +1580,17 @@
     "craftTime": 105560,
     "type": "Gloves",
     "gcost": [
-      "G003"
+      "G002"
     ],
     "mcost": {
       "M304": 1
     },
     "smithCost": "M304",
-    "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "guildUnlock": "G003",
+    "guildUnlock": "G002",
     "goldCost": 7500,
-    "repReq": 19,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -3350,19 +1602,17 @@
     "craftTime": 220797,
     "type": "Gloves",
     "gcost": [
-      "G003",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M605": 1
     },
     "smithCost": "M605",
-    "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "guildUnlock": "G003",
+    "guildUnlock": "G002",
     "goldCost": 52500,
-    "repReq": 24,
+    "repReq": 18,
     "recipeType": "normal"
   },
   {
@@ -3374,19 +1624,17 @@
     "craftTime": 421098,
     "type": "Gloves",
     "gcost": [
-      "G003",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M506": 1
     },
     "smithCost": "M506",
-    "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "guildUnlock": "G003",
+    "guildUnlock": "G002",
     "goldCost": 367500,
-    "repReq": 35,
+    "repReq": 21,
     "recipeType": "normal"
   },
   {
@@ -3398,17 +1646,15 @@
     "craftTime": 576744,
     "type": "Gloves",
     "gcost": [
-      "G003",
-      "G004"
+      "G002"
     ],
     "mcost": null,
     "smithCost": "M507",
-    "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "guildUnlock": "G003",
+    "guildUnlock": "G002",
     "goldCost": 2572500,
-    "repReq": 40,
+    "repReq": 24,
     "recipeType": "normal"
   },
   {
@@ -3420,19 +1666,17 @@
     "craftTime": 700496,
     "type": "Gloves",
     "gcost": [
-      "G003",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M108": 1
     },
     "smithCost": "M108",
-    "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "guildUnlock": "G003",
+    "guildUnlock": "G002",
     "goldCost": 18007500,
-    "repReq": 45,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -3444,19 +1688,17 @@
     "craftTime": 778393,
     "type": "Gloves",
     "gcost": [
-      "G003",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M609": 1
     },
     "smithCost": "M609",
-    "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "guildUnlock": "G003",
+    "guildUnlock": "G002",
     "goldCost": 126052500,
-    "repReq": 50,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -3468,19 +1710,17 @@
     "craftTime": 1025872,
     "type": "Gloves",
     "gcost": [
-      "G003",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M210": 1
     },
     "smithCost": "M210",
-    "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "guildUnlock": "G003",
+    "guildUnlock": "G002",
     "goldCost": 882367500,
-    "repReq": 55,
+    "repReq": 38,
     "recipeType": "normal"
   },
   {
@@ -3492,18 +1732,17 @@
     "craftTime": 16826,
     "type": "Shoes",
     "gcost": [
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M401": 1
     },
     "smithCost": "M401",
-    "apAdd": 0,
     "pow": 0,
     "hp": 30,
-    "guildUnlock": "G004",
+    "guildUnlock": "G002",
     "goldCost": 100,
-    "repReq": 3,
+    "repReq": 2,
     "recipeType": "normal"
   },
   {
@@ -3515,16 +1754,15 @@
     "craftTime": 32040,
     "type": "Shoes",
     "gcost": [
-      "G004"
+      "G002"
     ],
     "mcost": null,
     "smithCost": "M602",
-    "apAdd": 0,
     "pow": 0,
     "hp": 41,
-    "guildUnlock": "G004",
+    "guildUnlock": "G002",
     "goldCost": 500,
-    "repReq": 8,
+    "repReq": 5,
     "recipeType": "normal"
   },
   {
@@ -3536,18 +1774,17 @@
     "craftTime": 61683,
     "type": "Shoes",
     "gcost": [
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M503": 1
     },
     "smithCost": "M503",
-    "apAdd": 0,
     "pow": 0,
     "hp": 57,
-    "guildUnlock": "G004",
+    "guildUnlock": "G002",
     "goldCost": 1000,
-    "repReq": 13,
+    "repReq": 8,
     "recipeType": "normal"
   },
   {
@@ -3559,18 +1796,17 @@
     "craftTime": 117985,
     "type": "Shoes",
     "gcost": [
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M404": 1
     },
     "smithCost": "M404",
-    "apAdd": 0,
     "pow": 0,
     "hp": 79,
-    "guildUnlock": "G004",
+    "guildUnlock": "G002",
     "goldCost": 7500,
-    "repReq": 18,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -3582,19 +1818,17 @@
     "craftTime": 207292,
     "type": "Shoes",
     "gcost": [
-      "G002",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M105": 1
     },
     "smithCost": "M105",
-    "apAdd": 0,
     "pow": 0,
     "hp": 108,
-    "guildUnlock": "G004",
+    "guildUnlock": "G002",
     "goldCost": 52500,
-    "repReq": 29,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -3606,19 +1840,17 @@
     "craftTime": 395337,
     "type": "Shoes",
     "gcost": [
-      "G002",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M606": 1
     },
     "smithCost": "M606",
-    "apAdd": 0,
     "pow": 0,
     "hp": 148,
-    "guildUnlock": "G004",
+    "guildUnlock": "G002",
     "goldCost": 367500,
-    "repReq": 34,
+    "repReq": 22,
     "recipeType": "normal"
   },
   {
@@ -3630,17 +1862,15 @@
     "craftTime": 541461,
     "type": "Shoes",
     "gcost": [
-      "G002",
-      "G004"
+      "G002"
     ],
     "mcost": null,
     "smithCost": "M607",
-    "apAdd": 0,
     "pow": 0,
     "hp": 202,
-    "guildUnlock": "G004",
+    "guildUnlock": "G002",
     "goldCost": 2572500,
-    "repReq": 39,
+    "repReq": 25,
     "recipeType": "normal"
   },
   {
@@ -3652,19 +1882,17 @@
     "craftTime": 657642,
     "type": "Shoes",
     "gcost": [
-      "G002",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M108": 1
     },
     "smithCost": "M108",
-    "apAdd": 0,
     "pow": 0,
     "hp": 276,
-    "guildUnlock": "G004",
+    "guildUnlock": "G002",
     "goldCost": 18007500,
-    "repReq": 44,
+    "repReq": 28,
     "recipeType": "normal"
   },
   {
@@ -3676,19 +1904,17 @@
     "craftTime": 730773,
     "type": "Shoes",
     "gcost": [
-      "G002",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M209": 1
     },
     "smithCost": "M209",
-    "apAdd": 0,
     "pow": 0,
     "hp": 378,
-    "guildUnlock": "G004",
+    "guildUnlock": "G002",
     "goldCost": 126052500,
-    "repReq": 49,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -3700,19 +1926,17 @@
     "craftTime": 963113,
     "type": "Shoes",
     "gcost": [
-      "G002",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M310": 1
     },
     "smithCost": "M310",
-    "apAdd": 0,
     "pow": 0,
     "hp": 520,
-    "guildUnlock": "G004",
+    "guildUnlock": "G002",
     "goldCost": 882367500,
-    "repReq": 54,
+    "repReq": 39,
     "recipeType": "normal"
   },
   {
@@ -3724,18 +1948,17 @@
     "craftTime": 20369,
     "type": "Armor",
     "gcost": [
-      "G001"
+      "G002"
     ],
     "mcost": {
       "M301": 1
     },
     "smithCost": "M301",
-    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 100,
-    "repReq": 5,
+    "repReq": 3,
     "recipeType": "normal"
   },
   {
@@ -3747,18 +1970,17 @@
     "craftTime": 37324,
     "type": "Armor",
     "gcost": [
-      "G001"
+      "G002"
     ],
     "mcost": {
       "M402": 1
     },
     "smithCost": "M402",
-    "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 500,
-    "repReq": 10,
+    "repReq": 6,
     "recipeType": "normal"
   },
   {
@@ -3770,16 +1992,15 @@
     "craftTime": 68568,
     "type": "Armor",
     "gcost": [
-      "G001"
+      "G002"
     ],
     "mcost": null,
     "smithCost": "M403",
-    "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 1000,
-    "repReq": 15,
+    "repReq": 9,
     "recipeType": "normal"
   },
   {
@@ -3791,18 +2012,17 @@
     "craftTime": 125808,
     "type": "Armor",
     "gcost": [
-      "G001"
+      "G002"
     ],
     "mcost": {
       "M404": 1
     },
     "smithCost": "M404",
-    "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 7500,
-    "repReq": 20,
+    "repReq": 12,
     "recipeType": "normal"
   },
   {
@@ -3814,19 +2034,17 @@
     "craftTime": 230828,
     "type": "Armor",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M605": 1
     },
     "smithCost": "M605",
-    "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 52500,
-    "repReq": 25,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -3838,19 +2056,17 @@
     "craftTime": 423522,
     "type": "Armor",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M106": 1
     },
     "smithCost": "M106",
-    "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 367500,
-    "repReq": 30,
+    "repReq": 23,
     "recipeType": "normal"
   },
   {
@@ -3862,19 +2078,17 @@
     "craftTime": 580065,
     "type": "Armor",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M207": 1
     },
     "smithCost": "M207",
-    "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 2572500,
-    "repReq": 41,
+    "repReq": 26,
     "recipeType": "normal"
   },
   {
@@ -3886,17 +2100,15 @@
     "craftTime": 779479,
     "type": "Armor",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": null,
     "smithCost": "M408",
-    "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 18007500,
-    "repReq": 46,
+    "repReq": 29,
     "recipeType": "normal"
   },
   {
@@ -3908,19 +2120,17 @@
     "craftTime": 1027304,
     "type": "Armor",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M109": 1
     },
     "smithCost": "M109",
-    "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 126052500,
-    "repReq": 51,
+    "repReq": 32,
     "recipeType": "normal"
   },
   {
@@ -3932,19 +2142,17 @@
     "craftTime": 1300827,
     "type": "Armor",
     "gcost": [
-      "G001",
-      "G004"
+      "G002"
     ],
     "mcost": {
       "M610": 1
     },
     "smithCost": "M610",
-    "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "guildUnlock": "G001",
+    "guildUnlock": "G002",
     "goldCost": 882367500,
-    "repReq": 56,
+    "repReq": 39,
     "recipeType": "normal"
   },
   {
@@ -3962,12 +2170,11 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "guildUnlock": "G003",
     "goldCost": 100,
-    "repReq": 5,
+    "repReq": 3,
     "recipeType": "normal"
   },
   {
@@ -3985,12 +2192,11 @@
       "M302": 1
     },
     "smithCost": "M302",
-    "apAdd": 0,
     "pow": 0,
     "hp": 82,
     "guildUnlock": "G003",
     "goldCost": 500,
-    "repReq": 10,
+    "repReq": 6,
     "recipeType": "normal"
   },
   {
@@ -4006,12 +2212,11 @@
     ],
     "mcost": null,
     "smithCost": "M503",
-    "apAdd": 0,
     "pow": 0,
     "hp": 114,
     "guildUnlock": "G003",
     "goldCost": 1000,
-    "repReq": 15,
+    "repReq": 9,
     "recipeType": "normal"
   },
   {
@@ -4029,12 +2234,11 @@
       "M404": 1
     },
     "smithCost": "M404",
-    "apAdd": 0,
     "pow": 0,
     "hp": 158,
     "guildUnlock": "G003",
     "goldCost": 7500,
-    "repReq": 20,
+    "repReq": 12,
     "recipeType": "normal"
   },
   {
@@ -4046,19 +2250,17 @@
     "craftTime": 250065,
     "type": "Cloaks",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M105": 1
     },
     "smithCost": "M105",
-    "apAdd": 0,
     "pow": 0,
     "hp": 216,
     "guildUnlock": "G003",
     "goldCost": 52500,
-    "repReq": 25,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -4070,19 +2272,17 @@
     "craftTime": 458815,
     "type": "Cloaks",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M606": 1
     },
     "smithCost": "M606",
-    "apAdd": 0,
     "pow": 0,
     "hp": 296,
     "guildUnlock": "G003",
     "goldCost": 367500,
-    "repReq": 30,
+    "repReq": 23,
     "recipeType": "normal"
   },
   {
@@ -4094,19 +2294,17 @@
     "craftTime": 628404,
     "type": "Cloaks",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M507": 1
     },
     "smithCost": "M507",
-    "apAdd": 0,
     "pow": 0,
     "hp": 404,
     "guildUnlock": "G003",
     "goldCost": 2572500,
-    "repReq": 41,
+    "repReq": 26,
     "recipeType": "normal"
   },
   {
@@ -4118,17 +2316,15 @@
     "craftTime": 844436,
     "type": "Cloaks",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": null,
     "smithCost": "M508",
-    "apAdd": 0,
     "pow": 0,
     "hp": 552,
     "guildUnlock": "G003",
     "goldCost": 18007500,
-    "repReq": 46,
+    "repReq": 29,
     "recipeType": "normal"
   },
   {
@@ -4140,19 +2336,17 @@
     "craftTime": 1112913,
     "type": "Cloaks",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M109": 1
     },
     "smithCost": "M109",
-    "apAdd": 0,
     "pow": 0,
     "hp": 756,
     "guildUnlock": "G003",
     "goldCost": 126052500,
-    "repReq": 51,
+    "repReq": 32,
     "recipeType": "normal"
   },
   {
@@ -4164,19 +2358,17 @@
     "craftTime": 1409229,
     "type": "Cloaks",
     "gcost": [
-      "G003",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M310": 1
     },
     "smithCost": "M310",
-    "apAdd": 0,
     "pow": 0,
     "hp": 1040,
     "guildUnlock": "G003",
     "goldCost": 882367500,
-    "repReq": 56,
+    "repReq": 39,
     "recipeType": "normal"
   },
   {
@@ -4188,18 +2380,17 @@
     "craftTime": 20369,
     "type": "Vests",
     "gcost": [
-      "G005"
+      "G002"
     ],
     "mcost": {
       "M501": 1
     },
     "smithCost": "M501",
-    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "guildUnlock": "G005",
+    "guildUnlock": "G002",
     "goldCost": 100,
-    "repReq": 5,
+    "repReq": 3,
     "recipeType": "normal"
   },
   {
@@ -4211,18 +2402,17 @@
     "craftTime": 37284,
     "type": "Vests",
     "gcost": [
-      "G005"
+      "G002"
     ],
     "mcost": {
       "M302": 1
     },
     "smithCost": "M302",
-    "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "guildUnlock": "G005",
+    "guildUnlock": "G002",
     "goldCost": 500,
-    "repReq": 10,
+    "repReq": 7,
     "recipeType": "normal"
   },
   {
@@ -4234,16 +2424,15 @@
     "craftTime": 68521,
     "type": "Vests",
     "gcost": [
-      "G005"
+      "G002"
     ],
     "mcost": null,
     "smithCost": "M603",
-    "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "guildUnlock": "G005",
+    "guildUnlock": "G002",
     "goldCost": 1000,
-    "repReq": 15,
+    "repReq": 10,
     "recipeType": "normal"
   },
   {
@@ -4255,18 +2444,17 @@
     "craftTime": 125796,
     "type": "Vests",
     "gcost": [
-      "G005"
+      "G002"
     ],
     "mcost": {
       "M504": 1
     },
     "smithCost": "M504",
-    "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "guildUnlock": "G005",
+    "guildUnlock": "G002",
     "goldCost": 7500,
-    "repReq": 20,
+    "repReq": 13,
     "recipeType": "normal"
   },
   {
@@ -4278,19 +2466,17 @@
     "craftTime": 230831,
     "type": "Vests",
     "gcost": [
-      "G002",
-      "G005"
+      "G002"
     ],
     "mcost": {
       "M205": 1
     },
     "smithCost": "M205",
-    "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "guildUnlock": "G005",
+    "guildUnlock": "G002",
     "goldCost": 52500,
-    "repReq": 25,
+    "repReq": 16,
     "recipeType": "normal"
   },
   {
@@ -4302,19 +2488,17 @@
     "craftTime": 423522,
     "type": "Vests",
     "gcost": [
-      "G002",
-      "G005"
+      "G002"
     ],
     "mcost": {
       "M506": 1
     },
     "smithCost": "M506",
-    "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "guildUnlock": "G005",
+    "guildUnlock": "G002",
     "goldCost": 367500,
-    "repReq": 30,
+    "repReq": 23,
     "recipeType": "normal"
   },
   {
@@ -4326,19 +2510,17 @@
     "craftTime": 580065,
     "type": "Vests",
     "gcost": [
-      "G002",
-      "G005"
+      "G002"
     ],
     "mcost": {
       "M407": 1
     },
     "smithCost": "M407",
-    "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "guildUnlock": "G005",
+    "guildUnlock": "G002",
     "goldCost": 2572500,
-    "repReq": 41,
+    "repReq": 27,
     "recipeType": "normal"
   },
   {
@@ -4350,17 +2532,15 @@
     "craftTime": 779479,
     "type": "Vests",
     "gcost": [
-      "G002",
-      "G005"
+      "G002"
     ],
     "mcost": null,
     "smithCost": "M608",
-    "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "guildUnlock": "G005",
+    "guildUnlock": "G002",
     "goldCost": 18007500,
-    "repReq": 46,
+    "repReq": 30,
     "recipeType": "normal"
   },
   {
@@ -4372,19 +2552,17 @@
     "craftTime": 1027304,
     "type": "Vests",
     "gcost": [
-      "G002",
-      "G005"
+      "G002"
     ],
     "mcost": {
       "M109": 1
     },
     "smithCost": "M109",
-    "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "guildUnlock": "G005",
+    "guildUnlock": "G002",
     "goldCost": 126052500,
-    "repReq": 51,
+    "repReq": 33,
     "recipeType": "normal"
   },
   {
@@ -4396,19 +2574,17 @@
     "craftTime": 1300827,
     "type": "Vests",
     "gcost": [
-      "G002",
-      "G005"
+      "G002"
     ],
     "mcost": {
       "M410": 1
     },
     "smithCost": "M410",
-    "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "guildUnlock": "G005",
+    "guildUnlock": "G002",
     "goldCost": 882367500,
-    "repReq": 56,
+    "repReq": 36,
     "recipeType": "normal"
   },
   {
@@ -4420,18 +2596,15 @@
     "craftTime": 32590,
     "type": "Shields",
     "gcost": [
-      "G001"
+      "G004"
     ],
-    "mcost": {
-      "M401": 1
-    },
+    "mcost": null,
     "smithCost": "M401",
-    "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G004",
     "goldCost": 100,
-    "repReq": 4,
+    "repReq": 0,
     "recipeType": "normal"
   },
   {
@@ -4443,18 +2616,17 @@
     "craftTime": 51321,
     "type": "Shields",
     "gcost": [
-      "G001"
+      "G004"
     ],
     "mcost": {
       "M502": 1
     },
     "smithCost": "M502",
-    "apAdd": 0,
     "pow": 25,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G004",
     "goldCost": 500,
-    "repReq": 9,
+    "repReq": 7,
     "recipeType": "normal"
   },
   {
@@ -4466,18 +2638,17 @@
     "craftTime": 80933,
     "type": "Shields",
     "gcost": [
-      "G001"
+      "G004"
     ],
     "mcost": {
       "M103": 1
     },
     "smithCost": "M103",
-    "apAdd": 0,
     "pow": 35,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G004",
     "goldCost": 1000,
-    "repReq": 14,
+    "repReq": 10,
     "recipeType": "normal"
   },
   {
@@ -4489,16 +2660,15 @@
     "craftTime": 127650,
     "type": "Shields",
     "gcost": [
-      "G001"
+      "G004"
     ],
     "mcost": null,
     "smithCost": "M104",
-    "apAdd": 0,
     "pow": 49,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G004",
     "goldCost": 7500,
-    "repReq": 19,
+    "repReq": 13,
     "recipeType": "normal"
   },
   {
@@ -4510,19 +2680,17 @@
     "craftTime": 201230,
     "type": "Shields",
     "gcost": [
-      "G001",
-      "G003"
+      "G004"
     ],
     "mcost": {
       "M105": 1
     },
     "smithCost": "M105",
-    "apAdd": 0,
     "pow": 68,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G004",
     "goldCost": 52500,
-    "repReq": 24,
+    "repReq": 16,
     "recipeType": "normal"
   },
   {
@@ -4534,19 +2702,17 @@
     "craftTime": 317214,
     "type": "Shields",
     "gcost": [
-      "G001",
-      "G003"
+      "G004"
     ],
     "mcost": {
       "M206": 1
     },
     "smithCost": "M206",
-    "apAdd": 0,
     "pow": 94,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G004",
     "goldCost": 367500,
-    "repReq": 35,
+    "repReq": 23,
     "recipeType": "normal"
   },
   {
@@ -4558,19 +2724,17 @@
     "craftTime": 500043,
     "type": "Shields",
     "gcost": [
-      "G001",
-      "G003"
+      "G004"
     ],
     "mcost": {
       "M407": 1
     },
     "smithCost": "M407",
-    "apAdd": 0,
     "pow": 130,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G004",
     "goldCost": 2572500,
-    "repReq": 40,
+    "repReq": 26,
     "recipeType": "normal"
   },
   {
@@ -4582,19 +2746,17 @@
     "craftTime": 788247,
     "type": "Shields",
     "gcost": [
-      "G001",
-      "G003"
+      "G004"
     ],
     "mcost": {
       "M308": 1
     },
     "smithCost": "M308",
-    "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G004",
     "goldCost": 18007500,
-    "repReq": 45,
+    "repReq": 29,
     "recipeType": "normal"
   },
   {
@@ -4606,17 +2768,15 @@
     "craftTime": 1222188,
     "type": "Shields",
     "gcost": [
-      "G001",
-      "G003"
+      "G004"
     ],
     "mcost": null,
     "smithCost": "M109",
-    "apAdd": 0,
     "pow": 250,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G004",
     "goldCost": 126052500,
-    "repReq": 50,
+    "repReq": 32,
     "recipeType": "normal"
   },
   {
@@ -4628,251 +2788,17 @@
     "craftTime": 1863436,
     "type": "Shields",
     "gcost": [
-      "G001",
-      "G003"
+      "G004"
     ],
     "mcost": {
       "M310": 1
     },
     "smithCost": "M310",
-    "apAdd": 0,
     "pow": 350,
     "hp": 0,
-    "guildUnlock": "G001",
+    "guildUnlock": "G004",
     "goldCost": 882367500,
-    "repReq": 55,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5201",
-    "name": "Stealth Ward",
-    "description": "Useful in protecting against the unseen.",
-    "lvl": 1,
-    "value": 28,
-    "craftTime": 35645,
-    "type": "Wards",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": {
-      "M201": 1
-    },
-    "smithCost": "M201",
-    "apAdd": 0,
-    "pow": 18,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 100,
-    "repReq": 3,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5202",
-    "name": "Sentry Ward",
-    "description": "Alerts the user when dangery is nearby.",
-    "lvl": 2,
-    "value": 170,
-    "craftTime": 55926,
-    "type": "Wards",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": {
-      "M402": 1
-    },
-    "smithCost": "M402",
-    "apAdd": 0,
-    "pow": 25,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 500,
-    "repReq": 8,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5203",
-    "name": "Spell Ward",
-    "description": "Whiskey Alpha Romeo Delta",
-    "lvl": 3,
-    "value": 1041,
-    "craftTime": 88500,
-    "type": "Wards",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": {
-      "M603": 1
-    },
-    "smithCost": "M603",
-    "apAdd": 0,
-    "pow": 35,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 1000,
-    "repReq": 13,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5204",
-    "name": "Curse Ward",
-    "description": "Trusting the demon of lying to tell the truth was probably a mistake.",
-    "lvl": 4,
-    "value": 3496,
-    "craftTime": 139615,
-    "type": "Wards",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": null,
-    "smithCost": "M204",
-    "apAdd": 0,
-    "pow": 49,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 7500,
-    "repReq": 18,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5205",
-    "name": "Poison Ward",
-    "description": "Antidotes are much cheaper, but this ward will last forever.",
-    "lvl": 5,
-    "value": 38468,
-    "craftTime": 218394,
-    "type": "Wards",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M205": 1
-    },
-    "smithCost": "M205",
-    "apAdd": 0,
-    "pow": 68,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 52500,
-    "repReq": 29,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5206",
-    "name": "Disease Ward",
-    "description": "It will protect you against most common ailments adventurers face.",
-    "lvl": 6,
-    "value": 236486,
-    "craftTime": 346953,
-    "type": "Wards",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M106": 1
-    },
-    "smithCost": "M106",
-    "apAdd": 0,
-    "pow": 94,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 367500,
-    "repReq": 34,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5207",
-    "name": "Infection Ward",
-    "description": "Keep this ward around, but make sure to get your flu shot too.",
-    "lvl": 7,
-    "value": 1442570,
-    "craftTime": 546923,
-    "type": "Wards",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M407": 1
-    },
-    "smithCost": "M407",
-    "apAdd": 0,
-    "pow": 130,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 2572500,
     "repReq": 39,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5208",
-    "name": "Cancer Ward",
-    "description": "If only this existed for real.",
-    "lvl": 8,
-    "value": 8499679,
-    "craftTime": 832753,
-    "type": "Wards",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M308": 1
-    },
-    "smithCost": "M308",
-    "apAdd": 0,
-    "pow": 180,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 18007500,
-    "repReq": 44,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5209",
-    "name": "Maternity Ward",
-    "description": "Using this ward will result in years of sleeplessness nights and reduced savings accounts.",
-    "lvl": 9,
-    "value": 29038944,
-    "craftTime": 1336768,
-    "type": "Wards",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": null,
-    "smithCost": "M209",
-    "apAdd": 0,
-    "pow": 250,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 126052500,
-    "repReq": 49,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5210",
-    "name": "Burn Unit",
-    "description": "Not just for clapbacks anymore.",
-    "lvl": 10,
-    "value": 311508669,
-    "craftTime": 2038133,
-    "type": "Wards",
-    "gcost": [
-      "G002",
-      "G003"
-    ],
-    "mcost": {
-      "M410": 1
-    },
-    "smithCost": "M410",
-    "apAdd": 0,
-    "pow": 350,
-    "hp": 0,
-    "guildUnlock": "G003",
-    "goldCost": 882367500,
-    "repReq": 54,
     "recipeType": "normal"
   },
   {
@@ -4880,22 +2806,21 @@
     "name": "Stones",
     "description": "Not safe to own in houses made of glass.",
     "lvl": 1,
-    "value": 29,
-    "craftTime": 26850,
+    "value": 15,
+    "craftTime": 14549,
     "type": "Thrown",
     "gcost": [
-      "G002"
+      "G001"
     ],
     "mcost": {
       "M601": 1
     },
     "smithCost": "M601",
-    "apAdd": 0,
-    "pow": 18,
-    "hp": 0,
-    "guildUnlock": "G002",
+    "pow": 0,
+    "hp": 18,
+    "guildUnlock": "G001",
     "goldCost": 100,
-    "repReq": 2,
+    "repReq": 3,
     "recipeType": "normal"
   },
   {
@@ -4903,22 +2828,21 @@
     "name": "Sticks",
     "description": "Don't shove this in your bike spokes.",
     "lvl": 2,
-    "value": 176,
-    "craftTime": 42109,
+    "value": 111,
+    "craftTime": 27822,
     "type": "Thrown",
     "gcost": [
-      "G002"
+      "G001"
     ],
     "mcost": {
       "M402": 1
     },
     "smithCost": "M402",
-    "apAdd": 0,
-    "pow": 25,
-    "hp": 0,
-    "guildUnlock": "G002",
+    "pow": 0,
+    "hp": 25,
+    "guildUnlock": "G001",
     "goldCost": 500,
-    "repReq": 7,
+    "repReq": 6,
     "recipeType": "normal"
   },
   {
@@ -4926,22 +2850,21 @@
     "name": "Words",
     "description": "Use this against yourself before your enemies get the chance.",
     "lvl": 3,
-    "value": 1079,
-    "craftTime": 66713,
+    "value": 523,
+    "craftTime": 33876,
     "type": "Thrown",
     "gcost": [
-      "G002"
+      "G001"
     ],
     "mcost": {
       "M603": 1
     },
     "smithCost": "M603",
-    "apAdd": 0,
-    "pow": 35,
-    "hp": 0,
-    "guildUnlock": "G002",
+    "pow": 0,
+    "hp": 35,
+    "guildUnlock": "G001",
     "goldCost": 1000,
-    "repReq": 12,
+    "repReq": 9,
     "recipeType": "normal"
   },
   {
@@ -4949,20 +2872,19 @@
     "name": "Shooting Stars",
     "description": "Protect yourself against bag raiders with a handful of these.",
     "lvl": 4,
-    "value": 3621,
-    "craftTime": 105165,
+    "value": 3352,
+    "craftTime": 102004,
     "type": "Thrown",
     "gcost": [
-      "G002"
+      "G001"
     ],
     "mcost": null,
     "smithCost": "M304",
-    "apAdd": 0,
-    "pow": 49,
-    "hp": 0,
-    "guildUnlock": "G002",
+    "pow": 0,
+    "hp": 49,
+    "guildUnlock": "G001",
     "goldCost": 7500,
-    "repReq": 23,
+    "repReq": 12,
     "recipeType": "normal"
   },
   {
@@ -4970,23 +2892,21 @@
     "name": "Poison Shuriken",
     "description": "A little poison will go a long way, so use it modestly.",
     "lvl": 5,
-    "value": 40152,
-    "craftTime": 165785,
+    "value": 45040,
+    "craftTime": 194823,
     "type": "Thrown",
     "gcost": [
-      "G002",
-      "G005"
+      "G001"
     ],
     "mcost": {
       "M305": 1
     },
     "smithCost": "M305",
-    "apAdd": 0,
-    "pow": 68,
-    "hp": 0,
-    "guildUnlock": "G002",
+    "pow": 0,
+    "hp": 68,
+    "guildUnlock": "G001",
     "goldCost": 52500,
-    "repReq": 28,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -4994,23 +2914,21 @@
     "name": "Shining Stars",
     "description": "Manages to reflect light, even when covered in blood.",
     "lvl": 6,
-    "value": 244932,
-    "craftTime": 261341,
+    "value": 332399,
+    "craftTime": 371557,
     "type": "Thrown",
     "gcost": [
-      "G002",
-      "G005"
+      "G001"
     ],
     "mcost": {
       "M106": 1
     },
     "smithCost": "M106",
-    "apAdd": 0,
-    "pow": 94,
-    "hp": 0,
-    "guildUnlock": "G002",
+    "pow": 0,
+    "hp": 94,
+    "guildUnlock": "G001",
     "goldCost": 367500,
-    "repReq": 33,
+    "repReq": 22,
     "recipeType": "normal"
   },
   {
@@ -5018,23 +2936,21 @@
     "name": "Golden Shuriken",
     "description": "This weapon broke the mold.  Throw for the moon.",
     "lvl": 7,
-    "value": 1494090,
-    "craftTime": 411968,
+    "value": 1761716,
+    "craftTime": 508892,
     "type": "Thrown",
     "gcost": [
-      "G002",
-      "G005"
+      "G001"
     ],
     "mcost": {
       "M207": 1
     },
     "smithCost": "M207",
-    "apAdd": 0,
-    "pow": 130,
-    "hp": 0,
-    "guildUnlock": "G002",
+    "pow": 0,
+    "hp": 130,
+    "guildUnlock": "G001",
     "goldCost": 2572500,
-    "repReq": 38,
+    "repReq": 25,
     "recipeType": "normal"
   },
   {
@@ -5042,23 +2958,21 @@
     "name": "Frost Shuriken",
     "description": "Consider it a really sharp chill pill.",
     "lvl": 8,
-    "value": 9113954,
-    "craftTime": 649408,
+    "value": 8280068,
+    "craftTime": 618085,
     "type": "Thrown",
     "gcost": [
-      "G002",
-      "G005"
+      "G001"
     ],
     "mcost": {
       "M308": 1
     },
     "smithCost": "M308",
-    "apAdd": 0,
-    "pow": 180,
-    "hp": 0,
-    "guildUnlock": "G002",
+    "pow": 0,
+    "hp": 180,
+    "guildUnlock": "G001",
     "goldCost": 18007500,
-    "repReq": 43,
+    "repReq": 28,
     "recipeType": "normal"
   },
   {
@@ -5066,21 +2980,19 @@
     "name": "Burning Sticks",
     "description": "All it takes is one match to start an explosion.",
     "lvl": 9,
-    "value": 30076049,
-    "craftTime": 1006916,
+    "value": 19582362,
+    "craftTime": 686817,
     "type": "Thrown",
     "gcost": [
-      "G002",
-      "G005"
+      "G001"
     ],
     "mcost": null,
     "smithCost": "M309",
-    "apAdd": 0,
-    "pow": 250,
-    "hp": 0,
-    "guildUnlock": "G002",
+    "pow": 0,
+    "hp": 250,
+    "guildUnlock": "G001",
     "goldCost": 126052500,
-    "repReq": 48,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -5088,23 +3000,21 @@
     "name": "Heart Seeker",
     "description": "The fastest way to your enemy's heart is through his stomach, so aim for that.",
     "lvl": 10,
-    "value": 322633979,
-    "craftTime": 1535217,
+    "value": 181581899,
+    "craftTime": 905181,
     "type": "Thrown",
     "gcost": [
-      "G002",
-      "G005"
+      "G001"
     ],
     "mcost": {
       "M510": 1
     },
     "smithCost": "M510",
-    "apAdd": 0,
-    "pow": 350,
-    "hp": 0,
-    "guildUnlock": "G002",
+    "pow": 0,
+    "hp": 350,
+    "guildUnlock": "G001",
     "goldCost": 882367500,
-    "repReq": 59,
+    "repReq": 38,
     "recipeType": "normal"
   },
   {
@@ -5116,14 +3026,13 @@
     "craftTime": 35079,
     "type": "Tomes",
     "gcost": [
-      "G002"
+      "G004"
     ],
     "mcost": null,
     "smithCost": "M401",
-    "apAdd": 0,
     "pow": 18,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G004",
     "goldCost": 0,
     "repReq": 1,
     "recipeType": "normal"
@@ -5137,18 +3046,17 @@
     "craftTime": 55268,
     "type": "Tomes",
     "gcost": [
-      "G002"
+      "G004"
     ],
     "mcost": {
       "M502": 1
     },
     "smithCost": "M502",
-    "apAdd": 0,
     "pow": 25,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G004",
     "goldCost": 500,
-    "repReq": 6,
+    "repReq": 4,
     "recipeType": "normal"
   },
   {
@@ -5160,18 +3068,17 @@
     "craftTime": 87130,
     "type": "Tomes",
     "gcost": [
-      "G002"
+      "G004"
     ],
     "mcost": {
       "M103": 1
     },
     "smithCost": "M103",
-    "apAdd": 0,
     "pow": 35,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G004",
     "goldCost": 1000,
-    "repReq": 17,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
@@ -5183,18 +3090,17 @@
     "craftTime": 137401,
     "type": "Tomes",
     "gcost": [
-      "G002"
+      "G004"
     ],
     "mcost": {
       "M504": 1
     },
     "smithCost": "M504",
-    "apAdd": 0,
     "pow": 49,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G004",
     "goldCost": 7500,
-    "repReq": 22,
+    "repReq": 14,
     "recipeType": "normal"
   },
   {
@@ -5206,17 +3112,15 @@
     "craftTime": 216605,
     "type": "Tomes",
     "gcost": [
-      "G002",
-      "G003"
+      "G004"
     ],
     "mcost": null,
     "smithCost": "M205",
-    "apAdd": 0,
     "pow": 68,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G004",
     "goldCost": 52500,
-    "repReq": 27,
+    "repReq": 17,
     "recipeType": "normal"
   },
   {
@@ -5231,19 +3135,17 @@
     "craftTime": 341446,
     "type": "Tomes",
     "gcost": [
-      "G002",
-      "G003"
+      "G004"
     ],
     "mcost": {
       "M206": 1
     },
     "smithCost": "M206",
-    "apAdd": 0,
     "pow": 94,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G004",
     "goldCost": 367500,
-    "repReq": 32,
+    "repReq": 20,
     "recipeType": "normal"
   },
   {
@@ -5255,19 +3157,17 @@
     "craftTime": 538241,
     "type": "Tomes",
     "gcost": [
-      "G002",
-      "G003"
+      "G004"
     ],
     "mcost": {
       "M607": 1
     },
     "smithCost": "M607",
-    "apAdd": 0,
     "pow": 130,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G004",
     "goldCost": 2572500,
-    "repReq": 37,
+    "repReq": 27,
     "recipeType": "normal"
   },
   {
@@ -5279,19 +3179,17 @@
     "craftTime": 848460,
     "type": "Tomes",
     "gcost": [
-      "G002",
-      "G003"
+      "G004"
     ],
     "mcost": {
       "M508": 1
     },
     "smithCost": "M508",
-    "apAdd": 0,
     "pow": 180,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G004",
     "goldCost": 18007500,
-    "repReq": 42,
+    "repReq": 30,
     "recipeType": "normal"
   },
   {
@@ -5303,19 +3201,17 @@
     "craftTime": 1315550,
     "type": "Tomes",
     "gcost": [
-      "G002",
-      "G003"
+      "G004"
     ],
     "mcost": {
       "M209": 1
     },
     "smithCost": "M209",
-    "apAdd": 0,
     "pow": 250,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G004",
     "goldCost": 126052500,
-    "repReq": 53,
+    "repReq": 33,
     "recipeType": "normal"
   },
   {
@@ -5327,479 +3223,15 @@
     "craftTime": 2005782,
     "type": "Tomes",
     "gcost": [
-      "G002",
-      "G003"
+      "G004"
     ],
     "mcost": null,
     "smithCost": "M210",
-    "apAdd": 0,
     "pow": 350,
     "hp": 0,
-    "guildUnlock": "G002",
+    "guildUnlock": "G004",
     "goldCost": 882367500,
-    "repReq": 58,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5601",
-    "name": "Dubious Dart",
-    "description": "You're not sure if it's really a dart, or a fat arrow.",
-    "lvl": 1,
-    "value": 30,
-    "craftTime": 27775,
-    "type": "Darts",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": {
-      "M101": 1
-    },
-    "smithCost": "M101",
-    "apAdd": 0,
-    "pow": 18,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 100,
-    "repReq": 5,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5602",
-    "name": "Delayed Dart",
-    "description": "It's really noticable when the latency rates go up.",
-    "lvl": 2,
-    "value": 183,
-    "craftTime": 43784,
-    "type": "Darts",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": {
-      "M502": 1
-    },
-    "smithCost": "M502",
-    "apAdd": 0,
-    "pow": 25,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 500,
-    "repReq": 10,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5603",
-    "name": "Diverted Dart",
-    "description": "Seems to have taken a detour to Albuquerque.",
-    "lvl": 3,
-    "value": 1116,
-    "craftTime": 69001,
-    "type": "Darts",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": {
-      "M103": 1
-    },
-    "smithCost": "M103",
-    "apAdd": 0,
-    "pow": 35,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 1000,
-    "repReq": 15,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5604",
-    "name": "Ditched Dart",
-    "description": "It moves so quick, that this dart forgets to pay the bill.",
-    "lvl": 4,
-    "value": 6809,
-    "craftTime": 108792,
-    "type": "Darts",
-    "gcost": [
-      "G002"
-    ],
-    "mcost": {
-      "M604": 1
-    },
-    "smithCost": "M604",
-    "apAdd": 0,
-    "pow": 49,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 7500,
-    "repReq": 20,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5605",
-    "name": "Ducked Dart",
-    "description": "Quite useful during rabbit season.",
-    "lvl": 5,
-    "value": 22846,
-    "craftTime": 171503,
-    "type": "Darts",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M305",
-    "apAdd": 0,
-    "pow": 68,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 52500,
-    "repReq": 25,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5606",
-    "name": "Dipped Dart",
-    "description": "Thirty years ago, this was called the dart of the future.  Since then, nothing has changed.",
-    "lvl": 6,
-    "value": 253378,
-    "craftTime": 270353,
-    "type": "Darts",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M206": 1
-    },
-    "smithCost": "M206",
-    "apAdd": 0,
-    "pow": 94,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 367500,
-    "repReq": 30,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5607",
-    "name": "Dancing Dart",
-    "description": "A classic dart beloved by many, but is highly problematic looking back on it now.",
-    "lvl": 7,
-    "value": 1545611,
-    "craftTime": 426174,
-    "type": "Darts",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M607": 1
-    },
-    "smithCost": "M607",
-    "apAdd": 0,
-    "pow": 130,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 2572500,
-    "repReq": 41,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5608",
-    "name": "Daring Dart",
-    "description": "The courage to make the right move at the right time is everything.",
-    "lvl": 8,
-    "value": 9428828,
-    "craftTime": 671844,
-    "type": "Darts",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M508": 1
-    },
-    "smithCost": "M508",
-    "apAdd": 0,
-    "pow": 180,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 18007500,
-    "repReq": 46,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5609",
-    "name": "Double Dart",
-    "description": "Two times the pain packed into one easy to handle dart.",
-    "lvl": 9,
-    "value": 56569371,
-    "craftTime": 1041637,
-    "type": "Darts",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": {
-      "M309": 1
-    },
-    "smithCost": "M309",
-    "apAdd": 0,
-    "pow": 250,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 126052500,
-    "repReq": 51,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R5610",
-    "name": "Dodged Dart",
-    "description": "It doesn't look like much, but it gets to point A to point B just fine.",
-    "lvl": 10,
-    "value": 183567609,
-    "craftTime": 1588156,
-    "type": "Darts",
-    "gcost": [
-      "G002",
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M310",
-    "apAdd": 0,
-    "pow": 350,
-    "hp": 0,
-    "guildUnlock": "G002",
-    "goldCost": 882367500,
-    "repReq": 56,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6101",
-    "name": "Healing Potion",
-    "description": "A simple concoction to soothe wounds.",
-    "lvl": 1,
-    "value": 8,
-    "craftTime": 14711,
-    "type": "Potions",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": null,
-    "smithCost": "M501",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 60,
-    "guildUnlock": "G003",
-    "goldCost": 0,
-    "repReq": 0,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6102",
-    "name": "Mana Potion",
-    "description": "The standard recovery method mages use.",
-    "lvl": 2,
-    "value": 98,
-    "craftTime": 28658,
-    "type": "Potions",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": {
-      "M602": 1
-    },
-    "smithCost": "M602",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 82,
-    "guildUnlock": "G003",
-    "goldCost": 500,
-    "repReq": 11,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6103",
-    "name": "Sleeping Potion",
-    "description": "Not for long-term use.  Designed by Melvin Albert Tonin.",
-    "lvl": 3,
-    "value": 741,
-    "craftTime": 55996,
-    "type": "Potions",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": {
-      "M203": 1
-    },
-    "smithCost": "M203",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 114,
-    "guildUnlock": "G003",
-    "goldCost": 1000,
-    "repReq": 16,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6104",
-    "name": "Coughing Potion",
-    "description": "After two or three of these, most adventurers are ready for a long nap.",
-    "lvl": 4,
-    "value": 3016,
-    "craftTime": 107073,
-    "type": "Potions",
-    "gcost": [
-      "G003"
-    ],
-    "mcost": null,
-    "smithCost": "M404",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 158,
-    "guildUnlock": "G003",
-    "goldCost": 7500,
-    "repReq": 21,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6105",
-    "name": "Invincibility Potion",
-    "description": "The bottle looks completely transparent, but that's pretty self-explanatory.",
-    "lvl": 5,
-    "value": 40028,
-    "craftTime": 202000,
-    "type": "Potions",
-    "gcost": [
-      "G003",
-      "G003"
-    ],
-    "mcost": {
-      "M405": 1
-    },
-    "smithCost": "M405",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 216,
-    "guildUnlock": "G003",
-    "goldCost": 52500,
-    "repReq": 26,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6106",
-    "name": "Laughing Potion",
-    "description": "Consuming many of these at once is called a smorgasvein, and it's elegantly cultural.",
-    "lvl": 6,
-    "value": 288207,
-    "craftTime": 375852,
-    "type": "Potions",
-    "gcost": [
-      "G003",
-      "G003"
-    ],
-    "mcost": {
-      "M106": 1
-    },
-    "smithCost": "M106",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 296,
-    "guildUnlock": "G003",
-    "goldCost": 367500,
-    "repReq": 31,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6107",
-    "name": "Rejuvenating Potion",
-    "description": "Traditionally recovers health over time.",
-    "lvl": 7,
-    "value": 1527499,
-    "craftTime": 514775,
-    "type": "Potions",
-    "gcost": [
-      "G003",
-      "G003"
-    ],
-    "mcost": {
-      "M307": 1
-    },
-    "smithCost": "M307",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 404,
-    "guildUnlock": "G003",
-    "goldCost": 2572500,
     "repReq": 36,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6108",
-    "name": "Like Potion",
-    "description": "Created by a gold-toothed gypsy, who later created an even more famous potion.",
-    "lvl": 8,
-    "value": 7942998,
-    "craftTime": 691744,
-    "type": "Potions",
-    "gcost": [
-      "G003",
-      "G003"
-    ],
-    "mcost": {
-      "M508": 1
-    },
-    "smithCost": "M508",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 552,
-    "guildUnlock": "G003",
-    "goldCost": 18007500,
-    "repReq": 47,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6109",
-    "name": "Bitter Potion",
-    "description": "Using this potion by the light of the moon may lead to broken cups and abrupt endings.",
-    "lvl": 9,
-    "value": 22280112,
-    "craftTime": 911675,
-    "type": "Potions",
-    "gcost": [
-      "G003",
-      "G003"
-    ],
-    "mcost": null,
-    "smithCost": "M409",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 756,
-    "guildUnlock": "G003",
-    "goldCost": 126052500,
-    "repReq": 52,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6110",
-    "name": "Strength Potion",
-    "description": "In some regions, this potion contains highly illegal, and addictive, ingredients.",
-    "lvl": 10,
-    "value": 198495540,
-    "craftTime": 1154411,
-    "type": "Potions",
-    "gcost": [
-      "G003",
-      "G003"
-    ],
-    "mcost": {
-      "M610": 1
-    },
-    "smithCost": "M610",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 1040,
-    "guildUnlock": "G003",
-    "goldCost": 882367500,
-    "repReq": 57,
     "recipeType": "normal"
   },
   {
@@ -5815,12 +3247,11 @@
     ],
     "mcost": null,
     "smithCost": "M601",
-    "apAdd": 0,
     "pow": 0,
     "hp": 60,
     "guildUnlock": "G004",
     "goldCost": 0,
-    "repReq": 1,
+    "repReq": 2,
     "recipeType": "normal"
   },
   {
@@ -5838,12 +3269,11 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "apAdd": 0,
     "pow": 0,
     "hp": 82,
     "guildUnlock": "G004",
     "goldCost": 500,
-    "repReq": 6,
+    "repReq": 5,
     "recipeType": "normal"
   },
   {
@@ -5861,12 +3291,11 @@
       "M303": 1
     },
     "smithCost": "M303",
-    "apAdd": 0,
     "pow": 0,
     "hp": 114,
     "guildUnlock": "G004",
     "goldCost": 1000,
-    "repReq": 17,
+    "repReq": 8,
     "recipeType": "normal"
   },
   {
@@ -5882,12 +3311,11 @@
     ],
     "mcost": null,
     "smithCost": "M504",
-    "apAdd": 0,
     "pow": 0,
     "hp": 158,
     "guildUnlock": "G004",
     "goldCost": 7500,
-    "repReq": 22,
+    "repReq": 15,
     "recipeType": "normal"
   },
   {
@@ -5899,19 +3327,17 @@
     "craftTime": 332972,
     "type": "Pendants",
     "gcost": [
-      "G004",
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M505": 1
     },
     "smithCost": "M505",
-    "apAdd": 0,
     "pow": 0,
     "hp": 216,
     "guildUnlock": "G004",
     "goldCost": 52500,
-    "repReq": 27,
+    "repReq": 18,
     "recipeType": "normal"
   },
   {
@@ -5923,19 +3349,17 @@
     "craftTime": 619537,
     "type": "Pendants",
     "gcost": [
-      "G004",
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M206": 1
     },
     "smithCost": "M206",
-    "apAdd": 0,
     "pow": 0,
     "hp": 296,
     "guildUnlock": "G004",
     "goldCost": 367500,
-    "repReq": 32,
+    "repReq": 21,
     "recipeType": "normal"
   },
   {
@@ -5947,19 +3371,17 @@
     "craftTime": 848531,
     "type": "Pendants",
     "gcost": [
-      "G004",
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M407": 1
     },
     "smithCost": "M407",
-    "apAdd": 0,
     "pow": 0,
     "hp": 404,
     "guildUnlock": "G004",
     "goldCost": 2572500,
-    "repReq": 37,
+    "repReq": 24,
     "recipeType": "normal"
   },
   {
@@ -5971,19 +3393,17 @@
     "craftTime": 1140238,
     "type": "Pendants",
     "gcost": [
-      "G004",
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M608": 1
     },
     "smithCost": "M608",
-    "apAdd": 0,
     "pow": 0,
     "hp": 552,
     "guildUnlock": "G004",
     "goldCost": 18007500,
-    "repReq": 42,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -5995,17 +3415,15 @@
     "craftTime": 1502761,
     "type": "Pendants",
     "gcost": [
-      "G004",
-      "G005"
+      "G004"
     ],
     "mcost": null,
     "smithCost": "M509",
-    "apAdd": 0,
     "pow": 0,
     "hp": 756,
     "guildUnlock": "G004",
     "goldCost": 126052500,
-    "repReq": 53,
+    "repReq": 34,
     "recipeType": "normal"
   },
   {
@@ -6017,19 +3435,17 @@
     "craftTime": 1903125,
     "type": "Pendants",
     "gcost": [
-      "G004",
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M110": 1
     },
     "smithCost": "M110",
-    "apAdd": 0,
     "pow": 0,
     "hp": 1040,
     "guildUnlock": "G004",
     "goldCost": 882367500,
-    "repReq": 58,
+    "repReq": 37,
     "recipeType": "normal"
   },
   {
@@ -6041,16 +3457,15 @@
     "craftTime": 14258,
     "type": "Rings",
     "gcost": [
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M201": 1
     },
     "smithCost": "M201",
-    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "guildUnlock": "G005",
+    "guildUnlock": "G004",
     "goldCost": 100,
     "repReq": 3,
     "recipeType": "normal"
@@ -6064,18 +3479,17 @@
     "craftTime": 27897,
     "type": "Rings",
     "gcost": [
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M302": 1
     },
     "smithCost": "M302",
-    "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "guildUnlock": "G005",
+    "guildUnlock": "G004",
     "goldCost": 500,
-    "repReq": 8,
+    "repReq": 6,
     "recipeType": "normal"
   },
   {
@@ -6087,18 +3501,17 @@
     "craftTime": 54273,
     "type": "Rings",
     "gcost": [
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M403": 1
     },
     "smithCost": "M403",
-    "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "guildUnlock": "G005",
+    "guildUnlock": "G004",
     "goldCost": 1000,
-    "repReq": 13,
+    "repReq": 9,
     "recipeType": "normal"
   },
   {
@@ -6110,16 +3523,15 @@
     "craftTime": 103783,
     "type": "Rings",
     "gcost": [
-      "G005"
+      "G004"
     ],
     "mcost": null,
     "smithCost": "M604",
-    "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "guildUnlock": "G005",
+    "guildUnlock": "G004",
     "goldCost": 7500,
-    "repReq": 18,
+    "repReq": 12,
     "recipeType": "normal"
   },
   {
@@ -6131,19 +3543,17 @@
     "craftTime": 195784,
     "type": "Rings",
     "gcost": [
-      "G001",
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M605": 1
     },
     "smithCost": "M605",
-    "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "guildUnlock": "G005",
+    "guildUnlock": "G004",
     "goldCost": 52500,
-    "repReq": 29,
+    "repReq": 19,
     "recipeType": "normal"
   },
   {
@@ -6155,19 +3565,17 @@
     "craftTime": 364287,
     "type": "Rings",
     "gcost": [
-      "G001",
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M306": 1
     },
     "smithCost": "M306",
-    "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "guildUnlock": "G005",
+    "guildUnlock": "G004",
     "goldCost": 367500,
-    "repReq": 34,
+    "repReq": 22,
     "recipeType": "normal"
   },
   {
@@ -6179,19 +3587,17 @@
     "craftTime": 498936,
     "type": "Rings",
     "gcost": [
-      "G001",
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M507": 1
     },
     "smithCost": "M507",
-    "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "guildUnlock": "G005",
+    "guildUnlock": "G004",
     "goldCost": 2572500,
-    "repReq": 39,
+    "repReq": 25,
     "recipeType": "normal"
   },
   {
@@ -6203,19 +3609,17 @@
     "craftTime": 670460,
     "type": "Rings",
     "gcost": [
-      "G001",
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M108": 1
     },
     "smithCost": "M108",
-    "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "guildUnlock": "G005",
+    "guildUnlock": "G004",
     "goldCost": 18007500,
-    "repReq": 44,
+    "repReq": 28,
     "recipeType": "normal"
   },
   {
@@ -6227,17 +3631,15 @@
     "craftTime": 883624,
     "type": "Rings",
     "gcost": [
-      "G001",
-      "G005"
+      "G004"
     ],
     "mcost": null,
     "smithCost": "M609",
-    "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "guildUnlock": "G005",
+    "guildUnlock": "G004",
     "goldCost": 126052500,
-    "repReq": 49,
+    "repReq": 35,
     "recipeType": "normal"
   },
   {
@@ -6249,251 +3651,17 @@
     "craftTime": 1118891,
     "type": "Rings",
     "gcost": [
-      "G001",
-      "G005"
+      "G004"
     ],
     "mcost": {
       "M210": 1
     },
     "smithCost": "M210",
-    "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "guildUnlock": "G005",
+    "guildUnlock": "G004",
     "goldCost": 882367500,
-    "repReq": 54,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6401",
-    "name": "Conch Shell",
-    "description": "These wash up on shore, and produce lovely sounds.",
-    "lvl": 1,
-    "value": 23,
-    "craftTime": 22309,
-    "type": "Instruments",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M301": 1
-    },
-    "smithCost": "M301",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 60,
-    "guildUnlock": "G005",
-    "goldCost": 100,
-    "repReq": 4,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6402",
-    "name": "Flute",
-    "description": "A simple, well-known instrument.",
-    "lvl": 2,
-    "value": 174,
-    "craftTime": 43613,
-    "type": "Instruments",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M402": 1
-    },
-    "smithCost": "M402",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 82,
-    "guildUnlock": "G005",
-    "goldCost": 500,
-    "repReq": 9,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6403",
-    "name": "Harp",
-    "description": "Once considered to be the most valueable of all crafted items, it has since fallen out of favor.",
-    "lvl": 3,
-    "value": 1311,
-    "craftTime": 84917,
-    "type": "Instruments",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M503": 1
-    },
-    "smithCost": "M503",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 114,
-    "guildUnlock": "G005",
-    "goldCost": 1000,
-    "repReq": 14,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6404",
-    "name": "Guitar Pick",
-    "description": "Always seems to get stuck in things at the worst possible moment.",
-    "lvl": 4,
-    "value": 9701,
-    "craftTime": 162380,
-    "type": "Instruments",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M104": 1
-    },
-    "smithCost": "M104",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 158,
-    "guildUnlock": "G005",
-    "goldCost": 7500,
-    "repReq": 19,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6405",
-    "name": "Flugelhorn",
-    "description": "Slightly more tolerable than a vuvuzela.",
-    "lvl": 5,
-    "value": 38951,
-    "craftTime": 306335,
-    "type": "Instruments",
-    "gcost": [
-      "G004",
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M405",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 216,
-    "guildUnlock": "G005",
-    "goldCost": 52500,
-    "repReq": 24,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6406",
-    "name": "Drum",
-    "description": "Used to inspire troops to march heroicly into battle.",
-    "lvl": 6,
-    "value": 509905,
-    "craftTime": 569973,
-    "type": "Instruments",
-    "gcost": [
-      "G004",
-      "G005"
-    ],
-    "mcost": {
-      "M406": 1
-    },
-    "smithCost": "M406",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 296,
-    "guildUnlock": "G005",
-    "goldCost": 367500,
-    "repReq": 35,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6407",
-    "name": "Lyre",
-    "description": "Very popular on campuses.  Used by bachelors in awkward courtship rituals.",
-    "lvl": 7,
-    "value": 2702499,
-    "craftTime": 780648,
-    "type": "Instruments",
-    "gcost": [
-      "G004",
-      "G005"
-    ],
-    "mcost": {
-      "M607": 1
-    },
-    "smithCost": "M607",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 404,
-    "guildUnlock": "G005",
-    "goldCost": 2572500,
-    "repReq": 40,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6408",
-    "name": "Bells",
-    "description": "Used to inspire troops by running away from the annoying sound it creates.",
-    "lvl": 8,
-    "value": 14052997,
-    "craftTime": 1049019,
-    "type": "Instruments",
-    "gcost": [
-      "G004",
-      "G005"
-    ],
-    "mcost": {
-      "M208": 1
-    },
-    "smithCost": "M208",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 552,
-    "guildUnlock": "G005",
-    "goldCost": 18007500,
-    "repReq": 45,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6409",
-    "name": "Shofar",
-    "description": "Most often used to warn villagers of an incoming raid.",
-    "lvl": 9,
-    "value": 71670289,
-    "craftTime": 1382540,
-    "type": "Instruments",
-    "gcost": [
-      "G004",
-      "G005"
-    ],
-    "mcost": {
-      "M409": 1
-    },
-    "smithCost": "M409",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 756,
-    "guildUnlock": "G005",
-    "goldCost": 126052500,
-    "repReq": 50,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6410",
-    "name": "Gjallarhorn",
-    "description": "The horn of legend, it represents the pinnacle of music-making.",
-    "lvl": 10,
-    "value": 193151430,
-    "craftTime": 1750646,
-    "type": "Instruments",
-    "gcost": [
-      "G004",
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M410",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 1040,
-    "guildUnlock": "G005",
-    "goldCost": 882367500,
-    "repReq": 55,
+    "repReq": 38,
     "recipeType": "normal"
   },
   {
@@ -6505,18 +3673,17 @@
     "craftTime": 11110,
     "type": "Belts",
     "gcost": [
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M401": 1
     },
     "smithCost": "M401",
-    "apAdd": 0,
     "pow": 0,
     "hp": 60,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 100,
-    "repReq": 5,
+    "repReq": 4,
     "recipeType": "normal"
   },
   {
@@ -6528,18 +3695,17 @@
     "craftTime": 21772,
     "type": "Belts",
     "gcost": [
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M502": 1
     },
     "smithCost": "M502",
-    "apAdd": 0,
     "pow": 0,
     "hp": 82,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 500,
-    "repReq": 10,
+    "repReq": 8,
     "recipeType": "normal"
   },
   {
@@ -6551,18 +3717,17 @@
     "craftTime": 42291,
     "type": "Belts",
     "gcost": [
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M603": 1
     },
     "smithCost": "M603",
-    "apAdd": 0,
     "pow": 0,
     "hp": 114,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 1000,
-    "repReq": 15,
+    "repReq": 11,
     "recipeType": "normal"
   },
   {
@@ -6574,18 +3739,17 @@
     "craftTime": 80863,
     "type": "Belts",
     "gcost": [
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M204": 1
     },
     "smithCost": "M204",
-    "apAdd": 0,
     "pow": 0,
     "hp": 158,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 7500,
-    "repReq": 20,
+    "repReq": 14,
     "recipeType": "normal"
   },
   {
@@ -6597,17 +3761,15 @@
     "craftTime": 152560,
     "type": "Belts",
     "gcost": [
-      "G001",
-      "G004"
+      "G003"
     ],
     "mcost": null,
     "smithCost": "M505",
-    "apAdd": 0,
     "pow": 0,
     "hp": 216,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 52500,
-    "repReq": 25,
+    "repReq": 17,
     "recipeType": "normal"
   },
   {
@@ -6619,19 +3781,17 @@
     "craftTime": 283860,
     "type": "Belts",
     "gcost": [
-      "G001",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M506": 1
     },
     "smithCost": "M506",
-    "apAdd": 0,
     "pow": 0,
     "hp": 296,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 367500,
-    "repReq": 30,
+    "repReq": 24,
     "recipeType": "normal"
   },
   {
@@ -6643,19 +3803,17 @@
     "craftTime": 388781,
     "type": "Belts",
     "gcost": [
-      "G001",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M107": 1
     },
     "smithCost": "M107",
-    "apAdd": 0,
     "pow": 0,
     "hp": 404,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 2572500,
-    "repReq": 41,
+    "repReq": 28,
     "recipeType": "normal"
   },
   {
@@ -6667,19 +3825,17 @@
     "craftTime": 522436,
     "type": "Belts",
     "gcost": [
-      "G001",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M308": 1
     },
     "smithCost": "M308",
-    "apAdd": 0,
     "pow": 0,
     "hp": 552,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 18007500,
-    "repReq": 46,
+    "repReq": 31,
     "recipeType": "normal"
   },
   {
@@ -6691,19 +3847,17 @@
     "craftTime": 688538,
     "type": "Belts",
     "gcost": [
-      "G001",
-      "G004"
+      "G003"
     ],
     "mcost": {
       "M509": 1
     },
     "smithCost": "M509",
-    "apAdd": 0,
     "pow": 0,
     "hp": 756,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 126052500,
-    "repReq": 51,
+    "repReq": 34,
     "recipeType": "normal"
   },
   {
@@ -6715,249 +3869,15 @@
     "craftTime": 871863,
     "type": "Belts",
     "gcost": [
-      "G001",
-      "G004"
+      "G003"
     ],
     "mcost": null,
     "smithCost": "M510",
-    "apAdd": 0,
     "pow": 0,
     "hp": 1040,
-    "guildUnlock": "G004",
+    "guildUnlock": "G003",
     "goldCost": 882367500,
-    "repReq": 56,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6601",
-    "name": "Magic Earring",
-    "description": "The perfect combination of stylish and cute.",
-    "lvl": 1,
-    "value": 21,
-    "craftTime": 20369,
-    "type": "Earrings",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M501": 1
-    },
-    "smithCost": "M501",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 60,
-    "guildUnlock": "G005",
-    "goldCost": 100,
-    "repReq": 2,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6602",
-    "name": "Druidic Earring",
-    "description": "Adored by nature lovers the world over.",
-    "lvl": 2,
-    "value": 159,
-    "craftTime": 39853,
-    "type": "Earrings",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M102": 1
-    },
-    "smithCost": "M102",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 82,
-    "guildUnlock": "G005",
-    "goldCost": 500,
-    "repReq": 7,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6603",
-    "name": "Musical Earring",
-    "description": "On quiet nights, some say this earring creates it's own music.  It could be tinnitus.",
-    "lvl": 3,
-    "value": 1197,
-    "craftTime": 77533,
-    "type": "Earrings",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M103": 1
-    },
-    "smithCost": "M103",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 114,
-    "guildUnlock": "G005",
-    "goldCost": 1000,
-    "repReq": 12,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6604",
-    "name": "Caster Earring",
-    "description": "The perfect earring for those who fish.  Can be used as a lure in a pinch.",
-    "lvl": 4,
-    "value": 8857,
-    "craftTime": 148253,
-    "type": "Earrings",
-    "gcost": [
-      "G005"
-    ],
-    "mcost": {
-      "M304": 1
-    },
-    "smithCost": "M304",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 158,
-    "guildUnlock": "G005",
-    "goldCost": 7500,
-    "repReq": 23,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6605",
-    "name": "Medical Earring",
-    "description": "Houses a small device that alerts paramedics, should you ever fall and can't get up.",
-    "lvl": 5,
-    "value": 35564,
-    "craftTime": 279694,
-    "type": "Earrings",
-    "gcost": [
-      "G003",
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M605",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 216,
-    "guildUnlock": "G005",
-    "goldCost": 52500,
-    "repReq": 28,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6606",
-    "name": "Healing Earring",
-    "description": "Sold primarily by trendy merchants who claim crystals and oils can cure curious ailments.",
-    "lvl": 6,
-    "value": 465565,
-    "craftTime": 520410,
-    "type": "Earrings",
-    "gcost": [
-      "G003",
-      "G005"
-    ],
-    "mcost": {
-      "M606": 1
-    },
-    "smithCost": "M606",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 296,
-    "guildUnlock": "G005",
-    "goldCost": 367500,
-    "repReq": 33,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6607",
-    "name": "Wizard Earring",
-    "description": "Wearing this earring for prolonged periods may empower you to learn a long forgotten language.",
-    "lvl": 7,
-    "value": 2467499,
-    "craftTime": 712766,
-    "type": "Earrings",
-    "gcost": [
-      "G003",
-      "G005"
-    ],
-    "mcost": {
-      "M207": 1
-    },
-    "smithCost": "M207",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 404,
-    "guildUnlock": "G005",
-    "goldCost": 2572500,
-    "repReq": 38,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6608",
-    "name": "Clerical Earring",
-    "description": "Loved by those who make spreadsheets and do data entry.",
-    "lvl": 8,
-    "value": 12830998,
-    "craftTime": 957800,
-    "type": "Earrings",
-    "gcost": [
-      "G003",
-      "G005"
-    ],
-    "mcost": {
-      "M408": 1
-    },
-    "smithCost": "M408",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 552,
-    "guildUnlock": "G005",
-    "goldCost": 18007500,
-    "repReq": 43,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6609",
-    "name": "Charismatic Earring",
-    "description": "Favored by those who want to talk their way out of a tough situation.",
-    "lvl": 9,
-    "value": 65438090,
-    "craftTime": 1262319,
-    "type": "Earrings",
-    "gcost": [
-      "G003",
-      "G005"
-    ],
-    "mcost": {
-      "M609": 1
-    },
-    "smithCost": "M609",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 756,
-    "guildUnlock": "G005",
-    "goldCost": 126052500,
-    "repReq": 48,
-    "recipeType": "normal"
-  },
-  {
-    "id": "R6610",
-    "name": "Rose Earring",
-    "description": "The idyllic earring, perfect in every way.",
-    "lvl": 10,
-    "value": 176355654,
-    "craftTime": 1598416,
-    "type": "Earrings",
-    "gcost": [
-      "G003",
-      "G005"
-    ],
-    "mcost": null,
-    "smithCost": "M610",
-    "apAdd": 0,
-    "pow": 0,
-    "hp": 1040,
-    "guildUnlock": "G005",
-    "goldCost": 882367500,
-    "repReq": 59,
+    "repReq": 37,
     "recipeType": "normal"
   },
   {
@@ -6978,7 +3898,6 @@
       "M602": 30
     },
     "smithCost": null,
-    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "guildUnlock": 0,
@@ -7004,7 +3923,6 @@
       "M603": 30
     },
     "smithCost": null,
-    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "guildUnlock": 0,
@@ -7030,7 +3948,6 @@
       "M604": 30
     },
     "smithCost": null,
-    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "guildUnlock": 0,
@@ -7056,7 +3973,6 @@
       "M605": 30
     },
     "smithCost": null,
-    "apAdd": 0,
     "pow": 0,
     "hp": 0,
     "guildUnlock": 0,

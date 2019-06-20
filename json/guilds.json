@@ -1,27 +1,22 @@
 [
   {
     "id": "G001",
-    "name": "Iron Vanguard",
-    "description": "Ore and Steel, produced by highly skilled miners and smelters."
+    "name": "Offensive",
+    "description": "I am Offensive"
   },
   {
     "id": "G002",
-    "name": "Arborist Clan",
-    "description": "Wood and Paper, milled with the utmost care."
+    "name": "Defensive",
+    "description": "I am Defensive"
   },
   {
     "id": "G003",
-    "name": "Magik Group",
-    "description": "Herbs and Mana, gathered using secret techniques."
+    "name": "Sneaky",
+    "description": "I am Sneaky"
   },
   {
     "id": "G004",
-    "name": "Weaver's Guild",
-    "description": "Leather and Fabric, created through traditional methods."
-  },
-  {
-    "id": "G005",
-    "name": "Exotic Sect",
-    "description": "Silver and Bone, acquired through less than savory means."
+    "name": "Valuable",
+    "description": "I am Valuable"
   }
 ]

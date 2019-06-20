@@ -32,7 +32,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M102": 70
+      "M102": 60
     },
     "event": "normal",
     "special": null
@@ -51,7 +51,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M103": 50
+      "M103": 40
     },
     "event": "normal",
     "special": null
@@ -70,7 +70,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M104": 35
+      "M104": 30
     },
     "event": "normal",
     "special": null
@@ -222,7 +222,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M202": 70
+      "M202": 60
     },
     "event": "normal",
     "special": null
@@ -241,7 +241,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M203": 50
+      "M203": 40
     },
     "event": "normal",
     "special": null
@@ -260,7 +260,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M204": 35
+      "M204": 30
     },
     "event": "normal",
     "special": null
@@ -393,7 +393,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M301": 100
+      "M101": 100
     },
     "event": "normal",
     "special": null
@@ -412,7 +412,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M302": 70
+      "M102": 60
     },
     "event": "normal",
     "special": null
@@ -431,7 +431,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M303": 50
+      "M103": 40
     },
     "event": "normal",
     "special": null
@@ -450,7 +450,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M304": 35
+      "M104": 30
     },
     "event": "normal",
     "special": null
@@ -469,7 +469,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M305": 25
+      "M105": 25
     },
     "event": "normal",
     "special": null
@@ -488,7 +488,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M306": 25
+      "M106": 25
     },
     "event": "normal",
     "special": null
@@ -507,7 +507,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M307": 25
+      "M107": 25
     },
     "event": "normal",
     "special": null
@@ -526,7 +526,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M308": 25
+      "M108": 25
     },
     "event": "normal",
     "special": null
@@ -545,7 +545,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M309": 25
+      "M109": 25
     },
     "event": "normal",
     "special": null
@@ -564,7 +564,7 @@
     "dodge": 10,
     "target": "highhp",
     "drops": {
-      "M310": 25
+      "M110": 25
     },
     "event": "normal",
     "special": null
@@ -583,7 +583,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M401": 100
+      "M301": 100
     },
     "event": "normal",
     "special": null
@@ -602,7 +602,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M402": 70
+      "M302": 60
     },
     "event": "normal",
     "special": null
@@ -621,7 +621,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M403": 50
+      "M303": 40
     },
     "event": "normal",
     "special": null
@@ -640,7 +640,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M404": 35
+      "M304": 30
     },
     "event": "normal",
     "special": null
@@ -659,7 +659,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M405": 25
+      "M305": 25
     },
     "event": "normal",
     "special": null
@@ -678,7 +678,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M406": 25
+      "M306": 25
     },
     "event": "normal",
     "special": null
@@ -697,7 +697,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M407": 25
+      "M307": 25
     },
     "event": "normal",
     "special": null
@@ -716,7 +716,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M408": 25
+      "M308": 25
     },
     "event": "normal",
     "special": null
@@ -735,7 +735,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M409": 25
+      "M309": 25
     },
     "event": "normal",
     "special": null
@@ -754,7 +754,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M410": 25
+      "M310": 25
     },
     "event": "normal",
     "special": null
@@ -773,7 +773,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M501": 100
+      "M301": 100
     },
     "event": "normal",
     "special": null
@@ -792,7 +792,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M502": 70
+      "M302": 60
     },
     "event": "normal",
     "special": null
@@ -811,7 +811,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M503": 50
+      "M303": 40
     },
     "event": "normal",
     "special": null
@@ -830,7 +830,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M504": 35
+      "M304": 30
     },
     "event": "normal",
     "special": null
@@ -849,7 +849,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M505": 25
+      "M305": 25
     },
     "event": "normal",
     "special": null
@@ -868,7 +868,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M506": 25
+      "M306": 25
     },
     "event": "normal",
     "special": null
@@ -887,7 +887,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M507": 25
+      "M307": 25
     },
     "event": "normal",
     "special": null
@@ -906,7 +906,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M508": 25
+      "M308": 25
     },
     "event": "normal",
     "special": null
@@ -925,7 +925,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M509": 25
+      "M309": 25
     },
     "event": "normal",
     "special": null
@@ -944,7 +944,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M510": 25
+      "M310": 25
     },
     "event": "normal",
     "special": null
@@ -963,7 +963,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M601": 100
+      "M201": 100
     },
     "event": "normal",
     "special": null
@@ -982,7 +982,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M602": 70
+      "M202": 60
     },
     "event": "normal",
     "special": null
@@ -1001,7 +1001,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M603": 50
+      "M203": 40
     },
     "event": "normal",
     "special": null
@@ -1020,7 +1020,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M604": 35
+      "M204": 30
     },
     "event": "normal",
     "special": null
@@ -1039,7 +1039,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M605": 25
+      "M205": 25
     },
     "event": "normal",
     "special": null
@@ -1058,7 +1058,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M606": 25
+      "M206": 25
     },
     "event": "normal",
     "special": null
@@ -1077,7 +1077,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M607": 25
+      "M207": 25
     },
     "event": "normal",
     "special": null
@@ -1096,7 +1096,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M608": 25
+      "M208": 25
     },
     "event": "normal",
     "special": null
@@ -1115,7 +1115,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M609": 25
+      "M209": 25
     },
     "event": "normal",
     "special": null
@@ -1134,7 +1134,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M610": 25
+      "M210": 25
     },
     "event": "normal",
     "special": null
@@ -1393,7 +1393,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M101": 100
+      "M301": 100
     },
     "event": "normal",
     "special": null
@@ -1412,7 +1412,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M102": 70
+      "M302": 60
     },
     "event": "normal",
     "special": null
@@ -1431,7 +1431,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M103": 50
+      "M303": 40
     },
     "event": "normal",
     "special": null
@@ -1450,7 +1450,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M104": 35
+      "M304": 30
     },
     "event": "normal",
     "special": null
@@ -1469,7 +1469,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M105": 25
+      "M305": 25
     },
     "event": "normal",
     "special": null
@@ -1488,7 +1488,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M106": 25
+      "M306": 25
     },
     "event": "normal",
     "special": null
@@ -1507,7 +1507,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M107": 25
+      "M307": 25
     },
     "event": "normal",
     "special": null
@@ -1526,7 +1526,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M108": 25
+      "M308": 25
     },
     "event": "normal",
     "special": null
@@ -1545,7 +1545,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M109": 25
+      "M309": 25
     },
     "event": "normal",
     "special": null
@@ -1564,7 +1564,7 @@
     "dodge": 5,
     "target": "first",
     "drops": {
-      "M110": 25
+      "M310": 25
     },
     "event": "normal",
     "special": null
@@ -1583,7 +1583,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M201": 100
+      "M101": 100
     },
     "event": "normal",
     "special": null
@@ -1602,7 +1602,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M202": 70
+      "M102": 60
     },
     "event": "normal",
     "special": null
@@ -1621,7 +1621,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M203": 50
+      "M103": 40
     },
     "event": "normal",
     "special": null
@@ -1640,7 +1640,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M204": 35
+      "M104": 30
     },
     "event": "normal",
     "special": null
@@ -1659,7 +1659,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M205": 25
+      "M105": 25
     },
     "event": "normal",
     "special": null
@@ -1678,7 +1678,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M206": 25
+      "M106": 25
     },
     "event": "normal",
     "special": null
@@ -1697,7 +1697,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M207": 25
+      "M107": 25
     },
     "event": "normal",
     "special": null
@@ -1716,7 +1716,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M208": 25
+      "M108": 25
     },
     "event": "normal",
     "special": null
@@ -1735,7 +1735,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M209": 25
+      "M109": 25
     },
     "event": "normal",
     "special": null
@@ -1754,7 +1754,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M210": 25
+      "M110": 25
     },
     "event": "normal",
     "special": null
@@ -1773,7 +1773,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M301": 100
+      "M201": 100
     },
     "event": "normal",
     "special": null
@@ -1792,7 +1792,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M302": 70
+      "M202": 60
     },
     "event": "normal",
     "special": null
@@ -1811,7 +1811,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M303": 50
+      "M203": 40
     },
     "event": "normal",
     "special": null
@@ -1830,7 +1830,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M304": 35
+      "M204": 30
     },
     "event": "normal",
     "special": null
@@ -1849,7 +1849,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M305": 25
+      "M205": 25
     },
     "event": "normal",
     "special": null
@@ -1868,7 +1868,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M306": 25
+      "M206": 25
     },
     "event": "normal",
     "special": null
@@ -1887,7 +1887,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M307": 25
+      "M207": 25
     },
     "event": "normal",
     "special": null
@@ -1906,7 +1906,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M308": 25
+      "M208": 25
     },
     "event": "normal",
     "special": null
@@ -1925,7 +1925,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M309": 25
+      "M209": 25
     },
     "event": "normal",
     "special": null
@@ -1944,7 +1944,7 @@
     "dodge": 15,
     "target": "lowhp",
     "drops": {
-      "M310": 25
+      "M210": 25
     },
     "event": "normal",
     "special": null
@@ -1963,7 +1963,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M401": 100
+      "M201": 100
     },
     "event": "normal",
     "special": null
@@ -1982,7 +1982,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M402": 70
+      "M202": 60
     },
     "event": "normal",
     "special": null
@@ -2001,7 +2001,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M403": 50
+      "M203": 40
     },
     "event": "normal",
     "special": null
@@ -2020,7 +2020,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M404": 35
+      "M204": 30
     },
     "event": "normal",
     "special": null
@@ -2039,7 +2039,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M405": 25
+      "M205": 25
     },
     "event": "normal",
     "special": null
@@ -2058,7 +2058,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M406": 25
+      "M206": 25
     },
     "event": "normal",
     "special": null
@@ -2077,7 +2077,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M407": 25
+      "M207": 25
     },
     "event": "normal",
     "special": null
@@ -2096,7 +2096,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M408": 25
+      "M208": 25
     },
     "event": "normal",
     "special": null
@@ -2115,7 +2115,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M409": 25
+      "M209": 25
     },
     "event": "normal",
     "special": null
@@ -2134,7 +2134,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M410": 25
+      "M210": 25
     },
     "event": "normal",
     "special": null
@@ -2153,7 +2153,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M501": 100
+      "M101": 100
     },
     "event": "normal",
     "special": null
@@ -2172,7 +2172,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M502": 70
+      "M102": 60
     },
     "event": "normal",
     "special": null
@@ -2191,7 +2191,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M503": 50
+      "M103": 40
     },
     "event": "normal",
     "special": null
@@ -2210,7 +2210,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M504": 35
+      "M104": 30
     },
     "event": "normal",
     "special": null
@@ -2229,7 +2229,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M505": 25
+      "M105": 25
     },
     "event": "normal",
     "special": null
@@ -2248,7 +2248,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M506": 25
+      "M106": 25
     },
     "event": "normal",
     "special": null
@@ -2267,7 +2267,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M507": 25
+      "M107": 25
     },
     "event": "normal",
     "special": null
@@ -2286,7 +2286,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M508": 25
+      "M108": 25
     },
     "event": "normal",
     "special": null
@@ -2305,7 +2305,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M509": 25
+      "M109": 25
     },
     "event": "normal",
     "special": null
@@ -2324,7 +2324,7 @@
     "dodge": 5,
     "target": "random",
     "drops": {
-      "M510": 25
+      "M110": 25
     },
     "event": "normal",
     "special": null
@@ -2343,7 +2343,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M601": 100
+      "M301": 100
     },
     "event": "normal",
     "special": null
@@ -2362,7 +2362,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M602": 70
+      "M302": 60
     },
     "event": "normal",
     "special": null
@@ -2381,7 +2381,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M603": 50
+      "M303": 40
     },
     "event": "normal",
     "special": null
@@ -2400,7 +2400,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M604": 35
+      "M304": 30
     },
     "event": "normal",
     "special": null
@@ -2419,7 +2419,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M605": 25
+      "M305": 25
     },
     "event": "normal",
     "special": null
@@ -2438,7 +2438,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M606": 25
+      "M306": 25
     },
     "event": "normal",
     "special": null
@@ -2457,7 +2457,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M607": 25
+      "M307": 25
     },
     "event": "normal",
     "special": null
@@ -2476,7 +2476,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M608": 25
+      "M308": 25
     },
     "event": "normal",
     "special": null
@@ -2495,7 +2495,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M609": 25
+      "M309": 25
     },
     "event": "normal",
     "special": null
@@ -2514,7 +2514,7 @@
     "dodge": 0,
     "target": "first",
     "drops": {
-      "M610": 25
+      "M310": 25
     },
     "event": "normal",
     "special": null

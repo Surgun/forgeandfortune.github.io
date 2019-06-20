@@ -4,8 +4,8 @@
     "name": "Water Staff",
     "description": "Expert water staff users can use floods in expertly timed, awe inspiring bursts of magic.",
     "lvl": 1,
-    "value": 9,
-    "craftTime": 8333,
+    "value": 11,
+    "craftTime": 11203,
     "type": "Arcane",
     "gcost": [
       "G001"
@@ -24,8 +24,8 @@
     "name": "Actor Rod",
     "description": "Technically it's a Barista Rod, but as long as the dream is still alive, I guess it counts.",
     "lvl": 2,
-    "value": 36,
-    "craftTime": 15312,
+    "value": 67,
+    "craftTime": 17633,
     "type": "Arcane",
     "gcost": [
       "G001"
@@ -46,8 +46,8 @@
     "name": "Hate Wand",
     "description": "Most wizards use this wand out of anger, which unsurprisingly leads to suffering.",
     "lvl": 3,
-    "value": 466,
-    "craftTime": 28812,
+    "value": 408,
+    "craftTime": 27749,
     "type": "Arcane",
     "gcost": [
       "G001"
@@ -68,8 +68,8 @@
     "name": "Heart Staff",
     "description": "Honestly the weirdest of the staves, and kind of a boring superpower.",
     "lvl": 4,
-    "value": 3358,
-    "craftTime": 53653,
+    "value": 2488,
+    "craftTime": 43728,
     "type": "Arcane",
     "gcost": [
       "G001"
@@ -90,8 +90,8 @@
     "name": "Stewart Rod",
     "description": "Some rods have all the luck, and the Stewart Rod gets all the breaks.",
     "lvl": 5,
-    "value": 24183,
-    "craftTime": 95509,
+    "value": 15176,
+    "craftTime": 68927,
     "type": "Arcane",
     "gcost": [
       "G001"
@@ -112,8 +112,8 @@
     "name": "Thunder Wand",
     "description": "Speaking scientifically, it's probably lightning, but the person who named it wasn't that bright.",
     "lvl": 6,
-    "value": 174117,
-    "craftTime": 177704,
+    "value": 92573,
+    "craftTime": 108652,
     "type": "Arcane",
     "gcost": [
       "G001"
@@ -134,8 +134,8 @@
     "name": "Lunar Staff",
     "description": "Possibly fake.  It casts an odd shadow.  Could be a movie studio knockoff.",
     "lvl": 7,
-    "value": 507445,
-    "craftTime": 243336,
+    "value": 564695,
+    "craftTime": 171275,
     "type": "Arcane",
     "gcost": [
       "G001"
@@ -156,8 +156,8 @@
     "name": "Love Wand",
     "description": "Romantic comedies are right: trading in glasses for contacts counts as a total makeover.",
     "lvl": 8,
-    "value": 4387611,
-    "craftTime": 299043,
+    "value": 3444639,
+    "craftTime": 269990,
     "type": "Arcane",
     "gcost": [
       "G001"
@@ -178,8 +178,8 @@
     "name": "Fishing Rod",
     "description": "Don't teach a man to fish, feed yourself.  Fishing isn't that hard.",
     "lvl": 9,
-    "value": 19126012,
-    "craftTime": 336864,
+    "value": 21012297,
+    "craftTime": 425600,
     "type": "Arcane",
     "gcost": [
       "G001"
@@ -200,8 +200,8 @@
     "name": "Janitorial Staff",
     "description": "Janitorial Staves may be underappreciated, but befriend them early and often.",
     "lvl": 10,
-    "value": 97394366,
-    "craftTime": 443290,
+    "value": 128175011,
+    "craftTime": 670897,
     "type": "Arcane",
     "gcost": [
       "G001"
@@ -222,8 +222,8 @@
     "name": "Knife",
     "description": "Even the mighty oak starts as a simple acorn.",
     "lvl": 1,
-    "value": 4,
-    "craftTime": 6111,
+    "value": 9,
+    "craftTime": 9166,
     "type": "Light",
     "gcost": [
       "G003"
@@ -242,8 +242,8 @@
     "name": "El Bow",
     "description": "Named by someone who took too many hits to their funny bone.",
     "lvl": 2,
-    "value": 43,
-    "craftTime": 11317,
+    "value": 54,
+    "craftTime": 14212,
     "type": "Light",
     "gcost": [
       "G003"
@@ -264,8 +264,8 @@
     "name": "Cool Whip",
     "description": "This is a dish best served cold.",
     "lvl": 3,
-    "value": 310,
-    "craftTime": 21084,
+    "value": 329,
+    "craftTime": 22376,
     "type": "Light",
     "gcost": [
       "G003"
@@ -286,8 +286,8 @@
     "name": "Butter Knife",
     "description": "Check out the low calorie version -- Hard To Believe This Isn't A Butter Knife.",
     "lvl": 4,
-    "value": 2239,
-    "craftTime": 39351,
+    "value": 2006,
+    "craftTime": 35256,
     "type": "Light",
     "gcost": [
       "G003"
@@ -308,8 +308,8 @@
     "name": "Rain Bow",
     "description": "Now you can shoot enemies with all the colors of the wind.",
     "lvl": 5,
-    "value": 16122,
-    "craftTime": 73223,
+    "value": 12236,
+    "craftTime": 55574,
     "type": "Light",
     "gcost": [
       "G003"
@@ -330,8 +330,8 @@
     "name": "Shaped Whip",
     "description": "Try to detect this whip, not before it's too late, or else you'll get whipped good.",
     "lvl": 6,
-    "value": 63843,
-    "craftTime": 136240,
+    "value": 74639,
+    "craftTime": 87603,
     "type": "Light",
     "gcost": [
       "G003"
@@ -352,8 +352,8 @@
     "name": "Club Knife",
     "description": "It's the most exclusive Club in town.",
     "lvl": 7,
-    "value": 615084,
-    "craftTime": 186558,
+    "value": 455297,
+    "craftTime": 138094,
     "type": "Light",
     "gcost": [
       "G003"
@@ -374,8 +374,8 @@
     "name": "Disintegrator",
     "description": "This bow is unlicensed.  I'd stand back if I were you.",
     "lvl": 8,
-    "value": 2925074,
-    "craftTime": 229266,
+    "value": 2777311,
+    "craftTime": 217685,
     "type": "Light",
     "gcost": [
       "G003"
@@ -396,8 +396,8 @@
     "name": "Qilinbian",
     "description": "The qilinbian is mostly used for exercise, but certain instructors can wield it with lethal force.",
     "lvl": 9,
-    "value": 12750675,
-    "craftTime": 258262,
+    "value": 16941597,
+    "craftTime": 343149,
     "type": "Light",
     "gcost": [
       "G003"
@@ -418,8 +418,8 @@
     "name": "The Bloopinator",
     "description": "This magical knife can slay overlords and tyrants, but using it comes with a price.",
     "lvl": 10,
-    "value": 64929577,
-    "craftTime": 339856,
+    "value": 103343741,
+    "craftTime": 540924,
     "type": "Light",
     "gcost": [
       "G003"
@@ -440,8 +440,8 @@
     "name": "Meager Sword",
     "description": "Use it.  Abuse it.  Lose it.  That's the Meager Sword Motto.",
     "lvl": 1,
-    "value": 7,
-    "craftTime": 22406,
+    "value": 13,
+    "craftTime": 13240,
     "type": "Heavy",
     "gcost": [
       "G001"
@@ -463,7 +463,7 @@
     "description": "I'm not saying it's a gold digger, but it has been used in such activities in the past.",
     "lvl": 2,
     "value": 79,
-    "craftTime": 41583,
+    "craftTime": 20791,
     "type": "Heavy",
     "gcost": [
       "G001"
@@ -484,8 +484,8 @@
     "name": "Striped Club",
     "description": "When used as a scratching post, it brings out all the cats and kittens.",
     "lvl": 3,
-    "value": 569,
-    "craftTime": 77397,
+    "value": 481,
+    "craftTime": 32713,
     "type": "Heavy",
     "gcost": [
       "G001"
@@ -506,8 +506,8 @@
     "name": "Buzzblade",
     "description": "Set this blade to stun, instead of kill, and have a blast.",
     "lvl": 4,
-    "value": 4105,
-    "craftTime": 144294,
+    "value": 2934,
+    "craftTime": 51566,
     "type": "Heavy",
     "gcost": [
       "G001"
@@ -528,8 +528,8 @@
     "name": "Gluttonous Axe",
     "description": "Gluttonous Axe is not very balanced, and probably should lose some weight around the belly.",
     "lvl": 5,
-    "value": 16257,
-    "craftTime": 268485,
+    "value": 17897,
+    "craftTime": 81285,
     "type": "Heavy",
     "gcost": [
       "G001"
@@ -550,8 +550,8 @@
     "name": "Night Club",
     "description": "Nothing good ever happens with this club after two in the morning, so be careful.",
     "lvl": 6,
-    "value": 212810,
-    "craftTime": 499547,
+    "value": 109171,
+    "craftTime": 128133,
     "type": "Heavy",
     "gcost": [
       "G001"
@@ -572,8 +572,8 @@
     "name": "Salty Sword",
     "description": "A weapon for the eternally angry and margarita fans alike.",
     "lvl": 7,
-    "value": 1127655,
-    "craftTime": 684046,
+    "value": 665943,
+    "craftTime": 201984,
     "type": "Heavy",
     "gcost": [
       "G001"
@@ -594,8 +594,8 @@
     "name": "Wrath",
     "description": "This axe's name varies by region. In some places it is known as Crusade, and in others, Cataclysm.",
     "lvl": 8,
-    "value": 5362636,
-    "craftTime": 840643,
+    "value": 4062252,
+    "craftTime": 318398,
     "type": "Heavy",
     "gcost": [
       "G001"
@@ -616,8 +616,8 @@
     "name": "Knife Club",
     "description": "It's the most exclusive Knife in town.",
     "lvl": 9,
-    "value": 23376237,
-    "craftTime": 946962,
+    "value": 24779737,
+    "craftTime": 501909,
     "type": "Heavy",
     "gcost": [
       "G001"
@@ -638,8 +638,8 @@
     "name": "Balmungous",
     "description": "Having two or three of these in a group will make a giant difference.",
     "lvl": 10,
-    "value": 65470658,
-    "craftTime": 1246139,
+    "value": 151156395,
+    "craftTime": 791187,
     "type": "Heavy",
     "gcost": [
       "G001"
@@ -660,8 +660,8 @@
     "name": "Standard Helmet",
     "description": "A plain, standard issue helmet given to soldiers on their way to war.",
     "lvl": 1,
-    "value": 11,
-    "craftTime": 18517,
+    "value": 6,
+    "craftTime": 6111,
     "type": "Helmets",
     "gcost": [
       "G002"
@@ -680,8 +680,8 @@
     "name": "Cobalt Helmet",
     "description": "This helmet is extremely heat resistant, but it is also highly magnetic.",
     "lvl": 2,
-    "value": 137,
-    "craftTime": 32778,
+    "value": 39,
+    "craftTime": 10264,
     "type": "Helmets",
     "gcost": [
       "G002"
@@ -702,8 +702,8 @@
     "name": "Regular Helmet",
     "description": "It does a much better job of preventing brain injuries than a rusty bucket ever could.",
     "lvl": 3,
-    "value": 949,
-    "craftTime": 58675,
+    "value": 253,
+    "craftTime": 17207,
     "type": "Helmets",
     "gcost": [
       "G002"
@@ -724,8 +724,8 @@
     "name": "Super Helmet",
     "description": "Be grateful that this one doesn't come with that super annoying regional lockout.",
     "lvl": 4,
-    "value": 6532,
-    "craftTime": 104366,
+    "value": 1644,
+    "craftTime": 28894,
     "type": "Helmets",
     "gcost": [
       "G002"
@@ -746,8 +746,8 @@
     "name": "Mega Helmet",
     "description": "This reactive armor says it reduces damage by 93%, but it's probably just marketing hype.",
     "lvl": 5,
-    "value": 44941,
-    "craftTime": 185558,
+    "value": 10686,
+    "craftTime": 48534,
     "type": "Helmets",
     "gcost": [
       "G002"
@@ -768,8 +768,8 @@
     "name": "Skull Helmet",
     "description": "Forged from the skull of a giant insect, this helmet smells like jerky and deception.",
     "lvl": 6,
-    "value": 169811,
-    "craftTime": 329430,
+    "value": 69459,
+    "craftTime": 81524,
     "type": "Helmets",
     "gcost": [
       "G002"
@@ -790,8 +790,8 @@
     "name": "Dark Helmet",
     "description": "Crafting this helmet always feels like the first time, for the last time.",
     "lvl": 7,
-    "value": 1636356,
-    "craftTime": 451195,
+    "value": 451483,
+    "craftTime": 136937,
     "type": "Helmets",
     "gcost": [
       "G002"
@@ -812,8 +812,8 @@
     "name": "Whimsical Helmet",
     "description": "The ideal helmet for stunt performers and clowns alike.",
     "lvl": 8,
-    "value": 7690875,
-    "craftTime": 548008,
+    "value": 2934639,
+    "craftTime": 230016,
     "type": "Helmets",
     "gcost": [
       "G002"
@@ -834,8 +834,8 @@
     "name": "Magnetized Helmet",
     "description": "The metal in this helmet has been altered at the molecular level.",
     "lvl": 9,
-    "value": 33070764,
-    "craftTime": 608947,
+    "value": 19075153,
+    "craftTime": 386363,
     "type": "Helmets",
     "gcost": [
       "G002"
@@ -856,8 +856,8 @@
     "name": "Coal Helmut",
     "description": "The perfect head cover for mine shafts and reunification.",
     "lvl": 10,
-    "value": 168660899,
-    "craftTime": 802554,
+    "value": 123988494,
+    "craftTime": 648984,
     "type": "Helmets",
     "gcost": [
       "G002"
@@ -878,8 +878,8 @@
     "name": "Simple Hat",
     "description": "As long as it covers my bald spot, I'm happy.",
     "lvl": 1,
-    "value": 9,
-    "craftTime": 14814,
+    "value": 5,
+    "craftTime": 5092,
     "type": "Hats",
     "gcost": [
       "G003"
@@ -900,8 +900,8 @@
     "name": "Princess Tiara",
     "description": "This tiara isn't for real princesses, but rather those who demand to be treated like one.",
     "lvl": 2,
-    "value": 110,
-    "craftTime": 26318,
+    "value": 32,
+    "craftTime": 8422,
     "type": "Hats",
     "gcost": [
       "G003"
@@ -922,8 +922,8 @@
     "name": "Black Hat",
     "description": "It also comes in \"morally grey.\"",
     "lvl": 3,
-    "value": 759,
-    "craftTime": 46928,
+    "value": 208,
+    "craftTime": 14146,
     "type": "Hats",
     "gcost": [
       "G003"
@@ -944,8 +944,8 @@
     "name": "Beach Hat",
     "description": "This hat is perfect for summer days, where the sand is coarse, rough and irritating.",
     "lvl": 4,
-    "value": 5225,
-    "craftTime": 83483,
+    "value": 1352,
+    "craftTime": 23762,
     "type": "Hats",
     "gcost": [
       "G003"
@@ -966,8 +966,8 @@
     "name": "Green Bay Beret",
     "description": "It is made of foam, smells like beer, and comes with a warning against bears, vikings, and lions.",
     "lvl": 5,
-    "value": 35953,
-    "craftTime": 136077,
+    "value": 8788,
+    "craftTime": 39914,
     "type": "Hats",
     "gcost": [
       "G003"
@@ -988,8 +988,8 @@
     "name": "The Mind Cap",
     "description": "Concealed inside the lining is a healthy dose of tin foil, for obvious reasons.",
     "lvl": 6,
-    "value": 135849,
-    "craftTime": 241582,
+    "value": 57122,
+    "craftTime": 67044,
     "type": "Hats",
     "gcost": [
       "G003"
@@ -1010,8 +1010,8 @@
     "name": "Ornate Crown",
     "description": "Clearly overcompensating for something.",
     "lvl": 7,
-    "value": 1309085,
-    "craftTime": 330876,
+    "value": 371293,
+    "craftTime": 112615,
     "type": "Hats",
     "gcost": [
       "G003"
@@ -1032,8 +1032,8 @@
     "name": "Spellcasting Hat",
     "description": "To awaken it's power, recite the following spell --  \"Lorem ipsum dolor sit amet\"",
     "lvl": 8,
-    "value": 6152700,
-    "craftTime": 401872,
+    "value": 2413404,
+    "craftTime": 189162,
     "type": "Hats",
     "gcost": [
       "G003"
@@ -1054,8 +1054,8 @@
     "name": "Noble Tiara",
     "description": "Owners of these don't often mix with each other, because they're already stable.",
     "lvl": 9,
-    "value": 26456611,
-    "craftTime": 446561,
+    "value": 15687126,
+    "craftTime": 317740,
     "type": "Hats",
     "gcost": [
       "G003"
@@ -1076,8 +1076,8 @@
     "name": "All Folks Hat",
     "description": "As close to \"one size fits all\" as fantasy headwear can be.",
     "lvl": 10,
-    "value": 134928719,
-    "craftTime": 588539,
+    "value": 101966319,
+    "craftTime": 533715,
     "type": "Hats",
     "gcost": [
       "G003"
@@ -1098,8 +1098,8 @@
     "name": "Bandit Mask",
     "description": "The perfect disguise for robbing trains.",
     "lvl": 1,
-    "value": 10,
-    "craftTime": 15941,
+    "value": 4,
+    "craftTime": 4074,
     "type": "Masks",
     "gcost": [
       "G003"
@@ -1120,8 +1120,8 @@
     "name": "Hidden Mask",
     "description": "It matches your complexion perfectly.",
     "lvl": 2,
-    "value": 124,
-    "craftTime": 28378,
+    "value": 26,
+    "craftTime": 6843,
     "type": "Masks",
     "gcost": [
       "G003"
@@ -1142,8 +1142,8 @@
     "name": "Rubber Mask",
     "description": "Make sure to put the lotion on your skin before wearing this mask again.",
     "lvl": 3,
-    "value": 854,
-    "craftTime": 50506,
+    "value": 169,
+    "craftTime": 11494,
     "type": "Masks",
     "gcost": [
       "G003"
@@ -1164,8 +1164,8 @@
     "name": "Cucumber Mask",
     "description": "Put it into a jar with vinegar and salt to create a tasty snack.",
     "lvl": 4,
-    "value": 5878,
-    "craftTime": 89833,
+    "value": 1098,
+    "craftTime": 19298,
     "type": "Masks",
     "gcost": [
       "G003"
@@ -1186,8 +1186,8 @@
     "name": "Coffee Mask",
     "description": "Seemingly addictive, but comes with strange digestive complications.",
     "lvl": 5,
-    "value": 40447,
-    "craftTime": 159742,
+    "value": 7137,
+    "craftTime": 32415,
     "type": "Masks",
     "gcost": [
       "G003"
@@ -1208,8 +1208,8 @@
     "name": "Pumpkin Mask",
     "description": "Especially popular in autumn with Basic Wand users.",
     "lvl": 6,
-    "value": 152830,
-    "craftTime": 283596,
+    "value": 46390,
+    "craftTime": 54448,
     "type": "Masks",
     "gcost": [
       "G003"
@@ -1230,8 +1230,8 @@
     "name": "Stone Mask",
     "description": "The eyes in this mask seem droopy, and a little bloodshot.",
     "lvl": 7,
-    "value": 1472720,
-    "craftTime": 388420,
+    "value": 301535,
+    "craftTime": 91457,
     "type": "Masks",
     "gcost": [
       "G003"
@@ -1252,8 +1252,8 @@
     "name": "Oxygen Mask",
     "description": "Highly flammable.  Proceed with caution.",
     "lvl": 8,
-    "value": 6921787,
-    "craftTime": 471763,
+    "value": 1959977,
+    "craftTime": 153622,
     "type": "Masks",
     "gcost": [
       "G003"
@@ -1274,8 +1274,8 @@
     "name": "Spoopy Mask",
     "description": "Somehow funny, and spooky, all at the same time, like a comedy about a ghost.",
     "lvl": 9,
-    "value": 29763688,
-    "craftTime": 524224,
+    "value": 12739850,
+    "craftTime": 258043,
     "type": "Masks",
     "gcost": [
       "G003"
@@ -1296,8 +1296,8 @@
     "name": "Volto Mask",
     "description": "Use this mask to find out exactly where the rainbow ends.",
     "lvl": 10,
-    "value": 151794809,
-    "craftTime": 690894,
+    "value": 82809025,
+    "craftTime": 433441,
     "type": "Masks",
     "gcost": [
       "G003"
@@ -1318,8 +1318,8 @@
     "name": "New Gauntlets",
     "description": "Fresh from the forge, so treat them right.",
     "lvl": 1,
-    "value": 15,
-    "craftTime": 14549,
+    "value": 10,
+    "craftTime": 10184,
     "type": "Gauntlets",
     "gcost": [
       "G001"
@@ -1340,8 +1340,8 @@
     "name": "Shiny Gauntlets",
     "description": "Almost mirror-like, adventurers often confuse their enemies wearing these.",
     "lvl": 2,
-    "value": 62,
-    "craftTime": 27822,
+    "value": 63,
+    "craftTime": 16580,
     "type": "Gauntlets",
     "gcost": [
       "G001"
@@ -1362,8 +1362,8 @@
     "name": "Plain Gauntlets",
     "description": "The exact opposite of The Everything Gauntlet.",
     "lvl": 3,
-    "value": 523,
-    "craftTime": 33876,
+    "value": 396,
+    "craftTime": 26932,
     "type": "Gauntlets",
     "gcost": [
       "G001"
@@ -1384,8 +1384,8 @@
     "name": "Pristine Gauntlets",
     "description": "These gauntlets have never been touched, until now.  ",
     "lvl": 4,
-    "value": 6094,
-    "craftTime": 102004,
+    "value": 2494,
+    "craftTime": 43833,
     "type": "Gauntlets",
     "gcost": [
       "G001"
@@ -1406,8 +1406,8 @@
     "name": "Challenge Gauntlets",
     "description": "Legend states that these mythical gauntlets are awarded to dragon raiders and cheese hoarders.",
     "lvl": 5,
-    "value": 45040,
-    "craftTime": 194823,
+    "value": 15712,
+    "craftTime": 71361,
     "type": "Gauntlets",
     "gcost": [
       "G001"
@@ -1428,8 +1428,8 @@
     "name": "Fancy Gauntlets",
     "description": "For some reason, there's a spot for a gem on the thumb.  That's an odd choice.",
     "lvl": 6,
-    "value": 332399,
-    "craftTime": 371557,
+    "value": 98985,
+    "craftTime": 116178,
     "type": "Gauntlets",
     "gcost": [
       "G001"
@@ -1450,8 +1450,8 @@
     "name": "Old Gauntlets",
     "description": "Particularly helpful when your wizards need food badly.",
     "lvl": 7,
-    "value": 968944,
-    "craftTime": 508892,
+    "value": 623605,
+    "craftTime": 189142,
     "type": "Gauntlets",
     "gcost": [
       "G001"
@@ -1472,8 +1472,8 @@
     "name": "Dark Gauntlets",
     "description": "The color of these gauntlets baffle smiths and armorcrafters to this day.",
     "lvl": 8,
-    "value": 8280068,
-    "craftTime": 618085,
+    "value": 3928711,
+    "craftTime": 307931,
     "type": "Gauntlets",
     "gcost": [
       "G001"
@@ -1494,8 +1494,8 @@
     "name": "Dandy Gauntlets",
     "description": "Often worn by process servers to deliver copyright disputes.",
     "lvl": 9,
-    "value": 35604293,
-    "craftTime": 686817,
+    "value": 24750879,
+    "craftTime": 501324,
     "type": "Gauntlets",
     "gcost": [
       "G001"
@@ -1516,8 +1516,8 @@
     "name": "Cool Gauntlets",
     "description": "The top prize awarded to record holders for breaking misunderstood records.",
     "lvl": 10,
-    "value": 181581899,
-    "craftTime": 905181,
+    "value": 155930537,
+    "craftTime": 816176,
     "type": "Gauntlets",
     "gcost": [
       "G001"
@@ -1538,8 +1538,8 @@
     "name": "Gardening Gloves",
     "description": "The thumbs are green, as you would expect.",
     "lvl": 1,
-    "value": 17,
-    "craftTime": 15055,
+    "value": 9,
+    "craftTime": 9166,
     "type": "Gloves",
     "gcost": [
       "G002"
@@ -1560,8 +1560,8 @@
     "name": "Running Gloves",
     "description": "Chapped hands are a real problem, and these are the perfect solution.",
     "lvl": 2,
-    "value": 69,
-    "craftTime": 28607,
+    "value": 56,
+    "craftTime": 14738,
     "type": "Gloves",
     "gcost": [
       "G002"
@@ -1582,8 +1582,8 @@
     "name": "Fighting Gloves",
     "description": "Ergonomically designed so you can snap while you sing.",
     "lvl": 3,
-    "value": 933,
-    "craftTime": 55178,
+    "value": 352,
+    "craftTime": 23940,
     "type": "Gloves",
     "gcost": [
       "G002"
@@ -1604,8 +1604,8 @@
     "name": "Cleaning Gloves",
     "description": "Works great for scrubbing sinks or avoiding the hoi polloi.",
     "lvl": 4,
-    "value": 6907,
-    "craftTime": 105560,
+    "value": 2217,
+    "craftTime": 38965,
     "type": "Gloves",
     "gcost": [
       "G002"
@@ -1626,8 +1626,8 @@
     "name": "Punching Gloves",
     "description": "The knuckles are padded with brass, which seems counterintuitive.",
     "lvl": 5,
-    "value": 51045,
-    "craftTime": 220797,
+    "value": 13967,
+    "craftTime": 63436,
     "type": "Gloves",
     "gcost": [
       "G002"
@@ -1648,8 +1648,8 @@
     "name": "Hugging Gloves",
     "description": "Politicians wear these so that they don't actually have to touch the great unwashed.",
     "lvl": 6,
-    "value": 376719,
-    "craftTime": 421098,
+    "value": 87992,
+    "craftTime": 103276,
     "type": "Gloves",
     "gcost": [
       "G002"
@@ -1670,8 +1670,8 @@
     "name": "Dancing Gloves",
     "description": "The fingers of these gloves are detachable, because sure, why not.",
     "lvl": 7,
-    "value": 1098137,
-    "craftTime": 576744,
+    "value": 554349,
+    "craftTime": 168137,
     "type": "Gloves",
     "gcost": [
       "G002"
@@ -1692,8 +1692,8 @@
     "name": "Loving Gloves",
     "description": "Ideally speaking, we should all wear gloves before going to bed.",
     "lvl": 8,
-    "value": 9384077,
-    "craftTime": 700496,
+    "value": 3492398,
+    "craftTime": 273733,
     "type": "Gloves",
     "gcost": [
       "G002"
@@ -1714,8 +1714,8 @@
     "name": "Other Gloves",
     "description": "Named by an architect who had to come up with a last minute change.",
     "lvl": 9,
-    "value": 40351533,
-    "craftTime": 778393,
+    "value": 22002107,
+    "craftTime": 445648,
     "type": "Gloves",
     "gcost": [
       "G002"
@@ -1736,8 +1736,8 @@
     "name": "Boxing Gloves",
     "description": "These gloves are the traditional gift given to children the day after Christmas.",
     "lvl": 10,
-    "value": 205792819,
-    "craftTime": 1025872,
+    "value": 138613274,
+    "craftTime": 725533,
     "type": "Gloves",
     "gcost": [
       "G002"
@@ -1758,8 +1758,8 @@
     "name": "Hamster Clogs",
     "description": "These wooden shoes are tiny, and have bits of romaine stuck inside.",
     "lvl": 1,
-    "value": 19,
-    "craftTime": 16826,
+    "value": 8,
+    "craftTime": 8147,
     "type": "Shoes",
     "gcost": [
       "G002"
@@ -1780,8 +1780,8 @@
     "name": "Mage Moccasins",
     "description": "Staunch magical defenders used these in ancient times.",
     "lvl": 2,
-    "value": 77,
-    "craftTime": 32040,
+    "value": 50,
+    "craftTime": 13159,
     "type": "Shoes",
     "gcost": [
       "G002"
@@ -1802,8 +1802,8 @@
     "name": "Druidic Boots",
     "description": "These boots have odd properties that allow it to change form quickly.",
     "lvl": 3,
-    "value": 1043,
-    "craftTime": 61683,
+    "value": 315,
+    "craftTime": 21424,
     "type": "Shoes",
     "gcost": [
       "G002"
@@ -1824,8 +1824,8 @@
     "name": "Fighting Stilettos",
     "description": "The perfect shoe for date night and stabbing people in the neck.",
     "lvl": 4,
-    "value": 7720,
-    "craftTime": 117985,
+    "value": 1984,
+    "craftTime": 34870,
     "type": "Shoes",
     "gcost": [
       "G002"
@@ -1846,8 +1846,8 @@
     "name": "Bardic Galoshes",
     "description": "Smells like ale, and covered in syrup.",
     "lvl": 5,
-    "value": 57051,
-    "craftTime": 207292,
+    "value": 12499,
+    "craftTime": 56768,
     "type": "Shoes",
     "gcost": [
       "G002"
@@ -1868,8 +1868,8 @@
     "name": "Master Loafers",
     "description": "Frequently worn around the house, they don't often see the light of day.",
     "lvl": 6,
-    "value": 421039,
-    "craftTime": 395337,
+    "value": 78743,
+    "craftTime": 92420,
     "type": "Shoes",
     "gcost": [
       "G002"
@@ -1890,8 +1890,8 @@
     "name": "Foxy Slippers",
     "description": "One of them appears to have a chip.",
     "lvl": 7,
-    "value": 1227329,
-    "craftTime": 541461,
+    "value": 496080,
+    "craftTime": 150463,
     "type": "Shoes",
     "gcost": [
       "G002"
@@ -1912,8 +1912,8 @@
     "name": "Hairy Shoes",
     "description": "The best excuse to have a second breakfast.",
     "lvl": 8,
-    "value": 10488086,
-    "craftTime": 657642,
+    "value": 3125304,
+    "craftTime": 244960,
     "type": "Shoes",
     "gcost": [
       "G002"
@@ -1934,8 +1934,8 @@
     "name": "Lunar Whalers",
     "description": "You aren't sure why, but wearing these makes you feel more energetic.",
     "lvl": 9,
-    "value": 45098772,
-    "craftTime": 730773,
+    "value": 19689415,
+    "craftTime": 398805,
     "type": "Shoes",
     "gcost": [
       "G002"
@@ -1956,8 +1956,8 @@
     "name": "Jay Walkers",
     "description": "Upon closer inspection, it appears as if the artist has put their name all over these shoes.",
     "lvl": 10,
-    "value": 230003739,
-    "craftTime": 963113,
+    "value": 124043314,
+    "craftTime": 649271,
     "type": "Shoes",
     "gcost": [
       "G002"
@@ -1978,8 +1978,8 @@
     "name": "Metal Armor",
     "description": "Provides strong protection, but limited mobility.",
     "lvl": 1,
-    "value": 22,
-    "craftTime": 20369,
+    "value": 14,
+    "craftTime": 14258,
     "type": "Armor",
     "gcost": [
       "G002"
@@ -2000,8 +2000,8 @@
     "name": "Metallic Armor",
     "description": "Just make sure you don't get sand in it.",
     "lvl": 2,
-    "value": 156,
-    "craftTime": 37324,
+    "value": 93,
+    "craftTime": 24476,
     "type": "Armor",
     "gcost": [
       "G002"
@@ -2022,8 +2022,8 @@
     "name": "Panther Armor",
     "description": "If this armor were any heavier, adventurers would collapse from the weight.",
     "lvl": 3,
-    "value": 610,
-    "craftTime": 68568,
+    "value": 613,
+    "craftTime": 41691,
     "type": "Armor",
     "gcost": [
       "G002"
@@ -2044,8 +2044,8 @@
     "name": "Slayers Plate",
     "description": "The history of this armor is mired in controversy.",
     "lvl": 4,
-    "value": 7874,
-    "craftTime": 125808,
+    "value": 3984,
+    "craftTime": 70020,
     "type": "Armor",
     "gcost": [
       "G002"
@@ -2066,8 +2066,8 @@
     "name": "Leaded Zeppelin Hull",
     "description": "Check out the newer version, the Greta Von Hauberk.",
     "lvl": 5,
-    "value": 55905,
-    "craftTime": 230828,
+    "value": 25497,
+    "craftTime": 115803,
     "type": "Armor",
     "gcost": [
       "G002"
@@ -2088,8 +2088,8 @@
     "name": "A Cool Dark Chainmail",
     "description": "Given the opportunity, you should paint the back in black or really dark grey.",
     "lvl": 6,
-    "value": 396930,
-    "craftTime": 423522,
+    "value": 160631,
+    "craftTime": 188532,
     "type": "Armor",
     "gcost": [
       "G002"
@@ -2110,8 +2110,8 @@
     "name": "Maidens Plate",
     "description": "Named after a torture device, this armor can cause hearing loss.",
     "lvl": 7,
-    "value": 2103731,
-    "craftTime": 580065,
+    "value": 995912,
+    "craftTime": 302065,
     "type": "Armor",
     "gcost": [
       "G002"
@@ -2132,8 +2132,8 @@
     "name": "Intense Purple Cuirass",
     "description": "Not to be used as a floatation device.  ",
     "lvl": 8,
-    "value": 6016672,
-    "craftTime": 779479,
+    "value": 6075063,
+    "craftTime": 476162,
     "type": "Armor",
     "gcost": [
       "G002"
@@ -2154,8 +2154,8 @@
     "name": "Serpent Mail",
     "description": "Oddly useful at car washes.",
     "lvl": 9,
-    "value": 55790957,
-    "craftTime": 1027304,
+    "value": 36450378,
+    "craftTime": 738295,
     "type": "Armor",
     "gcost": [
       "G002"
@@ -2176,8 +2176,8 @@
     "name": "Heavy Metal Armor",
     "description": "Somehow, this armor only allows one arm through.",
     "lvl": 10,
-    "value": 273375691,
-    "craftTime": 1300827,
+    "value": 215057230,
+    "craftTime": 1125658,
     "type": "Armor",
     "gcost": [
       "G002"
@@ -2198,8 +2198,8 @@
     "name": "Novice Cloak",
     "description": "A simple protective covering.",
     "lvl": 1,
-    "value": 26,
-    "craftTime": 22066,
+    "value": 12,
+    "craftTime": 12221,
     "type": "Cloaks",
     "gcost": [
       "G003"
@@ -2220,8 +2220,8 @@
     "name": "Apprentice Cloak",
     "description": "Worn by initiates looking to find more steady work.",
     "lvl": 2,
-    "value": 184,
-    "craftTime": 40355,
+    "value": 80,
+    "craftTime": 21055,
     "type": "Cloaks",
     "gcost": [
       "G003"
@@ -2242,8 +2242,8 @@
     "name": "Practitioner Cloak",
     "description": "It has a protective coating to prevent forest fires and accidental discharge.",
     "lvl": 3,
-    "value": 721,
-    "craftTime": 74246,
+    "value": 528,
+    "craftTime": 35910,
     "type": "Cloaks",
     "gcost": [
       "G003"
@@ -2264,8 +2264,8 @@
     "name": "Journeyman Cloak",
     "description": "Wandering magi wear it to harness the elements.",
     "lvl": 4,
-    "value": 9305,
-    "craftTime": 136283,
+    "value": 3432,
+    "craftTime": 60319,
     "type": "Cloaks",
     "gcost": [
       "G003"
@@ -2286,8 +2286,8 @@
     "name": "Expert Cloak",
     "description": "The most experienced spellcasters wear this cloak with pride.",
     "lvl": 5,
-    "value": 66070,
-    "craftTime": 250065,
+    "value": 21964,
+    "craftTime": 99757,
     "type": "Cloaks",
     "gcost": [
       "G003"
@@ -2308,8 +2308,8 @@
     "name": "Frostflinger Cloak",
     "description": "This garment is as cold as ice, but it's a sacrifice worth making for the power it gives.",
     "lvl": 6,
-    "value": 469099,
-    "craftTime": 458815,
+    "value": 138373,
+    "craftTime": 162407,
     "type": "Cloaks",
     "gcost": [
       "G003"
@@ -2330,8 +2330,8 @@
     "name": "Stormbringer Cloak",
     "description": "Made from flannel, it is especially deadly in the dry winter air.",
     "lvl": 7,
-    "value": 2486228,
-    "craftTime": 628404,
+    "value": 857912,
+    "craftTime": 260209,
     "type": "Cloaks",
     "gcost": [
       "G003"
@@ -2352,8 +2352,8 @@
     "name": "Earthslinger Cloak",
     "description": "Comes with a hydrophobic coating, so you can cause destruction in style.",
     "lvl": 8,
-    "value": 7110612,
-    "craftTime": 844436,
+    "value": 5233263,
+    "craftTime": 410181,
     "type": "Cloaks",
     "gcost": [
       "G003"
@@ -2374,8 +2374,8 @@
     "name": "Lifegiver Cloak",
     "description": "It contains many pockets to hide remedies and antidotes for all occasions.",
     "lvl": 9,
-    "value": 65934767,
-    "craftTime": 1112913,
+    "value": 31399578,
+    "craftTime": 635992,
     "type": "Cloaks",
     "gcost": [
       "G003"
@@ -2396,8 +2396,8 @@
     "name": "Deathcaller Cloak",
     "description": "Those who wear this cloak should be forewarned: this cloak may be cursed.",
     "lvl": 10,
-    "value": 323080362,
-    "craftTime": 1409229,
+    "value": 185257510,
+    "craftTime": 969679,
     "type": "Cloaks",
     "gcost": [
       "G003"
@@ -2418,8 +2418,8 @@
     "name": "Mole Vest",
     "description": "Worn by those who hide in plain sight.",
     "lvl": 1,
-    "value": 24,
-    "craftTime": 20369,
+    "value": 13,
+    "craftTime": 13240,
     "type": "Vests",
     "gcost": [
       "G002"
@@ -2440,8 +2440,8 @@
     "name": "Assassin Vest",
     "description": "This vest allows the wearer to move silently.",
     "lvl": 2,
-    "value": 170,
-    "craftTime": 37284,
+    "value": 87,
+    "craftTime": 22897,
     "type": "Vests",
     "gcost": [
       "G002"
@@ -2462,8 +2462,8 @@
     "name": "Bandit Vest",
     "description": "Has a handy pocket to keep bandanas and knives.",
     "lvl": 3,
-    "value": 665,
-    "craftTime": 68521,
+    "value": 574,
+    "craftTime": 39039,
     "type": "Vests",
     "gcost": [
       "G002"
@@ -2484,8 +2484,8 @@
     "name": "Spy Vest",
     "description": "Also comes in black and white.",
     "lvl": 4,
-    "value": 8589,
-    "craftTime": 125796,
+    "value": 3731,
+    "craftTime": 65574,
     "type": "Vests",
     "gcost": [
       "G002"
@@ -2506,8 +2506,8 @@
     "name": "Fugitive Vest",
     "description": "Good for those on the run and trying to prove their innocence.",
     "lvl": 5,
-    "value": 60988,
-    "craftTime": 230831,
+    "value": 23878,
+    "craftTime": 108450,
     "type": "Vests",
     "gcost": [
       "G002"
@@ -2528,8 +2528,8 @@
     "name": "Outlaw Vest",
     "description": "Great for protecting against the elements while in exile.",
     "lvl": 6,
-    "value": 433015,
-    "craftTime": 423522,
+    "value": 150431,
+    "craftTime": 176560,
     "type": "Vests",
     "gcost": [
       "G002"
@@ -2550,8 +2550,8 @@
     "name": "Grifter Vest",
     "description": "When grifting someone, make sure they aren't broke, or well connected.",
     "lvl": 7,
-    "value": 2294979,
-    "craftTime": 580065,
+    "value": 932672,
+    "craftTime": 282884,
     "type": "Vests",
     "gcost": [
       "G002"
@@ -2572,8 +2572,8 @@
     "name": "Criminal Vest",
     "description": "Designed by a soft spoken judge who understands criminals quite well.",
     "lvl": 8,
-    "value": 6563642,
-    "craftTime": 779479,
+    "value": 5689299,
+    "craftTime": 445925,
     "type": "Vests",
     "gcost": [
       "G002"
@@ -2594,8 +2594,8 @@
     "name": "Hitman Vest",
     "description": "Hitperson just doesn't sound right, but it's a gender neutral vest.",
     "lvl": 9,
-    "value": 60862862,
-    "craftTime": 1027304,
+    "value": 34135794,
+    "craftTime": 691414,
     "type": "Vests",
     "gcost": [
       "G002"
@@ -2616,8 +2616,8 @@
     "name": "Pirate Vest",
     "description": "Contains a special shoulder attachment for parrots to perch on.",
     "lvl": 10,
-    "value": 298228026,
-    "craftTime": 1300827,
+    "value": 201401184,
+    "craftTime": 1054179,
     "type": "Vests",
     "gcost": [
       "G002"
@@ -2638,8 +2638,8 @@
     "name": "Patience",
     "description": "Sometimes the easiest way to win is to wait for your enemy to die.",
     "lvl": 1,
-    "value": 32,
-    "craftTime": 32590,
+    "value": 5,
+    "craftTime": 5092,
     "type": "Shields",
     "gcost": [
       "G004"
@@ -2658,8 +2658,8 @@
     "name": "Faithful Buckler",
     "description": "Seeing is believing, but blocking with this shield doesn't hurt either.",
     "lvl": 2,
-    "value": 195,
-    "craftTime": 51321,
+    "value": 35,
+    "craftTime": 9211,
     "type": "Shields",
     "gcost": [
       "G004"
@@ -2680,8 +2680,8 @@
     "name": "Defiant Targe",
     "description": "This shield will help you hold your ground, even in adverse situations.",
     "lvl": 3,
-    "value": 1190,
-    "craftTime": 80933,
+    "value": 248,
+    "craftTime": 16867,
     "type": "Shields",
     "gcost": [
       "G004"
@@ -2702,8 +2702,8 @@
     "name": "Fair Shield",
     "description": "Fairness is okay as long as I get what I want.",
     "lvl": 4,
-    "value": 3995,
-    "craftTime": 127650,
+    "value": 1760,
+    "craftTime": 30933,
     "type": "Shields",
     "gcost": [
       "G004"
@@ -2724,8 +2724,8 @@
     "name": "Wisdom",
     "description": "Wisdom is knowing not to put tomatoes in a fruit salad.",
     "lvl": 5,
-    "value": 44306,
-    "craftTime": 201230,
+    "value": 12496,
+    "craftTime": 56755,
     "type": "Shields",
     "gcost": [
       "G004"
@@ -2746,8 +2746,8 @@
     "name": "Generous Blocker",
     "description": "Easily able to cover an adventurer and a half.",
     "lvl": 6,
-    "value": 270270,
-    "craftTime": 317214,
+    "value": 88721,
+    "craftTime": 104131,
     "type": "Shields",
     "gcost": [
       "G004"
@@ -2768,8 +2768,8 @@
     "name": "Loyal Companion",
     "description": "This shield is lined with fur, so it will keep you warm at night.",
     "lvl": 7,
-    "value": 1648651,
-    "craftTime": 500043,
+    "value": 629919,
+    "craftTime": 191057,
     "type": "Shields",
     "gcost": [
       "G004"
@@ -2790,8 +2790,8 @@
     "name": "Dignity",
     "description": "The most luxurious possession and richest treasure most people will ever have.",
     "lvl": 8,
-    "value": 10056777,
-    "craftTime": 788247,
+    "value": 4472424,
+    "craftTime": 350547,
     "type": "Shields",
     "gcost": [
       "G004"
@@ -2812,8 +2812,8 @@
     "name": "Trustworthy Kite",
     "description": "Sometimes the best shield against harm is your own principles.",
     "lvl": 9,
-    "value": 33187365,
-    "craftTime": 1222188,
+    "value": 31754210,
+    "craftTime": 643175,
     "type": "Shields",
     "gcost": [
       "G004"
@@ -2834,8 +2834,8 @@
     "name": "Truth Teller",
     "description": "One good hit to your enemy's skull should help them give up any secrets.",
     "lvl": 10,
-    "value": 356009908,
-    "craftTime": 1863436,
+    "value": 225454891,
+    "craftTime": 1180082,
     "type": "Shields",
     "gcost": [
       "G004"
@@ -2856,8 +2856,8 @@
     "name": "Stones",
     "description": "Not safe to own in houses made of glass.",
     "lvl": 1,
-    "value": 15,
-    "craftTime": 14549,
+    "value": 4,
+    "craftTime": 4074,
     "type": "Thrown",
     "gcost": [
       "G001"
@@ -2878,8 +2878,8 @@
     "name": "Sticks",
     "description": "Don't shove this in your bike spokes.",
     "lvl": 2,
-    "value": 111,
-    "craftTime": 27822,
+    "value": 28,
+    "craftTime": 7369,
     "type": "Thrown",
     "gcost": [
       "G001"
@@ -2900,8 +2900,8 @@
     "name": "Words",
     "description": "Use this against yourself before your enemies get the chance.",
     "lvl": 3,
-    "value": 523,
-    "craftTime": 33876,
+    "value": 198,
+    "craftTime": 13466,
     "type": "Thrown",
     "gcost": [
       "G001"
@@ -2922,8 +2922,8 @@
     "name": "Shooting Stars",
     "description": "Protect yourself against bag raiders with a handful of these.",
     "lvl": 4,
-    "value": 3352,
-    "craftTime": 102004,
+    "value": 1405,
+    "craftTime": 24693,
     "type": "Thrown",
     "gcost": [
       "G001"
@@ -2944,8 +2944,8 @@
     "name": "Poison Shuriken",
     "description": "A little poison will go a long way, so use it modestly.",
     "lvl": 5,
-    "value": 45040,
-    "craftTime": 194823,
+    "value": 9975,
+    "craftTime": 45305,
     "type": "Thrown",
     "gcost": [
       "G001"
@@ -2966,8 +2966,8 @@
     "name": "Shining Stars",
     "description": "Manages to reflect light, even when covered in blood.",
     "lvl": 6,
-    "value": 332399,
-    "craftTime": 371557,
+    "value": 70822,
+    "craftTime": 83123,
     "type": "Thrown",
     "gcost": [
       "G001"
@@ -2988,8 +2988,8 @@
     "name": "Golden Shuriken",
     "description": "This weapon broke the mold.  Throw for the moon.",
     "lvl": 7,
-    "value": 1761716,
-    "craftTime": 508892,
+    "value": 502836,
+    "craftTime": 152512,
     "type": "Thrown",
     "gcost": [
       "G001"
@@ -3010,8 +3010,8 @@
     "name": "Frost Shuriken",
     "description": "Consider it a really sharp chill pill.",
     "lvl": 8,
-    "value": 8280068,
-    "craftTime": 618085,
+    "value": 3570135,
+    "craftTime": 279826,
     "type": "Thrown",
     "gcost": [
       "G001"
@@ -3032,8 +3032,8 @@
     "name": "Burning Sticks",
     "description": "All it takes is one match to start an explosion.",
     "lvl": 9,
-    "value": 19582362,
-    "craftTime": 686817,
+    "value": 25347958,
+    "craftTime": 513418,
     "type": "Thrown",
     "gcost": [
       "G001"
@@ -3054,8 +3054,8 @@
     "name": "Heart Seeker",
     "description": "The fastest way to your enemy's heart is through his stomach, so aim for that.",
     "lvl": 10,
-    "value": 181581899,
-    "craftTime": 905181,
+    "value": 179970501,
+    "craftTime": 942006,
     "type": "Thrown",
     "gcost": [
       "G001"
@@ -3076,8 +3076,8 @@
     "name": "Spells Vol I",
     "description": "An introduction into the wide world of magic.",
     "lvl": 1,
-    "value": 18,
-    "craftTime": 35079,
+    "value": 6,
+    "craftTime": 6111,
     "type": "Tomes",
     "gcost": [
       "G004"
@@ -3098,8 +3098,8 @@
     "name": "Spells Vol II",
     "description": "Basic ingredients and techniques commonly used.",
     "lvl": 2,
-    "value": 189,
-    "craftTime": 55268,
+    "value": 42,
+    "craftTime": 11054,
     "type": "Tomes",
     "gcost": [
       "G004"
@@ -3120,8 +3120,8 @@
     "name": "Spells Vol IV",
     "description": "Fun stories from former witches and warlocks.",
     "lvl": 3,
-    "value": 1153,
-    "craftTime": 87130,
+    "value": 298,
+    "craftTime": 20267,
     "type": "Tomes",
     "gcost": [
       "G004"
@@ -3142,8 +3142,8 @@
     "name": "Earthshaping and You",
     "description": "How to make your enemies dirty while staying squeaky clean.",
     "lvl": 4,
-    "value": 7036,
-    "craftTime": 137401,
+    "value": 2115,
+    "craftTime": 37172,
     "type": "Tomes",
     "gcost": [
       "G004"
@@ -3164,8 +3164,8 @@
     "name": "Pyromania: A Love Story",
     "description": "How to make long distance relationships with magma elementals work.",
     "lvl": 5,
-    "value": 23608,
-    "craftTime": 216605,
+    "value": 15016,
+    "craftTime": 68200,
     "type": "Tomes",
     "gcost": [
       "G004"
@@ -3189,8 +3189,8 @@
       ""
     ],
     "lvl": 6,
-    "value": 261824,
-    "craftTime": 341446,
+    "value": 106613,
+    "craftTime": 125131,
     "type": "Tomes",
     "gcost": [
       "G004"
@@ -3211,8 +3211,8 @@
     "name": "Nal'Dur's Diary",
     "description": "I'm so upset.  How can I be expected to end the world when I can't even get Tommy to notice me?",
     "lvl": 7,
-    "value": 1597131,
-    "craftTime": 538241,
+    "value": 756952,
+    "craftTime": 229587,
     "type": "Tomes",
     "gcost": [
       "G004"
@@ -3233,8 +3233,8 @@
     "name": "Cauldroning 101",
     "description": "A deep dive into best practices, but it is so dense most people don't know who the author is.",
     "lvl": 8,
-    "value": 9742502,
-    "craftTime": 848460,
+    "value": 5374359,
+    "craftTime": 421241,
     "type": "Tomes",
     "gcost": [
       "G004"
@@ -3255,8 +3255,8 @@
     "name": "Secret Streams",
     "description": "Upon further review, it looks like a manual about divining rods.",
     "lvl": 9,
-    "value": 58455016,
-    "craftTime": 1315550,
+    "value": 38157948,
+    "craftTime": 772882,
     "type": "Tomes",
     "gcost": [
       "G004"
@@ -3277,8 +3277,8 @@
     "name": "Efficient Spells 102",
     "description": "The final volume from an outcast former expert.",
     "lvl": 10,
-    "value": 189686529,
-    "craftTime": 2005782,
+    "value": 270921430,
+    "craftTime": 1418064,
     "type": "Tomes",
     "gcost": [
       "G004"
@@ -3299,8 +3299,8 @@
     "name": "Lactuca",
     "description": "The beloved pendant of vegetarians and vegans.",
     "lvl": 1,
-    "value": 14,
-    "craftTime": 24248,
+    "value": 16,
+    "craftTime": 16295,
     "type": "Pendants",
     "gcost": [
       "G004"
@@ -3321,8 +3321,8 @@
     "name": "Gelata Eros",
     "description": "A little sticky, and a little nutty, but it makes everyone jealous.",
     "lvl": 2,
-    "value": 190,
-    "craftTime": 47623,
+    "value": 107,
+    "craftTime": 28161,
     "type": "Pendants",
     "gcost": [
       "G004"
@@ -3343,8 +3343,8 @@
     "name": "Comitatus",
     "description": "Created in fertile farmland where great adventures seem to begin.",
     "lvl": 3,
-    "value": 1425,
-    "craftTime": 92301,
+    "value": 706,
+    "craftTime": 48016,
     "type": "Pendants",
     "gcost": [
       "G004"
@@ -3365,8 +3365,8 @@
     "name": "Tacet Gladio",
     "description": "Walk softly, and carry a big stick to impale your adversaries with.",
     "lvl": 4,
-    "value": 5800,
-    "craftTime": 176507,
+    "value": 4589,
+    "craftTime": 80654,
     "type": "Pendants",
     "gcost": [
       "G004"
@@ -3387,8 +3387,8 @@
     "name": "Ostium Amici",
     "description": "Manly men in northern regions are particularly suited for this pendant.",
     "lvl": 5,
-    "value": 76978,
-    "craftTime": 332972,
+    "value": 29369,
+    "craftTime": 133389,
     "type": "Pendants",
     "gcost": [
       "G004"
@@ -3409,8 +3409,8 @@
     "name": "Ignis Pullum",
     "description": "Contains the feather of an resurrected avian creature.",
     "lvl": 6,
-    "value": 554245,
-    "craftTime": 619537,
+    "value": 185024,
+    "craftTime": 217161,
     "type": "Pendants",
     "gcost": [
       "G004"
@@ -3431,8 +3431,8 @@
     "name": "Folium Strennus",
     "description": "Used by only the most impassioned adventurers.",
     "lvl": 7,
-    "value": 2937499,
-    "craftTime": 848531,
+    "value": 1147148,
+    "craftTime": 347935,
     "type": "Pendants",
     "gcost": [
       "G004"
@@ -3453,8 +3453,8 @@
     "name": "Magicae Criceta",
     "description": "This pendant looks good, and works amazingly well.",
     "lvl": 8,
-    "value": 15274997,
-    "craftTime": 1140238,
+    "value": 6997602,
+    "craftTime": 548470,
     "type": "Pendants",
     "gcost": [
       "G004"
@@ -3475,8 +3475,8 @@
     "name": "Inpulsa Sciurus",
     "description": "Wearing this trinket bestows a sense of pride and accomplishment.",
     "lvl": 9,
-    "value": 42846369,
-    "craftTime": 1502761,
+    "value": 41985612,
+    "craftTime": 850410,
     "type": "Pendants",
     "gcost": [
       "G004"
@@ -3497,8 +3497,8 @@
     "name": "Adipem Pater",
     "description": "If this pendant could lose some weight, it would be far more useful.",
     "lvl": 10,
-    "value": 381772192,
-    "craftTime": 1903125,
+    "value": 247715110,
+    "craftTime": 1296597,
     "type": "Pendants",
     "gcost": [
       "G004"
@@ -3519,8 +3519,8 @@
     "name": "Soldier Ring",
     "description": "The soldiers soldered this ring themselves.",
     "lvl": 1,
-    "value": 14,
-    "craftTime": 14258,
+    "value": 17,
+    "craftTime": 17313,
     "type": "Rings",
     "gcost": [
       "G004"
@@ -3541,8 +3541,8 @@
     "name": "Mercenary Ring",
     "description": "This ring signifies that the wearer holds no allegiances.",
     "lvl": 2,
-    "value": 106,
-    "craftTime": 27897,
+    "value": 113,
+    "craftTime": 29740,
     "type": "Rings",
     "gcost": [
       "G004"
@@ -3563,8 +3563,8 @@
     "name": "Chaplain Ring",
     "description": "Adorned with certain etchings that make it unmistakable.",
     "lvl": 3,
-    "value": 798,
-    "craftTime": 54273,
+    "value": 745,
+    "craftTime": 50668,
     "type": "Rings",
     "gcost": [
       "G004"
@@ -3585,8 +3585,8 @@
     "name": "General Ring",
     "description": "Gifted to the most prestigious of generals upon retirement.",
     "lvl": 4,
-    "value": 3248,
-    "craftTime": 103783,
+    "value": 4842,
+    "craftTime": 85100,
     "type": "Rings",
     "gcost": [
       "G004"
@@ -3607,8 +3607,8 @@
     "name": "Tactical Ring",
     "description": "Might be a decoder ring, but it's hard to tell.",
     "lvl": 5,
-    "value": 43107,
-    "craftTime": 195784,
+    "value": 30988,
+    "craftTime": 140742,
     "type": "Rings",
     "gcost": [
       "G004"
@@ -3629,8 +3629,8 @@
     "name": "Paladin Ring",
     "description": "Contains a small amount of holy water, just in case.",
     "lvl": 6,
-    "value": 310377,
-    "craftTime": 364287,
+    "value": 195224,
+    "craftTime": 229133,
     "type": "Rings",
     "gcost": [
       "G004"
@@ -3651,8 +3651,8 @@
     "name": "Hunter Ring",
     "description": "Worn to show prowess and cunning in battle.",
     "lvl": 7,
-    "value": 1644999,
-    "craftTime": 498936,
+    "value": 1210388,
+    "craftTime": 367116,
     "type": "Rings",
     "gcost": [
       "G004"
@@ -3673,8 +3673,8 @@
     "name": "Trapper Ring",
     "description": "Signifies a commitment to a difficult and taxing profession.",
     "lvl": 8,
-    "value": 8553998,
-    "craftTime": 670460,
+    "value": 7383366,
+    "craftTime": 578706,
     "type": "Rings",
     "gcost": [
       "G004"
@@ -3695,8 +3695,8 @@
     "name": "Berserker Ring",
     "description": "The love for this ring is like a ticking clock.",
     "lvl": 9,
-    "value": 23993967,
-    "craftTime": 883624,
+    "value": 44300196,
+    "craftTime": 897292,
     "type": "Rings",
     "gcost": [
       "G004"
@@ -3717,8 +3717,8 @@
     "name": "Marksman Ring",
     "description": "Holds some secrets shown to be invaluable to the most skilled sharpshooters.",
     "lvl": 10,
-    "value": 213764428,
-    "craftTime": 1118891,
+    "value": 261371156,
+    "craftTime": 1368075,
     "type": "Rings",
     "gcost": [
       "G004"
@@ -3739,8 +3739,8 @@
     "name": "Leather Belt",
     "description": "Keeps your pants up.",
     "lvl": 1,
-    "value": 12,
-    "craftTime": 11110,
+    "value": 18,
+    "craftTime": 18332,
     "type": "Belts",
     "gcost": [
       "G003"
@@ -3761,8 +3761,8 @@
     "name": "Timing Belt",
     "description": "Make sure to wear this belt at just the right moment.",
     "lvl": 2,
-    "value": 91,
-    "craftTime": 21772,
+    "value": 120,
+    "craftTime": 31582,
     "type": "Belts",
     "gcost": [
       "G003"
@@ -3783,8 +3783,8 @@
     "name": "Rodeo Belt",
     "description": "Awarded to the best in competition.",
     "lvl": 3,
-    "value": 684,
-    "craftTime": 42291,
+    "value": 792,
+    "craftTime": 53865,
     "type": "Belts",
     "gcost": [
       "G003"
@@ -3805,8 +3805,8 @@
     "name": "Rust Belt",
     "description": "Once worn by skilled laborers, many years ago.",
     "lvl": 4,
-    "value": 5061,
-    "craftTime": 80863,
+    "value": 5148,
+    "craftTime": 90478,
     "type": "Belts",
     "gcost": [
       "G003"
@@ -3827,8 +3827,8 @@
     "name": "Cowboy Belt",
     "description": "The gawdy buckle is supposed to signify wealth.",
     "lvl": 5,
-    "value": 20322,
-    "craftTime": 152560,
+    "value": 32947,
+    "craftTime": 149639,
     "type": "Belts",
     "gcost": [
       "G003"
@@ -3849,8 +3849,8 @@
     "name": "Flat Belt",
     "description": "This belt has been left out in the open for way too long.",
     "lvl": 6,
-    "value": 266037,
-    "craftTime": 283860,
+    "value": 207566,
+    "craftTime": 243619,
     "type": "Belts",
     "gcost": [
       "G003"
@@ -3871,8 +3871,8 @@
     "name": "Fan Belt",
     "description": "For some reason, this belt is constantly oscillating.",
     "lvl": 7,
-    "value": 1409999,
-    "craftTime": 388781,
+    "value": 1286909,
+    "craftTime": 390325,
     "type": "Belts",
     "gcost": [
       "G003"
@@ -3893,8 +3893,8 @@
     "name": "Formal Belt",
     "description": "Matches perfectly with business socks, for business time.",
     "lvl": 8,
-    "value": 7331998,
-    "craftTime": 522436,
+    "value": 7850144,
+    "craftTime": 615292,
     "type": "Belts",
     "gcost": [
       "G003"
@@ -3915,8 +3915,8 @@
     "name": "Conveyor Belt",
     "description": "The leather in this belt was orginally used in a pulley system.",
     "lvl": 9,
-    "value": 37393194,
-    "craftTime": 688538,
+    "value": 47100864,
+    "craftTime": 954019,
     "type": "Belts",
     "gcost": [
       "G003"
@@ -3937,8 +3937,8 @@
     "name": "Extra Belt",
     "description": "This belt is just way over the top.  Entirely too much going on.",
     "lvl": 10,
-    "value": 100774659,
-    "craftTime": 871863,
+    "value": 277895097,
+    "craftTime": 1454565,
     "type": "Belts",
     "gcost": [
       "G003"

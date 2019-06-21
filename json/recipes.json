@@ -12,7 +12,7 @@
     ],
     "mcost": null,
     "smithCost": "M301",
-    "pow": 14,
+    "pow": 18,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 0,
@@ -34,7 +34,7 @@
       "M102": 1
     },
     "smithCost": "M102",
-    "pow": 20,
+    "pow": 25,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 500,
@@ -56,7 +56,7 @@
       "M203": 1
     },
     "smithCost": "M203",
-    "pow": 28,
+    "pow": 35,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 1000,
@@ -78,7 +78,7 @@
       "M304": 1
     },
     "smithCost": "M304",
-    "pow": 40,
+    "pow": 49,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 7500,
@@ -100,7 +100,7 @@
       "M105": 1
     },
     "smithCost": "M105",
-    "pow": 55,
+    "pow": 68,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 52500,
@@ -122,7 +122,7 @@
       "M206": 1
     },
     "smithCost": "M206",
-    "pow": 75,
+    "pow": 94,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 367500,
@@ -144,7 +144,7 @@
       "M107": 1
     },
     "smithCost": "M107",
-    "pow": 104,
+    "pow": 130,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 2572500,
@@ -166,7 +166,7 @@
       "M308": 1
     },
     "smithCost": "M308",
-    "pow": 144,
+    "pow": 180,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 18007500,
@@ -188,7 +188,7 @@
       "M209": 1
     },
     "smithCost": "M209",
-    "pow": 200,
+    "pow": 250,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 126052500,
@@ -210,7 +210,7 @@
       "M110": 1
     },
     "smithCost": "M110",
-    "pow": 280,
+    "pow": 350,
     "hp": 0,
     "guildUnlock": "G001",
     "goldCost": 882367500,
@@ -230,7 +230,7 @@
     ],
     "mcost": null,
     "smithCost": "M101",
-    "pow": 22,
+    "pow": 18,
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 0,
@@ -252,7 +252,7 @@
       "M202": 1
     },
     "smithCost": "M202",
-    "pow": 30,
+    "pow": 25,
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 500,
@@ -274,7 +274,7 @@
       "M103": 1
     },
     "smithCost": "M103",
-    "pow": 42,
+    "pow": 35,
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 1000,
@@ -296,7 +296,7 @@
       "M204": 1
     },
     "smithCost": "M204",
-    "pow": 59,
+    "pow": 49,
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 7500,
@@ -318,7 +318,7 @@
       "M305": 1
     },
     "smithCost": "M305",
-    "pow": 81,
+    "pow": 68,
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 52500,
@@ -340,7 +340,7 @@
       "M106": 1
     },
     "smithCost": "M106",
-    "pow": 113,
+    "pow": 94,
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 367500,
@@ -362,7 +362,7 @@
       "M207": 1
     },
     "smithCost": "M207",
-    "pow": 156,
+    "pow": 130,
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 2572500,
@@ -384,7 +384,7 @@
       "M108": 1
     },
     "smithCost": "M108",
-    "pow": 216,
+    "pow": 180,
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 18007500,
@@ -406,7 +406,7 @@
       "M309": 1
     },
     "smithCost": "M309",
-    "pow": 300,
+    "pow": 250,
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 126052500,
@@ -428,7 +428,7 @@
       "M310": 1
     },
     "smithCost": "M310",
-    "pow": 420,
+    "pow": 350,
     "hp": 0,
     "guildUnlock": "G003",
     "goldCost": 882367500,

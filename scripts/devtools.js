@@ -78,7 +78,7 @@ const devtools = {
         })
     },
     forceTown() {
-        const types = ["bank","fuse","smith","fusion"];
+        const types = ["desynth","bank","fuse","smith","fusion"];
         types.forEach(t => TownManager.buildingPerk(t));
         refreshSideTown();
     },

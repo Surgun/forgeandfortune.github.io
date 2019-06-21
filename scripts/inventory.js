@@ -174,6 +174,7 @@ const Inventory = {
         if (id === "R99210") return unlockFuse();
         if (id === "R99310") return unlockSmith();
         if (id === "R99510") return unlockFortune();
+        if (id === "R99410") return unlockDesynth();
         const item = recipeList.idToItem(id)
         const name = item.name;
         const autoSell = item.autoSell;
@@ -252,6 +253,7 @@ const Inventory = {
         return this.nonblank().filter(r=>types.includes(r.type));
     },
     containerToItem(containerID) {
+        console.log(containerID, this.nonblank().find(r=>r.containerID===containerID));
         return this.nonblank().find(r=>r.containerID===containerID)
     },
     haveItem(id,rarity) {
@@ -332,6 +334,9 @@ const Inventory = {
     },
     findCraftMatch(uniqueID) {
         return this.nonblank().find(i => i.uniqueID() === uniqueID);
+    },
+    higherRarity() {
+        return this.nonblank().filter(i => i.rarity > 0);
     }
 }
 
@@ -437,5 +442,6 @@ function refreshInventoryPlaces() {
     refreshPossibleFuse();
     refreshBankInventory();
     refreshSmithInventory();
+    refreshDesynthInventory();
     wipeSmithStage();
 }

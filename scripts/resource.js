@@ -47,7 +47,8 @@ const ResourceManager = {
             for (let i=0;i<amt;i++) Inventory.addToInventory(res,0,-1);
             return;
         }
-        const mat = this.materials.find(mat => mat.id === res); 
+        const mat = this.materials.find(mat => mat.id === res);
+        console.log(mat);
         mat.amt += amt;
         mat.seen = true;
         if (mat.amt === 0) $("#"+mat.id).hide();

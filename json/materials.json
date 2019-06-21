@@ -432,5 +432,26 @@
     "tier": 6,
     "fortuneLvl": 10,
     "notoAdd": 10
+  },
+  {
+    "id": "M700",
+    "name": "Green Essence",
+    "tier": 0,
+    "fortuneLvl": 0,
+    "notoAdd": 0
+  },
+  {
+    "id": "M701",
+    "name": "Blue Essence",
+    "tier": 0,
+    "fortuneLvl": 0,
+    "notoAdd": 0
+  },
+  {
+    "id": "M702",
+    "name": "Purple Essence",
+    "tier": 0,
+    "fortuneLvl": 0,
+    "notoAdd": 0
   }
 ]

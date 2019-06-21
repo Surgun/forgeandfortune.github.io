@@ -12,6 +12,7 @@ const $fortuneBuilding = $("#fortuneBuilding");
 const TownManager = {
     lastBldg : null,
     lastType : null,
+    DesynthStatus : BuildingState.hidden,
     bankStatus : BuildingState.hidden,
     fuseStatus : BuildingState.hidden,
     smithStatus : BuildingState.hidden,
@@ -19,6 +20,7 @@ const TownManager = {
     purgeSlots : false,
     createSave() {
         const save = {};
+        save.DesynthStatus = this.DesynthStatus;
         save.bankStatus = this.bankStatus;
         save.fuseStatus = this.fuseStatus;
         save.smithStatus = this.smithStatus;
@@ -26,16 +28,21 @@ const TownManager = {
         return save;
     },
     loadSave(save) {
+        if (save.DesynthStatus !== undefined) this.DesynthStatus = save.DesynthStatus;
         if (save.bankStatus !== undefined) this.bankStatus = save.bankStatus;
         if (save.fuseStatus !== undefined) this.fuseStatus = save.fuseStatus;
         if (save.smithStatus !== undefined) this.smithStatus = save.smithStatus;
         if (save.fortuneStatus !== undefined) this.fortuneStatus = save.fortuneStatus;
     },
     unseenLeft() {
-        const bldgs = [this.bankStatus,this.fuseStatus,this.smithStatus,this.fortuneStatus]
+        const bldgs = [this.DesynthStatus,this.bankStatus,this.fuseStatus,this.smithStatus,this.fortuneStatus]
         return bldgs.includes(BuildingState.unseen);
     },
     buildingPerk(type) {
+        if (type === "desynth") {
+            this.DesynthStatus = BuildingState.unseen;
+            recipeList.idToItem("R99410").owned = true;
+        }
         if (type === "bank") {
             this.bankStatus = BuildingState.unseen;
             recipeList.idToItem("R99110").owned = true;
@@ -63,27 +70,55 @@ function refreshSideTown() {
     //$buildBuilding.hide();
     if (TownManager.unseenLeft()) $("#townTab").addClass("hasEvent");
     else $("#townTab").removeClass("hasEvent");
-    if (TownManager.bankStatus === BuildingState.hidden) return;
+    if (TownManager.DesynthStatus === BuildingState.hidden) return;
     $emptyTown.hide();
+    const d1a = $("<div/>").addClass("buildingName").attr("id","DesynthBldg").html(`<div><i class="fas fa-university"></i> Desynth</div>`);
+    if (TownManager.lastBldg === "desynth") d1a.addClass("selected");
+    if (TownManager.DesynthStatus === BuildingState.unseen) d1a.addClass("hasEvent");
+    $buildingList.show().append(d1a);
+    if (TownManager.bankStatus === BuildingState.hidden) return;
     const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`<div><i class="fas fa-university"></i> Bank</div>`);
     if (TownManager.lastBldg === "bank") d1.addClass("selected");
-    if (TownManager.bankOnce) d1.addClass("hasEvent");
-    $buildingList.show().append(d1);
+    if (TownManager.bankStatus === BuildingState.unseen) d1.addClass("hasEvent");
+    $buildingList.append(d1);
     if (TownManager.fuseStatus === BuildingState.hidden) return;
     const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`<div><i class="fas fa-cauldron"></i> Cauldron</div>`);
     if (TownManager.lastBldg === "fuse") d2.addClass("selected");
-    if (TownManager.fuseOnce) d2.addClass("hasEvent");
+    if (TownManager.fuseStatus === BuildingState.unseen) d2.addClass("hasEvent");
     $buildingList.append(d2);
     if (TownManager.smithStatus === BuildingState.hidden) return;
     const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`<div><i class="fas fa-hammer-war"></i> Forge</div>`);
     if (TownManager.lastBldg === "smith") d3.addClass("selected");
-    if (TownManager.smithOnce) d3.addClass("hasEvent");
+    if (TownManager.smithStatus === BuildingState.unseen) d3.addClass("hasEvent");
     $buildingList.append(d3);
     if (TownManager.fortuneStatus === BuildingState.hidden) return;
     const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html(`<div><i class="fas fa-hat-wizard"></i> Fortune</div>`);
     if (TownManager.lastBldg === "fortune") d4.addClass("selected");
-    if (TownManager.fortuneOnce) d4.addClass("hasEvent");
+    if (TownManager.fortuneStatus === BuildingState.unseen) d4.addClass("hasEvent");
     $buildingList.append(d4);
+}
+
+const $buildBuilding = $("#buildBuilding");
+
+function showDesynthBldg() {
+    $(".buildingTab").removeClass("bldgTabActive").hide();
+    $bankBuilding.addClass("bldgTabActive");
+    $buildingHeader.empty();
+    $buildBuilding.hide();
+    const d = $("<div/>").addClass("buildingInfo buildingDesynth");
+    const da = $("<div/>").addClass("buildingInfoBackground");
+    const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
+    if (TownManager.DesynthStatus === BuildingState.built) db.html("<img src='images/townImages/DesynthBuilding/Desynth_building.png'>");
+    const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Magical Desynth</h2>");
+    const dd = $("<div/>").addClass("buildingInfoDesc").html("Take items of higher quality and melt out the magic!");
+    if (!TownManager.DesynthStatus === BuildingState.built) d.addClass("buildInProgress");
+    d.append(da,db,dc,dd);
+    $buildingHeader.append(d);
+    if (TownManager.DesynthStatus === BuildingState.built) initiateDesynthBldg();
+    else {
+        $buildBuilding.show();
+        buildScreen("desynth");
+    }
 }
 
 function showFuseBldg() {
@@ -106,8 +141,6 @@ function showFuseBldg() {
         buildScreen("fuse");
     }
 }
-
-const $buildBuilding = $("#buildBuilding");
 
 function showBankBldg() {
     $(".buildingTab").removeClass("bldgTabActive").hide();
@@ -172,6 +205,18 @@ function showFortuneBldg() {
     }
 }
 
+$(document).on('click', "#DesynthBldg", (e) => {
+    e.preventDefault();
+    if (TownManager.lastBldg === "Desynth") return;
+    TownManager.lastBldg = "Desynth";
+    if (TownManager.DesynthStatus === BuildingState.unseen) TownManager.DesynthStatus = BuildingState.seen;
+    $(".buildingName").removeClass("selected");
+    if (!TownManager.unseenLeft()) $("#townTab").removeClass("hasEvent");
+    $("#DesynthBldg").addClass("selected");
+    $("#DesynthBldg").removeClass("hasEvent");
+    showDesynthBldg();
+});
+
 $(document).on('click', "#fusionBldg", (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "fusion") return;
@@ -235,7 +280,7 @@ function buildScreen(type) {
 
     const d5 = $("<div/>").addClass("buildingInstr");
         $("<div/>").addClass("buildingInstrHead").html("Instruction").appendTo(d5);
-        const d5b = $("<div/>").addClass("buildingInstrDesc").html("Construct the building recipe to unlock this building permanently!").appendTo(d5);
+        $("<div/>").addClass("buildingInstrDesc").html("Construct the building recipe to unlock this building permanently!").appendTo(d5);
     $buildingRecipes.append(d5);
     recipeCanCraft();
 }
@@ -245,6 +290,16 @@ $(document).on('click', ".buyBuildingBP", (e) => {
     const type = $(e.currentTarget).attr("type");
     buyBuildingBP(type);
 });
+
+function unlockDesynth() {
+    TownManager.DesynthStatus = BuildingState.built;
+    TownManager.lastBldg = "Desynth";
+    TownManager.purgeSlots = true;
+    $(".buildingName").removeClass("selected");
+    $("#bankBldg").addClass("selected");
+    refreshSideTown();
+    showDesynthBldg();
+}
 
 function unlockBank() {
     TownManager.bankStatus = BuildingState.built;

@@ -145,7 +145,7 @@ const actionSlotManager = {
         return this.slots.length > slotnum;
     },
     isBuildingMaterial(slotnum) {
-        const types = ["bank", "fuse", "smith", "fortune"];
+        const types = ["foundry","bank", "fuse", "smith", "fortune"];
         if (!this.hasSlot(slotnum)) return false;
         return types.includes(this.slots[slotnum].item.recipeType);
     },

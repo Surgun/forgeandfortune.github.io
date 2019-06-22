@@ -95,10 +95,8 @@ class Guild {
         this.order = [];
         if (this.maxLvlReached()) return refreshguildOrder(this);
         let possibleItems = recipeList.guildOrderItems(this.lvl);
-        console.log(possibleItems);
         const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
         const chosenFirst = possibleGuildItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleGuildItems.length)];
-        console.log(chosenFirst);
         possibleItems = possibleItems.filter(r => r.id !== chosenFirst.id);
         const chosenSecond = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
         possibleItems = possibleItems.filter(r => r.id !== chosenSecond.id);

@@ -78,7 +78,6 @@ const PartyCreator = {
     startingTeam(team) {
         if (team === null) return;
         const statuses = team.map(h=>HeroManager.idToHero(h).inDungeon)
-        console.log(statuses);
         if (statuses.some(h=>h)) return;
         team.forEach(h => this.addMember(h));
     }

@@ -7,11 +7,16 @@ const DesynthManager = {
     cookTime : 3000,
     createSave() {
         const save = {};
-        save.slot = this.slot.createSave();
+        if (save.slot === null) save.slot = undefined;
+        else save.slot = this.slot.createSave();
         save.state = this.state;
     },
     loadSave(save) {
-        if (save.slot !== null && save.slot !== undefined) //oops
+        if (save.slot !== undefined) {
+            const container = new itemContainer(item.id,item.rarity);
+            container.loadSave(item);
+            this.slot = container;
+        }
         if (this.state !== undefined) this.state = save.state;
     },
     possibleDesynth() {
@@ -19,9 +24,7 @@ const DesynthManager = {
     },
     addDesynth(containerID) {
         if (this.slot !== null || this.state !== "empty") return;
-        console.log(containerID)
         const container = Inventory.containerToItem(containerID);
-        console.log(container);
         Inventory.removeContainerFromInventory(containerID);
         this.slot = container;
         this.state = "staged";
@@ -37,14 +40,17 @@ const DesynthManager = {
     startDesynth() {
         if (this.state !== "staged") return;
         this.state = "synthing";
-        this.time = 0;
+        this.time = this.cookTime;
         refreshDesynthStage();
     },
     addTime(ms) {
         if (this.state !== "synthing") return;
         this.time -= ms;
-        if (this.time > 0) return refreshdesynthBar();
+        if (this.time > 0) return refreshDesynthBar();
         this.state = "complete";
+        this.time = 0;
+        this.slot.rarity -= 1;
+        console.log('slot lower!')
         refreshDesynthStage();
     },
     collectDesynth() {
@@ -53,21 +59,20 @@ const DesynthManager = {
             Notifications.synthInvFull();
             return;
         }
-        const reward = this.desynthRewards();
-        console.log(reward);
-        this.slot.rarity -= 1;
+        const reward = this.desynthRewards(true);
         ResourceManager.addMaterial(reward.id,reward.amt);
         Inventory.addItemContainerToInventory(this.slot);
         this.slot = null;
         this.state = "empty";
         initiateDesynthBldg();
     },
-    desynthRewards() {
+    desynthRewards(increase) {
+        const mod = increase ? 1 : 0;
         if (this.slot === null) return null;
         const reward = {};
-        if (this.slot.rarity === 1) reward.id = "M700";
-        if (this.slot.rarity === 2) reward.id = "M701";
-        if (this.slot.rarity === 3) reward.id = "M702";
+        if (this.slot.rarity + mod === 1) reward.id = "M700";
+        if (this.slot.rarity + mod === 2) reward.id = "M701";
+        if (this.slot.rarity + mod === 3) reward.id = "M702";
         reward.amt = Math.floor(this.slot.item.craftTime / 4000);
         return reward;
     }
@@ -122,7 +127,8 @@ function refreshDesynthStage() {
     d3.append(d4,d4a,d5,d6,d7);
     $desynthSlot.append(d3);
     //materials
-    const reward = DesynthManager.desynthRewards();
+    const mod = DesynthManager.state === "complete";
+    const reward = DesynthManager.desynthRewards(mod);
     $("<div/>").addClass("desynthMaterialPic").html(ResourceManager.idToMaterial(reward.id).img).appendTo($desynthRewardCard);
     $("<div/>").addClass("desynthMaterialAmt").html(reward.amt).appendTo($desynthRewardAmt);
     $desynthRewardCard.html()

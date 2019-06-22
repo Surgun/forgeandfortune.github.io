@@ -253,7 +253,6 @@ const Inventory = {
         return this.nonblank().filter(r=>types.includes(r.type));
     },
     containerToItem(containerID) {
-        console.log(containerID, this.nonblank().find(r=>r.containerID===containerID));
         return this.nonblank().find(r=>r.containerID===containerID)
     },
     haveItem(id,rarity) {

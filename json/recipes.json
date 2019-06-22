@@ -72,7 +72,8 @@
     "craftTime": 43728,
     "type": "Arcane",
     "gcost": [
-      "G001"
+      "G001",
+      "G004"
     ],
     "mcost": {
       "M304": 1
@@ -94,7 +95,8 @@
     "craftTime": 68927,
     "type": "Arcane",
     "gcost": [
-      "G001"
+      "G001",
+      "G004"
     ],
     "mcost": {
       "M105": 1
@@ -116,7 +118,8 @@
     "craftTime": 108652,
     "type": "Arcane",
     "gcost": [
-      "G001"
+      "G001",
+      "G004"
     ],
     "mcost": {
       "M206": 1
@@ -138,6 +141,8 @@
     "craftTime": 171275,
     "type": "Arcane",
     "gcost": [
+      "G001",
+      "G004",
       "G001"
     ],
     "mcost": {
@@ -160,6 +165,8 @@
     "craftTime": 269990,
     "type": "Arcane",
     "gcost": [
+      "G001",
+      "G004",
       "G001"
     ],
     "mcost": {
@@ -182,6 +189,8 @@
     "craftTime": 425600,
     "type": "Arcane",
     "gcost": [
+      "G001",
+      "G004",
       "G001"
     ],
     "mcost": {
@@ -204,6 +213,8 @@
     "craftTime": 670897,
     "type": "Arcane",
     "gcost": [
+      "G001",
+      "G004",
       "G001"
     ],
     "mcost": {
@@ -290,7 +301,8 @@
     "craftTime": 35256,
     "type": "Light",
     "gcost": [
-      "G003"
+      "G003",
+      "G004"
     ],
     "mcost": {
       "M204": 1
@@ -312,7 +324,8 @@
     "craftTime": 55574,
     "type": "Light",
     "gcost": [
-      "G003"
+      "G003",
+      "G004"
     ],
     "mcost": {
       "M305": 1
@@ -334,7 +347,8 @@
     "craftTime": 87603,
     "type": "Light",
     "gcost": [
-      "G003"
+      "G003",
+      "G004"
     ],
     "mcost": {
       "M106": 1
@@ -356,6 +370,8 @@
     "craftTime": 138094,
     "type": "Light",
     "gcost": [
+      "G003",
+      "G004",
       "G003"
     ],
     "mcost": {
@@ -378,6 +394,8 @@
     "craftTime": 217685,
     "type": "Light",
     "gcost": [
+      "G003",
+      "G004",
       "G003"
     ],
     "mcost": {
@@ -400,6 +418,8 @@
     "craftTime": 343149,
     "type": "Light",
     "gcost": [
+      "G003",
+      "G004",
       "G003"
     ],
     "mcost": {
@@ -422,6 +442,8 @@
     "craftTime": 540924,
     "type": "Light",
     "gcost": [
+      "G003",
+      "G004",
       "G003"
     ],
     "mcost": {
@@ -510,6 +532,7 @@
     "craftTime": 51566,
     "type": "Heavy",
     "gcost": [
+      "G001",
       "G001"
     ],
     "mcost": {
@@ -532,6 +555,7 @@
     "craftTime": 81285,
     "type": "Heavy",
     "gcost": [
+      "G001",
       "G001"
     ],
     "mcost": {
@@ -554,6 +578,7 @@
     "craftTime": 128133,
     "type": "Heavy",
     "gcost": [
+      "G001",
       "G001"
     ],
     "mcost": {
@@ -576,7 +601,9 @@
     "craftTime": 201984,
     "type": "Heavy",
     "gcost": [
-      "G001"
+      "G001",
+      "G001",
+      "G003"
     ],
     "mcost": {
       "M307": 1
@@ -598,7 +625,9 @@
     "craftTime": 318398,
     "type": "Heavy",
     "gcost": [
-      "G001"
+      "G001",
+      "G001",
+      "G003"
     ],
     "mcost": {
       "M208": 1
@@ -620,7 +649,9 @@
     "craftTime": 501909,
     "type": "Heavy",
     "gcost": [
-      "G001"
+      "G001",
+      "G001",
+      "G003"
     ],
     "mcost": {
       "M109": 1
@@ -642,7 +673,9 @@
     "craftTime": 791187,
     "type": "Heavy",
     "gcost": [
-      "G001"
+      "G001",
+      "G001",
+      "G003"
     ],
     "mcost": {
       "M210": 1
@@ -772,7 +805,8 @@
     "craftTime": 81524,
     "type": "Helmets",
     "gcost": [
-      "G002"
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M206": 1
@@ -794,7 +828,8 @@
     "craftTime": 136937,
     "type": "Helmets",
     "gcost": [
-      "G002"
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M107": 1
@@ -816,7 +851,8 @@
     "craftTime": 230016,
     "type": "Helmets",
     "gcost": [
-      "G002"
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M308": 1
@@ -838,7 +874,8 @@
     "craftTime": 386363,
     "type": "Helmets",
     "gcost": [
-      "G002"
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M209": 1
@@ -860,7 +897,8 @@
     "craftTime": 648984,
     "type": "Helmets",
     "gcost": [
-      "G002"
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M110": 1
@@ -992,7 +1030,8 @@
     "craftTime": 67044,
     "type": "Hats",
     "gcost": [
-      "G003"
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M206": 1
@@ -1014,7 +1053,8 @@
     "craftTime": 112615,
     "type": "Hats",
     "gcost": [
-      "G003"
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M107": 1
@@ -1036,7 +1076,8 @@
     "craftTime": 189162,
     "type": "Hats",
     "gcost": [
-      "G003"
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M308": 1
@@ -1058,7 +1099,8 @@
     "craftTime": 317740,
     "type": "Hats",
     "gcost": [
-      "G003"
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M209": 1
@@ -1080,7 +1122,8 @@
     "craftTime": 533715,
     "type": "Hats",
     "gcost": [
-      "G003"
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M110": 1
@@ -1212,6 +1255,7 @@
     "craftTime": 54448,
     "type": "Masks",
     "gcost": [
+      "G003",
       "G003"
     ],
     "mcost": {
@@ -1234,6 +1278,7 @@
     "craftTime": 91457,
     "type": "Masks",
     "gcost": [
+      "G003",
       "G003"
     ],
     "mcost": {
@@ -1256,6 +1301,7 @@
     "craftTime": 153622,
     "type": "Masks",
     "gcost": [
+      "G003",
       "G003"
     ],
     "mcost": {
@@ -1278,6 +1324,7 @@
     "craftTime": 258043,
     "type": "Masks",
     "gcost": [
+      "G003",
       "G003"
     ],
     "mcost": {
@@ -1300,6 +1347,7 @@
     "craftTime": 433441,
     "type": "Masks",
     "gcost": [
+      "G003",
       "G003"
     ],
     "mcost": {
@@ -1432,7 +1480,8 @@
     "craftTime": 116178,
     "type": "Gauntlets",
     "gcost": [
-      "G001"
+      "G001",
+      "G002"
     ],
     "mcost": {
       "M106": 1
@@ -1454,7 +1503,8 @@
     "craftTime": 189142,
     "type": "Gauntlets",
     "gcost": [
-      "G001"
+      "G001",
+      "G002"
     ],
     "mcost": {
       "M207": 1
@@ -1476,7 +1526,8 @@
     "craftTime": 307931,
     "type": "Gauntlets",
     "gcost": [
-      "G001"
+      "G001",
+      "G002"
     ],
     "mcost": {
       "M108": 1
@@ -1498,7 +1549,8 @@
     "craftTime": 501324,
     "type": "Gauntlets",
     "gcost": [
-      "G001"
+      "G001",
+      "G002"
     ],
     "mcost": {
       "M309": 1
@@ -1520,7 +1572,8 @@
     "craftTime": 816176,
     "type": "Gauntlets",
     "gcost": [
-      "G001"
+      "G001",
+      "G002"
     ],
     "mcost": {
       "M310": 1
@@ -1652,7 +1705,8 @@
     "craftTime": 103276,
     "type": "Gloves",
     "gcost": [
-      "G002"
+      "G002",
+      "G001"
     ],
     "mcost": {
       "M306": 1
@@ -1674,7 +1728,8 @@
     "craftTime": 168137,
     "type": "Gloves",
     "gcost": [
-      "G002"
+      "G002",
+      "G001"
     ],
     "mcost": {
       "M307": 1
@@ -1696,7 +1751,8 @@
     "craftTime": 273733,
     "type": "Gloves",
     "gcost": [
-      "G002"
+      "G002",
+      "G001"
     ],
     "mcost": {
       "M208": 1
@@ -1718,7 +1774,8 @@
     "craftTime": 445648,
     "type": "Gloves",
     "gcost": [
-      "G002"
+      "G002",
+      "G001"
     ],
     "mcost": {
       "M109": 1
@@ -1740,7 +1797,8 @@
     "craftTime": 725533,
     "type": "Gloves",
     "gcost": [
-      "G002"
+      "G002",
+      "G001"
     ],
     "mcost": {
       "M210": 1
@@ -1872,7 +1930,8 @@
     "craftTime": 92420,
     "type": "Shoes",
     "gcost": [
-      "G002"
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M206": 1
@@ -1894,7 +1953,8 @@
     "craftTime": 150463,
     "type": "Shoes",
     "gcost": [
-      "G002"
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M107": 1
@@ -1916,7 +1976,8 @@
     "craftTime": 244960,
     "type": "Shoes",
     "gcost": [
-      "G002"
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M308": 1
@@ -1938,7 +1999,8 @@
     "craftTime": 398805,
     "type": "Shoes",
     "gcost": [
-      "G002"
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M209": 1
@@ -1960,7 +2022,8 @@
     "craftTime": 649271,
     "type": "Shoes",
     "gcost": [
-      "G002"
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M110": 1
@@ -2048,6 +2111,7 @@
     "craftTime": 70020,
     "type": "Armor",
     "gcost": [
+      "G002",
       "G002"
     ],
     "mcost": {
@@ -2070,6 +2134,7 @@
     "craftTime": 115803,
     "type": "Armor",
     "gcost": [
+      "G002",
       "G002"
     ],
     "mcost": {
@@ -2092,6 +2157,7 @@
     "craftTime": 188532,
     "type": "Armor",
     "gcost": [
+      "G002",
       "G002"
     ],
     "mcost": {
@@ -2114,7 +2180,9 @@
     "craftTime": 302065,
     "type": "Armor",
     "gcost": [
-      "G002"
+      "G002",
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M207": 1
@@ -2136,7 +2204,9 @@
     "craftTime": 476162,
     "type": "Armor",
     "gcost": [
-      "G002"
+      "G002",
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M108": 1
@@ -2158,7 +2228,9 @@
     "craftTime": 738295,
     "type": "Armor",
     "gcost": [
-      "G002"
+      "G002",
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M309": 1
@@ -2180,7 +2252,9 @@
     "craftTime": 1125658,
     "type": "Armor",
     "gcost": [
-      "G002"
+      "G002",
+      "G002",
+      "G004"
     ],
     "mcost": {
       "M310": 1
@@ -2268,7 +2342,8 @@
     "craftTime": 60319,
     "type": "Cloaks",
     "gcost": [
-      "G003"
+      "G003",
+      "G002"
     ],
     "mcost": {
       "M204": 1
@@ -2290,7 +2365,8 @@
     "craftTime": 99757,
     "type": "Cloaks",
     "gcost": [
-      "G003"
+      "G003",
+      "G002"
     ],
     "mcost": {
       "M305": 1
@@ -2312,7 +2388,8 @@
     "craftTime": 162407,
     "type": "Cloaks",
     "gcost": [
-      "G003"
+      "G003",
+      "G002"
     ],
     "mcost": {
       "M106": 1
@@ -2334,7 +2411,9 @@
     "craftTime": 260209,
     "type": "Cloaks",
     "gcost": [
-      "G003"
+      "G003",
+      "G002",
+      "G001"
     ],
     "mcost": {
       "M207": 1
@@ -2356,7 +2435,9 @@
     "craftTime": 410181,
     "type": "Cloaks",
     "gcost": [
-      "G003"
+      "G003",
+      "G002",
+      "G001"
     ],
     "mcost": {
       "M108": 1
@@ -2378,7 +2459,9 @@
     "craftTime": 635992,
     "type": "Cloaks",
     "gcost": [
-      "G003"
+      "G003",
+      "G002",
+      "G001"
     ],
     "mcost": {
       "M309": 1
@@ -2400,7 +2483,9 @@
     "craftTime": 969679,
     "type": "Cloaks",
     "gcost": [
-      "G003"
+      "G003",
+      "G002",
+      "G001"
     ],
     "mcost": {
       "M310": 1
@@ -2488,7 +2573,8 @@
     "craftTime": 65574,
     "type": "Vests",
     "gcost": [
-      "G002"
+      "G002",
+      "G003"
     ],
     "mcost": {
       "M204": 1
@@ -2510,7 +2596,8 @@
     "craftTime": 108450,
     "type": "Vests",
     "gcost": [
-      "G002"
+      "G002",
+      "G003"
     ],
     "mcost": {
       "M305": 1
@@ -2532,7 +2619,8 @@
     "craftTime": 176560,
     "type": "Vests",
     "gcost": [
-      "G002"
+      "G002",
+      "G003"
     ],
     "mcost": {
       "M106": 1
@@ -2554,7 +2642,9 @@
     "craftTime": 282884,
     "type": "Vests",
     "gcost": [
-      "G002"
+      "G002",
+      "G003",
+      "G004"
     ],
     "mcost": {
       "M207": 1
@@ -2576,7 +2666,9 @@
     "craftTime": 445925,
     "type": "Vests",
     "gcost": [
-      "G002"
+      "G002",
+      "G003",
+      "G004"
     ],
     "mcost": {
       "M108": 1
@@ -2598,7 +2690,9 @@
     "craftTime": 691414,
     "type": "Vests",
     "gcost": [
-      "G002"
+      "G002",
+      "G003",
+      "G004"
     ],
     "mcost": {
       "M309": 1
@@ -2620,7 +2714,9 @@
     "craftTime": 1054179,
     "type": "Vests",
     "gcost": [
-      "G002"
+      "G002",
+      "G003",
+      "G004"
     ],
     "mcost": {
       "M310": 1
@@ -2750,7 +2846,8 @@
     "craftTime": 104131,
     "type": "Shields",
     "gcost": [
-      "G004"
+      "G004",
+      "G002"
     ],
     "mcost": {
       "M206": 1
@@ -2772,7 +2869,8 @@
     "craftTime": 191057,
     "type": "Shields",
     "gcost": [
-      "G004"
+      "G004",
+      "G002"
     ],
     "mcost": {
       "M107": 1
@@ -2794,7 +2892,8 @@
     "craftTime": 350547,
     "type": "Shields",
     "gcost": [
-      "G004"
+      "G004",
+      "G002"
     ],
     "mcost": {
       "M308": 1
@@ -2816,7 +2915,8 @@
     "craftTime": 643175,
     "type": "Shields",
     "gcost": [
-      "G004"
+      "G004",
+      "G002"
     ],
     "mcost": {
       "M209": 1
@@ -2838,7 +2938,8 @@
     "craftTime": 1180082,
     "type": "Shields",
     "gcost": [
-      "G004"
+      "G004",
+      "G002"
     ],
     "mcost": {
       "M110": 1
@@ -2970,7 +3071,8 @@
     "craftTime": 83123,
     "type": "Thrown",
     "gcost": [
-      "G001"
+      "G001",
+      "G003"
     ],
     "mcost": {
       "M306": 1
@@ -2992,7 +3094,8 @@
     "craftTime": 152512,
     "type": "Thrown",
     "gcost": [
-      "G001"
+      "G001",
+      "G003"
     ],
     "mcost": {
       "M307": 1
@@ -3014,7 +3117,8 @@
     "craftTime": 279826,
     "type": "Thrown",
     "gcost": [
-      "G001"
+      "G001",
+      "G003"
     ],
     "mcost": {
       "M208": 1
@@ -3036,7 +3140,8 @@
     "craftTime": 513418,
     "type": "Thrown",
     "gcost": [
-      "G001"
+      "G001",
+      "G003"
     ],
     "mcost": {
       "M109": 1
@@ -3058,7 +3163,8 @@
     "craftTime": 942006,
     "type": "Thrown",
     "gcost": [
-      "G001"
+      "G001",
+      "G003"
     ],
     "mcost": {
       "M210": 1
@@ -3193,7 +3299,8 @@
     "craftTime": 125131,
     "type": "Tomes",
     "gcost": [
-      "G004"
+      "G004",
+      "G001"
     ],
     "mcost": {
       "M106": 1
@@ -3215,7 +3322,8 @@
     "craftTime": 229587,
     "type": "Tomes",
     "gcost": [
-      "G004"
+      "G004",
+      "G001"
     ],
     "mcost": {
       "M207": 1
@@ -3237,7 +3345,8 @@
     "craftTime": 421241,
     "type": "Tomes",
     "gcost": [
-      "G004"
+      "G004",
+      "G001"
     ],
     "mcost": {
       "M108": 1
@@ -3259,7 +3368,8 @@
     "craftTime": 772882,
     "type": "Tomes",
     "gcost": [
-      "G004"
+      "G004",
+      "G001"
     ],
     "mcost": {
       "M309": 1
@@ -3281,7 +3391,8 @@
     "craftTime": 1418064,
     "type": "Tomes",
     "gcost": [
-      "G004"
+      "G004",
+      "G001"
     ],
     "mcost": {
       "M310": 1
@@ -3369,6 +3480,7 @@
     "craftTime": 80654,
     "type": "Pendants",
     "gcost": [
+      "G004",
       "G004"
     ],
     "mcost": {
@@ -3391,6 +3503,7 @@
     "craftTime": 133389,
     "type": "Pendants",
     "gcost": [
+      "G004",
       "G004"
     ],
     "mcost": {
@@ -3413,6 +3526,7 @@
     "craftTime": 217161,
     "type": "Pendants",
     "gcost": [
+      "G004",
       "G004"
     ],
     "mcost": {
@@ -3435,7 +3549,9 @@
     "craftTime": 347935,
     "type": "Pendants",
     "gcost": [
-      "G004"
+      "G004",
+      "G004",
+      "G002"
     ],
     "mcost": {
       "M307": 1
@@ -3457,7 +3573,9 @@
     "craftTime": 548470,
     "type": "Pendants",
     "gcost": [
-      "G004"
+      "G004",
+      "G004",
+      "G002"
     ],
     "mcost": {
       "M208": 1
@@ -3479,7 +3597,9 @@
     "craftTime": 850410,
     "type": "Pendants",
     "gcost": [
-      "G004"
+      "G004",
+      "G004",
+      "G002"
     ],
     "mcost": {
       "M109": 1
@@ -3501,7 +3621,9 @@
     "craftTime": 1296597,
     "type": "Pendants",
     "gcost": [
-      "G004"
+      "G004",
+      "G004",
+      "G002"
     ],
     "mcost": {
       "M210": 1
@@ -3589,7 +3711,8 @@
     "craftTime": 85100,
     "type": "Rings",
     "gcost": [
-      "G004"
+      "G004",
+      "G003"
     ],
     "mcost": {
       "M304": 1
@@ -3611,7 +3734,8 @@
     "craftTime": 140742,
     "type": "Rings",
     "gcost": [
-      "G004"
+      "G004",
+      "G003"
     ],
     "mcost": {
       "M105": 1
@@ -3633,7 +3757,8 @@
     "craftTime": 229133,
     "type": "Rings",
     "gcost": [
-      "G004"
+      "G004",
+      "G003"
     ],
     "mcost": {
       "M206": 1
@@ -3655,7 +3780,9 @@
     "craftTime": 367116,
     "type": "Rings",
     "gcost": [
-      "G004"
+      "G004",
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M107": 1
@@ -3677,7 +3804,9 @@
     "craftTime": 578706,
     "type": "Rings",
     "gcost": [
-      "G004"
+      "G004",
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M308": 1
@@ -3699,7 +3828,9 @@
     "craftTime": 897292,
     "type": "Rings",
     "gcost": [
-      "G004"
+      "G004",
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M209": 1
@@ -3721,7 +3852,9 @@
     "craftTime": 1368075,
     "type": "Rings",
     "gcost": [
-      "G004"
+      "G004",
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M110": 1
@@ -3809,7 +3942,8 @@
     "craftTime": 90478,
     "type": "Belts",
     "gcost": [
-      "G003"
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M104": 1
@@ -3831,7 +3965,8 @@
     "craftTime": 149639,
     "type": "Belts",
     "gcost": [
-      "G003"
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M205": 1
@@ -3853,7 +3988,8 @@
     "craftTime": 243619,
     "type": "Belts",
     "gcost": [
-      "G003"
+      "G003",
+      "G001"
     ],
     "mcost": {
       "M306": 1
@@ -3875,7 +4011,9 @@
     "craftTime": 390325,
     "type": "Belts",
     "gcost": [
-      "G003"
+      "G003",
+      "G001",
+      "G002"
     ],
     "mcost": {
       "M307": 1
@@ -3897,7 +4035,9 @@
     "craftTime": 615292,
     "type": "Belts",
     "gcost": [
-      "G003"
+      "G003",
+      "G001",
+      "G002"
     ],
     "mcost": {
       "M208": 1
@@ -3919,7 +4059,9 @@
     "craftTime": 954019,
     "type": "Belts",
     "gcost": [
-      "G003"
+      "G003",
+      "G001",
+      "G002"
     ],
     "mcost": {
       "M109": 1
@@ -3941,7 +4083,9 @@
     "craftTime": 1454565,
     "type": "Belts",
     "gcost": [
-      "G003"
+      "G003",
+      "G001",
+      "G002"
     ],
     "mcost": {
       "M210": 1

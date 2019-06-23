@@ -99,6 +99,7 @@ function refreshDesynthInventory() {
     DesynthManager.possibleDesynth().forEach(container => {
         const d3 = $("<div/>").addClass("desynthGroup").addClass("R"+container.rarity);
             $("<div/>").addClass("desynthName").html(`${container.picName()}`).appendTo(d3);
+            $("<div/>").addClass("desynthLevel").html(`${container.itemLevel()}`).appendTo(d3);
             $("<div/>").addClass("desynthButton").attr("container",container.containerID).html("Desynth").appendTo(d3);
         d1.append(d3);
     });
@@ -122,7 +123,10 @@ function refreshDesynthStage() {
     const d6 = $("<div/>").attr("id","desynthSlotCollect").html("Collect").hide();
     const d7 = $("<div/>").attr("id","desynthSlotStart").html("Start Desynth").hide();    
     if (DesynthManager.state === "synthing") d5.show();
-    if (DesynthManager.state === "complete") d6.show()
+    if (DesynthManager.state === "complete") { 
+        d6.show();
+        d4a.hide();
+    }
     if (DesynthManager.state === "staged") d7.show();
     d3.append(d4,d4a,d5,d6,d7);
     $desynthSlot.append(d3);

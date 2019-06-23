@@ -4514,7 +4514,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     animation: none;
 }
 
-.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl, .heroLevel, .gearItemLevel, .workerBuyCardLevel {
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl, .heroLevel, .gearItemLevel, .workerBuyCardLevel, .desynthLevel {
     position: absolute;
     top: 10px;
     left: 10px;

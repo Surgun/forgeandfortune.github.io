@@ -34,6 +34,7 @@ function tabClick(e, name) {
 const $comptitle1 = $("#comptitle1");
 const $comptitle2 = $("#comptitle2");
 const $comptitle3 = $("#comptitle3");
+const $comptitle4 = $("#comptitle4");
 
 $comptitle1.click((e) => {
     e.preventDefault();
@@ -48,6 +49,11 @@ $comptitle2.click((e) => {
 $comptitle3.click((e) => {
     e.preventDefault();
     tabClick(e, "dungeonsTab");
+});
+
+$comptitle4.click((e) => {
+    e.preventDefault();
+    tabClick(e, "guildTab");
 });
 
 $(document).on('click', ".DungeonSideBarStatus", (e) => {

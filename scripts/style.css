@@ -380,6 +380,27 @@ p.hamster {
     margin-left: 10px;
 }
 
+.guildWorkersSideContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fill,minmax(60px,1fr));
+    grid-gap: 5px;
+    margin-top:10px;
+}
+
+.guildWorkersSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: var(--border-primary);
+    border-radius: 5px;
+}
+
+.guildWorkersSide img {
+    margin-bottom: -5px;
+    margin-right: 5px;
+}
+
 #inventory-container {
     height: 100%;
     overflow: auto;

@@ -456,6 +456,17 @@ $(document).on('keydown','.recipeSortInput', (e) => {
     recipeFilterList();
 });
 
+// Prevent hotkey input when search bar focused
+$(document).on('focus','.recipeSortInput', (e) => {
+    settings.dialogStatus = 1;
+    saveSettings();
+});
+
+$(document).on('blur','.recipeSortInput', (e) => {
+    settings.dialogStatus = 0;
+    saveSettings();
+});
+
 const $RecipeLogistics = $("#RecipeLogistics");
 const $recipeDropdownButton = $(".recipeDropdownButton");
 

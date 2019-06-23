@@ -1029,6 +1029,12 @@ Rarities
     opacity: 1;
 }
 
+.asRes {
+    position: relative;
+    left: 5px;
+    z-index: 1;
+}
+
 .WSAuto {
     left: 0;
     top: unset;

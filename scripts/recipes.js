@@ -53,8 +53,8 @@ class Item{
     visualizeResAndMat() {
         const d = $("<div/>").addClass("itemCost")
         this.gcost.forEach(resource => {
-            const resourceNameForTooltips = resource.charAt(0).toUpperCase()+resource.slice(1);
-            d.append($("<div/>").addClass("indvCost resCost tooltip").attr("data-tooltip",resourceNameForTooltips).html('<img src="images/resources/'+resource+'.png">'));
+            const guild = GuildManager.idToGuild(resource);
+            d.append($("<div/>").addClass("indvCost resCost tooltip").attr("data-tooltip",guild.name+" Guild Worker").html('<img src="images/resources/'+resource+'.png">'));
         })
         if (this.mcost === null) return d;
         for (const [material, amt] of Object.entries(this.mcost)) {

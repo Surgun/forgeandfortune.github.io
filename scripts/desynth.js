@@ -93,11 +93,11 @@ function initiateDesynthBldg() {
 
 function refreshDesynthInventory() {
     $desynthList.empty();
-        $("<div/>").addClass("possibleDesynthHead").html("Possible Items to Magically Desynth").appendTo($desynthList);
+        $("<div/>").addClass("possibleDesynthHead desynthHeading").html("Possible Items to Magically Desynth").appendTo($desynthList);
         const d1 = $("<div/>").addClass('possibleDesynthHolder').appendTo($desynthList);
     if (DesynthManager.possibleDesynth().length === 0) $("<div/>").addClass("desynthBlank").html("No Items to Magically Desynth").appendTo(d1)
     DesynthManager.possibleDesynth().forEach(container => {
-        const d3 = $("<div/>").addClass("desynthGroup").addClass("desynthR"+container.rarity);
+        const d3 = $("<div/>").addClass("desynthGroup").addClass("R"+container.rarity);
             $("<div/>").addClass("desynthName").html(`${container.picName()}`).appendTo(d3);
             $("<div/>").addClass("desynthButton").attr("container",container.containerID).html("Desynth").appendTo(d3);
         d1.append(d3);

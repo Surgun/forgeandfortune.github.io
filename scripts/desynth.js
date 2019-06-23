@@ -119,6 +119,7 @@ function refreshDesynthStage() {
     const d3 = $("<div/>").addClass("desynthSlot").addClass("R"+DesynthManager.slot.rarity);
     const d4 = $("<div/>").addClass("desynthSlotName").html(DesynthManager.slot.picName());
     const d4a = $('<div/>').attr("id","desynthRemove").html(`<i class="fas fa-times"></i>`);
+    const d4b = $('<div/>').addClass("desynthLevel").html(DesynthManager.slot.itemLevel());
     const d5 = createDesynthBar().hide();
     const d6 = $("<div/>").attr("id","desynthSlotCollect").html("Collect").hide();
     const d7 = $("<div/>").attr("id","desynthSlotStart").html("Start Desynth").hide();    
@@ -128,7 +129,7 @@ function refreshDesynthStage() {
         d4a.hide();
     }
     if (DesynthManager.state === "staged") d7.show();
-    d3.append(d4,d4a,d5,d6,d7);
+    d3.append(d4,d4a,d4b,d5,d6,d7);
     $desynthSlot.append(d3);
     //materials
     const mod = DesynthManager.state === "complete";

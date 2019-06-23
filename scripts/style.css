@@ -4272,6 +4272,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     background: url(/images/townImages/researchBuilding/bg.png);
 }
 
+.buildingDesynth .buildingInfoBackground {
+    background: url(/images/townImages/desynthBuilding/bg.png);
+}
+
 .buildingInfoImage {
     text-align: center;
     transform-origin: bottom;

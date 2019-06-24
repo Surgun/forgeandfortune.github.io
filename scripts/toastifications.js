@@ -219,6 +219,18 @@ const Notifications = {
         const icon = "error";
         popToast(text,heading,icon);
     },
+    synthCollectInvFull() {
+        const text = "Inventory is full.";
+        const heading = "Cannot Collect Desynth";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
+    synthCollect(name,amt) {
+        const text = `You collected ${amt} ${name}!`; // Text that is to be shown in the toast
+        const heading = "Extraction Complete!"; // Optional heading to be shown on the toast
+        const icon = 'info'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
 }
 
 function popToast(text,heading,icon) {

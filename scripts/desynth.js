@@ -33,6 +33,10 @@ const DesynthManager = {
     },
     removeDesynth() {
         if (this.state !== "staged") return;
+        if (Inventory.full()) {
+            Notifications.synthCollectInvFull();
+            return;
+        }
         Inventory.addItemContainerToInventory(this.slot);
         this.slot = null;
         this.state = "empty";
@@ -57,11 +61,12 @@ const DesynthManager = {
     collectDesynth() {
         if (this.state !== "complete") return;
         if (Inventory.full()) {
-            Notifications.synthInvFull();
+            Notifications.synthCollectInvFull();
             return;
         }
         const reward = this.desynthRewards(true);
         ResourceManager.addMaterial(reward.id,reward.amt);
+        Notifications.synthCollect(ResourceManager.idToMaterial(reward.id).name,reward.amt);
         Inventory.addItemContainerToInventory(this.slot);
         this.slot = null;
         this.state = "empty";

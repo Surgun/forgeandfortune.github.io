@@ -7,14 +7,15 @@ const DesynthManager = {
     cookTime : 3000,
     createSave() {
         const save = {};
-        if (save.slot === null) save.slot = undefined;
-        else save.slot = this.slot.createSave();
+        if (this.slot !== null) save.slot = this.slot.createSave();
+        console.log(this.slot);
         save.state = this.state;
+        return save;
     },
     loadSave(save) {
         if (save.slot !== undefined) {
-            const container = new itemContainer(item.id,item.rarity);
-            container.loadSave(item);
+            const container = new itemContainer(save.slot.id,save.slot.rarity);
+            container.loadSave(save.slot);
             this.slot = container;
         }
         if (this.state !== undefined) this.state = save.state;

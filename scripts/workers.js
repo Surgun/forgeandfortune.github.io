@@ -3,7 +3,7 @@
 class Worker {
     constructor(props) {
         Object.assign(this, props);
-        this.pic = '<img src="images/workers/'+this.id+'.gif">';
+        this.pic = '<img src="images/workers/'+this.workerID+'.gif">';
         this.prodpic = '<img src="images/resources/'+this.production+'.png">';
         this.owned = false;
         this.status = "idle";

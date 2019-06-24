@@ -8,7 +8,6 @@ const DesynthManager = {
     createSave() {
         const save = {};
         if (this.slot !== null) save.slot = this.slot.createSave();
-        console.log(this.slot);
         save.state = this.state;
         return save;
     },
@@ -55,7 +54,6 @@ const DesynthManager = {
         this.state = "complete";
         this.time = 0;
         this.slot.rarity -= 1;
-        console.log('slot lower!')
         refreshDesynthStage();
     },
     collectDesynth() {

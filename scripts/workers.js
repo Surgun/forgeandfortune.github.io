@@ -55,7 +55,6 @@ const WorkerManager = {
     assignWorker(item) {
         item.gcost.forEach(res => {
             const freeworkers = this.workers.filter(worker=> worker.status === "idle");
-            console.log(res,freeworkers.filter(worker => worker.production === res && worker.owned))
             const chosenworker = freeworkers.filter(worker => worker.production === res && worker.owned)[0];
             chosenworker.status = item.id;
         });

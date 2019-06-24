@@ -7,7 +7,7 @@ class Hero {
         Object.assign(this, props);
         this.uniqueid = this.id;
         this.ap = 0;
-        this.apAdd = 20;
+        this.apAdd = 30;
         this.apmax = 100;
         this.armor = 0;
         this.crit = 5;
@@ -417,7 +417,7 @@ function examineHero(ID) {
             const td1 = $('<div/>').addClass('gearStatContainer');
                 $('<div/>').addClass('gearStat gearStatHP').html(miscIcons.hp + equip.hp()).appendTo(td1);
             const td2 = $('<div/>').addClass('gearStatContainer');
-                $('<div/>').addClass('gearStat gearStatPow').html(miscIcons.pow + equip.pow())/appendTo(td2);
+                $('<div/>').addClass('gearStat gearStatPow').html(miscIcons.pow + equip.pow()).appendTo(td2);
             equipStats = $('<div/>').addClass('equipStatContainer').append(td1,td2);
         }
         else {

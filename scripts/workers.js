@@ -3,7 +3,7 @@
 class Worker {
     constructor(props) {
         Object.assign(this, props);
-        this.pic = '<img src="images/workers/'+this.name+'.gif">';
+        this.pic = '<img src="images/workers/'+this.id+'.gif">';
         this.prodpic = '<img src="images/resources/'+this.production+'.png">';
         this.owned = false;
         this.status = "idle";
@@ -54,7 +54,8 @@ const WorkerManager = {
     },
     assignWorker(item) {
         item.gcost.forEach(res => {
-            const freeworkers = this.workers.filter(worker=>worker.status === "idle");
+            const freeworkers = this.workers.filter(worker=> worker.status === "idle");
+            console.log(res,freeworkers.filter(worker => worker.production === res && worker.owned))
             const chosenworker = freeworkers.filter(worker => worker.production === res && worker.owned)[0];
             chosenworker.status = item.id;
         });
@@ -69,13 +70,21 @@ const WorkerManager = {
     },
     couldCraft(item) {
         const canProduce = this.workers.filter(w=> w.owned).map(w=>w.production);
-        const difference = item.gcost.filter(x => !canProduce.includes(x));
-        return difference.length === 0;
+        const canProduceBucket = canProduce.reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), Object.create(null));
+        const needBucket = item.gcost.reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), Object.create(null));
+        for (const [res, amt] of Object.entries(needBucket)) {
+            if (canProduceBucket[res] < amt) return false;
+        }
+        return true;
     },
     canCurrentlyCraft(item) {
         const canProduce = this.workers.filter(w=> w.owned && w.status === "idle").map(w=>w.production);
-        const difference = item.gcost.filter(x => !canProduce.includes(x));
-        return difference.length === 0;
+        const canProduceBucket = canProduce.reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), Object.create(null));
+        const needBucket = item.gcost.reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), Object.create(null));
+        for (const [res, amt] of Object.entries(needBucket)) {
+            if (canProduceBucket[res] < amt) return false;
+        }
+        return true;
     },
     filterByGuild(guildID) {
         return this.workers.filter(r=>r.guildUnlock === guildID);
@@ -86,7 +95,10 @@ const WorkerManager = {
         return left.sort((a,b) => a.repReqForBuy() - b.repReqForBuy())[0];
     },
     freeByGuild(gid) {
-        return this.workers.filter(w => w.production === gid && w.status === "idle").length;
+        return this.workers.filter(w => w.production === gid && w.owned && w.status === "idle").length;
+    },
+    ownedByGuild(gid) {
+        return this.workers.filter(w => w.production === gid && w.owned).length;
     }
 }
 
@@ -117,11 +129,14 @@ function refreshSideWorkers() {
         d.append(d2,d3);
         $workersUse.append(d);
     });
-    $G001WorkerFree.html(WorkerManager.freeByGuild("G001"));
+    $G001WorkerFree.html(WorkerManager.freeByGuild("G001")).show();
+    if (WorkerManager.ownedByGuild("G001")) $G001WorkerFree.hide();
     $G002WorkerFree.html(WorkerManager.freeByGuild("G002"));
+    if (WorkerManager.ownedByGuild("G002")) $G002WorkerFree.hide();
     $G003WorkerFree.html(WorkerManager.freeByGuild("G003"));
+    if (WorkerManager.ownedByGuild("G003")) $G003WorkerFree.hide();
     $G004WorkerFree.html(WorkerManager.freeByGuild("G004"));
-    $G005WorkerFree.html(WorkerManager.freeByGuild("G005"));
+    if (WorkerManager.ownedByGuild("G004")) $G004WorkerFree.hide();
 };
 
 $(document).on("click", ".workerSideBar", (e) => {

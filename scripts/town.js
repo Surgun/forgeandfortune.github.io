@@ -72,7 +72,7 @@ function refreshSideTown() {
     else $("#townTab").removeClass("hasEvent");
     if (TownManager.DesynthStatus === BuildingState.hidden) return;
     $emptyTown.hide();
-    const d1a = $("<div/>").addClass("buildingName").attr("id","DesynthBldg").html(`<div><i class="fas fa-university"></i> Desynth</div>`);
+    const d1a = $("<div/>").addClass("buildingName").attr("id","DesynthBldg").html(`<div><i class="fas fa-flask-potion"></i> Desynth</div>`);
     if (TownManager.lastBldg === "desynth") d1a.addClass("selected");
     if (TownManager.DesynthStatus === BuildingState.unseen) d1a.addClass("hasEvent");
     $buildingList.show().append(d1a);

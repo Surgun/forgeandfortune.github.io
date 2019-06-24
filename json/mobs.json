@@ -2522,7 +2522,7 @@
   {
     "id": "BB010",
     "name": "Loathing Oak",
-    "hpBase": 2800,
+    "hpBase": 2000,
     "hpLvl": 0,
     "powBase": 90,
     "powLvl": 0,
@@ -2556,7 +2556,7 @@
   {
     "id": "BB012",
     "name": "Blue Knight",
-    "hpBase": 4000,
+    "hpBase": 6500,
     "hpLvl": 0,
     "powBase": 350,
     "powLvl": 0,
@@ -2573,7 +2573,7 @@
   {
     "id": "BB013",
     "name": "Lich Suit Lawrence",
-    "hpBase": 6000,
+    "hpBase": 10000,
     "hpLvl": 0,
     "powBase": 200,
     "powLvl": 0,
@@ -2590,7 +2590,7 @@
   {
     "id": "BB014",
     "name": "Beclutcher",
-    "hpBase": 13000,
+    "hpBase": 36000,
     "hpLvl": 0,
     "powBase": 400,
     "powLvl": 0,
@@ -2607,7 +2607,7 @@
   {
     "id": "BB015",
     "name": "Aggressive Oak",
-    "hpBase": 20000,
+    "hpBase": 13000,
     "hpLvl": 0,
     "powBase": 1000,
     "powLvl": 0,
@@ -2624,7 +2624,7 @@
   {
     "id": "BB016",
     "name": "Enraged Phoenix",
-    "hpBase": 30000,
+    "hpBase": 40000,
     "hpLvl": 0,
     "powBase": 1000,
     "powLvl": 0,
@@ -2641,7 +2641,7 @@
   {
     "id": "BB017",
     "name": "Melancholy Knight",
-    "hpBase": 60000,
+    "hpBase": 70000,
     "hpLvl": 0,
     "powBase": 2500,
     "powLvl": 0,
@@ -2675,7 +2675,7 @@
   {
     "id": "BB019",
     "name": "Begrasper",
-    "hpBase": 130000,
+    "hpBase": 135000,
     "hpLvl": 0,
     "powBase": 3333,
     "powLvl": 0,

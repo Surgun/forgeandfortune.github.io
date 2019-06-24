@@ -1,9 +1,18 @@
 [
   {
+    "id": "AL001",
+    "title": "Don't I Know You",
+    "description": "Unlock Bird Arms worker: Oren",
+    "notoReq": 25,
+    "goldCost": 500,
+    "type": "worker",
+    "subtype": "WN001"
+  },
+  {
     "id": "AL0002",
     "title": "Did You Lose Weight",
     "description": "Unlock Bird Arms worker: Eryn",
-    "notoReq": 3010,
+    "notoReq": 3025,
     "goldCost": 5000,
     "type": "worker",
     "subtype": "WN002"
@@ -12,7 +21,7 @@
     "id": "AL0003",
     "title": "You Sound Familiar",
     "description": "Unlock Bird Arms worker: Herbie",
-    "notoReq": 28010,
+    "notoReq": 28025,
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN003"
@@ -21,7 +30,7 @@
     "id": "AL0004",
     "title": "Birds of A Feather",
     "description": "Unlock Bird Arms worker: Lakur",
-    "notoReq": 108010,
+    "notoReq": 108025,
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN004"
@@ -30,7 +39,7 @@
     "id": "AL0101",
     "title": "Lettuce Time",
     "description": "Unlock Green Guard worker: Tiny",
-    "notoReq": 25,
+    "notoReq": 50,
     "goldCost": 500,
     "type": "worker",
     "subtype": "WN101"
@@ -39,7 +48,7 @@
     "id": "AL0102",
     "title": "Kale is Gross",
     "description": "Unlock Green Guard worker: Crash",
-    "notoReq": 3025,
+    "notoReq": 3050,
     "goldCost": 5000,
     "type": "worker",
     "subtype": "WN102"
@@ -48,7 +57,7 @@
     "id": "AL0103",
     "title": "Sesame Seed Money",
     "description": "Unlock Green Guard worker: Titan",
-    "notoReq": 28025,
+    "notoReq": 28050,
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN103"
@@ -57,25 +66,16 @@
     "id": "AL0104",
     "title": "Having A Ball",
     "description": "Unlock Green Guard worker: Smash",
-    "notoReq": 108025,
+    "notoReq": 108050,
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN104"
   },
   {
-    "id": "AL0201",
-    "title": "Furmidable Allies",
-    "description": "Unlock The Cat's Meow worker: Francis",
-    "notoReq": 50,
-    "goldCost": 500,
-    "type": "worker",
-    "subtype": "WN201"
-  },
-  {
     "id": "AL0202",
     "title": "Feline Fine",
     "description": "Unlock The Cat's Meow worker: Squeaks",
-    "notoReq": 3050,
+    "notoReq": 3010,
     "goldCost": 5000,
     "type": "worker",
     "subtype": "WN202"
@@ -84,7 +84,7 @@
     "id": "AL0203",
     "title": "Not A Dog Person",
     "description": "Unlock The Cat's Meow worker: Renae",
-    "notoReq": 28050,
+    "notoReq": 28010,
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN203"
@@ -93,7 +93,7 @@
     "id": "AL0204",
     "title": "Hot Tin Roof",
     "description": "Unlock The Cat's Meow worker: Tawny",
-    "notoReq": 108050,
+    "notoReq": 108010,
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN204"

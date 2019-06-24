@@ -12,7 +12,7 @@ function afterLoad() {
     initializeRecipes();
     initializeMats();
     if (!loadGame()) {
-        WorkerManager.gainWorker("W003");
+        WorkerManager.gainWorker("WN201");
         recipeList.idToItem("R13001").owned = true;
         HeroManager.idToHero("H203").owned = true;
         achievementStats.startTime = Date.now();

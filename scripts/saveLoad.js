@@ -2,6 +2,8 @@
 
 let stopSave = false;
 
+
+
 function ClearSave() {
     localStorage.removeItem("ffgs1");
     location.replace('/');
@@ -284,3 +286,10 @@ $("#exportSaveCopy").click((e) => {
     document.execCommand("copy");
     $temp.remove();
 })
+
+$("#exportSaveLocal").click((e) => {
+    e.preventDefault();
+    const saveFile = createSaveExport();
+    const b = new Blob([saveFile],{type:"text/plain;charset=utf-8"});
+    saveAs(b, "ForgeAndFortuneSave.txt");
+});

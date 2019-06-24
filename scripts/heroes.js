@@ -390,13 +390,13 @@ function examineHero(ID) {
     const stats = [hero.maxHP(),hero.getPow(), hero.apmax, hero.getArmor(), hero.crit+"%", hero.critdmg*100+"%", hero.dodgeChance+"%"];
     const statName = ["MAX HP","POW","AP","ARMOR","CRIT","CRDMG","DODGE"];
     const statDesc = [
-        "The amount of damage your hero can sustain before being downed.",
-        "The amount of damage your hero can deal.",
-        "The amount of action points your hero needs to initiate their hero ability.",
-        "The damage resistance your hero possesses.",
-        "The chance of an attack dealing bonus damage.",
-        "The amount of bonus damage your hero will deal upon critical attack.",
-        "The chance your hero may avoid an enemy attack."
+        "Amount of damage your hero can sustain before being downed.",
+        "Amount of damage your hero can deal.",
+        "Amount of action points your hero needs to initiate their hero ability.",
+        "Damage resistance your hero possesses.",
+        "Chance of an attack dealing bonus damage.",
+        "Amount of bonus damage your hero will deal upon critical attack.",
+        "Chance your hero may avoid an enemy attack."
     ];
     for (let i=0;i<stats.length;i++) {
         heroExamineStats.append(statRow(statName[i],stats[i],statDesc[i]));

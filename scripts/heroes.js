@@ -389,8 +389,17 @@ function examineHero(ID) {
     heroExamineStats.append(htd.append(htd1));
     const stats = [hero.maxHP(),hero.getPow(), hero.apmax, hero.getArmor(), hero.crit+"%", hero.critdmg*100+"%", hero.dodgeChance+"%"];
     const statName = ["MAX HP","POW","AP","ARMOR","CRIT","CRDMG","DODGE"];
+    const statDesc = [
+        "The amount of damage your hero can sustain before being downed.",
+        "The amount of damage your hero can deal.",
+        "The amount of action points your hero needs to initiate their hero ability.",
+        "The damage resistance your hero possesses.",
+        "The chance of an attack dealing bonus damage.",
+        "The amount of bonus damage your hero will deal upon critical attack.",
+        "The chance your hero may avoid an enemy attack."
+    ];
     for (let i=0;i<stats.length;i++) {
-        heroExamineStats.append(statRow(statName[i],stats[i]));
+        heroExamineStats.append(statRow(statName[i],stats[i],statDesc[i]));
     }
 
     const lowerDiv = $("<div/>").addClass("heroExamineEquip");
@@ -441,8 +450,8 @@ function examineHero(ID) {
     $heroGearSlots.append(lowerDiv);
 }
 
-function statRow(name,value) {
-    const d1 = $("<div/>").addClass("heroExamineStatRow");
+function statRow(name,value,description) {
+    const d1 = $("<div/>").addClass("heroExamineStatRow tooltip").attr("data-tooltip",description);
     const d2 = $("<div/>").addClass("heroExamineStatRowName").html(name);
     const d3 = $("<div/>").addClass("heroExamineStatRowValue").html(value);
     return d1.append(d2,d3);

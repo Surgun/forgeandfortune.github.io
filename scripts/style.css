@@ -3003,6 +3003,7 @@ Rarities
 }
 
 .heroExamineStatRow {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -5624,6 +5625,11 @@ footer a[href*="discord.gg"]:hover {
 
 .overviewStat.tooltip:after {
     width: 60px;
+    margin: 0 auto;
+}
+
+.heroExamineStatRow.tooltip:after {
+    width: 200px;
     margin: 0 auto;
 }
 

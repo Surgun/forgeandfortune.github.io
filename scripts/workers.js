@@ -107,7 +107,10 @@ const $G001WorkerFree = $("#G001WorkerFree");
 const $G002WorkerFree = $("#G002WorkerFree");
 const $G003WorkerFree = $("#G003WorkerFree");
 const $G004WorkerFree = $("#G004WorkerFree");
-const $G005WorkerFree = $("#G005WorkerFree");
+const $G001Workers = $("#G001Workers");
+const $G002Workers = $("#G002Workers");
+const $G003Workers = $("#G003Workers");
+const $G004Workers = $("#G004Workers");
 
 function refreshSideWorkers() {
     $workersUse.empty();
@@ -128,14 +131,18 @@ function refreshSideWorkers() {
         d.append(d2,d3);
         $workersUse.append(d);
     });
-    $G001WorkerFree.html(WorkerManager.freeByGuild("G001")).show();
-    if (WorkerManager.ownedByGuild("G001")) $G001WorkerFree.hide();
+    $G001WorkerFree.html(WorkerManager.freeByGuild("G001"));
     $G002WorkerFree.html(WorkerManager.freeByGuild("G002"));
-    if (WorkerManager.ownedByGuild("G002")) $G002WorkerFree.hide();
     $G003WorkerFree.html(WorkerManager.freeByGuild("G003"));
-    if (WorkerManager.ownedByGuild("G003")) $G003WorkerFree.hide();
     $G004WorkerFree.html(WorkerManager.freeByGuild("G004"));
-    if (WorkerManager.ownedByGuild("G004")) $G004WorkerFree.hide();
+    if (WorkerManager.ownedByGuild("G001")) $G001Workers.show();
+    else $G001Workers.hide();
+    if (WorkerManager.ownedByGuild("G002")) $G002Workers.show();
+    else $G002Workers.hide();
+    if (WorkerManager.ownedByGuild("G003")) $G003Workers.show();
+    else $G003Workers.hide();
+    if (WorkerManager.ownedByGuild("G004")) $G004Workers.show();
+    else $G004Workers.hide();
 };
 
 $(document).on("click", ".workerSideBar", (e) => {

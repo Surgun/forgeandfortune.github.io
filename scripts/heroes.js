@@ -119,7 +119,7 @@ class Hero {
         this.ap += this.apAdded();
     }
     apAdded() {
-        return 20;
+        return this.apAdd;
     }
     heal(hp) {
         if (this.hp ===0) return;

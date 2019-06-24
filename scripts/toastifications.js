@@ -4,7 +4,7 @@ let toastPosition = settings.toastPosition;
 
 const Notifications = {
     craftWarning() {
-        const text = "You do not have the required workers available for this craft."; // Text that is to be shown in the toast
+        const text = "You do not have the required workers free for this craft."; // Text that is to be shown in the toast
         const heading = 'Insufficient Workers'; // Optional heading to be shown on the toast
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);

@@ -134,8 +134,8 @@ class Guild {
         return gold.reduce((a,b) => a+b)*2;
     }
     maxLvlReached() {
-        if (this.lvl === 59) return true;
-        return this.lvl >= 5 + 6 * DungeonManager.bossesBeat.length;
+        if (this.lvl >= 39) return true;
+        return this.lvl >= 3 + 4 * DungeonManager.bossesBeat.length;
     }
 }
 

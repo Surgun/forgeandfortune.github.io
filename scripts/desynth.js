@@ -83,6 +83,7 @@ const $desynthSlot = $("#desynthSlot");
 const $desynthList = $("#desynthList");
 const $desynthRewardCard = $("#desynthRewardCard");
 const $desynthRewardAmt = $("#desynthRewardAmt")
+const $desynthReward = $("#desynthReward");
 
 
 function initiateDesynthBldg() {
@@ -109,26 +110,28 @@ function refreshDesynthStage() {
     $desynthSlot.empty();
     $desynthRewardCard.empty();
     $desynthRewardAmt.empty();
+    $desynthReward.show();
     if (DesynthManager.slot === null) {
         const d1 = $("<div/>").addClass("desynthSlot");
-        const d2 = $("<div/>").addClass("desynthSlotName").html("Empty");
+        const d2 = $("<div/>").addClass("desynthSlotName slotEmpty").html("Empty");
         d1.append(d2);
         $desynthSlot.append(d2);
+        $desynthReward.hide();
         return;
     }
     const d3 = $("<div/>").addClass("desynthSlot").addClass("R"+DesynthManager.slot.rarity);
     const d4 = $("<div/>").addClass("desynthSlotName").html(DesynthManager.slot.picName());
-    const d4a = $('<div/>').attr("id","desynthRemove").html(`<i class="fas fa-times"></i>`);
+    const d4a = $('<div/>').attr("id","desynthRemove").html(`<i class="fas fa-times"></i>`).hide();
     const d4b = $('<div/>').addClass("desynthLevel").html(DesynthManager.slot.itemLevel());
     const d5 = createDesynthBar().hide();
     const d6 = $("<div/>").attr("id","desynthSlotCollect").html("Collect").hide();
     const d7 = $("<div/>").attr("id","desynthSlotStart").html("Start Desynth").hide();    
     if (DesynthManager.state === "synthing") d5.show();
-    if (DesynthManager.state === "complete") { 
-        d6.show();
-        d4a.hide();
+    if (DesynthManager.state === "complete") d6.show();
+    if (DesynthManager.state === "staged") {
+        d4a.show();
+        d7.show();
     }
-    if (DesynthManager.state === "staged") d7.show();
     d3.append(d4,d4a,d4b,d5,d6,d7);
     $desynthSlot.append(d3);
     //materials
@@ -136,7 +139,7 @@ function refreshDesynthStage() {
     const reward = DesynthManager.desynthRewards(mod);
     $("<div/>").addClass("desynthMaterialPic").html(ResourceManager.idToMaterial(reward.id).img).appendTo($desynthRewardCard);
     $("<div/>").addClass("desynthMaterialAmt").html(reward.amt).appendTo($desynthRewardAmt);
-    $desynthRewardCard.html()
+    $desynthReward.addClass("tooltip").attr("data-tooltip",ResourceManager.idToMaterial(reward.id).name);
 }
 
 function createDesynthBar() {

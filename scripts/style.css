@@ -4856,9 +4856,6 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     position: absolute;
     top: 10px;
     right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 25px;
     height: 25px;
     background-color: rgba(255,255,255,0.1);
@@ -4869,6 +4866,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 #desynthRemove:hover {
     background-color: rgba(255, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
+}
+
+#desynthRemove > i {
+    margin-top: 5px;
 }
 
 #desynthPower, #desynthRewards {
@@ -4885,6 +4886,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 #desynthReward {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4896,6 +4898,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .desynthMaterialPic > img {
     margin-right: 5px;
+}
+
+.desynthSlotName.slotEmpty {
+    color: var(--highlight);
 }
 
 /* Events / Mail Content */
@@ -5630,6 +5636,11 @@ footer a[href*="discord.gg"]:hover {
 
 .heroExamineStatRow.tooltip:after {
     width: 200px;
+    margin: 0 auto;
+}
+
+#desynthReward.tooltip:after {
+    width: 125px;
     margin: 0 auto;
 }
 

@@ -372,7 +372,8 @@ function createWorkerBuyCard(worker) {
     const d2 = $("<div/>").addClass("workerBuyCardBodyImage").html(worker.pic);
     const d3 = $("<div/>").addClass("workerBuyCardBodyName").html(worker.name);
     const d4 = $("<div/>").addClass("workerBuyCardBodyProduction").html(worker.productionText());
-    return d1.append(d2,d3,d4);
+    const d5 = $('<div/>').addClass('workerBuyCardDesc tooltip').attr("data-tooltip",worker.description).html("<i class='fas fa-info-circle'></i>");
+    return d1.append(d2,d3,d4,d5);
 };
 
 //submit a guild order

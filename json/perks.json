@@ -1,174 +1,138 @@
 [
   {
-    "id": "AL1002",
-    "title": "An Axe To Grind",
-    "description": "Unlock Wood worker: Eryn",
+    "id": "AL0002",
+    "title": "Did You Lose Weight",
+    "description": "Unlock Bird Arms worker: Eryn",
+    "notoReq": 3010,
+    "goldCost": 5000,
+    "type": "worker",
+    "subtype": "WN002"
+  },
+  {
+    "id": "AL0003",
+    "title": "You Sound Familiar",
+    "description": "Unlock Bird Arms worker: Herbie",
+    "notoReq": 28010,
+    "goldCost": 300000,
+    "type": "worker",
+    "subtype": "WN003"
+  },
+  {
+    "id": "AL0004",
+    "title": "Birds of A Feather",
+    "description": "Unlock Bird Arms worker: Lakur",
+    "notoReq": 108010,
+    "goldCost": 4000000,
+    "type": "worker",
+    "subtype": "WN004"
+  },
+  {
+    "id": "AL0101",
+    "title": "Lettuce Time",
+    "description": "Unlock Green Guard worker: Tiny",
     "notoReq": 25,
-    "goldCost": 200,
+    "goldCost": 500,
     "type": "worker",
-    "subtype": "W002"
+    "subtype": "WN101"
   },
   {
-    "id": "AL1003",
-    "title": "A Big Dill",
-    "description": "Unlock Herb worker: Herbie",
+    "id": "AL0102",
+    "title": "Kale is Gross",
+    "description": "Unlock Green Guard worker: Crash",
+    "notoReq": 3025,
+    "goldCost": 5000,
+    "type": "worker",
+    "subtype": "WN102"
+  },
+  {
+    "id": "AL0103",
+    "title": "Sesame Seed Money",
+    "description": "Unlock Green Guard worker: Titan",
+    "notoReq": 28025,
+    "goldCost": 300000,
+    "type": "worker",
+    "subtype": "WN103"
+  },
+  {
+    "id": "AL0104",
+    "title": "Having A Ball",
+    "description": "Unlock Green Guard worker: Smash",
+    "notoReq": 108025,
+    "goldCost": 4000000,
+    "type": "worker",
+    "subtype": "WN104"
+  },
+  {
+    "id": "AL0201",
+    "title": "Furmidable Allies",
+    "description": "Unlock The Cat's Meow worker: Francis",
     "notoReq": 50,
-    "goldCost": 200,
+    "goldCost": 500,
     "type": "worker",
-    "subtype": "W003"
+    "subtype": "WN201"
   },
   {
-    "id": "AL1004",
-    "title": "Nowhere to Hide",
-    "description": "Unlock Leather worker: Lakur",
+    "id": "AL0202",
+    "title": "Feline Fine",
+    "description": "Unlock The Cat's Meow worker: Squeaks",
+    "notoReq": 3050,
+    "goldCost": 5000,
+    "type": "worker",
+    "subtype": "WN202"
+  },
+  {
+    "id": "AL0203",
+    "title": "Not A Dog Person",
+    "description": "Unlock The Cat's Meow worker: Renae",
+    "notoReq": 28050,
+    "goldCost": 300000,
+    "type": "worker",
+    "subtype": "WN203"
+  },
+  {
+    "id": "AL0204",
+    "title": "Hot Tin Roof",
+    "description": "Unlock The Cat's Meow worker: Tawny",
+    "notoReq": 108050,
+    "goldCost": 4000000,
+    "type": "worker",
+    "subtype": "WN204"
+  },
+  {
+    "id": "AL0301",
+    "title": "Bubble Baubles",
+    "description": "Unlock Trawled Treasures worker: Gilbert",
     "notoReq": 75,
-    "goldCost": 200,
-    "type": "worker",
-    "subtype": "W004"
-  },
-  {
-    "id": "AL1005",
-    "title": "Skeleton Crew",
-    "description": "Unlock Bone worker: Harmony",
-    "notoReq": 100,
-    "goldCost": 200,
-    "type": "worker",
-    "subtype": "W005"
-  },
-  {
-    "id": "AL1006",
-    "title": "Seams Important",
-    "description": "Unlock Fabric worker: Frederic",
-    "notoReq": 125,
     "goldCost": 500,
     "type": "worker",
-    "subtype": "W006"
+    "subtype": "WN301"
   },
   {
-    "id": "AL1007",
-    "title": "In Need Of Alloys",
-    "description": "Unlock Steel worker: Magnolia",
-    "notoReq": 150,
-    "goldCost": 500,
+    "id": "AL0302",
+    "title": "Shiny Bubbles",
+    "description": "Unlock Trawled Treasures worker: Gillian",
+    "notoReq": 3075,
+    "goldCost": 5000,
     "type": "worker",
-    "subtype": "W007"
+    "subtype": "WN302"
   },
   {
-    "id": "AL1008",
-    "title": "Earring Aides",
-    "description": "Unlock Silver worker: Sylvester",
-    "notoReq": 175,
-    "goldCost": 500,
+    "id": "AL0303",
+    "title": "Rollin In The Deep",
+    "description": "Unlock Trawled Treasures worker: Gilfred",
+    "notoReq": 28075,
+    "goldCost": 300000,
     "type": "worker",
-    "subtype": "W008"
+    "subtype": "WN303"
   },
   {
-    "id": "AL1009",
-    "title": "To A Pulp",
-    "description": "Unlock Paper worker: Pippa",
-    "notoReq": 200,
-    "goldCost": 500,
+    "id": "AL0304",
+    "title": "Stinky Divers",
+    "description": "Unlock Trawled Treasures worker: Gilda",
+    "notoReq": 108075,
+    "goldCost": 4000000,
     "type": "worker",
-    "subtype": "W009"
-  },
-  {
-    "id": "AL1010",
-    "title": "Spell Ya Later",
-    "description": "Unlock Mana worker: Manny",
-    "notoReq": 225,
-    "goldCost": 500,
-    "type": "worker",
-    "subtype": "W010"
-  },
-  {
-    "id": "AL1011",
-    "title": "Rain Ore Shine",
-    "description": "Unlock Ore worker: Hardy",
-    "notoReq": 57000,
-    "goldCost": 12500,
-    "type": "worker",
-    "subtype": "W101"
-  },
-  {
-    "id": "AL1012",
-    "title": "Out On A Limb",
-    "description": "Unlock Wood worker: Wendy",
-    "notoReq": 62000,
-    "goldCost": 12500,
-    "type": "worker",
-    "subtype": "W102"
-  },
-  {
-    "id": "AL1013",
-    "title": "You Grow Girl",
-    "description": "Unlock Herb worker: Blossom",
-    "notoReq": 67000,
-    "goldCost": 12500,
-    "type": "worker",
-    "subtype": "W103"
-  },
-  {
-    "id": "AL1014",
-    "title": "I've Been Cured",
-    "description": "Unlock Leather worker: Rocky",
-    "notoReq": 72000,
-    "goldCost": 12500,
-    "type": "worker",
-    "subtype": "W104"
-  },
-  {
-    "id": "AL1015",
-    "title": "A Star Is Bone",
-    "description": "Unlock Bone worker: Floyd",
-    "notoReq": 77000,
-    "goldCost": 12500,
-    "type": "worker",
-    "subtype": "W105"
-  },
-  {
-    "id": "AL1016",
-    "title": "Clothes The Shop",
-    "description": "Unlock Fabric worker: Tricia",
-    "notoReq": 82000,
-    "goldCost": 12500,
-    "type": "worker",
-    "subtype": "W106"
-  },
-  {
-    "id": "AL1017",
-    "title": "Those Metalling Kids",
-    "description": "Unlock Steel worker: Remington",
-    "notoReq": 87000,
-    "goldCost": 12500,
-    "type": "worker",
-    "subtype": "W107"
-  },
-  {
-    "id": "AL1018",
-    "title": "AG-mazing",
-    "description": "Unlock Silver worker: Renae",
-    "notoReq": 92000,
-    "goldCost": 12500,
-    "type": "worker",
-    "subtype": "W108"
-  },
-  {
-    "id": "AL1019",
-    "title": "Origlamorous",
-    "description": "Unlock Paper worker: Paula",
-    "notoReq": 97000,
-    "goldCost": 12500,
-    "type": "worker",
-    "subtype": "W109"
-  },
-  {
-    "id": "AL1020",
-    "title": "Arithmagicians",
-    "description": "Unlock Mana worker: Jewel",
-    "notoReq": 102000,
-    "goldCost": 12500,
-    "type": "worker",
-    "subtype": "W110"
+    "subtype": "WN304"
   },
   {
     "id": "AL2001",
@@ -538,5 +502,86 @@
     "goldCost": 32500000000,
     "type": "sanctuary9",
     "subtype": null
+  },
+  {
+    "id": "AL6001",
+    "title": "Guild Power",
+    "description": "Increase Guild Level Cap to 12",
+    "notoReq": 1625,
+    "goldCost": 251,
+    "type": "cap",
+    "subtype": 12
+  },
+  {
+    "id": "AL6002",
+    "title": "Guild Power II",
+    "description": "Increase Guild Level Cap to 18",
+    "notoReq": 7250,
+    "goldCost": 3001,
+    "type": "cap",
+    "subtype": 18
+  },
+  {
+    "id": "AL6003",
+    "title": "Guild Power III",
+    "description": "Increase Guild Level Cap to 24",
+    "notoReq": 19750,
+    "goldCost": 11501,
+    "type": "cap",
+    "subtype": 24
+  },
+  {
+    "id": "AL6004",
+    "title": "Guild Power IV",
+    "description": "Increase Guild Level Cap to 30",
+    "notoReq": 42250,
+    "goldCost": 28001,
+    "type": "cap",
+    "subtype": 30
+  },
+  {
+    "id": "AL6005",
+    "title": "Guild Power V",
+    "description": "Increase Guild Level Cap to 36",
+    "notoReq": 82250,
+    "goldCost": 56501,
+    "type": "cap",
+    "subtype": 36
+  },
+  {
+    "id": "AL6006",
+    "title": "Guild Power VI",
+    "description": "Increase Guild Level Cap to 42",
+    "notoReq": 139750,
+    "goldCost": 108001,
+    "type": "cap",
+    "subtype": 42
+  },
+  {
+    "id": "AL6007",
+    "title": "Guild Power VII",
+    "description": "Increase Guild Level Cap to 48",
+    "notoReq": 213750,
+    "goldCost": 171501,
+    "type": "cap",
+    "subtype": 48
+  },
+  {
+    "id": "AL6008",
+    "title": "Guild Power VIII",
+    "description": "Increase Guild Level Cap to 54",
+    "notoReq": 310250,
+    "goldCost": 256001,
+    "type": "cap",
+    "subtype": 54
+  },
+  {
+    "id": "AL6009",
+    "title": "Guild Power IX",
+    "description": "Increase Guild Level Cap to 60",
+    "notoReq": 432250,
+    "goldCost": 364501,
+    "type": "cap",
+    "subtype": 60
   }
 ]

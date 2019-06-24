@@ -280,6 +280,7 @@ function initiateDungeonFloor(dungeonID) {
         $dungeonHeroList.prepend(d1);
     });
     dungeon.mobs.forEach((mob) => {
+        console.log(mob.name);
         const d6 = $("<div/>").addClass("dfm").attr("id","dfm"+mob.uniqueid);
         const d7 = $("<div/>").addClass("dfmName").html(mob.name);
         const d8 = $("<div/>").addClass("dfmImage").html(mob.image);

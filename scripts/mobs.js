@@ -3,6 +3,7 @@
 const MobManager = {
     monsterDB : [],
     activeMobs : [],
+    idCount : 0,
     addMob(mob) {
         this.monsterDB.push(mob);
         this.unitType = "mob";
@@ -17,12 +18,8 @@ const MobManager = {
         return mob;
     },
     getUniqueID() {
-        let i = 0;
-        const mobIds = this.activeMobs.map(m=>m.uniqueid);
-        while (mobIds.includes(i)) {
-            i += 1;
-        }
-        return i;
+        this.idCount += 1;
+        return this.idCount;
     },
     generateDungeonFloor(dungeonid,floorNum) {
         const mobFloor = [];
@@ -88,6 +85,7 @@ class Mob {
         this.ap = 0;
         this.apmax = 120;
         this.uniqueid = MobManager.getUniqueID();
+        console.log(this.uniqueid);
         this.gotloot = false;
     }
     createSave() {

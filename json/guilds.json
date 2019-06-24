@@ -1,22 +1,22 @@
 [
   {
     "id": "G001",
-    "name": "Offensive",
-    "description": "I am Offensive"
+    "name": "Bird Arms",
+    "description": "The Skyfire Clan is a proud and noble race, and are expert weaponmakers."
   },
   {
     "id": "G002",
-    "name": "Defensive",
-    "description": "I am Defensive"
+    "name": "Green Guard",
+    "description": "Residing in the Rapid Chi Orchard, these stoic beings are superb at defense."
   },
   {
     "id": "G003",
-    "name": "Sneaky",
-    "description": "I am Sneaky"
+    "name": "The Cat's Meow",
+    "description": "If you plan on fighting in the shadows, this is the place to start."
   },
   {
     "id": "G004",
-    "name": "Valuable",
-    "description": "I am Valuable"
+    "name": "Trawled Treasures",
+    "description": "This guild became expert crafters after studying shipwrecked valuables."
   }
 ]

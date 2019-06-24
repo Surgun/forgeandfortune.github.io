@@ -4104,9 +4104,11 @@
     "description": "Harvest the magical energy from your rare items",
     "lvl": 1,
     "value": 0,
-    "craftTime": 1800000,
+    "craftTime": 900000,
     "type": "desynth",
-    "gcost": [],
+    "gcost": [
+      "G001"
+    ],
     "mcost": {
       "M102": 40,
       "M202": 40,
@@ -4126,9 +4128,11 @@
     "description": "Store your precious keepsakes here.",
     "lvl": 1,
     "value": 0,
-    "craftTime": 1800000,
+    "craftTime": 900000,
     "type": "bank",
-    "gcost": [],
+    "gcost": [
+      "G002"
+    ],
     "mcost": {
       "M102": 40,
       "M202": 40,
@@ -4148,9 +4152,11 @@
     "description": "Combine items to make better stuff.",
     "lvl": 1,
     "value": 0,
-    "craftTime": 2700000,
+    "craftTime": 1800000,
     "type": "fuse",
-    "gcost": [],
+    "gcost": [
+      "G003"
+    ],
     "mcost": {
       "M103": 40,
       "M203": 40,
@@ -4170,9 +4176,11 @@
     "description": "All or nothing, baby.",
     "lvl": 1,
     "value": 0,
-    "craftTime": 3600000,
+    "craftTime": 1800000,
     "type": "smith",
-    "gcost": [],
+    "gcost": [
+      "G004"
+    ],
     "mcost": {
       "M104": 40,
       "M204": 40,
@@ -4192,9 +4200,11 @@
     "description": "Hopefully she shows up.",
     "lvl": 1,
     "value": 0,
-    "craftTime": 5400000,
+    "craftTime": 2700000,
     "type": "fortune",
-    "gcost": [],
+    "gcost": [
+      "G001"
+    ],
     "mcost": {
       "M105": 40,
       "M205": 40,

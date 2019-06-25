@@ -133,14 +133,6 @@ const actionSlotManager = {
         initializeActionSlots();
         checkCraftableStatus();
     },
-    removeID(itemID) {
-        const num = this.slots.findIndex(a=>a.itemid === itemID);
-        this.slots.splice(num, 1);
-        refreshSideWorkers();
-        initializeActionSlots();
-        recipeCanCraft();
-        checkCraftableStatus();
-    },
     hasSlot(slotnum) {
         return this.slots.length > slotnum;
     },
@@ -163,17 +155,8 @@ const actionSlotManager = {
             else if (slot.status === slotState.NEEDMATERIAL) $("#ASBar"+i).addClass("matsNeeded").attr("data-label","Waiting for materials");
         });
     },
-    itemList() {
-        return this.slots.map(slot => slot.item);
-    },
     upgradeSlot() {
         if (this.maxSlots === 5) return;
-        /*const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
-        if (ResourceManager.materialAvailable("M001") < amt) {
-            Notifications.cantAffordSlot();
-            return;
-        }
-        ResourceManager.deductMoney(amt);*/
         this.maxSlots += 1;
         initializeActionSlots();
     },
@@ -192,6 +175,11 @@ const actionSlotManager = {
     resList(i) {
         if (i >= this.slots.length) return null;
         return this.slots[i].item.gcost;
+    },
+    usage() {
+        const mats = flattenArray(...[this.slots.map(s=>s.item.gcost)]);
+        const group = groupArray(mats);
+        return group
     }
 }
 
@@ -224,12 +212,4 @@ function initializeActionSlots() {
         };
         $ActionSlots.append(d);
     }
-    /*if (actionSlotManager.maxSlots < 5) {
-        const d4 = $("<div/>").addClass("ASBuySlot");
-        const amt = miscLoadedValues.asCost[actionSlotManager.maxSlots];
-        const d5 = $("<div/>").addClass("ASBuySlotTitle").html(`Unlock Crafting Slot`);
-        const d6 = $("<div/>").addClass("ASBuySlotButton").html(`<div class="ASBuySlotText">Purchase</div><div class="ASBuySlotCost">${miscIcons.gold} ${formatToUnits(amt,2)}</div>`);
-        d4.append(d5, d6);
-        $ActionSlots.append(d4);
-    }*/
 }

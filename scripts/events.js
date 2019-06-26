@@ -133,6 +133,9 @@ const EventManager = {
     },
     badCraft() {
         if (!EventManager.hasSeen("E018")) EventManager.addEvent("E018");
+    },
+    allDungeonEventIDs() {
+        return this.events.filter(e => e.type === "dungeon").map(e => e.eventNum);
     }
 };
 
@@ -279,9 +282,9 @@ $(document).on('click', "div.eventList", (e) => {
         const d6b = $("<div/>").addClass("eventNotoriety").html(` You have earned <span>${event.notoriety()} Notoriety</span>. Make use of it in The Action League.`)
         d.append(d6.append(d6a,d6b));
     }
-    const d7 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT");
+    const d7 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT").appendTo(d);
     if (EventManager.seeOld) d7.hide();
-    d.append(d7);
+    if (event.type === "dungeon") $("<div/>").attr("id","eventCollectAll").html("Collect All Dungeon Rewards").appendTo(d);
     $eventContent.append(d);
 });
 
@@ -290,6 +293,12 @@ $(document).on('click', "div.eventConfirm", (e) => {
     e.preventDefault();
     const eventID = parseInt($(e.currentTarget).attr("eventID"));
     EventManager.readEvent(eventID);
+})
+
+$(document).on('click', "#eventCollectAll", (e) => {
+    e.preventDefault();
+    const eventIDs = EventManager.allDungeonEventIDs();
+    eventIDs.forEach(eventID => EventManager.readEvent(eventID));
 })
 
 $(document).on('click', "#readNew", (e) => {

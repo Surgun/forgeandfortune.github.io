@@ -396,6 +396,15 @@
     "subtype": null
   },
   {
+    "id": "AL4105",
+    "title": "You Need A Break",
+    "description": "Unlocks the Desynth Building, to break down your stuff.",
+    "notoReq": 300,
+    "goldCost": 2000,
+    "type": "desynth",
+    "subtype": null
+  },
+  {
     "id": "AL4201",
     "title": "Big Parties",
     "description": "Increases party size for dungeons to 2",

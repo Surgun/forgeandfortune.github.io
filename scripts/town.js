@@ -282,7 +282,7 @@ function buildScreen(type) {
         $("<div/>").addClass("buildingInstrHead").html("Instruction").appendTo(d5);
         $("<div/>").addClass("buildingInstrDesc").html("Construct the building recipe to unlock this building permanently!").appendTo(d5);
     $buildingRecipes.append(d5);
-    recipeCanCraft();
+    //recipeCanCraft();
 }
 
 $(document).on('click', ".buyBuildingBP", (e) => {

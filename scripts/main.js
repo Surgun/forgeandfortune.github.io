@@ -31,13 +31,13 @@ function afterLoad() {
     hardMatRefresh();
     refreshProgress();
     initializeSideBarDungeon();
-    recipeCanCraft();
-    checkCraftableStatus();
     refreshSideTown();
     refreshFilterListLucky();
     refreshCraftedCount();
     initializeGuilds();
     refreshInventoryPlaces();
+    recipeList.canCraft();
+    checkCraftableStatus();
     setInterval(mainLoop, 10);
     recipeList.recipeFilterType = "Knives";
     recipeList.recipeFilterString = "";

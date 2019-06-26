@@ -100,6 +100,15 @@ class Item{
         else if (this.autoSell === "Great") this.autoSell = "Epic";
         else this.autoSell = "None";
     }
+    setCanCraft(canProduceBucket) {
+        const needBucket = groupArray(this.gcost);
+        this.canProduce = true;
+        for (const [res, amt] of Object.entries(needBucket)) {
+            if (canProduceBucket[res] === undefined || canProduceBucket[res] < amt) {
+                this.canProduce = false;
+            };
+        }
+    }
 }
 
 const recipeList = {
@@ -176,6 +185,13 @@ const recipeList = {
             if (item !== undefined) items.push(item);
         });
         return items;
+    },
+    canCraft() {
+        const canProduce = WorkerManager.getCurrentProduceAvailable();
+        this.recipes.forEach(recipe => {
+            recipe.setCanCraft(canProduce);
+        });
+        recipeCanCraft();
     }
 }
 
@@ -242,7 +258,6 @@ function initializeRecipes() { //this is run once at the beginning to load ALL t
     sortOrder.value = tempList.sort((a,b) => a.value - b.value).map(r => r.id);
     sortOrder.valueAsc = tempList.sort((a,b) => b.value - a.value).map(r => r.id);
     sortOrder.recipeDivs = $(".recipeCardContainer");
-    recipeCanCraft();
 }
 
 function recipeSort() {
@@ -303,6 +318,7 @@ function recipeCardFront(recipe) {
         const td6a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(recipeMasteryBar(recipe.craftCount));
         if (recipe.recipeType !== "normal") td6a.hide();
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
+        recipe.recipeDiv = td6b;
     td6.append(td6a,td6b);
     return $('<div/>').addClass('recipeCardFront').append(td1,td2,td3,td4,td5,td6);
 }
@@ -376,12 +392,13 @@ function refreshCardInvCount() {
 }
 
 function recipeCanCraft() {
+    console.log("recipeCanCraft");
     //loops through recipes, adds class if disabled
-    const $recipeCraft = $(".recipeCraft");
-    $recipeCraft.removeClass("recipeCraftDisable");
     recipeList.recipes.forEach(recipe => {
-        if (!WorkerManager.canCurrentlyCraft(recipe)) $(".rr"+recipe.id).addClass("recipeCraftDisable");
-    }) 
+        if (recipe.recipeType !== "normal") return;
+        if (recipe.canProduce) recipe.recipeDiv.removeClass("recipeCraftDisable");
+        else recipe.recipeDiv.addClass("recipeCraftDisable");
+    });
 }
 
 const $blueprintUnlock = $("#BlueprintUnlock");

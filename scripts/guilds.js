@@ -235,7 +235,6 @@ function initializeGuilds() {
         refreshguildOrder(g);
         refreshSales(g);
         refreshGuildWorkers(g);
-        checkCraftableStatus();
     });
     refreshALperks();
     refreshALprogress();
@@ -243,10 +242,11 @@ function initializeGuilds() {
 
 function checkCraftableStatus() {
     // Check if item in guild order can be crafted
+    console.log("checkCraft");
     const $orderCraft = $(".orderCraft");
     $orderCraft.removeClass("recipeCraftDisable");
     recipeList.recipes.forEach(recipe => {
-        if (!WorkerManager.canCurrentlyCraft(recipe) || !recipe.owned) $("#"+recipe.id+".orderCraft").addClass("recipeCraftDisable");
+        if (!recipe.canProduce || !recipe.owned) $("#"+recipe.id+".orderCraft").addClass("recipeCraftDisable");
     }) 
 }
 
@@ -298,7 +298,6 @@ function refreshguildOrder(guild) {
         $("<div/>").addClass("guildOrderSubmitValue").html(`${miscIcons.gold} +${formatToUnits(guild.goldValue(),2)}`).appendTo(d1);
     if (!guild.orderComplete()) d1.addClass("guildOrderIncomplete");
     $go.append(d1);
-    checkCraftableStatus();
 };
 
 function createOrderCard(item,id,index) {
@@ -394,7 +393,6 @@ $(document).on("click",".guildListButton",(e) => {
     $(".guildContainer").hide();
     if (gid === "ActionLeague") $("#actionLeague").show();
     else $("#"+gid).show();
-    checkCraftableStatus();
 });
 
 
@@ -419,7 +417,6 @@ $(document).on('click', '.orderCraft', (e) => {
     e.stopPropagation();
     const itemID = $(e.currentTarget).attr("id");
     actionSlotManager.addSlot(itemID);
-    checkCraftableStatus();
 });
 
 //********************************

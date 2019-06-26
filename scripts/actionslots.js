@@ -107,7 +107,7 @@ const actionSlotManager = {
         }
         const item = recipeList.idToItem(itemid);
         if (!item.owned) return Notifications.recipeNotOwned();
-        if (!WorkerManager.canCurrentlyCraft(item)) {
+        if (!item.canProduce) {
             EventManager.badCraft();
             Notifications.craftWarning();
             return;
@@ -115,7 +115,7 @@ const actionSlotManager = {
         this.slots.push(new actionSlot(itemid));
         initializeActionSlots();
         refreshSideWorkers();
-        recipeCanCraft();
+        recipeList.canCraft();
         checkCraftableStatus();
     },
     removeSlot(slot) {
@@ -123,14 +123,14 @@ const actionSlotManager = {
         this.slots.splice(slot,1);
         initializeActionSlots();
         refreshSideWorkers();
-        recipeCanCraft();
+        recipeList.canCraft();
         checkCraftableStatus();
     },
     removeBldgSlots() {
         this.slots = this.slots.filter(s => s.item.recipeType === "normal");
-        refreshSideWorkers();
-        recipeCanCraft();
         initializeActionSlots();
+        refreshSideWorkers();
+        recipeList.canCraft();
         checkCraftableStatus();
     },
     hasSlot(slotnum) {

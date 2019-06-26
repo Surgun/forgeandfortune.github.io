@@ -23,6 +23,7 @@ class Worker {
 
 const WorkerManager = {
     workers : [],
+    canProduceBucket : {},
     addWorker(worker) {
         this.workers.push(worker);
     },
@@ -47,11 +48,15 @@ const WorkerManager = {
         worker.owned = true;
         refreshSideWorkers();
         refreshRecipeFilters();
-        recipeCanCraft();
+        recipeList.canCraft();
         refreshProgress();
         refreshAllGuildWorkers();
     },
+    canCurrentlyProduce() {
+
+    },
     couldCraft(item) {
+        console.log("couldCraft");
         const canProduce = this.workers.filter(w=> w.owned).map(w=>w.production);
         const canProduceBucket = groupArray(canProduce);
         const needBucket = groupArray(item.gcost);
@@ -61,15 +66,10 @@ const WorkerManager = {
         return true;
     },
     canCurrentlyCraft(item) {
-        const gid = ["G001","G002","G003","G004"];
-        const canProduceBucket = {};
-        gid.forEach(g => {
-            canProduceBucket[g] = this.freeByGuild(g);
-        });
+        console.log("canCurrentlyCraft");
         const needBucket = groupArray(item.gcost);
         for (const [res, amt] of Object.entries(needBucket)) {
-            console.log(canProduceBucket[res], res, amt);
-            if (canProduceBucket[res] === undefined || canProduceBucket[res] < amt) return false;
+            if (this.canProduceBucket[res] === undefined || this.canProduceBucket[res] < amt) return false;
         }
         return true;
     },
@@ -88,6 +88,14 @@ const WorkerManager = {
     },
     ownedByGuild(gid) {
         return this.workers.filter(w => w.production === gid && w.owned).length;
+    },
+    getCurrentProduceAvailable() {
+        const gid = ["G001","G002","G003","G004"];
+        const canProduceBucket = {};
+        gid.forEach(g => {
+            canProduceBucket[g] = this.freeByGuild(g);
+        });
+        return canProduceBucket;
     }
 }
 

@@ -282,9 +282,10 @@ $(document).on('click', "div.eventList", (e) => {
         const d6b = $("<div/>").addClass("eventNotoriety").html(` You have earned <span>${event.notoriety()} Notoriety</span>. Make use of it in The Action League.`)
         d.append(d6.append(d6a,d6b));
     }
-    const d7 = $("<div/>").addClass("eventConfirm").attr("eventID",eventNum).html("ACCEPT").appendTo(d);
+    const d7 = $("<div/>").addClass("eventActionsContainer").appendTo(d);
+        $("<div/>").addClass("eventConfirm eventActionButton").attr("eventID",eventNum).html("Accept").appendTo(d7);
     if (EventManager.seeOld) d7.hide();
-    if (event.type === "dungeon") $("<div/>").attr("id","eventCollectAll").html("Collect All Dungeon Rewards").appendTo(d);
+    if (event.type === "dungeon") $("<div/>").attr("id","eventCollectAll").addClass("eventActionButton").html("Collect All Dungeon Rewards").appendTo(d7);
     $eventContent.append(d);
 });
 

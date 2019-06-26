@@ -173,6 +173,7 @@ class Dungeon {
             DungeonManager.bossesBeat.push(this.id);
             refreshALprogress();
             refreshProgress();
+            refreshAllOrders();
         }
         else if (this.type === "regular" && !noReward) EventManager.addEventDungeon(this.eventLetter,this.dropList,this.dungeonTotalTime,this.floorCount, this.beatTotal);
         DungeonManager.removeDungeon(this.id);

@@ -2658,7 +2658,7 @@
   {
     "id": "BB018",
     "name": "Lawrence The Second",
-    "hpBase": 100000,
+    "hpBase": 125000,
     "hpLvl": 0,
     "powBase": 2000,
     "powLvl": 0,
@@ -2675,7 +2675,7 @@
   {
     "id": "BB019",
     "name": "Begrasper",
-    "hpBase": 135000,
+    "hpBase": 160000,
     "hpLvl": 0,
     "powBase": 3333,
     "powLvl": 0,

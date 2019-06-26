@@ -89,6 +89,13 @@ const bloopSmith = {
     getStageResourceCost() {
         if (this.smithStage === null) return;
         return this.smithStage.getSmithResourceCost();
+    },
+    resmith() {
+        if (this.smithState !== "complete") return;
+        this.smithState = "waiting";
+        this.smithStage = this.smithSlot;
+        this.smithSlot = null;
+        this.smithStart();
     }
 }
 
@@ -163,7 +170,9 @@ function refreshSmithArea() {
         $swCollect.hide();
     }
     else if (bloopSmith.smithState === "complete") {
-        $swItemStage.html("Collect Reward").addClass("collectTextBox");
+        $swItemStage.empty();
+            $("<div/>").addClass("collectTextBox").html("Collect Reward").appendTo($swItemStage);
+            $("<div/>").attr("id","collectResmith").html("Smith Again").appendTo($swItemStage);
         const d1 = $("<div/>").attr("id","swCollect").html("Collect");
         $swItemResult.html(itemStageCardSmith(bloopSmith.smithSlot,false).append(d1)).removeClass("inProgressTextBox");
         if (bloopSmith.smithSuccess) {
@@ -234,4 +243,10 @@ $(document).on("click","#swCollect", (e) => {
     e.preventDefault();
     bloopSmith.collectSmith();
     refreshSmithArea();
-})
+});
+
+$(document).on("click","#collectResmith", (e) => {
+    e.preventDefault();
+    bloopSmith.resmith();
+    refreshSmithArea();
+});

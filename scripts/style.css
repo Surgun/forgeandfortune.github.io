@@ -2142,7 +2142,7 @@ Rarities
     height: 100%;
 }
 
-#guildList {
+#guildList, #buildingList {
     position: sticky;
     top: 0;
     display: flex;
@@ -2160,7 +2160,7 @@ Rarities
     animation: 0.15s scale-x-in forwards;
 }
 
-.guildListButton {
+.guildListButton, .buildingName {
     padding: 10px 20px;
     width: 100%;
     border-top: 1px solid var(--border-primary);
@@ -2168,11 +2168,11 @@ Rarities
     cursor: pointer;
 }
 
-.guildListButton:hover {
+.guildListButton:hover, .buildingName:hover {
     background-color: var(--bg-secondary);
 }
 
-.guildListButton.selected, .guildListButton.selected:hover {
+.guildListButton.selected, .guildListButton.selected:hover, .buildingName.selected, .buildingName.selected:hover {
     background-color: var(--border-primary);
     border-color: var(--border-tertiary);
     color: var(--highlight);
@@ -2220,16 +2220,11 @@ Rarities
     background: linear-gradient(to right, transparent 0%,rgb(83, 99, 94) 40%, rgb(83, 99, 94) 60%, transparent 100%), url(/images/guildImages/G005.png);
 }
 
-.guildName {
+.guildName > h2 {
+    margin: 0;
     font-size: 2rem;
-    padding: 10px;
-    color: var(--text-white);
+    font-weight: normal;
     text-shadow: 2px 2px 0 black;
-}
-
-.guildDesc {
-    padding: 0 10px;
-    color: var(--text-secondary);
 }
 
 #ALPerks {
@@ -2350,7 +2345,6 @@ Rarities
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 10px;
     width: 100%;
     max-width: 300px;
 }
@@ -4120,6 +4114,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     overflow: auto;
 }
 
+.buildingContentContainer {
+    display: flex;
+    height: 100%;
+}
+
 #buildingRecipes {
     display: flex;
     flex-wrap: wrap;
@@ -4131,48 +4130,29 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 #buildingList {
     position: sticky;
     top: 0;
-    display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     background-color: var(--bg-primary);
-    border-bottom: 2px solid var(--border-primary);
-    z-index: 10;
-}
-
-.buildingName {
-    position: relative;
-    text-align: center;
-    background-color: var(--bg-primary);
-    color: var(--text-tertiary);
-    border-right: 1px solid var(--border-secondary);
-    cursor: pointer;
-}
-
-.buildingName > div {
-    padding: 10px;
-}
-
-.buildingName:hover {
-    background-color: var(--bg-secondary);
-}
-
-.buildingName:after {
-    display: block;
-    content: "";
-    margin: auto;
-    width: 0;
-    height: 2px;
-
-    background-color: transparent;
-}
-
-.buildingName.selected:after {
+    border-right: 1px solid var(--border-primary);
     width: 100%;
-    background-color: var(--highlight);
+    max-width: 220px;
+    height: 100%;
+    overflow: auto;
+    transform-origin: left;
+    -webkit-animation: 0.15s scale-x-in forwards;
+    animation: 0.15s scale-x-in forwards;
 }
 
-.buildingName.selected {
-    background-color: var(--border-primary);
-    color: var(--text-primary);
+.buildingName > i {
+    margin-right: 5px;
+}
+
+#buildingContent {
+    flex-grow: 1;
+    height: 100%;
+    overflow: auto;
 }
 
 .buildingInfo {
@@ -4182,20 +4162,24 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     justify-content: center;
     align-items: center;
     padding: 20px 5px;
-    max-height: 250px;
+    max-height: 200px;
     background-color: var(--bg-tertiary);
     border-bottom: 2px solid var(--border-primary);
     overflow: hidden;
+    opacity: 0;
+    -webkit-animation: 0.2s .15s fade-in forwards;
+    animation: 0.2s .15s fade-in forwards;
 }
 
 .buildingTab {
     display: none;
     padding: 10px;
     opacity: 0;
-    animation: 0.5s 0.5s fade-in forwards;
+    -webkit-animation: 0.2s .15s fade-in forwards;
+    animation: 0.2s .15s fade-in forwards;
 }
 
-.buildingInfoImage, .buildingInfoName, .buildingInfoDesc {
+.buildingInfoImage, .buildingInfoName, .buildingInfoDesc, .guildName, .guildDesc {
     min-width: 400px;
     text-align: center;
 }
@@ -4204,48 +4188,57 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: .45;
 }
 
 .buildingFusion .buildingInfoBackground {
-    background: url(/images/townImages/fuseBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/images/townImages/fuseBuilding/bg.png);
 }
 
 .buildingBank .buildingInfoBackground {
-    background: url(/images/townImages/bankBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(57, 111, 39) 40%, rgb(57, 111, 39) 60%, transparent 100%), url(/images/townImages/bankBuilding/bg.png);
 }
 
 .buildingSmith .buildingInfoBackground {
-    background: url(/images/townImages/smithBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/images/townImages/smithBuilding/bg.png);
 }
 
 .buildingFortune .buildingInfoBackground {
-    background: url(/images/townImages/fortuneBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/images/townImages/fortuneBuilding/bg.png);
 }
 
 .buildingResearch .buildingInfoBackground {
-    background: url(/images/townImages/researchBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/images/townImages/researchBuilding/bg.png);
 }
 
 .buildingDesynth .buildingInfoBackground {
-    background: url(/images/townImages/desynthBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/desynthBuilding/bg.png);
 }
 
 .buildingInfoImage {
     text-align: center;
-    transform-origin: bottom;
-    animation: 0.3s scale-in forwards;
 }
 
 .buildingInfoImage > img {
-    max-height: 125px;
+    max-height: 100px;
     filter: drop-shadow(0 0 5px black)
 }
 
 .buildingInfoName {
     display: inline-block;
     color: var(--text-primary);
-    animation: 0.3s scale-in forwards;
+    z-index: 1;
+}
+
+.buildingInfoName:after, .guildName:after {
+    display: block;
+    content: "";
+    position: relative;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    margin: 5px auto;
+    background-color: var(--highlight);
+    animation: 1s 0.3s width forwards;
 }
 
 .buildingInfoName > h2 {
@@ -4255,31 +4248,9 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     text-shadow: 2px 2px 0 black;
 }
 
-.buildingInfoName:after {
-    display: block;
-    content: "";
-    position: relative;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    margin: 0 auto;
-    background-color: var(--highlight);
-    animation: 1s 0.3s width forwards;
-}
-
-.buildingInfoDesc {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    color: var(--text-primary);
-    opacity: 0;
-    padding: 20px;
-    max-width: 400px;
-    min-height: 75px;
-    background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 50%,rgba(0,0,0,0) 100%);
-    transform-origin: top;
-    animation: 0.3s 0.5s fade-in forwards;
+.buildingInfoDesc, .guildDesc {
+    padding: 5px 10px;
+    z-index: 1;
 }
 
 .buildInProgress .buildingInfoBackground {

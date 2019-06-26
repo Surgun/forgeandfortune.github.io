@@ -229,6 +229,7 @@ class Dungeon {
         initiateDungeonFloor(this.id);
     }
     addSummon2() {
+        this.mobs = this.mobs.filter(m=>m.alive());
         if (this.mobs.length === 4) return;
         const newMob = MobManager.generateDungeonMob("LKH004",0);
         newMob.clearImmediately = true;

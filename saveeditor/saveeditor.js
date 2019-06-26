@@ -10,7 +10,6 @@ const Recipes = [];
 $.ajax({
     url: "../json/heroes.json",
 }).done(data => {
-    console.log("hero load complete");
     $.each(data, function(i,props){
         Heroes.push(props);
     });
@@ -19,7 +18,6 @@ $.ajax({
 $.ajax({
     url: "../json/recipes.json",
 }).done(data => {
-    console.log("recipe load complete");
     $.each(data, function(i,props){
         Recipes.push(props);
     });

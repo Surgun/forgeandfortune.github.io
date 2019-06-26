@@ -392,7 +392,6 @@ function refreshCardInvCount() {
 }
 
 function recipeCanCraft() {
-    console.log("recipeCanCraft");
     //loops through recipes, adds class if disabled
     recipeList.recipes.forEach(recipe => {
         if (recipe.recipeType !== "normal") return;

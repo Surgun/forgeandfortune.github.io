@@ -669,7 +669,6 @@ $(document).on('click', ".buyNewHeroButton", (e) => {
 
 $(".heroUnequipSlot").on("click", (e) => {
     e.stopPropagation();
-    console.log('fire!')
 })
 
 //global variable to hold where we're looking to equip to for the equipping shit.

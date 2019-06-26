@@ -248,6 +248,11 @@ $(document).on("click", ".dungeonSpeedButtons", (e) => {
     if (id === "dungeonSpeedFast") DungeonManager.speed = 750;
 });
 
+$(document).on("click", "#dungeonAbandon", (e) => {
+    e.preventDefault();
+    DungeonManager.abandonCurrentDungeon();
+})
+
 function refreshSpeedButton(speed) {
     $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
     if (speed === 3000) $("#dungeonSpeedSlow").addClass("dungeonSpeedActive");
@@ -280,7 +285,6 @@ function initiateDungeonFloor(dungeonID) {
         $dungeonHeroList.prepend(d1);
     });
     dungeon.mobs.forEach((mob) => {
-        console.log(mob.name);
         const d6 = $("<div/>").addClass("dfm").attr("id","dfm"+mob.uniqueid);
         const d7 = $("<div/>").addClass("dfmName").html(mob.name);
         const d8 = $("<div/>").addClass("dfmImage").html(mob.image);

@@ -242,7 +242,6 @@ function initializeGuilds() {
 
 function checkCraftableStatus() {
     // Check if item in guild order can be crafted
-    console.log("checkCraft");
     const $orderCraft = $(".orderCraft");
     $orderCraft.removeClass("recipeCraftDisable");
     recipeList.recipes.forEach(recipe => {

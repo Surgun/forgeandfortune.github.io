@@ -162,7 +162,7 @@ class Dungeon {
         this.party = party;
         this.lastParty = party.heroID;
     }
-    resetDungeon() {
+    resetDungeon(noReward) {
         this.party.heroes.forEach(h=>{
             h.inDungeon = false;
             h.ap = 0;
@@ -174,7 +174,7 @@ class Dungeon {
             refreshALprogress();
             refreshProgress();
         }
-        else if (this.type === "regular") EventManager.addEventDungeon(this.eventLetter,this.dropList,this.dungeonTotalTime,this.floorCount, this.beatTotal);
+        else if (this.type === "regular" && !noReward) EventManager.addEventDungeon(this.eventLetter,this.dropList,this.dungeonTotalTime,this.floorCount, this.beatTotal);
         DungeonManager.removeDungeon(this.id);
         if (DungeonManager.dungeonView === this.id) {
             BattleLog.clear();
@@ -327,6 +327,10 @@ const DungeonManager = {
     bossMaxCount() {
         return this.dungeons.filter(d => d.type === "boss").length;
     },
+    abandonCurrentDungeon() {
+        const dungeon = this.getCurrentDungeon();
+        dungeon.resetDungeon(true);
+    }
 };
 
 const dungeonIcons = {

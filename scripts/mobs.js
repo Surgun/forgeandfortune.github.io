@@ -85,7 +85,6 @@ class Mob {
         this.ap = 0;
         this.apmax = 120;
         this.uniqueid = MobManager.getUniqueID();
-        console.log(this.uniqueid);
         this.gotloot = false;
     }
     createSave() {

@@ -56,7 +56,6 @@ const WorkerManager = {
 
     },
     couldCraft(item) {
-        console.log("couldCraft");
         const canProduce = this.workers.filter(w=> w.owned).map(w=>w.production);
         const canProduceBucket = groupArray(canProduce);
         const needBucket = groupArray(item.gcost);
@@ -66,7 +65,6 @@ const WorkerManager = {
         return true;
     },
     canCurrentlyCraft(item) {
-        console.log("canCurrentlyCraft");
         const needBucket = groupArray(item.gcost);
         for (const [res, amt] of Object.entries(needBucket)) {
             if (this.canProduceBucket[res] === undefined || this.canProduceBucket[res] < amt) return false;

@@ -176,9 +176,11 @@ function refreshSmithArea() {
     else if (bloopSmith.smithState === "complete") {
         $swItemStage.empty();
             $("<div/>").addClass("collectTextBox").html("Collect Reward").appendTo($swItemStage);
-            const d = $("<div/>").attr("id","collectResmith").html("Smith Again").appendTo($swItemStage);
-            $("<span/>").addClass("smith_cost smith_gold").html(`${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(true),2)}`).appendTo(d);
-            $("<span/>").addClass("smith_cost smith_material tooltip").attr("data-tooltip",ResourceManager.idToMaterial(bloopSmith.smithSlot.item.smithCost).name).html(`${ResourceManager.materialIcon(bloopSmith.smithSlot.item.smithCost)} 3`).appendTo(d)
+            const d = $("<div/>").attr("id","collectResmith").appendTo($swItemStage);
+            const s1 = $("<div/>").addClass("smithCostContainer").appendTo(d);
+            $("<div/>").addClass("smith_title").html(`Smith Again`).appendTo(s1);
+            $("<span/>").addClass("smith_cost smith_gold").html(`${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(true),2)}`).appendTo(s1);
+            $("<span/>").addClass("smith_cost smith_material tooltip").attr("data-tooltip",ResourceManager.idToMaterial(bloopSmith.smithSlot.item.smithCost).name).html(`${ResourceManager.materialIcon(bloopSmith.smithSlot.item.smithCost)} 3`).appendTo(s1)
         const d1 = $("<div/>").attr("id","swCollect").html("Collect");
         $swItemResult.html(itemStageCardSmith(bloopSmith.smithSlot,false).append(d1)).removeClass("inProgressTextBox");
         if (bloopSmith.smithSuccess) {

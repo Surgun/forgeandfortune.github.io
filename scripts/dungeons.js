@@ -229,11 +229,16 @@ class Dungeon {
         initiateDungeonFloor(this.id);
     }
     addSummon2() {
-        this.mobs = this.mobs.filter(m=>m.alive());
-        if (this.mobs.length === 4) return;
+        this.mobs = this.mobs.filter(m=>!m.clearImmediately);
         const newMob = MobManager.generateDungeonMob("LKH004",0);
         newMob.clearImmediately = true;
         this.mobs.push(newMob);
+        const newMob2 = MobManager.generateDungeonMob("LKH005",0);
+        newMob2.clearImmediately = true;
+        this.mobs.push(newMob2);
+        const newMob3 = MobManager.generateDungeonMob("LKH006",0);
+        newMob3.clearImmediately = true;
+        this.mobs.push(newMob3);
         this.order = new TurnOrder(this.party.heroes,this.mobs);
         this.order.position += 1;
         initiateDungeonFloor(this.id);

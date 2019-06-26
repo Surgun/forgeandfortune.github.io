@@ -220,6 +220,7 @@ class Dungeon {
         refreshDSB(this.id);
     }
     addSummon() {
+        this.mobs = this.mobs.filter(m=>m.alive());
         if (this.mobs.length === 4) return;
         const newMob = MobManager.generateDungeonMob("LKH001",0);
         this.mobs.push(newMob);

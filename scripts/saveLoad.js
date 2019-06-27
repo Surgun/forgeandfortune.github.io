@@ -40,7 +40,7 @@ function forceSave() {
 
 function createSave() {
     const saveFile = {}
-    saveFile["v"] = "03"
+    saveFile["v"] = "0310"
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
     saveFile["e"] = EventManager.createSave();
@@ -259,7 +259,7 @@ function saveUpdate(loadGame) {
         refreshAllSales();
         refreshAllProgress();
     }
-    if (loadGame.v = "0308") {
+    if (loadGame.v === "0308") {
         loadGame.v = "0310";
         //this is the recipes and what they got changed to
         const recipeExchange = {

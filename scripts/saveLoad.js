@@ -97,6 +97,7 @@ function loadGame() {
 }
 
 function saveUpdate(loadGame) {
+    console.log(loadGame.v);
     if (loadGame.v === "0202") {
         loadGame.v = "03";
         //remove E008 because we killed it (it was auto craft sac)
@@ -257,6 +258,213 @@ function saveUpdate(loadGame) {
         refreshAllOrders();
         refreshAllSales();
         refreshAllProgress();
+    }
+    if (loadGame.v = "0308") {
+        loadGame.v = "0310";
+        //this is the recipes and what they got changed to
+        const recipeExchange = {
+            "R0101":"R12001",
+            "R0102":"R12002",
+            "R0103":"R12003",
+            "R0104":"R12004",
+            "R0105":"R12005",
+            "R0106":"R12006",
+            "R0107":"R12007",
+            "R0108":"R12008",
+            "R0109":"R12009",
+            "R0110":"R12010",
+            "R0201":"R12001",
+            "R0202":"R12002",
+            "R0203":"R12003",
+            "R0204":"R12004",
+            "R0205":"R12005",
+            "R0206":"R12006",
+            "R0207":"R12007",
+            "R0208":"R12008",
+            "R0209":"R12009",
+            "R0210":"R12010",
+            "R0301":"R12001",
+            "R0302":"R12002",
+            "R0303":"R12003",
+            "R0304":"R12004",
+            "R0305":"R12005",
+            "R0306":"R12006",
+            "R0307":"R12007",
+            "R0308":"R12008",
+            "R0309":"R12009",
+            "R0310":"R12010",
+            "R0401":"R11001",
+            "R0402":"R11002",
+            "R0403":"R11003",
+            "R0404":"R11004",
+            "R0405":"R11005",
+            "R0406":"R11006",
+            "R0407":"R11007",
+            "R0408":"R11008",
+            "R0409":"R11009",
+            "R0410":"R11010",
+            "R0501":"R11001",
+            "R0502":"R11002",
+            "R0503":"R11003",
+            "R0504":"R11004",
+            "R0505":"R11005",
+            "R0506":"R11006",
+            "R0507":"R11007",
+            "R0508":"R11008",
+            "R0509":"R11009",
+            "R0510":"R11010",
+            "R0601":"R11001",
+            "R0602":"R11002",
+            "R0603":"R11003",
+            "R0604":"R11004",
+            "R0605":"R11005",
+            "R0606":"R11006",
+            "R0607":"R11007",
+            "R0608":"R11008",
+            "R0609":"R11009",
+            "R0610":"R11010",
+            "R0701":"R13001",
+            "R0702":"R13002",
+            "R0703":"R13003",
+            "R0704":"R13004",
+            "R0705":"R13005",
+            "R0706":"R13006",
+            "R0707":"R13007",
+            "R0708":"R13008",
+            "R0709":"R13009",
+            "R0710":"R13010",
+            "R0801":"R13001",
+            "R0802":"R13002",
+            "R0803":"R13003",
+            "R0804":"R13004",
+            "R0805":"R13005",
+            "R0806":"R13006",
+            "R0807":"R13007",
+            "R0808":"R13008",
+            "R0809":"R13009",
+            "R0810":"R13010",
+            "R0901":"R13001",
+            "R0902":"R13002",
+            "R0903":"R13003",
+            "R0904":"R13004",
+            "R0905":"R13005",
+            "R0906":"R13006",
+            "R0907":"R13007",
+            "R0908":"R13008",
+            "R0909":"R13009",
+            "R0910":"R13010",
+            "R1001":"R12001",
+            "R1002":"R12002",
+            "R1003":"R12003",
+            "R1004":"R12004",
+            "R1005":"R12005",
+            "R1006":"R12006",
+            "R1007":"R12007",
+            "R1008":"R12008",
+            "R1009":"R12009",
+            "R1010":"R12010",
+            "R5201":"R5501",
+            "R5202":"R5502",
+            "R5203":"R5503",
+            "R5204":"R5504",
+            "R5205":"R5505",
+            "R5206":"R5506",
+            "R5207":"R5507",
+            "R5208":"R5508",
+            "R5209":"R5509",
+            "R5210":"R5510",
+            "R5601":"R5301",
+            "R5602":"R5302",
+            "R5603":"R5303",
+            "R5604":"R5304",
+            "R5605":"R5305",
+            "R5606":"R5306",
+            "R5607":"R5307",
+            "R5608":"R5308",
+            "R5609":"R5309",
+            "R5610":"R5310",
+            "R6101":"R6501",
+            "R6102":"R6502",
+            "R6103":"R6503",
+            "R6104":"R6504",
+            "R6105":"R6505",
+            "R6106":"R6506",
+            "R6107":"R6507",
+            "R6108":"R6508",
+            "R6109":"R6509",
+            "R6110":"R6510",
+            "R6401":"R6301",
+            "R6402":"R6302",
+            "R6403":"R6303",
+            "R6404":"R6304",
+            "R6405":"R6305",
+            "R6406":"R6306",
+            "R6407":"R6307",
+            "R6408":"R6308",
+            "R6409":"R6309",
+            "R6410":"R6310",
+            "R6601":"R6201",
+            "R6602":"R6202",
+            "R6603":"R6203",
+            "R6604":"R6204",
+            "R6605":"R6205",
+            "R6606":"R6206",
+            "R6607":"R6207",
+            "R6608":"R6208",
+            "R6609":"R6209",
+            "R6610":"R6210",
+        }            
+        //cycle through recipes and "own" the equivalents (repeats are okay because of how recipe load works)
+        loadGame["r"].forEach(recipe => {
+            if (recipeExchange.hasOwnProperty(recipe.id)) recipe.id = recipeExchange[recipe.id];
+        });
+        //cycle through inventory and swap the item types to this list
+        loadGame["i"].forEach(i => {
+            if (i !== null && recipeExchange.hasOwnProperty(i.id)) i.id = recipeExchange[i.id];
+        });
+        //cycle through bank too
+        loadGame["bb"].slots.forEach(i => {
+            if (i !== null && recipeExchange.hasOwnProperty(i.id)) i.id = recipeExchange[i.id];
+        });
+        //cycle through heroes and their gear
+        const heroTable = {
+            "H001":["R51","R65"],
+            "H002":["R51","R65"],
+            "H003":["R51","R65"],
+            "H004":["R51","R65"],
+            "H101":["R55","R62"],
+            "H102":["R55","R62"],
+            "H103":["R55","R62"],
+            "H104":["R55","R62"],
+            "H201":["R53","R63"],
+            "H202":["R53","R63"],
+            "H203":["R53","R63"],
+            "H204":["R53","R63"],
+        }
+        loadGame["h"].forEach(hero => {
+            //slot 1 is weapon and we can just swap from recipe table
+            if (hero.slot1 !== null && recipeExchange.hasOwnProperty(hero.slot1.id)) hero.slot1.id = recipeExchange[hero.slot1.id];
+            //slot 5 and 6 is a PITA because a might hero might go from needing a potion to needing a belt. Fortunately we can
+            //just swap the first two letters to get the "new" one and leave the tier part... 
+            if (hero.slot5 !== null) hero.slot5.id = heroTable[hero.id][0] + hero.slot5.id.slice(-2);
+            if (hero.slot6 !== null) hero.slot6.id = heroTable[hero.id][1] + hero.slot6.id.slice(-2);
+        });
+        //clear action slots too because worker allocation is different
+        loadGame["as"].slots = [];
+        //delete workers because why the fuck not?
+        delete loadGame["w"];
+
+        const locked2 = loadGame["r"].filter(r => r.owned).map(r => r.id);
+        GuildManager.guilds.map(g => g.id).forEach(gid => {
+            const repReq = recipeList.recipes.filter(r => r.guildUnlock === gid && locked2.includes(r.id)).map(r=>r.repReq);
+            const lowest = Math.max(...repReq);
+            loadGame["g"].guilds.find(g=>g.id === gid).lvl = lowest;
+        });
+        delete loadGame["g"].guilds[0].order;
+        delete loadGame["g"].guilds[1].order;
+        delete loadGame["g"].guilds[2].order;
+        delete loadGame["g"].guilds[3].order;
+        loadGame["g"].guilds = loadGame["g"].guilds.filter(g=>g.id !== "G005");
     }
     return loadGame;
 }

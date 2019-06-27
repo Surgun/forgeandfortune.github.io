@@ -184,6 +184,7 @@ const recipeList = {
             const item = guildWork.find(r => r.repReq === chosenRepReq);
             if (item !== undefined) items.push(item);
         });
+        console.log(items);
         return items;
     },
     canCraft() {

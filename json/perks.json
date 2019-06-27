@@ -4,7 +4,7 @@
     "title": "Don't I Know You",
     "description": "Unlock Bird Arms worker: Oren",
     "notoReq": 25,
-    "goldCost": 500,
+    "goldCost": 300,
     "type": "worker",
     "subtype": "WN001"
   },
@@ -13,7 +13,7 @@
     "title": "Did You Lose Weight",
     "description": "Unlock Bird Arms worker: Eryn",
     "notoReq": 3025,
-    "goldCost": 5000,
+    "goldCost": 4000,
     "type": "worker",
     "subtype": "WN002"
   },
@@ -40,7 +40,7 @@
     "title": "Lettuce Time",
     "description": "Unlock Green Guard worker: Tiny",
     "notoReq": 50,
-    "goldCost": 500,
+    "goldCost": 300,
     "type": "worker",
     "subtype": "WN101"
   },
@@ -49,7 +49,7 @@
     "title": "Kale is Gross",
     "description": "Unlock Green Guard worker: Crash",
     "notoReq": 3050,
-    "goldCost": 5000,
+    "goldCost": 4000,
     "type": "worker",
     "subtype": "WN102"
   },
@@ -76,7 +76,7 @@
     "title": "Feline Fine",
     "description": "Unlock The Cat's Meow worker: Squeaks",
     "notoReq": 3010,
-    "goldCost": 5000,
+    "goldCost": 4000,
     "type": "worker",
     "subtype": "WN202"
   },
@@ -103,7 +103,7 @@
     "title": "Bubble Baubles",
     "description": "Unlock Trawled Treasures worker: Gilbert",
     "notoReq": 75,
-    "goldCost": 500,
+    "goldCost": 300,
     "type": "worker",
     "subtype": "WN301"
   },
@@ -112,7 +112,7 @@
     "title": "Shiny Bubbles",
     "description": "Unlock Trawled Treasures worker: Gillian",
     "notoReq": 3075,
-    "goldCost": 5000,
+    "goldCost": 4000,
     "type": "worker",
     "subtype": "WN302"
   },

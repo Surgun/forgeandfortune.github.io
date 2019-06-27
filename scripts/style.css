@@ -382,7 +382,7 @@ p.hamster {
 
 .guildWorkersSideContainer {
     display: grid;
-    grid-template: auto / repeat(auto-fill,minmax(60px,1fr));
+    grid-template: auto / repeat(auto-fill,minmax(50px,1fr));
     grid-gap: 5px;
     margin-top:10px;
 }

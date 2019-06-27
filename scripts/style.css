@@ -4223,7 +4223,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .buildingFortune .buildingInfoBackground {
-    background: linear-gradient(to right, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/images/townImages/fortuneBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(65, 123, 48) 40%, rgb(65, 123, 48) 60%, transparent 100%), url(/images/townImages/fortuneBuilding/bg.png);
 }
 
 .buildingResearch .buildingInfoBackground {

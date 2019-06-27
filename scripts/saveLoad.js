@@ -97,7 +97,6 @@ function loadGame() {
 }
 
 function saveUpdate(loadGame) {
-    console.log(loadGame.v);
     if (loadGame.v === "0202") {
         loadGame.v = "03";
         //remove E008 because we killed it (it was auto craft sac)
@@ -453,7 +452,9 @@ function saveUpdate(loadGame) {
         loadGame["as"].slots = [];
         //delete workers because why the fuck not?
         delete loadGame["w"];
+        WorkerManager.gainWorker("WN201");
 
+        //repopulate guild oredrs bc new items (and one less guild);
         const locked2 = loadGame["r"].filter(r => r.owned).map(r => r.id);
         GuildManager.guilds.map(g => g.id).forEach(gid => {
             const repReq = recipeList.recipes.filter(r => r.guildUnlock === gid && locked2.includes(r.id)).map(r=>r.repReq);

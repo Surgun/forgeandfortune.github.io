@@ -669,8 +669,12 @@ $(document).on('click', ".buyNewHeroButton", (e) => {
 
 $(document).on('click', ".heroUnequipSlot", (e) => {
     e.stopPropagation();
-    console.log("ya");
-})
+    e.preventDefault();
+    const heroID = $(e.currentTarget).attr("heroID");
+    const slotNum = parseInt($(e.currentTarget).attr("slotNum"));
+    unequipSlot(slotNum,heroID);
+    examineHeroPossibleEquip(slotNum,heroID);
+});
 
 //global variable to hold where we're looking to equip to for the equipping shit.
 let equippingTo = null;

@@ -18,7 +18,7 @@ function openTab(tabName) {
         refreshSideTown();
     }
     if (tabName === "inventoryTab") {
-        if (TownManager.bankUnlock) $("#goToBank").show();
+        if (TownManager.bankStatus === BuildingState.built) $("#goToBank").show();
         else $("#goToBank").hide();
     }
     $(".tabcontent").hide();

@@ -489,7 +489,10 @@ function examineHeroPossibleEquip(slot,heroID) {
     }
     
     let upgradeAvaialable = false;
+    const currentTypes = [];
     Inventory.listbyType(types).forEach((itemContainer) => {
+        if (currentTypes.includes(itemContainer.uniqueID())) return;
+        currentTypes.push(itemContainer.uniqueID());
         const td1 = $('<div/>').addClass('gearItemName').html(itemContainer.picName());
         const relPow = HeroManager.relativePow(heroID,slot,itemContainer.pow());
         const relHP = HeroManager.relativeHP(heroID,slot,itemContainer.hp());

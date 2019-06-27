@@ -667,8 +667,9 @@ $(document).on('click', ".buyNewHeroButton", (e) => {
     HeroManager.purchaseHero();    
 })
 
-$(".heroUnequipSlot").on("click", (e) => {
+$(document).on('click', ".heroUnequipSlot", (e) => {
     e.stopPropagation();
+    console.log("ya");
 })
 
 //global variable to hold where we're looking to equip to for the equipping shit.

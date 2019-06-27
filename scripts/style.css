@@ -3121,11 +3121,10 @@ Rarities
     justify-content: center;
     align-items: center;
     background-color: var(--bg-tertiary);
-    pointer-events: none;
     opacity: 0;
 }
 
-.heroExamineEquipmentEquip:hover + .heroExamineEquipmentEquipTypes {
+.heroExamineEquipment:hover > .heroExamineEquipmentEquipTypes {
     top: 0;
     opacity: 1;
 }
@@ -4846,7 +4845,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     min-height: 160px;
 }
 
-#desynthRemove {
+#desynthRemove, .heroUnequipSlot {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -4857,12 +4856,12 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     cursor: pointer;
 }
 
-#desynthRemove:hover {
+#desynthRemove:hover, .heroUnequipSlot:hover {
     background-color: rgba(255, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
-#desynthRemove > i {
+#desynthRemove > i, .heroUnequipSlot > i {
     margin-top: 5px;
 }
 

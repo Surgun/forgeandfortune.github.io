@@ -149,6 +149,8 @@ class guildOrderItem {
         this.gid = gid;
         this.id = id;
         this.item = recipeList.idToItem(id);
+        console.log(this.id);
+        console.log(this.item.name);
         this.lvl = lvl;
         this.rarity = this.generateRarity(lvl);
         this.sharp = this.generateSharp(lvl);

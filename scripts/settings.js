@@ -8,8 +8,7 @@ const settings = {
     battleLogLength: 30,
     toggleTurnOrderBars: 1,
     db: 0,
-    expandedLogistics: {
-        workers: 1, 
+    expandedLogistics: { 
         materials: 0
     },
     expandedMaterials: {

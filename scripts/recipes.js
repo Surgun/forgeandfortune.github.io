@@ -514,7 +514,6 @@ function checkLogisticsStatus() {
         $RecipeLogistics.show();
         $(".recipeDropdownButton[data-filter=materials]").addClass("filterActive");
         $("#materials").addClass("expanded");
-        settings.expandedLogistics.workers = 0;
     }
 }
 

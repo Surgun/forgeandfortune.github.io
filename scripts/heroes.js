@@ -1,7 +1,7 @@
 "use strict";
 
 const $heroTab = $("#heroTab");
-
+const $heroGear = $("#heroGear");
 class Hero {
     constructor (props) {
         Object.assign(this, props);
@@ -238,6 +238,7 @@ class Hero {
 const HeroManager = {
     heroes : [],
     heroView : null,
+    tabSelected : "heroTab1",
     addHero(hero) {
         this.heroes.push(hero);
     },
@@ -325,7 +326,7 @@ function initializeHeroList() {
     $heroList.empty();
     $("<div/>").attr("id","heroOverviewButton").addClass("heroOverviewButton highlight").html(`<i class="fas fa-info-circle"></i> Hero Overview`).appendTo($heroList);
     HeroManager.heroes.forEach(hero => {
-        const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",hero.id);
+        const d = $("<div/>").addClass("heroOwnedCard heroInspect").attr("data-value",hero.id);
         const d1 = $("<div/>").addClass("heroOwnedImage").html(hero.head);
         const d2 = $("<div/>").addClass("heroOwnedName").html(hero.name);
         const d3 = $("<div/>").addClass("heroPower").html(HeroManager.heroPower(hero));
@@ -354,7 +355,7 @@ function viewHeroOverview() {
     const overviewTitle = $("<div/>").addClass("overviewTitle").html("Hero Overview");
     const overviewDesc = $("<div/>").addClass("overviewDescription").html("A quick glance at all your heroes and their stats.");
     HeroManager.heroes.filter(hero => hero.owned).forEach(hero => {
-        const d = $("<div/>").addClass("heroOverviewCard");
+        const d = $("<div/>").addClass("heroOverviewCard heroInspect").attr("data-value",hero.id);
             const heroInfo = $("<div/>").addClass("heroOverviewInfo").appendTo(d);
                 $("<div/>").addClass("heroOverviewImage").html(hero.image).appendTo(heroInfo);
                 $("<div/>").addClass("heroOverviewName").html(hero.name).appendTo(heroInfo);
@@ -548,91 +549,78 @@ $(document).on('click',".heroCounter", (e) => {
     tabClick(e, "dungeonsTab");
 });
 
+const $heroOverviewButton = $("#heroOverviewButton");
+
 // Show or hide hero's info
 function showHeroInfo(show) {
     if (show) {
         $(".heroTabContainer").addClass("grid-show");
         $(".heroOwnedCard").removeClass("highlight");
-        $("#heroOverviewButton").removeClass("highlight");
-        $("#heroOverview").hide();
+        $heroOverviewButton.removeClass("highlight");
+        $heroOverview.hide();
+        return;
     }
-    else {
-        $(".heroOwnedCard").removeClass("highlight");
-        $(".heroTabContainer").removeClass("grid-show");
-        $(".heroContentContainer").addClass("none");
-        $("#heroOverviewButton").addClass("highlight");
-        $("#heroOverview").show();
-    }
+    $(".heroOwnedCard").removeClass("highlight");
+    $(".heroTabContainer").removeClass("grid-show");
+    $(".heroContentContainer").addClass("none");
+    $heroOverviewButton.addClass("highlight");
+    $heroOverview.show();
 }
 
 // Show details tab of selected hero
 function showHeroDetailsTab() {
-    const heroDetails = document.querySelector("#heroDetails");
-    const heroGear = document.querySelector("#heroGear");
-    heroDetails.classList.remove("none");
-    heroGear.classList.add("none");
+    $heroDetails.removeClass("none");
+    $heroGear.addClass("none");
 }
 
 // Show gear tab of selected hero
 function showHeroGearTab() {
-    const heroDetails = document.querySelector("#heroDetails");
-    const heroGear = document.querySelector("#heroGear");
-    heroDetails.classList.add("none");
-    heroGear.classList.remove("none");
+    $heroDetails.addClass("none");
+    $heroGear.removeClass("none");
 }
 
 $(document).on('click',"#heroOverviewButton", (e) => {
     e.preventDefault();
     showHeroInfo(false);
-    const heroTabs = document.querySelectorAll(".heroTab");
-    heroTabs.forEach(tab => {
-        tab.classList.remove("selected");
-    });
+    $(".heroTab").removeClass("selected");
     viewHeroOverview();
 });
 
-$(document).on('click', "div.heroOwnedCard", (e) => {
+$(document).on('click', "div.heroInspect", (e) => {
     //pop up the detailed character card
     e.preventDefault();
     equippingTo = null;
     showHeroInfo(true);
     //Checks if no tab would be selected and defaults to tab 1, if true
-    const heroTabs = document.querySelectorAll(".heroTab");
-    let isSelected = 0;
-    heroTabs.forEach(tab => {
-        if(tab.classList.contains("selected")) {
-            isSelected = 1;
-        }
-    }); 
-    if (isSelected === 0) {
-        $(".heroTab1").addClass("selected");
-        showHeroDetailsTab();
-    }
-    //
     const ID = $(e.currentTarget).attr("data-value");
-    $(e.currentTarget).addClass("highlight");
+    $(`.heroOwnedCard[data-value=${ID}]`).addClass("highlight");
     HeroManager.heroView = ID;
     examineHero(ID);
+    $(".heroTab").removeClass("selected");
+    if (HeroManager.tabSelected === "heroTab1") {
+        showHeroDetailsTab();
+        $(".heroTab1").addClass("selected");
+    }
+    else {
+        showHeroGearTab();
+        $(".heroTab2").addClass("selected");
+    }
     clearExaminePossibleEquip();
 });
 
-$(document).on('click', ".heroTab", (e) => {
-    e.preventDefault();
-    const heroTabs = document.querySelectorAll(".heroTab");
-    const currentTab = e.currentTarget;
-    heroTabs.forEach(tab => {
-        tab.classList.remove("selected");
-    });
-    currentTab.classList.add("selected");
-})
-
 $(document).on('click', ".heroTab1", (e) => {
     e.preventDefault();
+    $(".heroTab").removeClass("selected");
+    $(e.currentTarget).addClass("selected");
+    HeroManager.tabSelected = "heroTab1";
     showHeroDetailsTab();
 })
 
 $(document).on('click', ".heroTab2", (e) => {
     e.preventDefault();
+    $(".heroTab").removeClass("selected");
+    $(e.currentTarget).addClass("selected");
+    HeroManager.tabSelected = "heroTab2";
     showHeroGearTab();
 })
 
@@ -660,6 +648,7 @@ $(document).on('click', "div.gearItem", (e) => {
 
 function updateHeroPower() {
     HeroManager.heroes.forEach(hero => {
+        
         const heroCard = $(`.heroOwnedCard[data-value=${hero.id}]`);
         $(heroCard).find(".heroPower").html(HeroManager.heroPower(hero));
     });

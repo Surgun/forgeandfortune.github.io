@@ -440,7 +440,7 @@ function examineHero(ID) {
             d5c = "";
         } else {
             d5c = $("<div/>").addClass("heroExamineEquipmentEquipTypes").html(hero.slotTypeIcons(slotNum));
-            $("<div/>").addClass("heroUnequipSlot").attr("heroID",ID).attr("slotNum",slotNum).html('<i class="fas fa-times"></i>').appendTo(d5c);
+            $("<div/>").addClass("heroUnequipSlot").attr("heroID",ID).attr("slotNum",slotNum).html('<i class="fas fa-times"></i> Unslot Equipment').appendTo(d5c);
         }
         if (equip === null) d5b.addClass("heroExamineEquipmentEquipEmpty");
         

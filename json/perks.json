@@ -515,82 +515,82 @@
   {
     "id": "AL6001",
     "title": "Guild Power",
-    "description": "Increase Guild Level Cap to 12",
+    "description": "Increase Guild Level Cap to 8",
     "notoReq": 251,
     "goldCost": 4000,
     "type": "cap",
-    "subtype": 12
+    "subtype": 8
   },
   {
     "id": "AL6002",
     "title": "Guild Power II",
-    "description": "Increase Guild Level Cap to 18",
+    "description": "Increase Guild Level Cap to 12",
     "notoReq": 3001,
     "goldCost": 30000,
     "type": "cap",
-    "subtype": 18
+    "subtype": 12
   },
   {
     "id": "AL6003",
     "title": "Guild Power III",
-    "description": "Increase Guild Level Cap to 24",
+    "description": "Increase Guild Level Cap to 16",
     "notoReq": 11501,
     "goldCost": 200000,
     "type": "cap",
-    "subtype": 24
+    "subtype": 16
   },
   {
     "id": "AL6004",
     "title": "Guild Power IV",
-    "description": "Increase Guild Level Cap to 30",
+    "description": "Increase Guild Level Cap to 20",
     "notoReq": 28001,
     "goldCost": 800000,
     "type": "cap",
-    "subtype": 30
+    "subtype": 20
   },
   {
     "id": "AL6005",
     "title": "Guild Power V",
-    "description": "Increase Guild Level Cap to 36",
+    "description": "Increase Guild Level Cap to 24",
     "notoReq": 56501,
     "goldCost": 3000000,
     "type": "cap",
-    "subtype": 36
+    "subtype": 24
   },
   {
     "id": "AL6006",
     "title": "Guild Power VI",
-    "description": "Increase Guild Level Cap to 42",
+    "description": "Increase Guild Level Cap to 28",
     "notoReq": 108001,
     "goldCost": 30000000,
     "type": "cap",
-    "subtype": 42
+    "subtype": 28
   },
   {
     "id": "AL6007",
     "title": "Guild Power VII",
-    "description": "Increase Guild Level Cap to 48",
+    "description": "Increase Guild Level Cap to 32",
     "notoReq": 171501,
     "goldCost": 150000000,
     "type": "cap",
-    "subtype": 48
+    "subtype": 32
   },
   {
     "id": "AL6008",
     "title": "Guild Power VIII",
-    "description": "Increase Guild Level Cap to 54",
+    "description": "Increase Guild Level Cap to 36",
     "notoReq": 256001,
     "goldCost": 625000000,
     "type": "cap",
-    "subtype": 54
+    "subtype": 36
   },
   {
     "id": "AL6009",
     "title": "Guild Power IX",
-    "description": "Increase Guild Level Cap to 60",
+    "description": "Increase Guild Level Cap to 40",
     "notoReq": 364501,
     "goldCost": 32500000000,
     "type": "cap",
-    "subtype": 60
+    "subtype": 40
   }
 ]

@@ -149,7 +149,6 @@ const Inventory = {
         });
     },
     addFuseToInventory(fuse) {
-        console.log(fuse);
         if (this.full()) return;
         const container = new itemContainer(fuse.id,fuse.rarity);
         container.sharp = fuse.sharp;
@@ -335,7 +334,6 @@ const Inventory = {
 }
 
 function uniqueIDProperties(uniqueID) {
-    console.log(uniqueID);
     const props = uniqueID.split("_");
     const item = {};
     item.uniqueID = uniqueID;

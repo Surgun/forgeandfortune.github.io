@@ -161,7 +161,7 @@ class Hero {
         if (slot === 2) this.slot3 = null;
         if (slot === 3) this.slot4 = null;
         if (slot === 4) this.slot5 = null;
-        if (slot === 6) this.slot6 = null;
+        if (slot === 5) this.slot6 = null;
     }
     slotTypesByNum(num) {
         const slots = [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type];

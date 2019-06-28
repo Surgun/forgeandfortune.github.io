@@ -72,7 +72,6 @@ const FusionManager = {
             return;
         }
         ResourceManager.deductMoney(this.getFuseCost(fuseProp));
-        console.log(uniqueid);
         Inventory.removeFromInventory(uniqueid);
         Inventory.removeFromInventory(uniqueid);
         Inventory.removeFromInventory(uniqueid);
@@ -145,7 +144,6 @@ const $fuseList = $("#fuseList");
 function refreshFuseSlots() {
     $fuseSlots.empty();
     FusionManager.slots.forEach(slot => {
-        console.log(slot);
         const d1 = $("<div/>").addClass("fuseSlot").addClass("R"+slot.rarity);
         const d2 = $("<div/>").addClass("fuseSlotName").html(slot.name);
         const d3 = createFuseBar(slot);

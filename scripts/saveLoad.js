@@ -51,7 +51,6 @@ function createSave() {
     saveFile["w"] = WorkerManager.createSave();
     saveFile["ac"] = achievementStats.createSave();
     saveFile["ds"] = DesynthManager.createSave();
-    console.log(saveFile["fb"]);
     saveFile["fb"] = FusionManager.createSave();
     saveFile["bb"] = BankManager.createSave();
     saveFile["bs"] = bloopSmith.createSave();

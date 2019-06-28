@@ -583,6 +583,7 @@ $(document).on('click',"#heroOverviewButton", (e) => {
     e.preventDefault();
     showHeroInfo(false);
     $(".heroTab").removeClass("selected");
+    $("#heroOverviewButton").addClass("highlight");
     viewHeroOverview();
 });
 
@@ -597,6 +598,7 @@ $(document).on('click', "div.heroInspect", (e) => {
     HeroManager.heroView = ID;
     examineHero(ID);
     $(".heroTab").removeClass("selected");
+    $("#heroOverviewButton").removeClass("highlight");
     if (HeroManager.tabSelected === "heroTab1") {
         showHeroDetailsTab();
         $(".heroTab1").addClass("selected");
@@ -648,7 +650,6 @@ $(document).on('click', "div.gearItem", (e) => {
 
 function updateHeroPower() {
     HeroManager.heroes.forEach(hero => {
-        
         const heroCard = $(`.heroOwnedCard[data-value=${hero.id}]`);
         $(heroCard).find(".heroPower").html(HeroManager.heroPower(hero));
     });
@@ -666,6 +667,7 @@ $(document).on('click', ".heroUnequipSlot", (e) => {
     const slotNum = parseInt($(e.currentTarget).attr("slotNum"));
     unequipSlot(slotNum,heroID);
     examineHeroPossibleEquip(slotNum,heroID);
+    updateHeroPower();
 });
 
 //global variable to hold where we're looking to equip to for the equipping shit.

@@ -60,6 +60,9 @@ const TownManager = {
             recipeList.idToItem("R99510").owned = true;
         }
         refreshSideTown();
+    },
+    buildingsOwned() {
+        return Math.max(1,this.DesynthStatus+1)+Math.max(1,this.bankStatus+1)+Math.max(1,this.fuseStatus+1)+Math.max(1,this.smithStatus+1)+Math.max(1,this.fortuneStatus+1)
     }
 }
 
@@ -67,35 +70,41 @@ const $emptyTown = $("#emptyTown");
 
 function refreshSideTown() {
     $buildingList.empty().hide();
-    //$buildBuilding.hide();
     if (TownManager.unseenLeft()) $("#townTab").addClass("hasEvent");
     else $("#townTab").removeClass("hasEvent");
-    if (TownManager.DesynthStatus === BuildingState.hidden) return;
+    if (TownManager.buildingsOwned() === 0) return;
     $emptyTown.hide();
-    const d1a = $("<div/>").addClass("buildingName").attr("id","DesynthBldg").html(`Magical Desynth`);
-    if (TownManager.lastBldg === "desynth") d1a.addClass("selected");
-    if (TownManager.DesynthStatus === BuildingState.unseen) d1a.addClass("hasEvent");
-    $buildingList.show().append(d1a);
-    if (TownManager.bankStatus === BuildingState.hidden) return;
-    const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`The Bank`);
-    if (TownManager.lastBldg === "bank") d1.addClass("selected");
-    if (TownManager.bankStatus === BuildingState.unseen) d1.addClass("hasEvent");
-    $buildingList.append(d1);
-    if (TownManager.fuseStatus === BuildingState.hidden) return;
-    const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`Fusion Cauldron`);
-    if (TownManager.lastBldg === "fuse") d2.addClass("selected");
-    if (TownManager.fuseStatus === BuildingState.unseen) d2.addClass("hasEvent");
-    $buildingList.append(d2);
-    if (TownManager.smithStatus === BuildingState.hidden) return;
-    const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`The Forge`);
-    if (TownManager.lastBldg === "smith") d3.addClass("selected");
-    if (TownManager.smithStatus === BuildingState.unseen) d3.addClass("hasEvent");
-    $buildingList.append(d3);
-    if (TownManager.fortuneStatus === BuildingState.hidden) return;
-    const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html(`Fortune Teller`);
-    if (TownManager.lastBldg === "fortune") d4.addClass("selected");
-    if (TownManager.fortuneStatus === BuildingState.unseen) d4.addClass("hasEvent");
-    $buildingList.append(d4);
+    $buildingList.show();
+    if (TownManager.DesynthStatus >= 0) {
+        const d1a = $("<div/>").addClass("buildingName").attr("id","DesynthBldg").html(`Magical Desynth`);
+        if (TownManager.lastBldg === "desynth") d1a.addClass("selected");
+        if (TownManager.DesynthStatus === BuildingState.unseen) d1a.addClass("hasEvent");
+        $buildingList.show().append(d1a);
+    }
+    if (TownManager.bankStatus >= 0) {
+        const d1 = $("<div/>").addClass("buildingName").attr("id","bankBldg").html(`The Bank`);
+        if (TownManager.lastBldg === "bank") d1.addClass("selected");
+        if (TownManager.bankStatus === BuildingState.unseen) d1.addClass("hasEvent");
+        $buildingList.append(d1);
+    }
+    if (TownManager.fuseStatus >= 0) {
+        const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`Fusion Cauldron`);
+        if (TownManager.lastBldg === "fuse") d2.addClass("selected");
+        if (TownManager.fuseStatus === BuildingState.unseen) d2.addClass("hasEvent");
+        $buildingList.append(d2);
+    }
+    if (TownManager.smithStatus >= 0) {
+        const d3 = $("<div/>").addClass("buildingName").attr("id","smithBldg").html(`The Forge`);
+        if (TownManager.lastBldg === "smith") d3.addClass("selected");
+        if (TownManager.smithStatus === BuildingState.unseen) d3.addClass("hasEvent");
+        $buildingList.append(d3);
+    }
+    if (TownManager.fortuneStatus >= 0) {
+        const d4 = $("<div/>").addClass("buildingName").attr("id","fortuneBldg").html(`Fortune Teller`);
+        if (TownManager.lastBldg === "fortune") d4.addClass("selected");
+        if (TownManager.fortuneStatus === BuildingState.unseen) d4.addClass("hasEvent");
+        $buildingList.append(d4);
+    }
 }
 
 const $buildBuilding = $("#buildBuilding");

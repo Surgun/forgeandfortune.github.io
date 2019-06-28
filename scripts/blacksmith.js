@@ -113,12 +113,12 @@ function refreshSmithInventory() {
     $smithInvSlots.empty();
     const d1 = $("<div/>").addClass("smithInvHead").html("Inventory");
     $smithInvSlots.append(d1);
-    if (Inventory.nonblank(true).length === 0) {
+    if (Inventory.nonblank().length === 0) {
         const d2 = $("<div/>").addClass("smithInvBlank").html("No Items in Inventory");
         $smithInvSlots.append(d2);
         return;
     }
-    Inventory.nonblank(true).filter(i=>i.sharp < 10).forEach(item => {
+    Inventory.nonblank().filter(i=>i.sharp < 10).forEach(item => {
         $smithInvSlots.append(itemCardSmith(item));
     });
 }

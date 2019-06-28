@@ -51,7 +51,7 @@ class itemContainer {
         containerid += 1;
     }
     uniqueID() {
-        return this.id+this.rarity+this.sharp;
+        return this.id+"_"+this.rarity+"_"+this.sharp;
     }
     createSave() {
         const save = {};
@@ -148,6 +148,17 @@ const Inventory = {
             this.inv[i] = container;
         });
     },
+    addFuseToInventory(fuse) {
+        console.log(fuse);
+        if (this.full()) return;
+        const container = new itemContainer(fuse.id,fuse.rarity);
+        container.sharp = fuse.sharp;
+        this.findempty(container);
+        const item = recipeList.idToItem(container.id);
+        if (examineGearTypesCache.includes(item.type)) {
+            examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache);
+        }
+    },
     addToInventory(id,rarity,autoSell) {
         if (this.full()) this.sellItem(id,rarity,0);
         else if (autoSell >= rarity) this.sellItem(id,rarity,0);
@@ -218,17 +229,10 @@ const Inventory = {
         if (quality === "Great") return miscLoadedValues.qualityCheck[2]*masterMod*fortuneMod;
         if (quality === "Epic") return miscLoadedValues.qualityCheck[3]*masterMod*fortuneMod;
     },
-    removeFromInventory(id,rarity) {
-        //THIS WILL NOT REMOVE ENHANCED ITEMS
-        for (let i=0;i<this.inv.length;i++) {
-            const ic = this.inv[i]
-            if (ic === null) continue;
-            if (ic.id === id && ic.rarity === rarity && ic.sharp === 0) {
-                this.inv[i] = null;
-                refreshInventoryPlaces()
-                return;
-            }
-        }
+    removeFromInventory(uniqueID) {
+        const container = this.nonblank().find(i=>i.uniqueID() === uniqueID);
+        this.removeContainerFromInventory(container.containerID);
+        refreshInventoryPlaces();
     },
     removeContainerFromInventory(containerID) {
         this.inv = this.inv.filter(c=>c === null || c.containerID !== containerID);
@@ -264,8 +268,7 @@ const Inventory = {
     inventoryCount() {
         return this.nonblank().length;
     },
-    nonblank(typeOverride) {
-        if (typeOverride) return this.inv.filter(r=>r !== null && r.item.recipeType === "normal");
+    nonblank() {
         return this.inv.filter(r=>r !== null);
     },
     sortInventory() {
@@ -294,9 +297,7 @@ const Inventory = {
         })
     },
     getFusePossibilities() {
-        const fuses = this.nonblank().filter(s=>s.sharp === 0 && s.item.recipeType === "normal").map(i=>{
-            return i.id+i.rarity
-        });
+        const fuses = this.nonblank().filter(container => container.item.recipeType === "normal").map(container=>container.uniqueID())
         const fuseSorted = fuses.reduce((fuseList, item) => {
             if (item in fuseList) fuseList[item]++;
             else fuseList[item] = 1;
@@ -305,17 +306,15 @@ const Inventory = {
         const fuseFiltered = [];
         for (let [idR, num] of Object.entries(fuseSorted)) {
             if (num < 3) continue;
-            const fuse = {};
-            fuse.id = idR.slice(0, -1);
-            fuse.name = recipeList.idToItem(fuse.id).name;
-            fuse.rarity = parseInt(idR.slice(-1))+1;
+            const fuse = uniqueIDProperties(idR);
+            fuse.rarity += 1;
             if (fuse.rarity > 3) continue;
             fuseFiltered.push(fuse);
         }
         return fuseFiltered;
     },
-    hasThree(id,rarity) {
-        const inv = this.nonblank().filter(i=> i.id === id && i.rarity === rarity);
+    hasThree(uniqueID) {
+        const inv = this.nonblank().filter(i=> i.uniqueID() === uniqueID);
         return inv.length >= 3;
     },
     itemCount(id,rarity) {
@@ -327,16 +326,25 @@ const Inventory = {
     itemCountSpecific(uniqueID) {
         return this.nonblank().filter(i => i.uniqueID() === uniqueID).length;
     },
-    removePrecraft(id,amt) {
-        if (this.itemCount(id,0) < amt) return;
-        for (let i=0;i<amt;i++) this.removeFromInventory(id,0);
-    },
     findCraftMatch(uniqueID) {
         return this.nonblank().find(i => i.uniqueID() === uniqueID);
     },
     higherRarity() {
         return this.nonblank().filter(i => i.rarity > 0);
-    }
+    },
+}
+
+function uniqueIDProperties(uniqueID) {
+    console.log(uniqueID);
+    const props = uniqueID.split("_");
+    const item = {};
+    item.uniqueID = uniqueID;
+    item.id = props[0];
+    const recipe = recipeList.idToItem(item.id);
+    item.rarity = parseInt(props[1]);
+    item.sharp = parseInt(props[2]);
+    item.name = (item.sharp > 0) ? `${recipe.itemPic()} +${item.sharp} ${recipe.name}` : `${recipe.itemPic()} ${recipe.name}`;
+    return item;
 }
 
 $inventory = $("#inventory");

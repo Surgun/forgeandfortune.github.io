@@ -506,6 +506,7 @@ class alRewards {
         if (this.type === "sanctuary7") ActionLeague.sanctuaryHeal[7] = 100;
         if (this.type === "sanctuary8") ActionLeague.sanctuaryHeal[8] = 100;
         if (this.type === "sanctuary9") ActionLeague.sanctuaryHeal[9] = 100;
+        if (this.type === "desynth") TownManager.buildingPerk("desynth");
         if (this.type === "bank") TownManager.buildingPerk("bank");
         if (this.type === "cauldron") TownManager.buildingPerk("fuse");
         if (this.type === "forge") TownManager.buildingPerk("smith");

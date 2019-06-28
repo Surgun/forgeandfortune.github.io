@@ -51,6 +51,7 @@ function createSave() {
     saveFile["w"] = WorkerManager.createSave();
     saveFile["ac"] = achievementStats.createSave();
     saveFile["ds"] = DesynthManager.createSave();
+    console.log(saveFile["fb"]);
     saveFile["fb"] = FusionManager.createSave();
     saveFile["bb"] = BankManager.createSave();
     saveFile["bs"] = bloopSmith.createSave();
@@ -466,6 +467,11 @@ function saveUpdate(loadGame) {
         delete loadGame["g"].guilds[2].order;
         delete loadGame["g"].guilds[3].order;
         loadGame["g"].guilds = loadGame["g"].guilds.filter(g=>g.id !== "G005");
+        
+        //convert fusion slots
+        loadGame["fb"].slots.forEach(slot => {
+            slot.uniqueID = slot.id+"_"+slot.rarity+"_0";
+        })
     }
     return loadGame;
 }

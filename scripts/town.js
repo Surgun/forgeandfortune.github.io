@@ -62,7 +62,8 @@ const TownManager = {
         refreshSideTown();
     },
     buildingsOwned() {
-        return Math.max(0,this.DesynthStatus+1)+Math.max(0,this.bankStatus+1)+Math.max(0,this.fuseStatus+1)+Math.max(0,this.smithStatus+1)+Math.max(0,this.fortuneStatus+1)
+        const bldgs = [this.DesynthStatus,this.bankStatus,this.fuseStatus,this.smithStatus,this.fortuneStatus]
+        return bldgs.some((building) => building !== BuildingState.hidden);
     }
 }
 
@@ -73,7 +74,7 @@ function refreshSideTown() {
     if (TownManager.unseenLeft()) $("#townTab").addClass("hasEvent");
     else $("#townTab").removeClass("hasEvent");
     $emptyTown.hide();
-    if (TownManager.buildingsOwned() === 0) {
+    if (!TownManager.buildingsOwned()) {
         $emptyTown.show();
         return;
     }

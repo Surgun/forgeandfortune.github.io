@@ -62,7 +62,7 @@ const TownManager = {
         refreshSideTown();
     },
     buildingsOwned() {
-        return Math.max(1,this.DesynthStatus+1)+Math.max(1,this.bankStatus+1)+Math.max(1,this.fuseStatus+1)+Math.max(1,this.smithStatus+1)+Math.max(1,this.fortuneStatus+1)
+        return Math.max(0,this.DesynthStatus+1)+Math.max(0,this.bankStatus+1)+Math.max(0,this.fuseStatus+1)+Math.max(0,this.smithStatus+1)+Math.max(0,this.fortuneStatus+1)
     }
 }
 
@@ -72,8 +72,11 @@ function refreshSideTown() {
     $buildingList.empty().hide();
     if (TownManager.unseenLeft()) $("#townTab").addClass("hasEvent");
     else $("#townTab").removeClass("hasEvent");
-    if (TownManager.buildingsOwned() === 0) return;
     $emptyTown.hide();
+    if (TownManager.buildingsOwned() === 0) {
+        $emptyTown.show();
+        return;
+    }
     $buildingList.show();
     if (TownManager.DesynthStatus >= 0) {
         const d1a = $("<div/>").addClass("buildingName").attr("id","DesynthBldg").html(`Magical Desynth`);

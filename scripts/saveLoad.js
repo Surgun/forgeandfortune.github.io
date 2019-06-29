@@ -470,7 +470,16 @@ function saveUpdate(loadGame) {
         //convert fusion slots
         loadGame["fb"].slots.forEach(slot => {
             slot.uniqueID = slot.id+"_"+slot.rarity+"_0";
-        })
+        });
+
+        //buy max level perks you should own
+        loadGame["g"].maxGuildLevel = 0;
+        ActionLeague.perks.filter(p=>p.type === "cap").forEach(perk => {
+            if (perk.notoReq <= ActionLeague.notoriety) {
+                loadGame["al"].purchased.push(perk.id);
+                loadGame["g"].maxGuildLevel = Math.max(loadGame["g"].maxGuildLevel,perk.subtype);
+            }
+        });
     }
     return loadGame;
 }

@@ -347,7 +347,7 @@ function createRecipeBuyCard(recipe,buyLater) {
     const d1 = $("<div/>").addClass("recipeBuyCard");
     const d2 = $("<div/>").addClass("recipeBuyCardHead").html(recipe.type);
     const d3 = $("<div/>").addClass("recipeBuyCardBody").html(recipe.itemPicName());
-    const d3a = $("<div/>").addClass("recipeBuyCardTier").html(recipe.lvl);
+    const d3a = $("<div/>").addClass("recipeBuyCardTier recipeItemLevel").html(recipe.itemLevel());
     if (buyLater) {
         const d4 = $("<div/>").addClass("recipeBuyCardBuyLater").html("Reach next Guild Level to Unlock");
         return d1.append(d2,d3,d3a,d4);

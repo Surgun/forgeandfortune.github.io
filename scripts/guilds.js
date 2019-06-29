@@ -347,14 +347,15 @@ function createRecipeBuyCard(recipe,buyLater) {
     const d1 = $("<div/>").addClass("recipeBuyCard");
     const d2 = $("<div/>").addClass("recipeBuyCardHead").html(recipe.type);
     const d3 = $("<div/>").addClass("recipeBuyCardBody").html(recipe.itemPicName());
+    const d3a = $("<div/>").addClass("recipeBuyCardTier").html(recipe.lvl);
     if (buyLater) {
         const d4 = $("<div/>").addClass("recipeBuyCardBuyLater").html("Reach next Guild Level to Unlock");
-        return d1.append(d2,d3,d4);
+        return d1.append(d2,d3,d3a,d4);
     }
     const d5 = $("<div/>").addClass("recipeBuyCardBuy").data("rid",recipe.id);
         $("<div/>").addClass("recipeBuyCardBuyText").html("Purchase").appendTo(d5);
         $("<div/>").addClass("recipeBuyCardBuyCost").html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
-    return d1.append(d2,d3,d5);
+    return d1.append(d2,d3,d3a,d5);
 };
 
 function refreshAllGuildWorkers() {

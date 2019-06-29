@@ -3,11 +3,13 @@
 const GuildManager = {
     guilds : [],
     lastClicked : "G001",
+    maxGuildLevel : 4,
     addGuild(guild) {
         this.guilds.push(guild);
     },
     createSave() {
         const save = {};
+        save.maxGuildLevel = this.maxGuildLevel
         save.guilds = [];
         this.guilds.forEach(guild => {
             save.guilds.push(guild.createSave());
@@ -15,6 +17,7 @@ const GuildManager = {
         return save;
     },
     loadSave(save) {
+        if (save.maxGuildLevel !== undefined) this.maxGuildLevel = save.maxGuildLevel;
         save.guilds.forEach(guildSave => {
             const guild = this.idToGuild(guildSave.id);
             guild.loadSave(guildSave);
@@ -26,6 +29,9 @@ const GuildManager = {
     submitOrder(gid) {
         const guild = this.idToGuild(gid);
         guild.submitOrder();
+    },
+    setMaxLvl(lvl) {
+        this.maxGuildLevel = Math.max(this.maxGuildLevel,lvl);
     }
 }
 
@@ -133,8 +139,7 @@ class Guild {
         return gold.reduce((a,b) => a+b)*2;
     }
     maxLvlReached() {
-        if (this.lvl >= 39) return true;
-        return this.lvl >= 3 + 4 * DungeonManager.bossesBeat.length;
+        return this.lvl + 1 >= GuildManager.maxGuildLevel;
     }
 }
 
@@ -506,6 +511,7 @@ class alRewards {
         if (this.type === "sanctuary7") ActionLeague.sanctuaryHeal[7] = 100;
         if (this.type === "sanctuary8") ActionLeague.sanctuaryHeal[8] = 100;
         if (this.type === "sanctuary9") ActionLeague.sanctuaryHeal[9] = 100;
+        if (this.type === "cap") GuildManager.setMaxLvl(this.subtype);
         if (this.type === "desynth") TownManager.buildingPerk("desynth");
         if (this.type === "bank") TownManager.buildingPerk("bank");
         if (this.type === "cauldron") TownManager.buildingPerk("fuse");

@@ -121,7 +121,7 @@ function showDesynthBldg() {
     const d = $("<div/>").addClass("buildingInfo buildingDesynth");
     const da = $("<div/>").addClass("buildingInfoBackground");
     const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
-    if (TownManager.DesynthStatus === BuildingState.built) db.html("<img src='images/townImages/desynthBuilding/Desynth_building.png'>");
+    if (TownManager.DesynthStatus === BuildingState.built) db.html("<img src='images/townImages/desynthBuilding/desynth_building.png'>");
     const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Magical Desynth</h2>");
     const dd = $("<div/>").addClass("buildingInfoDesc").html("Take items of higher quality and melt out the magic!");
     if (!TownManager.DesynthStatus === BuildingState.built) d.addClass("buildInProgress");

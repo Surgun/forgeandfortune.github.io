@@ -117,7 +117,7 @@ class Guild {
     submitItem(slot) {
         const submitContainer = this.order[slot];
         if (submitContainer.complete()) return;
-        const itemString = submitContainer.id+submitContainer.rarity+submitContainer.sharp;
+        const itemString = submitContainer.uniqueID();
         const itemMatch = Inventory.findCraftMatch(itemString);
         if (itemMatch === undefined) return Notifications.cantFindMatch();
         Inventory.removeContainerFromInventory(itemMatch.containerID);
@@ -218,7 +218,7 @@ class guildOrderItem {
         return `${this.item.name}`
     }
     uniqueID() {
-        return this.id+this.rarity+this.sharp;
+        return this.id+"_"+this.rarity+"_"+this.sharp;
     }
 }
 

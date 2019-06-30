@@ -323,6 +323,8 @@ const Inventory = {
         return this.nonblank().filter(r=>r.id === id).length;
     },
     itemCountSpecific(uniqueID) {
+        console.log(uniqueID);
+        console.log(this.nonblank().map(i=>i.uniqueID()));
         return this.nonblank().filter(i => i.uniqueID() === uniqueID).length;
     },
     findCraftMatch(uniqueID) {

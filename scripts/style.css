@@ -2933,6 +2933,10 @@ Rarities
     border-radius: 5px;
 }
 
+.heroOverviewPow {
+    flex-grow: unset;
+}
+
 .overviewStat > img {
     margin-right: 5px;
 }

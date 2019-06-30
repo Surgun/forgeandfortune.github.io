@@ -475,7 +475,7 @@ function saveUpdate(loadGame) {
         //buy max level perks you should own
         loadGame["g"].maxGuildLevel = 0;
         ActionLeague.perks.filter(p=>p.type === "cap").forEach(perk => {
-            if (perk.notoReq <= ActionLeague.notoriety) {
+            if (perk.notoReq <= loadGame["al"].notoriety) {
                 loadGame["al"].purchased.push(perk.id);
                 loadGame["g"].maxGuildLevel = Math.max(loadGame["g"].maxGuildLevel,perk.subtype);
             }

@@ -469,6 +469,7 @@ function saveUpdate(loadGame) {
         
         //convert fusion slots
         loadGame["fb"].slots.forEach(slot => {
+            if (recipeExchange[slot.id] !== undefined) slot.id = recipeExchange[slot.id];
             slot.uniqueID = slot.id+"_"+slot.rarity+"_0";
         });
 

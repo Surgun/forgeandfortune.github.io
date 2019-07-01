@@ -97,6 +97,7 @@ function loadGame() {
 }
 
 function saveUpdate(loadGame) {
+    console.log(loadGame);
     if (loadGame.v === "0202") {
         loadGame.v = "03";
         //remove E008 because we killed it (it was auto craft sac)
@@ -425,6 +426,10 @@ function saveUpdate(loadGame) {
         loadGame["bb"].slots.forEach(i => {
             if (i !== null && recipeExchange.hasOwnProperty(i.id)) i.id = recipeExchange[i.id];
         });
+
+        //blacksmith fix
+        if (recipeExchange[loadGame["bs"].smithSlot.id] !== undefined) loadGame["bs"].smithSlot.id = recipeExchange[loadGame["bs"].smithSlot.id];        
+
         //cycle through heroes and their gear
         const heroTable = {
             "H001":["R51","R65"],
@@ -520,4 +525,11 @@ function downloadSave() {
     const saveFile = createSaveExport();
     const b = new Blob([saveFile],{type:"text/plain;charset=utf-8"});
     saveAs(b, "ForgeAndFortuneSave.txt");
+}
+
+//used for diagnostics
+function unPackSave(file) {
+    const unpako = atob(file);
+    const saveFile = JSON.parse(JSON.parse(pako.ungzip(unpako,{ to: 'string' })));
+    return saveFile;
 }

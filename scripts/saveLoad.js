@@ -513,7 +513,11 @@ $("#exportSaveCopy").click((e) => {
 
 $("#exportSaveLocal").click((e) => {
     e.preventDefault();
+    downloadSave();
+});
+
+function downloadSave() {
     const saveFile = createSaveExport();
     const b = new Blob([saveFile],{type:"text/plain;charset=utf-8"});
     saveAs(b, "ForgeAndFortuneSave.txt");
-});
+}

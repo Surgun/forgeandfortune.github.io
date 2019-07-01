@@ -76,5 +76,11 @@
     "version": "v0.3.1.1",
     "date": "June 30th, 2019",
     "body": "<p>Fixed a bug preventing users who were fusing a removed item from loading in</p>"
+  },
+  {
+    "patchCount": 14,
+    "version": "v0.3.1.2",
+    "date": "June 30th, 2019",
+    "body": "<p>Fixed a bug where re-smithing without the neccessary materials would cause your item to disappear</p>"
   }
 ]

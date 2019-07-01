@@ -91,11 +91,19 @@ const bloopSmith = {
         this.smithState = "waiting";
     },
     getStageResourceCost() {
-        if (this.smithStage === null) return;
-        return this.smithStage.getSmithResourceCost();
+        if (this.smithStage !== null) return this.smithStage.getSmithResourceCost();
+        return this.smithSlot.getSmithResourceCost();
     },
     resmith() {
-        if (this.smithState !== "complete") return;
+        if (this.smithState !=="complete") return;
+        if (ResourceManager.materialAvailable("M001") < this.getSmithCost()) {
+            Notifications.cantAffordSmith();
+            return;
+        }
+        if (ResourceManager.materialAvailable(this.getStageResourceCost()) < 3) {
+            Notifications.cantAffordSmithRes();
+            return;
+        }
         this.smithState = "waiting";
         this.smithStage = this.smithSlot;
         this.smithSlot = null;

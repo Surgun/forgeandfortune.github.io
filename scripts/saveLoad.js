@@ -428,7 +428,7 @@ function saveUpdate(loadGame) {
         });
 
         //blacksmith fix
-        if (recipeExchange[loadGame["bs"].smithSlot.id] !== undefined) loadGame["bs"].smithSlot.id = recipeExchange[loadGame["bs"].smithSlot.id];        
+        if (loadGame["bs"].smithSlot !== null && recipeExchange[loadGame["bs"].smithSlot.id] !== undefined) loadGame["bs"].smithSlot.id = recipeExchange[loadGame["bs"].smithSlot.id];        
 
         //cycle through heroes and their gear
         const heroTable = {

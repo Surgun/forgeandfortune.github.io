@@ -1043,7 +1043,7 @@ Rarities
     opacity: 1;
 }
 
-.asRes {
+.asRes, .orderMaterials {
     position: relative;
     left: 5px;
     display: flex;
@@ -1053,6 +1053,11 @@ Rarities
 
 .asResIcon {
     margin-right: 2px;
+}
+
+.orderMaterials {
+    left: unset;
+    margin-top: 5px;
 }
 
 .WSAuto {

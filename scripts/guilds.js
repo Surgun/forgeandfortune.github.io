@@ -32,6 +32,7 @@ const GuildManager = {
     },
     setMaxLvl(lvl) {
         this.maxGuildLevel = Math.max(this.maxGuildLevel,lvl);
+        refreshAllOrders();
     }
 }
 
@@ -316,11 +317,11 @@ function createOrderCard(item,id,index) {
     const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Needed`);
     if (item.complete()) {
         d5.html(`<i class="fas fa-check-circle"></i> Completed`)
-        return d1.append(d2,d3,d4,d4a,d5);
+        return d1.append(d2,d3,d4,d5);
     }
     const d6 = $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`);
     const d7 = $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`);
-    return d1.append(d2,d3,d4,d5,d6,d7);
+    return d1.append(d2,d3,d4,d4a,d5,d6,d7);
 };
 
 function refreshOrderInvCount() {

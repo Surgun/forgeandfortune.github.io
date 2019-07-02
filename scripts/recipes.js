@@ -153,6 +153,7 @@ const recipeList = {
         recipe.owned = true;
         Notifications.buyRecipe(recipe.name);
         refreshRecipeFilters();
+        checkCraftableStatus();
         refreshAllSales();
     },
     idToItem(id) {

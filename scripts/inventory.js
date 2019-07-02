@@ -262,7 +262,7 @@ const Inventory = {
         return this.nonblank().filter(r=>r.id === id && r.rarity === rarity && r.sharp === 0).length > 0
     },
     full() {
-        return this.nonblank().length === this.inv.length;
+        return this.nonblank().length >= this.inv.length;
     },
     inventoryCount() {
         return this.nonblank().length;

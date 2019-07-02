@@ -106,6 +106,7 @@ const actionSlotManager = {
             return;
         }
         const item = recipeList.idToItem(itemid);
+        if (item.recipeType !== "normal" && this.isAlreadySlotted(itemid)) return;
         if (!item.owned) return Notifications.recipeNotOwned();
         if (!item.canProduce) {
             EventManager.badCraft();
@@ -143,6 +144,9 @@ const actionSlotManager = {
     },
     isEmptySlot() {
         return `<img class='ASEmptyImg' src='images/recipes/noitem.png' /> Empty Slot`;
+    },
+    isAlreadySlotted(id) {
+        return this.slots.map(s=>s.itemid).includes(id)
     },
     asPicName(slotnum) {
         return this.slots[slotnum].itemPicName();

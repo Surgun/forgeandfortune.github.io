@@ -122,7 +122,7 @@ class Hero {
         return this.apAdd;
     }
     heal(hp) {
-        if (this.hp ===0) return;
+        if (this.hp === 0) return;
         this.hp = Math.min(this.hp+hp,this.maxHP());
         if (CombatManager.refreshLater) refreshHPBar(this);
     }

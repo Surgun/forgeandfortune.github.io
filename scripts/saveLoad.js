@@ -97,7 +97,6 @@ function loadGame() {
 }
 
 function saveUpdate(loadGame) {
-    console.log(loadGame);
     if (loadGame.v === "0202") {
         loadGame.v = "03";
         //remove E008 because we killed it (it was auto craft sac)

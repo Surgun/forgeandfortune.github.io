@@ -489,9 +489,7 @@ function saveUpdate(loadGame) {
     }
     if (loadGame.v === "0310") {
         loadGame.v = "0312";
-        console.log(loadGame["al"].purchased);
         const alp = ActionLeague.perks.map(p => p.id)
-        console.log(alp);
         loadGame["al"].purchased = loadGame["al"].purchased.filter(p => alp.includes(p));
     }
     return loadGame;

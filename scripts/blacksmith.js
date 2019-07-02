@@ -46,7 +46,7 @@ const bloopSmith = {
         if (item === null) return;
         return miscLoadedValues.smithChance[item.sharp];
     },
-    smithStart() {
+    smithStart(isResmith) {
         if (this.smithState !== "waiting" || this.smithStage === null) return;
         if (ResourceManager.materialAvailable("M001") < this.getSmithCost()) {
             Notifications.cantAffordSmith();
@@ -59,7 +59,7 @@ const bloopSmith = {
         ResourceManager.deductMoney(this.getSmithCost());
         ResourceManager.addMaterial(this.getStageResourceCost(),-3);
         this.smithSlot = this.smithStage;
-        Inventory.removeContainerFromInventory(this.smithStage.containerID);
+        if (!isResmith) Inventory.removeContainerFromInventory(this.smithStage.containerID);
         this.smithState = "smithing";
         this.smithTimer = 5000;
     },
@@ -107,7 +107,7 @@ const bloopSmith = {
         this.smithState = "waiting";
         this.smithStage = this.smithSlot;
         this.smithSlot = null;
-        this.smithStart();
+        this.smithStart(true);
     }
 }
 

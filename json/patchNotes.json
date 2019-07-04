@@ -82,5 +82,11 @@
     "version": "v0.3.1.2",
     "date": "June 30th, 2019",
     "body": "<p>Fixed a bug where re-smithing without the neccessary materials would cause your item to disappear</p>"
+  },
+  {
+    "patchCount": 15,
+    "version": "v0.3.1.3",
+    "date": "July 3rd, 2019",
+    "body": "<ul><li>Added guild resource icons to guild orders</li><li>Fixed coloring of craft icons to properly reflect if you can craft it or not</li><li>Fixed inventory overflow</li><li>Fixed Perk count</li><li>Fixed the slotting of two buildings</li></ul>"
   }
 ]

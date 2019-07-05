@@ -176,7 +176,7 @@ function refreshSmithArea() {
     else if (bloopSmith.smithState === "smithing") {
         $swItemStage.html(itemStageCardSmith(bloopSmith.smithSlot,false));
         $swItemResult.html("In Progress").addClass("inProgressTextBox");
-        $swMiddleText.html("Smithing...").show();
+        $swMiddleText.html("Smithing...").removeClass("smithFailed smithSucceed").show();
         $swSuccess.hide();
         $swConfirm.hide();
         $swCollect.hide();

@@ -94,5 +94,11 @@
     "version": "v0.3.1.4",
     "date": "July 5th, 2019",
     "body": "<p>Fixed bug with smithing success/failure being improperly colored</p>"
+  },
+  {
+    "patchCount": 17,
+    "version": "v0.3.1.5",
+    "date": "July 5th, 2019",
+    "body": "<p>Fixed the crafting button to not always turn green after you turn items in</p>"
   }
 ]

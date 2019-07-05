@@ -284,6 +284,7 @@ function createGuildBar(guild) {
 
 function refreshAllOrders() {
     GuildManager.guilds.forEach(g => refreshguildOrder(g));
+    checkCraftableStatus();
 }
 
 function refreshguildOrder(guild) {

@@ -40,7 +40,7 @@ function forceSave() {
 
 function createSave() {
     const saveFile = {}
-    saveFile["v"] = "0310"
+    saveFile["v"] = "0316"
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
     saveFile["e"] = EventManager.createSave();
@@ -491,6 +491,58 @@ function saveUpdate(loadGame) {
         const alp = ActionLeague.perks.map(p => p.id)
         loadGame["al"].purchased = loadGame["al"].purchased.filter(p => alp.includes(p));
     }
+    console.log(loadGame.v);
+    if (loadGame.v === "0312") {
+        loadGame.v = "0316";
+        console.log("fire!");
+        const matConversion = {
+            "M401":"M101",
+            "M402":"M102",
+            "M403":"M103",
+            "M404":"M104",
+            "M405":"M105",
+            "M406":"M106",
+            "M407":"M107",
+            "M408":"M108",
+            "M409":"M109",
+            "M410":"M110",
+            "M501":"M201",
+            "M502":"M202",
+            "M503":"M203",
+            "M504":"M204",
+            "M505":"M205",
+            "M506":"M206",
+            "M507":"M207",
+            "M508":"M208",
+            "M509":"M209",
+            "M510":"M210",
+            "M601":"M301",
+            "M602":"M302",
+            "M603":"M303",
+            "M604":"M304",
+            "M605":"M305",
+            "M606":"M306",
+            "M607":"M307",
+            "M608":"M308",
+            "M609":"M309",
+            "M610":"M310",
+        }
+        loadGame["rs"].forEach(material => {
+            if (matConversion[material.id] === undefined) return;
+            const newMat = matConversion[material.id];
+            if (loadGame["rs"].find(m=>m.id === newMat) === undefined) {
+                const newMatProp = {};
+                newMatProp.id = newMat;
+                newMatProp.amt = loadGame["rs"].find(m=>m.id === material.id).amt;
+                newMatProp.seen = true;
+                loadGame["rs"].push(newMatProp);
+            }
+            else loadGame["rs"].find(m=>m.id === newMat).amt += material.amt;
+        });
+        loadGame["rs"] = loadGame["rs"].filter(m => matConversion[m.id] === undefined);
+        loadGame["rs"] = loadGame["rs"].filter(m=>m.id !== "M002");
+    }
+    console.log(loadGame.v);
     return loadGame;
 }
 

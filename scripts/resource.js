@@ -36,6 +36,7 @@ const ResourceManager = {
     loadSave(save) {
         save.forEach(m=> {
             const mat = this.idToMaterial(m.id);
+            console.log(m.id,mat);
             mat.loadSave(m);
         });
     },

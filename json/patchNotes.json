@@ -100,5 +100,11 @@
     "version": "v0.3.1.5",
     "date": "July 5th, 2019",
     "body": "<p>Fixed the crafting button to not always turn green after you turn items in</p>"
+  },
+  {
+    "patchCount": 18,
+    "version": "v0.3.1.6",
+    "date": "July 7th, 2019",
+    "body": "<p>Finally actually removed obsolete materials (they have been rolled into the used material type). Fortune teller no longer should ask for obsolete materials.</p>"
   }
 ]

@@ -106,5 +106,11 @@
     "version": "v0.3.1.6",
     "date": "July 7th, 2019",
     "body": "<p>Finally actually removed obsolete materials (they have been rolled into the used material type). Fortune teller no longer should ask for obsolete materials.</p>"
+  },
+  {
+    "patchCount": 19,
+    "version": "v0.3.1.7",
+    "date": "July 8th, 2019",
+    "body": "<p>Fixed uncollectable mail due to old materials. Fixed Notoriety cap and bugged notoriety values if you've defeated all bosses. Fixed fortune teller still needing old mats for existing requests.</p>"
   }
 ]

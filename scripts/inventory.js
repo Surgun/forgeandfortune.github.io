@@ -204,17 +204,18 @@ const Inventory = {
             "Epic" : 3,
         }
         const sellToggle = sellToggleChart[autoSell];
-        if (roll < this.craftChance(item,"Epic")) {
+        const procRate = this.craftChance(item);
+        if (roll < procRate.epic) {
             this.addToInventory(id,3,sellToggle);
             achievementStats.craftedItem("Epic");
             if (sellToggle < 3) Notifications.exceptionalCraft(name,"Epic","craftEpic");
         }
-        else if (roll < (this.craftChance(item,"Epic")+this.craftChance(item,"Great"))) {
+        else if (roll < (procRate.epic+procRate.great)) {
             this.addToInventory(id,2,sellToggle);
             achievementStats.craftedItem("Great");
             if (sellToggle < 2) Notifications.exceptionalCraft(name,"Great","craftGreat");
         }
-        else if (roll < (this.craftChance(item,"Epic")+this.craftChance(item,"Great")+this.craftChance(item,"Good"))) {
+        else if (roll < (procRate.epic+procRate.great+procRate.good)) {
             this.addToInventory(id,1,sellToggle);
             achievementStats.craftedItem("Good");
             if (sellToggle < 1) Notifications.exceptionalCraft(name,"Good","craftGood");
@@ -223,13 +224,16 @@ const Inventory = {
             this.addToInventory(id,0,sellToggle);
             achievementStats.craftedItem("Common");
         }
+        FortuneManager.spendFortune(item);
     },
-    craftChance(item,quality) {
+    craftChance(item) {
         const masterMod = item.isMastered() ? 2 : 1;
-        const fortuneMod = FortuneManager.isLucky(item.type,quality) ? 2 : 1;
-        if (quality === "Good") return miscLoadedValues.qualityCheck[1]*masterMod*fortuneMod;
-        if (quality === "Great") return miscLoadedValues.qualityCheck[2]*masterMod*fortuneMod;
-        if (quality === "Epic") return miscLoadedValues.qualityCheck[3]*masterMod*fortuneMod;
+        const fortuneMod = FortuneManager.getProcModifier(item.type, item.lvl);
+        const mods = {};
+        mods.good = miscLoadedValues.qualityCheck[1]*masterMod*fortuneMod[0];
+        mods.great = miscLoadedValues.qualityCheck[2]*masterMod*fortuneMod[1];
+        mods.epic = miscLoadedValues.qualityCheck[3]*masterMod*fortuneMod[2];
+        return mods;
     },
     removeFromInventory(uniqueID) {
         const container = this.nonblank().find(i=>i.uniqueID() === uniqueID);

@@ -28,7 +28,6 @@ class fortuneSlot {
     }
     subtractCraft() {
         this.amt -= 1;
-        if (this.amt === 0) FortuneManager.removeSlot(this);
     }
 }
 
@@ -75,6 +74,20 @@ const FortuneManager = {
     getMaterialCost() {
         if (this.stage === null) return null;
         return {id:this.stage.material(),amt:20};
+    },
+    getProcModifier(line,tier) {
+        const modifier = [1,1,1];
+        const mods = this.slots.filter(s=>s.line === line && s.tier === tier)
+        mods.forEach(s => {
+            modifier[s.rarity-1] = 2;
+        })
+        return modifier;
+    },
+    spendFortune(item) {
+        const containers = this.slots.filter(s=>s.line === item.type && s.tier === item.lvl);
+        containers.forEach(s => s.subtractCraft());
+        this.slots = this.slots.filter(s=>s.amt > 0);
+        refreshFortuneSlots();
     }
 }
 

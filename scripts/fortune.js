@@ -2,206 +2,164 @@
 
 const $fortuneStatus = $("#fortuneStatus");
 const $fortuneWeek = $("#fortuneWeek");
+const $fortuneStart = $("#fortuneStart");
 
-const FortuneManager = {
-    fortuneWeek: null,
-    //wtf we are giving on bargain
-    goodLine: null,
-    greatLine: null,
-    epicLine: null,
-    //wtf it costs to show it
-    goodReq: null,
-    greatReq: null,
-    epicReq: null,
-    reqAmt: 0,
-    //did you even pay wtf
-    setPaid : false,
-    goodPaid : false,
-    greatPaid : false,
-    epicPaid : false,
+let fortuneSlotid = 0;
+
+class fortuneSlot {
+    constructor(line, rarity, tier, amt) {
+        this.line = line;
+        this.rarity = rarity;
+        this.tier = tier;
+        this.amt = amt;
+        this.slotid = fortuneSlotid;
+        fortuneSlotid += 1;
+    }
     createSave() {
         const save = {};
-        save.fortuneWeek = this.fortuneWeek;
-        save.goodLine = this.goodLine;
-        save.greatLine = this.greatLine;
-        save.epicLine = this.epicLine;
-        save.goodReq = this.goodReq;
-        save.greatReq = this.greatReq;
-        save.epicReq = this.epicReq;
-        save.reqAmt = this.reqAmt;
-        save.setPaid = this.setPaid;
-        save.goodPaid = this.goodPaid;
-        save.greatPaid = this.greatPaid;
-        save.epicPaid = this.epicPaid;
+        save.line = this.line;
+        save.rarity = this.rarity;
+        save.tier = this.tier;
+        save.amt = this.amt;
+        return save;
+    }
+    loadSave(save) {
+        return;
+    }
+    subtractCraft() {
+        this.amt -= 1;
+        if (this.amt === 0) FortuneManager.removeSlot(this);
+    }
+}
+
+const FortuneManager = {
+    stage : null,
+    slots : [],
+    maxSlot : 1,
+    createSave() {
+        const save = {};
+        save.slots = [];
+        this.slots.forEach(slot => {
+            const saveSlot = slot.createSave();
+            save.slots.push(saveSlot);
+        });
         return save;
     },
     loadSave(save) {
-        this.fortuneWeek = save.fortuneWeek;
-        this.goodLine = save.goodLine;
-        this.greatLine = save.greatLine;
-        this.epicLine = save.epicLine;
-        this.goodReq = save.goodReq;
-        this.greatReq = save.greatReq;
-        this.epicReq = save.epicReq;
-        this.reqAmt = save.reqAmt;
-        this.setPaid = save.setPaid;
-        this.goodPaid = save.goodPaid;
-        this.greatPaid = save.greatPaid;
-        this.epicPaid = save.epicPaid;
+        return;
+        save.slots.forEach(slot => {
+            const saveSlot = new fortuneSlot(slot.itemid, slot.rarity, slot.tier, slot.amt);
+            saveSlot.loadSave(slot);
+            this.slots.push(saveSlot);
+        })
     },
-    setReqResource() {
-        const lvl = recipeList.maxTier();
-        return ResourceManager.fortuneResource(lvl);
-        //[good,great,epic] matID
+    stageItem(containerID) {
+        const container = Inventory.containerToItem(containerID);
+        if (container === undefined) return;
+        this.stage = container;
+        refreshFortuneStage();
     },
-    resetFortune() {
-        $fortuneWeek.html(`Time Left in Week: ${timeLeftinWeek()}`);
-        if (this.fortuneWeek === currentWeek()) return;
-        this.fortuneWeek = currentWeek();
-        const matIDs = this.setReqResource();
-        this.goodLine = null;
-        this.greatLine = null;
-        this.epicLine = null;
-        this.goodReq = matIDs[0];
-        this.greatReq = matIDs[1];
-        this.epicReq = matIDs[2];
-        this.reqAmt = recipeList.maxTier();
-        this.setPaid = false;
-        this.goodPaid = false;
-        this.greatPaid = false;
-        this.epicPaid = false;
-        refreshFortuneInfo();
-        refreshFilterListLucky()
+    lockFortune() {
+        if (this.slots.length >= this.maxSlot) return;
+        const recipe = this.stage.item;
+        const newFortune = new fortuneSlot(recipe.type, this.stage.rarity+1,recipe.lvl,20);
+        this.slots.push(newFortune);
+        Inventory.removeContainerFromInventory(this.stage.containerID);
+        this.stage = null;
+        refreshFortuneSlots();
+        refreshFortuneStage();
     },
-    setCrafts() {
-        if (this.setPaid) return;
-        if (ResourceManager.materialAvailable("M001") < this.getGoldCost()) {
-            Notifications.cantReadFortune();
-            return;
-        }
-        ResourceManager.deductMoney(this.getGoldCost());
-        
-        const fortunesTaken = [];
-
-        this.goodLine = ItemType[Math.floor(Math.random() * ItemType.length)];
-        fortunesTaken.push(this.goodLine);
-
-        const fortunesRemainGood = ItemType.filter(i => !fortunesTaken.includes(i));
-        this.greatLine = fortunesRemainGood[Math.floor(Math.random() * fortunesRemainGood.length)];
-        fortunesTaken.push(this.greatLine);
-
-        const fortunesRemainGreat = ItemType.filter(i => !fortunesTaken.includes(i));
-        this.epicLine = fortunesRemainGreat[Math.floor(Math.random() * fortunesRemainGreat.length)];
-
-        this.setPaid = true;
-        refreshFortuneInfo();
+    emptySlotCount() {
+        return this.maxSlot - this.slots.length;
     },
-    propsByType(type) {
-        const props = {};
-        props.amt = this.reqAmt;
-        if (type === "Good") {
-            props.line = this.goodLine;
-            props.matReq = this.goodReq;
-            props.payState = this.goodPaid;
-        }
-        else if (type === "Great") {
-            props.line = this.greatLine;
-            props.matReq = this.greatReq;
-            props.payState = this.greatPaid;
-        }
-        else if (type === "Epic") {
-            props.line = this.epicLine;
-            props.matReq = this.epicReq;
-            props.payState = this.epicPaid;
-        }
-        return props;
-    },
-    getFortuneText(type) {
-        const props = this.propsByType(type);
-        if (!props.payState) return "???";
-        return `${props.line}`;
-    },
-    getGoldCost() {
-        return miscLoadedValues.fortuneCost[recipeList.maxTier()-1];
-    },
-    payUp(type) {
-        const props = this.propsByType(type);
-        if (props.payState) return;
-        const matID = props.matReq;
-        const amt = props.amt;
-        if (ResourceManager.materialAvailable(matID) < amt) {
-            Notifications.cantAffordFortune();
-            return false;
-        }
-        ResourceManager.addMaterial(matID,-amt);
-        if (type === "Good") this.goodPaid = true;
-        else if (type === "Great") this.greatPaid = true;
-        else if (type === "Epic") this.epicPaid = true;
-        refreshFortuneInfo();
-        refreshFilterListLucky();
-    },
-    isLucky(type,quality) {
-        if (!this.setPaid) return false;
-        const prop = this.propsByType(quality);
-        return prop.line === type;
+    getMaterialCost() {
+        if (this.stage === null) return null;
+        return {id:this.stage.material(),amt:20};
     }
 }
+
+const $fortuneStage = $("#fortuneStage");
+const $fortuneSlots = $("#fortuneSlots");
+const $fortuneGear = $("#fortuneGear");
 
 function initiateFortuneBldg () {
     $fortuneBuilding.show();
-    refreshFortuneInfo();
+    refreshFortuneSlots();
+    refreshFortuneStage();
+    refreshFortuneGear();
 }
 
-function refreshFortuneInfo() {
-    $fortuneStatus.empty();
-    const d = $("<div/>").addClass(`fortuneStatusContainer`);
-    if (!FortuneManager.setPaid) {
-        const d1 = $("<div/>").addClass("fortuneSetHead").html("Pay to get your fortune read?");
-        const d2 = $("<div/>").attr("id","fortuneSetButton").html(`Pay<span class="fortune_cost">${miscIcons.gold} ${formatToUnits(FortuneManager.getGoldCost(),2)}</span>`);
-        $fortuneStatus.append(d1,d2);
+function refreshFortuneSlots() {
+    $fortuneSlots.empty();
+    FortuneManager.slots.forEach(slot => {
+        $fortuneSlots.append(createFortuneCard(slot));
+    });
+    for (let i=0;i<FortuneManager.emptySlotCount();i++) {
+        const d1 = $("<div/>").addClass("fortuneSlot").html("Fortune Available");
+        $fortuneSlots.append(d1);
+    }
+}
+
+function refreshFortuneGear() {
+    $fortuneGear.empty();
+    Inventory.nonEpic().forEach(container => {
+        $fortuneGear.append(createFortuneInv(container));
+    });
+}
+
+function refreshFortuneStage() {
+    refreshFortuneofferButton();
+    const stage = FortuneManager.stage;
+    $fortuneStage.empty();
+    if (FortuneManager.stage === null) {
+        const d1 = $("<div/>").addClass("fortuneStageEmpty").html("No item selected");
+        $fortuneStage.append(d1);
         return;
     }
-    const types = ["Good","Great","Epic"];
-    const d3 = $("<div/>").addClass("fortuneSetHead").html("Ah! I see much fortune in your future! Here's what I found:");
-    $fortuneStatus.append(d3);
-    types.forEach(type => {
-        d.append(fortuneBox(type));
-    });
-    $fortuneStatus.append(d);
+    const itemdiv = $("<div/>").addClass("fortuneStageItem").addClass("R"+stage.rarity);
+    const itemName = $("<div/>").addClass("fortuneStageName").html(stage.picName());
+    const rarity = ["common","good","great","epic"];
+    const itemDesc = $("<div/>").addClass("fortuneStageDesc").html(`Increase ${rarity[stage.rarity+1]} craft chance of Lvl ${stage.lvl} ${stage.type}`);
+    itemdiv.append(itemName,itemDesc);
+    $fortuneStage.append(itemdiv);
 }
 
-function refreshFilterListLucky() {
-    $(".recipeSelect").removeClass("luckyFortune luckyGood luckyGreat luckyEpic");
-    ItemType.forEach(i => {
-        $("#rf"+i).html(i);
-    })  
-    if (!FortuneManager.setPaid) return;
-    if (FortuneManager.goodPaid) $("#rf"+FortuneManager.goodLine).addClass("luckyFortune luckyGood").html(`${FortuneManager.goodLine}<i class="fas fa-hat-wizard"></i>`);
-    if (FortuneManager.greatPaid) $("#rf"+FortuneManager.greatLine).addClass("luckyFortune luckyGreat").html(`${FortuneManager.greatLine}<i class="fas fa-hat-wizard"></i>`);
-    if (FortuneManager.epicPaid) $("#rf"+FortuneManager.epicLine).addClass("luckyFortune luckyEpic").html(`${FortuneManager.epicLine}<i class="fas fa-hat-wizard"></i>`);
+function refreshFortuneofferButton() {
+    if (FortuneManager.stage === null) {
+        $fortuneStart.removeClass("fortuneOfferCanStart").html("Select an Item to Offer");
+        return;
+    }
+    const mat = FortuneManager.getMaterialCost();
+    const message = `Offer - ${ResourceManager.materialIcon(mat.id)} ${mat.amt}`
+    $fortuneStart.addClass("fortuneOfferCanStart").html(message);
 }
 
-function fortuneBox(type) {
-    const d1 = $("<div/>").addClass(`fortuneStatus ${"fortune"+type}`)
-    const d2 = $("<div/>").addClass("fortuneStatusHeading").html(`<i class="fas fa-hat-wizard"></i><span>Increased ${type} Procs</span>`);
-    const d3 = $("<div/>").addClass("fortuneStatusType").html(FortuneManager.getFortuneText(type));
-    d1.append(d2,d3);
-    const props = FortuneManager.propsByType(type);
-    if (props.payState) return d1;
-    const mat = ResourceManager.idToMaterial(props.matReq);
-    const d4 = $("<div/>").addClass('fortuneStatusButton').attr("type",type).html("Look Deeper");
-    const d4a = $("<div/>").addClass('deeper_cost tooltip').attr("data-tooltip",mat.name).html(`${mat.img} ${props.amt}`);
-    d4.append(d4a);
-    return d1.append(d4);
+function createFortuneInv(item) {
+    const itemdiv = $("<div/>").addClass("fortuneItem").addClass("R"+item.rarity);
+    const itemName = $("<div/>").addClass("fortuneItemName").html(item.picName());
+    const itemLevel = $("<div/>").addClass("fortuneItemLevel").html(item.itemLevel());
+    const fortuneButton = $("<div/>").addClass("fortuneStage").attr("containerID",item.containerID).html("Offer");
+    return itemdiv.append(itemName,itemLevel,fortuneButton);
 }
 
-$(document).on("click","#fortuneSetButton",(e) => {
+function createFortuneCard(slot) {
+    const rarity = ["Common","Good","Great","Epic"];
+    const itemdiv = $("<div/>").addClass("fortuneSlot").addClass("R"+slot.rarity);
+    const itemName = $("<div/>").addClass("fortuneSlotName").html(`Lvl ${slot.tier} ${slot.line}`);
+    const itemRarity = $("<div/>").addClass("fortuneSlotRarity").html(`2x ${rarity[slot.rarity]} Craft Chance`)
+    const itemAmt = $("<div/>").addClass("fortuneSlotAmt").html(`${slot.amt} Crafts Remaining`);
+    return itemdiv.append(itemName,itemRarity,itemAmt);
+}
+
+$(document).on('click', '.fortuneStage', (e) => {
+    console.log('fire!')
     e.preventDefault();
-    FortuneManager.setCrafts();
+    const containerID = parseInt($(e.currentTarget).attr("containerID"));
+    console.log(containerID);
+    FortuneManager.stageItem(containerID);
 });
 
-$(document).on("click",".fortuneStatusButton",(e) => {
+$(document).on('click', '#fortuneStart', (e) => {
     e.preventDefault();
-    const type = $(e.currentTarget).attr("type");
-    FortuneManager.payUp(type);
-});
+    FortuneManager.lockFortune();
+})

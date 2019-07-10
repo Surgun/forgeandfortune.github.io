@@ -32,7 +32,6 @@ function afterLoad() {
     refreshProgress();
     initializeSideBarDungeon();
     refreshSideTown();
-    refreshFilterListLucky();
     refreshCraftedCount();
     initializeGuilds();
     refreshInventoryPlaces();
@@ -97,7 +96,6 @@ function mainLoop() {
     DesynthManager.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
     PatchManager.patchTimer(elapsedTime);
-    FortuneManager.resetFortune();
     if (TownManager.purgeSlots) {
         actionSlotManager.removeBldgSlots();
         TownManager.purgeSlots = false;

@@ -127,6 +127,9 @@ class itemContainer {
     getSmithResourceCost() {
         return this.item.smithCost;
     }
+    material() {
+        return Object.keys(this.item.mcost)[0]
+    }
 }
 
 const Inventory = {
@@ -331,6 +334,9 @@ const Inventory = {
     higherRarity() {
         return this.nonblank().filter(i => i.rarity > 0);
     },
+    nonEpic() {
+        return this.nonblank().filter(i => i.rarity < 3);
+    }
 }
 
 function uniqueIDProperties(uniqueID) {

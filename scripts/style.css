@@ -62,15 +62,10 @@ body {
 
 .game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, .heroOverviewButton, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #exportSaveLocal, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .buildingName:after, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .workerBuyCardDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, #db-panel input, .alPerkBuy, .guildOrderSubmit, .orderCraft, .dtsMaterialTitle, .dtsBackButton, #updateRefresh, #clearSettings, .desynthGroup, .desynthButton, #desynthSlotStart, #desynthRemove, .heroUnequipSlot, #desynthSlotCollect, .desynthPowerSetting, #collectResmith, .eventActionButton, #dungeonAbandon, .heroOverviewCard, .fortuneStage {
     -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
 .back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon {
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
     -ms-box-shadow: var(--box-shadow);
     -o-box-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
@@ -92,23 +87,14 @@ body {
     background-color: var(--border-primary);
     color: var(--text-primary);
     -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
     transform: scale(0);
     -webkit-transition: all var(--transition);
-    -moz-transition: all var(--transition);
-    -ms-transition: all var(--transition);
-    -o-transition: all var(--transition);
     transition: all var(--transition);
     z-index: 900;
 }
 
 .show-button {
     -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
     transform: scale(1);
 }
 
@@ -132,8 +118,10 @@ body {
 
 p.hamster {
     color: var(--text-tertiary);
+    font-size: 10.4px;
     font-size: .65rem;
     opacity: 0.25;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
 }
 
 #content, footer {
@@ -145,14 +133,20 @@ p.hamster {
 }
 
 .game-content {
+    display: -ms-grid;
     display: grid;
     grid-template: 1fr 50px / 250px 1fr 250px;
     height: 100vh;
 }
 
 .game-content .status, #right-side-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: var(--bg-primary);
 }
 
@@ -180,7 +174,9 @@ p.hamster {
 }
 
 #side-content {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     padding: 0 10px;
     overflow-y: auto;
 }
@@ -191,9 +187,6 @@ p.hamster {
     margin-bottom: 15px;
     overflow: hidden;
     -webkit-transition: max-height 0.3s ease-in-out;
-    -moz-transition: max-height 0.3s ease-in-out;
-    -ms-transition: max-height 0.3s ease-in-out;
-    -o-transition: max-height 0.3s ease-in-out;
     transition: max-height 0.3s ease-in-out;
 }
 
@@ -209,17 +202,11 @@ p.hamster {
     font-family: monospace;
     font-weight: bold;
     -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
 .arrow-rotate {
     -webkit-transform: rotateZ(180deg);
-    -moz-transform: rotateZ(180deg);
-    -ms-transform: rotateZ(180deg);
-    -o-transform: rotateZ(180deg);
     transform: rotateZ(180deg);
 }
 
@@ -238,8 +225,12 @@ p.hamster {
 
 .workerSideBar {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 5px;
     background-color: var(--green-secondary);
     border-radius: 5px;
@@ -256,9 +247,15 @@ p.hamster {
 
 .wsbLvl {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 5px;
     margin-right: 2px;
     background-color: rgba(255,255,255,.1);
@@ -266,8 +263,12 @@ p.hamster {
 }
 
 .wsbType {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     padding-left: 5px;
 }
 
@@ -289,16 +290,24 @@ p.hamster {
 
 .material {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 5px 10px;
     background-color: var(--bg-tertiary);
     border-radius: 5px;
 }
 
 .material .materialName {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .material .materialName > img {
@@ -319,10 +328,17 @@ p.hamster {
 }
 
 .sidebarContentContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #inventorySidebar {
@@ -330,11 +346,19 @@ p.hamster {
 }
 
 .invSideContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     text-align: center;
     background-color: var(--bg-tertiary);
     border: 1px solid transparent;
@@ -371,16 +395,23 @@ p.hamster {
 }
 
 .dungeonSideBarMember {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .dungeonSideBarMemberHP {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     margin-left: 10px;
 }
 
 .guildWorkersSideContainer {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill,minmax(50px,1fr));
     grid-gap: 5px;
@@ -388,9 +419,15 @@ p.hamster {
 }
 
 .guildWorkersSide {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 5px;
     background-color: var(--border-primary);
     border-radius: 5px;
@@ -407,24 +444,41 @@ p.hamster {
 }
 
 .inventoryActions {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     width: 100%;
 }
 
 .invSubActionsContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     padding-right: 10px;
 }
 
 .invActionButton, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .dungeonSpeedButtons, #dungeonAbandon {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 10px 0 0 10px;
     padding: 10px 15px;
     background-color: rgba(255,255,255,.05);
@@ -452,9 +506,15 @@ p.hamster {
     position: absolute;
     top: 10px;
     left: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: left;
-    align-items: center;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .dungeonSpeedButtons, #dungeonAbandon  {
@@ -477,8 +537,10 @@ p.hamster {
 }
 
 #inventory, #ietEquip, #ietHero {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    -ms-grid-columns: (minmax(175px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
     margin: 10px;
 }
@@ -489,10 +551,19 @@ p.hamster {
 }
 
 .inventoryItem, .equipItem, .heroEquipBlock {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
     padding: 10px;
     background-color: var(--bg-primary);
@@ -504,12 +575,21 @@ p.hamster {
 }
 
 .inventoryItemName, .equipItemName {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     width: 100%;
     padding: 10px;
 }
@@ -517,7 +597,8 @@ p.hamster {
 .inventoryItemName > .item-name, .equipItemName > .item-name {
     margin-top: 15px;
     width: 100%;
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
 }
 
 .inventoryItemName > img, .equipItemName > img {
@@ -552,25 +633,43 @@ p.hamster {
 
 .inventoryItemValue, .invProp {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 5px;
 }
 
 .invProp > div {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0 5px;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .inventoryButtons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: center;
+        align-content: center;
     margin-top: auto;
     width: 100%;
     text-align: center;
@@ -581,7 +680,9 @@ p.hamster {
 }
 
 .inventoryEquip, .inventorySell {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     margin-top: 10px;
     padding: 8px 10px;
     background-color: rgba(255,255,255,0.05);
@@ -607,7 +708,9 @@ p.hamster {
 }
 
 .heroEquipBlock {
-    justify-content: start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
 }
 
 .heroEquipBlockPic {
@@ -617,6 +720,7 @@ p.hamster {
 .heroEquipBlockName {
     margin-top: 10px;
     text-align: center;
+    font-size: 16px;
     font-size: 1rem;
     color: var(--highlight);
 }
@@ -644,9 +748,15 @@ p.hamster {
 }
 
 .heroEquipBlockEquipStat {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 10px 0;
     background-color: var(--bg-secondary);
     padding: 5px;
@@ -655,6 +765,7 @@ p.hamster {
 
 .equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .EquipmentCardsHeader, .eventNotorietyHeading, .desynthHeading, .fortuneGearHeading {
     font-weight: normal;
+    font-size: 16px;
     font-size: 1rem;
     padding: 0 5px 5px;
     margin: 0 0 10px;
@@ -668,21 +779,18 @@ Rarities
 */
 
 .R1 { /* Green */
-    background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(27, 223, 69, 0.15) 100%);
     background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
     /*border-color: rgba(27, 223, 69, 0.25);*/
 }
 
 .R2 { /* Blue */
-    background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(2, 121, 223, 0.15) 100%);
     background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
     /*border-color: rgba(2, 121, 223, 0.25);*/
 }
 
 .R3 { /* Pink */
-    background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(243, 6, 144, 0.15) 100%);
     background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
     /*border-color: rgba(243, 6, 144, 0.25);*/
@@ -700,6 +808,7 @@ Rarities
     padding: 25px 10px 5px;
     background-color: var(--bg-primary);
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     z-index: 10;
 }
 
@@ -710,24 +819,28 @@ Rarities
 
 .inventoryItem.R1 > .inventoryItemName:before {
     content: "Good";
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
     background-size: 100% 212px;
 }
 
 .inventoryItem.R2 > .inventoryItemName:before {
     content: "Great";
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
     background-size: 100% 212px;
 }
 
 .inventoryItem.R3 > .inventoryItemName:before {
     content: "Epic";
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
     background-size: 100% 212px;
 }
 
 .inventoryItem.R0 > .inventoryItemName:hover:before, .inventoryItem.R1 > .inventoryItemName:hover:before, .inventoryItem.R2 > .inventoryItemName:hover:before, .inventoryItem.R3 > .inventoryItemName:hover:before {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     top: 0;
 }
 
@@ -800,7 +913,10 @@ Rarities
 }
 
 .game-content #tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     max-height: calc(100vh - 50px);
@@ -819,9 +935,6 @@ Rarities
     font-size: 0.8em;
     cursor: pointer;
     -webkit-transition: color var(--transition);
-    -moz-transition: color var(--transition)t;
-    -ms-transition: color var(--transition);
-    -o-transition: color var(--transition);
     transition: color var(--transition);
 }
 
@@ -851,9 +964,6 @@ Rarities
     height: 2px;
     background-color: var(--highlight);
     -webkit-transition: width var(--transition);
-    -moz-transition: width var(--transition);
-    -ms-transition: width var(--transition);
-    -o-transition: width var(--transition);
     transition: width var(--transition);
 }
 
@@ -886,8 +996,13 @@ Rarities
 }
 
 .ASBlock, .ASBuySlot {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: relative;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
@@ -900,8 +1015,12 @@ Rarities
 
 .ASProgressBar, .plProgressBar {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 23px;
     margin: 0;
 }
@@ -923,9 +1042,6 @@ Rarities
     bottom: 3px;
     left: 50%;
     -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
     transform: translateX(-50%);
     background-color: rgba(0,0,0,0.15);
     border-radius: 15px;
@@ -956,12 +1072,21 @@ Rarities
 }
 
 .ASName {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
     text-align: center;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     padding: 5px;
     font-size: 0.9em;
     text-shadow: 0 0 5px black;
@@ -976,6 +1101,7 @@ Rarities
 .ASEmptyImg {
     max-height: 32px;
     opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 }
 
 .ASCancel {
@@ -1015,43 +1141,54 @@ Rarities
     font-size: 20px;
     color: #635c5c;
     opacity: 0.75;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
     cursor: pointer;
     text-shadow: 1px 1px 0 rgba(0,0,0,0.55), -1px -1px 0 rgba(0,0,0,0.55), 1px -1px 0 rgba(0,0,0,0.55), -1px 1px 0 rgba(0,0,0,0.55);
 }
 
 .ASauto:hover, .WSAuto:hover {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 .ASautoEnabledCommon, .WSautoEnabled {
     color: #fff;
     opacity: 0.9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
 }
 
 .ASautoEnabledGood {
     color: rgba(27, 223, 69, 1);
     opacity: 0.9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
 }
 
 .ASautoEnabledGreat {
     color: rgba(2, 121, 223, 1);
     opacity: 0.9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
 }
 
 .ASautoEnabledEpic {
     color: rgba(243, 6, 144, 1);
     opacity: 0.9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
 }
 
 .ASautoEnabled:hover {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 .asRes, .orderMaterials {
     position: relative;
     left: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     z-index: 1;
 }
 
@@ -1068,6 +1205,7 @@ Rarities
     left: 0;
     top: unset;
     bottom: 0;
+    font-size: 15.84px;
     font-size: .99rem;
 }
 
@@ -1091,20 +1229,30 @@ Rarities
 }
 
 #recipes-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
 }
 
 #recipes-list {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     overflow: auto;
 }
 
 .recipeDropdownContainer {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-right: 10px;
 }
 
@@ -1126,7 +1274,8 @@ Rarities
     background-color: var(--bg-primary);
     border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
-    transform-origin: top;
+    -webkit-transform-origin: top;
+            transform-origin: top;
     -webkit-animation: 0.2s scale-y-in;
     animation: 0.2s scale-y-in;
 }
@@ -1137,11 +1286,13 @@ Rarities
     grid-auto-rows: auto;
     grid-gap: 5px;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     -webkit-animation: 0.2s fade-in forwards;
     animation: 0.2s fade-in forwards;
 }
 
 .logisticContainer.expanded {
+    display: -ms-grid;
     display: grid;
 }
 
@@ -1150,10 +1301,17 @@ Rarities
 }
 
 .recipeSortContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .recipeActionButton.filterActive {
@@ -1179,6 +1337,7 @@ Rarities
     position: absolute;
     top: 12px;
     left: 10px;
+    font-size: 15.2px;
     font-size: .95rem;
 }
 
@@ -1188,29 +1347,42 @@ Rarities
     right: 10px;
     font-size: 12px;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
 .recipeActionButton.filterActive .filterStatus > i {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 .recipeActionButton.filterActive.toggleFilter .filterStatus > i {
     top: 13px;
-    transform: rotateZ(-180deg);
+    -webkit-transform: rotateZ(-180deg);
+            transform: rotateZ(-180deg);
 }
 
 .recipeSortSearch {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin: 10px 20px 0 10px;
-    transform-origin: left;
+    -webkit-transform-origin: left;
+            transform-origin: left;
     -webkit-animation: 0.2s scale-in forwards;
     animation: 0.2s scale-in forwards;
 }
 
 .recipeSortInput {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     padding: 10px 15px;
     background-color: rgba(255,255,255,.05);
     border: 1px solid transparent;
@@ -1243,23 +1415,34 @@ Rarities
 }
 
 #RecipeFilter {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 100%;
     max-width: 200px;
     background-color: var(--bg-primary);
     border-right: 1px solid var(--border-primary);
     overflow: auto;
-    transform-origin: left;
+    -webkit-transform-origin: left;
+            transform-origin: left;
     -webkit-animation: 0.15s scale-x-in;
     animation: 0.15s scale-x-in;
 }
 
 #RecipeFilter a.recipeSelect {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 3px 5px;
     border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
@@ -1390,6 +1573,7 @@ Rarities
 }
 
 .recipeContents, .brecipeTable {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(275px, 1fr));
     grid-auto-rows: auto;
@@ -1408,8 +1592,10 @@ Rarities
     min-height: 216px;
     height: 100%;
     max-width: 350px;
-    perspective: 1500px;
-    transform: rotateX(360deg);
+    -webkit-perspective: 1500px;
+            perspective: 1500px;
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
     -webkit-animation: 0.2s scale-in;
     animation: 0.2s scale-in;
 }
@@ -1428,12 +1614,18 @@ Rarities
     width: 100%;
     height: 100%;
     min-height: 220px;
-    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 
 .recipeCardFront, .recipeCardBack, .bpShop {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1447,13 +1639,15 @@ Rarities
 
 .recipeCardBack {
     font-size: 0.9em;
-    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+            transform: rotateX(180deg);
 }
 
 .recipeCardFlipped {
     -webkit-transform: rotateX(180deg) translateZ(0);
     transform: rotateX(180deg) translateZ(0);
-    perspective: 1px;
+    -webkit-perspective: 1px;
+            perspective: 1px;
 }
 
 .recipeCardDisabled {
@@ -1461,23 +1655,39 @@ Rarities
 }
 
 .recipeTabContainer {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
-    animation: 0.2s scale-y-in forwards;
+    -webkit-animation: 0.2s scale-y-in forwards;
+            animation: 0.2s scale-y-in forwards;
 }
 
 .recipeDetailsContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 100%;
 }
 
 .recipeBackDescription {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .recipeBackDescription, .masteryBlockDescription {
@@ -1491,16 +1701,29 @@ Rarities
 }
 
 .masteryBlockContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 100%;
 }
 
 .masteryBlock {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);
     border-radius: 5px;
@@ -1516,17 +1739,22 @@ Rarities
 }
 
 .masteryBlock > i {
+    font-size: 20px;
     font-size: 1.25rem;
     opacity: 0.25;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
 }
 
 .masteryBlock.masteryObtained > i {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 .masteryDetail {
     text-align: center;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 
 .masteryCountRequired {
@@ -1555,6 +1783,7 @@ Rarities
 }
 
 .recipeCountAndCraft {
+    display: -ms-grid;
     display: grid;
     grid-template: 1fr / 2fr 1fr;
     grid-gap: 10px;
@@ -1565,17 +1794,29 @@ Rarities
 }
 
 .recipeTimeAndValue {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: auto 0 10px;
 }
 
 .recipeTimeContainer, .recipeAmountContainer, .recipeValueContainer {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     line-height: 1em;
     padding: 0 5px;
 }
@@ -1613,9 +1854,15 @@ Rarities
 }
 
 .recipeName, .recipeBackTabContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: left;
-    align-items: center;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-left: 50px;
     padding: 0 35px 5px 0;
     height: 38px;
@@ -1634,10 +1881,18 @@ Rarities
 
 .recipeBackTab {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin-right: 5px;
     background-color: var(--bg-secondary);
     color: var(--text-secondary);
@@ -1661,6 +1916,7 @@ Rarities
     height: 2px;
     width: 0;
     background-color: transparent;
+    -webkit-transition: var(--transition);
     transition: var(--transition);
 }
 
@@ -1673,9 +1929,15 @@ Rarities
     position: absolute;
     top: 10px;
     right: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 30px;
     width: 30px;
     background-color: rgba(255,255,255,0.05);
@@ -1693,9 +1955,15 @@ Rarities
 }
 
 .recipeLvl {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: absolute;
     top: 8px;
     left: 10px;
@@ -1707,9 +1975,14 @@ Rarities
 }
 
 .recipecostdiv {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
 }
 
 .reciperesdiv, .recipematdiv {
@@ -1721,6 +1994,7 @@ Rarities
 }
 
 .itemCost {
+    display: -ms-grid;
     display: grid;
     grid-template: 1fr 1fr / repeat(auto-fill, minmax(60px, 1fr));
     grid-auto-rows: auto;
@@ -1731,9 +2005,15 @@ Rarities
 
 .indvCost {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 5px 10px;
     background-color: var(--border-primary);
     border: 1px solid var(--border-secondary);
@@ -1748,12 +2028,19 @@ Rarities
 
 .isMastered .matCost > img {
     opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
 
 .recipeStatList {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0 0 10px 0;
     border-radius: 5px;
     background-color: var(--bg-tertiary);
@@ -1761,10 +2048,18 @@ Rarities
 
 .recipeStatList > div {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 8px 10px;
 }
 
@@ -1784,11 +2079,20 @@ Rarities
 }
 
 .EHPEHeader, .EHPErow {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     min-height: 40px;
 }
 
@@ -1812,21 +2116,26 @@ Rarities
 
 .sortAsc:after {
     -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
     transform: rotate(180deg);
 }
 
 .recipeHeadName, .recipeHeadLvl, .recipeHeadRes, .recipeHeadCost, .recipeHeadStats, .recipeHeadTime, .recipeHeadValue, .recipeHeadCount, .brecipeHeadName, .brecipeHeadRes, .brecipeHeadCost, .brecipeHeadTime, .brecipeHeadLvl {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
 }
 
 .EHPEHeaderName, .EHPEname  {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     min-width: 250px;
     padding-left: 10px;
@@ -1864,9 +2173,14 @@ Rarities
 }
 
 .reciperesdiv, .recipeStatList {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
 }
 
@@ -1879,6 +2193,7 @@ Rarities
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
     filter: grayscale(100%);
 }
 
@@ -1903,21 +2218,41 @@ Rarities
 }
 
 .bpShopDescription, .bpReq {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 10px;
     text-align: center;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     font-size: 0.9em;
 }
 
 .bpReqNeeded {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .bpReqWorker {
@@ -1930,10 +2265,12 @@ Rarities
 }
 
 #workerList {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, 250px);
     grid-gap: 10px;
-    align-items: start;
+    -ms-grid-row-align: start;
+        align-items: start;
 }
 
 #workerList, #progresslist, #dungeonSelect {
@@ -1941,8 +2278,13 @@ Rarities
 }
 
 .Worker, .purchaseWorkerCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: relative;
     height: 100%;
     min-height: 229px;
@@ -1961,8 +2303,13 @@ Rarities
 }
 
 .purchaseWorkerCard {
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+                -ms-grid-row-align: center;
+            align-items: center;
 }
 
 .unknownWorker > img {
@@ -1990,9 +2337,15 @@ Rarities
 }
 
 .buyWorkerCost, .buyHeroCost, .ASBuySlotCost {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 10px;
 }
 
@@ -2001,8 +2354,12 @@ Rarities
 }
 
 .WorkerDetails {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .WorkerImage {
@@ -2013,40 +2370,69 @@ Rarities
 }
 
 .WorkerNameAndProduction {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
 }
 
 .WorkerName {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
 }
 
 .WorkerProduction {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 0.8em;
 }
 
 .production_type {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background-color: var(--border-secondary);
     border-radius: 50%;
     width: 25px;
     height: 25px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     z-index: 2;
 }
 
 .production_text {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-left: -15px;
     padding-left: 20px;
     padding-right: 15px;
@@ -2069,11 +2455,19 @@ Rarities
 }
 
 .Worker .itemSac {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     position: relative;
-    justify-content: center;
-    flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin: 10px 0;
 }
 
@@ -2117,10 +2511,17 @@ Rarities
 .Worker .BuyWorker, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .alPerkBuy, .fuseStart {
     position: relative;
     border: 0;
+    font-size: 16px;
     font-size: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .upgrade_text, .unlockbp_text, .buyWorkerText, .buyHeroText, .ASBuySlotText, .dungeon_upgrade_text, .alPerkBuyText, .fuseStartText {
@@ -2143,6 +2544,8 @@ Rarities
 }
 
 .workerButtons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
     bottom: 0;
@@ -2153,32 +2556,49 @@ Rarities
 
 .workerButtons > button {
     position: relative;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     min-width: 50%;
 }
 
 /* Guilds */
 
 #guildsContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     height: 100%;
 }
 
 #guildList, #buildingList {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: var(--bg-primary);
     border-right: 1px solid var(--border-primary);
     width: 100%;
     max-width: 220px;
     height: 100%;
     overflow: auto;
-    transform-origin: left;
+    -webkit-transform-origin: left;
+            transform-origin: left;
     -webkit-animation: 0.15s scale-x-in forwards;
     animation: 0.15s scale-x-in forwards;
 }
@@ -2202,49 +2622,68 @@ Rarities
 }
 
 .guildContainer {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     padding: 10px;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     -webkit-animation: 0.2s .15s fade-in forwards;
     animation: 0.2s .15s fade-in forwards;
     overflow: auto;
 }
 
 .guildSummary {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: -10px -10px 10px;
     padding: 10px;
     height: 200px;
     background-color: var(--bg-tertiary);
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(84, 127, 139) 40%, rgb(84, 127, 139) 60%, transparent 100%), url(/images/guildImages/default.png);
     background: linear-gradient(to right, transparent 0%, rgb(84, 127, 139) 40%, rgb(84, 127, 139) 60%, transparent 100%), url(/images/guildImages/default.png);
     border-bottom: 2px solid var(--border-primary);
 }
 
 #G001Summary.guildSummary {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/images/guildImages/G001.png);
     background: linear-gradient(to right, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/images/guildImages/G001.png);
 }
 
 #G002Summary.guildSummary {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(112, 73, 47) 40%, rgb(112, 73, 47)  60%, transparent 100%), url(/images/guildImages/G002.png);
     background: linear-gradient(to right, transparent 0%, rgb(112, 73, 47) 40%, rgb(112, 73, 47)  60%, transparent 100%), url(/images/guildImages/G002.png);
 }
 
 #G003Summary.guildSummary {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(37, 30, 47) 40%, rgb(37, 30, 47) 60%, transparent 100%), url(/images/guildImages/G003.png);
     background: linear-gradient(to right, transparent 0%, rgb(37, 30, 47) 40%, rgb(37, 30, 47) 60%, transparent 100%), url(/images/guildImages/G003.png);
 }
 
 #G004Summary.guildSummary {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(111, 103, 68) 40%, rgb(111, 103, 68) 60%, transparent 100%), url(/images/guildImages/G004.png);
     background: linear-gradient(to right, transparent 0%, rgb(111, 103, 68) 40%, rgb(111, 103, 68) 60%, transparent 100%), url(/images/guildImages/G004.png);
 }
 
 #G005Summary.guildSummary {
+    background: -webkit-linear-gradient(left, transparent 0%,rgb(83, 99, 94) 40%, rgb(83, 99, 94) 60%, transparent 100%), url(/images/guildImages/G005.png);
     background: linear-gradient(to right, transparent 0%,rgb(83, 99, 94) 40%, rgb(83, 99, 94) 60%, transparent 100%), url(/images/guildImages/G005.png);
 }
 
 .guildName > h2 {
     margin: 0;
+    font-size: 32px;
     font-size: 2rem;
     font-weight: normal;
     text-shadow: 2px 2px 0 black;
@@ -2272,6 +2711,7 @@ Rarities
 }
 
 .guildOrder, .guildSales, .guildWorkers {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
@@ -2345,13 +2785,15 @@ Rarities
     top: 5px;
     left: 5px;
     padding: 5px 7px;
+    font-size: 13.6px;
     font-size: .85rem;
     background-color: var(--green-tertiary);
     border-radius: 5px;
 }
 
 .guildOrderSubmit {
-    grid-row: 2;
+    -ms-grid-row: 2;
+        grid-row: 2;
 }
 
 .recipeBuyCardBody, .recipeBuyCardBuyLater {
@@ -2364,21 +2806,34 @@ Rarities
 
 .recipeBuyCardBuyLater, .alPerkCantBuy {
     margin-top: 10px;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     color: var(--highlight);
 }
 
 .guildProgress {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     width: 100%;
     max-width: 300px;
 }
 
 .workerBuyCardBodyProduction {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 10px;
 }
@@ -2410,6 +2865,7 @@ Rarities
 }
 
 #progress_container {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill,minmax(250px,1fr));
     grid-gap: 10px;
@@ -2430,6 +2886,7 @@ Rarities
 }
 
 #progress_container > div > h2 {
+    font-size: 16px;
     font-size: 1rem;
     font-weight: normal;
     margin-bottom: 0;
@@ -2442,16 +2899,26 @@ Rarities
 }
 
 .progress-desc {
+    font-size: 14.4px;
     font-size: .9rem;
     text-align: center;
     color: var(--text-secondary);
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 
 .progressRecipe, .progressWorker, .progressHero, .progressOverall {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
@@ -2482,14 +2949,20 @@ Rarities
 }
 
 .progress-card-container, .stat-box-container {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-gap: 10px;
 }
 
 .ProgressCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 15px 15px 15px 0;
     font-size: 0.9em;
     background-color: var(--bg-primary);
@@ -2507,12 +2980,18 @@ Rarities
 }
 
 .stat-box-container {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .statBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 15px;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
@@ -2543,19 +3022,29 @@ Rarities
 }
 
 #heroContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
 }
 
 #heroList {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
     padding: 5px;
     height: 100%;
     width: 100%;
     max-width: 325px;
-    align-self: start;
+    -ms-flex-item-align: start;
+        align-self: start;
     overflow: auto;
 }
 
@@ -2570,26 +3059,32 @@ Rarities
     right: 0;
     width: 100%;
     height: 200px;
-    filter: blur(15px);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="15" /></filter></svg>#filter');
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
     z-index: -1;
 }
 
 .dtsD001.dtsBackground {
+    background: -webkit-linear-gradient(top, transparent 0%, var(--bg-secondary) 100%), url(/images/dungeonPreviews/dungeon_1.png);
     background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%), url(/images/dungeonPreviews/dungeon_1.png);
     background-size: contain;
 }
 
 .dtsD002.dtsBackground {
+    background: -webkit-linear-gradient(top, transparent 0%, var(--bg-secondary) 100%), url(/images/dungeonPreviews/dungeon_2.png);
     background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%), url(/images/dungeonPreviews/dungeon_2.png);
     background-size: contain;
 }
 
 .dtsD003.dtsBackground {
+    background: -webkit-linear-gradient(top, transparent 0%, var(--bg-secondary) 100%), url(/images/dungeonPreviews/dungeon_3.png);
     background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%), url(/images/dungeonPreviews/dungeon_3.png);
     background-size: contain;
 }
 
 .DBoss.dtsBackground {
+    background: -webkit-linear-gradient(top, transparent 0%, var(--bg-secondary) 100%), url(/images/dungeonPreviews/dungeon_boss.png);
     background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%), url(/images/dungeonPreviews/dungeon_boss.png);
     background-size: contain;
 }
@@ -2598,9 +3093,16 @@ Rarities
     position: absolute;
     top: 35px;
     left: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 24px;
     font-size: 1.5rem;
     width: 50px;
     height: 50px;
@@ -2616,6 +3118,7 @@ Rarities
 .dtsHeader {
     padding: 30px 20px 10px;
     margin-left: 60px;
+    font-size: 48px;
     font-size: 3rem;
     text-shadow: 3px 3px 0 black;
 }
@@ -2638,11 +3141,15 @@ Rarities
 .dtsMaterialTitle > i {
     position: absolute;
     margin: 2px 5px 0;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: -webkit-transform 0.2s ease-in-out;
     transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
 .dtsMaterialTitle.toggleActive > i {
-    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
 }
 
 .dtsMaterialNone {
@@ -2655,23 +3162,32 @@ Rarities
     grid-template: auto / repeat(auto-fill,minmax(200px,1fr));
     grid-gap: 5px;
     padding: 0 25px;
-    transform-origin: top;
+    -webkit-transform-origin: top;
+            transform-origin: top;
     -webkit-animation: 0.2s scale-y-in;
     animation: 0.2s scale-y-in;
 }
 
 .dtsMaterialContainer.expanded {
+    display: -ms-grid;
     display: grid;
 }
 
 .dtsMaterial {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 10px;
     background-color: rgba(255,255,255,0.05);
     border-radius: 5px;
+    font-size: 12px;
     font-size: 0.75rem;
 }
 
@@ -2681,7 +3197,9 @@ Rarities
 }
 
 .dtsMaterialName {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 
 .dtsMaterialAmt {
@@ -2693,14 +3211,21 @@ Rarities
 
 .dungeonTeamCard, .dungeonAvailableCard, .dungeonNotAvailableCard, .drHeroCard {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     min-width: 125px;
     min-height: 220px;
     text-align: center;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     border-radius: 10px;
 }
 
@@ -2715,10 +3240,17 @@ Rarities
 
 .heroOwnedCard, .buyNewHeroCard, .heroOverviewButton {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 5px;
     margin: 2.5px 0;
     text-align: center;
@@ -2736,7 +3268,9 @@ Rarities
 
 .heroOverviewButton {
     padding: 12px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .heroOverviewButton > i {
@@ -2746,7 +3280,9 @@ Rarities
 .buyNewHeroCard {
     grid-column: 1 / -1;
     padding: 10px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     cursor: default;
 }
 
@@ -2779,10 +3315,17 @@ Rarities
     top: 0;
     left: 0;
     right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 10px 5px;
+    background: -webkit-linear-gradient(top, rgba(17, 220, 130, 0.25), transparent);
     background: linear-gradient(to bottom, rgba(17, 220, 130, 0.25), transparent);
     color: var(--green-primary);
     border-top-left-radius: 10px;
@@ -2790,6 +3333,7 @@ Rarities
 }
 
 .heroBanned .heroStatus {
+    background: -webkit-linear-gradient(top, rgba(255, 0, 0, 0.25), transparent);
     background: linear-gradient(to bottom, rgba(255, 0, 0, 0.25), transparent);
     color: #ff9090;
 }
@@ -2799,9 +3343,15 @@ Rarities
 }
 
 .heroPower, .dungeonAvailablePow, .dungeonNotAvailablePow , .dungeonTeamPow {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 3px 10px;
     background-color: var(--border-primary);
     border-radius: 5px;
@@ -2837,13 +3387,21 @@ Rarities
 }
 
 #heroCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     background-color: var(--bg-primary);
     border-left: 1px solid var(--border-primary);
     overflow: auto;
-    transform-origin: right;
+    -webkit-transform-origin: right;
+            transform-origin: right;
     -webkit-animation: 0.2s scale-x-in;
     animation: 0.2s scale-x-in;
 }
@@ -2855,6 +3413,7 @@ Rarities
 }
 
 .heroTabContainer.grid-show {
+    display: -ms-grid;
     display: grid;
 }
 
@@ -2865,8 +3424,12 @@ Rarities
 }
 
 .heroDetailsContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     overflow: auto;
 }
 
@@ -2875,6 +3438,7 @@ Rarities
 }
 
 .overviewContainer {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill,minmax(175px,1fr));
     grid-gap: 10px;
@@ -2883,6 +3447,7 @@ Rarities
 .overviewTitle {
     padding: 0 5px 5px;
     margin-bottom: 5px;
+    font-size: 24px;
     font-size: 1.5rem;
     color: var(--highlight);
     border-bottom: 2px solid var(--border-primary);
@@ -2895,9 +3460,16 @@ Rarities
 }
 
 .heroOverviewCard {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 10px;
     border: 2px solid var(--border-primary);
     border-radius: 10px;
@@ -2911,7 +3483,8 @@ Rarities
 }
 
 .heroOverviewInfo {
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
     text-align: center;
 }
 
@@ -2926,16 +3499,27 @@ Rarities
 }
 
 .heroOverviewStats {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .overviewStat {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin: 2.5px;
     padding: 5px 10px;
     background-color: var(--border-primary);
@@ -2943,7 +3527,9 @@ Rarities
 }
 
 .heroOverviewPow {
-    flex-grow: unset;
+    -webkit-box-flex: unset;
+        -ms-flex-positive: unset;
+            flex-grow: unset;
 }
 
 .overviewStat > img {
@@ -2951,7 +3537,9 @@ Rarities
 }
 
 .heroExamineContainer {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 
 .hero-placeholder-details, .hero-placeholder-equip, .events-placeholder-details {
@@ -2965,10 +3553,19 @@ Rarities
 
 .heroExamineTop {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     max-width: 500px;
 }
@@ -3034,44 +3631,67 @@ Rarities
 }
 
 .heroExamineStats {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill,minmax(200px,1fr));
     grid-gap: 5px;
-    align-content: start;
+    -ms-flex-line-pack: start;
+        align-content: start;
 }
 
 .heroExamineStatRow {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 15px 20px;
+    font-size: 13.6px;
     font-size: 0.85rem;
     background-color:  var(--bg-secondary);
     border-radius: 5px;
 }
 
 .heroExamineStatRowName {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 
 #heroGear {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     overflow: auto;
 }
 
 .heroExamineEquip {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(3,195px);
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
 }
 
 .heroExamineEquipment {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 5px 2.5px;
     min-width: 175px;
     min-height: 212px;
@@ -3099,13 +3719,24 @@ Rarities
 }
 
 .heroExamineEquipmentEquip {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 5px;
     width: 100%;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 
 .heroExamineEquipmentEquip > .item-name, .heroExamineEquipmentEquip > .item-prefix-name {
@@ -3129,22 +3760,33 @@ Rarities
 }
 
 .heroExamineEquipmentEquipTypes {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: var(--bg-tertiary);
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 
 .heroExamineEquipment:hover > .heroExamineEquipmentEquipTypes {
     top: 0;
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 #heroEquipmentList {
@@ -3172,14 +3814,21 @@ div.EquipmentCardsContainer {
 
 .gearItem {
     cursor: pointer;
-    animation: 0.2s scale-in forwards;
+    -webkit-animation: 0.2s scale-in forwards;
+            animation: 0.2s scale-in forwards;
 }
 
 .gearStatContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     margin-top: 10px;
 }
@@ -3190,10 +3839,18 @@ div.EquipmentCardsContainer {
 
 .gearStat {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     background-color: rgba(255,255,255,.05);
     padding: 5px;
     border-radius: 5px;
@@ -3217,6 +3874,8 @@ div.EquipmentCardsContainer {
 }
 
 #dungeon-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
     overflow: auto;
@@ -3226,6 +3885,7 @@ div.EquipmentCardsContainer {
     min-width: 200px;
     padding: 20px;
     overflow: auto;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
 }
@@ -3236,9 +3896,12 @@ div.EquipmentCardsContainer {
 }
 
 .dungeonListings {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+    -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    -ms-grid-rows: (minmax(150px, 1fr))[auto-fill];
+        grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
     grid-auto-rows: minmax(150px, 1fr);
     grid-gap: 10px;
 }
@@ -3248,8 +3911,13 @@ div.EquipmentCardsContainer {
 }
 
 .dungeonContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: relative;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
@@ -3281,10 +3949,12 @@ div.EquipmentCardsContainer {
     left: 0;
     right: 0;
     bottom: 0;
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_1.png');
     background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_1.png');
     background-size: cover;
     background-position: 50% 40%;
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     z-index: -1;
 }
 
@@ -3294,10 +3964,12 @@ div.EquipmentCardsContainer {
     left: 0;
     right: 0;
     bottom: 0;
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_2.png');
     background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_2.png');
     background-size: cover;
     background-position: center 70%;
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     z-index: -1;
 }
 
@@ -3307,10 +3979,12 @@ div.EquipmentCardsContainer {
     left: 0;
     right: 0;
     bottom: 0;
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_3.png');
     background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_3.png');
     background-size: cover;
     background-position: center;
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     z-index: -1;
 }
 
@@ -3320,18 +3994,17 @@ div.EquipmentCardsContainer {
     left: 0;
     right: 0;
     bottom: 0;
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_boss.png');
     background: linear-gradient(to bottom, rgba(0,0,0,0.5) 10%,rgba(0,0,0,0) 100%), url('/images/dungeonPreviews/dungeon_boss.png');
     background-size: cover;
     background-position: center;
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     z-index: -1;
 }
 
 .dungeonContainer:hover .dungeonBackground {
     -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -3354,17 +4027,30 @@ div.EquipmentCardsContainer {
 }
 
 .dungeonAdventurers {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 10px;
 }
 
 .dungeonHeroDungeonSelect {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0 1px;
     padding: 10px;
     background-color: rgba(255,255,255,0.1);
@@ -3376,20 +4062,34 @@ div.EquipmentCardsContainer {
 }
 
 #drContentWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
 }
 
 #drContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     overflow: auto;
 }
 
 #drArena {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: relative;
     min-height: 300px;
     max-height: 300px;
@@ -3506,6 +4206,7 @@ div.EquipmentCardsContainer {
     -webkit-animation: 5s 3s ascend-hands infinite;
     animation: 5s 3s ascend-hands infinite;
     opacity: 0.75;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
 }
 
 .D002 .bgContainer .layer9 {
@@ -3642,8 +4343,12 @@ div.EquipmentCardsContainer {
 }
 
 #drArena > h3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 0;
     padding: 20px;
 }
@@ -3653,6 +4358,7 @@ div.EquipmentCardsContainer {
     text-transform: uppercase;
     text-shadow: 3px 3px 0 black;
     font-weight: normal;
+    font-size: 24px;
     font-size: 1.5rem;
     color: var(--highlight);
     background-color: #21262b;
@@ -3662,14 +4368,21 @@ div.EquipmentCardsContainer {
 }
 
 #dungeonListContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
 }
 
 #dungeonHeroList, #dungeonMobList {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    -ms-grid-columns: (minmax(50px, 1fr))[4];
+        grid-template-columns: repeat(4, minmax(50px, 1fr));
     grid-gap: 3px;
     margin: 0 10px;
     width: 100%;
@@ -3683,6 +4396,7 @@ div.EquipmentCardsContainer {
     -moz-filter: drop-shadow(0 0 5px black);
     -ms-filter: drop-shadow(0 0 5px black);
     -o-filter: drop-shadow(0 0 5px black);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="5" /><feOffset dx="1" dy="1" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,1)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
     filter: drop-shadow(0 0 5px black);
 }
 
@@ -3692,23 +4406,31 @@ div.EquipmentCardsContainer {
 }
 
 .dfm {
-    grid-column: 4;
-    grid-row: 1;
+    -ms-grid-column: 4;
+        grid-column: 4;
+    -ms-grid-row: 1;
+        grid-row: 1;
 }
 
 .dfm + .dfm {
-    grid-column: 3;
-    grid-row: 1;
+    -ms-grid-column: 3;
+        grid-column: 3;
+    -ms-grid-row: 1;
+        grid-row: 1;
 }
 
 .dfm + .dfm + .dfm {
-    grid-column: 2;
-    grid-row: 1;
+    -ms-grid-column: 2;
+        grid-column: 2;
+    -ms-grid-row: 1;
+        grid-row: 1;
 }
 
 .dfm + .dfm + .dfm + .dfm {
-    grid-column: 1;
-    grid-row: 1;
+    -ms-grid-column: 1;
+        grid-column: 1;
+    -ms-grid-row: 1;
+        grid-row: 1;
 }
 
 .mobDead {
@@ -3725,24 +4447,37 @@ div.EquipmentCardsContainer {
 }
 
 #drStats {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     min-height: 350px;
 }
 
 #drStatsHero, #drStatsMob {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
-    grid-template-rows: repeat(2, minmax(150px, 1fr));
+    -ms-grid-columns: (minmax(150px, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+    -ms-grid-rows: (minmax(150px, 1fr))[2];
+        grid-template-rows: repeat(2, minmax(150px, 1fr));
     grid-gap: 10px;
     margin: 10px;
     width: 100%;
 }
 
 .dsc, .dsm {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     text-align: center;
     padding: 10px;
     background-color: var(--bg-primary);
@@ -3751,41 +4486,59 @@ div.EquipmentCardsContainer {
 }
 
 .dsm {
-    grid-column: 2;
-    grid-row: 1;
+    -ms-grid-column: 2;
+        grid-column: 2;
+    -ms-grid-row: 1;
+        grid-row: 1;
 }
 
 .dsm + .dsm {
-    grid-column: 1;
-    grid-row: 1;
+    -ms-grid-column: 1;
+        grid-column: 1;
+    -ms-grid-row: 1;
+        grid-row: 1;
 }
 
 .dsm + .dsm + .dsm {
-    grid-column: 2;
-    grid-row: 2;
+    -ms-grid-column: 2;
+        grid-column: 2;
+    -ms-grid-row: 2;
+        grid-row: 2;
 }
 
 .dsm + .dsm + .dsm + .dsm {
-    grid-column: 1;
-    grid-row: 2;
+    -ms-grid-column: 1;
+        grid-column: 1;
+    -ms-grid-row: 2;
+        grid-row: 2;
 }
 
 .drTurnOrderLogContainer {
+    display: -ms-grid;
     display: grid;
     grid-template: auto 1fr / 1fr 1fr;
-    justify-content: center;
-    align-items: start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-row-align: start;
+        align-items: start;
     height: 100%;
     overflow: auto;
 }
 
 .drTurnOrderLogTitles {
     grid-column: 1 / -1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: var(--bg-primary);
     border-bottom: 2px solid var(--border-primary);
+    font-size: 9.6px;
     font-size: 0.6rem;
     text-transform: uppercase;
 }
@@ -3801,11 +4554,14 @@ div.EquipmentCardsContainer {
 }
 
 #drTurnOrder {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px,1fr));
     grid-gap: 10px;
-    align-items: start;
-    align-content: start;
+    -ms-grid-row-align: start;
+        align-items: start;
+    -ms-flex-line-pack: start;
+        align-content: start;
     padding: 10px;
     height: 100%;
     overflow: auto;
@@ -3813,9 +4569,16 @@ div.EquipmentCardsContainer {
 
 .orderUnit {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 10px;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
@@ -3828,7 +4591,9 @@ div.EquipmentCardsContainer {
 
 .orderUnitHead {
     margin: 10px 0;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 .orderUnitHeadImg, .orderUnitHead, .orderUnitHP, .orderUnitAP {
@@ -3840,8 +4605,13 @@ div.EquipmentCardsContainer {
 }
 
 #drLog {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 100%;
     border-left: 2px solid var(--border-primary);
     overflow: auto;
@@ -3889,7 +4659,9 @@ div.EquipmentCardsContainer {
 #drLogHero, #drLogMob {
     height: 100%;
     border-top: 1px solid var(--border-primary);
-    flex: 1 300px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 300px;
+            flex: 1 300px;
     padding: 15px;
     overflow-y: auto;
 }
@@ -3909,13 +4681,18 @@ div.EquipmentCardsContainer {
 }
 
 #drTop {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .dungeonTeamCollection, .dungeonAvailableCollection {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    -ms-grid-columns: (minmax(165px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
     grid-gap: 5px;
 }
 
@@ -3924,11 +4701,16 @@ div.EquipmentCardsContainer {
 }
 
 div#dungeonTeamButton {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: relative;
     margin-top: 20px;
     padding: 15px;
+    font-size: 13.6px;
     font-size: 0.85rem;
     text-align: center;
     text-transform: uppercase;
@@ -3950,10 +4732,8 @@ div#dungeonTeamButton:not(.dungeonStartNotAvailable):after, .heroExamineLvlButto
     border-radius: 5px;
     z-index: -1;
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     -webkit-transform: scaleY(1) scaleX(1);
-    -moz-transform: scaleY(1) scaleX(1);
-    -ms-transform: scaleY(1) scaleX(1);
-    -o-transform: scaleY(1) scaleX(1);
     transform: scaleY(1) scaleX(1);
     -webkit-animation: 1s button-active infinite;
     animation: 1s button-active infinite;
@@ -3964,22 +4744,37 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     background-color: var(--bg-primary);
     cursor: not-allowed;
     opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
 
 .dungeonAvailableStats, .dungeonNotAvailableStats, .dungeonTeamStats {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 5px;
 }
 
 .heroStat {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin: 2.5px;
     padding: 5px;
     background-color: var(--border-primary);
@@ -4006,9 +4801,14 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .buyHeroCost {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .buyHeroCost > img {
@@ -4017,8 +4817,12 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .repBarDiv, .notoBarDiv, .desynthBarDiv {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 23px;
     margin: 2px 0;
     border: 1px solid rgb(100, 100, 100);
@@ -4027,6 +4831,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .repBar {
+    font-size: 14.4px;
     font-size: .9rem;
 }
 
@@ -4061,9 +4866,15 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 .hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before, .masteryBar:before, .repBar:before, .notoBar:before, .desynthBar:before {
     content: " " attr(data-label);
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     height: 100%;
     font-size: 0.9em;
@@ -4101,9 +4912,13 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 #floorProgressBarContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     max-width: 300px;
     height: 23px;
     margin: 5px 0;
@@ -4120,9 +4935,15 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 #floorProgressBar {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    flex-grow: 1;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     height: 100%;
     margin: 0;
 }
@@ -4152,32 +4973,52 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .buildingContentContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
 }
 
 #buildingRecipes {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 20px;
 }
 
 #buildingList {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: var(--bg-primary);
     border-right: 1px solid var(--border-primary);
     width: 100%;
     max-width: 220px;
     height: 100%;
     overflow: auto;
-    transform-origin: left;
+    -webkit-transform-origin: left;
+            transform-origin: left;
     -webkit-animation: 0.15s scale-x-in forwards;
     animation: 0.15s scale-x-in forwards;
 }
@@ -4187,23 +5028,35 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 #buildingContent {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     height: 100%;
     overflow: auto;
 }
 
 .buildingInfo {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 20px 5px;
     max-height: 200px;
     background-color: var(--bg-tertiary);
     border-bottom: 2px solid var(--border-primary);
     overflow: hidden;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     -webkit-animation: 0.2s .15s fade-in forwards;
     animation: 0.2s .15s fade-in forwards;
 }
@@ -4212,6 +5065,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     display: none;
     padding: 10px;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     -webkit-animation: 0.2s .15s fade-in forwards;
     animation: 0.2s .15s fade-in forwards;
 }
@@ -4228,26 +5082,32 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .buildingFusion .buildingInfoBackground {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/images/townImages/fuseBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/images/townImages/fuseBuilding/bg.png);
 }
 
 .buildingBank .buildingInfoBackground {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(57, 111, 39) 40%, rgb(57, 111, 39) 60%, transparent 100%), url(/images/townImages/bankBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(57, 111, 39) 40%, rgb(57, 111, 39) 60%, transparent 100%), url(/images/townImages/bankBuilding/bg.png);
 }
 
 .buildingSmith .buildingInfoBackground {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/images/townImages/smithBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/images/townImages/smithBuilding/bg.png);
 }
 
 .buildingFortune .buildingInfoBackground {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(65, 123, 48) 40%, rgb(65, 123, 48) 60%, transparent 100%), url(/images/townImages/fortuneBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(65, 123, 48) 40%, rgb(65, 123, 48) 60%, transparent 100%), url(/images/townImages/fortuneBuilding/bg.png);
 }
 
 .buildingResearch .buildingInfoBackground {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/images/townImages/researchBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/images/townImages/researchBuilding/bg.png);
 }
 
 .buildingDesynth .buildingInfoBackground {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/desynthBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/desynthBuilding/bg.png);
 }
 
@@ -4257,7 +5117,9 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .buildingInfoImage > img {
     max-height: 100px;
-    filter: drop-shadow(0 0 5px black)
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="5" /><feOffset dx="1" dy="1" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,1)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
+    -webkit-filter: drop-shadow(0 0 5px black);
+            filter: drop-shadow(0 0 5px black)
 }
 
 .buildingInfoName {
@@ -4275,11 +5137,13 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     height: 2px;
     margin: 5px auto;
     background-color: var(--highlight);
-    animation: 1s 0.3s width forwards;
+    -webkit-animation: 1s 0.3s width forwards;
+            animation: 1s 0.3s width forwards;
 }
 
 .buildingInfoName > h2 {
     margin: 0;
+    font-size: 32px;
     font-size: 2rem;
     font-weight: normal;
     text-shadow: 2px 2px 0 black;
@@ -4292,10 +5156,12 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .buildInProgress .buildingInfoBackground {
     -webkit-filter: grayscale(1);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
     filter: grayscale(1);
 }
 
 #fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleDesynthHolder, #fortuneGear {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
@@ -4304,10 +5170,19 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .alPerk, .desynthSlot, .desynthGroup, .fortuneItem {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 10px;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
@@ -4319,10 +5194,19 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .fuseSlotName, .bankItemName, .possibleFuse, .smithItemName, .fortuneStatusHeading, .gearItemName, .orderName, .desynthName, .fortuneItemName {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
 }
 
@@ -4389,6 +5273,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .possibleFuseHolder {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 10px;
@@ -4396,10 +5281,19 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .possibleFusegroup {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 10px;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
@@ -4447,11 +5341,15 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 #bankContainer {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(2, 1fr);
     grid-gap: 20px;
-    justify-content: start;
-    align-items: start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -ms-grid-row-align: start;
+        align-items: start;
 }
 
 #bankInvSlots, #bankBankSlots {
@@ -4464,9 +5362,15 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .bankBankHeadContainer, .bankInvHeadContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 0;
     min-height: 50px;
 }
@@ -4517,9 +5421,15 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 #smithWorkingArea, #desynthSide, #fortuneTop {
     margin: -10px -10px 10px -10px;
     padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     min-height: 200px;
     background-color: var(--bg-tertiary);
@@ -4532,19 +5442,34 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 #swItemStage, #swMiddle, #swItemResult {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 0 10px;
     max-width: 225px;
     width: 100%;
 }
 
 #swMiddleText {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     color: #fff;
 }
 
@@ -4604,10 +5529,17 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .smithCostContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .smith_title {
@@ -4619,10 +5551,17 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 #swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .dungeon_cost, .recipeBuyCardBuyCost, .alPerkBuyCost, .guildOrderSubmitValue, .fuseStartCost, #collectResmith {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .recipeBuyCardBuyCost, .alPerkBuyCost, .guildOrderSubmitValue, .fuseStartCost {
@@ -4635,7 +5574,9 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .smith_cost {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     width: unset;
     margin: 5px 2.5px 0;
 }
@@ -4660,10 +5601,17 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .item-prefix-name {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     margin: auto 0;
 }
@@ -4702,9 +5650,14 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .fortuneStatusContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .fortuneStatus {
@@ -4763,10 +5716,19 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .fortuneStageContainer, #fortuneStart, .fortuneSlotsContainer {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     margin: 0 10px;
     max-width: 200px;
@@ -4778,19 +5740,34 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .buildingMatTable {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 10px;
 }
 
 .buildingMatDiv {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
 }
 
@@ -4828,8 +5805,12 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .buildingInstr {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 10px;
     padding: 15px;
     width: 100%;
@@ -4837,9 +5818,15 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .buildingInstrHead {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: var(--border-tertiary);
     border: 1px solid var(--border-tertiary);
     color: var(--highlight);
@@ -4876,20 +5863,27 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 #emptyTown > i {
     position: absolute;
     left: 20px;
+    font-size: 48px;
     font-size: 3rem;
     color: var(--text-white);
     opacity: 0.25;
-    transform: rotate(-30deg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
 }
 
 #desynthSide {
-    align-items: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+                -ms-grid-row-align: start;
+            align-items: start;
 }
 
 #desynthSlot {
     min-width: 200px;
     margin: 0 20px;
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
 }
 
 .desynthSlot {
@@ -4909,9 +5903,14 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .heroUnequipSlot {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: unset;
     width: 150px;
     padding: 5px;
@@ -4941,9 +5940,15 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 #desynthReward {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 10px;
     padding: 8px 10px;
     background-color: var(--bg-primary);
@@ -4981,42 +5986,65 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 #eventContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
     overflow: auto;
 }
 
 #eventListContainer {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 100%;
     width: 100%;
     max-width: 250px;
     background-color: var(--bg-primary);
     border-right: 1px solid var(--border-primary);
     overflow: auto;
-    transform-origin: left;
+    -webkit-transform-origin: left;
+            transform-origin: left;
     -webkit-animation: 0.15s scale-x-in;
     animation: 0.15s scale-x-in;
 }
 
 #readUnread {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     color: var(--text-tertiary);
     border-bottom: 1px solid var(--border-primary)
 }
 
 .readOption, .heroTab {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     padding: 12px 15px;
     color: var(--text-tertiary);
     cursor: pointer;
@@ -5046,13 +6074,22 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 #eventList {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    padding-bottom: 20px;
 }
 
 .eventList {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: left;
-    align-items: center;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 12px 15px;
     border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
@@ -5074,21 +6111,28 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 #eventContent {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    font-size: 14.4px;
     font-size: 0.9rem;
     padding: 15px;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     -webkit-animation: 0.2s .15s fade-in forwards;
     animation: 0.2s .15s fade-in forwards;
 }
 
 .eventBody {
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     -webkit-animation: 0.2s .15s fade-in forwards;
     animation: 0.2s .15s fade-in forwards;
 }
 
 .eventAuthor {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     padding: 5px 10px;
     color: var(--text-tertiary);
@@ -5101,8 +6145,13 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .eventMessage {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 15px;
     margin: 10px 0;
     background-color: var(--bg-primary);
@@ -5111,14 +6160,20 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .eventStatsContainer {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill,minmax(300px,1fr));
     grid-gap: 5px;
 }
 
 .eventContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 10px;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
@@ -5153,10 +6208,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .eventActionsContainer {
+    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(100px, 1fr));
     grid-gap: 10px;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .eventActionButton {
@@ -5164,11 +6220,15 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .eventConfirm {
-    grid-column: 1 / span 2;
+    -ms-grid-column-span: 2;
+    -ms-grid-column: 1;
+        grid-column: 1 / span 2;
 }
 
 #eventCollectAll {
-    grid-column: 3 / span 3;
+    -ms-grid-column-span: 3;
+    -ms-grid-column: 3;
+        grid-column: 3 / span 3;
 }
 
 .rewardDivTitle {
@@ -5180,9 +6240,14 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     padding: 3px 10px;
     margin-top: 10px;
     margin-right: 5px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    align-items: center;
-    flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
 }
@@ -5201,10 +6266,17 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 footer {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    grid-row: 2;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-row: 2;
+        grid-row: 2;
     grid-column: 1 / -1;
     font-size: 14px;
     background-color: var(--bg-primary);
@@ -5213,8 +6285,12 @@ footer {
 }
 
 #bottom-left, #bottom-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 footer a, .footer_more-btn {
@@ -5235,12 +6311,13 @@ footer a:hover, .footer_more-btn:hover {
 }
 
 #bottom-right a, .footer_more-btn {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-transition: background-color var(--transition);
-    -moz-transition: background-color var(--transition);
-    -ms-transition: background-color var(--transition);
-    -o-transition: background-color var(--transition);
     transition: background-color var(--transition);
 }
 
@@ -5249,9 +6326,6 @@ footer a:hover, .footer_more-btn:hover {
     font-size: 1em;
     color: var(--text-tertiary);
     -webkit-transition: color var(--transition);
-    -moz-transition: color var(--transition);
-    -ms-transition: color var(--transition);
-    -o-transition: color var(--transition);
     transition: color var(--transition);
 }
 
@@ -5278,7 +6352,8 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .footer_more-btn:hover + .footer_more-list, .footer_more-list:hover {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
 }
 
 .footer_more-list {
@@ -5292,8 +6367,10 @@ footer a[href*="discord.gg"]:hover {
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-primary);
     overflow: hidden;
-    transform: scale(0);
-    transform-origin: bottom;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
     z-index: 10;
 }
 
@@ -5302,6 +6379,8 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .footer_more-list li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
 }
@@ -5335,13 +6414,11 @@ footer a[href*="discord.gg"]:hover {
     border: 8px solid transparent;
     border-bottom-color: black;
     -webkit-transform: scale(0) rotate(180deg) translateX(50%);
-    -moz-transform: scale(0) rotate(180deg) translateX(50%);
-    -ms-transform: scale(0) rotate(180deg) translateX(50%);
-    -o-transform: scale(0) rotate(180deg) translateX(50%);
     transform: scale(0) rotate(180deg) translateX(50%);
     pointer-events: none;
     z-index: 10;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 } 
 
 .tooltip:after {
@@ -5355,37 +6432,33 @@ footer a[href*="discord.gg"]:hover {
     background-color: #000;
     border-radius: 5px;
     color: #fff;
+    font-size: 12px;
     font-size: 0.75rem;
     text-align: center;
     text-transform: none;
     word-wrap: break-word;
     -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
     transform: scale(0);
-    transform-origin: bottom center;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
     pointer-events: none;
     z-index: 10;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 
 .tooltip:hover:after {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
     transform: scale(1);
 }
 
 .tooltip:hover:before {
     top: -35%;
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     -webkit-transform: rotate(180deg) translateX(50%);
-    -moz-transform: rotate(180deg) translateX(50%);
-    -ms-transform: rotate(180deg) translateX(50%);
-    -o-transform: rotate(180deg) translateX(50%);
     transform: rotate(180deg) translateX(50%);
 }
 
@@ -5396,18 +6469,17 @@ footer a[href*="discord.gg"]:hover {
 
 #clearSave.tooltip:after {
     left: 10px;
-    transform-origin: 10% bottom;
+    -webkit-transform-origin: 10% bottom;
+            transform-origin: 10% bottom;
 }
 
 .ASauto.tooltip:before, .WSAuto.tooltip:before {
     top: 2px;
     left: 105%;
     -webkit-transform: scale(0) rotate(-90deg);
-    -moz-transform: scale(0) rotate(-90deg);
-    -ms-transform: scale(0) rotate(-90deg);
-    -o-transform: scale(0) rotate(-90deg);
     transform: scale(0) rotate(-90deg);
-    transform-origin: bottom center;
+    -webkit-transform-origin: bottom center;
+            transform-origin: bottom center;
 }
 
 .ASauto.tooltip:after {
@@ -5416,14 +6488,12 @@ footer a[href*="discord.gg"]:hover {
     left: 140%;
     bottom: unset;
     width: 150px;
-    transform-origin: left;
+    -webkit-transform-origin: left;
+            transform-origin: left;
 }
 
 .ASauto.tooltip:hover:before, .WSAuto.tooltip:hover:before {
     -webkit-transform: scale(1) rotate(-90deg);
-    -moz-transform: scale(1) rotate(-90deg);
-    -ms-transform: scale(1) rotate(-90deg);
-    -o-transform: scale(1) rotate(-90deg);
     transform: scale(1) rotate(-90deg);
 }
 
@@ -5436,7 +6506,8 @@ footer a[href*="discord.gg"]:hover {
     left: 35px;
     bottom: 5px;
     width: 150px;
-    transform-origin: bottom left;
+    -webkit-transform-origin: bottom left;
+            transform-origin: bottom left;
 }
 
 .itemToSac.tooltip:before {
@@ -5461,9 +6532,6 @@ footer a[href*="discord.gg"]:hover {
 
 .recipeDescription.tooltip:before {
     -webkit-transform: none;
-    -moz-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
     transform: none;
     top: 135%;
     left: unset;
@@ -5480,7 +6548,8 @@ footer a[href*="discord.gg"]:hover {
     left: 3px;
     right: unset;
     bottom: unset;
-    transform-origin: top left;
+    -webkit-transform-origin: top left;
+            transform-origin: top left;
 }
 
 .recipeStatList > .tooltip:after, .invProp > .tooltip:after {
@@ -5504,7 +6573,8 @@ footer a[href*="discord.gg"]:hover {
     bottom: 130%;
     left: 0;
     right: 0;
-    transform-origin: bottom left;
+    -webkit-transform-origin: bottom left;
+            transform-origin: bottom left;
 }
 
 .material.tooltip:after {
@@ -5516,7 +6586,8 @@ footer a[href*="discord.gg"]:hover {
     right: unset;
     width: 100px;
     bottom: 135%;
-    transform-origin: left 30px;
+    -webkit-transform-origin: left 30px;
+            transform-origin: left 30px;
 }
 
 .wsbLvl.tooltip:before {  
@@ -5527,7 +6598,8 @@ footer a[href*="discord.gg"]:hover {
     left: -1px;
     right: -1px;
     bottom: 135%;
-    transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+            transform-origin: right bottom;
 }
 
 .wsbCraft.tooltip:before {
@@ -5548,7 +6620,8 @@ footer a[href*="discord.gg"]:hover {
     right: -10px;
     width: 155px;
     margin: 0 auto;
-    transform-origin: 90% bottom;
+    -webkit-transform-origin: 90% bottom;
+            transform-origin: 90% bottom;
 }
 
 .BuyWorker.tooltip:after, .WorkerUpgrade.workerUpgradeDisable:after {
@@ -5590,7 +6663,8 @@ footer a[href*="discord.gg"]:hover {
     right: unset;
     bottom: unset;
     margin-left: 0;
-    transform-origin: left top;
+    -webkit-transform-origin: left top;
+            transform-origin: left top;
 }
 
 .buildingMatDiv.tooltip:after {
@@ -5635,7 +6709,8 @@ footer a[href*="discord.gg"]:hover {
 
 .recipeTimeContainer.tooltip:after {
     left: -65px;
-    transform-origin: 45px bottom;
+    -webkit-transform-origin: 45px bottom;
+            transform-origin: 45px bottom;
 }
 
 .recipeValueContainer.tooltip:before {
@@ -5656,7 +6731,8 @@ footer a[href*="discord.gg"]:hover {
     bottom: 135%;
     left: unset;
     right: 0;
-    transform-origin: center bottom;
+    -webkit-transform-origin: center bottom;
+            transform-origin: center bottom;
 }
 
 .heroStat.tooltip:after, .heroPowStat.tooltip:after, .gearStat.tooltip:after {
@@ -5716,6 +6792,7 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .patchNoteDate {
+    font-size: 13.6px;
     font-size: .85rem;
     color: var(--text-secondary);
 }
@@ -5756,15 +6833,22 @@ footer a[href*="discord.gg"]:hover {
 }
 
 #pfButtons, #pfImportExport {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #exportSaveLocal, #updateRefresh, #clearSettings {
     margin: 10px 0;
     padding: 10px 25px;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     text-transform: uppercase;
     background-color: rgba(255,255,255,.05);
     color: var(--text-primary);
@@ -5801,10 +6885,12 @@ footer a[href*="discord.gg"]:hover {
     -webkit-animation: 0.2s scale-in;
     animation: 0.2s scale-in;
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 #pfImportExport {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 #pfStatus, #pfSaveStatus {
@@ -5845,8 +6931,10 @@ span.beta-tag {
 }
 
 .selections-grid {
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
 }
 
 .selection-container {
@@ -5869,6 +6957,7 @@ span.beta-tag {
 .selection-container input {
     position: absolute;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     cursor: pointer;
     height: 0;
     width: 0;
@@ -5883,7 +6972,8 @@ span.beta-tag {
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
     border-radius: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
 }
 
 .selection:after {
@@ -5891,14 +6981,12 @@ span.beta-tag {
     content: "";
     display: none;
     -webkit-transform: rotate(45deg) scale(0);
-    -ms-transform: rotate(45deg) scale(0);
     transform: rotate(45deg) scale(0);
 }
 
 .selection-container input:checked ~ .selection:after {
     display: block;
     -webkit-transform: rotate(45deg) scale(1);
-    -ms-transform: rotate(45deg) scale(1);
     transform: rotate(45deg) scale(1);
 }
 
@@ -5939,6 +7027,7 @@ span.beta-tag {
 }
 
 #updateRefresh {
+    font-size: 16px;
     font-size: 1rem;
     background-color: var(--green-tertiary);
     text-align: center;
@@ -5957,12 +7046,14 @@ span.beta-tag {
     left: 0;
     bottom: 0;
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     pointer-events: none;
     z-index: 9999;
 }
 
 .dialog:target {
     opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     pointer-events: auto;
 }
 
@@ -5971,9 +7062,6 @@ span.beta-tag {
     margin: auto;
     top: 50%;
     -webkit-transform: translateY(0%);
-    -moz-transform: translateY(0%);
-    -ms-transform: translateY(0%);
-    -o-transform: translateY(0%);
     transform: translateY(0%);
     width: 100%;
     max-width: 500px;
@@ -5981,8 +7069,6 @@ span.beta-tag {
     max-height: 400px;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
-    -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
-    -moz-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -ms-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     -o-box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
     box-shadow: 0 0 15px 0 rgba(0,0,0,0.25);
@@ -5990,9 +7076,6 @@ span.beta-tag {
 
 .dialog:target .dialog_content {
     -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
@@ -6003,6 +7086,7 @@ span.beta-tag {
 
 .dialog:target ~ .game-content {
     opacity: 0.1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
 }
 
 .dialog_header {
@@ -6014,9 +7098,15 @@ span.beta-tag {
 }
 
 .dialog_close {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: absolute;
     top: 5px;
     right: 5px;
@@ -6078,13 +7168,20 @@ span.beta-tag {
 }
 
 .dialog_btn_actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .btn_action {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 
 .btn_action > button {
@@ -6093,12 +7190,34 @@ span.beta-tag {
 
 /* Animation Keyframes */
 
-@keyframes fade-in {
+@-webkit-keyframes fade-in {
     from {
         opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     }
     to {
         opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+    to {
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+}
+
+@-webkit-keyframes width {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
     }
 }
 
@@ -6111,15 +7230,48 @@ span.beta-tag {
     }
 }
 
-@keyframes gleam {
+@-webkit-keyframes gleam {
     0% {
         opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     }
     50% {
         opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     }
     100% {
         opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+}
+
+@keyframes gleam {
+    0% {
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+    50% {
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    }
+    100% {
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+}
+
+@-webkit-keyframes ascend-hands {
+    0% {
+        background-position: 0 100px;
+    }
+    20% {
+        background-position: 0 0;
+    }
+    80% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100px;
     }
 }
 
@@ -6138,6 +7290,21 @@ span.beta-tag {
     }
 }
 
+@-webkit-keyframes descend-spiders-1 {
+    0% {
+        background-position: 30% -300px;
+    }
+    20% {
+        background-position: 30% -150px;
+    }
+    80% {
+        background-position: 30% -150px;
+    }
+    100% {
+        background-position: 30% -300px;
+    }
+}
+
 @keyframes descend-spiders-1 {
     0% {
         background-position: 30% -300px;
@@ -6150,6 +7317,21 @@ span.beta-tag {
     }
     100% {
         background-position: 30% -300px;
+    }
+}
+
+@-webkit-keyframes descend-spiders-2 {
+    0% {
+        background-position: center -300px;
+    }
+    20% {
+        background-position: center 0;
+    }
+    80% {
+        background-position: center 0;
+    }
+    100% {
+        background-position: center -300px;
     }
 }
 
@@ -6168,15 +7350,45 @@ span.beta-tag {
     }
 }
 
-@keyframes notification {
+@-webkit-keyframes notification {
     0% {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
     50% {
-        transform: scale(.8);
+        -webkit-transform: scale(.8);
+                transform: scale(.8);
     }
     100% {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+@keyframes notification {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(.8);
+                transform: scale(.8);
+    }
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+@-webkit-keyframes point-right {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 10px;
+    }
+    100% {
+        left: 0;
     }
 }
 
@@ -6192,53 +7404,129 @@ span.beta-tag {
     }
 }
 
-@keyframes scale-in {
+@-webkit-keyframes scale-in {
     from {
-        transform: scale(0);
+        -webkit-transform: scale(0);
+                transform: scale(0);
     }
     to {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+@keyframes scale-in {
+    from {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+    }
+    to {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+
+@-webkit-keyframes scale-x-in {
+    from {
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+    }
+    to {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
     }
 }
 
 @keyframes scale-x-in {
     from {
-        transform: scaleX(0);
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
     }
     to {
-        transform: scaleX(1);
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+    }
+}
+
+@-webkit-keyframes scale-y-in {
+    from {
+        -webkit-transform: scaleY(0);
+                transform: scaleY(0);
+    }
+    to {
+        -webkit-transform: scaleY(1);
+                transform: scaleY(1);
     }
 }
 
 @keyframes scale-y-in {
     from {
-        transform: scaleY(0);
+        -webkit-transform: scaleY(0);
+                transform: scaleY(0);
     }
     to {
-        transform: scaleY(1);
+        -webkit-transform: scaleY(1);
+                transform: scaleY(1);
+    }
+}
+
+@-webkit-keyframes button-active {
+    0% {
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        -webkit-transform: scaleY(1) scaleX(1);
+                transform: scaleY(1) scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        -webkit-transform: scaleY(1.5) scaleX(1.1);
+                transform: scaleY(1.5) scaleX(1.1);
     }
 }
 
 @keyframes button-active {
     0% {
         opacity: 1;
-        transform: scaleY(1) scaleX(1);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        -webkit-transform: scaleY(1) scaleX(1);
+                transform: scaleY(1) scaleX(1);
     }
     100% {
         opacity: 0;
-        transform: scaleY(1.5) scaleX(1.1);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        -webkit-transform: scaleY(1.5) scaleX(1.1);
+                transform: scaleY(1.5) scaleX(1.1);
+    }
+}
+
+@-webkit-keyframes btn-press {
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(.97);
+                transform: scale(.97);
+    }
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
 }
 
 @keyframes btn-press {
     0% {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
     50% {
-        transform: scale(.97);
+        -webkit-transform: scale(.97);
+                transform: scale(.97);
     }
     100% {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
 }
 
@@ -6267,8 +7555,13 @@ span.beta-tag {
     }
 
     .buyNewHeroButton {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .buyHeroText {
@@ -6290,8 +7583,13 @@ span.beta-tag {
     }
 
     .buyNewHeroButton {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .buyHeroText {
@@ -6322,9 +7620,14 @@ span.beta-tag {
     }
 
     .mobile-nav-listing {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         margin: 0 auto;
         padding: 0;
         max-width: 600px;
@@ -6333,7 +7636,9 @@ span.beta-tag {
     }
 
     .mobile-nav-listing .nav-item {
-        flex-grow: 1;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
         font-size: 0.75rem;
     }
 
@@ -6404,9 +7709,14 @@ span.beta-tag {
 /* Expand equip slots to use all available space on large displays */
 @media screen and (min-width: 1550px) {
     .heroExamineEquip {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
         max-width: 1100px;
     }
 }
@@ -6422,6 +7732,7 @@ span.beta-tag {
     }
 
     .recipeContents .itemCost {
+        display: -ms-grid;
         display: grid;
         grid-template: 1fr 1fr / repeat(auto-fill, minmax(50px, 1fr));
     }
@@ -6441,7 +7752,8 @@ span.beta-tag {
 
 @media screen and (min-width: 1775px) {
     #dungeonHeroList, #dungeonMobList {
-        grid-template-columns: repeat(4, minmax(150px, 1fr));
+        -ms-grid-columns: (minmax(150px, 1fr))[4];
+            grid-template-columns: repeat(4, minmax(150px, 1fr));
         grid-gap: 10px;
     }
 
@@ -6454,48 +7766,66 @@ span.beta-tag {
     }
 
     #drStatsHero, #drStatsMob {
-        grid-template-columns: repeat(4, minmax(75px, 1fr));
-        grid-template-rows: 150px;
+        -ms-grid-columns: (minmax(75px, 1fr))[4];
+            grid-template-columns: repeat(4, minmax(75px, 1fr));
+        -ms-grid-rows: 150px;
+            grid-template-rows: 150px;
     }
 
     .dsm, .dfm {
-        grid-column: 4;
-        grid-row: 1;
+        -ms-grid-column: 4;
+            grid-column: 4;
+        -ms-grid-row: 1;
+            grid-row: 1;
     }
 
     .dsm + .dsm, .dfm + .dfm {
-        grid-column: 3;
-        grid-row: 1;
+        -ms-grid-column: 3;
+            grid-column: 3;
+        -ms-grid-row: 1;
+            grid-row: 1;
     }
 
     .dsm + .dsm + .dsm, .dfm + .dfm + .dfm {
-        grid-column: 2;
-        grid-row: 1;
+        -ms-grid-column: 2;
+            grid-column: 2;
+        -ms-grid-row: 1;
+            grid-row: 1;
     }
 
     .dsm + .dsm + .dsm + .dsm, .dfm + .dfm + .dfm + .dfm {
-        grid-column: 1;
-        grid-row: 1;
+        -ms-grid-column: 1;
+            grid-column: 1;
+        -ms-grid-row: 1;
+            grid-row: 1;
     }
 
     .dsc, .dfc {
-        grid-column: 1;
-        grid-row: 1;
+        -ms-grid-column: 1;
+            grid-column: 1;
+        -ms-grid-row: 1;
+            grid-row: 1;
     }
 
     .dsc + .dsc, .dfc + .dfc {
-        grid-column: 2;
-        grid-row: 1;
+        -ms-grid-column: 2;
+            grid-column: 2;
+        -ms-grid-row: 1;
+            grid-row: 1;
     }
 
     .dsc + .dsc + .dsc, .dfc + .dfc + .dfc {
-        grid-column: 3;
-        grid-row: 1;
+        -ms-grid-column: 3;
+            grid-column: 3;
+        -ms-grid-row: 1;
+            grid-row: 1;
     }
 
     .dsc + .dsc + .dsc + .dsc, .dfc + .dfc + .dfc + .dfc {
-        grid-column: 4;
-        grid-row: 1;
+        -ms-grid-column: 4;
+            grid-column: 4;
+        -ms-grid-row: 1;
+            grid-row: 1;
     }
 }
 
@@ -6522,9 +7852,15 @@ span.beta-tag {
 }
 
 .dbClose {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: absolute;
     top: 15px;
     right: 15px;
@@ -6580,10 +7916,17 @@ span.beta-tag {
 }
 
 .singleActionContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-right: 50px;
 }
 

@@ -23,6 +23,11 @@ function ImportSaveButton() {
     location.replace('/');
 }
 
+function forceSaveChange(string) {
+    localStorage.setItem('ffgs1', string);
+    location.replace('/');
+}
+
 let saveTime = 0;
 
 function saveGame(ms) {
@@ -195,10 +200,17 @@ function saveUpdate(loadGame) {
         if (loadGame["tm"].fortuneStatus !== BuildingState.hidden) loadGame["al"].purchased.push("AL4104");
 
         //now we have to take the highest perk you've bought, and make sure your notoriety matches it... or you have materials higher than the cap... ugh
-        const notoReq = loadGame["al"].purchased.map(p => ActionLeague.idToPerk(p).notoReq);
+        console.log(loadGame["al"]);
+        const notoReq = loadGame["al"].purchased.map(p => {
+            if (ActionLeague.idToPerk(p) === undefined) return 0;
+            return ActionLeague.idToPerk(p).notoReq;
+        });
         const maxNoto = Math.max(...notoReq);
 
-        const materialTier = loadGame["rs"].map(r => ResourceManager.idToMaterial(r.id).notoAdd);
+        const materialTier = loadGame["rs"].map(r => {
+            if (ResourceManager.idToMaterial(r.id) === undefined) return 0;
+            return ResourceManager.idToMaterial(r.id).notoAdd;
+        });
         const maxTier = Math.max(...materialTier);
 
             //we can't just set max notoriety, we have to fix the cap too which is killing the bosses...
@@ -241,7 +253,10 @@ function saveUpdate(loadGame) {
         }
 
         //add the missing notoriety based of boss kills (that's why we recalculate)
-        const notoReq2 = loadGame["al"].purchased.map(p => ActionLeague.idToPerk(p).notoReq);
+        const notoReq2 = loadGame["al"].purchased.map(p => {
+            if (ActionLeague.idToPerk(p) === undefined) return 0;
+            return ActionLeague.idToPerk(p).notoReq
+        });
         const maxNoto2 = Math.max(...notoReq2);
         loadGame["al"].notoriety = maxNoto2;
     }

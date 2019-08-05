@@ -165,7 +165,6 @@ function createFortuneCard(slot) {
 }
 
 $(document).on('click', '.fortuneStage', (e) => {
-    console.log('fire!')
     e.preventDefault();
     const containerID = parseInt($(e.currentTarget).attr("containerID"));
     console.log(containerID);

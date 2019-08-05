@@ -188,6 +188,7 @@ const Inventory = {
         if (id === "R99310") return unlockSmith();
         if (id === "R99510") return unlockFortune();
         if (id === "R99410") return unlockDesynth();
+        if (id === "R99610") return unlockTinker();
         const item = recipeList.idToItem(id)
         const name = item.name;
         const autoSell = item.autoSell;
@@ -340,6 +341,12 @@ const Inventory = {
     },
     nonEpic() {
         return this.nonblank().filter(i => i.rarity < 3);
+    },
+    getCommon() {
+        const item = this.nonblank().filter(item=>item.rarity === 0)[0];
+        if (item === null) return false;
+        this.removeContainerFromInventory(item.containerID);
+        return item;
     }
 }
 

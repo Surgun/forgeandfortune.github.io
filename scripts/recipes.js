@@ -51,7 +51,7 @@ class Item{
         return this.value;
     }
     visualizeResAndMat() {
-        const d = $("<div/>").addClass("itemCost")
+        const d = $("<div/>").addClass("itemCost");
         this.gcost.forEach(resource => {
             const guild = GuildManager.idToGuild(resource);
             d.append($("<div/>").addClass("indvCost resCost tooltip").attr("data-tooltip",guild.name+" Guild Worker").html('<img src="images/resources/'+resource+'.png">'));

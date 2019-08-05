@@ -8,6 +8,7 @@ const $fuseBuilding = $("#fuseBuilding");
 const $bankBuilding = $("#bankBuilding");
 const $smithBuilding = $("#smithBuilding");
 const $fortuneBuilding = $("#fortuneBuilding");
+const $tinkerBuilding = $("#tinkerBuilding");
 
 const TownManager = {
     lastBldg : null,
@@ -17,6 +18,7 @@ const TownManager = {
     fuseStatus : BuildingState.hidden,
     smithStatus : BuildingState.hidden,
     fortuneStatus : BuildingState.hidden,
+    tinkerStatus : BuildingState.hidden,
     purgeSlots : false,
     createSave() {
         const save = {};
@@ -25,6 +27,7 @@ const TownManager = {
         save.fuseStatus = this.fuseStatus;
         save.smithStatus = this.smithStatus;
         save.fortuneStatus = this.fortuneStatus;
+        save.tinkerStatus = this.tinkerStatus;
         return save;
     },
     loadSave(save) {
@@ -33,9 +36,10 @@ const TownManager = {
         if (save.fuseStatus !== undefined) this.fuseStatus = save.fuseStatus;
         if (save.smithStatus !== undefined) this.smithStatus = save.smithStatus;
         if (save.fortuneStatus !== undefined) this.fortuneStatus = save.fortuneStatus;
+        if (save.tinkerStatus !== undefined) this.tinkerStatus = save.tinkerStatus;
     },
     unseenLeft() {
-        const bldgs = [this.DesynthStatus,this.bankStatus,this.fuseStatus,this.smithStatus,this.fortuneStatus]
+        const bldgs = [this.DesynthStatus,this.bankStatus,this.fuseStatus,this.smithStatus,this.fortuneStatus,this.tinkerStatus]
         return bldgs.includes(BuildingState.unseen);
     },
     buildingPerk(type) {
@@ -59,10 +63,14 @@ const TownManager = {
             this.fortuneStatus = BuildingState.unseen;
             recipeList.idToItem("R99510").owned = true;
         }
+        if (type === "tinker") {
+            this.tinkerStatus = BuildingState.unseen;
+            recipeList.idToItem("R99610").owned = true;
+        }
         refreshSideTown();
     },
     buildingsOwned() {
-        const bldgs = [this.DesynthStatus,this.bankStatus,this.fuseStatus,this.smithStatus,this.fortuneStatus]
+        const bldgs = [this.DesynthStatus,this.bankStatus,this.fuseStatus,this.smithStatus,this.fortuneStatus,this.tinkerStatus]
         return bldgs.some((building) => building !== BuildingState.hidden);
     }
 }
@@ -108,6 +116,12 @@ function refreshSideTown() {
         if (TownManager.lastBldg === "fortune") d4.addClass("selected");
         if (TownManager.fortuneStatus === BuildingState.unseen) d4.addClass("hasEvent");
         $buildingList.append(d4);
+    }
+    if (TownManager.tinkerStatus >= 0) {
+        const d5 = $("<div/>").addClass("buildingName").attr("id","tinkerBldg").html(`Tinker Hut`);
+        if (TownManager.lastBldg === "tinker") d5.addClass("selected");
+        if (TownManager.fortuneStatus === BuildingState.unseen) d5.addClass("hasEvent");
+        $buildingList.append(d5);
     }
 }
 
@@ -218,6 +232,27 @@ function showFortuneBldg() {
     }
 }
 
+function showTinkerBldg() {
+    $(".buildingTab").removeClass("bldgTabActive").hide();
+    $tinkerBuilding.addClass("bldgTabActive");
+    $buildingHeader.empty();
+    $buildBuilding.hide();
+    const d = $("<div/>").addClass("buildingInfo buildingTinker");
+        const da = $("<div/>").addClass("buildingInfoBackground");
+        const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
+        if (TownManager.tinkerStatus === BuildingState.built) db.html("<img src='images/townImages/fortuneBuilding/tinker_building.png'>");
+        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Tinker Hut</h2>");
+        const dd = $("<div/>").addClass("buildingInfoDesc").html("Tinker stuff");
+        if (TownManager.tinkerStatus === BuildingState.built) d.addClass("buildInProgress");
+        d.append(da,db,dc,dd);
+    $buildingHeader.append(d);
+    if (TownManager.tinkerStatus === BuildingState.built) initiateTinkerBldg();
+    else {
+        $buildBuilding.show();
+        buildScreen("tinker");
+    }
+}
+
 $(document).on('click', "#DesynthBldg", (e) => {
     e.preventDefault();
     if (TownManager.lastBldg === "Desynth") return;
@@ -278,6 +313,18 @@ $(document).on('click', '#fortuneBldg', (e) => {
     $("#fortuneBldg").addClass("selected");
     $("#fortuneBldg").removeClass("hasEvent");
     showFortuneBldg();
+});
+
+$(document).on('click', '#tinkerBldg', (e) => {
+    e.preventDefault();
+    if (TownManager.lastBldg === "tinker") return;
+    TownManager.lastBldg = "tinker";
+    if (TownManager.tinkerStatus === BuildingState.unseen) TownManager.tinkerStatus = BuildingState.seen;
+    $(".buildingName").removeClass("selected");
+    if (!TownManager.unseenLeft()) $("#townTab").removeClass("hasEvent");
+    $("#tinkerBldg").addClass("selected");
+    $("#tinkerBldg").removeClass("hasEvent");
+    showTinkerBldg();
 });
 
 const $buildingRecipes = $("#buildingRecipes");
@@ -352,4 +399,14 @@ function unlockFortune() {
     $("#fortuneBldg").addClass("selected");
     refreshSideTown();
     showFortuneBldg();
+}
+
+function unlockTinker() {
+    TownManager.tinkerStatus = BuildingState.built;
+    TownManager.lastBldg = "tinker";
+    TownManager.purgeSlots = true;
+    $(".buildingName").removeClass("selected");
+    $("#tinkerBldg").addClass("selected");
+    refreshSideTown();
+    showTinkerBldg();
 }

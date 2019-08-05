@@ -142,6 +142,18 @@ function loadDungeonFloors() {
             const floor = new FloorTemplate(props);
             FloorManager.addFloor(floor);
         });
+        loadTinker();
+    });
+}
+
+function loadTinker() {
+    $.ajax({
+        url: "json/tinker.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            const command = new tinkerCommand(props);
+            TinkerManager.addCommand(command);
+        });
         afterLoad();
     });
 }

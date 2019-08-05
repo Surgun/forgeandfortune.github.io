@@ -4217,5 +4217,92 @@
     "goldCost": null,
     "repReq": null,
     "recipeType": "fortune"
+  },
+  {
+    "id": "R99610",
+    "name": "Tinker Hut",
+    "description": "Description Description Description",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 2700000,
+    "type": "tinker",
+    "gcost": [
+      "G003"
+    ],
+    "mcost": {
+      "M105": 40,
+      "M205": 40,
+      "M305": 40
+    },
+    "smithCost": null,
+    "pow": 0,
+    "hp": 0,
+    "guildUnlock": 0,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "tinker"
+  },
+  {
+    "id": "R90001",
+    "name": "Trinket 1",
+    "description": "Trinket 1",
+    "lvl": 1,
+    "value": 20,
+    "craftTime": 0,
+    "type": "Trinkets",
+    "gcost": [],
+    "mcost": {
+      "M700": 1,
+      "M800": 1
+    },
+    "smithCost": "M700",
+    "pow": 0,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90002",
+    "name": "Trinket 2",
+    "description": "Trinket 2",
+    "lvl": 1,
+    "value": 20,
+    "craftTime": 0,
+    "type": "Trinkets",
+    "gcost": [],
+    "mcost": {
+      "M701": 1,
+      "M801": 1
+    },
+    "smithCost": "M701",
+    "pow": 0,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90003",
+    "name": "Trinket 3",
+    "description": "Trinket 3",
+    "lvl": 1,
+    "value": 20,
+    "craftTime": 0,
+    "type": "Trinkets",
+    "gcost": [],
+    "mcost": {
+      "M702": 1,
+      "M802": 1
+    },
+    "smithCost": "M702",
+    "pow": 0,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "recipeType": "trinket"
   }
 ]

@@ -60,6 +60,7 @@ const bloopSmith = {
         ResourceManager.addMaterial(this.getStageResourceCost(),-3);
         this.smithSlot = this.smithStage;
         if (!isResmith) Inventory.removeContainerFromInventory(this.smithStage.containerID);
+        else this.smithStage = null;
         this.smithState = "smithing";
         this.smithTimer = 5000;
     },
@@ -88,6 +89,7 @@ const bloopSmith = {
         }
         Inventory.addItemContainerToInventory(this.smithSlot);
         this.smithSlot = null;
+        this.smithStage = null;
         this.smithState = "waiting";
     },
     getStageResourceCost() {
@@ -96,7 +98,7 @@ const bloopSmith = {
     },
     resmith() {
         if (this.smithState !=="complete") return;
-        if (ResourceManager.materialAvailable("M001") < this.getSmithCost()) {
+        if (ResourceManager.materialAvailable("M001") < this.getSmithCost(true)) {
             Notifications.cantAffordSmith();
             return;
         }
@@ -184,11 +186,13 @@ function refreshSmithArea() {
     else if (bloopSmith.smithState === "complete") {
         $swItemStage.empty();
             $("<div/>").addClass("collectTextBox").html("Collect Reward").appendTo($swItemStage);
-            const d = $("<div/>").attr("id","collectResmith").appendTo($swItemStage);
-            const s1 = $("<div/>").addClass("smithCostContainer").appendTo(d);
-            $("<div/>").addClass("smith_title").html(`Smith Again`).appendTo(s1);
-            $("<span/>").addClass("smith_cost smith_gold").html(`${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(true),2)}`).appendTo(s1);
-            $("<span/>").addClass("smith_cost smith_material tooltip").attr("data-tooltip",ResourceManager.idToMaterial(bloopSmith.smithSlot.item.smithCost).name).html(`${ResourceManager.materialIcon(bloopSmith.smithSlot.item.smithCost)} 3`).appendTo(s1)
+            if (bloopSmith.smithSlot.sharp < 10) {
+                const d = $("<div/>").attr("id","collectResmith").appendTo($swItemStage);
+                const s1 = $("<div/>").addClass("smithCostContainer").appendTo(d);
+                $("<div/>").addClass("smith_title").html(`Smith Again`).appendTo(s1);
+                $("<span/>").addClass("smith_cost smith_gold").html(`${miscIcons.gold} ${formatToUnits(bloopSmith.getSmithCost(true),2)}`).appendTo(s1);
+                $("<span/>").addClass("smith_cost smith_material tooltip").attr("data-tooltip",ResourceManager.idToMaterial(bloopSmith.smithSlot.item.smithCost).name).html(`${ResourceManager.materialIcon(bloopSmith.smithSlot.item.smithCost)} 3`).appendTo(s1)
+            }
         const d1 = $("<div/>").attr("id","swCollect").html("Collect");
         $swItemResult.html(itemStageCardSmith(bloopSmith.smithSlot,false).append(d1)).removeClass("inProgressTextBox");
         if (bloopSmith.smithSuccess) {

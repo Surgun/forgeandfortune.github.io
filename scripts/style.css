@@ -65,7 +65,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon, .tinkerCommand {
     -ms-box-shadow: var(--box-shadow);
     -o-box-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
@@ -763,7 +763,7 @@ p.hamster {
     border-radius: 5px;
 }
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .EquipmentCardsHeader, .eventNotorietyHeading, .desynthHeading, .fortuneGearHeading {
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .EquipmentCardsHeader, .eventNotorietyHeading, .desynthHeading, .fortuneGearHeading, .tinkerHeading {
     font-weight: normal;
     font-size: 16px;
     font-size: 1rem;
@@ -5111,6 +5111,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     background: linear-gradient(to right, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/desynthBuilding/bg.png);
 }
 
+.buildingTinker .buildingInfoBackground {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/tinkerBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/tinkerBuilding/bg.png);
+}
+
 .buildingInfoImage {
     text-align: center;
 }
@@ -5168,7 +5173,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 0;
 }
 
-.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .alPerk, .desynthSlot, .desynthGroup, .fortuneItem {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .alPerk, .desynthSlot, .desynthGroup, .fortuneItem, .tinkerCommand {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5418,7 +5423,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
-#smithWorkingArea, #desynthSide, #fortuneTop {
+#smithWorkingArea, #desynthSide, #fortuneTop, .tinkerTopContainer {
     margin: -10px -10px 10px -10px;
     padding: 10px;
     display: -webkit-box;
@@ -5961,6 +5966,39 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .desynthSlotName.slotEmpty {
     color: var(--highlight);
+}
+
+.tinkerTopContainer {
+    flex-direction: column;
+    min-height: 50px;
+}
+
+.tinkerMaterialsContainer, .tinkerCommandsContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fill,minmax(150px, 1fr));
+    grid-gap: 5px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.tinkerMat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-primary);
+    padding: 5px 10px;
+}
+
+.tinkerCommandsContainer {
+    grid-template: auto / repeat(auto-fill,minmax(200px, 1fr));
+}
+
+.tinkerCommandName {
+    color: var(--highlight);
+}
+
+.tinkerCommandDesc {
+    color: var(--text-secondary);
 }
 
 /* Events / Mail Content */

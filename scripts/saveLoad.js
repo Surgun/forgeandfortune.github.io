@@ -557,6 +557,11 @@ function saveUpdate(loadGame) {
         if (matConversion[loadGame["fo"].greatReq] !== undefined) loadGame["fo"].greatReq = matConversion[loadGame["fo"].greatReq];
         if (matConversion[loadGame["fo"].epicReq] !== undefined) loadGame["fo"].epicReq = matConversion[loadGame["fo"].epicReq];
     }
+    if (loadGame.v === "0316") {
+        loadGame.v = "032";
+        const eventIDs = EventManager.allDungeonEventIDs();
+        eventIDs.forEach(eventID => EventManager.readEvent(eventID));
+    }
     return loadGame;
 }
 

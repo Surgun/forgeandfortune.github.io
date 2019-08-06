@@ -114,6 +114,7 @@ const TinkerManager = {
             this.time -= maxTime;
             this.steam -= this.steamReq();
         }
+        refreshTinkerEnergy();
     },
     idToCommand(id) {
         return this.commands.find(a => a.id === id);

@@ -96,6 +96,7 @@ function mainLoop() {
     DesynthManager.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
     PatchManager.patchTimer(elapsedTime);
+    TinkerManager.addTime(elapsedTime);
     if (TownManager.purgeSlots) {
         actionSlotManager.removeBldgSlots();
         TownManager.purgeSlots = false;

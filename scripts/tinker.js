@@ -14,8 +14,8 @@ let slotid = 0;
 
 class tinkerSlot {
     constructor(id) {
-        const command = TinkerManager.idToCommand(id);
-        Object.assign(this,command);
+        this.command = TinkerManager.idToCommand(id);
+        Object.assign(this,this.command);
         this.energy = 0;
         this.state = "run";
         this.slotid = slotid;
@@ -34,12 +34,12 @@ class tinkerSlot {
     }
     action() {
         if (this.id === "T001") {
-            const material = ResourceManager.getSteamMaterial();
-            if (!material) {
+            const steam = ResourceManager.getSteamMaterial();
+            if (!steam) {
                 this.state = "error";
                 return;
             }
-            TinkerManager.addSteam(material.steam);
+            TinkerManager.addSteam(steam);
         }
         else if (this.id === "T002") {
             const item = Inventory.getCommon();
@@ -105,16 +105,20 @@ const TinkerManager = {
             return;
         }
         this.time += ms;
-        if (this.time < maxTime) return;
-        while (this.time > maxTime) {
+        if (this.time < this.maxTime) {
+            refreshTinkerEnergy();
+            return;
+        }
+        while (this.time > this.maxTime) {
             if (this.steam < this.steamReq()) {
                 return this.time = 0;
             }
             this.slots.forEach(slot => slot.addCount());
-            this.time -= maxTime;
+            this.time -= this.maxTime;
             this.steam -= this.steamReq();
         }
         refreshTinkerEnergy();
+        refreshTinkerSlotProgress();
     },
     idToCommand(id) {
         return this.commands.find(a => a.id === id);
@@ -126,14 +130,19 @@ const TinkerManager = {
         if (this.slots.length >= this.slotsMax) return;
         this.slots.push(new tinkerSlot(id));
     },
-    removeSlot(slotnum) {
-        this.slots.splice(slotnum,1);
+    removeSlot(slotid) {
+        this.slots = this.slots.filter(s=>s.slotid !== slotid);
     },
     addSteam(amt) {
         this.steam += amt;
+        refreshTinkerMats();
     },
     steamReq() {
-        return this.slots.reduce((acc,val) => {return acc + val.getSteamCost()});
+        const steamReq = this.slots.map(s=>s.getSteamCost());
+        return steamReq.reduce((a,b) => a + b, 0)
+    },
+    idle() {
+        return this.slots.length === 0;
     }
 }
 
@@ -141,15 +150,17 @@ function initiateTinkerBldg () {
     $tinkerBuilding.show();
     refreshTinkerMats();
     refreshTinkerCommands();
-    refreshTinkerSlots();
+    initializeTinkerSlots();
+    refreshTinkerEnergy();
 }
 
 function refreshTinkerMats() {
-    const mats = ["M700","M701","M702","M800","M801","M802","M803"];
+    const mats = ["M700","M701","M702","M800","M801","M802"];
     $tinkerMaterials.empty();
     mats.forEach(mat => {
         $("<div/>").addClass("tinkerMat").html(ResourceManager.sidebarMaterial(mat)).appendTo($tinkerMaterials);
     });
+    $("<div/>").addClass("tinkerMat").html(`${dungeonIcons["Energy"]} ${TinkerManager.steam}`).appendTo($tinkerMaterials);
 };
 
 function refreshTinkerCommands() {
@@ -162,35 +173,49 @@ function refreshTinkerCommands() {
     });
 };
 
-function refreshTinkerSlots() {
+function initializeTinkerSlots() {
     $tinkerSlots.empty();
+    TinkerManager.tinkerSlotCache = {};
     TinkerManager.slots.forEach(slot => {
         const d1 = $("<div/>").addClass("tinkerSlot").appendTo($tinkerSlots);
             $("<div/>").addClass("tinkerSlotName").html(slot.name).appendTo(d1);
-            $("<div/>").addClass("tinkerProgress").html(createTinkerProgress(slot.energy,slot.energyReq)).appendTo(d1);
+            $("<div/>").addClass("tinkerProgress").html(createTinkerProgress(slot.slotid,slot.energy,slot.energyReq)).appendTo(d1);
+            $('<div/>').addClass("tinkerSlotRemove").data("slotID",slot.slotid).html(`<i class="fas fa-times"></i>`).appendTo(d1);
     });
 };
 
-function createTinkerProgress(current,max) {
+function refreshTinkerSlotProgress() {
+    TinkerManager.slots.forEach(slot => {
+        const percent = slot.energy/slot.energyReq;
+        const width = (percent*100).toFixed(1)+"%";
+        $("#tinkerBar"+slot.slotid).attr("data-label",width);
+        $("#tinkerFill"+slot.slotid).css('width', width);
+    })
+};
+
+function createTinkerProgress(slotid,current,max) {
     const percent = current/max;
     const width = (percent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("tinkerProgressDiv").html(dungeonIcons["Energy"]);
-    const d1a = $("<div/>").addClass("tinkerBar").attr("data-label",current+"/"+max);
-    const s1 = $("<span/>").addClass("tinkerBarFill").css('width', width);
+    const d1 = $("<div/>").addClass("tinkerProgressDiv");
+    const d1a = $("<div/>").addClass("tinkerBar").attr("id","tinkerBar"+slotid).attr("data-label",width);
+    const s1 = $("<span/>").addClass("tinkerBarFill").attr("id","tinkerFill"+slotid).css('width', width);
     return d1.append(d1a,s1);
 }
 
-const $tinkerTickBar = $("#tinkerTickBar");
+const $tinkerTicksBar = $("#tinkerTicksBar");
+const $tinkerTicksBarFill = $("#tinkerTicksBarFill");
 
 function refreshTinkerEnergy() {
-    $tinkerTickBar.empty();
+    if (TinkerManager.idle()) {
+        $tinkerTicksBar.attr("data-label","Idle").html("Idle");
+        $tinkerTicksBarFill.css("width","0%");
+        return;
+    }
     const percent = TinkerManager.time/TinkerManager.maxTime;
     const width = (percent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("tinkerTicksDiv").html("Energizing").appendTo($tinkerTickBar);
-        $("<div/>").addClass("tinkerTicksBar").attr("data-label",current+"/"+max).appendTo(d1);
-        $("<span/>").addClass("tinkerTicksBarFill").css('width', width).appendTo(d1);
+    $tinkerTicksBar.attr("data-label",width).html(`${dungeonIcons.Energy} ${TinkerManager.steamReq()} / tick`);
+    $tinkerTicksBarFill.css("width",width);
 }
-
 
 //makes a trinket
 function createTrinket(type) {
@@ -211,7 +236,16 @@ function createTrinket(type) {
 
 $(document).on('click', '.tinkerCommand', (e) => {
     e.preventDefault();
-    const commandID = parseInt($(e.currentTarget).data("tinkerID"));
+    const commandID =$(e.currentTarget).data("tinkerID");
     TinkerManager.addSlot(commandID);
-    refreshTinkerSlots();
+    initializeTinkerSlots();
+    refreshTinkerEnergy();
 });
+
+$(document).on('click', '.tinkerSlotRemove', (e) => {
+    e.preventDefault();
+    const slotID = parseInt($(e.currentTarget).data("slotID"));
+    TinkerManager.removeSlot(slotID);
+    initializeTinkerSlots();
+    refreshTinkerEnergy();
+})

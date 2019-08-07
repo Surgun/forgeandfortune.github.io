@@ -340,5 +340,5 @@ const dungeonIcons = {
     [Stat.HP] : '<img src="images/DungeonIcons/hp.png" alt="HP">',
     [Stat.POW] : '<img src="images/DungeonIcons/pow.png" alt="POW">',
     [Stat.AP] : '<img src="images/DungeonIcons/ap.png" alt="AP">',
-    Energy : '<img src="images/resources/M803.png" alt="Energy">',
+    Energy : '<img src="images/resources/energy.png" alt="Energy">',
 }

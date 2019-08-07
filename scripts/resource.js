@@ -145,7 +145,7 @@ const ResourceManager = {
         const possible = this.materials.filter(m => m.amt > 0 && m.steam > 0);
         if (possible.length === 0) return false;
         possible[0].amt -= 1;
-        return possible[0].id;
+        return possible[0].steam;
     }
 }
 

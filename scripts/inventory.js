@@ -39,6 +39,7 @@ let containerid = 0;
 
 class itemContainer {
     constructor(id,rarity) {
+        console.log(id,rarity);
         this.id = id;
         this.item = recipeList.idToItem(id);
         this.name = this.item.name;
@@ -129,6 +130,12 @@ class itemContainer {
     }
     material() {
         return Object.keys(this.item.mcost)[0]
+    }
+    deconType() {
+        return this.item.deconType;
+    }
+    deconAmt() {
+        return Math.floor(this.item.craftTime / 4000);
     }
 }
 
@@ -304,7 +311,7 @@ const Inventory = {
         })
     },
     getFusePossibilities() {
-        const fuses = this.nonblank().filter(container => container.item.recipeType === "normal").map(container=>container.uniqueID())
+        const fuses = this.nonblank().filter(container => container.item.recipeType === "normal" || container.item.recipeType === "trinket").map(container=>container.uniqueID())
         const fuseSorted = fuses.reduce((fuseList, item) => {
             if (item in fuseList) fuseList[item]++;
             else fuseList[item] = 1;
@@ -344,7 +351,7 @@ const Inventory = {
     },
     getCommon() {
         const item = this.nonblank().filter(item=>item.rarity === 0)[0];
-        if (item === null) return false;
+        if (item === undefined) return false;
         this.removeContainerFromInventory(item.containerID);
         return item;
     }

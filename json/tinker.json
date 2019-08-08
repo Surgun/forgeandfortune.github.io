@@ -4,34 +4,34 @@
     "name": "Create Steam",
     "description": "Takes materials and turns them into steam",
     "steam": 0,
-    "energyReq": 5
+    "energyReq": 3
   },
   {
     "id": "T002",
     "name": "Destroy Item",
     "description": "Takes common items and turns them into parts",
     "steam": 10,
-    "energyReq": 10
+    "energyReq": 3
   },
   {
     "id": "T003",
     "name": "Create Trinket 1",
     "description": "Takes items and makes a trinket",
-    "steam": 20,
-    "energyReq": 15
+    "steam": 10,
+    "energyReq": 3
   },
   {
     "id": "T004",
     "name": "Create Trinket 2",
     "description": "Takes items and makes a trinket",
-    "steam": 30,
-    "energyReq": 10
+    "steam": 10,
+    "energyReq": 3
   },
   {
     "id": "T005",
     "name": "Create Trinket 3",
     "description": "Takes items and makes a trinket",
-    "steam": 50,
-    "energyReq": 6
+    "steam": 10,
+    "energyReq": 3
   }
 ]

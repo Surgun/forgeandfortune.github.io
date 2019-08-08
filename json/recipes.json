@@ -17,6 +17,7 @@
     "guildUnlock": "G001",
     "goldCost": 0,
     "repReq": 0,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -39,6 +40,7 @@
     "guildUnlock": "G001",
     "goldCost": 500,
     "repReq": 7,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -61,6 +63,7 @@
     "guildUnlock": "G001",
     "goldCost": 1000,
     "repReq": 10,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -84,6 +87,7 @@
     "guildUnlock": "G001",
     "goldCost": 7500,
     "repReq": 13,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -107,6 +111,7 @@
     "guildUnlock": "G001",
     "goldCost": 52500,
     "repReq": 16,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -130,6 +135,7 @@
     "guildUnlock": "G001",
     "goldCost": 367500,
     "repReq": 23,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -154,6 +160,7 @@
     "guildUnlock": "G001",
     "goldCost": 2572500,
     "repReq": 26,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -178,6 +185,7 @@
     "guildUnlock": "G001",
     "goldCost": 18007500,
     "repReq": 29,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -202,6 +210,7 @@
     "guildUnlock": "G001",
     "goldCost": 126052500,
     "repReq": 32,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -226,6 +235,7 @@
     "guildUnlock": "G001",
     "goldCost": 882367500,
     "repReq": 39,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -246,6 +256,7 @@
     "guildUnlock": "G003",
     "goldCost": 0,
     "repReq": 0,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -268,6 +279,7 @@
     "guildUnlock": "G003",
     "goldCost": 500,
     "repReq": 7,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -290,6 +302,7 @@
     "guildUnlock": "G003",
     "goldCost": 1000,
     "repReq": 10,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -313,6 +326,7 @@
     "guildUnlock": "G003",
     "goldCost": 7500,
     "repReq": 13,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -336,6 +350,7 @@
     "guildUnlock": "G003",
     "goldCost": 52500,
     "repReq": 16,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -359,6 +374,7 @@
     "guildUnlock": "G003",
     "goldCost": 367500,
     "repReq": 23,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -383,6 +399,7 @@
     "guildUnlock": "G003",
     "goldCost": 2572500,
     "repReq": 26,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -407,6 +424,7 @@
     "guildUnlock": "G003",
     "goldCost": 18007500,
     "repReq": 29,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -431,6 +449,7 @@
     "guildUnlock": "G003",
     "goldCost": 126052500,
     "repReq": 32,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -455,6 +474,7 @@
     "guildUnlock": "G003",
     "goldCost": 882367500,
     "repReq": 39,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -477,6 +497,7 @@
     "guildUnlock": "G001",
     "goldCost": 100,
     "repReq": 1,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -499,6 +520,7 @@
     "guildUnlock": "G001",
     "goldCost": 500,
     "repReq": 4,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -521,6 +543,7 @@
     "guildUnlock": "G001",
     "goldCost": 1000,
     "repReq": 11,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -544,6 +567,7 @@
     "guildUnlock": "G001",
     "goldCost": 7500,
     "repReq": 14,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -567,6 +591,7 @@
     "guildUnlock": "G001",
     "goldCost": 52500,
     "repReq": 17,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -590,6 +615,7 @@
     "guildUnlock": "G001",
     "goldCost": 367500,
     "repReq": 20,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -614,6 +640,7 @@
     "guildUnlock": "G001",
     "goldCost": 2572500,
     "repReq": 27,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -638,6 +665,7 @@
     "guildUnlock": "G001",
     "goldCost": 18007500,
     "repReq": 30,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -662,6 +690,7 @@
     "guildUnlock": "G001",
     "goldCost": 126052500,
     "repReq": 33,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -686,6 +715,7 @@
     "guildUnlock": "G001",
     "goldCost": 882367500,
     "repReq": 36,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -706,6 +736,7 @@
     "guildUnlock": "G002",
     "goldCost": 0,
     "repReq": 0,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -728,6 +759,7 @@
     "guildUnlock": "G002",
     "goldCost": 500,
     "repReq": 7,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -750,6 +782,7 @@
     "guildUnlock": "G002",
     "goldCost": 1000,
     "repReq": 10,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -772,6 +805,7 @@
     "guildUnlock": "G002",
     "goldCost": 7500,
     "repReq": 13,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -794,6 +828,7 @@
     "guildUnlock": "G002",
     "goldCost": 52500,
     "repReq": 16,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -817,6 +852,7 @@
     "guildUnlock": "G002",
     "goldCost": 367500,
     "repReq": 23,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -840,6 +876,7 @@
     "guildUnlock": "G002",
     "goldCost": 2572500,
     "repReq": 26,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -863,6 +900,7 @@
     "guildUnlock": "G002",
     "goldCost": 18007500,
     "repReq": 29,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -886,6 +924,7 @@
     "guildUnlock": "G002",
     "goldCost": 126052500,
     "repReq": 32,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -909,6 +948,7 @@
     "guildUnlock": "G002",
     "goldCost": 882367500,
     "repReq": 39,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -931,6 +971,7 @@
     "guildUnlock": "G003",
     "goldCost": 100,
     "repReq": 1,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -953,6 +994,7 @@
     "guildUnlock": "G003",
     "goldCost": 500,
     "repReq": 4,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -975,6 +1017,7 @@
     "guildUnlock": "G003",
     "goldCost": 1000,
     "repReq": 11,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -997,6 +1040,7 @@
     "guildUnlock": "G003",
     "goldCost": 7500,
     "repReq": 14,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1019,6 +1063,7 @@
     "guildUnlock": "G003",
     "goldCost": 52500,
     "repReq": 17,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1042,6 +1087,7 @@
     "guildUnlock": "G003",
     "goldCost": 367500,
     "repReq": 20,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1065,6 +1111,7 @@
     "guildUnlock": "G003",
     "goldCost": 2572500,
     "repReq": 27,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1088,6 +1135,7 @@
     "guildUnlock": "G003",
     "goldCost": 18007500,
     "repReq": 30,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1111,6 +1159,7 @@
     "guildUnlock": "G003",
     "goldCost": 126052500,
     "repReq": 33,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1134,6 +1183,7 @@
     "guildUnlock": "G003",
     "goldCost": 882367500,
     "repReq": 36,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1156,6 +1206,7 @@
     "guildUnlock": "G003",
     "goldCost": 100,
     "repReq": 2,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1178,6 +1229,7 @@
     "guildUnlock": "G003",
     "goldCost": 500,
     "repReq": 5,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1200,6 +1252,7 @@
     "guildUnlock": "G003",
     "goldCost": 1000,
     "repReq": 8,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1222,6 +1275,7 @@
     "guildUnlock": "G003",
     "goldCost": 7500,
     "repReq": 15,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1244,6 +1298,7 @@
     "guildUnlock": "G003",
     "goldCost": 52500,
     "repReq": 18,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1267,6 +1322,7 @@
     "guildUnlock": "G003",
     "goldCost": 367500,
     "repReq": 21,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1290,6 +1346,7 @@
     "guildUnlock": "G003",
     "goldCost": 2572500,
     "repReq": 24,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1313,6 +1370,7 @@
     "guildUnlock": "G003",
     "goldCost": 18007500,
     "repReq": 31,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1336,6 +1394,7 @@
     "guildUnlock": "G003",
     "goldCost": 126052500,
     "repReq": 34,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1359,6 +1418,7 @@
     "guildUnlock": "G003",
     "goldCost": 882367500,
     "repReq": 37,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1381,6 +1441,7 @@
     "guildUnlock": "G001",
     "goldCost": 100,
     "repReq": 2,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -1403,6 +1464,7 @@
     "guildUnlock": "G001",
     "goldCost": 500,
     "repReq": 5,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -1425,6 +1487,7 @@
     "guildUnlock": "G001",
     "goldCost": 1000,
     "repReq": 8,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -1447,6 +1510,7 @@
     "guildUnlock": "G001",
     "goldCost": 7500,
     "repReq": 15,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -1469,6 +1533,7 @@
     "guildUnlock": "G001",
     "goldCost": 52500,
     "repReq": 18,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -1492,6 +1557,7 @@
     "guildUnlock": "G001",
     "goldCost": 367500,
     "repReq": 21,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -1515,6 +1581,7 @@
     "guildUnlock": "G001",
     "goldCost": 2572500,
     "repReq": 24,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -1538,6 +1605,7 @@
     "guildUnlock": "G001",
     "goldCost": 18007500,
     "repReq": 31,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -1561,6 +1629,7 @@
     "guildUnlock": "G001",
     "goldCost": 126052500,
     "repReq": 34,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -1584,6 +1653,7 @@
     "guildUnlock": "G001",
     "goldCost": 882367500,
     "repReq": 37,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -1606,6 +1676,7 @@
     "guildUnlock": "G002",
     "goldCost": 100,
     "repReq": 1,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1628,6 +1699,7 @@
     "guildUnlock": "G002",
     "goldCost": 500,
     "repReq": 4,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1650,6 +1722,7 @@
     "guildUnlock": "G002",
     "goldCost": 1000,
     "repReq": 11,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1672,6 +1745,7 @@
     "guildUnlock": "G002",
     "goldCost": 7500,
     "repReq": 14,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1694,6 +1768,7 @@
     "guildUnlock": "G002",
     "goldCost": 52500,
     "repReq": 17,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1717,6 +1792,7 @@
     "guildUnlock": "G002",
     "goldCost": 367500,
     "repReq": 20,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1740,6 +1816,7 @@
     "guildUnlock": "G002",
     "goldCost": 2572500,
     "repReq": 27,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1763,6 +1840,7 @@
     "guildUnlock": "G002",
     "goldCost": 18007500,
     "repReq": 30,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1786,6 +1864,7 @@
     "guildUnlock": "G002",
     "goldCost": 126052500,
     "repReq": 33,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1809,6 +1888,7 @@
     "guildUnlock": "G002",
     "goldCost": 882367500,
     "repReq": 36,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -1831,6 +1911,7 @@
     "guildUnlock": "G002",
     "goldCost": 100,
     "repReq": 2,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1853,6 +1934,7 @@
     "guildUnlock": "G002",
     "goldCost": 500,
     "repReq": 5,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1875,6 +1957,7 @@
     "guildUnlock": "G002",
     "goldCost": 1000,
     "repReq": 8,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1897,6 +1980,7 @@
     "guildUnlock": "G002",
     "goldCost": 7500,
     "repReq": 15,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1919,6 +2003,7 @@
     "guildUnlock": "G002",
     "goldCost": 52500,
     "repReq": 18,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1942,6 +2027,7 @@
     "guildUnlock": "G002",
     "goldCost": 367500,
     "repReq": 21,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1965,6 +2051,7 @@
     "guildUnlock": "G002",
     "goldCost": 2572500,
     "repReq": 24,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -1988,6 +2075,7 @@
     "guildUnlock": "G002",
     "goldCost": 18007500,
     "repReq": 31,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2011,6 +2099,7 @@
     "guildUnlock": "G002",
     "goldCost": 126052500,
     "repReq": 34,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2034,6 +2123,7 @@
     "guildUnlock": "G002",
     "goldCost": 882367500,
     "repReq": 37,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2056,6 +2146,7 @@
     "guildUnlock": "G002",
     "goldCost": 100,
     "repReq": 3,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2078,6 +2169,7 @@
     "guildUnlock": "G002",
     "goldCost": 500,
     "repReq": 5,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2100,6 +2192,7 @@
     "guildUnlock": "G002",
     "goldCost": 1000,
     "repReq": 10,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2123,6 +2216,7 @@
     "guildUnlock": "G002",
     "goldCost": 7500,
     "repReq": 14,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2146,6 +2240,7 @@
     "guildUnlock": "G002",
     "goldCost": 52500,
     "repReq": 19,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2169,6 +2264,7 @@
     "guildUnlock": "G002",
     "goldCost": 367500,
     "repReq": 21,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2193,6 +2289,7 @@
     "guildUnlock": "G002",
     "goldCost": 2572500,
     "repReq": 26,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2217,6 +2314,7 @@
     "guildUnlock": "G002",
     "goldCost": 18007500,
     "repReq": 30,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2241,6 +2339,7 @@
     "guildUnlock": "G002",
     "goldCost": 126052500,
     "repReq": 35,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2265,6 +2364,7 @@
     "guildUnlock": "G002",
     "goldCost": 882367500,
     "repReq": 37,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2287,6 +2387,7 @@
     "guildUnlock": "G003",
     "goldCost": 100,
     "repReq": 3,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2309,6 +2410,7 @@
     "guildUnlock": "G003",
     "goldCost": 500,
     "repReq": 5,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2331,6 +2433,7 @@
     "guildUnlock": "G003",
     "goldCost": 1000,
     "repReq": 10,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2354,6 +2457,7 @@
     "guildUnlock": "G003",
     "goldCost": 7500,
     "repReq": 14,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2377,6 +2481,7 @@
     "guildUnlock": "G003",
     "goldCost": 52500,
     "repReq": 19,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2400,6 +2505,7 @@
     "guildUnlock": "G003",
     "goldCost": 367500,
     "repReq": 21,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2424,6 +2530,7 @@
     "guildUnlock": "G003",
     "goldCost": 2572500,
     "repReq": 26,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2448,6 +2555,7 @@
     "guildUnlock": "G003",
     "goldCost": 18007500,
     "repReq": 30,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2472,6 +2580,7 @@
     "guildUnlock": "G003",
     "goldCost": 126052500,
     "repReq": 35,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2496,6 +2605,7 @@
     "guildUnlock": "G003",
     "goldCost": 882367500,
     "repReq": 37,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2518,6 +2628,7 @@
     "guildUnlock": "G002",
     "goldCost": 100,
     "repReq": 3,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2540,6 +2651,7 @@
     "guildUnlock": "G002",
     "goldCost": 500,
     "repReq": 6,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2562,6 +2674,7 @@
     "guildUnlock": "G002",
     "goldCost": 1000,
     "repReq": 9,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2585,6 +2698,7 @@
     "guildUnlock": "G002",
     "goldCost": 7500,
     "repReq": 12,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2608,6 +2722,7 @@
     "guildUnlock": "G002",
     "goldCost": 52500,
     "repReq": 19,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2631,6 +2746,7 @@
     "guildUnlock": "G002",
     "goldCost": 367500,
     "repReq": 22,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2655,6 +2771,7 @@
     "guildUnlock": "G002",
     "goldCost": 2572500,
     "repReq": 25,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2679,6 +2796,7 @@
     "guildUnlock": "G002",
     "goldCost": 18007500,
     "repReq": 28,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2703,6 +2821,7 @@
     "guildUnlock": "G002",
     "goldCost": 126052500,
     "repReq": 35,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2727,6 +2846,7 @@
     "guildUnlock": "G002",
     "goldCost": 882367500,
     "repReq": 38,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -2747,6 +2867,7 @@
     "guildUnlock": "G004",
     "goldCost": 0,
     "repReq": 0,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2769,6 +2890,7 @@
     "guildUnlock": "G004",
     "goldCost": 500,
     "repReq": 7,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2791,6 +2913,7 @@
     "guildUnlock": "G004",
     "goldCost": 1000,
     "repReq": 10,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2813,6 +2936,7 @@
     "guildUnlock": "G004",
     "goldCost": 7500,
     "repReq": 13,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2835,6 +2959,7 @@
     "guildUnlock": "G004",
     "goldCost": 52500,
     "repReq": 16,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2858,6 +2983,7 @@
     "guildUnlock": "G004",
     "goldCost": 367500,
     "repReq": 23,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2881,6 +3007,7 @@
     "guildUnlock": "G004",
     "goldCost": 2572500,
     "repReq": 26,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2904,6 +3031,7 @@
     "guildUnlock": "G004",
     "goldCost": 18007500,
     "repReq": 29,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2927,6 +3055,7 @@
     "guildUnlock": "G004",
     "goldCost": 126052500,
     "repReq": 32,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2950,6 +3079,7 @@
     "guildUnlock": "G004",
     "goldCost": 882367500,
     "repReq": 39,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -2972,6 +3102,7 @@
     "guildUnlock": "G001",
     "goldCost": 100,
     "repReq": 3,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -2994,6 +3125,7 @@
     "guildUnlock": "G001",
     "goldCost": 500,
     "repReq": 6,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3016,6 +3148,7 @@
     "guildUnlock": "G001",
     "goldCost": 1000,
     "repReq": 9,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3038,6 +3171,7 @@
     "guildUnlock": "G001",
     "goldCost": 7500,
     "repReq": 12,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3060,6 +3194,7 @@
     "guildUnlock": "G001",
     "goldCost": 52500,
     "repReq": 19,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3083,6 +3218,7 @@
     "guildUnlock": "G001",
     "goldCost": 367500,
     "repReq": 22,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3106,6 +3242,7 @@
     "guildUnlock": "G001",
     "goldCost": 2572500,
     "repReq": 25,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3129,6 +3266,7 @@
     "guildUnlock": "G001",
     "goldCost": 18007500,
     "repReq": 28,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3152,6 +3290,7 @@
     "guildUnlock": "G001",
     "goldCost": 126052500,
     "repReq": 35,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3175,6 +3314,7 @@
     "guildUnlock": "G001",
     "goldCost": 882367500,
     "repReq": 38,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3197,6 +3337,7 @@
     "guildUnlock": "G004",
     "goldCost": 100,
     "repReq": 1,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3219,6 +3360,7 @@
     "guildUnlock": "G004",
     "goldCost": 500,
     "repReq": 4,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3241,6 +3383,7 @@
     "guildUnlock": "G004",
     "goldCost": 1000,
     "repReq": 11,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3263,6 +3406,7 @@
     "guildUnlock": "G004",
     "goldCost": 7500,
     "repReq": 14,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3285,6 +3429,7 @@
     "guildUnlock": "G004",
     "goldCost": 52500,
     "repReq": 17,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3311,6 +3456,7 @@
     "guildUnlock": "G004",
     "goldCost": 367500,
     "repReq": 20,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3334,6 +3480,7 @@
     "guildUnlock": "G004",
     "goldCost": 2572500,
     "repReq": 27,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3357,6 +3504,7 @@
     "guildUnlock": "G004",
     "goldCost": 18007500,
     "repReq": 30,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3380,6 +3528,7 @@
     "guildUnlock": "G004",
     "goldCost": 126052500,
     "repReq": 33,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3403,6 +3552,7 @@
     "guildUnlock": "G004",
     "goldCost": 882367500,
     "repReq": 36,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3425,6 +3575,7 @@
     "guildUnlock": "G004",
     "goldCost": 100,
     "repReq": 2,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -3447,6 +3598,7 @@
     "guildUnlock": "G004",
     "goldCost": 500,
     "repReq": 5,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -3469,6 +3621,7 @@
     "guildUnlock": "G004",
     "goldCost": 1000,
     "repReq": 8,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -3492,6 +3645,7 @@
     "guildUnlock": "G004",
     "goldCost": 7500,
     "repReq": 15,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -3515,6 +3669,7 @@
     "guildUnlock": "G004",
     "goldCost": 52500,
     "repReq": 18,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -3538,6 +3693,7 @@
     "guildUnlock": "G004",
     "goldCost": 367500,
     "repReq": 21,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -3562,6 +3718,7 @@
     "guildUnlock": "G004",
     "goldCost": 2572500,
     "repReq": 24,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -3586,6 +3743,7 @@
     "guildUnlock": "G004",
     "goldCost": 18007500,
     "repReq": 31,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -3610,6 +3768,7 @@
     "guildUnlock": "G004",
     "goldCost": 126052500,
     "repReq": 34,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -3634,6 +3793,7 @@
     "guildUnlock": "G004",
     "goldCost": 882367500,
     "repReq": 37,
+    "deconType": "M800",
     "recipeType": "normal"
   },
   {
@@ -3656,6 +3816,7 @@
     "guildUnlock": "G004",
     "goldCost": 100,
     "repReq": 3,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3678,6 +3839,7 @@
     "guildUnlock": "G004",
     "goldCost": 500,
     "repReq": 6,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3700,6 +3862,7 @@
     "guildUnlock": "G004",
     "goldCost": 1000,
     "repReq": 9,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3723,6 +3886,7 @@
     "guildUnlock": "G004",
     "goldCost": 7500,
     "repReq": 12,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3746,6 +3910,7 @@
     "guildUnlock": "G004",
     "goldCost": 52500,
     "repReq": 19,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3769,6 +3934,7 @@
     "guildUnlock": "G004",
     "goldCost": 367500,
     "repReq": 22,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3793,6 +3959,7 @@
     "guildUnlock": "G004",
     "goldCost": 2572500,
     "repReq": 25,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3817,6 +3984,7 @@
     "guildUnlock": "G004",
     "goldCost": 18007500,
     "repReq": 28,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3841,6 +4009,7 @@
     "guildUnlock": "G004",
     "goldCost": 126052500,
     "repReq": 35,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3865,6 +4034,7 @@
     "guildUnlock": "G004",
     "goldCost": 882367500,
     "repReq": 38,
+    "deconType": "M801",
     "recipeType": "normal"
   },
   {
@@ -3887,6 +4057,7 @@
     "guildUnlock": "G003",
     "goldCost": 100,
     "repReq": 3,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3909,6 +4080,7 @@
     "guildUnlock": "G003",
     "goldCost": 500,
     "repReq": 6,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3931,6 +4103,7 @@
     "guildUnlock": "G003",
     "goldCost": 1000,
     "repReq": 9,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3954,6 +4127,7 @@
     "guildUnlock": "G003",
     "goldCost": 7500,
     "repReq": 12,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -3977,6 +4151,7 @@
     "guildUnlock": "G003",
     "goldCost": 52500,
     "repReq": 19,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -4000,6 +4175,7 @@
     "guildUnlock": "G003",
     "goldCost": 367500,
     "repReq": 22,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -4024,6 +4200,7 @@
     "guildUnlock": "G003",
     "goldCost": 2572500,
     "repReq": 25,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -4048,6 +4225,7 @@
     "guildUnlock": "G003",
     "goldCost": 18007500,
     "repReq": 28,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -4072,6 +4250,7 @@
     "guildUnlock": "G003",
     "goldCost": 126052500,
     "repReq": 35,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -4096,6 +4275,7 @@
     "guildUnlock": "G003",
     "goldCost": 882367500,
     "repReq": 38,
+    "deconType": "M802",
     "recipeType": "normal"
   },
   {
@@ -4120,6 +4300,7 @@
     "guildUnlock": 0,
     "goldCost": null,
     "repReq": null,
+    "deconType": null,
     "recipeType": "desynth"
   },
   {
@@ -4144,6 +4325,7 @@
     "guildUnlock": 0,
     "goldCost": null,
     "repReq": null,
+    "deconType": null,
     "recipeType": "bank"
   },
   {
@@ -4168,6 +4350,7 @@
     "guildUnlock": 0,
     "goldCost": null,
     "repReq": null,
+    "deconType": null,
     "recipeType": "fuse"
   },
   {
@@ -4192,6 +4375,7 @@
     "guildUnlock": 0,
     "goldCost": null,
     "repReq": null,
+    "deconType": null,
     "recipeType": "smith"
   },
   {
@@ -4216,6 +4400,7 @@
     "guildUnlock": 0,
     "goldCost": null,
     "repReq": null,
+    "deconType": null,
     "recipeType": "fortune"
   },
   {
@@ -4240,6 +4425,7 @@
     "guildUnlock": 0,
     "goldCost": null,
     "repReq": null,
+    "deconType": null,
     "recipeType": "tinker"
   },
   {
@@ -4261,6 +4447,7 @@
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
+    "deconType": null,
     "recipeType": "trinket"
   },
   {
@@ -4282,6 +4469,7 @@
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
+    "deconType": null,
     "recipeType": "trinket"
   },
   {
@@ -4303,6 +4491,7 @@
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
+    "deconType": null,
     "recipeType": "trinket"
   }
 ]

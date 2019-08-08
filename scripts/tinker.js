@@ -42,12 +42,14 @@ class tinkerSlot {
             TinkerManager.addSteam(steam);
         }
         else if (this.id === "T002") {
+            console.log("fire");
             const item = Inventory.getCommon();
+            console.log(item);
             if (!item) {
                 this.state = "error";
                 return;
             }
-            ResourceManager.addMaterial(item.deconType,item.deconAmt);
+            ResourceManager.addMaterial(item.deconType(),item.deconAmt());
         }
         else if (this.id === "T003") {
             const success = createTrinket("R90001");
@@ -80,8 +82,9 @@ const TinkerManager = {
     slotsMax : 1,
     steam : 0,
     steamMax : 0,
+    status : "running",
     time : 0,
-    maxTime : 1000,
+    maxTime : 5000,
     createSave() {
         const save = {};
         save.slotsMax = this.slotsMax;
@@ -102,20 +105,27 @@ const TinkerManager = {
     addTime(ms) {
         if (this.slots.length === 0) {
             this.time = 0;
+            this.status = "idle";
+            refreshTinkerEnergy();
             return;
         }
         this.time += ms;
+        this.status = "running";
         if (this.time < this.maxTime) {
             refreshTinkerEnergy();
             return;
         }
         while (this.time > this.maxTime) {
-            if (this.steam < this.steamReq()) {
-                return this.time = 0;
+            if (this.notEnoughSteam()) {
+                this.time = this.maxTime;
+                this.status = "no steam";
+                refreshTinkerEnergy();
+                return;
             }
             this.slots.forEach(slot => slot.addCount());
             this.time -= this.maxTime;
             this.steam -= this.steamReq();
+            refreshTinkerMats();
         }
         refreshTinkerEnergy();
         refreshTinkerSlotProgress();
@@ -143,6 +153,9 @@ const TinkerManager = {
     },
     idle() {
         return this.slots.length === 0;
+    },
+    notEnoughSteam() {
+        return this.steamReq() > this.steam;
     }
 }
 
@@ -169,7 +182,7 @@ function refreshTinkerCommands() {
         const d1 = $("<div/>").addClass("tinkerCommand").data("tinkerID",command.id).appendTo($tinkerCommands);
             $("<div/>").addClass("tinkerCommandName").html(command.name).appendTo(d1);
             $("<div/>").addClass("tinkerCommandDesc").html(command.desc).appendTo(d1);
-            $("<div/>").addClass("tinkerCommandEnergy").html(`Energy required: ${command.energyReq}`).appendTo(d1);
+            $("<div/>").addClass("tinkerCommandEnergy").html(`Requires ${command.steam} ${dungeonIcons.Energy}`).appendTo(d1);
     });
 };
 
@@ -206,9 +219,14 @@ const $tinkerTicksBar = $("#tinkerTicksBar");
 const $tinkerTicksBarFill = $("#tinkerTicksBarFill");
 
 function refreshTinkerEnergy() {
-    if (TinkerManager.idle()) {
+    if (TinkerManager.status === "idle") {
         $tinkerTicksBar.attr("data-label","Idle").html("Idle");
         $tinkerTicksBarFill.css("width","0%");
+        return;
+    }
+    if (TinkerManager.status === "no steam") {
+        $tinkerTicksBar.attr("data-label","Need Steam").html("Need Steam");
+        $tinkerTicksBarFill.css("width","100%");
         return;
     }
     const percent = TinkerManager.time/TinkerManager.maxTime;
@@ -230,7 +248,7 @@ function createTrinket(type) {
     if (Inventory.full()) return false;
     ResourceManager.addMaterial(type1,-amt1);
     ResourceManager.addMaterial(type2,-amt2);
-    Inventory.addToInventory(item,0,-1);
+    Inventory.addToInventory(type,0,-1);
     return true;
 }
 

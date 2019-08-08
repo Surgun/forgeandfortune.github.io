@@ -81,7 +81,6 @@ const TinkerManager = {
     slots : [], //it is an instance of the action
     slotsMax : 1,
     steam : 0,
-    steamMax : 0,
     status : "running",
     time : 0,
     maxTime : 5000,
@@ -89,6 +88,7 @@ const TinkerManager = {
         const save = {};
         save.slotsMax = this.slotsMax;
         save.steam = this.steam;
+        save.status = this.status;
         save.slots = [];
         this.slots.forEach(slot => {
             save.slots.push(slot.createSave());
@@ -98,8 +98,11 @@ const TinkerManager = {
     loadSave(save) {
         this.slotsMax = save.slotsMax;
         this.steam = save.steam;
-        save.slots.forEach(slot => {
-            this.slots.push(slot.loadSave());
+        this.status = save.status;
+        save.slots.forEach(slotSave => {
+            const newSlot = new tinkerSlot(slotSave.id);
+            newSlot.loadSave(slotSave);
+            this.slots.push(newSlot);
         });
     },
     addTime(ms) {

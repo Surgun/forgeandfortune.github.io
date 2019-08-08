@@ -4281,7 +4281,7 @@
   {
     "id": "R99410",
     "name": "Magical Desynth",
-    "description": "Harvest the magical energy from your rare items",
+    "description": "Harvest the magical energy from your rare items.",
     "lvl": 1,
     "value": 0,
     "craftTime": 900000,
@@ -4406,7 +4406,7 @@
   {
     "id": "R99610",
     "name": "Tinker Hut",
-    "description": "Description Description Description",
+    "description": "Chew some rocks and make some stuff.",
     "lvl": 1,
     "value": 0,
     "craftTime": 2700000,
@@ -4434,7 +4434,7 @@
     "description": "This trinket provides critical thinking skills and a predisposition to murders by train.",
     "lvl": 1,
     "value": 20,
-    "craftTime": 0,
+    "craftTime": 27000,
     "type": "Trinkets",
     "gcost": [],
     "mcost": {
@@ -4456,7 +4456,7 @@
     "description": "All who doth adorn their personage with yon trinket will acquire expert knowledgeth in the theatricalth arths.",
     "lvl": 1,
     "value": 200,
-    "craftTime": 0,
+    "craftTime": 92000,
     "type": "Trinkets",
     "gcost": [],
     "mcost": {
@@ -4478,7 +4478,7 @@
     "description": " Use this trinket.  It will make your skills better.  End of flavor text.",
     "lvl": 1,
     "value": 2000,
-    "craftTime": 0,
+    "craftTime": 670000,
     "type": "Trinkets",
     "gcost": [],
     "mcost": {

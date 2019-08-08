@@ -405,6 +405,15 @@
     "subtype": null
   },
   {
+    "id": "AL4106",
+    "title": "Over Engineered",
+    "description": "Unlocks the Tinker Hut, to make trinkets.",
+    "notoReq": 56501,
+    "goldCost": 500000,
+    "type": "tinker",
+    "subtype": null
+  },
+  {
     "id": "AL4201",
     "title": "Big Parties",
     "description": "Increases party size for dungeons to 2",

@@ -23,6 +23,7 @@ class Hero {
         this.slot4 = null;
         this.slot5 = null;
         this.slot6 = null;
+        this.slot7 = null;
         this.image = '<img src="images/heroes/'+this.id+'.gif">';
         this.head = '<img src="images/heroes/heads/'+this.id+'.png">';
         this.owned = false;
@@ -46,6 +47,8 @@ class Hero {
         else save.slot5 = this.slot5.createSave();
         if (this.slot6 === null) save.slot6 = null;
         else save.slot6 = this.slot6.createSave();
+        if (this.slot7 === null) save.slot7 = null;
+        else save.slot7 = this.slot7.createSave();
         save.owned = this.owned;
         return save;
     }
@@ -77,6 +80,10 @@ class Hero {
             this.slot6 = new itemContainer(save.slot6.id,save.slot6.rarity);
             this.slot6.loadSave(save.slot6);
         }
+        if (save.slot7 !== null && save.slot7 !== undefined) {
+            this.slot7 = new itemContainer(save.slot7.id,save.slot7.rarity);
+            this.slot7.loadSave(save.slot6);
+        }
         this.owned = save.owned;
     }
     getArmor() {
@@ -92,6 +99,7 @@ class Hero {
         if (this.slot4 !== null) pow += this.slot4.pow();
         if (this.slot5 !== null) pow += this.slot5.pow();
         if (this.slot6 !== null) pow += this.slot6.pow();
+        if (this.slot7 !== null) pow += this.slot7.pow();
         return pow;
     }
     getAdjPow() {
@@ -104,6 +112,7 @@ class Hero {
         if (slot === 3 && this.slot4 !== null) return this.slot4.pow();
         if (slot === 4 && this.slot5 !== null) return this.slot5.pow();
         if (slot === 5 && this.slot6 !== null) return this.slot6.pow();
+        if (slot === 6 && this.slot7 !== null) return this.slot7.pow();
         return 0;
     }
     getHPSlot(slot) {
@@ -113,6 +122,7 @@ class Hero {
         if (slot === 3 && this.slot4 !== null) return this.slot4.hp();
         if (slot === 4 && this.slot5 !== null) return this.slot5.hp();
         if (slot === 5 && this.slot6 !== null) return this.slot6.hp();
+        if (slot === 6 && this.slot7 !== null) return this.slot7.hp();
         return 0;
     }
     addAP() {
@@ -145,7 +155,7 @@ class Hero {
     }
     getEquipSlots() {
         //return an object with 
-        return [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6];
+        return [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6,this.slot7];
     }
     equip(item,slot) {
         if (slot === 0) this.slot1 = item;
@@ -154,6 +164,7 @@ class Hero {
         if (slot === 3) this.slot4 = item;
         if (slot === 4) this.slot5 = item;
         if (slot === 5) this.slot6 = item;
+        if (slot === 6) this.slot7 = item;
     }
     removeSlot(slot) {
         if (slot === 0) this.slot1 = null;
@@ -162,13 +173,13 @@ class Hero {
         if (slot === 3) this.slot4 = null;
         if (slot === 4) this.slot5 = null;
         if (slot === 5) this.slot6 = null;
+        if (slot === 6) this.slot7 = null;
     }
     slotTypesByNum(num) {
-        const slots = [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type];
-        return slots[num];
+        return this.getSlotTypes()[num];
     }
     getSlotTypes() {
-        return [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type];
+        return [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type,this.slot7Type];
     }
     slotTypeIcons(num) {
         let s = ""
@@ -191,6 +202,7 @@ class Hero {
         if (this.slot4 !== null) hp += this.slot4.hp();
         if (this.slot5 !== null) hp += this.slot5.hp();
         if (this.slot6 !== null) hp += this.slot6.hp();
+        if (this.slot7 !== null) hp += this.slot7.hp();
         return hp;
     }
     missingHP() {
@@ -213,6 +225,7 @@ class Hero {
         if (this.slot4Type.includes(type)) return this.slot4 !== null;
         if (this.slot5Type.includes(type)) return this.slot5 !== null;
         if (this.slot6Type.includes(type)) return this.slot6 !== null;
+        if (this.slot7Type.includes(type)) return this.slot7 !== null;
     }
     getEquip(type) {
         if (this.slot1Type.includes(type)) return this.slot1;
@@ -221,6 +234,7 @@ class Hero {
         if (this.slot4Type.includes(type)) return this.slot4;
         if (this.slot5Type.includes(type)) return this.slot5;
         if (this.slot6Type.includes(type)) return this.slot6;
+        if (this.slot7Type.includes(type)) return this.slot7;
     }
     equipUpgradeAvailable(slot) {
         const types = this.slotTypesByNum(slot)
@@ -231,7 +245,7 @@ class Hero {
         return invMaxPow > currentPow || invMaxHP > currentHP;
     }
     canEquipType(type) {
-        return this.slot1Type.includes(type) || this.slot2Type.includes(type) || this.slot3Type.includes(type) || this.slot4Type.includes(type) || this.slot5Type.includes(type) || this.slot6Type.includes(type);
+        return this.slot1Type.includes(type) || this.slot2Type.includes(type) || this.slot3Type.includes(type) || this.slot4Type.includes(type) || this.slot5Type.includes(type) || this.slot6Type.includes(type) || this.slot7Type.includes(type);
     }
 }
 
@@ -405,7 +419,7 @@ function examineHero(ID) {
 
     const lowerDiv = $("<div/>").addClass("heroExamineEquip");
     const slots = hero.getEquipSlots();
-    const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory"]
+    const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory","Trinket"]
     $.each(slots, (slotNum,equip) => {
         let equipText = "";
         let equipRarity = 0
@@ -447,7 +461,6 @@ function examineHero(ID) {
         
         lowerDiv.append(d5.append(d5a,d5b,d5c));
     });
-    
     $heroDetails.append(heroExamineTop,heroExamineStats);
     $heroGearSlots.append(lowerDiv);
 }
@@ -458,7 +471,6 @@ function statRow(name,value,description) {
     const d3 = $("<div/>").addClass("heroExamineStatRowValue").html(value);
     return d1.append(d2,d3);
 }
-
 
 const $heroEquipmentList = $("#heroEquipmentList");
 

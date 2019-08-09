@@ -247,26 +247,7 @@ $(document).on('click', "div.eventList", (e) => {
     const d1 = $("<div/>").addClass("eventAuthor").html(`<span>Received from:</span> ${event.author}`);
     const d1a = $("<div/>").addClass("eventAuthor").html(`<span>Date:</span> ${event.date}`);
     const d2 = $("<div/>").addClass("eventMessage").html(event.message);
-    const d3 = $("<div/>").addClass("eventStatsContainer");
-    d.append(d1,d1a,d2,d3);
-    if (event.time !== null) {
-        const d3a = $("<div/>").addClass("eventTimeContainer eventContainer");
-        const d3a1 = $("<div/>").addClass("eventTimeHeading eventHeading").html("Total Time");
-        const d3a2 = $("<div/>").addClass("eventTime eventDescription").html(timeSince(0,event.time));
-        d3.append(d3a.append(d3a1,d3a2));
-    }
-    if (event.floor !== null) {
-        const d3b = $("<div/>").addClass("eventFloorContainer eventContainer");
-        const d3b1 = $("<div/>").addClass("eventFloorHeading eventHeading").html("Floor Reached");
-        const d3b2 = $("<div/>").addClass("eventFloor eventDescription").html("Floor " + event.floor);
-        d3.append(d3b.append(d3b1,d3b2));
-    }
-    if (event.beats !== null) {
-        const d3c = $("<div/>").addClass("eventBeatContainer eventContainer");
-        const d3c1 = $("<div/>").addClass("eventBeatHeading eventHeading").html("Turns Taken");
-        const d3c2 = $("<div/>").addClass("eventBeat eventDescription").html(event.beats + " turns");
-        d3.append(d3c.append(d3c1,d3c2));
-    }
+    d.append(d1,d1a,d2);
     if (event.reward !== null ) {
         const d4 = $("<div/>").addClass("eventReward").html(dungeonDrops(event));
         d.append(d4);

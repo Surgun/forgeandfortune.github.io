@@ -82,7 +82,8 @@ class Hero {
         }
         if (save.slot7 !== null && save.slot7 !== undefined) {
             this.slot7 = new itemContainer(save.slot7.id,save.slot7.rarity);
-            this.slot7.loadSave(save.slot6);
+            console.log(this.slot7,save.slot7);
+            this.slot7.loadSave(save.slot7);
         }
         this.owned = save.owned;
     }

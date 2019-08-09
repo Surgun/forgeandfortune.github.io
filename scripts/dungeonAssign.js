@@ -42,6 +42,7 @@ function dungeonBlock(dungeon) {
     const d2 = $("<div/>").addClass("dungeonHeader").html(dungeon.name);
     const d3 = $("<div/>").addClass("dungeonStatus").attr("id","ds"+dungeon.id);
     if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").html(`Fight in Progress`);
+    else if (dungeon.status === DungeonStatus.COLLECT) d3.addClass("dungeonComplete").html(`Run Complete`);
     else if (!DungeonManager.bossDungeonCanSee(dungeon.id)) d3.addClass("dungeonNotOpened").html("Not Opened");
     else d3.addClass("dungeonIdle").html("Idle");
     const d4 = $("<div/>").addClass("dungeonBackground");
@@ -61,9 +62,13 @@ function dungeonBlock(dungeon) {
 $(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();
     const dungeonID = $(e.currentTarget).attr("id");
+    DungeonManager.dungeonView = dungeonID;
     const lastParty = DungeonManager.dungeonByID(dungeonID).lastParty;
     $dungeonSelect.hide();
     if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.ADVENTURING) showDungeon(dungeonID);
+    else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.COLLECT) {
+        showDungeonReward(dungeonID,false);
+    }
     else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.EMPTY) {
         DungeonManager.dungeonCreatingID = dungeonID;
         PartyCreator.clearMembers();

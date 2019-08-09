@@ -1,6 +1,6 @@
 "use strict";
 const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP"});
-const DungeonStatus = Object.freeze({EMPTY:0,ADVENTURING:1});
+const DungeonStatus = Object.freeze({EMPTY:0,ADVENTURING:1,COLLECT:2});
 
 class TurnOrder {
     constructor(heroes,mobs) {
@@ -132,7 +132,7 @@ class Dungeon {
             this.checkDeadMobs(refreshLater);
             this.beatTotal += 1;
             if (this.party.isDead()) {
-                this.resetDungeon();
+                this.endDungeon();
                 return;
             }
             this.dungeonTime -= dungeonWaitTime;
@@ -162,7 +162,14 @@ class Dungeon {
         this.party = party;
         this.lastParty = party.heroID;
     }
-    resetDungeon(noReward) {
+    endDungeon(abandoned) {
+        this.status = DungeonStatus.COLLECT;
+        console.log(DungeonManager.dungeonView,this.id);
+        if (DungeonManager.dungeonView === this.id) {
+            showDungeonReward(this.id,abandoned);
+        }
+    }
+    resetDungeon() {
         this.party.heroes.forEach(h=>{
             h.inDungeon = false;
             h.ap = 0;
@@ -175,7 +182,6 @@ class Dungeon {
             refreshProgress();
             refreshAllOrders();
         }
-        else if (this.type === "regular" && !noReward) EventManager.addEventDungeon(this.eventLetter,this.dropList,this.dungeonTotalTime,this.floorCount, this.beatTotal);
         DungeonManager.removeDungeon(this.id);
         if (DungeonManager.dungeonView === this.id) {
             BattleLog.clear();
@@ -202,7 +208,7 @@ class Dungeon {
     }
     nextFloor(refreshLater) {
         if (this.type === "boss" && this.floorCount === 1) {
-            this.resetDungeon();
+            this.endDungeon();
             return;
         }
         this.floorCount += 1;
@@ -330,7 +336,7 @@ const DungeonManager = {
     },
     abandonCurrentDungeon() {
         const dungeon = this.getCurrentDungeon();
-        dungeon.resetDungeon(true);
+        dungeon.endDungeon(true);
     }
 };
 

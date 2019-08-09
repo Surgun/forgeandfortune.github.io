@@ -14,14 +14,12 @@ const devtools = {
             ResourceManager.addMaterial(material.id,9999999);
         })
         DungeonManager.bossesBeat = DungeonManager.dungeons.filter(d=>d.type==="boss").map(d=>d.id);
-        TownManager.bankSee = true;
-        TownManager.bankUnlock = true;
-        TownManager.fuseSee = true;
-        TownManager.fuseUnlock = true;
-        TownManager.smithSee = true;
-        TownManager.smithUnlock = true;
-        TownManager.fortuneSee = true;
-        TownManager.fortuneUnlock = true;
+        TownManager.bankStatus = BuildingState.built;
+        TownManager.fuseStatus = BuildingState.built;
+        TownManager.smithStatus = BuildingState.built;
+        TownManager.fortuneStatus = BuildingState.built;
+        TownManager.tinkerStatus = BuildingState.built;
+        TownManager.DesynthStatus = BuildingState.built;
         forceSave();
         location.replace('/');
     },

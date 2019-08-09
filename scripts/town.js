@@ -222,7 +222,7 @@ function showFortuneBldg() {
         if (TownManager.fortuneStatus === BuildingState.built) db.html("<img src='images/townImages/fortuneBuilding/fortune_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fortune Teller</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Find which crafts are lucky this week!");
-        if (TownManager.fortuneStatus === BuildingState.built) d.addClass("buildInProgress");
+        if (!TownManager.fortuneStatus === BuildingState.built) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.fortuneStatus === BuildingState.built) initiateFortuneBldg();
@@ -240,10 +240,10 @@ function showTinkerBldg() {
     const d = $("<div/>").addClass("buildingInfo buildingTinker");
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
-        if (TownManager.tinkerStatus === BuildingState.built) db.html("<img src='images/townImages/fortuneBuilding/tinker_building.png'>");
+        if (TownManager.tinkerStatus === BuildingState.built) db.html("<img src='images/townImages/tinkerBuilding/tinker_building.png'>");
         const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Tinker Hut</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Tinker stuff");
-        if (TownManager.tinkerStatus === BuildingState.built) d.addClass("buildInProgress");
+        if (!TownManager.tinkerStatus === BuildingState.built) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);
     $buildingHeader.append(d);
     if (TownManager.tinkerStatus === BuildingState.built) initiateTinkerBldg();

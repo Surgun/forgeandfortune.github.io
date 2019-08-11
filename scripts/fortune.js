@@ -35,8 +35,10 @@ const FortuneManager = {
     stage : null,
     slots : [],
     maxSlot : 1,
+    lvl : 1,
     createSave() {
         const save = {};
+        save.lvl = this.lvl;
         save.slots = [];
         this.slots.forEach(slot => {
             const saveSlot = slot.createSave();
@@ -45,12 +47,12 @@ const FortuneManager = {
         return save;
     },
     loadSave(save) {
-        return;
         save.slots.forEach(slot => {
             const saveSlot = new fortuneSlot(slot.itemid, slot.rarity, slot.tier, slot.amt);
             saveSlot.loadSave(slot);
             this.slots.push(saveSlot);
-        })
+        });
+        if (save.lvl !== undefined) this.lvl = save.lvl;
     },
     stageItem(containerID) {
         const container = Inventory.containerToItem(containerID);
@@ -59,7 +61,7 @@ const FortuneManager = {
         refreshFortuneStage();
     },
     lockFortune() {
-        if (this.slots.length >= this.maxSlot) return;
+        if (this.slots.length >= this.maxSlot()) return;
         const recipe = this.stage.item;
         const newFortune = new fortuneSlot(recipe.type, this.stage.rarity+1,recipe.lvl,20);
         this.slots.push(newFortune);
@@ -69,7 +71,7 @@ const FortuneManager = {
         refreshFortuneStage();
     },
     emptySlotCount() {
-        return this.maxSlot - this.slots.length;
+        return this.maxSlot() - this.slots.length;
     },
     getMaterialCost() {
         if (this.stage === null) return null;
@@ -88,6 +90,9 @@ const FortuneManager = {
         containers.forEach(s => s.subtractCraft());
         this.slots = this.slots.filter(s=>s.amt > 0);
         refreshFortuneSlots();
+    },
+    maxSlot() {
+        return this.lvl;
     }
 }
 

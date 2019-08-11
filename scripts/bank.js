@@ -5,10 +5,10 @@ const $bankBankSlots = $("#bankBankSlots");
 
 const BankManager = {
     slots : [],
-    maxSlots : 20,
+    level : 1,
     createSave() {
         const save = {};
-        save.maxSlots = this.maxSlots;
+        save.lvl = this.lvl;
         save.slots = [];
         this.slots.forEach(slot => {
             save.slots.push(slot.createSave());
@@ -16,15 +16,18 @@ const BankManager = {
         return save;
     },
     loadSave(save) {
-        this.maxSlots = save.maxSlots;
         save.slots.forEach(item => {
             const container = new itemContainer(item.id,item.rarity);
             container.loadSave(item);
             this.slots.push(container);
         });
+        if (save.lvl !== undefined) this.lvl = save.lvl;
+    },
+    maxSlots() {
+        return this.lvl*5+10;
     },
     full() {
-        return this.slots.length === this.maxSlots;
+        return this.slots.length === this.maxSlots();
     },
     containerToItem(containerID) {
         return this.slots.find(s=>s.containerID === containerID)
@@ -76,7 +79,7 @@ function refreshBankInventory() {
 function refreshBankBank() {
     $bankBankSlots.empty();
     const d1 = $("<div/>").addClass("bankBankHeadContainer");
-    const d2 = $("<div/>").addClass("bankBankHead").html(`Bank (${BankManager.slots.length}/${BankManager.maxSlots})` );
+    const d2 = $("<div/>").addClass("bankBankHead").html(`Bank (${BankManager.slots.length}/${BankManager.maxSlots()})` );
     const d3 = $("<div/>").attr("id","sortBank").html("Sort Bank");
     d1.append(d2,d3);
     $bankBankSlots.append(d1);

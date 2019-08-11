@@ -39,11 +39,11 @@ class fuse {
 
 const FusionManager = {
     slots : [],
-    maxSlots : 3,
+    lvl : 1,
     fuseNum : 0,
     createSave() {
         const save = {};
-        save.maxSlots = this.maxSlots;
+        save.lvl = this.lvl;
         save.slots = [];
         this.slots.forEach(slot => {
             save.slots.push(slot.createSave());
@@ -58,10 +58,10 @@ const FusionManager = {
             this.fuseNum += 1;
             this.slots.push(slot);
         });
-        this.maxSlots = save.maxSlots;
+        if (save.lvl !== undefined) this.lvl = save.lvl;
     },
     addFuse(uniqueid) {
-        if (this.slots.length === this.maxSlots) {
+        if (this.slots.length === this.maxSlots()) {
             Notifications.noFuseSlots();
             return;
         }
@@ -105,6 +105,9 @@ const FusionManager = {
         Inventory.addFuseToInventory(slot);
         this.slots = this.slots.filter(f=>f.fuseID !== fuseID);
         refreshFuseSlots();
+    },
+    maxSlots() {
+        return 1+this.lvl;
     }
 }
 
@@ -155,7 +158,7 @@ function refreshFuseSlots() {
         d1.append(d2,d3,d4);
         $fuseSlots.append(d1);
     });
-    for (let i=0;i<FusionManager.maxSlots-FusionManager.slots.length;i++) {
+    for (let i=0;i<FusionManager.maxSlots()-FusionManager.slots.length;i++) {
         const d4 = $("<div/>").addClass("fuseSlot");
         const d5 = $("<div/>").addClass("fuseSlotName").html("Empty");
         d4.append(d5);

@@ -1,37 +1,46 @@
 [
   {
     "id": "T001",
-    "name": "Create Steam",
-    "description": "Takes materials and turns them into steam",
-    "steam": 0,
-    "energyReq": 3
+    "name": "Destroy Item",
+    "description": "Takes common items and turns them into parts",
+    "mcost1": null,
+    "mcost1amt": null,
+    "mcost2": null,
+    "mcost2amt": null,
+    "creates": null,
+    "timeReq": 600000
   },
   {
     "id": "T002",
-    "name": "Destroy Item",
-    "description": "Takes common items and turns them into parts",
-    "steam": 10,
-    "energyReq": 3
+    "name": "Create Trinket 1",
+    "description": "Takes items and makes a trinket",
+    "mcost1": "M700",
+    "mcost1amt": 10,
+    "mcost2": "M800",
+    "mcost2amt": 10,
+    "creates": "R90001",
+    "timeReq": 600000
   },
   {
     "id": "T003",
-    "name": "Create Trinket 1",
+    "name": "Create Trinket 2",
     "description": "Takes items and makes a trinket",
-    "steam": 10,
-    "energyReq": 3
+    "mcost1": "M701",
+    "mcost1amt": 10,
+    "mcost2": "M801",
+    "mcost2amt": 10,
+    "creates": "R90002",
+    "timeReq": 600000
   },
   {
     "id": "T004",
-    "name": "Create Trinket 2",
-    "description": "Takes items and makes a trinket",
-    "steam": 10,
-    "energyReq": 3
-  },
-  {
-    "id": "T005",
     "name": "Create Trinket 3",
     "description": "Takes items and makes a trinket",
-    "steam": 10,
-    "energyReq": 3
+    "mcost1": "M702",
+    "mcost1amt": 10,
+    "mcost2": "M802",
+    "mcost2amt": 10,
+    "creates": "R90003",
+    "timeReq": 600000
   }
 ]

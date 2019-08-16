@@ -91,7 +91,10 @@ const miscIcons = {
     hp : '<img src="images/DungeonIcons/hp.png">',
     pow : '<img src="images/DungeonIcons/pow.png">',
     ap : '<img src="images/DungeonIcons/ap.png">',
-    gold : '<img src="images/DungeonIcons/gold.png">'
+    gold : '<img src="images/DungeonIcons/gold.png">',
+    star : '<i class="fal fa-star"></i>',
+    on : '<i class="fal fa-toggle-on"></i>',
+    off : '<i class="fal fa-toggle-off"></i>',
 }
 
 function msToSec(ms) {

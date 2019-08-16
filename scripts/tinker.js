@@ -8,9 +8,10 @@ class tinkerCommand {
     constructor(props) {
         Object.assign(this, props);
         this.time = 0;
+        this.acted = 0;
+        this.min = 1;
         this.state = "idle";
         this.enabled = false;
-        this.rngSeed = Math.random();
         this.reward = null;
     }
     createSave() {
@@ -19,16 +20,19 @@ class tinkerCommand {
         save.time = this.time;
         save.state = this.state;
         save.enabled = this.enabled;
-        save.rngSeed = this.rngSeed;
         save.reward = this.reward;
+        save.acted = this.acted;
+        save.min = this.min;
+        save.act = this.act;
         return save;
     }
     loadSave(save) {
         this.time = save.time;
         this.state = save.state;
         this.enabled = save.enabled;
-        this.rngSeed = save.rngSeed;
         this.reward = save.reward;
+        this.acted = save.acted;
+        this.min = save.min;
     }
     addTime(ms) {
         if (!this.enabled) return;
@@ -66,21 +70,35 @@ class tinkerCommand {
             this.reward = null;
             this.time = 0;
             this.state = "idle";
+            this.increaseAct();
             return;
         }
         if (Inventory.full()) return;
-        TinkerManager.newTrinket(this.creates);
+        TinkerManager.newTrinket(this.creates,this.min);
         this.time = 0;
         this.state = "idle";
+        this.increaseAct();
+    }
+    increaseAct() {
+        if (this.min === TinkerManager.max()) return;
+        this.acted += 1;
+        if (this.acted >= 5) {
+            this.acted = 0;
+            this.min += 1;
+            this.min = Math.min(this.min,TinkerManager.max());
+            refreshTinkerCommands();
+        }
     }
 }
 
 const TinkerManager = {
     commands : [],
     lvl : 1,
+    rngSeed : Math.random(),
     createSave() {
         const save = {};
         save.lvl = this.lvl;
+        save.rngSeed = this.rngSeed;
         save.commands = [];
         this.commands.forEach(c => save.commands.push(c.createSave()));
         return save;
@@ -91,6 +109,7 @@ const TinkerManager = {
             command.loadSave(c);
         });
         this.lvl = save.lvl;
+        this.rngSeed = save.rngSeed;
     },
     addTime(ms) {
         this.commands.forEach(command => command.addTime(ms));
@@ -102,18 +121,24 @@ const TinkerManager = {
     addCommand(action) {
         this.commands.push(action);                                                             
     },
-    newTrinket(trinketID) {
+    newTrinket(trinketID,min) {
         const item = new itemContainer(trinketID,0);
-        item.scale = Math.floor(Math.random() * 100) + 1;
+        item.scale = Math.floor(normalDistribution(min,this.max(),0.5));
         Inventory.addItemContainerToInventory(item);
-    }
+    },
+    toggle(commandID) {
+        const command = this.idToCommand(commandID);
+        command.toggle();
+    },
+    max() {
+        return 50;
+    },
 }
 
 function initiateTinkerBldg () {
     $tinkerBuilding.show();
     refreshTinkerMats();
     refreshTinkerCommands();
-    initializeTinkerSlots();
 }
 
 function refreshTinkerMats() {
@@ -131,8 +156,9 @@ function refreshTinkerCommands() {
             const enable = $("<div/>").addClass("tinkerCommandEnable").html(miscIcons.on).appendTo(d1);
             if (!command.enabled) enable.removeClass("tinkerCommandEnable").addClass("tinkerCommandDisable").html(miscIcons.off);
             $("<div/>").addClass("tinkerCommandName").html(command.name).appendTo(d1);
-            $("<div/>").addClass("tinkerCommandDesc").html(command.desc).appendTo(d1);
+            $("<div/>").addClass("tinkerCommandDesc").html(command.description).appendTo(d1);
             $("<div/>").addClass("tinkerCommandStatus").html(command.status).appendTo(d1);
+            if (command.id !== "T001") $("<div/>").addClass("tinkerCommandRange").html(`${miscIcons.star} ${command.min}-${TinkerManager.max()}`).appendTo(d1);
             createTinkerProgress(command).appendTo(d1);
     });
 };
@@ -155,21 +181,10 @@ function createTinkerProgress(command) {
     return d1.append(d1a,s1);
 }
 
-const $tinkerTicksBar = $("#tinkerTicksBar");
-const $tinkerTicksBarFill = $("#tinkerTicksBarFill");
-
+//enable or disable
 $(document).on('click', '.tinkerCommand', (e) => {
     e.preventDefault();
     const commandID =$(e.currentTarget).data("tinkerID");
-    TinkerManager.addSlot(commandID);
-    initializeTinkerSlots();
-    refreshTinkerEnergy();
+    TinkerManager.toggle(commandID);
+    refreshTinkerCommands();
 });
-
-$(document).on('click', '.tinkerSlotRemove', (e) => {
-    e.preventDefault();
-    const slotID = parseInt($(e.currentTarget).data("slotID"));
-    TinkerManager.removeSlot(slotID);
-    initializeTinkerSlots();
-    refreshTinkerEnergy();
-})

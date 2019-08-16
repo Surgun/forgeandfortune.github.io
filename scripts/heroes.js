@@ -430,6 +430,7 @@ function examineHero(ID) {
             equipText = equip.picName();
             equipRarity = equip.rarity;
             equipLevel = `<div class="level_text">LVL</div><div class="level_integer">${equip.lvl}</div>`;
+            if (equip.scale > 0) equipLevel = `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${equip.scale}</div>`;
             const td1 = $('<div/>').addClass('gearStatContainer');
                 $('<div/>').addClass('gearStat gearStatHP').html(miscIcons.hp + equip.hp()).appendTo(td1);
             const td2 = $('<div/>').addClass('gearStatContainer');

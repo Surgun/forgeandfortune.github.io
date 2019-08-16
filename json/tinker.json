@@ -8,7 +8,7 @@
     "mcost2": null,
     "mcost2amt": null,
     "creates": null,
-    "timeReq": 600000
+    "maxTime": 600000
   },
   {
     "id": "T002",
@@ -19,7 +19,7 @@
     "mcost2": "M800",
     "mcost2amt": 10,
     "creates": "R90001",
-    "timeReq": 600000
+    "maxTime": 600000
   },
   {
     "id": "T003",
@@ -30,7 +30,7 @@
     "mcost2": "M801",
     "mcost2amt": 10,
     "creates": "R90002",
-    "timeReq": 600000
+    "maxTime": 600000
   },
   {
     "id": "T004",
@@ -41,6 +41,6 @@
     "mcost2": "M802",
     "mcost2amt": 10,
     "creates": "R90003",
-    "timeReq": 600000
+    "maxTime": 600000
   }
 ]

@@ -73,7 +73,6 @@ class itemContainer {
     picName() {
         const prefix = `<span class="item-prefix-name">+${this.sharp} ${this.item.name}</span>`
         if (this.sharp > 0) return `${this.item.itemPic()}<div class="item-prefix-name">${prefix}</div>`;
-        if (this.scale > 0) return `${this.item.itemPic()} <span class="item-prefix-name">${this.scale} ${miscIcons.star} ${this.item.name}`;
         return this.item.itemPicName();
     }
     picNamePlus() {
@@ -81,6 +80,7 @@ class itemContainer {
         return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
     }
     itemLevel() {
+        if (this.scale > 0) return `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${this.scale}</div>`;
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
     pow() {

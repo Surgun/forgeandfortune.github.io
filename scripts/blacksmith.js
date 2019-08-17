@@ -8,6 +8,7 @@ const bloopSmith = {
     smithState : "waiting",
     smithSuccess : false,
     smithTimer : 0,
+    lvl : 1,
     createSave() {
         const save = {};
         save.smithTimer = this.smithTimer;
@@ -110,6 +111,11 @@ const bloopSmith = {
         this.smithStage = this.smithSlot;
         this.smithSlot = null;
         this.smithStart(true);
+    },
+    maxSharp() {
+        if (this.lvl === 1) return 3;
+        if (this.lvl === 2) return 6;
+        return 10;
     }
 }
 
@@ -128,7 +134,7 @@ function refreshSmithInventory() {
         $smithInvSlots.append(d2);
         return;
     }
-    Inventory.nonblank().filter(i=>i.sharp < 10).forEach(item => {
+    Inventory.nonblank().filter(i=>i.sharp < bloopSmith.maxSharp()).forEach(item => {
         $smithInvSlots.append(itemCardSmith(item));
     });
 }
@@ -186,7 +192,7 @@ function refreshSmithArea() {
     else if (bloopSmith.smithState === "complete") {
         $swItemStage.empty();
             $("<div/>").addClass("collectTextBox").html("Collect Reward").appendTo($swItemStage);
-            if (bloopSmith.smithSlot.sharp < 10) {
+            if (bloopSmith.smithSlot.sharp < bloopSmith.maxSharp()) {
                 const d = $("<div/>").attr("id","collectResmith").appendTo($swItemStage);
                 const s1 = $("<div/>").addClass("smithCostContainer").appendTo(d);
                 $("<div/>").addClass("smith_title").html(`Smith Again`).appendTo(s1);

@@ -82,7 +82,8 @@ class Hero {
         }
         if (save.slot7 !== null && save.slot7 !== undefined) {
             this.slot7 = new itemContainer(save.slot7.id,save.slot7.rarity);
-            this.slot7.loadSave(save.slot6);
+            console.log(this.slot7,save.slot7);
+            this.slot7.loadSave(save.slot7);
         }
         this.owned = save.owned;
     }
@@ -429,6 +430,7 @@ function examineHero(ID) {
             equipText = equip.picName();
             equipRarity = equip.rarity;
             equipLevel = `<div class="level_text">LVL</div><div class="level_integer">${equip.lvl}</div>`;
+            if (equip.scale > 0) equipLevel = `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${equip.scale}</div>`;
             const td1 = $('<div/>').addClass('gearStatContainer');
                 $('<div/>').addClass('gearStat gearStatHP').html(miscIcons.hp + equip.hp()).appendTo(td1);
             const td2 = $('<div/>').addClass('gearStatContainer');

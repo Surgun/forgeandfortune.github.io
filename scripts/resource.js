@@ -53,6 +53,7 @@ const ResourceManager = {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
+        refreshTinkerMats();
         if (mat.id !== "M001") return;
         $goldSidebarAmt.html(formatToUnits(mat.amt,2));
         $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);
@@ -141,12 +142,6 @@ const ResourceManager = {
         const materials = matids.map(m => this.idToMaterial(m));
         return materials.filter(m => m.seen);
     },
-    getSteamMaterial() {
-        const possible = this.materials.filter(m => m.amt > 0 && m.steam > 0);
-        if (possible.length === 0) return false;
-        possible[0].amt -= 1;
-        return possible[0].steam;
-    }
 }
 
 const $materials = $("#materials");

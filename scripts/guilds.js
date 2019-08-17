@@ -519,11 +519,17 @@ class alRewards {
         if (this.type === "sanctuary8") ActionLeague.sanctuaryHeal[8] = 100;
         if (this.type === "sanctuary9") ActionLeague.sanctuaryHeal[9] = 100;
         if (this.type === "cap") GuildManager.setMaxLvl(this.subtype);
-        if (this.type === "desynth") TownManager.buildingPerk("desynth");
-        if (this.type === "bank") TownManager.buildingPerk("bank");
-        if (this.type === "cauldron") TownManager.buildingPerk("fuse");
-        if (this.type === "forge") TownManager.buildingPerk("smith");
-        if (this.type === "fortune") TownManager.buildingPerk("fortune");
+        if (this.type === "desynth" && this.subtype === "open") TownManager.buildingPerk("desynth");
+        if (this.type === "bank" && this.subtype === "open") TownManager.buildingPerk("bank");
+        if (this.type === "bank" && this.subtype === "level") BankManager.addLevel();
+        if (this.type === "cauldron" && this.subtype === "open") TownManager.buildingPerk("fuse");
+        if (this.type === "cauldron" && this.subtype === "level") FusionManager.addLevel();
+        if (this.type === "forge" && this.subtype === "open") TownManager.buildingPerk("smith");
+        if (this.type === "forge" && this.subtype === "level") bloopSmith.addLevel();
+        if (this.type === "fortune" && this.subtype === "open") TownManager.buildingPerk("fortune");
+        if (this.type === "fortune" && this.subtype === "level") FortuneManager.addLevel();
+        if (this.type === "tinker" && this.subtype === "open") TownManager.buildingPerk("tinker");
+        if (this.type === "tinker" && this.subtype === "level") TinkerManager.addLevel();
     }
 }
 

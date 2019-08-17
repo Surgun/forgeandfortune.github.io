@@ -91,7 +91,10 @@ const miscIcons = {
     hp : '<img src="images/DungeonIcons/hp.png">',
     pow : '<img src="images/DungeonIcons/pow.png">',
     ap : '<img src="images/DungeonIcons/ap.png">',
-    gold : '<img src="images/DungeonIcons/gold.png">'
+    gold : '<img src="images/DungeonIcons/gold.png">',
+    star : '<i class="fas fa-star"></i>',
+    on : '<i class="fal fa-toggle-on"></i>',
+    off : '<i class="fal fa-toggle-off"></i>',
 }
 
 function msToSec(ms) {
@@ -176,4 +179,18 @@ function inWords(num) {
     str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
     str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) : '';
     return str;
+}
+
+function normalDistribution(min, max, skew) {
+    var u = 0, v = 0;
+    while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+    while(v === 0) v = Math.random();
+    let num = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+
+    num = num / 10.0 + 0.5; // Translate to 0 -> 1
+    if (num > 1 || num < 0) num = randn_bm(min, max, skew); // resample between 0 and 1 if out of range
+    num = Math.pow(num, skew); // Skew
+    num *= max - min; // Stretch to fill range
+    num += min; // offset to min
+    return num;
 }

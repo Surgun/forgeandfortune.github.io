@@ -200,7 +200,6 @@ function saveUpdate(loadGame) {
         if (loadGame["tm"].fortuneStatus !== BuildingState.hidden) loadGame["al"].purchased.push("AL4104");
 
         //now we have to take the highest perk you've bought, and make sure your notoriety matches it... or you have materials higher than the cap... ugh
-        console.log(loadGame["al"]);
         const notoReq = loadGame["al"].purchased.map(p => {
             if (ActionLeague.idToPerk(p) === undefined) return 0;
             return ActionLeague.idToPerk(p).notoReq;
@@ -576,6 +575,7 @@ function saveUpdate(loadGame) {
         loadGame.v = "032";
         const eventIDs = EventManager.allDungeonEventIDs();
         eventIDs.forEach(eventID => EventManager.readEvent(eventID));
+        delete loadGame["fo"];
     }
     return loadGame;
 }

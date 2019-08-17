@@ -39,7 +39,6 @@ let containerid = 0;
 
 class itemContainer {
     constructor(id,rarity) {
-        console.log(id,rarity);
         this.id = id;
         this.item = recipeList.idToItem(id);
         this.name = this.item.name;
@@ -49,10 +48,13 @@ class itemContainer {
         this.containerID = containerid;
         this.sharp = 0;
         this.seed = Math.floor(Math.random() * 1000000);
+        this.scale = 0;
         containerid += 1;
     }
     uniqueID() {
-        return this.id+"_"+this.rarity+"_"+this.sharp;
+        const result = this.id+"_"+this.rarity+"_"+this.sharp;
+        if (this.scale > 0) return result + "_" + this.scale;
+        return result;
     }
     createSave() {
         const save = {};
@@ -60,11 +62,13 @@ class itemContainer {
         save.rarity = this.rarity;
         save.sharp = this.sharp;
         save.seed = this.seed;
+        save.scale = this.scale;
         return save;
     }
     loadSave(save) {
         this.sharp = save.sharp;
         if (save.seed !== undefined) this.seed = save.seed;
+        if (save.scale !== undefined) this.scale = save.scale;
     }
     picName() {
         const prefix = `<span class="item-prefix-name">+${this.sharp} ${this.item.name}</span>`
@@ -76,6 +80,7 @@ class itemContainer {
         return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
     }
     itemLevel() {
+        if (this.scale > 0) return `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${this.scale}</div>`;
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
     pow() {
@@ -118,7 +123,6 @@ class itemContainer {
         }
         return d;
     }
-    
     goldValueFormatted() {
         return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue(),2);
     }
@@ -351,9 +355,9 @@ const Inventory = {
     },
     getCommon() {
         const item = this.nonblank().filter(item=>item.rarity === 0)[0];
-        if (item === undefined) return false;
+        if (item === undefined) return {id:null,amt:0};
         this.removeContainerFromInventory(item.containerID);
-        return item;
+        return {id:item.deconType(),amt:item.deconAmt()};
     }
 }
 

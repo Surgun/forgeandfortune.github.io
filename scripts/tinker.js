@@ -36,7 +36,7 @@ class tinkerCommand {
     }
     addTime(ms) {
         if (!this.enabled) return;
-        if (this.state === "idle" || this.state === "need material") return this.attemptStart();
+        if (this.state === "idle" || this.state === "need material") this.attemptStart();
         if (this.state === "running") {
             this.time += ms;
             if (this.time >= this.maxTime) {
@@ -167,7 +167,8 @@ function refreshTinkerSlotProgress() {
     TinkerManager.commands.forEach(command => {
         const percent = command.time/command.maxTime;
         const width = (percent*100).toFixed(1)+"%";
-        $("#tinkerBar"+command.id).attr("data-label",width);
+        const datalabel = command.enabled ? msToTime(command.maxTime-command.time) : "";
+        $("#tinkerBar"+command.id).attr("data-label",datalabel);
         $("#tinkerFill"+command.id).css('width', width);
     })
 };
@@ -176,7 +177,8 @@ function createTinkerProgress(command) {
     const percent = command.time/command.maxTime;
     const width = (percent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("tinkerProgressDiv");
-    const d1a = $("<div/>").addClass("tinkerBar").attr("id","tinkerBar"+command.id).attr("data-label",width);
+    const datalabel = command.enabled ? msToTime(command.maxTime-command.time) : "";
+    const d1a = $("<div/>").addClass("tinkerBar").attr("id","tinkerBar"+command.id).attr("data-label",datalabel);
     const s1 = $("<span/>").addClass("tinkerBarFill").attr("id","tinkerFill"+command.id).css('width', width);
     return d1.append(d1a,s1);
 }

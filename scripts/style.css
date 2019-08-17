@@ -4881,11 +4881,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     z-index: 1;
 }
 
-.hpBar, .apBar, .masteryBar, .fuseBar, #swBar, .dsbhpBar, .repBar, .notoBar, .tinkerBar, .tinkerTicksBar {
+.hpBar, .apBar, .masteryBar, .fuseBar, #swBar, .dsbhpBar, .repBar, .notoBar, .tinkerBar, .tinkerTicksBar, .tinkerBarFill {
     height: 100%;
 }
 
-.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before, .masteryBar:before, .repBar:before, .notoBar:before, .desynthBar:before {
+.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before, .masteryBar:before, .repBar:before, .notoBar:before, .desynthBar:before, .tinkerBar:before {
     content: " " attr(data-label);
     position: absolute;
     display: -webkit-box;
@@ -5279,6 +5279,9 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin-top: 5px;
 }
 
+.tinkerBarFill {
+    height: 100%;
+}
 .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill, .notoBarFill, .desynthBarFill, .repBarDiv, .notoBarDiv, .tinkerTicksBarFill, .tinkerBarFill {
     background-color: rgba(255,255,255,0.15);
 }

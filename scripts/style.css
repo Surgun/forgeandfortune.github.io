@@ -4815,7 +4815,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 0 2px;
 }
 
-.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .repBarDiv, .notoBarDiv, .desynthBarDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .repBarDiv, .notoBarDiv, .desynthBarDiv, .tinkerProgressDiv, .tinkerTicksDiv {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4859,7 +4859,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     z-index: 1;
 }
 
-.hpBar, .apBar, .masteryBar, .fuseBar, #swBar, .dsbhpBar, .repBar, .notoBar {
+.hpBar, .apBar, .masteryBar, .fuseBar, #swBar, .dsbhpBar, .repBar, .notoBar, .tinkerBar, .tinkerTicksBar {
     height: 100%;
 }
 
@@ -5173,7 +5173,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 0;
 }
 
-.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .alPerk, .desynthSlot, .desynthGroup, .fortuneItem, .tinkerCommand {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .alPerk, .desynthSlot, .desynthGroup, .fortuneItem, .tinkerCommand, .tinkerSlot {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5223,7 +5223,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     padding: 10px 0;
 }
 
-.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, .repBarDiv, .notoBarDiv, .desynthBarDiv {
+.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, .repBarDiv, .notoBarDiv, .desynthBarDiv, .tinkerTicksDiv, .tinkerProgressDiv {
     width: 100%;
     height: 26px;
     line-height: 26px;
@@ -5233,10 +5233,6 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     border-radius: 5px;
     font-size: 1em;
     text-align: center;
-}
-
-.repBarDiv, .notoBarDiv {
-    background-color: rgba(255,255,255,0.15);
 }
 
 .beatBarDiv {
@@ -5261,7 +5257,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin-top: 5px;
 }
 
-.fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill, .notoBarFill, .desynthBarFill {
+.fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill, .notoBarFill, .desynthBarFill, .repBarDiv, .notoBarDiv, .tinkerTicksBarFill, .tinkerBarFill {
     background-color: rgba(255,255,255,0.15);
 }
 
@@ -5973,7 +5969,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     min-height: 50px;
 }
 
-.tinkerMaterialsContainer, .tinkerCommandsContainer {
+.tinkerMaterialsContainer, .tinkerCommandsContainer, .tinkerSlotsContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill,minmax(150px, 1fr));
     grid-gap: 5px;
@@ -5989,7 +5985,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     padding: 5px 10px;
 }
 
-.tinkerCommandsContainer {
+.tinkerCommandsContainer, .tinkerSlotsContainer {
     grid-template: auto / repeat(auto-fill,minmax(200px, 1fr));
 }
 

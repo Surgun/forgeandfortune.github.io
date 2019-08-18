@@ -4816,11 +4816,19 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin-bottom: 20px;
 }
 
+.dreTeamHero {
+    -webkit-animation: 0.2s scale-in forwards;
+    animation: 0.2s scale-in forwards;
+}
+
+.dreLoot {
+    margin-right: 70px;
+}
+
 .dreCollect {
     width: 100%;
     max-width: 315px;
 }
-
 
 .buyHeroCost {
     display: -webkit-box;
@@ -6328,7 +6336,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .rewardCard, .dreLootDropCard {
     position: relative;
-    padding: 3px 10px;
+    padding: 5px 10px;
     margin-top: 10px;
     margin-right: 5px;
     display: -webkit-inline-box;
@@ -6340,7 +6348,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 5px;
+    -webkit-animation: 0.2s scale-in forwards;
+    animation: 0.2s scale-in forwards;
 }
 
 .rewardImage, .dreLootDropImage {

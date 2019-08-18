@@ -172,7 +172,6 @@ function createFortuneCard(slot) {
 $(document).on('click', '.fortuneStage', (e) => {
     e.preventDefault();
     const containerID = parseInt($(e.currentTarget).attr("containerID"));
-    console.log(containerID);
     FortuneManager.stageItem(containerID);
 });
 

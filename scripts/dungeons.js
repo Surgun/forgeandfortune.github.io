@@ -169,6 +169,7 @@ class Dungeon {
         }
     }
     resetDungeon() {
+        ResourceManager.addDungeonDrops(this.dropList);
         this.party.heroes.forEach(h=>{
             h.inDungeon = false;
             h.ap = 0;
@@ -308,10 +309,10 @@ const DungeonManager = {
     repeatDungeon(dungeonID) {
         //ends a dungeon and also restarts it?
         const dungeon = this.dungeonByID(dungeonID);
+        this.dungeonCreatingID = dungeonID;
         dungeon.resetDungeon();
         PartyCreator.clearMembers();
         PartyCreator.startingTeam(dungeon.lastParty);
-        this.dungeonCreatingID = dungeonID;
         this.createDungeon();
     },
     createDungeon() {

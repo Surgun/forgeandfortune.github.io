@@ -49,6 +49,7 @@ const ResourceManager = {
         }
         const mat = this.materials.find(mat => mat.id === res);
         mat.amt += amt;
+        if (mat.id !== "M001") mat.amt = Math.min(mat.amt,1000);
         mat.seen = true;
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();

@@ -12,6 +12,7 @@ $(document).on("click","#sortInventory",(e) => {
 $(document).on("click","#sellAllCommons",(e) => {
     e.preventDefault();
     Inventory.sellCommons();
+    Inventory.sortInventory();
 });
 
 $(document).on("click",".inventoryEquip",(e) => {

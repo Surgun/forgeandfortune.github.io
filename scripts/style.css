@@ -6744,7 +6744,7 @@ footer a[href*="discord.gg"]:hover {
 }
 
 .rewardCard.tooltip:after, .dreLootDropCard.tooltip:after {
-    left: -20%;
+    left: -10%;
     right: -50%;
     margin-left: 0;
     bottom: 130%;

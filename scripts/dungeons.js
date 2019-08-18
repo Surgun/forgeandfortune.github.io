@@ -164,7 +164,6 @@ class Dungeon {
     }
     endDungeon(abandoned) {
         this.status = DungeonStatus.COLLECT;
-        console.log(DungeonManager.dungeonView,this.id);
         if (DungeonManager.dungeonView === this.id) {
             showDungeonReward(this.id,abandoned);
         }
@@ -305,6 +304,15 @@ const DungeonManager = {
         const dungeon = this.dungeonByID(dungeonID);
         dungeon.party = null;
         dungeon.status = DungeonStatus.EMPTY;
+    },
+    repeatDungeon(dungeonID) {
+        //ends a dungeon and also restarts it?
+        const dungeon = this.dungeonByID(dungeonID);
+        dungeon.resetDungeon();
+        PartyCreator.clearMembers();
+        PartyCreator.startingTeam(dungeon.lastParty);
+        this.dungeonCreatingID = dungeonID;
+        this.createDungeon();
     },
     createDungeon() {
         const party = PartyCreator.lockParty();

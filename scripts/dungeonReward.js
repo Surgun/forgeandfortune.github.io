@@ -46,4 +46,12 @@ $(document).on('click', "#dreCollect", (e) => {
     openTab("dungeonsTab");
 })
 
+$(document).on('click', "#dreRepeat", (e) => {
+    const dungeonID = DungeonManager.dungeonView;
+    DungeonManager.repeatDungeon(dungeonID);
+    $dungeonSelect.hide();
+    $dungeonTeamSelect.hide();
+    $dungeonRun.show();
+});
+
 //resetDungeon

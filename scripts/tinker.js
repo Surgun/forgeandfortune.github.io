@@ -155,7 +155,7 @@ function refreshTinkerCommands() {
         const d1 = $("<div/>").addClass("tinkerCommand").data("tinkerID",command.id).appendTo($tinkerCommands);
             const toggle = $("<div/>").addClass("toggleStatus");
                 $("<div/>").addClass("toggleCue").appendTo(toggle);
-            const enable = $("<div/>").addClass("tinkerCommandEnable").append(toggle).appendTo(d1);
+            const enable = $("<div/>").attr("id","enable"+command.id).addClass("tinkerCommandEnable").append(toggle).appendTo(d1);
             if (!command.enabled) enable.removeClass("tinkerCommandEnable").addClass("tinkerCommandDisable");
             $("<div/>").addClass("tinkerCommandName").html(command.name).appendTo(d1);
             $("<div/>").addClass("tinkerCommandDesc").html(command.description).appendTo(d1);
@@ -190,5 +190,7 @@ $(document).on('click', '.tinkerCommand', (e) => {
     e.preventDefault();
     const commandID =$(e.currentTarget).data("tinkerID");
     TinkerManager.toggle(commandID);
-    refreshTinkerCommands();
+    const command = TinkerManager.idToCommand(commandID);
+    if (command.enabled) $("#enable"+commandID).addClass("tinkerCommandEnable").removeClass("tinkerCommandDisable");
+    else $("#enable"+commandID).removeClass("tinkerCommandEnable").addClass("tinkerCommandDisable");
 });

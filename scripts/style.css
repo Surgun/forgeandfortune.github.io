@@ -4405,6 +4405,14 @@ div.EquipmentCardsContainer {
     font-weight: bold;
 }
 
+.dfcImage, .dfmImage {
+    max-height: 100px;
+}
+
+.dfcImage > img, .dfmImage > img {
+    height: 100%;
+}
+
 .dfm {
     -ms-grid-column: 4;
         grid-column: 4;

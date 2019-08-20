@@ -123,7 +123,7 @@ const TinkerManager = {
     },
     newTrinket(trinketID,min) {
         const item = new itemContainer(trinketID,0);
-        item.scale = Math.floor(normalDistribution(min,this.max(),0.5));
+        item.scale = Math.floor(normalDistribution(min,this.max(),3));
         Inventory.addItemContainerToInventory(item);
     },
     toggle(commandID) {

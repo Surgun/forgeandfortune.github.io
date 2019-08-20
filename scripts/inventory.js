@@ -81,6 +81,7 @@ class itemContainer {
         return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
     }
     itemLevel() {
+        console.log(this.scale);
         if (this.scale > 0) return `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${this.scale}</div>`;
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
@@ -426,18 +427,20 @@ function refreshInventory() {
         const itemLevel = $("<div/>").addClass("inventoryItemLevel").html(item.itemLevel());
         if (item.goldValue() === 0) {
             itemCost.hide();
+        }
+        if (item.lvl === 0 && item.scale === 0) {
             itemLevel.hide();
         }
         const itemProps = $("<div/>").addClass("inventoryProps").html(item.propDiv());
         const actionBtns = $("<div/>").addClass("inventoryButtons");
-        if (item.item.recipeType === "normal") {
-            const equipButton = $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip");
-            const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Sell");
-            actionBtns.append(equipButton,sellButton);
+        if (item.item.recipeType === "normal" || item.item.recipeType === "trinket") {
+            $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip").appendTo(actionBtns);
+        }
+        if (item.goldValue() > 0) {
+            $("<div/>").addClass('inventorySell').attr("id",i).html("Sell").appendTo(actionBtns);
         }
         else {
-            const sellButton = $("<div/>").addClass('inventorySell').attr("id",i).html("Discard");
-            actionBtns.append(sellButton);
+            $("<div/>").addClass('inventorySell').attr("id",i).html("Discard").appendTo(actionBtns);
         }
         itemdiv.append(itemName,itemLevel,itemCost,itemProps,actionBtns);
         $inventory.append(itemdiv);
@@ -454,13 +457,13 @@ const $ietHero = $("#ietHero");
 function gearEquipFromInventory(invID) {
     $ietEquip.empty();
     $ietHero.empty();
-    const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory"]
     equipContainerTarget = Inventory.inv[invID];
     const item = equipContainerTarget.item;
     const itemdiv = $("<div/>").addClass("equipItem");
     itemdiv.addClass("R"+equipContainerTarget.rarity)
-    const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName())
-    const itemLevel = $("<div/>").addClass("equipItemLevel").html(item.itemLevel());
+    const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
+    console.log(item.itemLevel());
+    const itemLevel = $("<div/>").addClass("equipItemLevel").html(equipContainerTarget.itemLevel());
     const itemProps = $("<div/>").addClass("equipItemProps").html(equipContainerTarget.propDiv());
     itemdiv.append(itemName,itemLevel,itemProps);
     $ietEquip.html(itemdiv);
@@ -473,27 +476,22 @@ function gearEquipFromInventory(invID) {
         const d3 = $("<div/>").addClass("heroEquipBlockEquips");
         hb.canEquip.forEach((tf,i) => {
             if (!tf) return;
-            const d4 = $("<div/>").addClass("heroEquipBlockEquip");
-            const d4a = $("<div/>").addClass("heroEquipBlockEquipSlot").html(slotName[i]);
-            const relPow = HeroManager.relativePow(hb.id,i,equipContainerTarget.pow());
-            const relHP = HeroManager.relativeHP(hb.id,i,equipContainerTarget.hp());
+            const d4 = $("<div/>").addClass("heroEquipBlockEquip").appendTo(d3);
+            const currentStats = hero.getSlot(i) ? hero.getSlot(i).itemStat() : blankItemStat();
+            const newStats = equipContainerTarget.itemStat();
+            let same = true;
+            for (const [stat, val] of Object.entries(newStats)) {
+                const deltaStat = val - currentStats[stat];
+                if (deltaStat === 0 && val === 0) continue;
+                same = false;
+                const d4a = $('<div/>').addClass('heroEquipBlockEquipStat').appendTo(d4);
+                if (deltaStat > 0) d4a.addClass("hebPositive").html(`${miscIcons[stat]}${val} (+${deltaStat})`);
+                else if (deltaStat < 0) d4a.addClass("hebNegative").html(`${miscIcons[stat]}${val} (${deltaStat})`);
+                else d4a.html(`${miscIcons[stat]}${val}`);
+            }
+            if (same) $("<div/>").addClass("heroEquipBlockEquipStat").html("No Change").appendTo(d4);
+            $("<div/>").addClass("heroEquipBlockEquipButton").attr("hid",hb.id).attr("sid",i).html("Equip").appendTo(d4);
 
-            const d4b = $("<div/>").addClass("heroEquipBlockEquipStat")
-            if (relPow > 0) d4b.addClass("hebPositive").html(miscIcons.pow + "&nbsp;+" + relPow);
-            else if (relPow < 0) d4b.addClass("hebNegative").html(miscIcons.pow + "&nbsp;" + relPow);
-            else d4b.hide();
-
-            const d4c = $("<div/>").addClass("heroEquipBlockEquipStat").html(relHP);
-            if (relHP > 0) d4c.addClass("hebPositive").html(miscIcons.hp + "&nbsp;+" + relHP);
-            else if (relHP < 0) d4c.addClass("hebNegative").html(miscIcons.hp + "&nbsp;" + relHP);
-            else d4c.hide();
-
-            const d4d = $("<div/>").addClass("heroEquipBlockEquipStat").html("No Change");
-            if (relPow !== 0 || relHP !== 0) d4d.hide();
-
-            const d4e = $("<div/>").addClass("heroEquipBlockEquipButton").attr("hid",hb.id).attr("sid",i).html("Equip");
-            d4.append(d4a,d4b,d4c,d4d,d4e);
-            d3.append(d4);
         });
         d.append(d1,d2,d3);
         $ietHero.append(d);

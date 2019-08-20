@@ -84,17 +84,23 @@ class itemContainer {
         if (this.scale > 0) return `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${this.scale}</div>`;
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
-    pow() {
-        return Math.floor(this.item.pow * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*this.sharp));
-    }
+    pow() { return this.statCalc(this.item.pow,this.item.powScale); }
+    hp() { return this.statCalc(this.item.hp,this.item.hpScale); }
+    armor() { return this.statCalc(this.item.armor,this.item.armorScale); }
+    resist() { return this.statCalc(this.item.resist,this.item.resistScale); }
+    crit() { return this.statCalc(this.item.crit,this.item.critScale); }
+    dodge() { return this.statCalc(this.item.dodge,this.item.dodgeScale); }
+    spow() { return this.statCalc(this.item.spow,this.item.spowScale); }
+    apen() { return this.statCalc(this.item.apen,this.item.apenScale); }
+    mpen() { return this.statCalc(this.item.mpen,this.item.mpenScale); }
     powPlus() {
-        return Math.floor(this.item.pow * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*(this.sharp+1)));
-    }
-    hp() {
-        return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*this.sharp));
+        return Math.floor(this.pow()*1.05);
     }
     hpPlus() {
-        return Math.floor(this.item.hp * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*(this.sharp+1)));
+        return Math.floor(this.hp()*1.05);
+    }
+    statCalc(flat,scale) {
+        return Math.floor(flat * miscLoadedValues.rarityMod[this.rarity] + scale * this.scale) * (1+0.05*this.sharp);
     }
     propDiv() {
         const d = $("<div/>").addClass("invProp");
@@ -142,6 +148,33 @@ class itemContainer {
     deconAmt() {
         return Math.floor(this.item.craftTime / 4000);
     }
+    itemStat() {
+        const stats = {};
+        stats[heroStat.pow] = this.pow();
+        stats[heroStat.hp] = this.hp();
+        stats[heroStat.armor] = this.armor();
+        stats[heroStat.resis] = this.resist();
+        stats[heroStat.crit] = this.crit();
+        stats[heroStat.dodge] = this.dodge();
+        stats[heroStat.spow] = this.spow();
+        stats[heroStat.apen] = this.apen();
+        stats[heroStat.mpen] = this.mpen();
+        return stats;
+    }
+}
+
+function blankItemStat() {
+    const stats = {};
+    stats[heroStat.pow] = 0;
+    stats[heroStat.hp] = 0;
+    stats[heroStat.armor] = 0;
+    stats[heroStat.resis] = 0;
+    stats[heroStat.crit] = 0;
+    stats[heroStat.dodge] = 0;
+    stats[heroStat.spow] = 0;
+    stats[heroStat.apen] = 0;
+    stats[heroStat.mpen] = 0;
+    return stats;
 }
 
 const Inventory = {

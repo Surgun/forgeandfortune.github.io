@@ -114,6 +114,9 @@ class Mob {
         if (this.armorBuff) return this.armor + Math.round(this.getAdjPow() * 0.2);
         return this.armor;
     }
+    getCrit() {
+        return this.crit;
+    }
     pic() {
         return this.image;
     }

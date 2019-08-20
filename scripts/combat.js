@@ -64,7 +64,7 @@ const CombatManager = {
     },
     normalAttack(attacker, defender, dungeonid) {
         const battleMessage = $("<span/>");
-        const critical = this.rollStat(attacker.crit);
+        const critical = this.rollStat(attacker.getCrit());
         let damage = attacker.getAdjPow();
         if (critical) {
             damage = Math.round(damage*attacker.critdmg);

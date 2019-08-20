@@ -198,9 +198,13 @@ const $tinkerRangeContainer = $("#tinkerRangeContainer");
 function populateTinkerRange() {
     TinkerManager.commands.forEach(command => {
         if (command.id === "T001") return;
-        const d = $("<div/>").addClass("tinkerRangeContainer").appendTo($tinkerRangeContainer);
-            const commandText = (TinkerManager["d"+command.id] === 0) ? `${command.name} - Disabled` : `${command.name} - ${TinkerManager["d"+command.id]}${miscIcons.star}`;
-            $("<span/>").addClass("tinkerRangeDesc").attr("id","rangeLabel"+command.id).html(commandText).appendTo(d);
+        const d = $("<div/>").addClass("tinkerRangeBox").appendTo($tinkerRangeContainer);
+            const tinkerRangeDesc = $("<div/>").addClass("tinkerRangeDesc").attr("id","rangeLabel"+command.id).appendTo(d);
+            const commandName = $("<div/>").addClass("commandName").html(`${command.name}`);
+            const commandStatus = $("<div/>").addClass("commandStatus");
+                if ((TinkerManager["d"+command.id] === 0)) $(commandStatus).addClass("commandDisabled").html(`Disabled`);
+                else $(commandStatus).html(`${TinkerManager["d"+command.id]}${miscIcons.star}`);
+                tinkerRangeDesc.append(commandName,commandStatus);
             $("<input type='range'/>").addClass("tinkerRange").attr({"id":"range"+command.id,"max":100,"min":0,"step":1,"value":TinkerManager["d"+command.id],}).data("tinkerID",command.id).appendTo(d);
     })
 }
@@ -209,9 +213,13 @@ $(document).on('input', '.tinkerRange', (e) => {
     const tinkerID = $(e.currentTarget).data("tinkerID");
     const value = parseInt($(e.currentTarget).val());
     TinkerManager["d"+tinkerID] = value;
-    const commandName = TinkerManager.idToCommand(tinkerID).name;
-    if (value === 0) $("#rangeLabel"+tinkerID).html(`${commandName} - Disabled`)
-    else $("#rangeLabel"+tinkerID).html(`${commandName} - ${$(e.currentTarget).val()}${miscIcons.star}`)
+    const commandName = $("<div/>").addClass("commandName").html(`${TinkerManager.idToCommand(tinkerID).name}`);
+    const commandStatus = $("<div/>").addClass("commandStatus commandDisabled").html(`Disabled`);
+    if (value === 0) $("#rangeLabel"+tinkerID).empty().append(commandName,commandStatus);
+    else {
+        $(commandStatus).removeClass("commandDisabled").html(`${$(e.currentTarget).val()}${miscIcons.star}`);
+        $("#rangeLabel"+tinkerID).empty().append(commandName,commandStatus);
+    }
 });
 
 //enable or disable

@@ -64,6 +64,7 @@ function createSave() {
     saveFile["gsm"] = GuildSeedManager.createSave();
     saveFile["g"] = GuildManager.createSave();
     saveFile["al"] = ActionLeague.createSave();
+    saveFile["t"] = TinkerManager.createSave();
     saveFile["saveTime"] = Date.now();
     return JSON.stringify(saveFile);
 }
@@ -98,6 +99,7 @@ function loadGame() {
     if (typeof loadGame["gsm"] !== "undefined") GuildSeedManager.loadSave(loadGame["gsm"]);
     if (typeof loadGame["g"] !== "undefined") GuildManager.loadSave(loadGame["g"]);
     if (typeof loadGame["al"] !== "undefined") ActionLeague.loadSave(loadGame["al"]);
+    if (typeof loadGame["t"] !== "undefined") TinkerManager.loadSave(loadGame["t"]);
     return true;
 }
 

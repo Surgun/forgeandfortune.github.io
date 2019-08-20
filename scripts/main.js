@@ -41,6 +41,7 @@ function afterLoad() {
     recipeList.recipeFilterType = "Knives";
     recipeList.recipeFilterString = "";
     recipeFilterList();
+    populateTinkerRange();
     loading_screen.finish();
 }
 

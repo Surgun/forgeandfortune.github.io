@@ -94,22 +94,28 @@ class tinkerCommand {
 const TinkerManager = {
     commands : [],
     lvl : 1,
-    rngSeed : Math.random(),
+    dT002 : 0,
+    dT003 : 0,
+    dT004 : 0,
     createSave() {
         const save = {};
         save.lvl = this.lvl;
-        save.rngSeed = this.rngSeed;
         save.commands = [];
+        save.dT002 = this.dT002;
+        save.dT003 = this.dT003;
+        save.dT004 = this.dT004;
         this.commands.forEach(c => save.commands.push(c.createSave()));
         return save;
     },
     loadSave(save) {
-        save.forEach(c => {
+        save.commands.forEach(c => {
             const command = this.idToCommand(c.id);
             command.loadSave(c);
         });
         this.lvl = save.lvl;
-        this.rngSeed = save.rngSeed;
+        if (save.dT002 !== undefined) this.dT002 = save.dT002;
+        if (save.dT003 !== undefined) this.dT003 = save.dT003;
+        if (save.dT004 !== undefined) this.dT004 = save.dT004;
     },
     addTime(ms) {
         this.commands.forEach(command => command.addTime(ms));
@@ -122,8 +128,10 @@ const TinkerManager = {
         this.commands.push(action);                                                             
     },
     newTrinket(trinketID,min) {
+        const scale = Math.floor(normalDistribution(min,this.max(),3));
+        if (scale < this["d"+trinketID]) return;
         const item = new itemContainer(trinketID,0);
-        item.scale = Math.floor(normalDistribution(min,this.max(),3));
+        item.scale = scale;
         Inventory.addItemContainerToInventory(item);
     },
     toggle(commandID) {
@@ -184,6 +192,27 @@ function createTinkerProgress(command) {
     const s1 = $("<span/>").addClass("tinkerBarFill").attr("id","tinkerFill"+command.id).css('width', width);
     return d1.append(d1a,s1);
 }
+
+const $tinkerRangeContainer = $("#tinkerRangeContainer");
+
+function populateTinkerRange() {
+    TinkerManager.commands.forEach(command => {
+        if (command.id === "T001") return;
+        const d = $("<div/>").addClass("tinkerRangeContainer").appendTo($tinkerRangeContainer);
+            const commandText = (TinkerManager["d"+command.id] === 0) ? `${command.name} - Disabled` : `${command.name} - ${TinkerManager["d"+command.id]}${miscIcons.star}`;
+            $("<span/>").addClass("tinkerRangeDesc").attr("id","rangeLabel"+command.id).html(commandText).appendTo(d);
+            $("<input type='range'/>").addClass("tinkerRange").attr({"id":"range"+command.id,"max":100,"min":0,"step":1,"value":TinkerManager["d"+command.id],}).data("tinkerID",command.id).appendTo(d);
+    })
+}
+
+$(document).on('input', '.tinkerRange', (e) => {
+    const tinkerID = $(e.currentTarget).data("tinkerID");
+    const value = parseInt($(e.currentTarget).val());
+    TinkerManager["d"+tinkerID] = value;
+    const commandName = TinkerManager.idToCommand(tinkerID).name;
+    if (value === 0) $("#rangeLabel"+tinkerID).html(`${commandName} - Disabled`)
+    else $("#rangeLabel"+tinkerID).html(`${commandName} - ${$(e.currentTarget).val()}${miscIcons.star}`)
+});
 
 //enable or disable
 $(document).on('click', '.tinkerCommand', (e) => {

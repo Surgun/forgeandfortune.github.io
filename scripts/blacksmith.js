@@ -134,7 +134,7 @@ function refreshSmithInventory() {
         $smithInvSlots.append(d2);
         return;
     }
-    Inventory.nonblank().filter(i=>i.sharp < bloopSmith.maxSharp()).forEach(item => {
+    Inventory.nonblank().filter(i=>i.sharp < bloopSmith.maxSharp() && i.item.recipeType === "normal").forEach(item => {
         $smithInvSlots.append(itemCardSmith(item));
     });
 }

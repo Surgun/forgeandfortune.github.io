@@ -81,7 +81,6 @@ class itemContainer {
         return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
     }
     itemLevel() {
-        console.log(this.scale);
         if (this.scale > 0) return `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${this.scale}</div>`;
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
@@ -141,6 +140,7 @@ class itemContainer {
         return this.item.smithCost;
     }
     material() {
+        if (!this.item.mcost) return "M201";
         return Object.keys(this.item.mcost)[0]
     }
     deconType() {
@@ -350,7 +350,7 @@ const Inventory = {
         })
     },
     getFusePossibilities() {
-        const fuses = this.nonblank().filter(container => container.item.recipeType === "normal" || container.item.recipeType === "trinket").map(container=>container.uniqueID())
+        const fuses = this.nonblank().filter(container => container.item.recipeType === "normal").map(container=>container.uniqueID())
         const fuseSorted = fuses.reduce((fuseList, item) => {
             if (item in fuseList) fuseList[item]++;
             else fuseList[item] = 1;

@@ -220,14 +220,12 @@ const Inventory = {
         }
     },
     addItemContainerToInventory(container) {
-        console.log(container);
         if (this.full()) this.sellItem(id,rarity,0);
         else this.findempty(container);
     },
     findempty(item) {
         const i = this.inv.findIndex(r=>r===null);
         this.inv[i] = item;
-        console.log(i,this.inv[i]);
         refreshInventoryPlaces()
     },
     craftToInventory(id) {
@@ -285,13 +283,11 @@ const Inventory = {
         return mods;
     },
     removeFromInventory(uniqueID) {
-        console.log("removeFromInventory")
         const container = this.nonblank().find(i=>i.uniqueID() === uniqueID);
         this.removeContainerFromInventory(container.containerID);
         refreshInventoryPlaces();
     },
     removeContainerFromInventory(containerID) {
-        console.log("removeContainerFromInventory")
         this.inv = this.inv.filter(c=>c === null || c.containerID !== containerID);
         this.inv.push(null);
         refreshInventoryPlaces()
@@ -300,7 +296,6 @@ const Inventory = {
         return this.nonblank().some(c => c.containerID === containerID);
     },
     sellInventory(indx) {
-        console.log("sellInventory")
         const item = this.inv[indx];
         this.inv[indx] = null;
         this.sellItem(item.id,item.rarity,item.sharp);
@@ -467,7 +462,6 @@ function gearEquipFromInventory(invID) {
     const itemdiv = $("<div/>").addClass("equipItem");
     itemdiv.addClass("R"+equipContainerTarget.rarity)
     const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
-    console.log(item.itemLevel());
     const itemLevel = $("<div/>").addClass("equipItemLevel").html(equipContainerTarget.itemLevel());
     const itemProps = $("<div/>").addClass("equipItemProps").html(equipContainerTarget.propDiv());
     itemdiv.append(itemName,itemLevel,itemProps);

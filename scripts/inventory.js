@@ -220,12 +220,14 @@ const Inventory = {
         }
     },
     addItemContainerToInventory(container) {
+        console.log(container);
         if (this.full()) this.sellItem(id,rarity,0);
         else this.findempty(container);
     },
     findempty(item) {
         const i = this.inv.findIndex(r=>r===null);
         this.inv[i] = item;
+        console.log(i,this.inv[i]);
         refreshInventoryPlaces()
     },
     craftToInventory(id) {
@@ -283,11 +285,13 @@ const Inventory = {
         return mods;
     },
     removeFromInventory(uniqueID) {
+        console.log("removeFromInventory")
         const container = this.nonblank().find(i=>i.uniqueID() === uniqueID);
         this.removeContainerFromInventory(container.containerID);
         refreshInventoryPlaces();
     },
     removeContainerFromInventory(containerID) {
+        console.log("removeContainerFromInventory")
         this.inv = this.inv.filter(c=>c === null || c.containerID !== containerID);
         this.inv.push(null);
         refreshInventoryPlaces()
@@ -296,6 +300,7 @@ const Inventory = {
         return this.nonblank().some(c => c.containerID === containerID);
     },
     sellInventory(indx) {
+        console.log("sellInventory")
         const item = this.inv[indx];
         this.inv[indx] = null;
         this.sellItem(item.id,item.rarity,item.sharp);
@@ -389,7 +394,7 @@ const Inventory = {
         return this.nonblank().filter(i => i.rarity < 3);
     },
     getCommon() {
-        const item = this.nonblank().filter(item=>item.rarity === 0)[0];
+        const item = this.nonblank().filter(item=>item.rarity === 0 && item.item.recipeType === "normal")[0];
         if (item === undefined) return {id:null,amt:0};
         this.removeContainerFromInventory(item.containerID);
         return {id:item.deconType(),amt:item.deconAmt()};

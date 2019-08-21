@@ -37,6 +37,7 @@ class tinkerCommand {
     addTime(ms) {
         if (!this.enabled) return;
         if (this.state === "idle" || this.state === "Need Material") this.attemptStart();
+        if (this.state === "Inventory Full" && !Inventory.full()) this.state = "running";
         if (this.state === "running") {
             this.time += ms;
             if (this.time >= this.maxTime) {
@@ -73,8 +74,8 @@ class tinkerCommand {
             this.increaseAct();
             return;
         }
-        if (Inventory.full()) return;
-        TinkerManager.newTrinket(this.creates,this.min);
+        if (Inventory.full()) return this.state = "Inventory Full";
+        TinkerManager.newTrinket(this.id,this.creates,this.min);
         this.time = 0;
         this.state = "idle";
         this.increaseAct();
@@ -127,9 +128,9 @@ const TinkerManager = {
     addCommand(action) {
         this.commands.push(action);                                                             
     },
-    newTrinket(trinketID,min) {
+    newTrinket(commandID,trinketID,min) {
         const scale = Math.floor(normalDistribution(min,this.max(),3));
-        if (scale < this["d"+trinketID]) return;
+        if (scale < this["d"+commandID]) return;
         const item = new itemContainer(trinketID,0);
         item.scale = scale;
         Inventory.addItemContainerToInventory(item);

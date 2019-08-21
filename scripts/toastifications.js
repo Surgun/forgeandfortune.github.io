@@ -27,6 +27,12 @@ const Notifications = {
         const icon = iconType; // Type of toast icon
         popToast(text,heading,icon);
     },
+    recipeMasterNeedMore() {
+        const text = "You do not have enough materials to master this recipe.";
+        const heading = 'Not enough Material';
+        const icon = 'error';
+        popToast(text,heading,icon);
+    },
     inventoryFull() {
         const text = "Your inventory is full, please sell something to continue."; // Text that is to be shown in the toast
         const heading = 'Inventory Full'; // Optional heading to be shown on the toast
@@ -193,6 +199,12 @@ const Notifications = {
         const text = `Craft your new ${name} on the recipe tab!`; // Text that is to be shown in the toast
         const heading = 'You purchased a recipe!'; // Optional heading to be shown on the toast
         const icon = 'info'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
+    masterRecipe(name) {
+        const text = 'Rarity proc doubled and material requirements removed!'
+        const heading = `${name} has been mastered!`
+        const icon = 'info';
         popToast(text,heading,icon);
     },
     insufficientGuildOrderSubmit() {

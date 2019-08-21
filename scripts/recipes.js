@@ -13,6 +13,7 @@ class Item{
     constructor (props) {
         Object.assign(this, props);
         this.craftCount = 0;
+        this.mastered = false;
         this.autoSell = "None";
         this.owned = false;
     }
@@ -22,12 +23,14 @@ class Item{
         save.craftCount = this.craftCount;
         save.autoSell = this.autoSell;
         save.owned = this.owned;
+        save.mastered = this.mastered;
         return save;
     }
     loadSave(save) {
         this.craftCount = save.craftCount;
         this.autoSell = save.autoSell;
         this.owned = save.owned;
+        if (save.mastered !== undefined) this.mastered = save.mastered;
     }
     itemDescription() {
         return this.description;
@@ -81,17 +84,27 @@ class Item{
     }
     addCount() {
         this.craftCount += 1;
-        if (this.craftCount === 100) {
-            masteredItem = true;
-            initializeActionSlots();
-            refreshProgress();
-        }
         refreshMasteryBar();
         refreshCraftedCount();
     }
+    attemptMastery() {
+        if (this.isMastered()) return;
+        const material = (this.mcost) ? Object.keys(this.mcost)[0] : "M201";
+        const amt = Math.max(100,1000-9*this.craftCount);
+        if (ResourceManager.materialAvailable(material) < amt) {
+            Notifications.recipeMasterNeedMore();
+            return;
+        }
+        ResourceManager.addMaterial(material,-amt);
+        this.mastered = true;
+        Notifications.masterRecipe(this.name);
+        initializeActionSlots();
+        refreshCraftedCount();
+        refreshProgress();
+    }
     isMastered() {
-        if (this.recipeType === "building") return false;
-        return this.craftCount >= 100;
+        if (this.recipeType === "building" || this.recipeType === "Trinket") return false;
+        return this.mastered;
     }
     autoSellToggle() {
         if (this.autoSell === "None") this.autoSell = "Common";
@@ -193,6 +206,9 @@ const recipeList = {
             recipe.setCanCraft(canProduce);
         });
         recipeCanCraft();
+    },
+    attemptMastery(recipeID) {
+        this.idToItem(recipeID).attemptMastery();
     }
 }
 
@@ -294,6 +310,7 @@ function recipeCardFront(recipe) {
     const td3 = $('<div/>').addClass('recipeItemLevel').html(recipe.itemLevel());
     if (recipe.recipeType !== "normal") td3.hide();
     const td4 = $('<div/>').addClass('recipecostdiv').attr("id",recipe.id+"rcd");
+        if (recipe.isMastered()) td4.addClass("isMastered");
         const td4a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
         if (recipe.isMastered()) td4a.addClass('isMastered');
     td4.append(td4a);
@@ -316,7 +333,7 @@ function recipeCardFront(recipe) {
     td5.append(td5a,td5b,td5c);
 
     const td6 = $('<div/>').addClass('recipeCountAndCraft');
-        const td6a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(recipeMasteryBar(recipe.craftCount));
+        const td6a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(`${recipe.craftCount} crafted`);
         if (recipe.recipeType !== "normal") td6a.hide();
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
         recipe.recipeDiv = td6b;
@@ -336,23 +353,13 @@ function recipeCardBack(recipe) {
         const td8a = $('<div/>').addClass('recipeDetailsContainer');
             const td8a1 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
             const td8a2 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
-            const td8a3 = $('<div/>').addClass('recipeTotalCrafted').html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
+            const material = (recipe.mcost) ? Object.keys(recipe.mcost)[0] : "M201";
+            const td8a3 = $('<div/>').addClass('recipeTotalCrafted').attr("id","rcc"+recipe.id).data("rid",recipe.id).html(`Master for ${Math.max(100,1000-9*recipe.craftCount)} ${ResourceManager.idToMaterial(material).img}`);
+            if (recipe.isMastered) td8a3.addClass("isMastered").html("MASTERED");
             if (recipe.recipeType !== "normal") td8a3.hide();
         td8a.append(td8a1,td8a2,td8a3);
     td8.append(td8a);
-
-    const td9 = $('<div/>').addClass('recipeTabContainer recipeTabMastery');
-        const td9a = $('<div/>').addClass('recipeMasteryContainer');
-            const td9a1 = $("<div/>").addClass("masteryBlockContainer");
-            /* This is psuedo code meant for simply displaying how mastery progression will look. A proper function will need to be created once mastery tiers have been designed and implemented */
-                const td9a1a = $("<div/>").addClass("masteryBlock masteryObtained").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">Material Cost Removal</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 100</div>`);
-                const td9a1b = $("<div/>").addClass("masteryBlock").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">+25% Rarity Chance</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 250</div>`);
-                const td9a1c = $("<div/>").addClass("masteryBlock").html(`<i class="fas fa-check-circle"></i><div class="masteryDetail">-25% Craft Time Reduction</div><div class="masteryCountRequired"><i class="fas fa-hammer"></i> 999</div>`);
-            td9a1.append(td9a1a,td9a1b,td9a1c);
-            /* End */
-        td9a.append(td9a1);
-    td9.append(td9a);
-    return $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9);
+    return $('<div/>').addClass('recipeCardBack').append(td6,td7,td8);
 }
 
 function recipeMasteryBar(craftCount) {
@@ -371,15 +378,16 @@ function recipeMasteryBar(craftCount) {
 function refreshMasteryBar() {
     recipeList.recipes.forEach((recipe) => {
         const rr = $("#rc"+recipe.id)
-        rr.html(recipeMasteryBar(recipe.craftCount));
+        rr.html(`${recipe.craftCount} crafted`);
     });
 }
 
 function refreshCraftedCount() {
     recipeList.recipes.forEach(recipe => {
-        const rr = $("#rr"+recipe.id);
-        rr.find(".recipeTotalCrafted").html(`${recipe.craftCount} <span>${recipe.name}</span> crafted.`);
-        if (recipe.craftCount >= 100) $("#"+recipe.id+"rcd").addClass("isMastered");
+        const rcc = $("#rcc"+recipe.id);
+        const material = (recipe.mcost) ? Object.keys(recipe.mcost)[0] : "M201";
+        rcc.html(`Master for ${Math.max(100,1000-9*recipe.craftCount)} ${ResourceManager.idToMaterial(material).img}`);
+        if (recipe.isMastered()) rcc.addClass("isMastered").html("MASTERED");
     });
 }
  
@@ -433,6 +441,12 @@ $(document).on('click','.recipeDescription', (e) => {
     $(e.currentTarget).parent().addClass("recipeCardDisabled");
     $(e.currentTarget).parent().parent().addClass("recipeCardFlipped");
 });
+
+$(document).on('click','.recipeTotalCrafted', (e) => {
+    e.preventDefault();
+    const recipeID = $(e.currentTarget).data("rid");
+    recipeList.attemptMastery(recipeID);
+})
 
 $(document).on('click','.recipeClose', (e) => {
     e.preventDefault();

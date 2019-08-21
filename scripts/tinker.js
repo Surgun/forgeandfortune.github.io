@@ -36,7 +36,7 @@ class tinkerCommand {
     }
     addTime(ms) {
         if (!this.enabled) return;
-        if (this.state === "idle" || this.state === "need material") this.attemptStart();
+        if (this.state === "idle" || this.state === "Need Material") this.attemptStart();
         if (this.state === "running") {
             this.time += ms;
             if (this.time >= this.maxTime) {
@@ -52,13 +52,13 @@ class tinkerCommand {
         if (this.state === "running") return;
         if (this.id === "T001") {
             const deconstruct = Inventory.getCommon();
-            if (!deconstruct.id) return this.state = "need material";
+            if (!deconstruct.id) return this.state = "Need Material";
             this.reward = deconstruct;
             this.state = "running";
         }
         else {
-            if (!ResourceManager.available(this.mcost1,this.mcost1amt)) return this.state = "need material"; 
-            if (!ResourceManager.available(this.mcost2,this.mcost2amt)) return this.state = "need material";
+            if (!ResourceManager.available(this.mcost1,this.mcost1amt)) return this.state = "Need Material"; 
+            if (!ResourceManager.available(this.mcost2,this.mcost2amt)) return this.state = "Need Material";
             ResourceManager.addMaterial(this.mcost1,-this.mcost1amt);
             ResourceManager.addMaterial(this.mcost2,-this.mcost2amt);
             this.state = "running";
@@ -177,7 +177,9 @@ function refreshTinkerSlotProgress() {
     TinkerManager.commands.forEach(command => {
         const percent = command.time/command.maxTime;
         const width = (percent*100).toFixed(1)+"%";
-        const datalabel = command.enabled ? msToTime(command.maxTime-command.time) : "";
+        let datalabel = "Disabled";
+        if (command.enabled && command.state !== "running") datalabel = command.state;
+        else if (command.enabled) datalabel = msToTime(command.maxTime-command.time);
         $("#tinkerBar"+command.id).attr("data-label",datalabel);
         $("#tinkerFill"+command.id).css('width', width);
     })

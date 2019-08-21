@@ -2,7 +2,7 @@
   {
     "id": "T001",
     "name": "Destroy Item",
-    "description": "Takes common items and turns them into parts",
+    "description": "<img src='./images/recipes/Light/R13001.png'> <i class=\"fas fa-arrow-right\"></i> <img src='./images/resources/M800.png'> <img src='./images/resources/M801.png'> <img src='./images/resources/M802.png'>",
     "mcost1": null,
     "mcost1amt": null,
     "mcost2": null,
@@ -13,7 +13,7 @@
   {
     "id": "T002",
     "name": "Philosophy Module",
-    "description": "Creates a Philosopher's Trinket.",
+    "description": "50 <img src='./images/resources/M701.png'> 250 <img src='./images/resources/M800.png'> <i class=\"fas fa-arrow-right\"></i> <img src='./images/recipes/Trinkets/R90001.png'>",
     "mcost1": "M701",
     "mcost1amt": 50,
     "mcost2": "M800",
@@ -24,7 +24,7 @@
   {
     "id": "T003",
     "name": "Theatre Module",
-    "description": "Creates a Theatrical Trinket.",
+    "description": "2 <img src='./images/resources/M702.png'> 250 <img src='./images/resources/M801.png'> <i class=\"fas fa-arrow-right\"></i> <img src='./images/recipes/Trinkets/R90002.png'>",
     "mcost1": "M702",
     "mcost1amt": 2,
     "mcost2": "M801",
@@ -35,7 +35,7 @@
   {
     "id": "T004",
     "name": "Engineering Module",
-    "description": "Creates an Engineer's Trinket.",
+    "description": "140 <img src='./images/resources/M700.png'> 250 <img src='./images/resources/M802.png'> <i class=\"fas fa-arrow-right\"></i> <img src='./images/recipes/Trinkets/R90003.png'>",
     "mcost1": "M700",
     "mcost1amt": 140,
     "mcost2": "M802",

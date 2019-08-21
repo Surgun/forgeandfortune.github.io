@@ -578,6 +578,10 @@ function saveUpdate(loadGame) {
         const eventIDs = EventManager.allDungeonEventIDs();
         eventIDs.forEach(eventID => EventManager.readEvent(eventID));
         delete loadGame["fo"];
+        saveFile["r"].recipes.forEach(recipe=> {
+            if (recipe.craftCount >= 100) recipe.mastered = true;
+            else recipe.mastered = false;
+        });
     }
     return loadGame;
 }

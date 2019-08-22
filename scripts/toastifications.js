@@ -225,8 +225,14 @@ const Notifications = {
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
     },
-    cantAffordSmithRes() {
-        const text = "You do not have enough resources.";
+    cantAffordSmithGold() {
+        const text = "You do not have enough gold.";
+        const heading = "Cannot Start Smithing";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
+    cantAffordSmithMaterials(name,amt) {
+        const text = `Need ${amt} more ${name}`;
         const heading = "Cannot Start Smithing";
         const icon = "error";
         popToast(text,heading,icon);

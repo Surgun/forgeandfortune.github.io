@@ -34,11 +34,11 @@ const bloopSmith = {
         if (this.smithStage === null) return;
         const params = this.getSmithCost();
         if (ResourceManager.materialAvailable("M001") < params.gold) {
-            Notifications.cantAffordSmith();
+            Notifications.cantAffordSmithGold();
             return;
         }
         if (ResourceManager.materialAvailable(params.resType) < params.resAmt) {
-            Notifications.cantAffordSmith();
+            Notifications.cantAffordSmithMaterials(ResourceManager.idToMaterial(params.resType).name, params.resAmt-ResourceManager.materialAvailable(params.resType));
             return;
         }
         ResourceManager.deductMoney(params.gold);

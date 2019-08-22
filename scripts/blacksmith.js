@@ -119,7 +119,12 @@ function itemStageCardSmith(slot,upgrade) {
     if (upgrade) itemName.html(slot.picNamePlus());
     else itemName.html(slot.picName());
     const itemLevel = $("<div/>").addClass("smithItemLevel").html(slot.itemLevel());
-    const itemProps = $("<div/>").addClass("smithProps").html(slot.statChange(upgrade));
+    const itemProps = $("<div/>").addClass("smithProps");
+    const d = $("<div/>").addClass("invProp").appendTo(itemProps);
+    for (const [stat, val] of Object.entries(slot.itemStat(upgrade))) {
+        if (val === 0) continue;
+        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",stat).html(`${miscIcons[stat]} ${val}`).appendTo(d);
+    }
     return itemdiv.append(itemName,itemLevel,itemProps);
 }
 

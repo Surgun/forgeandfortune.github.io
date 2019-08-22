@@ -84,23 +84,18 @@ class itemContainer {
         if (this.scale > 0) return `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${this.scale}</div>`;
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
-    pow() { return this.statCalc(this.item.pow,this.item.powScale); }
-    hp() { return this.statCalc(this.item.hp,this.item.hpScale); }
-    armor() { return this.statCalc(this.item.armor,this.item.armorScale); }
-    resist() { return this.statCalc(this.item.resist,this.item.resistScale); }
-    crit() { return this.statCalc(this.item.crit,this.item.critScale); }
-    dodge() { return this.statCalc(this.item.dodge,this.item.dodgeScale); }
-    spow() { return this.statCalc(this.item.spow,this.item.spowScale); }
-    apen() { return this.statCalc(this.item.apen,this.item.apenScale); }
-    mpen() { return this.statCalc(this.item.mpen,this.item.mpenScale); }
-    powPlus() {
-        return Math.floor(this.pow()*1.05);
-    }
-    hpPlus() {
-        return Math.floor(this.hp()*1.05);
-    }
-    statCalc(flat,scale) {
-        return Math.floor((flat * miscLoadedValues.rarityMod[this.rarity] + scale * this.scale) * (1+0.05*this.sharp));
+    pow(sharpIncrease) { return this.statCalc(this.item.pow,this.item.powScale,sharpIncrease); }
+    hp(sharpIncrease) { return this.statCalc(this.item.hp,this.item.hpScale,sharpIncrease); }
+    armor(sharpIncrease) { return this.statCalc(this.item.armor,this.item.armorScale,sharpIncrease); }
+    resist(sharpIncrease) { return this.statCalc(this.item.resist,this.item.resistScale,sharpIncrease); }
+    crit(sharpIncrease) { return this.statCalc(this.item.crit,this.item.critScale,sharpIncrease); }
+    dodge(sharpIncrease) { return this.statCalc(this.item.dodge,this.item.dodgeScale,sharpIncrease); }
+    spow(sharpIncrease) { return this.statCalc(this.item.spow,this.item.spowScale,sharpIncrease); }
+    apen(sharpIncrease) { return this.statCalc(this.item.apen,this.item.apenScale,sharpIncrease); }
+    mpen(sharpIncrease) { return this.statCalc(this.item.mpen,this.item.mpenScale,sharpIncrease); }
+    statCalc(flat,scale,sharpIncrease) {
+        const sharpAdd = sharpIncrease ? 1 : 0;
+        return Math.floor((flat * miscLoadedValues.rarityMod[this.rarity] + scale * this.scale) * (1+0.05*(this.sharp+sharpAdd)));
     }
     propDiv() {
         const d = $("<div/>").addClass("invProp");
@@ -111,22 +106,6 @@ class itemContainer {
         if (this.hp() > 0) {
             const d3 = $("<div/>").addClass("invPropHP tooltip").attr("data-tooltip", "HP").html(miscIcons.hp + "&nbsp;" + this.hp())
             d.append(d3);
-        }
-        return d;
-    }
-    statChange(upgrade) {
-        const d = $("<div/>").addClass("invProp");
-        if (this.pow() > 0) {
-            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","POW")
-            if (upgrade) d2.html(`${miscIcons.pow}&nbsp;${this.powPlus()}`);
-            else d2.html(`${miscIcons.pow}&nbsp;${this.pow()}`);
-            d.append(d2);
-        }
-        if (this.hp() > 0) {
-            const d2 = $("<div/>").addClass("invPropPow tooltip").attr("data-tooltip","HP");
-            if (upgrade) d2.html(`${miscIcons.hp}&nbsp;${this.hpPlus()}`);
-            else d2.html(`${miscIcons.hp}&nbsp;${this.hp()}`);
-            d.append(d2);
         }
         return d;
     }
@@ -149,17 +128,17 @@ class itemContainer {
     deconAmt() {
         return Math.floor(this.item.craftTime / 4000);
     }
-    itemStat() {
+    itemStat(sharpIncrease) {
         const stats = {};
-        stats[heroStat.pow] = this.pow();
-        stats[heroStat.hp] = this.hp();
-        stats[heroStat.armor] = this.armor();
-        stats[heroStat.resis] = this.resist();
-        stats[heroStat.crit] = this.crit();
-        stats[heroStat.dodge] = this.dodge();
-        stats[heroStat.spow] = this.spow();
-        stats[heroStat.apen] = this.apen();
-        stats[heroStat.mpen] = this.mpen();
+        stats[heroStat.pow] = this.pow(sharpIncrease);
+        stats[heroStat.hp] = this.hp(sharpIncrease);
+        stats[heroStat.armor] = this.armor(sharpIncrease);
+        stats[heroStat.resis] = this.resist(sharpIncrease);
+        stats[heroStat.crit] = this.crit(sharpIncrease);
+        stats[heroStat.dodge] = this.dodge(sharpIncrease);
+        stats[heroStat.spow] = this.spow(sharpIncrease);
+        stats[heroStat.apen] = this.apen(sharpIncrease);
+        stats[heroStat.mpen] = this.mpen(sharpIncrease);
         return stats;
     }
 }

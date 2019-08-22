@@ -96,7 +96,11 @@ function refreshSmithStage() {
     $smithOriginal.html(itemStageCardSmith(bloopSmith.smithStage,false));
     $smithImproved.html(itemStageCardSmith(bloopSmith.smithStage,true));
     const params = bloopSmith.getSmithCost()
-    $smithConfirm.html(`Improve for ${miscIcons.gold} ${params.gold} and ${ResourceManager.idToMaterial(params.resType).img} ${params.resAmt}`);
+    const improveText = $("<div/>").addClass("improveText").html(`Improve for`);
+    const improveCost = $("<div/>").addClass("improveCostContainer");
+        $("<div/>").addClass("improveCost tooltip").attr("data-tooltip",`${params.gold} Gold`).html(`${miscIcons.gold} ${params.gold}`).appendTo(improveCost);
+        $("<div/>").addClass("improveCost tooltip").attr("data-tooltip",`${ResourceManager.idToMaterial(params.resType).name}`).html(`${ResourceManager.idToMaterial(params.resType).img} ${params.resAmt}`).appendTo(improveCost);
+    $smithConfirm.empty().append(improveText,improveCost);
 }
 
 function itemCardSmith(item) {

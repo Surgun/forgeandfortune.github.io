@@ -361,57 +361,147 @@
   },
   {
     "id": "AL4101",
-    "title": "Take It To the Bank",
+    "title": "Take It To The Bank",
     "description": "Unlocks the Bank Building, so you can store your stuff.",
-    "notoReq": 251,
-    "goldCost": 1000,
+    "notoReq": 11501,
+    "goldCost": 60000,
     "type": "bank",
-    "subtype": null
+    "subtype": "open"
+  },
+  {
+    "id": "AL41011",
+    "title": "More To Store",
+    "description": "Increases the storage capability of the Bank.",
+    "notoReq": 60000,
+    "goldCost": 1600000,
+    "type": "bank",
+    "subtype": "level"
+  },
+  {
+    "id": "AL41012",
+    "title": "You Can Bank On It",
+    "description": "Increases the storage capability of the Bank.",
+    "notoReq": 175000,
+    "goldCost": 60000000,
+    "type": "bank",
+    "subtype": "level"
   },
   {
     "id": "AL4102",
     "title": "Offer You Can't Re-Fuse",
-    "description": "Unlocks the Fusion Cauldron Building, so you can increase item quality.",
+    "description": "Unlocks the Fusion Cabin Building, so you can increase item quality.",
     "notoReq": 3001,
-    "goldCost": 4000,
+    "goldCost": 8000,
     "type": "cauldron",
-    "subtype": null
+    "subtype": "open"
+  },
+  {
+    "id": "AL41021",
+    "title": "Offer You Can't Re-Fuse  II",
+    "description": "Adds another slot to your Fusion Cabin.",
+    "notoReq": 30000,
+    "goldCost": 150000,
+    "type": "cauldron",
+    "subtype": "level"
+  },
+  {
+    "id": "AL41022",
+    "title": "Offer You Can't Re-Fuse III",
+    "description": "Adds another slot to your Fusion Cabin.",
+    "notoReq": 110000,
+    "goldCost": 4500000,
+    "type": "cauldron",
+    "subtype": "level"
   },
   {
     "id": "AL4103",
     "title": "Can I Be Your Plus One",
     "description": "Unlocks the Forge Building, so you can improve item stats.",
-    "notoReq": 11501,
-    "goldCost": 20000,
+    "notoReq": 14000,
+    "goldCost": 90000,
     "type": "forge",
-    "subtype": null
+    "subtype": "open"
+  },
+  {
+    "id": "AL41031",
+    "title": "Can I Be Your Plus Two",
+    "description": "Increases forge limits from +3 to +6.",
+    "notoReq": 120000,
+    "goldCost": 4500000,
+    "type": "forge",
+    "subtype": "level"
+  },
+  {
+    "id": "AL41032",
+    "title": "Can I Be Your Plus Three",
+    "description": "Increases forge limits from +6 to +10.",
+    "notoReq": 275000,
+    "goldCost": 300000000,
+    "type": "forge",
+    "subtype": "level"
   },
   {
     "id": "AL4104",
     "title": "Your Future Is Green",
     "description": "Unlocks the Fortune Teller Building, to increase exceptional craft odds.",
     "notoReq": 56501,
-    "goldCost": 500000,
+    "goldCost": 1200000,
     "type": "fortune",
-    "subtype": null
+    "subtype": "open"
+  },
+  {
+    "id": "AL41041",
+    "title": "Crystal Ballerina",
+    "description": "Adds an additional Fortune Teller building option.",
+    "notoReq": 200000,
+    "goldCost": 45000000,
+    "type": "fortune",
+    "subtype": "level"
+  },
+  {
+    "id": "AL41042",
+    "title": "With Less Ads",
+    "description": "Adds an additional Fortune Teller building option.",
+    "notoReq": 300000,
+    "goldCost": 225000000,
+    "type": "fortune",
+    "subtype": "level"
   },
   {
     "id": "AL4105",
     "title": "You Need A Break",
     "description": "Unlocks the Desynth Building, to break down your stuff.",
-    "notoReq": 300,
+    "notoReq": 251,
     "goldCost": 2000,
     "type": "desynth",
-    "subtype": null
+    "subtype": "open"
   },
   {
     "id": "AL4106",
     "title": "Over Engineered",
     "description": "Unlocks the Tinker Hut, to make trinkets.",
-    "notoReq": 56501,
-    "goldCost": 500000,
+    "notoReq": 28001,
+    "goldCost": 300000,
     "type": "tinker",
-    "subtype": null
+    "subtype": "open"
+  },
+  {
+    "id": "AL41061",
+    "title": "Not The Train Kind",
+    "description": "Improves the Tinker Hut speed.",
+    "notoReq": 150000,
+    "goldCost": 9000000,
+    "type": "tinker",
+    "subtype": "level"
+  },
+  {
+    "id": "AL41062",
+    "title": "Electrotastic",
+    "description": "Improves the Tinker Hut speed.",
+    "notoReq": 400000,
+    "goldCost": 1250000000,
+    "type": "tinker",
+    "subtype": "level"
   },
   {
     "id": "AL4201",

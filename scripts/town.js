@@ -100,7 +100,7 @@ function refreshSideTown() {
         $buildingList.append(d1);
     }
     if (TownManager.fuseStatus >= 0) {
-        const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`Fusion Cauldron`);
+        const d2 = $("<div/>").addClass("buildingName").attr("id","fusionBldg").html(`Fusion Cabin`);
         if (TownManager.lastBldg === "fuse") d2.addClass("selected");
         if (TownManager.fuseStatus === BuildingState.unseen) d2.addClass("hasEvent");
         $buildingList.append(d2);
@@ -157,7 +157,7 @@ function showFuseBldg() {
         const da = $("<div/>").addClass("buildingInfoBackground");
         const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
         if (TownManager.fuseStatus === BuildingState.built) db.html("<img src='images/townImages/fuseBuilding/fusion_building.png'>");
-        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Cauldron</h2>");
+        const dc = $("<div/>").addClass("buildingInfoName").html("<h2>Fusion Cabin</h2>");
         const dd = $("<div/>").addClass("buildingInfoDesc").html("Fuse three of the same item into a rarity higher of the same item.");
         if (!TownManager.fuseStatus === BuildingState.built) d.addClass("buildInProgress");
         d.append(da,db,dc,dd);

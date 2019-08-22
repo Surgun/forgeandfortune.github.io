@@ -44,6 +44,7 @@ const bloopSmith = {
         ResourceManager.deductMoney(params.gold);
         ResourceManager.addMaterial(params.resType,-params.resAmt);
         this.smithStage.sharp += 1;
+        Notifications.smithSuccess(this.smithStage.name);
         refreshInventoryPlaces();
         refreshSmithStage();
     },

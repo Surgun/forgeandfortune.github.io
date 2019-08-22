@@ -237,6 +237,12 @@ const Notifications = {
         const icon = "error";
         popToast(text,heading,icon);
     },
+    smithSuccess(name) {
+        const text = `Your ${name} has been improved!`;
+        const heading = "Forge Success!";
+        const icon = "info";
+        popToast(text,heading,icon);
+    },
     synthCollectInvFull() {
         const text = "Inventory is full.";
         const heading = "Cannot Collect Desynth";

@@ -100,7 +100,7 @@ class itemContainer {
         return Math.floor(this.hp()*1.05);
     }
     statCalc(flat,scale) {
-        return Math.floor(flat * miscLoadedValues.rarityMod[this.rarity] + scale * this.scale) * (1+0.05*this.sharp);
+        return Math.floor((flat * miscLoadedValues.rarityMod[this.rarity] + scale * this.scale) * (1+0.05*this.sharp));
     }
     propDiv() {
         const d = $("<div/>").addClass("invProp");
@@ -507,5 +507,4 @@ function refreshInventoryPlaces() {
     refreshBankInventory();
     refreshSmithInventory();
     refreshDesynthInventory();
-    wipeSmithStage();
 }

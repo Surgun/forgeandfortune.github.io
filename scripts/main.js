@@ -93,7 +93,6 @@ function mainLoop() {
     player.lastTime = Date.now();
     DungeonManager.addTime(elapsedTime);
     FusionManager.addTime(elapsedTime);
-    bloopSmith.addTime(elapsedTime);
     DesynthManager.addTime(elapsedTime);
     actionSlotManager.craftAdvance(elapsedTime);
     PatchManager.patchTimer(elapsedTime);

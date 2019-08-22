@@ -105,11 +105,15 @@ function refreshSmithStage() {
 
 function itemCardSmith(item) {
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
-    const itemName = $("<div/>").addClass("smithItemName").html(item.picName());
-    const itemLevel = $("<div/>").addClass("smithItemLevel").html(item.itemLevel());
-    const itemProps = $("<div/>").addClass("smithProps").html(item.propDiv());
-    const smithButton = $("<div/>").addClass("smithStage").attr("containerID",item.containerID).html("Smith");
-    return itemdiv.append(itemName,itemProps,itemLevel,smithButton);
+        $("<div/>").addClass("smithItemName").html(item.picName()).appendTo(itemdiv);
+        $("<div/>").addClass("smithItemLevel").html(item.itemLevel()).appendTo(itemdiv);
+        const itemProps = $("<div/>").addClass("smithProps").appendTo(itemdiv);
+        for (const [stat, val] of Object.entries(item.itemStat(false))) {
+            if (val === 0) continue;
+            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+        }
+        $("<div/>").addClass("smithStage").attr("containerID",item.containerID).html("Smith").appendTo(itemdiv);
+    return itemdiv;
 }
 
 function itemStageCardSmith(slot,upgrade) {

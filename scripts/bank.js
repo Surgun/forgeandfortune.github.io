@@ -5,7 +5,7 @@ const $bankBankSlots = $("#bankBankSlots");
 
 const BankManager = {
     slots : [],
-    level : 1,
+    lvl : 1,
     createSave() {
         const save = {};
         save.lvl = this.lvl;
@@ -93,7 +93,11 @@ function itemCard(item,inBank) {
     const itemName = $("<div/>").addClass("bankItemName").html(item.picName());
     const itemLevel = $("<div/>").addClass("bankItemLevel").html(item.itemLevel());
     if (item.item.recipeType === "building") itemLevel.hide();
-    const itemProps = $("<div/>").addClass("bankProps").html(item.propDiv());
+    const itemProps = $("<div/>").addClass("bankProps");
+    for (const [stat, val] of Object.entries(item.itemStat(false))) {
+        if (val === 0) continue;
+        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+    }
     const locationButton = $("<div/>").attr("containerID",item.containerID);
     if (inBank) locationButton.addClass('bankTake').html("Take");
     else locationButton.addClass('bankStow').html("Stow");

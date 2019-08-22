@@ -282,8 +282,8 @@ const Inventory = {
     haveItem(id,rarity) {
         return this.nonblank().filter(r=>r.id === id && r.rarity === rarity && r.sharp === 0).length > 0
     },
-    full() {
-        return this.nonblank().length >= this.inv.length;
+    full(modifier = 1) {
+        return this.nonblank().length > this.inv.length - modifier;
     },
     inventoryCount() {
         return this.nonblank().length;

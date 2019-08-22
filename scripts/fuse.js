@@ -6,15 +6,18 @@ class fuse {
         Object.assign(this, props);
         this.recipe = recipeList.idToItem(this.id);
         this.fuseTime = 0;
+        this.started = false;
     }
     createSave() {
         const save = {};
-        save.uniqueID = this.uniqueID;
         save.fuseTime = this.fuseTime;
+        save.started = this.started;
+        save.uniqueID = this.uniqueID;
         return save;
     }
     loadSave(save) {
         if (save.fuseTime !== undefined) this.fuseTime = save.fuseTime;
+        if (save.started !== undefined) this.started = save.started;
     }
     addTime(ms) {
         this.fuseTime = Math.min(this.fuseTime+ms,this.getMaxFuse());
@@ -22,18 +25,19 @@ class fuse {
     getMaxFuse() {
         return this.recipe.craftTime*this.rarity;
     }
-    fuseDone() {
-        return this.fuseTime === this.getMaxFuse();
-    }
     timeRemaining() {
         return this.getMaxFuse() - this.fuseTime;
     }
     fuseComplete() {
+        if (this.notStarted()) return false;
         return this.fuseTime === this.getMaxFuse();
     }
     increaseRarity() {
         this.rarity += 1;
         this.uniqueID = this.id+"_"+this.rarity+"_"+this.sharp;
+    }
+    notStarted() {
+        return !this.started;
     }
 }
 
@@ -61,30 +65,51 @@ const FusionManager = {
         if (save.lvl !== undefined) this.lvl = save.lvl;
     },
     addFuse(uniqueid) {
+        if (!Inventory.hasThree(uniqueid)) return;
         if (this.slots.length === this.maxSlots()) {
             Notifications.noFuseSlots();
             return;
         }
-        const fuseProp = uniqueIDProperties(uniqueid);
-        if (!Inventory.hasThree(uniqueid)) return;
-        if (ResourceManager.materialAvailable("M001") < this.getFuseCost(fuseProp)) {
+        const fuseProps = uniqueIDProperties(uniqueid);
+        if (ResourceManager.materialAvailable("M001") < this.getFuseCost(fuseProps)) {
             Notifications.cantAffordFuse();
             return;
         }
-        ResourceManager.deductMoney(this.getFuseCost(fuseProp));
+        ResourceManager.deductMoney(this.getFuseCost(fuseProps));
         Inventory.removeFromInventory(uniqueid);
         Inventory.removeFromInventory(uniqueid);
         Inventory.removeFromInventory(uniqueid);
         const newFuse = new fuse(uniqueid);
-        newFuse.increaseRarity();
         newFuse.fuseID = this.fuseNum;
         this.fuseNum += 1;
         this.slots.push(newFuse);
         refreshFuseSlots();
     },
+    fuseByID(fuseID) {
+        return this.slots.find(f => f.fuseID === fuseID);
+    },
+    startFuse(fuseid) {
+        const fuse = this.fuseByID(fuseid);
+        fuse.increaseRarity();    
+        fuse.started = true;
+        refreshFuseSlots();
+    },
+    cancelFuse(fuseid) {
+        const fuse = this.fuseByID(fuseid);
+        if (Inventory.full(3)) {
+            Notifications.fuseInvFull();
+            return;
+        }
+        ResourceManager.addMaterial("M001",this.getFuseCost(fuse));
+        Inventory.addFuseToInventory(fuse);
+        Inventory.addFuseToInventory(fuse);
+        Inventory.addFuseToInventory(fuse);
+        this.slots = this.slots.filter(f=>f.fuseID !== fuseid);
+        refreshFuseSlots();
+    },
     addTime(ms) {
         this.slots.forEach(fuse => {
-            fuse.addTime(ms);
+            if (fuse.started) fuse.addTime(ms);
         });
         refreshFuseBars();
     },
@@ -150,12 +175,20 @@ function refreshFuseSlots() {
         const d1 = $("<div/>").addClass("fuseSlot").addClass("R"+slot.rarity);
         const d2 = $("<div/>").addClass("fuseSlotName").html(slot.name);
         const d3 = createFuseBar(slot);
-        const d4 = $("<div/>").addClass("fuseSlotCollect").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html("Collect").hide();
+        const d4 = $("<div/>").addClass("fuseSlotCollect").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html("Collect Fuse").hide();
+        const d5 = $("<div/>").addClass("fuseSlotStart").attr("id","fuseSlotStart"+slot.fuseID).attr("fuseid",slot.fuseID).html("Start Fuse").hide();
+        const d6 = $('<div/>').addClass("fuseClose").attr("fuseid",slot.fuseID).html(`<i class="fas fa-times"></i>`).hide();
         if (slot.fuseComplete()) {
+            console.log('fuse complete')
             d3.hide();
             d4.show();
         }
-        d1.append(d2,d3,d4);
+        if (slot.notStarted()) {
+            d3.hide();
+            d5.show();
+            d6.show();
+        }
+        d1.append(d2,d3,d4,d5,d6);
         $fuseSlots.append(d1);
     });
     for (let i=0;i<FusionManager.maxSlots()-FusionManager.slots.length;i++) {
@@ -179,7 +212,7 @@ function refreshPossibleFuse() {
             const d4 = $("<div/>").addClass("possibleFusegroupHeader").addClass("possibleFuseRarity"+f.rarity).html(`${rarities[f.rarity]} Fuse`)
             const d5 = $("<div/>").addClass("possibleFuse").html(f.name);
             const d6 = $("<div/>").addClass("fuseTime tooltip").attr("data-tooltip","Fuse Time").html(`<i class="fas fa-clock"></i> ${msToTime(item.craftTime*f.rarity)}`);
-            const d7 = $("<div/>").addClass("fuseStart").attr("fuseID",f.uniqueID);
+            const d7 = $("<div/>").addClass("fuseStart").attr("uniqueid",f.uniqueID);
                 $("<div/>").addClass("fuseStartText").html("Fuse").appendTo(d7);
                 $("<div/>").addClass("fuseStartCost").html(`${ResourceManager.materialIcon("M001")}${formatToUnits(FusionManager.getFuseCost(f),2)}`).appendTo(d7);
             d3.append(d4,d5,d6,d7);
@@ -191,8 +224,20 @@ function refreshPossibleFuse() {
     
 $(document).on('click', '.fuseStart', (e) => {
     e.preventDefault();
-    const uniqueid = $(e.currentTarget).attr("fuseID");
+    const uniqueid = $(e.currentTarget).attr("uniqueid");
     FusionManager.addFuse(uniqueid);
+});
+
+$(document).on('click', '.fuseClose', (e) => {
+    e.preventDefault();
+    const fuseid = parseInt($(e.currentTarget).attr("fuseid"));
+    FusionManager.cancelFuse(fuseid);
+})
+
+$(document).on('click', '.fuseSlotStart', (e) => {
+    e.preventDefault();
+    const fuseid = parseInt($(e.currentTarget).attr("fuseid"));
+    FusionManager.startFuse(fuseid);
 });
 
 $(document).on('click', '.fuseSlotCollect', (e) => {

@@ -482,4 +482,5 @@ function refreshInventoryPlaces() {
     refreshBankInventory();
     refreshSmithInventory();
     refreshDesynthInventory();
+    refreshFortuneGear();
 }

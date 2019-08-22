@@ -177,5 +177,6 @@ $(document).on('click', '.fortuneStage', (e) => {
 
 $(document).on('click', '#fortuneStart', (e) => {
     e.preventDefault();
+    if (FortuneManager.stage === null) return;
     FortuneManager.lockFortune();
 })

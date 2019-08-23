@@ -123,8 +123,8 @@ class Item{
         }
     }
     material() {
-        if (!this.item.mcost) return "M201";
-        return Object.keys(this.item.mcost)[0]
+        if (!this.mcost) return "M201";
+        return Object.keys(this.mcost)[0]
     }
 }
 

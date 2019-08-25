@@ -1,40 +1,58 @@
 "use strict";
 
-const $fortuneStatus = $("#fortuneStatus");
-const $fortuneWeek = $("#fortuneWeek");
-const $fortuneStart = $("#fortuneStart");
-
 let fortuneSlotid = 0;
 
 class fortuneSlot {
-    constructor(line, rarity, tier, amt) {
-        this.line = line;
-        this.rarity = rarity;
-        this.tier = tier;
-        this.amt = amt;
+    constructor(container) {
+        this.container = container;
+        this.type = container.item.type;
+        this.rarity = container.rarity;
+        this.lvl = container.item.lvl;
         this.slotid = fortuneSlotid;
+        this.state = "unlocked";
+        this.amt = 20;
         fortuneSlotid += 1;
     }
     createSave() {
         const save = {};
-        save.line = this.line;
+        save.container = this.container.createSave();
+        save.type = this.type;
         save.rarity = this.rarity;
-        save.tier = this.tier;
+        save.lvl = this.lvl;
         save.amt = this.amt;
+        save.state = this.state;
         return save;
     }
     loadSave(save) {
-        return;
+        this.type = save.type;
+        this.rarity = save.rarity;
+        this.lvl = save.lvl;
+        const newContainer = new itemContainer(save.container.id,save.container.rarity);
+        newContainer.loadSave(save.container);
+        this.container = newContainer;
+        this.state = save.state;
+        this.amt = save.amt;
     }
-    subtractCraft() {
-        this.amt -= 1;
+    lockFortune() {
+        this.state = "locked";
+        this.rarity += 1;
+    }
+    locked() {
+        return this.state === "locked";
+    }
+    picName() {
+        return this.container.picName();
+    }
+    material() {
+        return this.container.material();
+    }
+    itemLevel() {
+        return this.container.itemLevel();
     }
 }
 
 const FortuneManager = {
-    stage : null,
     slots : [],
-    maxSlot : 1,
     lvl : 1,
     createSave() {
         const save = {};
@@ -48,73 +66,89 @@ const FortuneManager = {
     },
     loadSave(save) {
         save.slots.forEach(slot => {
-            const saveSlot = new fortuneSlot(slot.itemid, slot.rarity, slot.tier, slot.amt);
+            const container = new itemContainer(slot.container.id,slot.container.rarity);
+            container.loadSave(container);
+            const saveSlot = new fortuneSlot(container);
             saveSlot.loadSave(slot);
             this.slots.push(saveSlot);
         });
-        if (save.lvl !== undefined) this.lvl = save.lvl;
+        this.lvl = save.lvl;
     },
     stageItem(containerID) {
+        if (this.slots.length >= this.maxSlot()) {
+            Notifications.fortuneNoSlot();
+            return;
+        }
         const container = Inventory.containerToItem(containerID);
         if (container === undefined) return;
-        this.stage = container;
-        refreshFortuneStage();
-    },
-    lockFortune() {
-        if (this.slots.length >= this.maxSlot()) return;
-        const recipe = this.stage.item;
-        const newFortune = new fortuneSlot(recipe.type, this.stage.rarity+1,recipe.lvl,20);
-        this.slots.push(newFortune);
-        Inventory.removeContainerFromInventory(this.stage.containerID);
-        this.stage = null;
+        const newfortuneSlot = new fortuneSlot(container);
+        this.slots.push(newfortuneSlot);
+        Inventory.removeContainerFromInventory(containerID);
         refreshFortuneSlots();
-        refreshFortuneStage();
+    },
+    fortuneByID(fortuneID) {
+        return this.slots.find(f=>f.slotid == fortuneID);
+    },
+    removeFortune(fortuneID) {
+        if (Inventory.full()) {
+            Notifications.fortuneInvFull();
+        }
+        const fortune = this.fortuneByID(fortuneID);
+        console.log(fortune,fortuneID);
+        Inventory.addItemContainerToInventory(fortune.container);
+        this.slots = this.slots.filter(f=>f.slotid !== fortuneID);
+        refreshFortuneSlots();
+    },
+    lockFortune(fortuneID) {
+        const fortune = this.fortuneByID(fortuneID);
+        fortune.lockFortune();
+        refreshFortuneSlots();
     },
     emptySlotCount() {
         return this.maxSlot() - this.slots.length;
     },
-    getMaterialCost() {
-        if (this.stage === null) return null;
-        return {id:this.stage.material(),amt:20};
+    getMaterialCost(slot) {
+        if (slot === null) return null;
+        return {id:slot.material(),amt:20};
     },
     getProcModifier(line,tier) {
         const modifier = [1,1,1];
-        const mods = this.slots.filter(s=>s.line === line && s.tier === tier)
+        const mods = this.slots.filter(s=>s.type === line && s.lvl === tier)
+        console.log(mods);
         mods.forEach(s => {
             modifier[s.rarity-1] = 2;
-        })
-        return modifier;
-    },
-    spendFortune(item) {
-        const containers = this.slots.filter(s=>s.line === item.type && s.tier === item.lvl);
-        containers.forEach(s => s.subtractCraft());
-        this.slots = this.slots.filter(s=>s.amt > 0);
+            s.amt -= 1;
+        });
+        if (this.slots.some(f=>f.amt <= 0)) this.purgeDone();
         refreshFortuneSlots();
+        return modifier;
     },
     maxSlot() {
         return this.lvl;
+    },
+    purgeDone() {
+        this.slots = this.slots.filter(f => f.amt > 0);
+        refreshFortuneSlots();
     }
 }
 
 const $fortuneStage = $("#fortuneStage");
-const $fortuneSlots = $("#fortuneSlots");
 const $fortuneGear = $("#fortuneGear");
 
 function initiateFortuneBldg () {
     $fortuneBuilding.show();
     refreshFortuneSlots();
-    refreshFortuneStage();
     refreshFortuneGear();
 }
 
 function refreshFortuneSlots() {
-    $fortuneSlots.empty();
+    $fortuneStage.empty();
     FortuneManager.slots.forEach(slot => {
-        $fortuneSlots.append(createFortuneCard(slot));
+        if (slot.locked()) $fortuneStage.append(createFortuneCardLocked(slot));
+        else $fortuneStage.append(createFortuneCard(slot));
     });
     for (let i=0;i<FortuneManager.emptySlotCount();i++) {
-        const d1 = $("<div/>").addClass("fortuneSlot").html("Fortune Available");
-        $fortuneSlots.append(d1);
+        $fortuneStage.append(createFortuneBlank());
     }
 }
 
@@ -123,33 +157,6 @@ function refreshFortuneGear() {
     Inventory.nonEpic().forEach(container => {
         $fortuneGear.append(createFortuneInv(container));
     });
-}
-
-function refreshFortuneStage() {
-    refreshFortuneofferButton();
-    const stage = FortuneManager.stage;
-    $fortuneStage.empty();
-    if (FortuneManager.stage === null) {
-        const d1 = $("<div/>").addClass("fortuneStageEmpty").html("No item selected");
-        $fortuneStage.append(d1);
-        return;
-    }
-    const itemdiv = $("<div/>").addClass("fortuneStageItem").addClass("R"+stage.rarity);
-    const itemName = $("<div/>").addClass("fortuneStageName").html(stage.picName());
-    const rarity = ["common","good","great","epic"];
-    const itemDesc = $("<div/>").addClass("fortuneStageDesc").html(`Increase ${rarity[stage.rarity+1]} craft chance of Lvl ${stage.lvl} ${stage.type}`);
-    itemdiv.append(itemName,itemDesc);
-    $fortuneStage.append(itemdiv);
-}
-
-function refreshFortuneofferButton() {
-    if (FortuneManager.stage === null) {
-        $fortuneStart.removeClass("fortuneOfferCanStart").html("Select an Item to Offer");
-        return;
-    }
-    const mat = FortuneManager.getMaterialCost();
-    const message = `Offer - ${ResourceManager.materialIcon(mat.id)} ${mat.amt}`
-    $fortuneStart.addClass("fortuneOfferCanStart").html(message);
 }
 
 function createFortuneInv(item) {
@@ -163,20 +170,49 @@ function createFortuneInv(item) {
 function createFortuneCard(slot) {
     const rarity = ["Common","Good","Great","Epic"];
     const itemdiv = $("<div/>").addClass("fortuneSlot").addClass("R"+slot.rarity);
-    const itemName = $("<div/>").addClass("fortuneSlotName").html(`Lvl ${slot.tier} ${slot.line}`);
-    const itemRarity = $("<div/>").addClass("fortuneSlotRarity").html(`2x ${rarity[slot.rarity]} Craft Chance`)
-    const itemAmt = $("<div/>").addClass("fortuneSlotAmt").html(`${slot.amt} Crafts Remaining`);
-    return itemdiv.append(itemName,itemRarity,itemAmt);
+        $("<div/>").addClass("fortuneItemName").html(slot.picName()).appendTo(itemdiv);
+        $("<div/>").addClass("fortuneItemLevel").html(slot.itemLevel()).appendTo(itemdiv);
+    $("<div/>").addClass("fortuneItemDesc").html(`2x ${rarity[slot.rarity+1]} Chance`).appendTo(itemdiv);
+    const cost = FortuneManager.getMaterialCost(slot);
+    $("<div/>").addClass("fortuneItemSac").data("fortuneID",slot.slotid).html(`Sacrifice for ${ResourceManager.idToMaterial(cost.id).img} ${cost.amt}`).appendTo(itemdiv);
+    $('<div/>').addClass("fortuneItemClose").data("fortuneID",slot.slotid).html(`<i class="fas fa-times"></i>`).appendTo(itemdiv);
+    return itemdiv;
 }
+
+function createFortuneCardLocked(slot) {
+    const rarity = ["Common","Good","Great","Epic"];
+    const itemdiv = $("<div/>").addClass("fortuneSlot").addClass("R"+(slot.rarity));
+        $("<div/>").addClass("fortuneItemName").html(slot.picName()).appendTo(itemdiv);
+        $("<div/>").addClass("fortuneItemLevel").html(slot.itemLevel()).appendTo(itemdiv);
+    $("<div/>").addClass("fortuneItemDesc").html(`2x ${rarity[slot.rarity]} Chance`).appendTo(itemdiv);
+    $("<div/>").addClass("fortuneItemAmt").html(`${slot.amt} Crafts Left`).appendTo(itemdiv);
+    return itemdiv;
+}
+
+function createFortuneBlank() {
+    const itemdiv = $("<div/>").addClass("fortuneSlot");
+        $("<div/>").addClass("fortuneSlotEmpty").html("Fortune Available").appendTo(itemdiv);
+    return itemdiv;
+}
+
 
 $(document).on('click', '.fortuneStage', (e) => {
     e.preventDefault();
     const containerID = parseInt($(e.currentTarget).attr("containerID"));
     FortuneManager.stageItem(containerID);
+    refreshFortuneSlots();
 });
 
-$(document).on('click', '#fortuneStart', (e) => {
+$(document).on('click', '.fortuneItemSac', (e) => {
     e.preventDefault();
-    if (FortuneManager.stage === null) return;
-    FortuneManager.lockFortune();
+    const fortuneID = parseInt($(e.currentTarget).data("fortuneID"));
+    FortuneManager.lockFortune(fortuneID);
+    refreshFortuneSlots();
 })
+
+$(document).on('click', '.fortuneItemClose', (e) => {
+    e.preventDefault();
+    const fortuneID = parseInt($(e.currentTarget).data("fortuneID"));
+    FortuneManager.removeFortune(fortuneID);
+    refreshFortuneSlots();
+});

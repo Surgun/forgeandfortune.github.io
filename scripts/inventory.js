@@ -238,7 +238,6 @@ const Inventory = {
             this.addToInventory(id,0,sellToggle);
             achievementStats.craftedItem("Common");
         }
-        FortuneManager.spendFortune(item);
     },
     craftChance(item) {
         const masterMod = item.isMastered() ? 2 : 1;
@@ -353,7 +352,7 @@ const Inventory = {
         return this.nonblank().filter(i => i.rarity > 0);
     },
     nonEpic() {
-        return this.nonblank().filter(i => i.rarity < 3);
+        return this.nonblank().filter(i => i.rarity < 3 && i.item.recipeType === "normal");
     },
     getCommon() {
         const item = this.nonblank().filter(item=>item.rarity === 0 && item.item.recipeType === "normal")[0];

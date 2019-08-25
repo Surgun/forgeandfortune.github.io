@@ -15,6 +15,18 @@ const Notifications = {
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
     },
+    fortuneNoSlot() {
+        const text = "You do not have any available fortune slots."; // Text that is to be shown in the toast
+        const heading = 'Cannot Add Fortune'; // Optional heading to be shown on the toast
+        const icon = 'error'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
+    fortuneNoSlot() {
+        const text = "Inventory is full."; // Text that is to be shown in the toast
+        const heading = 'Cannot Recollect Fortune'; // Optional heading to be shown on the toast
+        const icon = 'error'; // Type of toast icon
+        popToast(text,heading,icon);
+    },
     workerGoldReq() {
         const text = "You do not have enough gold to upgrade this worker."; // Text that is to be shown in the toast
         const heading = 'Cannot Upgrade Worker'; // Optional heading to be shown on the toast

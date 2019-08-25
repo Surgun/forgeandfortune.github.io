@@ -3398,6 +3398,15 @@ Rarities
     margin: 5px 5px 0px 0px;
 }
 
+.heroPower {
+    padding: 5px;
+    font-size: .95rem;
+}
+
+.heroPower > .pow_img {
+    margin: 0 5px
+}
+
 .heroCounter {
     color: var(--text-white);
     text-align: center;

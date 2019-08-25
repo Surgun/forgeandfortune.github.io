@@ -17,7 +17,7 @@ function SAarmor(attacker, dungeonid) {
 function SAbloodLet(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, attacker.target);
     attacker.damageCurrentPercent(95);
-    const damage = attacker.getAdjPow()*3;
+    const damage = attacker.getAdjPow(true)*3;
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-tired")} ${logName(attacker.name)} lets out a scream and attacks ${logName(target.name)} for ${logDmg(damage)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
@@ -26,7 +26,7 @@ function SAbloodLet(attacker, enemies, dungeonid) {
 
 function SAravage(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, attacker.target);
-    const damage = Math.round(attacker.getAdjPow()*1.5);
+    const damage = Math.round(attacker.getAdjPow(true)*1.5);
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-fist-raised")} Energy soars through ${logName(attacker.name)} as they attack ${logName(target.name)} for ${logDmg(damage)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
@@ -41,7 +41,7 @@ function SAravage(attacker, enemies, dungeonid) {
 function SAblast(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, attacker.target);
     target.ignoredArmor = true;
-    const damage = Math.round(attacker.getAdjPow()*1.5);
+    const damage = Math.round(attacker.getAdjPow(true)*1.5);
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-fire-smoke")} ${logName(attacker.name)} unleashes a blast at ${logName(target.name)} for ${logDmg(damage)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
@@ -49,7 +49,7 @@ function SAblast(attacker, enemies, dungeonid) {
 };
 
 function SAmeteor(attacker, enemies, dungeonid) {
-    const damage = Math.round(attacker.getAdjPow()*1.2);
+    const damage = Math.round(attacker.getAdjPow(true)*1.2);
     const targets = enemies.filter(e => !e.dead());
     const dividedDmg = Math.round(damage/targets.length);
     const battleMessage = $("<span/>").addClass("logSpecial");
@@ -62,7 +62,7 @@ function SAmeteor(attacker, enemies, dungeonid) {
 
 function SAheal(attacker, allies, dungeonid) {
     const target = getTarget(allies, "lowMissingHp");
-    const healamt = attacker.getAdjPow();
+    const healamt = attacker.getAdjPow(true);
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-heart-circle")} ${logName(attacker.name)} heals ${logName(target.name)} for ${logHeal(healamt)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
@@ -70,7 +70,7 @@ function SAheal(attacker, allies, dungeonid) {
 }
 
 function SAmassHeal(attacker, allies, dungeonid) {
-    const healamt = Math.round(attacker.getAdjPow()*0.8);
+    const healamt = Math.round(attacker.getAdjPow(true)*0.8);
     const targets = allies.filter(a => !a.dead());
     const dividedHeal = Math.round(healamt/targets.length);
     const battleMessage = $("<span/>").addClass("logSpecial");
@@ -83,7 +83,7 @@ function SAmassHeal(attacker, allies, dungeonid) {
 
 function SAsniper(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, "lowhp");
-    const damage = attacker.getAdjPow();
+    const damage = attacker.getAdjPow(true);
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-bullseye-arrow")} ${logName(attacker.name)} snipes ${logName(target.name)} for ${logDmg(damage)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
@@ -92,7 +92,7 @@ function SAsniper(attacker, enemies, dungeonid) {
 
 function SAdouble(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, attacker.target);
-    const damage = attacker.getAdjPow();
+    const damage = attacker.getAdjPow(true);
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("far fa-swords")} ${logName(attacker.name)} attacks ${logName(target.name)} twice for ${logDmg(damage)}!`);
     BattleLog.addEntry(dungeonid,battleMessage);
@@ -117,7 +117,7 @@ function SAstun(attacker, enemies, dungeonid) {
 
 function SAsecond(attacker, enemies, dungeonid) {
     const target = getTarget(enemies, "second");
-    const damage = Math.round(attacker.getAdjPow()*1.5);
+    const damage = Math.round(attacker.getAdjPow(true)*1.5);
     const battleMessage = $("<span/>").addClass("logSpecial");
     battleMessage.html(`${logIcon("fas fa-meteor")} ${logName(attacker.name)} unleashes an enhanced attack!`);
     BattleLog.addEntry(dungeonid,battleMessage); 

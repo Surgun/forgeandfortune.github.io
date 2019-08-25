@@ -86,7 +86,7 @@ class Hero {
         const slots = this.getEquipSlots(true).map(s=>s.armor());
         const armorFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
         const armorCalc = this.initialArmor + armorFromGear;
-        if (this.armorBuff) return armorCalc + Math.round(this.getAdjPow() * 0.2);
+        if (this.armorBuff) return armorCalc + Math.round(this.getAdjPow(true) * 0.2);
         return armorCalc;
     }
     getPow() {
@@ -129,7 +129,8 @@ class Hero {
         if (slots.length === 0) return this.initialMpen;
         return this.initialMpen + slots.reduce((a,b) => a+b);
     }
-    getAdjPow() {
+    getAdjPow(spow) {
+        if (spow) return Math.floor(this.getPow() + this.getSpow());
         return Math.floor(this.getPow());
     }
     getPowSlot(slot) {

@@ -155,9 +155,9 @@ const actionSlotManager = {
         $.each(this.slots, (i,slot) => {
             slot.craftAdvance(t)
             $("#ASBarFill"+i).css('width', slot.progress);
-            const material= slot.item.material();
+            //const material= ResourceManager.idToMaterial(slot.item.material()).img;
             if (slot.status === slotState.CRAFTING) $("#ASBar"+i).removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));
-            else if (slot.status === slotState.NEEDMATERIAL) $("#ASBar"+i).addClass("matsNeeded").attr("data-label",`Requires more ${material}`);
+            else if (slot.status === slotState.NEEDMATERIAL) $("#ASBar"+i).addClass("matsNeeded").attr("data-label",`Requires more material`);
         });
     },
     upgradeSlot() {

@@ -6154,9 +6154,27 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .tinkerCommandDesc {
-    margin: 5px 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    padding: 5px 10px;
     text-align: center;
     color: var(--text-secondary);
+    background-color: var(--bg-tertiary);
+    border-radius: 5px;
+}
+
+.tinkerCommandDesc > img {
+    margin: 0 3px;
+    max-height: 24px;
+}
+
+.tinkerCommandDesc > i {
+    margin: 0 3px;
+    color: var(--green-primary);
+    padding: 5px 8px;
+    font-size: 1.25rem;
 }
 
 .tinkerCommandRange {

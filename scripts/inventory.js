@@ -136,7 +136,7 @@ function blankItemStat() {
     stats[heroStat.pow] = 0;
     stats[heroStat.hp] = 0;
     stats[heroStat.armor] = 0;
-    stats[heroStat.resis] = 0;
+    stats[heroStat.resist] = 0;
     stats[heroStat.crit] = 0;
     stats[heroStat.dodge] = 0;
     stats[heroStat.spow] = 0;
@@ -454,6 +454,7 @@ function gearEquipFromInventory(invID) {
             const newStats = equipContainerTarget.itemStat();
             let same = true;
             for (const [stat, val] of Object.entries(newStats)) {
+                console.log(stat,val);
                 const deltaStat = val - currentStats[stat];
                 if (deltaStat === 0 && val === 0) continue;
                 same = false;

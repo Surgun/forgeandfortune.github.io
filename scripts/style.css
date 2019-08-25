@@ -6109,6 +6109,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .tinkerMat {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7058,6 +7059,11 @@ footer a[href*="discord.gg"]:hover {
 .recipeTotalCrafted.tooltip:after {
     width: 145px;
     margin: 0 auto; 
+}
+
+.tinkerMat.tooltip:after {
+    width: 120px;
+    margin: 0 auto;
 }
 
 /* Firefox-Specific Fixes */

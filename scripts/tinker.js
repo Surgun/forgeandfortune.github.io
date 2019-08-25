@@ -158,7 +158,7 @@ function refreshTinkerMats() {
     const mats = ["M700","M701","M702","M800","M801","M802"];
     $tinkerMaterials.empty();
     mats.forEach(mat => {
-        $("<div/>").addClass("tinkerMat").html(ResourceManager.sidebarMaterial(mat)).appendTo($tinkerMaterials);
+        $("<div/>").addClass("tinkerMat tooltip").attr("data-tooltip",ResourceManager.idToMaterial(mat).name).html(ResourceManager.sidebarMaterial(mat)).appendTo($tinkerMaterials);
     });
 };  
 

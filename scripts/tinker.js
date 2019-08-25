@@ -140,7 +140,7 @@ const TinkerManager = {
         command.toggle();
     },
     max() {
-        return 50;
+        return 40+this.lvl*10;
     },
 }
 

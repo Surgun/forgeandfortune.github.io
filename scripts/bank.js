@@ -56,6 +56,11 @@ const BankManager = {
         this.removeContainer(containerID);
         Inventory.addItemContainerToInventory(container);
     },
+    addLevel() {
+        this.lvl += 1;
+        refreshBankBank();
+        refreshBankInventory();
+    }
 }
 
 function initiateBankBldg() {

@@ -55,6 +55,11 @@ const bloopSmith = {
     },
     canImprove() {
         return this.smithStage.sharp < this.maxSharp();
+    },
+    addLevel() {
+        this.lvl += 1;
+        refreshSmithInventory();
+        refreshSmithStage();
     }
 }
 

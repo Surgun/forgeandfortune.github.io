@@ -142,6 +142,10 @@ const TinkerManager = {
     max() {
         return 40+this.lvl*10;
     },
+    addLevel() {
+        this.lvl += 1;
+        refreshTinkerCommands();
+    }
 }
 
 function initiateTinkerBldg () {

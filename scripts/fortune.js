@@ -129,6 +129,10 @@ const FortuneManager = {
     purgeDone() {
         this.slots = this.slots.filter(f => f.amt > 0);
         refreshFortuneSlots();
+    },
+    addLevel() {
+        this.lvl += 1;
+        refreshFortuneSlots();
     }
 }
 

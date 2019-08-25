@@ -133,6 +133,10 @@ const FusionManager = {
     },
     maxSlots() {
         return 1+this.lvl;
+    },
+    addLevel() {
+        this.lvl += 1;
+        refreshFuseSlots();
     }
 }
 

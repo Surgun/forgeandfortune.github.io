@@ -178,7 +178,9 @@ function createFortuneCard(slot) {
         $("<div/>").addClass("fortuneItemLevel").html(slot.itemLevel()).appendTo(itemdiv);
     $("<div/>").addClass("fortuneItemDesc").html(`2x ${rarity[slot.rarity+1]} Chance`).appendTo(itemdiv);
     const cost = FortuneManager.getMaterialCost(slot);
-    $("<div/>").addClass("fortuneItemSac").data("fortuneID",slot.slotid).html(`Sacrifice for ${ResourceManager.idToMaterial(cost.id).img} ${cost.amt}`).appendTo(itemdiv);
+    const sacContainer = $("<div/>").addClass("fortuneItemSac").data("fortuneID",slot.slotid).appendTo(itemdiv);
+        $("<div/>").addClass("fortune_text").html(`Sacrifice for`).appendTo(sacContainer);
+        $("<div/>").addClass("fortune_cost tooltip").attr("data-tooltip",ResourceManager.idToMaterial(cost.id).name).html(`${ResourceManager.idToMaterial(cost.id).img} ${cost.amt}`).appendTo(sacContainer);
     $('<div/>').addClass("fortuneItemClose").data("fortuneID",slot.slotid).html(`<i class="fas fa-times"></i>`).appendTo(itemdiv);
     return itemdiv;
 }

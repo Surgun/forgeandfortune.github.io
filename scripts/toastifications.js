@@ -21,7 +21,7 @@ const Notifications = {
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
     },
-    fortuneNoSlot() {
+    fortuneInvFull() {
         const text = "Inventory is full."; // Text that is to be shown in the toast
         const heading = 'Cannot Recollect Fortune'; // Optional heading to be shown on the toast
         const icon = 'error'; // Type of toast icon

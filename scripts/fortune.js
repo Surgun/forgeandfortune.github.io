@@ -92,9 +92,9 @@ const FortuneManager = {
     removeFortune(fortuneID) {
         if (Inventory.full()) {
             Notifications.fortuneInvFull();
+            return;
         }
         const fortune = this.fortuneByID(fortuneID);
-        console.log(fortune,fortuneID);
         Inventory.addItemContainerToInventory(fortune.container);
         this.slots = this.slots.filter(f=>f.slotid !== fortuneID);
         refreshFortuneSlots();

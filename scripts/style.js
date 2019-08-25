@@ -384,11 +384,11 @@ $(document).on('click', '.adjustSpeedBtn', (e) => {
 });
 
 $(document).on('click', '.gearHeroesBtn', (e) => {
-    let itemLevel = Math.max(10,parseInt(document.querySelector(".gearHeroesLevel").value));
+    let itemLevel = Math.min(10,parseInt(document.querySelector(".gearHeroesLevel").value));
     if (itemLevel === undefined) itemLevel = 1;
-    let itemRarity = Math.max(3,parseInt(document.querySelector(".gearHeroesRarity").value));
+    let itemRarity = Math.min(3,parseInt(document.querySelector(".gearHeroesRarity").value));
     if (itemRarity === undefined) itemRarity = 3;
-    let itemSharp = Math.max(10,parseInt(document.querySelector(".gearHeroesSharp").value));
+    let itemSharp = Math.min(10,parseInt(document.querySelector(".gearHeroesSharp").value));
     if (itemSharp === undefined) itemSharp = 0;
     devtools.gearHeroes(itemLevel,itemRarity,itemSharp);
 });

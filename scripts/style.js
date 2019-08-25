@@ -287,7 +287,9 @@ function dbEnable() {
             $("<button/>").addClass("heroUnlockOption dbActionButton").html("Unlock Heroes").appendTo(d1h);
         const d1i = $("<div/>").addClass("perkUnlockContainer");
             $("<button/>").addClass("perkUnlockOption dbActionButton").html("Unlock Perks").appendTo(d1i);
-        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g,d1h,d1i);
+        const d1j = $("<div/>").addClass("trinketUnlockContainer");
+            $("<button/>").addClass("trinketUnlockOption dbActionButton").html("Add Trinkets").appendTo(d1j);
+        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g,d1h,d1i,d1j);
 
     const d4 = $("<div/>").addClass("addItemContainer dbActionContainer");
         const d4a = $("<div/>").addClass("addItemTitle").html("Add Item to Inventory");
@@ -367,6 +369,10 @@ $(document).on('click', '.perkUnlockOption', (e) => {
     devtools.allPerks();
 })
 
+$(document).on('click', '.trinketUnlockOption', (e) => {
+    devtools.addTrinkets();
+});
+
 $(document).on('click', '.addGoldBtn', (e) => {
     const goldAmount = parseInt(document.querySelector(".addGoldInput").value);
     devtools.addGold(goldAmount);
@@ -378,9 +384,12 @@ $(document).on('click', '.adjustSpeedBtn', (e) => {
 });
 
 $(document).on('click', '.gearHeroesBtn', (e) => {
-    const itemLevel = parseInt(document.querySelector(".gearHeroesLevel").value);
-    const itemRarity = parseInt(document.querySelector(".gearHeroesRarity").value);
-    const itemSharp = parseInt(document.querySelector(".gearHeroesSharp").value);
+    let itemLevel = Math.max(10,parseInt(document.querySelector(".gearHeroesLevel").value));
+    if (itemLevel === undefined) itemLevel = 1;
+    let itemRarity = Math.max(3,parseInt(document.querySelector(".gearHeroesRarity").value));
+    if (itemRarity === undefined) itemRarity = 3;
+    let itemSharp = Math.max(10,parseInt(document.querySelector(".gearHeroesSharp").value));
+    if (itemSharp === undefined) itemSharp = 0;
     devtools.gearHeroes(itemLevel,itemRarity,itemSharp);
 });
 

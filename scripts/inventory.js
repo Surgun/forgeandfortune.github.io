@@ -187,7 +187,7 @@ const Inventory = {
         }
     },
     addItemContainerToInventory(container) {
-        if (this.full()) this.sellItem(id,rarity,0);
+        if (this.full()) this.sellItem(container.id,container.rarity,0);
         else this.findempty(container);
     },
     findempty(item) {

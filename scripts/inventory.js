@@ -95,7 +95,7 @@ class itemContainer {
     mpen(sharpIncrease) { return this.statCalc(this.item.mpen,this.item.mpenScale,sharpIncrease); }
     statCalc(flat,scale,sharpIncrease) {
         const sharpAdd = sharpIncrease ? 1 : 0;
-        return Math.floor((flat * miscLoadedValues.rarityMod[this.rarity] + scale * this.scale) * (1+0.05*(this.sharp+sharpAdd)));
+        return Math.floor((flat * miscLoadedValues.rarityMod[this.rarity] + Math.ceil(scale * this.scale)) * (1+0.05*(this.sharp+sharpAdd)));
     }
     goldValueFormatted() {
         return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue(),2);
@@ -121,7 +121,7 @@ class itemContainer {
         stats[heroStat.pow] = this.pow(sharpIncrease);
         stats[heroStat.hp] = this.hp(sharpIncrease);
         stats[heroStat.armor] = this.armor(sharpIncrease);
-        stats[heroStat.resis] = this.resist(sharpIncrease);
+        stats[heroStat.resist] = this.resist(sharpIncrease);
         stats[heroStat.crit] = this.crit(sharpIncrease);
         stats[heroStat.dodge] = this.dodge(sharpIncrease);
         stats[heroStat.spow] = this.spow(sharpIncrease);

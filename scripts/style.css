@@ -770,7 +770,7 @@ p.hamster {
     border-radius: 5px;
 }
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .EquipmentCardsHeader, .eventNotorietyHeading, .desynthHeading, .fortuneGearHeading, .tinkerHeading, .dungeonRewardsHeader, .smithHeading {
+.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .EquipmentCardsHeader, .eventNotorietyHeading, .desynthHeading, .fortuneGearHeading, .tinkerHeading, .dungeonRewardsHeader, .smithHeading, .heroTrinketEquippedHeader {
     font-weight: normal;
     font-size: 16px;
     font-size: 1rem;
@@ -3744,6 +3744,15 @@ Rarities
     overflow: hidden;
 }
 
+.heroTrinketEquippedHeader {
+    margin: 10px 5px;
+}
+
+.heroEquipTrinketContainer {
+    max-width: 175px;
+    padding: 0 5px;
+}
+
 .heroExamineEquipmentList + .heroExamineEquipment {
     border-left: 1px solid var(--border-primary);
 }
@@ -5253,7 +5262,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     filter: grayscale(1);
 }
 
-#fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleDesynthHolder, #fortuneGear {
+#fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleDesynthHolder, #fortuneGear, .heroEquipTrinketAllContainer {
     display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));

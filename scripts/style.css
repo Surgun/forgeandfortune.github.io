@@ -5738,6 +5738,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 15px 0;
 }
 
+.smithMaxHeading {
+    padding: 0 5px;
+    color: var(--highlight);
+}
+
 .smithNoselection {
     padding: 0 5px;
     margin-bottom: 15px;

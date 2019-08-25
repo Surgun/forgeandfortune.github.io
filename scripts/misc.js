@@ -88,15 +88,15 @@ function createArray(len, itm) {
 }
 
 const miscIcons = Object.freeze({
-    hp : '<i class="fas fa-heart"></i>',
-    pow : '<i class="fad fa-sword"></i>',
+    hp : '<i class="fas fa-heart statHP"></i>',
+    pow : '<i class="fad fa-sword statPOW"></i>',
     ap : '<img src="images/DungeonIcons/ap.png">',
     gold : '<img src="images/DungeonIcons/gold.png">',
-    star : '<i class="fas fa-star"></i>',
-    spow : '<i class="fas fa-book-spells"></i>',
-    armor : '<i class="fas fa-shield"></i>',
-    crit : '<i class="fas fa-dagger"></i>',
-    dodge : '<i class="fas fa-hood-cloak"></i>',
+    star : '<i class="fas fa-star statSTAR"></i>',
+    spow : '<i class="fas fa-book-spells statSPOW"></i>',
+    armor : '<i class="fas fa-shield statARMOR"></i>',
+    crit : '<i class="fas fa-dagger statCRIT"></i>',
+    dodge : '<i class="fas fa-hood-cloak statDODGE"></i>',
 });
 
 const heroStat = Object.freeze({

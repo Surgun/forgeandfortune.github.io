@@ -628,7 +628,14 @@ p.hamster {
 }
 
 .inventoryProps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+}
+
+.invPropStat {
+    padding: 5px 10px;
 }
 
 .inventoryItemValue, .invProp {
@@ -6536,6 +6543,38 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 .rewardImage > img, .dreLootDropImage > img {
     vertical-align: middle;
     padding: 3px;
+}
+
+/* Stat Icons */
+
+.statHP {
+    color: rgb(248, 107, 107);
+    margin-right: 3px;
+}
+
+.statPOW {
+    color: rgb(238, 255, 0);
+    margin-right: 3px;
+}
+
+.statSPOW {
+    color: rgb(203, 125, 255);
+    margin-right: 3px;
+}
+
+.statARMOR {
+    color: rgb(110, 146, 247);
+    margin-right: 3px;
+}
+
+.statCRIT {
+    color: rgb(250, 175, 89);
+    margin-right: 3px;
+}
+
+.statDODGE {
+    color: rgb(145, 255, 163);
+    margin-right: 3px;
 }
 
 /* Footer Elements */

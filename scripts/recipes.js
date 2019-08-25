@@ -337,7 +337,8 @@ function recipeCardFront(recipe) {
     td5.append(td5a,td5b,td5c);
 
     const td6 = $('<div/>').addClass('recipeCountAndCraft');
-        const td6a = $('<div/>').addClass('recipeCount').attr("id","rc"+recipe.id).html(`${recipe.craftCount} crafted`);
+        const td6a = $('<div/>').addClass('recipeMasteredStatus').attr("id","rms"+recipe.id).html(`UNMASTERED`);
+        if (recipe.isMastered()) td6a.addClass('isMastered').html("MASTERED");
         if (recipe.recipeType !== "normal") td6a.hide();
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
         recipe.recipeDiv = td6b;
@@ -350,20 +351,31 @@ function recipeCardBack(recipe) {
         
     const td7 = $('<div/>').addClass('recipeBackTabContainer');
         const td7a = $('<div/>').addClass('recipeBackTab backTab1 selected').html(`Details`);
-        //const td7b = $('<div/>').addClass('recipeBackTab backTab2').html(`Mastery`);
-    td7.append(td7a);
+        const td7b = $('<div/>').addClass('recipeBackTab backTab2').html(`Mastery`);
+    td7.append(td7a,td7b);
 
     const td8 = $('<div/>').addClass('recipeTabContainer recipeTabDetails');
         const td8a = $('<div/>').addClass('recipeDetailsContainer');
             const td8a1 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
             const td8a2 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
-            const material = (recipe.mcost) ? Object.keys(recipe.mcost)[0] : "M201";
-            const td8a3 = $('<div/>').addClass('recipeTotalCrafted').attr("id","rcc"+recipe.id).data("rid",recipe.id).html(`Master for ${Math.max(100,1000-9*recipe.craftCount)} ${ResourceManager.idToMaterial(material).img}`);
-            if (recipe.isMastered) td8a3.addClass("isMastered").html("MASTERED");
-            if (recipe.recipeType !== "normal") td8a3.hide();
+            const td8a3 = $('<div/>').addClass('recipeCrafted').attr("id","rc"+recipe.id).html(`${recipe.craftCount} crafted`);
         td8a.append(td8a1,td8a2,td8a3);
     td8.append(td8a);
-    return $('<div/>').addClass('recipeCardBack').append(td6,td7,td8);
+
+    const td9 = $('<div/>').addClass('recipeTabContainer recipeTabMastery');
+        const td9a = $('<div/>').addClass('recipeMasteryContainer');
+            const td9a1 = $('<div/>').addClass('recipeBackDescription').attr("id","rbd"+recipe.id).html("Crafting this recipe will reduce the cost to master it, down to a maximum of 100.");
+            const material = (recipe.mcost) ? Object.keys(recipe.mcost)[0] : "M201";
+            const td9a2 = $('<div/>').addClass('recipeTotalCrafted tooltip').attr({"id": "rcc"+recipe.id, "data-tooltip": `${ResourceManager.idToMaterial(material).name}`}).data("rid",recipe.id).html(`Master for ${Math.max(100,1000-9*recipe.craftCount)} ${ResourceManager.idToMaterial(material).img}`);
+            if (recipe.isMastered()) {
+                td9a1.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
+                td9a2.addClass("isMastered").html("MASTERED");
+            }
+            if (recipe.recipeType !== "normal") td9a2.hide();
+        td9a.append(td9a1,td9a2);
+    td9.append(td9a);
+
+    return $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9);
 }
 
 function recipeMasteryBar(craftCount) {
@@ -389,9 +401,15 @@ function refreshMasteryBar() {
 function refreshCraftedCount() {
     recipeList.recipes.forEach(recipe => {
         const rcc = $("#rcc"+recipe.id);
+        const rbd = $("#rbd"+recipe.id);
+        const rms = $("#rms"+recipe.id);
         const material = (recipe.mcost) ? Object.keys(recipe.mcost)[0] : "M201";
         rcc.html(`Master for ${Math.max(100,1000-9*recipe.craftCount)} ${ResourceManager.idToMaterial(material).img}`);
-        if (recipe.isMastered()) rcc.addClass("isMastered").html("MASTERED");
+        if (recipe.isMastered()) {
+            rbd.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
+            rcc.addClass("isMastered").html("MASTERED");
+            rms.addClass("isMastered").html("MASTERED");
+        }
     });
 }
  

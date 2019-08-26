@@ -9,7 +9,7 @@ const $heroGearSlots = $("#heroGearSlots");
 const $heroOverview = $("#heroOverview");
 
 const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory","Trinket"];
-const statName = [`${miscIcons.hp}`,`${miscIcons.pow}`,`${miscIcons.spow}`,`${miscIcons.ap}`,`${miscIcons.armor}`,`${miscIcons.crit}`,`${miscIcons.dodge}`];
+const statName = [`${miscIcons.hp} HP`,`${miscIcons.pow} Power`,`${miscIcons.spow} SPower`,`${miscIcons.ap} AP`,`${miscIcons.armor} Armor`,`${miscIcons.crit} Crit`,`${miscIcons.dodge} Dodge`];
 const statDesc = [
     "Amount of damage your hero can sustain before being downed.",
     "Amount of damage your hero can deal.",

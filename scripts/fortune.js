@@ -10,7 +10,9 @@ class fortuneSlot {
         this.lvl = container.item.lvl;
         this.slotid = fortuneSlotid;
         this.state = "unlocked";
-        this.amt = 20;
+        if (container.rarity === 0) this.amt = 20;
+        else if (conttainer.rarity === 1) this.amt = 50;
+        else if (container.rarity === 2) this.amt = 100;
         fortuneSlotid += 1;
     }
     createSave() {
@@ -113,8 +115,7 @@ const FortuneManager = {
     },
     getProcModifier(line,tier) {
         const modifier = [1,1,1];
-        const mods = this.slots.filter(s=>s.type === line && s.lvl === tier)
-        console.log(mods);
+        const mods = this.slots.filter(s=>s.type === line && s.lvl === tier);
         mods.forEach(s => {
             modifier[s.rarity-1] = 2;
             s.amt -= 1;

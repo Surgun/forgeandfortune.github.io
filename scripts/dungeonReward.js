@@ -7,13 +7,16 @@ const $dreLoot = $("#dreLoot");
 const $dreStats = $("#dreStats");
 const $dreCollect = $("#dreCollect");
 
-function showDungeonReward(dungeonID,abandoned) {
+function showDungeonReward(dungeonID) {
     $dungeonSelect.hide();
     $dungeonRun.hide();
     $dungeonRewards.show();
     const dungeon = DungeonManager.dungeonByID(dungeonID);
+    const state = dungeon.completeState;
     if (dungeon.status !== DungeonStatus.COLLECT) return;
-    $dreHeader.html(`${dungeon.name} ${abandoned ? " Abandoned" : " Complete!"}`);
+    if (dungeon.type === "boss" && state === "partyDead") $dreHeader.html(`${dungeon.name} Failed`);
+    else if (state === "abandoned") $dreHeader.html(`${dungeon.name} Abandoned`);
+    else $dreHeader.html(`${dungeon.name} Complete!`);
     $dreTeam.empty();
     dungeon.party.heroes.forEach(hero => {
         const d1 = $("<div/>").addClass("dreTeamHero").appendTo($dreTeam);
@@ -27,6 +30,7 @@ function showDungeonReward(dungeonID,abandoned) {
             $("<div/>").addClass("dreLootDropImage").html(material.img).appendTo(d2);
             $("<div/>").addClass("dreLootDropAmt").html(drop.amt).appendTo(d2);
     });
+    if (dungeon.dropList.length === 0) $("<div/>").addClass("dreLootNone").html("No Loot Found").appendTo($dreLoot);
     $dreStats.empty();
     const d3 = $("<div/>").addClass("dreStatContainer").appendTo($dreStats);
         $("<div/>").addClass("dreStatHeading").html("Total Time").appendTo(d3);
@@ -37,7 +41,18 @@ function showDungeonReward(dungeonID,abandoned) {
     const d5 = $("<div/>").addClass("dreStatContainer").appendTo($dreStats);
         $("<div/>").addClass("dreStatHeading").html("Turns Taken").appendTo(d5);
         $("<div/>").addClass("dreStatDescription").html(dungeon.beatTotal + " turns").appendTo(d5);
+    if (dungeon.type === "boss") {
+        const d6 = $("<div/>").addClass("dreStatContainer").appendTo($dreStats);
+            $("<div/>").addClass("dreStatHeading").html("Boss Percent").appendTo(d6);
+            $("<div/>").addClass("dreStatDescription").html(dungeon.bossPercent()).appendTo(d6);
+    }
+    if (dungeon.type === "boss" && state === "bossBeat") $dreRepeat.hide();
+    else $dreRepeat.show();
+    if (dungeon.dropList.length === 0) $dreCollect.html("End Run");
+    else $dreCollect.html("Collect Rewards");
 }
+
+const $dreRepeat = $("#dreRepeat"); 
 
 $(document).on('click', "#dreCollect", (e) => {
     const dungeonID = DungeonManager.dungeonView;

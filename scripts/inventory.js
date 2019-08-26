@@ -456,7 +456,6 @@ function gearEquipFromInventory(invID) {
             const newStats = equipContainerTarget.itemStat();
             let same = true;
             for (const [stat, val] of Object.entries(newStats)) {
-                console.log(stat,val);
                 const deltaStat = val - currentStats[stat];
                 if (deltaStat === 0 && val === 0) continue;
                 same = false;

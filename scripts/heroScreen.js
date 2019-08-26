@@ -10,13 +10,13 @@ const $heroOverview = $("#heroOverview");
 
 const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory","Trinket"];
 const statName = [
-    `${miscIcons.hp} <span>Health</span>`,
+    `${miscIcons.hp} <span>HP</span>`,
     `${miscIcons.pow} <span>Power</span>`,
-    `${miscIcons.spow} <span>Special Power</span>`,
-    `${miscIcons.ap} <span>Action Points</span>`,
+    `${miscIcons.spow} <span>SPower</span>`,
+    `${miscIcons.ap} <span>AP</span>`,
     `${miscIcons.armor} <span>Armor</span>`,
-    `${miscIcons.crit} <span>Critical Chance</span>`,
-    `${miscIcons.dodge} <span>Dodge Chance</span>`
+    `${miscIcons.crit} <span>Crit</span>`,
+    `${miscIcons.dodge} <span>Dodge</span>`
 ];
 const statDesc = [
     "Amount of damage your hero can sustain before being downed.",

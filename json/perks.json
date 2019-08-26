@@ -483,23 +483,50 @@
     "notoReq": 28001,
     "goldCost": 300000,
     "type": "tinker",
-    "subtype": "open"
+    "subtype": "level"
   },
   {
     "id": "AL41061",
     "title": "Not The Train Kind",
-    "description": "Improves the Tinker Hut speed.",
-    "notoReq": 150000,
-    "goldCost": 9000000,
+    "description": "Increases the max star rating of trinkets.",
+    "notoReq": 82250,
+    "goldCost": 3000000,
     "type": "tinker",
     "subtype": "level"
   },
   {
     "id": "AL41062",
     "title": "Electrotastic",
-    "description": "Improves the Tinker Hut speed.",
-    "notoReq": 400000,
-    "goldCost": 1250000000,
+    "description": "Increases the max star rating of trinkets.",
+    "notoReq": 139750,
+    "goldCost": 30000000,
+    "type": "tinker",
+    "subtype": "level"
+  },
+  {
+    "id": "AL41063",
+    "title": "Hertz Doughnuts",
+    "description": "Increases the max star rating of trinkets.",
+    "notoReq": 213750,
+    "goldCost": 150000000,
+    "type": "tinker",
+    "subtype": "level"
+  },
+  {
+    "id": "AL41064",
+    "title": "Safety Not Guaranteed",
+    "description": "Increases the max star rating of trinkets.",
+    "notoReq": 310250,
+    "goldCost": 625000000,
+    "type": "tinker",
+    "subtype": "level"
+  },
+  {
+    "id": "AL41065",
+    "title": "Push It To The Limit",
+    "description": "Increases the max star rating of trinkets.",
+    "notoReq": 432250,
+    "goldCost": 32500000000,
     "type": "tinker",
     "subtype": "level"
   },

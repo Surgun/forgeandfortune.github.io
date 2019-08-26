@@ -183,7 +183,6 @@ function refreshFuseSlots() {
         const d5 = $("<div/>").addClass("fuseSlotStart").attr("id","fuseSlotStart"+slot.fuseID).attr("fuseid",slot.fuseID).html("Start Fuse").hide();
         const d6 = $('<div/>').addClass("fuseClose").attr("fuseid",slot.fuseID).html(`<i class="fas fa-times"></i>`).hide();
         if (slot.fuseComplete()) {
-            console.log('fuse complete')
             d3.hide();
             d4.show();
         }

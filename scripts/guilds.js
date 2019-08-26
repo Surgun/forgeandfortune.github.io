@@ -135,9 +135,9 @@ class Guild {
         refreshAllOrders();
     }
     goldValue() {
-        const gold = this.order.map(o => o.goldvalue);
+        const gold = this.order.map(o => o.goldValue());
         if (gold.length === 0) return 0;
-        return gold.reduce((a,b) => a+b)*2;
+        return gold.reduce((a,b) => a+b);
     }
     maxLvlReached() {
         return this.lvl + 1 >= GuildManager.maxGuildLevel;
@@ -162,7 +162,6 @@ class guildOrderItem {
         this.fufilled = 0;
         this.repgain = 1;
         this.displayName = this.generateName();
-        this.goldvalue = Math.round(this.item.value*(1+this.rarity)*(1+this.sharp*0.1)*this.amt);
     }
     createSave() {
         const save = {};
@@ -181,7 +180,10 @@ class guildOrderItem {
         this.sharp = save.sharp;
         this.fufilled = save.fufilled;
         this.displayName = this.generateName();
-        this.goldvalue = Math.round(this.item.value*(1+this.rarity)*(1+this.sharp*0.1)*this.amt);
+    }
+    goldValue() {
+        const sharpAdd = miscLoadedValues["smithChance"].splice(0,this.sharp).length === 0 ? 1 : miscLoadedValues["smithChance"].splice(0,this.sharp).reduce((a,b)=>a+b);
+        return Math.round(this.item.value*this.amt*(2*(1+this.rarity)+sharpAdd));
     }
     complete() {
         return this.fufilled >= this.amt;

@@ -584,8 +584,18 @@ function saveUpdate(loadGame) {
         });
         loadGame["rs"].forEach(m => {if (m.id !== "M001") m.amt = Math.min(m.amt,1000)});
     }
+    console.log(loadGame.v);
     if (loadGame.v === "032") {
         loadGame.v = "0321";
+        if (loadGame["t"] === undefined) {
+            loadGame["t"] = {
+                lvl : 1,
+                commands : [],
+                dT002 : 0,
+                dT003 : 0,
+                dT004 : 0,
+            }
+        }
         loadGame["t"].lvl = 1;
         if (loadGame["al"].purchased.includes("AL4106")) loadGame["tm"].tinkerStatus = 0;
         if (loadGame["al"].purchased.includes("AL41061")) loadGame["t"].lvl += 1;
@@ -600,8 +610,7 @@ function saveUpdate(loadGame) {
             lvl : 1,
             slots : [],
         }
-        loadGame["r"].find(r=>r.id === "R99610").owned = true;
-        if (loadGame["al"].purchased.includes("AL4106")) TownManager.buildingPerk("tinker");
+        if (loadGame["al"].purchased.includes("AL4106")) loadGame["r"].find(r=>r.id === "R99610").owned = true;
         if (loadGame["al"].purchased.includes("AL41041")) loadGame["fo"].lvl += 1;
         if (loadGame["al"].purchased.includes("AL41042")) loadGame["fo"].lvl += 1;
     }

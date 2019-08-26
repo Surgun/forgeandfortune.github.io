@@ -182,10 +182,6 @@ class Event {
         if (save.itemReward !== undefined) this.itemReward = save.itemReward;
         if (save.beats !== undefined) this.beats = save.beats;
     }
-    notoriety() {
-        if (this.reward === null) return;
-        return ActionLeague.generateNoto(this.reward);
-    }
 };
 
 const $eventList = $("#eventList");

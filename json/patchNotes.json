@@ -142,5 +142,11 @@
     "version": "V0.3.2.2",
     "date": "August 26th, 2019",
     "body": "<p>Fixed tinker and fortune again...</p><p>Second time's a charm?</p>"
+  },
+  {
+    "patchCount": 25,
+    "version": "V0.3.2.3",
+    "date": "August 26th, 2019",
+    "body": "<p>Notoriety should be shown and collected on dungeon rewards screen<p><p>Fixed loading screen error</p>"
   }
 ]

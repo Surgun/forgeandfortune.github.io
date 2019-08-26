@@ -174,6 +174,7 @@ class Dungeon {
     }
     resetDungeon() {
         ResourceManager.addDungeonDrops(this.dropList);
+        ActionLeague.addNoto(this.notoriety());
         this.party.heroes.forEach(h=>{
             h.inDungeon = false;
             h.ap = 0;
@@ -260,6 +261,13 @@ class Dungeon {
         if (this.type !== "boss") return "0%";
         const boss = this.mobs.find(m=>m.event === "boss")
         return Math.round(100*boss.hp/boss.maxHP())+"%";
+    }
+    notoriety() {
+        if (this.dropList.length === 0) return 0;
+        const noto = this.dropList.map(r => {
+            return r.amt*ResourceManager.idToMaterial(r.id).notoAdd;
+        });
+        return noto.reduce((a,b) => a+b , 0);
     }
 }
 

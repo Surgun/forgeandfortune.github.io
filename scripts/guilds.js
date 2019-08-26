@@ -479,13 +479,6 @@ const ActionLeague = {
         refreshALperks();
         refreshProgress();
     },
-    generateNoto(rewards) {
-        //takes the rewards list and generates how many pts you should get
-        const noto = rewards.map(r => {
-            return r.amt*ResourceManager.idToMaterial(r.id).notoAdd;
-        });
-        return noto.reduce((a,b) => a+b , 0);
-    },
     nextUnlock() {
         const perks = this.perks.filter(p => p.notoReq > this.notoriety && !this.purchased.includes(p.id));
         const perkNoto = perks.map(p=>p.notoReq);

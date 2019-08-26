@@ -582,7 +582,7 @@ function saveUpdate(loadGame) {
             if (recipe.craftCount >= 100) recipe.mastered = true;
             else recipe.mastered = false;
         });
-        loadGame["rs"].forEach(m => m.amt = Math.min(m.amt,1000));
+        loadGame["rs"].forEach(m => {if (m.id !== "M001") m.amt = Math.min(m.amt,1000)});
     }
     return loadGame;
 }

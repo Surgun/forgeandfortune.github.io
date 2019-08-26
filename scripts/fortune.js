@@ -11,7 +11,7 @@ class fortuneSlot {
         this.slotid = fortuneSlotid;
         this.state = "unlocked";
         if (container.rarity === 0) this.amt = 20;
-        else if (conttainer.rarity === 1) this.amt = 50;
+        else if (container.rarity === 1) this.amt = 50;
         else if (container.rarity === 2) this.amt = 100;
         fortuneSlotid += 1;
     }

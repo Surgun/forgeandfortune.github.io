@@ -96,7 +96,10 @@ const EventManager = {
         const event = this.eventNumToEvent(eventNum);
         if (event.reward !== null) {
             ResourceManager.addDungeonDrops(event.reward);
-            ActionLeague.addNoto(event.notoriety());
+            if (event.bossKill !== null) {
+                const dungeon = DungeonManager.dungeonByID(event.bossKill);
+                ActionLeague.addNoto(dungeon.notoriety());
+            }
         }
         event.reward = null;
         if (event.itemReward !== null) {

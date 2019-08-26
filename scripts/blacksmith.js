@@ -116,7 +116,8 @@ function itemCardSmith(item) {
         const itemProps = $("<div/>").addClass("smithProps").appendTo(itemdiv);
         for (const [stat, val] of Object.entries(item.itemStat(false))) {
             if (val === 0) continue;
-            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+            const statFormatted = stat.toUpperCase();
+            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
         }
         $("<div/>").addClass("smithStage").attr("containerID",item.containerID).html("Smith").appendTo(itemdiv);
     return itemdiv;
@@ -133,7 +134,8 @@ function itemStageCardSmith(slot,upgrade) {
     const d = $("<div/>").addClass("invProp").appendTo(itemProps);
     for (const [stat, val] of Object.entries(slot.itemStat(upgrade))) {
         if (val === 0) continue;
-        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",stat).html(`${miscIcons[stat]} ${val}`).appendTo(d);
+        const statFormatted = stat.toUpperCase();
+        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(d);
     }
     return itemdiv.append(itemName,itemLevel,itemProps);
 }

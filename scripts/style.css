@@ -39,7 +39,7 @@ body {
 
 /* Scrollbar */
 
-#side-content, #RecipeFilter, #right-side-content, .dialog_body, #recipes-list, #inventory-container, .workerList-container, #heroList, .heroTabContent, #dungeon-container, #dungeonCloseup, #drTurnOrder, #drLog, #townContainer, #eventContainer, #eventListContainer, #progresslist, .guildContainer {
+#side-content, #RecipeFilter, #right-side-content, .dialog_body, #recipes-list, #inventory-container, .workerList-container, #heroList, .heroTabContent, #dungeon-container, #dungeonCloseup, #drTurnOrder, #drLog, #townContainer, #eventContainer, #eventListContainer, #progresslist, .guildContainer, #inventoryEquipTab, #guildList, #buildingList, #buildingContent {
     scrollbar-color: var(--scroll-thumb) var(--scroll-track);
     scrollbar-width: thin;
 }
@@ -443,6 +443,10 @@ p.hamster {
     overflow: auto;
 }
 
+#inventoryEquipTab {
+    overflow: auto;
+}
+
 .inventoryActions {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -635,6 +639,7 @@ p.hamster {
 }
 
 .invPropStat {
+    position: relative;
     padding: 5px 10px;
 }
 
@@ -755,6 +760,7 @@ p.hamster {
 }
 
 .heroEquipBlockEquipStat {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1805,6 +1811,7 @@ Rarities
     background: var(--gradient-secondary);
     text-shadow: 0 0 3px black, 0 0 3px black;
     font-size: 1em;
+    cursor: default;
 }
 
 .recipeTotalCrafted > img {
@@ -3700,9 +3707,16 @@ Rarities
 }
 
 .heroExamineStatRowName {
+    display: flex;
+    justify-content: left;
+    align-items: center;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+}
+
+.heroExamineStatRowName > span {
+    margin-left: 5px;
 }
 
 #heroGear {
@@ -7001,7 +7015,7 @@ footer a[href*="discord.gg"]:hover {
     margin: 0 auto;
 }
 
-.inventoryItemValue.tooltip:after {
+.inventoryItemValue.tooltip:after, .invPropStat.tooltip:after, .heroEquipBlockEquipStat.tooltip:after {
     max-width: 100px;
     margin: 0 auto;
     font-size: 0.8em;

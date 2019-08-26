@@ -400,7 +400,8 @@ function refreshInventory() {
         const itemProps = $("<div/>").addClass("inventoryProps");
         for (const [stat, val] of Object.entries(item.itemStat(false))) {
             if (val === 0) continue;
-            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+            statFormatted = stat.toUpperCase();
+            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
         };
         const actionBtns = $("<div/>").addClass("inventoryButtons");
         if (item.item.recipeType === "normal" || item.item.recipeType === "trinket") {
@@ -436,7 +437,8 @@ function gearEquipFromInventory(invID) {
     const itemProps = $("<div/>").addClass("equipItemProps");
     for (const [stat, val] of Object.entries(equipContainerTarget.itemStat(false))) {
         if (val === 0) continue;
-        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+        const statFormatted = stat.toUpperCase();
+        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
     };
     itemdiv.append(itemName,itemLevel,itemProps);
     $ietEquip.html(itemdiv);
@@ -458,7 +460,8 @@ function gearEquipFromInventory(invID) {
                 const deltaStat = val - currentStats[stat];
                 if (deltaStat === 0 && val === 0) continue;
                 same = false;
-                const d4a = $('<div/>').addClass('heroEquipBlockEquipStat').appendTo(d4);
+                const statFormatted = stat.toUpperCase();
+                const d4a = $('<div/>').addClass('heroEquipBlockEquipStat tooltip').attr("data-tooltip",statFormatted).appendTo(d4);
                 if (deltaStat > 0) d4a.addClass("hebPositive").html(`${miscIcons[stat]}${val} (+${deltaStat})`);
                 else if (deltaStat < 0) d4a.addClass("hebNegative").html(`${miscIcons[stat]}${val} (${deltaStat})`);
                 else d4a.html(`${miscIcons[stat]}${val}`);

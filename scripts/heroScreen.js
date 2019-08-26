@@ -9,7 +9,15 @@ const $heroGearSlots = $("#heroGearSlots");
 const $heroOverview = $("#heroOverview");
 
 const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory","Trinket"];
-const statName = [`${miscIcons.hp}`,`${miscIcons.pow}`,`${miscIcons.spow}`,`${miscIcons.ap}`,`${miscIcons.armor}`,`${miscIcons.crit}`,`${miscIcons.dodge}`];
+const statName = [
+    `${miscIcons.hp} <span>Health</span>`,
+    `${miscIcons.pow} <span>Power</span>`,
+    `${miscIcons.spow} <span>Special Power</span>`,
+    `${miscIcons.ap} <span>Action Points</span>`,
+    `${miscIcons.armor} <span>Armor</span>`,
+    `${miscIcons.crit} <span>Critical Chance</span>`,
+    `${miscIcons.dodge} <span>Dodge Chance</span>`
+];
 const statDesc = [
     "Amount of damage your hero can sustain before being downed.",
     "Amount of damage your hero can deal.",
@@ -182,8 +190,9 @@ function heroEqupCard(hero, itemContainer) {
     for (const [stat, val] of Object.entries(itemContainer.itemStat())) {
         const deltaStat = val - equippedStats[stat];
         if (deltaStat === 0 && val === 0) continue;
+        const statFormatted = stat.toUpperCase();
         const d3 = $('<div/>').addClass('gearStatContainer').appendTo(card);
-        const d3a = $('<div/>').addClass('gearStat tooltip').attr("data-tooltip",stat).appendTo(d3);
+        const d3a = $('<div/>').addClass('gearStat tooltip').attr("data-tooltip",statFormatted).appendTo(d3);
         if (deltaStat > 0) d3a.addClass("gearStatPositive").html(`${miscIcons[stat]}${val} (+${deltaStat})`);
         else if (deltaStat < 0) d3a.addClass("gearStatNegative").html(`${miscIcons[stat]}${val} (${deltaStat})`);
         else d3a.html(`${miscIcons[stat]}${val}`);

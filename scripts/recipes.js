@@ -407,7 +407,7 @@ function refreshCraftedCount() {
         rcc.html(`Master for ${Math.max(100,1000-9*recipe.craftCount)} ${ResourceManager.idToMaterial(material).img}`);
         if (recipe.isMastered()) {
             rbd.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
-            rcc.addClass("isMastered").html("MASTERED");
+            rcc.addClass("isMastered").removeClass("tooltip").html("MASTERED");
             rms.addClass("isMastered").html("MASTERED");
         }
     });

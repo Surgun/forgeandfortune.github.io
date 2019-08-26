@@ -136,5 +136,11 @@
     "version": "V0.3.2.1",
     "date": "August 26th, 2019",
     "body": "<p>Fixed tinker building not showing up when purchased</p>"
+  },
+  {
+    "patchCount": 24,
+    "version": "V0.3.2.2",
+    "date": "August 26th, 2019",
+    "body": "<p>Fixed tinker and fortune again...</p><p>Second time's a charm?</p>"
   }
 ]

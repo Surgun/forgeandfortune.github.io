@@ -45,7 +45,7 @@ function forceSave() {
 
 function createSave() {
     const saveFile = {}
-    saveFile["v"] = "0321"
+    saveFile["v"] = "0322"
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
     saveFile["e"] = EventManager.createSave();
@@ -593,6 +593,17 @@ function saveUpdate(loadGame) {
         if (loadGame["al"].purchased.includes("AL41063")) loadGame["t"].lvl += 1;
         if (loadGame["al"].purchased.includes("AL41064")) loadGame["t"].lvl += 1;
         if (loadGame["al"].purchased.includes("AL41065")) loadGame["t"].lvl += 1;
+    }
+    if (loadGame.v === "0321") {
+        loadGame.v = "0322";
+        loadGame["fo"] = {
+            lvl : 1,
+            slots : [],
+        }
+        loadGame["r"].find(r=>r.id === "R99610").owned = true;
+        if (loadGame["al"].purchased.includes("AL4106")) TownManager.buildingPerk("tinker");
+        if (loadGame["al"].purchased.includes("AL41041")) loadGame["fo"].lvl += 1;
+        if (loadGame["al"].purchased.includes("AL41042")) loadGame["fo"].lvl += 1;
     }
     console.log(loadGame.v);
     return loadGame;

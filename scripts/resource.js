@@ -53,7 +53,7 @@ const ResourceManager = {
         mat.seen = true;
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
-        $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
+        $("#amt"+mat.id).html(mat.amt,2 );
         refreshTinkerMats();
         if (mat.id !== "M001") return;
         $goldSidebarAmt.html(formatToUnits(mat.amt,2));
@@ -166,7 +166,7 @@ function hardMatRefresh() {
     ResourceManager.materials.forEach(mat=> {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
-        $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
+        $("#amt"+mat.id).html(mat.amt);
         if (mat.id === "M001") {
             $goldSidebarAmt.html(formatToUnits(mat.amt,2));
             $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);

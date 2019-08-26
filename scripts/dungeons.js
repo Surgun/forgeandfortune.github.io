@@ -51,6 +51,7 @@ class Dungeon {
         this.order = null;
         this.status = DungeonStatus.EMPTY;
         this.lastParty = null;
+        this.completeState = "none";
     }
     createSave() {
         const save = {};
@@ -69,6 +70,7 @@ class Dungeon {
         if (this.order === null) save.order = null;
         else save.order = this.order.createSave();
         save.status = this.status;
+        save.completeState = this.completeState;
         return save;
     }
     loadSave(save) {
@@ -91,6 +93,7 @@ class Dungeon {
         this.floorCount = save.floorCount;
         this.status = save.status;
         this.sanctuary = FloorManager.isSanctuary(this.id,this.floorCount);
+        if (save.completeState !== undefined) this.completeState = save.completeState;
     }
     addTime(t) {
         //if there's enough time, grab the next guy and do some combat
@@ -132,6 +135,7 @@ class Dungeon {
             this.checkDeadMobs(refreshLater);
             this.beatTotal += 1;
             if (this.party.isDead()) {
+                this.completeState = "partyDead";
                 this.endDungeon();
                 return;
             }
@@ -162,10 +166,10 @@ class Dungeon {
         this.party = party;
         this.lastParty = party.heroID;
     }
-    endDungeon(abandoned) {
+    endDungeon() {
         this.status = DungeonStatus.COLLECT;
         if (DungeonManager.dungeonView === this.id) {
-            showDungeonReward(this.id,abandoned);
+            showDungeonReward(this.id);
         }
     }
     resetDungeon() {
@@ -197,6 +201,7 @@ class Dungeon {
         this.dungeonTotalTime = 0;
         this.beatTotal = 0;
         this.dropList = [];
+        this.completeState = "none";
         return;
     }
     addDungeonDrop(drops) {
@@ -208,6 +213,7 @@ class Dungeon {
     }
     nextFloor(refreshLater) {
         if (this.type === "boss" && this.floorCount === 1) {
+            this.completeState = "bossBeat";
             this.endDungeon();
             return;
         }
@@ -249,6 +255,11 @@ class Dungeon {
         this.order = new TurnOrder(this.party.heroes,this.mobs);
         this.order.position += 1;
         initiateDungeonFloor(this.id);
+    }
+    bossPercent() {
+        if (this.type !== "boss") return "0%";
+        const boss = this.mobs.find(m=>m.event === "boss")
+        return Math.round(100*boss.hp/boss.maxHP())+"%";
     }
 }
 
@@ -345,7 +356,8 @@ const DungeonManager = {
     },
     abandonCurrentDungeon() {
         const dungeon = this.getCurrentDungeon();
-        dungeon.endDungeon(true);
+        dungeon.completeState = "abandoned";
+        dungeon.endDungeon();
     }
 };
 

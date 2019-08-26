@@ -584,7 +584,6 @@ function saveUpdate(loadGame) {
         });
         loadGame["rs"].forEach(m => {if (m.id !== "M001") m.amt = Math.min(m.amt,1000)});
     }
-    console.log(loadGame.v);
     if (loadGame.v === "032") {
         loadGame.v = "0321";
         if (loadGame["t"] === undefined) {
@@ -614,7 +613,6 @@ function saveUpdate(loadGame) {
         if (loadGame["al"].purchased.includes("AL41041")) loadGame["fo"].lvl += 1;
         if (loadGame["al"].purchased.includes("AL41042")) loadGame["fo"].lvl += 1;
     }
-    console.log(loadGame.v);
     return loadGame;
 }
 

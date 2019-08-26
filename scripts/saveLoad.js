@@ -573,15 +573,16 @@ function saveUpdate(loadGame) {
         if (matConversion[loadGame["fo"].greatReq] !== undefined) loadGame["fo"].greatReq = matConversion[loadGame["fo"].greatReq];
         if (matConversion[loadGame["fo"].epicReq] !== undefined) loadGame["fo"].epicReq = matConversion[loadGame["fo"].epicReq];
     }
-    if (loadGame.v === "0316") {
+    if (loadGame.v === "0317") {
         loadGame.v = "032";
         const eventIDs = EventManager.allDungeonEventIDs();
         eventIDs.forEach(eventID => EventManager.readEvent(eventID));
         delete loadGame["fo"];
-        saveFile["r"].recipes.forEach(recipe=> {
+        loadGame["r"].forEach(recipe=> {
             if (recipe.craftCount >= 100) recipe.mastered = true;
             else recipe.mastered = false;
         });
+        loadGame["rs"].forEach(m => m.amt = Math.min(m.amt,1000));
     }
     return loadGame;
 }

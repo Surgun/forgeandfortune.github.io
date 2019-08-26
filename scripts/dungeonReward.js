@@ -13,7 +13,6 @@ function showDungeonReward(dungeonID) {
     $dungeonRewards.show();
     const dungeon = DungeonManager.dungeonByID(dungeonID);
     const state = dungeon.completeState;
-    console.log(state);
     if (dungeon.status !== DungeonStatus.COLLECT) return;
     if (dungeon.type === "boss" && state === "partyDead") $dreHeader.html(`${dungeon.name} Failed`);
     else if (state === "abandoned") $dreHeader.html(`${dungeon.name} Abandoned`);
@@ -47,7 +46,6 @@ function showDungeonReward(dungeonID) {
             $("<div/>").addClass("dreStatHeading").html("Boss Percent").appendTo(d6);
             $("<div/>").addClass("dreStatDescription").html(dungeon.bossPercent()).appendTo(d6);
     }
-    console.log(dungeon.type,state);
     if (dungeon.type === "boss" && state === "bossBeat") $dreRepeat.hide();
     else $dreRepeat.show();
     if (dungeon.dropList.length === 0) $dreCollect.html("End Run");

@@ -138,11 +138,6 @@ class Mob {
     apAdded() {
         return this.apAdd;
     }
-    deadCheck() {
-        if (this.hp > 0 || this.status === MobState.DEAD) return;
-        this.status = MobState.DEAD;
-        this.rollDrops();
-    }
     rollDrops() {
         const mobDrops = [];
         if (this.drops === null || this.gotloot) {

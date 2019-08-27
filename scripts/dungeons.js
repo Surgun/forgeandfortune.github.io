@@ -1,5 +1,4 @@
 "use strict";
-const Stat = Object.freeze({HP:"HP",POW:"Power",AP:"AP"});
 const DungeonStatus = Object.freeze({EMPTY:0,ADVENTURING:1,COLLECT:2});
 
 class TurnOrder {
@@ -368,12 +367,3 @@ const DungeonManager = {
         dungeon.endDungeon();
     }
 };
-
-const dungeonIcons = {
-    //[FloorType.FIGHT] : '<img src="images/DungeonIcons/combat_floor.png" alt="Fight">',
-    //[FloorType.TREASURE] : '<img src="images/DungeonIcons/treasure_floor.png" alt="Treasure">',
-    [Stat.HP] : '<img src="images/DungeonIcons/hp.png" alt="HP">',
-    [Stat.POW] : '<img src="images/DungeonIcons/pow.png" alt="POW">',
-    [Stat.AP] : '<img src="images/DungeonIcons/ap.png" alt="AP">',
-    Energy : '<img src="images/resources/energy.png" alt="Energy">',
-}

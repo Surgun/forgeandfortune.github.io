@@ -205,7 +205,7 @@ function refreshDSB(dungeonID) {
 function sidebarHP(hero) {
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("dsbhpBarDiv").html(dungeonIcons[Stat.HP]);
+    const d1 = $("<div/>").addClass("dsbhpBarDiv").html(miscIcons.hp);
     const d1a = $("<div/>").addClass("dsbhpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hpSide"+hero.uniqueid);
     const s1 = $("<span/>").addClass("dsbhpBarFill").attr("id","hpFillSide"+hero.uniqueid).css('width', hpWidth);
     return d1.append(d1a,s1);
@@ -214,7 +214,7 @@ function sidebarHP(hero) {
 function createHPBar(hero,tag) {
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("hpBarDiv").html(dungeonIcons[Stat.HP]);
+    const d1 = $("<div/>").addClass("hpBarDiv").html(miscIcons.hp);
     const d1a = $("<div/>").addClass("hpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hp"+tag+hero.uniqueid);
     const s1 = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+tag+hero.uniqueid).css('width', hpWidth);
     return d1.append(d1a,s1);
@@ -236,7 +236,7 @@ function refreshBeatBar(dungeonTime) {
 function createAPBar(hero, tag) {
     const apPercent = Math.min(1,hero.ap/hero.apmax);
     const apWidth = (apPercent*100).toFixed(1)+"%";
-    const d = $("<div/>").addClass("apBarDiv").html(dungeonIcons[Stat.AP]);
+    const d = $("<div/>").addClass("apBarDiv").html(miscIcons.ap);
     const d1 = $("<div/>").addClass("apBar").attr("data-label",hero.ap+"/"+hero.apmax).attr("id","ap"+tag+hero.uniqueid);
     const s1 = $("<span/>").addClass("apBarFill").attr("id","apFill"+tag+hero.uniqueid).css('width', apWidth);
     return d.append(d1,s1);

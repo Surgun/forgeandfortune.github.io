@@ -139,7 +139,7 @@ const EventManager = {
     },
     allDungeonEventIDs() {
         return this.events.filter(e => e.type === "dungeon").map(e => e.eventNum);
-    }
+    },
 };
 
 class EventTemplate {
@@ -184,6 +184,13 @@ class Event {
         if (save.bossKill !== undefined) this.bossKill = save.bossKill;
         if (save.itemReward !== undefined) this.itemReward = save.itemReward;
         if (save.beats !== undefined) this.beats = save.beats;
+    }
+    notoriety() {
+        if (this.reward === null) return 0;
+        const noto = this.reward.map(r => {
+            return r.amt*ResourceManager.idToMaterial(r.id).notoAdd;
+        });
+        return noto.reduce((a,b) => a+b , 0);
     }
 };
 

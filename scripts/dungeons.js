@@ -230,7 +230,7 @@ class Dungeon {
         }
         if (refreshLater) return;
         initiateDungeonFloor(this.id);
-        initializeSideBarDungeon();
+        $("#dsb"+this.id).html(`${this.name} - Floor ${this.floorCount}`);
     }
     addSummon() {
         this.mobs = this.mobs.filter(m=>m.alive());

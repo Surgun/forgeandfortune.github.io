@@ -62,6 +62,10 @@ function dungeonBlock(dungeon) {
 $(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();
     const dungeonID = $(e.currentTarget).attr("id");
+    screenDirectDungeon();
+});
+
+function screenDirectDungeon(dungeonID) {
     DungeonManager.dungeonView = dungeonID;
     const lastParty = DungeonManager.dungeonByID(dungeonID).lastParty;
     $dungeonSelect.hide();
@@ -77,7 +81,7 @@ $(document).on("click", ".dungeonContainer", (e) => {
         $dungeonSelect.hide();
         $dungeonTeamSelect.show();
     }
-});
+}
 
 /*------------------------
 /*-   TEAM SELECT CODE   -
@@ -90,6 +94,10 @@ $(document).on("click", ".dungeonContainer", (e) => {
 
 function showDungeon(dungeonID) {
     DungeonManager.dungeonView = dungeonID;
+    const dungeon = DungeonManager.dungeonByID(dungeonID);
+    if (dungeon.status === DungeonStatus.EMPTY) {
+        return 
+    }
     BattleLog.clear();
     initiateDungeonFloor(dungeonID);
     $dungeonSelect.hide();
@@ -179,12 +187,14 @@ function refreshTurnOrder(dungeonID) {
     });
 }
 
+const $dungeonTab = $("#dungeonTab");
+
 function initializeSideBarDungeon() {
     $DungeonSideBarTeam.empty();
     DungeonManager.dungeons.forEach(dungeon => {
-        if (dungeon.type !== "normal" && dungeon.status === DungeonStatus.EMPTY) return;
+        if (dungeon.type !== "regular" && dungeon.status === DungeonStatus.EMPTY) return;
         const d = $("<div/>").addClass("dungeonGroup").appendTo($DungeonSideBarTeam);
-        const d1 = $("<div/>").addClass("DungeonSideBarStatus").data("dungeonID",dungeon.id).appendTo(d);
+        const d1 = $("<div/>").addClass("DungeonSideBarStatus").attr("id","dsb"+dungeon.id).data("dungeonID",dungeon.id).appendTo(d);
         if (dungeon.status === DungeonStatus.ADVENTURING) {
             if (dungeon.type === "regular") d1.addClass("DungeonSideBarAdventuring").html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
             else d1.html(`${dungeon.name}`);
@@ -192,8 +202,10 @@ function initializeSideBarDungeon() {
         else if (dungeon.status === DungeonStatus.COLLECT) {
             d1.addClass("DungeonSideBarCollect").html(`${dungeon.name} Complete!`);
         }
-        else d1.addClass("DungeonSideBarIdle").htm(`${dungeon.name} Idle`);
-    })
+        else d1.addClass("DungeonSideBarIdle").html(`${dungeon.name} Idle`);
+    });
+    if (DungeonManager.dungeons.some(d=>d.status === DungeonStatus.COLLECT)) $dungeonTab.addClass("hasEvent");
+    else $dungeonTab.removeClass("hasEvent");
 }
 
 function createHPBar(hero,tag) {

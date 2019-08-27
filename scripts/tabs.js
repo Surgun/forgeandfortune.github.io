@@ -60,8 +60,8 @@ $comptitle4.click((e) => {
 $(document).on('click', ".DungeonSideBarStatus", (e) => {
     e.preventDefault();
     tabClick(e, "dungeonsTab");
-    const dungeonID = $(e.currentTarget).attr("id").substring(3);
-    showDungeon(dungeonID);
+    const dungeonID = $(e.currentTarget).data("dungeonID");
+    screenDirectDungeon(dungeonID);
 });
 
 $(document).on('click', "#goToBank", (e) => {

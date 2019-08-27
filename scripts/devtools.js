@@ -89,7 +89,6 @@ const devtools = {
     heroUnlock() {
         HeroManager.heroes.forEach(h=> h.owned = true);
         initializeHeroList();
-        updateHeroCounter();
     },
     allPerks() {
         this.addGold(1000000000000000);

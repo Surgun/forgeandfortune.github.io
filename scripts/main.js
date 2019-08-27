@@ -24,8 +24,6 @@ function afterLoad() {
     refreshSideWorkers();
     initializeActionSlots();
     initializeHeroList();
-    //refreshHeroSelect();
-    updateHeroCounter();
     refreshRecipeFilters();
     refreshEvents();
     hardMatRefresh();

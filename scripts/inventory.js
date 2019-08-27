@@ -486,4 +486,5 @@ function refreshInventoryPlaces() {
     refreshSmithStage();
     refreshDesynthInventory();
     refreshFortuneGear();
+    refreshTrinketInventory();
 }

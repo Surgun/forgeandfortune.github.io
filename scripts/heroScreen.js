@@ -375,7 +375,13 @@ const $heroEquipTrinketAll = $("#heroEquipTrinketAll");
 function refreshTrinketScreen(hero) {
     $heroEquipTrinket.empty();
     $heroEquipTrinket.html(heroCurrentGearEquip(hero,6,hero.slot7));
+    refreshTrinketInventory();
+}
+
+function refreshTrinketInventory() {
+    if (HeroManager.heroView === null) return;
     $heroEquipTrinketAll.empty();
+    const hero = HeroManager.idToHero(HeroManager.heroView);
     Inventory.listbyType("Trinkets").forEach(trinket => {
         heroEqupCard(hero,trinket).appendTo($heroEquipTrinketAll);
     });

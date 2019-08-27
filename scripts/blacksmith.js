@@ -28,7 +28,8 @@ const bloopSmith = {
     },
     getSmithCost() {
         const item = bloopSmith.smithStage;
-        return {"gold":Math.floor(item.goldValue()*miscLoadedValues.smithChance[item.sharp]),"resType":item.material(),"resAmt":(item.sharp+1)*100};
+        const amt = [25,50,75,100,150,200,250,300,400,500];
+        return {"gold":Math.floor(item.goldValue()*miscLoadedValues.smithChance[item.sharp]),"resType":item.material(),"resAmt":amt[item.sharp]};
     },
     smith() {
         if (this.smithStage === null) return;

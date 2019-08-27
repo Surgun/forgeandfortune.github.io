@@ -353,7 +353,7 @@ function recipeCardBack(recipe) {
         const td7a = $('<div/>').addClass('recipeBackTab backTab1 selected').html(`Details`);
         const td7b = $('<div/>').addClass('recipeBackTab backTab2').html(`Mastery`);
     td7.append(td7a);
-    if (recipe.type === 'normal') td7.append(td7b);
+    if (recipe.recipeType === 'normal') td7.append(td7b);
 
     const td8 = $('<div/>').addClass('recipeTabContainer recipeTabDetails');
         const td8a = $('<div/>').addClass('recipeDetailsContainer');

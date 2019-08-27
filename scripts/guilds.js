@@ -182,7 +182,8 @@ class guildOrderItem {
         this.displayName = this.generateName();
     }
     goldValue() {
-        const sharpAdd = miscLoadedValues["smithChance"].splice(0,this.sharp).length === 0 ? 1 : miscLoadedValues["smithChance"].splice(0,this.sharp).reduce((a,b)=>a+b);
+        const smithBonus = [...miscLoadedValues["smithChance"]].splice(0,this.sharp);
+        const sharpAdd = smithBonus.length === 0 ? 0 : smithBonus.reduce((a,b)=>a+b);
         return Math.round(this.item.value*this.amt*(2*(1+this.rarity)+sharpAdd));
     }
     complete() {

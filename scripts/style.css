@@ -381,6 +381,15 @@ p.hamster {
     cursor: pointer;
 }
 
+.DungeonSideBarStatus.DungeonSideBarIdle {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+.DungeonSideBarStatus.DungeonSideBarCollect {
+    background: var(--green-tertiary);
+}
+
 #inventorySidebar.inventoryFullSide {
     background-color: rgb(72, 9, 0);
     border-color: #820000;

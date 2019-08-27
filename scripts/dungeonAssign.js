@@ -182,33 +182,18 @@ function refreshTurnOrder(dungeonID) {
 function initializeSideBarDungeon() {
     $DungeonSideBarTeam.empty();
     DungeonManager.dungeons.forEach(dungeon => {
-        if (dungeon.status !== DungeonStatus.ADVENTURING) return;
-        const d = $("<div/>").addClass("dungeonGroup");
-        const d1 = $("<div/>").addClass("DungeonSideBarStatus").attr("id","dsb"+dungeon.id).html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
-        d.append(d1);
-        dungeon.party.heroes.forEach(hero => {
-            const d3 = $("<div/>").addClass("dungeonSideBarMember");
-            const d3a = $("<div/>").addClass("dungeonSideBarMemberIcon").html(hero.head);
-            const d3b = $("<div/>").addClass("dungeonSideBarMemberHP").html(sidebarHP(hero));
-            d3.append(d3a,d3b);
-            d.append(d3);
-        });
-        $DungeonSideBarTeam.append(d);
+        if (dungeon.type !== "normal" && dungeon.status === DungeonStatus.EMPTY) return;
+        const d = $("<div/>").addClass("dungeonGroup").appendTo($DungeonSideBarTeam);
+        const d1 = $("<div/>").addClass("DungeonSideBarStatus").data("dungeonID",dungeon.id).appendTo(d);
+        if (dungeon.status === DungeonStatus.ADVENTURING) {
+            if (dungeon.type === "regular") d1.addClass("DungeonSideBarAdventuring").html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
+            else d1.html(`${dungeon.name}`);
+        }
+        else if (dungeon.status === DungeonStatus.COLLECT) {
+            d1.addClass("DungeonSideBarCollect").html(`${dungeon.name} Complete!`);
+        }
+        else d1.addClass("DungeonSideBarIdle").htm(`${dungeon.name} Idle`);
     })
-}
-
-function refreshDSB(dungeonID) {
-    const dungeon = DungeonManager.dungeonByID(dungeonID);
-    $("#dsb"+dungeonID).html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
-}
-
-function sidebarHP(hero) {
-    const hpPercent = hero.hp/hero.maxHP();
-    const hpWidth = (hpPercent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("dsbhpBarDiv").html(miscIcons.hp);
-    const d1a = $("<div/>").addClass("dsbhpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hpSide"+hero.uniqueid);
-    const s1 = $("<span/>").addClass("dsbhpBarFill").attr("id","hpFillSide"+hero.uniqueid).css('width', hpWidth);
-    return d1.append(d1a,s1);
 }
 
 function createHPBar(hero,tag) {
@@ -243,7 +228,7 @@ function createAPBar(hero, tag) {
 }
 
 function refreshHPBar(hero) {
-    const hptypes = ["Party","Dung","Side","turnOrder"];
+    const hptypes = ["Dung","turnOrder"];
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
     hptypes.forEach(type => {

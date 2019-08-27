@@ -170,6 +170,7 @@ class Dungeon {
         if (DungeonManager.dungeonView === this.id) {
             showDungeonReward(this.id);
         }
+        initializeSideBarDungeon();
     }
     resetDungeon() {
         ResourceManager.addDungeonDrops(this.dropList);
@@ -193,7 +194,6 @@ class Dungeon {
         }
         initializeSideBarDungeon();
         refreshDungeonSelect();
-        updateHeroCounter();
         this.status = DungeonStatus.EMPTY;
         this.order = null;
         this.dungeonTime = 0;
@@ -230,7 +230,7 @@ class Dungeon {
         }
         if (refreshLater) return;
         initiateDungeonFloor(this.id);
-        refreshDSB(this.id);
+        initializeSideBarDungeon();
     }
     addSummon() {
         this.mobs = this.mobs.filter(m=>m.alive());
@@ -323,6 +323,7 @@ const DungeonManager = {
         const dungeon = this.dungeonByID(dungeonID);
         dungeon.party = null;
         dungeon.status = DungeonStatus.EMPTY;
+        initializeSideBarDungeon();
     },
     repeatDungeon(dungeonID) {
         //ends a dungeon and also restarts it?
@@ -342,7 +343,7 @@ const DungeonManager = {
         this.dungeonView = this.dungeonCreatingID;
         dungeon.initializeParty(party);
         dungeon.nextFloor();
-        updateHeroCounter();
+        initializeSideBarDungeon();
     },
     dungeonByID(dungeonID) {
         return this.dungeons.find(d => d.id === dungeonID);

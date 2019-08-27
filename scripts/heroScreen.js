@@ -205,22 +205,6 @@ function unequipSlot(slot,heroID) {
     examineHero(heroID);
 }
 
-const $heroCount = $(".heroCount");
-const $heroCountText = $(".heroCountText");
-const $heroCounter = $(".heroCounter");
-
-function updateHeroCounter() {
-    const count = HeroManager.heroes.filter(h=>h.owned && !h.inDungeon).length;
-    if (count === 0) {
-        $heroCounter.addClass("heroesCountZero").removeClass("heroesCountActive");
-        return;
-    }
-    $heroCounter.addClass("heroesCountActive").removeClass("heroesCountZero");
-    $heroCount.html(count);
-    if (count == 1) $heroCountText.html(" Hero Available");
-    else $heroCountText.html(" Heroes Available");
-}
-
 $(document).on('click',".heroCounter", (e) => {
     e.preventDefault();
     tabClick(e, "dungeonsTab");

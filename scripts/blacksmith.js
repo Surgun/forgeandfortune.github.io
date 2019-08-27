@@ -83,6 +83,9 @@ function refreshSmithInventory() {
 }
 
 function refreshSmithStage() {
+    if (bloopSmith.smithStage !== null && !Inventory.hasContainer(bloopSmith.smithStage.containerID)) {
+        bloopSmith.smithStage = null;
+    }
     if (bloopSmith.smithStage === null) {
         $smithNoSelectionDiv.show();
         $smithCanImproveDiv.hide();

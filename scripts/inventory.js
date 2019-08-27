@@ -483,6 +483,7 @@ function refreshInventoryPlaces() {
     refreshPossibleFuse();
     refreshBankInventory();
     refreshSmithInventory();
+    refreshSmithStage();
     refreshDesynthInventory();
     refreshFortuneGear();
 }

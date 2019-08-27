@@ -62,7 +62,7 @@ function dungeonBlock(dungeon) {
 $(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();
     const dungeonID = $(e.currentTarget).attr("id");
-    screenDirectDungeon();
+    screenDirectDungeon(dungeonID);
 });
 
 function screenDirectDungeon(dungeonID) {

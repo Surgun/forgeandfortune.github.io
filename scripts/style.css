@@ -4974,7 +4974,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin-top: 10px;
 }
 
-.hpBarDiv > img, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > img, .fuseBarDiv > img, #swBarDiv > img, .repBarDiv > img, .notoBarDiv > img, .desynthBarDiv > img {
+.hpBarDiv > i, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > i, .fuseBarDiv > img, #swBarDiv > img, .repBarDiv > img, .notoBarDiv > img, .desynthBarDiv > img {
     position: absolute;
     left: 8px;
     z-index: 1;

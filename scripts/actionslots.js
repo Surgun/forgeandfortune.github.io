@@ -48,7 +48,7 @@ class actionSlot {
         if (this.status !== slotState.CRAFTING) return;
         this.craftTime += t;
         if (this.craftTime > this.maxCraft) {
-            this.craftTime = 0;
+            this.craftTime -= this.maxCraft;
             Inventory.craftToInventory(this.itemid);
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart();

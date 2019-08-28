@@ -36,7 +36,7 @@ const DesynthManager = {
             Notifications.synthCollectInvFull();
             return;
         }
-        Inventory.addItemContainerToInventory(this.slot);
+        Inventory.addToInventory(this.slot);
         this.slot = null;
         this.state = "empty";
         initiateDesynthBldg();
@@ -65,7 +65,7 @@ const DesynthManager = {
         const reward = this.desynthRewards(true);
         ResourceManager.addMaterial(reward.id,reward.amt);
         Notifications.synthCollect(ResourceManager.idToMaterial(reward.id).name,reward.amt);
-        Inventory.addItemContainerToInventory(this.slot);
+        Inventory.addToInventory(this.slot);
         this.slot = null;
         this.state = "empty";
         initiateDesynthBldg();

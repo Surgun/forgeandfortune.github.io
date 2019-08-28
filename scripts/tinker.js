@@ -133,7 +133,7 @@ const TinkerManager = {
         if (scale < this["d"+commandID]) return;
         const item = new itemContainer(trinketID,0);
         item.scale = scale;
-        Inventory.addItemContainerToInventory(item);
+        Inventory.addToInventory(item);
     },
     toggle(commandID) {
         const command = this.idToCommand(commandID);

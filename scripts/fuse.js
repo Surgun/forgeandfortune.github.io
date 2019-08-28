@@ -76,9 +76,9 @@ const FusionManager = {
             return;
         }
         ResourceManager.deductMoney(this.getFuseCost(fuseProps));
-        Inventory.removeFromInventory(uniqueid);
-        Inventory.removeFromInventory(uniqueid);
-        Inventory.removeFromInventory(uniqueid);
+        Inventory.removeFromInventoryUID(uniqueid);
+        Inventory.removeFromInventoryUID(uniqueid);
+        Inventory.removeFromInventoryUID(uniqueid);
         const newFuse = new fuse(uniqueid);
         newFuse.fuseID = this.fuseNum;
         this.fuseNum += 1;

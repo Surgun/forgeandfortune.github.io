@@ -225,7 +225,7 @@ class Hero {
         const item = this.getSlot(slot);
         if (item === null) return;
         this.removeSlot(slot);
-        Inventory.addItemContainerToInventory(item);
+        Inventory.addToInventory(item);
     }
     currenEquipByType(type) {
         if (this.slot1Type.includes(type)) return this.slot1;

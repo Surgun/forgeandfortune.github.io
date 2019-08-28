@@ -97,7 +97,7 @@ const FortuneManager = {
             return;
         }
         const fortune = this.fortuneByID(fortuneID);
-        Inventory.addItemContainerToInventory(fortune.container);
+        Inventory.addToInventory(fortune.container);
         this.slots = this.slots.filter(f=>f.slotid !== fortuneID);
         refreshFortuneSlots();
     },

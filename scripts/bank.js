@@ -54,7 +54,7 @@ const BankManager = {
         if (Inventory.full()) return;
         const container = this.containerToItem(containerID);
         this.removeContainer(containerID);
-        Inventory.addItemContainerToInventory(container);
+        Inventory.addToInventory(container);
     },
     addLevel() {
         this.lvl += 1;

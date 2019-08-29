@@ -154,5 +154,11 @@
     "version": "V0.3.2.4",
     "date": "August 27th, 2019",
     "body": "<p>Few things that I've been rolling out over the last day, all actually typed up now:</p><ul><li>Update dungeon sidebar to only show dungeon and its status, hotlink to the proper screen, and throw a notification if you've got rewards to collect</li><li>Lowered forge material requirements and added an appropriate gold reward to guild orders requiring forged items</li><li>Updated the icons on the dungeon screen to match the new aethestic</li><li>Fixed a bug where items staged in smith or in your trinket inventory could be moved/sold and these screens weren't updated</li><li>The collect buttons from mail rewards works again so you can collect that old mail</li><li>Fixing smithing gold cost NaN bug</li><li>Removed ability to see mastery on building recipes</li><li>Added notoriety back to the collection screen</li></ul>"
+  },
+  {
+    "patchCount": 27,
+    "version": "V0.3.2.5",
+    "date": "August 29th, 2019",
+    "body": "<ul><li>Tinker command \"destroy item\" now takes commons SOLD (rather than commons in inventory) to power it. Auto-sell and manual sells count towards this. No more filling your inventory with unneccessary items!</li><li>Fixed a bug where trinkets would show on hero overview scren</li><li>Actions slots should correctly craft multiples of an item in offline mode</li></ul>"
   }
 ]

@@ -2,7 +2,7 @@
   {
     "id": "T001",
     "name": "Destroy Item",
-    "description": "<img src='./images/recipes/Light/R13001.png'> <i class=\"fas fa-arrow-right\"></i> <img src='./images/resources/M800.png'> <img src='./images/resources/M801.png'> <img src='./images/resources/M802.png'>",
+    "description": "Sold Commons <i class=\"fas fa-arrow-right\"></i> <img src='./images/resources/M800.png'> <img src='./images/resources/M801.png'> <img src='./images/resources/M802.png'>",
     "mcost1": null,
     "mcost1amt": null,
     "mcost2": null,

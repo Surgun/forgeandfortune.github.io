@@ -51,19 +51,12 @@ class tinkerCommand {
     }
     attemptStart() {
         if (this.state === "running") return;
-        if (this.id === "T001") {
-            const deconstruct = Inventory.getCommon();
-            if (!deconstruct.id) return this.state = "Need Material";
-            this.reward = deconstruct;
-            this.state = "running";
-        }
-        else {
-            if (!ResourceManager.available(this.mcost1,this.mcost1amt)) return this.state = "Need Material"; 
-            if (!ResourceManager.available(this.mcost2,this.mcost2amt)) return this.state = "Need Material";
-            ResourceManager.addMaterial(this.mcost1,-this.mcost1amt);
-            ResourceManager.addMaterial(this.mcost2,-this.mcost2amt);
-            this.state = "running";
-        }
+        if (this.id === "T001")  return;
+        if (!ResourceManager.available(this.mcost1,this.mcost1amt)) return this.state = "Need Material"; 
+        if (!ResourceManager.available(this.mcost2,this.mcost2amt)) return this.state = "Need Material";
+        ResourceManager.addMaterial(this.mcost1,-this.mcost1amt);
+        ResourceManager.addMaterial(this.mcost2,-this.mcost2amt);
+        this.state = "running";
     }
     act() {
         if (this.id === "T001") {
@@ -89,6 +82,12 @@ class tinkerCommand {
             this.min = Math.min(this.min,TinkerManager.max());
             refreshTinkerCommands();
         }
+    }
+    feedCommon(container) {
+        if (this.id !== "T001" || this.state === "running") return false;
+        this.reward = {id:container.deconType(),amt:container.deconAmt()};
+        this.state = "running";
+        return true;
     }
 }
 
@@ -133,7 +132,7 @@ const TinkerManager = {
         if (scale < this["d"+commandID]) return;
         const item = new itemContainer(trinketID,0);
         item.scale = scale;
-        Inventory.addItemContainerToInventory(item);
+        Inventory.addToInventory(item);
     },
     toggle(commandID) {
         const command = this.idToCommand(commandID);
@@ -145,6 +144,10 @@ const TinkerManager = {
     addLevel() {
         this.lvl += 1;
         refreshTinkerCommands();
+    },
+    feedCommon(container) {
+        if (container.rarity !== 0) return false;
+        return this.idToCommand("T001").feedCommon(container);
     }
 }
 
@@ -182,7 +185,7 @@ function refreshTinkerSlotProgress() {
     TinkerManager.commands.forEach(command => {
         const percent = command.time/command.maxTime;
         const width = (percent*100).toFixed(1)+"%";
-        let datalabel = "Disabled";
+        let datalabel = "disabled";
         if (command.enabled && command.state !== "running") datalabel = command.state;
         else if (command.enabled) datalabel = msToTime(command.maxTime-command.time);
         $("#tinkerBar"+command.id).attr("data-label",datalabel);

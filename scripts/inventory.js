@@ -1,7 +1,7 @@
 $('#inventory').on("click",".inventorySell",(e) => {
     e.preventDefault();
     const id = $(e.target).attr("id");
-    Inventory.sellInventory(id);
+    Inventory.sellInventoryIndex(id);
 })
 
 $(document).on("click","#sortInventory",(e) => {
@@ -101,7 +101,7 @@ class itemContainer {
         return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue(),2);
     }
     goldValue() {
-        return (this.item.value * (this.rarity+1));
+        return Math.round(this.item.value * (this.rarity+1) * (1+this.sharp*0.1));
     }
     getSmithResourceCost() {
         return this.item.smithCost;
@@ -174,26 +174,19 @@ const Inventory = {
             examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache);
         }
     },
-    addToInventory(id,rarity,autoSell) {
-        if (this.full()) this.sellItem(id,rarity,0);
-        else if (autoSell >= rarity) this.sellItem(id,rarity,0);
+    addToInventory(container) {
+        if (this.full()) this.sellContainer(container);
         else {
-            const container = new itemContainer(id,rarity);
             this.findempty(container);
-            const item = recipeList.idToItem(id);
-            if (examineGearTypesCache.includes(item.type)) {
+            if (examineGearTypesCache.includes(container.item.type)) {
                 examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache);
             }
         }
     },
-    addItemContainerToInventory(container) {
-        if (this.full()) this.sellItem(container.id,container.rarity,0);
-        else this.findempty(container);
-    },
     findempty(item) {
         const i = this.inv.findIndex(r=>r===null);
         this.inv[i] = item;
-        refreshInventoryPlaces()
+        refreshInventoryPlaces();
     },
     craftToInventory(id) {
         if (id === "R99110") return unlockBank();
@@ -203,39 +196,49 @@ const Inventory = {
         if (id === "R99410") return unlockDesynth();
         if (id === "R99610") return unlockTinker();
         const item = recipeList.idToItem(id)
-        const name = item.name;
-        const autoSell = item.autoSell;
         item.addCount();
-        if (item.recipeType === "building") {
-            this.addToInventory(id,0,-1);
-            return;
-        }
-        const roll = Math.floor(Math.random() * 1000)
+        const roll = Math.floor(Math.random() * 1000);
         const sellToggleChart = {
-            "Common" : 0,
-            "Good" : 1,
-            "Great" : 2,
-            "Epic" : 3,
+            "None" : 0,
+            "Common" : 1,
+            "Good" : 2,
+            "Great" : 3,
+            "Epic" : 4,
         }
-        const sellToggle = sellToggleChart[autoSell];
+        const sellToggle = sellToggleChart[item.autoSell];
         const procRate = this.craftChance(item);
         if (roll < procRate.epic) {
-            this.addToInventory(id,3,sellToggle);
+            const epicItem = new itemContainer(id,3);
+            if (sellToggle < 4) {
+                this.addToInventory(epicItem);
+                Notifications.exceptionalCraft(item.name,"Epic","craftEpic");
+            }
+            else this.sellContainer(epicItem);
             achievementStats.craftedItem("Epic");
-            if (sellToggle < 3) Notifications.exceptionalCraft(name,"Epic","craftEpic");
         }
         else if (roll < (procRate.epic+procRate.great)) {
-            this.addToInventory(id,2,sellToggle);
+            const greatItem = new itemContainer(id,2);
+            if (sellToggle < 3) {
+                this.addToInventory(greatItem);
+                Notifications.exceptionalCraft(item.name,"Great","craftGreat");
+            }
+            else this.sellContainer(greatItem);
             achievementStats.craftedItem("Great");
-            if (sellToggle < 2) Notifications.exceptionalCraft(name,"Great","craftGreat");
         }
         else if (roll < (procRate.epic+procRate.great+procRate.good)) {
-            this.addToInventory(id,1,sellToggle);
+            const goodItem = new itemContainer(id,1);
+            if (sellToggle < 2) {
+                this.addToInventory(goodItem);
+                Notifications.exceptionalCraft(item.name,"Good","craftGood");
+            }
+            else this.sellContainer(goodItem);
             achievementStats.craftedItem("Good");
-            if (sellToggle < 1) Notifications.exceptionalCraft(name,"Good","craftGood");
+            
         }
         else {
-            this.addToInventory(id,0,sellToggle);
+            const commonItem = new itemContainer(id,0);
+            if (sellToggle < 1) this.addToInventory(commonItem);
+            else this.sellContainer(commonItem);
             achievementStats.craftedItem("Common");
         }
     },
@@ -248,7 +251,7 @@ const Inventory = {
         mods.epic = miscLoadedValues.qualityCheck[3]*masterMod*fortuneMod[2];
         return mods;
     },
-    removeFromInventory(uniqueID) {
+    removeFromInventoryUID(uniqueID) {
         const container = this.nonblank().find(i=>i.uniqueID() === uniqueID);
         this.removeContainerFromInventory(container.containerID);
         refreshInventoryPlaces();
@@ -261,14 +264,16 @@ const Inventory = {
     hasContainer(containerID) {
         return this.nonblank().some(c => c.containerID === containerID);
     },
-    sellInventory(indx) {
+    sellInventoryIndex(indx) {
         const item = this.inv[indx];
         this.inv[indx] = null;
-        this.sellItem(item.id,item.rarity,item.sharp);
+        this.sellContainer(item);
         refreshInventoryPlaces()
     },
-    sellItem(id,rarity,sharp) {
-        const gold = Math.round(recipeList.idToItem(id).value*(rarity+1)*(1+sharp*0.1));
+    sellContainer(container) {
+        const tinkerAteIt = TinkerManager.feedCommon(container);
+        if (tinkerAteIt) return;
+        const gold = container.goldValue();
         achievementStats.gold(gold);
         ResourceManager.addMaterial("M001",gold);
     },
@@ -277,9 +282,6 @@ const Inventory = {
     },
     containerToItem(containerID) {
         return this.nonblank().find(r=>r.containerID===containerID)
-    },
-    haveItem(id,rarity) {
-        return this.nonblank().filter(r=>r.id === id && r.rarity === rarity && r.sharp === 0).length > 0
     },
     full(modifier = 1) {
         return this.nonblank().length > this.inv.length - modifier;
@@ -312,7 +314,7 @@ const Inventory = {
     },
     sellCommons() {
         this.inv.forEach((ic,indx) => {
-            if (ic !== null && ic.rarity === 0) this.sellInventory(indx);
+            if (ic !== null && ic.rarity === 0) this.sellInventoryIndex(indx);
         })
     },
     getFusePossibilities() {
@@ -354,12 +356,6 @@ const Inventory = {
     nonEpic() {
         return this.nonblank().filter(i => i.rarity < 3 && i.item.recipeType === "normal");
     },
-    getCommon() {
-        const item = this.nonblank().filter(item=>item.rarity === 0 && item.item.recipeType === "normal")[0];
-        if (item === undefined) return {id:null,amt:0};
-        this.removeContainerFromInventory(item.containerID);
-        return {id:item.deconType(),amt:item.deconAmt()};
-    }
 }
 
 function uniqueIDProperties(uniqueID) {

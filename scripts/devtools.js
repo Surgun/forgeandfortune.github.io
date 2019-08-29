@@ -99,7 +99,7 @@ const devtools = {
         trinkets.forEach(trinket => {
             const item = new itemContainer(trinket,0);
             item.scale = 100;
-            Inventory.addItemContainerToInventory(item);
+            Inventory.addToInventory(item);
         })
     }
 }

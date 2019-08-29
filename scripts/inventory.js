@@ -175,7 +175,7 @@ const Inventory = {
         }
     },
     addToInventory(container) {
-        if (this.full()) this.sellItem(container);
+        if (this.full()) this.sellContainer(container);
         else {
             this.findempty(container);
             if (examineGearTypesCache.includes(container.item.type)) {
@@ -267,10 +267,12 @@ const Inventory = {
     sellInventoryIndex(indx) {
         const item = this.inv[indx];
         this.inv[indx] = null;
-        this.sellItem(item);
+        this.sellContainer(item);
         refreshInventoryPlaces()
     },
-    sellItem(container) {
+    sellContainer(container) {
+        const tinkerAteIt = TinkerManager.feedCommon(container);
+        if (tinkerAteIt) return;
         const gold = container.goldValue();
         achievementStats.gold(gold);
         ResourceManager.addMaterial("M001",gold);
@@ -354,12 +356,6 @@ const Inventory = {
     nonEpic() {
         return this.nonblank().filter(i => i.rarity < 3 && i.item.recipeType === "normal");
     },
-    getCommon() {
-        const item = this.nonblank().filter(item=>item.rarity === 0 && item.item.recipeType === "normal")[0];
-        if (item === undefined) return {id:null,amt:0};
-        this.removeContainerFromInventory(item.containerID);
-        return {id:item.deconType(),amt:item.deconAmt()};
-    }
 }
 
 function uniqueIDProperties(uniqueID) {

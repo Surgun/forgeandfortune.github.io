@@ -77,8 +77,11 @@ const devtools = {
         })
     },
     forceTown() {
-        const types = ["desynth","bank","fuse","smith","fusion","fortne","tinker"];
-        types.forEach(t => TownManager.buildingPerk(t));
+        TownManager.buildings.forEach(building => {
+            recipeList.idToItem(building.recipeID).owned = true;
+            if (building.getStatus() === BuildingState.seen) building.setStatus(BuildingState.built);
+            else building.setStatus(BuildingState.seen);
+        })
         refreshSideTown();
     },
     dungeonUnlock() {

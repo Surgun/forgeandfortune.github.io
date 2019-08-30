@@ -5203,8 +5203,8 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .buildingfusion .buildingInfoBackground {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/images/townImages/fuseBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/images/townImages/fuseBuilding/bg.png);
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/images/townImages/fusionBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/images/townImages/fusionBuilding/bg.png);
 }
 
 .buildingbank .buildingInfoBackground {
@@ -5212,9 +5212,9 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     background: linear-gradient(to right, transparent 0%, rgb(57, 111, 39) 40%, rgb(57, 111, 39) 60%, transparent 100%), url(/images/townImages/bankBuilding/bg.png);
 }
 
-.buildingsmith .buildingInfoBackground {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/images/townImages/smithBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/images/townImages/smithBuilding/bg.png);
+.buildingforge .buildingInfoBackground {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/images/townImages/forgeBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/images/townImages/forgeBuilding/bg.png);
 }
 
 .buildingfortune .buildingInfoBackground {

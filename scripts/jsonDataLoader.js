@@ -154,6 +154,18 @@ function loadTinker() {
             const command = new tinkerCommand(props);
             TinkerManager.addCommand(command);
         });
+        loadTown();
+    });
+}
+
+function loadTown() {
+    $.ajax({
+        url: "json/town.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            const building = new Building(props);
+            TownManager.addBuilding(building);
+        });
         afterLoad();
     });
 }

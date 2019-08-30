@@ -15,11 +15,12 @@ class Building {
         const save = {};
         save.status = this.status;
         save.id = this.id;
+        return save;
     }
     loadSave(save) {
         this.status = save.status;
     }
-    status() {
+    getStatus() {
         return this.status;
     }
     unlocked() {
@@ -58,8 +59,14 @@ const TownManager = {
     typeToBuilding(type) {
         return this.buildings.find(b=>b.shorthand === type);
     },
+    recipeIDToBuilding(recipeID) {
+        return this.buildings.find(b=>b.recipeID === recipeID);
+    },
     buildingStatus() {
-        return this.buildings.map(b=>b.status());
+        return this.buildings.map(b=>b.getStatus());
+    },
+    buildingRecipes() {
+        return this.buildings.map(b=>b.recipeID);
     },
     unseenLeft() {
         return this.buildingStatus().includes(BuildingState.unseen);
@@ -71,18 +78,19 @@ const TownManager = {
         refreshSideTown();
     },
     buildingsOwned() {
-        return this.buildings.some(building => building.status() !== BuildingState.hidden);
+        return this.buildings.some(building => building.getStatus() !== BuildingState.hidden);
     },
     status(type) {
         const building = this.typeToBuilding(type);
-        return building.status();
+        return building.getStatus();
     },
     setStatus(type,value) {
         const building = this.typeToBuilding(type);
         building.setStatus(value);
     },
-    unlockBldg(type) {
-        const building = this.typeToBuilding(type);
+    unlockBldg(recipeID) {
+        const building = this.recipeIDToBuilding(recipeID);
+        const type = building.shorthand;
         building.setStatus(BuildingState.built);
         this.lastBldg = type;
         this.purgeSlots = true;
@@ -101,15 +109,16 @@ function refreshSideTown() {
     else $townTab.removeClass("hasEvent");
     if (!TownManager.buildingsOwned()) {
         $emptyTown.show();
+        $buildingList.hide();
         return;
     }
     $emptyTown.hide();
-    $buildingList.empty();
+    $buildingList.show().empty();
     TownManager.buildings.forEach(building => {
-        if (building.status() >= 0) {
+        if (building.getStatus() >= 0) {
             const d = $("<div/>").addClass("buildingName").attr("id",`${building.shorthand}Bldg`).data("bldgType",building.shorthand).html(building.name).appendTo($buildingList);
             if (TownManager.lastBldg === building.shorthand) d.addClass("selected");
-            if (building.status() === BuildingState.unseen) d.addClass("hasEvent");
+            if (building.getStatus() === BuildingState.unseen) d.addClass("hasEvent");
         }
     });
 }
@@ -125,13 +134,15 @@ function showBldg(type) {
     const d = $("<div/>").addClass(`buildingInfo building${building.shorthand}`);
     const da = $("<div/>").addClass("buildingInfoBackground");
     const db = $("<div/>").addClass("buildingInfoImage").html("<img src='images/recipes/noitem.png'>")
-    if (building.status() === BuildingState.built) db.html(`<img src='images/townImages/${building.shorthand}Building/${building.shorthand}_building.png'>`);
+    if (building.getStatus() === BuildingState.built) db.html(`<img src='images/townImages/${building.shorthand}Building/${building.shorthand}_building.png'>`);
     const dc = $("<div/>").addClass("buildingInfoName").html(`<h2>${building.name}</h2>`);
     const dd = $("<div/>").addClass("buildingInfoDesc").html(building.description);
-    if (building.status() !== BuildingState.built) d.addClass("buildInProgress");
+    if (building.getStatus() !== BuildingState.built) d.addClass("buildInProgress");
     d.append(da,db,dc,dd);
     $buildingHeader.append(d);
-    if (building.status() === BuildingState.built) window[`initiate${building.shorthand}Bldg`]();
+    const upper = building.shorthand.replace(/^\w/, c => c.toUpperCase());
+    const buildingText = `initiate${upper}Bldg`;
+    if (building.getStatus() === BuildingState.built) window[buildingText]();
     else {
         $buildBuilding.show();
         buildScreen(building.shorthand);
@@ -144,7 +155,7 @@ $(document).on('click', ".buildingName", (e) => {
     if (TownManager.lastBldg === type) return;
     TownManager.lastBldg = type;
     const building = TownManager.typeToBuilding(type);
-    if (building.status() === BuildingState.unseen) building.setStatus(BuildingState.seen);
+    if (building.getStatus() === BuildingState.unseen) building.setStatus(BuildingState.seen);
     $(".buildingName").removeClass("selected");
     if (!TownManager.unseenLeft()) $("#townTab").removeClass("hasEvent");
     $(e.currentTarget).addClass("selected");
@@ -156,6 +167,7 @@ $(document).on('click', ".buildingName", (e) => {
 function buildScreen(type) {
     $buildingRecipes.empty();
     TownManager.lastType = type;
+    console.log(type);
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
         const recipeCardInfo = $('<div/>').addClass('recipeCardInfo').append(recipeCardFront(recipe),recipeCardBack(recipe))
         const recipeCardContainer = $('<div/>').addClass('recipeCardContainer buildingCard').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardInfo);

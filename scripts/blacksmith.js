@@ -1,5 +1,6 @@
 "use strict";
 
+const $smithBuilding = $("#smithBuilding");
 const $smithInvSlots = $("#smithInvSlots");
 const $smithOriginal = $("#smithOriginal");
 const $smithImproved = $("#smithImproved");
@@ -64,7 +65,7 @@ const bloopSmith = {
     }
 }
 
-function initiateSmithBldg() {
+function initiateForgeBldg() {
     $smithBuilding.show();
     bloopSmith.smithStage = null;
     refreshSmithInventory();

@@ -1,5 +1,7 @@
 "use strict";
 
+const $fuseBuilding = $("#fuseBuilding");
+
 class fuse {
     constructor(uniqueID) {
         const props = uniqueIDProperties(uniqueID);
@@ -140,7 +142,7 @@ const FusionManager = {
     }
 }
 
-function initiateFuseBldg() {
+function initiateFusionBldg() {
     $fuseBuilding.show();
     refreshFuseSlots();
     refreshPossibleFuse();

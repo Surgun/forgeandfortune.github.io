@@ -189,12 +189,7 @@ const Inventory = {
         refreshInventoryPlaces();
     },
     craftToInventory(id) {
-        if (id === "R99110") return unlockBank();
-        if (id === "R99210") return unlockFuse();
-        if (id === "R99310") return unlockSmith();
-        if (id === "R99510") return unlockFortune();
-        if (id === "R99410") return unlockDesynth();
-        if (id === "R99610") return unlockTinker();
+        if (TownManager.buildingRecipes().includes(id)) return TownManager.unlockBldg(id);
         const item = recipeList.idToItem(id)
         item.addCount();
         const roll = Math.floor(Math.random() * 1000);

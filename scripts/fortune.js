@@ -1,5 +1,7 @@
 "use strict";
 
+const $fortuneBuilding = $("#fortuneBuilding");
+
 let fortuneSlotid = 0;
 
 class fortuneSlot {

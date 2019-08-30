@@ -7247,7 +7247,7 @@
     "lvl": 1,
     "value": 0,
     "craftTime": 1800000,
-    "type": "fuse",
+    "type": "fusion",
     "gcost": [
       "G002"
     ],
@@ -7283,12 +7283,12 @@
   },
   {
     "id": "R99310",
-    "name": "Smith",
+    "name": "The Forgery",
     "description": "All or nothing, baby.",
     "lvl": 1,
     "value": 0,
     "craftTime": 1800000,
-    "type": "smith",
+    "type": "forge",
     "gcost": [
       "G001"
     ],
@@ -7403,6 +7403,47 @@
     "repReq": null,
     "deconType": null,
     "recipeType": "tinker"
+  },
+  {
+    "id": "R99710",
+    "name": "Monster Hall",
+    "description": "Beat up some monsters",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 2700000,
+    "type": "monster",
+    "gcost": [
+      "G002"
+    ],
+    "mcost": {
+      "M105": 40,
+      "M205": 40,
+      "M305": 40
+    },
+    "smithCost": null,
+    "pow": 0,
+    "hp": 0,
+    "armor": 0,
+    "resist": 0,
+    "crit": 0,
+    "dodge": 0,
+    "spow": 0,
+    "apen": 0,
+    "mpen": 0,
+    "powScale": 0,
+    "hpScale": 0,
+    "armorScale": 0,
+    "resistScale": 0,
+    "critScale": 0,
+    "dodgeScale": 0,
+    "spowScale": 0,
+    "apenScale": 0,
+    "mpenScale": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "recipeType": "monster"
   },
   {
     "id": "R90001",

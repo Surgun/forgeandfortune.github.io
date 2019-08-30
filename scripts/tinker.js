@@ -1,5 +1,6 @@
 "use strict";
 
+const $tinkerBuilding = $("#tinkerBuilding");
 const $tinkerMaterials = $("#tinkerMaterials");
 const $tinkerSlots = $("#tinkerSlots");
 const $tinkerCommands = $("#tinkerCommands");

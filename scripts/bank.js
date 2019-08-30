@@ -2,6 +2,7 @@
 
 const $bankInvSlots = $("#bankInvSlots");
 const $bankBankSlots = $("#bankBankSlots");
+const $bankBuilding = $("#bankBuilding");
 
 const BankManager = {
     slots : [],

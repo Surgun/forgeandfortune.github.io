@@ -5202,37 +5202,32 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     height: 100%;
 }
 
-.buildingFusion .buildingInfoBackground {
+.buildingfusion .buildingInfoBackground {
     background: -webkit-linear-gradient(left, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/images/townImages/fuseBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/images/townImages/fuseBuilding/bg.png);
 }
 
-.buildingBank .buildingInfoBackground {
+.buildingbank .buildingInfoBackground {
     background: -webkit-linear-gradient(left, transparent 0%, rgb(57, 111, 39) 40%, rgb(57, 111, 39) 60%, transparent 100%), url(/images/townImages/bankBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(57, 111, 39) 40%, rgb(57, 111, 39) 60%, transparent 100%), url(/images/townImages/bankBuilding/bg.png);
 }
 
-.buildingSmith .buildingInfoBackground {
+.buildingsmith .buildingInfoBackground {
     background: -webkit-linear-gradient(left, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/images/townImages/smithBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/images/townImages/smithBuilding/bg.png);
 }
 
-.buildingFortune .buildingInfoBackground {
+.buildingfortune .buildingInfoBackground {
     background: -webkit-linear-gradient(left, transparent 0%, rgb(65, 123, 48) 40%, rgb(65, 123, 48) 60%, transparent 100%), url(/images/townImages/fortuneBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(65, 123, 48) 40%, rgb(65, 123, 48) 60%, transparent 100%), url(/images/townImages/fortuneBuilding/bg.png);
 }
 
-.buildingResearch .buildingInfoBackground {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/images/townImages/researchBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/images/townImages/researchBuilding/bg.png);
-}
-
-.buildingDesynth .buildingInfoBackground {
+.buildingdesynth .buildingInfoBackground {
     background: -webkit-linear-gradient(left, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/desynthBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/desynthBuilding/bg.png);
 }
 
-.buildingTinker .buildingInfoBackground {
+.buildingtinker .buildingInfoBackground {
     background: -webkit-linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/images/townImages/tinkerBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/images/townImages/tinkerBuilding/bg.png);
 }

@@ -19,7 +19,7 @@ const devtools = {
         TownManager.smithStatus = BuildingState.built;
         TownManager.fortuneStatus = BuildingState.built;
         TownManager.tinkerStatus = BuildingState.built;
-        TownManager.DesynthStatus = BuildingState.built;
+        TownManager.desynthStatus = BuildingState.built;
         forceSave();
         location.replace('/');
     },

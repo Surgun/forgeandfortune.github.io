@@ -101,6 +101,10 @@ const FortuneManager = {
         this.slots = this.slots.filter(f=>f.slotid !== fortuneID);
         refreshFortuneSlots();
     },
+    removeLockedFortune(fortuneID) {
+        this.slots = this.slots.filter(f=>f.slotid !== fortuneID);
+        refreshFortuneSlots();
+    },
     lockFortune(fortuneID) {
         const fortune = this.fortuneByID(fortuneID);
         fortune.lockFortune();
@@ -193,6 +197,7 @@ function createFortuneCardLocked(slot) {
         $("<div/>").addClass("fortuneItemLevel").html(slot.itemLevel()).appendTo(itemdiv);
     $("<div/>").addClass("fortuneItemDesc").html(`2x ${rarity[slot.rarity]} Chance`).appendTo(itemdiv);
     $("<div/>").addClass("fortuneItemAmt").html(`${slot.amt} Crafts Left`).appendTo(itemdiv);
+    $('<div/>').addClass("fortuneItemSetClose").data("fortuneID",slot.slotid).html(`<i class="fas fa-times"></i>`).appendTo(itemdiv);
     return itemdiv;
 }
 
@@ -221,5 +226,12 @@ $(document).on('click', '.fortuneItemClose', (e) => {
     e.preventDefault();
     const fortuneID = parseInt($(e.currentTarget).data("fortuneID"));
     FortuneManager.removeFortune(fortuneID);
+    refreshFortuneSlots();
+});
+
+$(document).on('click', '.fortuneItemSetClose', (e) => {
+    e.preventDefault();
+    const fortuneID = parseInt($(e.currentTarget).data("fortuneID"));
+    FortuneManager.removeLockedFortune(fortuneID);
     refreshFortuneSlots();
 });

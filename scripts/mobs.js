@@ -72,6 +72,11 @@ const FloorManager = {
         const floors = this.floors.filter(f=>f.dungeon === dungeonid);
         const mobs = flattenArray(floors.map(f => f.mobs));
         return [...new Set(mobs)]; 
+    },
+    mobsByDungeons(dungeonArray) {
+        const floors = this.floors.filter(f=>dungeonArray.includes(f.dungeon));
+        const mobs = flattenArray(floors.map(f => f.mobs));
+        return [...new Set(mobs)]; 
     }
 }
 

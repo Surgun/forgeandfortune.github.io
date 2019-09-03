@@ -48,6 +48,7 @@ const TownManager = {
         return save;
     },
     loadSave(save) {
+        if (save.buildings === undefined) return;
         save.buildings.forEach(bsave=> {
             const building = this.idToBuilding(bsave.id);
             building.loadSave(bsave);

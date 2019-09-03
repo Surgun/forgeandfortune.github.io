@@ -40,6 +40,7 @@ function afterLoad() {
     recipeList.recipeFilterString = "";
     recipeFilterList();
     populateTinkerRange();
+    initiateMonsterHall();
     loading_screen.finish();
 }
 

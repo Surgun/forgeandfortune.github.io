@@ -61,7 +61,7 @@ class tinkerCommand {
     }
     act() {
         if (this.id === "T001") {
-            ResourceManager.addMaterial(this.reward.id,this.reward.amt);
+            if (this.reward.id !== null) ResourceManager.addMaterial(this.reward.id,this.reward.amt);
             this.reward = null;
             this.time = 0;
             this.state = "idle";
@@ -85,7 +85,7 @@ class tinkerCommand {
         }
     }
     feedCommon(container) {
-        if (this.id !== "T001" || this.state === "running") return false;
+        if (this.id !== "T001" || this.state === "running" || container.type === "Trinkets") return false;
         this.reward = {id:container.deconType(),amt:container.deconAmt()};
         this.state = "running";
         return true;

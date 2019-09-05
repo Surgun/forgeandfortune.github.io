@@ -3,7 +3,6 @@
 const $monsterBuilding = $("#monsterBuilding");
 const $monsterDiv = $(".monsterDiv");
 const $monsterMobs = $("#monsterMobs");
-const $monsterBosses = $("#monsterBosses");
 const $monsterRewards = $("#monsterRewards");
 const $monsterMobsInspect = $("#monsterMobsInspect");
 
@@ -60,6 +59,44 @@ function refreshHallMonsterList() {
     });
 }
 
+function refreshHallMonsterInspect(monster) {
+    $monsterMobsInspect.empty();
+    $("<div/>").addClass("mhiBack").attr("id","mhiBackButton").html("Back to Beastiary").appendTo($monsterMobsInspect);
+    const floorRange = FloorManager.floorRangeByMob(monster.id);
+    const dungeonName = FloorManager.dungeonNameByMob(monster.id);
+    mhiBlock("Name",monster.name).appendTo($monsterMobsInspect);
+    $("<div/>").addClass("mhiBlockImage").html(monster.image).appendTo($monsterMobsInspect);
+    mhiBlock("Dungeon",dungeonName).appendTo($monsterMobsInspect);
+    mhiBlock("Floors",`${floorRange.min} - ${floorRange.max}`).appendTo($monsterMobsInspect);
+    const stats = [`${monster.getHP(floorRange.min)} - ${monster.getHP(floorRange.max)}`,`${monster.getPow(floorRange.min)} - ${monster.getPow(floorRange.max)}`, monster.spow, monster.apmax, monster.armor, monster.crit+"%", monster.dodge+"%"];
+    for (let i=0;i<stats.length;i++) {
+        $monsterMobsInspect.append(statRow(statName[i],stats[i],statDesc[i]));
+    }
+}
+
+function mhiBlock(heading,text) {
+    const d = $("<div/>").addClass("mhiBlock");
+        $("<div/>").addClass("mhiHeader").html(heading).appendTo(d);
+        $("<div/>").addClass("mhiText").html(text).appendTo(d);
+    return d;
+}
+
 $(".monsterHallFilterCheck").change(() => {
     refreshHallMonsterList();
+});
+
+$(document).on('click', "#mhiBackButton", (e) => {
+    e.preventDefault();
+    $monsterMobsInspect.hide();
+    refreshHallMonsterList();
+    $monsterMobs.show();
+})
+
+$(document).on('click', ".monsterCard", (e) => {
+    e.preventDefault();
+    const monsterID = $(e.currentTarget).data("monsterID");
+    const monster = MobManager.idToMob(monsterID);
+    refreshHallMonsterInspect(monster);
+    $monsterMobs.hide();
+    $monsterMobsInspect.show();
 });

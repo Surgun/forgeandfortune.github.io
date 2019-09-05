@@ -44,6 +44,12 @@ class MobTemplate {
         this.image = '<img src="images/enemies/' + this.id + '.gif">';
         this.head = '<img src="images/enemies/heads/' + this.id + '.png">';
     }
+    getPow(floor) {
+        return Math.floor(this.powBase + this.powLvl*floor);
+    }
+    getHP(floor) {
+        return Math.floor(this.hpBase + this.hpLvl*floor);
+    }
 }
 
 class FloorTemplate {
@@ -77,6 +83,17 @@ const FloorManager = {
         const floors = this.floors.filter(f=>dungeonArray.includes(f.dungeon));
         const mobs = flattenArray(floors.map(f => f.mobs));
         return [...new Set(mobs)]; 
+    },
+    dungeonNameByMob(mobID) {
+        const floors = this.floors.filter(f=>f.mobs.includes(mobID));
+        const uniqueDungeons = [...new Set(floors.map(f=>f.dungeon))];
+        return DungeonManager.dungeonByID(uniqueDungeons[0]).name;
+    },
+    floorRangeByMob(mobID) {
+        const floors = this.floors.filter(f=>f.mobs.includes(mobID));
+        const maxFloor = floors.map(f=>f.maxFloor);
+        const minFloor = floors.map(f=>f.minFloor);
+        return {"min":Math.min(...minFloor),"max":Math.min(...maxFloor)};
     }
 }
 

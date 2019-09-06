@@ -65,6 +65,7 @@ function createSave() {
     saveFile["g"] = GuildManager.createSave();
     saveFile["al"] = ActionLeague.createSave();
     saveFile["t"] = TinkerManager.createSave();
+    saveFile["mh"] = MonsterHall.createSave();
     saveFile["saveTime"] = Date.now();
     return JSON.stringify(saveFile);
 }
@@ -100,6 +101,7 @@ function loadGame() {
     if (typeof loadGame["g"] !== "undefined") GuildManager.loadSave(loadGame["g"]);
     if (typeof loadGame["al"] !== "undefined") ActionLeague.loadSave(loadGame["al"]);
     if (typeof loadGame["t"] !== "undefined") TinkerManager.loadSave(loadGame["t"]);
+    if (typeof loadGame["mh"] !== "undefined") MonsterHall.loadSave(loadGame["mh"]);
     return true;
 }
 

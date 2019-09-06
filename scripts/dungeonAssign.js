@@ -48,7 +48,7 @@ function dungeonBlock(dungeon) {
         if (MonsterHall.bossRefight()) $("<div/>").addClass("dungeonBossLvl").html(`${MonsterHall.monsterKillCount(bossID)} ${miscIcons.skull}`).appendTo(d1);
     }
     const d3 = $("<div/>").addClass("dungeonStatus").attr("id","ds"+dungeon.id);
-    if (dungeon.type === "boss" && DungeonManager.bossCleared(dungeon) && !MonsterHall.bossRefight()) d3.addClass("dungeonBossBeat").html(`Boss Defeated`);
+    if (dungeon.type === "boss" && DungeonManager.bossCleared(dungeon.id) && !MonsterHall.bossRefight()) d3.addClass("dungeonBossBeat").html(`Boss Defeated`);
     else if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").html(`Fight in Progress`);
     else if (dungeon.status === DungeonStatus.COLLECT) d3.addClass("dungeonComplete").html(`Run Complete`);
     else d3.addClass("dungeonIdle").html("Idle");
@@ -69,6 +69,8 @@ function dungeonBlock(dungeon) {
 $(document).on("click", ".dungeonContainer", (e) => {
     e.preventDefault();
     const dungeonID = $(e.currentTarget).attr("id");
+    const dungeon = DungeonManager.dungeonByID(dungeonID);
+    if (dungeon.type === "boss" && DungeonManager.bossCleared(dungeonID) && !MonsterHall.bossRefight()) return;
     screenDirectDungeon(dungeonID);
 });
 

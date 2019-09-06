@@ -95,13 +95,14 @@ function refreshHeroSelect() {
     //builds the div that we hide and can show when we're selecting for that area
     //Team Banner
     $dtsBanner.empty();
-        const b1 = $("<div/>").addClass(`dts${dungeon.id} dtsBackground`).appendTo($dtsBanner);
-        const b2 = $("<div/>").addClass(`dts${dungeon.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
-            $("<div/>").addClass(`dts${dungeon.id} dtsBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($dtsBanner);
-        if (dungeon.type === "boss") {
-            b1.addClass("DBoss");
-            b2.addClass("DBoss");
-        }
+    const b1 = $("<div/>").addClass(`dts${dungeon.id} dtsBackground`).appendTo($dtsBanner);
+    const b2 = $("<div/>").addClass(`dts${dungeon.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
+    $("<div/>").addClass(`dts${dungeon.id} dtsBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($dtsBanner);
+    if (dungeon.type === "boss") {
+        b1.addClass("DBoss");
+        b2.addClass("DBoss");
+        if (dungeon.bossDifficulty() > 0) $("<div/>").addClass("dtsBossDifficulty").html(`${dungeon.bossDifficulty()} ${miscIcons.skull}`).appendTo($dtsBanner);
+    }
     //Materials in Dungeon
     $dtsMaterials.empty();
     if (dungeon.type !== "boss") {

@@ -11,21 +11,21 @@ const MobManager = {
     idToMob(id) {
         return this.monsterDB.find(mob => mob.id === id);
     },
-    generateDungeonMob(mobID, difficulty) {
+    generateDungeonMob(mobID, difficulty,multiplier) {
         disableEventLayers();
         const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
-        const mob = new Mob(difficulty, mobTemplate);
+        const mob = new Mob(difficulty, mobTemplate, multiplier);
         return mob;
     },
     getUniqueID() {
         this.idCount += 1;
         return this.idCount;
     },
-    generateDungeonFloor(dungeonid,floorNum) {
+    generateDungeonFloor(dungeonid,floorNum,bossMultiplier) {
         const mobFloor = [];
         const floor = FloorManager.getFloor(dungeonid,floorNum);
         floor.mobs.forEach(mob => {
-            mobFloor.push(this.generateDungeonMob(mob,floorNum));
+            mobFloor.push(this.generateDungeonMob(mob,floorNum,bossMultiplier));
         })
         return mobFloor;
     },
@@ -98,11 +98,12 @@ const FloorManager = {
 }
 
 class Mob {
-    constructor (lvl,mobTemplate) {
+    constructor (lvl,mobTemplate, difficulty) {
         Object.assign(this, mobTemplate);
         this.lvl = lvl;
-        this.pow = Math.floor(mobTemplate.powBase + mobTemplate.powLvl*lvl);
-        this.hpmax = Math.floor(mobTemplate.hpBase + mobTemplate.hpLvl*lvl);
+        this.difficulty = difficulty;
+        this.pow = Math.floor((mobTemplate.powBase + mobTemplate.powLvl*lvl)*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
+        this.hpmax = Math.floor((mobTemplate.hpBase + mobTemplate.hpLvl*lvl)*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
         this.hp = this.hpmax;
         this.ap = 0;
         this.apmax = 120;
@@ -116,6 +117,7 @@ class Mob {
         save.uniqueid = this.uniqueid;
         save.hp = this.hp;
         save.ap = this.ap
+        save.difficulty = this.difficulty;
         return save;
     }
     loadSave(save) {
@@ -161,6 +163,7 @@ class Mob {
         return this.apAdd;
     }
     rollDrops() {
+        console.log(this.drops);
         const mobDrops = [];
         if (this.drops === null || this.gotloot) {
             this.gotloot = true;
@@ -171,6 +174,7 @@ class Mob {
             if (success > roll) mobDrops.push(material);
         }
         this.gotloot = true;
+        console.log(mobDrops);
         return mobDrops;
     }
     looted() {

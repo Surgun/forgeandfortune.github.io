@@ -79,7 +79,7 @@ class Dungeon {
         this.mobs = [];
         save.mobs.forEach(mobSave => {
             const mobTemplate = MobManager.idToMob(mobSave.id);
-            const mob = new Mob(mobSave.lvl, mobTemplate);
+            const mob = new Mob(mobSave.lvl, mobTemplate, mobSave.difficulty);
             mob.loadSave(mobSave);
             this.mobs.push(mob);
         });
@@ -155,6 +155,7 @@ class Dungeon {
         this.mobs.forEach(mob => {
             if (mob.dead() && !mob.looted()) {
                 this.addDungeonDrop(mob.rollDrops());
+                MonsterHall.addKill(mob.id);
                 needrefresh = true;
             }
         });
@@ -225,7 +226,7 @@ class Dungeon {
             this.order = new TurnOrder(this.party.heroes,[]);
         }
         else {
-            this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount);
+            this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount,this.bossDifficulty());
             this.order = new TurnOrder(this.party.heroes,this.mobs);
         }
         if (refreshLater) return;
@@ -267,6 +268,11 @@ class Dungeon {
             return r.amt*ResourceManager.idToMaterial(r.id).notoAdd;
         });
         return noto.reduce((a,b) => a+b , 0);
+    }
+    bossDifficulty() {
+        if (this.type === "regular") return 0;
+        const boss = DungeonManager.bossByDungeon(this.id);
+        return MonsterHall.monsterKillCount(boss);
     }
 }
 
@@ -359,6 +365,7 @@ const DungeonManager = {
         return this.bossesBeat.length;
     },
     bossCleared(id) {
+        console.log(id,this.bossesBeat.includes(id));
         return this.bossesBeat.includes(id);
     },
     bossMaxCount() {
@@ -371,5 +378,5 @@ const DungeonManager = {
     },
     bossByDungeon(dungeonid) {
         return FloorManager.mobsByDungeon(dungeonid)[0];
-    }
+    },
 };

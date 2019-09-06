@@ -11,6 +11,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M101": 100
@@ -30,6 +31,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M102": 60
@@ -49,6 +51,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M103": 40
@@ -68,6 +71,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M104": 30
@@ -87,6 +91,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M105": 25
@@ -106,6 +111,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M106": 25
@@ -125,6 +131,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M107": 25
@@ -144,6 +151,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M108": 25
@@ -163,6 +171,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M109": 25
@@ -182,6 +191,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M110": 25
@@ -201,6 +211,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M201": 100
@@ -220,6 +231,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M202": 60
@@ -239,6 +251,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M203": 40
@@ -258,6 +271,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M204": 30
@@ -277,6 +291,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M205": 25
@@ -296,6 +311,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M206": 25
@@ -315,6 +331,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M207": 25
@@ -334,6 +351,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M208": 25
@@ -353,6 +371,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M209": 25
@@ -372,6 +391,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M210": 25
@@ -391,6 +411,7 @@
     "crit": 10,
     "critdmg": 2,
     "dodge": 10,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M101": 100
@@ -410,6 +431,7 @@
     "crit": 10,
     "critdmg": 2,
     "dodge": 10,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M102": 60
@@ -429,6 +451,7 @@
     "crit": 10,
     "critdmg": 2,
     "dodge": 10,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M103": 40
@@ -448,6 +471,7 @@
     "crit": 10,
     "critdmg": 2,
     "dodge": 10,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M104": 30
@@ -467,6 +491,7 @@
     "crit": 10,
     "critdmg": 2,
     "dodge": 10,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M105": 25
@@ -486,6 +511,7 @@
     "crit": 10,
     "critdmg": 2,
     "dodge": 10,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M106": 25
@@ -505,6 +531,7 @@
     "crit": 10,
     "critdmg": 2,
     "dodge": 10,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M107": 25
@@ -524,6 +551,7 @@
     "crit": 10,
     "critdmg": 2,
     "dodge": 10,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M108": 25
@@ -543,6 +571,7 @@
     "crit": 10,
     "critdmg": 2,
     "dodge": 10,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M109": 25
@@ -562,6 +591,7 @@
     "crit": 10,
     "critdmg": 2,
     "dodge": 10,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M110": 25
@@ -581,6 +611,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M301": 100
@@ -600,6 +631,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M302": 60
@@ -619,6 +651,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M303": 40
@@ -638,6 +671,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M304": 30
@@ -657,6 +691,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M305": 25
@@ -676,6 +711,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M306": 25
@@ -695,6 +731,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M307": 25
@@ -714,6 +751,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M308": 25
@@ -733,6 +771,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M309": 25
@@ -752,6 +791,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M310": 25
@@ -771,6 +811,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M301": 100
@@ -790,6 +831,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M302": 60
@@ -809,6 +851,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M303": 40
@@ -828,6 +871,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M304": 30
@@ -847,6 +891,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M305": 25
@@ -866,6 +911,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M306": 25
@@ -885,6 +931,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M307": 25
@@ -904,6 +951,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M308": 25
@@ -923,6 +971,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M309": 25
@@ -942,6 +991,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M310": 25
@@ -961,6 +1011,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M201": 100
@@ -980,6 +1031,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M202": 60
@@ -999,6 +1051,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M203": 40
@@ -1018,6 +1071,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M204": 30
@@ -1037,6 +1091,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M205": 25
@@ -1056,6 +1111,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M206": 25
@@ -1075,6 +1131,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M207": 25
@@ -1094,6 +1151,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M208": 25
@@ -1113,6 +1171,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M209": 25
@@ -1132,6 +1191,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M210": 25
@@ -1151,6 +1211,7 @@
     "crit": 0,
     "critdmg": 0,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M101": 100,
@@ -1175,6 +1236,7 @@
     "crit": 0,
     "critdmg": 0,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M102": 100,
@@ -1199,6 +1261,7 @@
     "crit": 0,
     "critdmg": 0,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M103": 100,
@@ -1223,6 +1286,7 @@
     "crit": 0,
     "critdmg": 0,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M104": 100,
@@ -1247,6 +1311,7 @@
     "crit": 0,
     "critdmg": 0,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M105": 100,
@@ -1271,6 +1336,7 @@
     "crit": 0,
     "critdmg": 0,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M106": 100,
@@ -1295,6 +1361,7 @@
     "crit": 0,
     "critdmg": 0,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M107": 100,
@@ -1319,6 +1386,7 @@
     "crit": 0,
     "critdmg": 0,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M108": 100,
@@ -1343,6 +1411,7 @@
     "crit": 0,
     "critdmg": 0,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M109": 100,
@@ -1367,6 +1436,7 @@
     "crit": 0,
     "critdmg": 0,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": {
       "M110": 100,
@@ -1391,6 +1461,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M301": 100
@@ -1410,6 +1481,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M302": 60
@@ -1429,6 +1501,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M303": 40
@@ -1448,6 +1521,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M304": 30
@@ -1467,6 +1541,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M305": 25
@@ -1486,6 +1561,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M306": 25
@@ -1505,6 +1581,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M307": 25
@@ -1524,6 +1601,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M308": 25
@@ -1543,6 +1621,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M309": 25
@@ -1562,6 +1641,7 @@
     "crit": 5,
     "critdmg": 1.5,
     "dodge": 5,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M310": 25
@@ -1581,6 +1661,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M101": 100
@@ -1600,6 +1681,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M102": 60
@@ -1619,6 +1701,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M103": 40
@@ -1638,6 +1721,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M104": 30
@@ -1657,6 +1741,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M105": 25
@@ -1676,6 +1761,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M106": 25
@@ -1695,6 +1781,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M107": 25
@@ -1714,6 +1801,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M108": 25
@@ -1733,6 +1821,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M109": 25
@@ -1752,6 +1841,7 @@
     "crit": 2,
     "critdmg": 1.6,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M110": 25
@@ -1771,6 +1861,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M201": 100
@@ -1790,6 +1881,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M202": 60
@@ -1809,6 +1901,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M203": 40
@@ -1828,6 +1921,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M204": 30
@@ -1847,6 +1941,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M205": 25
@@ -1866,6 +1961,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M206": 25
@@ -1885,6 +1981,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M207": 25
@@ -1904,6 +2001,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M208": 25
@@ -1923,6 +2021,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M209": 25
@@ -1942,6 +2041,7 @@
     "crit": 15,
     "critdmg": 1.4,
     "dodge": 15,
+    "spow": 0,
     "target": "lowhp",
     "drops": {
       "M210": 25
@@ -1961,6 +2061,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M201": 100
@@ -1980,6 +2081,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M202": 60
@@ -1999,6 +2101,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M203": 40
@@ -2018,6 +2121,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M204": 30
@@ -2037,6 +2141,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M205": 25
@@ -2056,6 +2161,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M206": 25
@@ -2075,6 +2181,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M207": 25
@@ -2094,6 +2201,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M208": 25
@@ -2113,6 +2221,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M209": 25
@@ -2132,6 +2241,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M210": 25
@@ -2151,6 +2261,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M101": 100
@@ -2170,6 +2281,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M102": 60
@@ -2189,6 +2301,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M103": 40
@@ -2208,6 +2321,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M104": 30
@@ -2227,6 +2341,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M105": 25
@@ -2246,6 +2361,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M106": 25
@@ -2265,6 +2381,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M107": 25
@@ -2284,6 +2401,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M108": 25
@@ -2303,6 +2421,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M109": 25
@@ -2322,6 +2441,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 5,
+    "spow": 0,
     "target": "random",
     "drops": {
       "M110": 25
@@ -2341,6 +2461,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M301": 100
@@ -2360,6 +2481,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M302": 60
@@ -2379,6 +2501,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M303": 40
@@ -2398,6 +2521,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M304": 30
@@ -2417,6 +2541,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M305": 25
@@ -2436,6 +2561,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M306": 25
@@ -2455,6 +2581,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M307": 25
@@ -2474,6 +2601,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M308": 25
@@ -2493,6 +2621,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M309": 25
@@ -2512,6 +2641,7 @@
     "crit": 25,
     "critdmg": 3,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
     "drops": {
       "M310": 25
@@ -2531,8 +2661,11 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
-    "drops": null,
+    "drops": {
+      "M002": 100
+    },
     "event": "boss",
     "special": "second"
   },
@@ -2548,8 +2681,11 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
-    "drops": null,
+    "drops": {
+      "M002": 100
+    },
     "event": "boss",
     "special": "birdflame"
   },
@@ -2565,8 +2701,11 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
-    "drops": null,
+    "drops": {
+      "M002": 100
+    },
     "event": "boss",
     "special": "defenseStance"
   },
@@ -2582,8 +2721,11 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
-    "drops": null,
+    "drops": {
+      "M002": 100
+    },
     "event": "boss",
     "special": "summon"
   },
@@ -2599,8 +2741,11 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
-    "drops": null,
+    "drops": {
+      "M002": 100
+    },
     "event": "boss",
     "special": "fear"
   },
@@ -2616,8 +2761,11 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
-    "drops": null,
+    "drops": {
+      "M002": 100
+    },
     "event": "boss",
     "special": "lowHPstun"
   },
@@ -2633,8 +2781,11 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
-    "drops": null,
+    "drops": {
+      "M002": 100
+    },
     "event": "boss",
     "special": "birdflame"
   },
@@ -2650,8 +2801,11 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
-    "drops": null,
+    "drops": {
+      "M002": 100
+    },
     "event": "boss",
     "special": "defenseStancePlus"
   },
@@ -2667,8 +2821,11 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
-    "drops": null,
+    "drops": {
+      "M002": 100
+    },
     "event": "boss",
     "special": "summon2"
   },
@@ -2684,8 +2841,11 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "first",
-    "drops": null,
+    "drops": {
+      "M002": 100
+    },
     "event": "boss",
     "special": "fearap"
   },
@@ -2701,6 +2861,7 @@
     "crit": 10,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "last",
     "drops": null,
     "event": "temp",
@@ -2718,6 +2879,7 @@
     "crit": 25,
     "critdmg": 2,
     "dodge": 0,
+    "spow": 0,
     "target": "random",
     "drops": null,
     "event": "temp",
@@ -2735,6 +2897,7 @@
     "crit": 60,
     "critdmg": 4,
     "dodge": 0,
+    "spow": 0,
     "target": "highhp",
     "drops": null,
     "event": "temp",
@@ -2752,6 +2915,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "random",
     "drops": null,
     "event": "temp",
@@ -2769,6 +2933,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "random",
     "drops": null,
     "event": "temp",
@@ -2786,6 +2951,7 @@
     "crit": 20,
     "critdmg": 1.2,
     "dodge": 0,
+    "spow": 0,
     "target": "random",
     "drops": null,
     "event": "temp",

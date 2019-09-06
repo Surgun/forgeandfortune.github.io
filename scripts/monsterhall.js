@@ -8,14 +8,61 @@ const $monsterMobsInspect = $("#monsterMobsInspect");
 
 const MonsterHall = {
     lvl : 1,
+    kills : [],
     createSave() {
         const save = {};
         save.lvl = this.lvl;
+        save.kills = [];
+        this.kills.forEach(kill => {
+            save.kills.push(kill.createSave());
+        });
         return save;
     },
     loadSave(save) {
-        if (save.lvl !== undefined) this.lvl = save.lvl;
+        this.lvl = save.lvl;
+        save.kills.forEach(kill => {
+            const newKill = new monsterKill(kill.id,kill.amt);
+            newKill.loadSave(kill);
+            this.kills.push(newKill);
+        });
     },
+    addLevel() {
+        this.lvl += 1;
+    },
+    bossRefight() {
+        return this.lvl > 1;
+    },
+    monsterKillCount(mobID) {
+        const killCount = this.kills.find(m=>m.id === mobID);
+        return (killCount === undefined) ? 0 : killCount.amt;
+    },
+    addKill(mobID) {
+        let killCount = this.kills.find(m=>m.id === mobID);
+        if (killCount === undefined) {
+            killCount = new monsterKill(mobID,1);
+            this.kills.push(killCount);
+        }
+        else killCount.amt += 1;
+    }
+}
+
+class monsterKill {
+    constructor (id,amt) {
+        this.id = id;
+        this.amt = amt;
+    }
+    addKill() {
+        this.amt += 1;
+    }
+    createSave() {
+        const save = {};
+        save.id = this.id;
+        save.amt = this.amt;
+        return save;
+    }
+    loadSave(save) {
+        return;
+    }
 }
 
 function initiateMonsterBldg() {
@@ -68,6 +115,7 @@ function refreshHallMonsterInspect(monster) {
     $("<div/>").addClass("mhiBlockImage").html(monster.image).appendTo($monsterMobsInspect);
     mhiBlock("Dungeon",dungeonName).appendTo($monsterMobsInspect);
     mhiBlock("Floors",`${floorRange.min} - ${floorRange.max}`).appendTo($monsterMobsInspect);
+    mhiBlock("Kills",`${MonsterHall.monsterKillCount(monster.id)}`).appendTo($monsterMobsInspect);
     const stats = [`${monster.getHP(floorRange.min)} - ${monster.getHP(floorRange.max)}`,`${monster.getPow(floorRange.min)} - ${monster.getPow(floorRange.max)}`, monster.spow, monster.apmax, monster.armor, monster.crit+"%", monster.dodge+"%"];
     for (let i=0;i<stats.length;i++) {
         $monsterMobsInspect.append(statRow(statName[i],stats[i],statDesc[i]));

@@ -25,25 +25,32 @@ const $dungeonSpeedButtons = $(".dungeonSpeedButtons");
 /*---------------------------*/
 
 const $dungeonListings = $("#dungeonListings");
-const $dungeonListingBoss = $("#dungeonListingBoss");
+const $dungeonListingsBosses = $("#dungeonListingsBosses");
 
 function refreshDungeonSelect() {
     //shows each dungeon so you can select that shit...
     $dungeonListings.empty();
-    DungeonManager.dungeons.forEach(dungeon => {
-        if (!DungeonManager.bossDungeonCanSee(dungeon.id)) return;
+    DungeonManager.dungeons.filter(d=>d.type==="regular").forEach(dungeon => {
         $dungeonListings.append(dungeonBlock(dungeon));
+    });
+    $dungeonListingsBosses.empty();
+    DungeonManager.dungeons.filter(d=>d.type==="boss" && DungeonManager.bossDungeonCanSee(d.id)).forEach(dungeon => {
+        $dungeonListingsBosses.append(dungeonBlock(dungeon));
     });
 }
 
 function dungeonBlock(dungeon) {
     const d1 = $("<div/>").addClass("dungeonContainer").attr("id",dungeon.id);
-    if (dungeon.type === "boss") d1.addClass("dungeonTypeBoss");
     const d2 = $("<div/>").addClass("dungeonHeader").html(dungeon.name);
+    if (dungeon.type === "boss") {
+        d1.addClass("dungeonTypeBoss");
+        const bossID = DungeonManager.bossByDungeon(dungeon.id);
+        if (MonsterHall.bossRefight()) $("<div/>").addClass("dungeonBossLvl").html(`${MonsterHall.monsterKillCount(bossID)} ${miscIcons.skull}`).appendTo(d1);
+    }
     const d3 = $("<div/>").addClass("dungeonStatus").attr("id","ds"+dungeon.id);
-    if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").html(`Fight in Progress`);
+    if (dungeon.type === "boss" && DungeonManager.bossCleared(dungeon) && !MonsterHall.bossRefight()) d3.addClass("dungeonBossBeat").html(`Boss Defeated`);
+    else if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").html(`Fight in Progress`);
     else if (dungeon.status === DungeonStatus.COLLECT) d3.addClass("dungeonComplete").html(`Run Complete`);
-    else if (!DungeonManager.bossDungeonCanSee(dungeon.id)) d3.addClass("dungeonNotOpened").html("Not Opened");
     else d3.addClass("dungeonIdle").html("Idle");
     const d4 = $("<div/>").addClass("dungeonBackground");
     const d5 = $("<div/>").addClass("dungeonAdventurers");

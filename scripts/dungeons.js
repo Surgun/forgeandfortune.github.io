@@ -282,8 +282,7 @@ const DungeonManager = {
         this.dungeonPaid.push(id);
     },
     bossDungeonCanSee(id) {
-        if (this.bossesBeat.includes(id)) return false;
-        return this.dungeonByID(id).type === "regular" || this.dungeonPaid.includes(id);
+        return this.dungeonPaid.includes(id);
     },
     createSave() {
         const save = {};
@@ -359,6 +358,9 @@ const DungeonManager = {
     bossCount() {
         return this.bossesBeat.length;
     },
+    bossCleared(id) {
+        return this.bossesBeat.includes(id);
+    },
     bossMaxCount() {
         return this.dungeons.filter(d => d.type === "boss").length;
     },
@@ -366,5 +368,8 @@ const DungeonManager = {
         const dungeon = this.getCurrentDungeon();
         dungeon.completeState = "abandoned";
         dungeon.endDungeon();
+    },
+    bossByDungeon(dungeonid) {
+        return FloorManager.mobsByDungeon(dungeonid)[0];
     }
 };

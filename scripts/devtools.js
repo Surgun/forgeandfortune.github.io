@@ -104,5 +104,11 @@ const devtools = {
             item.scale = 100;
             Inventory.addToInventory(item);
         })
+    },
+    testMonsterHall() {
+        MonsterHall.lvl = 2;
+        MobManager.monsterDB.forEach(mob => {
+            MonsterHall.addKill(mob.id);
+        });
     }
 }

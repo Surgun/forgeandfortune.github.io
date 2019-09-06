@@ -97,6 +97,7 @@ const miscIcons = Object.freeze({
     armor : '<i class="fas fa-shield statARMOR"></i>',
     crit : '<i class="fas fa-dagger statCRIT"></i>',
     dodge : '<i class="fas fa-hood-cloak statDODGE"></i>',
+    skull : '<i class="fas fa-skull"></i>',
 });
 
 const heroStat = Object.freeze({

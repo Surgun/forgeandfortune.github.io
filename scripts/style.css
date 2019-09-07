@@ -65,7 +65,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon, .tinkerCommand, .dreStatContainer, .dreActionButton, .dreLootDropCard, .dreTeamHero, #guildList, #RecipeFilter, #eventListContainer, .tinkerRangeBox, .smithButton, .fortuneSlot, .fortuneItemClose:hover, .fortuneItemSetClose:hover  {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon, .tinkerCommand, .dreStatContainer, .dreActionButton, .dreLootDropCard, .dreTeamHero, #guildList, #RecipeFilter, #eventListContainer, .tinkerRangeBox, .smithButton, .fortuneSlot, .fortuneItemClose:hover, .fortuneItemSetClose:hover, .monsterCard  {
     -ms-box-shadow: var(--box-shadow);
     -o-box-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
@@ -5289,7 +5289,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 0;
 }
 
-.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .alPerk, .desynthSlot, .desynthGroup, .fortuneItem, .tinkerCommand, .tinkerSlot, .tinkerRangeBox, .fortuneSlot {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .alPerk, .desynthSlot, .desynthGroup, .fortuneItem, .tinkerCommand, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6295,6 +6295,63 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     border: 1px solid var(--highlight);
     border-radius: 100%;
     cursor: grab;
+}
+
+/* Monster Hall */
+
+.monsterNav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: -10px -10px 0;
+    background-color: var(--bg-primary);
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.monsterNavButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 200px;
+    padding: 12px 15px;
+    color: var(--text-tertiary);
+    cursor: pointer;
+}
+
+.monsterNavButton:hover {
+    background-color: var(--bg-secondary);
+}
+
+.monsterNavButton.selected {
+    background-color: var(--border-primary);
+    color: var(--text-primary);
+}
+
+.monsterNavButton:after {
+    position: absolute;
+    bottom: -2px;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: transparent;
+}
+
+.monsterNavButton.selected:after {
+    width: 100%;
+    background-color: var(--highlight);
+}
+
+.monsterFiltersContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    margin: 10px 0;
+}
+
+.monsterFiltersContainer .selection-container {
+
 }
 
 /* Events / Mail Content */

@@ -5,10 +5,12 @@ const $monsterDiv = $(".monsterDiv");
 const $monsterMobs = $("#monsterMobs");
 const $monsterRewards = $("#monsterRewards");
 const $monsterMobsInspect = $("#monsterMobsInspect");
+const $monsterMobsList = $("#monsterMobsList");
 
 const MonsterHall = {
     lvl : 1,
     kills : [],
+    lastTab : "Beastiary",
     createSave() {
         const save = {};
         save.lvl = this.lvl;
@@ -74,7 +76,7 @@ function initiateMonsterBldg() {
 
 function initiateMonsterHall() {
     MobManager.monsterDB.forEach(monster => {
-        createMonsterHallCard(monster).appendTo($monsterMobs);
+        createMonsterHallCard(monster).appendTo($monsterMobsList);
     });
 };
 
@@ -116,9 +118,10 @@ function refreshHallMonsterInspect(monster) {
     mhiBlock("Dungeon",dungeonName).appendTo($monsterMobsInspect);
     mhiBlock("Floors",`${floorRange.min} - ${floorRange.max}`).appendTo($monsterMobsInspect);
     mhiBlock("Kills",`${MonsterHall.monsterKillCount(monster.id)}`).appendTo($monsterMobsInspect);
+    const d = $("<div/>").addClass("mhiStats");
     const stats = [`${monster.getHP(floorRange.min)} - ${monster.getHP(floorRange.max)}`,`${monster.getPow(floorRange.min)} - ${monster.getPow(floorRange.max)}`, monster.spow, monster.apmax, monster.armor, monster.crit+"%", monster.dodge+"%"];
     for (let i=0;i<stats.length;i++) {
-        $monsterMobsInspect.append(statRow(statName[i],stats[i],statDesc[i]));
+        d.append(statRow(statName[i],stats[i],statDesc[i]));
     }
 }
 

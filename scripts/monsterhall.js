@@ -110,19 +110,27 @@ function refreshHallMonsterList() {
 
 function refreshHallMonsterInspect(monster) {
     $monsterMobsInspect.empty();
-    $("<div/>").addClass("mhiBack").attr("id","mhiBackButton").html("Back to Beastiary").appendTo($monsterMobsInspect);
-    const floorRange = FloorManager.floorRangeByMob(monster.id);
-    const dungeonName = FloorManager.dungeonNameByMob(monster.id);
-    mhiBlock("Name",monster.name).appendTo($monsterMobsInspect);
-    $("<div/>").addClass("mhiBlockImage").html(monster.image).appendTo($monsterMobsInspect);
-    mhiBlock("Dungeon",dungeonName).appendTo($monsterMobsInspect);
-    mhiBlock("Floors",`${floorRange.min} - ${floorRange.max}`).appendTo($monsterMobsInspect);
-    mhiBlock("Kills",`${MonsterHall.monsterKillCount(monster.id)}`).appendTo($monsterMobsInspect);
-    const d = $("<div/>").addClass("mhiStats");
+    const d = $("<div/>").addClass("monsterInspectContainer");
+    const d1 = $("<div/>").addClass("monsterActionsContainer");
+    $("<div/>").addClass("mhiBack").attr("id","mhiBackButton").html("Back to Beastiary").appendTo(d1);
+    const d2 = $("<div/>").addClass("monsterDetails");
+        const d2a = $("<div/>").addClass("monsterInfoDetails");
+        const floorRange = FloorManager.floorRangeByMob(monster.id);
+        const dungeonName = FloorManager.dungeonNameByMob(monster.id);
+        mhiBlock("Name",monster.name).appendTo(d2a);
+        $("<div/>").addClass("mhiBlockImage").html(monster.image).appendTo(d2a);
+        const d2b = $("<div/>").addClass("monsterDungeonDetails");
+        mhiBlock("Dungeon",dungeonName).appendTo(d2b);
+        mhiBlock("Floors",`${floorRange.min} - ${floorRange.max}`).appendTo(d2b);
+        mhiBlock("Kills",`${MonsterHall.monsterKillCount(monster.id)}`).appendTo(d2b);
+        d2.append(d2a,d2b);
+    const d3 = $("<div/>").addClass("mhiStats");
     const stats = [`${monster.getHP(floorRange.min)} - ${monster.getHP(floorRange.max)}`,`${monster.getPow(floorRange.min)} - ${monster.getPow(floorRange.max)}`, monster.spow, monster.apmax, monster.armor, monster.crit+"%", monster.dodge+"%"];
     for (let i=0;i<stats.length;i++) {
-        d.append(statRow(statName[i],stats[i],statDesc[i]));
+        d3.append(statRow(statName[i],stats[i],statDesc[i]));
     }
+    d.append(d1,d2,d3);
+    $monsterMobsInspect.append(d);
 }
 
 function mhiBlock(heading,text) {

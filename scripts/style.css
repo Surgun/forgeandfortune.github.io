@@ -60,12 +60,12 @@ body {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, .heroOverviewButton, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #exportSaveLocal, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .buildingName:after, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .workerBuyCardDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, #db-panel input, .alPerkBuy, .guildOrderSubmit, .orderCraft, .dtsMaterialTitle, .dtsBackButton, #updateRefresh, #clearSettings, .desynthGroup, .desynthButton, #desynthSlotStart, #desynthRemove, .heroUnequipSlot, #desynthSlotCollect, .desynthPowerSetting, #collectResmith, .eventActionButton, #dungeonAbandon, .heroOverviewCard, .fortuneStage, .dreActionButton, .tinkerCommand, .toggleStatus, .toggleCue, .smithButton, .recipeTotalCrafted, .fortuneItemClose, .fortuneItemSetClose .fortuneItemSac, .fuseClose, .fuseSlotStart {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, .heroOverviewButton, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, #pfButtons > input, #pfImportExport > input, #pfLoadButtons > input, #importSaveButton, #deleteSaveButton, #declineSaveButton, #exportSaveCopy, #exportSaveLocal, #pfEmail:after, #pfPassword:after, #pfEmail > input, #pfPassword > input, .tooltip:after, .tooltip:before, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .buildingName:after, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .workerBuyCardDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, #db-panel input, .alPerkBuy, .guildOrderSubmit, .orderCraft, .dtsMaterialTitle, .dtsBackButton, #updateRefresh, #clearSettings, .desynthGroup, .desynthButton, #desynthSlotStart, #desynthRemove, .heroUnequipSlot, #desynthSlotCollect, .desynthPowerSetting, #collectResmith, .eventActionButton, #dungeonAbandon, .heroOverviewCard, .fortuneStage, .dreActionButton, .tinkerCommand, .toggleStatus, .toggleCue, .smithButton, .recipeTotalCrafted, .fortuneItemClose, .fortuneItemSetClose .fortuneItemSac, .fuseClose, .fuseSlotStart, .monsterCard, .mhiBack {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon, .tinkerCommand, .dreStatContainer, .dreActionButton, .dreLootDropCard, .dreTeamHero, #guildList, #RecipeFilter, #eventListContainer, .tinkerRangeBox, .smithButton, .fortuneSlot, .fortuneItemClose:hover, .fortuneItemSetClose:hover, .monsterCard  {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon, .tinkerCommand, .dreStatContainer, .dreActionButton, .dreLootDropCard, .dreTeamHero, #guildList, #RecipeFilter, #eventListContainer, .tinkerRangeBox, .smithButton, .fortuneSlot, .fortuneItemClose:hover, .fortuneItemSetClose:hover, .monsterCard, .mhiBack, .mhiStats .heroExamineStatRow {
     -ms-box-shadow: var(--box-shadow);
     -o-box-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
@@ -481,7 +481,7 @@ p.hamster {
     padding-right: 10px;
 }
 
-.invActionButton, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .dungeonSpeedButtons, #dungeonAbandon {
+.invActionButton, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .dungeonSpeedButtons, #dungeonAbandon, .mhiBack {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -502,7 +502,7 @@ p.hamster {
     animation: 0.2s scale-in forwards;
 }
 
-.invActionButton:hover, #sortBank:hover, #sortInventoryBank:hover, .recipeActionButton:hover, .recipeDropdownButton:hover, .recipeSortInput:hover, .dungeonSpeedButtons:hover, #dungeonAbandon:hover {
+.invActionButton:hover, #sortBank:hover, #sortInventoryBank:hover, .recipeActionButton:hover, .recipeDropdownButton:hover, .recipeSortInput:hover, .dungeonSpeedButtons:hover, #dungeonAbandon:hover, .mhiBack:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -3688,7 +3688,7 @@ Rarities
     background-color: var(--border-primary);
 }
 
-.heroExamineStats {
+.heroExamineStats, .mhiStats {
     display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill,minmax(200px,1fr));
@@ -6314,7 +6314,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    max-width: 200px;
+    max-width: 150px;
     padding: 12px 15px;
     color: var(--text-tertiary);
     cursor: pointer;
@@ -6350,8 +6350,126 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 10px 0;
 }
 
-.monsterFiltersContainer .selection-container {
+.monsterDivMobs {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
+    grid-gap: 10px;
+}
 
+.monsterCard {
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    -webkit-animation: 0.2s scale-in forwards;
+    animation: 0.2s scale-in forwards;
+    cursor: pointer;
+}
+
+.monsterCard:hover {
+    border-color: var(--border-tertiary);
+}
+
+.monsterCardName {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    text-align: center;
+    color: var(--highlight);
+}
+
+.monsterCardName:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--border-secondary);
+}
+
+.monsterCardImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+}
+
+.monsterActionsContainer, .monsterDungeonDetails {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.monsterInspectContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.monsterActionsContainer {
+    width: 100%;
+}
+
+.mhiBack {
+    margin-left: 0;
+}
+
+.mhiHeader {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.mhiText {
+    color: var(--text-secondary);
+}
+
+.monsterDetails {
+    min-width: 300px;
+}
+
+.monsterInfoDetails {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.monsterInfoDetails > .mhiBlock {
+    margin-left: 75px;
+}
+
+.monsterInfoDetails > .mhiBlock > .mhiHeader, .monsterInfoDetails > .mhiBlock > .mhiText {
+    padding: 5px 0 10px 15px;
+}
+
+.monsterInfoDetails > .mhiBlock > .mhiText {
+    color: var(--highlight);
+}
+
+.mhiBlockImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-primary);
+    border-radius: 5px;
+}
+
+.mhiBlock {
+    margin-bottom: 10px;
+}
+
+.mhiStats {
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.mhiStats .heroExamineStatRow {
+    background-color: var(--bg-primary);
 }
 
 /* Events / Mail Content */

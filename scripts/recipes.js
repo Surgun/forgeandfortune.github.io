@@ -302,7 +302,7 @@ function recipeSort() {
 
 function recipeFilterList() {
     //uses two recipeLists to cycle through all the items and display as appropriate
-    $(".recipeCardContainer").hide();
+    Object.values(sortOrder.recipeDivDict).forEach(div => div.hide());
     recipeList.filteredRecipeList().map(r=>r.id).forEach(recipe => {
         sortOrder.recipeDivDict[recipe].show();
     })

@@ -65,7 +65,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon, .tinkerCommand, .dreStatContainer, .dreActionButton, .dreLootDropCard, .dreTeamHero, #guildList, #RecipeFilter, #eventListContainer, .tinkerRangeBox, .smithButton, .fortuneSlot, .fortuneItemClose:hover, .fortuneItemSetClose:hover, .monsterCard, .mhiBack, .mhiStats .heroExamineStatRow {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .tooltip:after, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon, .tinkerCommand, .dreStatContainer, .dreActionButton, .dreLootDropCard, .dreTeamHero, #guildList, #RecipeFilter, #eventListContainer, .tinkerRangeBox, .smithButton, .fortuneSlot, .fortuneItemClose:hover, .fortuneItemSetClose:hover, .monsterCard, .mhiBack, .mhiStats .heroExamineStatRow, .monsterDetails {
     -ms-box-shadow: var(--box-shadow);
     -o-box-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
@@ -6430,6 +6430,12 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .monsterDetails {
     min-width: 300px;
+    padding: 15px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    -webkit-animation: 0.2s scale-in forwards;
+    animation: 0.2s scale-in forwards;
 }
 
 .monsterInfoDetails {
@@ -6470,6 +6476,9 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 
 .mhiStats .heroExamineStatRow {
     background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    -webkit-animation: 0.2s scale-in forwards;
+    animation: 0.2s scale-in forwards;
 }
 
 /* Events / Mail Content */

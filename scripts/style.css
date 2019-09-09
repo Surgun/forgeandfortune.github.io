@@ -5232,6 +5232,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     background: linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/images/townImages/tinkerBuilding/bg.png);
 }
 
+.buildingmonster .buildingInfoBackground {
+    background: -webkit-linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/images/townImages/monsterBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/images/townImages/monsterBuilding/bg.png);
+}
+
 .buildingInfoImage {
     text-align: center;
 }

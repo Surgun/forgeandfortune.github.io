@@ -101,6 +101,7 @@ class Item{
         initializeActionSlots();
         refreshCraftedCount();
         refreshProgress();
+        refreshMonsterReward();
     }
     isMastered() {
         if (this.recipeType === "building" || this.recipeType === "Trinket") return false;

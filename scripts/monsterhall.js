@@ -51,11 +51,8 @@ const MonsterHall = {
     totalKills() {
         return this.kills.reduce((a,b) => a+b.amt,0);
     },
-    totalLineUpgrades() {
-        return this.lineUpgrades.reduce((a,b) => a+b.amt,0);
-    },
     lineUpgradesAvailable() {
-        return this.totalKills()-this.totalLineUpgrades();
+        return ResourceManager.materialAvailable("M002");
     },
     addKill(mobID) {
         let killCount = this.kills.find(m=>m.id === mobID);
@@ -72,20 +69,23 @@ const MonsterHall = {
             this.lineUpgrades.push(upgrade);
         }
         else upgrade.amt += 1;
+        console.log(line,upgrade);
     },
     lineUpgradeCount(line) {
         const upgrade = this.lineUpgrades.find(u=>u.id === line);
         return (upgrade === undefined) ? 0 : upgrade.amt;
     },
     floorSkip() {
+        if (this.lvl < 3) return 0;
         return Math.floor(recipeList.masteryCount()*2.5);
     },
-    lineIncrease(type,additional=0) {
-        const num = this.lineUpgradeCount(type);
-        return Math.round(Math.pow(0.95,num+additional),1);
+    lineIncrease(type,additional) {
+        return Math.pow(0.95,this.lineUpgradeCount(type)+additional);
     },
     buyLine(type) {
-        if (this.lineUpgradesAvailable() <= 0) return Notifications.cantAffordLineUpgrade();
+        if (ResourceManager.materialAvailable("M002") <= 0) return Notifications.cantAffordLineUpgrade();
+        ResourceManager.addMaterial("M002",-1);
+        console.log(type);
         this.addLineUpgrade(type);
         refreshMonsterRewardLines();
     }
@@ -243,16 +243,17 @@ function refreshMonsterRewardLines() {
     $mRewardLines.empty();
     ItemType.forEach(type => {
         const d = $("<div/>").addClass("lineRewardContainer").appendTo($mRewardLines);
+        $("<div/>").addClass("lineRewardLevel").html(`Lvl ${MonsterHall.lineUpgradeCount(type)}`).appendTo(d);
         const d1 = $("<div/>").addClass("lineRewardTitle").appendTo(d);
-            $("<div/>").addClass("lineRewardTitleImage").html(`<img src='../../images/recipeFilter/${type}32.png'`).appendTo(d1);
+            $("<div/>").addClass("lineRewardTitleImage").html(`<img src='./images/recipeFilter/${type}32.png'>`).appendTo(d1);
             $("<div/>").addClass("lineRewardTitleName").html(type);
-        $("<div/>").addClass("lineRewardCurrent").html(`Craft Speed: ${100*MonsterHall.lineIncrease(type)}% ${miscIcons.arrow} ${100*MonsterHall.lineIncrease(type,1)}%`).appendTo(d);
+        $("<div/>").addClass("lineRewardCurrent").html(`Craft Speed: ${(100*MonsterHall.lineIncrease(type,0)).toFixed(1)}% ${miscIcons.arrow} ${(100*MonsterHall.lineIncrease(type,1)).toFixed(1)}%`).appendTo(d);
         $("<div/>").addClass("lineRewardPay").attr("id","monsterPay").data("line",type).html(`Increase - 1 ${miscIcons.trophy}`).appendTo(d);
     });
 }
 
 $(document).on('click', "#monsterPay", (e) => {
     e.preventDefault();
-    const type = $(e.currentTarget).data("type"); 
+    const type = $(e.currentTarget).data("line"); 
     MonsterHall.buyLine(type);
 })

@@ -343,6 +343,7 @@ const DungeonManager = {
         const party = PartyCreator.lockParty();
         const dungeon = this.dungeonByID(this.dungeonCreatingID);
         dungeon.beatTotal = 0;
+        if (dungeon.type !== "boss") dungeon.floorCount = MonsterHall.floorSkip();
         if (devtools.dungeonStart !== undefined) dungeon.floorCount = devtools.dungeonStart;
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = this.dungeonCreatingID;
@@ -365,7 +366,6 @@ const DungeonManager = {
         return this.bossesBeat.length;
     },
     bossCleared(id) {
-        console.log(id,this.bossesBeat.includes(id));
         return this.bossesBeat.includes(id);
     },
     bossMaxCount() {

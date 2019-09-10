@@ -55,6 +55,7 @@ const ResourceManager = {
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(mat.amt,2 );
         refreshTinkerMats();
+        if (mat.id === "M002") refreshMonsterReward();
         if (mat.id !== "M001") return;
         $goldSidebarAmt.html(formatToUnits(mat.amt,2));
         $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);

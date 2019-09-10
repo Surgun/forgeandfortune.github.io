@@ -2,6 +2,7 @@ const devtools = {
     godmode : function() {
         recipeList.recipes.filter(r=>r.recipeType === "normal").forEach(recipe => {
             recipe.craftCount = 100;
+            recipe.mastered = true;
             recipe.owned = true;
         })
         WorkerManager.workers.forEach(worker => {

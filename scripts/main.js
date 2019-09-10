@@ -44,6 +44,7 @@ function afterLoad() {
     initiateMonsterHall();
     refreshMonsterReward();
     refreshMonsterRewardLines();
+    refreshCraftTimes();
     loading_screen.finish();
 }
 

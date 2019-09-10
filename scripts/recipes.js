@@ -127,6 +127,9 @@ class Item{
         if (!this.mcost) return "M201";
         return Object.keys(this.mcost)[0]
     }
+    reducedCraft() {
+        return this.craftTime * MonsterHall.lineIncrease(this.type,0);
+    }
 }
 
 const recipeList = {
@@ -323,7 +326,7 @@ function recipeCardFront(recipe) {
     const td5 = $('<div/>').addClass('recipeTimeAndValue');
         const td5a = $('<div/>').addClass('recipeTimeContainer tooltip').attr("data-tooltip", "Craft Time")
             const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader").html(`<i class="fas fa-clock"></i>`);
-            const td5a2 = $('<div/>').addClass('recipeTime').html(msToTime(recipe.craftTime));
+            const td5a2 = $('<div/>').addClass('recipeTime').attr("id",`rt${recipe.id}`).html(msToTime(recipe.reducedCraft()));
         td5a.append(td5a1,td5a2);
 
         const td5b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "In Inventory");
@@ -345,6 +348,12 @@ function recipeCardFront(recipe) {
         recipe.recipeDiv = td6b;
     td6.append(td6a,td6b);
     return $('<div/>').addClass('recipeCardFront').append(td1,td2,td3,td4,td5,td6);
+}
+
+function refreshCraftTimes() {
+    recipeList.recipes.forEach(recipe => {
+        $(`#rt${recipe.id}`).html(msToTime(recipe.reducedCraft()));
+    });
 }
 
 function recipeCardBack(recipe) {

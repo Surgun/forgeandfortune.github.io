@@ -26,7 +26,6 @@ class actionSlot {
         this.item = recipeList.idToItem(itemid);
         this.itemname = this.item.name;
         this.craftTime = 0;
-        this.maxCraft = this.item.craftTime;
         this.status = slotState.NEEDMATERIAL;
     }
     createSave() {
@@ -47,16 +46,19 @@ class actionSlot {
         if (this.status === slotState.NEEDMATERIAL) this.attemptStart();
         if (this.status !== slotState.CRAFTING) return;
         this.craftTime += t;
-        if (this.craftTime > this.maxCraft) {
-            this.craftTime -= this.maxCraft;
+        if (this.craftTime > this.maxCraft()) {
+            this.craftTime -= this.maxCraft();
             Inventory.craftToInventory(this.itemid);
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart();
         }
-        this.progress = (this.craftTime/this.maxCraft).toFixed(3)*100+"%";
+        this.progress = (this.craftTime/this.maxCraft()).toFixed(3)*100+"%";
+    }
+    maxCraft() {
+        return this.item.craftTime * MonsterHall.lineIncrease(this.item.type,0)
     }
     timeRemaining() {
-        return this.maxCraft-this.craftTime;
+        return this.maxCraft()-this.craftTime;
     }
     attemptStart() {
         //attempts to consume requried material, if successful start crafting

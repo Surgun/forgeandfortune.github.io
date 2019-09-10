@@ -88,6 +88,7 @@ const MonsterHall = {
         console.log(type);
         this.addLineUpgrade(type);
         refreshMonsterRewardLines();
+        refreshCraftTimes();
     }
 }
 

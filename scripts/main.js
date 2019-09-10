@@ -37,11 +37,13 @@ function afterLoad() {
     recipeList.canCraft();
     checkCraftableStatus();
     setInterval(mainLoop, 10);
-    recipeList.recipeFilterType = "Knives";
+    recipeList.recipeFilterType = "Light";
     recipeList.recipeFilterString = "";
     recipeFilterList();
     populateTinkerRange();
     initiateMonsterHall();
+    refreshMonsterReward();
+    refreshMonsterRewardLines();
     loading_screen.finish();
 }
 

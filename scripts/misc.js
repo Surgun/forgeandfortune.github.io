@@ -98,6 +98,8 @@ const miscIcons = Object.freeze({
     crit : '<i class="fas fa-dagger statCRIT"></i>',
     dodge : '<i class="fas fa-hood-cloak statDODGE"></i>',
     skull : '<i class="fas fa-skull"></i>',
+    trophy : `<img src='images/resources/M002.png' alt='Monster Trophy'>`,
+    arrow : '<i class="fas fa-arrow-right"></i>',
 });
 
 const heroStat = Object.freeze({

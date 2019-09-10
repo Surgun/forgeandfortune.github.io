@@ -20,6 +20,7 @@ const devtools = {
         TownManager.fortuneStatus = BuildingState.built;
         TownManager.tinkerStatus = BuildingState.built;
         TownManager.desynthStatus = BuildingState.built;
+        TownManager.monsterStatus = BuildingState.built;
         forceSave();
         location.replace('/');
     },
@@ -80,7 +81,7 @@ const devtools = {
         TownManager.buildings.forEach(building => {
             recipeList.idToItem(building.recipeID).owned = true;
             if (building.getStatus() === BuildingState.seen) building.setStatus(BuildingState.built);
-            else building.setStatus(BuildingState.seen);
+            else if (building.getStatus() !== BuildingState.built) building.setStatus(BuildingState.seen);
         })
         refreshSideTown();
     },

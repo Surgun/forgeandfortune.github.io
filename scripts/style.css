@@ -1519,15 +1519,15 @@ Rarities
 }
 
 #RecipeFilter a[href="HeavySelector"]:before {
-    background-image: url('../../images/recipeFilter/Swords32.png');
+    background-image: url('../../images/recipeFilter/Heavy32.png');
 }
 
 #RecipeFilter a[href="ArcaneSelector"]:before {
-    background-image: url('../../images/recipeFilter/Staves32.png');
+    background-image: url('../../images/recipeFilter/Arcane32.png');
 }
 
 #RecipeFilter a[href="LightSelector"]:before {
-    background-image: url('../../images/recipeFilter/Knives32.png');
+    background-image: url('../../images/recipeFilter/Light32.png');
 }
 
 #RecipeFilter a[href="HelmetSelector"]:before {

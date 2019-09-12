@@ -18,6 +18,7 @@ function afterLoad() {
         achievementStats.startTime = Date.now();
         EventManager.addEvent("E001");
         GuildManager.guilds.forEach(g=>g.generateNewOrder());
+        TownManager.buildingPerk("monster");
     }
     refreshMasteryBar()
     refreshInventory();
@@ -36,11 +37,14 @@ function afterLoad() {
     recipeList.canCraft();
     checkCraftableStatus();
     setInterval(mainLoop, 10);
-    recipeList.recipeFilterType = "Knives";
+    recipeList.recipeFilterType = "Light";
     recipeList.recipeFilterString = "";
     recipeFilterList();
     populateTinkerRange();
     initiateMonsterHall();
+    refreshMonsterReward();
+    refreshMonsterRewardLines();
+    refreshCraftTimes();
     loading_screen.finish();
 }
 

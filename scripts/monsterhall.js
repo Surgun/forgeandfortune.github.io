@@ -10,6 +10,7 @@ const $monsterMobsList = $("#monsterMobsList");
 const MonsterHall = {
     lvl : 1,
     kills : [],
+    lineUpgrades : [],
     lastTab : "Beastiary",
     createSave() {
         const save = {};
@@ -18,14 +19,23 @@ const MonsterHall = {
         this.kills.forEach(kill => {
             save.kills.push(kill.createSave());
         });
+        save.lineUpgrades = [];
+        this.lineUpgrades.forEach(upgrade => {
+            save.lineUpgrades.push(upgrade.createSave());
+        });
         return save;
     },
     loadSave(save) {
         this.lvl = save.lvl;
         save.kills.forEach(kill => {
-            const newKill = new monsterKill(kill.id,kill.amt);
+            const newKill = new idAmt(kill.id,kill.amt);
             newKill.loadSave(kill);
             this.kills.push(newKill);
+        });
+        save.lineUpgrades.forEach(upgrade => {
+            const newUpgrade = new idAmt(upgrade.id,upgrade.amt);
+            newUpgrade.loadSave(upgrade);
+            this.lineUpgrades.push(newUpgrade);
         });
     },
     addLevel() {
@@ -38,22 +48,56 @@ const MonsterHall = {
         const killCount = this.kills.find(m=>m.id === mobID);
         return (killCount === undefined) ? 0 : killCount.amt;
     },
+    totalKills() {
+        return this.kills.reduce((a,b) => a+b.amt,0);
+    },
+    lineUpgradesAvailable() {
+        return ResourceManager.materialAvailable("M002");
+    },
     addKill(mobID) {
         let killCount = this.kills.find(m=>m.id === mobID);
         if (killCount === undefined) {
-            killCount = new monsterKill(mobID,1);
+            killCount = new idAmt(mobID,1);
             this.kills.push(killCount);
         }
         else killCount.amt += 1;
+    },
+    addLineUpgrade(line) {
+        let upgrade = this.lineUpgrades.find(m=>m.id === line);
+        if (upgrade === undefined) {
+            upgrade = new idAmt(line,1);
+            this.lineUpgrades.push(upgrade);
+        }
+        else upgrade.amt += 1;
+        console.log(line,upgrade);
+    },
+    lineUpgradeCount(line) {
+        const upgrade = this.lineUpgrades.find(u=>u.id === line);
+        return (upgrade === undefined) ? 0 : upgrade.amt;
+    },
+    floorSkip() {
+        if (this.lvl < 3) return 0;
+        return Math.floor(recipeList.masteryCount()*2.5);
+    },
+    lineIncrease(type,additional) {
+        return Math.pow(0.95,this.lineUpgradeCount(type)+additional);
+    },
+    buyLine(type) {
+        if (ResourceManager.materialAvailable("M002") <= 0) return Notifications.cantAffordLineUpgrade();
+        ResourceManager.addMaterial("M002",-1);
+        console.log(type);
+        this.addLineUpgrade(type);
+        refreshMonsterRewardLines();
+        refreshCraftTimes();
     }
 }
 
-class monsterKill {
+class idAmt {
     constructor (id,amt) {
         this.id = id;
         this.amt = amt;
     }
-    addKill() {
+    addAmt() {
         this.amt += 1;
     }
     createSave() {
@@ -69,10 +113,32 @@ class monsterKill {
 
 function initiateMonsterBldg() {
     $monsterBuilding.show();
-    $monsterDiv.hide().removeClass("selected");
+    $monsterDiv.hide().removeClass("selected"); //hide all the tabs besides monster mobs
     $monsterMobs.show().addClass("selected");
     refreshHallMonsterList();
 }
+
+const $monsterNavMobs = $("#monsterNavMobs");
+const $monsterNavRewards = $("#monsterNavRewards");
+const $monsterNavButton  = $(".monsterNavButton");
+
+$(document).on('click', "#monsterNavRewards", (e) => {
+    console.log('monster rewards');
+    e.preventDefault();
+    $monsterNavButton.removeClass("selected");
+    $monsterNavRewards.addClass("selected");
+    $monsterDiv.hide().removeClass("selected");
+    $monsterRewards.show().addClass("selecteD");
+});
+
+$(document).on('click', "#monsterNavMobs", (e) => {
+    console.log('monster nav');
+    e.preventDefault();
+    $monsterNavButton.removeClass("selected");
+    $monsterNavMobs.addClass("selected");
+    $monsterDiv.hide().removeClass("selected");
+    $monsterMobs.show().addClass("selecteD");
+});
 
 function initiateMonsterHall() {
     MobManager.monsterDB.forEach(monster => {
@@ -159,3 +225,36 @@ $(document).on('click', ".monsterCard", (e) => {
     $monsterMobs.hide();
     $monsterMobsInspect.show();
 });
+
+const $mRWM = $("#mRWM");
+const $mRWS = $("#mRWS");
+const $mRTmax = $("#mRTmax");
+const $mRTavail = $("#mRTavail");
+
+function refreshMonsterReward() {
+    $mRWM.html(recipeList.masteryCount());
+    $mRWS.html(MonsterHall.floorSkip());
+    $mRTmax.html(MonsterHall.totalKills());
+    $mRTavail.html(MonsterHall.lineUpgradesAvailable());
+}
+
+const $mRewardLines = $("#mRewardLines");
+
+function refreshMonsterRewardLines() {
+    $mRewardLines.empty();
+    ItemType.forEach(type => {
+        const d = $("<div/>").addClass("lineRewardContainer").appendTo($mRewardLines);
+        $("<div/>").addClass("lineRewardLevel").html(`Lvl ${MonsterHall.lineUpgradeCount(type)}`).appendTo(d);
+        const d1 = $("<div/>").addClass("lineRewardTitle").appendTo(d);
+            $("<div/>").addClass("lineRewardTitleImage").html(`<img src='./images/recipeFilter/${type}32.png'>`).appendTo(d1);
+            $("<div/>").addClass("lineRewardTitleName").html(type);
+        $("<div/>").addClass("lineRewardCurrent").html(`Craft Speed: ${(100*MonsterHall.lineIncrease(type,0)).toFixed(1)}% ${miscIcons.arrow} ${(100*MonsterHall.lineIncrease(type,1)).toFixed(1)}%`).appendTo(d);
+        $("<div/>").addClass("lineRewardPay").attr("id","monsterPay").data("line",type).html(`Increase - 1 ${miscIcons.trophy}`).appendTo(d);
+    });
+}
+
+$(document).on('click', "#monsterPay", (e) => {
+    e.preventDefault();
+    const type = $(e.currentTarget).data("line"); 
+    MonsterHall.buyLine(type);
+})

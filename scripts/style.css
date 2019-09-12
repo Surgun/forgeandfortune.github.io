@@ -1519,15 +1519,15 @@ Rarities
 }
 
 #RecipeFilter a[href="HeavySelector"]:before {
-    background-image: url('../../images/recipeFilter/Swords32.png');
+    background-image: url('../../images/recipeFilter/Heavy32.png');
 }
 
 #RecipeFilter a[href="ArcaneSelector"]:before {
-    background-image: url('../../images/recipeFilter/Staves32.png');
+    background-image: url('../../images/recipeFilter/Arcane32.png');
 }
 
 #RecipeFilter a[href="LightSelector"]:before {
-    background-image: url('../../images/recipeFilter/Knives32.png');
+    background-image: url('../../images/recipeFilter/Light32.png');
 }
 
 #RecipeFilter a[href="HelmetSelector"]:before {
@@ -5230,6 +5230,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 .buildingtinker .buildingInfoBackground {
     background: -webkit-linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/images/townImages/tinkerBuilding/bg.png);
     background: linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/images/townImages/tinkerBuilding/bg.png);
+}
+
+.buildingmonster .buildingInfoBackground {
+    background: -webkit-linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/images/townImages/monsterBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/images/townImages/monsterBuilding/bg.png);
 }
 
 .buildingInfoImage {

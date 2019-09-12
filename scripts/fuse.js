@@ -25,7 +25,7 @@ class fuse {
         this.fuseTime = Math.min(this.fuseTime+ms,this.getMaxFuse());
     }
     getMaxFuse() {
-        return this.recipe.craftTime*this.rarity;
+        return this.recipe.craftTime*MonsterHall.lineIncrease(this.recipe.type,0)*this.rarity;
     }
     timeRemaining() {
         return this.getMaxFuse() - this.fuseTime;
@@ -216,7 +216,7 @@ function refreshPossibleFuse() {
             const d3 = $("<div/>").addClass("possibleFusegroup");
             const d4 = $("<div/>").addClass("possibleFusegroupHeader").addClass("possibleFuseRarity"+f.rarity).html(`${rarities[f.rarity]} Fuse`)
             const d5 = $("<div/>").addClass("possibleFuse").html(f.name);
-            const d6 = $("<div/>").addClass("fuseTime tooltip").attr("data-tooltip","Fuse Time").html(`<i class="fas fa-clock"></i> ${msToTime(item.craftTime*f.rarity)}`);
+            const d6 = $("<div/>").addClass("fuseTime tooltip").attr("data-tooltip","Fuse Time").html(`<i class="fas fa-clock"></i> ${msToTime(f.getMaxFuse())}`);
             const d7 = $("<div/>").addClass("fuseStart").attr("uniqueid",f.uniqueID);
                 $("<div/>").addClass("fuseStartText").html("Fuse").appendTo(d7);
                 $("<div/>").addClass("fuseStartCost").html(`${ResourceManager.materialIcon("M001")}${formatToUnits(FusionManager.getFuseCost(f),2)}`).appendTo(d7);

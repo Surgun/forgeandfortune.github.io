@@ -399,10 +399,6 @@ p.hamster {
     cursor: pointer;
 }
 
-.dungeonGroup {
-    margin-bottom: 20px;
-}
-
 .dungeonSideBarMember {
     display: -webkit-box;
     display: -ms-flexbox;

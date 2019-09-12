@@ -5758,7 +5758,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     align-items: center;
 }
 
-.smithItem {
+.smithImproveContainer .smithItem {
     min-width: 200px;
 }
 

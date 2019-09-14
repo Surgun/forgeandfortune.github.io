@@ -62,7 +62,7 @@ class Item{
         if (this.mcost === null) return d;
         for (const [material, amt] of Object.entries(this.mcost)) {
             const mat = ResourceManager.idToMaterial(material);
-            const d1 = $("<div/>").addClass("indvCost matCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt));
+            const d1 = $("<div/>").addClass("indvCost matCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",`${mat.name} (You have: ${mat.amt})`).html(ResourceManager.formatCost(material,amt));
             d.append(d1);
         }
         return d;

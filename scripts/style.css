@@ -6216,6 +6216,43 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     color: var(--highlight);
 }
 
+.tinkerCommandHeader {
+    padding-bottom: 5px;
+    margin: 5px 0;
+    border-bottom: 2px solid var(--border-secondary);
+}
+
+.trinketCommandCost {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 5px 0;
+    color: var(--text-secondary);
+}
+
+.trinketCommandCost .indvCost {
+    color: var(--text-primary);
+}
+
+.trinketCommandReward {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--green-primary);
+}
+
+.tinkerCommandStat {
+    text-transform: uppercase;
+    background-color: var(--bg-secondary);
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+.commandRewardTrinket {
+    margin-left: 5px;
+}
+
 .tinkerCommandDesc {
     display: flex;
     justify-content: center;
@@ -7157,6 +7194,12 @@ footer a[href*="discord.gg"]:hover {
 .fortune_cost.tooltip:after {
     width: 120px;
     margin: 0 auto;
+}
+
+.trinketCommandCost .indvCost.tooltip:after {
+    width: 90px;
+    margin: 0 auto;
+    left: -100%;
 }
 
 /* Firefox-Specific Fixes */

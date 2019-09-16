@@ -20,7 +20,8 @@ class tinkerCommand {
         save.time = this.time;
         save.state = this.state;
         save.enabled = this.enabled;
-        save.reward = this.reward;
+        if (this.reward !== null) save.reward = this.reward.createSave();
+        else save.reward = null;
         save.acted = this.acted;
         save.min = this.min;
         save.act = this.act;
@@ -30,7 +31,10 @@ class tinkerCommand {
         this.time = save.time;
         this.state = save.state;
         this.enabled = save.enabled;
-        this.reward = save.reward;
+        if (save.reward !== null) {
+            this.reward = new idAmt(save.reward.id,save.reward.amt);
+            this.reward.loadSave(save.reward);
+        }
         this.acted = save.acted;
         this.min = save.min;
     }
@@ -85,7 +89,7 @@ class tinkerCommand {
     }
     feedCommon(container) {
         if (this.id !== "T001" || this.state === "running" || container.type === "Trinkets") return false;
-        this.reward = {id:container.deconType(),amt:container.deconAmt()};
+        this.reward = new idAmt("M802",container.deconAmt());
         this.state = "running";
         return true;
     }
@@ -158,7 +162,7 @@ function initiateTinkerBldg () {
 }
 
 function refreshTinkerMats() {
-    const mats = ["M700","M701","M702","M800","M801","M802"];
+    const mats = ["M700","M701","M702","M802"];
     $tinkerMaterials.empty();
     mats.forEach(mat => {
         $("<div/>").addClass("tinkerMat tooltip").attr("data-tooltip",ResourceManager.idToMaterial(mat).name).html(ResourceManager.sidebarMaterial(mat)).appendTo($tinkerMaterials);
@@ -174,12 +178,35 @@ function refreshTinkerCommands() {
             const enable = $("<div/>").attr("id","enable"+command.id).addClass("tinkerCommandEnable").append(toggle).appendTo(d1);
             if (!command.enabled) enable.removeClass("tinkerCommandEnable").addClass("tinkerCommandDisable");
             $("<div/>").addClass("tinkerCommandName").html(command.name).appendTo(d1);
-            $("<div/>").addClass("tinkerCommandDesc").html(command.description).appendTo(d1);
+            $("<div/>").addClass("tinkerCommandHeader").html("Command Start Cost").appendTo(d1);
+            const d2 = $("<div/>").addClass("trinketCommandCost").html("Any sold common item").appendTo(d1);
+            if (command.id !== "T001") {
+                d2.html(createTinkerMaterialDiv(command.mcost1,command.mcost1amt));
+                d2.append(createTinkerMaterialDiv(command.mcost2,command.mcost2amt));
+            }
+            $("<div/>").addClass("tinkerCommandHeader").html("Command Finish Reward").appendTo(d1);
+            const d3 = $("<div/>").addClass("trinketCommandReward").html(`Earn ${ResourceManager.idToMaterial("M802").img} instead of gold for sale`).appendTo(d1);
+            if (command.id !== "T001") {
+                d3.html(createTinkerStatDiv(command.stat));
+                d3.append(` Trinket`);
+            }
             $("<div/>").addClass("tinkerCommandStatus").html(command.status).appendTo(d1);
             if (command.id !== "T001") $("<div/>").addClass("tinkerCommandRange").html(`${miscIcons.star} ${command.min}-${TinkerManager.max()}`).appendTo(d1);
             createTinkerProgress(command).appendTo(d1);
     });
 };
+
+function createTinkerMaterialDiv(id,amt) {
+    const res = ResourceManager.idToMaterial(id);
+    return $("<div/>").addClass("indvCost tooltip").attr("data-tooltip",res.name).html(`${res.img}&nbsp;&nbsp;${amt}`);
+}
+
+function createTinkerStatDiv(stat) {
+    const d = $("<div/>").addClass("tinkerCommandStat");
+        $("<span/>").addClass("tinkerCommandStatIcon").html(miscIcons[stat]).appendTo(d);
+        $("<span/>").addClass("tinkerCommandStatName").html(stat).appendTo(d);
+    return d;
+}
 
 function refreshTinkerSlotProgress() {
     TinkerManager.commands.forEach(command => {
@@ -241,3 +268,19 @@ $(document).on('click', '.tinkerCommand', (e) => {
     if (command.enabled) $("#enable"+commandID).addClass("tinkerCommandEnable").removeClass("tinkerCommandDisable");
     else $("#enable"+commandID).removeClass("tinkerCommandEnable").addClass("tinkerCommandDisable");
 });
+
+class idAmt {
+    constructor(id,amt) {
+        this.id = id;
+        this.amt = amt;
+    }
+    createSave() {
+        const save = {};
+        save.id = this.id;
+        save.amt = this.amt;
+        return save;
+    }
+    loadSave(save) {
+        return;
+    }
+}

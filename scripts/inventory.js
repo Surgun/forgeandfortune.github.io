@@ -314,7 +314,7 @@ const Inventory = {
     },
     sellCommons() {
         this.inv.forEach((ic,indx) => {
-            if (ic !== null && ic.rarity === 0) this.sellInventoryIndex(indx);
+            if (ic !== null && ic.rarity === 0 && ic.item.recipeType === "normal") this.sellInventoryIndex(indx);
         })
     },
     getFusePossibilities() {

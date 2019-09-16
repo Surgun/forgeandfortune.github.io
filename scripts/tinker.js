@@ -185,10 +185,11 @@ function refreshTinkerCommands() {
                 d2.append(createTinkerMaterialDiv(command.mcost2,command.mcost2amt));
             }
             $("<div/>").addClass("tinkerCommandHeader").html("Command Finish Reward").appendTo(d1);
-            const d3 = $("<div/>").addClass("trinketCommandReward").html(`Earn ${ResourceManager.idToMaterial("M802").img} instead of gold for sale`).appendTo(d1);
+            const d3 = $("<div/>").addClass("trinketCommandReward").appendTo(d1);
+                $("<div/>").addClass("commandRewardContent").html(`Earn ${ResourceManager.idToMaterial("M802").img} instead of Gold for sale.`).appendTo(d3);
             if (command.id !== "T001") {
                 d3.html(createTinkerStatDiv(command.stat));
-                d3.append(` Trinket`);
+                $("<div/>").addClass("commandRewardTrinket").html(`Trinket`).appendTo(d3);
             }
             $("<div/>").addClass("tinkerCommandStatus").html(command.status).appendTo(d1);
             if (command.id !== "T001") $("<div/>").addClass("tinkerCommandRange").html(`${miscIcons.star} ${command.min}-${TinkerManager.max()}`).appendTo(d1);

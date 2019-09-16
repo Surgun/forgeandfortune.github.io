@@ -45,7 +45,7 @@ function forceSave() {
 
 function createSave() {
     const saveFile = {}
-    saveFile["v"] = "0322"
+    saveFile["v"] = "0329"
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
     saveFile["e"] = EventManager.createSave();
@@ -614,6 +614,14 @@ function saveUpdate(loadGame) {
         if (loadGame["al"].purchased.includes("AL4106")) loadGame["r"].find(r=>r.id === "R99610").owned = true;
         if (loadGame["al"].purchased.includes("AL41041")) loadGame["fo"].lvl += 1;
         if (loadGame["al"].purchased.includes("AL41042")) loadGame["fo"].lvl += 1;
+    }
+    if (loadGame.v === "0322") {
+        loadGame.v = "0329";
+        const mat1 = loadGame["rs"].find(m=>m.id === "M800");
+        const mat2 = loadGame["rs"].find(m=>m.id === "M801");
+        const mat3 = loadGame["rs"].find(m=>m.id === "M802");
+        mat3.amt += mat1.amt + mat2.amt;
+        mat3.amt = Math.min(1000,mat3.amt);
     }
     return loadGame;
 }

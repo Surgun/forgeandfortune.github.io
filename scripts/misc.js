@@ -152,6 +152,16 @@ function inventorySort(a, b) {
     const bi = b.item;
     const aj = ItemType.indexOf(ai.type);
     const bj = ItemType.indexOf(bi.type);
+    if (ai.recipeType === "normal" && bi.recipeType !== "normal") return -1;
+    if (ai.recipeType !== "normal" && bi.recipeType === "normal") return 1;
+    if (ai.recipeType !== "normal" && bi.recipeType !== "normal") {
+        if (ai.name !== bi.name) {
+            if (ai.id > bi.id) return -1;
+            return 1;
+        }
+        if (a.scale > b.scale) return -1;
+        return 1;
+    }
     if (ai.lvl > bi.lvl) return -1;
     if (ai.lvl < bi.lvl) return 1;
     if (aj > bj) return -1;

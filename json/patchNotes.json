@@ -178,5 +178,11 @@
     "version": "V0.3.2.8",
     "date": "September 8th, 2019",
     "body": "<p>Fixed our longest standing bug of building recipe cards magically disappearing until reload. Thanks snewt for the steps to reproduce!</p>"
+  },
+  {
+    "patchCount": 31,
+    "version": "v0.3.2.9",
+    "date": "September 16th, 2019",
+    "body": "<ul><li>Trinkets no longer disappear from \"sell all commons\" in inventory</li><li>Trinkets are now sorted with the inventory sort function</li><li>Tinker Hut received a facelift in the name of clarity - ALL items now are converted into the same material, and the command cards have been updated to be more clear as to what their costs and rewards are. Your deconstruction materials have been adjusted for this change.</li></ul>"
   }
 ]

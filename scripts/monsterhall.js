@@ -180,7 +180,7 @@ function refreshHallMonsterInspect(monster) {
     $monsterMobsInspect.empty();
     const d = $("<div/>").addClass("monsterInspectContainer");
     const d1 = $("<div/>").addClass("monsterActionsContainer");
-    $("<div/>").addClass("mhiBack").attr("id","mhiBackButton").html("Back to Beastiary").appendTo(d1);
+    $("<div/>").addClass("monsterActionsButton").attr("id","mhiBackButton").html(`<i class="fas fa-arrow-left"></i> Back to Beastiary`).appendTo(d1);
     const d2 = $("<div/>").addClass("monsterDetails");
         const d2a = $("<div/>").addClass("monsterInfoDetails");
         const floorRange = FloorManager.floorRangeByMob(monster.id);

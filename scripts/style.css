@@ -6390,6 +6390,11 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin: 10px 0;
 }
 
+.monsterFiltersContainer .selection-container {
+    -webkit-animation: 0.2s scale-in forwards;
+    animation: 0.2s scale-in forwards;
+}
+
 .monsterDivMobs {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));

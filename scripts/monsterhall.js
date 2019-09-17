@@ -111,16 +111,18 @@ class idAmt {
     }
 }
 
-function initiateMonsterBldg() {
-    $monsterBuilding.show();
-    $monsterDiv.hide().removeClass("selected"); //hide all the tabs besides monster mobs
-    $monsterMobs.show().addClass("selected");
-    refreshHallMonsterList();
-}
-
 const $monsterNavMobs = $("#monsterNavMobs");
 const $monsterNavRewards = $("#monsterNavRewards");
 const $monsterNavButton  = $(".monsterNavButton");
+
+function initiateMonsterBldg() {
+    $monsterBuilding.show();
+    $monsterDiv.hide().removeClass("selected"); //hide all the tabs besides monster mobs
+    $monsterNavButton.removeClass("selected");
+    $monsterNavMobs.addClass("selected");
+    $monsterMobs.show().addClass("selected");
+    refreshHallMonsterList();
+}
 
 $(document).on('click', "#monsterNavRewards", (e) => {
     console.log('monster rewards');
@@ -128,7 +130,7 @@ $(document).on('click', "#monsterNavRewards", (e) => {
     $monsterNavButton.removeClass("selected");
     $monsterNavRewards.addClass("selected");
     $monsterDiv.hide().removeClass("selected");
-    $monsterRewards.show().addClass("selecteD");
+    $monsterRewards.show().addClass("selected");
 });
 
 $(document).on('click', "#monsterNavMobs", (e) => {
@@ -137,7 +139,7 @@ $(document).on('click', "#monsterNavMobs", (e) => {
     $monsterNavButton.removeClass("selected");
     $monsterNavMobs.addClass("selected");
     $monsterDiv.hide().removeClass("selected");
-    $monsterMobs.show().addClass("selecteD");
+    $monsterMobs.show().addClass("selected");
 });
 
 function initiateMonsterHall() {
@@ -244,12 +246,19 @@ function refreshMonsterRewardLines() {
     $mRewardLines.empty();
     ItemType.forEach(type => {
         const d = $("<div/>").addClass("lineRewardContainer").appendTo($mRewardLines);
-        $("<div/>").addClass("lineRewardLevel").html(`Lvl ${MonsterHall.lineUpgradeCount(type)}`).appendTo(d);
+        $("<div/>").addClass("lineRewardLevel").html(`Level ${MonsterHall.lineUpgradeCount(type)}`).appendTo(d);
         const d1 = $("<div/>").addClass("lineRewardTitle").appendTo(d);
             $("<div/>").addClass("lineRewardTitleImage").html(`<img src='./images/recipeFilter/${type}32.png'>`).appendTo(d1);
-            $("<div/>").addClass("lineRewardTitleName").html(type);
-        $("<div/>").addClass("lineRewardCurrent").html(`Craft Speed: ${(100*MonsterHall.lineIncrease(type,0)).toFixed(1)}% ${miscIcons.arrow} ${(100*MonsterHall.lineIncrease(type,1)).toFixed(1)}%`).appendTo(d);
-        $("<div/>").addClass("lineRewardPay").attr("id","monsterPay").data("line",type).html(`Increase - 1 ${miscIcons.trophy}`).appendTo(d);
+            $("<div/>").addClass("lineRewardTitleName").html(type).appendTo(d1);
+        const d2 = $("<div/>").addClass("lineRewardCurrent").appendTo(d);
+            $("<div/>").addClass("lineRewardCurrentTitle").html(`Craft Speed`).appendTo(d2);
+            const d2a = $("<div/>").addClass("lineRewardCurrentChange").appendTo(d2);
+                $("<div/>").addClass("lineRewardCurrentChangeBefore").html(`${(100*MonsterHall.lineIncrease(type,0)).toFixed(1)}%`).appendTo(d2a);
+                $("<div/>").addClass("lineRewardCurrentChangeMedian").html(`${miscIcons.arrow}`).appendTo(d2a);
+                $("<div/>").addClass("lineRewardCurrentChangeAfter").html(`${(100*MonsterHall.lineIncrease(type,1)).toFixed(1)}%`).appendTo(d2a);
+        const d3 = $("<div/>").addClass("lineRewardPay").attr("id","monsterPay").data("line",type).appendTo(d);
+            $("<div/>").addClass("lineRewardPayText").html(`Increase`).appendTo(d3);
+            $("<div/>").addClass("lineRewardPayCost tooltip").attr("data-tooltip", "Monster Trophy").html(`1 ${miscIcons.trophy}`).appendTo(d3);
     });
 }
 

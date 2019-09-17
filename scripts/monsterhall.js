@@ -265,10 +265,10 @@ function refreshMonsterRewardLines() {
         const d2 = $("<div/>").addClass("lineRewardCurrent").appendTo(d);
             $("<div/>").addClass("lineRewardCurrentTitle").html(`Craft Speed`).appendTo(d2);
             const d2a = $("<div/>").addClass("lineRewardCurrentChange").appendTo(d2);
-                $("<div/>").addClass("lineRewardCurrentChangeBefore").html(`-${(100-100*MonsterHall.lineIncrease(type,0)).toFixed(1)}%`).appendTo(d2a);
+                $("<div/>").addClass("lineRewardCurrentChangeBefore").html(`+${(100-100*MonsterHall.lineIncrease(type,0)).toFixed(1)}%`).appendTo(d2a);
                 if (!MonsterHall.maxUpgrade(type)) {
                     $("<div/>").addClass("lineRewardCurrentChangeMedian").html(`${miscIcons.arrow}`).appendTo(d2a);
-                    $("<div/>").addClass("lineRewardCurrentChangeAfter").html(`-${(100-100*MonsterHall.lineIncrease(type,1)).toFixed(1)}%`).appendTo(d2a);
+                    $("<div/>").addClass("lineRewardCurrentChangeAfter").html(`+${(100-100*MonsterHall.lineIncrease(type,1)).toFixed(1)}%`).appendTo(d2a);
                 }
         const d3 = $("<div/>").addClass("lineRewardPay").attr("id","monsterPay").data("line",type).appendTo(d);
             if (MonsterHall.maxUpgrade(type)) {

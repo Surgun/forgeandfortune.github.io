@@ -6515,6 +6515,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     border-radius: 5px;
 }
 
+.mhiBlockImage > img {
+    max-width: 64px;
+}
+
 .mhiBlock {
     margin-bottom: 10px;
 }
@@ -6850,7 +6854,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .dreNotoriety {
-    padding: 5px;
+    padding: 5px 0;
     width: 100%;
     max-width: 600px;
     margin: 20px 0 0 0;

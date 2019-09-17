@@ -270,19 +270,3 @@ $(document).on('click', '.tinkerCommand', (e) => {
     if (command.enabled) $("#enable"+commandID).addClass("tinkerCommandEnable").removeClass("tinkerCommandDisable");
     else $("#enable"+commandID).removeClass("tinkerCommandEnable").addClass("tinkerCommandDisable");
 });
-
-class idAmt {
-    constructor(id,amt) {
-        this.id = id;
-        this.amt = amt;
-    }
-    createSave() {
-        const save = {};
-        save.id = this.id;
-        save.amt = this.amt;
-        return save;
-    }
-    loadSave(save) {
-        return;
-    }
-}

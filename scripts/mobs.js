@@ -164,7 +164,6 @@ class Mob {
         return this.apAdd;
     }
     rollDrops() {
-        console.log(this.drops);
         const mobDrops = [];
         if (this.drops === null || this.gotloot) {
             this.gotloot = true;
@@ -175,7 +174,6 @@ class Mob {
             if (success > roll) mobDrops.push(material);
         }
         this.gotloot = true;
-        console.log(mobDrops);
         return mobDrops;
     }
     looted() {

@@ -168,7 +168,6 @@ $(document).on('click', ".buildingName", (e) => {
 function buildScreen(type) {
     $buildingRecipes.empty();
     TownManager.lastType = type;
-    console.log(type);
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
         const recipeCardInfo = $('<div/>').addClass('recipeCardInfo').append(recipeCardFront(recipe),recipeCardBack(recipe))
         const recipeCardContainer = $('<div/>').addClass('recipeCardContainer buildingCard').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardInfo);

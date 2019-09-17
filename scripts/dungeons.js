@@ -337,13 +337,13 @@ const DungeonManager = {
         dungeon.resetDungeon();
         PartyCreator.clearMembers();
         PartyCreator.startingTeam(dungeon.lastParty);
-        this.createDungeon();
+        this.createDungeon(true);
     },
-    createDungeon() {
+    createDungeon(floorSkip) {
         const party = PartyCreator.lockParty();
         const dungeon = this.dungeonByID(this.dungeonCreatingID);
         dungeon.beatTotal = 0;
-        if (dungeon.type !== "boss") dungeon.floorCount = MonsterHall.floorSkip();
+        if (dungeon.type !== "boss" && floorSkip) dungeon.floorCount = MonsterHall.floorSkip();
         if (devtools.dungeonStart !== undefined) dungeon.floorCount = devtools.dungeonStart;
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = this.dungeonCreatingID;

@@ -142,6 +142,11 @@ function refreshHeroSelect() {
     const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("Launch Adventure");
     if (PartyCreator.heroes.length === 0) dbutton.addClass('dungeonStartNotAvailable')
     $dtsTop.append(dbutton);
+    if (dungeon.type === "regular") {
+        const label = $("<label/>").attr("for","partySkip").addClass("selection-container party-selection-container").html("Skip Stages").appendTo($dtsTop);
+        $("<input/>").attr({"type":"checkbox","id":"partySkip"}).addClass("partySkipCheck").prop("defaultChecked","checked").appendTo(label);
+        $("<span/>").addClass("selection").appendTo(label);
+    }
     $dtsBottom.empty();
     //available heroes
     const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Your Available Heroes</h3>");
@@ -198,8 +203,9 @@ $(document).on('click', "div.dungeonAvailableCardClick", (e) => {
 //locking in a team to start a dungeon
 $(document).on('click', "#dungeonTeamButton", (e) => {
     e.preventDefault();
+    const skipStage = $("#partySkip").is(":checked");
     if (PartyCreator.validTeam()) {
-        DungeonManager.createDungeon();
+        DungeonManager.createDungeon(skipStage);
         initializeSideBarDungeon();
         $dungeonTeamSelect.hide();
         $dungeonRun.show();

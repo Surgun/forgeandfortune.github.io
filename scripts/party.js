@@ -142,7 +142,7 @@ function refreshHeroSelect() {
     const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("Launch Adventure");
     if (PartyCreator.heroes.length === 0) dbutton.addClass('dungeonStartNotAvailable')
     $dtsTop.append(dbutton);
-    if (dungeon.type === "regular") {
+    if (dungeon.type === "regular" && MonsterHall.lvl >= 3) {
         const label = $("<label/>").attr("for","partySkip").addClass("selection-container party-selection-container").html("Skip Stages").appendTo($dtsTop);
         $("<input/>").attr({"type":"checkbox","id":"partySkip"}).addClass("partySkipCheck").prop("defaultChecked","checked").appendTo(label);
         $("<span/>").addClass("selection").appendTo(label);

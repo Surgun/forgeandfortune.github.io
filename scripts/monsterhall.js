@@ -244,10 +244,17 @@ const $mRWM = $("#mRWM");
 const $mRWS = $("#mRWS");
 const $mRTmax = $("#mRTmax");
 const $mRTavail = $("#mRTavail");
+const $monsterRewardWarpContainer = $("#monsterRewardWarpContainer");
 
 function refreshMonsterReward() {
-    $mRWM.html(recipeList.masteryCount());
-    $mRWS.html(MonsterHall.floorSkip());
+    if (MonsterHall.lvl >= 3) {
+        $monsterRewardWarpContainer.show();
+        $mRWM.html(recipeList.masteryCount());
+        $mRWS.html(MonsterHall.floorSkip());
+    }
+    else {
+        $monsterRewardWarpContainer.hide();
+    }
     $mRTmax.html(MonsterHall.totalKills());
     $mRTavail.html(MonsterHall.lineUpgradesAvailable());
 }

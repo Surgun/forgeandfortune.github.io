@@ -139,6 +139,11 @@ const FusionManager = {
     addLevel() {
         this.lvl += 1;
         refreshFuseSlots();
+    },
+    getMaxFuse(uniqueIDProperties) {
+        //this takes a uniqueIDProperties return (which is only from the fusion creation screen) to give fuse time
+        const recipe = recipeList.idToItem(uniqueIDProperties.id);
+        return recipe.craftTime*MonsterHall.lineIncrease(recipe.type,0)*uniqueIDProperties.rarity;
     }
 }
 
@@ -212,11 +217,10 @@ function refreshPossibleFuse() {
     if(Inventory.getFusePossibilities().length === 0) d2.addClass("fuseInvBlank").html("No Items Available to Fuse");
     if(Inventory.getFusePossibilities().length > 0) {
         Inventory.getFusePossibilities().forEach(f => {
-            const item = recipeList.idToItem(f.id);
             const d3 = $("<div/>").addClass("possibleFusegroup");
             const d4 = $("<div/>").addClass("possibleFusegroupHeader").addClass("possibleFuseRarity"+f.rarity).html(`${rarities[f.rarity]} Fuse`)
             const d5 = $("<div/>").addClass("possibleFuse").html(f.name);
-            const d6 = $("<div/>").addClass("fuseTime tooltip").attr("data-tooltip","Fuse Time").html(`<i class="fas fa-clock"></i> ${msToTime(f.getMaxFuse())}`);
+            const d6 = $("<div/>").addClass("fuseTime tooltip").attr("data-tooltip","Fuse Time").html(`<i class="fas fa-clock"></i> ${msToTime(FusionManager.getMaxFuse(f))}`);
             const d7 = $("<div/>").addClass("fuseStart").attr("uniqueid",f.uniqueID);
                 $("<div/>").addClass("fuseStartText").html("Fuse").appendTo(d7);
                 $("<div/>").addClass("fuseStartCost").html(`${ResourceManager.materialIcon("M001")}${formatToUnits(FusionManager.getFuseCost(f),2)}`).appendTo(d7);

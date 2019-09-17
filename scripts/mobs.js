@@ -26,6 +26,7 @@ const MobManager = {
         const floor = FloorManager.getFloor(dungeonid,floorNum);
         floor.mobs.forEach(mob => {
             mobFloor.push(this.generateDungeonMob(mob,floorNum,bossMultiplier));
+            MonsterHall.findMonster(mob);
         })
         return mobFloor;
     },

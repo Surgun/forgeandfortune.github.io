@@ -62,6 +62,15 @@ const MonsterHall = {
         }
         else killCount.amt += 1;
     },
+    findMonster(mobID) {
+        if (this.kills.find(m=>m.id === mobID)) return;
+        const seen = new idAmt(mobID,0);
+        this.kills.push(seen);
+        refreshHallMonsterList();
+    },
+    haveSeen(mobID) {
+        return this.kills.find(m=>m.id === mobID) !== undefined;
+    },
     addLineUpgrade(line) {
         let upgrade = this.lineUpgrades.find(m=>m.id === line);
         if (upgrade === undefined) {
@@ -69,11 +78,13 @@ const MonsterHall = {
             this.lineUpgrades.push(upgrade);
         }
         else upgrade.amt += 1;
-        console.log(line,upgrade);
     },
     lineUpgradeCount(line) {
         const upgrade = this.lineUpgrades.find(u=>u.id === line);
         return (upgrade === undefined) ? 0 : upgrade.amt;
+    },
+    maxUpgrade(line) {
+        return this.lineUpgradeCount(line) >= 10;
     },
     floorSkip() {
         if (this.lvl < 3) return 0;
@@ -83,9 +94,9 @@ const MonsterHall = {
         return Math.pow(0.95,this.lineUpgradeCount(type)+additional);
     },
     buyLine(type) {
+        if (this.maxUpgrade(type)) return;
         if (ResourceManager.materialAvailable("M002") <= 0) return Notifications.cantAffordLineUpgrade();
         ResourceManager.addMaterial("M002",-1);
-        console.log(type);
         this.addLineUpgrade(type);
         refreshMonsterRewardLines();
         refreshCraftTimes();
@@ -125,7 +136,6 @@ function initiateMonsterBldg() {
 }
 
 $(document).on('click', "#monsterNavRewards", (e) => {
-    console.log('monster rewards');
     e.preventDefault();
     $monsterNavButton.removeClass("selected");
     $monsterNavRewards.addClass("selected");
@@ -134,7 +144,6 @@ $(document).on('click', "#monsterNavRewards", (e) => {
 });
 
 $(document).on('click', "#monsterNavMobs", (e) => {
-    console.log('monster nav');
     e.preventDefault();
     $monsterNavButton.removeClass("selected");
     $monsterNavMobs.addClass("selected");
@@ -161,17 +170,20 @@ function createMonsterHallCard(monster) {
 const $monsterHallFilterD001 = $("#monsterHallFilterD001");
 const $monsterHallFilterD002 = $("#monsterHallFilterD002");
 const $monsterHallFilterD003 = $("#monsterHallFilterD003");
-
+const $monsterHallFilterBosses = $("#monsterHallFilterBosses")
 
 function refreshHallMonsterList() {
     const dungeons = [];
     if ($monsterHallFilterD001.is(':checked')) dungeons.push("D001");
     if ($monsterHallFilterD002.is(':checked')) dungeons.push("D002");
     if ($monsterHallFilterD003.is(':checked')) dungeons.push("D003");
+    const showBoss = ($monsterHallFilterBosses.is(':checked')) ? true : false;
     const shownMobs = FloorManager.mobsByDungeons(dungeons);
     monsterHallMonserDivs.forEach(monsterDiv => {
         const monsterID = monsterDiv.data("monsterID");
-        if (shownMobs.includes(monsterID)) monsterDiv.show();
+        const monster = MobManager.idToMob(monsterID);
+        if (shownMobs.includes(monsterID) && MonsterHall.haveSeen(monsterID)) monsterDiv.show();
+        else if (showBoss && monster.event === "boss" && MonsterHall.haveSeen(monsterID)) monsterDiv.show();
         else monsterDiv.hide();
     });
 }
@@ -189,7 +201,7 @@ function refreshHallMonsterInspect(monster) {
         $("<div/>").addClass("mhiBlockImage").html(monster.image).appendTo(d2a);
         const d2b = $("<div/>").addClass("monsterDungeonDetails");
         mhiBlock("Dungeon",dungeonName).appendTo(d2b);
-        mhiBlock("Floors",`${floorRange.min} - ${floorRange.max}`).appendTo(d2b);
+        if (monster.event !== "boss") mhiBlock("Floors",`${floorRange.min} - ${floorRange.max}`).appendTo(d2b);
         mhiBlock("Kills",`${MonsterHall.monsterKillCount(monster.id)}`).appendTo(d2b);
         d2.append(d2a,d2b);
     const d3 = $("<div/>").addClass("mhiStats");
@@ -254,11 +266,18 @@ function refreshMonsterRewardLines() {
             $("<div/>").addClass("lineRewardCurrentTitle").html(`Craft Speed`).appendTo(d2);
             const d2a = $("<div/>").addClass("lineRewardCurrentChange").appendTo(d2);
                 $("<div/>").addClass("lineRewardCurrentChangeBefore").html(`-${(100-100*MonsterHall.lineIncrease(type,0)).toFixed(1)}%`).appendTo(d2a);
-                $("<div/>").addClass("lineRewardCurrentChangeMedian").html(`${miscIcons.arrow}`).appendTo(d2a);
-                $("<div/>").addClass("lineRewardCurrentChangeAfter").html(`-${(100-100*MonsterHall.lineIncrease(type,1)).toFixed(1)}%`).appendTo(d2a);
+                if (!MonsterHall.maxUpgrade(type)) {
+                    $("<div/>").addClass("lineRewardCurrentChangeMedian").html(`${miscIcons.arrow}`).appendTo(d2a);
+                    $("<div/>").addClass("lineRewardCurrentChangeAfter").html(`-${(100-100*MonsterHall.lineIncrease(type,1)).toFixed(1)}%`).appendTo(d2a);
+                }
         const d3 = $("<div/>").addClass("lineRewardPay").attr("id","monsterPay").data("line",type).appendTo(d);
-            $("<div/>").addClass("lineRewardPayText").html(`Increase`).appendTo(d3);
-            $("<div/>").addClass("lineRewardPayCost tooltip").attr("data-tooltip", "Monster Trophy").html(`1 ${miscIcons.trophy}`).appendTo(d3);
+            if (MonsterHall.maxUpgrade(type)) {
+                $("<div/>").addClass("lineRewardPayText").html(`Max Level`).appendTo(d3);
+            }
+            else {
+                $("<div/>").addClass("lineRewardPayText").html(`Increase`).appendTo(d3);
+                $("<div/>").addClass("lineRewardPayCost tooltip").attr("data-tooltip", "Monster Trophy").html(`1 ${miscIcons.trophy}`).appendTo(d3);
+            }
     });
 }
 

@@ -248,7 +248,7 @@ function refreshMonsterRewardLines() {
         const d1 = $("<div/>").addClass("lineRewardTitle").appendTo(d);
             $("<div/>").addClass("lineRewardTitleImage").html(`<img src='./images/recipeFilter/${type}32.png'>`).appendTo(d1);
             $("<div/>").addClass("lineRewardTitleName").html(type);
-        $("<div/>").addClass("lineRewardCurrent").html(`Craft Speed: ${(100*MonsterHall.lineIncrease(type,0)).toFixed(1)}% ${miscIcons.arrow} ${(100*MonsterHall.lineIncrease(type,1)).toFixed(1)}%`).appendTo(d);
+        $("<div/>").addClass("lineRewardCurrent").html(`Craft Speed: -${(100-100*MonsterHall.lineIncrease(type,0)).toFixed(1)}% ${miscIcons.arrow} -${(100-100*MonsterHall.lineIncrease(type,1)).toFixed(1)}%`).appendTo(d);
         $("<div/>").addClass("lineRewardPay").attr("id","monsterPay").data("line",type).html(`Increase - 1 ${miscIcons.trophy}`).appendTo(d);
     });
 }

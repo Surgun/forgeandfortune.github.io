@@ -18,7 +18,6 @@ function afterLoad() {
         achievementStats.startTime = Date.now();
         EventManager.addEvent("E001");
         GuildManager.guilds.forEach(g=>g.generateNewOrder());
-        TownManager.buildingPerk("monster");
     }
     refreshMasteryBar()
     refreshInventory();

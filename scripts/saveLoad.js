@@ -681,7 +681,7 @@ function saveUpdate(loadGame) {
         },
         {
             "id" : "TB007",
-            "status" : BuildingState.unseen,
+            "status" : BuildingState.hidden,
         }];
     }
     return loadGame;

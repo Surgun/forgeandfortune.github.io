@@ -172,5 +172,44 @@
       "</p><p>Keep crafting and overdrafting,</p><p>ABQU</p>"
     ],
     "type": "letter"
+  },
+  {
+    "id": "E019",
+    "title": "A Mysterious Letter",
+    "author": "Abqu",
+    "message": [
+      "<p>Bonjour, mon petit fromage",
+      "</p><p>You've found yet another building blueprint.&nbsp; Let's see what it says here....<br /><br /><em>STEAM PIPE TRUNK DISTRIBUTION VENUE</em></p><p>That seems a bit... wordy?&nbsp; We're gonna have to rename that sucker.&nbsp;&nbsp;</p><p>Let's head to the town and see what we have in store.</p><p>Looking forward to what's next,</p><p>ABQU</p>"
+    ],
+    "type": "letter"
+  },
+  {
+    "id": "E020",
+    "title": "Pledge Drive",
+    "author": "M.E.T.A.",
+    "message": "<p>To Whom It May Concern:</p><p>I am writing to inform you of an extraordinary organization.&nbsp; Our sole mission is to provide better adventuring conditions for the denizens of our great land.&nbsp; &nbsp;</p><p>We call ourselves, \"Monsters for the Equitable Treatment of Adventurers\".&nbsp;</p><p>We formally invite you to join our organization.&nbsp; With your lunarly donation, we believe we can truly bring justice for all.</p><p>Thank you.</p><p>&nbsp;</p><p>Hank Porter<br />M.E.T.A. Community Outreach</p>",
+    "type": "letter"
+  },
+  {
+    "id": "E021",
+    "title": "Pledge Drive",
+    "author": "M.E.T.A.",
+    "message": [
+      "<p>Hello",
+      "&nbsp;</p><p>It's pledge drive again here at headquarters, and thanks to your previous interest in our organization, I wanted to give you the chance to give us more money",
+      "&nbsp;&nbsp;</p><p>By joining our prestigious Platinum Club donation tier, our organization is ready to give you special access to our exclusive lounge, where you can join likeminded philantropists, and tell tall tales about your continued efforts to improve adventuring conditions.</p><p>And as a special bonus, we'll throw in a fuzzy Revere keychain",
+      "</p><p>&nbsp;</p><p>Hank Porter<br />M.E.T.A. Community Outreach</p>"
+    ],
+    "type": "letter"
+  },
+  {
+    "id": "E022",
+    "title": "Pledge Drive",
+    "author": "M.E.T.A.",
+    "message": [
+      "<p style= text-align: center; ><em>♫ ♪ ♫<br />In the Arms o</em><em>f an Adventurer<br />Quest away from Here</em></p><p style=\"text-align: center;\"><em>From this dark, cold creepy cavern<br />and the Endless Floors that They fear<br />♫ ♪ ♫<br /><br /><br /></em></p><p style=\"text-align: left;\">Only you can help the struggling adventurers of our great land.&nbsp; By joining the Diamond Club Level of our organization, Monsters for the Equitable Treatment of Adventurers, you will prevent so much suffering and time wasted.</p><p style=\"text-align: left;\">If you upgrade your membership today, you'll gain the rank of master on our council.&nbsp; And if you call within the next thirty minutes, you'll get this decorative Grim throw pillow.</p><p style=\"text-align: left;\">Operators are standing by -- call now",
+      "</p><p style= text-align: left; >&nbsp;</p><p style=\"text-align: left;\">&nbsp;</p><p style=\"text-align: left;\">Hank Porter<br />M.E.T.A. Director Of Community Relations</p>"
+    ],
+    "type": "letter"
   }
 ]

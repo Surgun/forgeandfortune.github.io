@@ -288,7 +288,8 @@ const DungeonManager = {
         this.dungeonPaid.push(id);
     },
     bossDungeonCanSee(id) {
-        return this.dungeonPaid.includes(id);
+        if (MonsterHall.bossRefight()) return this.dungeonPaid.includes(id);
+        return this.dungeonPaid.includes(id) && !DungeonManager.bossCleared(id);
     },
     createSave() {
         const save = {};

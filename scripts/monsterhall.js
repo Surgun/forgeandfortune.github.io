@@ -49,7 +49,8 @@ const MonsterHall = {
         return (killCount === undefined) ? 0 : killCount.amt;
     },
     totalKills() {
-        return this.kills.reduce((a,b) => a+b.amt,0);
+        const bossKills = this.kills.filter(m=>MobManager.idToMob(m.id).event === "boss");
+        return bossKills.reduce((a,b) => a+b.amt,0);
     },
     lineUpgradesAvailable() {
         return ResourceManager.materialAvailable("M002");

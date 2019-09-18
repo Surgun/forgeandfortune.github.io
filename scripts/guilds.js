@@ -469,6 +469,7 @@ const ActionLeague = {
         return miscLoadedValues["notoCap"][DungeonManager.bossesBeat.length];
     },
     buyPerk(id) {
+        console.log(id);
         const perk = this.idToPerk(id);
         if (ResourceManager.materialAvailable("M001") < perk.goldCost) {
             Notifications.alRewardCost();
@@ -518,9 +519,9 @@ class alRewards {
         if (this.type === "desynth" && this.subtype === "open") TownManager.buildingPerk("desynth");
         if (this.type === "bank" && this.subtype === "open") TownManager.buildingPerk("bank");
         if (this.type === "bank" && this.subtype === "level") BankManager.addLevel();
-        if (this.type === "cauldron" && this.subtype === "open") TownManager.buildingPerk("fuse");
+        if (this.type === "cauldron" && this.subtype === "open") TownManager.buildingPerk("fusion");
         if (this.type === "cauldron" && this.subtype === "level") FusionManager.addLevel();
-        if (this.type === "forge" && this.subtype === "open") TownManager.buildingPerk("smith");
+        if (this.type === "forge" && this.subtype === "open") TownManager.buildingPerk("forge");
         if (this.type === "forge" && this.subtype === "level") bloopSmith.addLevel();
         if (this.type === "fortune" && this.subtype === "open") TownManager.buildingPerk("fortune");
         if (this.type === "fortune" && this.subtype === "level") FortuneManager.addLevel();

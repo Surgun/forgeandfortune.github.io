@@ -7407,18 +7407,18 @@
   {
     "id": "R99710",
     "name": "Monster Hall",
-    "description": "Beat up some monsters",
+    "description": "A catalog of monsters you've seen",
     "lvl": 1,
     "value": 0,
-    "craftTime": 2700000,
+    "craftTime": 600000,
     "type": "monster",
     "gcost": [
-      "G002"
+      "G001"
     ],
     "mcost": {
-      "M105": 40,
-      "M205": 40,
-      "M305": 40
+      "M101": 20,
+      "M201": 20,
+      "M301": 20
     },
     "smithCost": null,
     "pow": 0,

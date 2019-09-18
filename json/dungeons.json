@@ -2,7 +2,12 @@
   {
     "id": "D001",
     "name": "Groovy Grove",
-    "!bannedHero": "H101!H002!H202!H104",
+    "bannedHero": [
+      "H101",
+      "H002",
+      "H202",
+      "H104"
+    ],
     "seed": 784,
     "type": "regular",
     "eventLetter": "E014"
@@ -10,7 +15,12 @@
   {
     "id": "D002",
     "name": "Spooky Spot",
-    "!bannedHero": "H001!H201!H103!H004",
+    "bannedHero": [
+      "H001",
+      "H201",
+      "H103",
+      "H004"
+    ],
     "seed": 7576,
     "type": "regular",
     "eventLetter": "E015"
@@ -18,7 +28,12 @@
   {
     "id": "D003",
     "name": "Creepy Crag",
-    "!bannedHero": "H203!H102!H003!H204",
+    "bannedHero": [
+      "H203",
+      "H102",
+      "H003",
+      "H204"
+    ],
     "seed": 7236,
     "type": "regular",
     "eventLetter": "E016"
@@ -26,7 +41,17 @@
   {
     "id": "D010",
     "name": "Loathing Oak",
-    "!bannedHero": "H002!H003!H004!H102!H103!H104!H201!H202!H204",
+    "bannedHero": [
+      "H002",
+      "H003",
+      "H004",
+      "H102",
+      "H103",
+      "H104",
+      "H201",
+      "H202",
+      "H204"
+    ],
     "seed": 0,
     "type": "boss",
     "eventLetter": "E013"
@@ -34,7 +59,14 @@
   {
     "id": "D011",
     "name": "Lost Phoenix",
-    "!bannedHero": "H003!H004!H103!H104!H202!H204",
+    "bannedHero": [
+      "H003",
+      "H004",
+      "H103",
+      "H104",
+      "H202",
+      "H204"
+    ],
     "seed": 0,
     "type": "boss",
     "eventLetter": "E013"
@@ -42,7 +74,14 @@
   {
     "id": "D012",
     "name": "Blue Knight",
-    "!bannedHero": "H001!H101!H203!H004!H104!H204",
+    "bannedHero": [
+      "H001",
+      "H101",
+      "H203",
+      "H004",
+      "H104",
+      "H204"
+    ],
     "seed": 0,
     "type": "boss",
     "eventLetter": "E013"
@@ -50,7 +89,14 @@
   {
     "id": "D013",
     "name": "Lich Suit Lawrence",
-    "!bannedHero": "H001!H101!H203!H002!H102!H201",
+    "bannedHero": [
+      "H001",
+      "H101",
+      "H203",
+      "H002",
+      "H102",
+      "H201"
+    ],
     "seed": 0,
     "type": "boss",
     "eventLetter": "E013"
@@ -58,7 +104,13 @@
   {
     "id": "D014",
     "name": "Beclutcher",
-    "!bannedHero": "H101!H002!H202!H104!H003",
+    "bannedHero": [
+      "H101",
+      "H002",
+      "H202",
+      "H104",
+      "H003"
+    ],
     "seed": 0,
     "type": "boss",
     "eventLetter": "E013"
@@ -66,7 +118,12 @@
   {
     "id": "D015",
     "name": "Aggressive Oak",
-    "!bannedHero": "H001!H201!H103!H004",
+    "bannedHero": [
+      "H001",
+      "H201",
+      "H103",
+      "H004"
+    ],
     "seed": 0,
     "type": "boss",
     "eventLetter": "E013"
@@ -74,7 +131,12 @@
   {
     "id": "D016",
     "name": "Enraged Phoenix",
-    "!bannedHero": "H203!H102!H003!H204",
+    "bannedHero": [
+      "H203",
+      "H102",
+      "H003",
+      "H204"
+    ],
     "seed": 0,
     "type": "boss",
     "eventLetter": "E013"
@@ -82,7 +144,12 @@
   {
     "id": "D017",
     "name": "Melancholy Knight",
-    "!bannedHero": "H101!H002!H202!H104",
+    "bannedHero": [
+      "H101",
+      "H002",
+      "H202",
+      "H104"
+    ],
     "seed": 0,
     "type": "boss",
     "eventLetter": "E013"
@@ -90,7 +157,12 @@
   {
     "id": "D018",
     "name": "Lawrence The Second",
-    "!bannedHero": "H001!H201!H103!H004",
+    "bannedHero": [
+      "H001",
+      "H201",
+      "H103",
+      "H004"
+    ],
     "seed": 0,
     "type": "boss",
     "eventLetter": "E013"
@@ -98,7 +170,12 @@
   {
     "id": "D019",
     "name": "Begrasper",
-    "!bannedHero": "H203!H102!H003!H204",
+    "bannedHero": [
+      "H203",
+      "H102",
+      "H003",
+      "H204"
+    ],
     "seed": 0,
     "type": "boss",
     "eventLetter": "E013"

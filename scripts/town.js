@@ -73,7 +73,8 @@ const TownManager = {
         return this.buildingStatus().includes(BuildingState.unseen);
     },
     buildingPerk(type) {
-        const building = this.typeToBuilding(type);        
+        const building = this.typeToBuilding(type);
+        console.log(type);
         building.setStatus(BuildingState.unseen);
         recipeList.idToItem(building.recipeID).owned = true;
         refreshSideTown();

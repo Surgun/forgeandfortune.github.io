@@ -45,7 +45,7 @@ function refreshDungeonSelect() {
 }
 
 function dungeonBlock(dungeon) {
-    const d1 = $("<div/>").addClass("dungeonContainer").attr("id",dungeon.id);
+    const d1 = $("<div/>").addClass(`dungeonContainer dungeonContainer${dungeon.id}`).attr("id",dungeon.id);
     const d2 = $("<div/>").addClass("dungeonHeader").html(dungeon.name);
     if (dungeon.type === "boss") {
         d1.addClass("dungeonTypeBoss");

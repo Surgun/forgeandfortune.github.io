@@ -99,7 +99,7 @@ const FloorManager = {
 }
 
 class Mob {
-    constructor (lvl,mobTemplate, difficulty) {
+    constructor (lvl,mobTemplate, difficulty=0) {
         Object.assign(this, mobTemplate);
         this.lvl = lvl;
         this.difficulty = difficulty;

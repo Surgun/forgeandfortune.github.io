@@ -45,7 +45,7 @@ function forceSave() {
 
 function createSave() {
     const saveFile = {}
-    saveFile["v"] = "0329"
+    saveFile["v"] = "03210"
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
     saveFile["e"] = EventManager.createSave();
@@ -622,6 +622,67 @@ function saveUpdate(loadGame) {
         const mat3 = loadGame["rs"].find(m=>m.id === "M802");
         mat3.amt += mat1.amt + mat2.amt;
         mat3.amt = Math.min(1000,mat3.amt);
+    }
+    if (loadGame.v === "0329") {
+        loadGame.v = "03210";
+        loadGame["rs"].find(m=>m.id === "M800").amt = 0;
+        loadGame["rs"].find(m=>m.id === "M801").amt = 0;
+        const bossesBeat = loadGame["d"].bossesBeat.length;
+        if (bossesBeat > 0) {
+            loadGame["mh"] = {};
+            loadGame["mh"].kills = [];
+            loadGame["mh"].lineUpgrades = [];
+            const materialSave = {
+                "id" : "M002",
+                "amt" : bossesBeat,
+                "seen" : true,
+            }
+            const dungeonBoss = {
+                "D010" : "BB010",
+                "D011" : "BB011",
+                "D012" : "BB012",
+                "D013" : "BB013",
+                "D014" : "BB014",
+                "D015" : "BB015",
+                "D016" : "BB016",
+                "D017" : "BB017",
+                "D018" : "BB018",
+                "D019" : "BB019",
+            }
+            loadGame["rs"].push(materialSave);
+            loadGame["d"].bossesBeat.forEach(bossID => {
+                loadGame["mh"].kills.push({id:dungeonBoss[bossID],amt:1});
+            });
+        };
+        loadGame["tm"].buildings = [
+        {
+            "id" : "TB001",
+            "status" : loadGame["tm"].DesynthStatus,
+        },
+        {
+            "id" : "TB002",
+            "status" : loadGame["tm"].bankStatus,
+        },
+        {
+            "id" : "TB003",
+            "status" : loadGame["tm"].fuseStatus,
+        },
+        {
+            "id" : "TB004",
+            "status" : loadGame["tm"].smithStatus,
+        },
+        {
+            "id" : "TB005",
+            "status" : loadGame["tm"].fortuneStatus,
+        },
+        {
+            "id" : "TB006",
+            "status" : loadGame["tm"].tinkerStatus,
+        },
+        {
+            "id" : "TB007",
+            "status" : BuildingState.unseen,
+        }];
     }
     return loadGame;
 }

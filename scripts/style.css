@@ -3136,6 +3136,62 @@ Rarities
     background-size: contain;
 }
 
+.dungeonBossPortrait {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+/* Boss Portraits */
+
+.dungeonBossPortrait.D010 {
+    background: url(/images/enemies/BB010.gif);
+}
+
+.dungeonBossPortrait.D011 {
+    background: url(/images/enemies/BB011.gif);
+}
+
+.dungeonBossPortrait.D012 {
+    background: url(/images/enemies/BB012.gif);
+}
+
+.dungeonBossPortrait.D013 {
+    background: url(/images/enemies/BB013.gif);
+}
+
+.dungeonBossPortrait.D014 {
+    background: url(/images/enemies/BB014.gif);
+}
+
+.dungeonBossPortrait.D015 {
+    background: url(/images/enemies/BB015.gif);
+}
+
+.dungeonBossPortrait.D016 {
+    background: url(/images/enemies/BB016.gif);
+}
+
+.dungeonBossPortrait.D017 {
+    background: url(/images/enemies/BB017.gif);
+}
+
+.dungeonBossPortrait.D018 {
+    background: url(/images/enemies/BB018.gif);
+}
+
+.dungeonBossPortrait.D019 {
+    background: url(/images/enemies/BB019.gif);
+}
+
+/* End Boss Portraits */
+
 .dtsBackButton {
     position: absolute;
     top: 35px;

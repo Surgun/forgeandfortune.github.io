@@ -45,7 +45,7 @@ function refreshDungeonSelect() {
 }
 
 function dungeonBlock(dungeon) {
-    const d1 = $("<div/>").addClass(`dungeonContainer dungeonContainer${dungeon.id}`).attr("id",dungeon.id);
+    const d1 = $("<div/>").addClass(`dungeonContainer`).attr("id",dungeon.id);
     const d2 = $("<div/>").addClass("dungeonHeader").html(dungeon.name);
     if (dungeon.type === "boss") {
         d1.addClass("dungeonTypeBoss");
@@ -58,7 +58,9 @@ function dungeonBlock(dungeon) {
     else d3.addClass("dungeonIdle").html("Idle");
     const d4 = $("<div/>").addClass("dungeonBackground");
     const d5 = $("<div/>").addClass("dungeonAdventurers");
+    const d6 = $("<div/>").addClass(`dungeonBossPortrait ${dungeon.id}`);
     d1.append(d2,d3,d4,d5);
+    if (dungeon.type === "boss") d1.append(d6);
     if (dungeon.status === DungeonStatus.ADVENTURING) {
         dungeon.party.heroes.forEach(h=> {
             const d5a = $("<div/>").addClass("dungeonHeroDungeonSelect").html(h.head);

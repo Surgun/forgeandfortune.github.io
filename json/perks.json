@@ -531,6 +531,33 @@
     "subtype": "level"
   },
   {
+    "id": "AL4107",
+    "title": "Omega Moo",
+    "description": "Unlocks the Monster House, a quizzical building.",
+    "notoReq": 150,
+    "goldCost": 1000,
+    "type": "monster",
+    "subtype": "open"
+  },
+  {
+    "id": "AL41071",
+    "title": "Quality Of Death",
+    "description": "Adds special privileges to the Monster House.",
+    "notoReq": 12500,
+    "goldCost": 75000,
+    "type": "monster",
+    "subtype": "level"
+  },
+  {
+    "id": "AL41072",
+    "title": "Numbers Go Down",
+    "description": "Adds special privileges to the Monster House.",
+    "notoReq": 40000,
+    "goldCost": 800000,
+    "type": "monster",
+    "subtype": "level"
+  },
+  {
     "id": "AL4201",
     "title": "Big Parties",
     "description": "Increases party size for dungeons to 2",

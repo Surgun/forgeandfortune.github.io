@@ -6520,6 +6520,10 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     margin-bottom: 10px;
 }
 
+.monsterDungeonDetails {
+    grid-template: auto / 1fr;
+}
+
 .monsterInspectContainer {
     display: flex;
     flex-wrap: wrap;
@@ -6555,7 +6559,8 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
 }
 
 .monsterDetails {
-    min-width: 300px;
+    width: 100%;
+    max-width: 300px;
     padding: 15px;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);

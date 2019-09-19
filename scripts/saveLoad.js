@@ -45,7 +45,7 @@ function forceSave() {
 
 function createSave() {
     const saveFile = {}
-    saveFile["v"] = "03210"
+    saveFile["v"] = "03211"
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
     saveFile["e"] = EventManager.createSave();
@@ -684,6 +684,12 @@ function saveUpdate(loadGame) {
             "id" : "TB007",
             "status" : BuildingState.hidden,
         }];
+    }
+    if (loadGame.v === "03210") {
+        loadGame.v = "03211";
+        loadGame["mh"].lvl = 1;
+        if (loadGame["al"].purchased.includes("AL41071")) loadGame["mh"].lvl = 2;
+        if (loadGame["al"].purchased.includes("AL41072")) loadGame["mh"].lvl = 3;
     }
     return loadGame;
 }

@@ -469,7 +469,6 @@ const ActionLeague = {
         return miscLoadedValues["notoCap"][DungeonManager.bossesBeat.length];
     },
     buyPerk(id) {
-        console.log(id);
         const perk = this.idToPerk(id);
         if (ResourceManager.materialAvailable("M001") < perk.goldCost) {
             Notifications.alRewardCost();
@@ -527,6 +526,8 @@ class alRewards {
         if (this.type === "fortune" && this.subtype === "level") FortuneManager.addLevel();
         if (this.type === "tinker" && this.subtype === "open") TownManager.buildingPerk("tinker");
         if (this.type === "tinker" && this.subtype === "level") TinkerManager.addLevel();
+        if (this.type === "monster" && this.subtype === "open") TownManager.buildingPerk("monster");
+        if (this.type === "monster" && this.subtype === "level") MonsterHall.addLevel();
     }
 }
 

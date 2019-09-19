@@ -631,6 +631,7 @@ function saveUpdate(loadGame) {
         if (bossesBeat > 0) {
             loadGame["mh"] = {};
             loadGame["mh"].kills = [];
+            loadGame["mh"].lvl = 1;
             loadGame["mh"].lineUpgrades = [];
             const materialSave = {
                 "id" : "M002",

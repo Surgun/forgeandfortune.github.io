@@ -190,5 +190,11 @@
     "version": "v0.3.3",
     "date": "September 18th, 2019",
     "body": "<p>Big update with small patch notes! This patch introduces the Monster Hall, which serves three purposes (each available via a perk!). Firstly, it serves as a bestiary to check out the monsters you've fought and gain more info on them. After your first upgrade, you'll be able to re-challenge bosses you've previously fought for craft speed upgrade rewards. Finally with the third upgrade, your recipe mastery level (aka how many recipes you've upgraded) will allow you to start further in the dungeon, up to 450 floors! As always, thanks for playing and I hope you like our final building for launch!</p>"
+  },
+  {
+    "patchCount": 33,
+    "version": "v0.3.3.1",
+    "date": "September 20th, 2019",
+    "body": "<ul><li>Fixed a bug with progress percentages over 100%</li><li>Fixed a bug with notoriety being null after re-fighting bosses</li><li>Fixed a bug with certain bosses not being able to be re-challenged</li><li>Action League no longer sends you mail for beating a boss, the first time or the 100th time (we'll re-introduce this later with better letters)</li></ul>"
   }
 ]

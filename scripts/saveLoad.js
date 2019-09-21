@@ -45,7 +45,7 @@ function forceSave() {
 
 function createSave() {
     const saveFile = {}
-    saveFile["v"] = "03211"
+    saveFile["v"] = "03212"
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
     saveFile["e"] = EventManager.createSave();
@@ -690,6 +690,11 @@ function saveUpdate(loadGame) {
         loadGame["mh"].lvl = 1;
         if (loadGame["al"].purchased.includes("AL41071")) loadGame["mh"].lvl = 2;
         if (loadGame["al"].purchased.includes("AL41072")) loadGame["mh"].lvl = 3;
+    }
+    if (loadGame.v === "03211") {
+        loadGame.v = "03212";
+        loadGame["d"].bossesBeat = [...new Set(loadGame["d"].bossesBeat)];
+        if (loadGame["al"].notoriety === null) loadGame["al"].notoriety = miscLoadedValues["notoCap"][loadGame["d"].bossesBeat.length]
     }
     return loadGame;
 }

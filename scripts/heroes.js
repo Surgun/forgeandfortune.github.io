@@ -266,6 +266,9 @@ class Hero {
     canEquipType(type) {
         return this.slot1Type.includes(type) || this.slot2Type.includes(type) || this.slot3Type.includes(type) || this.slot4Type.includes(type) || this.slot5Type.includes(type) || this.slot6Type.includes(type) || this.slot7Type.includes(type);
     }
+    hasEquipContainer(containerID) {
+        return this.getEquipSlots(true).map(i=>i.containerID).includes(containerID);
+    }
 }
 
 const HeroManager = {
@@ -349,4 +352,20 @@ const HeroManager = {
         });
         return results;
     },
+    getAllGear() {
+        const gear = [];
+        this.heroes.forEach(hero => {
+            gear.push(...hero.getEquipSlots(true));
+        });
+        return gear;
+    },
+    heroByContainerID(containerID) {
+        return this.heroes.find(h=>h.hasEquipContainer(containerID));
+    },
+    getContainerID(containerID) {
+        return this.heroes.map(h=>h.getEquipSlots(true)).flat().find(i=>i.containerID === containerID);
+    },
+    hasContainer(containerID) {
+        return this.heroes.map(h=>h.getEquipSlots(true)).flat().map(i=>i.containerID).includes(containerID);
+    }
 }

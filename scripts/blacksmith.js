@@ -9,6 +9,7 @@ const $smithConfirm = $("#smithConfirm");
 const $smithCanImproveDiv = $("#smithCanImproveDiv");
 const $smithCantImproveDiv = $("#smithCantImproveDiv");
 const $smithNoSelectionDiv = $("#smithNoSelectionDiv");
+const $smithHeroSlots= $("#smithHeroSlots");
 
 const bloopSmith = {
     smithStage : null,
@@ -21,8 +22,8 @@ const bloopSmith = {
     loadSave(save) {
         if (save.lvl !== undefined) this.lvl = save.lvl;
     },
-    addSmith(containerID) {
-        const item = Inventory.containerToItem(containerID);
+    addSmith(containerID,location) {
+        const item = (location === "inventory") ? Inventory.containerToItem(containerID) : HeroManager.getContainerID(containerID);
         if (item.sharp >= this.maxSharp()) return;
         this.smithStage = item;
         refreshSmithStage();
@@ -74,18 +75,24 @@ function initiateForgeBldg() {
 
 function refreshSmithInventory() {
     $smithInvSlots.empty();
-    const items = Inventory.nonblank().filter(i=>i.sharp < bloopSmith.maxSharp() && i.item.recipeType === "normal");
-    if (items.length === 0) {
+    $smithHeroSlots.empty();
+    const invItems = Inventory.nonblank().filter(i=>i.sharp < bloopSmith.maxSharp() && i.item.recipeType === "normal");
+    const heroItems = HeroManager.getAllGear().filter(i=>i.sharp < bloopSmith.maxSharp() && i.item.recipeType === "normal");
+    if (invItems.length === 0 && heroItems.length === 0) {
         $("<div/>").addClass("smithInvBlank").html("No Items in Inventory").appendTo($smithInvSlots);
         return;
     }
-    items.forEach(item => {
-        $smithInvSlots.append(itemCardSmith(item));
+    invItems.forEach(item => {
+        $smithInvSlots.append(itemCardSmith(item,"inventory",""));
     });
+    heroItems.forEach(gear => {
+        const hero = HeroManager.heroByContainerID(gear.containerID);
+        $smithHeroSlots.append(itemCardSmith(gear,"gear",`Equipped to ${hero.name}`));
+    })
 }
 
 function refreshSmithStage() {
-    if (bloopSmith.smithStage !== null && !Inventory.hasContainer(bloopSmith.smithStage.containerID)) {
+    if (bloopSmith.smithStage !== null && !Inventory.hasContainer(bloopSmith.smithStage.containerID) && !HeroManager.hasContainer(bloopSmith.smithStage.containerID)) {
         bloopSmith.smithStage = null;
     }
     if (bloopSmith.smithStage === null) {
@@ -114,17 +121,19 @@ function refreshSmithStage() {
     $smithConfirm.empty().append(improveText,improveCost);
 }
 
-function itemCardSmith(item) {
+function itemCardSmith(item,location,locationText) {
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
         $("<div/>").addClass("smithItemName").html(item.picName()).appendTo(itemdiv);
         $("<div/>").addClass("smithItemLevel").html(item.itemLevel()).appendTo(itemdiv);
+        $("<div/>").addClass("smithItemMaterial").html(ResourceManager.materialIcon(item.material())).appendTo(itemdiv);
         const itemProps = $("<div/>").addClass("smithProps").appendTo(itemdiv);
         for (const [stat, val] of Object.entries(item.itemStat(false))) {
             if (val === 0) continue;
             const statFormatted = stat.toUpperCase();
             $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
         }
-        $("<div/>").addClass("smithStage").attr("containerID",item.containerID).html("Smith").appendTo(itemdiv);
+        if (locationText !== "") $("<div/>").addClass("smithItemLocation").html(locationText).appendTo(itemdiv);
+        $("<div/>").addClass("smithStage").attr("containerID",item.containerID).data("location",location).html("Smith").appendTo(itemdiv);
     return itemdiv;
 }
 
@@ -142,13 +151,14 @@ function itemStageCardSmith(slot,upgrade) {
         const statFormatted = stat.toUpperCase();
         $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(d);
     }
-    return itemdiv.append(itemName,itemLevel,itemProps);
+    return itemdiv.append(itemName,itemLevel,itemMaterial,itemProps);
 }
 
 $(document).on("click",".smithStage",(e) => {
     e.preventDefault();
     const containerID = parseInt($(e.target).attr("containerID"));
-    bloopSmith.addSmith(containerID);
+    const location = $(e.target).data("location");
+    bloopSmith.addSmith(containerID,location);
     refreshSmithStage();
 });
 

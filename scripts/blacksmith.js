@@ -125,7 +125,7 @@ function itemCardSmith(item,location,locationText) {
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
         $("<div/>").addClass("smithItemName").html(item.picName()).appendTo(itemdiv);
         $("<div/>").addClass("smithItemLevel").html(item.itemLevel()).appendTo(itemdiv);
-        $("<div/>").addClass("smithItemMaterial").html(ResourceManager.materialIcon(item.material())).appendTo(itemdiv);
+        $("<div/>").addClass("smithItemMaterial tooltip").attr("data-tooltip", `${ResourceManager.idToMaterial(item.material()).name}`).html(ResourceManager.materialIcon(item.material())).appendTo(itemdiv);
         const itemProps = $("<div/>").addClass("smithProps").appendTo(itemdiv);
         for (const [stat, val] of Object.entries(item.itemStat(false))) {
             if (val === 0) continue;

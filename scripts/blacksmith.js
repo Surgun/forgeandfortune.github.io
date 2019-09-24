@@ -144,6 +144,7 @@ function itemStageCardSmith(slot,upgrade) {
     if (upgrade) itemName.html(slot.picNamePlus());
     else itemName.html(slot.picName());
     const itemLevel = $("<div/>").addClass("smithItemLevel").html(slot.itemLevel());
+    const itemMaterial = $("<div/>").addClass("smithItemMaterial tooltip").attr("data-tooltip", `${ResourceManager.idToMaterial(item.material()).name}`).html(ResourceManager.materialIcon(item.material()));
     const itemProps = $("<div/>").addClass("smithProps");
     const d = $("<div/>").addClass("invProp").appendTo(itemProps);
     for (const [stat, val] of Object.entries(slot.itemStat(upgrade))) {

@@ -5356,7 +5356,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     filter: grayscale(1);
 }
 
-#fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleDesynthHolder, #fortuneGear, .heroEquipTrinketAllContainer, .fortuneStageContainer {
+#fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithHeroSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleDesynthHolder, #fortuneGear, .heroEquipTrinketAllContainer, .fortuneStageContainer {
     display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
@@ -5787,9 +5787,23 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     text-align: center;
 }
 
+#smithInvSlots {
+    margin-bottom: 20px;
+}
+
 .smithInvBlank, .fuseInvBlank, .desynthBlank {
     padding: 0 5px;
     color: var(--text-tertiary);
+}
+
+.smithInvBlank {
+    margin-bottom: 15px;
+}
+
+.smithItemLocation {
+    font-size: .85rem;
+    margin-bottom: 10px;
+    color: var(--highlight);
 }
 
 .item-prefix-name {

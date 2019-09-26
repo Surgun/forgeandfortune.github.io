@@ -14,6 +14,7 @@ const $smithHeroSlots= $("#smithHeroSlots");
 const bloopSmith = {
     smithStage : null,
     lvl : 1,
+    heroView : null,
     createSave() {
         const save = {};
         save.lvl = this.lvl;
@@ -69,6 +70,7 @@ const bloopSmith = {
 function initiateForgeBldg() {
     $smithBuilding.show();
     bloopSmith.smithStage = null;
+    bloopSmith.heroView = null;
     refreshSmithInventory();
     refreshSmithStage();
 }
@@ -77,19 +79,27 @@ function refreshSmithInventory() {
     $smithInvSlots.empty();
     $smithHeroSlots.empty();
     const invItems = Inventory.nonblank().filter(i=>i.sharp < bloopSmith.maxSharp() && i.item.recipeType === "normal");
-    const heroItems = HeroManager.getAllGear().filter(i=>i.sharp < bloopSmith.maxSharp() && i.item.recipeType === "normal");
-    if (invItems.length === 0 && heroItems.length === 0) {
+    if (invItems.length === 0) {
         $("<div/>").addClass("smithInvBlank").html("No Items in Inventory").appendTo($smithInvSlots);
-        return;
     }
-    invItems.forEach(item => {
-        $smithInvSlots.append(itemCardSmith(item,"inventory",""));
-    });
-    heroItems.forEach(gear => {
-        const hero = HeroManager.heroByContainerID(gear.containerID);
-        $smithHeroSlots.append(itemCardSmith(gear,"gear",`Equipped to ${hero.name}`));
-    })
-}
+    else {
+        invItems.forEach(item => {
+            $smithInvSlots.append(itemCardSmith(item,"inventory",""));
+        });
+    }
+    if (bloopSmith.heroView === null) {
+        HeroManager.heroes.filter(hero=>hero.owned).forEach(hero => {
+            $("<div/>").addClass("smithHeroButton").data("heroID",hero.id).html(`${hero.head} ${hero.name}`).appendTo($smithHeroSlots);
+        })
+    }
+    else {
+        $("<div/>").addClass("smithHeroButton").data("heroID",null).html(`Choose a different hero`).appendTo($smithHeroSlots);
+        const hero = HeroManager.idToHero(bloopSmith.heroView);
+        hero.getEquipSlots(true).forEach(gear => {
+            $smithHeroSlots.append(itemCardSmith(gear,"gear",`Equipped to ${hero.name}`));
+        })
+    }
+};
 
 function refreshSmithStage() {
     if (bloopSmith.smithStage !== null && !Inventory.hasContainer(bloopSmith.smithStage.containerID) && !HeroManager.hasContainer(bloopSmith.smithStage.containerID)) {
@@ -166,4 +176,10 @@ $(document).on("click",".smithStage",(e) => {
 $(document).on("click","#smithConfirm",(e) => {
     e.preventDefault();
     bloopSmith.smith();
-})
+});
+
+$(document).on("click",".smithHeroButton",(e) => {
+    const heroID = $(e.target).data("heroID");
+    bloopSmith.heroView = heroID;
+    refreshSmithInventory();
+});

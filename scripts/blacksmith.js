@@ -25,7 +25,7 @@ const bloopSmith = {
     },
     addSmith(containerID,location) {
         const item = (location === "inventory") ? Inventory.containerToItem(containerID) : HeroManager.getContainerID(containerID);
-        if (item.sharp >= this.maxSharp()) return;
+        if (item.sharp >= this.maxSharp()) return Notifications.cantSmithMax();
         this.smithStage = item;
         refreshSmithStage();
     },

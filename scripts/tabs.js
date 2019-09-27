@@ -19,7 +19,7 @@ function openTab(tabName) {
         refreshSideTown();
     }
     if (tabName === "inventoryTab") {
-        if (TownManager.bankStatus === BuildingState.built) $("#goToBank").show();
+        if (TownManager.typeToBuilding('bank').status === BuildingState.built) $("#goToBank").show();
         else $("#goToBank").hide();
     }
     $(".tabcontent").hide();
@@ -68,10 +68,9 @@ $(document).on('click', "#goToBank", (e) => {
     e.preventDefault();
     tabClick(e, 'townsTab');
     TownManager.lastBldg = "bank";
-    TownManager.bankOnce = false;
     $(".buildingName").removeClass("selected");
     $("#bankBldg").addClass("selected");
-    showBankBldg();
+    showBldg('bank');
 });
 
 $(document).on( "keypress", (e) => {

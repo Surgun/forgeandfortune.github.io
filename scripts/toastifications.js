@@ -272,6 +272,12 @@ const Notifications = {
         const heading = "Cannot afford Upgrade";
         const icon = "error";
         popToast(text,heading,icon);
+    },
+    cantSmithMax() {
+        const text = 'Item is at max enhancement';
+        const heading = "Cannot smith item";
+        const icon = "error";
+        popToast(text,heading,icon);
     }
 }
 

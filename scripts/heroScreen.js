@@ -328,6 +328,7 @@ $(document).on('click', "div.gearItem", (e) => {
     refreshTrinketScreen(HeroManager.idToHero(heroID));
     clearExaminePossibleEquip();
     updateHeroPower();
+    refreshSmithInventory(); //because hero gear is here
 });
 
 function updateHeroPower() {
@@ -351,6 +352,7 @@ $(document).on('click', ".heroUnequipSlot", (e) => {
     examineHeroPossibleEquip(slotNum,heroID);
     refreshTrinketScreen(HeroManager.idToHero(heroID));
     updateHeroPower();
+    refreshSmithInventory(); //because hero gear is here
 });
 
 const $heroEquipTrinket = $("#heroEquipTrinket");

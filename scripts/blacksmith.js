@@ -89,11 +89,13 @@ function refreshSmithInventory() {
     }
     if (bloopSmith.heroView === null) {
         HeroManager.heroes.filter(hero=>hero.owned).forEach(hero => {
-            $("<div/>").addClass("smithHeroButton").data("heroID",hero.id).html(`${hero.head} ${hero.name}`).appendTo($smithHeroSlots);
+            const heroButton = $("<div/>").addClass("smithHeroButton").data("heroID",hero.id).html(`${hero.head}`).appendTo($smithHeroSlots);
+                $("<div/>").addClass('smithHeroButtonName').html(`${hero.name}`).appendTo(heroButton);
         })
     }
     else {
-        $("<div/>").addClass("smithHeroButton").data("heroID",null).html(`Choose a different hero`).appendTo($smithHeroSlots);
+        const smithBackButton = $("<div/>").addClass("smithActionsContainer").appendTo($smithHeroSlots)
+            $("<div/>").addClass("smithHeroButton smithHeroBackButton").data("heroID",null).html(`<i class="fas fa-arrow-left"></i> Select a different Hero`).appendTo(smithBackButton);
         const hero = HeroManager.idToHero(bloopSmith.heroView);
         hero.getEquipSlots(true).forEach(gear => {
             $smithHeroSlots.append(itemCardSmith(gear,"gear",`Equipped to ${hero.name}`));
@@ -179,7 +181,7 @@ $(document).on("click","#smithConfirm",(e) => {
 });
 
 $(document).on("click",".smithHeroButton",(e) => {
-    const heroID = $(e.target).data("heroID");
+    const heroID = $(e.currentTarget).data("heroID");
     bloopSmith.heroView = heroID;
     refreshSmithInventory();
 });

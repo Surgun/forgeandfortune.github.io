@@ -166,6 +166,30 @@ function loadTown() {
             const building = new Building(props);
             TownManager.addBuilding(building);
         });
+        loadSkills();
+    });
+}
+
+function loadSkills() {
+    $.ajax({
+        url: "json/skills.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            const skill = new Skill(props);
+            SkillManager.addSkill(skill);
+        });
+        loadPlaybooks();
+    });
+}
+
+function loadPlaybooks() {
+    $.ajax({
+        url: "json/playbook.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            const playbook = new playBookTemplate(props);
+            PlaybookManager.addPlaybookTemplate(playbook);
+        });
         afterLoad();
     });
 }

@@ -2,6 +2,14 @@
 
 const CombatManager = {
     refreshLater : false,
+    nextTurn(dungeon) {
+        const attacker = dungeon.order.nextTurn();
+        const allies = (attacker.unitType === "hero") ? this.party.heroes : this.mobs;
+        const enemies = (attacker.unitType === "hero") ? this.mobs : this.party.heroes;
+        const attack = attacker.getSkill();
+        attack.execute(attacker,allies,enemies);
+        dungeon.order.nextPosition();
+    },
     launchAttack(attacker, allies, enemies, dungeonid) {
         //clear buffs since it's for one round
         attacker.parry = false;

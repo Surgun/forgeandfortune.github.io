@@ -34,6 +34,12 @@ class Party {
             h.addTime(t, dungeonID);
         })
     }
+    resetForFloor() {
+        this.heroes.forEach(hero => {
+            hero.hp = hero.maxHP();
+            hero.resetPlaybookPosition();
+        })
+    }
 }
 
 const PartyCreator = {

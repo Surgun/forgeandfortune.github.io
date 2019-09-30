@@ -4,13 +4,10 @@ class Hero {
     constructor (props) {
         Object.assign(this, props);
         this.uniqueid = this.id;
-        this.ap = 0;
-        this.apAdd = 30;
-        this.apmax = 100;
         this.hp = this.initialHP;
         this.pow = this.initialPow;
+        this.playbook = null;
         this.critdmg = 1.5;
-        this.target = "first";
         this.unitType = "hero";
         this.slot1 = null;
         this.slot2 = null;
@@ -28,7 +25,6 @@ class Hero {
         const save = {};
         save.id = this.id;
         save.hp = this.hp;
-        save.ap = this.ap;
         save.inDungeon = this.inDungeon;
         if (this.slot1 === null) save.slot1 = null;
         else save.slot1 = this.slot1.createSave();
@@ -49,7 +45,6 @@ class Hero {
     }
     loadSave(save) {
         this.hp = save.hp;
-        this.ap = save.ap;
         this.inDungeon = save.inDungeon;
         if (save.slot1 !== null) {
             this.slot1 = new itemContainer(save.slot1.id,save.slot1.rarity);
@@ -142,12 +137,6 @@ class Hero {
         const slots = this.getEquipSlots();
         if (slots[slot] === null) return 0;
         return slots[slot].hp();
-    }
-    addAP() {
-        this.ap += this.apAdded();
-    }
-    apAdded() {
-        return this.apAdd;
     }
     heal(hp) {
         if (this.hp === 0) return;
@@ -266,6 +255,9 @@ class Hero {
     canEquipType(type) {
         return this.slot1Type.includes(type) || this.slot2Type.includes(type) || this.slot3Type.includes(type) || this.slot4Type.includes(type) || this.slot5Type.includes(type) || this.slot6Type.includes(type) || this.slot7Type.includes(type);
     }
+    resetPlaybookPosition() {
+        this.playbook.reset();
+    }
 }
 
 const HeroManager = {
@@ -318,14 +310,6 @@ const HeroManager = {
     },
     ownedHeroes() {
         return this.heroes.filter(hero => hero.owned);
-    },
-    relativePow(heroID,slot,pow) {
-        const hero = this.idToHero(heroID);
-        return pow - hero.getPowSlot(slot);
-    },
-    relativeHP(heroID,slot,hp) {
-        const hero = this.idToHero(heroID);
-        return hp - hero.getHPSlot(slot);
     },
     gainHero(heroID) {
         this.idToHero(heroID).owned = true;

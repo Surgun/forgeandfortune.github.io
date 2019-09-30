@@ -129,6 +129,9 @@ class itemContainer {
         stats[heroStat.mpen] = this.mpen(sharpIncrease);
         return stats;
     }
+    isTrinket() {
+        return this.item.type === "Trinkets";
+    }
 }
 
 function blankItemStat() {

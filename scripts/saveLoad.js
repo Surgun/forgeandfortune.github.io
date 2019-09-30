@@ -45,7 +45,7 @@ function forceSave() {
 
 function createSave() {
     const saveFile = {}
-    saveFile["v"] = "03212"
+    saveFile["v"] = "0334"
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
     saveFile["e"] = EventManager.createSave();
@@ -695,6 +695,21 @@ function saveUpdate(loadGame) {
         loadGame.v = "03212";
         loadGame["d"].bossesBeat = [...new Set(loadGame["d"].bossesBeat)];
         if (loadGame["al"].notoriety === null) loadGame["al"].notoriety = miscLoadedValues["notoCap"][loadGame["d"].bossesBeat.length]
+    }
+    if (loadGame.v === "03212") {
+        loadGame.v = "0334";
+        loadGame["h"].forEach(hero => {
+            if (hero.slot7 !== null) hero.slot7.sharp = 0;
+        });
+        loadGame["i"].forEach(container => {
+            if (container === null) return;
+            const item = recipeList.idToItem(container.id);
+            if (item.type === "Trinkets") container.sharp = 0;
+        });
+        loadGame["bb"].slots.forEach(container => {
+            const item = recipeList.idToItem(container.id);
+            if (item.type === "Trinkets") container.sharp = 0;
+        });
     }
     return loadGame;
 }

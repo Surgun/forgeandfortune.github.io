@@ -98,6 +98,7 @@ function refreshSmithInventory() {
             $("<div/>").addClass("smithHeroButton smithHeroBackButton").data("heroID",null).html(`<i class="fas fa-arrow-left"></i> Select a different Hero`).appendTo(smithBackButton);
         const hero = HeroManager.idToHero(bloopSmith.heroView);
         hero.getEquipSlots(true).forEach(gear => {
+            if (gear.isTrinket()) return;
             $smithHeroSlots.append(itemCardSmith(gear,"gear",`Equipped to ${hero.name}`));
         })
     }

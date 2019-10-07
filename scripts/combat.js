@@ -70,6 +70,9 @@ const CombatManager = {
         }
         attacker.ap -= 100;
     },
+    formAttack(attacker, modifier, canCrit) {
+
+    },
     normalAttack(attacker, defender, dungeonid) {
         const battleMessage = $("<span/>");
         const critical = this.rollStat(attacker.getCrit());
@@ -111,9 +114,6 @@ const CombatManager = {
         if (!this.refreshLater) refreshHPBar(defender);
         BattleLog.addEntry(dungeonid,battleMessage);
         defender.ignoredArmor = false;
-    },
-    rollStat(stat) {
-        return stat > Math.floor(Math.random()*100) + 1
     },
 }
 
@@ -165,6 +165,10 @@ function getTarget(party,type) {
     else if (type === "lowMissingHp") return party.sort((a,b) => {return b.missingHP() - a.missingHP()})[0];
 }
 
+function rollStat(stat) {
+    return stat > Math.floor(Math.random()*100) + 1
+}
+
 const $drLog = $("#drLog");
 
 const BattleLog = {
@@ -195,4 +199,14 @@ const BattleLog = {
         const dropnames = drops.map(m=>ResourceManager.idToMaterial(m).name);
         this.addEntry(`${name} dropped ${dropnames.join(", ")}`)
     },
+}
+
+class Attack {
+    constructor (attacker, power, skill) {
+        this.attacker = attacker;
+        this.power = power;
+        this.type = skill.damageType;
+        this.element = skill.damageElement;
+        this.canDodge = skill.canDodge;
+    }
 }

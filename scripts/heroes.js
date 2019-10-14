@@ -350,9 +350,9 @@ const HeroManager = {
         return results;
     },
     getContainerID(containerID) {
-        return this.heroes.map(h=>h.getEquipSlots(true)).flat().find(i=>i.containerID === containerID);
+        return flattenArray(...[this.heroes.map(h=>h.getEquipSlots(true))]).find(i=>i.containerID === containerID);
     },
     hasContainer(containerID) {
-        return this.heroes.map(h=>h.getEquipSlots(true)).flat().map(i=>i.containerID).includes(containerID);
+        return flattenArray(...[this.heroes.map(h=>h.getEquipSlots(true))]).map(i=>i.containerID).includes(containerID);
     }
 }

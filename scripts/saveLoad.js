@@ -702,7 +702,8 @@ function saveUpdate(loadGame) {
     if (loadGame.v === "03212") {
         loadGame.v = "0334";
         loadGame["h"].forEach(hero => {
-            if (hero.slot7 !== null) hero.slot7.sharp = 0;
+            if (hero.slot7 === undefined || hero.slot7 === null) return;
+            hero.slot7.sharp = 0;
         });
         loadGame["i"].forEach(container => {
             if (container === null) return;

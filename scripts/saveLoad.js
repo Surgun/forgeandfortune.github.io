@@ -82,6 +82,7 @@ function loadGame() {
     if (loadGame === null) return false;
     //aka there IS a file
     loadGame = saveUpdate(loadGame);
+    console.log(loadGame);
     if (typeof loadGame["as"] !== "undefined") actionSlotManager.loadSave(loadGame["as"]);
     if (typeof loadGame["d"] !== "undefined") DungeonManager.loadSave(loadGame["d"]);
     if (typeof loadGame["e"] !== "undefined") EventManager.loadSave(loadGame["e"]);
@@ -617,6 +618,9 @@ function saveUpdate(loadGame) {
     }
     if (loadGame.v === "0322") {
         loadGame.v = "0329";
+        if (loadGame["rs"].find(m=>m.id === "M800") === undefined) loadGame["rs"].push({id: "M800", amt: 0});
+        if (loadGame["rs"].find(m=>m.id === "M801") === undefined) loadGame["rs"].push({id: "M801", amt: 0});
+        if (loadGame["rs"].find(m=>m.id === "M802") === undefined) loadGame["rs"].push({id: "M802", amt: 0});
         const mat1 = loadGame["rs"].find(m=>m.id === "M800");
         const mat2 = loadGame["rs"].find(m=>m.id === "M801");
         const mat3 = loadGame["rs"].find(m=>m.id === "M802");

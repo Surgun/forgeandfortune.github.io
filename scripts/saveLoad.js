@@ -82,7 +82,6 @@ function loadGame() {
     if (loadGame === null) return false;
     //aka there IS a file
     loadGame = saveUpdate(loadGame);
-    console.log(loadGame);
     if (typeof loadGame["as"] !== "undefined") actionSlotManager.loadSave(loadGame["as"]);
     if (typeof loadGame["d"] !== "undefined") DungeonManager.loadSave(loadGame["d"]);
     if (typeof loadGame["e"] !== "undefined") EventManager.loadSave(loadGame["e"]);

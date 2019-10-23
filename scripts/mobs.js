@@ -21,7 +21,7 @@ const MobManager = {
         this.idCount += 1;
         return this.idCount;
     },
-    generateDungeonFloor(floor,bossMultiplier) {
+    generateDungeonFloor(floor,floorNum,bossMultiplier) {
         const mobFloor = [];
         floor.mobs.forEach(mob => {
             mobFloor.push(this.generateDungeonMob(mob,floorNum,bossMultiplier));
@@ -98,15 +98,14 @@ const FloorManager = {
     }
 }
 
-class Mob {
-    constructor (lvl,mobTemplate, difficulty=0) {
-        Object.assign(this, mobTemplate);
+class Mob extends Combatant {
+    constructor (lvl, mobTemplate, difficulty=0) {
+        super(mobTemplate);
         this.lvl = lvl;
         this.difficulty = difficulty;
         this.pow = Math.floor((mobTemplate.powBase + mobTemplate.powLvl*lvl)*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
         this.hpmax = Math.floor((mobTemplate.hpBase + mobTemplate.hpLvl*lvl)*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
         this.hp = this.hpmax;
-        this.playbook = null;
         this.uniqueid = MobManager.getUniqueID();
         this.gotloot = false;
     }
@@ -125,52 +124,7 @@ class Mob {
     }
     addTime() {
     }
-    getPow() {
-        return this.pow;
-    }
-    getAdjPow() {
-        return this.getPow();
-    }
-    getArmor() {
-        if (this.ignoredArmor) return 0;
-        if (this.armorBuff) return this.armor + Math.round(this.getAdjPow() * 0.2);
-        return this.armor;
-    }
-    getCrit() {
-        return this.crit;
-    }
     pic() {
         return this.image;
-    }
-    dead() {
-        return this.hp === 0;
-    }
-    alive() {
-        return this.hp > 0;
-    }
-    maxHP() {
-        return this.hpmax;
-    }
-    missingHP() {
-        return this.maxHP()-this.hp;
-    }
-    rollDrops() {
-        const mobDrops = [];
-        if (this.drops === null || this.gotloot) {
-            this.gotloot = true;
-            return mobDrops;
-        }
-        for (const [material, success] of Object.entries(this.drops)) {
-            const roll = Math.floor(Math.random() * 100);
-            if (success > roll) mobDrops.push(material);
-        }
-        this.gotloot = true;
-        return mobDrops;
-    }
-    looted() {
-        return this.gotloot;
-    }
-    healCost() {
-        return 0;
     }
 }

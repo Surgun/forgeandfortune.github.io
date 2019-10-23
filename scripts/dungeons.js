@@ -111,8 +111,12 @@ class Dungeon {
                 this.dungeonTime -= dungeonWaitTime;
                 return;
             }
+            if (this.party.isDead()) {
+                this.nextFloor(refreshLater,true);
+                this.dungeonTime -= dungeonWaitTime;
+                return;
+            }
             CombatManager.nextTurn(this);
-            if (this.party.isDead()) this.previousFloor(refreshLater);
             this.dungeonTime -= dungeonWaitTime;
             if (!refreshLater) refreshTurnOrder(this.id);
         }
@@ -124,6 +128,10 @@ class Dungeon {
     }
     floorComplete() {
         return this.mobs.every(m=>m.dead());
+    }
+    initializeParty(party) {
+        this.party = party;
+        this.lastParty = party.heroID;
     }
     endDungeon() {
         if (DungeonManager.dungeonView === this.id) {
@@ -170,51 +178,28 @@ class Dungeon {
         });
     }
     addRewards() {
-        if (this.floorCount === 0) return;
+        /*if (this.floorCount === 0) return;
         const rewards = FloorManager.rewards(this.floorID,this.floorCount);
-        ResourceManager.addMaterial(rewards.id,rewards.amt);
+        ResourceManager.addMaterial(rewards.id,rewards.amt);*/
     }
-    nextFloor(refreshLater) {
-        if (this.type === "boss" && this.floorCount === 1) {
+    nextFloor(refreshLater, previousFloor) {
+        /*if (this.type === "boss" && this.floorCount === 1) {
             this.completeState = "bossBeat";
             this.endDungeon();
             return;
-        }
+        }*/
         this.addRewards();
-        this.floorCount += 1;
+        if (previousFloor) this.floorCount = Math.max(1,this.floorCount-1);
+        else this.floorCount += 1;
         achievementStats.floorRecord(this.id, this.floorCount);
-        const floor = FloorManager.getFloor(dungeonid,floorNum);
+        const floor = FloorManager.getFloor(this.id, this.floorCount);
         this.floorID = floor.id;
-        this.mobs = MobManager.generateDungeonFloor(floor,this.bossDifficulty());
+        this.mobs = MobManager.generateDungeonFloor(floor,this.floorCount,this.bossDifficulty());
         this.order = new TurnOrder(this.party.heroes,this.mobs);
         this.party.resetForFloor();
         if (refreshLater) return;
         initiateDungeonFloor(this.id);
         $("#dsb"+this.id).html(`${this.name} - Floor ${this.floorCount}`);
-    }
-    addSummon() {
-        this.mobs = this.mobs.filter(m=>m.alive());
-        if (this.mobs.length === 4) return;
-        const newMob = MobManager.generateDungeonMob("LKH001",0);
-        this.mobs.push(newMob);
-        this.order = new TurnOrder(this.party.heroes,this.mobs);
-        this.order.position += 1;
-        initiateDungeonFloor(this.id);
-    }
-    addSummon2() {
-        this.mobs = this.mobs.filter(m=>!m.clearImmediately);
-        const newMob = MobManager.generateDungeonMob("LKH004",0);
-        newMob.clearImmediately = true;
-        this.mobs.push(newMob);
-        const newMob2 = MobManager.generateDungeonMob("LKH005",0);
-        newMob2.clearImmediately = true;
-        this.mobs.push(newMob2);
-        const newMob3 = MobManager.generateDungeonMob("LKH006",0);
-        newMob3.clearImmediately = true;
-        this.mobs.push(newMob3);
-        this.order = new TurnOrder(this.party.heroes,this.mobs);
-        this.order.position += 1;
-        initiateDungeonFloor(this.id);
     }
     bossPercent() {
         if (this.type !== "boss") return "0%";

@@ -1,12 +1,11 @@
 "use strict";
 
-class Hero {
+class Hero extends Combatant {
     constructor (props) {
-        Object.assign(this, props);
+        super(props);
         this.uniqueid = this.id;
         this.hp = this.initialHP;
         this.pow = this.initialPow;
-        this.playbook = null;
         this.critdmg = 1.5;
         this.unitType = "hero";
         this.slot1 = null;
@@ -77,12 +76,9 @@ class Hero {
         this.owned = save.owned;
     }
     getArmor() {
-        if (this.ignoredArmor) return 0;
         const slots = this.getEquipSlots(true).map(s=>s.armor());
         const armorFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
-        const armorCalc = this.initialArmor + armorFromGear;
-        if (this.armorBuff) return armorCalc + Math.round(this.getAdjPow(true) * 0.2);
-        return armorCalc;
+        return this.initialArmor + armorFromGear;
     }
     getPow() {
         const slots = this.getEquipSlots(true).map(s=>s.pow());
@@ -138,28 +134,6 @@ class Hero {
         if (slots[slot] === null) return 0;
         return slots[slot].hp();
     }
-    heal(hp) {
-        if (this.hp === 0) return;
-        this.hp = Math.min(this.hp+hp,this.maxHP());
-        if (CombatManager.refreshLater) refreshHPBar(this);
-    }
-    healPercent(hpPercent) {
-        if (this.hp === 0) return;
-        this.hp += Math.floor(this.maxHP()*hpPercent/100);
-        this.hp = Math.min(this.maxHP(),this.hp);
-        if (CombatManager.refreshLater) refreshHPBar(this);
-    }
-    damageCurrentPercent(dmgPercent) {
-        this.hp = Math.floor(this.hp*dmgPercent/100)
-        this.hp = Math.max(1,this.hp)
-        if (CombatManager.refreshLater) refreshHPBar(this);
-    }
-    dead() {
-        return this.hp === 0;
-    }
-    alive() {
-        return this.hp > 0;
-    }
     getEquipSlots(nonblank) {
         //return an object with 
         const slots = [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6,this.slot7];
@@ -202,9 +176,6 @@ class Hero {
     }
     getSlot(slot) {
         return this.getEquipSlots()[slot];
-    }
-    missingHP() {
-        return this.maxHP()-this.hp;
     }
     unequip(slot) {
         if (Inventory.full()) {
@@ -254,9 +225,6 @@ class Hero {
     }
     canEquipType(type) {
         return this.slot1Type.includes(type) || this.slot2Type.includes(type) || this.slot3Type.includes(type) || this.slot4Type.includes(type) || this.slot5Type.includes(type) || this.slot6Type.includes(type) || this.slot7Type.includes(type);
-    }
-    resetPlaybookPosition() {
-        this.playbook.reset();
     }
 }
 

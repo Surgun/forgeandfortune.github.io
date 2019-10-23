@@ -162,7 +162,6 @@ function initiateDungeonFloor(dungeonID) {
         d1.append(d2,d3);        
         if (settings.toggleTurnOrderBars === 1) {
             $("<div/>").addClass("dscHP").html(createHPBar(hero,"Dung")).appendTo(d1);
-            $("<div/>").addClass("dscAP").html(createAPBar(hero,"Dung")).appendTo(d1);
         }
         $dungeonHeroList.prepend(d1);
     });
@@ -173,8 +172,6 @@ function initiateDungeonFloor(dungeonID) {
         d6.append(d7,d8);
         if (settings.toggleTurnOrderBars === 1) {
             $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung")).appendTo(d6);
-            const d10 = $("<div/>").addClass("dsmAP").html(createAPBar(mob,"Dung")).appendTo(d6);
-            if (mob.apAdd === 0) d10.hide();
         }
         if (mob.hp === 0) d6.addClass("mobDead");
         $dungeonMobList.prepend(d6);
@@ -192,9 +189,7 @@ function refreshTurnOrder(dungeonID) {
         const d1a = $("<div/>").addClass("orderUnitHeadImg").html(unit.head);
         const d1b = $("<div/>").addClass("orderUnitHead").html(unit.name);
         const d1c = $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder"));
-        const d1d = $("<div/>").addClass("orderUnitAP").html(createAPBar(unit,"turnOrder"));
-        if (unit.apAdded() === 0) d1d.hidden();
-        d1.append(d1a,d1b,d1c,d1d);
+        d1.append(d1a,d1b,d1c);
         if (dungeon.order.position === i) {
             d1.addClass("orderUnitActive").append(createBeatBar(0));
         };
@@ -245,15 +240,6 @@ function refreshBeatBar(dungeonTime) {
     beatFill.css('width',beatWidth);
 }
 
-function createAPBar(hero, tag) {
-    const apPercent = Math.min(1,hero.ap/hero.apmax);
-    const apWidth = (apPercent*100).toFixed(1)+"%";
-    const d = $("<div/>").addClass("apBarDiv").html(miscIcons.ap);
-    const d1 = $("<div/>").addClass("apBar").attr("data-label",hero.ap+"/"+hero.apmax).attr("id","ap"+tag+hero.uniqueid);
-    const s1 = $("<span/>").addClass("apBarFill").attr("id","apFill"+tag+hero.uniqueid).css('width', apWidth);
-    return d.append(d1,s1);
-}
-
 function refreshHPBar(hero) {
     const hptypes = ["Dung","turnOrder"];
     const hpPercent = hero.hp/hero.maxHP();
@@ -262,14 +248,4 @@ function refreshHPBar(hero) {
         $(`#hp${type}${hero.uniqueid}`).attr("data-label",hero.hp+"/"+hero.maxHP());
         $(`#hpFill${type}${hero.uniqueid}`).css('width', hpWidth);
     })
-}
-
-function refreshAPBar(hero) {
-    const apTypes = ["Dung","turnOrder"];
-    const apPercent = hero.ap/hero.apmax;
-    const apWidth = (apPercent*100).toFixed(1)+"%";
-    apTypes.forEach(type => {
-        $("#ap"+type+hero.uniqueid).attr("data-label",hero.ap+"/"+hero.apmax);
-        $("#apFill"+type+hero.uniqueid).css('width', apWidth);
-    });
 }

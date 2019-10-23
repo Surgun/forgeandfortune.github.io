@@ -234,8 +234,7 @@ function characterCard(prefix,dv,ID,status) {
     const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
     const d3 = $("<div/>").addClass(prefix+"Stats");
         const d3a = $("<div/>").addClass(prefix+"HP"+" heroStat"+" tooltip").attr("data-tooltip","HP").html(`${miscIcons.hp} ${hero.maxHP()}`);
-        const d3b = $("<div/>").addClass(prefix+"AP"+" heroStat"+" tooltip").attr("data-tooltip","AP Per Hit").html(`${miscIcons.ap} ${hero.apAdded()}`);
-        d3.append(d3a,d3b);
+        d3.append(d3a);
     const d4 = $("<div/>").addClass(prefix+"Pow"+" heroPowStat"+" tooltip").attr("data-tooltip","POW").html(`${miscIcons.pow} ${hero.getPow()}`);
     const d5 = $("<div/>").addClass("heroStatus").html(status);
     if (status === null) d5.hide();

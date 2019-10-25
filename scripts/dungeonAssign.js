@@ -98,11 +98,6 @@ function screenDirectDungeon(dungeonID) {
     }
 }
 
-/*------------------------
-/*-   TEAM SELECT CODE   -
-/*------------------------*/
-
-
 /*-----------------------------------------
 /*-   DUNGEON RUNNING CODE
 /*-----------------------------------------*/
@@ -186,15 +181,24 @@ function refreshTurnOrder(dungeonID) {
     dungeon.order.getOrder().forEach((unit,i) => {
         const d1 = $("<div/>").addClass("orderUnit");
         if (unit.dead()) d1.addClass("orderUnitDead");
-        const d1a = $("<div/>").addClass("orderUnitHeadImg").html(unit.head);
-        const d1b = $("<div/>").addClass("orderUnitHead").html(unit.name);
-        const d1c = $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder"));
-        d1.append(d1a,d1b,d1c);
+            $("<div/>").addClass("orderUnitHeadImg").html(unit.head).appendTo(d1);
+            $("<div/>").addClass("orderUnitHead").html(unit.name).appendTo(d1);
+            $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder")).appendTo(d1);
+        generateSkillIcons(unit).appendTo(d1);
         if (dungeon.order.position === i) {
             d1.addClass("orderUnitActive").append(createBeatBar(0));
         };
         $drTurnOrder.append(d1);
     });
+}
+
+function generateSkillIcons(unit) {
+    const d1 = $("<div/>").addClass("orderUnitSkills");
+    unit.getSkillIcons().forEach((icon,idx) => {
+        const d2 = $("<div/>").addClass("orderUnitSkill").html(icon).appendTo(d1);
+        if (unit.playbook.skillCount() === idx) d2.addClass("orderUnitActiveSkill");
+    });
+    return d1;
 }
 
 const $dungeonTab = $("#dungeonTab");

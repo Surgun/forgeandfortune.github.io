@@ -70,6 +70,12 @@ class Playbook {
         if (this.position >= 4) this.position = 0;
         return skill;
     }
+    getSkillIcons() {
+        return this.skills.map(s=>s.icon);
+    }
+    skillCount() {
+        return this.position;
+    }
 }
 
 SkillManager.skillEffects['S0001'] = function(skill,attacker,power,target,dungeonid) {

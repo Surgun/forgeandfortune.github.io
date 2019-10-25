@@ -139,5 +139,8 @@ class Combatant {
     getSkill() {
         return this.playbook.nextSkill();
     }
+    getSkillIcons() {
+        return this.playbook.getSkillIcons();
+    }
 }
 

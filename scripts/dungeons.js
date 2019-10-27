@@ -50,12 +50,14 @@ class Dungeon {
         this.order = null;
         this.status = DungeonStatus.EMPTY;
         this.lastParty = null;
+        this.floorMaterial = null;
         this.completeState = "none";
     }
     createSave() {
         const save = {};
         save.id = this.id;
         save.lastParty = this.lastParty;
+        save.floorID = this.floorID;
         if (this.party === null) save.party = null;
         else save.party = this.party.createSave();
         save.mobs = [];
@@ -76,6 +78,7 @@ class Dungeon {
         if (save.party !== null) this.party = new Party(save.party.heroID);
         else save.party = null;
         if (save.lastParty !== undefined) this.lastParty = save.lastParty;
+        if (save.floorID !== undefined) this.floorID = save.floorID;
         this.mobs = [];
         save.mobs.forEach(mobSave => {
             const mobTemplate = MobManager.idToMob(mobSave.id);
@@ -91,7 +94,6 @@ class Dungeon {
         this.dungeonTime = save.dungeonTime;
         this.floorCount = save.floorCount;
         this.status = save.status;
-        this.sanctuary = FloorManager.isSanctuary(this.id,this.floorCount);
         if (save.completeState !== undefined) this.completeState = save.completeState;
     }
     addTime(t) {
@@ -103,41 +105,18 @@ class Dungeon {
         const refreshLater = this.dungeonTime >= 2*dungeonWaitTime;
         CombatManager.refreshLater = refreshLater;
         while (this.dungeonTime >= dungeonWaitTime) {
-            if (this.sanctuary) {
-                //lol hax, this.sanctuary holds gate keeping
-                const healPercent = ActionLeague.sanctuaryHeal[this.floorCount/50];
-                if (healPercent > 0) {
-                    const battleMessage = $("<span/>").addClass("logSpecial");
-                    battleMessage.html(`${logIcon("far fa-swords")} Your party is healed at the Sanctuary!`);
-                    BattleLog.addEntry(this.id,battleMessage);
-                    this.party.heroes.forEach(hero => {
-                        hero.healPercent(healPercent);
-                    });
-                }
+            //take a turn
+            if (this.floorComplete()) {
                 this.nextFloor(refreshLater);
                 this.dungeonTime -= dungeonWaitTime;
                 return;
             }
-            this.checkDeadMobs(refreshLater); //workaround for when you killed a monster but haven't looted it and refreshed
-            if (this.floorComplete() && this.dungeonTime >= dungeonWaitTime) {
-                this.nextFloor(refreshLater);
-                this.dungeonTime -= dungeonWaitTime;
-                return;
-            }
-            const unit = this.order.nextTurn();
-            if (!unit.dead()) {
-                if (unit.unitType === "hero") CombatManager.launchAttack(unit, this.party.heroes, this.mobs, this.id);
-                else CombatManager.launchAttack(unit, this.mobs, this.party.heroes, this.id);         
-            }
-            if (!refreshLater) refreshAPBar(unit);
-            this.order.nextPosition();
-            this.checkDeadMobs(refreshLater);
-            this.beatTotal += 1;
             if (this.party.isDead()) {
-                this.completeState = "partyDead";
-                this.endDungeon();
+                this.nextFloor(refreshLater,true);
+                this.dungeonTime -= dungeonWaitTime;
                 return;
             }
+            CombatManager.nextTurn(this);
             this.dungeonTime -= dungeonWaitTime;
             if (!refreshLater) refreshTurnOrder(this.id);
         }
@@ -145,29 +124,16 @@ class Dungeon {
             initiateDungeonFloor(this.id);
             BattleLog.refresh();
         }
-        if (!this.floorComplete() && DungeonManager.dungeonView === this.id) refreshBeatBar(this.dungeonTime);
+        if (DungeonManager.dungeonView === this.id) refreshBeatBar(this.dungeonTime);
     }
     floorComplete() {
-        return this.mobs.every(m=>m.looted());
-    }
-    checkDeadMobs(refreshLater) {
-        let needrefresh = false;
-        this.mobs.forEach(mob => {
-            if (mob.dead() && !mob.looted()) {
-                this.addDungeonDrop(mob.rollDrops());
-                MonsterHall.addKill(mob.id);
-                needrefresh = true;
-            }
-        });
-        if (refreshLater) return;
-        if (needrefresh) initiateDungeonFloor(this.id);
+        return this.mobs.every(m=>m.dead());
     }
     initializeParty(party) {
         this.party = party;
         this.lastParty = party.heroID;
     }
     endDungeon() {
-        this.status = DungeonStatus.COLLECT;
         if (DungeonManager.dungeonView === this.id) {
             showDungeonReward(this.id);
         }
@@ -209,52 +175,31 @@ class Dungeon {
             const found = this.dropList.find(d => d.id === drop)
             if (found === undefined) this.dropList.push({"id":drop,"amt":1});
             else found.amt += 1;
-        })
+        });
     }
-    nextFloor(refreshLater) {
-        if (this.type === "boss" && this.floorCount === 1) {
+    addRewards() {
+        /*if (this.floorCount === 0) return;
+        const rewards = FloorManager.rewards(this.floorID,this.floorCount);
+        ResourceManager.addMaterial(rewards.id,rewards.amt);*/
+    }
+    nextFloor(refreshLater, previousFloor) {
+        /*if (this.type === "boss" && this.floorCount === 1) {
             this.completeState = "bossBeat";
             this.endDungeon();
             return;
-        }
-        this.floorCount += 1;
+        }*/
+        this.addRewards();
+        if (previousFloor) this.floorCount = Math.max(1,this.floorCount-1);
+        else this.floorCount += 1;
         achievementStats.floorRecord(this.id, this.floorCount);
-        this.sanctuary = FloorManager.isSanctuary(this.id,this.floorCount);
-        if (this.sanctuary) {
-            this.mobs = [];
-            this.order = new TurnOrder(this.party.heroes,[]);
-        }
-        else {
-            this.mobs = MobManager.generateDungeonFloor(this.id,this.floorCount,this.bossDifficulty());
-            this.order = new TurnOrder(this.party.heroes,this.mobs);
-        }
+        const floor = FloorManager.getFloor(this.id, this.floorCount);
+        this.floorID = floor.id;
+        this.mobs = MobManager.generateDungeonFloor(floor,this.floorCount,this.bossDifficulty());
+        this.order = new TurnOrder(this.party.heroes,this.mobs);
+        this.party.resetForFloor();
         if (refreshLater) return;
         initiateDungeonFloor(this.id);
         $("#dsb"+this.id).html(`${this.name} - Floor ${this.floorCount}`);
-    }
-    addSummon() {
-        this.mobs = this.mobs.filter(m=>m.alive());
-        if (this.mobs.length === 4) return;
-        const newMob = MobManager.generateDungeonMob("LKH001",0);
-        this.mobs.push(newMob);
-        this.order = new TurnOrder(this.party.heroes,this.mobs);
-        this.order.position += 1;
-        initiateDungeonFloor(this.id);
-    }
-    addSummon2() {
-        this.mobs = this.mobs.filter(m=>!m.clearImmediately);
-        const newMob = MobManager.generateDungeonMob("LKH004",0);
-        newMob.clearImmediately = true;
-        this.mobs.push(newMob);
-        const newMob2 = MobManager.generateDungeonMob("LKH005",0);
-        newMob2.clearImmediately = true;
-        this.mobs.push(newMob2);
-        const newMob3 = MobManager.generateDungeonMob("LKH006",0);
-        newMob3.clearImmediately = true;
-        this.mobs.push(newMob3);
-        this.order = new TurnOrder(this.party.heroes,this.mobs);
-        this.order.position += 1;
-        initiateDungeonFloor(this.id);
     }
     bossPercent() {
         if (this.type !== "boss") return "0%";

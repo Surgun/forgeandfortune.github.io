@@ -21,9 +21,8 @@ const MobManager = {
         this.idCount += 1;
         return this.idCount;
     },
-    generateDungeonFloor(dungeonid,floorNum,bossMultiplier) {
+    generateDungeonFloor(floor,floorNum,bossMultiplier) {
         const mobFloor = [];
-        const floor = FloorManager.getFloor(dungeonid,floorNum);
         floor.mobs.forEach(mob => {
             mobFloor.push(this.generateDungeonMob(mob,floorNum,bossMultiplier));
             MonsterHall.findMonster(mob);
@@ -64,16 +63,13 @@ const FloorManager = {
     addFloor(floor) {
         this.floors.push(floor);
     },
+    floorByID(id) {
+        return this.floors.find(f=>f.id === id);
+    },
     getFloor(dungeon,floor) {
         const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
         const rand = DungeonSeedManager.getFloorSeed(dungeon,floor);
         return possibleFloors[Math.floor(rand*possibleFloors.length)];
-    },
-    isSanctuary(dungeon,floor) {
-        //so hackish
-        const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
-        if (possibleFloors.every(f => f.type === "sanctuary")) return true;
-        return false;
     },
     mobsByDungeon(dungeonid) {
         const floors = this.floors.filter(f=>f.dungeon === dungeonid);
@@ -95,19 +91,21 @@ const FloorManager = {
         const maxFloor = floors.map(f=>f.maxFloor);
         const minFloor = floors.map(f=>f.minFloor);
         return {"min":Math.min(...minFloor),"max":Math.min(...maxFloor)};
+    },
+    rewards(floorID) {
+        const floor = this.floorByID(floorID);
+        return new idAmt(floor.material,floor.amt);
     }
 }
 
-class Mob {
-    constructor (lvl,mobTemplate, difficulty=0) {
-        Object.assign(this, mobTemplate);
+class Mob extends Combatant {
+    constructor (lvl, mobTemplate, difficulty=0) {
+        super(mobTemplate);
         this.lvl = lvl;
         this.difficulty = difficulty;
         this.pow = Math.floor((mobTemplate.powBase + mobTemplate.powLvl*lvl)*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
         this.hpmax = Math.floor((mobTemplate.hpBase + mobTemplate.hpLvl*lvl)*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
         this.hp = this.hpmax;
-        this.ap = 0;
-        this.apmax = 120;
         this.uniqueid = MobManager.getUniqueID();
         this.gotloot = false;
     }
@@ -117,69 +115,16 @@ class Mob {
         save.id = this.id;
         save.uniqueid = this.uniqueid;
         save.hp = this.hp;
-        save.ap = this.ap
         save.difficulty = this.difficulty;
         return save;
     }
     loadSave(save) {
         this.hp = save.hp;
-        this.ap = save.ap;
         this.uniqueid = save.uniqueid;
     }
     addTime() {
     }
-    getPow() {
-        return this.pow;
-    }
-    getAdjPow() {
-        return this.getPow();
-    }
-    getArmor() {
-        if (this.ignoredArmor) return 0;
-        if (this.armorBuff) return this.armor + Math.round(this.getAdjPow() * 0.2);
-        return this.armor;
-    }
-    getCrit() {
-        return this.crit;
-    }
     pic() {
         return this.image;
-    }
-    dead() {
-        return this.hp === 0;
-    }
-    alive() {
-        return this.hp > 0;
-    }
-    maxHP() {
-        return this.hpmax;
-    }
-    missingHP() {
-        return this.maxHP()-this.hp;
-    }
-    addAP() {
-        this.ap += this.apAdd;
-    }
-    apAdded() {
-        return this.apAdd;
-    }
-    rollDrops() {
-        const mobDrops = [];
-        if (this.drops === null || this.gotloot) {
-            this.gotloot = true;
-            return mobDrops;
-        }
-        for (const [material, success] of Object.entries(this.drops)) {
-            const roll = Math.floor(Math.random() * 100);
-            if (success > roll) mobDrops.push(material);
-        }
-        this.gotloot = true;
-        return mobDrops;
-    }
-    looted() {
-        return this.gotloot;
-    }
-    healCost() {
-        return 0;
     }
 }

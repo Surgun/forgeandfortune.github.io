@@ -7,7 +7,7 @@ const player = {
 }
 
 function afterLoad() {
-    $versionNum.html(PatchManager.lastVersion());
+    $("#versionNum").html(PatchManager.lastVersion());
     refreshPatchNotes();
     initializeRecipes();
     initializeMats();

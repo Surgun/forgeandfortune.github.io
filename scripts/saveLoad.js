@@ -717,21 +717,26 @@ function saveUpdate(loadGame) {
 
 
 //UI Stuff
-$("#deleteSaveButton").click((e) => {
+$(document).on('click', '#deleteSaveButton', (e) => {
     e.preventDefault();
     ClearSave();
 });
 
-$('#exportSave').click(() => {
+$(document).on('click', '#declineSaveButton', (e) => {
+    e.preventDefault();
+    setDialogClose();
+});
+
+$(document).on('click', '#exportSave', () => {
     ExportSave();
 });
 
-$('#importSaveButton').click((e) => {
+$(document).on('click', '#importSaveButton', (e) => {
     e.preventDefault();
     ImportSaveButton();
 });
 
-$("#exportSaveCopy").click((e) => {
+$(document).on('click', '#exportSaveCopy', (e) => {
     e.preventDefault();
     var $temp = $("<input>");
     $("body").append($temp);
@@ -740,7 +745,7 @@ $("#exportSaveCopy").click((e) => {
     $temp.remove();
 })
 
-$("#exportSaveLocal").click((e) => {
+$(document).on('click', '#exportSaveLocal', (e) => {
     e.preventDefault();
     downloadSave();
 });

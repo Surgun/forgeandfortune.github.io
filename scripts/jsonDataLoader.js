@@ -166,6 +166,18 @@ function loadTown() {
             const building = new Building(props);
             TownManager.addBuilding(building);
         });
+        loadDialogs();
+    });
+
+function loadDialogs() {
+    $.ajax({
+        url: "json/dialogs.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            const dialog = new Dialog(props);
+            DialogManager.addDialog(dialog);
+        });
         afterLoad();
     });
+}
 }

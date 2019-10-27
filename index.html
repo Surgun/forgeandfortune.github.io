@@ -67,78 +67,6 @@
 <body>
     <main id="content">
         <!-- Dialogs -->
-        <div id="dialogPlayfab" class="dialog" role="dialog" aria-labelledby="titlePlayfab" aria-describedby="descPlayfab">
-            <div class="dialog_content">
-                <div class="dialog_header">
-                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
-                    <h2 id="titlePlayfab" class="dialog_title"><img class="playfabLogo" src="images/PlayFab_logo_small.png" oncontextmenu="return false;">PlayfabCloud Save</h2>
-                </div>
-                <div class="dialog_body">
-                    <p id="descPlayfab" class="dialog_description">
-                        Login or Register your PlayFab account below, and then import or export your cloud save on any computer or device!
-                    </p>
-                    <div id="pfLoginRegister">
-                        <form autocomplete="on">
-                            <div id="pfEmail"><h2>Email</h2><input type="text" name="email" id="email" autocomplete="email"></div>
-                            <div id="pfPassword"><h2>Password</h2> <input type="password" name="password" id="password" autocomplete="current-password"></div>
-                            <div id="pfButtons"><input type="submit" name="login" id="login" value="login"><input type="button" name="register" id="register" value="register"></div>
-                            <div id="pfStatusSection"><span id="pfStatus" style="color:red"></span></div>
-                        </form>
-                    </div>
-                    <div id="pfImportExport">
-                        <input type="button" name="Save to Cloud" id="pfSave" value="Save to Cloud">
-                        <input type="button" name="Load from Cloud" id="pfLoad" value="Load from Cloud">
-                        <div id="pfSaveStatus"><span id="pfStatusSave" style="color:red"></span></div>
-                    </div>
-                    <div id="loadSure">
-                        <p class="loadSureDescription">Are you sure you would like to load this game data? This action cannot be reserved!</p>
-                        <div id="pfLoadButtons"><input type="button" name="loadYes" id="pfloadYes" value="Yes"><input type="button" name="loadNo" id="pfloadNo" value="No"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="dialogClearSave" class="dialog" role="dialog" aria-labelledby="titleClearSave" aria-describedby="descClearSave">
-            <div class="dialog_content">
-                <div class="dialog_header">
-                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
-                    <h2 id="titleClearSave" class="dialog_title">Clear Your Save Data?</h2>
-                </div>
-                <div class="dialog_body">
-                    <p id="descClearSave" class="dialog_description">Are you sure you want to clear your saved game data from this browser? This action cannot be reversed.</p>
-                    <div class="dialog_btn_actions">
-                        <button class="btn_action" id="deleteSaveButton">Yes! Delete My Game Data.</button>
-                        <a class="btn_action" href="#closeDialog"><button id="declineSaveButton">No! Keep My Game Data.</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="dialogExportSave" class="dialog" role="dialog" aria-labelledby="titleExportSave" aria-describedby="descExportSave">
-            <div class="dialog_content">
-                <div class="dialog_header">
-                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
-                    <h2 id="titleExportSave" class="dialog_title">Export Game Data?</h2>
-                </div>
-                <div class="dialog_body">
-                    <p id="descExportSave" class="dialog_description">Export your game data for sharing or use at a later time in another browser, computer or device. Copy the export string below for importing at a later time.</p>
-                    <input type="text" id="exportSaveText"/>
-                    <button id="exportSaveLocal">Download as File</button>
-                    <button id="exportSaveCopy">Copy to Clipboard</button>
-                </div>
-            </div>
-        </div>
-        <div id="dialogImportSave" class="dialog" role="dialog" aria-labelledby="titleImportSave" aria-describedby="descImportSave">
-            <div class="dialog_content">
-                <div class="dialog_header">
-                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
-                    <h2 id="titleImportSave" class="dialog_title">Import Game Data?</h2>
-                </div>
-                <div class="dialog_body">
-                    <p id="descImportSave" class="dialog_description">Import previously exported data by inputting the export string in the box below then pressing 'Import Save'.</p>
-                    <input type="text" id="importSaveText"/>
-                    <button id="importSaveButton">Import Save</button>
-                </div>
-            </div>
-        </div>
         <div id="dialogSettings" class="dialog" role="dialog" aria-labelledby="titleImportSave" aria-describedby="descImportSave">
             <div class="dialog_content">
                 <div class="dialog_header">
@@ -211,20 +139,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div id="dialogPatch" class="dialog" role="dialog" aria-labelledby="titlePatch" aria-describedby="descPatch">
-            <div class="dialog_content">
-                <div class="dialog_header">
-                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
-                    <h2 id="titlePatch" class="dialog_title">Patch Notes</h2>
-                </div>
-                <div class="dialog_body" id="patchList">
-                    <p id="descPatch" class="dialog_description">You are not running the latest version of Forge &amp; Fortune.</p>
-                </div>
-                <div class="dialog_footer">
-                    <div id="updateRefresh">Refresh Game to Update</div>
                 </div>
             </div>
         </div>
@@ -760,14 +674,14 @@
             </div>
             <footer role="contentinfo">
                 <div id="bottom-left">
-                    <a id="clearSave" class="isDialog tooltip" href="#dialogClearSave" data-tooltip="Permanently delete your current saved game data. This action is irreversible."><i class="fas fa-file-times"></i> Clear Save</a>
-                    <a id="exportSave" class="isDialog tooltip" href="#dialogExportSave" data-tooltip="Export your current game data for sharing or importing at a later time."><i class="fas fa-file-export"></i> Export Save</a>
-                    <a id="importSave" class="isDialog tooltip" href="#dialogImportSave" data-tooltip="Import your own previously exported data or shared game data."><i class="fas fa-file-import"></i> Import Save</a>
-                    <a id="cloudSave" class="isDialog tooltip" href="#dialogPlayfab" data-tooltip="Save or load your game data from the Cloud using Playfab."><i class="fas fa-cloud-download"></i> Cloud Save</a>
-                    <a id="settings" class="isDialog tooltip" href="#dialogSettings" data-tooltip="Change your game preferences and settings."><i class="fas fa-cog"></i> Settings</a>
+                    <a id="clearSave" data-dialog-id="clear_save" class="isDialog tooltip" data-tooltip="Permanently delete your current saved game data. This action is irreversible."><i class="fas fa-file-times"></i> Clear Save</a>
+                    <a id="exportSave" data-dialog-id="export_save" class="isDialog tooltip" data-tooltip="Export your current game data for sharing or importing at a later time."><i class="fas fa-file-export"></i> Export Save</a>
+                    <a id="importSave" data-dialog-id="import_save" class="isDialog tooltip" data-tooltip="Import your own previously exported data or shared game data."><i class="fas fa-file-import"></i> Import Save</a>
+                    <a id="cloudSave" data-dialog-id="playfab" class="isDialog tooltip" data-tooltip="Save or load your game data from the Cloud using Playfab."><i class="fas fa-cloud-download"></i> Cloud Save</a>
+                    <a id="settings" data-dialog-id="settings" class="isDialog tooltip" data-tooltip="Change your game preferences and settings."><i class="fas fa-cog"></i> Settings</a>
                 </div>
                 <div id="bottom-right">
-                    <a class="isDialog" href="#dialogPatch" id="versionNum">v0.2.2.0</a>
+                    <a class="isDialog" data-dialog-id="patch_notes" id="versionNum">fetching...</a>
                     <div class="footer_more-container">
                         <span class="footer_more-btn">View Links &amp; Resources<i class="fas fa-angle-up"></i></span>
                         <ul class="footer_more-list">
@@ -867,6 +781,7 @@
     <script src="scripts/monsterhall.js"></script>
     <script src="scripts/town.js"></script>
     <script src="scripts/guilds.js"></script>
+    <script src="scripts/dialogs.js"></script>
     <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
     <script src="scripts/playfab.js"></script>
     <script type="text/javascript" src="scripts/pako.min.js"></script>

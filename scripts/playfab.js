@@ -3,69 +3,75 @@ PlayFab.settings.titleId = "D765";
 let sessionID = ""
 let saveFile = 0;
 
-
-$pfLoginRegister = $("#pfLoginRegister");
-$pfImportExport = $("#pfImportExport");
-$register = $("#register");
-$login = $("#login");
-$pfStatus = $("#pfStatus");
-$pfStatusSave = $("#pfStatusSave");
-$pfSave = $("#pfSave");
-$pfLoad = $("#pfLoad");
-$loadSure = $("#loadSure");
-$pfloadYes = $("#pfloadYes");
-$pfloadNo = $("#pfloadNo")
-
-$pfLoginRegister.show();
-$pfImportExport.hide();
-$loadSure.hide();
-
-$("#cloudSave").click((e) => {
+$(document).on("click", "#cloudSave", (e) => {
     //clicked on the "Cloud Save" button
-    $pfLoginRegister.show();
-    $pfImportExport.hide();
-    $loadSure.hide();
+    $("#pfLoginRegister").show();
+    $("#pfImportExport").hide();
+    $("#loadSure").hide();
 })
 
-$register.click((e) => {
+$(document).on("click", "#register", (e) => {
     e.preventDefault();
     registerAcct();
 })
 
-$login.click((e) => {
+$(document).on("click", "#login", (e) => {
     e.preventDefault();
     loginAcct();
 })
 
-$pfSave.click((e) => {
+$(document).on("click", "#reset", (e) => {
+    resetPassword();
+})
+
+
+$(document).on("click", "#pfSave", (e) => {
     e.preventDefault();
     saveToCloud();
 })
 
-$pfLoad.click((e) => {
+$(document).on("click", "#pfLoad", (e) => {
     e.preventDefault();
-    $loadSure.show();
-    $pfImportExport.hide();
+    $("#loadSure").show();
+    $("#pfImportExport").hide();
 })
 
-$pfloadYes.click(() => {
+$(document).on("click", "#pfloadYes", (e) => {
     loadFromCloud();
 })
 
-$pfloadNo.click(() => {
-    $pfLoginRegister.show();
-    $pfImportExport.hide();
-    $loadSure.hide();
+$(document).on("click", "#pfloadNo", (e) => {
+    $("#pfLoginRegister").show();
+    $("#pfImportExport").hide();
+    $("#loadSure").hide();
 })
 
 const validateCallback = function (result, error) {
     if (error !== null) {
-        $pfLoginRegister.show();
-        $pfImportExport.hide();
+        $("#pfLoginRegister").show();
+        $("#pfImportExport").hide();
     }
     else {
-        $pfLoginRegister.hide();
-        $pfImportExport.show();
+        $("#pfLoginRegister").hide();
+        $("#pfImportExport").show();
+    }
+}
+
+function resetPassword() {
+    const resetRequest = {
+        TitleId: PlayFab.settings.titleId,
+        Email : $("#email").val()
+    };
+    PlayFabClientSDK.SendAccountRecoveryEmail(resetRequest, resetCallback);
+}
+
+const resetCallback = (result, error) => {
+    if (result !== null) {
+        $("#pfStatus").html("Password reset email sent to your email address.");
+        setTimeout(() => {setDialogClose()}, 1500)
+    } else if (error !== null) {
+        $("#pfStatus").html(PlayFab.GenerateErrorReport(error));
+        setTimeout(() => {$("#pfStatus").empty()}, 3500);
     }
 }
 
@@ -83,7 +89,8 @@ const registerCallback = function (result, error) {
     if (result !== null) {
         loginAcct();
     } else if (error !== null) {
-        $pfStatus.html(PlayFab.GenerateErrorReport(error));
+        $("#pfStatus").html(PlayFab.GenerateErrorReport(error));
+        setTimeout(() => {$("#pfStatus").empty()}, 3500);
     }
 }
 
@@ -99,17 +106,17 @@ function loginAcct(){
 const LoginCallback = function (result, error) {
     if (result !== null) {
         sessionID = result.data.SessionTicket;
-        $pfLoginRegister.hide();
-        $pfImportExport.show();
-        getSaveFromCloud();       
-
+        $("#pfLoginRegister").hide();
+        $("#pfImportExport").show();
+        getSaveFromCloud();
     } else if (error !== null) {
-        $pfStatus.html(PlayFab.GenerateErrorReport(error));
+        $("#pfStatus").html(PlayFab.GenerateErrorReport(error));
+        setTimeout(() => {$("#pfStatus").empty()}, 3500);
     }
 }
 
 function saveToCloud() {
-    $pfStatusSave.html("Saving...");
+    $("#pfStatusSave").html("Saving...");
     forceSave();
     const requestData = {
         TitleId : PlayFab.settings.titleId,
@@ -125,7 +132,7 @@ function saveCallback(result,error) {
         getSaveFromCloud();
     }
     if (error !== null) {
-        $pfStatusSave.html(PlayFab.GenerateErrorReport(error));
+        $("#pfStatusSave").html(PlayFab.GenerateErrorReport(error));
     }
 }
 
@@ -146,18 +153,18 @@ function getSaveFromCloud() {
 
 function loadCallback(result,error) {
     if (error !== null) {
-        $pfStatusSave.html(PlayFab.GenerateErrorReport(error));        
+        $("#pfStatusSave").html(PlayFab.GenerateErrorReport(error));        
     }
     if (result) {
         if (result.data.Data !== null) {
             saveFile = JSON.parse(JSON.parse(pako.ungzip(atob(result.data.Data.savestring.Value),{ to: 'string' })));
             const date = saveFile["saveTime"];
             const dateString = new Date(date).toString();
-            $pfStatusSave.html("Last save:</br>"+dateString);
+            $("#pfStatusSave").html("Last save:</br>"+dateString);
         }
         else {
             saveFile = null;
-            $pfStatusSave.text("No save uploaded");
+            $("#pfStatusSave").text("No save uploaded.");
         }
     }
 }

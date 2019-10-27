@@ -76,60 +76,6 @@ function backToTop() {
 
 if (backToTopButton) window.onscroll = () => backToTop();
 
-// Dialog Behavior and Tracking
-
-const dialogs = document.querySelectorAll(".dialog");
-const dialogsCloseButtons = document.querySelectorAll(".dialog_close");
-const dialogTriggers = document.querySelectorAll(".isDialog");
-
-dialogs.forEach((dialog) => dialog.addEventListener("click", closeDialog));
-dialogsCloseButtons.forEach((closeButton) => closeButton.addEventListener("click", setDialogClose));
-dialogTriggers.forEach((dialogTrigger) => dialogTrigger.addEventListener("click", setDialogOpen));
-
-function closeDialog(dialog) {
-    if (this === dialog.target) {
-        window.location.assign("#closeDialog");
-        setDialogClose();
-    }
-}
-
-function setDialogOpen() {
-    settings.dialogStatus = 1;
-    saveSettings();
-}
-
-function setDialogClose() {
-    settings.dialogStatus = 0;
-    saveSettings();
-}
-
-if (window.location.href.indexOf("#dialog") > -1) {
-    setDialogOpen();
-} else {
-    setDialogClose();
-}
-
-// Export Copy Click Feedback
-
-const clipboardButton = document.querySelector("#exportSaveCopy");
-
-function clipboardText() {
-    if(document.querySelector(".ClipboardCopy")) {
-        document.querySelector(".ClipboardCopy").remove();
-    }
-    const copyAlert = document.createElement('div');
-    copyAlert.innerHTML = "Copied to clipboard.";
-    copyAlert.classList.add("ClipboardCopy");
-    clipboardButton.insertAdjacentElement("afterend", copyAlert);
-    setTimeout(()=>{
-        document.querySelector(".ClipboardCopy").style.opacity = 0;
-    }, 2500);
-}
-
-if (clipboardButton) {
-    clipboardButton.addEventListener("click", clipboardText);
-}
-
 // Toast Positioning Setting
 
 const toastSettings = document.querySelectorAll("#settings_notificationLocation .selection-container");

@@ -46,25 +46,23 @@ class PatchNote {
     }
 }
 
-const $versionNum = $("#versionNum");
-const $patchList = $("#patchList");
-const $updateRefresh = $("#updateRefresh");
-
 function refreshPatchNotes() {
-    if (PatchManager.updateNeeded()) $versionNum.addClass("hasEvent");
-    $patchList.empty();
+    if (PatchManager.updateNeeded()) $("#versionNum").addClass("hasEvent");
+}
+
+function showPatchNotes() {
+    $("#patchList").empty();
     PatchManager.patchList.forEach(patch => {
         const d = $("<div/>").addClass("patchNote");
             $("<div/>").addClass("patchNoteVersion").html(patch.version).appendTo(d);
             $("<div/>").addClass("patchNoteDate").html(`Updated ${patch.date}`).appendTo(d);
             $("<div/>").addClass("patchNoteBody").html(patch.body).appendTo(d);
-        $patchList.prepend(d);
+        $("#patchList").prepend(d);
     });
-    if (PatchManager.updateNeeded()) $updateRefresh.show();
-    else $updateRefresh.hide();
+    if (PatchManager.updateNeeded()) $("#updateRefresh").show();
+    else $("#updateRefresh").hide();
 }
 
-//buy a perk
 $(document).on("click","#updateRefresh", (e) => {
     location.replace('/');
 });

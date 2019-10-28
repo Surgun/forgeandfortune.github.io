@@ -1,16 +1,12 @@
 "use strict";
 
-class Hero {
+class Hero extends Combatant {
     constructor (props) {
-        Object.assign(this, props);
+        super(props);
         this.uniqueid = this.id;
-        this.ap = 0;
-        this.apAdd = 30;
-        this.apmax = 100;
         this.hp = this.initialHP;
         this.pow = this.initialPow;
         this.critdmg = 1.5;
-        this.target = "first";
         this.unitType = "hero";
         this.slot1 = null;
         this.slot2 = null;
@@ -28,7 +24,6 @@ class Hero {
         const save = {};
         save.id = this.id;
         save.hp = this.hp;
-        save.ap = this.ap;
         save.inDungeon = this.inDungeon;
         if (this.slot1 === null) save.slot1 = null;
         else save.slot1 = this.slot1.createSave();
@@ -49,7 +44,6 @@ class Hero {
     }
     loadSave(save) {
         this.hp = save.hp;
-        this.ap = save.ap;
         this.inDungeon = save.inDungeon;
         if (save.slot1 !== null) {
             this.slot1 = new itemContainer(save.slot1.id,save.slot1.rarity);
@@ -82,12 +76,9 @@ class Hero {
         this.owned = save.owned;
     }
     getArmor() {
-        if (this.ignoredArmor) return 0;
         const slots = this.getEquipSlots(true).map(s=>s.armor());
         const armorFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
-        const armorCalc = this.initialArmor + armorFromGear;
-        if (this.armorBuff) return armorCalc + Math.round(this.getAdjPow(true) * 0.2);
-        return armorCalc;
+        return this.initialArmor + armorFromGear;
     }
     getPow() {
         const slots = this.getEquipSlots(true).map(s=>s.pow());
@@ -143,34 +134,6 @@ class Hero {
         if (slots[slot] === null) return 0;
         return slots[slot].hp();
     }
-    addAP() {
-        this.ap += this.apAdded();
-    }
-    apAdded() {
-        return this.apAdd;
-    }
-    heal(hp) {
-        if (this.hp === 0) return;
-        this.hp = Math.min(this.hp+hp,this.maxHP());
-        if (CombatManager.refreshLater) refreshHPBar(this);
-    }
-    healPercent(hpPercent) {
-        if (this.hp === 0) return;
-        this.hp += Math.floor(this.maxHP()*hpPercent/100);
-        this.hp = Math.min(this.maxHP(),this.hp);
-        if (CombatManager.refreshLater) refreshHPBar(this);
-    }
-    damageCurrentPercent(dmgPercent) {
-        this.hp = Math.floor(this.hp*dmgPercent/100)
-        this.hp = Math.max(1,this.hp)
-        if (CombatManager.refreshLater) refreshHPBar(this);
-    }
-    dead() {
-        return this.hp === 0;
-    }
-    alive() {
-        return this.hp > 0;
-    }
     getEquipSlots(nonblank) {
         //return an object with 
         const slots = [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6,this.slot7];
@@ -213,9 +176,6 @@ class Hero {
     }
     getSlot(slot) {
         return this.getEquipSlots()[slot];
-    }
-    missingHP() {
-        return this.maxHP()-this.hp;
     }
     unequip(slot) {
         if (Inventory.full()) {
@@ -318,14 +278,6 @@ const HeroManager = {
     },
     ownedHeroes() {
         return this.heroes.filter(hero => hero.owned);
-    },
-    relativePow(heroID,slot,pow) {
-        const hero = this.idToHero(heroID);
-        return pow - hero.getPowSlot(slot);
-    },
-    relativeHP(heroID,slot,hp) {
-        const hero = this.idToHero(heroID);
-        return hp - hero.getHPSlot(slot);
     },
     gainHero(heroID) {
         this.idToHero(heroID).owned = true;

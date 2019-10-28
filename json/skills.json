@@ -1,0 +1,28 @@
+[
+  {
+    "id": "S0001",
+    "name": "Attack",
+    "icon": "<i class=\"fas fa-swords\"></i>",
+    "type": "physical",
+    "canDodge": true,
+    "canCrit": false,
+    "subType": "none",
+    "targetEnemies": true,
+    "targetType": "first",
+    "powMod": 1,
+    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE# damage"
+  },
+  {
+    "id": "S0002",
+    "name": "Super Attack",
+    "icon": "<i class=\"fas fa-fist-raised\"></i>",
+    "type": "physical",
+    "canDodge": true,
+    "canCrit": false,
+    "subType": "none",
+    "targetEnemies": true,
+    "targetType": "first",
+    "powMod": 1,
+    "bText": "#ATTACKER# launches a super attack against #DEFENDER# for #DAMAGE# damage"
+  }
+]

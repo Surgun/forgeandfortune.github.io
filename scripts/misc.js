@@ -100,6 +100,8 @@ const miscIcons = Object.freeze({
     skull : '<i class="fas fa-skull"></i>',
     trophy : `<img src='images/resources/M002.png' alt='Monster Trophy'>`,
     arrow : '<i class="fas fa-arrow-right"></i>',
+    dead : '<i class="fas fa-skull-crossbones"></i>',
+    takeDamage : '<i class="fas fa-shield-cross"></i>',
 });
 
 const heroStat = Object.freeze({

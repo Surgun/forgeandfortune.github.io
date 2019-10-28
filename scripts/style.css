@@ -8947,7 +8947,8 @@ span.beta-tag {
 }
 
 .pfStatus, 
-.pfStatusSave {
+.pfStatusSave,
+.exportStatus {
     margin-top: 10px;
     width: 100%;
     color: var(--highlight);

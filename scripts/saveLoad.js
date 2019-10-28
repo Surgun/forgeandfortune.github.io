@@ -743,6 +743,8 @@ $(document).on('click', '#exportSaveCopy', (e) => {
     $temp.val($("#exportSaveText").val()).select();
     document.execCommand("copy");
     $temp.remove();
+    $("#exportStatus").html('Copied to Clipboard.');
+    setTimeout(() => {$("#exportStatus").empty()}, 3500);
 })
 
 $(document).on('click', '#exportSaveLocal', (e) => {

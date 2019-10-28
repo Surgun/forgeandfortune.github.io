@@ -33,6 +33,7 @@ function renderDialogActions(id) {
     const exportSaveActions = $("<div/>").addClass('exportSaveActions').appendTo(dialogActions);
       $("<button/>").attr({id: "exportSaveLocal", tabindex: 3}).addClass('exportSaveLocal actionButton').html('Download as File').appendTo(exportSaveActions);
       $("<button/>").attr({id: "exportSaveCopy", tabindex: 4}).addClass('exportSaveCopy actionButton').html('Copy to Clipboard').appendTo(exportSaveActions);
+      $("<div/>").attr({id: "exportStatus"}).addClass("exportStatus").appendTo(exportSaveActions);
     return dialogActions;
   }
   // Import Save Dialog
@@ -62,14 +63,14 @@ function renderDialogActions(id) {
       $("<div/>").attr({id: "pfStatus"}).addClass("pfStatus").appendTo(statusMessage);
     // Importing or exporting from Cloud
     const accountImportExport = $("<div/>").attr({id: "pfImportExport"}).addClass('pfImportExportContainer').appendTo(accountContainer).hide();
-      $("<input/>").attr({id: "pfSave", tabindex: 0, type: "button", name: "Save to Cloud", value: "Save to Cloud"}).addClass("actionButton").appendTo(accountImportExport);
+      $("<input/>").attr({id: "pfSave", tabindex: 2, type: "button", name: "Save to Cloud", value: "Save to Cloud"}).addClass("actionButton").appendTo(accountImportExport);
       $("<input/>").attr({id: "pfLoad", tabindex: 3, type: "button", name: "Load from Cloud", value: "Load from Cloud"}).addClass("actionButton").appendTo(accountImportExport);
       $("<div/>").attr({id: "pfStatusSave"}).addClass("pfStatusSave").appendTo(accountImportExport);
     // Confirmation screen for loading from Cloud
     const loadFromCloud = $("<div/>").attr({id: "loadSure"}).addClass("loadSure").appendTo(accountContainer).hide();
       $("<div/>").addClass("loadSureDescription").html("Are you sure you would like to load this cloud save data? This action is irreversible!").appendTo(loadFromCloud);
       const loadFromCloudActions = $("<div/>").attr({id: "pfLoadButtons"}).addClass("pfLoadButtons").appendTo(loadFromCloud);
-        $("<input/>").attr({id: "pfloadYes", tabindex: 0, type: "button", name: "loadYes", value: "Yes"}).addClass("actionButton").appendTo(loadFromCloudActions);
+        $("<input/>").attr({id: "pfloadYes", tabindex: 2, type: "button", name: "loadYes", value: "Yes"}).addClass("actionButton").appendTo(loadFromCloudActions);
         $("<input/>").attr({id: "pfloadNo", tabindex: 3, type: "button", name: "loadNo", value: "No"}).addClass("actionButton").appendTo(loadFromCloudActions);
     return dialogActions;
   }
@@ -80,7 +81,7 @@ function renderDialogActions(id) {
   // Patch Notes Dialog
   if (id === 'patch_notes') {
     const patchListContainer = $("<div/>").attr({id: "patchList"}).addClass('patchListContainer').appendTo(dialogActions);
-      $("<div/>").attr({id: "descPatch"}).addClass('descPatch').html("You are running the latest version of Forge & Fortune.").appendTo(patchListContainer)
+      $("<div/>").attr({id: "descPatch", tabindex: 1}).addClass('descPatch').html("You are running the latest version of Forge & Fortune.").appendTo(patchListContainer)
     const patchListFooter = $("<div/>").attr({id: "patchListFooter"}).addClass('patchListFooter').appendTo(dialogActions);
       $("<div/>").attr({id: "updateRefresh"}).addClass('updateRefresh').html("Refresh to Update Game").appendTo(patchListFooter);
     return dialogActions;

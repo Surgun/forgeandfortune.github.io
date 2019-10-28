@@ -8960,17 +8960,6 @@ span.beta-tag {
 
 /* New Combat */
 
-@keyframes skill-trigger {
-    from {
-        margin: 0;
-        opacity: 1;
-    } to {
-        margin: -15px;
-        background-color: var(--highlight);
-        opacity: 0;
-    }
-}
-
 .orderUnitSkills {
     display: flex;
     flex-wrap: wrap;
@@ -8980,7 +8969,6 @@ span.beta-tag {
 }
 
 .orderUnitSkill {
-    position: relative;
     flex-grow: 1;
     padding: 5px;
     color: var(--text-secondary);
@@ -8994,20 +8982,6 @@ span.beta-tag {
 .orderUnitSkill.orderUnitActiveSkill {
     color: var(--highlight);
     background-color: rgba(255,255,255,.05);
-}
-
-.orderUnitSkill.orderUnitActiveSkill:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content: "";
-    margin: 0;
-    background-color: transparent;
-    border-radius: 5px;
-    animation: skill-trigger 0.5s;
-    z-index: 1;
 }
 
 /* End New Combat*/

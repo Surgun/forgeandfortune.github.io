@@ -80,11 +80,8 @@ if (backToTopButton) window.onscroll = () => backToTop();
 
 const toastSettings = document.querySelectorAll("#settings_notificationLocation .selection-container");
 
-toastSettings.forEach((selection) => {
-    selection.addEventListener("input", assignToastPosition);
-    if(selection.querySelector("input").value === settings.toastPosition) {
-        selection.querySelector("input").setAttribute("checked", "checked")
-    };
+$(document).on("input", "#settings_notificationLocation .selection-container input", (e) => {
+    assignToastPosition(e);
 });
 
 function assignToastPosition(e) {

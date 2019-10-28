@@ -76,6 +76,46 @@ function renderDialogActions(id) {
   }
   // Settings Dialog
   if (id === 'settings') {
+    const settingsContainer = $("<div/>").attr({id: "settingsGrid"}).addClass("settings-grid").appendTo(dialogActions);
+
+    // Setting: Notification Location
+    const notificationLocation = $("<div/>").attr({id: "settings_notificationLocation"}).addClass("setting-container").appendTo(settingsContainer);
+    const notificationLocation_details = {
+      title: "Notification Location",
+      description: "Designates where the notifications for various events (such as exceptional crafts) will appear."
+    }
+    settingsBoilerplate(notificationLocation_details).appendTo(notificationLocation);
+
+    const selectionsGrid = $("<div/>").addClass("selections-grid").appendTo(notificationLocation);
+    const locations = ["Top-Left", "Top-Center", "Top-Right", "Bottom-Left", "Bottom-Center", "Bottom-Right"];
+    locations.forEach((location, i) => {
+      const label = $("<label/>").addClass("selection-container").html(location);
+        $("<input/>").attr({type: "radio", name: "toast", value: location.toLowerCase(), checked: location.toLowerCase() === settings.toastPosition ? "checked" : null}).appendTo(label);
+        $("<span/>").addClass("selection").appendTo(label);;
+      label.appendTo(selectionsGrid);
+    });
+    // Setting: Battle Log Length
+    const logLength = $("<div/>").attr({id: "settings_logLength"}).addClass("setting-container").appendTo(settingsContainer);
+    const logLength_details = {
+      title: "Battle Log Length",
+      description: "Set the maximum amount of lines to be displayed in the battle log for Adventures. Default value is 30, minimum accepted value of 5, maximum accepted value of 999."
+    }
+    settingsBoilerplate(logLength_details).appendTo(logLength);
+    // Setting: Toggle HP Bars in Turn Order
+    const turnOrderDisplay = $("<div/>").attr({id: "settings_turnOrderDisplay"}).addClass("setting-container").appendTo(settingsContainer);
+    const turnOrderDisplay_details = {
+      title: "Toggle HP in Combat Area",
+      description: "Toggle whether to display or hide the HP bars in Combat Area during Adventures."
+    }
+    settingsBoilerplate(turnOrderDisplay_details).appendTo(turnOrderDisplay);
+    // Setting: Reset Settings
+    const clearSettings = $("<div/>").attr({id: "settings_clearSettings"}).addClass("setting-container").appendTo(settingsContainer);
+    const clearSettings_details = {
+      title: "Reset All Settings",
+      description: "Reset your settings to default values for this browser only. This will reload the game but your progress will not be reset."
+    }
+    settingsBoilerplate(clearSettings_details).appendTo(clearSettings);
+
     return dialogActions;
   }
   // Patch Notes Dialog
@@ -86,6 +126,13 @@ function renderDialogActions(id) {
       $("<div/>").attr({id: "updateRefresh"}).addClass('updateRefresh').html("Refresh to Update Game").appendTo(patchListFooter);
     return dialogActions;
   }
+}
+
+function settingsBoilerplate(settingDetails) {
+  const detailsContainer = $("<div/>").addClass("settings-details");
+    $("<div/>").addClass("settings-title").html(settingDetails.title).appendTo(detailsContainer);
+    $("<div/>").addClass("settings-description").html(settingDetails.description).appendTo(detailsContainer);
+  return detailsContainer;
 }
 
 // Sets the dialog status to open and renders the dialog
@@ -117,8 +164,8 @@ function setDialogClose() {
   $('.dialogContent').removeClass('dialogOpening').addClass('dialogClosing');
 }
 
-$(document).on('transitionend ', '.dialogContent', (e) => {
-  $('#dialogContainer').remove();
+$(document).on('transitionend', '.dialogContent', (e) => {
+  if (e.target === e.currentTarget) $('#dialogContainer').remove();
 });
 
 // Event Listeners / Triggers

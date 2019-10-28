@@ -1,13 +1,20 @@
 PlayFab.settings.titleId = "D765";
 
-let sessionID = ""
+let sessionID = null;
 let saveFile = 0;
 
 $(document).on("click", "#cloudSave", (e) => {
     //clicked on the "Cloud Save" button
-    $("#pfLoginRegister").show();
-    $("#pfImportExport").hide();
-    $("#loadSure").hide();
+    if (!sessionID) {
+        $("#pfLoginRegister").show();
+        $("#pfImportExport").hide();
+        $("#loadSure").hide();
+    } else {
+        $("#pfLoginRegister").hide();
+        $("#pfImportExport").show();
+        $("#loadSure").hide();
+        getSaveFromCloud();
+    }
 })
 
 $(document).on("click", "#register", (e) => {

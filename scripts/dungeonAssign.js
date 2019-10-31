@@ -155,9 +155,7 @@ function initiateDungeonFloor(dungeonID) {
         const d2 = $("<div/>").addClass("dfcName").html(hero.name);
         const d3 = $("<div/>").addClass("dfcImage").html(hero.image);
         d1.append(d2,d3);        
-        if (settings.toggleTurnOrderBars === 1) {
             $("<div/>").addClass("dscHP").html(createHPBar(hero,"Dung")).appendTo(d1);
-        }
         $dungeonHeroList.prepend(d1);
     });
     dungeon.mobs.forEach((mob) => {
@@ -165,9 +163,7 @@ function initiateDungeonFloor(dungeonID) {
         const d7 = $("<div/>").addClass("dfmName").html(mob.name);
         const d8 = $("<div/>").addClass("dfmImage").html(mob.image);
         d6.append(d7,d8);
-        if (settings.toggleTurnOrderBars === 1) {
             $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung")).appendTo(d6);
-        }
         if (mob.hp === 0) d6.addClass("mobDead");
         $dungeonMobList.prepend(d6);
     });

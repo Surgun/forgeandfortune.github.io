@@ -116,15 +116,21 @@ class Mob extends Combatant {
         save.uniqueid = this.uniqueid;
         save.hp = this.hp;
         save.difficulty = this.difficulty;
+        save.buffs = [];
+        this.buffs.forEach(buff => {
+            save.buffs.push(buff.createSave());
+        });
         return save;
     }
     loadSave(save) {
         this.hp = save.hp;
         this.uniqueid = save.uniqueid;
-    }
-    addTime() {
-    }
-    pic() {
-        return this.image;
+        if (save.buffs !== undefined) {
+            save.buffs.forEach(buff => {
+                const newBuff = BuffManager.generateSaveBuff(buff.id,buff.power);
+                newBuff.loadSave(buff);
+                this.buffs.push(newBuff);
+            });
+        }
     }
 }

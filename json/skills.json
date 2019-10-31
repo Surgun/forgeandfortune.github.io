@@ -24,5 +24,18 @@
     "targetType": "first",
     "powMod": 1,
     "bText": "#ATTACKER# launches a super attack against #DEFENDER# for #DAMAGE# damage"
+  },
+  {
+    "id": "S0003",
+    "name": "Armor Buff",
+    "icon": "<i class=\"fas fa-fist-raised\"></i>",
+    "type": "physical",
+    "canDodge": false,
+    "canCrit": false,
+    "subType": "none",
+    "targetEnemies": false,
+    "targetType": "self",
+    "powMod": 0.5,
+    "bText": "#ATTACKER# flexes his muscles hard at Abqu!"
   }
 ]

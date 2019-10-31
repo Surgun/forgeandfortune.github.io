@@ -12,7 +12,7 @@ const CombatManager = {
     },
 }
 
-function getTarget(wholeparty,type) {
+function getTarget(wholeparty, self, type) {
     const party = wholeparty.filter(h => h.alive());
     if (type === "first") return party[0]
     if (type === "second") {
@@ -33,6 +33,7 @@ function getTarget(wholeparty,type) {
     else if (type === "lowhp") return party.sort((a,b) => {return a.hp - b.hp})[0];
     else if (type === "lowmaxHP") return party.sort((a,b) => {return b.maxHP() - a.maxHP()})[0];
     else if (type === "lowMissingHp") return party.sort((a,b) => {return b.missingHP() - a.missingHP()})[0];
+    else if (type === "self") return self;
 }
 
 function rollStat(stat) {
@@ -77,11 +78,87 @@ class Attack {
     }
 }
 
+class buffTemplate {
+    constructor (props) {
+        Object.assign(this, props);
+    }
+}
+
+class Buff {
+    constructor (props,power) {
+        Object.assign(this, props);
+        this.turns = this.maxTurns;
+        this.stacks = 1;
+        this.power = power;
+    }
+    addCast() {
+        if (this.application === "expire") {
+            this.turns = this.maxTurns;
+        }
+        else if (this.application === "stack") {
+            this.stacks = Math.min(this.stacks+1,this.maxStacks);
+        }
+    }
+    createSave() {
+        const save = {};
+        save.turns = this.turns;
+        save.stacks = this.stacks;
+        save.power = this.power;
+        save.id = this.id;
+        return save;
+    }
+    loadSave(save) {
+        this.turns = save.turns;
+        this.stacks = save.stacks;
+        this.power = save.power;
+    }
+    buffCache() {
+        return {
+            id : this.id,
+            turns : this.turns,
+            stacks : this.stacks,
+            icon : this.icon,
+        };
+    }
+}
+
+const BuffManager = {
+    buffDB : [],
+    buffIDCount : 1,
+    addBuffTemplate(buff) {
+        this.buffDB.push(buff);
+    },
+    idToBuff(buffID) {
+        return this.buffDB.find(b => b.id === buffID);
+    },
+    generateBuff(buffID,target,power) {
+        const buffTemplate = this.idToBuff(buffID);
+        if (target.hasBuff(buffID)) {
+            const buff = target.getBuff(buffID);
+            buff.addCast();
+            refreshBuff()
+            return;
+        }
+        const buff = new Buff(buffTemplate,power);
+        buff.buffInstanceID = this.buffIDCount;
+        this.buffIDCount += 1;
+        target.addBuff(buff);
+    },
+    generateSaveBuff(buffID,power) {
+        const buffTemplate = this.idToBuff(buffID);
+        const buff = new Buff(buffTemplate,power);
+        buff.buffInstanceID = this.buffIDCount;
+        this.buffIDCount += 1;
+        return buff;
+    }
+}
+
 class Combatant {
     constructor (props) {
         Object.assign(this,props);
         this.hp = 1;
         this.playbook = PlaybookManager.generatePlayBook("PB001");
+        this.buffs = [];
     }
     takeDamage(attack) {
         const dodge = attack.canDodge ? rollStat(this.getDodge()) : false;
@@ -94,6 +171,15 @@ class Combatant {
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);
         if (this.hp === 0) BattleLog.addEntry(attack.dungeonid,miscIcons.dead,`${this.name} has fallen!`);
+    }
+    hasBuff(buffID) {
+        return this.buffs.some(b => b.id === buffID);
+    }
+    getBuff(buffID) {
+        return this.buffs.find(b => b.id === buffID);
+    }
+    addBuff(buff) {
+        this.buffs.push(buff);
     }
     getPow() {
         return this.pow;

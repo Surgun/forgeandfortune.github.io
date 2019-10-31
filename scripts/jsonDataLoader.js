@@ -81,9 +81,22 @@ function loadPlaybooks() {
             const playbook = new playBookTemplate(props);
             PlaybookManager.addPlaybookTemplate(playbook);
         });
+        loadBuffs();
+    });
+}
+
+function loadBuffs() {
+    $.ajax({
+        url: "json/buffs.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            const buff = new buffTemplate(props);
+            BuffManager.addBuffTemplate(buff);
+        });
         loadHeroes();
     });
 }
+
 
 function loadHeroes() {
     $.ajax({

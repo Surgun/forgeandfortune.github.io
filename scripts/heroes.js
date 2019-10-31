@@ -40,6 +40,10 @@ class Hero extends Combatant {
         if (this.slot7 === null) save.slot7 = null;
         else save.slot7 = this.slot7.createSave();
         save.owned = this.owned;
+        save.buffs = [];
+        this.buffs.forEach(buff => {
+            save.buffs.push(buff.createSave());
+        });
         return save;
     }
     loadSave(save) {
@@ -72,6 +76,13 @@ class Hero extends Combatant {
         if (save.slot7 !== null && save.slot7 !== undefined) {
             this.slot7 = new itemContainer(save.slot7.id,save.slot7.rarity);
             this.slot7.loadSave(save.slot7);
+        }
+        if (save.buffs !== undefined) {
+            save.buffs.forEach(buff => {
+                const newBuff = BuffManager.generateSaveBuff(buff.id,buff.power);
+                newBuff.loadSave(buff);
+                this.buffs.push(newBuff);
+            });
         }
         this.owned = save.owned;
     }

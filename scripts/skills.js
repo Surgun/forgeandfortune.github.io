@@ -36,7 +36,7 @@ class Skill {
         Object.assign(this, props);
     }
     execute(attacker,allies,enemies,dungeonid) {
-        const target = this.targetEnemies ? getTarget(enemies, this.targetType) : getTarget(allies, this.targetType);
+        const target = this.targetEnemies ? getTarget(enemies, attacker, this.targetType) : getTarget(allies, attacker, this.targetType);
         const crit = this.canCrit ? rollStat(attacker.getCrit()) : false;
         const critDmg = crit ? attacker.critDmg : 1;
         const power = attacker.getPow() * this.powMod * critDmg;
@@ -88,4 +88,9 @@ SkillManager.skillEffects['S0002'] = function (skill,attacker,power,target,dunge
     //Power Attack
     const attack = new Attack(attacker, power, skill, dungeonid);
     target.takeDamage(attack);
+}
+
+SkillManager.skillEffects['S0003'] = function (skill,attacker,power,target,dungeonid) {
+    //Armor Buff
+    BuffManager.generateBuff('B0001',attacker,power);
 }

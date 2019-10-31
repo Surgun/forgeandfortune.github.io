@@ -168,21 +168,6 @@ function assignTurnOrderPref(e) {
     initiateDungeonFloor(DungeonManager.dungeonView);
 }
 
-// Logo Easter Egg
-
-const $gameLogo = $("#game-logo");
-let logoNum = 0;
-
-$gameLogo.click(() => {
-    logoNum += 1;
-    if (logoNum === 1) $gameLogo.css("background-image","url('images/site-logo.png')");
-    else if (logoNum === 2) $gameLogo.css("background-image","url('images/site-logo2.png')");
-    else {
-        $gameLogo.css("background-image","url('images/site-logo.png')");
-        logoNum = 0;
-    }
-});
-
 // Event Functions
 
 function disableEventLayers() {

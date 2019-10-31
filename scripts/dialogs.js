@@ -94,20 +94,6 @@ function renderDialogActions(id) {
         $("<span/>").addClass("selection").appendTo(label);;
       label.appendTo(selectionsGrid);
     });
-    // Setting: Battle Log Length
-    const logLength = $("<div/>").attr({id: "settings_logLength"}).addClass("setting-container").appendTo(settingsContainer);
-    const logLength_details = {
-      title: "Battle Log Length",
-      description: "Set the maximum amount of lines to be displayed in the battle log for Adventures. Default value is 30, minimum accepted value of 5, maximum accepted value of 999."
-    }
-    settingsBoilerplate(logLength_details).appendTo(logLength);
-    // Setting: Toggle HP Bars in Turn Order
-    const turnOrderDisplay = $("<div/>").attr({id: "settings_turnOrderDisplay"}).addClass("setting-container").appendTo(settingsContainer);
-    const turnOrderDisplay_details = {
-      title: "Toggle HP in Combat Area",
-      description: "Toggle whether to display or hide the HP bars in Combat Area during Adventures."
-    }
-    settingsBoilerplate(turnOrderDisplay_details).appendTo(turnOrderDisplay);
     // Setting: Reset Settings
     const clearSettings = $("<div/>").attr({id: "settings_clearSettings"}).addClass("setting-container").appendTo(settingsContainer);
     const clearSettings_details = {
@@ -116,6 +102,8 @@ function renderDialogActions(id) {
     }
     settingsBoilerplate(clearSettings_details).appendTo(clearSettings);
 
+    $("<button/>").attr({id: "clearSettings"}).addClass("actionButton").html("Reset All Settings").appendTo(clearSettings);
+    // Return Value
     return dialogActions;
   }
   // Patch Notes Dialog

@@ -5,8 +5,7 @@
 const settings = {
     toastPosition: "top-left",
     dialogStatus: 0,
-    battleLogLength: 30,
-    toggleTurnOrderBars: 1,
+    battleLogLength: 999,
     db: 0,
     expandedLogistics: { 
         materials: 0
@@ -27,6 +26,7 @@ function loadSettings() {
     for (let setting in obj) {
         settings[setting] = obj[setting];
     }
+    portSettings();
     localStorage.setItem("settings", JSON.stringify(settings));
 }
 
@@ -36,3 +36,9 @@ function clearSettings() {
 }
 
 loadSettings();
+
+// Port over to new settings
+function portSettings() {
+    delete settings.toggleTurnOrderBars;
+    if (settings.battleLogLength !== 999) settings.battleLogLength = 999;
+}

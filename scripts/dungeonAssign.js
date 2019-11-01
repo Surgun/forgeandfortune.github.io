@@ -150,11 +150,12 @@ function initiateDungeonFloor(dungeonID) {
     $floorID.html("Floor "+dungeon.floorCount);
     $dungeonHeroList.empty();
     $dungeonMobList.empty();
-    dungeon.party.heroes.forEach((hero) => {
+    dungeon.party.heroes.forEach(hero => {
         const d1 = $("<div/>").addClass("dfc");
         const d2 = $("<div/>").addClass("dfcName").html(hero.name);
         const d3 = $("<div/>").addClass("dfcImage").html(hero.image);
-        d1.append(d2,d3);        
+        const d4 = $("<div/>").addClass("buffListContent").attr("id","buffList"+hero.uniqueid);
+        d1.append(d2,d3,d4);
             $("<div/>").addClass("dscHP").html(createHPBar(hero,"Dung")).appendTo(d1);
         $dungeonHeroList.prepend(d1);
     });
@@ -162,12 +163,14 @@ function initiateDungeonFloor(dungeonID) {
         const d6 = $("<div/>").addClass("dfm").attr("id","dfm"+mob.uniqueid);
         const d7 = $("<div/>").addClass("dfmName").html(mob.name);
         const d8 = $("<div/>").addClass("dfmImage").html(mob.image);
+        const d9 = $("<div/>").addClass("buffListContent").attr("id","buffList"+mob.uniqueid);
         d6.append(d7,d8);
             $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung")).appendTo(d6);
         if (mob.hp === 0) d6.addClass("mobDead");
         $dungeonMobList.prepend(d6);
     });
     refreshTurnOrder(dungeonID);
+    BuffRefreshManager.hardRefreshBuff();
 }
 
 function refreshTurnOrder(dungeonID) {

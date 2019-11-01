@@ -2,10 +2,19 @@
   {
     "id": "B0001",
     "name": "Armor Up",
-    "icon": "<i class=\"fas fa-fist-raised\"></i>",
+    "icon": "<i class=\"fas fa-shield-cross\"></i>",
     "maxTurns": 8,
     "maxStacks": 1,
-    "oncast": "expire",
+    "onCast": "expire",
     "type": "buff"
+  },
+  {
+    "id": "B0002",
+    "name": "Poison Stack",
+    "icon": "<i class=\"fas fa-flask-poison\"></i>",
+    "maxTurns": 1,
+    "maxStacks": 5,
+    "onCast": "stack",
+    "type": "debuff"
   }
 ]

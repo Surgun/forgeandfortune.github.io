@@ -43,13 +43,14 @@ class Buff {
         };
     }
     buffTick(uniqueid) {
-        if (this.application !== "expire") return;
+        console.log("fire");
+        if (this.onCast !== "expire") return;
         this.turns = Math.max(0,this.turns-1);
         if (this.turns === 0) BuffRefreshManager.removeBuff(this, uniqueid);
         else BuffRefreshManager.updateBuffCount(this, uniqueid);
     }
     expired() {
-        return this.application === "expire" && this.turns === 0;
+        return this.onCast === "expire" && this.turns === 0;
     }
 }
 
@@ -113,7 +114,7 @@ const BuffRefreshManager = {
         return d1;
     },
     addBuff(buff,combatant) {
-        const buffList = $("#bc"+combatant.uniqueid);
+        const buffList = $("#buffList"+combatant.uniqueid);
         buffList.append(this.makeBuffContainer(buff,combatant.uniqueid));
     },
     updateBuffCount(buff,combatant) {
@@ -121,6 +122,6 @@ const BuffRefreshManager = {
         $("#bcount"+combatant.uniqueid+buff.id).html(count);
     },
     removeBuff(buff,combatant) {
-        $("bc"+combatant.uniqueid+buff.id).remove();
+        $("#bc"+combatant.uniqueid+buff.id).remove();
     }
 }

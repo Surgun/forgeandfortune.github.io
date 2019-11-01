@@ -42,6 +42,15 @@ class Buff {
             icon : this.icon,
         };
     }
+    buffTick(uniqueid) {
+        if (this.application !== "expire") return;
+        this.turns = Math.max(0,this.turns-1);
+        if (this.turns === 0) BuffRefreshManager.removeBuff(this, uniqueid);
+        else BuffRefreshManager.updateBuffCount(this, uniqueid);
+    }
+    expired() {
+        return this.application === "expire" && this.turns === 0;
+    }
 }
 
 const BuffManager = {

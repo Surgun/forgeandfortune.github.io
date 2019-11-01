@@ -85,6 +85,12 @@ class Combatant {
         this.playbook = PlaybookManager.generatePlayBook("PB001");
         this.buffs = [];
     }
+    buffTick() {
+        this.buffs.forEach(buff => {
+            buff.buffTick(this);
+        });
+        this.buffs = this.buffs.filter(buff => !buff.expired());
+    }
     takeDamage(attack) {
         const dodge = attack.canDodge ? rollStat(this.getDodge()) : false;
         if (dodge) {

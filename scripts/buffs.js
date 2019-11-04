@@ -14,10 +14,10 @@ class Buff {
         this.power = power;
     }
     addCast() {
-        if (this.application === "expire") {
+        if (this.onCast === "expire") {
             this.turns = this.maxTurns;
         }
-        else if (this.application === "stack") {
+        else if (this.onCast === "stack") {
             this.stacks = Math.min(this.stacks+1,this.maxStacks);
         }
     }

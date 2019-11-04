@@ -164,7 +164,7 @@ function initiateDungeonFloor(dungeonID) {
         const d7 = $("<div/>").addClass("dfmName").html(mob.name);
         const d8 = $("<div/>").addClass("dfmImage").html(mob.image);
         const d9 = $("<div/>").addClass("buffListContent").attr("id","buffList"+mob.uniqueid);
-        d6.append(d7,d8);
+        d6.append(d7,d8,d9);
             $("<div/>").addClass("dsmHP").html(createHPBar(mob,"Dung")).appendTo(d6);
         if (mob.hp === 0) d6.addClass("mobDead");
         $dungeonMobList.prepend(d6);

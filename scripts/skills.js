@@ -94,3 +94,8 @@ SkillManager.skillEffects['S0003'] = function (skill,attacker,power,target,dunge
     //Armor Buff
     BuffManager.generateBuff('B0001',target,power);
 }
+
+SkillManager.skillEffects['S0004'] = function (skill,attacker,power,target,dungeonid) {
+    //Armor Buff
+    BuffManager.generateBuff('B0002',target,power);
+}

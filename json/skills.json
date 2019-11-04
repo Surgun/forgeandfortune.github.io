@@ -28,7 +28,7 @@
   {
     "id": "S0003",
     "name": "Armor Buff",
-    "icon": "<i class=\"fas fa-fist-raised\"></i>",
+    "icon": "<i class=\"fas fa-shield-cross\"></i>",
     "type": "physical",
     "canDodge": false,
     "canCrit": false,
@@ -41,7 +41,7 @@
   {
     "id": "S0004",
     "name": "Poison",
-    "icon": "<i class=\"fas fa-shield-cross\"></i>",
+    "icon": "<i class=\"fas fa-flask-poison\"></i>",
     "type": "magical",
     "canDodge": false,
     "canCrit": false,

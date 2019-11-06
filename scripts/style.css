@@ -4889,7 +4889,7 @@ div#dungeonTeamButton.dungeonStartNotAvailable {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
 
-.selection-container.party-selection-container {
+label.selection-container.party-selection-container {
     margin-left: 20px;
     padding: 12px 15px 12px 50px;
     border-radius: 5px;
@@ -8978,10 +8978,10 @@ span.beta-tag {
 
 .orderUnitSkill {
     flex-grow: 1;
+    margin: 2.5px;
     padding: 5px;
     color: var(--text-secondary);
     text-align: center;
-    margin: 2.5px;
     background-color: transparent;
     border: 2px solid var(--border-secondary);
     border-radius: 5px;
@@ -8990,6 +8990,35 @@ span.beta-tag {
 .orderUnitSkill.orderUnitActiveSkill {
     color: var(--highlight);
     background-color: rgba(255,255,255,.05);
+}
+
+.buffListContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.buffContainer {
+    display: flex;
+    flex-direction: column;
+    color: var(--highlight);
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 2.5px;
+    padding: 5px 10px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--box-shadow);
+}
+
+.buffContainerCount {
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 
 /* End New Combat*/

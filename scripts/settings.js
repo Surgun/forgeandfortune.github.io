@@ -37,7 +37,7 @@ function clearSettings() {
 
 loadSettings();
 
-// Port over to new settings
+// Port Settings - Remove old settings, update to new setting values, etc.
 function portSettings() {
     delete settings.toggleTurnOrderBars;
     if (settings.battleLogLength !== 999) settings.battleLogLength = 999;

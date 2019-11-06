@@ -79,7 +79,7 @@ class Hero extends Combatant {
         }
         if (save.buffs !== undefined) {
             save.buffs.forEach(buff => {
-                const newBuff = BuffManager.generateSaveBuff(buff.id,buff.power);
+                const newBuff = BuffManager.generateSaveBuff(buff.id,this,buff.power);
                 newBuff.loadSave(buff);
                 this.buffs.push(newBuff);
             });
@@ -89,7 +89,7 @@ class Hero extends Combatant {
     getArmor() {
         const slots = this.getEquipSlots(true).map(s=>s.armor());
         const armorFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
-        return this.initialArmor + armorFromGear;
+        return this.initialArmor + armorFromGear + this.getBuffArmor();
     }
     getPow() {
         const slots = this.getEquipSlots(true).map(s=>s.pow());

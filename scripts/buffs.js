@@ -55,7 +55,7 @@ class Buff {
         return this.onCast === "expire" && this.turns === 0;
     }
     onTick() { return; }
-    getArmor() { return; }
+    getArmor() { return 0; }
 }
 
 const BuffManager = {
@@ -81,9 +81,9 @@ const BuffManager = {
         target.addBuff(buff);
         BuffRefreshManager.addBuff(buff,target);
     },
-    generateSaveBuff(buffID,power) {
+    generateSaveBuff(buffID,target,power) {
         const buffTemplate = this.idToBuff(buffID);
-        const buff = new Buff(buffTemplate,power);
+        const buff = new BuffLookup[buffID](buffTemplate,target,power);
         buff.buffInstanceID = this.buffIDCount;
         this.buffIDCount += 1;
         return buff;
@@ -144,7 +144,6 @@ class B0002 extends Buff {
         super(buffTemplate,target,power);
     }
     onTick() {
-        console.log("WORKED");
         this.target.takeDamage(this.power);
     }
 }

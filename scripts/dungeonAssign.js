@@ -20,6 +20,8 @@ const $dsd1 = $("#dsd1");
 
 const $dungeonSpeedButtons = $(".dungeonSpeedButtons");
 
+const $toggleProgress = $("#toggleProgress");
+
 /*---------------------------
 /*-   DUNGEON SELECT CODE   -
 /*---------------------------*/
@@ -130,6 +132,11 @@ $(document).on("click", "#dungeonAbandon", (e) => {
     DungeonManager.abandonCurrentDungeon();
 })
 
+$(document).on("click", "#toggleProgress", (e) => {
+    e.preventDefault();
+    DungeonManager.toggleProgress();
+})
+
 function refreshSpeedButton(speed) {
     $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
     if (speed === 3000) $("#dungeonSpeedSlow").addClass("dungeonSpeedActive");
@@ -169,6 +176,8 @@ function initiateDungeonFloor(dungeonID) {
         if (mob.hp === 0) d6.addClass("mobDead");
         $dungeonMobList.prepend(d6);
     });
+    if (dungeon.toggleProgress) $toggleProgress.html("Advance Floors");
+    else $toggleProgress.html("Stay Here");
     refreshTurnOrder(dungeonID);
     BuffRefreshManager.hardRefreshBuff();
 }

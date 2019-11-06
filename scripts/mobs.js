@@ -127,7 +127,7 @@ class Mob extends Combatant {
         this.uniqueid = save.uniqueid;
         if (save.buffs !== undefined) {
             save.buffs.forEach(buff => {
-                const newBuff = BuffManager.generateSaveBuff(buff.id,buff.power);
+                const newBuff = BuffManager.generateSaveBuff(buff.id,this,buff.power);
                 newBuff.loadSave(buff);
                 this.buffs.push(newBuff);
             });

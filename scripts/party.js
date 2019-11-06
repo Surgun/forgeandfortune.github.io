@@ -38,6 +38,7 @@ class Party {
         this.heroes.forEach(hero => {
             hero.hp = hero.maxHP();
             hero.resetPlaybookPosition();
+            hero.removeBuffs();
         })
     }
 }

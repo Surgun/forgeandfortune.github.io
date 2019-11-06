@@ -52,6 +52,7 @@ class Dungeon {
         this.lastParty = null;
         this.floorMaterial = null;
         this.completeState = "none";
+        this.progressNextFloor = true;
     }
     createSave() {
         const save = {};
@@ -72,6 +73,7 @@ class Dungeon {
         else save.order = this.order.createSave();
         save.status = this.status;
         save.completeState = this.completeState;
+        save.progressNextFloor = this.progressNextFloor;
         return save;
     }
     loadSave(save) {
@@ -95,6 +97,7 @@ class Dungeon {
         this.floorCount = save.floorCount;
         this.status = save.status;
         if (save.completeState !== undefined) this.completeState = save.completeState;
+        if (save.progressNextFloor !== undefined) this.progressNextFloor = save.progressNextFloor;
     }
     addTime(t) {
         //if there's enough time, grab the next guy and do some combat
@@ -184,14 +187,12 @@ class Dungeon {
         ResourceManager.addMaterial(rewards.id,rewards.amt);*/
     }
     nextFloor(refreshLater, previousFloor) {
-        /*if (this.type === "boss" && this.floorCount === 1) {
-            this.completeState = "bossBeat";
-            this.endDungeon();
-            return;
-        }*/
         this.addRewards();
-        if (previousFloor) this.floorCount = Math.max(1,this.floorCount-1);
-        else this.floorCount += 1;
+        if (previousFloor) {
+            this.floorCount = Math.max(1,this.floorCount-1);
+            this.toggleProgress(false);
+        }
+        else if (this.progressNextFloor) this.floorCount += 1;
         achievementStats.floorRecord(this.id, this.floorCount);
         const floor = FloorManager.getFloor(this.id, this.floorCount);
         this.floorID = floor.id;
@@ -226,6 +227,13 @@ class Dungeon {
         this.mobs.forEach(enemy => {
             enemy.buffTick();
         })
+    }
+    toggleProgress(toggle) {
+        if (toggle === undefined) toggle = !this.progressNextFloor;
+        this.progressNextFloor = toggle;
+        if (DungeonManager.dungeonView !== this.id) return;
+        if (toggle) $("#toggleProgress").html("Advance Floors");
+        else $("#toggleProgress").html("Stay Here");
     }
 }
 
@@ -333,4 +341,7 @@ const DungeonManager = {
     bossByDungeon(dungeonid) {
         return FloorManager.mobsByDungeon(dungeonid)[0];
     },
+    toggleProgress() {
+        this.getCurrentDungeon().toggleProgress();
+    }
 };

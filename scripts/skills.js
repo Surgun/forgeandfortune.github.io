@@ -81,13 +81,13 @@ class Playbook {
 SkillManager.skillEffects['S0001'] = function(skill,attacker,power,target,dungeonid) {
     //Regular Attack
     const attack = new Attack(attacker, power, skill, dungeonid);
-    target.takeDamage(attack);
+    target.takeAttack(attack);
 }
 
 SkillManager.skillEffects['S0002'] = function (skill,attacker,power,target,dungeonid) {
     //Power Attack
     const attack = new Attack(attacker, power, skill, dungeonid);
-    target.takeDamage(attack);
+    target.takeAttack(attack);
 }
 
 SkillManager.skillEffects['S0003'] = function (skill,attacker,power,target,dungeonid) {

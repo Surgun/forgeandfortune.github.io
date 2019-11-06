@@ -7,10 +7,11 @@ class buffTemplate {
 }
 
 class Buff {
-    constructor (props,power) {
-        Object.assign(this, props);
+    constructor (buffTemplate,target,power) {
+        Object.assign(this, buffTemplate);
         this.turns = this.maxTurns;
         this.stacks = 1;
+        this.target = target;
         this.power = power;
     }
     addCast() {
@@ -42,16 +43,19 @@ class Buff {
             icon : this.icon,
         };
     }
-    buffTick(uniqueid) {
-        console.log("fire");
-        if (this.onCast !== "expire") return;
-        this.turns = Math.max(0,this.turns-1);
-        if (this.turns === 0) BuffRefreshManager.removeBuff(this, uniqueid);
-        else BuffRefreshManager.updateBuffCount(this, uniqueid);
+    buffTick() {
+        if (this.onCast === "expire") {
+            this.turns = Math.max(0,this.turns-1);
+            if (this.turns === 0) BuffRefreshManager.removeBuff(this, this.target);
+            else BuffRefreshManager.updateBuffCount(this, this.target);
+        }
+        this.onTick();        
     }
     expired() {
         return this.onCast === "expire" && this.turns === 0;
     }
+    onTick() { return; }
+    getArmor() { return; }
 }
 
 const BuffManager = {
@@ -64,14 +68,14 @@ const BuffManager = {
         return this.buffDB.find(b => b.id === buffID);
     },
     generateBuff(buffID,target,power) {
-        const buffTemplate = this.idToBuff(buffID);
         if (target.hasBuff(buffID)) {
             const buff = target.getBuff(buffID);
             buff.addCast();
             BuffRefreshManager.updateBuffCount(buff,target);
             return;
         }
-        const buff = new Buff(buffTemplate,power);
+        const buffTemplate = this.idToBuff(buffID);
+        const buff = new BuffLookup[buffID](buffTemplate,target,power);        
         buff.buffInstanceID = this.buffIDCount;
         this.buffIDCount += 1;
         target.addBuff(buff);
@@ -124,4 +128,28 @@ const BuffRefreshManager = {
     removeBuff(buff,combatant) {
         $("#bc"+combatant.uniqueid+buff.id).remove();
     }
+}
+
+class B0001 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getArmor() {
+        return this.power;
+    }
+}
+
+class B0002 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    onTick() {
+        console.log("WORKED");
+        this.target.takeDamage(this.power);
+    }
+}
+
+const BuffLookup = {
+    B0001,
+    B0002,
 }

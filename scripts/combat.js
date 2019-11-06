@@ -87,11 +87,11 @@ class Combatant {
     }
     buffTick() {
         this.buffs.forEach(buff => {
-            buff.buffTick(this);
+            buff.buffTick();
         });
         this.buffs = this.buffs.filter(buff => !buff.expired());
     }
-    takeDamage(attack) {
+    takeAttack(attack) {
         const dodge = attack.canDodge ? rollStat(this.getDodge()) : false;
         if (dodge) {
             BattleLog.addEntry(attack.dungeonid,miscIcons.dodge,`${this.name} dodged the attack!`);
@@ -102,6 +102,10 @@ class Combatant {
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);
         if (this.hp === 0) BattleLog.addEntry(attack.dungeonid,miscIcons.dead,`${this.name} has fallen!`);
+    }
+    takeDamage(dmg) {
+        this.hp = Math.max(this.hp-dmg,0);
+        refreshHPBar(this);
     }
     hasBuff(buffID) {
         return this.buffs.some(b => b.id === buffID);

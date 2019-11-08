@@ -53,7 +53,7 @@ const ResourceManager = {
         mat.seen = true;
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
-        $("#amt"+mat.id).html(mat.amt,2 );
+        $("#amt"+mat.id).html(mat.amt,2);
         refreshTinkerMats();
         if (mat.id === "M002") refreshMonsterReward();
         if (mat.id !== "M001") return;
@@ -121,11 +121,6 @@ const ResourceManager = {
     },
     isAMaterial(matID) {
         return this.materials.some(m=>m.id === matID);
-    },
-    addDungeonDrops(drops) {
-        drops.forEach(d => {
-            this.addMaterial(d.id,d.amt);
-        })
     },
     reOrderMats() {
         this.materials.sort((a,b) => a.tier - b.tier);

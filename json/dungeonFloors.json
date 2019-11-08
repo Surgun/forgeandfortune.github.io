@@ -3,54 +3,49 @@
     "id": "F0001",
     "dungeon": "D001",
     "minFloor": 0,
-    "maxFloor": 49,
+    "maxFloor": 50,
     "mobs": [
       "B201"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0002",
     "dungeon": "D001",
     "minFloor": 0,
-    "maxFloor": 49,
+    "maxFloor": 50,
     "mobs": [
       "B601"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0003",
     "dungeon": "D001",
-    "minFloor": 0,
-    "maxFloor": 49,
+    "minFloor": 50,
+    "maxFloor": 100,
     "mobs": [
       "B0401"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0004",
     "dungeon": "D001",
-    "minFloor": 0,
-    "maxFloor": 49,
+    "minFloor": 50,
+    "maxFloor": 100,
     "mobs": [
       "B0301"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9001",
-    "dungeon": "D001",
-    "minFloor": 50,
-    "maxFloor": 50,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D010"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0009",
@@ -62,7 +57,8 @@
       "B202"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0010",
@@ -74,7 +70,8 @@
       "B602"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0011",
@@ -86,7 +83,8 @@
       "B0402"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0012",
@@ -98,7 +96,8 @@
       "B0302"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0013",
@@ -110,7 +109,8 @@
       "B602"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0014",
@@ -122,7 +122,8 @@
       "B0402"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0015",
@@ -134,7 +135,8 @@
       "B0302"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0016",
@@ -146,7 +148,8 @@
       "B0402"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0017",
@@ -158,7 +161,8 @@
       "B0302"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0018",
@@ -170,7 +174,8 @@
       "B0302"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0019",
@@ -182,7 +187,8 @@
       "B202"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0020",
@@ -194,7 +200,8 @@
       "B202"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0021",
@@ -206,7 +213,8 @@
       "B202"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0022",
@@ -218,7 +226,8 @@
       "B602"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0023",
@@ -230,7 +239,8 @@
       "B602"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0024",
@@ -242,16 +252,8 @@
       "B0402"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9002",
-    "dungeon": "D001",
-    "minFloor": 100,
-    "maxFloor": 100,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D011"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0041",
@@ -264,7 +266,8 @@
       "B203"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0042",
@@ -277,7 +280,8 @@
       "B603"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0043",
@@ -290,7 +294,8 @@
       "B0403"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0044",
@@ -303,7 +308,8 @@
       "B0303"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0045",
@@ -316,7 +322,8 @@
       "B203"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0046",
@@ -329,7 +336,8 @@
       "B603"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0047",
@@ -342,7 +350,8 @@
       "B0303"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0048",
@@ -355,7 +364,8 @@
       "B0403"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0049",
@@ -368,7 +378,8 @@
       "B203"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0050",
@@ -381,7 +392,8 @@
       "B603"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0051",
@@ -394,7 +406,8 @@
       "B203"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0052",
@@ -407,7 +420,8 @@
       "B603"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0053",
@@ -420,7 +434,8 @@
       "B0303"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0054",
@@ -433,7 +448,8 @@
       "B0403"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0055",
@@ -446,7 +462,8 @@
       "B603"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0056",
@@ -459,7 +476,8 @@
       "B203"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0057",
@@ -472,7 +490,8 @@
       "B0403"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0058",
@@ -485,7 +504,8 @@
       "B0303"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0059",
@@ -498,7 +518,8 @@
       "B0303"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0060",
@@ -511,16 +532,8 @@
       "B603"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9003",
-    "dungeon": "D001",
-    "minFloor": 150,
-    "maxFloor": 150,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D012"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0081",
@@ -534,7 +547,8 @@
       "B204"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0082",
@@ -548,7 +562,8 @@
       "B604"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0083",
@@ -562,7 +577,8 @@
       "B0404"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0084",
@@ -576,7 +592,8 @@
       "B0304"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0085",
@@ -590,7 +607,8 @@
       "B204"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0086",
@@ -604,7 +622,8 @@
       "B604"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0087",
@@ -618,7 +637,8 @@
       "B204"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0088",
@@ -632,7 +652,8 @@
       "B0404"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0089",
@@ -646,7 +667,8 @@
       "B0304"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0090",
@@ -660,7 +682,8 @@
       "B604"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0091",
@@ -674,7 +697,8 @@
       "B0404"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0092",
@@ -688,7 +712,8 @@
       "B0304"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0093",
@@ -702,7 +727,8 @@
       "B204"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0094",
@@ -716,7 +742,8 @@
       "B604"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0095",
@@ -730,7 +757,8 @@
       "B0404"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0096",
@@ -744,7 +772,8 @@
       "B0304"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0097",
@@ -758,7 +787,8 @@
       "B0404"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0098",
@@ -772,7 +802,8 @@
       "B604"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0099",
@@ -786,7 +817,8 @@
       "B204"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0100",
@@ -800,16 +832,8 @@
       "B604"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9004",
-    "dungeon": "D001",
-    "minFloor": 200,
-    "maxFloor": 200,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D013"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0101",
@@ -823,7 +847,8 @@
       "B205"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0102",
@@ -837,7 +862,8 @@
       "B605"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0103",
@@ -851,7 +877,8 @@
       "B0405"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0104",
@@ -865,7 +892,8 @@
       "B0305"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0105",
@@ -879,7 +907,8 @@
       "B205"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0106",
@@ -893,7 +922,8 @@
       "B605"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0107",
@@ -907,7 +937,8 @@
       "B205"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0108",
@@ -921,7 +952,8 @@
       "B0405"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0109",
@@ -935,7 +967,8 @@
       "B0305"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0110",
@@ -949,7 +982,8 @@
       "B605"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0111",
@@ -963,7 +997,8 @@
       "B0405"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0112",
@@ -977,7 +1012,8 @@
       "B0305"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0113",
@@ -991,7 +1027,8 @@
       "B205"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0114",
@@ -1005,7 +1042,8 @@
       "B605"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0115",
@@ -1019,7 +1057,8 @@
       "B0405"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0116",
@@ -1033,7 +1072,8 @@
       "B0305"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0117",
@@ -1047,7 +1087,8 @@
       "B0405"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0118",
@@ -1061,7 +1102,8 @@
       "B605"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0119",
@@ -1075,7 +1117,8 @@
       "B205"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0120",
@@ -1089,16 +1132,8 @@
       "B605"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9005",
-    "dungeon": "D001",
-    "minFloor": 250,
-    "maxFloor": 250,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D014"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0121",
@@ -1112,7 +1147,8 @@
       "B206"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0122",
@@ -1126,7 +1162,8 @@
       "B606"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0123",
@@ -1140,7 +1177,8 @@
       "B0406"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0124",
@@ -1154,7 +1192,8 @@
       "B0306"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0125",
@@ -1168,7 +1207,8 @@
       "B206"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0126",
@@ -1182,7 +1222,8 @@
       "B606"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0127",
@@ -1196,7 +1237,8 @@
       "B206"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0128",
@@ -1210,7 +1252,8 @@
       "B0406"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0129",
@@ -1224,7 +1267,8 @@
       "B0306"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0130",
@@ -1238,7 +1282,8 @@
       "B606"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0131",
@@ -1252,7 +1297,8 @@
       "B0406"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0132",
@@ -1266,7 +1312,8 @@
       "B0306"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0133",
@@ -1280,7 +1327,8 @@
       "B206"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0134",
@@ -1294,7 +1342,8 @@
       "B606"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0135",
@@ -1308,7 +1357,8 @@
       "B0406"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0136",
@@ -1322,7 +1372,8 @@
       "B0306"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0137",
@@ -1336,7 +1387,8 @@
       "B0406"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0138",
@@ -1350,7 +1402,8 @@
       "B606"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0139",
@@ -1364,7 +1417,8 @@
       "B206"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0140",
@@ -1378,16 +1432,8 @@
       "B606"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9006",
-    "dungeon": "D001",
-    "minFloor": 300,
-    "maxFloor": 300,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D015"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0141",
@@ -1401,7 +1447,8 @@
       "B207"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0142",
@@ -1415,7 +1462,8 @@
       "B607"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0143",
@@ -1429,7 +1477,8 @@
       "B0407"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0144",
@@ -1443,7 +1492,8 @@
       "B0307"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0145",
@@ -1457,7 +1507,8 @@
       "B207"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0146",
@@ -1471,7 +1522,8 @@
       "B607"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0147",
@@ -1485,7 +1537,8 @@
       "B207"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0148",
@@ -1499,7 +1552,8 @@
       "B0407"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0149",
@@ -1513,7 +1567,8 @@
       "B0307"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0150",
@@ -1527,7 +1582,8 @@
       "B607"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0151",
@@ -1541,7 +1597,8 @@
       "B0407"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0152",
@@ -1555,7 +1612,8 @@
       "B0307"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0153",
@@ -1569,7 +1627,8 @@
       "B207"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0154",
@@ -1583,7 +1642,8 @@
       "B607"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0155",
@@ -1597,7 +1657,8 @@
       "B0407"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0156",
@@ -1611,7 +1672,8 @@
       "B0307"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0157",
@@ -1625,7 +1687,8 @@
       "B0407"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0158",
@@ -1639,7 +1702,8 @@
       "B607"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0159",
@@ -1653,7 +1717,8 @@
       "B207"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0160",
@@ -1667,16 +1732,8 @@
       "B607"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9007",
-    "dungeon": "D001",
-    "minFloor": 350,
-    "maxFloor": 350,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D016"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0161",
@@ -1690,7 +1747,8 @@
       "B208"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0162",
@@ -1704,7 +1762,8 @@
       "B608"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0163",
@@ -1718,7 +1777,8 @@
       "B0408"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0164",
@@ -1732,7 +1792,8 @@
       "B0308"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0165",
@@ -1746,7 +1807,8 @@
       "B208"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0166",
@@ -1760,7 +1822,8 @@
       "B608"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0167",
@@ -1774,7 +1837,8 @@
       "B208"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0168",
@@ -1788,7 +1852,8 @@
       "B0408"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0169",
@@ -1802,7 +1867,8 @@
       "B0308"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0170",
@@ -1816,7 +1882,8 @@
       "B608"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0171",
@@ -1830,7 +1897,8 @@
       "B0408"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0172",
@@ -1844,7 +1912,8 @@
       "B0308"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0173",
@@ -1858,7 +1927,8 @@
       "B208"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0174",
@@ -1872,7 +1942,8 @@
       "B608"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0175",
@@ -1886,7 +1957,8 @@
       "B0408"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0176",
@@ -1900,7 +1972,8 @@
       "B0308"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0177",
@@ -1914,7 +1987,8 @@
       "B0408"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0178",
@@ -1928,7 +2002,8 @@
       "B608"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0179",
@@ -1942,7 +2017,8 @@
       "B208"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0180",
@@ -1956,16 +2032,8 @@
       "B608"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9008",
-    "dungeon": "D001",
-    "minFloor": 400,
-    "maxFloor": 400,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D017"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0181",
@@ -1979,7 +2047,8 @@
       "B209"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0182",
@@ -1993,7 +2062,8 @@
       "B609"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0183",
@@ -2007,7 +2077,8 @@
       "B0409"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0184",
@@ -2021,7 +2092,8 @@
       "B0309"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0185",
@@ -2035,7 +2107,8 @@
       "B209"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0186",
@@ -2049,7 +2122,8 @@
       "B609"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0187",
@@ -2063,7 +2137,8 @@
       "B209"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0188",
@@ -2077,7 +2152,8 @@
       "B0409"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0189",
@@ -2091,7 +2167,8 @@
       "B0309"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0190",
@@ -2105,7 +2182,8 @@
       "B609"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0191",
@@ -2119,7 +2197,8 @@
       "B0409"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0192",
@@ -2133,7 +2212,8 @@
       "B0309"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0193",
@@ -2147,7 +2227,8 @@
       "B209"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0194",
@@ -2161,7 +2242,8 @@
       "B609"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0195",
@@ -2175,7 +2257,8 @@
       "B0409"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0196",
@@ -2189,7 +2272,8 @@
       "B0309"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0197",
@@ -2203,7 +2287,8 @@
       "B0409"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0198",
@@ -2217,7 +2302,8 @@
       "B609"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0199",
@@ -2231,7 +2317,8 @@
       "B209"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0200",
@@ -2245,16 +2332,8 @@
       "B609"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9009",
-    "dungeon": "D001",
-    "minFloor": 450,
-    "maxFloor": 450,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D018"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0201",
@@ -2268,7 +2347,8 @@
       "B210"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0202",
@@ -2282,7 +2362,8 @@
       "B610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0203",
@@ -2296,7 +2377,8 @@
       "B0410"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0204",
@@ -2310,7 +2392,8 @@
       "B0310"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0205",
@@ -2324,7 +2407,8 @@
       "B210"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0206",
@@ -2338,7 +2422,8 @@
       "B610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0207",
@@ -2352,7 +2437,8 @@
       "B210"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0208",
@@ -2366,7 +2452,8 @@
       "B0410"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0209",
@@ -2380,7 +2467,8 @@
       "B0310"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0210",
@@ -2394,7 +2482,8 @@
       "B610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0211",
@@ -2408,7 +2497,8 @@
       "B0410"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0212",
@@ -2422,7 +2512,8 @@
       "B0310"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0213",
@@ -2436,7 +2527,8 @@
       "B210"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0214",
@@ -2450,7 +2542,8 @@
       "B610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0215",
@@ -2464,7 +2557,8 @@
       "B0410"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0216",
@@ -2478,7 +2572,8 @@
       "B0310"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0217",
@@ -2492,7 +2587,8 @@
       "B0410"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0218",
@@ -2506,7 +2602,8 @@
       "B610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0219",
@@ -2520,7 +2617,8 @@
       "B210"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F0220",
@@ -2534,7 +2632,8 @@
       "B610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2001",
@@ -2545,7 +2644,8 @@
       "B0501"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2002",
@@ -2556,7 +2656,8 @@
       "B101"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2003",
@@ -2567,7 +2668,8 @@
       "B0201"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2004",
@@ -2578,16 +2680,8 @@
       "B301"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9011",
-    "dungeon": "D002",
-    "minFloor": 50,
-    "maxFloor": 50,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D010"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2009",
@@ -2599,7 +2693,8 @@
       "B0502"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2010",
@@ -2611,7 +2706,8 @@
       "B102"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2011",
@@ -2623,7 +2719,8 @@
       "B0202"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2012",
@@ -2635,7 +2732,8 @@
       "B302"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2013",
@@ -2647,7 +2745,8 @@
       "B102"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2014",
@@ -2659,7 +2758,8 @@
       "B0202"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2015",
@@ -2671,7 +2771,8 @@
       "B302"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2016",
@@ -2683,7 +2784,8 @@
       "B0202"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2017",
@@ -2695,7 +2797,8 @@
       "B302"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2018",
@@ -2707,7 +2810,8 @@
       "B302"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2019",
@@ -2719,7 +2823,8 @@
       "B0502"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2020",
@@ -2731,7 +2836,8 @@
       "B0502"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2021",
@@ -2743,7 +2849,8 @@
       "B0502"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2022",
@@ -2755,7 +2862,8 @@
       "B102"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2023",
@@ -2767,7 +2875,8 @@
       "B102"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2024",
@@ -2779,16 +2888,8 @@
       "B0202"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9012",
-    "dungeon": "D002",
-    "minFloor": 100,
-    "maxFloor": 100,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D011"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2041",
@@ -2801,7 +2902,8 @@
       "B0503"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2042",
@@ -2814,7 +2916,8 @@
       "B103"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2043",
@@ -2827,7 +2930,8 @@
       "B0203"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2044",
@@ -2840,7 +2944,8 @@
       "B303"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2045",
@@ -2853,7 +2958,8 @@
       "B0503"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2046",
@@ -2866,7 +2972,8 @@
       "B103"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2047",
@@ -2879,7 +2986,8 @@
       "B303"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2048",
@@ -2892,7 +3000,8 @@
       "B0203"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2049",
@@ -2905,7 +3014,8 @@
       "B0503"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2050",
@@ -2918,7 +3028,8 @@
       "B103"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2051",
@@ -2931,7 +3042,8 @@
       "B0503"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2052",
@@ -2944,7 +3056,8 @@
       "B103"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2053",
@@ -2957,7 +3070,8 @@
       "B303"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2054",
@@ -2970,7 +3084,8 @@
       "B0203"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2055",
@@ -2983,7 +3098,8 @@
       "B103"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2056",
@@ -2996,7 +3112,8 @@
       "B0503"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2057",
@@ -3009,7 +3126,8 @@
       "B0203"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2058",
@@ -3022,7 +3140,8 @@
       "B303"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2059",
@@ -3035,7 +3154,8 @@
       "B303"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2060",
@@ -3048,16 +3168,8 @@
       "B103"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9013",
-    "dungeon": "D003",
-    "minFloor": 150,
-    "maxFloor": 150,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D012"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2081",
@@ -3071,7 +3183,8 @@
       "B0504"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2082",
@@ -3085,7 +3198,8 @@
       "B104"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2083",
@@ -3099,7 +3213,8 @@
       "B0204"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2084",
@@ -3113,7 +3228,8 @@
       "B304"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2085",
@@ -3127,7 +3243,8 @@
       "B0504"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2086",
@@ -3141,7 +3258,8 @@
       "B104"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2087",
@@ -3155,7 +3273,8 @@
       "B0504"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2088",
@@ -3169,7 +3288,8 @@
       "B0204"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2089",
@@ -3183,7 +3303,8 @@
       "B304"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2090",
@@ -3197,7 +3318,8 @@
       "B104"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2091",
@@ -3211,7 +3333,8 @@
       "B0204"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2092",
@@ -3225,7 +3348,8 @@
       "B304"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2093",
@@ -3239,7 +3363,8 @@
       "B0504"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2094",
@@ -3253,7 +3378,8 @@
       "B104"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2095",
@@ -3267,7 +3393,8 @@
       "B0204"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2096",
@@ -3281,7 +3408,8 @@
       "B304"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2097",
@@ -3295,7 +3423,8 @@
       "B0204"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2098",
@@ -3309,7 +3438,8 @@
       "B104"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2099",
@@ -3323,7 +3453,8 @@
       "B0504"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2100",
@@ -3337,16 +3468,8 @@
       "B104"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9014",
-    "dungeon": "D002",
-    "minFloor": 200,
-    "maxFloor": 200,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D013"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2101",
@@ -3360,7 +3483,8 @@
       "B0505"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2102",
@@ -3374,7 +3498,8 @@
       "B105"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2103",
@@ -3388,7 +3513,8 @@
       "B0205"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2104",
@@ -3402,7 +3528,8 @@
       "B305"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2105",
@@ -3416,7 +3543,8 @@
       "B0505"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2106",
@@ -3430,7 +3558,8 @@
       "B105"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2107",
@@ -3444,7 +3573,8 @@
       "B0505"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2108",
@@ -3458,7 +3588,8 @@
       "B0205"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2109",
@@ -3472,7 +3603,8 @@
       "B305"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2110",
@@ -3486,7 +3618,8 @@
       "B105"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2111",
@@ -3500,7 +3633,8 @@
       "B0205"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2112",
@@ -3514,7 +3648,8 @@
       "B305"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2113",
@@ -3528,7 +3663,8 @@
       "B0505"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2114",
@@ -3542,7 +3678,8 @@
       "B105"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2115",
@@ -3556,7 +3693,8 @@
       "B0205"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2116",
@@ -3570,7 +3708,8 @@
       "B305"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2117",
@@ -3584,7 +3723,8 @@
       "B0205"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2118",
@@ -3598,7 +3738,8 @@
       "B105"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2119",
@@ -3612,7 +3753,8 @@
       "B0505"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2120",
@@ -3626,16 +3768,8 @@
       "B105"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9015",
-    "dungeon": "D002",
-    "minFloor": 250,
-    "maxFloor": 250,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D014"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2121",
@@ -3649,7 +3783,8 @@
       "B0506"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2122",
@@ -3663,7 +3798,8 @@
       "B106"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2123",
@@ -3677,7 +3813,8 @@
       "B0206"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2124",
@@ -3691,7 +3828,8 @@
       "B306"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2125",
@@ -3705,7 +3843,8 @@
       "B0506"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2126",
@@ -3719,7 +3858,8 @@
       "B106"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2127",
@@ -3733,7 +3873,8 @@
       "B0506"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2128",
@@ -3747,7 +3888,8 @@
       "B0206"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2129",
@@ -3761,7 +3903,8 @@
       "B306"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2130",
@@ -3775,7 +3918,8 @@
       "B106"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2131",
@@ -3789,7 +3933,8 @@
       "B0206"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2132",
@@ -3803,7 +3948,8 @@
       "B306"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2133",
@@ -3817,7 +3963,8 @@
       "B0506"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2134",
@@ -3831,7 +3978,8 @@
       "B106"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2135",
@@ -3845,7 +3993,8 @@
       "B0206"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2136",
@@ -3859,7 +4008,8 @@
       "B306"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2137",
@@ -3873,7 +4023,8 @@
       "B0206"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2138",
@@ -3887,7 +4038,8 @@
       "B106"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2139",
@@ -3901,7 +4053,8 @@
       "B0506"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2140",
@@ -3915,16 +4068,8 @@
       "B106"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9016",
-    "dungeon": "D002",
-    "minFloor": 300,
-    "maxFloor": 300,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D015"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2141",
@@ -3938,7 +4083,8 @@
       "B0507"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2142",
@@ -3952,7 +4098,8 @@
       "B107"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2143",
@@ -3966,7 +4113,8 @@
       "B0207"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2144",
@@ -3980,7 +4128,8 @@
       "B307"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2145",
@@ -3994,7 +4143,8 @@
       "B0507"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2146",
@@ -4008,7 +4158,8 @@
       "B107"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2147",
@@ -4022,7 +4173,8 @@
       "B0507"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2148",
@@ -4036,7 +4188,8 @@
       "B0207"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2149",
@@ -4050,7 +4203,8 @@
       "B307"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2150",
@@ -4064,7 +4218,8 @@
       "B107"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2151",
@@ -4078,7 +4233,8 @@
       "B0207"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2152",
@@ -4092,7 +4248,8 @@
       "B307"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2153",
@@ -4106,7 +4263,8 @@
       "B0507"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2154",
@@ -4120,7 +4278,8 @@
       "B107"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2155",
@@ -4134,7 +4293,8 @@
       "B0207"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2156",
@@ -4148,7 +4308,8 @@
       "B307"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2157",
@@ -4162,7 +4323,8 @@
       "B0207"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2158",
@@ -4176,7 +4338,8 @@
       "B107"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2159",
@@ -4190,7 +4353,8 @@
       "B0507"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2160",
@@ -4204,16 +4368,8 @@
       "B107"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9017",
-    "dungeon": "D002",
-    "minFloor": 350,
-    "maxFloor": 350,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D016"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2161",
@@ -4227,7 +4383,8 @@
       "B0508"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2162",
@@ -4241,7 +4398,8 @@
       "B108"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2163",
@@ -4255,7 +4413,8 @@
       "B0208"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2164",
@@ -4269,7 +4428,8 @@
       "B308"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2165",
@@ -4283,7 +4443,8 @@
       "B0508"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2166",
@@ -4297,7 +4458,8 @@
       "B108"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2167",
@@ -4311,7 +4473,8 @@
       "B0508"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2168",
@@ -4325,7 +4488,8 @@
       "B0208"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2169",
@@ -4339,7 +4503,8 @@
       "B308"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2170",
@@ -4353,7 +4518,8 @@
       "B108"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2171",
@@ -4367,7 +4533,8 @@
       "B0208"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2172",
@@ -4381,7 +4548,8 @@
       "B308"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2173",
@@ -4395,7 +4563,8 @@
       "B0508"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2174",
@@ -4409,7 +4578,8 @@
       "B108"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2175",
@@ -4423,7 +4593,8 @@
       "B0208"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2176",
@@ -4437,7 +4608,8 @@
       "B308"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2177",
@@ -4451,7 +4623,8 @@
       "B0208"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2178",
@@ -4465,7 +4638,8 @@
       "B108"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2179",
@@ -4479,7 +4653,8 @@
       "B0508"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2180",
@@ -4493,16 +4668,8 @@
       "B108"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9018",
-    "dungeon": "D002",
-    "minFloor": 400,
-    "maxFloor": 400,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D017"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2181",
@@ -4516,7 +4683,8 @@
       "B0509"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2182",
@@ -4530,7 +4698,8 @@
       "B109"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2183",
@@ -4544,7 +4713,8 @@
       "B0209"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2184",
@@ -4558,7 +4728,8 @@
       "B309"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2185",
@@ -4572,7 +4743,8 @@
       "B0509"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2186",
@@ -4586,7 +4758,8 @@
       "B109"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2187",
@@ -4600,7 +4773,8 @@
       "B0509"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2188",
@@ -4614,7 +4788,8 @@
       "B0209"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2189",
@@ -4628,7 +4803,8 @@
       "B309"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2190",
@@ -4642,7 +4818,8 @@
       "B109"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2191",
@@ -4656,7 +4833,8 @@
       "B0209"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2192",
@@ -4670,7 +4848,8 @@
       "B309"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2193",
@@ -4684,7 +4863,8 @@
       "B0509"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2194",
@@ -4698,7 +4878,8 @@
       "B109"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2195",
@@ -4712,7 +4893,8 @@
       "B0209"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2196",
@@ -4726,7 +4908,8 @@
       "B309"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2197",
@@ -4740,7 +4923,8 @@
       "B0209"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2198",
@@ -4754,7 +4938,8 @@
       "B109"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2199",
@@ -4768,7 +4953,8 @@
       "B0509"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2200",
@@ -4782,16 +4968,8 @@
       "B109"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9019",
-    "dungeon": "D002",
-    "minFloor": 450,
-    "maxFloor": 450,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D018"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2201",
@@ -4805,7 +4983,8 @@
       "B0510"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2202",
@@ -4819,7 +4998,8 @@
       "B110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2203",
@@ -4833,7 +5013,8 @@
       "B0210"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2204",
@@ -4847,7 +5028,8 @@
       "B310"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2205",
@@ -4861,7 +5043,8 @@
       "B0510"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2206",
@@ -4875,7 +5058,8 @@
       "B110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2207",
@@ -4889,7 +5073,8 @@
       "B0510"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2208",
@@ -4903,7 +5088,8 @@
       "B0210"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2209",
@@ -4917,7 +5103,8 @@
       "B310"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2210",
@@ -4931,7 +5118,8 @@
       "B110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2211",
@@ -4945,7 +5133,8 @@
       "B0210"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2212",
@@ -4959,7 +5148,8 @@
       "B310"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2213",
@@ -4973,7 +5163,8 @@
       "B0510"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2214",
@@ -4987,7 +5178,8 @@
       "B110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2215",
@@ -5001,7 +5193,8 @@
       "B0210"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2216",
@@ -5015,7 +5208,8 @@
       "B310"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2217",
@@ -5029,7 +5223,8 @@
       "B0210"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2218",
@@ -5043,7 +5238,8 @@
       "B110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2219",
@@ -5057,7 +5253,8 @@
       "B0510"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F2220",
@@ -5071,7 +5268,8 @@
       "B110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4001",
@@ -5082,7 +5280,8 @@
       "B0101"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4002",
@@ -5093,7 +5292,8 @@
       "B0601"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4003",
@@ -5104,7 +5304,8 @@
       "B401"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4004",
@@ -5115,16 +5316,8 @@
       "B501"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9021",
-    "dungeon": "D003",
-    "minFloor": 50,
-    "maxFloor": 50,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D010"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4009",
@@ -5136,7 +5329,8 @@
       "B0102"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4010",
@@ -5148,7 +5342,8 @@
       "B0602"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4011",
@@ -5160,7 +5355,8 @@
       "B402"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4012",
@@ -5172,7 +5368,8 @@
       "B502"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4013",
@@ -5184,7 +5381,8 @@
       "B0602"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4014",
@@ -5196,7 +5394,8 @@
       "B402"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4015",
@@ -5208,7 +5407,8 @@
       "B502"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4016",
@@ -5220,7 +5420,8 @@
       "B402"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4017",
@@ -5232,7 +5433,8 @@
       "B502"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4018",
@@ -5244,7 +5446,8 @@
       "B502"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4019",
@@ -5256,7 +5459,8 @@
       "B0102"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4020",
@@ -5268,7 +5472,8 @@
       "B0102"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4021",
@@ -5280,7 +5485,8 @@
       "B0102"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4022",
@@ -5292,7 +5498,8 @@
       "B0602"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4023",
@@ -5304,7 +5511,8 @@
       "B0602"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4024",
@@ -5316,16 +5524,8 @@
       "B402"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9022",
-    "dungeon": "D003",
-    "minFloor": 100,
-    "maxFloor": 100,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D011"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4041",
@@ -5338,7 +5538,8 @@
       "B0103"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4042",
@@ -5351,7 +5552,8 @@
       "B0603"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4043",
@@ -5364,7 +5566,8 @@
       "B403"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4044",
@@ -5377,7 +5580,8 @@
       "B503"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4045",
@@ -5390,7 +5594,8 @@
       "B0103"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4046",
@@ -5403,7 +5608,8 @@
       "B0603"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4047",
@@ -5416,7 +5622,8 @@
       "B503"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4048",
@@ -5429,7 +5636,8 @@
       "B403"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4049",
@@ -5442,7 +5650,8 @@
       "B0103"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4050",
@@ -5455,7 +5664,8 @@
       "B0603"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4051",
@@ -5468,7 +5678,8 @@
       "B0103"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4052",
@@ -5481,7 +5692,8 @@
       "B0603"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4053",
@@ -5494,7 +5706,8 @@
       "B503"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4054",
@@ -5507,7 +5720,8 @@
       "B403"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4055",
@@ -5520,7 +5734,8 @@
       "B0603"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4056",
@@ -5533,7 +5748,8 @@
       "B0103"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4057",
@@ -5546,7 +5762,8 @@
       "B403"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4058",
@@ -5559,7 +5776,8 @@
       "B503"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4059",
@@ -5572,7 +5790,8 @@
       "B503"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4060",
@@ -5585,16 +5804,8 @@
       "B0603"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9023",
-    "dungeon": "D003",
-    "minFloor": 150,
-    "maxFloor": 150,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D012"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4081",
@@ -5608,7 +5819,8 @@
       "B0104"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4082",
@@ -5622,7 +5834,8 @@
       "B0604"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4083",
@@ -5636,7 +5849,8 @@
       "B404"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4084",
@@ -5650,7 +5864,8 @@
       "B504"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4085",
@@ -5664,7 +5879,8 @@
       "B0104"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4086",
@@ -5678,7 +5894,8 @@
       "B0604"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4087",
@@ -5692,7 +5909,8 @@
       "B0104"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4088",
@@ -5706,7 +5924,8 @@
       "B404"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4089",
@@ -5720,7 +5939,8 @@
       "B504"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4090",
@@ -5734,7 +5954,8 @@
       "B0604"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4091",
@@ -5748,7 +5969,8 @@
       "B404"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4092",
@@ -5762,7 +5984,8 @@
       "B504"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4093",
@@ -5776,7 +5999,8 @@
       "B0104"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4094",
@@ -5790,7 +6014,8 @@
       "B0604"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4095",
@@ -5804,7 +6029,8 @@
       "B404"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4096",
@@ -5818,7 +6044,8 @@
       "B504"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4097",
@@ -5832,7 +6059,8 @@
       "B404"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4098",
@@ -5846,7 +6074,8 @@
       "B0604"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4099",
@@ -5860,7 +6089,8 @@
       "B0104"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4100",
@@ -5874,16 +6104,8 @@
       "B0604"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9024",
-    "dungeon": "D003",
-    "minFloor": 200,
-    "maxFloor": 200,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D013"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4101",
@@ -5897,7 +6119,8 @@
       "B0105"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4102",
@@ -5911,7 +6134,8 @@
       "B0605"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4103",
@@ -5925,7 +6149,8 @@
       "B405"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4104",
@@ -5939,7 +6164,8 @@
       "B505"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4105",
@@ -5953,7 +6179,8 @@
       "B0105"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4106",
@@ -5967,7 +6194,8 @@
       "B0605"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4107",
@@ -5981,7 +6209,8 @@
       "B0105"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4108",
@@ -5995,7 +6224,8 @@
       "B405"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4109",
@@ -6009,7 +6239,8 @@
       "B505"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4110",
@@ -6023,7 +6254,8 @@
       "B0605"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4111",
@@ -6037,7 +6269,8 @@
       "B405"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4112",
@@ -6051,7 +6284,8 @@
       "B505"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4113",
@@ -6065,7 +6299,8 @@
       "B0105"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4114",
@@ -6079,7 +6314,8 @@
       "B0605"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4115",
@@ -6093,7 +6329,8 @@
       "B405"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4116",
@@ -6107,7 +6344,8 @@
       "B505"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4117",
@@ -6121,7 +6359,8 @@
       "B405"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4118",
@@ -6135,7 +6374,8 @@
       "B0605"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4119",
@@ -6149,7 +6389,8 @@
       "B0105"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4120",
@@ -6163,16 +6404,8 @@
       "B0605"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9025",
-    "dungeon": "D003",
-    "minFloor": 250,
-    "maxFloor": 250,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D014"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4121",
@@ -6186,7 +6419,8 @@
       "B0106"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4122",
@@ -6200,7 +6434,8 @@
       "B0606"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4123",
@@ -6214,7 +6449,8 @@
       "B406"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4124",
@@ -6228,7 +6464,8 @@
       "B506"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4125",
@@ -6242,7 +6479,8 @@
       "B0106"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4126",
@@ -6256,7 +6494,8 @@
       "B0606"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4127",
@@ -6270,7 +6509,8 @@
       "B0106"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4128",
@@ -6284,7 +6524,8 @@
       "B406"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4129",
@@ -6298,7 +6539,8 @@
       "B506"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4130",
@@ -6312,7 +6554,8 @@
       "B0606"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4131",
@@ -6326,7 +6569,8 @@
       "B406"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4132",
@@ -6340,7 +6584,8 @@
       "B506"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4133",
@@ -6354,7 +6599,8 @@
       "B0106"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4134",
@@ -6368,7 +6614,8 @@
       "B0606"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4135",
@@ -6382,7 +6629,8 @@
       "B406"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4136",
@@ -6396,7 +6644,8 @@
       "B506"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4137",
@@ -6410,7 +6659,8 @@
       "B406"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4138",
@@ -6424,7 +6674,8 @@
       "B0606"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4139",
@@ -6438,7 +6689,8 @@
       "B0106"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4140",
@@ -6452,16 +6704,8 @@
       "B0606"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9026",
-    "dungeon": "D003",
-    "minFloor": 300,
-    "maxFloor": 300,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D015"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4141",
@@ -6475,7 +6719,8 @@
       "B0107"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4142",
@@ -6489,7 +6734,8 @@
       "B0607"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4143",
@@ -6503,7 +6749,8 @@
       "B407"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4144",
@@ -6517,7 +6764,8 @@
       "B507"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4145",
@@ -6531,7 +6779,8 @@
       "B0107"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4146",
@@ -6545,7 +6794,8 @@
       "B0607"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4147",
@@ -6559,7 +6809,8 @@
       "B0107"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4148",
@@ -6573,7 +6824,8 @@
       "B407"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4149",
@@ -6587,7 +6839,8 @@
       "B507"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4150",
@@ -6601,7 +6854,8 @@
       "B0607"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4151",
@@ -6615,7 +6869,8 @@
       "B407"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4152",
@@ -6629,7 +6884,8 @@
       "B507"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4153",
@@ -6643,7 +6899,8 @@
       "B0107"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4154",
@@ -6657,7 +6914,8 @@
       "B0607"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4155",
@@ -6671,7 +6929,8 @@
       "B407"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4156",
@@ -6685,7 +6944,8 @@
       "B507"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4157",
@@ -6699,7 +6959,8 @@
       "B407"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4158",
@@ -6713,7 +6974,8 @@
       "B0607"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4159",
@@ -6727,7 +6989,8 @@
       "B0107"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4160",
@@ -6741,16 +7004,8 @@
       "B0607"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9027",
-    "dungeon": "D003",
-    "minFloor": 350,
-    "maxFloor": 350,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D016"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4161",
@@ -6764,7 +7019,8 @@
       "B0108"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4162",
@@ -6778,7 +7034,8 @@
       "B0608"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4163",
@@ -6792,7 +7049,8 @@
       "B408"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4164",
@@ -6806,7 +7064,8 @@
       "B508"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4165",
@@ -6820,7 +7079,8 @@
       "B0108"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4166",
@@ -6834,7 +7094,8 @@
       "B0608"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4167",
@@ -6848,7 +7109,8 @@
       "B0108"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4168",
@@ -6862,7 +7124,8 @@
       "B408"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4169",
@@ -6876,7 +7139,8 @@
       "B508"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4170",
@@ -6890,7 +7154,8 @@
       "B0608"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4171",
@@ -6904,7 +7169,8 @@
       "B408"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4172",
@@ -6918,7 +7184,8 @@
       "B508"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4173",
@@ -6932,7 +7199,8 @@
       "B0108"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4174",
@@ -6946,7 +7214,8 @@
       "B0608"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4175",
@@ -6960,7 +7229,8 @@
       "B408"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4176",
@@ -6974,7 +7244,8 @@
       "B508"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4177",
@@ -6988,7 +7259,8 @@
       "B408"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4178",
@@ -7002,7 +7274,8 @@
       "B0608"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4179",
@@ -7016,7 +7289,8 @@
       "B0108"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4180",
@@ -7030,16 +7304,8 @@
       "B0608"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9028",
-    "dungeon": "D003",
-    "minFloor": 400,
-    "maxFloor": 400,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D017"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4181",
@@ -7053,7 +7319,8 @@
       "B0109"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4182",
@@ -7067,7 +7334,8 @@
       "B0609"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4183",
@@ -7081,7 +7349,8 @@
       "B409"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4184",
@@ -7095,7 +7364,8 @@
       "B509"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4185",
@@ -7109,7 +7379,8 @@
       "B0109"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4186",
@@ -7123,7 +7394,8 @@
       "B0609"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4187",
@@ -7137,7 +7409,8 @@
       "B0109"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4188",
@@ -7151,7 +7424,8 @@
       "B409"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4189",
@@ -7165,7 +7439,8 @@
       "B509"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4190",
@@ -7179,7 +7454,8 @@
       "B0609"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4191",
@@ -7193,7 +7469,8 @@
       "B409"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4192",
@@ -7207,7 +7484,8 @@
       "B509"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4193",
@@ -7221,7 +7499,8 @@
       "B0109"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4194",
@@ -7235,7 +7514,8 @@
       "B0609"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4195",
@@ -7249,7 +7529,8 @@
       "B409"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4196",
@@ -7263,7 +7544,8 @@
       "B509"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4197",
@@ -7277,7 +7559,8 @@
       "B409"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4198",
@@ -7291,7 +7574,8 @@
       "B0609"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4199",
@@ -7305,7 +7589,8 @@
       "B0109"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4200",
@@ -7319,16 +7604,8 @@
       "B0609"
     ],
     "type": "normal",
-    "gate": null
-  },
-  {
-    "id": "F9029",
-    "dungeon": "D003",
-    "minFloor": 450,
-    "maxFloor": 450,
-    "mobs": [],
-    "type": "sanctuary",
-    "gate": "D018"
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4201",
@@ -7342,7 +7619,8 @@
       "B0110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4202",
@@ -7356,7 +7634,8 @@
       "B0610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4203",
@@ -7370,7 +7649,8 @@
       "B410"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4204",
@@ -7384,7 +7664,8 @@
       "B510"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4205",
@@ -7398,7 +7679,8 @@
       "B0110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4206",
@@ -7412,7 +7694,8 @@
       "B0610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4207",
@@ -7426,7 +7709,8 @@
       "B0110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4208",
@@ -7440,7 +7724,8 @@
       "B410"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4209",
@@ -7454,7 +7739,8 @@
       "B510"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4210",
@@ -7468,7 +7754,8 @@
       "B0610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4211",
@@ -7482,7 +7769,8 @@
       "B410"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4212",
@@ -7496,7 +7784,8 @@
       "B510"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4213",
@@ -7510,7 +7799,8 @@
       "B0110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4214",
@@ -7524,7 +7814,8 @@
       "B0610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4215",
@@ -7538,7 +7829,8 @@
       "B410"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4216",
@@ -7552,7 +7844,8 @@
       "B510"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4217",
@@ -7566,7 +7859,8 @@
       "B410"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4218",
@@ -7580,7 +7874,8 @@
       "B0610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4219",
@@ -7594,7 +7889,8 @@
       "B0110"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "F4220",
@@ -7608,7 +7904,8 @@
       "B0610"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "FB010",
@@ -7619,7 +7916,8 @@
       "BB010"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "FB011",
@@ -7630,7 +7928,8 @@
       "BB011"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "FB012",
@@ -7641,7 +7940,8 @@
       "BB012"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "FB013",
@@ -7652,7 +7952,8 @@
       "BB013"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "FB014",
@@ -7663,7 +7964,8 @@
       "BB014"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "FB015",
@@ -7674,7 +7976,8 @@
       "BB015"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "FB016",
@@ -7685,7 +7988,8 @@
       "BB016"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "FB017",
@@ -7696,7 +8000,8 @@
       "BB017"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "FB018",
@@ -7707,7 +8012,8 @@
       "BB018"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   },
   {
     "id": "FB019",
@@ -7718,6 +8024,7 @@
       "BB019"
     ],
     "type": "normal",
-    "gate": null
+    "matA": "M201",
+    "matB": null
   }
 ]

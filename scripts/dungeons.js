@@ -181,13 +181,18 @@ class Dungeon {
             else found.amt += 1;
         });
     }
+    getRewards() {
+        const value = Math.floor(this.floorCount/5);
+        const amt = miscLoadedValues.floorMatA[value];
+        const mat = FloorManager.floorByID(this.floorID).matA;
+        return new idAmt(mat,amt);
+    }
     addRewards() {
-        /*if (this.floorCount === 0) return;
-        const rewards = FloorManager.rewards(this.floorID,this.floorCount);
-        ResourceManager.addMaterial(rewards.id,rewards.amt);*/
+        const rewards = this.getRewards();
+        ResourceManager.addMaterial(rewards.id,rewards.amt);
     }
     nextFloor(refreshLater, previousFloor) {
-        this.addRewards();
+        if (!previousFloor) this.addRewards();
         if (previousFloor) {
             this.floorCount = Math.max(1,this.floorCount-1);
             this.toggleProgress(false);

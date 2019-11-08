@@ -13,14 +13,11 @@ a group...
 
 const $dungeonSelect = $("#dungeonSelect");
 const $dungeonRun = $("#dungeonRun");
-
 const $DungeonSideBarTeam = $("#DungeonSideBarTeam");
-
 const $dsd1 = $("#dsd1");
-
 const $dungeonSpeedButtons = $(".dungeonSpeedButtons");
-
 const $toggleProgress = $("#toggleProgress");
+const $floorRewards = $("#floorRewards");
 
 /*---------------------------
 /*-   DUNGEON SELECT CODE   -
@@ -155,6 +152,8 @@ function initiateDungeonFloor(dungeonID) {
     $dungeonRun.removeClass().addClass(dungeon.id);
     if (dungeon.type === "boss") $dungeonRun.addClass("DBoss");
     $floorID.html("Floor "+dungeon.floorCount);
+    const rewards = dungeon.getRewards();
+    $floorRewards.html(`Earning ${rewards.amt} ${ResourceManager.materialIcon(rewards.id)} per clear`)
     $dungeonHeroList.empty();
     $dungeonMobList.empty();
     dungeon.party.heroes.forEach(hero => {
@@ -217,17 +216,12 @@ function initializeSideBarDungeon() {
         if (dungeon.type !== "regular" && dungeon.status === DungeonStatus.EMPTY) return;
         const d = $("<div/>").addClass("dungeonGroup").appendTo($DungeonSideBarTeam);
         const d1 = $("<div/>").addClass("DungeonSideBarStatus").attr("id","dsb"+dungeon.id).data("dungeonID",dungeon.id).appendTo(d);
-        if (dungeon.status === DungeonStatus.ADVENTURING) {
-            if (dungeon.type === "regular") d1.addClass("DungeonSideBarAdventuring").html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
-            else d1.html(`${dungeon.name}`);
+        if (dungeon.type === "regular" && dungeon.status === DungeonStatus.ADVENTURING) {
+            d1.addClass("DungeonSideBarAdventuring").html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
+            $("<div/>").attr("id","dsbr"+dungeon.id).addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon.getRewards(),dungeon.id)).appendTo(d);
         }
-        else if (dungeon.status === DungeonStatus.COLLECT) {
-            d1.addClass("DungeonSideBarCollect").html(`${dungeon.name} Complete!`);
-        }
-        else d1.addClass("DungeonSideBarIdle").html(`${dungeon.name} Idle`);
+        else d1.html(`${dungeon.name}`);
     });
-    if (DungeonManager.dungeons.some(d=>d.status === DungeonStatus.COLLECT)) $dungeonTab.addClass("hasEvent");
-    else $dungeonTab.removeClass("hasEvent");
 }
 
 function createHPBar(hero,tag) {
@@ -260,4 +254,14 @@ function refreshHPBar(hero) {
         $(`#hp${type}${hero.uniqueid}`).attr("data-label",hero.hp+"/"+hero.maxHP());
         $(`#hpFill${type}${hero.uniqueid}`).css('width', hpWidth);
     })
+}
+
+function createDungeonSidebarReward(rewards,dungeonid) {
+    const haveReward = ResourceManager.materialAvailable(rewards.id);
+    const matPercent = haveReward/1000;
+    const matWidth = (matPercent*100).toFixed(1)+"%";
+    const d1 = $("<div/>").addClass("dungeonRewardDiv").html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`);
+    const d1a = $("<div/>").addClass("dungeonRewardBar").attr("data-label",`${haveReward}/1000`).attr("id","dsbr"+dungeonid);
+    const s1 = $("<span/>").addClass("dungeonREwardFill").attr("id","dsbrf"+dungeonid).css('width',matWidth);
+    return d1.append(d1a,s1);
 }

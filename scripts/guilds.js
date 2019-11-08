@@ -440,7 +440,6 @@ const ActionLeague = {
     notoriety : 0,
     purchased : [],
     perks : [],
-    sanctuaryHeal : [0,0,0,0,0,0,0,0,0,0],
     addPerk(reward) {
         this.perks.push(reward);
     },
@@ -448,13 +447,11 @@ const ActionLeague = {
         const save = {};
         save.notoriety = this.notoriety;
         save.purchased = this.purchased;
-        save.sanctuaryHeal = this.sanctuaryHeal;
         return save;
     },
     loadSave(save) {
         this.notoriety = save.notoriety;
         this.purchased = save.purchased;
-        this.sanctuaryHeal = save.sanctuaryHeal;
     },
     idToPerk(id) {
         return this.perks.find(r=>r.id === id);
@@ -463,6 +460,7 @@ const ActionLeague = {
         this.notoriety += amt
         this.notoriety = Math.min(this.notoriety, this.maxNoto());
         refreshALprogress();
+        refreshALbar();
         refreshALperks();
     },
     maxNoto() {
@@ -505,15 +503,6 @@ class alRewards {
         if (this.type === "boss") DungeonManager.unlockDungeon(this.subtype);
         if (this.type === "craft") actionSlotManager.upgradeSlot();
         if (this.type === "adventure") DungeonManager.partySize += 1;
-        if (this.type === "sanctuary1") ActionLeague.sanctuaryHeal[1] = 100;
-        if (this.type === "sanctuary2") ActionLeague.sanctuaryHeal[2] = 100;
-        if (this.type === "sanctuary3") ActionLeague.sanctuaryHeal[3] = 100;
-        if (this.type === "sanctuary4") ActionLeague.sanctuaryHeal[4] = 100;
-        if (this.type === "sanctuary5") ActionLeague.sanctuaryHeal[5] = 100;
-        if (this.type === "sanctuary6") ActionLeague.sanctuaryHeal[6] = 100;
-        if (this.type === "sanctuary7") ActionLeague.sanctuaryHeal[7] = 100;
-        if (this.type === "sanctuary8") ActionLeague.sanctuaryHeal[8] = 100;
-        if (this.type === "sanctuary9") ActionLeague.sanctuaryHeal[9] = 100;
         if (this.type === "cap") GuildManager.setMaxLvl(this.subtype);
         if (this.type === "desynth" && this.subtype === "open") TownManager.buildingPerk("desynth");
         if (this.type === "bank" && this.subtype === "open") TownManager.buildingPerk("bank");
@@ -559,6 +548,17 @@ function refreshALperks() {
     $alp.append(createALperk(nextperk,false));
 }
 
+const $notoBar = $("#notoBar");
+const $notoBarFill = $("#notoBarFill");
+
+function refreshALbar() {
+    const notoPercent = ActionLeague.notoriety/ActionLeague.maxNoto();
+    const notoWidth = (notoPercent*100).toFixed(1)+"%";
+    if (ActionLeague.notoriety === ActionLeague.maxNoto()) $notoBar.data("data-label","Max Notoriety");
+    else $notoBar.data("data-label",`${formatToUnits(ActionLeague.notoriety,2)}/${formatToUnits(ActionLeague.maxNoto,2)}`);
+    $notoBarFill.css('width', notoWidth);
+}
+
 function createALperk(perk,canbuy) {
     const d1 = $("<div/>").addClass("alPerk");
     const d2 = $("<div/>").addClass("alTitle").html(perk.title);
@@ -573,7 +573,6 @@ function createALperk(perk,canbuy) {
     const d6 = $("<div/>").addClass("alPerkCantBuy").html(`Available at ${perk.notoReq} Notoriety`);
     return d1.append(d2,d3,d4,d6)
 }
-
 
 //buy a perk
 $(document).on("click",".alPerkBuy", (e) => {

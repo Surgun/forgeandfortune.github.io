@@ -47,7 +47,7 @@ class Skill {
         let battleTextEdit = this.bText.replace("#ATTACKER#",attacker);
         battleTextEdit = battleTextEdit.replace("#DEFENDER#",defender);
         return battleTextEdit.replace("#DAMAGE#",damage);
-    }
+    } 
 }
 
 class Playbook {

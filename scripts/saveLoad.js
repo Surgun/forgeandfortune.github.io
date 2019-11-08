@@ -160,7 +160,6 @@ function saveUpdate(loadGame) {
         loadGame["al"] = {};
         loadGame["al"].notoriety = 0;
         loadGame["al"].purchased = [];
-        loadGame["al"].sanctuaryHeal = [0,0,0,0,0,0,0,0,0,0];
         if (loadGame["w"].find(w=>w.id === "W002").owned) loadGame["al"].purchased.push("AL1002");
         if (loadGame["w"].find(w=>w.id === "W003").owned) loadGame["al"].purchased.push("AL1003");
         if (loadGame["w"].find(w=>w.id === "W004").owned) loadGame["al"].purchased.push("AL1004");

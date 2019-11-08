@@ -190,6 +190,7 @@ class Dungeon {
     addRewards() {
         const rewards = this.getRewards();
         ResourceManager.addMaterial(rewards.id,rewards.amt);
+        ActionLeague.addNoto(this.notoriety());
     }
     nextFloor(refreshLater, previousFloor) {
         if (!previousFloor) this.addRewards();
@@ -214,11 +215,7 @@ class Dungeon {
         return Math.round(100*boss.hp/boss.maxHP())+"%";
     }
     notoriety() {
-        if (this.dropList.length === 0) return 0;
-        const noto = this.dropList.map(r => {
-            return r.amt*ResourceManager.idToMaterial(r.id).notoAdd;
-        });
-        return noto.reduce((a,b) => a+b , 0);
+        return this.floorCount;
     }
     bossDifficulty() {
         if (this.type === "regular") return 0;

@@ -104,7 +104,7 @@ class Dungeon {
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
         this.dungeonTotalTime += t;
-        const dungeonWaitTime = ((DungeonManager.dungeonView === this.id) ? DungeonManager.speed : 750);
+        const dungeonWaitTime = DungeonManager.speed;
         const refreshLater = this.dungeonTime >= 2*dungeonWaitTime;
         CombatManager.refreshLater = refreshLater;
         while (this.dungeonTime >= dungeonWaitTime) {
@@ -144,8 +144,6 @@ class Dungeon {
         initializeSideBarDungeon();
     }
     resetDungeon() {
-        ResourceManager.addDungeonDrops(this.dropList);
-        ActionLeague.addNoto(this.notoriety());
         this.party.heroes.forEach(h=>{
             h.inDungeon = false;
             h.ap = 0;
@@ -173,13 +171,6 @@ class Dungeon {
         this.dropList = [];
         this.completeState = "none";
         return;
-    }
-    addDungeonDrop(drops) {
-        drops.forEach(drop => {
-            const found = this.dropList.find(d => d.id === drop)
-            if (found === undefined) this.dropList.push({"id":drop,"amt":1});
-            else found.amt += 1;
-        });
     }
     getRewards() {
         const value = Math.floor(this.floorCount/5);
@@ -234,8 +225,8 @@ class Dungeon {
         if (toggle === undefined) toggle = !this.progressNextFloor;
         this.progressNextFloor = toggle;
         if (DungeonManager.dungeonView !== this.id) return;
-        if (toggle) $("#toggleProgress").html("Advance Floors");
-        else $("#toggleProgress").html("Stay Here");
+        if (toggle) $toggleProgress.html("Advance Floors");
+        else $toggleProgress.html("Stay Here");
     }
 }
 
@@ -243,7 +234,7 @@ const DungeonManager = {
     dungeons : [],
     dungeonCreatingID : null,
     dungeonView : null,
-    speed : 1250,
+    speed : 750,
     dungeonPaid : [],
     bossesBeat : [],
     partySize : 1,
@@ -277,8 +268,7 @@ const DungeonManager = {
         this.speed = save.speed;
         if (typeof save.dungeonPaid !== "undefined") this.dungeonPaid = save.dungeonPaid;
         if (typeof save.bossesBeat !== "undefined") this.bossesBeat = save.bossesBeat;
-        if (typeof save.partySize !== "undefined") this.partySize = save.partySize
-        refreshSpeedButton(this.speed);
+        if (typeof save.partySize !== "undefined") this.partySize = save.partySize;
     },
     addTime(t) {
         this.dungeons.forEach(dungeon => {
@@ -344,6 +334,8 @@ const DungeonManager = {
         return FloorManager.mobsByDungeon(dungeonid)[0];
     },
     toggleProgress() {
+        console.log(this.getCurrentDungeon().progressNextFloor)
         this.getCurrentDungeon().toggleProgress();
+        console.log(this.getCurrentDungeon().progressNextFloor)
     }
 };

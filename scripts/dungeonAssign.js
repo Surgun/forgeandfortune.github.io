@@ -15,7 +15,6 @@ const $dungeonSelect = $("#dungeonSelect");
 const $dungeonRun = $("#dungeonRun");
 const $DungeonSideBarTeam = $("#DungeonSideBarTeam");
 const $dsd1 = $("#dsd1");
-const $dungeonSpeedButtons = $(".dungeonSpeedButtons");
 const $toggleProgress = $("#toggleProgress");
 const $floorRewards = $("#floorRewards");
 
@@ -114,16 +113,6 @@ function showDungeon(dungeonID) {
     if (DungeonManager.dungeonByID(dungeonID).type === "boss") $dungeonRun.addClass("DBoss");
 }
 
-$(document).on("click", ".dungeonSpeedButtons", (e) => {
-    e.preventDefault();
-    $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
-    $(e.currentTarget).addClass("dungeonSpeedActive");
-    const id = $(e.currentTarget).attr("id");
-    if (id === "dungeonSpeedSlow") DungeonManager.speed = 3000;
-    if (id === "dungeonSpeedNormal") DungeonManager.speed = 1500;
-    if (id === "dungeonSpeedFast") DungeonManager.speed = 750;
-});
-
 $(document).on("click", "#dungeonAbandon", (e) => {
     e.preventDefault();
     DungeonManager.abandonCurrentDungeon();
@@ -133,13 +122,6 @@ $(document).on("click", "#toggleProgress", (e) => {
     e.preventDefault();
     DungeonManager.toggleProgress();
 })
-
-function refreshSpeedButton(speed) {
-    $dungeonSpeedButtons.removeClass("dungeonSpeedActive");
-    if (speed === 3000) $("#dungeonSpeedSlow").addClass("dungeonSpeedActive");
-    if (speed === 1500) $("#dungeonSpeedNormal").addClass("dungeonSpeedActive");
-    if (speed === 750) $("#dungeonSpeedFast").addClass("dungeonSpeedActive");
-};
 
 const $floorID = $("#floorID");
 const $dungeonHeroList = $("#dungeonHeroList");
@@ -175,7 +157,7 @@ function initiateDungeonFloor(dungeonID) {
         if (mob.hp === 0) d6.addClass("mobDead");
         $dungeonMobList.prepend(d6);
     });
-    if (dungeon.toggleProgress) $toggleProgress.html("Advance Floors");
+    if (dungeon.progressNextFloor) $toggleProgress.html("Advance Floors");
     else $toggleProgress.html("Stay Here");
     refreshTurnOrder(dungeonID);
     BuffRefreshManager.hardRefreshBuff();

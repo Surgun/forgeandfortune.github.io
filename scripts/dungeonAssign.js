@@ -252,5 +252,3 @@ function createDungeonSidebarReward(rewards,dungeonid) {
     d1.append(d1a,s1)
     return d.append(d1);
 }
-
-//.html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`)

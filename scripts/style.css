@@ -515,34 +515,6 @@ p.hamster {
     min-width: 200px;
 }
 
-#dungeonSpeed {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-
-.dungeonSpeedButtons, #dungeonAbandon  {
-    background-color: rgba(255,255,255,.15);
-    padding: 10px 15px;
-}
-
-.dungeonSpeedButtons:hover, #dungeonAbandon:hover {
-    background-color: rgba(255,255,255,.25);
-}
-
-.dungeonSpeedActive, .dungeonSpeedActive:hover {
-    background-color: var(--green-tertiary);
-}
-
 #dungeonAbandon {
     position: absolute;
     top: 10px;
@@ -9019,6 +8991,46 @@ span.beta-tag {
     width: 100%;
     background-color: rgba(0,0,0,0.1);
     border-radius: 5px;
+}
+
+.dungeonToggleProgress {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.floorRewards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto -40px;
+    padding: 10px;
+    max-width: 400px;
+    color: var(--text-primary);
+    text-align: center;
+    background-color: var(--button-primary-active);
+    border-radius: 10px;
+}
+
+.floorRewards > img {
+    margin: 0 5px;
+}
+
+.dungeonToggleProgress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 0 10px;
+    padding: 10px 15px;
+    background-color: var(--button-primary);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dungeonToggleProgress:hover {
+    background-color: var(--button-primary-active);
 }
 
 /* End New Combat*/

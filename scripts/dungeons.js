@@ -110,6 +110,7 @@ class Dungeon {
         CombatManager.refreshLater = refreshLater;
         while (this.dungeonTime >= dungeonWaitTime) {
             //take a turn
+            this.buffTick();
             if (this.floorComplete()) {
                 this.nextFloor(refreshLater);
                 this.dungeonTime -= dungeonWaitTime;
@@ -120,7 +121,6 @@ class Dungeon {
                 this.dungeonTime -= dungeonWaitTime;
                 return;
             }
-            this.buffTick();
             CombatManager.nextTurn(this);
             this.dungeonTime -= dungeonWaitTime;
             if (!refreshLater) {
@@ -132,7 +132,7 @@ class Dungeon {
             initiateDungeonFloor(this.id);
             BattleLog.refresh();
         }
-        if (DungeonManager.dungeonView === this.id && !this.floorComplete() && !this.party.isDead()) refreshBeatBar(this.order.getCurrentID(),this.dungeonTime);
+        if (DungeonManager.dungeonView === this.id) refreshBeatBar(this.order.getCurrentID(),this.dungeonTime);
     }
     floorComplete() {
         return this.mobs.every(m=>m.dead());
@@ -187,7 +187,7 @@ class Dungeon {
         ActionLeague.addNoto(this.notoriety());
     }
     nextFloor(refreshLater, previousFloor) {
-        if (!previousFloor) this.addRewards();
+        if (!previousFloor && this.floorCount > 0) this.addRewards();
         if (previousFloor) {
             this.floorCount = Math.max(1,this.floorCount-1);
             this.toggleProgress(false);
@@ -237,7 +237,7 @@ const DungeonManager = {
     dungeons : [],
     dungeonCreatingID : null,
     dungeonView : null,
-    speed : 750,
+    speed : 1000,
     dungeonPaid : [],
     bossesBeat : [],
     partySize : 1,
@@ -302,7 +302,6 @@ const DungeonManager = {
         const dungeon = this.dungeonByID(this.dungeonCreatingID);
         dungeon.beatTotal = 0;
         if (dungeon.type !== "boss" && floorSkip) dungeon.floorCount = MonsterHall.floorSkip();
-        if (devtools.dungeonStart !== undefined) dungeon.floorCount = devtools.dungeonStart;
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = this.dungeonCreatingID;
         dungeon.initializeParty(party);

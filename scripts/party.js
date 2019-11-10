@@ -138,12 +138,12 @@ function refreshHeroSelect() {
     //actual members
     PartyCreator.heroes.forEach((hero,i) => {
         const d1 = characterCard("dungeonTeam",i,hero);
-        d.append(d1);
+        d.prepend(d1);
     });
     //empty slots
     for (let i=0;i<PartyCreator.emptyPartySlots();i++) {
         const d1a = characterCard("dungeonTeam",i).addClass("noHeroDungeonSelect");
-        d.append(d1a);
+        d.prepend(d1a);
     }
     $dtsTop.append(d);
     const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("Launch Adventure");

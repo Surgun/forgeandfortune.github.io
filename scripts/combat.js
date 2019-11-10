@@ -160,6 +160,9 @@ class Combatant {
     getSkill() {
         return this.playbook.nextSkill();
     }
+    getActiveSkill() {
+        return this.playbook.skillCount();
+    }
     getSkillIcons() {
         return this.playbook.getSkillIcons();
     }

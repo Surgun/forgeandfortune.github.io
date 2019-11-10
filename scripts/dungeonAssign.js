@@ -159,33 +159,43 @@ function initiateDungeonFloor(dungeonID) {
     });
     if (dungeon.progressNextFloor) $toggleProgress.html("Advance Floors");
     else $toggleProgress.html("Stay Here");
-    refreshTurnOrder(dungeonID);
+    generateTurnOrder(dungeonID);
     BuffRefreshManager.hardRefreshBuff();
 }
 
-function refreshTurnOrder(dungeonID) {
+function generateTurnOrder(dungeonID) {
     if (DungeonManager.dungeonView !== dungeonID) return;
     $drTurnOrder.empty();
     const dungeon = DungeonManager.getCurrentDungeon();
     dungeon.order.getOrder().forEach((unit,i) => {
-        const d1 = $("<div/>").addClass("orderUnit");
-        if (unit.dead()) d1.addClass("orderUnitDead");
-            $("<div/>").addClass("orderUnitHeadImg").html(unit.head).appendTo(d1);
-            $("<div/>").addClass("orderUnitHead").html(unit.name).appendTo(d1);
-            $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder")).appendTo(d1);
+        const d1 = $("<div/>").addClass("orderUnit").appendTo($drTurnOrder);
+        $("<div/>").addClass("orderUnitHeadImg").html(unit.head).appendTo(d1);
+        $("<div/>").addClass("orderUnitHead").html(unit.name).appendTo(d1);
+        $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder")).appendTo(d1);
         generateSkillIcons(unit).appendTo(d1);
-        if (dungeon.order.position === i) {
-            d1.addClass("orderUnitActive").append(createBeatBar(0));
-        };
-        $drTurnOrder.append(d1);
+        const d2 = $("<div/>").addClass("beatBarDiv").appendTo(d1);
+        $("<span/>").addClass("beatBarFill").attr("id","beatbarFill"+unit.uniqueid).css('width', "0%").appendTo(d2);
+    });
+    refreshTurnOrder(dungeonID);
+}
+
+function refreshTurnOrder(dungeonID) {
+    if (DungeonManager.dungeonView !== dungeonID) return;
+    const dungeon = DungeonManager.getCurrentDungeon();
+    const uniqueid = dungeon.order.getCurrentID();
+    $(".orderUnit").removeClass("orderUnitActive");
+    $("#orderUnit"+uniqueid).addClass("orderUnitActive");
+    $(".orderUnitSkill").removeClass("orderUnitActiveSkill");
+    dungeon.order.getOrder().forEach(unit => {
+        const skillNum = unit.getActiveSkill();
+        $("#oUS"+unit.uniqueid+skillNum).addClass("orderUnitActiveSkill")
     });
 }
 
 function generateSkillIcons(unit) {
     const d1 = $("<div/>").addClass("orderUnitSkills");
-    unit.getSkillIcons().forEach((icon,idx) => {
-        const d2 = $("<div/>").addClass("orderUnitSkill").html(icon).appendTo(d1);
-        if (unit.playbook.skillCount() === idx) d2.addClass("orderUnitActiveSkill");
+    unit.getSkillIcons().forEach((icon,i) => {
+        $("<div/>").addClass("orderUnitSkill").attr("id","oUS"+unit.uniqueid+i).html(icon).appendTo(d1);
     });
     return d1;
 }
@@ -215,17 +225,9 @@ function createHPBar(hero,tag) {
     return d1.append(d1a,s1);
 }
 
-function createBeatBar(dungeonTime) {
+function refreshBeatBar(uniqueid,dungeonTime) {
     const beatWidth = (dungeonTime/DungeonManager.speed*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("beatBarDiv");
-    const s1 = $("<span/>").addClass("beatBarFill").attr("id","beatbar").css('width', beatWidth);
-    return d1.append(s1);
-}
-
-function refreshBeatBar(dungeonTime) {
-    const beatFill = $("#beatbar");
-    const beatWidth = (dungeonTime/DungeonManager.speed*100).toFixed(1)+"%";
-    beatFill.css('width',beatWidth);
+    $("#beatbarFill"+uniqueid).css('width',beatWidth);
 }
 
 function refreshHPBar(hero) {

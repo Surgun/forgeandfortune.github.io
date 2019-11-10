@@ -35,7 +35,6 @@ function showDungeonReward(dungeonID) {
     $dreStats.empty();
     const d3 = $("<div/>").addClass("dreStatContainer").appendTo($dreStats);
         $("<div/>").addClass("dreStatHeading").html("Total Time").appendTo(d3);
-        $("<div/>").addClass("dreStatDescription").html(timeSince(0,dungeon.dungeonTotalTime)).appendTo(d3);
     const d4 = $("<div/>").addClass("dreStatContainer").appendTo($dreStats);
         $("<div/>").addClass("dreStatHeading").html("Floor Reached").appendTo(d4);
         $("<div/>").addClass("dreStatDescription").html("Floor " + dungeon.floorCount).appendTo(d4);

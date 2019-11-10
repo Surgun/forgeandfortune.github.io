@@ -34,6 +34,9 @@ class TurnOrder {
     addMob(mob) {
         this.order.splice(this.position+1,0,mob);
     }
+    getCurrentID() {
+        return this.order[this.position].uniqueid;
+    }
 }
 
 
@@ -45,7 +48,6 @@ class Dungeon {
         this.mobs = [];
         this.dropList = [];
         this.dungeonTime = 0;
-        this.dungeonTotalTime = 0;
         this.floorCount = 0;
         this.order = null;
         this.status = DungeonStatus.EMPTY;
@@ -103,13 +105,11 @@ class Dungeon {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
-        this.dungeonTotalTime += t;
         const dungeonWaitTime = DungeonManager.speed;
         const refreshLater = this.dungeonTime >= 2*dungeonWaitTime;
         CombatManager.refreshLater = refreshLater;
         while (this.dungeonTime >= dungeonWaitTime) {
             //take a turn
-            this.buffTick();
             if (this.floorComplete()) {
                 this.nextFloor(refreshLater);
                 this.dungeonTime -= dungeonWaitTime;
@@ -120,15 +120,19 @@ class Dungeon {
                 this.dungeonTime -= dungeonWaitTime;
                 return;
             }
+            this.buffTick();
             CombatManager.nextTurn(this);
             this.dungeonTime -= dungeonWaitTime;
-            if (!refreshLater) refreshTurnOrder(this.id);
+            if (!refreshLater) {
+                refreshTurnOrder(this.id);
+                $(".beatBarFill").css("width","0%");
+            }
         }
         if (refreshLater) {
             initiateDungeonFloor(this.id);
             BattleLog.refresh();
         }
-        if (DungeonManager.dungeonView === this.id) refreshBeatBar(this.dungeonTime);
+        if (DungeonManager.dungeonView === this.id && !this.floorComplete() && !this.party.isDead()) refreshBeatBar(this.order.getCurrentID(),this.dungeonTime);
     }
     floorComplete() {
         return this.mobs.every(m=>m.dead());
@@ -166,7 +170,6 @@ class Dungeon {
         this.order = null;
         this.dungeonTime = 0;
         this.floorCount = 0;
-        this.dungeonTotalTime = 0;
         this.beatTotal = 0;
         this.dropList = [];
         this.completeState = "none";
@@ -274,6 +277,7 @@ const DungeonManager = {
         this.dungeons.forEach(dungeon => {
             dungeon.addTime(t);
         });
+
     },
     dungeonStatus(dungeonID) {
         return this.dungeons.find(d=>d.id===dungeonID).status;
@@ -334,8 +338,6 @@ const DungeonManager = {
         return FloorManager.mobsByDungeon(dungeonid)[0];
     },
     toggleProgress() {
-        console.log(this.getCurrentDungeon().progressNextFloor)
         this.getCurrentDungeon().toggleProgress();
-        console.log(this.getCurrentDungeon().progressNextFloor)
     }
 };

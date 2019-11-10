@@ -9052,6 +9052,7 @@ span.beta-tag {
 
 .dungeonRewardDiv {
     display: flex;
+    align-items: center;
     width: 100%;
 }
 
@@ -9068,14 +9069,13 @@ span.beta-tag {
     position: relative;
     flex-grow: 1;
     margin-left: 10px;
-    min-height: 20px;
+    min-height: 25px;
     background-color: var(--bg-tertiary);
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
 }
 
 .dungeonRewardBar, .notoBar {
-    position: relative;
     width: 100%;
     height: 100%;
 }
@@ -9088,7 +9088,6 @@ span.beta-tag {
     align-items: center;
     width: 100%;
     height: 100%;
-    font-size: 0.9em;
     white-space: pre;
     z-index: 2;
 }

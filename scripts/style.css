@@ -377,11 +377,12 @@ p.hamster {
 
 .DungeonSideBarStatus {
     position: relative;
+    margin-top: 10px;
+    padding: 5px;
     text-align: center;
     background-color: var(--bg-tertiary);
-    padding: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    border: 2px solid var(--border-primary);
+    border-radius: 10px 10px 0 0;
     cursor: pointer;
 }
 
@@ -9032,5 +9033,72 @@ span.beta-tag {
 .dungeonToggleProgress:hover {
     background-color: var(--button-primary-active);
 }
+
+#DungeonSideBar {
+    margin-bottom: 20px;
+}
+
+.dungeonSidebarReward {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-primary);
+    padding: 5px 10px;
+    border: 2px solid var(--border-primary);
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+.dungeonRewardDiv {
+    display: flex;
+    width: 100%;
+}
+
+.dungeonRewardRate {
+    min-width: 80px;
+    text-align: center;
+}
+
+.dungeonRewardRate > img {
+    max-height: 16px;
+}
+
+.dungeonRewardBarDiv, .notorietyBarDiv {
+    position: relative;
+    flex-grow: 1;
+    margin-left: 10px;
+    min-height: 20px;
+    background-color: var(--bg-tertiary);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dungeonRewardBar, .notoBar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dungeonRewardBar:before, .notoBar:before {
+    content: " " attr(data-label);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.9em;
+    white-space: pre;
+    z-index: 2;
+}
+
+.dungeonRewardFill, .notoBarFill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--border-secondary);
+    height: 100%;
+} 
 
 /* End New Combat*/

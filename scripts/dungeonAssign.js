@@ -244,8 +244,13 @@ function createDungeonSidebarReward(rewards,dungeonid) {
     const haveReward = ResourceManager.materialAvailable(rewards.id);
     const matPercent = haveReward/1000;
     const matWidth = (matPercent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("dungeonRewardDiv").html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`);
+    const d = $("<div/>").addClass("dungeonRewardDiv");
+        $("<div/>").addClass("dungeonRewardRate").html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`).appendTo(d);
+    const d1 = $("<div/>").addClass("dungeonRewardBarDiv");
     const d1a = $("<div/>").addClass("dungeonRewardBar").attr("data-label",`${haveReward}/1000`).attr("id","dsbr"+dungeonid);
-    const s1 = $("<span/>").addClass("dungeonREwardFill").attr("id","dsbrf"+dungeonid).css('width',matWidth);
-    return d1.append(d1a,s1);
+    const s1 = $("<span/>").addClass("dungeonRewardFill").attr("id","dsbrf"+dungeonid).css('width',matWidth);
+    d1.append(d1a,s1)
+    return d.append(d1);
 }
+
+//.html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`)

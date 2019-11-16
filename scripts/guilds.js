@@ -525,7 +525,7 @@ const $alp = $("#ALPerks");
 
 function refreshALprogress() {
     $algp.empty();
-    $algp.append(createALGuildBar());
+    $algp.html(createALGuildBar());
 }
 
 function createALGuildBar() {
@@ -554,8 +554,7 @@ const $notoBarFill = $("#notoBarFill");
 function refreshALbar() {
     const notoPercent = ActionLeague.notoriety/ActionLeague.maxNoto();
     const notoWidth = (notoPercent*100).toFixed(1)+"%";
-    if (ActionLeague.notoriety === ActionLeague.maxNoto()) $notoBar.attr("data-label","Max Notoriety");
-    else $notoBar.attr("data-label",`${formatToUnits(ActionLeague.notoriety,2)}/${formatToUnits(ActionLeague.maxNoto(),2)}`);
+    $notoBar.attr("data-label",`${formatToUnits(ActionLeague.notoriety,2)}/${formatToUnits(ActionLeague.maxNoto(),2)}`);
     $notoBarFill.css('width', notoWidth);
 }
 

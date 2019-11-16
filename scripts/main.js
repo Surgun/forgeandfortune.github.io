@@ -44,6 +44,7 @@ function afterLoad() {
     refreshMonsterReward();
     refreshMonsterRewardLines();
     refreshCraftTimes();
+    refreshALprogress();
     loading_screen.finish();
 }
 

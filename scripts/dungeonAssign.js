@@ -210,10 +210,15 @@ function initializeSideBarDungeon() {
         const d1 = $("<div/>").addClass("DungeonSideBarStatus").attr("id","dsb"+dungeon.id).data("dungeonID",dungeon.id).appendTo(d);
         if (dungeon.type === "regular" && dungeon.status === DungeonStatus.ADVENTURING) {
             d1.addClass("DungeonSideBarAdventuring").html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
-            $("<div/>").attr("id","dsbr"+dungeon.id).addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon.getRewards(),dungeon.id)).appendTo(d);
+            $("<div/>").addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon.getRewards(),dungeon.id)).appendTo(d);
         }
         else d1.html(`${dungeon.name}`);
     });
+}
+
+function refreshSidebarDungeonMats(dungeonID) {
+    const rewards = DungeonManager.dungeonByID(dungeonID).getRewards();
+    $("#dRR"+dungeonID).html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`);
 }
 
 function createHPBar(hero,tag) {
@@ -242,13 +247,21 @@ function refreshHPBar(hero) {
 
 function createDungeonSidebarReward(rewards,dungeonid) {
     const haveReward = ResourceManager.materialAvailable(rewards.id);
-    const matPercent = haveReward/1000;
-    const matWidth = (matPercent*100).toFixed(1)+"%";
+    const matWidth = (haveReward/10).toFixed(1)+"%";
     const d = $("<div/>").addClass("dungeonRewardDiv");
-        $("<div/>").addClass("dungeonRewardRate").html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`).appendTo(d);
+        $("<div/>").addClass("dungeonRewardRate").attr("id","dRR"+dungeonid).html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`).appendTo(d);
     const d1 = $("<div/>").addClass("dungeonRewardBarDiv");
-    const d1a = $("<div/>").addClass("dungeonRewardBar").attr("data-label",`${haveReward}/1000`).attr("id","dsbr"+dungeonid);
+    const d1a = $("<div/>").addClass("dungeonRewardBar").attr("id","dsbr"+dungeonid).html(haveReward);
     const s1 = $("<span/>").addClass("dungeonRewardFill").attr("id","dsbrf"+dungeonid).css('width',matWidth);
     d1.append(d1a,s1)
     return d.append(d1);
+}
+
+function refreshDungeonMatBar(dungeonid) {
+    const rewards = DungeonManager.dungeonByID(dungeonid).getRewards();
+    const haveReward = ResourceManager.materialAvailable(rewards.id);
+    const matWidth = (haveReward/10).toFixed(1)+"%";
+    console.log(haveReward,matWidth);
+    $("#dsbr"+dungeonid).html(haveReward);
+    $("#dsbrf"+dungeonid).css('width',matWidth);
 }

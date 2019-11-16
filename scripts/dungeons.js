@@ -185,6 +185,7 @@ class Dungeon {
         const rewards = this.getRewards();
         ResourceManager.addMaterial(rewards.id,rewards.amt);
         ActionLeague.addNoto(this.notoriety());
+        refreshDungeonMatBar(this.id);
     }
     nextFloor(refreshLater, previousFloor) {
         if (!previousFloor && this.floorCount > 0) this.addRewards();
@@ -202,6 +203,7 @@ class Dungeon {
         if (refreshLater) return;
         initiateDungeonFloor(this.id);
         $("#dsb"+this.id).html(`${this.name} - Floor ${this.floorCount}`);
+        refreshSidebarDungeonMats(this.id);
     }
     bossPercent() {
         if (this.type !== "boss") return "0%";

@@ -5022,7 +5022,7 @@ label.selection-container.party-selection-container {
     height: 100%;
 }
 
-.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before, .masteryBar:before, .repBar:before, .notoBar:before, .desynthBar:before, .tinkerBar:before {
+.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before, .masteryBar:before, .repBar:before, .desynthBar:before, .tinkerBar:before {
     content: " " attr(data-label);
     position: absolute;
     display: -webkit-box;
@@ -9067,25 +9067,34 @@ span.beta-tag {
 
 .dungeonRewardBarDiv, .notorietyBarDiv {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-grow: 1;
-    margin-left: 10px;
     min-height: 25px;
     background-color: var(--bg-tertiary);
     border-radius: 5px;
     overflow: hidden;
 }
 
+.dungeonRewardBarDiv {
+    margin-left: 10px;
+}
+
 .dungeonRewardBar, .notoBar {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 0.85rem;
 }
 
-.dungeonRewardBar:before, .notoBar:before {
+.notoBar:before {
     content: " " attr(data-label);
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 0.85rem;
     width: 100%;
     height: 100%;
     white-space: pre;

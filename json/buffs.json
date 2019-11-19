@@ -1,22 +1,65 @@
 [
   {
-    "id": "B0001",
+    "id": "B0003",
     "name": "Armor Up",
     "icon": "<i class=\"fas fa-shield-cross\"></i>",
-    "powerMod": 1,
     "maxTurns": 8,
     "maxStacks": 1,
     "onCast": "expire",
     "type": "buff"
   },
   {
-    "id": "B0002",
+    "id": "B0007",
     "name": "Poison Stack",
     "icon": "<i class=\"fas fa-flask-poison\"></i>",
-    "powerMod": 1,
     "maxTurns": 1,
     "maxStacks": 5,
     "onCast": "stack",
     "type": "debuff"
+  },
+  {
+    "id": "B0008",
+    "name": "Healing Aura",
+    "icon": "<i class=\"fas fa-praying-hands\"></i>",
+    "maxTurns": 8,
+    "maxStacks": 1,
+    "onCast": "expire",
+    "type": "buff"
+  },
+  {
+    "id": "B0009",
+    "name": "Translucent",
+    "icon": "<i class=\"fas fa-ghost\"></i>",
+    "maxTurns": 2,
+    "maxStacks": 1,
+    "onCast": "expire",
+    "type": "buff"
+  },
+  {
+    "id": "B0011",
+    "name": "Needles",
+    "icon": "<i class=\"fab fa-hornbill\"></i>",
+    "maxTurns": 8,
+    "maxStacks": 1,
+    "onCast": "expire",
+    "type": "buff"
+  },
+  {
+    "id": "B0012",
+    "name": "Lethargy",
+    "icon": "<i class=\"fas fa-tired\"></i>",
+    "maxTurns": 2,
+    "maxStacks": 1,
+    "onCast": "expire",
+    "type": "debuff"
+  },
+  {
+    "id": "B0016",
+    "name": "Invigorate",
+    "icon": "<i class=\"fas fa-dumbbell\"></i>",
+    "maxTurns": 1,
+    "maxStacks": 5,
+    "onCast": "stack",
+    "type": "buff"
   }
 ]

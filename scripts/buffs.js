@@ -56,6 +56,9 @@ class Buff {
     }
     onTick() { return; }
     getArmor() { return 0; }
+    getDodge() { return 0; }
+    onAttacked() { return; }
+    getPower() { return 0; }
 }
 
 const BuffManager = {
@@ -130,7 +133,7 @@ const BuffRefreshManager = {
     }
 }
 
-class B0001 extends Buff {
+class B0003 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
@@ -139,7 +142,7 @@ class B0001 extends Buff {
     }
 }
 
-class B0002 extends Buff {
+class B0007 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
@@ -148,7 +151,58 @@ class B0002 extends Buff {
     }
 }
 
+class B0008 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    onTick() {
+        this.target.heal(this.power);
+    }
+}
+
+class B0009 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getDodge() {
+        return 100;
+    } 
+}
+
+class B0011 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    onAttacked(attacker) {
+        attacker.takeDamage(this.power);
+    }
+}
+
+class B0012 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getPower() {
+        return -this.power;
+    }
+}
+
+class B0016 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getPower() {
+        return this.power;
+    }
+}
+
+
 const BuffLookup = {
-    B0001,
-    B0002,
+    B0003,
+    B0007,
+    B0008,
+    B0009,
+    B0011,
+    B0012,
+    B0016,
 }

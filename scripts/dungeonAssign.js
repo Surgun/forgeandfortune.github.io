@@ -261,7 +261,6 @@ function refreshDungeonMatBar(dungeonid) {
     const rewards = DungeonManager.dungeonByID(dungeonid).getRewards();
     const haveReward = ResourceManager.materialAvailable(rewards.id);
     const matWidth = (haveReward/10).toFixed(1)+"%";
-    console.log(haveReward,matWidth);
     $("#dsbr"+dungeonid).html(haveReward);
     $("#dsbrf"+dungeonid).css('width',matWidth);
 }

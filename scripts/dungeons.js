@@ -176,10 +176,8 @@ class Dungeon {
         return;
     }
     getRewards() {
-        const value = Math.floor(this.floorCount/5);
-        const amt = miscLoadedValues.floorMatA[value];
-        const mat = FloorManager.floorByID(this.floorID).matA;
-        return new idAmt(mat,amt);
+        const floor = FloorManager.floorByID(this.floorID);
+        return new idAmt(floor.mat,floor.matAmt)
     }
     addRewards() {
         const rewards = this.getRewards();
@@ -340,5 +338,25 @@ const DungeonManager = {
     },
     toggleProgress() {
         this.getCurrentDungeon().toggleProgress();
+    },
+    getHpFloor(x2) {
+        const fl = Math.floor((x2-1)/100);
+        const ce = Math.ceil((x2-1)/100);
+        const x1 = fl*100+1;
+        const x3 = ce*100+1;
+        const y1 = miscLoadedValues.hpFloor[fl];
+        const y3 = miscLoadedValues.hpFloor[ce];
+        if (fl === ce) return y1;
+        return Math.round((x2-x1)*(y3-y1)/(x3-x1)+y1);
+    },
+    getPowFloor(x2) {
+        const fl = Math.floor((x2-1)/100);
+        const ce = Math.ceil((x2-1)/100);
+        const x1 = fl*100+1;
+        const x3 = ce*100+1;
+        const y1 = miscLoadedValues.powFloor[fl];
+        const y3 = miscLoadedValues.powFloor[ce];
+        if (fl === ce) return y1;
+        return Math.round((x2-x1)*(y3-y1)/(x3-x1)+y1);
     }
 };

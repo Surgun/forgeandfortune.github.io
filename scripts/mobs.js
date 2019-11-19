@@ -30,11 +30,9 @@ const MobManager = {
         return mobFloor;
     },
     allMobDropsByDungeon(dungeonID) {
-        const mobids = FloorManager.mobsByDungeon(dungeonID);
-        const mobs = mobids.map(m => this.idToMob(m));
-        const materials = mobs.map(m=>m.drops);
-        const matNames = flattenArray(materials.map(m => Object.keys(m)))
-        return [...new Set(matNames)];
+        const floors = FloorManager.floorsByDungeon(dungeonID);
+        const materials = floors.map(f=>f.mat);
+        return [...new Set(materials)];
     }
 }
 
@@ -92,6 +90,9 @@ const FloorManager = {
         const minFloor = floors.map(f=>f.minFloor);
         return {"min":Math.min(...minFloor),"max":Math.min(...maxFloor)};
     },
+    floorsByDungeon(dungeonID) {
+        return this.floors.filter(f=>f.dungeon === dungeonID); 
+    },
     rewards(floorID) {
         const floor = this.floorByID(floorID);
         return new idAmt(floor.material,floor.amt);
@@ -103,11 +104,11 @@ class Mob extends Combatant {
         super(mobTemplate);
         this.lvl = lvl;
         this.difficulty = difficulty;
-        this.pow = Math.floor((mobTemplate.powBase + mobTemplate.powLvl*lvl)*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
-        this.hpmax = Math.floor((mobTemplate.hpBase + mobTemplate.hpLvl*lvl)*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
+        this.pow = Math.floor(DungeonManager.getPowFloor(lvl)*this.powMod*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
+        this.hpmax = Math.floor(DungeonManager.getHpFloor(lvl)*this.hpMod*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
         this.hp = this.hpmax;
         this.uniqueid = MobManager.getUniqueID();
-        this.gotloot = false;
+        this.playbook = PlaybookManager.generatePlayBook("PB004");
     }
     createSave() {
         const save = {};

@@ -109,7 +109,6 @@ class Mob extends Combatant {
         this.hp = this.hpmax;
         this.uniqueid = MobManager.getUniqueID();
         this.playbook = PlaybookManager.generatePlayBook(mobTemplate.playbook);
-        console.log(this.playbook);
     }
     createSave() {
         const save = {};

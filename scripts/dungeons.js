@@ -141,24 +141,11 @@ class Dungeon {
         this.party = party;
         this.lastParty = party.heroID;
     }
-    endDungeon() {
-        if (DungeonManager.dungeonView === this.id) {
-            showDungeonReward(this.id);
-        }
-        initializeSideBarDungeon();
-    }
     resetDungeon() {
         this.party.heroes.forEach(h=>{
             h.inDungeon = false;
-            h.ap = 0;
             h.hp = h.maxHP()
         });
-        if (this.type === "boss" && this.mobs.every(m=>m.dead())) {
-            if (!DungeonManager.bossesBeat.includes(this.id)) DungeonManager.bossesBeat.push(this.id);
-            refreshALprogress();
-            refreshProgress();
-            refreshAllOrders();
-        }
         DungeonManager.removeDungeon(this.id);
         if (DungeonManager.dungeonView === this.id) {
             BattleLog.clear();
@@ -171,7 +158,6 @@ class Dungeon {
         this.dungeonTime = 0;
         this.floorCount = 0;
         this.beatTotal = 0;
-        this.dropList = [];
         this.completeState = "none";
         return;
     }
@@ -183,7 +169,6 @@ class Dungeon {
         const rewards = this.getRewards();
         ResourceManager.addMaterial(rewards.id,rewards.amt);
         ActionLeague.addNoto(this.notoriety());
-        refreshDungeonMatBar(this.id);
     }
     nextFloor(refreshLater, previousFloor) {
         if (!previousFloor && this.floorCount > 0) this.addRewards();
@@ -237,7 +222,7 @@ const DungeonManager = {
     dungeons : [],
     dungeonCreatingID : null,
     dungeonView : null,
-    speed : 1000,
+    speed : 1500,
     dungeonPaid : [],
     bossesBeat : [],
     partySize : 1,
@@ -330,8 +315,7 @@ const DungeonManager = {
     },
     abandonCurrentDungeon() {
         const dungeon = this.getCurrentDungeon();
-        dungeon.completeState = "abandoned";
-        dungeon.endDungeon();
+        dungeon.resetDungeon();
     },
     bossByDungeon(dungeonid) {
         return FloorManager.mobsByDungeon(dungeonid)[0];
@@ -358,5 +342,12 @@ const DungeonManager = {
         const y3 = miscLoadedValues.powFloor[ce];
         if (fl === ce) return y1;
         return Math.round((x2-x1)*(y3-y1)/(x3-x1)+y1);
-    }
+    },
+    dungeonMatRefresh(matID) {
+        this.dungeons.forEach(dungeon => {
+            if (dungeon.status !== DungeonStatus.ADVENTURING) return;
+            if (FloorManager.floorByID(dungeon.floorID).mat !== matID) return;
+            refreshDungeonMatBar(dungeon.id);
+        });
+    },
 };

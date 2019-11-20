@@ -39,6 +39,7 @@ class Skill {
         const target = this.targetEnemies ? getTarget(enemies, attacker, this.targetType) : getTarget(allies, attacker, this.targetType);
         const crit = this.canCrit ? rollStat(attacker.getCrit()) : false;
         const critDmg = crit ? attacker.critDmg : 1;
+        console.log(attacker.critDmg);
         const power = attacker.getPow() * this.powMod * critDmg;
         BattleLog.addEntry(dungeonid,this.icon,this.battleText(attacker.name,target.name,power))
         SkillManager.skillEffects[this.id](this,attacker,power,target,dungeonid);

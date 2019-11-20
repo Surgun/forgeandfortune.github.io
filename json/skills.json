@@ -65,7 +65,7 @@
     "subType": "none",
     "targetEnemies": true,
     "targetType": "first",
-    "powMod": 1,
+    "powMod": 0.25,
     "buffID": null,
     "bText": "#ATTACKER# lets out four quick stings at #DEFENDER# for #DAMAGE# damage"
   },

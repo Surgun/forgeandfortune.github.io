@@ -108,7 +108,8 @@ class Mob extends Combatant {
         this.hpmax = Math.floor(DungeonManager.getHpFloor(lvl)*this.hpMod*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
         this.hp = this.hpmax;
         this.uniqueid = MobManager.getUniqueID();
-        this.playbook = PlaybookManager.generatePlayBook("PB004");
+        this.playbook = PlaybookManager.generatePlayBook(mobTemplate.playbook);
+        console.log(this.playbook);
     }
     createSave() {
         const save = {};

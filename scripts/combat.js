@@ -83,6 +83,7 @@ class Combatant {
     constructor (props) {
         Object.assign(this,props);
         this.hp = 1;
+        this.critDmg = 1.5;
         this.buffs = [];
     }
     buffTick() {

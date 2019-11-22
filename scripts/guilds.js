@@ -144,11 +144,6 @@ class Guild {
     }
 }
 
-/*
-        const gold = Math.round(recipeList.idToItem(id).value*(rarity+1)*(1=sharp*0.1));
-        achievementStats.gold(gold);
-        ResourceManager.addMaterial("M001",gold);
-*/
 
 class guildOrderItem {
     constructor (gid,id,lvl) {

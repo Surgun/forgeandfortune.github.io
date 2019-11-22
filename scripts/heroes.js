@@ -92,7 +92,7 @@ class Hero extends Combatant {
         const armorFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
         return this.initialArmor + armorFromGear + this.getBuffArmor();
     }
-    getPower() {
+    getPow() {
         const slots = this.getEquipSlots(true).map(s=>s.pow());
         const powerFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
         return this.initialPow + powerFromGear + this.getBuffPower();

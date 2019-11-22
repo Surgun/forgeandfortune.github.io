@@ -177,7 +177,7 @@ class Combatant {
         return buffs.reduce((a,b) => a+b, 0);
     }
     getBuffPower() {
-        const buffs = this.buffs.map(b=>b.getPower());
+        const buffs = this.buffs.map(b=>b.getPow());
         return buffs.reduce((a,b) => a+b, 0);
     }
     removeBuffs() {

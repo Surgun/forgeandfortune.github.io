@@ -58,7 +58,7 @@ class Buff {
     getArmor() { return 0; }
     getDodge() { return 0; }
     onAttacked() { return; }
-    getPower() { return 0; }
+    getPow() { return 0; }
 }
 
 const BuffManager = {
@@ -182,7 +182,7 @@ class B0012 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    getPower() {
+    getPow() {
         return -this.power;
     }
 }
@@ -191,7 +191,7 @@ class B0016 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    getPower() {
+    getPow() {
         return this.power;
     }
 }

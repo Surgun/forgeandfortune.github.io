@@ -2,12 +2,7 @@
   {
     "id": "D001",
     "name": "Groovy Grove",
-    "bannedHero": [
-      "H101",
-      "H002",
-      "H202",
-      "H104"
-    ],
+    "bannedHero": [],
     "seed": 784,
     "type": "regular",
     "eventLetter": "E014"
@@ -15,12 +10,7 @@
   {
     "id": "D002",
     "name": "Spooky Spot",
-    "bannedHero": [
-      "H001",
-      "H201",
-      "H103",
-      "H004"
-    ],
+    "bannedHero": [],
     "seed": 7576,
     "type": "regular",
     "eventLetter": "E015"
@@ -28,12 +18,7 @@
   {
     "id": "D003",
     "name": "Creepy Crag",
-    "bannedHero": [
-      "H203",
-      "H102",
-      "H003",
-      "H204"
-    ],
+    "bannedHero": [],
     "seed": 7236,
     "type": "regular",
     "eventLetter": "E016"

@@ -173,6 +173,7 @@ nav {
     font-weight: normal;
     font-size: 1.5em;
     font-style: italic;
+    color: var(--highlight);
     text-shadow: 2px 2px var(--border-tertiary);
     background: linear-gradient(transparent 0%, var(--bg-primary) 30%);
     opacity: 0;
@@ -181,9 +182,12 @@ nav {
 
 .user-card .user-title {
     font-weight: normal;
-    font-size: 1em;
-    color: var(--highlight);
+    font-size: 0.85rem;
     opacity: 0;
+}
+
+.user-card .user-title > i {
+    margin-right: 5px;
 }
 
 .asset-card .asset-desc:before{

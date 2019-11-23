@@ -1,6 +1,5 @@
 "use strict";
 
-const $dungeonRewards = $("#dungeonRewards");
 const $dreHeader = $("#dreHeader");
 const $dreTeam = $("#dreTeam");
 const $dreLoot = $("#dreLoot");
@@ -10,7 +9,6 @@ const $dreCollect = $("#dreCollect");
 function showDungeonReward(dungeonID) {
     $dungeonSelect.hide();
     $dungeonRun.hide();
-    $dungeonRewards.show();
     const dungeon = DungeonManager.dungeonByID(dungeonID);
     const state = dungeon.completeState;
     if (dungeon.status !== DungeonStatus.COLLECT) return;

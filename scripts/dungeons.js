@@ -176,7 +176,7 @@ class Dungeon {
             this.floorCount = Math.max(1,this.floorCount-1);
             this.toggleProgress(false);
         }
-        else if (this.progressNextFloor) this.floorCount += 1;
+        else if (this.progressNextFloor || this.floorCount === 0) this.floorCount += 1;
         achievementStats.floorRecord(this.id, this.floorCount);
         const floor = FloorManager.getFloor(this.id, this.floorCount);
         this.floorID = floor.id;
@@ -210,11 +210,11 @@ class Dungeon {
         })
     }
     toggleProgress(toggle) {
-        if (toggle === undefined) toggle = !this.progressNextFloor;
+        toggle = toggle || !this.progressNextFloor;
         this.progressNextFloor = toggle;
         if (DungeonManager.dungeonView !== this.id) return;
-        if (toggle) $toggleProgress.html("Advance Floors");
-        else $toggleProgress.html("Stay Here");
+        if (toggle) $toggleProgress.html("Progressing");
+        else $toggleProgress.html("Farming");
     }
 }
 
@@ -271,6 +271,7 @@ const DungeonManager = {
         const dungeon = this.dungeonByID(dungeonID);
         dungeon.party = null;
         dungeon.status = DungeonStatus.EMPTY;
+        dungeon.progressNextFloor = true;
         initializeSideBarDungeon();
     },
     repeatDungeon(dungeonID) {
@@ -286,6 +287,8 @@ const DungeonManager = {
         const party = PartyCreator.lockParty();
         const dungeon = this.dungeonByID(this.dungeonCreatingID);
         dungeon.beatTotal = 0;
+        dungeon.floorCount = 0;
+        dungeon.progressNextFloor = true;
         if (dungeon.type !== "boss" && floorSkip) dungeon.floorCount = MonsterHall.floorSkip();
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = this.dungeonCreatingID;

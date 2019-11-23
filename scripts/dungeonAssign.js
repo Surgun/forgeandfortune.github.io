@@ -157,8 +157,8 @@ function initiateDungeonFloor(dungeonID) {
         if (mob.hp === 0) d6.addClass("mobDead");
         $dungeonMobList.prepend(d6);
     });
-    if (dungeon.progressNextFloor) $toggleProgress.html("Advance Floors");
-    else $toggleProgress.html("Stay Here");
+    if (dungeon.progressNextFloor) $toggleProgress.html("Progressing");
+    else $toggleProgress.html("Farming");
     generateTurnOrder(dungeonID);
     BuffRefreshManager.hardRefreshBuff();
 }

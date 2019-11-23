@@ -51,38 +51,7 @@ const EventManager = {
         const event = new Event(eventTemplate);
         event.eventNum = this.eventNum;
         this.eventNum += 1;
-        if (event.id === "E001") event.reward = [{id:"M001",amt:miscLoadedValues.startingGold}];
-        this.events.push(event);
-        refreshEvents();
-    },
-    addEventDungeon(id, reward,time,floor,beats) {
-        const eventTemplate = this.idToEventDB(id);
-        const event = new Event(eventTemplate);
-        event.reward = reward;
-        event.time = time;
-        event.floor = floor;
-        event.beats = beats;
-        event.eventNum = this.eventNum;
-        this.eventNum += 1;
-        this.events.push(event);
-        refreshEvents();
-    },
-    addEventBoss(id,time) {
-        const eventTemplate = this.idToEventDB("E013");
-        const event = new Event(eventTemplate);
-        event.bossKill = id;
-        event.time = time;
-        event.eventNum = this.eventNum;
-        this.eventNum += 1;
-        this.events.push(event);
-        refreshEvents();
-    },
-    addEventFuse(container) {
-        const eventTemplate = this.idToEventDB("E009")
-        const event = new Event(eventTemplate);
-        event.itemReward = container;
-        event.eventNum = this.eventNum;
-        this.eventNum += 1;
+        if (event.id === "E001") event.reward = [new idAmt("M001",miscLoadedValues.startingGold)];
         this.events.push(event);
         refreshEvents();
     },
@@ -95,40 +64,12 @@ const EventManager = {
     readEvent(eventNum) {
         const event = this.eventNumToEvent(eventNum);
         if (event.reward !== null) {
-            ResourceManager.addDungeonDrops(event.reward);
-            if (event.bossKill !== null) {
-                const dungeon = DungeonManager.dungeonByID(event.bossKill);
-                ActionLeague.addNoto(dungeon.notoriety());
-            }
+            console.log(event.reward);
+            event.reward.forEach(reward => {
+                ResourceManager.addMaterial(reward.id, reward.amt);
+            })
         }
         event.reward = null;
-        if (event.itemReward !== null) {
-            if (Inventory.full()) {
-                Notifications.rewardInvFull();
-                return;
-            }
-            Inventory.addToInventory(event.itemReward.id,event.itemReward.rarity,-1);
-        }
-        if (event.id === "E009") {
-            TownManager.bankOnce = true;
-            TownManager.bankSee = true;
-            refreshSideTown();
-        }
-        if (event.id === "E010") {
-            TownManager.fuseOnce = true;
-            TownManager.fuseSee = true;
-            refreshSideTown();
-        }
-        if (event.id === "E011") {
-            TownManager.smithOnce = true;
-            TownManager.smithSee = true;
-            refreshSideTown();
-        }
-        if (event.id === "E012") {
-            TownManager.fortuneOnce = true;
-            TownManager.fortuneSee = true;
-            refreshSideTown();
-        }
         if (event.type === "letter" && !this.oldEvents.map(e=>e.id).includes(event.id)) this.oldEvents.push(event);
         this.events = this.events.filter(e=>e.eventNum !== eventNum);
         $eventContent.empty();
@@ -220,6 +161,8 @@ function dungeonDrops(event) {
     const d = $("<div/>").addClass("rewardDiv");
     const d1 = $("<div/>").addClass("rewardDivTitle").html("Rewards");
     d.append(d1);
+    console.log(event.reward);
+    if (event.reward === undefined) return d;
     event.reward.forEach(reward => {
         const d2 = $("<div/>").addClass("rewardCard tooltip").attr("data-tooltip",ResourceManager.idToMaterial(reward.id).name);
         const d3 = $("<div/>").addClass("rewardImage").html(ResourceManager.idToMaterial(reward.id).img);

@@ -121,12 +121,43 @@ nav {
 }
 
 .user-card .user-pic {
-    width: 100%;
-    max-width: 150px;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     background-color: var(--bg-secondary);
-    border: 2px solid var(--border-primary);
+    border: 2px solid var(--bg-primary);
+    box-shadow: 0 0 0 2px var(--border-secondary);
     transform: scale(0);
+}
+
+.user-card .user-pic.jakerson {
+    background: center no-repeat / contain url(/images/userpics/staff/akerson.png);
+}
+
+.user-card .user-pic.richard {
+    background-image: url(/images/userpics/staff/richard.png);
+    background-size: contain;
+}
+
+.user-card .user-pic.abqu {
+    background-image: url(/images/userpics/staff/abqu.png);
+    background-size: contain;
+}
+
+.user-card .user-pic.abqu:hover {
+    background-image: url(/images/userpics/staff/abqu_wink.png);
+    background-size: contain;
+}
+
+.user-card .user-pic.kakerson {
+    background-image: url(/images/userpics/staff/katie.png);
+    background-size: contain;
+}
+
+.preload {
+    height: 0;
+    width: 0;
 }
 
 .user-card .user-name {

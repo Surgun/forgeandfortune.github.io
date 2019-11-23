@@ -162,14 +162,18 @@ nav {
 }
 
 .user-card .user-name {
-    margin-top: 10px;
+    margin: -30px -20px 0;
+    padding: 10px;
     font-weight: normal;
     font-size: 1.5em;
+    font-style: italic;
+    text-shadow: 2px 2px var(--border-tertiary);
+    background: linear-gradient(transparent 0%, var(--bg-primary) 30%);
     opacity: 0;
+    transform: translateY(10px);
 }
 
 .user-card .user-title {
-    margin-top: 5px;
     font-weight: normal;
     font-size: 1em;
     color: var(--highlight);
@@ -302,6 +306,15 @@ nav {
     }
 }
 
+@keyframes slide-up {
+    0% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .user-card, .player-card, .asset-card {
     -webkit-animation: .7s scale-in;
     animation: .7s scale-in;
@@ -324,6 +337,10 @@ nav {
 
 .user-title, .player-title {
     animation-delay: .5s;
+}
+
+.user-name {
+    animation: 0.5s .4s slide-up forwards, 0.7s fade-in forwards;
 }
 
 .user-desc {

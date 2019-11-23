@@ -15,16 +15,16 @@ const CombatManager = {
 function getTarget(wholeparty, self, type) {
     const party = wholeparty.filter(h => h.alive());
     if (type === "first") return party[0]
-    if (type === "second") {
+    else if (type === "second") {
         if (party.length === 1) return party[0];
         return party[1];
     }
-    if (type === "third") {
+    else if (type === "third") {
         if (party.length === 1) return party[0];
         if (party.length === 2) return party[2];
         return party[3]
     }
-    if (type === "last") return party[party.length-1];
+    else if (type === "last") return party[party.length-1];
     else if (type === "reverse") return party.reverse()[0];
     else if (type === "random") {
         return party[Math.floor(Math.random()*party.length)];
@@ -34,6 +34,7 @@ function getTarget(wholeparty, self, type) {
     else if (type === "lowmaxHP") return party.sort((a,b) => {return b.maxHP() - a.maxHP()})[0];
     else if (type === "lowMissingHp") return party.sort((a,b) => {return b.missingHP() - a.missingHP()})[0];
     else if (type === "self") return self;
+    else if (type === "all") return wholeparty;
 }
 
 function rollStat(stat) {
@@ -82,7 +83,7 @@ class Combatant {
     constructor (props) {
         Object.assign(this,props);
         this.hp = 1;
-        this.playbook = PlaybookManager.generatePlayBook("PB001");
+        this.critDmg = 1.5;
         this.buffs = [];
     }
     buffTick() {
@@ -102,6 +103,7 @@ class Combatant {
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);
         if (this.hp === 0) BattleLog.addEntry(attack.dungeonid,miscIcons.dead,`${this.name} has fallen!`);
+        this.buffs.forEach(b=>b.onAttacked(attack.attacker));
     }
     takeDamage(dmg) {
         this.hp = Math.max(this.hp-dmg,0);
@@ -117,19 +119,19 @@ class Combatant {
         this.buffs.push(buff);
     }
     getPow() {
-        return this.pow;
+        return this.pow + this.getBuffPower();
     }
     getAdjPow() {
         return this.getPow();
     }
     getArmor() {
-        return this.armor;
+        return this.armor + this.getBuffDodge();
     }
     getCrit() {
         return this.crit;
     }
     getDodge() {
-        return this.dodge;
+        return this.dodge + this.getBuffDodge();
     }
     dead() {
         return this.hp <= 0;
@@ -168,6 +170,14 @@ class Combatant {
     }
     getBuffArmor() {
         const buffs = this.buffs.map(b=>b.getArmor());
+        return buffs.reduce((a,b) => a+b, 0);
+    }
+    getBuffDodge() {
+        const buffs = this.buffs.map(b=>b.getDodge());
+        return buffs.reduce((a,b) => a+b, 0);
+    }
+    getBuffPower() {
+        const buffs = this.buffs.map(b=>b.getPow());
         return buffs.reduce((a,b) => a+b, 0);
     }
     removeBuffs() {

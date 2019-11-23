@@ -13,7 +13,6 @@ const statName = [
     `${miscIcons.hp} <span>HP</span>`,
     `${miscIcons.pow} <span>Power</span>`,
     `${miscIcons.spow} <span>SPower</span>`,
-    `${miscIcons.ap} <span>AP</span>`,
     `${miscIcons.armor} <span>Armor</span>`,
     `${miscIcons.crit} <span>Crit</span>`,
     `${miscIcons.dodge} <span>Dodge</span>`
@@ -22,7 +21,6 @@ const statDesc = [
     "Amount of damage your hero can sustain before being downed.",
     "Amount of damage your hero can deal.",
     "Amount of additional damage your hero can deal with special attacks.",
-    "Amount of action points your hero needs to initiate their hero ability.",
     "Damage resistance your hero possesses.",
     "Chance of an attack dealing bonus damage.",
     "Chance your hero may avoid an enemy attack."
@@ -63,7 +61,6 @@ function viewHeroOverview() {
                 $("<div/>").addClass("heroOverviewClass").html(hero.class).appendTo(heroInfo);
             const heroStats = $("<div/>").addClass("heroOverviewStats").appendTo(d);
                 $("<div/>").addClass("heroOverviewHP overviewStat tooltip").attr("data-tooltip","HP").html(`${miscIcons.hp} ${hero.maxHP()}`).appendTo(heroStats);
-                $("<div/>").addClass("heroOverviewAP overviewStat tooltip").attr("data-tooltip","AP").html(`${miscIcons.ap} ${hero.apmax}`).appendTo(heroStats);
             $("<div/>").addClass("heroOverviewPow overviewStat tooltip").attr("data-tooltip","POW").html(`${miscIcons.pow} ${hero.getPow()}`).appendTo(d);
             d.appendTo(overviewContainer)
     });
@@ -89,7 +86,7 @@ function examineHero(ID) {
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
     heroExamineStats.append(htd.append(htd1));
-    const stats = [hero.maxHP(),hero.getPow(), hero.getSpow(), hero.apmax, hero.getArmor(), hero.getCrit()+"%", hero.getDodge()+"%"];
+    const stats = [hero.maxHP(),hero.getPow(), hero.getSpow(), hero.getArmor(), hero.getCrit()+"%", hero.getDodge()+"%"];
     for (let i=0;i<stats.length;i++) {
         heroExamineStats.append(statRow(statName[i],stats[i],statDesc[i]));
     }

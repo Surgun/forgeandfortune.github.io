@@ -43,6 +43,7 @@ const ResourceManager = {
         this.materials.push(material);
     },
     addMaterial(res,amt) {
+        console.log(res,amt);
         if (res.charAt(0) === "R") {
             for (let i=0;i<amt;i++) Inventory.addToInventory(res,0,-1);
             return;
@@ -54,7 +55,9 @@ const ResourceManager = {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
         $("#amt"+mat.id).html(mat.amt,2);
+        $("#dsbr"+mat.id).html(mat.amt);
         refreshTinkerMats();
+        DungeonManager.dungeonMatRefresh(mat.id);
         if (mat.id === "M002") refreshMonsterReward();
         if (mat.id !== "M001") return;
         $goldSidebarAmt.html(formatToUnits(mat.amt,2));

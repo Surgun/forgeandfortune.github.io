@@ -19,6 +19,7 @@ class Hero extends Combatant {
         this.head = '<img src="images/heroes/heads/'+this.id+'.png">';
         this.owned = false;
         this.inDungeon = false;
+        this.playbook = GetPlaybook(this.id);
     }
     createSave() {
         const save = {};
@@ -93,8 +94,8 @@ class Hero extends Combatant {
     }
     getPow() {
         const slots = this.getEquipSlots(true).map(s=>s.pow());
-        if (slots.length === 0) return this.initialPow;
-        return this.initialPow + slots.reduce((a,b) => a+b);
+        const powerFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
+        return this.initialPow + powerFromGear + this.getBuffPower();
     }
     maxHP() {
         const slots = this.getEquipSlots(true).map(s=>s.hp());
@@ -113,8 +114,8 @@ class Hero extends Combatant {
     }
     getDodge() {
         const slots = this.getEquipSlots(true).map(s=>s.dodge());
-        if (slots.length === 0) return this.initialDodge;
-        return this.initialDodge + slots.reduce((a,b) => a+b);
+        const dodgeFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
+        return this.initialDodge + dodgeFromGear + this.getBuffDodge();
     }
     getSpow() {
         const slots = this.getEquipSlots(true).map(s=>s.spow());
@@ -318,4 +319,11 @@ const HeroManager = {
     hasContainer(containerID) {
         return this.heroes.map(h=>h.getEquipSlots(true)).flat().map(i=>i.containerID).includes(containerID);
     }
+}
+
+function GetPlaybook(heroID) {
+    if (heroID === "H203") return PlaybookManager.generatePlayBook("PB001");
+    if (heroID === "H001") return PlaybookManager.generatePlayBook("PB002");
+    if (heroID === "H101") return PlaybookManager.generatePlayBook("PB003");
+    return PlaybookManager.generatePlayBook("PB004");
 }

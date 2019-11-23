@@ -88,14 +88,74 @@ SkillManager.skillEffects['S0002'] = function (skill,attacker,power,target,dunge
     //Power Attack
     const attack = new Attack(attacker, power, skill, dungeonid);
     target.takeAttack(attack);
+    target.takeAttack(attack);
 }
 
 SkillManager.skillEffects['S0003'] = function (skill,attacker,power,target,dungeonid) {
     //Armor Buff
-    BuffManager.generateBuff('B0001',target,power);
+    BuffManager.generateBuff('B0003',target,power);
 }
 
 SkillManager.skillEffects['S0004'] = function (skill,attacker,power,target,dungeonid) {
-    //Armor Buff
-    BuffManager.generateBuff('B0002',target,power);
+    //Meteor
+    const attack = new Attack(attacker, power, skill, dungeonid);
+    target.forEach(t => t.takeAttack(attack));
+}
+
+SkillManager.skillEffects['S0005'] = function (skill,attacker,power,target,dungeonid) {
+    const attack = new Attack(attacker, power, skill, dungeonid);
+    target.takeAttack(attack);
+    target.takeAttack(attack);
+    target.takeAttack(attack);
+    target.takeAttack(attack);
+}
+
+SkillManager.skillEffects['S0006'] = function (skill,attacker,power,target,dungeonid) {
+    const attack = new Attack(attacker, power, skill, dungeonid);
+    target.forEach(t => t.takeAttack(attack));
+    attacker.heal(power);
+}
+
+SkillManager.skillEffects['S0007'] = function (skill,attacker,power,target,dungeonid) {
+    BuffManager.generateBuff('B0007',target,power);
+}
+
+SkillManager.skillEffects['S0008'] = function (skill,attacker,power,target,dungeonid) {
+    BuffManager.generateBuff('B0008',target,power);
+}
+
+SkillManager.skillEffects['S0009'] = function (skill,attacker,power,target,dungeonid) {
+    BuffManager.generateBuff('B0009',target,power);
+}
+
+SkillManager.skillEffects['S0010'] = function (skill,attacker,power,target,dungeonid) {
+    attacker.heal(power);
+}
+
+SkillManager.skillEffects['S0011'] = function (skill,attacker,power,target,dungeonid) {
+    BuffManager.generateBuff('B0011',target,power);
+}
+
+SkillManager.skillEffects['S0012'] = function (skill,attacker,power,target,dungeonid) {
+    BuffManager.generateBuff('B0012',target,power);
+}
+
+SkillManager.skillEffects['S0013'] = function (skill,attacker,power,target,dungeonid) {
+    const attack = new Attack(attacker, power, skill, dungeonid);
+    target.takeAttack(attack);
+}
+
+SkillManager.skillEffects['S0014'] = function (skill,attacker,power,target,dungeonid) {
+    const attack = new Attack(attacker, power, skill, dungeonid);
+    target.takeAttack(attack);
+    attacker.takeDamage(power);
+}
+
+SkillManager.skillEffects['S0015'] = function (skill,attacker,power,target,dungeonid) {
+    const attack = new Attack(attacker, power, skill, dungeonid);
+    target.takeAttack(attack);
+}
+
+SkillManager.skillEffects['S0016'] = function (skill,attacker,power,target,dungeonid) {
+    uffManager.generateBuff('B0016',target,power);
 }

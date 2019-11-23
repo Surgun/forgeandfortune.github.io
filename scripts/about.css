@@ -117,7 +117,13 @@ nav {
     padding: 20px;
     max-width: 350px;
     background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+}
+
+.user-card {
+    display: flex;
+    flex-direction: column;
 }
 
 .user-card .user-pic {
@@ -180,7 +186,7 @@ nav {
     opacity: 0;
 }
 
-.user-card .user-desc:before, .asset-card .asset-desc:before{
+.asset-card .asset-desc:before{
     display: block;
     position: relative;
     content: "";
@@ -193,11 +199,16 @@ nav {
 
 .user-card .user-desc {
     position: relative;
-    color: var(--text-tertiary);
-    margin-top: 20px;
-    padding: 0 10px;
+    flex-grow: 1;
+    margin: 10px -20px 0;
+    padding: 20px;
     font-size: .85em;
+    color: var(--text-tertiary);
+    background-color: var(--bg-secondary);
+    border-top: 2px solid var(--border-primary);
+    border-bottom: 2px solid var(--border-primary);
     opacity: 0;
+    transform: translateY(10px);
 }
 
 .external-link_inline {
@@ -326,7 +337,7 @@ nav {
     animation-delay: .2s;
 }
 
-.user-name, .user-title, .user-desc, .player-name, .player-title {
+.user-name, .user-title, .player-name, .player-title {
     -webkit-animation: 0.7s fade-in forwards;
     animation: 0.7s fade-in forwards;
 }
@@ -344,7 +355,7 @@ nav {
 }
 
 .user-desc {
-    animation-delay: .6s;
+    animation: 0.5s .4s slide-up forwards, 0.7s .4s fade-in forwards;
 }
 
 @media screen and (max-width: 1250px) {

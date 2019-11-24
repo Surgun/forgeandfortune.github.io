@@ -41,7 +41,7 @@ class Guild {
         Object.assign(this, props);
         this.rep = 0;
         this.lvl = 0;
-        this.order = [];
+        this.order = [null,null,null];
     }
     createSave() {
         const save = {};
@@ -66,12 +66,11 @@ class Guild {
             this.generateNewOrder();
         }
     }
-    addRep() {
-        this.rep += 1;
+    addRep(rep) {
+        this.rep += rep;
         if (this.rep >= this.repLvl()) {
-            this.rep -= this.repLvl();
+            this.rep = 0;
             this.lvl += 1;
-            refreshSales(this);
         }
         refreshguildprogress(this);
     }
@@ -79,17 +78,11 @@ class Guild {
         givenlvl = givenlvl || this.lvl;
         return miscLoadedValues["guildRepForLvls"][givenlvl];
     }
-    recipeListID() {
-        return recipeList.filterByGuild(this.id).map(r => r.id);
-    }
     recipeToBuy() {
         return recipeList.filterByGuild(this.id).filter(r =>!r.owned && r.repReq <= this.lvl);
     }
     recipeNextLevel() {
         return recipeList.filterByGuild(this.id).filter(r => r.repReq === this.lvl + 1 );
-    }
-    recipeListOwnedID() {
-        return this.recipeList().filter(r=>r.owned).map(r => r.id);
     }
     workers() {
         return WorkerManager.filterByGuild(this.id).filter(w => w.owned);
@@ -144,7 +137,6 @@ class Guild {
     }
 }
 
-
 class guildOrderItem {
     constructor (gid,id,lvl) {
         this.gid = gid;
@@ -153,9 +145,9 @@ class guildOrderItem {
         this.lvl = lvl;
         this.rarity = this.generateRarity(lvl);
         this.sharp = this.generateSharp(lvl);
-        this.amt = this.generateAmt(lvl);
+        this.amt = this.generateAmt();
+        this.rep = 11-this.amt;
         this.fufilled = 0;
-        this.repgain = 1;
         this.displayName = this.generateName();
     }
     createSave() {
@@ -167,6 +159,7 @@ class guildOrderItem {
         save.rarity = this.rarity;
         save.sharp = this.sharp;
         save.fufilled = this.fufilled;
+        save.rep = this.rep;
         return save;
     }
     loadSave(save) {
@@ -174,12 +167,13 @@ class guildOrderItem {
         this.rarity = save.rarity;
         this.sharp = save.sharp;
         this.fufilled = save.fufilled;
+        this.rep = save.rep;
         this.displayName = this.generateName();
     }
     goldValue() {
         const smithBonus = [...miscLoadedValues["smithChance"]].splice(0,this.sharp);
         const sharpAdd = smithBonus.length === 0 ? 0 : smithBonus.reduce((a,b)=>a+b);
-        return Math.round(this.item.value*this.amt*(2*(1+this.rarity)+sharpAdd));
+        return Math.round(this.item.value*(2*(1+this.rarity)+sharpAdd));
     }
     complete() {
         return this.fufilled >= this.amt;
@@ -187,22 +181,20 @@ class guildOrderItem {
     left() {
         return this.amt - this.fufilled;
     }
-    generateAmt(lvl) {
-        const min = miscLoadedValues["goMin"][lvl];
-        const max = miscLoadedValues["goMax"][lvl];
-        let startAmt = bellCurveSeed(this.gid, min, max);
-        startAmt -= this.rarity
-        if (this.sharp > 0) startAmt -= 1;
+    generateAmt() {
+        let startAmt = 10;
+        startAmt -= this.rarity*2;
+        startAmt -= Math.floor(this.sharp/1.5);
         return Math.max(1,startAmt);
     }
     generateRarity(lvl) {
         const epicChance = miscLoadedValues["goEpic"][lvl];
         const greatChance = miscLoadedValues["goGreat"][lvl]+epicChance;
         const goodChance = miscLoadedValues["goGood"][lvl]+greatChance;     
-        const sharpRoll = Math.floor(GuildSeedManager.fauxRand(this.gid) * 100);
-        if (epicChance > sharpRoll) return 3;
-        if (greatChance > sharpRoll) return 2;
-        if (goodChance > sharpRoll) return 1;
+        const rarityRoll = Math.floor(GuildSeedManager.fauxRand(this.gid) * 100);
+        if (epicChance > rarityRoll) return 3;
+        if (greatChance > rarityRoll) return 2;
+        if (goodChance > rarityRoll) return 1;
         return 0;
     }
     generateSharp(lvl) {
@@ -313,7 +305,7 @@ function createOrderCard(item,id,index) {
     item.item.gcost.forEach(g => {
         $("<div/>").addClass("asResIcon").html(`<img src="images/resources/${g}.png" alt="${g}">`).appendTo(d4a);
     });
-    const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Needed`);
+    const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Left`);
     if (item.complete()) {
         d5.html(`<i class="fas fa-check-circle"></i> Completed`)
         return d1.append(d2,d3,d4,d5);

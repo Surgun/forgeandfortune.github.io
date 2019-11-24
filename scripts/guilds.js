@@ -33,6 +33,7 @@ const GuildManager = {
     setMaxLvl(lvl) {
         this.maxGuildLevel = Math.max(this.maxGuildLevel,lvl);
         refreshAllOrders();
+        refreshAllSales();
     },
     maxLvl() {
         return Math.max(...this.guilds.map(g=>g.lvl));
@@ -84,7 +85,7 @@ class Guild {
         return miscLoadedValues["guildRepForLvls"][givenlvl];
     }
     recipeToBuy() {
-        return recipeList.filterByGuild(this.id).filter(r =>!r.owned && r.repReq <= GuildManager.maxLvl());
+        return recipeList.filterByGuild(this.id).filter(r =>!r.owned && r.repReq <= GuildManager.maxGuildLevel).sort((a,b) => a.repReq-b.repReq);
     }
     workers() {
         return WorkerManager.filterByGuild(this.id).filter(w => w.owned);
@@ -244,7 +245,7 @@ function refreshguildprogress(guild) {
     const id = guild.id;
     const $gp = $(`#${id}Progress`);
     $gp.empty();
-    $("<div/>").addClass("guildLevel").html(`Level ${inWords(guild.lvl+1)}`).appendTo($gp);
+    $("<div/>").addClass("guildLevel").html(`Level ${inWords(guild.lvl)}`).appendTo($gp);
     $gp.append(createGuildBar(guild));
 }
 

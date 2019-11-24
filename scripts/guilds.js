@@ -118,7 +118,6 @@ class Guild {
         this.addRep(submitContainer.rep);
         achievementStats.gold(submitContainer.goldValue());
         ResourceManager.addMaterial("M001",submitContainer.goldValue());
-        Notifications.submitOrder(submitContainer.goldValue());
         if (submitContainer.complete()) this.generateNewOrder(slot);
         refreshAllOrders();
     }

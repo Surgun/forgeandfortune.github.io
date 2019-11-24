@@ -273,7 +273,7 @@ function saveUpdate(loadGame) {
         })
         refreshAllOrders();
         refreshAllSales();
-        refreshAllProgress();
+        GuildManager.guilds.forEach(g => refreshguildprogress(g));
     }
     if (loadGame.v === "0308") {
         loadGame.v = "0310";

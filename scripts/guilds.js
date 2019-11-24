@@ -33,6 +33,9 @@ const GuildManager = {
     setMaxLvl(lvl) {
         this.maxGuildLevel = Math.max(this.maxGuildLevel,lvl);
         refreshAllOrders();
+    },
+    maxLvl() {
+        return Math.max(...this.guilds.map(g=>g.lvl));
     }
 }
 
@@ -67,10 +70,12 @@ class Guild {
         this.order3.loadSave(save.order3);
     }
     addRep(rep) {
+        if (this.maxLvlReached()) return;
         this.rep += rep;
         if (this.rep >= this.repLvl()) {
             this.rep = 0;
             this.lvl += 1;
+            refreshAllSales();
         }
         refreshguildprogress(this);
     }
@@ -79,10 +84,7 @@ class Guild {
         return miscLoadedValues["guildRepForLvls"][givenlvl];
     }
     recipeToBuy() {
-        return recipeList.filterByGuild(this.id).filter(r =>!r.owned && r.repReq <= this.lvl);
-    }
-    recipeNextLevel() {
-        return recipeList.filterByGuild(this.id).filter(r => r.repReq === this.lvl + 1 );
+        return recipeList.filterByGuild(this.id).filter(r =>!r.owned && r.repReq <= GuildManager.maxLvl());
     }
     workers() {
         return WorkerManager.filterByGuild(this.id).filter(w => w.owned);
@@ -116,6 +118,7 @@ class Guild {
         achievementStats.gold(submitContainer.goldValue());
         ResourceManager.addMaterial("M001",submitContainer.goldValue());
         Notifications.submitOrder(submitContainer.goldValue());
+        if (submitContainer.complete()) this.generateNewOrder(slot);
         refreshAllOrders();
     }
     goldValue() {
@@ -161,7 +164,6 @@ class guildOrderItem {
         this.fufilled = save.fufilled;
         this.rep = save.rep;
         this.item = recipeList.idToItem(this.id);
-        console.log(this.id,this.item);
         this.displayName = this.generateName();
     }
     goldValue() {
@@ -199,7 +201,6 @@ class guildOrderItem {
         return bellCurveSeed(this.gid, sharpMin,sharpMax);
     }
     generateName() {
-        console.log(this.item);
         if (this.sharp > 0) return `<span>+${this.sharp} ${this.item.name}</span>`
         return `${this.item.name}`
     }
@@ -237,10 +238,6 @@ function checkCraftableStatus() {
     recipeList.recipes.forEach(recipe => {
         if (!recipe.canProduce || !recipe.owned) $("#"+recipe.id+".orderCraft").addClass("recipeCraftDisable");
     }) 
-}
-
-function refreshAllProgress() {
-    GuildManager.guilds.forEach(g => refreshguildprogress(g));
 }
 
 function refreshguildprogress(guild) {
@@ -297,7 +294,10 @@ function createOrderCard(item,id,index) {
     $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Left`).appendTo(d1);
     $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(d1);
     $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`).appendTo(d1);
-    $("<div/>").addClass("guildItemSubmitGold").html(`Submit  ${miscIcons.gold} +${item.goldValue()}`).appendTo(d1);
+    const d3 = $("<div/>").addClass("guildItemSubmit").appendTo(d1);
+    $("<div/>").addClass("guildItemSubmitHeading").html(`Submit one for:`).appendTo(d3);
+    $("<div/>").addClass("guildItemSubmitGold").html(`${miscIcons.gold} +${item.goldValue()}`).appendTo(d3);
+    $("<div/>").addClass("guildItemSubmitRep").html(`+${item.rep} Reputation`).appendTo(d3);
     return d1;
 };
 
@@ -317,21 +317,19 @@ function refreshAllSales() {
 function refreshSales(guild) {
     const $gs = $(`#${guild.id}Sales`);
     $gs.empty();
+    console.log(guild.recipeToBuy());
     guild.recipeToBuy().forEach(recipe => {
-        $gs.append(createRecipeBuyCard(recipe,false));
+        $gs.append(createRecipeBuyCard(recipe,guild.lvl));
     });
-    guild.recipeNextLevel().forEach(recipe => {
-        $gs.append(createRecipeBuyCard(recipe,true));
-    })
 };
 
-function createRecipeBuyCard(recipe,buyLater) {
+function createRecipeBuyCard(recipe,guildLvl) {
     const d1 = $("<div/>").addClass("recipeBuyCard");
     const d2 = $("<div/>").addClass("recipeBuyCardHead").html(recipe.type);
     const d3 = $("<div/>").addClass("recipeBuyCardBody").html(recipe.itemPicName());
     const d3a = $("<div/>").addClass("recipeBuyCardTier recipeItemLevel").html(recipe.itemLevel());
-    if (buyLater) {
-        const d4 = $("<div/>").addClass("recipeBuyCardBuyLater").html("Reach next Guild Level to Unlock");
+    if (recipe.repReq > guildLvl) {
+        const d4 = $("<div/>").addClass("recipeBuyCardBuyLater").html(`Reach Guild Level ${recipe.repReq} to Unlock`);
         return d1.append(d2,d3,d3a,d4);
     }
     const d5 = $("<div/>").addClass("recipeBuyCardBuy").data("rid",recipe.id);
@@ -387,7 +385,6 @@ $(document).on("click",".orderCard",(e) => {
     e.preventDefault();
     const itemData = $(e.currentTarget).data();
     GuildManager.idToGuild(itemData.gid).submitItem(itemData.slot);
-    refreshInventoryPlaces();
 });
 
 //buy a recipe from guild

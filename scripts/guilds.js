@@ -109,7 +109,7 @@ class Guild {
     submitItem(slot) {
         let submitContainer = this.order1;
         if (slot === 2) submitContainer = this.order2;
-        if (slot === 3) submitContainer = this.order;
+        if (slot === 3) submitContainer = this.order3;
         const itemString = submitContainer.uniqueID();
         const itemMatch = Inventory.findCraftMatch(itemString);
         if (itemMatch === undefined) return Notifications.cantFindMatch();

@@ -41,30 +41,29 @@ class Guild {
         Object.assign(this, props);
         this.rep = 0;
         this.lvl = 0;
-        this.order = [null,null,null];
+        this.order1 = null;
+        this.order2 = null;
+        this.order3 = null;
     }
     createSave() {
         const save = {};
         save.id = this.id;
         save.lvl = this.lvl;
         save.rep = this.rep;
-        save.order = [];
-        this.order.forEach(o=>save.order.push(o.createSave()));
+        save.order1 = this.order1;
+        save.order2 = this.order2;
+        save.order3 = this.order3;
         return save;
     }
     loadSave(save) {
         this.rep = save.rep;
         this.lvl = save.lvl;
-        if (save.order !== undefined) {
-            save.order.forEach(o => {
-            const container = new guildOrderItem(o.gid, o.id, o.amt, o.rarity, o.sharp);
-            container.loadSave(o);
-            this.order.push(container);
-            });
-        }
-        else {
-            this.generateNewOrder();
-        }
+        this.order1 = new guildOrderItem(save.order1.id,save.order1.gid,save.order1.lvl);
+        this.order1.loadSave(save.order1);
+        this.order2 = new guildOrderItem(save.order2.id,save.order2.gid,save.order2.lvl);
+        this.order2.loadSave(save.order2);
+        this.order3 = new guildOrderItem(save.order3.id,save.order3.gid,save.order3.lvl);
+        this.order3.loadSave(save.order3);
     }
     addRep(rep) {
         this.rep += rep;
@@ -91,22 +90,18 @@ class Guild {
         if (devtools.orderBypass) return true;
         return this.order.every(o=>o.complete());
     }
-    generateNewOrder() {
-        this.order = [];
-        let possibleItems = recipeList.guildOrderItems(this.lvl);
-        const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
-        const chosenFirst = possibleGuildItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleGuildItems.length)];
-        possibleItems = possibleItems.filter(r => r.id !== chosenFirst.id);
-        const chosenSecond = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
-        possibleItems = possibleItems.filter(r => r.id !== chosenSecond.id);
-        const chosenThird = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
-        this.order.push(new guildOrderItem(this.id,chosenFirst.id, this.lvl));
-        if (this.lvl >= 5) this.order.push(new guildOrderItem(this.id, chosenSecond.id, this.lvl));
-        if (this.lvl >= 7) this.order.push(new guildOrderItem(this.id, chosenThird.id, this.lvl));
+    generateNewOrder(orderNum) {
+        const possibleItems = recipeList.guildOrderItems(this.lvl);
+        if (orderNum === 1) {
+            const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
+            const chosenGuildItem = possibleGuildItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleGuildItems.length)];
+            this.order1 = new guildOrderItem(this.id,chosenGuildItem.id,this.lvl);
+            return;
+        }
+        const chosenItem = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
+        if (orderNum === 2) this.order2 = new guildOrderItem(this.id,chosenItem.id,this.lvl);
+        if (orderNum === 3) this.order3 = new guildOrderItem(this.id,chosenItem.id,this.lvl);
         refreshguildOrder(this);
-    }
-    getItem(slot) {
-        return this.order[slot];
     }
     submitItem(slot) {
         const submitContainer = this.order[slot];
@@ -282,9 +277,14 @@ function refreshguildOrder(guild) {
     const $go = $(`#${id}Order`);
     $go.empty();
     if (guild.maxLvlReached()) {
-        $("<div/>").addClass("guildMaxLvl").html("Max Guild Level Reached - Open more levels in the Action League").appendTo($go);
+        $("<div/>").addClass("guildMaxLvl").html("Max Guild Level Reached - Defeat a Boss to unlock more levels").appendTo($go);
         return;
     }
+    $go.append(createOrderCard(guild.order1,id,1));
+    $go.append(createOrderCard(guild.order2,id,2));
+    $go.append(createOrderCard(guild.order3,id,3));
+
+
     guild.order.forEach((item,i) => {
         $go.append(createOrderCard(item,id,i));
     });

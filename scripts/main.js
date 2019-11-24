@@ -17,7 +17,11 @@ function afterLoad() {
         HeroManager.idToHero("H203").owned = true;
         achievementStats.startTime = Date.now();
         EventManager.addEvent("E001");
-        GuildManager.guilds.forEach(g=>g.generateNewOrder());
+        GuildManager.guilds.forEach(g=>{
+            g.generateNewOrder(1);
+            g.generateNewOrder(2);
+            g.generateNewOrder(3);
+        });
     }
     refreshMasteryBar()
     refreshInventory();

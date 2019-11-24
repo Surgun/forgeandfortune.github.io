@@ -50,19 +50,20 @@ class Guild {
         save.id = this.id;
         save.lvl = this.lvl;
         save.rep = this.rep;
-        save.order1 = this.order1;
-        save.order2 = this.order2;
-        save.order3 = this.order3;
+        save.order1 = this.order1.createSave();
+        save.order2 = this.order2.createSave();
+        save.order3 = this.order3.createSave();
         return save;
     }
     loadSave(save) {
         this.rep = save.rep;
         this.lvl = save.lvl;
-        this.order1 = new guildOrderItem(save.order1.id,save.order1.gid,save.order1.lvl);
+        console.log(save.order1.id,save.order1.gid,save.order1.lvl);
+        this.order1 = new guildOrderItem(save.order1.gid,save.order1.id,save.order1.lvl);
         this.order1.loadSave(save.order1);
-        this.order2 = new guildOrderItem(save.order2.id,save.order2.gid,save.order2.lvl);
+        this.order2 = new guildOrderItem(save.order2.gid,save.order2.id,save.order2.lvl);
         this.order2.loadSave(save.order2);
-        this.order3 = new guildOrderItem(save.order3.id,save.order3.gid,save.order3.lvl);
+        this.order3 = new guildOrderItem(save.order3.gid,save.order3.id,save.order3.lvl);
         this.order3.loadSave(save.order3);
     }
     addRep(rep) {
@@ -101,25 +102,20 @@ class Guild {
         const chosenItem = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
         if (orderNum === 2) this.order2 = new guildOrderItem(this.id,chosenItem.id,this.lvl);
         if (orderNum === 3) this.order3 = new guildOrderItem(this.id,chosenItem.id,this.lvl);
-        refreshguildOrder(this);
     }
     submitItem(slot) {
-        const submitContainer = this.order[slot];
-        if (submitContainer.complete()) return;
+        let submitContainer = this.order1;
+        if (slot === 2) submitContainer = this.order2;
+        if (slot === 3) submitContainer = this.order;
         const itemString = submitContainer.uniqueID();
         const itemMatch = Inventory.findCraftMatch(itemString);
         if (itemMatch === undefined) return Notifications.cantFindMatch();
         Inventory.removeContainerFromInventory(itemMatch.containerID);
         submitContainer.fufilled += 1;
-        refreshAllOrders();
-    }
-    submitOrder() {
-        if (!this.orderComplete()) return Notifications.insufficientGuildOrderSubmit();
-        this.addRep();
-        achievementStats.gold(this.goldValue());
-        ResourceManager.addMaterial("M001",this.goldValue());
-        Notifications.submitOrder(this.goldValue());
-        this.generateNewOrder();
+        this.addRep(submitContainer.rep);
+        achievementStats.gold(submitContainer.goldValue());
+        ResourceManager.addMaterial("M001",submitContainer.goldValue());
+        Notifications.submitOrder(submitContainer.goldValue());
         refreshAllOrders();
     }
     goldValue() {
@@ -137,6 +133,7 @@ class guildOrderItem {
         this.gid = gid;
         this.id = id;
         this.item = recipeList.idToItem(id);
+        console.log(id,this.item);
         this.lvl = lvl;
         this.rarity = this.generateRarity(lvl);
         this.sharp = this.generateSharp(lvl);
@@ -163,6 +160,8 @@ class guildOrderItem {
         this.sharp = save.sharp;
         this.fufilled = save.fufilled;
         this.rep = save.rep;
+        this.item = recipeList.idToItem(this.id);
+        console.log(this.id,this.item);
         this.displayName = this.generateName();
     }
     goldValue() {
@@ -200,7 +199,8 @@ class guildOrderItem {
         return bellCurveSeed(this.gid, sharpMin,sharpMax);
     }
     generateName() {
-        if (this.sharp > 0) return `+${this.sharp} ${this.item.name}</span>`
+        console.log(this.item);
+        if (this.sharp > 0) return `<span>+${this.sharp} ${this.item.name}</span>`
         return `${this.item.name}`
     }
     uniqueID() {
@@ -261,8 +261,7 @@ function createGuildBar(guild) {
     const repPercent = guild.rep/guild.repLvl();
     const repWidth = (repPercent*100).toFixed(1)+"%";
     const d1 = $("<div/>").addClass("repBarDiv");
-    const plural = ((guild.repLvl() - guild.rep) > 1 ? "Orders" : "Order");
-    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Complete ${guild.repLvl()-guild.rep} Guild ${plural} to Advance`);
+    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Reputation: ${guild.rep}/${guild.repLvl()}`);
     const s1 = $("<span/>").addClass("repBarFill").css('width', repWidth);
     return d1.append(d2,s1);
 }
@@ -283,36 +282,23 @@ function refreshguildOrder(guild) {
     $go.append(createOrderCard(guild.order1,id,1));
     $go.append(createOrderCard(guild.order2,id,2));
     $go.append(createOrderCard(guild.order3,id,3));
-
-
-    guild.order.forEach((item,i) => {
-        $go.append(createOrderCard(item,id,i));
-    });
-    const d1 = $("<div/>").addClass('guildOrderSubmit').data("gid", id);
-        $("<div/>").addClass("guildOrderSubmitText").html("Claim Reward").appendTo(d1);
-        $("<div/>").addClass("guildOrderSubmitValue").html(`${miscIcons.gold} +${formatToUnits(guild.goldValue(),2)}`).appendTo(d1);
-    if (!guild.orderComplete()) d1.addClass("guildOrderIncomplete");
-    $go.append(d1);
 };
 
 function createOrderCard(item,id,index) {
     const d1 = $("<div/>").addClass(`orderCard R${item.rarity}`).data({"slot":index,"gid":id});
     if (item.complete()) d1.addClass('orderComplete');
-    const d2 = $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id));
-    const d3 = $("<div/>").addClass("orderName").addClass(`orderName`).html(item.displayName);
-    const d4 = $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id));
-    const d4a = $("<div/>").addClass("orderMaterials");
+    $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id)).appendTo(d1);
+    $("<div/>").addClass("orderName").addClass(`orderName`).html(item.displayName).appendTo(d1);
+    $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id)).appendTo(d1);
+    const d2 = $("<div/>").addClass("orderMaterials").appendTo(d1);
     item.item.gcost.forEach(g => {
-        $("<div/>").addClass("asResIcon").html(`<img src="images/resources/${g}.png" alt="${g}">`).appendTo(d4a);
+        $("<div/>").addClass("asResIcon").html(`<img src="images/resources/${g}.png" alt="${g}">`).appendTo(d2);
     });
-    const d5 = $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Left`);
-    if (item.complete()) {
-        d5.html(`<i class="fas fa-check-circle"></i> Completed`)
-        return d1.append(d2,d3,d4,d5);
-    }
-    const d6 = $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`);
-    const d7 = $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`);
-    return d1.append(d2,d3,d4,d4a,d5,d6,d7);
+    $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Left`).appendTo(d1);
+    $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(d1);
+    $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`).appendTo(d1);
+    $("<div/>").addClass("guildItemSubmitGold").html(`Submit  ${miscIcons.gold} +${item.goldValue()}`).appendTo(d1);
+    return d1;
 };
 
 function refreshOrderInvCount() {

@@ -102,6 +102,7 @@ const miscIcons = Object.freeze({
     arrow : '<i class="fas fa-arrow-right"></i>',
     dead : '<i class="fas fa-skull-crossbones"></i>',
     takeDamage : '<i class="fas fa-shield-cross"></i>',
+    guildRep : '<i class="far fa-grin-alt"></i>',
 });
 
 const heroStat = Object.freeze({

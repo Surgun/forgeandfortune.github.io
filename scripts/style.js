@@ -190,7 +190,6 @@ const $dbpanel = $("#db-panel");
 let dbi = 0;
 
 function dbEnable() {
-    setDialogOpen();
     $dbpanel.empty();
     dbi = 0;
 
@@ -250,6 +249,7 @@ function dbEnable() {
     $dbpanel.css("display", "block");
 
     settings.db = 1;
+    settings.dialogStatus = !settings.dialogStatus;
     saveSettings();
     checkDB();
 }
@@ -258,7 +258,7 @@ function addButtonDB() {
     const footer = $("#bottom-left");
     let dbButton = $("#debug");
     if (!dbButton.length) {
-        dbButton = $("<a/>").attr("id","debug").addClass("isDialog tooltip").attr("data-tooltip","Development options for tesing various functions, mechanics and interfaces.").html(`<i class="fas fa-bug"></i> Debug`)
+        dbButton = $("<a/>").attr("id", "debug").addClass("isDialog tooltip").attr("data-tooltip", "Development options for tesing various functions, mechanics and interfaces.").html(`<i class="fas fa-bug"></i> Debug`)
         footer.append(dbButton);
     }
 }

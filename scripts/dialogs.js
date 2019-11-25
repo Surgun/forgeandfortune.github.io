@@ -159,7 +159,7 @@ $(document).on('transitionend', '.dialogContent', (e) => {
 // Event Listeners / Triggers
 $(document).on('click', '.isDialog', (e) => {
   const id = $(e.currentTarget).attr("data-dialog-id");
-  if (settings.dialogStatus === 0) setDialogOpen(DialogManager.findDialog(id));
+  if (settings.dialogStatus === 0 && id) setDialogOpen(DialogManager.findDialog(id));
 });
 
 $(document).on('click ', '.dialogClose', (e) => {

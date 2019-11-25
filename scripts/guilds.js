@@ -296,8 +296,9 @@ function createOrderCard(item,id,index) {
     $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`).appendTo(d1);
     const d3 = $("<div/>").addClass("guildItemSubmit").appendTo(d1);
     $("<div/>").addClass("guildItemSubmitHeading").html(`Submit one for:`).appendTo(d3);
-    $("<div/>").addClass("guildItemSubmitGold").html(`${miscIcons.gold} +${item.goldValue()}`).appendTo(d3);
-    $("<div/>").addClass("guildItemSubmitRep").html(`+${item.rep} Reputation`).appendTo(d3);
+        const d3a = $("<div/>").addClass("guildItemSubmitRewards").appendTo(d3);
+        $("<div/>").addClass("guildItemSubmitItem RewardGold").html(`${miscIcons.gold} +${item.goldValue()}`).appendTo(d3a);
+        $("<div/>").addClass("guildItemSubmitItem RewardRep").html(`+${item.rep} Reputation`).appendTo(d3a);
     return d1;
 };
 

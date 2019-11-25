@@ -109,7 +109,7 @@ body {
     font-weight: normal;
 }
 
-.dialog_title, .settings-title, .masteryBlockHeader {
+.masteryBlockHeader {
     font-family: 'Roboto Slab', serif;
     font-weight: 100;
 }
@@ -9106,3 +9106,35 @@ span.beta-tag {
 } 
 
 /* End New Combat*/
+
+.guildItemSubmit {
+    width: 100%;
+    text-align: center;
+}
+
+.guildItemSubmitHeading {
+    margin: 10px 0 0;
+    padding: 0 0 5px 0;
+    border-bottom: 2px solid var(--border-secondary);
+}
+
+.guildItemSubmitRewards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.guildItemSubmitItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0 0;
+    padding: 5px;
+    width: 100%;
+    background-color: var(--bg-tertiary);
+    border-radius: 5px;
+}
+
+.guildItemSubmitItem.RewardRep {
+    color: var(--green-primary);
+}

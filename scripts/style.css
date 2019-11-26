@@ -377,6 +377,9 @@ p.hamster {
 
 .DungeonSideBarStatus {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
     padding: 5px;
     text-align: center;
@@ -393,6 +396,25 @@ p.hamster {
 
 .DungeonSideBarStatus.DungeonSideBarCollect {
     background: var(--green-tertiary);
+}
+
+.dungeonFarmStatus {
+    padding: 0 5px;
+    color: var(--text-tertiary);
+    margin-bottom: -3px;
+    transition: color 0.27s ease-in-out;
+}
+
+.dungeonFarmStatus:hover {
+    color: var(--text-primary);
+}
+
+.dungeonFarmStatus.dungeonFarmActive {
+    color: var(--highlight);
+}
+
+.dungeonSidebarFloor {
+    flex-grow: 1;
 }
 
 #inventorySidebar.inventoryFullSide {
@@ -9021,13 +9043,14 @@ span.beta-tag {
     align-items: center;
     margin: 10px 0 0 10px;
     padding: 10px 15px;
-    background-color: var(--button-primary);
+    background-color: rgba(0,0,0,.2);
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.27s ease-in-out;
 }
 
 .dungeonToggleProgress:hover {
-    background-color: var(--button-primary-active);
+    background-color: rgba(0,0,0,.3);
 }
 
 #DungeonSideBar {
@@ -9053,11 +9076,15 @@ span.beta-tag {
 }
 
 .dungeonRewardRate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-width: 80px;
     text-align: center;
 }
 
 .dungeonRewardRate > img {
+    margin-left: 5px;
     max-height: 16px;
 }
 
@@ -9083,6 +9110,7 @@ span.beta-tag {
     display: flex;
     justify-content: center;
     font-size: 0.85rem;
+    z-index: 1;
 }
 
 .notoBar:before {

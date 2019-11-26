@@ -3,7 +3,8 @@
     "id": "AL0001",
     "title": "Don't I Know You",
     "description": "Unlock Bird Arms worker: Oren",
-    "notoReq": 25,
+    "mat": "M101",
+    "matAmt": 25,
     "goldCost": 300,
     "type": "worker",
     "subtype": "WN001"
@@ -12,7 +13,8 @@
     "id": "AL0002",
     "title": "Did You Lose Weight",
     "description": "Unlock Bird Arms worker: Eryn",
-    "notoReq": 3025,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000,
     "type": "worker",
     "subtype": "WN002"
@@ -21,7 +23,8 @@
     "id": "AL0003",
     "title": "You Sound Familiar",
     "description": "Unlock Bird Arms worker: Herbie",
-    "notoReq": 28025,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN003"
@@ -30,7 +33,8 @@
     "id": "AL0004",
     "title": "Birds of A Feather",
     "description": "Unlock Bird Arms worker: Lakur",
-    "notoReq": 108025,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN004"
@@ -39,7 +43,8 @@
     "id": "AL0101",
     "title": "Lettuce Time",
     "description": "Unlock Green Guard worker: Tiny",
-    "notoReq": 50,
+    "mat": "M101",
+    "matAmt": 25,
     "goldCost": 300,
     "type": "worker",
     "subtype": "WN101"
@@ -48,7 +53,8 @@
     "id": "AL0102",
     "title": "Kale is Gross",
     "description": "Unlock Green Guard worker: Crash",
-    "notoReq": 3050,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000,
     "type": "worker",
     "subtype": "WN102"
@@ -57,7 +63,8 @@
     "id": "AL0103",
     "title": "Sesame Seed Money",
     "description": "Unlock Green Guard worker: Titan",
-    "notoReq": 28050,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN103"
@@ -66,7 +73,8 @@
     "id": "AL0104",
     "title": "Having A Ball",
     "description": "Unlock Green Guard worker: Smash",
-    "notoReq": 108050,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN104"
@@ -75,7 +83,8 @@
     "id": "AL0202",
     "title": "Feline Fine",
     "description": "Unlock The Cat's Meow worker: Squeaks",
-    "notoReq": 3010,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000,
     "type": "worker",
     "subtype": "WN202"
@@ -84,7 +93,8 @@
     "id": "AL0203",
     "title": "Not A Dog Person",
     "description": "Unlock The Cat's Meow worker: Renae",
-    "notoReq": 28010,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN203"
@@ -93,7 +103,8 @@
     "id": "AL0204",
     "title": "Hot Tin Roof",
     "description": "Unlock The Cat's Meow worker: Tawny",
-    "notoReq": 108010,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN204"
@@ -102,7 +113,8 @@
     "id": "AL0301",
     "title": "Bubble Baubles",
     "description": "Unlock Trawled Treasures worker: Gilbert",
-    "notoReq": 75,
+    "mat": "M101",
+    "matAmt": 25,
     "goldCost": 300,
     "type": "worker",
     "subtype": "WN301"
@@ -111,7 +123,8 @@
     "id": "AL0302",
     "title": "Shiny Bubbles",
     "description": "Unlock Trawled Treasures worker: Gillian",
-    "notoReq": 3075,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000,
     "type": "worker",
     "subtype": "WN302"
@@ -120,7 +133,8 @@
     "id": "AL0303",
     "title": "Rollin In The Deep",
     "description": "Unlock Trawled Treasures worker: Gilfred",
-    "notoReq": 28075,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN303"
@@ -129,7 +143,8 @@
     "id": "AL0304",
     "title": "Stinky Divers",
     "description": "Unlock Trawled Treasures worker: Gilda",
-    "notoReq": 108075,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN304"
@@ -138,7 +153,8 @@
     "id": "AL2001",
     "title": "Mighty Allies",
     "description": "Unlocks Beorn, the noble warrior.",
-    "notoReq": 80,
+    "mat": "M101",
+    "matAmt": 50,
     "goldCost": 500,
     "type": "hero",
     "subtype": "H001"
@@ -147,7 +163,8 @@
     "id": "AL2002",
     "title": "Mighty Allies II",
     "description": "Unlocks Cedric, the dutiful protector.",
-    "notoReq": 1750,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 2000,
     "type": "hero",
     "subtype": "H002"
@@ -156,7 +173,8 @@
     "id": "AL2003",
     "title": "Mighty Allies III",
     "description": "Unlocks Grim, the bloodythirsty barbarian.",
-    "notoReq": 7000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 15000,
     "type": "hero",
     "subtype": "H003"
@@ -165,7 +183,8 @@
     "id": "AL2004",
     "title": "Mighty Allies IV",
     "description": "Unlocks Lambug, the ferocious attacker.",
-    "notoReq": 22000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 100000,
     "type": "hero",
     "subtype": "H004"
@@ -174,7 +193,8 @@
     "id": "AL2101",
     "title": "Mindful Bond",
     "description": "Unlocks Zoe, the cunning sorcerer.",
-    "notoReq": 160,
+    "mat": "M201",
+    "matAmt": 25,
     "goldCost": 500,
     "type": "hero",
     "subtype": "H101"
@@ -183,7 +203,8 @@
     "id": "AL2102",
     "title": "Mindful Bond II",
     "description": "Unlocks Neve, the focused mage.",
-    "notoReq": 2500,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 2000,
     "type": "hero",
     "subtype": "H102"
@@ -192,7 +213,8 @@
     "id": "AL2103",
     "title": "Mindful Bond III",
     "description": "Unlocks Titus, the generous mender.",
-    "notoReq": 9000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 15000,
     "type": "hero",
     "subtype": "H103"
@@ -201,7 +223,8 @@
     "id": "AL2104",
     "title": "Mindful Bond IV",
     "description": "Unlocks Troy, the adept healer.",
-    "notoReq": 27000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 100000,
     "type": "hero",
     "subtype": "H104"
@@ -210,7 +233,8 @@
     "id": "AL2201",
     "title": "Real Moxie II",
     "description": "Unlocks Alok, the crafty impairer.",
-    "notoReq": 1000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 2000,
     "type": "hero",
     "subtype": "H201"
@@ -219,7 +243,8 @@
     "id": "AL2202",
     "title": "Real Moxie III",
     "description": "Unlocks Grogmar, the trustworthy sniper.",
-    "notoReq": 5000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 15000,
     "type": "hero",
     "subtype": "H202"
@@ -228,7 +253,8 @@
     "id": "AL2204",
     "title": "Real Moxie IV",
     "description": "Unlocks Caeda, the skilled immobilizer.",
-    "notoReq": 17000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 100000,
     "type": "hero",
     "subtype": "H204"
@@ -237,7 +263,8 @@
     "id": "AL3001",
     "title": "Chance Of Splinters",
     "description": "Defeating this difficult enemy will increase your notoriety limit.",
-    "notoReq": 250,
+    "mat": "M301",
+    "matAmt": 100,
     "goldCost": 1000,
     "type": "boss",
     "subtype": "D010"
@@ -246,7 +273,8 @@
     "id": "AL3002",
     "title": "Wear Sunscreen",
     "description": "Defeating this difficult enemy will increase your notoriety limit.",
-    "notoReq": 3000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000,
     "type": "boss",
     "subtype": "D011"
@@ -255,7 +283,8 @@
     "id": "AL3003",
     "title": "He Who Walks Softly",
     "description": "Defeating this difficult enemy will increase your notoriety limit.",
-    "notoReq": 11500,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 30000,
     "type": "boss",
     "subtype": "D012"
@@ -264,7 +293,8 @@
     "id": "AL3004",
     "title": "Clown Car",
     "description": "Defeating this difficult enemy will increase your notoriety limit.",
-    "notoReq": 28000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 200000,
     "type": "boss",
     "subtype": "D013"
@@ -273,7 +303,8 @@
     "id": "AL3005",
     "title": "Heterochromia",
     "description": "Defeating this difficult enemy will increase your notoriety limit.",
-    "notoReq": 56500,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 800000,
     "type": "boss",
     "subtype": "D014"
@@ -282,7 +313,8 @@
     "id": "AL3006",
     "title": "Just A Broken Limb",
     "description": "Defeating this difficult enemy will increase your notoriety limit.",
-    "notoReq": 108000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 3000000,
     "type": "boss",
     "subtype": "D015"
@@ -291,7 +323,8 @@
     "id": "AL3007",
     "title": "Unextinguished",
     "description": "Defeating this difficult enemy will increase your notoriety limit.",
-    "notoReq": 171500,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 30000000,
     "type": "boss",
     "subtype": "D016"
@@ -300,7 +333,8 @@
     "id": "AL3008",
     "title": "He Who Now Limps",
     "description": "Defeating this difficult enemy will increase your notoriety limit.",
-    "notoReq": 256000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 150000000,
     "type": "boss",
     "subtype": "D017"
@@ -309,7 +343,8 @@
     "id": "AL3009",
     "title": "Swagger Wagon",
     "description": "Defeating this difficult enemy will increase your notoriety limit.",
-    "notoReq": 364500,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 625000000,
     "type": "boss",
     "subtype": "D018"
@@ -318,7 +353,8 @@
     "id": "AL3010",
     "title": "Nystagmus",
     "description": "Defeating this difficult enemy will increase your notoriety limit.",
-    "notoReq": 500000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 32500000000,
     "type": "boss",
     "subtype": "D019"
@@ -327,7 +363,8 @@
     "id": "AL4001",
     "title": "Second Slot",
     "description": "Unlocks the second crafting slot.",
-    "notoReq": 100,
+    "mat": "M201",
+    "matAmt": 75,
     "goldCost": 250,
     "type": "craft",
     "subtype": null
@@ -336,7 +373,8 @@
     "id": "AL4002",
     "title": "Third Slot",
     "description": "Unlocks the third crafting slot.",
-    "notoReq": 250,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 1000,
     "type": "craft",
     "subtype": null
@@ -345,7 +383,8 @@
     "id": "AL4003",
     "title": "Fourth Slot",
     "description": "Unlocks the fourth crafting slot.",
-    "notoReq": 2500,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000,
     "type": "craft",
     "subtype": null
@@ -354,7 +393,8 @@
     "id": "AL4004",
     "title": "Jackslot",
     "description": "Unlocks the fifth crafting slot.",
-    "notoReq": 10000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 20000,
     "type": "craft",
     "subtype": null
@@ -363,7 +403,8 @@
     "id": "AL4101",
     "title": "Take It To The Bank",
     "description": "Unlocks the Bank Building, so you can store your stuff.",
-    "notoReq": 11501,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 60000,
     "type": "bank",
     "subtype": "open"
@@ -372,7 +413,8 @@
     "id": "AL41011",
     "title": "More To Store",
     "description": "Increases the storage capability of the Bank.",
-    "notoReq": 60000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 1600000,
     "type": "bank",
     "subtype": "level"
@@ -381,7 +423,8 @@
     "id": "AL41012",
     "title": "You Can Bank On It",
     "description": "Increases the storage capability of the Bank.",
-    "notoReq": 175000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 60000000,
     "type": "bank",
     "subtype": "level"
@@ -390,7 +433,8 @@
     "id": "AL4102",
     "title": "Offer You Can't Re-Fuse",
     "description": "Unlocks the Fusion Cabin Building, so you can increase item quality.",
-    "notoReq": 3001,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 8000,
     "type": "cauldron",
     "subtype": "open"
@@ -399,7 +443,8 @@
     "id": "AL41021",
     "title": "Offer You Can't Re-Fuse  II",
     "description": "Adds another slot to your Fusion Cabin.",
-    "notoReq": 30000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 150000,
     "type": "cauldron",
     "subtype": "level"
@@ -408,7 +453,8 @@
     "id": "AL41022",
     "title": "Offer You Can't Re-Fuse III",
     "description": "Adds another slot to your Fusion Cabin.",
-    "notoReq": 110000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4500000,
     "type": "cauldron",
     "subtype": "level"
@@ -417,7 +463,8 @@
     "id": "AL4103",
     "title": "Can I Be Your Plus One",
     "description": "Unlocks the Forge Building, so you can improve item stats.",
-    "notoReq": 14000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 90000,
     "type": "forge",
     "subtype": "open"
@@ -426,7 +473,8 @@
     "id": "AL41031",
     "title": "Can I Be Your Plus Two",
     "description": "Increases forge limits from +3 to +6.",
-    "notoReq": 120000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4500000,
     "type": "forge",
     "subtype": "level"
@@ -435,7 +483,8 @@
     "id": "AL41032",
     "title": "Can I Be Your Plus Three",
     "description": "Increases forge limits from +6 to +10.",
-    "notoReq": 275000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 300000000,
     "type": "forge",
     "subtype": "level"
@@ -444,7 +493,8 @@
     "id": "AL4104",
     "title": "Your Future Is Green",
     "description": "Unlocks the Fortune Teller Building, to increase exceptional craft odds.",
-    "notoReq": 56501,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 1200000,
     "type": "fortune",
     "subtype": "open"
@@ -453,7 +503,8 @@
     "id": "AL41041",
     "title": "Crystal Ballerina",
     "description": "Adds an additional Fortune Teller building option.",
-    "notoReq": 200000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 45000000,
     "type": "fortune",
     "subtype": "level"
@@ -462,7 +513,8 @@
     "id": "AL41042",
     "title": "With Less Ads",
     "description": "Adds an additional Fortune Teller building option.",
-    "notoReq": 300000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 225000000,
     "type": "fortune",
     "subtype": "level"
@@ -471,7 +523,8 @@
     "id": "AL4105",
     "title": "You Need A Break",
     "description": "Unlocks the Desynth Building, to break down your stuff.",
-    "notoReq": 251,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 2000,
     "type": "desynth",
     "subtype": "open"
@@ -480,7 +533,8 @@
     "id": "AL4106",
     "title": "Over Engineered",
     "description": "Unlocks the Tinker Hut, to make trinkets.",
-    "notoReq": 28001,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 300000,
     "type": "tinker",
     "subtype": "open"
@@ -489,7 +543,8 @@
     "id": "AL41061",
     "title": "Not The Train Kind",
     "description": "Increases the max star rating of trinkets.",
-    "notoReq": 82250,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 3000000,
     "type": "tinker",
     "subtype": "level"
@@ -498,7 +553,8 @@
     "id": "AL41062",
     "title": "Electrotastic",
     "description": "Increases the max star rating of trinkets.",
-    "notoReq": 139750,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 30000000,
     "type": "tinker",
     "subtype": "level"
@@ -507,7 +563,8 @@
     "id": "AL41063",
     "title": "Hertz Doughnuts",
     "description": "Increases the max star rating of trinkets.",
-    "notoReq": 213750,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 150000000,
     "type": "tinker",
     "subtype": "level"
@@ -516,7 +573,8 @@
     "id": "AL41064",
     "title": "Safety Not Guaranteed",
     "description": "Increases the max star rating of trinkets.",
-    "notoReq": 310250,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 625000000,
     "type": "tinker",
     "subtype": "level"
@@ -525,7 +583,8 @@
     "id": "AL41065",
     "title": "Push It To The Limit",
     "description": "Increases the max star rating of trinkets.",
-    "notoReq": 432250,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 32500000000,
     "type": "tinker",
     "subtype": "level"
@@ -534,7 +593,8 @@
     "id": "AL4107",
     "title": "Omega Moo",
     "description": "Unlocks the Monster House, a quizzical building.",
-    "notoReq": 150,
+    "mat": "M301",
+    "matAmt": 50,
     "goldCost": 1000,
     "type": "monster",
     "subtype": "open"
@@ -543,7 +603,8 @@
     "id": "AL41071",
     "title": "Quality Of Death",
     "description": "Adds special privileges to the Monster House.",
-    "notoReq": 12500,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 75000,
     "type": "monster",
     "subtype": "level"
@@ -552,7 +613,8 @@
     "id": "AL41072",
     "title": "Numbers Go Down",
     "description": "Adds special privileges to the Monster House.",
-    "notoReq": 40000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 800000,
     "type": "monster",
     "subtype": "level"
@@ -561,7 +623,8 @@
     "id": "AL4201",
     "title": "Big Parties",
     "description": "Increases party size for dungeons to 2",
-    "notoReq": 300,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 1500,
     "type": "adventure",
     "subtype": null
@@ -570,7 +633,8 @@
     "id": "AL4202",
     "title": "Bigger Parties",
     "description": "Increases party size for dungeons to 3",
-    "notoReq": 3500,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 15000,
     "type": "adventure",
     "subtype": null
@@ -579,7 +643,8 @@
     "id": "AL4203",
     "title": "Biggest Parties",
     "description": "Increases party size for dungeons to 4",
-    "notoReq": 12000,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 75000,
     "type": "adventure",
     "subtype": null
@@ -588,7 +653,8 @@
     "id": "AL5001",
     "title": "Slight Haven",
     "description": "Floor 50 now becomes a Sanctuary, a place for adventurers to rest.",
-    "notoReq": 1625,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000,
     "type": "sanctuary1",
     "subtype": null
@@ -597,7 +663,8 @@
     "id": "AL5002",
     "title": "Safe-ish Haven",
     "description": "Floor 100 now becomes a Sanctuary, a place for adventurers to rest.",
-    "notoReq": 7250,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 30000,
     "type": "sanctuary2",
     "subtype": null
@@ -606,7 +673,8 @@
     "id": "AL5003",
     "title": "Safe Haven",
     "description": "Floor 150 now becomes a Sanctuary, a place for adventurers to rest.",
-    "notoReq": 19750,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 200000,
     "type": "sanctuary3",
     "subtype": null
@@ -615,7 +683,8 @@
     "id": "AL5004",
     "title": "Safer Haven",
     "description": "Floor 200 now becomes a Sanctuary.",
-    "notoReq": 42250,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 800000,
     "type": "sanctuary4",
     "subtype": null
@@ -624,7 +693,8 @@
     "id": "AL5005",
     "title": "Most Safer Haven",
     "description": "Floor 250 now becomes a Sanctuary.",
-    "notoReq": 82250,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 3000000,
     "type": "sanctuary5",
     "subtype": null
@@ -633,7 +703,8 @@
     "id": "AL5006",
     "title": "Really Safe Haven",
     "description": "Floor 300 now becomes a Sanctuary.",
-    "notoReq": 139750,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 30000000,
     "type": "sanctuary6",
     "subtype": null
@@ -642,7 +713,8 @@
     "id": "AL5007",
     "title": "Super Safe Haven",
     "description": "Floor 350 now becomes a Sanctuary.",
-    "notoReq": 213750,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 150000000,
     "type": "sanctuary7",
     "subtype": null
@@ -651,7 +723,8 @@
     "id": "AL5008",
     "title": "Extremely Safe Haven",
     "description": "Floor 400 now becomes a Sanctuary.",
-    "notoReq": 310250,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 625000000,
     "type": "sanctuary8",
     "subtype": null
@@ -660,7 +733,8 @@
     "id": "AL5009",
     "title": "Mega Safe Haven",
     "description": "Floor 450 now becomes a Sanctuary.",
-    "notoReq": 432250,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 32500000000,
     "type": "sanctuary9",
     "subtype": null
@@ -669,7 +743,8 @@
     "id": "AL6001",
     "title": "Guild Power",
     "description": "Increase Guild Level Cap to 8",
-    "notoReq": 251,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 4000,
     "type": "cap",
     "subtype": 8
@@ -678,7 +753,8 @@
     "id": "AL6002",
     "title": "Guild Power II",
     "description": "Increase Guild Level Cap to 12",
-    "notoReq": 3001,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 30000,
     "type": "cap",
     "subtype": 12
@@ -687,7 +763,8 @@
     "id": "AL6003",
     "title": "Guild Power III",
     "description": "Increase Guild Level Cap to 16",
-    "notoReq": 11501,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 200000,
     "type": "cap",
     "subtype": 16
@@ -696,7 +773,8 @@
     "id": "AL6004",
     "title": "Guild Power IV",
     "description": "Increase Guild Level Cap to 20",
-    "notoReq": 28001,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 800000,
     "type": "cap",
     "subtype": 20
@@ -705,7 +783,8 @@
     "id": "AL6005",
     "title": "Guild Power V",
     "description": "Increase Guild Level Cap to 24",
-    "notoReq": 56501,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 3000000,
     "type": "cap",
     "subtype": 24
@@ -714,7 +793,8 @@
     "id": "AL6006",
     "title": "Guild Power VI",
     "description": "Increase Guild Level Cap to 28",
-    "notoReq": 108001,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 30000000,
     "type": "cap",
     "subtype": 28
@@ -723,7 +803,8 @@
     "id": "AL6007",
     "title": "Guild Power VII",
     "description": "Increase Guild Level Cap to 32",
-    "notoReq": 171501,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 150000000,
     "type": "cap",
     "subtype": 32
@@ -732,7 +813,8 @@
     "id": "AL6008",
     "title": "Guild Power VIII",
     "description": "Increase Guild Level Cap to 36",
-    "notoReq": 256001,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 625000000,
     "type": "cap",
     "subtype": 36
@@ -741,7 +823,8 @@
     "id": "AL6009",
     "title": "Guild Power IX",
     "description": "Increase Guild Level Cap to 40",
-    "notoReq": 364501,
+    "mat": "M310",
+    "matAmt": 25,
     "goldCost": 32500000000,
     "type": "cap",
     "subtype": 40

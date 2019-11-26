@@ -43,7 +43,6 @@ const ResourceManager = {
         this.materials.push(material);
     },
     addMaterial(res,amt) {
-        console.log(res,amt);
         if (res.charAt(0) === "R") {
             for (let i=0;i<amt;i++) Inventory.addToInventory(res,0,-1);
             return;

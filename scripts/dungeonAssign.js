@@ -207,13 +207,22 @@ function initializeSideBarDungeon() {
     DungeonManager.dungeons.forEach(dungeon => {
         if (dungeon.type !== "regular" && dungeon.status === DungeonStatus.EMPTY) return;
         const d = $("<div/>").addClass("dungeonGroup").appendTo($DungeonSideBarTeam);
-        const d1 = $("<div/>").addClass("DungeonSideBarStatus").attr("id","dsb"+dungeon.id).data("dungeonID",dungeon.id).appendTo(d);
+        const d1 = $("<div/>").addClass("DungeonSideBarStatus").data("dungeonID",dungeon.id).appendTo(d);
         if (dungeon.type === "regular" && dungeon.status === DungeonStatus.ADVENTURING) {
-            d1.addClass("DungeonSideBarAdventuring").html(`${dungeon.name} - Floor ${dungeon.floorCount}`);
+            d1.addClass("DungeonSideBarAdventuring");
+            const d2 = $("<div/>").addClass("dungeonFarmStatus").attr("id","dungeonFarm"+dungeon.id).data("gid",dungeon.id).html(`<i class="fas fa-recycle"></i>`).appendTo(d1);
+            if (!dungeon.progressNextFloor) d2.addClass("dungeonFarmActive");
+            $("<div/>").addClass("dungeonSidebarFloor").attr("id","dsb"+dungeon.id).html(`${dungeon.name} - ${dungeon.floorCount}`).appendTo(d1);
             $("<div/>").addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon.getRewards(),dungeon.id)).appendTo(d);
         }
         else d1.html(`${dungeon.name}`);
     });
+}
+
+function refreshDungeonFarmStatus(dungeonid) {
+    const dungeon = DungeonManager.dungeonByID(dungeonid);
+    if (dungeon.progressNextFloor) $("#dungeonFarm"+dungeonid).removeClass("dungeonFarmActive");
+    else $("#dungeonFarm"+dungeonid).addClass("dungeonFarmActive");
 }
 
 function refreshSidebarDungeonMats(dungeonID) {
@@ -274,4 +283,12 @@ $(document).on("click", "#notorietyHeading", (e) => {
     $("#actionLeague").show();
     $(".guildListButton").removeClass("selected");
     $("#actionLeagueTab").addClass("selected");
+});
+
+$(document).on("click", ".dungeonFarmStatus", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("toggled dungeon progress");
+    const gid = $(e.currentTarget).data("gid");
+    DungeonManager.dungeonByID(gid).toggleProgress();
 });

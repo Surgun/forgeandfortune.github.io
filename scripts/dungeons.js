@@ -185,7 +185,7 @@ class Dungeon {
         this.party.resetForFloor();
         if (refreshLater) return;
         initiateDungeonFloor(this.id);
-        $("#dsb"+this.id).html(`${this.name} - Floor ${this.floorCount}`);
+        $("#dsb"+this.id).html(`${this.name} - ${this.floorCount}`);
         refreshSidebarDungeonMats(this.id);
     }
     bossPercent() {
@@ -212,6 +212,7 @@ class Dungeon {
     toggleProgress(toggle) {
         toggle = toggle || !this.progressNextFloor;
         this.progressNextFloor = toggle;
+        refreshDungeonFarmStatus(this.id);
         if (DungeonManager.dungeonView !== this.id) return;
         if (toggle) $toggleProgress.html("Progressing");
         else $toggleProgress.html("Farming");

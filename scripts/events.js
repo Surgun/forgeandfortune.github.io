@@ -64,7 +64,6 @@ const EventManager = {
     readEvent(eventNum) {
         const event = this.eventNumToEvent(eventNum);
         if (event.reward !== null) {
-            console.log(event.reward);
             event.reward.forEach(reward => {
                 ResourceManager.addMaterial(reward.id, reward.amt);
             })
@@ -161,7 +160,6 @@ function dungeonDrops(event) {
     const d = $("<div/>").addClass("rewardDiv");
     const d1 = $("<div/>").addClass("rewardDivTitle").html("Rewards");
     d.append(d1);
-    console.log(event.reward);
     if (event.reward === undefined) return d;
     event.reward.forEach(reward => {
         const d2 = $("<div/>").addClass("rewardCard tooltip").attr("data-tooltip",ResourceManager.idToMaterial(reward.id).name);

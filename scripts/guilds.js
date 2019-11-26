@@ -62,7 +62,6 @@ class Guild {
     loadSave(save) {
         this.rep = save.rep;
         this.lvl = save.lvl;
-        console.log(save.order1.id,save.order1.gid,save.order1.lvl);
         this.order1 = new guildOrderItem(save.order1.gid,save.order1.id,save.order1.lvl);
         this.order1.loadSave(save.order1);
         this.order2 = new guildOrderItem(save.order2.gid,save.order2.id,save.order2.lvl);
@@ -136,7 +135,6 @@ class guildOrderItem {
         this.gid = gid;
         this.id = id;
         this.item = recipeList.idToItem(id);
-        console.log(id,this.item);
         this.lvl = lvl;
         this.rarity = this.generateRarity(lvl);
         this.sharp = this.generateSharp(lvl);
@@ -318,7 +316,6 @@ function refreshAllSales() {
 function refreshSales(guild) {
     const $gs = $(`#${guild.id}Sales`);
     $gs.empty();
-    console.log(guild.recipeToBuy());
     guild.recipeToBuy().forEach(recipe => {
         $gs.append(createRecipeBuyCard(recipe,guild.lvl));
     });

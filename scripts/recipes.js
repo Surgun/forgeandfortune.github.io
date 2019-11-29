@@ -102,6 +102,8 @@ class Item{
         refreshCraftedCount();
         refreshProgress();
         refreshMonsterReward();
+        GuildManager.repopulateUnmastered();
+        refreshAllRecipeMastery();
     }
     isMastered() {
         if (this.recipeType === "building" || this.recipeType === "Trinket") return false;
@@ -129,6 +131,11 @@ class Item{
     }
     reducedCraft() {
         return this.craftTime * MonsterHall.lineIncrease(this.type,0);
+    }
+    masteryCost() {
+        const amt = Math.max(100,1000-9*this.craftCount);
+        const material = this.mcost ? Object.keys(this.mcost)[0] : "M201";
+        return new idAmt(material,amt);
     }
 }
 
@@ -217,6 +224,9 @@ const recipeList = {
     },
     attemptMastery(recipeID) {
         this.idToItem(recipeID).attemptMastery();
+    },
+    unmasteredByGuild(guild) {
+        return this.recipes.filter(r=>r.guildUnlock === guild && !r.mastered && r.owned).map(r=>r.id);
     }
 }
 
@@ -376,8 +386,8 @@ function recipeCardBack(recipe) {
     const td9 = $('<div/>').addClass('recipeTabContainer recipeTabMastery');
         const td9a = $('<div/>').addClass('recipeMasteryContainer');
             const td9a1 = $('<div/>').addClass('recipeBackDescription').attr("id","rbd"+recipe.id).html("Crafting this recipe will reduce the cost to master it, down to a maximum of 100.");
-            const material = (recipe.mcost) ? Object.keys(recipe.mcost)[0] : "M201";
-            const td9a2 = $('<div/>').addClass('recipeTotalCrafted tooltip').attr({"id": "rcc"+recipe.id, "data-tooltip": `${ResourceManager.idToMaterial(material).name}`}).data("rid",recipe.id).html(`Master for ${Math.max(100,1000-9*recipe.craftCount)} ${ResourceManager.idToMaterial(material).img}`);
+            const masteryCost = recipe.masteryCost();
+            const td9a2 = $('<div/>').addClass('recipeTotalCrafted tooltip').attr({"id": "rcc"+recipe.id, "data-tooltip": `${ResourceManager.idToMaterial(masteryCost.id).name}`}).data("rid",recipe.id).html(`Master for ${masteryCost.amt} ${ResourceManager.idToMaterial(masteryCost.id).img}`);
             if (recipe.isMastered()) {
                 td9a1.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
                 td9a2.addClass("isMastered").html("MASTERED");

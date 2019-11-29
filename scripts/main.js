@@ -7,6 +7,7 @@ const player = {
 }
 
 function afterLoad() {
+    console.log("Begin Load: " + Date.now());
     $("#versionNum").html(PatchManager.lastVersion());
     refreshPatchNotes();
     initializeRecipes();
@@ -48,7 +49,10 @@ function afterLoad() {
     refreshMonsterReward();
     refreshMonsterRewardLines();
     refreshCraftTimes();
+    GuildManager.repopulateUnmastered();
+    refreshAllRecipeMastery();
     loading_screen.finish();
+    console.log("End Load: " + Date.now());
 }
 
 /* Load Message Selection */

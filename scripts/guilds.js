@@ -32,6 +32,9 @@ const GuildManager = {
     },
     maxLvl() {
         return Math.max(...this.guilds.map(g=>g.lvl));
+    },
+    repopulateUnmastered() {
+        this.guilds.forEach(g => g.repopulateUnmastered());
     }
 }
 
@@ -43,6 +46,7 @@ class Guild {
         this.order1 = null;
         this.order2 = null;
         this.order3 = null;
+        this.unmastered = [];
     }
     createSave() {
         const save = {};
@@ -52,6 +56,7 @@ class Guild {
         save.order1 = this.order1.createSave();
         save.order2 = this.order2.createSave();
         save.order3 = this.order3.createSave();
+        save.unmastered = this.unmastered;
         return save;
     }
     loadSave(save) {
@@ -63,6 +68,7 @@ class Guild {
         this.order2.loadSave(save.order2);
         this.order3 = new guildOrderItem(save.order3.gid,save.order3.id,save.order3.lvl);
         this.order3.loadSave(save.order3);
+        if (save.unmastered !== undefined) this.unmastered = save.unmastered;
     }
     addRep(rep) {
         if (this.maxLvlReached()) return;
@@ -122,6 +128,9 @@ class Guild {
     }
     maxLvlReached() {
         return this.lvl + 1 >= GuildManager.maxGuildLevel();
+    }
+    repopulateUnmastered() {
+        this.unmastered = recipeList.unmasteredByGuild(this.id);
     }
 }
 
@@ -217,6 +226,7 @@ function initializeGuilds() {
         refreshguildprogress(g);
         refreshguildOrder(g);
         refreshSales(g);
+        refreshRecipeMastery(g);
         refreshGuildWorkers(g);
     });
 };
@@ -348,6 +358,43 @@ function createWorkerBuyCard(worker) {
     const d5 = $('<div/>').addClass('workerBuyCardDesc tooltip').attr("data-tooltip",worker.description).html("<i class='fas fa-info-circle'></i>");
     return d1.append(d2,d3,d4,d5);
 };
+
+function refreshAllRecipeMastery() {
+    GuildManager.guilds.forEach(g=>refreshRecipeMastery(g));
+}
+
+function refreshRecipeMastery(guild) {
+    const $guildBlock = $(`#${guild.id}Mastery`);
+    $guildBlock.empty();
+    if (guild.unmastered.length === 0) $guildBlock.html("No recipes to master currently");
+    guild.unmastered.forEach(rid => {
+        const recipe = recipeList.idToItem(rid);
+        $guildBlock.append(createRecipeMasteryCard(recipe));
+    });
+    
+}
+
+function createRecipeMasteryCard(recipe) {
+    console.log(recipe);
+    const d1 = $("<div/>").addClass("recipeMasteryGuildCard");
+    $("<div/>").addClass("recipeMasteryGuildPicName").html(recipe.itemPicName()).appendTo(d1);
+    const masteryCost = recipe.masteryCost();
+    $("<div/>").addClass("recipeMasteryGuildButton").attr("id","rcm"+recipe.id).data("rid",recipe.id).html(`Master for ${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`).appendTo(d1);
+    return d1;
+}
+
+function refreshRecipeMasteryAmt(recipe) {
+    console.log(recipe);
+    const masteryCost = recipe.masteryCost();
+    $(`#rcm${recipe.id}`).html(`Master for ${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`);
+}
+
+//attempt a mastery
+$(document).on("click",".recipeMasteryGuildButton",(e) => {
+    e.preventDefault();
+    const rid = $(e.currentTarget).data("rid");
+    recipeList.attemptMastery(rid);
+});
 
 //submit a guild order
 $(document).on("click",".guildOrderSubmit",(e) => {

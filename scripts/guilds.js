@@ -277,7 +277,9 @@ function refreshguildOrder(guild) {
         return;
     }
     $go.append(createOrderCard(guild.order1,id,1));
+    if (guild.lvl < 4) return;
     $go.append(createOrderCard(guild.order2,id,2));
+    if (guild.lvl < 8) return;
     $go.append(createOrderCard(guild.order3,id,3));
 };
 
@@ -375,7 +377,6 @@ function refreshRecipeMastery(guild) {
 }
 
 function createRecipeMasteryCard(recipe) {
-    console.log(recipe);
     const d1 = $("<div/>").addClass("recipeMasteryGuildCard");
     $("<div/>").addClass("recipeMasteryGuildPicName").html(recipe.itemPicName()).appendTo(d1);
     const masteryCost = recipe.masteryCost();

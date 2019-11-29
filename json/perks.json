@@ -6,6 +6,7 @@
     "mat": "M101",
     "matAmt": 25,
     "goldCost": 300,
+    "unlockOrder": 1,
     "type": "worker",
     "subtype": "WN001"
   },
@@ -16,6 +17,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4000,
+    "unlockOrder": 22,
     "type": "worker",
     "subtype": "WN002"
   },
@@ -26,6 +28,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 300000,
+    "unlockOrder": 45,
     "type": "worker",
     "subtype": "WN003"
   },
@@ -36,6 +39,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4000000,
+    "unlockOrder": 60,
     "type": "worker",
     "subtype": "WN004"
   },
@@ -46,6 +50,7 @@
     "mat": "M101",
     "matAmt": 25,
     "goldCost": 300,
+    "unlockOrder": 2,
     "type": "worker",
     "subtype": "WN101"
   },
@@ -56,6 +61,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4000,
+    "unlockOrder": 23,
     "type": "worker",
     "subtype": "WN102"
   },
@@ -66,6 +72,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 300000,
+    "unlockOrder": 46,
     "type": "worker",
     "subtype": "WN103"
   },
@@ -76,6 +83,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4000000,
+    "unlockOrder": 61,
     "type": "worker",
     "subtype": "WN104"
   },
@@ -86,6 +94,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4000,
+    "unlockOrder": 21,
     "type": "worker",
     "subtype": "WN202"
   },
@@ -96,6 +105,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 300000,
+    "unlockOrder": 44,
     "type": "worker",
     "subtype": "WN203"
   },
@@ -106,6 +116,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4000000,
+    "unlockOrder": 59,
     "type": "worker",
     "subtype": "WN204"
   },
@@ -116,6 +127,7 @@
     "mat": "M101",
     "matAmt": 25,
     "goldCost": 300,
+    "unlockOrder": 3,
     "type": "worker",
     "subtype": "WN301"
   },
@@ -126,6 +138,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4000,
+    "unlockOrder": 24,
     "type": "worker",
     "subtype": "WN302"
   },
@@ -136,6 +149,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 300000,
+    "unlockOrder": 47,
     "type": "worker",
     "subtype": "WN303"
   },
@@ -146,6 +160,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4000000,
+    "unlockOrder": 62,
     "type": "worker",
     "subtype": "WN304"
   },
@@ -156,6 +171,7 @@
     "mat": "M101",
     "matAmt": 50,
     "goldCost": 500,
+    "unlockOrder": 4,
     "type": "hero",
     "subtype": "H001"
   },
@@ -166,6 +182,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 2000,
+    "unlockOrder": 15,
     "type": "hero",
     "subtype": "H002"
   },
@@ -176,6 +193,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 15000,
+    "unlockOrder": 27,
     "type": "hero",
     "subtype": "H003"
   },
@@ -186,6 +204,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 100000,
+    "unlockOrder": 39,
     "type": "hero",
     "subtype": "H004"
   },
@@ -196,6 +215,7 @@
     "mat": "M201",
     "matAmt": 25,
     "goldCost": 500,
+    "unlockOrder": 7,
     "type": "hero",
     "subtype": "H101"
   },
@@ -206,6 +226,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 2000,
+    "unlockOrder": 16,
     "type": "hero",
     "subtype": "H102"
   },
@@ -216,6 +237,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 15000,
+    "unlockOrder": 29,
     "type": "hero",
     "subtype": "H103"
   },
@@ -226,6 +248,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 100000,
+    "unlockOrder": 40,
     "type": "hero",
     "subtype": "H104"
   },
@@ -236,6 +259,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 2000,
+    "unlockOrder": 13,
     "type": "hero",
     "subtype": "H201"
   },
@@ -246,6 +270,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 15000,
+    "unlockOrder": 26,
     "type": "hero",
     "subtype": "H202"
   },
@@ -256,106 +281,117 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 100000,
+    "unlockOrder": 37,
     "type": "hero",
     "subtype": "H204"
   },
   {
     "id": "AL3001",
     "title": "Chance Of Splinters",
-    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "description": "Defeating this difficult enemy will unlock more recipes.",
     "mat": "M301",
     "matAmt": 100,
     "goldCost": 1000,
+    "unlockOrder": 8,
     "type": "boss",
     "subtype": "D010"
   },
   {
     "id": "AL3002",
     "title": "Wear Sunscreen",
-    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "description": "Defeating this difficult enemy will unlock more recipes.",
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4000,
+    "unlockOrder": 18,
     "type": "boss",
     "subtype": "D011"
   },
   {
     "id": "AL3003",
     "title": "He Who Walks Softly",
-    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "description": "Defeating this difficult enemy will unlock more recipes.",
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 30000,
+    "unlockOrder": 31,
     "type": "boss",
     "subtype": "D012"
   },
   {
     "id": "AL3004",
     "title": "Clown Car",
-    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "description": "Defeating this difficult enemy will unlock more recipes.",
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 200000,
+    "unlockOrder": 41,
     "type": "boss",
     "subtype": "D013"
   },
   {
     "id": "AL3005",
     "title": "Heterochromia",
-    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "description": "Defeating this difficult enemy will unlock more recipes.",
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 800000,
+    "unlockOrder": 51,
     "type": "boss",
     "subtype": "D014"
   },
   {
     "id": "AL3006",
     "title": "Just A Broken Limb",
-    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "description": "Defeating this difficult enemy will unlock more recipes.",
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 3000000,
+    "unlockOrder": 57,
     "type": "boss",
     "subtype": "D015"
   },
   {
     "id": "AL3007",
     "title": "Unextinguished",
-    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "description": "Defeating this difficult enemy will unlock more recipes.",
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 30000000,
+    "unlockOrder": 67,
     "type": "boss",
     "subtype": "D016"
   },
   {
     "id": "AL3008",
     "title": "He Who Now Limps",
-    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "description": "Defeating this difficult enemy will unlock more recipes.",
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 150000000,
+    "unlockOrder": 73,
     "type": "boss",
     "subtype": "D017"
   },
   {
     "id": "AL3009",
     "title": "Swagger Wagon",
-    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "description": "Defeating this difficult enemy will unlock more recipes.",
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 625000000,
+    "unlockOrder": 79,
     "type": "boss",
     "subtype": "D018"
   },
   {
     "id": "AL3010",
     "title": "Nystagmus",
-    "description": "Defeating this difficult enemy will increase your notoriety limit.",
+    "description": "Defeating this difficult enemy will unlock more recipes.",
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 32500000000,
+    "unlockOrder": 83,
     "type": "boss",
     "subtype": "D019"
   },
@@ -366,6 +402,7 @@
     "mat": "M201",
     "matAmt": 75,
     "goldCost": 250,
+    "unlockOrder": 5,
     "type": "craft",
     "subtype": null
   },
@@ -376,6 +413,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 1000,
+    "unlockOrder": 9,
     "type": "craft",
     "subtype": null
   },
@@ -386,6 +424,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4000,
+    "unlockOrder": 17,
     "type": "craft",
     "subtype": null
   },
@@ -396,6 +435,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 20000,
+    "unlockOrder": 30,
     "type": "craft",
     "subtype": null
   },
@@ -406,6 +446,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 60000,
+    "unlockOrder": 32,
     "type": "bank",
     "subtype": "open"
   },
@@ -416,6 +457,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 1600000,
+    "unlockOrder": 54,
     "type": "bank",
     "subtype": "level"
   },
@@ -426,6 +468,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 60000000,
+    "unlockOrder": 69,
     "type": "bank",
     "subtype": "level"
   },
@@ -436,6 +479,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 8000,
+    "unlockOrder": 19,
     "type": "cauldron",
     "subtype": "open"
   },
@@ -446,6 +490,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 150000,
+    "unlockOrder": 48,
     "type": "cauldron",
     "subtype": "level"
   },
@@ -456,6 +501,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4500000,
+    "unlockOrder": 63,
     "type": "cauldron",
     "subtype": "level"
   },
@@ -466,6 +512,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 90000,
+    "unlockOrder": 36,
     "type": "forge",
     "subtype": "open"
   },
@@ -476,6 +523,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 4500000,
+    "unlockOrder": 64,
     "type": "forge",
     "subtype": "level"
   },
@@ -486,6 +534,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 300000000,
+    "unlockOrder": 75,
     "type": "forge",
     "subtype": "level"
   },
@@ -496,6 +545,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 1200000,
+    "unlockOrder": 52,
     "type": "fortune",
     "subtype": "open"
   },
@@ -506,6 +556,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 45000000,
+    "unlockOrder": 70,
     "type": "fortune",
     "subtype": "level"
   },
@@ -516,6 +567,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 225000000,
+    "unlockOrder": 76,
     "type": "fortune",
     "subtype": "level"
   },
@@ -526,6 +578,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 2000,
+    "unlockOrder": 10,
     "type": "desynth",
     "subtype": "open"
   },
@@ -536,6 +589,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 300000,
+    "unlockOrder": 42,
     "type": "tinker",
     "subtype": "open"
   },
@@ -546,6 +600,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 3000000,
+    "unlockOrder": 55,
     "type": "tinker",
     "subtype": "level"
   },
@@ -556,6 +611,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 30000000,
+    "unlockOrder": 65,
     "type": "tinker",
     "subtype": "level"
   },
@@ -566,6 +622,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 150000000,
+    "unlockOrder": 71,
     "type": "tinker",
     "subtype": "level"
   },
@@ -576,6 +633,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 625000000,
+    "unlockOrder": 77,
     "type": "tinker",
     "subtype": "level"
   },
@@ -586,6 +644,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 32500000000,
+    "unlockOrder": 81,
     "type": "tinker",
     "subtype": "level"
   },
@@ -596,6 +655,7 @@
     "mat": "M301",
     "matAmt": 50,
     "goldCost": 1000,
+    "unlockOrder": 6,
     "type": "monster",
     "subtype": "open"
   },
@@ -606,6 +666,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 75000,
+    "unlockOrder": 35,
     "type": "monster",
     "subtype": "level"
   },
@@ -616,6 +677,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 800000,
+    "unlockOrder": 49,
     "type": "monster",
     "subtype": "level"
   },
@@ -626,6 +688,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 1500,
+    "unlockOrder": 12,
     "type": "adventure",
     "subtype": null
   },
@@ -636,6 +699,7 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 15000,
+    "unlockOrder": 25,
     "type": "adventure",
     "subtype": null
   },
@@ -646,187 +710,8 @@
     "mat": "M310",
     "matAmt": 25,
     "goldCost": 75000,
+    "unlockOrder": 34,
     "type": "adventure",
     "subtype": null
-  },
-  {
-    "id": "AL5001",
-    "title": "Slight Haven",
-    "description": "Floor 50 now becomes a Sanctuary, a place for adventurers to rest.",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 4000,
-    "type": "sanctuary1",
-    "subtype": null
-  },
-  {
-    "id": "AL5002",
-    "title": "Safe-ish Haven",
-    "description": "Floor 100 now becomes a Sanctuary, a place for adventurers to rest.",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 30000,
-    "type": "sanctuary2",
-    "subtype": null
-  },
-  {
-    "id": "AL5003",
-    "title": "Safe Haven",
-    "description": "Floor 150 now becomes a Sanctuary, a place for adventurers to rest.",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 200000,
-    "type": "sanctuary3",
-    "subtype": null
-  },
-  {
-    "id": "AL5004",
-    "title": "Safer Haven",
-    "description": "Floor 200 now becomes a Sanctuary.",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 800000,
-    "type": "sanctuary4",
-    "subtype": null
-  },
-  {
-    "id": "AL5005",
-    "title": "Most Safer Haven",
-    "description": "Floor 250 now becomes a Sanctuary.",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 3000000,
-    "type": "sanctuary5",
-    "subtype": null
-  },
-  {
-    "id": "AL5006",
-    "title": "Really Safe Haven",
-    "description": "Floor 300 now becomes a Sanctuary.",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 30000000,
-    "type": "sanctuary6",
-    "subtype": null
-  },
-  {
-    "id": "AL5007",
-    "title": "Super Safe Haven",
-    "description": "Floor 350 now becomes a Sanctuary.",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 150000000,
-    "type": "sanctuary7",
-    "subtype": null
-  },
-  {
-    "id": "AL5008",
-    "title": "Extremely Safe Haven",
-    "description": "Floor 400 now becomes a Sanctuary.",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 625000000,
-    "type": "sanctuary8",
-    "subtype": null
-  },
-  {
-    "id": "AL5009",
-    "title": "Mega Safe Haven",
-    "description": "Floor 450 now becomes a Sanctuary.",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 32500000000,
-    "type": "sanctuary9",
-    "subtype": null
-  },
-  {
-    "id": "AL6001",
-    "title": "Guild Power",
-    "description": "Increase Guild Level Cap to 8",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 4000,
-    "type": "cap",
-    "subtype": 8
-  },
-  {
-    "id": "AL6002",
-    "title": "Guild Power II",
-    "description": "Increase Guild Level Cap to 12",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 30000,
-    "type": "cap",
-    "subtype": 12
-  },
-  {
-    "id": "AL6003",
-    "title": "Guild Power III",
-    "description": "Increase Guild Level Cap to 16",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 200000,
-    "type": "cap",
-    "subtype": 16
-  },
-  {
-    "id": "AL6004",
-    "title": "Guild Power IV",
-    "description": "Increase Guild Level Cap to 20",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 800000,
-    "type": "cap",
-    "subtype": 20
-  },
-  {
-    "id": "AL6005",
-    "title": "Guild Power V",
-    "description": "Increase Guild Level Cap to 24",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 3000000,
-    "type": "cap",
-    "subtype": 24
-  },
-  {
-    "id": "AL6006",
-    "title": "Guild Power VI",
-    "description": "Increase Guild Level Cap to 28",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 30000000,
-    "type": "cap",
-    "subtype": 28
-  },
-  {
-    "id": "AL6007",
-    "title": "Guild Power VII",
-    "description": "Increase Guild Level Cap to 32",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 150000000,
-    "type": "cap",
-    "subtype": 32
-  },
-  {
-    "id": "AL6008",
-    "title": "Guild Power VIII",
-    "description": "Increase Guild Level Cap to 36",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 625000000,
-    "type": "cap",
-    "subtype": 36
-  },
-  {
-    "id": "AL6009",
-    "title": "Guild Power IX",
-    "description": "Increase Guild Level Cap to 40",
-    "mat": "M310",
-    "matAmt": 25,
-    "goldCost": 32500000000,
-    "type": "cap",
-    "subtype": 40
   }
 ]

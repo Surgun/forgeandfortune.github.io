@@ -201,8 +201,8 @@ const Notifications = {
         const icon = "error";
         popToast(text,heading,icon);
     },
-    alRewardCost() {
-        const text = "You do not have enough gold.";
+    perkCost() {
+        const text = "You do not have enough gold or materials.";
         const heading = "Cannot Purchase Perk";
         const icon = "error";
         popToast(text,heading,icon);

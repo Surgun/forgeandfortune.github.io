@@ -28,7 +28,6 @@ function showDungeonReward(dungeonID) {
             $("<div/>").addClass("dreLootDropImage").html(material.img).appendTo(d2);
             $("<div/>").addClass("dreLootDropAmt").html(drop.amt).appendTo(d2);
     });
-    $("<div/>").addClass("dreNotoriety").html(`You gained ${dungeon.notoriety()} notoriety with the Action League`).appendTo($dreLoot);
     if (dungeon.dropList.length === 0) $("<div/>").addClass("dreLootNone").html("No Loot Found").appendTo($dreLoot);
     $dreStats.empty();
     const d3 = $("<div/>").addClass("dreStatContainer").appendTo($dreStats);

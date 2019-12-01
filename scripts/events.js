@@ -125,13 +125,6 @@ class Event {
         if (save.itemReward !== undefined) this.itemReward = save.itemReward;
         if (save.beats !== undefined) this.beats = save.beats;
     }
-    notoriety() {
-        if (this.reward === null) return 0;
-        const noto = this.reward.map(r => {
-            return r.amt*ResourceManager.idToMaterial(r.id).notoAdd;
-        });
-        return noto.reduce((a,b) => a+b , 0);
-    }
 };
 
 const $eventList = $("#eventList");
@@ -204,12 +197,6 @@ $(document).on('click', "div.eventList", (e) => {
         const d5 = $("<div/>").addClass("iR"+event.itemReward.rarity).html(item.itemPicName());
         d.append(d5);
     }
-    if (event.reward !== null && event.id !== "E001") {
-        const d6 = $("<div/>").addClass("eventNotorietyContainer")
-        const d6a = $("<div/>").addClass("eventNotorietyHeading").html(`Notoriety Earned`);
-        const d6b = $("<div/>").addClass("eventNotoriety").html(` You have earned <span>${event.notoriety()} Notoriety</span>. Make use of it in The Action League.`)
-        d.append(d6.append(d6a,d6b));
-    }
     const d7 = $("<div/>").addClass("eventActionsContainer").appendTo(d);
         $("<div/>").addClass("eventConfirm eventActionButton").attr("eventID",eventNum).html("Accept").appendTo(d7);
     if (EventManager.seeOld) d7.hide();
@@ -250,15 +237,15 @@ function eventChecker() {
     if (!EventManager.hasSeen("E005") && achievementStats.totalItemsCrafted >= 10000) EventManager.addEvent("E005");
     if (!EventManager.hasSeen("E006") && masteredItem) EventManager.addEvent("E006");
     if (!EventManager.hasSeen("E007") && Inventory.full()) EventManager.addEvent("E007");
-    if (!EventManager.hasSeen("E009") && ActionLeague.purchased.includes("AL4101")) EventManager.addEvent("E009");
-    if (!EventManager.hasSeen("E010") && ActionLeague.purchased.includes("AL4102")) EventManager.addEvent("E010");
-    if (!EventManager.hasSeen("E011") && ActionLeague.purchased.includes("AL4103")) EventManager.addEvent("E011");
-    if (!EventManager.hasSeen("E012") && ActionLeague.purchased.includes("AL4104")) EventManager.addEvent("E012");
+    if (!EventManager.hasSeen("E009") && Shop.purchased.includes("AL4101")) EventManager.addEvent("E009");
+    if (!EventManager.hasSeen("E010") && Shop.purchased.includes("AL4102")) EventManager.addEvent("E010");
+    if (!EventManager.hasSeen("E011") && Shop.purchased.includes("AL4103")) EventManager.addEvent("E011");
+    if (!EventManager.hasSeen("E012") && Shop.purchased.includes("AL4104")) EventManager.addEvent("E012");
     if (!EventManager.hasSeen("E017") && achievementStats.highestFloor() >= 50) EventManager.addEvent("E017");
-    if (!EventManager.hasSeen("E019") && ActionLeague.purchased.includes("AL4106")) EventManager.addEvent("E019");
-    if (!EventManager.hasSeen("E020") && ActionLeague.purchased.includes("AL4107")) EventManager.addEvent("E020");
-    if (!EventManager.hasSeen("E021") && ActionLeague.purchased.includes("AL41071")) EventManager.addEvent("E021");
-    if (!EventManager.hasSeen("E022") && ActionLeague.purchased.includes("AL41072")) EventManager.addEvent("E022");
+    if (!EventManager.hasSeen("E019") && Shop.purchased.includes("AL4106")) EventManager.addEvent("E019");
+    if (!EventManager.hasSeen("E020") && Shop.purchased.includes("AL4107")) EventManager.addEvent("E020");
+    if (!EventManager.hasSeen("E021") && Shop.purchased.includes("AL41071")) EventManager.addEvent("E021");
+    if (!EventManager.hasSeen("E022") && Shop.purchased.includes("AL41072")) EventManager.addEvent("E022");
 }
 
 let masteredItem = false;

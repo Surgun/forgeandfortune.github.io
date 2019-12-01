@@ -3,13 +3,11 @@
 const GuildManager = {
     guilds : [],
     lastClicked : "G001",
-    maxGuildLevel : 4,
     addGuild(guild) {
         this.guilds.push(guild);
     },
     createSave() {
         const save = {};
-        save.maxGuildLevel = this.maxGuildLevel
         save.guilds = [];
         this.guilds.forEach(guild => {
             save.guilds.push(guild.createSave());
@@ -17,7 +15,6 @@ const GuildManager = {
         return save;
     },
     loadSave(save) {
-        if (save.maxGuildLevel !== undefined) this.maxGuildLevel = save.maxGuildLevel;
         save.guilds.forEach(guildSave => {
             const guild = this.idToGuild(guildSave.id);
             guild.loadSave(guildSave);
@@ -30,13 +27,14 @@ const GuildManager = {
         const guild = this.idToGuild(gid);
         guild.submitOrder();
     },
-    setMaxLvl(lvl) {
-        this.maxGuildLevel = Math.max(this.maxGuildLevel,lvl);
-        refreshAllOrders();
-        refreshAllSales();
+    maxGuildLevel() {
+        return (DungeonManager.bossCount()+1)*4-1;
     },
     maxLvl() {
         return Math.max(...this.guilds.map(g=>g.lvl));
+    },
+    repopulateUnmastered() {
+        this.guilds.forEach(g => g.repopulateUnmastered());
     }
 }
 
@@ -48,6 +46,7 @@ class Guild {
         this.order1 = null;
         this.order2 = null;
         this.order3 = null;
+        this.unmastered = [];
     }
     createSave() {
         const save = {};
@@ -57,6 +56,7 @@ class Guild {
         save.order1 = this.order1.createSave();
         save.order2 = this.order2.createSave();
         save.order3 = this.order3.createSave();
+        save.unmastered = this.unmastered;
         return save;
     }
     loadSave(save) {
@@ -68,6 +68,7 @@ class Guild {
         this.order2.loadSave(save.order2);
         this.order3 = new guildOrderItem(save.order3.gid,save.order3.id,save.order3.lvl);
         this.order3.loadSave(save.order3);
+        if (save.unmastered !== undefined) this.unmastered = save.unmastered;
     }
     addRep(rep) {
         if (this.maxLvlReached()) return;
@@ -84,7 +85,7 @@ class Guild {
         return miscLoadedValues["guildRepForLvls"][givenlvl];
     }
     recipeToBuy() {
-        return recipeList.filterByGuild(this.id).filter(r =>!r.owned && r.repReq <= GuildManager.maxGuildLevel).sort((a,b) => a.repReq-b.repReq);
+        return recipeList.filterByGuild(this.id).filter(r =>!r.owned && r.repReq <= GuildManager.maxGuildLevel()).sort((a,b) => a.repReq-b.repReq);
     }
     workers() {
         return WorkerManager.filterByGuild(this.id).filter(w => w.owned);
@@ -126,7 +127,10 @@ class Guild {
         return gold.reduce((a,b) => a+b);
     }
     maxLvlReached() {
-        return this.lvl + 1 >= GuildManager.maxGuildLevel;
+        return this.lvl + 1 >= GuildManager.maxGuildLevel();
+    }
+    repopulateUnmastered() {
+        this.unmastered = recipeList.unmasteredByGuild(this.id);
     }
 }
 
@@ -211,7 +215,6 @@ const $guildList = $("#guildList");
 
 function initializeGuilds() {
     $guildList.empty();
-    $("<div/>").addClass("guildListButton").data("gid","ActionLeague").attr("id","actionLeagueTab").html("The Action League").appendTo($guildList);
     GuildManager.guilds.forEach(g => {
         const d1 = $("<div/>").addClass("guildListButton").data("gid",g.id).html(g.name);
         if (GuildManager.lastClicked === g.id) d1.addClass("selected");
@@ -223,10 +226,9 @@ function initializeGuilds() {
         refreshguildprogress(g);
         refreshguildOrder(g);
         refreshSales(g);
+        refreshRecipeMastery(g);
         refreshGuildWorkers(g);
     });
-    refreshALperks();
-    refreshALprogress();
 };
 
 function checkCraftableStatus() {
@@ -275,7 +277,9 @@ function refreshguildOrder(guild) {
         return;
     }
     $go.append(createOrderCard(guild.order1,id,1));
+    if (guild.lvl < 4) return;
     $go.append(createOrderCard(guild.order2,id,2));
+    if (guild.lvl < 8) return;
     $go.append(createOrderCard(guild.order3,id,3));
 };
 
@@ -357,6 +361,42 @@ function createWorkerBuyCard(worker) {
     return d1.append(d2,d3,d4,d5);
 };
 
+function refreshAllRecipeMastery() {
+    GuildManager.guilds.forEach(g=>refreshRecipeMastery(g));
+}
+
+function refreshRecipeMastery(guild) {
+    const $guildBlock = $(`#${guild.id}Mastery`);
+    $guildBlock.empty();
+    if (guild.unmastered.length === 0) $guildBlock.html("No recipes to master currently");
+    guild.unmastered.forEach(rid => {
+        const recipe = recipeList.idToItem(rid);
+        $guildBlock.append(createRecipeMasteryCard(recipe));
+    });
+    
+}
+
+function createRecipeMasteryCard(recipe) {
+    const d1 = $("<div/>").addClass("recipeMasteryGuildCard");
+    $("<div/>").addClass("recipeMasteryGuildPicName").html(recipe.itemPicName()).appendTo(d1);
+    const masteryCost = recipe.masteryCost();
+    $("<div/>").addClass("recipeMasteryGuildButton").attr("id","rcm"+recipe.id).data("rid",recipe.id).html(`Master for ${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`).appendTo(d1);
+    return d1;
+}
+
+function refreshRecipeMasteryAmt(recipe) {
+    console.log(recipe);
+    const masteryCost = recipe.masteryCost();
+    $(`#rcm${recipe.id}`).html(`Master for ${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`);
+}
+
+//attempt a mastery
+$(document).on("click",".recipeMasteryGuildButton",(e) => {
+    e.preventDefault();
+    const rid = $(e.currentTarget).data("rid");
+    recipeList.attemptMastery(rid);
+});
+
 //submit a guild order
 $(document).on("click",".guildOrderSubmit",(e) => {
     e.preventDefault();
@@ -373,8 +413,7 @@ $(document).on("click",".guildListButton",(e) => {
     const gid = $(e.currentTarget).data("gid");
     GuildManager.lastClicked = gid;
     $(".guildContainer").hide();
-    if (gid === "ActionLeague") $("#actionLeague").show();
-    else $("#"+gid).show();
+    $("#"+gid).show();
 });
 
 
@@ -398,152 +437,4 @@ $(document).on('click', '.orderCraft', (e) => {
     e.stopPropagation();
     const itemID = $(e.currentTarget).attr("id");
     actionSlotManager.addSlot(itemID);
-});
-
-//********************************
-// ACTION LEAGUE STUFF
-//********************************/
-
-const ActionLeague = {
-    notoriety : 0,
-    purchased : [],
-    perks : [],
-    addPerk(reward) {
-        this.perks.push(reward);
-    },
-    createSave() {
-        const save = {};
-        save.notoriety = this.notoriety;
-        save.purchased = this.purchased;
-        return save;
-    },
-    loadSave(save) {
-        this.notoriety = save.notoriety;
-        this.purchased = save.purchased;
-    },
-    idToPerk(id) {
-        return this.perks.find(r=>r.id === id);
-    },
-    addNoto(amt) {
-        this.notoriety += amt
-        this.notoriety = Math.min(this.notoriety, this.maxNoto());
-        refreshALprogress();
-        refreshALbar();
-        refreshALperks();
-    },
-    maxNoto() {
-        return miscLoadedValues["notoCap"][DungeonManager.bossesBeat.length];
-    },
-    buyPerk(id) {
-        const perk = this.idToPerk(id);
-        if (ResourceManager.materialAvailable("M001") < perk.goldCost) {
-            Notifications.alRewardCost();
-            return;
-        }
-        ResourceManager.deductMoney(perk.goldCost);
-        this.purchased.push(id);
-        perk.activate();
-        refreshALperks();
-        refreshProgress();
-    },
-    nextUnlock() {
-        const perks = this.perks.filter(p => p.notoReq > this.notoriety && !this.purchased.includes(p.id));
-        const perkNoto = perks.map(p=>p.notoReq);
-        const lowest = Math.min(...perkNoto);
-        return this.perks.find(p => p.notoReq === lowest);
-    },
-    perkCount() {
-        return this.purchased.length;
-    },
-    perkMaxCount() {
-        return this.perks.length;
-    }
-}
-
-class alRewards {
-    constructor (props) {
-        Object.assign(this, props);
-        this.image = `<img src='images/perks/${this.id}.png'>`;
-    }
-    activate() {
-        if (this.type === "hero") HeroManager.gainHero(this.subtype);
-        if (this.type === "worker") WorkerManager.gainWorker(this.subtype);
-        if (this.type === "boss") DungeonManager.unlockDungeon(this.subtype);
-        if (this.type === "craft") actionSlotManager.upgradeSlot();
-        if (this.type === "adventure") DungeonManager.partySize += 1;
-        if (this.type === "cap") GuildManager.setMaxLvl(this.subtype);
-        if (this.type === "desynth" && this.subtype === "open") TownManager.buildingPerk("desynth");
-        if (this.type === "bank" && this.subtype === "open") TownManager.buildingPerk("bank");
-        if (this.type === "bank" && this.subtype === "level") BankManager.addLevel();
-        if (this.type === "cauldron" && this.subtype === "open") TownManager.buildingPerk("fusion");
-        if (this.type === "cauldron" && this.subtype === "level") FusionManager.addLevel();
-        if (this.type === "forge" && this.subtype === "open") TownManager.buildingPerk("forge");
-        if (this.type === "forge" && this.subtype === "level") bloopSmith.addLevel();
-        if (this.type === "fortune" && this.subtype === "open") TownManager.buildingPerk("fortune");
-        if (this.type === "fortune" && this.subtype === "level") FortuneManager.addLevel();
-        if (this.type === "tinker" && this.subtype === "open") TownManager.buildingPerk("tinker");
-        if (this.type === "tinker" && this.subtype === "level") TinkerManager.addLevel();
-        if (this.type === "monster" && this.subtype === "open") TownManager.buildingPerk("monster");
-        if (this.type === "monster" && this.subtype === "level") MonsterHall.addLevel();
-    }
-}
-
-const $algp = $("#ALProgress");
-const $alp = $("#ALPerks");
-
-function refreshALprogress() {
-    $algp.empty();
-    $algp.html(createALGuildBar());
-}
-
-function createALGuildBar() {
-    const notoPercent = ActionLeague.notoriety/ActionLeague.maxNoto();
-    const notoWidth = (notoPercent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("notoBarDiv");
-    const d2 = $("<div/>").addClass("notoBar").attr("data-label",`Notoriety - ${ActionLeague.notoriety}/${ActionLeague.maxNoto()}`);
-    const s1 = $("<span/>").addClass("notoBarFill").css('width',notoWidth);
-    return d1.append(d2,s1);
-}
-
-function refreshALperks() {
-    $alp.empty();
-    const perks = ActionLeague.perks.filter(p=> p.notoReq <= ActionLeague.notoriety && !ActionLeague.purchased.includes(p.id));
-    perks.forEach((perk,i) => {
-        $alp.append(createALperk(perk,true));
-    });
-    const nextperk = ActionLeague.nextUnlock();
-    if (nextperk === undefined) return;
-    $alp.append(createALperk(nextperk,false));
-}
-
-const $notoBar = $("#notoBar");
-const $notoBarFill = $("#notoBarFill");
-
-function refreshALbar() {
-    const notoPercent = ActionLeague.notoriety/ActionLeague.maxNoto();
-    const notoWidth = (notoPercent*100).toFixed(1)+"%";
-    $notoBar.attr("data-label",`${formatToUnits(ActionLeague.notoriety,2)}/${formatToUnits(ActionLeague.maxNoto(),2)}`);
-    $notoBarFill.css('width', notoWidth);
-}
-
-function createALperk(perk,canbuy) {
-    const d1 = $("<div/>").addClass("alPerk");
-    const d2 = $("<div/>").addClass("alTitle").html(perk.title);
-    const d3 = $("<div/>").addClass("alImage").html(perk.image);
-    const d4 = $("<div/>").addClass("alDesc").html(perk.description);
-    if (canbuy) {
-        const d5 = $("<div/>").addClass("alPerkBuy").data("pid",perk.id);
-            $("<div/>").addClass("alPerkBuyText").html("Unlock").appendTo(d5);
-            $("<div/>").addClass("alPerkBuyCost").html(`${miscIcons.gold} ${formatToUnits(perk.goldCost,2)}`).appendTo(d5);
-        return d1.append(d2,d3,d4,d5);
-    }
-    const d6 = $("<div/>").addClass("alPerkCantBuy").html(`Available at ${perk.notoReq} Notoriety`);
-    return d1.append(d2,d3,d4,d6)
-}
-
-//buy a perk
-$(document).on("click",".alPerkBuy", (e) => {
-    e.preventDefault();
-    const perkid = $(e.currentTarget).data("pid");
-    ActionLeague.buyPerk(perkid);
 });

@@ -168,7 +168,6 @@ class Dungeon {
     addRewards() {
         const rewards = this.getRewards();
         ResourceManager.addMaterial(rewards.id,rewards.amt);
-        ActionLeague.addNoto(this.notoriety());
     }
     nextFloor(refreshLater, previousFloor) {
         if (!previousFloor && this.floorCount > 0) this.addRewards();
@@ -192,9 +191,6 @@ class Dungeon {
         if (this.type !== "boss") return "0%";
         const boss = this.mobs.find(m=>m.event === "boss")
         return Math.round(100*boss.hp/boss.maxHP())+"%";
-    }
-    notoriety() {
-        return this.floorCount;
     }
     bossDifficulty() {
         if (this.type === "regular") return 0;

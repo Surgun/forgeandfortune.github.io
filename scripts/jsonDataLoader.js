@@ -127,8 +127,8 @@ function loadPerks() {
         url: "json/perks.json",
     }).done((data) => {
         $.each(data, function(i,props){
-            const perk = new alRewards(props);
-            ActionLeague.addPerk(perk);
+            const perk = new Perk(props);
+            Shop.addPerk(perk);
         });
         loadMobs();
     });

@@ -41,7 +41,7 @@ function initializeHeroList() {
     if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
         const bh1 = $("<div/>").addClass("buyNewHeroCard")
         const bh2 = $("<div/>").addClass("buyNewHeroTitle").html(`Looking for more Heroes?`);
-        const bh3 = $("<div/>").addClass("buyNewHeroDesc").html(`Gain notoriety with the Action League to unlock more!`);
+        const bh3 = $("<div/>").addClass("buyNewHeroDesc").html(`Check the Market to get more!`);
         bh1.append(bh2,bh3);
         $heroList.append(bh1);
     }

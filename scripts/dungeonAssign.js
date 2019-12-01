@@ -274,17 +274,6 @@ function refreshDungeonMatBar(dungeonid) {
     $("#dsbrf"+dungeonid).css('width',matWidth);
 }
 
-
-$(document).on("click", "#notorietyHeading", (e) => {
-    e.preventDefault();
-    openTab('guildTab');
-    GuildManager.lastClicked = "ActionLeague";
-    $(".guildContainer").hide();
-    $("#actionLeague").show();
-    $(".guildListButton").removeClass("selected");
-    $("#actionLeagueTab").addClass("selected");
-});
-
 $(document).on("click", ".dungeonFarmStatus", (e) => {
     e.preventDefault();
     e.stopPropagation();

@@ -3,7 +3,6 @@
 let stopSave = false;
 
 
-
 function ClearSave() {
     localStorage.removeItem("ffgs1");
     location.replace('/');
@@ -63,7 +62,7 @@ function createSave() {
     saveFile["tm"] = TownManager.createSave();
     saveFile["gsm"] = GuildSeedManager.createSave();
     saveFile["g"] = GuildManager.createSave();
-    saveFile["al"] = ActionLeague.createSave();
+    saveFile["al"] = Shop.createSave();
     saveFile["t"] = TinkerManager.createSave();
     saveFile["mh"] = MonsterHall.createSave();
     saveFile["saveTime"] = Date.now();
@@ -99,7 +98,7 @@ function loadGame() {
     if (typeof loadGame["tm"] !== "undefined") TownManager.loadSave(loadGame["tm"]);
     if (typeof loadGame["gsm"] !== "undefined") GuildSeedManager.loadSave(loadGame["gsm"]);
     if (typeof loadGame["g"] !== "undefined") GuildManager.loadSave(loadGame["g"]);
-    if (typeof loadGame["al"] !== "undefined") ActionLeague.loadSave(loadGame["al"]);
+    if (typeof loadGame["al"] !== "undefined") Shop.loadSave(loadGame["al"]);
     if (typeof loadGame["t"] !== "undefined") TinkerManager.loadSave(loadGame["t"]);
     if (typeof loadGame["mh"] !== "undefined") MonsterHall.loadSave(loadGame["mh"]);
     return true;
@@ -158,7 +157,6 @@ function saveUpdate(loadGame) {
 
         //setup action league import and unlock perks already owned
         loadGame["al"] = {};
-        loadGame["al"].notoriety = 0;
         loadGame["al"].purchased = [];
         if (loadGame["w"].find(w=>w.id === "W002").owned) loadGame["al"].purchased.push("AL1002");
         if (loadGame["w"].find(w=>w.id === "W003").owned) loadGame["al"].purchased.push("AL1003");
@@ -201,66 +199,6 @@ function saveUpdate(loadGame) {
         if (loadGame["tm"].fuseStatus !== BuildingState.hidden) loadGame["al"].purchased.push("AL4102");
         if (loadGame["tm"].smithStatus !== BuildingState.hidden) loadGame["al"].purchased.push("AL4103");
         if (loadGame["tm"].fortuneStatus !== BuildingState.hidden) loadGame["al"].purchased.push("AL4104");
-
-        //now we have to take the highest perk you've bought, and make sure your notoriety matches it... or you have materials higher than the cap... ugh
-        const notoReq = loadGame["al"].purchased.map(p => {
-            if (ActionLeague.idToPerk(p) === undefined) return 0;
-            return ActionLeague.idToPerk(p).notoReq;
-        });
-        const maxNoto = Math.max(...notoReq);
-
-        const materialTier = loadGame["rs"].map(r => {
-            if (ResourceManager.idToMaterial(r.id) === undefined) return 0;
-            return ResourceManager.idToMaterial(r.id).notoAdd;
-        });
-        const maxTier = Math.max(...materialTier);
-
-            //we can't just set max notoriety, we have to fix the cap too which is killing the bosses...
-            //i just do a bunch of if statements for each because it's easier than a weird for loop
-        if (ActionLeague.maxNoto() < maxNoto || maxTier > 1) {
-            loadGame["al"].purchased.push("AL3001");
-            DungeonManager.bossesBeat.push("D010");
-        }
-        if (ActionLeague.maxNoto() < maxNoto || maxTier > 2) {
-            loadGame["al"].purchased.push("AL3002");
-            DungeonManager.bossesBeat.push("D011");
-        }
-        if (ActionLeague.maxNoto() < maxNoto || maxTier > 3) {
-            loadGame["al"].purchased.push("AL3003");
-            DungeonManager.bossesBeat.push("D012");
-        }
-        if (ActionLeague.maxNoto() < maxNoto || maxTier > 4) {
-            loadGame["al"].purchased.push("AL3004");
-            DungeonManager.bossesBeat.push("D013");
-        }
-        if (ActionLeague.maxNoto() < maxNoto || maxTier > 5) {
-            loadGame["al"].purchased.push("AL3005");
-            DungeonManager.bossesBeat.push("D014");
-        }
-        if (ActionLeague.maxNoto() < maxNoto || maxTier > 6) {
-            loadGame["al"].purchased.push("AL3006");
-            DungeonManager.bossesBeat.push("D015");
-        }
-        if (ActionLeague.maxNoto() < maxNoto || maxTier > 7) {
-            loadGame["al"].purchased.push("AL3007");
-            DungeonManager.bossesBeat.push("D016");
-        }
-        if (ActionLeague.maxNoto() < maxNoto || maxTier > 8) {
-            loadGame["al"].purchased.push("AL3008");
-            DungeonManager.bossesBeat.push("D017");
-        }
-        if (ActionLeague.maxNoto() < maxNoto || maxTier > 9) {
-            loadGame["al"].purchased.push("AL3009");
-            DungeonManager.bossesBeat.push("D018");
-        }
-
-        //add the missing notoriety based of boss kills (that's why we recalculate)
-        const notoReq2 = loadGame["al"].purchased.map(p => {
-            if (ActionLeague.idToPerk(p) === undefined) return 0;
-            return ActionLeague.idToPerk(p).notoReq
-        });
-        const maxNoto2 = Math.max(...notoReq2);
-        loadGame["al"].notoriety = maxNoto2;
     }
     if (loadGame.v === "03") {
         loadGame.v = "0308";
@@ -496,16 +434,10 @@ function saveUpdate(loadGame) {
 
         //buy max level perks you should own
         loadGame["g"].maxGuildLevel = 0;
-        ActionLeague.perks.filter(p=>p.type === "cap").forEach(perk => {
-            if (perk.notoReq <= loadGame["al"].notoriety) {
-                loadGame["al"].purchased.push(perk.id);
-                loadGame["g"].maxGuildLevel = Math.max(loadGame["g"].maxGuildLevel,perk.subtype);
-            }
-        });
     }
     if (loadGame.v === "0310") {
         loadGame.v = "0312";
-        const alp = ActionLeague.perks.map(p => p.id)
+        const alp = Shop.perks.map(p => p.id)
         loadGame["al"].purchased = loadGame["al"].purchased.filter(p => alp.includes(p));
     }
     const matConversion = {
@@ -567,8 +499,6 @@ function saveUpdate(loadGame) {
                 mat.id = matConversion[mat.id];
             });
         });
-        //fix notoriety
-        if (loadGame["al"].notoriety === null) loadGame["al"].notoriety = 500000;
         //and finally fix fortune
         if (matConversion[loadGame["fo"].goodReq] !== undefined) loadGame["fo"].goodReq = matConversion[loadGame["fo"].goodReq];
         if (matConversion[loadGame["fo"].greatReq] !== undefined) loadGame["fo"].greatReq = matConversion[loadGame["fo"].greatReq];
@@ -693,7 +623,6 @@ function saveUpdate(loadGame) {
     if (loadGame.v === "03211") {
         loadGame.v = "03212";
         loadGame["d"].bossesBeat = [...new Set(loadGame["d"].bossesBeat)];
-        if (loadGame["al"].notoriety === null) loadGame["al"].notoriety = miscLoadedValues["notoCap"][loadGame["d"].bossesBeat.length]
     }
     if (loadGame.v === "03212") {
         loadGame.v = "0334";

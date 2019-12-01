@@ -31,12 +31,12 @@ function refreshProgress() {
     tally += recipeList.masteryCount();
     max += recipeList.recipeCount();
     
-    $plPerk.html(`${ActionLeague.perkCount()}/${ActionLeague.perkMaxCount()}`);
-    const perkPercent = (ActionLeague.perkCount()/ActionLeague.perkMaxCount()*100).toFixed(2);
+    $plPerk.html(`${Shop.perkCount()}/${Shop.perkMaxCount()}`);
+    const perkPercent = (Shop.perkCount()/Shop.perkMaxCount()*100).toFixed(2);
     $pbPerk.css('width', perkPercent+"%");
     if (perkPercent === "100.00") $pbPerk.addClass("Completed");
-    tally += ActionLeague.perkCount();
-    max += ActionLeague.perkMaxCount();
+    tally += Shop.perkCount();
+    max += Shop.perkMaxCount();
 
     const overallPercent = tally/max;
     if (overallPercent === 1 && achievementStats.endTime === -1) achievementStats.endTime = Date.now();

@@ -97,7 +97,7 @@ const devtools = {
     },
     allPerks() {
         this.addGold(1000000000000000);
-        ActionLeague.perks.forEach(p=>ActionLeague.buyPerk(p.id));
+        Shop.perks.forEach(p=>Shop.buyPerk(p.id));
     },
     addTrinkets() {
         const trinkets = ["R90001","R90002","R90003"]

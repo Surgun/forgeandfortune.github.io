@@ -1,0 +1,130 @@
+[
+  {
+    "id": "gold_dynamic",
+    "title": "Gold",
+    "description": "Standard currency used for various purchases.",
+    "icon": "/images/resources/M001.png",
+    "isFont": false,
+    "isDynamic": true
+  },
+  {
+    "id": "gold",
+    "title": "Gold",
+    "description": "Standard currency used for various purchases.",
+    "icon": "/images/resources/M001.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "rep",
+    "title": "Reputation",
+    "description": "Amount of reputation you have accumulated.",
+    "icon": "<i class=\"far fa-grin-alt\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "in_inventory",
+    "title": "In Inventory",
+    "description": "Amount currently in your inventory.",
+    "icon": "<i class=\"fas fa-cube\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "hp",
+    "title": "Health",
+    "description": "The amount of damage an entity can sustain before being downed.",
+    "icon": "<i class=\"fas fa-heart statHP\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "pow",
+    "title": "Power",
+    "description": "The amount of damage an entity is capable of dealing.",
+    "icon": "<i class=\"fad fa-sword statPOW\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "spower",
+    "title": "Special Power",
+    "description": "The amount of damage an entity can deal with special attacks.",
+    "icon": "<i class=\"fas fa-book-spells statSPOW\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "armor",
+    "title": "Armor",
+    "description": "The damage resistance an entity possesses.",
+    "icon": "<i class=\"fas fa-shield statARMOR\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "crit",
+    "title": "Critical Chance",
+    "description": "The chance an entity will deal bonus damage on attack.",
+    "icon": "<i class=\"fas fa-dagger statCRIT\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "dodge",
+    "title": "Dodge",
+    "description": "The chance an entity will avoid an attack.",
+    "icon": "<i class=\"fas fa-hood-cloak statDODGE\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "clear_save",
+    "title": "Clear Saved Game Data",
+    "description": "Permanently delete your current saved game data. This action is irreversible.",
+    "icon": "<i class=\"fas fa-file-times\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "import_save",
+    "title": "Import Game Data",
+    "description": "Export your current game data for sharing or importing at a later time.",
+    "icon": "<i class=\"fas fa-file-export\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "export_save",
+    "title": "Export Game Data",
+    "description": "Import your own previously exported data or shared game data.",
+    "icon": "<i class=\"fas fa-file-import\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "cloud_save",
+    "title": "Save or Load from Cloud",
+    "description": "Save or load your game data from the Cloud using Playfab.",
+    "icon": "<i class=\"fas fa-cloud-download\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "settings",
+    "title": "Settings",
+    "description": "Change your game preferences and settings.",
+    "icon": "<i class=\"fas fa-cog\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "debug",
+    "title": "Development Options",
+    "description": "Development and debugging options for testing various mechanics, environments and features.",
+    "icon": "<i class=\"fas fa-bug\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  }
+]

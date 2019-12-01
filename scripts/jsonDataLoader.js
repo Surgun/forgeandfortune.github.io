@@ -214,6 +214,18 @@ function loadDialogs() {
             const dialog = new Dialog(props);
             DialogManager.addDialog(dialog);
         });
+        loadTooltips();
+    });
+}
+
+function loadTooltips() {
+    $.ajax({
+        url: "json/tooltips.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            const tooltip = new Tooltip(props);
+            TooltipManager.addTooltip(tooltip);
+        });
         afterLoad();
     });
 }

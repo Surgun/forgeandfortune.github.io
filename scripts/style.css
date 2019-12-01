@@ -7234,7 +7234,7 @@ footer a[href*="discord.gg"]:hover {
 
 /* Tooltips */
 
-.tooltip:before {
+/* .tooltip:before {
     display: inline-block;
     position: absolute;
     left: 50%;
@@ -7289,7 +7289,7 @@ footer a[href*="discord.gg"]:hover {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     -webkit-transform: rotate(180deg) translateX(50%);
     transform: rotate(180deg) translateX(50%);
-}
+} */
 
 .isDialog.tooltip:after {
     width: 250px;
@@ -9165,4 +9165,60 @@ span.beta-tag {
 
 .guildItemSubmitItem.RewardRep {
     color: var(--green-primary);
+}
+
+#tooltips {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.tooltip-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    background-color: rgba(0,0,0,.95);
+    border: 2px solid var(--border-secondary);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    z-index: 999;
+    max-width: 350px;
+    width: 100%;
+    transition: all 200ms ease-in-out;
+    animation: 0.2s fade-in;
+}
+
+.destroyingTooltip {
+    opacity: 0;
+}
+
+.tooltip-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 0 10px 0 0;
+    padding: 5px 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-primary);
+    background-position: center;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.tooltip-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.tooltip-description {
+    color: var(--text-secondary);
 }

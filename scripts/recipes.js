@@ -324,7 +324,7 @@ function recipeCardFront(recipe) {
     td4.append(td4a);
 
     const td5 = $('<div/>').addClass('recipeTimeAndValue');
-        const td5a = $('<div/>').addClass('recipeTimeContainer tooltip').attr("data-tooltip", "Craft Time")
+        const td5a = $('<div/>').addClass('recipeTimeContainer tooltip').attr("data-tooltip", "crafting_time")
             const td5a1 = $("<div/>").addClass("recipeTimeHeader recipeCardHeader").html(`<i class="fas fa-clock"></i>`);
             const td5a2 = $('<div/>').addClass('recipeTime').attr("id",`rt${recipe.id}`).html(msToTime(recipe.reducedCraft()));
         td5a.append(td5a1,td5a2);
@@ -334,7 +334,7 @@ function recipeCardFront(recipe) {
             $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`).appendTo(td5b);
         if (recipe.recipeType !== "normal") td5b.hide();
 
-        const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr("data-tooltip", `${recipe.itemValue()} Gold`);
+        const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr({"data-tooltip": "gold", "data-tooltip-value": recipe.itemValue()});
             $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`).appendTo(td5c);
             $('<div/>').addClass('recipeValue').html(recipe.itemValueFormatted()).appendTo(td5c);
         if (recipe.recipeType !== "normal") td5c.hide();

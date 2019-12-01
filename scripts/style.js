@@ -258,7 +258,7 @@ function addButtonDB() {
     const footer = $("#bottom-left");
     let dbButton = $("#debug");
     if (!dbButton.length) {
-        dbButton = $("<a/>").attr("id", "debug").addClass("isDialog tooltip").attr("data-tooltip", "Development options for tesing various functions, mechanics and interfaces.").html(`<i class="fas fa-bug"></i> Debug`)
+        dbButton = $("<a/>").attr("id", "debug").addClass("isDialog tooltip").attr("data-tooltip", "debug").html(`<i class="fas fa-bug"></i> Debug`)
         footer.append(dbButton);
     }
 }

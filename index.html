@@ -641,11 +641,11 @@
             </div>
             <footer role="contentinfo">
                 <div id="bottom-left">
-                    <a id="clearSave" data-dialog-id="clear_save" class="isDialog tooltip" data-tooltip="Permanently delete your current saved game data. This action is irreversible."><i class="fas fa-file-times"></i> Clear Save</a>
-                    <a id="exportSave" data-dialog-id="export_save" class="isDialog tooltip" data-tooltip="Export your current game data for sharing or importing at a later time."><i class="fas fa-file-export"></i> Export Save</a>
-                    <a id="importSave" data-dialog-id="import_save" class="isDialog tooltip" data-tooltip="Import your own previously exported data or shared game data."><i class="fas fa-file-import"></i> Import Save</a>
-                    <a id="cloudSave" data-dialog-id="playfab" class="isDialog tooltip" data-tooltip="Save or load your game data from the Cloud using Playfab."><i class="fas fa-cloud-download"></i> Cloud Save</a>
-                    <a id="settings" data-dialog-id="settings" class="isDialog tooltip" data-tooltip="Change your game preferences and settings."><i class="fas fa-cog"></i> Settings</a>
+                    <a id="clearSave" data-dialog-id="clear_save" class="isDialog tooltip" data-tooltip="clear_save"><i class="fas fa-file-times"></i> Clear Save</a>
+                    <a id="exportSave" data-dialog-id="export_save" class="isDialog tooltip" data-tooltip="export_save"><i class="fas fa-file-export"></i> Export Save</a>
+                    <a id="importSave" data-dialog-id="import_save" class="isDialog tooltip" data-tooltip="import_save"><i class="fas fa-file-import"></i> Import Save</a>
+                    <a id="cloudSave" data-dialog-id="playfab" class="isDialog tooltip" data-tooltip="cloud_save"><i class="fas fa-cloud-download"></i> Cloud Save</a>
+                    <a id="settings" data-dialog-id="settings" class="isDialog tooltip" data-tooltip="settings"><i class="fas fa-cog"></i> Settings</a>
                 </div>
                 <div id="bottom-right">
                     <a class="isDialog" data-dialog-id="patch_notes" id="versionNum">fetching...</a>
@@ -722,6 +722,7 @@
         </div>
     </section>
     <div id="db-panel"></div>
+    <div id="tooltips"></div>
 
     <script type="text/javascript" src="scripts/please-wait.min.js"></script>
     <script src="external/jquery/jquery.js"></script>
@@ -770,5 +771,6 @@
     <script language="javascript" src="scripts/lz-string.js"></script>
     <script src="scripts/toastifications.js"></script>
     <script src="scripts/style.js"></script>
+    <script src="scripts/tooltips.js"></script>
 </body>
 </html>

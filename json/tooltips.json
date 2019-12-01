@@ -8,6 +8,14 @@
     "isDynamic": false
   },
   {
+    "id": "gold_d",
+    "title": "Gold",
+    "description": "Standard currency used for various purchases.",
+    "icon": "/images/resources/M001.png",
+    "isFont": false,
+    "isDynamic": true
+  },
+  {
     "id": "rep",
     "title": "Reputation",
     "description": "Amount of reputation you have accumulated.",
@@ -122,7 +130,7 @@
   {
     "id": "crafting_time",
     "title": "Crafting Time",
-    "description": "The amount of time needed to fully craft this recipe.",
+    "description": "The amount of time needed to craft this recipe.",
     "icon": "<i class=\"fas fa-clock\"></i>",
     "isFont": true,
     "isDynamic": false
@@ -134,5 +142,301 @@
     "icon": "/images/resources/M001.png",
     "isFont": false,
     "isDynamic": true
+  },
+  {
+    "id": "M002",
+    "title": "Monster Trophy",
+    "description": null,
+    "icon": "/images/resources/M002.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M101",
+    "title": "Emerald Slime",
+    "description": null,
+    "icon": "/images/resources/M101.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M102",
+    "title": "Peach Slime",
+    "description": null,
+    "icon": "/images/resources/M102.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M103",
+    "title": "Indigo Slime",
+    "description": null,
+    "icon": "/images/resources/M103.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M104",
+    "title": "Ginger Slime",
+    "description": null,
+    "icon": "/images/resources/M104.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M105",
+    "title": "Stinky Slime",
+    "description": null,
+    "icon": "/images/resources/M105.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M106",
+    "title": "Clear Slime",
+    "description": null,
+    "icon": "/images/resources/M106.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M107",
+    "title": "Magenta Slime",
+    "description": null,
+    "icon": "/images/resources/M107.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M108",
+    "title": "Grey Slime",
+    "description": null,
+    "icon": "/images/resources/M108.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M109",
+    "title": "Cobalt Slime",
+    "description": null,
+    "icon": "/images/resources/M109.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M110",
+    "title": "Technicolor Slime",
+    "description": null,
+    "icon": "/images/resources/M110.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M201",
+    "title": "Bee Chunks",
+    "description": null,
+    "icon": "/images/resources/M201.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M202",
+    "title": "Cobra Chunks",
+    "description": null,
+    "icon": "/images/resources/M202.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M203",
+    "title": "Worm Chunks",
+    "description": null,
+    "icon": "/images/resources/M203.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M204",
+    "title": "Rat Chunks",
+    "description": null,
+    "icon": "/images/resources/M204.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M205",
+    "title": "Scorpion Chunks",
+    "description": null,
+    "icon": "/images/resources/M205.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M206",
+    "title": "Spider Chunks",
+    "description": null,
+    "icon": "/images/resources/M206.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M207",
+    "title": "Snake Chunks",
+    "description": null,
+    "icon": "/images/resources/M207.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M208",
+    "title": "Parasite Chunks",
+    "description": null,
+    "icon": "/images/resources/M208.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M209",
+    "title": "Wasp Chunks",
+    "description": null,
+    "icon": "/images/resources/M209.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M210",
+    "title": "Bat Chunks",
+    "description": null,
+    "icon": "/images/resources/M210.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M301",
+    "title": "Earth Crystal",
+    "description": null,
+    "icon": "/images/resources/M301.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M302",
+    "title": "Psychic Crystal",
+    "description": null,
+    "icon": "/images/resources/M302.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M303",
+    "title": "Life Crystal",
+    "description": null,
+    "icon": "/images/resources/M303.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M304",
+    "title": "Wind Crystal",
+    "description": null,
+    "icon": "/images/resources/M304.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M305",
+    "title": "Lightning Crystal",
+    "description": null,
+    "icon": "/images/resources/M305.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M306",
+    "title": "Fire Crystal",
+    "description": null,
+    "icon": "/images/resources/M306.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M307",
+    "title": "Ice Crystal",
+    "description": null,
+    "icon": "/images/resources/M307.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M308",
+    "title": "Poison Crystal",
+    "description": null,
+    "icon": "/images/resources/M308.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M309",
+    "title": "Storm Crystal",
+    "description": null,
+    "icon": "/images/resources/M309.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M310",
+    "title": "Death Crystal",
+    "description": null,
+    "icon": "/images/resources/M310.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M700",
+    "title": "Green Essence",
+    "description": null,
+    "icon": "/images/resources/M700.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M701",
+    "title": "Blue Essence",
+    "description": null,
+    "icon": "/images/resources/M701.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M702",
+    "title": "Purple Essence",
+    "description": null,
+    "icon": "/images/resources/M702.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M800",
+    "title": "Plate",
+    "description": null,
+    "icon": "/images/resources/M800.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M801",
+    "title": "Nut",
+    "description": null,
+    "icon": "/images/resources/M801.png",
+    "isFont": false,
+    "isDynamic": false
+  },
+  {
+    "id": "M802",
+    "title": "Screw",
+    "description": null,
+    "icon": "/images/resources/M802.png",
+    "isFont": false,
+    "isDynamic": false
   }
 ]

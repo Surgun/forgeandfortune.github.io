@@ -47,6 +47,9 @@ class Item{
     itemLevel() {
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
+    itemValueCommas() {
+        return formatWithCommas(this.value);
+    }
     itemValueFormatted() {
         return formatToUnits(this.value,2);
     }
@@ -344,7 +347,7 @@ function recipeCardFront(recipe) {
             $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`).appendTo(td5b);
         if (recipe.recipeType !== "normal") td5b.hide();
 
-        const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr({"data-tooltip": "gold", "data-tooltip-value": recipe.itemValue()});
+        const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr({"data-tooltip": "gold_value", "data-tooltip-value": recipe.itemValueCommas()});
             $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`).appendTo(td5c);
             $('<div/>').addClass('recipeValue').html(recipe.itemValueFormatted()).appendTo(td5c);
         if (recipe.recipeType !== "normal") td5c.hide();

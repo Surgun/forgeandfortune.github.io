@@ -9179,7 +9179,6 @@ span.beta-tag {
 .tooltip-container {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
     padding: 8px 10px;
     font-size: 0.8rem;
@@ -9217,6 +9216,17 @@ span.beta-tag {
 .tooltip-details {
     display: flex;
     flex-direction: column;
+}
+
+.tooltip-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tooltip-title-value {
+    margin-right: 3px;
+    color: var(--green-primary);
 }
 
 .tooltip-description {

@@ -1,13 +1,5 @@
 [
   {
-    "id": "gold_dynamic",
-    "title": "Gold",
-    "description": "Standard currency used for various purchases.",
-    "icon": "/images/resources/M001.png",
-    "isFont": false,
-    "isDynamic": true
-  },
-  {
     "id": "gold",
     "title": "Gold",
     "description": "Standard currency used for various purchases.",
@@ -126,5 +118,21 @@
     "icon": "<i class=\"fas fa-bug\"></i>",
     "isFont": true,
     "isDynamic": false
+  },
+  {
+    "id": "crafting_time",
+    "title": "Crafting Time",
+    "description": "The amount of time needed to fully craft this recipe.",
+    "icon": "<i class=\"fas fa-clock\"></i>",
+    "isFont": true,
+    "isDynamic": false
+  },
+  {
+    "id": "gold_value",
+    "title": "Gold Value",
+    "description": "The amount of gold this recipe is worth.",
+    "icon": "/images/resources/M001.png",
+    "isFont": false,
+    "isDynamic": true
   }
 ]

@@ -30,16 +30,20 @@ function generateTooltip(e) {
     bottom: positionBottom,
     left: positionLeft
   }
-
+  
+  if (tooltip === undefined) return;
   const generatedTooltip = $("<div/>").addClass("tooltip-container").css(defaultStyles).appendTo(tooltipsContainer);
-
   // If icon is image, render image
   if (tooltip.icon && !tooltip.isFont) $("<div/>").addClass("tooltip-icon").css({backgroundImage: `url(${tooltip.icon})`}).appendTo(generatedTooltip);
   // If icon is font, render font icon
   if (tooltip.icon && tooltip.isFont) $("<div/>").addClass("tooltip-icon").html(tooltip.icon).appendTo(generatedTooltip);
 
   const tooltipDetails = $("<div/>").addClass("tooltip-details").appendTo(generatedTooltip);
-  if (tooltip.isDynamic) $("<div/>").addClass("tooltip-title").html(`${tooltipEV} ${tooltip.title}`).appendTo(tooltipDetails);
+  if (tooltip.isDynamic) {
+    const title = $("<div/>").addClass("tooltip-title").appendTo(tooltipDetails);
+      $("<div/>").addClass("tooltip-title-value").html(`${tooltipEV}`).appendTo(title);
+      $("<div/>").addClass("tooltip-title-string").html(`${tooltip.title}`).appendTo(title);
+  }
   else $("<div/>").addClass("tooltip-title").html(tooltip.title).appendTo(tooltipDetails);
   // If description is present, render description
   if (tooltip.description) $("<div/>").addClass("tooltip-description").html(tooltip.description).appendTo(tooltipDetails);

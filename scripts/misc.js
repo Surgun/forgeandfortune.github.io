@@ -10,6 +10,9 @@ function formatToUnits(number, precision) {
     const suffix = abbrev[order];
     return parseFloat((number / Math.pow(10, order * 3)).toFixed(precision)) + suffix;
 }
+function formatWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 function msToTime(s) {
     const ms = s % 1000;

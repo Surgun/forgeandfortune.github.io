@@ -127,7 +127,7 @@ class Guild {
         return gold.reduce((a,b) => a+b);
     }
     maxLvlReached() {
-        return this.lvl + 1 >= GuildManager.maxGuildLevel();
+        return this.lvl >= GuildManager.maxGuildLevel();
     }
     repopulateUnmastered() {
         this.unmastered = recipeList.unmasteredByGuild(this.id);

@@ -227,3 +227,7 @@ function normalDistribution(min, max, skew) {
     num += min; // offset to min
     return num;
 }
+
+function extractPounds(text) {
+    return text.split("#")[1];
+}

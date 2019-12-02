@@ -1,20 +1,20 @@
 class Tooltip {
   constructor(props) {
     Object.assign(this, props)
-    this.isFont = this.icon.substring(0,2) === "<i";
+    this.isFont = this.icon ? this.icon.substring(0,2) === "<i" : false;
   }
-  tooltipValue(id) {
-    if (this.type === "buff") return BuffManager.idToBuff(id)[this.prop];
-    else if (this.type === "dungeon") return DungeonManager.dungeonByID(id)[this.prop];
-    else if (this.type === "event") return EventManager.idToEventDB(id)[this.prop];
-    else if (this.type === "guild") return GuildManager.idToGuild(id)[this.prop];
-    else if (this.type === "hero") return HeroManager.idToHero(id)[this.prop];
-    else if (this.type === "resource") return ResourceManager.idToMaterial(id)[this.prop];
-    else if (this.type === "mob") return MobManager.idToMob(id)[this.prop];
-    else if (this.type === "perk") return Shop.idToPerk(id)[this.prop];
-    else if (this.type === "recipe") return recipeList.idToItem(id)[this.prop];
-    else if (this.type === "skill") return SkillManager.idToSkill(id)[this.prop];
-    else if (this.type === "worker") return WorkerManager.workerByID(id)[this.prop];
+  tooltipValue(id,prop) {
+    if (this.type === "buff") return BuffManager.idToBuff(id)[prop];
+    else if (this.type === "dungeon") return DungeonManager.dungeonByID(id)[prop];
+    else if (this.type === "event") return EventManager.idToEventDB(id)[prop];
+    else if (this.type === "guild") return GuildManager.idToGuild(id)[prop];
+    else if (this.type === "hero") return HeroManager.idToHero(id)[prop];
+    else if (this.type === "resource") return ResourceManager.idToMaterial(id)[prop];
+    else if (this.type === "mob") return MobManager.idToMob(id)[prop];
+    else if (this.type === "perk") return Shop.idToPerk(id)[prop];
+    else if (this.type === "recipe") return recipeList.idToItem(id)[prop];
+    else if (this.type === "skill") return SkillManager.idToSkill(id)[prop];
+    else if (this.type === "worker") return WorkerManager.workerByID(id)[prop];
   }
 }
 
@@ -55,12 +55,12 @@ function generateTooltip(e) {
   const tooltipDetails = $("<div/>").addClass("tooltip-details").appendTo(generatedTooltip);
   
   if (tooltip.title) {
-    const title = $("<div/>").addClass("tooltip-title").html(tooltip.title).appendTo(tooltipDetails);
-    if (tooltipEV) title.html(title.html().replace("#VALUE#",`<div class="tooltip-value">${tooltip.tooltipValue(tooltipEV)}</div>`));
+    const titleText = tooltipEV ? hashtagReplace(tooltip,"title") : tooltip.title;
+    $("<div/>").addClass("tooltip-title").html(titleText).appendTo(tooltipDetails);
   }
   if (tooltip.description) {
-    const description = $("<div/>").addClass("tooltip-description").html(tooltip.description).appendTo(tooltipDetails);
-    if (tooltipEV) description.html(description.html().replace("#VALUE#",`<div class="tooltip-value">${tooltip.tooltipValue(tooltipEV)}</div>`));
+    const descText = tooltipEV ? hashtagReplace(tooltip,"description") : tooltip.description;
+    $("<div/>").addClass("tooltip-description").html(descText).appendTo(tooltipDetails);
   }
 
   return generatedTooltip;
@@ -81,3 +81,12 @@ $(document).on("mouseenter", ".tooltip", (e) => {
 $(document).on("mouseleave", ".tooltip", (e) => {
   destroyTooltip(e);
 });
+
+function hashtagReplace(tooltip, id, type) {
+  const html = type === "title" ? tooltip.title : tooltip.description;
+  if (!html.includes("#")) return html;
+  const start = html.indexOf("#");
+  const end = html.indexOf("#",start+1);
+  const prop = html.substring(start+1,end);
+  return html.substring(0,start)+tooltip.tooltipValue(id,prop)+html.substring(end+1);
+}

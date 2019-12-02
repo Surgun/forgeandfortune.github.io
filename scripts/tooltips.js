@@ -4,12 +4,13 @@ class Tooltip {
     this.isFont = this.icon ? this.icon.substring(0,2) === "<i" : false;
   }
   tooltipValue(id,prop) {
-    if (this.type === "buff") return BuffManager.idToBuff(id)[prop];
+    if (this.type === "value") return id;
+    else if (this.type === "buff") return BuffManager.idToBuff(id)[prop];
     else if (this.type === "dungeon") return DungeonManager.dungeonByID(id)[prop];
     else if (this.type === "event") return EventManager.idToEventDB(id)[prop];
     else if (this.type === "guild") return GuildManager.idToGuild(id)[prop];
     else if (this.type === "hero") return HeroManager.idToHero(id)[prop];
-    else if (this.type === "resource") return ResourceManager.idToMaterial(id)[prop];
+    else if (this.type === "material") return ResourceManager.idToMaterial(id)[prop];
     else if (this.type === "mob") return MobManager.idToMob(id)[prop];
     else if (this.type === "perk") return Shop.idToPerk(id)[prop];
     else if (this.type === "recipe") return recipeList.idToItem(id)[prop];
@@ -55,11 +56,11 @@ function generateTooltip(e) {
   const tooltipDetails = $("<div/>").addClass("tooltip-details").appendTo(generatedTooltip);
   
   if (tooltip.title) {
-    const titleText = tooltipEV ? hashtagReplace(tooltip,tooltipEV,"title") : tooltip.title;
+    const titleText = tooltipEV ? hashtagReplace(tooltip,tooltipEV,tooltip.title) : tooltip.title;
     $("<div/>").addClass("tooltip-title").html(titleText).appendTo(tooltipDetails);
   }
   if (tooltip.description) {
-    const descText = tooltipEV ? hashtagReplace(tooltip,tooltipEV,"description") : tooltip.description;
+    const descText = tooltipEV ? hashtagReplace(tooltip,tooltipEV,tooltip.description) : tooltip.description;
     $("<div/>").addClass("tooltip-description").html(descText).appendTo(tooltipDetails);
   }
 
@@ -82,11 +83,10 @@ $(document).on("mouseleave", ".tooltip", (e) => {
   destroyTooltip(e);
 });
 
-function hashtagReplace(tooltip, id, type) {
-  const html = (type === "title") ? tooltip.title : tooltip.description;
+function hashtagReplace(tooltip, id, html) {
   if (!html.includes("#")) return html;
   const start = html.indexOf("#");
   const end = html.indexOf("#",start+1);
   const prop = html.substring(start+1,end);
-  return html.substring(0,start)+tooltip.tooltipValue(id,prop)+html.substring(end+1);
+  return hashtagReplace(tooltip,id,html.substring(0,start)+tooltip.tooltipValue(id,prop)+html.substring(end+1));
 }

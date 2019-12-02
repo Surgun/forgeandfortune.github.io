@@ -57,7 +57,10 @@ class Perk {
     }
     activate() {
         if (this.type === "hero") HeroManager.gainHero(this.subtype);
-        if (this.type === "worker") WorkerManager.gainWorker(this.subtype);
+        if (this.type === "worker") {
+            WorkerManager.gainWorker(this.subtype);
+            initializeGuilds();
+        }
         if (this.type === "boss") DungeonManager.unlockDungeon(this.subtype);
         if (this.type === "craft") actionSlotManager.upgradeSlot();
         if (this.type === "adventure") DungeonManager.partySize += 1;

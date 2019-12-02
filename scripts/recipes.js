@@ -65,7 +65,7 @@ class Item{
         if (this.mcost === null) return d;
         for (const [material, amt] of Object.entries(this.mcost)) {
             const mat = ResourceManager.idToMaterial(material);
-            const d1 = $("<div/>").addClass("indvCost matCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.id).html(ResourceManager.formatCost(material,amt));
+            const d1 = $("<div/>").addClass("indvCost matCost tooltip").attr("id","vr"+this.id).attr({"data-tooltip":"material_desc","data-tooltip-value":mat.id}).html(ResourceManager.formatCost(material,amt));
             d.append(d1);
         }
         return d;
@@ -347,7 +347,7 @@ function recipeCardFront(recipe) {
             $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`).appendTo(td5b);
         if (recipe.recipeType !== "normal") td5b.hide();
 
-        const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr({"data-tooltip": "gold_value", "data-tooltip-value": recipe.id});
+        const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr({"data-tooltip": "recipe_gold", "data-tooltip-value": recipe.id});
             $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`).appendTo(td5c);
             $('<div/>').addClass('recipeValue').html(recipe.itemValueFormatted()).appendTo(td5c);
         if (recipe.recipeType !== "normal") td5c.hide();

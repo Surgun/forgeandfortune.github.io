@@ -1,115 +1,101 @@
 [
   {
-    "id": "gold",
-    "title": "Gold",
-    "description": "Standard currency used for various purchases.",
-    "icon": "/images/resources/M001.png",
-    "type": null
-  },
-  {
-    "id": "gold_d",
-    "title": "#amt# Gold",
-    "description": "Standard currency used for various purchases.",
-    "icon": "/images/resources/M001.png",
-    "type": "resource"
-  },
-  {
     "id": "rep",
     "title": "Reputation",
     "description": "Used to level up guilds.",
     "icon": "<i class=\"far fa-grin-alt\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "in_inventory",
     "title": "In Inventory",
     "description": "Amount currently in your inventory.",
     "icon": "<i class=\"fas fa-cube\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "hp",
     "title": "Health",
     "description": "The amount of damage an entity can sustain before being downed.",
     "icon": "<i class=\"fas fa-heart statHP\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "pow",
     "title": "Power",
     "description": "The amount of damage an entity is capable of dealing.",
     "icon": "<i class=\"fad fa-sword statPOW\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "spower",
     "title": "Special Power",
     "description": "The amount of damage an entity can deal with special attacks.",
     "icon": "<i class=\"fas fa-book-spells statSPOW\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "armor",
     "title": "Armor",
     "description": "The damage resistance an entity possesses.",
     "icon": "<i class=\"fas fa-shield statARMOR\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "crit",
     "title": "Critical Chance",
     "description": "The chance an entity will deal bonus damage on attack.",
     "icon": "<i class=\"fas fa-dagger statCRIT\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "dodge",
     "title": "Dodge",
     "description": "The chance an entity will avoid an attack.",
     "icon": "<i class=\"fas fa-hood-cloak statDODGE\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "clear_save",
     "title": "Clear Saved Game Data",
     "description": "Permanently delete your current saved game data. This action is irreversible.",
     "icon": "<i class=\"fas fa-file-times\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "import_save",
     "title": "Import Game Data",
     "description": "Export your current game data for sharing or importing at a later time.",
     "icon": "<i class=\"fas fa-file-export\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "export_save",
     "title": "Export Game Data",
     "description": "Import your own previously exported data or shared game data.",
     "icon": "<i class=\"fas fa-file-import\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "cloud_save",
     "title": "Save or Load from Cloud",
     "description": "Save or load your game data from the Cloud using Playfab.",
     "icon": "<i class=\"fas fa-cloud-download\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "settings",
     "title": "Settings",
     "description": "Change your game preferences and settings.",
     "icon": "<i class=\"fas fa-cog\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "debug",
     "title": "Development Options",
     "description": "Development and debugging options for testing various mechanics and features.",
     "icon": "<i class=\"fas fa-bug\"></i>",
-    "type": null
+    "type": "static"
   },
   {
     "id": "crafting_time",
@@ -119,8 +105,8 @@
     "type": null
   },
   {
-    "id": "gold_value",
-    "title": "#value# Gold Value",
+    "id": "recipe_gold",
+    "title": "#value# Gold",
     "description": "The amount of gold this recipe is worth.",
     "icon": "/images/resources/M001.png",
     "type": "recipe"
@@ -133,270 +119,11 @@
     "type": null
   },
   {
-    "id": "M001",
-    "title": "Gold",
-    "description": "Standard currency used for various purchases.",
+    "id": "material_desc",
+    "title": "#name#",
+    "description": "#description#</br>You have #amt#",
     "icon": "/images/resources/M001.png",
-    "type": null
-  },
-  {
-    "id": "M002",
-    "title": "Monster Trophy",
-    "description": "Earned in the Monster House.",
-    "icon": "/images/resources/M002.png",
-    "type": null
-  },
-  {
-    "id": "M101",
-    "title": "Emerald Slime",
-    "description": "Found in Spooky Spot, on floors 1-100.",
-    "icon": "/images/resources/M101.png",
-    "type": null
-  },
-  {
-    "id": "M102",
-    "title": "Peach Slime",
-    "description": "Found in Spooky Spot, on floors 101-200.",
-    "icon": "/images/resources/M102.png",
-    "type": null
-  },
-  {
-    "id": "M103",
-    "title": "Indigo Slime",
-    "description": "Found in Spooky Spot, on floors 201-300.",
-    "icon": "/images/resources/M103.png",
-    "type": null
-  },
-  {
-    "id": "M104",
-    "title": "Ginger Slime",
-    "description": "Found in Spooky Spot, on floors 301-400.",
-    "icon": "/images/resources/M104.png",
-    "type": null
-  },
-  {
-    "id": "M105",
-    "title": "Stinky Slime",
-    "description": "Found in Spooky Spot, on floors 401-500.",
-    "icon": "/images/resources/M105.png",
-    "type": null
-  },
-  {
-    "id": "M106",
-    "title": "Clear Slime",
-    "description": "Found in Spooky Spot, on floors 501-600.",
-    "icon": "/images/resources/M106.png",
-    "type": null
-  },
-  {
-    "id": "M107",
-    "title": "Magenta Slime",
-    "description": "Found in Spooky Spot, on floors 601-700",
-    "icon": "/images/resources/M107.png",
-    "type": null
-  },
-  {
-    "id": "M108",
-    "title": "Grey Slime",
-    "description": "Found in Spooky Spot, on floors 701-800.",
-    "icon": "/images/resources/M108.png",
-    "type": null
-  },
-  {
-    "id": "M109",
-    "title": "Cobalt Slime",
-    "description": "Found in Spooky Spot, on floors 801-900.",
-    "icon": "/images/resources/M109.png",
-    "type": null
-  },
-  {
-    "id": "M110",
-    "title": "Technicolor Slime",
-    "description": "Found in Spooky Spot, on floors 900 and up.",
-    "icon": "/images/resources/M110.png",
-    "type": null
-  },
-  {
-    "id": "M201",
-    "title": "Bee Chunks",
-    "description": "Found in Groovy Grove, on floors 1-100.",
-    "icon": "/images/resources/M201.png",
-    "type": null
-  },
-  {
-    "id": "M202",
-    "title": "Cobra Chunks",
-    "description": "Found in Groovy Grove, on floors 101-200.",
-    "icon": "/images/resources/M202.png",
-    "type": null
-  },
-  {
-    "id": "M203",
-    "title": "Worm Chunks",
-    "description": "Found in Groovy Grove, on floors 201-300.",
-    "icon": "/images/resources/M203.png",
-    "type": null
-  },
-  {
-    "id": "M204",
-    "title": "Rat Chunks",
-    "description": "Found in Groovy Grove, on floors 301-400.",
-    "icon": "/images/resources/M204.png",
-    "type": null
-  },
-  {
-    "id": "M205",
-    "title": "Scorpion Chunks",
-    "description": "Found in Groovy Grove, on floors 401-500.",
-    "icon": "/images/resources/M205.png",
-    "type": null
-  },
-  {
-    "id": "M206",
-    "title": "Spider Chunks",
-    "description": "Found in Groovy Grove, on floors 501-600.",
-    "icon": "/images/resources/M206.png",
-    "type": null
-  },
-  {
-    "id": "M207",
-    "title": "Snake Chunks",
-    "description": "Found in Groovy Grove, on floors 601-700",
-    "icon": "/images/resources/M207.png",
-    "type": null
-  },
-  {
-    "id": "M208",
-    "title": "Parasite Chunks",
-    "description": "Found in Groovy Grove, on floors 701-800.",
-    "icon": "/images/resources/M208.png",
-    "type": null
-  },
-  {
-    "id": "M209",
-    "title": "Wasp Chunks",
-    "description": "Found in Groovy Grove, on floors 801-900.",
-    "icon": "/images/resources/M209.png",
-    "type": null
-  },
-  {
-    "id": "M210",
-    "title": "Bat Chunks",
-    "description": "Found in Groovy Grove, on floors 900 and up.",
-    "icon": "/images/resources/M210.png",
-    "type": null
-  },
-  {
-    "id": "M301",
-    "title": "Earth Crystal",
-    "description": "Found in Creepy Crag, on floors 1-100.",
-    "icon": "/images/resources/M301.png",
-    "type": null
-  },
-  {
-    "id": "M302",
-    "title": "Psychic Crystal",
-    "description": "Found in Creepy Crag, on floors 101-200.",
-    "icon": "/images/resources/M302.png",
-    "type": null
-  },
-  {
-    "id": "M303",
-    "title": "Life Crystal",
-    "description": "Found in Creepy Crag, on floors 201-300.",
-    "icon": "/images/resources/M303.png",
-    "type": null
-  },
-  {
-    "id": "M304",
-    "title": "Wind Crystal",
-    "description": "Found in Creepy Crag, on floors 301-400.",
-    "icon": "/images/resources/M304.png",
-    "type": null
-  },
-  {
-    "id": "M305",
-    "title": "Lightning Crystal",
-    "description": "Found in Creepy Crag, on floors 401-500.",
-    "icon": "/images/resources/M305.png",
-    "type": null
-  },
-  {
-    "id": "M306",
-    "title": "Fire Crystal",
-    "description": "Found in Creepy Crag, on floors 501-600.",
-    "icon": "/images/resources/M306.png",
-    "type": null
-  },
-  {
-    "id": "M307",
-    "title": "Ice Crystal",
-    "description": "Found in Creepy Crag, on floors 601-700",
-    "icon": "/images/resources/M307.png",
-    "type": null
-  },
-  {
-    "id": "M308",
-    "title": "Poison Crystal",
-    "description": "Found in Creepy Crag, on floors 701-800.",
-    "icon": "/images/resources/M308.png",
-    "type": null
-  },
-  {
-    "id": "M309",
-    "title": "Storm Crystal",
-    "description": "Found in Creepy Crag, on floors 801-900.",
-    "icon": "/images/resources/M309.png",
-    "type": null
-  },
-  {
-    "id": "M310",
-    "title": "Death Crystal",
-    "description": "Found in Creepy Crag, on floors 900 and up.",
-    "icon": "/images/resources/M310.png",
-    "type": null
-  },
-  {
-    "id": "M700",
-    "title": "Green Essence",
-    "description": "Obtained via Desynthesis.",
-    "icon": "/images/resources/M700.png",
-    "type": null
-  },
-  {
-    "id": "M701",
-    "title": "Blue Essence",
-    "description": "Obtained via Desynthesis.",
-    "icon": "/images/resources/M701.png",
-    "type": null
-  },
-  {
-    "id": "M702",
-    "title": "Purple Essence",
-    "description": "Obtained via Desynthesis.",
-    "icon": "/images/resources/M702.png",
-    "type": null
-  },
-  {
-    "id": "M800",
-    "title": "Plate",
-    "description": "Used to create Artifacts.",
-    "icon": "/images/resources/M800.png",
-    "type": null
-  },
-  {
-    "id": "M801",
-    "title": "Nut",
-    "description": "Used to create Artifacts.",
-    "icon": "/images/resources/M801.png",
-    "type": null
-  },
-  {
-    "id": "M802",
-    "title": "Screw",
-    "description": "Used to create Artifacts.",
-    "icon": "/images/resources/M802.png",
-    "type": null
+    "type": "material"
   },
   {
     "id": "G001_worker",
@@ -2045,5 +1772,12 @@
     "description": "Gilda doesn't enjoy her job, but her bills get paid on time.",
     "icon": null,
     "type": null
+  },
+  {
+    "id": "gold_value",
+    "title": "#value# Gold",
+    "description": "The amount of gold this recipe is worth.",
+    "icon": "/images/resources/M001.png",
+    "type": "value"
   }
 ]

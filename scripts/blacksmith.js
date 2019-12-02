@@ -129,7 +129,7 @@ function refreshSmithStage() {
     const params = bloopSmith.getSmithCost()
     const improveText = $("<div/>").addClass("improveText").html(`Improve for`);
     const improveCost = $("<div/>").addClass("improveCostContainer");
-        $("<div/>").addClass("improveCost tooltip").attr({"data-tooltip": "gold_d", "data-tooltip-value": params.gold}).html(`${miscIcons.gold} ${formatToUnits(params.gold,2)}`).appendTo(improveCost);
+        $("<div/>").addClass("improveCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": params.gold}).html(`${miscIcons.gold} ${formatToUnits(params.gold,2)}`).appendTo(improveCost);
         $("<div/>").addClass("improveCost tooltip").attr("data-tooltip", params.resType).html(`${ResourceManager.idToMaterial(params.resType).img} ${params.resAmt}`).appendTo(improveCost);
     $smithConfirm.empty().append(improveText,improveCost);
 }

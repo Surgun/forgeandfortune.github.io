@@ -223,7 +223,7 @@ function refreshPossibleFuse() {
             const d6 = $("<div/>").addClass("fuseTime tooltip").attr("data-tooltip","fuse_time").html(`<i class="fas fa-clock"></i> ${msToTime(FusionManager.getMaxFuse(f))}`);
             const d7 = $("<div/>").addClass("fuseStart").attr("uniqueid",f.uniqueID);
                 $("<div/>").addClass("fuseStartText").html("Fuse").appendTo(d7);
-                $("<div/>").addClass("fuseStartCost tooltip").attr({"data-tooltip": "gold_d", "data-tooltip-value": formatWithCommas(FusionManager.getFuseCost(f))}).html(`${ResourceManager.materialIcon("M001")}${formatToUnits(FusionManager.getFuseCost(f),2)}`).appendTo(d7);
+                $("<div/>").addClass("fuseStartCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(FusionManager.getFuseCost(f))}).html(`${ResourceManager.materialIcon("M001")}${formatToUnits(FusionManager.getFuseCost(f),2)}`).appendTo(d7);
             d3.append(d4,d5,d6,d7);
             d2.append(d3);
         });

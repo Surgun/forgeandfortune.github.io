@@ -2,7 +2,7 @@
 
 const GuildManager = {
     guilds : [],
-    lastClicked : "G001",
+    lastClicked : "G003",
     addGuild(guild) {
         this.guilds.push(guild);
     },
@@ -132,6 +132,9 @@ class Guild {
     repopulateUnmastered() {
         this.unmastered = recipeList.unmasteredByGuild(this.id);
     }
+    unlocked() {
+        return this.workers().length > 0;
+    }
 }
 
 class guildOrderItem {
@@ -221,14 +224,16 @@ function initializeGuilds() {
         d1.appendTo($guildList);
         $(`#${g.id}Name`).html(`<h2>${g.name}</h2>`);
         $(`#${g.id}Desc`).html(g.description);
-        $(".guildContainer").hide();
-        $("#"+GuildManager.lastClicked).show();
-        refreshguildprogress(g);
-        refreshguildOrder(g);
-        refreshSales(g);
-        refreshRecipeMastery(g);
-        refreshGuildWorkers(g);
+        if (!g.unlocked()) d1.hide();
     });
+    $(".guildContainer").hide();
+    $("#"+GuildManager.lastClicked).show();
+    const guild = GuildManager.idToGuild(GuildManager.lastClicked);
+    refreshguildprogress(guild);
+    refreshguildOrder(guild);
+    refreshSales(guild);
+    refreshRecipeMastery(guild);
+    refreshGuildWorkers(guild);
 };
 
 function checkCraftableStatus() {
@@ -257,7 +262,7 @@ function createGuildBar(guild) {
     }
     const repPercent = guild.rep/guild.repLvl();
     const repWidth = (repPercent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("repBarDiv");
+    const d1 = $("<div/>").addClass("repBarDiv"); 
     const d2 = $("<div/>").addClass("repBar").attr("data-label",`Reputation: ${guild.rep}/${guild.repLvl()}`);
     const s1 = $("<span/>").addClass("repBarFill").css('width', repWidth);
     return d1.append(d2,s1);
@@ -299,7 +304,7 @@ function createOrderCard(item,id,index) {
     const d3 = $("<div/>").addClass("guildItemSubmit").appendTo(d1);
     $("<div/>").addClass("guildItemSubmitHeading").html(`Submit one for:`).appendTo(d3);
         const d3a = $("<div/>").addClass("guildItemSubmitRewards").appendTo(d3);
-        $("<div/>").addClass("guildItemSubmitItem RewardGold tooltip").attr({"data-tooltip": "gold_d", "data-tooltip-value": formatWithCommas(item.goldValue())}).html(`${miscIcons.gold} +${item.goldValue()}`).appendTo(d3a);
+        $("<div/>").addClass("guildItemSubmitItem RewardGold tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": item.goldValue()}).html(`${miscIcons.gold} +${item.goldValue()}`).appendTo(d3a);
         $("<div/>").addClass("guildItemSubmitItem RewardRep tooltip").attr("data-tooltip", "rep").html(`+${item.rep} Reputation`).appendTo(d3a);
     return d1;
 };
@@ -336,7 +341,7 @@ function createRecipeBuyCard(recipe,guildLvl) {
     }
     const d5 = $("<div/>").addClass("recipeBuyCardBuy").data("rid",recipe.id);
         $("<div/>").addClass("recipeBuyCardBuyText").html("Purchase").appendTo(d5);
-        $("<div/>").addClass("recipeBuyCardBuyCost tooltip").attr({"data-tooltip": "gold_d", "data-tooltip-value": formatWithCommas(recipe.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
+        $("<div/>").addClass("recipeBuyCardBuyCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(recipe.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
     return d1.append(d2,d3,d3a,d5);
 };
 

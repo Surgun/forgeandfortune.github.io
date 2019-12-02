@@ -1,7 +1,6 @@
 class Tooltip {
   constructor(props) {
-    Object.assign(this, props)
-    this.isFont = this.icon ? this.icon.substring(0,2) === "<i" : false;
+    Object.assign(this, props);
   }
   tooltipValue(id,prop) {
     if (this.type === "value") return id;
@@ -16,6 +15,13 @@ class Tooltip {
     else if (this.type === "recipe") return recipeList.idToItem(id)[prop];
     else if (this.type === "skill") return SkillManager.idToSkill(id)[prop];
     else if (this.type === "worker") return WorkerManager.workerByID(id)[prop];
+  }
+  generateIcon(id) {
+    if (!this.icon) return null;
+    return hashtagReplace(this, id, this.icon);
+  }
+  isFont() {
+    return this.icon ? this.icon.substring(0,2) === "<i" : false;
   }
 }
 
@@ -49,9 +55,9 @@ function generateTooltip(e) {
   if (tooltip === undefined) return;
   const generatedTooltip = $("<div/>").addClass("tooltip-container").css(defaultStyles).appendTo(tooltipsContainer);
   // If icon is image, render image
-  if (tooltip.icon && !tooltip.isFont) $("<div/>").addClass("tooltip-icon").css({backgroundImage: `url(${tooltip.icon})`}).appendTo(generatedTooltip);
+  if (tooltip.icon && !tooltip.isFont()) $("<div/>").addClass("tooltip-icon").css({backgroundImage: `url(${tooltip.generateIcon(tooltipEV)})`}).appendTo(generatedTooltip);
   // If icon is font, render font icon
-  if (tooltip.icon && tooltip.isFont) $("<div/>").addClass("tooltip-icon").html(tooltip.icon).appendTo(generatedTooltip);
+  if (tooltip.icon && tooltip.isFont()) $("<div/>").addClass("tooltip-icon").html(tooltip.generateIcon(tooltipEV)).appendTo(generatedTooltip);
 
   const tooltipDetails = $("<div/>").addClass("tooltip-details").appendTo(generatedTooltip);
   

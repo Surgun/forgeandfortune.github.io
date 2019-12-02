@@ -122,7 +122,7 @@
     "id": "material_desc",
     "title": "#name#",
     "description": "#description#</br>You have #amt#",
-    "icon": "/images/resources/M001.png",
+    "icon": "/images/resources/#id#.png",
     "type": "material"
   },
   {

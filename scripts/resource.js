@@ -119,7 +119,6 @@ const ResourceManager = {
         return item.name;
     },
     idToMaterial(matID) {
-        console.log(matID);
         if (matID.charAt(0) === "R") return recipeList.idToItem(matID);
         return this.materials.find(m=>m.id === matID);
     },

@@ -17,6 +17,7 @@ class Tooltip {
     else if (this.type === "worker") return WorkerManager.workerByID(id)[prop];
   }
   generateIcon(id) {
+    console.log(id);
     if (!this.icon) return null;
     return hashtagReplace(this, id, this.icon);
   }

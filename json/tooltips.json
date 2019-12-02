@@ -126,32 +126,11 @@
     "type": "material"
   },
   {
-    "id": "G001_worker",
-    "title": "Aviation Association Worker",
-    "description": null,
-    "icon": "/images/resources/G001.png",
-    "type": null
-  },
-  {
-    "id": "G002_worker",
-    "title": "Green Guard Worker",
-    "description": null,
-    "icon": "/images/resources/G002.png",
-    "type": null
-  },
-  {
-    "id": "G003_worker",
-    "title": "The Cat's Meow Worker",
-    "description": null,
-    "icon": "/images/resources/G003.png",
-    "type": null
-  },
-  {
-    "id": "G004_worker",
-    "title": "Trawled Treasures Worker",
-    "description": null,
-    "icon": "/images/resources/G004.png",
-    "type": null
+    "id": "guild_worker",
+    "title": "#name#",
+    "description": "Represents a worker for the guild.",
+    "icon": "/images/resources/#id#.png",
+    "type": "guild"
   },
   {
     "id": "autosell_none",

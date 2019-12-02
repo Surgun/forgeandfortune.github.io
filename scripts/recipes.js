@@ -60,7 +60,7 @@ class Item{
         const d = $("<div/>").addClass("itemCost");
         this.gcost.forEach(resource => {
             const guild = GuildManager.idToGuild(resource);
-            d.append($("<div/>").addClass("indvCost resCost tooltip").attr("data-tooltip",guild.id+"_worker").html('<img src="images/resources/'+resource+'.png">'));
+            d.append($("<div/>").addClass("indvCost resCost tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":guild.id}).html('<img src="images/resources/'+resource+'.png">'));
         })
         if (this.mcost === null) return d;
         for (const [material, amt] of Object.entries(this.mcost)) {

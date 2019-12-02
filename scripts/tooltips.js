@@ -39,15 +39,16 @@ function generateTooltip(e) {
   if (tooltip.icon && tooltip.isFont) $("<div/>").addClass("tooltip-icon").html(tooltip.icon).appendTo(generatedTooltip);
 
   const tooltipDetails = $("<div/>").addClass("tooltip-details").appendTo(generatedTooltip);
-  if (tooltip.isDynamic) {
-    const title = $("<div/>").addClass("tooltip-title").appendTo(tooltipDetails);
-      $("<div/>").addClass("tooltip-title-value").html(`${tooltipEV}`).appendTo(title);
-      $("<div/>").addClass("tooltip-title-string").html(`${tooltip.title}`).appendTo(title);
-  }
-  else $("<div/>").addClass("tooltip-title").html(tooltip.title).appendTo(tooltipDetails);
-  // If description is present, render description
-  if (tooltip.description) $("<div/>").addClass("tooltip-description").html(tooltip.description).appendTo(tooltipDetails);
   
+  if (tooltip.title) {
+    const title = $("<div/>").addClass("tooltip-title").html(tooltip.title).appendTo(tooltipDetails);
+    if (tooltipEV) title.html(title.html().replace("#VALUE#",`<div class="tooltip-value">${tooltipEV}</div>`));
+  }
+  if (tooltip.description) {
+    const description = $("<div/>").addClass("tooltip-description").html(tooltip.description).appendTo(tooltipDetails);
+    if (tooltipEV) description.html(description.html().replace("#VALUE#",`<div class="tooltip-value">${tooltipEV}</div>`));
+  }
+
   return generatedTooltip;
 }
 
@@ -56,6 +57,10 @@ function destroyTooltip(e) {
   setTimeout(() => {
     $(".tooltip-container.destroyingTooltip").remove();
   }, 200)
+}
+
+function replaceWithDiv(div,replaceText) {
+  div.html(div.html().replace("#VALUE#",replaceText));
 }
 
 $(document).on("mouseenter", ".tooltip", (e) => {

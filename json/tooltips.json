@@ -137,7 +137,7 @@
   },
   {
     "id": "gold_value",
-    "title": "Gold Value",
+    "title": "#VALUE#&nbsp;Gold Value",
     "description": "The amount of gold this recipe is worth.",
     "icon": "/images/resources/M001.png",
     "isFont": false,

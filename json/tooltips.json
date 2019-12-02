@@ -120,10 +120,10 @@
   },
   {
     "id": "gold_value",
-    "title": "#amt# Gold Value",
+    "title": "#value# Gold Value",
     "description": "The amount of gold this recipe is worth.",
     "icon": "/images/resources/M001.png",
-    "type": "resource"
+    "type": "recipe"
   },
   {
     "id": "fuse_time",

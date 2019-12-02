@@ -347,7 +347,7 @@ function recipeCardFront(recipe) {
             $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`).appendTo(td5b);
         if (recipe.recipeType !== "normal") td5b.hide();
 
-        const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr({"data-tooltip": "gold_value", "data-tooltip-value": recipe.itemValueCommas()});
+        const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr({"data-tooltip": "gold_value", "data-tooltip-value": recipe.id});
             $("<div/>").addClass("recipeValueHeader recipeCardHeader").html(`<img src='images/resources/M001.png'>`).appendTo(td5c);
             $('<div/>').addClass('recipeValue').html(recipe.itemValueFormatted()).appendTo(td5c);
         if (recipe.recipeType !== "normal") td5c.hide();

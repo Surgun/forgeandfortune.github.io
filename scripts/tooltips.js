@@ -55,11 +55,11 @@ function generateTooltip(e) {
   const tooltipDetails = $("<div/>").addClass("tooltip-details").appendTo(generatedTooltip);
   
   if (tooltip.title) {
-    const titleText = tooltipEV ? hashtagReplace(tooltip,"title") : tooltip.title;
+    const titleText = tooltipEV ? hashtagReplace(tooltip,tooltipEV,"title") : tooltip.title;
     $("<div/>").addClass("tooltip-title").html(titleText).appendTo(tooltipDetails);
   }
   if (tooltip.description) {
-    const descText = tooltipEV ? hashtagReplace(tooltip,"description") : tooltip.description;
+    const descText = tooltipEV ? hashtagReplace(tooltip,tooltipEV,"description") : tooltip.description;
     $("<div/>").addClass("tooltip-description").html(descText).appendTo(tooltipDetails);
   }
 
@@ -83,7 +83,7 @@ $(document).on("mouseleave", ".tooltip", (e) => {
 });
 
 function hashtagReplace(tooltip, id, type) {
-  const html = type === "title" ? tooltip.title : tooltip.description;
+  const html = (type === "title") ? tooltip.title : tooltip.description;
   if (!html.includes("#")) return html;
   const start = html.indexOf("#");
   const end = html.indexOf("#",start+1);

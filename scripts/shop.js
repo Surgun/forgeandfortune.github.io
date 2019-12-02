@@ -24,7 +24,7 @@ const Shop = {
             return;
         }
         ResourceManager.deductMoney(perk.goldCost);
-        ResourceManager.addMaterial(perk.mat,perk.matAmt)
+        ResourceManager.addMaterial(perk.mat,-perk.matAmt)
         this.purchased.push(id);
         perk.activate();
         refreshShop();

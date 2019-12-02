@@ -1,6 +1,20 @@
 class Tooltip {
   constructor(props) {
     Object.assign(this, props)
+    this.isFont = this.icon.substring(0,2) === "<i";
+  }
+  tooltipValue(id) {
+    if (this.type === "buff") return BuffManager.idToBuff(id)[this.prop];
+    else if (this.type === "dungeon") return DungeonManager.dungeonByID(id)[this.prop];
+    else if (this.type === "event") return EventManager.idToEventDB(id)[this.prop];
+    else if (this.type === "guild") return GuildManager.idToGuild(id)[this.prop];
+    else if (this.type === "hero") return HeroManager.idToHero(id)[this.prop];
+    else if (this.type === "resource") return ResourceManager.idToMaterial(id)[this.prop];
+    else if (this.type === "mob") return MobManager.idToMob(id)[this.prop];
+    else if (this.type === "perk") return Shop.idToPerk(id)[this.prop];
+    else if (this.type === "recipe") return recipeList.idToItem(id)[this.prop];
+    else if (this.type === "skill") return SkillManager.idToSkill(id)[this.prop];
+    else if (this.type === "worker") return WorkerManager.workerByID(id)[this.prop];
   }
 }
 
@@ -11,7 +25,7 @@ TooltipManager = {
   },
   findTooltip(id) {
     return this.tooltips.find(tooltip => tooltip.id === id)
-  }
+  },
 }
 
 function generateTooltip(e) {
@@ -42,11 +56,11 @@ function generateTooltip(e) {
   
   if (tooltip.title) {
     const title = $("<div/>").addClass("tooltip-title").html(tooltip.title).appendTo(tooltipDetails);
-    if (tooltipEV) title.html(title.html().replace("#VALUE#",`<div class="tooltip-value">${tooltipEV}</div>`));
+    if (tooltipEV) title.html(title.html().replace("#VALUE#",`<div class="tooltip-value">${tooltip.tooltipValue(tooltipEV)}</div>`));
   }
   if (tooltip.description) {
     const description = $("<div/>").addClass("tooltip-description").html(tooltip.description).appendTo(tooltipDetails);
-    if (tooltipEV) description.html(description.html().replace("#VALUE#",`<div class="tooltip-value">${tooltipEV}</div>`));
+    if (tooltipEV) description.html(description.html().replace("#VALUE#",`<div class="tooltip-value">${tooltip.tooltipValue(tooltipEV)}</div>`));
   }
 
   return generatedTooltip;
@@ -57,10 +71,6 @@ function destroyTooltip(e) {
   setTimeout(() => {
     $(".tooltip-container.destroyingTooltip").remove();
   }, 200)
-}
-
-function replaceWithDiv(div,replaceText) {
-  div.html(div.html().replace("#VALUE#",replaceText));
 }
 
 $(document).on("mouseenter", ".tooltip", (e) => {

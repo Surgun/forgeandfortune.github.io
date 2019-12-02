@@ -122,7 +122,7 @@
   {
     "id": "debug",
     "title": "Development Options",
-    "description": "Development and debugging options for testing various mechanics, environments and features.",
+    "description": "Development and debugging options for testing various mechanics and features.",
     "icon": "<i class=\"fas fa-bug\"></i>",
     "isFont": true,
     "isDynamic": false
@@ -146,7 +146,7 @@
   {
     "id": "M002",
     "title": "Monster Trophy",
-    "description": null,
+    "description": "Earned in the Monster House.",
     "icon": "/images/resources/M002.png",
     "isFont": false,
     "isDynamic": false
@@ -154,7 +154,7 @@
   {
     "id": "M101",
     "title": "Emerald Slime",
-    "description": null,
+    "description": "Found in Spooky Spot.\nFloors 1-100",
     "icon": "/images/resources/M101.png",
     "isFont": false,
     "isDynamic": false
@@ -162,7 +162,7 @@
   {
     "id": "M102",
     "title": "Peach Slime",
-    "description": null,
+    "description": "Found in Spooky Spot.\nFloors 101-200",
     "icon": "/images/resources/M102.png",
     "isFont": false,
     "isDynamic": false
@@ -170,7 +170,7 @@
   {
     "id": "M103",
     "title": "Indigo Slime",
-    "description": null,
+    "description": "Found in Spooky Spot.\nFloors 201-300",
     "icon": "/images/resources/M103.png",
     "isFont": false,
     "isDynamic": false
@@ -178,7 +178,7 @@
   {
     "id": "M104",
     "title": "Ginger Slime",
-    "description": null,
+    "description": "Found in Spooky Spot.\nFloors 301-400",
     "icon": "/images/resources/M104.png",
     "isFont": false,
     "isDynamic": false
@@ -186,7 +186,7 @@
   {
     "id": "M105",
     "title": "Stinky Slime",
-    "description": null,
+    "description": "Found in Spooky Spot.\nFloors 401-500",
     "icon": "/images/resources/M105.png",
     "isFont": false,
     "isDynamic": false
@@ -194,7 +194,7 @@
   {
     "id": "M106",
     "title": "Clear Slime",
-    "description": null,
+    "description": "Found in Spooky Spot.\nFloors 501-600",
     "icon": "/images/resources/M106.png",
     "isFont": false,
     "isDynamic": false
@@ -202,7 +202,7 @@
   {
     "id": "M107",
     "title": "Magenta Slime",
-    "description": null,
+    "description": "Found in Spooky Spot.\nFloors 601-700",
     "icon": "/images/resources/M107.png",
     "isFont": false,
     "isDynamic": false
@@ -210,7 +210,7 @@
   {
     "id": "M108",
     "title": "Grey Slime",
-    "description": null,
+    "description": "Found in Spooky Spot.\nFloors 701-800",
     "icon": "/images/resources/M108.png",
     "isFont": false,
     "isDynamic": false
@@ -218,7 +218,7 @@
   {
     "id": "M109",
     "title": "Cobalt Slime",
-    "description": null,
+    "description": "Found in Spooky Spot.\nFloors 801-900",
     "icon": "/images/resources/M109.png",
     "isFont": false,
     "isDynamic": false
@@ -226,7 +226,7 @@
   {
     "id": "M110",
     "title": "Technicolor Slime",
-    "description": null,
+    "description": "Found in Spooky Spot.\nFloors 900 and up.",
     "icon": "/images/resources/M110.png",
     "isFont": false,
     "isDynamic": false
@@ -234,7 +234,7 @@
   {
     "id": "M201",
     "title": "Bee Chunks",
-    "description": null,
+    "description": "Found in Groovy Grove.\nFloors 1-100",
     "icon": "/images/resources/M201.png",
     "isFont": false,
     "isDynamic": false
@@ -242,7 +242,7 @@
   {
     "id": "M202",
     "title": "Cobra Chunks",
-    "description": null,
+    "description": "Found in Groovy Grove.\nFloors 101-200",
     "icon": "/images/resources/M202.png",
     "isFont": false,
     "isDynamic": false
@@ -250,7 +250,7 @@
   {
     "id": "M203",
     "title": "Worm Chunks",
-    "description": null,
+    "description": "Found in Groovy Grove.\nFloors 201-300",
     "icon": "/images/resources/M203.png",
     "isFont": false,
     "isDynamic": false
@@ -258,7 +258,7 @@
   {
     "id": "M204",
     "title": "Rat Chunks",
-    "description": null,
+    "description": "Found in Groovy Grove.\nFloors 301-400",
     "icon": "/images/resources/M204.png",
     "isFont": false,
     "isDynamic": false
@@ -266,7 +266,7 @@
   {
     "id": "M205",
     "title": "Scorpion Chunks",
-    "description": null,
+    "description": "Found in Groovy Grove.\nFloors 401-500",
     "icon": "/images/resources/M205.png",
     "isFont": false,
     "isDynamic": false
@@ -274,7 +274,7 @@
   {
     "id": "M206",
     "title": "Spider Chunks",
-    "description": null,
+    "description": "Found in Groovy Grove.\nFloors 501-600",
     "icon": "/images/resources/M206.png",
     "isFont": false,
     "isDynamic": false
@@ -282,7 +282,7 @@
   {
     "id": "M207",
     "title": "Snake Chunks",
-    "description": null,
+    "description": "Found in Groovy Grove.\nFloors 601-700",
     "icon": "/images/resources/M207.png",
     "isFont": false,
     "isDynamic": false
@@ -290,7 +290,7 @@
   {
     "id": "M208",
     "title": "Parasite Chunks",
-    "description": null,
+    "description": "Found in Groovy Grove.\nFloors 701-800",
     "icon": "/images/resources/M208.png",
     "isFont": false,
     "isDynamic": false
@@ -298,7 +298,7 @@
   {
     "id": "M209",
     "title": "Wasp Chunks",
-    "description": null,
+    "description": "Found in Groovy Grove.\nFloors 801-900",
     "icon": "/images/resources/M209.png",
     "isFont": false,
     "isDynamic": false
@@ -306,7 +306,7 @@
   {
     "id": "M210",
     "title": "Bat Chunks",
-    "description": null,
+    "description": "Found in Groovy Grove.\nFloors 900 and up.",
     "icon": "/images/resources/M210.png",
     "isFont": false,
     "isDynamic": false
@@ -314,7 +314,7 @@
   {
     "id": "M301",
     "title": "Earth Crystal",
-    "description": null,
+    "description": "Found in Creepy Crag.\nFloors 1-100",
     "icon": "/images/resources/M301.png",
     "isFont": false,
     "isDynamic": false
@@ -322,7 +322,7 @@
   {
     "id": "M302",
     "title": "Psychic Crystal",
-    "description": null,
+    "description": "Found in Creepy Crag.\nFloors 101-200",
     "icon": "/images/resources/M302.png",
     "isFont": false,
     "isDynamic": false
@@ -330,7 +330,7 @@
   {
     "id": "M303",
     "title": "Life Crystal",
-    "description": null,
+    "description": "Found in Creepy Crag.\nFloors 201-300",
     "icon": "/images/resources/M303.png",
     "isFont": false,
     "isDynamic": false
@@ -338,7 +338,7 @@
   {
     "id": "M304",
     "title": "Wind Crystal",
-    "description": null,
+    "description": "Found in Creepy Crag.\nFloors 301-400",
     "icon": "/images/resources/M304.png",
     "isFont": false,
     "isDynamic": false
@@ -346,7 +346,7 @@
   {
     "id": "M305",
     "title": "Lightning Crystal",
-    "description": null,
+    "description": "Found in Creepy Crag.\nFloors 401-500",
     "icon": "/images/resources/M305.png",
     "isFont": false,
     "isDynamic": false
@@ -354,7 +354,7 @@
   {
     "id": "M306",
     "title": "Fire Crystal",
-    "description": null,
+    "description": "Found in Creepy Crag.\nFloors 501-600",
     "icon": "/images/resources/M306.png",
     "isFont": false,
     "isDynamic": false
@@ -362,7 +362,7 @@
   {
     "id": "M307",
     "title": "Ice Crystal",
-    "description": null,
+    "description": "Found in Creepy Crag.\nFloors 601-700",
     "icon": "/images/resources/M307.png",
     "isFont": false,
     "isDynamic": false
@@ -370,7 +370,7 @@
   {
     "id": "M308",
     "title": "Poison Crystal",
-    "description": null,
+    "description": "Found in Creepy Crag.\nFloors 701-800",
     "icon": "/images/resources/M308.png",
     "isFont": false,
     "isDynamic": false
@@ -378,7 +378,7 @@
   {
     "id": "M309",
     "title": "Storm Crystal",
-    "description": null,
+    "description": "Found in Creepy Crag.\nFloors 801-900",
     "icon": "/images/resources/M309.png",
     "isFont": false,
     "isDynamic": false
@@ -386,7 +386,7 @@
   {
     "id": "M310",
     "title": "Death Crystal",
-    "description": null,
+    "description": "Found in Creepy Crag.\nFloors 900 and up.",
     "icon": "/images/resources/M310.png",
     "isFont": false,
     "isDynamic": false
@@ -394,7 +394,7 @@
   {
     "id": "M700",
     "title": "Green Essence",
-    "description": null,
+    "description": "Obtained via Desynthesis.",
     "icon": "/images/resources/M700.png",
     "isFont": false,
     "isDynamic": false
@@ -402,7 +402,7 @@
   {
     "id": "M701",
     "title": "Blue Essence",
-    "description": null,
+    "description": "Obtained via Desynthesis.",
     "icon": "/images/resources/M701.png",
     "isFont": false,
     "isDynamic": false
@@ -410,7 +410,7 @@
   {
     "id": "M702",
     "title": "Purple Essence",
-    "description": null,
+    "description": "Obtained via Desynthesis.",
     "icon": "/images/resources/M702.png",
     "isFont": false,
     "isDynamic": false
@@ -418,7 +418,7 @@
   {
     "id": "M800",
     "title": "Plate",
-    "description": null,
+    "description": "Used to create Artifacts.",
     "icon": "/images/resources/M800.png",
     "isFont": false,
     "isDynamic": false
@@ -426,7 +426,7 @@
   {
     "id": "M801",
     "title": "Nut",
-    "description": null,
+    "description": "Used to create Artifacts.",
     "icon": "/images/resources/M801.png",
     "isFont": false,
     "isDynamic": false
@@ -434,7 +434,7 @@
   {
     "id": "M802",
     "title": "Screw",
-    "description": null,
+    "description": "Used to create Artifacts.",
     "icon": "/images/resources/M802.png",
     "isFont": false,
     "isDynamic": false

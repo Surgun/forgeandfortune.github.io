@@ -73,6 +73,9 @@ class Playbook {
     getSkillIcons() {
         return this.skills.map(s=>s.icon);
     }
+    getSkillIDs() {
+        return this.skills.map(s=>s.id);
+    }
     skillCount() {
         return this.position;
     }

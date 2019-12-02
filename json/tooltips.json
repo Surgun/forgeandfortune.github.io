@@ -121,7 +121,7 @@
   {
     "id": "material_desc",
     "title": "#name#",
-    "description": "#description#</br>You have #amt#",
+    "description": "#description#</br>You have #amt#.",
     "icon": "/images/resources/#id#.png",
     "type": "material"
   },
@@ -187,5 +187,12 @@
     "description": "The amount of gold this recipe is worth.",
     "icon": "/images/resources/M001.png",
     "type": "value"
+  },
+  {
+    "id": "skill_desc",
+    "title": "#name#",
+    "description": "#description#",
+    "icon": "#icon#",
+    "type": "skill"
   }
 ]

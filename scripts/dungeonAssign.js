@@ -194,8 +194,10 @@ function refreshTurnOrder(dungeonID) {
 
 function generateSkillIcons(unit) {
     const d1 = $("<div/>").addClass("orderUnitSkills");
+    const skillIDs = unit.getSkillIDs();
     unit.getSkillIcons().forEach((icon,i) => {
-        $("<div/>").addClass("orderUnitSkill").attr("id","oUS"+unit.uniqueid+i).html(icon).appendTo(d1);
+        console.log(skillIDs);
+        $("<div/>").addClass("orderUnitSkill tooltip").attr({"id":"oUS"+unit.uniqueid+i,"data-tooltip":"skill_desc","data-tooltip-value":skillIDs[i]}).html(icon).appendTo(d1);
     });
     return d1;
 }

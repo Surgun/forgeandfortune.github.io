@@ -168,6 +168,9 @@ class Combatant {
     getSkillIcons() {
         return this.playbook.getSkillIcons();
     }
+    getSkillIDs() {
+        return this.playbook.getSkillIDs();
+    }
     getBuffArmor() {
         const buffs = this.buffs.map(b=>b.getArmor());
         return buffs.reduce((a,b) => a+b, 0);

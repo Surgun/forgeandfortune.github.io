@@ -3,6 +3,7 @@ class Tooltip {
     Object.assign(this, props);
   }
   tooltipValue(id,prop) {
+    console.log(SkillManager.idToSkill(id));
     if (this.type === "value") return id;
     else if (this.type === "buff") return BuffManager.idToBuff(id)[prop];
     else if (this.type === "dungeon") return DungeonManager.dungeonByID(id)[prop];
@@ -17,12 +18,12 @@ class Tooltip {
     else if (this.type === "worker") return WorkerManager.workerByID(id)[prop];
   }
   generateIcon(id) {
-    console.log(id);
     if (!this.icon) return null;
     return hashtagReplace(this, id, this.icon);
   }
-  isFont() {
-    return this.icon ? this.icon.substring(0,2) === "<i" : false;
+  isFont(id) {
+    const iconText = this.generateIcon(id);
+    return iconText ? iconText.substring(0,2) === "<i" : false;
   }
 }
 
@@ -54,11 +55,12 @@ function generateTooltip(e) {
   }
   
   if (tooltip === undefined) return;
+  console.log(tooltipEV);
   const generatedTooltip = $("<div/>").addClass("tooltip-container").css(defaultStyles).appendTo(tooltipsContainer);
   // If icon is image, render image
-  if (tooltip.icon && !tooltip.isFont()) $("<div/>").addClass("tooltip-icon").css({backgroundImage: `url(${tooltip.generateIcon(tooltipEV)})`}).appendTo(generatedTooltip);
+  if (tooltip.icon && !tooltip.isFont(tooltipEV)) $("<div/>").addClass("tooltip-icon").css({backgroundImage: `url(${tooltip.generateIcon(tooltipEV)})`}).appendTo(generatedTooltip);
   // If icon is font, render font icon
-  if (tooltip.icon && tooltip.isFont()) $("<div/>").addClass("tooltip-icon").html(tooltip.generateIcon(tooltipEV)).appendTo(generatedTooltip);
+  if (tooltip.icon && tooltip.isFont(tooltipEV)) $("<div/>").addClass("tooltip-icon").html(tooltip.generateIcon(tooltipEV)).appendTo(generatedTooltip);
 
   const tooltipDetails = $("<div/>").addClass("tooltip-details").appendTo(generatedTooltip);
   
@@ -91,6 +93,7 @@ $(document).on("mouseleave", ".tooltip", (e) => {
 });
 
 function hashtagReplace(tooltip, id, html) {
+  console.log(tooltip,id,html);
   if (!html.includes("#")) return html;
   const start = html.indexOf("#");
   const end = html.indexOf("#",start+1);

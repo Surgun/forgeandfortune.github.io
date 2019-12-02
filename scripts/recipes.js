@@ -16,6 +16,7 @@ class Item{
         this.mastered = false;
         this.autoSell = "None";
         this.owned = false;
+        this.goldComma = this.itemValueCommas(this.value);
     }
     createSave() {
         const save = {};

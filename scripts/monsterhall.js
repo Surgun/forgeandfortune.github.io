@@ -285,7 +285,7 @@ function refreshMonsterRewardLines() {
             }
             else {
                 $("<div/>").addClass("lineRewardPayText").html(`Increase`).appendTo(d3);
-                $("<div/>").addClass("lineRewardPayCost tooltip").attr("data-tooltip", "M002").html(`1 ${miscIcons.trophy}`).appendTo(d3);
+                $("<div/>").addClass("lineRewardPayCost tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":"M002"}).html(`1 ${miscIcons.trophy}`).appendTo(d3);
             }
     });
 }

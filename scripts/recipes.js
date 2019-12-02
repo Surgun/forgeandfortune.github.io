@@ -390,7 +390,7 @@ function recipeCardBack(recipe) {
         const td9a = $('<div/>').addClass('recipeMasteryContainer');
             const td9a1 = $('<div/>').addClass('recipeBackDescription').attr("id","rbd"+recipe.id).html("Crafting this recipe will reduce the cost to master it, down to a maximum of 100.");
             const masteryCost = recipe.masteryCost();
-            const td9a2 = $('<div/>').addClass('recipeTotalCrafted tooltip').attr({"id": "rcc"+recipe.id, "data-tooltip": masteryCost.id}).data("rid",recipe.id).html(`Master for ${masteryCost.amt} ${ResourceManager.idToMaterial(masteryCost.id).img}`);
+            const td9a2 = $('<div/>').addClass('recipeTotalCrafted tooltip').attr({"id": "rcc"+recipe.id, "data-tooltip":"material_desc","data-tooltip-value":masteryCost.id}).data("rid",recipe.id).html(`Master for ${masteryCost.amt} ${ResourceManager.idToMaterial(masteryCost.id).img}`);
             if (recipe.isMastered()) {
                 td9a1.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
                 td9a2.addClass("isMastered").html("MASTERED");

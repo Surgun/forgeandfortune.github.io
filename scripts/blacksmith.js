@@ -130,7 +130,7 @@ function refreshSmithStage() {
     const improveText = $("<div/>").addClass("improveText").html(`Improve for`);
     const improveCost = $("<div/>").addClass("improveCostContainer");
         $("<div/>").addClass("improveCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": params.gold}).html(`${miscIcons.gold} ${formatToUnits(params.gold,2)}`).appendTo(improveCost);
-        $("<div/>").addClass("improveCost tooltip").attr("data-tooltip", params.resType).html(`${ResourceManager.idToMaterial(params.resType).img} ${params.resAmt}`).appendTo(improveCost);
+        $("<div/>").addClass("improveCost tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value": params.resType}).html(`${ResourceManager.idToMaterial(params.resType).img} ${params.resAmt}`).appendTo(improveCost);
     $smithConfirm.empty().append(improveText,improveCost);
 }
 
@@ -138,7 +138,7 @@ function itemCardSmith(item,location,locationText) {
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
         $("<div/>").addClass("smithItemName").html(item.picName()).appendTo(itemdiv);
         $("<div/>").addClass("smithItemLevel").html(item.itemLevel()).appendTo(itemdiv);
-        $("<div/>").addClass("smithItemMaterial tooltip").attr("data-tooltip", item.material()).html(ResourceManager.materialIcon(item.material())).appendTo(itemdiv);
+        $("<div/>").addClass("smithItemMaterial tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":item.material()}).html(ResourceManager.materialIcon(item.material())).appendTo(itemdiv);
         const itemProps = $("<div/>").addClass("smithProps").appendTo(itemdiv);
         for (const [stat, val] of Object.entries(item.itemStat(false))) {
             if (val === 0) continue;
@@ -156,7 +156,7 @@ function itemStageCardSmith(slot,upgrade) {
     if (upgrade) itemName.html(slot.picNamePlus());
     else itemName.html(slot.picName());
     const itemLevel = $("<div/>").addClass("smithItemLevel").html(slot.itemLevel());
-    const itemMaterial = $("<div/>").addClass("smithItemMaterial tooltip").attr("data-tooltip", slot.material()).html(ResourceManager.materialIcon(slot.material()));
+    const itemMaterial = $("<div/>").addClass("smithItemMaterial tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":slot.material()}).html(ResourceManager.materialIcon(slot.material()));
     const itemProps = $("<div/>").addClass("smithProps");
     const d = $("<div/>").addClass("invProp").appendTo(itemProps);
     for (const [stat, val] of Object.entries(slot.itemStat(upgrade))) {

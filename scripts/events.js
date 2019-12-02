@@ -155,7 +155,7 @@ function dungeonDrops(event) {
     d.append(d1);
     if (event.reward === undefined) return d;
     event.reward.forEach(reward => {
-        const d2 = $("<div/>").addClass("rewardCard tooltip").attr("data-tooltip",reward.id);
+        const d2 = $("<div/>").addClass("rewardCard tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":reward.id});
         const d3 = $("<div/>").addClass("rewardImage").html(ResourceManager.idToMaterial(reward.id).img);
         const d4 = $("<div/>").addClass("rewardAmt").html(reward.amt);
         d.append(d2.append(d3,d4));
@@ -168,7 +168,7 @@ function bossRecipeUnlocks(recipes) {
     const d1 = $("<div/>").addClass("rewardDivTitle").html("Rewards");
     d.append(d1);
     recipes.forEach(recipe => {
-        const d2 = $("<div/>").addClass("rewardCard tooltip").attr("data-tooltip",recipe.name);
+        const d2 = $("<div/>").addClass("rewardCard tooltip").attr({"data-tooltip":"recipe_desc","data-tooltip-value":recipe.name});
         const d3 = $("<div/>").addClass("rewardImage").html(recipe.itemPic());
         d.append(d2.append(d3));
     });

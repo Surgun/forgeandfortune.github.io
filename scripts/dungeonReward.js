@@ -24,7 +24,7 @@ function showDungeonReward(dungeonID) {
     $dreLoot.empty();
     dungeon.dropList.forEach(drop => {
         const material = ResourceManager.idToMaterial(drop.id);
-        const d2 = $("<div/>").addClass("dreLootDropCard tooltip").attr("data-tooltip",material.id).appendTo($dreLoot);
+        const d2 = $("<div/>").addClass("dreLootDropCard tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":material.id}).appendTo($dreLoot);
             $("<div/>").addClass("dreLootDropImage").html(material.img).appendTo(d2);
             $("<div/>").addClass("dreLootDropAmt").html(drop.amt).appendTo(d2);
     });

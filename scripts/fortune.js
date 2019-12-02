@@ -187,7 +187,7 @@ function createFortuneCard(slot) {
     const cost = FortuneManager.getMaterialCost(slot);
     const sacContainer = $("<div/>").addClass("fortuneItemSac").data("fortuneID",slot.slotid).appendTo(itemdiv);
         $("<div/>").addClass("fortune_text").html(`Sacrifice for`).appendTo(sacContainer);
-        $("<div/>").addClass("fortune_cost tooltip").attr("data-tooltip", cost.id).html(`${ResourceManager.idToMaterial(cost.id).img} ${cost.amt}`).appendTo(sacContainer);
+        $("<div/>").addClass("fortune_cost tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":cost.id}).html(`${ResourceManager.idToMaterial(cost.id).img} ${cost.amt}`).appendTo(sacContainer);
     $('<div/>').addClass("fortuneItemClose").data("fortuneID",slot.slotid).html(`<i class="fas fa-times"></i>`).appendTo(itemdiv);
     return itemdiv;
 }

@@ -143,7 +143,7 @@ function refreshDesynthStage() {
     const reward = DesynthManager.desynthRewards(mod);
     $("<div/>").addClass("desynthMaterialPic").html(ResourceManager.idToMaterial(reward.id).img).appendTo($desynthRewardCard);
     $("<div/>").addClass("desynthMaterialAmt").html(reward.amt).appendTo($desynthRewardAmt);
-    $desynthReward.addClass("tooltip").attr("data-tooltip", reward.id);
+    $desynthReward.addClass("tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":reward.id});
 }
 
 function createDesynthBar() {

@@ -206,16 +206,14 @@ function initializeActionSlots() {
         const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","");
             const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i).appendTo(d3);
         if (actionSlotManager.isMastered(i)) s3.addClass("ProgressBarFillMaster");
-        let autoSellTooltip;
-        actionSlotManager.autoSell(i) !== "None" ? autoSellTooltip = actionSlotManager.autoSell(i) + " and lesser rarities" : autoSellTooltip = "None";
-        const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `Toggle Autosell: ${autoSellTooltip}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
+        const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `autosell_${actionSlotManager.autoSell(i).toLowerCase()}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
         if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
         if (!actionSlotManager.hasSlot(i) || actionSlotManager.isBuildingMaterial(i)) d4.hide();
         d.append(d1,d2,d3,d4);
         if (actionSlotManager.resList(i) !== null) {
             const d5 = $("<div/>").addClass("asRes").appendTo(d);
             actionSlotManager.resList(i).forEach(g => {
-                $("<div/>").addClass("asResIcon").html(`<img src="images/resources/${g}.png" alt="${g}">`).appendTo(d5);
+                $("<div/>").addClass("asResIcon tooltip").attr("data-tooltip", `${g}_worker`).html(`<img src="images/resources/${g}.png" alt="${g}">`).appendTo(d5);
             });
         };
         $ActionSlots.append(d);

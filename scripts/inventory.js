@@ -383,7 +383,7 @@ function refreshInventory() {
         }
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
-        const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr("data-tooltip", `${item.goldValue()} Gold`).html(item.goldValueFormatted());
+        const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr({"data-tooltip": "gold_d", "data-tooltip-value": formatWithCommas(item.goldValue())}).html(item.goldValueFormatted());
         const itemLevel = $("<div/>").addClass("inventoryItemLevel").html(item.itemLevel());
         if (item.goldValue() === 0) {
             itemCost.hide();
@@ -394,8 +394,7 @@ function refreshInventory() {
         const itemProps = $("<div/>").addClass("inventoryProps");
         for (const [stat, val] of Object.entries(item.itemStat(false))) {
             if (val === 0) continue;
-            statFormatted = stat.toUpperCase();
-            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
         };
         const actionBtns = $("<div/>").addClass("inventoryButtons");
         if (item.item.recipeType === "normal" || item.item.recipeType === "trinket") {
@@ -431,8 +430,7 @@ function gearEquipFromInventory(invID) {
     const itemProps = $("<div/>").addClass("equipItemProps");
     for (const [stat, val] of Object.entries(equipContainerTarget.itemStat(false))) {
         if (val === 0) continue;
-        const statFormatted = stat.toUpperCase();
-        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
     };
     itemdiv.append(itemName,itemLevel,itemProps);
     $ietEquip.html(itemdiv);
@@ -453,8 +451,7 @@ function gearEquipFromInventory(invID) {
                 const deltaStat = val - currentStats[stat];
                 if (deltaStat === 0 && val === 0) continue;
                 same = false;
-                const statFormatted = stat.toUpperCase();
-                const d4a = $('<div/>').addClass('heroEquipBlockEquipStat tooltip').attr("data-tooltip",statFormatted).appendTo(d4);
+                const d4a = $('<div/>').addClass('heroEquipBlockEquipStat tooltip').attr("data-tooltip", stat).appendTo(d4);
                 if (deltaStat > 0) d4a.addClass("hebPositive").html(`${miscIcons[stat]}${val} (+${deltaStat})`);
                 else if (deltaStat < 0) d4a.addClass("hebNegative").html(`${miscIcons[stat]}${val} (${deltaStat})`);
                 else d4a.html(`${miscIcons[stat]}${val}`);

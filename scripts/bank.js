@@ -102,8 +102,7 @@ function itemCard(item,inBank) {
     const itemProps = $("<div/>").addClass("bankProps");
     for (const [stat, val] of Object.entries(item.itemStat(false))) {
         if (val === 0) continue;
-        const statFormatted = stat.toUpperCase();
-        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
     }
     const locationButton = $("<div/>").attr("containerID",item.containerID);
     if (inBank) locationButton.addClass('bankTake').html("Take");

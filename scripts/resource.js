@@ -61,7 +61,7 @@ const ResourceManager = {
         if (mat.id === "M002") refreshMonsterReward();
         if (mat.id !== "M001") return;
         $goldSidebarAmt.html(formatToUnits(mat.amt,2));
-        $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);
+        $goldSidebar.addClass("tooltip").attr({"data-tooltip": "gold_d", "data-tooltip-value": formatWithCommas(mat.amt)});
     },
     canAffordMaterial(item) {
         if (item.mcost === null) return true;
@@ -168,7 +168,7 @@ function hardMatRefresh() {
         $("#amt"+mat.id).html(mat.amt);
         if (mat.id === "M001") {
             $goldSidebarAmt.html(formatToUnits(mat.amt,2));
-            $goldSidebar.addClass("tooltip").attr("data-tooltip",`${mat.amt} Gold`);
+            $goldSidebar.addClass("tooltip").attr({"data-tooltip": "gold_d", "data-tooltip-value": formatWithCommas(mat.amt)})
         }
     })
 }

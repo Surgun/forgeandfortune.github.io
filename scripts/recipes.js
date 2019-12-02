@@ -60,12 +60,12 @@ class Item{
         const d = $("<div/>").addClass("itemCost");
         this.gcost.forEach(resource => {
             const guild = GuildManager.idToGuild(resource);
-            d.append($("<div/>").addClass("indvCost resCost tooltip").attr("data-tooltip",guild.name+" Guild Worker").html('<img src="images/resources/'+resource+'.png">'));
+            d.append($("<div/>").addClass("indvCost resCost tooltip").attr("data-tooltip",guild.id+"_worker").html('<img src="images/resources/'+resource+'.png">'));
         })
         if (this.mcost === null) return d;
         for (const [material, amt] of Object.entries(this.mcost)) {
             const mat = ResourceManager.idToMaterial(material);
-            const d1 = $("<div/>").addClass("indvCost matCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.name).html(ResourceManager.formatCost(material,amt));
+            const d1 = $("<div/>").addClass("indvCost matCost tooltip").attr("id","vr"+this.id).attr("data-tooltip",mat.id).html(ResourceManager.formatCost(material,amt));
             d.append(d1);
         }
         return d;
@@ -73,11 +73,11 @@ class Item{
     recipeListStats() {
         const d = $("<div/>").addClass("recipeStatList");
         if (this.pow > 0) {
-            const d1 = $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "POW").html(miscIcons.pow + this.pow);
+            const d1 = $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "pow").html(miscIcons.pow + this.pow);
             d.append(d1);
         }
         if (this.hp > 0) {
-            const d3 = $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "HP").html(miscIcons.hp + this.hp);
+            const d3 = $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "hp").html(miscIcons.hp + this.hp);
             d.append(d3);
         }
         return d;
@@ -342,7 +342,7 @@ function recipeCardFront(recipe) {
             const td5a2 = $('<div/>').addClass('recipeTime').attr("id",`rt${recipe.id}`).html(msToTime(recipe.reducedCraft()));
         td5a.append(td5a1,td5a2);
 
-        const td5b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "In Inventory");
+        const td5b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "in_inventory");
             $("<div/>").addClass("recipeAmountHeader recipeCardHeader").html(`<i class="fas fa-cube"></i>`).appendTo(td5b);
             $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`).appendTo(td5b);
         if (recipe.recipeType !== "normal") td5b.hide();
@@ -390,7 +390,7 @@ function recipeCardBack(recipe) {
         const td9a = $('<div/>').addClass('recipeMasteryContainer');
             const td9a1 = $('<div/>').addClass('recipeBackDescription').attr("id","rbd"+recipe.id).html("Crafting this recipe will reduce the cost to master it, down to a maximum of 100.");
             const masteryCost = recipe.masteryCost();
-            const td9a2 = $('<div/>').addClass('recipeTotalCrafted tooltip').attr({"id": "rcc"+recipe.id, "data-tooltip": `${ResourceManager.idToMaterial(masteryCost.id).name}`}).data("rid",recipe.id).html(`Master for ${masteryCost.amt} ${ResourceManager.idToMaterial(masteryCost.id).img}`);
+            const td9a2 = $('<div/>').addClass('recipeTotalCrafted tooltip').attr({"id": "rcc"+recipe.id, "data-tooltip": masteryCost.id}).data("rid",recipe.id).html(`Master for ${masteryCost.amt} ${ResourceManager.idToMaterial(masteryCost.id).img}`);
             if (recipe.isMastered()) {
                 td9a1.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
                 td9a2.addClass("isMastered").html("MASTERED");

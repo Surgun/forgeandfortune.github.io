@@ -166,7 +166,7 @@ function refreshTinkerMats() {
     const mats = ["M700","M701","M702","M802"];
     $tinkerMaterials.empty();
     mats.forEach(mat => {
-        $("<div/>").addClass("tinkerMat tooltip").attr("data-tooltip",ResourceManager.idToMaterial(mat).name).html(ResourceManager.sidebarMaterial(mat)).appendTo($tinkerMaterials);
+        $("<div/>").addClass("tinkerMat tooltip").attr("data-tooltip", mat.id).html(ResourceManager.sidebarMaterial(mat)).appendTo($tinkerMaterials);
     });
 };  
 
@@ -200,7 +200,7 @@ function refreshTinkerCommands() {
 
 function createTinkerMaterialDiv(id,amt) {
     const res = ResourceManager.idToMaterial(id);
-    return $("<div/>").addClass("indvCost tooltip").attr("data-tooltip",res.name).html(`${res.img}&nbsp;&nbsp;${amt}`);
+    return $("<div/>").addClass("indvCost tooltip").attr("data-tooltip", res.id).html(`${res.img}&nbsp;&nbsp;${amt}`);
 }
 
 function createTinkerStatDiv(stat) {

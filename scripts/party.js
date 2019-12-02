@@ -127,7 +127,7 @@ function refreshHeroSelect() {
             const dm1 = $("<div/>").addClass("dtsMaterial").appendTo(dm);
                 $("<div/>").addClass("dtsMaterialIcon").html(m.img).appendTo(dm1);
                 $("<div/>").addClass("dtsMaterialName").html(m.name).appendTo(dm1);
-                $("<div/>").addClass("dtsMaterialAmt tooltip").attr("data-tooltip","Amount Owned").html(formatToUnits(m.amt,2)).appendTo(dm1);
+                $("<div/>").addClass("dtsMaterialAmt tooltip").attr("data-tooltip","in_inventory").html(formatToUnits(m.amt,2)).appendTo(dm1);
         });
         $dtsMaterials.append(dm);
     }
@@ -234,9 +234,9 @@ function characterCard(prefix,dv,ID,status) {
     const d1 = $("<div/>").addClass(prefix+"Image").html(hero.image);
     const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
     const d3 = $("<div/>").addClass(prefix+"Stats");
-        const d3a = $("<div/>").addClass(prefix+"HP"+" heroStat"+" tooltip").attr("data-tooltip","HP").html(`${miscIcons.hp} ${hero.maxHP()}`);
+        const d3a = $("<div/>").addClass(prefix+"HP"+" heroStat"+" tooltip").attr("data-tooltip","hp").html(`${miscIcons.hp} ${hero.maxHP()}`);
         d3.append(d3a);
-    const d4 = $("<div/>").addClass(prefix+"Pow"+" heroPowStat"+" tooltip").attr("data-tooltip","POW").html(`${miscIcons.pow} ${hero.getPow()}`);
+    const d4 = $("<div/>").addClass(prefix+"Pow"+" heroPowStat"+" tooltip").attr("data-tooltip","pow").html(`${miscIcons.pow} ${hero.getPow()}`);
     const d5 = $("<div/>").addClass("heroStatus").html(status);
     if (status === null) d5.hide();
     else d.addClass("heroUnavailable");

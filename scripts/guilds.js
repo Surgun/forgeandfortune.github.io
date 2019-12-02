@@ -288,19 +288,19 @@ function createOrderCard(item,id,index) {
     if (item.complete()) d1.addClass('orderComplete');
     $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id)).appendTo(d1);
     $("<div/>").addClass("orderName").addClass(`orderName`).html(item.displayName).appendTo(d1);
-    $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip",ResourceManager.nameForWorkerSac(item.id)).appendTo(d1);
+    $("<div/>").addClass("itemToSac tooltip").attr("data-tooltip", item.id).appendTo(d1);
     const d2 = $("<div/>").addClass("orderMaterials").appendTo(d1);
     item.item.gcost.forEach(g => {
         $("<div/>").addClass("asResIcon").html(`<img src="images/resources/${g}.png" alt="${g}">`).appendTo(d2);
     });
     $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Left`).appendTo(d1);
-    $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","In Inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(d1);
+    $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","in_inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(d1);
     $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`).appendTo(d1);
     const d3 = $("<div/>").addClass("guildItemSubmit").appendTo(d1);
     $("<div/>").addClass("guildItemSubmitHeading").html(`Submit one for:`).appendTo(d3);
         const d3a = $("<div/>").addClass("guildItemSubmitRewards").appendTo(d3);
-        $("<div/>").addClass("guildItemSubmitItem RewardGold").html(`${miscIcons.gold} +${item.goldValue()}`).appendTo(d3a);
-        $("<div/>").addClass("guildItemSubmitItem RewardRep").html(`+${item.rep} Reputation`).appendTo(d3a);
+        $("<div/>").addClass("guildItemSubmitItem RewardGold tooltip").attr({"data-tooltip": "gold_d", "data-tooltip-value": formatWithCommas(item.goldValue())}).html(`${miscIcons.gold} +${item.goldValue()}`).appendTo(d3a);
+        $("<div/>").addClass("guildItemSubmitItem RewardRep tooltip").attr("data-tooltip", "rep").html(`+${item.rep} Reputation`).appendTo(d3a);
     return d1;
 };
 
@@ -336,7 +336,7 @@ function createRecipeBuyCard(recipe,guildLvl) {
     }
     const d5 = $("<div/>").addClass("recipeBuyCardBuy").data("rid",recipe.id);
         $("<div/>").addClass("recipeBuyCardBuyText").html("Purchase").appendTo(d5);
-        $("<div/>").addClass("recipeBuyCardBuyCost").html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
+        $("<div/>").addClass("recipeBuyCardBuyCost tooltip").attr({"data-tooltip": "gold_d", "data-tooltip-value": formatWithCommas(recipe.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
     return d1.append(d2,d3,d3a,d5);
 };
 
@@ -357,7 +357,7 @@ function createWorkerBuyCard(worker) {
     const d2 = $("<div/>").addClass("workerBuyCardBodyImage").html(worker.pic);
     const d3 = $("<div/>").addClass("workerBuyCardBodyName").html(worker.name);
     const d4 = $("<div/>").addClass("workerBuyCardBodyProduction").html(worker.productionText());
-    const d5 = $('<div/>').addClass('workerBuyCardDesc tooltip').attr("data-tooltip",worker.description).html("<i class='fas fa-info-circle'></i>");
+    const d5 = $('<div/>').addClass('workerBuyCardDesc tooltip').attr("data-tooltip", worker.workerID).html("<i class='fas fa-info-circle'></i>");
     return d1.append(d2,d3,d4,d5);
 };
 

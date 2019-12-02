@@ -129,8 +129,8 @@ function refreshSmithStage() {
     const params = bloopSmith.getSmithCost()
     const improveText = $("<div/>").addClass("improveText").html(`Improve for`);
     const improveCost = $("<div/>").addClass("improveCostContainer");
-        $("<div/>").addClass("improveCost tooltip").attr("data-tooltip",`${params.gold} Gold`).html(`${miscIcons.gold} ${formatToUnits(params.gold,2)}`).appendTo(improveCost);
-        $("<div/>").addClass("improveCost tooltip").attr("data-tooltip",`${ResourceManager.idToMaterial(params.resType).name}`).html(`${ResourceManager.idToMaterial(params.resType).img} ${params.resAmt}`).appendTo(improveCost);
+        $("<div/>").addClass("improveCost tooltip").attr({"data-tooltip": "gold_d", "data-tooltip-value": params.gold}).html(`${miscIcons.gold} ${formatToUnits(params.gold,2)}`).appendTo(improveCost);
+        $("<div/>").addClass("improveCost tooltip").attr("data-tooltip", params.resType).html(`${ResourceManager.idToMaterial(params.resType).img} ${params.resAmt}`).appendTo(improveCost);
     $smithConfirm.empty().append(improveText,improveCost);
 }
 
@@ -138,12 +138,11 @@ function itemCardSmith(item,location,locationText) {
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
         $("<div/>").addClass("smithItemName").html(item.picName()).appendTo(itemdiv);
         $("<div/>").addClass("smithItemLevel").html(item.itemLevel()).appendTo(itemdiv);
-        $("<div/>").addClass("smithItemMaterial tooltip").attr("data-tooltip", `${ResourceManager.idToMaterial(item.material()).name}`).html(ResourceManager.materialIcon(item.material())).appendTo(itemdiv);
+        $("<div/>").addClass("smithItemMaterial tooltip").attr("data-tooltip", item.material()).html(ResourceManager.materialIcon(item.material())).appendTo(itemdiv);
         const itemProps = $("<div/>").addClass("smithProps").appendTo(itemdiv);
         for (const [stat, val] of Object.entries(item.itemStat(false))) {
             if (val === 0) continue;
-            const statFormatted = stat.toUpperCase();
-            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
         }
         if (locationText !== "") $("<div/>").addClass("smithItemLocation").html(locationText).appendTo(itemdiv);
         $("<div/>").addClass("smithStage").attr("containerID",item.containerID).data("location",location).html("Smith").appendTo(itemdiv);
@@ -157,13 +156,12 @@ function itemStageCardSmith(slot,upgrade) {
     if (upgrade) itemName.html(slot.picNamePlus());
     else itemName.html(slot.picName());
     const itemLevel = $("<div/>").addClass("smithItemLevel").html(slot.itemLevel());
-    const itemMaterial = $("<div/>").addClass("smithItemMaterial tooltip").attr("data-tooltip", `${ResourceManager.idToMaterial(slot.material()).name}`).html(ResourceManager.materialIcon(slot.material()));
+    const itemMaterial = $("<div/>").addClass("smithItemMaterial tooltip").attr("data-tooltip", slot.material()).html(ResourceManager.materialIcon(slot.material()));
     const itemProps = $("<div/>").addClass("smithProps");
     const d = $("<div/>").addClass("invProp").appendTo(itemProps);
     for (const [stat, val] of Object.entries(slot.itemStat(upgrade))) {
         if (val === 0) continue;
-        const statFormatted = stat.toUpperCase();
-        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip",statFormatted).html(`${miscIcons[stat]} ${val}`).appendTo(d);
+        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} ${val}`).appendTo(d);
     }
     return itemdiv.append(itemName,itemLevel,itemMaterial,itemProps);
 }

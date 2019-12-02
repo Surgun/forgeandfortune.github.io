@@ -18,12 +18,12 @@ const statName = [
     `${miscIcons.dodge} <span>Dodge</span>`
 ];
 const statDesc = [
-    "Amount of damage your hero can sustain before being downed.",
-    "Amount of damage your hero can deal.",
-    "Amount of additional damage your hero can deal with special attacks.",
-    "Damage resistance your hero possesses.",
-    "Chance of an attack dealing bonus damage.",
-    "Chance your hero may avoid an enemy attack."
+    "hp",
+    "pow",
+    "spower",
+    "armor",
+    "crit",
+    "dodge"
 ];
 
 function initializeHeroList() {
@@ -60,8 +60,8 @@ function viewHeroOverview() {
                 $("<div/>").addClass("heroOverviewName").html(hero.name).appendTo(heroInfo);
                 $("<div/>").addClass("heroOverviewClass").html(hero.class).appendTo(heroInfo);
             const heroStats = $("<div/>").addClass("heroOverviewStats").appendTo(d);
-                $("<div/>").addClass("heroOverviewHP overviewStat tooltip").attr("data-tooltip","HP").html(`${miscIcons.hp} ${hero.maxHP()}`).appendTo(heroStats);
-            $("<div/>").addClass("heroOverviewPow overviewStat tooltip").attr("data-tooltip","POW").html(`${miscIcons.pow} ${hero.getPow()}`).appendTo(d);
+                $("<div/>").addClass("heroOverviewHP overviewStat tooltip").attr("data-tooltip","hp").html(`${miscIcons.hp} ${hero.maxHP()}`).appendTo(heroStats);
+            $("<div/>").addClass("heroOverviewPow overviewStat tooltip").attr("data-tooltip","pow").html(`${miscIcons.pow} ${hero.getPow()}`).appendTo(d);
             d.appendTo(overviewContainer)
     });
     $heroOverview.append(overviewTitle,overviewDesc,overviewContainer);
@@ -187,9 +187,8 @@ function heroEqupCard(hero, itemContainer) {
     for (const [stat, val] of Object.entries(itemContainer.itemStat())) {
         const deltaStat = val - equippedStats[stat];
         if (deltaStat === 0 && val === 0) continue;
-        const statFormatted = stat.toUpperCase();
         const d3 = $('<div/>').addClass('gearStatContainer').appendTo(card);
-        const d3a = $('<div/>').addClass('gearStat tooltip').attr("data-tooltip",statFormatted).appendTo(d3);
+        const d3a = $('<div/>').addClass('gearStat tooltip').attr("data-tooltip", stat).appendTo(d3);
         if (deltaStat > 0) d3a.addClass("gearStatPositive").html(`${miscIcons[stat]}${val} (+${deltaStat})`);
         else if (deltaStat < 0) d3a.addClass("gearStatNegative").html(`${miscIcons[stat]}${val} (${deltaStat})`);
         else d3a.html(`${miscIcons[stat]}${val}`);

@@ -135,7 +135,7 @@
   {
     "id": "autosell_none",
     "title": "Auto-Sell Setting: None",
-    "description": "You are currently not autoselling any of this item.",
+    "description": "You are currently not autoselling any qualities of this item.",
     "icon": null,
     "type": "static"
   },
@@ -184,7 +184,7 @@
   {
     "id": "gold_value",
     "title": "#value# Gold",
-    "description": "The amount of gold this recipe is worth.",
+    "description": "Standard currency used for purchases.",
     "icon": "/images/resources/M001.png",
     "type": "value"
   },

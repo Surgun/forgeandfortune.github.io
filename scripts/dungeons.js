@@ -110,7 +110,7 @@ class Dungeon {
         CombatManager.refreshLater = refreshLater;
         while (this.dungeonTime >= dungeonWaitTime) {
             //take a turn
-            this.buffTick();
+            this.buffTick("onTurn");
             if (this.floorComplete()) {
                 this.nextFloor(refreshLater);
                 this.dungeonTime -= dungeonWaitTime;
@@ -197,12 +197,12 @@ class Dungeon {
         const boss = DungeonManager.bossByDungeon(this.id);
         return MonsterHall.monsterKillCount(boss);
     }
-    buffTick() {
+    buffTick(type) {
         this.party.heroes.forEach(hero => {
-            hero.buffTick();
+            hero.buffTick(type);
         })
         this.mobs.forEach(enemy => {
-            enemy.buffTick();
+            enemy.buffTick(type);
         })
     }
     toggleProgress(toggle) {

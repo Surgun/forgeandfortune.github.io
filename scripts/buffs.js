@@ -9,29 +9,26 @@ class buffTemplate {
 class Buff {
     constructor (buffTemplate,target,power) {
         Object.assign(this, buffTemplate);
-        this.turns = this.maxTurns;
-        this.stacks = 1;
+        this.stacks = this.stackCast;
         this.target = target;
         this.power = power;
     }
     addCast() {
-        if (this.onCast === "expire") {
-            this.turns = this.maxTurns;
+        if (this.onCast === "refresh") {
+            this.stacks = this.stackCast;
         }
         else if (this.onCast === "stack") {
-            this.stacks = Math.min(this.stacks+1,this.maxStacks);
+            this.stacks = Math.min(this.stacks+this.stackCast,this.maxStack);
         }
     }
     createSave() {
         const save = {};
-        save.turns = this.turns;
         save.stacks = this.stacks;
         save.power = this.power;
         save.id = this.id;
         return save;
     }
     loadSave(save) {
-        this.turns = save.turns;
         this.stacks = save.stacks;
         this.power = save.power;
     }
@@ -43,21 +40,21 @@ class Buff {
             icon : this.icon,
         };
     }
-    buffTick() {
-        if (this.onCast === "expire") {
-            this.turns = Math.max(0,this.turns-1);
-            if (this.turns === 0) BuffRefreshManager.removeBuff(this, this.target);
-            else BuffRefreshManager.updateBuffCount(this, this.target);
-        }
-        this.onTick();        
+    buffTick(type) {
+        if (type !== this.decrease) return;
+        this.stacks -= 1;
+        if (this.stacks <= 0) BuffRefreshManager.removeBuff(this, this.target);
+        else BuffRefreshManager.updateBuffCount(this, this.target);
+        if (type === "onTurn") this.onTick();
+        if (type === "onHit") this.onHit();
     }
     expired() {
-        return this.onCast === "expire" && this.turns === 0;
+        return this.stacks <= 0;
     }
     onTick() { return; }
     getArmor() { return 0; }
     getDodge() { return 0; }
-    onAttacked() { return; }
+    onHit() { return; }
     getPow() { return 0; }
 }
 
@@ -114,10 +111,10 @@ const BuffRefreshManager = {
         })
     },
     makeBuffContainer(buff,uniqueid) {
-        const count = (buff.onCast === "expire") ? buff.turns : buff.stacks;
         const d1 = $("<div/>").addClass("buffContainer").attr("id","bc"+uniqueid+buff.id);
             $("<div/>").addClass("buffContainerIcon").html(buff.icon).appendTo(d1);
-            $("<div/>").addClass("buffContainerCount").attr("id","bcount"+uniqueid+buff.id).html(count).appendTo(d1);
+            console.log(buff.stacks);
+            $("<div/>").addClass("buffContainerCount").attr("id","bcount"+uniqueid+buff.id).html(buff.stacks).appendTo(d1);
         return d1;
     },
     addBuff(buff,combatant) {
@@ -125,8 +122,7 @@ const BuffRefreshManager = {
         buffList.append(this.makeBuffContainer(buff,combatant.uniqueid));
     },
     updateBuffCount(buff,combatant) {
-        const count = (buff.onCast === "expire") ? buff.turns : buff.stacks;
-        $("#bcount"+combatant.uniqueid+buff.id).html(count);
+        $("#bcount"+combatant.uniqueid+buff.id).html(buff.stacks);
     },
     removeBuff(buff,combatant) {
         $("#bc"+combatant.uniqueid+buff.id).remove();
@@ -173,7 +169,7 @@ class B0011 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    onAttacked(attacker) {
+    onHit(attacker) {
         attacker.takeDamage(this.power);
     }
 }

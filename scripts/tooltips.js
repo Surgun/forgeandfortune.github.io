@@ -3,7 +3,6 @@ class Tooltip {
     Object.assign(this, props);
   }
   tooltipValue(id,prop) {
-    console.log(SkillManager.idToSkill(id));
     if (this.type === "value") return id;
     else if (this.type === "buff") return BuffManager.idToBuff(id)[prop];
     else if (this.type === "dungeon") return DungeonManager.dungeonByID(id)[prop];
@@ -55,7 +54,6 @@ function generateTooltip(e) {
   }
   
   if (tooltip === undefined) return;
-  console.log(tooltipEV);
   const generatedTooltip = $("<div/>").addClass("tooltip-container").css(defaultStyles).appendTo(tooltipsContainer);
   // If icon is image, render image
   if (tooltip.icon && !tooltip.isFont(tooltipEV)) $("<div/>").addClass("tooltip-icon").css({backgroundImage: `url(${tooltip.generateIcon(tooltipEV)})`}).appendTo(generatedTooltip);
@@ -93,7 +91,6 @@ $(document).on("mouseleave", ".tooltip", (e) => {
 });
 
 function hashtagReplace(tooltip, id, html) {
-  console.log(tooltip,id,html);
   if (!html.includes("#")) return html;
   const start = html.indexOf("#");
   const end = html.indexOf("#",start+1);

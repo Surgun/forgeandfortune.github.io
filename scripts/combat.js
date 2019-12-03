@@ -8,6 +8,7 @@ const CombatManager = {
         const enemies = (attacker.unitType === "hero") ? dungeon.mobs : dungeon.party.heroes;
         const attack = attacker.getSkill();
         attack.execute(attacker,allies,enemies,dungeon.id);
+        attacker.buffTick("onHitting");
         dungeon.order.nextPosition();
     },
 }
@@ -86,9 +87,9 @@ class Combatant {
         this.critDmg = 1.5;
         this.buffs = [];
     }
-    buffTick() {
+    buffTick(type) {
         this.buffs.forEach(buff => {
-            buff.buffTick();
+            buff.buffTick(type);
         });
         this.buffs = this.buffs.filter(buff => !buff.expired());
     }
@@ -103,7 +104,7 @@ class Combatant {
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);
         if (this.hp === 0) BattleLog.addEntry(attack.dungeonid,miscIcons.dead,`${this.name} has fallen!`);
-        this.buffs.forEach(b=>b.onAttacked(attack.attacker));
+        this.buffTick("onHit");
     }
     takeDamage(dmg) {
         this.hp = Math.max(this.hp-dmg,0);

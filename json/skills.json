@@ -11,7 +11,6 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
-    "buffID": null,
     "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE# damage"
   },
   {
@@ -26,7 +25,6 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
-    "buffID": null,
     "bText": "#ATTACKER# launches a super attack against #DEFENDER# for #DAMAGE# damage"
   },
   {
@@ -41,7 +39,6 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 0.5,
-    "buffID": null,
     "bText": "#ATTACKER# braces himself"
   },
   {
@@ -56,7 +53,6 @@
     "targetEnemies": true,
     "targetType": "all",
     "powMod": 1.5,
-    "buffID": null,
     "bText": "#ATTACKER# sends a rain of meteors for #DAMAGE# damage"
   },
   {
@@ -71,7 +67,6 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 0.25,
-    "buffID": null,
     "bText": "#ATTACKER# lets out four quick stings at #DEFENDER# for #DAMAGE# damage"
   },
   {
@@ -86,7 +81,6 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
-    "buffID": null,
     "bText": [
       "#ATTACKER# strikes #DEFENDER# for #DAMAGE# damage and heals the same amount",
       ""
@@ -104,7 +98,6 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 0.25,
-    "buffID": null,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -119,7 +112,6 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 1,
-    "buffID": null,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -134,7 +126,6 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 1,
-    "buffID": null,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -149,7 +140,6 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 0.25,
-    "buffID": null,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -164,7 +154,6 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 0.25,
-    "buffID": null,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -179,7 +168,6 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 0.25,
-    "buffID": null,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -194,7 +182,6 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
-    "buffID": null,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -209,7 +196,6 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
-    "buffID": null,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -224,7 +210,6 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
-    "buffID": null,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -239,7 +224,20 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 0.25,
-    "buffID": null,
     "bText": "#ATTACKER# i'll write this later"
+  },
+  {
+    "id": "S0017",
+    "name": "Tree Wallop",
+    "description": "High damage attack to second in order",
+    "icon": "<i class=\"fas fa-tree\"></i>",
+    "type": "physical",
+    "canDodge": true,
+    "canCrit": false,
+    "subType": "none",
+    "targetEnemies": true,
+    "targetType": "second",
+    "powMod": 2,
+    "bText": "#ATTACKER# trees you for #DAMAGE# damage"
   }
 ]

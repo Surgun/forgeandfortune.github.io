@@ -135,7 +135,7 @@ function initiateDungeonFloor(dungeonID) {
     if (dungeon.type === "boss") $dungeonRun.addClass("DBoss");
     $floorID.html("Floor "+dungeon.floorCount);
     const rewards = dungeon.getRewards();
-    $floorRewards.html(`Earning ${rewards.amt} ${ResourceManager.materialIcon(rewards.id)} per clear`)
+    if (dungeon.type === "normal") $floorRewards.html(`Earning ${rewards.amt} ${ResourceManager.materialIcon(rewards.id)} per clear`)
     $dungeonHeroList.empty();
     $dungeonMobList.empty();
     dungeon.party.heroes.forEach(hero => {
@@ -223,12 +223,15 @@ function initializeSideBarDungeon() {
 
 function refreshDungeonFarmStatus(dungeonid) {
     const dungeon = DungeonManager.dungeonByID(dungeonid);
+    if (dungeon.type === "boss") return;
     if (dungeon.progressNextFloor) $("#dungeonFarm"+dungeonid).removeClass("dungeonFarmActive");
     else $("#dungeonFarm"+dungeonid).addClass("dungeonFarmActive");
 }
 
 function refreshSidebarDungeonMats(dungeonID) {
-    const rewards = DungeonManager.dungeonByID(dungeonID).getRewards();
+    const dungeon = DungeonManager.dungeonByID(dungeonID);
+    if (dungeon.type === "boss") return;
+    const rewards = dungeon.getRewards();
     $("#dRR"+dungeonID).html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`);
 }
 

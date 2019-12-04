@@ -39,7 +39,6 @@ class TurnOrder {
     }
 }
 
-
 class Dungeon {
     constructor(props) {
         Object.assign(this, props);
@@ -170,8 +169,10 @@ class Dungeon {
         ResourceManager.addMaterial(rewards.id,rewards.amt);
     }
     nextFloor(refreshLater, previousFloor) {
+        if (this.floorCount > 0 && this.type === "boss") return this.dungeonComplete(previousFloor);
         if (!previousFloor && this.floorCount > 0) this.addRewards();
         if (previousFloor) {
+            this.resetDungeon();
             this.floorCount = Math.max(1,this.floorCount-1);
             this.toggleProgress(false);
         }
@@ -186,6 +187,10 @@ class Dungeon {
         initiateDungeonFloor(this.id);
         $("#dsb"+this.id).html(`${this.name} - ${this.floorCount}`);
         refreshSidebarDungeonMats(this.id);
+    }
+    dungeonComplete(lost) {
+        this.status = DungeonStatus.COLLECT;
+        if (DungeonManager.dungeonView === this.id) showDungeonReward(this.id);
     }
     bossPercent() {
         if (this.type !== "boss") return "0%";
@@ -270,15 +275,6 @@ const DungeonManager = {
         dungeon.status = DungeonStatus.EMPTY;
         dungeon.progressNextFloor = true;
         initializeSideBarDungeon();
-    },
-    repeatDungeon(dungeonID) {
-        //ends a dungeon and also restarts it?
-        const dungeon = this.dungeonByID(dungeonID);
-        this.dungeonCreatingID = dungeonID;
-        dungeon.resetDungeon();
-        PartyCreator.clearMembers();
-        PartyCreator.startingTeam(dungeon.lastParty);
-        this.createDungeon(true);
     },
     createDungeon(floorSkip) {
         const party = PartyCreator.lockParty();

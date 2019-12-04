@@ -1306,7 +1306,7 @@
     "powMod": 90,
     "armor": 25,
     "resist": 0,
-    "playbook": null,
+    "playbook": "PB016",
     "event": "boss"
   },
   {

@@ -718,5 +718,17 @@
     "type": "normal",
     "mat": "M301",
     "matAmt": 12.25
+  },
+  {
+    "id": "F1000",
+    "dungeon": "D010",
+    "minFloor": 1,
+    "maxFloor": 1,
+    "mobs": [
+      "BB010"
+    ],
+    "type": "boss",
+    "mat": null,
+    "matAmt": null
   }
 ]

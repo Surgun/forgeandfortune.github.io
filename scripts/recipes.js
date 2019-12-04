@@ -104,6 +104,7 @@ class Item{
         Notifications.masterRecipe(this.name);
         initializeActionSlots();
         refreshCraftedCount();
+        destroyTooltip(); // Removes stuck tooltip after mastering item on recipe card
         refreshProgress();
         refreshMonsterReward();
         GuildManager.repopulateUnmastered();

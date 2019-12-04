@@ -85,7 +85,7 @@ function destroyTooltip(e) {
 
 $(document).on("mouseenter", ".tooltip", (e) => {
   e.stopPropagation();
-  destroyTooltip();
+  destroyTooltip(); // Ensures removal of any "stuck" tooltips before generating new tooltip
   generateTooltip(e);
 });
 

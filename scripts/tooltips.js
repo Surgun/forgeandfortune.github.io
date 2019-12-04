@@ -85,6 +85,7 @@ function destroyTooltip(e) {
 
 $(document).on("mouseenter", ".tooltip", (e) => {
   e.stopPropagation();
+  destroyTooltip();
   generateTooltip(e);
 });
 

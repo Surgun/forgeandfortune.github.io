@@ -373,7 +373,7 @@ function refreshAllRecipeMastery() {
 function refreshRecipeMastery(guild) {
     const $guildBlock = $(`#${guild.id}Mastery`);
     $guildBlock.empty();
-    if (guild.unmastered.length === 0) $guildBlock.html("No recipes to master currently");
+    if (guild.unmastered.length === 0) $guildBlock.html("No recipes to master currently.");
     guild.unmastered.forEach(rid => {
         const recipe = recipeList.idToItem(rid);
         $guildBlock.append(createRecipeMasteryCard(recipe));
@@ -385,7 +385,7 @@ function createRecipeMasteryCard(recipe) {
     const d1 = $("<div/>").addClass("recipeMasteryGuildCard");
     $("<div/>").addClass("recipeMasteryGuildPicName").html(recipe.itemPicName()).appendTo(d1);
     const masteryCost = recipe.masteryCost();
-    $("<div/>").addClass("recipeMasteryGuildButton").attr("id","rcm"+recipe.id).data("rid",recipe.id).html(`Master for ${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`).appendTo(d1);
+    $("<div/>").addClass("recipeMasteryGuildButton tooltip").attr({"id": "rcm"+recipe.id, "data-tooltip": "material_desc", "data-tooltip-value": masteryCost.id}).data("rid",recipe.id).html(`Master for ${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`).appendTo(d1);
     return d1;
 }
 

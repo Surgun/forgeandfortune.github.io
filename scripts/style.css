@@ -2545,7 +2545,7 @@ Rarities
     border-radius: 5px;
 }
 
-.Worker .BuyWorker, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .alPerkBuy, .fuseStart, .lineRewardPay {
+.Worker .BuyWorker, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .fuseStart, .lineRewardPay {
     position: relative;
     border: 0;
     font-size: 16px;
@@ -2561,7 +2561,7 @@ Rarities
             align-items: center;
 }
 
-.upgrade_text, .unlockbp_text, .buyWorkerText, .buyHeroText, .ASBuySlotText, .dungeon_upgrade_text, .alPerkBuyText, .fuseStartText, .lineRewardPayText {
+.upgrade_text, .unlockbp_text, .buyWorkerText, .buyHeroText, .ASBuySlotText, .dungeon_upgrade_text, .fuseStartText, .lineRewardPayText {
     padding: 0 10px;
     margin-right: 10px;
 }
@@ -2748,7 +2748,7 @@ Rarities
     color: var(--text-secondary);
 }
 
-.guildOrder, .guildSales, .guildWorkers {
+.guildOrder, .guildWorkers {
     display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
@@ -5580,7 +5580,7 @@ label.selection-container.party-selection-container {
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, #dungeonTeamButton, .recipeBuyCardBuy, .workerBuyCardBuy, .alPerkBuy, .guildOrderSubmit, .fuseStart, .desynthButton, #desynthSlotStart, .desynthPowerSetting, #desynthSlotCollect, #collectResmith, .eventActionButton, .fortuneStage, .dreActionButton, .smithButton, .recipeTotalCrafted, .fortuneItemSac, .fuseSlotStart, .lineRewardPay {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .bpShopButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, #dungeonTeamButton, .recipeBuyCardBuy, .workerBuyCardBuy, .guildOrderSubmit, .fuseStart, .desynthButton, #desynthSlotStart, .desynthPowerSetting, #desynthSlotCollect, #collectResmith, .eventActionButton, .fortuneStage, .dreActionButton, .smithButton, .recipeTotalCrafted, .fortuneItemSac, .fuseSlotStart, .lineRewardPay {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -5728,7 +5728,7 @@ label.selection-container.party-selection-container {
     background-color: var(--green-tertiary);
 }
 
-#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .dungeon_cost, .recipeBuyCardBuyCost, .alPerkBuyCost, .guildOrderSubmitValue, .fuseStartCost, #collectResmith, .lineRewardPayCost {
+#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .dungeon_cost, .recipeBuyCardBuyCost, .guildOrderSubmitValue, .fuseStartCost, #collectResmith, .lineRewardPayCost {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5742,7 +5742,7 @@ label.selection-container.party-selection-container {
             align-items: center;
 }
 
-.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .recipeBuyCardBuyCost, .alPerkBuyCost, .guildOrderSubmitValue, .fuseStartCost, .lineRewardPayCost {
+.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .recipeBuyCardBuyCost, .guildOrderSubmitValue, .fuseStartCost, .lineRewardPayCost {
     position: relative;
     margin-top: 5px;
     padding: 5px;
@@ -5759,11 +5759,11 @@ label.selection-container.party-selection-container {
     margin: 5px 2.5px 0;
 }
 
-.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img, .dungeon_cost > img, .recipeBuyCardBuyCost > img, .alPerkBuyCost > img, .guildOrderSubmitValue > img, .fuseStartCost > img, .lineRewardPayCost > img {
+.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img, .dungeon_cost > img, .recipeBuyCardBuyCost > img, .guildOrderSubmitValue > img, .fuseStartCost > img, .lineRewardPayCost > img {
     margin: 0 5px;
 }
 
-.worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .alPerkBuyCost, .fuseStartCost, .lineRewardPayCost {
+.worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .dungeon_cost, .fuseStartCost, .lineRewardPayCost {
     margin-top: 0;
     max-width: 120px;
 }
@@ -8756,6 +8756,8 @@ span.beta-tag {
     color: var(--green-primary);
 }
 
+/* Tooltips */
+
 #tooltips {
     position: absolute;
     top: 0;
@@ -8821,3 +8823,73 @@ span.beta-tag {
 .tooltip-description {
     color: var(--text-secondary);
 }
+
+/* End Tooltips */
+
+/* Market */
+
+.marketContainer {
+    height: 100%;
+    overflow: auto;
+}
+
+.marketContainer .guildSummary {
+    margin: 0;
+}
+
+.guildSalesContainer {
+    padding: 10px;
+}
+
+.guildSales {
+    display: -ms-grid;
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(225px, 1fr));
+    grid-gap: 10px;
+}
+
+.alPerkBuy {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding: 8px 10px;
+    width: 100%;
+    background-color: rgba(255,255,255,.05);
+    color: var(--text-primary);
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.alPerkBuyText {
+    width: 100%;
+}
+
+.alPerkBuyCost {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.buyCost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 1px;
+    flex-grow: 1;
+    margin: 5px 2.5px 0;
+    padding: 8px 10px;
+    white-space: nowrap;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 5px;
+}
+
+.buyCost > img {
+    margin-right: 5px;
+}
+
+/* End Market */

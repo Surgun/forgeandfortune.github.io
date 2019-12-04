@@ -97,8 +97,9 @@ function createALperk(perk) {
     $("<div/>").addClass("alDesc").html(perk.description).appendTo(d1);
     const d5 = $("<div/>").addClass("alPerkBuy").data("pid",perk.id).appendTo(d1);
         $("<div/>").addClass("alPerkBuyText").html("Purchase").appendTo(d5);
-        $("<div/>").addClass("alPerkBuyCost").html(`${miscIcons.gold} ${formatToUnits(perk.goldCost,2)}`).appendTo(d5);
-        $("<div/>").addClass("alPerkBuyCostMaterial").html(`${ResourceManager.materialIcon(perk.mat)} ${perk.matAmt}`).appendTo(d5);
+        const d5a = $("<div/>").addClass("alPerkBuyCost").appendTo(d5);
+            $("<div/>").addClass("buyCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(perk.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(perk.goldCost,2)}`).appendTo(d5a);
+            $("<div/>").addClass("buyCost tooltip").attr({"data-tooltip": "material_desc", "data-tooltip-value": perk.mat}).html(`${ResourceManager.materialIcon(perk.mat)} ${perk.matAmt}`).appendTo(d5a);
     return d1;
 }
 

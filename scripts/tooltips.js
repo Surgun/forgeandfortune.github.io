@@ -42,11 +42,13 @@ function generateTooltip(e) {
   const tooltipEV = $(e.currentTarget).attr("data-tooltip-value");
   const tooltip = TooltipManager.findTooltip(tooltipID);
   const props = e.currentTarget.getBoundingClientRect();
+
   let positionBottom = ( window.innerHeight - props.top ) + 10;
   if (props.top < 100) positionBottom = ( window.innerHeight - props.top ) - 100;
-  let positionLeft = props.left - 150;
+  let positionLeft = props.left + (props.width / 2) - 175;
   if (positionLeft < 0) positionLeft = 5;
-  if (positionLeft > window.innerWidth) positionLeft -= 5;
+  while (positionLeft > window.innerWidth - 350) positionLeft -= 5;
+
   const defaultStyles = {
     position: "absolute",
     bottom: positionBottom,

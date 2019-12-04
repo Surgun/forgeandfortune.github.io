@@ -8808,6 +8808,10 @@ span.beta-tag {
     border-radius: 5px;
 }
 
+.tooltip-icon > i {
+    margin: 0;
+}
+
 .tooltip-details {
     display: flex;
     flex-direction: column;

@@ -233,6 +233,7 @@ function refreshPossibleFuse() {
     
 $(document).on('click', '.fuseStart', (e) => {
     e.preventDefault();
+    destroyTooltip();
     const uniqueid = $(e.currentTarget).attr("uniqueid");
     FusionManager.addFuse(uniqueid);
 });

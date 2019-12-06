@@ -106,9 +106,16 @@
   },
   {
     "id": "recipe_gold",
-    "title": "#value# Gold",
+    "title": "#goldComma# Gold",
     "description": "The amount of gold this recipe is worth.",
     "icon": "/images/resources/M001.png",
+    "type": "recipe"
+  },
+  {
+    "id": "recipe_desc",
+    "title": "#name#",
+    "description": "#description#",
+    "icon": "/images/recipes/#type#/#id#.png",
     "type": "recipe"
   },
   {
@@ -166,13 +173,6 @@
     "description": "You are currently autoselling all qualities (common, good, great and epic) of this item.",
     "icon": null,
     "type": "static"
-  },
-  {
-    "id": "recipe_desc",
-    "title": "#name",
-    "description": "#description#",
-    "icon": "/images/recipes/#type#/#id#.png",
-    "type": "recipe"
   },
   {
     "id": "worker_desc",

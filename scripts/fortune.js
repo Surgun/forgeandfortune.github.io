@@ -219,6 +219,7 @@ $(document).on('click', '.fortuneStage', (e) => {
 
 $(document).on('click', '.fortuneItemSac', (e) => {
     e.preventDefault();
+    destroyTooltip();
     const fortuneID = parseInt($(e.currentTarget).data("fortuneID"));
     FortuneManager.lockFortune(fortuneID);
     refreshFortuneSlots();

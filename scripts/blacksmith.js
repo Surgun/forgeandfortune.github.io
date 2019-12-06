@@ -176,6 +176,7 @@ $(document).on("click",".smithStage",(e) => {
 
 $(document).on("click","#smithConfirm",(e) => {
     e.preventDefault();
+    destroyTooltip();
     bloopSmith.smith();
 });
 

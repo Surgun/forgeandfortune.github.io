@@ -111,6 +111,7 @@ function refreshShopEvent() {
 //buy a perk
 $(document).on("click",".alPerkBuy", (e) => {
     e.preventDefault();
+    destroyTooltip();
     const perkid = $(e.currentTarget).data("pid");
     Shop.buyPerk(perkid);
 });

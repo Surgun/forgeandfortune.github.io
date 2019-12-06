@@ -425,6 +425,7 @@ $(document).on("click",".guildListButton",(e) => {
 //submit an item to guild order
 $(document).on("click",".orderCard",(e) => {
     e.preventDefault();
+    destroyTooltip();
     const itemData = $(e.currentTarget).data();
     GuildManager.idToGuild(itemData.gid).submitItem(itemData.slot);
 });
@@ -432,6 +433,7 @@ $(document).on("click",".orderCard",(e) => {
 //buy a recipe from guild
 $(document).on("click",".recipeBuyCardBuy", (e) => {
     e.preventDefault();
+    destroyTooltip();
     const recipeId = $(e.currentTarget).data("rid");
     recipeList.buyRecipe(recipeId);
 });

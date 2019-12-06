@@ -228,12 +228,13 @@ function initializeGuilds() {
     });
     $(".guildContainer").hide();
     $("#"+GuildManager.lastClicked).show();
-    const guild = GuildManager.idToGuild(GuildManager.lastClicked);
-    refreshguildprogress(guild);
-    refreshguildOrder(guild);
-    refreshSales(guild);
-    refreshRecipeMastery(guild);
-    refreshGuildWorkers(guild);
+    GuildManager.guilds.forEach(guild => {
+        refreshguildprogress(guild);
+        refreshguildOrder(guild);
+        refreshSales(guild);
+        refreshRecipeMastery(guild);
+        refreshGuildWorkers(guild);
+    });
 };
 
 function checkCraftableStatus() {

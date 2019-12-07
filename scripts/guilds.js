@@ -431,6 +431,7 @@ $(document).on("click",".orderCard",(e) => {
     destroyTooltip();
     const itemData = $(e.currentTarget).data();
     GuildManager.idToGuild(itemData.gid).submitItem(itemData.slot);
+    refreshOrderInvCount();
 });
 
 //buy a recipe from guild

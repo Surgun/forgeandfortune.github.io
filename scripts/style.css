@@ -8872,6 +8872,10 @@ span.beta-tag {
     cursor: pointer;
 }
 
+.alPerkBuy.cannotAfford {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
 .alPerkBuyText {
     width: 100%;
 }

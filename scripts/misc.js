@@ -8,11 +8,17 @@ function formatToUnits(number, precision) {
     const unrangifiedOrder = Math.floor(Math.log10(Math.abs(number)) / 3)
     const order = Math.max(0, Math.min(unrangifiedOrder, abbrev.length -1 ))
     const suffix = abbrev[order];
-    return parseFloat((number / Math.pow(10, order * 3)).toFixed(precision)) + suffix;
+    return parseFloat((number / Math.pow(10, order * 3)).toFixedDown(precision)) + suffix;
 }
 function formatWithCommas(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
+Number.prototype.toFixedDown = function(digits) {
+    var re = new RegExp("(\\d+\\.\\d{" + digits + "})(\\d)"),
+        m = this.toString().match(re);
+    return m ? parseFloat(m[1]) : this.valueOf();
+};
 
 function msToTime(s) {
     const ms = s % 1000;

@@ -35,13 +35,6 @@
     "type": "static"
   },
   {
-    "id": "spower",
-    "title": "Special Power",
-    "description": "The amount of damage an entity can deal with special attacks.",
-    "icon": "<i class=\"fas fa-book-spells statSPOW\"></i>",
-    "type": "static"
-  },
-  {
     "id": "armor",
     "title": "Armor",
     "description": "The damage resistance an entity possesses.",

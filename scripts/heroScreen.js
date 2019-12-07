@@ -20,7 +20,7 @@ const statName = [
 const statDesc = [
     "hp",
     "pow",
-    "spower",
+    "spow",
     "armor",
     "crit",
     "dodge"

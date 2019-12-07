@@ -104,16 +104,6 @@ body {
 
 /* Font Stack */
 
-#Actions > h1, .heading, .tab-heading, footer,  #progresslist, .tablinks, .heroExamineEquipmentEquipEmpty, .heroExamineEquipmentEquipTypes, .ASBlock, .itemSac, .WorkerUpgrade.workerUpgradeDisable:after, .workerBuyCardDesc:after {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: normal;
-}
-
-.masteryBlockHeader {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 100;
-}
-
 .dialog_description, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container, #right-side-content, #guildsContainer, #db-panel, .dbActionButton, #progresslist, .equipHeading, .heroEquipBlockName, #patchList, #updateRefresh {
     font-family: 'Varela Round', 'Open Sans', sans-serif;
 }
@@ -214,9 +204,9 @@ p.hamster {
     transform: rotateZ(180deg);
 }
 
-#side-content .heading, #right-side-content .heading {
-    font-size: .95em;
+.right-side-content .heading {
     padding: 5px 20px 5px 10px;
+    font-weight: normal;
     text-align: center;
     color: var(--text-primary);
     border-bottom: 2px solid var(--border-primary);

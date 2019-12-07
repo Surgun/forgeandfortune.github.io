@@ -41,9 +41,7 @@
     <link href="scripts/style.css" rel="stylesheet">
     <link href="scripts/jquery.toast.css" rel="stylesheet">
     <link href="scripts/please-wait.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     <!-- Favicons & Application Styling -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
@@ -282,7 +280,10 @@
                             <div class="guildMasteryContainer">
                                 <div class="guildHeading">Guild Recipe Mastery</div>
                                 <div class="guildContext">Master recipes to eliminate resource costs and produce higher rarity crafts.</div>
-                                <div id="G001Mastery" class="guildMastery"></div>
+                                <div id="G001Mastery" class="guildMastery">
+                                    <div class="guildMasteryNotice"></div>
+                                    <div class="guildMasteryCardContainer"></div>
+                                </div>
                             </div>
                             <div class="guildWorkersContainer">
                                 <div class="guildHeading">Guild Workers</div>
@@ -309,7 +310,10 @@
                             <div class="guildMasteryContainer">
                                 <div class="guildHeading">Guild Recipe Mastery</div>
                                 <div class="guildContext">Master recipes to eliminate resource costs and produce higher rarity crafts.</div>
-                                <div id="G002Mastery" class="guildMastery"></div>
+                                <div id="G002Mastery" class="guildMastery">
+                                    <div class="guildMasteryNotice"></div>
+                                    <div class="guildMasteryCardContainer"></div>
+                                </div>
                             </div>
                             <div class="guildWorkersContainer">
                                 <div class="guildHeading">Guild Workers</div>
@@ -336,7 +340,10 @@
                             <div class="guildMasteryContainer">
                                 <div class="guildHeading">Guild Recipe Mastery</div>
                                 <div class="guildContext">Master recipes to eliminate resource costs and produce higher rarity crafts.</div>
-                                <div id="G003Mastery" class="guildMastery"></div>
+                                <div id="G003Mastery" class="guildMastery">
+                                    <div class="guildMasteryNotice"></div>
+                                    <div class="guildMasteryCardContainer"></div>
+                                </div>
                             </div>
                             <div class="guildWorkersContainer">
                                 <div class="guildHeading">Guild Workers</div>
@@ -363,7 +370,10 @@
                             <div class="guildMasteryContainer">
                                 <div class="guildHeading">Guild Recipe Mastery</div>
                                 <div class="guildContext">Master recipes to eliminate resource costs and produce higher rarity crafts.</div>
-                                <div id="G004Mastery" class="guildMastery"></div>
+                                <div id="G004Mastery" class="guildMastery">
+                                    <div class="guildMasteryNotice"></div>
+                                    <div class="guildMasteryCardContainer"></div>
+                                </div>
                             </div>
                             <div class="guildWorkersContainer">
                                 <div class="guildHeading">Guild Workers</div>
@@ -695,20 +705,20 @@
                     </div>
                 </div>
             </footer>
-            <div id='right-side-content' role="complementary" aria-labelledby="comptitle2">
+            <div id='right-side-content' class="right-side-content">
                 <div id="as-header">
-                    <h2 id="comptitle1" class="heading">Gold &amp; Inventory</h2>
+                    <div id="comptitle1" class="heading">Gold &amp; Inventory</div>
                     <div class="sidebarContentContainer">
                         <div id="goldSidebar" class="invSideContainer"><img src="images/resources/M001.png" alt="Gold"> <span id="goldSidebarAmt">0</span></div>
                         <div id="inventorySidebar" class="invSideContainer"><i class="fas fa-cube"></i> 0/20</div>
                     </div>
                 </div>
                 <div id="as-header">
-                    <h2 id="comptitle2" class="heading">Crafting Slots</h2>
+                    <div id="comptitle2" class="heading">Crafting Slots</div>
                 </div>
                 <div id="ActionSlots"></div>
                 <div id="GuildWorkers">
-                    <h2 id="comptitle4" class="heading">Guild Workers</h2>
+                    <div id="comptitle3" class="heading">Guild Workers</div>
                     <div class="guildWorkersSideContainer">
                         <div id="G001Workers" class="guildWorkersSide tooltip" data-tooltip="guild_worker" data-tooltip-value="G001">
                             <div id="G001Image"><img src="images/resources/G001.png" alt="G001"></div>
@@ -729,7 +739,7 @@
                     </div>
                 </div>
                 <div id="DungeonSideBar">
-                    <h2 id="comptitle3" class="heading">Dungeons</h2>
+                    <div id="comptitle4" class="heading">Dungeons</div>
                     <div id="DungeonSideBarTeam"></div>
                 </div>
             </div>

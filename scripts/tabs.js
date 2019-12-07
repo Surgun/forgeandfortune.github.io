@@ -52,12 +52,12 @@ $comptitle2.click((e) => {
 
 $comptitle3.click((e) => {
     e.preventDefault();
-    tabClick(e, "dungeonsTab");
+    tabClick(e, "guildTab");
 });
 
 $comptitle4.click((e) => {
     e.preventDefault();
-    tabClick(e, "guildTab");
+    tabClick(e, "dungeonsTab");
 });
 
 $(document).on('click', ".DungeonSideBarStatus", (e) => {

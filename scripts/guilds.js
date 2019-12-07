@@ -372,12 +372,14 @@ function refreshAllRecipeMastery() {
 }
 
 function refreshRecipeMastery(guild) {
-    const $guildBlock = $(`#${guild.id}Mastery`);
-    $guildBlock.empty();
-    if (guild.unmastered.length === 0) $guildBlock.html("No recipes to master currently.");
+    const $guildNotice = $(`#${guild.id}Mastery .guildMasteryNotice`);
+    const $guildMasteryContainer = $(`#${guild.id}Mastery .guildMasteryCardContainer`)
+    $guildNotice.empty();
+    $guildMasteryContainer.empty();
+    if (guild.unmastered.length === 0) $guildNotice.addClass("noMasteryAvailable").html("No recipes to master currently.");
     guild.unmastered.forEach(rid => {
         const recipe = recipeList.idToItem(rid);
-        $guildBlock.append(createRecipeMasteryCard(recipe));
+        $guildMasteryContainer.append(createRecipeMasteryCard(recipe));
     });
     
 }
@@ -429,6 +431,7 @@ $(document).on("click",".orderCard",(e) => {
     destroyTooltip();
     const itemData = $(e.currentTarget).data();
     GuildManager.idToGuild(itemData.gid).submitItem(itemData.slot);
+    refreshOrderInvCount();
 });
 
 //buy a recipe from guild

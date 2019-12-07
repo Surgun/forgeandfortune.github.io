@@ -28,7 +28,7 @@
     "type": "static"
   },
   {
-    "id": "spower",
+    "id": "spow",
     "title": "Special Power",
     "description": "The amount of damage an entity can deal with special attacks.",
     "icon": "<i class=\"fas fa-book-spells statSPOW\"></i>",

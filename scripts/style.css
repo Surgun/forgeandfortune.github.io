@@ -1,6 +1,7 @@
 /* Root */
 
 * {
+    font-family: 'Varela Round', 'Open Sans', sans-serif;
     box-sizing: border-box;
     outline: 0;
 }
@@ -34,7 +35,7 @@ body {
     --gradient-primary: linear-gradient(to right, #0b7edc 0%,#1396f3 50%,#00adff 100%);
     --gradient-secondary: linear-gradient(to right, #ff7f00 0%,#ffad00 50%,#ffe800 100%);
     --box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    --transition: 0.2s ease-in-out;
+    --transition: 0.2s linear;
 
     --button-primary: rgba(255,255,255,0.05);
     --button-primary-active: rgba(255,255,255,0.10);
@@ -44,7 +45,7 @@ body {
 
 /* Scrollbar */
 
-#side-content, #RecipeFilter, #right-side-content, .dialog_body, #recipes-list, #inventory-container, .workerList-container, #heroList, .heroTabContent, #dungeon-container, #dungeonCloseup, #drTurnOrder, #drLog, #townContainer, #eventContainer, #eventListContainer, #progresslist, .guildContainer, #inventoryEquipTab, #guildList, #buildingList, #buildingContent, .dialogActionsContainer {
+#side-content, #RecipeFilter, .right-side-content, .dialog_body, #recipes-list, #inventory-container, .workerList-container, #heroList, .heroTabContent, #dungeon-container, #dungeonCloseup, #drTurnOrder, #drLog, #townContainer, #eventContainer, #eventListContainer, #progresslist, .guildContainer, #inventoryEquipTab, #guildList, #buildingList, #buildingContent, .dialogActionsContainer {
     scrollbar-color: var(--scroll-thumb) var(--scroll-track);
     scrollbar-width: thin;
 }
@@ -64,7 +65,7 @@ body {
 
 /* Global */
 
-.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, .heroOverviewButton, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, #right-side-content .heading, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .buildingName:after, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .workerBuyCardDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, #db-panel input, .alPerkBuy, .guildOrderSubmit, .orderCraft, .dtsMaterialTitle, .dtsBackButton, #updateRefresh, .desynthGroup, .desynthButton, #desynthSlotStart, #desynthRemove, .heroUnequipSlot, #desynthSlotCollect, .desynthPowerSetting, #collectResmith, .eventActionButton, #dungeonAbandon, .heroOverviewCard, .fortuneStage, .dreActionButton, .tinkerCommand, .toggleStatus, .toggleCue, .smithButton, .recipeTotalCrafted, .fortuneItemClose, .fortuneItemSetClose .fortuneItemSac, .fuseClose, .fuseSlotStart, .monsterCard, .monsterActionsButton, .monsterActionsButton > i, .monsterNavButton, .monsterNavButton:after, .lineRewardPay, .workerBuyCardDesc, .fortuneItemSac, .smithHeroButton, .smithHeroButton.smithHeroBackButton > i, .invActionButton.backToInventory > i, .recipeMasteryGuildButton {
+.game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #ActionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, .heroOverviewButton, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, #dungeonTeamButton, .eventList, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, #inventorySidebar, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .buildingName:after, .footer_more-list, #clearSave, #exportSave, #importSave, #cloudSave, #settings, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .workerBuyCardDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, #db-panel input, .alPerkBuy, .guildOrderSubmit, .orderCraft, .dtsMaterialTitle, .dtsBackButton, #updateRefresh, .desynthGroup, .desynthButton, #desynthSlotStart, #desynthRemove, .heroUnequipSlot, #desynthSlotCollect, .desynthPowerSetting, #collectResmith, .eventActionButton, #dungeonAbandon, .heroOverviewCard, .fortuneStage, .dreActionButton, .tinkerCommand, .toggleStatus, .toggleCue, .smithButton, .recipeTotalCrafted, .fortuneItemClose, .fortuneItemSetClose .fortuneItemSac, .fuseClose, .fuseSlotStart, .monsterCard, .monsterActionsButton, .monsterActionsButton > i, .monsterNavButton, .monsterNavButton:after, .lineRewardPay, .workerBuyCardDesc, .fortuneItemSac, .smithHeroButton, .smithHeroButton.smithHeroBackButton > i, .invActionButton.backToInventory > i, .recipeMasteryGuildButton {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
@@ -76,10 +77,10 @@ body {
 }
 
 body {
+    margin: 0;
+    padding: 0;
     color: var(--text-primary);
     background-color: var(--bg-secondary);
-    font-family: "Trebuchet MS", sans-serif;
-    margin: 0;
 }
 
 .back-to-top {
@@ -90,22 +91,13 @@ body {
     border-radius: 50%;
     background-color: var(--border-primary);
     color: var(--text-primary);
-    -webkit-transform: scale(0);
     transform: scale(0);
-    -webkit-transition: all var(--transition);
     transition: all var(--transition);
     z-index: 900;
 }
 
 .show-button {
-    -webkit-transform: scale(1);
     transform: scale(1);
-}
-
-/* Font Stack */
-
-.dialog_description, .progress-desc, .statNormal, .MilestoneDescription, .bpReq, .settings-description, #battleLogValue, #battleLogSet, #battleLogReset, #townContainer, .selection-container, .inventoryItem, .equipItem, .heroEquipBlockEquipSlot, .heroEquipBlockEquipButton, .heroEquipBlockEquip, .heroExamineEquipmentEquip, #recipes-container, #sortBank, #sortInventoryBank, .invActionButton, .recipeSortInput, #workerList, .WorkerUpgrade, #heroContainer, .ASBuySlot, #eventContainer, #dungeon-container, #right-side-content, #guildsContainer, #db-panel, .dbActionButton, #progresslist, .equipHeading, .heroEquipBlockName, #patchList, #updateRefresh {
-    font-family: 'Varela Round', 'Open Sans', sans-serif;
 }
 
 /* General Content */
@@ -115,254 +107,100 @@ p.hamster {
     font-size: 10.4px;
     font-size: .65rem;
     opacity: 0.25;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
 }
 
 #content, footer {
     padding: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
 .game-content {
-    display: -ms-grid;
     display: grid;
     grid-template: 1fr 50px / 250px 1fr 250px;
     height: 100vh;
 }
 
-.game-content .status, #right-side-content {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.right-side-content {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    background-color: var(--bg-primary);
-}
-
-.game-content .status {
-    border-right: 1px solid var(--border-primary);
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    overflow-y: auto;
-}
-
-#game-logo {
-    margin: 0 auto;
-    background-color: var(--bg-primary);
-    background-image: url('../../images/site-logo.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 90%;
-    height: 150px;
-}
-
-#game-logo h1 {
-    margin: 0;
-    font-size: 0;
-}
-
-#side-content {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    padding: 0 10px;
-    overflow-y: auto;
-}
-
-#workers-container, #materials-container, #settings-container {
-    position: relative;
-    max-height: 2500px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    -webkit-transition: max-height 0.3s ease-in-out;
-    transition: max-height 0.3s ease-in-out;
-}
-
-.height-collapse {
-    max-height: 40px!important;
-}
-
-.heading-arrow {
-    position: absolute;
-    top: 8px;
-    right: 6px;
-    color: var(--text-tertiary);
-    font-family: monospace;
-    font-weight: bold;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-}
-
-.arrow-rotate {
-    -webkit-transform: rotateZ(180deg);
-    transform: rotateZ(180deg);
-}
-
-.right-side-content .heading {
-    padding: 5px 20px 5px 10px;
-    font-weight: normal;
-    text-align: center;
-    color: var(--text-primary);
-    border-bottom: 2px solid var(--border-primary);
-    cursor: pointer;
-}
-
-#side-content .heading:first-of-type {
-    margin-top: 0;
-}
-
-.workerSideBar {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 5px;
-    background-color: var(--green-secondary);
-    border-radius: 5px;
-}
-
-.workerSideBar.wsbActive {
-    background-color: var(--bg-tertiary);
-    cursor: pointer;
-}
-
-.workerSideBar.wsbActive:hover, .workerSideBar.wsbActive:hover .wsbLvl, .workerSideBar.wsbActive:hover .wsbCraft {
-    border-color: var(--border-secondary);
-}
-
-.wsbLvl {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 5px;
-    margin-right: 2px;
-    background-color: rgba(255,255,255,.1);
-    border-radius: 5px;
-}
-
-.wsbType {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    padding-left: 5px;
-}
-
-.wsbCraft {
-    min-width: 50px;
-    text-align: center;
-    border-left: 1px solid var(--green-tertiary);
-    padding: 2px 0;
-}
-
-.workerSideBar.wsbActive .wsbCraft {
-    border-color: var(--border-tertiary);
-}
-
-.wsbCraft > img {
-    height: 20px;
-    vertical-align: middle;
-}
-
-.material {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 5px 10px;
-    background-color: var(--bg-tertiary);
-    border-radius: 5px;
-}
-
-.material .materialName {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-
-.material .materialName > img {
-    margin-right: 5px;
-}
-
-#right-side-content {
+    flex-direction: column;
     grid-column: 3 / 4;
     grid-row: 1 / 2;
     padding: 0 10px;
+    background-color: var(--bg-primary);
     border-left: 1px solid var(--border-primary);
     overflow-y: auto;
 }
 
-#right-side-content .heading {
-    margin: 10px 15px;
-    padding: 5px 20px;
+.right-side-content .heading {
+    margin: 10px 20px;
+    padding: 5px 10px;
+    color: var(--text-primary);
+    font-weight: normal;
+    text-align: center;
+    border-bottom: 2px solid var(--border-secondary);
+    cursor: pointer;
+}
+
+.material {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-primary);
+    border-radius: 5px;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.15);
+}
+
+.material .materialName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: var(--border-primary);
+    border-right: 2px solid var(--border-primary);
+    border-radius: 3px 0 0 3px;
+}
+
+.material .materialName > img {
+    width: 20px;
+}
+
+.material .materialAmt {
+    padding-left: 10px;
 }
 
 .sidebarContentContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-
-#inventorySidebar {
-    max-width: 90px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .invSideContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     position: relative;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 50px;
+    margin: 2.5px;
+    padding: 5px;
     text-align: center;
     background-color: var(--bg-tertiary);
     border: 1px solid transparent;
-    padding: 5px;
     border-radius: 5px;
-    margin: 2.5px;
 }
 
 .invSideContainer > img, .invSideContainer > i {
     margin-right: 5px;
+}
+
+.inventoryFullSide {
+    background-color: var(--button-cancel);
+}
+
+.dungeonGroup {
+    margin-bottom: 10px;
 }
 
 .DungeonSideBarStatus {
@@ -370,7 +208,6 @@ p.hamster {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
     padding: 5px;
     text-align: center;
     background-color: var(--bg-tertiary);
@@ -407,51 +244,19 @@ p.hamster {
     flex-grow: 1;
 }
 
-#inventorySidebar.inventoryFullSide {
-    background-color: rgb(72, 9, 0);
-    border-color: #820000;
-}
-
-#DungeonSideBarStatus {
-    cursor: pointer;
-}
-
-.dungeonSideBarMember {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-
-.dungeonSideBarMemberHP {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    margin-left: 10px;
-}
-
 .guildWorkersSideContainer {
-    display: -ms-grid;
     display: grid;
-    grid-template: auto / repeat(auto-fill,minmax(50px,1fr));
-    grid-gap: 5px;
-    margin-top:10px;
+    grid-template: auto / repeat(auto-fill, minmax(50px, 1fr));
+    grid-gap: 2.5px;
 }
 
 .guildWorkersSide {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
-    background-color: var(--border-primary);
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-primary);
     border-radius: 5px;
 }
 
@@ -981,7 +786,7 @@ Rarities
 }
 
 .tabcontent {
-    --tab-height: 40px;
+    --tab-height: 38px;
     height: calc(100% - var(--tab-height));
     -webkit-animation: 0.2s fade-in;
     animation: 0.2s fade-in;
@@ -1269,15 +1074,13 @@ Rarities
 
 .recipeLogisticsContainer {
     position: relative;
-    margin-top: 10px;
+    margin: 10px;
     padding: 10px;
+    border-radius: 10px;
     background-color: var(--bg-primary);
-    border-top: 1px solid var(--border-primary);
-    border-bottom: 1px solid var(--border-primary);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    -webkit-animation: 0.2s scale-y-in;
-    animation: 0.2s scale-y-in;
+    border: 2px solid var(--border-primary);
+    transform-origin: left top;
+    animation: 0.2s scale-in;
 }
 
 .logisticContainer {
@@ -1286,8 +1089,6 @@ Rarities
     grid-auto-rows: auto;
     grid-gap: 5px;
     opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    -webkit-animation: 0.2s fade-in forwards;
     animation: 0.2s fade-in forwards;
 }
 
@@ -8295,12 +8096,6 @@ span.beta-tag {
     margin: 5px;
 }
 
-/* New CSS Standard, do not fucking delete this Richard you goddamn moron */
-
-* {
-    font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-}
-
 /* Start Dialogs */
 
 @keyframes dialogOpening {
@@ -8387,6 +8182,7 @@ span.beta-tag {
     box-shadow: var(--box-shadow);
     cursor: pointer;
     z-index: 1;
+    transition: all 0.2s linear;
 }
 
 .dialogClose:hover,
@@ -8461,6 +8257,7 @@ span.beta-tag {
     border-radius: 5px;
     appearance: none;
     -webkit-appearance: none;
+    transition: all 0.2s linear;
 }
 
 .exportSaveText:hover,
@@ -8492,6 +8289,7 @@ span.beta-tag {
     border-radius: 5px;
     border: 0;
     cursor: pointer;
+    transition: all 0.2s linear;
 }
 
 .actionButton:hover,

@@ -388,6 +388,7 @@ function uniqueIDProperties(uniqueID) {
 
 $inventory = $("#inventory");
 $sideInventory = $("#inventorySidebar");
+$sideInventoryAmt = $("#invSidebarAmt");
 
 function refreshInventory() {
     $inventory.empty();
@@ -427,7 +428,7 @@ function refreshInventory() {
         itemdiv.append(itemName,itemLevel,itemCost,itemProps,actionBtns);
         $inventory.append(itemdiv);
     });
-    $sideInventory.html(`<i class="fas fa-cube"></i> ${Inventory.inventoryCount()}/20`)
+    $sideInventoryAmt.html(`${Inventory.inventoryCount()}/20`)
     if (Inventory.inventoryCount() === 20) $sideInventory.addClass("inventoryFullSide");
     else $sideInventory.removeClass("inventoryFullSide");
 }

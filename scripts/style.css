@@ -190,6 +190,10 @@ p.hamster {
     border-radius: 5px;
 }
 
+.invSideContainer:first-of-type {
+    flex-grow: 2;
+}
+
 .invSideContainer > img, .invSideContainer > i {
     display: flex;
     justify-content: center;

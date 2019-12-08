@@ -82,12 +82,12 @@ class itemContainer {
         if (save.spowRatio !== undefined) this.spowRatio = save.spowRatio;
     }
     picName() {
-        const sharp = this.sharp > 0 ? `+${this.sharp}` : "";
-        return `${this.item.itemPic()}<div class="item-prefix-name"><span class="item-prefix">${sharp} ${this.prefix()}${this.item.name}</span></div>`;
+        const sharp = this.sharp > 0 ? `+${this.sharp} ` : "";
+        return `${this.item.itemPic()}<div class="item-prefix-name"><span class="item-prefix">${sharp}${this.prefix()}${this.item.name}</span></div>`;
     }
     picNamePlus() {
-        const sharp = `<span class="item-prefix">+${this.sharp + 1}</span>`
-        return `${this.item.itemPic()}<div class="item-prefix-name"><span class="item-prefix">${sharp} ${this.prefix()}${this.item.name}</span></div>`;
+        const sharp = `<span class="item-prefix">+${this.sharp + 1} </span>`
+        return `${this.item.itemPic()}<div class="item-prefix-name"><span class="item-prefix">${sharp}${this.prefix()}${this.item.name}</span></div>`;
     }
     itemLevel() {
         if (this.scale > 0) return `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${this.scale}</div>`;
@@ -140,7 +140,7 @@ class itemContainer {
         this.spowRatio = filteredRatios[choice][2];
     }
     prefix() {
-        if (this.powRatio === this.item.pow && this.hpRatio === this.item.hp && this.spowRatio === this.item.spow) return;
+        if (this.powRatio === this.item.pow && this.hpRatio === this.item.hp && this.spowRatio === this.item.spow) return "";
         return `${adjective[this.powRatio.toString() + this.hpRatio.toString() + this.spowRatio.toString()]} `
     }
 }

@@ -112,5 +112,12 @@ const devtools = {
         MobManager.monsterDB.forEach(mob => {
             MonsterHall.addKill(mob.id);
         });
+    },
+    suffixTest() {
+        Inventory.inv.forEach(i=>{
+            if (i === null) return;
+            i.rerollRatio();
+        });
+        refreshInventoryPlaces();
     }
 }

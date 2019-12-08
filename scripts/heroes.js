@@ -87,11 +87,6 @@ class Hero extends Combatant {
         }
         this.owned = save.owned;
     }
-    getArmor() {
-        const slots = this.getEquipSlots(true).map(s=>s.armor());
-        const armorFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
-        return this.initialArmor + armorFromGear + this.getBuffArmor();
-    }
     getPow() {
         const slots = this.getEquipSlots(true).map(s=>s.pow());
         const powerFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
@@ -102,35 +97,10 @@ class Hero extends Combatant {
         if (slots.length === 0) return this.initialHP;
         return this.initialHP + slots.reduce((a,b) => a + b);
     }
-    getResist() {
-        const slots = this.getEquipSlots(true).map(s=>s.resist());
-        if (slots.length === 0) return this.initialResist;
-        return this.initialResist + slots.reduce((a,b) => a+b);
-    }
-    getCrit() {
-        const slots = this.getEquipSlots(true).map(s=>s.crit());
-        if (slots.length === 0) return this.initialCrit;
-        return this.initialCrit + slots.reduce((a,b) => a+b);
-    }
-    getDodge() {
-        const slots = this.getEquipSlots(true).map(s=>s.dodge());
-        const dodgeFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
-        return this.initialDodge + dodgeFromGear + this.getBuffDodge();
-    }
     getSpow() {
         const slots = this.getEquipSlots(true).map(s=>s.spow());
         if (slots.length === 0) return this.initialSpow;
         return this.initialSpow + slots.reduce((a,b) => a+b);
-    }
-    getApen() {
-        const slots = this.getEquipSlots(true).map(s=>s.apen());
-        if (slots.length === 0) return this.initialApen;
-        return this.initialApen + slots.reduce((a,b) => a+b);
-    }
-    getMpen() {
-        const slots = this.getEquipSlots(true).map(s=>s.mpen());
-        if (slots.length === 0) return this.initialMpen;
-        return this.initialMpen + slots.reduce((a,b) => a+b);
     }
     getAdjPow(spow) {
         if (spow) return Math.floor(this.getPow() + this.getSpow());

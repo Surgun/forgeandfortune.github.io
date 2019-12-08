@@ -73,14 +73,12 @@ class Item{
     }
     recipeListStats() {
         const d = $("<div/>").addClass("recipeStatList");
-        if (this.pow > 0) {
-            const d1 = $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "pow").html(miscIcons.pow + this.pow);
-            d.append(d1);
-        }
-        if (this.hp > 0) {
-            const d3 = $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "hp").html(miscIcons.hp + this.hp);
-            d.append(d3);
-        }
+        const pow = this.pow*this.pts;
+        const hp = 9*this.hp*this.pts;
+        const spow = this.spow*this.pts;
+        if (pow > 0) $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "pow").html(`${miscIcons.pow} ${pow}`).appendTo(d);
+        if (hp > 0) $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "hp").html(`${miscIcons.hp} ${hp}`).appendTo(d);
+        if (spow > 0) $("<div/>").addClass("recipeStatListSPow tooltip").attr("data-tooltip", "spow").html(`${miscIcons.spow} ${spow}`).appendTo(d);
         return d;
     }
     count() {

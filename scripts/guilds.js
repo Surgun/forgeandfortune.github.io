@@ -393,7 +393,6 @@ function createRecipeMasteryCard(recipe) {
 }
 
 function refreshRecipeMasteryAmt(recipe) {
-    console.log(recipe);
     const masteryCost = recipe.masteryCost();
     $(`#rcm${recipe.id}`).html(`Master for ${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`);
 }

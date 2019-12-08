@@ -10,15 +10,16 @@ function formatToUnits(number, precision) {
     const suffix = abbrev[order];
     return parseFloat((number / Math.pow(10, order * 3)).toFixedDown(precision)) + suffix;
 }
-function formatWithCommas(number) {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
 
 Number.prototype.toFixedDown = function(digits) {
     var re = new RegExp("(\\d+\\.\\d{" + digits + "})(\\d)"),
         m = this.toString().match(re);
     return m ? parseFloat(m[1]) : this.valueOf();
 };
+
+function formatWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 function msToTime(s) {
     const ms = s % 1000;
@@ -117,13 +118,7 @@ const miscIcons = Object.freeze({
 const heroStat = Object.freeze({
     hp : 'hp',
     pow : 'pow',
-    armor : 'armor',
-    resist : 'resist',
-    crit : 'crit',
-    dodge : 'dodge',
     spow: 'spow',
-    apen: 'apen',
-    mpen: 'mpen',
 })
 
 function msToSec(ms) {

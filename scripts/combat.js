@@ -94,12 +94,7 @@ class Combatant {
         this.buffs = this.buffs.filter(buff => !buff.expired());
     }
     takeAttack(attack) {
-        const dodge = attack.canDodge ? rollStat(this.getDodge()) : false;
-        if (dodge) {
-            BattleLog.addEntry(attack.dungeonid,miscIcons.dodge,`${this.name} dodged the attack!`);
-            return;
-        }
-        const reducedDmg = Math.ceil(attack.power * 100/(100+this.getArmor()));
+        const reducedDmg = attack.power;
         BattleLog.addEntry(attack.dungeonid,miscIcons.takeDamage,`${this.name} takes ${reducedDmg} damage`);
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);
@@ -124,15 +119,6 @@ class Combatant {
     }
     getAdjPow() {
         return this.getPow();
-    }
-    getArmor() {
-        return this.armor + this.getBuffDodge();
-    }
-    getCrit() {
-        return this.crit;
-    }
-    getDodge() {
-        return this.dodge + this.getBuffDodge();
     }
     dead() {
         return this.hp <= 0;

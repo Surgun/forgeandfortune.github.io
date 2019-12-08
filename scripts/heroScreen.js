@@ -13,17 +13,11 @@ const statName = [
     `${miscIcons.hp} <span>HP</span>`,
     `${miscIcons.pow} <span>Power</span>`,
     `${miscIcons.spow} <span>SPower</span>`,
-    `${miscIcons.armor} <span>Armor</span>`,
-    `${miscIcons.crit} <span>Crit</span>`,
-    `${miscIcons.dodge} <span>Dodge</span>`
 ];
 const statDesc = [
     "hp",
     "pow",
     "spow",
-    "armor",
-    "crit",
-    "dodge"
 ];
 
 function initializeHeroList() {
@@ -86,7 +80,7 @@ function examineHero(ID) {
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
     heroExamineStats.append(htd.append(htd1));
-    const stats = [hero.maxHP(),hero.getPow(), hero.getSpow(), hero.getArmor(), hero.getCrit()+"%", hero.getDodge()+"%"];
+    const stats = [hero.maxHP(),hero.getPow(), hero.getSpow()];
     for (let i=0;i<stats.length;i++) {
         heroExamineStats.append(statRow(statName[i],stats[i],statDesc[i]));
     }

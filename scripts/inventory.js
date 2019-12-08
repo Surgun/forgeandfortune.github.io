@@ -50,6 +50,10 @@ class itemContainer {
         this.sharp = 0;
         this.seed = Math.floor(Math.random() * 1000000);
         this.scale = 0;
+        this.powRatio = this.item.pow;
+        this.hpRatio = this.item.hp;
+        this.spowRatio = this.item.spow;
+        this.pts = this.item.pts;
         containerid += 1;
     }
     uniqueID() {
@@ -64,35 +68,34 @@ class itemContainer {
         save.sharp = this.sharp;
         save.seed = this.seed;
         save.scale = this.scale;
+        save.powRatio = this.powRatio;
+        save.hpRatio = this.hpRatio;
+        save.spowRatio = this.spowRatio;
         return save;
     }
     loadSave(save) {
         this.sharp = save.sharp;
         if (save.seed !== undefined) this.seed = save.seed;
         if (save.scale !== undefined) this.scale = save.scale;
+        if (save.powRatio !== undefined) this.powRatio = save.powRatio;
+        if (save.hpRatio !== undefined) this.hpRatio = save.hpRatio;
+        if (save.spowRatio !== undefined) this.spowRatio = save.spowRatio;
     }
     picName() {
-        const prefix = `<span class="item-prefix-name">+${this.sharp} ${this.item.name}</span>`
-        if (this.sharp > 0) return `${this.item.itemPic()}<div class="item-prefix-name">${prefix}</div>`;
-        return this.item.itemPicName();
+        const sharp = this.sharp > 0 ? `+${this.sharp}` : "";
+        return `${this.item.itemPic()}<div class="item-prefix-name"><span class="item-prefix">${sharp} ${this.prefix()}${this.item.name}</span></div>`;
     }
     picNamePlus() {
-        const prefix = `<span class="item-prefix">+${this.sharp + 1}</span>`
-        return `${this.item.itemPic()}<div class="item-prefix-name">${prefix+this.item.itemName()}</div>`;
+        const sharp = `<span class="item-prefix">+${this.sharp + 1}</span>`
+        return `${this.item.itemPic()}<div class="item-prefix-name"><span class="item-prefix">${sharp} ${this.prefix()}${this.item.name}</span></div>`;
     }
     itemLevel() {
         if (this.scale > 0) return `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${this.scale}</div>`;
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
-    pow(sharpIncrease) { return this.statCalc(this.item.pow,this.item.powScale,sharpIncrease); }
-    hp(sharpIncrease) { return this.statCalc(this.item.hp,this.item.hpScale,sharpIncrease); }
-    armor(sharpIncrease) { return this.statCalc(this.item.armor,this.item.armorScale,sharpIncrease); }
-    resist(sharpIncrease) { return this.statCalc(this.item.resist,this.item.resistScale,sharpIncrease); }
-    crit(sharpIncrease) { return this.statCalc(this.item.crit,this.item.critScale,sharpIncrease); }
-    dodge(sharpIncrease) { return this.statCalc(this.item.dodge,this.item.dodgeScale,sharpIncrease); }
-    spow(sharpIncrease) { return this.statCalc(this.item.spow,this.item.spowScale,sharpIncrease); }
-    apen(sharpIncrease) { return this.statCalc(this.item.apen,this.item.apenScale,sharpIncrease); }
-    mpen(sharpIncrease) { return this.statCalc(this.item.mpen,this.item.mpenScale,sharpIncrease); }
+    pow(sharpIncrease) { return this.statCalc(this.powRatio*this.pts,this.item.powScale,sharpIncrease); }
+    hp(sharpIncrease) { return this.statCalc(9*this.hpRatio*this.pts,this.item.hpScale,sharpIncrease); }
+    spow(sharpIncrease) { return this.statCalc(this.spowRatio*this.pts,this.item.spowScale,sharpIncrease); }
     statCalc(flat,scale,sharpIncrease) {
         const sharpAdd = sharpIncrease ? 1 : 0;
         return Math.floor((flat * miscLoadedValues.rarityMod[this.rarity] + Math.ceil(scale * this.scale)) * (1+0.05*(this.sharp+sharpAdd)));
@@ -120,31 +123,46 @@ class itemContainer {
         const stats = {};
         stats[heroStat.pow] = this.pow(sharpIncrease);
         stats[heroStat.hp] = this.hp(sharpIncrease);
-        stats[heroStat.armor] = this.armor(sharpIncrease);
-        stats[heroStat.resist] = this.resist(sharpIncrease);
-        stats[heroStat.crit] = this.crit(sharpIncrease);
-        stats[heroStat.dodge] = this.dodge(sharpIncrease);
         stats[heroStat.spow] = this.spow(sharpIncrease);
-        stats[heroStat.apen] = this.apen(sharpIncrease);
-        stats[heroStat.mpen] = this.mpen(sharpIncrease);
         return stats;
     }
     isTrinket() {
         return this.item.type === "Trinkets";
     }
+    rerollRatio() {
+        const ratios = [[3,0,0],[2,1,0],[2,0,1],[1,2,0],[1,0,2],[1,1,1],[0,3,0],[0,2,1],[0,1,2],[0,0,3]];
+        let filteredRatios = ratios.filter(r =>  Math.abs(r[0]-this.powRatio) <= 1 && Math.abs(r[1]-this.hpRatio) <= 1 && Math.abs(r[2]-this.spowRatio) <= 1)
+        filteredRatios = filteredRatios.filter(r => r[0] !== this.powRatio || r[1] !== this.hpRatio || r[2] !== this.spowRatio);
+        //TODO: seed this
+        const choice = Math.floor(Math.random()*filteredRatios.length);
+        this.powRatio = filteredRatios[choice][0];
+        this.hpRatio = filteredRatios[choice][1];
+        this.spowRatio = filteredRatios[choice][2];
+    }
+    prefix() {
+        if (this.powRatio === this.item.pow && this.hpRatio === this.item.hp && this.spowRatio === this.item.spow) return;
+        return `${adjective[this.powRatio.toString() + this.hpRatio.toString() + this.spowRatio.toString()]} `
+    }
+}
+
+const adjective = {
+    "300" : "Powerful",
+    "210" : "Sturdy",
+    "201" : "Strong",
+    "120" : "Mighty",
+    "111" : "Balanced",
+    "102" : "Potent",
+    "012" : "Wonderous",
+    "021" : "Unwieldy",
+    "030" : "Bulky",
+    "003" : "Mystical",
 }
 
 function blankItemStat() {
     const stats = {};
     stats[heroStat.pow] = 0;
     stats[heroStat.hp] = 0;
-    stats[heroStat.armor] = 0;
-    stats[heroStat.resist] = 0;
-    stats[heroStat.crit] = 0;
-    stats[heroStat.dodge] = 0;
     stats[heroStat.spow] = 0;
-    stats[heroStat.apen] = 0;
-    stats[heroStat.mpen] = 0;
     return stats;
 }
 

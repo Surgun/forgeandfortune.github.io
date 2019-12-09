@@ -195,7 +195,7 @@ p.hamster {
     position: relative;
     display: flex;
     align-items: center;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-tertiary);
     border: 2px solid var(--border-secondary);
     border-radius: 5px;
     animation: 0.2s scale-in;
@@ -207,7 +207,6 @@ p.hamster {
     align-items: center;
     padding: 5px;
     background-color: var(--border-secondary);
-    border-right: 2px solid var(--border-primary);
     border-radius: 3px 0 0 3px;
 }
 

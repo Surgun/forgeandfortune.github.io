@@ -64,83 +64,6 @@
 </head>
 <body>
     <main id="content">
-        <!-- Dialogs -->
-        <div id="dialogSettings" class="dialog" role="dialog" aria-labelledby="titleImportSave" aria-describedby="descImportSave">
-            <div class="dialog_content">
-                <div class="dialog_header">
-                    <a href="#closeDialog" class="dialog_close"><i class="fas fa-times"></i></a>
-                    <h2 id="titleSettings" class="dialog_title">Settings</h2>
-                </div>
-                <div class="dialog_body">
-                    <p id="descSettings" class="dialog_description">Adjust your game preferences and settings. These settings will only be applied to this browser.</p>
-                    <div class="settings-grid">
-                        <div id="settings_notificationLocation" class="setting-container">
-                            <h3 class="settings-title">Notification Location</h3>
-                            <p class="settings-description">Designates where the notifications for various events (such as exceptional crafts) will appear.</p>
-                            <div class="selections-grid">
-                                <label class="selection-container">Top-Left
-                                    <input type="radio" name="toast" value="top-left" checked="checked">
-                                    <span class="selection"></span>
-                                </label>
-                                <label class="selection-container">Top-Center
-                                    <input type="radio" name="toast" value="top-center">
-                                    <span class="selection"></span>
-                                </label>
-                                <label class="selection-container">Top-Right
-                                    <input type="radio" name="toast" value="top-right">
-                                    <span class="selection"></span>
-                                </label>
-                                <label class="selection-container">Bottom-Left
-                                    <input type="radio" name="toast" value="bottom-left">
-                                    <span class="selection"></span>
-                                </label>
-                                <label class="selection-container">Bottom-Center
-                                    <input type="radio" name="toast" value="bottom-center">
-                                    <span class="selection"></span>
-                                </label>
-                                <label class="selection-container">Bottom-Right
-                                    <input type="radio" name="toast" value="bottom-right">
-                                    <span class="selection"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div id="settings_logLength" class="setting-container">
-                            <h3 class="settings-title">Battle Log Length</h3>
-                            <p class="settings-description">Set the maximum amount of lines to be displayed in the battle log for Adventures. Default value is 30, minimum accepted value of 5, maximum accepted value of 999.</p>
-                            <div class="settings-content">
-                                <input type="number" name="battleLog" id="battleLogValue" min="5" max="100">
-                                <button id="battleLogSet">Set Value</button>
-                                <button id="battleLogReset">Reset to Default</button>
-                            </div>
-                        </div>
-                        <div id="settings_turnOrderDisplay" class="setting-container">
-                            <h3 class="settings-title">Toggle HP &amp; AP Bars in Combat Area</h3>
-                            <p class="settings-description">Toggle whether to display or hide the HP and AP bars in Combat Area during Adventures.</p>
-                            <div class="settings-content">
-                                <div class="selections-grid">
-                                    <label class="selection-container">Display Bars
-                                        <input type="radio" name="hp-ap-bar" value="1" checked="checked">
-                                        <span class="selection"></span>
-                                    </label>
-                                    <label class="selection-container">Hide Bars
-                                        <input type="radio" name="hp-ap-bar" value="0">
-                                        <span class="selection"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="settings_clearSettings" class="setting-container">
-                            <h3 class="settings-title">Reset All Settings</h3>
-                            <p class="settings-description">Reset your settings to default values or if your settings are corrupted. This will reload the game.</p>
-                            <div class="settings-content">
-                                <button id="clearSettings" class="clearSettings">Reset Settings</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End of Dialogs -->
         <section class="game-content">
             <div class="game-wrapper" role="main">
                 
@@ -160,8 +83,7 @@
                         <div class="inventoryContent">
                             <div class="materialContentContainer">
                                 <div class="materialsHeader">Materials</div>
-                                <div id="materials" class="materialsList">
-                                </div>
+                                <div id="materials" class="materialsList"></div>
                             </div>
                             <div class="inventoryContentContainer">
                                 <div class="inventoryActions">

@@ -1682,35 +1682,35 @@ Rarities
 }
 
 .recipeTimeAndValue {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     margin: auto 0 10px;
 }
 
 .recipeTimeContainer, .recipeAmountContainer, .recipeValueContainer {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    line-height: 1em;
-    padding: 0 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    flex-grow: 1;
+    font-size: 0.85rem;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 5px;
+}
+
+.recipeAmountContainer {
+    margin: 0 2.5px;
 }
 
 .recipeTimeHeader, .recipeAmountHeader, .recipeValueHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 5px;
+}
+
+.recipeValueHeader > img {
+    max-width: 20px;
 }
 
 .recipeCraft {
@@ -1878,7 +1878,7 @@ Rarities
 }
 
 .reciperesdiv {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .itemCost {
@@ -1893,18 +1893,12 @@ Rarities
 
 .indvCost {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     padding: 5px 10px;
-    background-color: var(--border-primary);
-    border: 1px solid var(--border-secondary);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
     border-radius: 5px;
 }
 
@@ -2041,14 +2035,6 @@ Rarities
     right: 0;
     left: 0;
     cursor: pointer;
-}
-
-.recipeCardHeader, .recipeValue {
-    position: relative;
-}
-
-.recipeValue {
-    min-width: 20px;
 }
 
 .recipeName > img, .EHPEname > img {

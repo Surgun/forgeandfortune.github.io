@@ -80,7 +80,7 @@ body {
     margin: 0;
     padding: 0;
     color: var(--text-primary);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-tertiary);
 }
 
 .back-to-top {
@@ -198,6 +198,7 @@ p.hamster {
     background-color: var(--bg-secondary);
     border: 2px solid var(--border-secondary);
     border-radius: 5px;
+    animation: 0.2s scale-in;
 }
 
 .material .materialName {
@@ -216,6 +217,12 @@ p.hamster {
 
 .material .materialAmt {
     padding-left: 10px;
+}
+
+.noMaterials {
+    grid-column: 1 /-1;
+    text-align: center;
+    color: var(--text-tertiary);
 }
 
 /* End Materials and Materials Inventory */

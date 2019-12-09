@@ -157,14 +157,25 @@
                 </div>
                 <div id="inventoryTab" class="tabcontent">
                     <div id="inventory-container">
-                        <div class="inventoryActions">
-                            <div id="goToBank" class="invActionButton"><i class="fas fa-university"></i><span>View Bank</span></div>
-                            <div class="invSubActionsContainer">
-                                <div id="sortInventory" class="invActionButton"><i class="fas fa-sort-size-up-alt"></i><span>Sort Inventory</span></div>
-                                <div id="sellAllCommons" class="invActionButton"><i class="fas fa-funnel-dollar"></i><span>Sell All Commons</span></div>
+                        <div class="inventoryContent">
+                            <div class="materialContentContainer">
+                                <div class="materialsHeader">Materials</div>
+                                <div id="materials" class="materialsList"></div>
+                            </div>
+                            <div class="inventoryContentContainer">
+                                <div class="inventoryActions">
+                                    <div id="goToBank" class="invActionButton">
+                                        <i class="fas fa-university"></i>
+                                        <span>View Bank</span>
+                                    </div>
+                                    <div class="invSubActionsContainer">
+                                        <div id="sortInventory" class="invActionButton"><i class="fas fa-sort-size-up-alt"></i><span>Sort Inventory</span></div>
+                                        <div id="sellAllCommons" class="invActionButton"><i class="fas fa-funnel-dollar"></i><span>Sell All Commons</span></div>
+                                    </div>
+                                </div>
+                                <div id="inventory"></div>
                             </div>
                         </div>
-                        <div id="inventory"></div>
                     </div>
                 </div>
                 <div id="inventoryEquipTab" class="tabcontent">
@@ -202,9 +213,6 @@
                         <div id="recipes-list">
                             <div id="RecipeTop" class="recipeTopContainer">
                                 <div id="RecipeSorting" class="recipeSortContainer">
-                                    <div id="RecipeDropdownDetails" class="recipeDropdownContainer">
-                                        <div class="recipeDropdownButton" data-filter="materials"><div class="activeStatus"><i class="far fa-box"></i></div>Materials</div>
-                                    </div>
                                     <div class="recipeActionButton" data-filter="name">Name <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
                                     <div class="recipeActionButton" data-filter="lvl">Level <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
                                     <div class="recipeActionButton" data-filter="value">Value <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>

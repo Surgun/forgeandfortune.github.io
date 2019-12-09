@@ -141,14 +141,63 @@ p.hamster {
     cursor: pointer;
 }
 
+.inventoryContent {
+    display: flex;
+    height: 100%;
+}
+
+.inventoryContent > div {
+    flex-basis: 220px;
+}
+
+.inventoryContentContainer {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/* Materials and Materials Inventory */
+
+.materialContentContainer {
+    position: relative;
+    padding: 0 10px 10px;
+    height: 100%;
+    background-color: var(--bg-primary);
+    border-right: 1px solid var(--border-primary);
+    overflow: auto;
+    transform-origin: left;
+    animation: 0.15s scale-x-in forwards;
+}
+
+.materialsHeader {
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 15px 10px 5px;
+    width: 100%;
+    color: var(--text-primary);
+    font-weight: normal;
+    text-align: center;
+    background-color: var(--bg-primary);
+    border-bottom: 2px solid var(--border-secondary);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.materialsList {
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+    grid-gap: 5px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
 .material {
     position: relative;
     display: flex;
     align-items: center;
     background-color: var(--bg-secondary);
-    border: 2px solid var(--border-primary);
+    border: 2px solid var(--border-secondary);
     border-radius: 5px;
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,.15);
 }
 
 .material .materialName {
@@ -156,7 +205,7 @@ p.hamster {
     justify-content: center;
     align-items: center;
     padding: 5px;
-    background-color: var(--border-primary);
+    background-color: var(--border-secondary);
     border-right: 2px solid var(--border-primary);
     border-radius: 3px 0 0 3px;
 }
@@ -168,6 +217,10 @@ p.hamster {
 .material .materialAmt {
     padding-left: 10px;
 }
+
+/* End Materials and Materials Inventory */
+
+/* Right Sidebar Gold and Inventory */
 
 .sidebarContentContainer {
     display: flex;
@@ -217,6 +270,8 @@ p.hamster {
 .invSideContainer.inventoryFullSide > i {
     background-color: var(--button-cancel);
 }
+
+/* End Right Sidebar Gold and Inventory */
 
 .dungeonGroup {
     margin-bottom: 10px;
@@ -365,6 +420,8 @@ p.hamster {
         grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
     margin: 10px;
+    transform-origin: left top;
+    animation: 0.2s scale-in;
 }
 
 #ietEquip, #ietHero {
@@ -811,6 +868,12 @@ Rarities
     animation: 0.2s fade-in;
 }
 
+@media screen and (max-width: 1189px) {
+    .tabcontent {
+        --tab-height: 55px;
+    }
+}
+
 #dungeonRun {
     -webkit-animation: 0.2s fade-in;
     animation: 0.2s fade-in;
@@ -1089,35 +1152,6 @@ Rarities
     width: 2px;
     height: calc(100% - 10px);
     background-color: var(--border-tertiary);
-}
-
-.recipeLogisticsContainer {
-    position: relative;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-primary);
-    transform-origin: left top;
-    animation: 0.2s scale-in;
-}
-
-.logisticContainer {
-    display: none;
-    grid-template: auto / repeat(auto-fill, minmax(225px,1fr));
-    grid-auto-rows: auto;
-    grid-gap: 5px;
-    opacity: 0;
-    animation: 0.2s fade-in forwards;
-}
-
-.logisticContainer.expanded {
-    display: -ms-grid;
-    display: grid;
-}
-
-.logMaterials {
-    grid-template: auto / repeat(auto-fill, minmax(110px,1fr));
 }
 
 .recipeSortContainer {
@@ -7813,7 +7847,6 @@ span.beta-tag {
         padding: 0;
         max-width: 600px;
         list-style: none;
-        font-family: 'Varela Round', 'Open Sans', sans-serif;
     }
 
     .mobile-nav-listing .nav-item {
@@ -7851,7 +7884,6 @@ span.beta-tag {
     .mobile-notice-headline {
         color: var(--highlight);
         text-transform: uppercase;
-        font-family: 'Roboto Slab', serif;
         font-weight: 100;
     }
 
@@ -7863,10 +7895,6 @@ span.beta-tag {
         width: 75%;
         margin: 10px auto;
         background-color: var(--border-secondary);
-    }
-
-    .mobile-notice-description {
-        font-family: 'Varela Round', 'Open Sans', sans-serif;
     }
 
     .mobile-notice-description + .mobile-notice-description {

@@ -215,7 +215,8 @@ p.hamster {
 }
 
 .material .materialAmt {
-    padding-left: 10px;
+    flex-grow: 1;
+    text-align: center;
 }
 
 .noMaterials {

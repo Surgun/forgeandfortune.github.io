@@ -50,7 +50,10 @@ const ResourceManager = {
         if (mat.id !== "M001") mat.amt = Math.min(mat.amt,1000);
         mat.seen = true;
         if (mat.amt === 0) $("#"+mat.id).hide();
-        else $("#"+mat.id).show();
+        else {
+            $(".noMaterials").remove();
+            $("#"+mat.id).show();
+        }
         $("#amt"+mat.id).html(mat.amt,2);
         $("#dsbr"+mat.id).html(mat.amt);
         refreshTinkerMats();
@@ -157,13 +160,18 @@ function initializeMats() {
             $materials.append(d);
         }
     })
+    const noMats = $("<div/>").addClass("noMaterials").html("No materials currently in your inventory. Try the dungeons!");
+    $materials.append(noMats);
 }
 
 function hardMatRefresh() {
     //used when we first load in
     ResourceManager.materials.forEach(mat=> {
         if (mat.amt === 0) $("#"+mat.id).hide();
-        else $("#"+mat.id).show();
+        else {
+            $(".noMaterials").remove();
+            $("#"+mat.id).show();
+        }
         $("#amt"+mat.id).html(mat.amt);
         if (mat.id === "M001") {
             $goldSidebarAmt.html(formatToUnits(mat.amt,2));

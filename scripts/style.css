@@ -80,7 +80,7 @@ body {
     margin: 0;
     padding: 0;
     color: var(--text-primary);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-tertiary);
 }
 
 .back-to-top {
@@ -141,14 +141,64 @@ p.hamster {
     cursor: pointer;
 }
 
+.inventoryContent {
+    display: flex;
+    height: 100%;
+}
+
+.inventoryContent > div {
+    flex-basis: 220px;
+}
+
+.inventoryContentContainer {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/* Materials and Materials Inventory */
+
+.materialContentContainer {
+    position: relative;
+    padding: 0 10px 10px;
+    height: 100%;
+    background-color: var(--bg-primary);
+    border-right: 1px solid var(--border-primary);
+    overflow: auto;
+    transform-origin: left;
+    animation: 0.15s scale-x-in forwards;
+}
+
+.materialsHeader {
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 15px 10px 5px;
+    width: 100%;
+    color: var(--text-primary);
+    font-weight: normal;
+    text-align: center;
+    background-color: var(--bg-primary);
+    border-bottom: 2px solid var(--border-secondary);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.materialsList {
+    display: grid;
+    grid-template: auto / repeat(2, 1fr);
+    grid-gap: 5px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+}
+
 .material {
     position: relative;
     display: flex;
     align-items: center;
-    background-color: var(--bg-secondary);
-    border: 2px solid var(--border-primary);
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-secondary);
     border-radius: 5px;
-    box-shadow: 0 3px 5px 0 rgba(0,0,0,.15);
+    animation: 0.2s scale-in;
 }
 
 .material .materialName {
@@ -156,8 +206,7 @@ p.hamster {
     justify-content: center;
     align-items: center;
     padding: 5px;
-    background-color: var(--border-primary);
-    border-right: 2px solid var(--border-primary);
+    background-color: var(--border-secondary);
     border-radius: 3px 0 0 3px;
 }
 
@@ -166,8 +215,19 @@ p.hamster {
 }
 
 .material .materialAmt {
-    padding-left: 10px;
+    flex-grow: 1;
+    text-align: center;
 }
+
+.noMaterials {
+    grid-column: 1 /-1;
+    text-align: center;
+    color: var(--text-tertiary);
+}
+
+/* End Materials and Materials Inventory */
+
+/* Right Sidebar Gold and Inventory */
 
 .sidebarContentContainer {
     display: flex;
@@ -217,6 +277,8 @@ p.hamster {
 .invSideContainer.inventoryFullSide > i {
     background-color: var(--button-cancel);
 }
+
+/* End Right Sidebar Gold and Inventory */
 
 .dungeonGroup {
     margin-bottom: 10px;
@@ -365,6 +427,8 @@ p.hamster {
         grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
     margin: 10px;
+    transform-origin: left top;
+    animation: 0.2s scale-in;
 }
 
 #ietEquip, #ietHero {
@@ -811,6 +875,12 @@ Rarities
     animation: 0.2s fade-in;
 }
 
+@media screen and (max-width: 1189px) {
+    .tabcontent {
+        --tab-height: 55px;
+    }
+}
+
 #dungeonRun {
     -webkit-animation: 0.2s fade-in;
     animation: 0.2s fade-in;
@@ -1089,35 +1159,6 @@ Rarities
     width: 2px;
     height: calc(100% - 10px);
     background-color: var(--border-tertiary);
-}
-
-.recipeLogisticsContainer {
-    position: relative;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-primary);
-    transform-origin: left top;
-    animation: 0.2s scale-in;
-}
-
-.logisticContainer {
-    display: none;
-    grid-template: auto / repeat(auto-fill, minmax(225px,1fr));
-    grid-auto-rows: auto;
-    grid-gap: 5px;
-    opacity: 0;
-    animation: 0.2s fade-in forwards;
-}
-
-.logisticContainer.expanded {
-    display: -ms-grid;
-    display: grid;
-}
-
-.logMaterials {
-    grid-template: auto / repeat(auto-fill, minmax(110px,1fr));
 }
 
 .recipeSortContainer {
@@ -1641,35 +1682,35 @@ Rarities
 }
 
 .recipeTimeAndValue {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     margin: auto 0 10px;
 }
 
 .recipeTimeContainer, .recipeAmountContainer, .recipeValueContainer {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    line-height: 1em;
-    padding: 0 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    flex-grow: 1;
+    font-size: 0.85rem;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 5px;
+}
+
+.recipeAmountContainer {
+    margin: 0 2.5px;
 }
 
 .recipeTimeHeader, .recipeAmountHeader, .recipeValueHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 5px;
+}
+
+.recipeValueHeader > img {
+    max-width: 20px;
 }
 
 .recipeCraft {
@@ -1837,7 +1878,7 @@ Rarities
 }
 
 .reciperesdiv {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .itemCost {
@@ -1852,18 +1893,12 @@ Rarities
 
 .indvCost {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     padding: 5px 10px;
-    background-color: var(--border-primary);
-    border: 1px solid var(--border-secondary);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
     border-radius: 5px;
 }
 
@@ -2000,14 +2035,6 @@ Rarities
     right: 0;
     left: 0;
     cursor: pointer;
-}
-
-.recipeCardHeader, .recipeValue {
-    position: relative;
-}
-
-.recipeValue {
-    min-width: 20px;
 }
 
 .recipeName > img, .EHPEname > img {
@@ -5943,16 +5970,13 @@ label.selection-container.party-selection-container {
 }
 
 .buildingInstr {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-top: 10px;
     padding: 15px;
     width: 100%;
     color: var(--highlight);
+    animation: 0.2s scale-in;
 }
 
 .buildingInstrHead {
@@ -7813,7 +7837,6 @@ span.beta-tag {
         padding: 0;
         max-width: 600px;
         list-style: none;
-        font-family: 'Varela Round', 'Open Sans', sans-serif;
     }
 
     .mobile-nav-listing .nav-item {
@@ -7851,7 +7874,6 @@ span.beta-tag {
     .mobile-notice-headline {
         color: var(--highlight);
         text-transform: uppercase;
-        font-family: 'Roboto Slab', serif;
         font-weight: 100;
     }
 
@@ -7863,10 +7885,6 @@ span.beta-tag {
         width: 75%;
         margin: 10px auto;
         background-color: var(--border-secondary);
-    }
-
-    .mobile-notice-description {
-        font-family: 'Varela Round', 'Open Sans', sans-serif;
     }
 
     .mobile-notice-description + .mobile-notice-description {

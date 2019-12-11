@@ -136,7 +136,7 @@
     "id": "guild_worker",
     "title": "#name#",
     "description": "Represents a worker for the guild.",
-    "icon": "/images/resources/#id#.png",
+    "icon": "#icon#",
     "type": "guild"
   },
   {

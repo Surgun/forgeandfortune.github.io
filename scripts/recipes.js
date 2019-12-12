@@ -427,12 +427,14 @@ function refreshCraftedCount() {
         const rcc = $("#rcc"+recipe.id);
         const rbd = $("#rbd"+recipe.id);
         const rms = $("#rms"+recipe.id);
+        const rcd = $("#"+recipe.id+"rcd");
         const material = (recipe.mcost) ? Object.keys(recipe.mcost)[0] : "M201";
         rcc.html(`Master for ${Math.max(100,1000-9*recipe.craftCount)} ${ResourceManager.idToMaterial(material).img}`);
         if (recipe.isMastered()) {
             rbd.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
             rcc.addClass("isMastered").removeClass("tooltip").html("MASTERED");
             rms.addClass("isMastered").html("MASTERED");
+            rcd.find(".matCost").attr({"data-tooltip":"material_desc_mastered","data-tooltip-value":material.id}).addClass("isMastered");
         }
     });
 }

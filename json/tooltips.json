@@ -133,6 +133,13 @@
     "type": "material"
   },
   {
+    "id": "material_desc_mastered",
+    "title": "#name# Cost Removed",
+    "description": "Mastering this recipe has removed this material cost.",
+    "icon": "/images/resources/#id#.png",
+    "type": "material"
+  },
+  {
     "id": "guild_worker",
     "title": "#name#",
     "description": "Represents a worker for the guild.",

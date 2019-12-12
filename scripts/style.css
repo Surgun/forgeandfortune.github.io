@@ -1910,6 +1910,7 @@ Rarities
     font-size: 1rem;
     padding: 5px;
     height: 30px;
+    border-radius: 3px 0 0 3px;
 }
 
 .indvCost > .matIcon {
@@ -1920,6 +1921,19 @@ Rarities
 .indvCost > .matAmt {
     flex-grow: 1;
     text-align: center;
+}
+
+.indvCost.matCost.isMastered {
+    border-color: var(--highlight);
+}
+
+.indvCost.matCost.isMastered .matIcon {
+    background: var(--gradient-secondary);
+    flex-grow: 1;
+}
+
+.indvCost.matCost.isMastered .matAmt {
+    display: none;
 }
 
 .recipeStatList {

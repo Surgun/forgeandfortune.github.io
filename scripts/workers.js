@@ -131,5 +131,4 @@ function refreshSideWorkers() {
     else $G003Workers.hide();
     if (WorkerManager.ownedByGuild("G004")) $G004Workers.show();
     else $G004Workers.hide();
-    if ()
 };

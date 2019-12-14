@@ -196,7 +196,6 @@ function generateSkillIcons(unit) {
     const d1 = $("<div/>").addClass("orderUnitSkills");
     const skillIDs = unit.getSkillIDs();
     unit.getSkillIcons().forEach((icon,i) => {
-        console.log(skillIDs);
         $("<div/>").addClass("orderUnitSkill tooltip").attr({"id":"oUS"+unit.uniqueid+i,"data-tooltip":"skill_desc","data-tooltip-value":skillIDs[i]}).html(icon).appendTo(d1);
     });
     return d1;
@@ -253,6 +252,7 @@ function refreshHPBar(hero) {
     const hptypes = ["Dung","turnOrder"];
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
+    console.log(hero.hp,hero.maxHP());
     hptypes.forEach(type => {
         $(`#hp${type}${hero.uniqueid}`).attr("data-label",hero.hp+"/"+hero.maxHP());
         $(`#hpFill${type}${hero.uniqueid}`).css('width', hpWidth);

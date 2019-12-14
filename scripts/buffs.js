@@ -113,7 +113,6 @@ const BuffRefreshManager = {
     makeBuffContainer(buff,uniqueid) {
         const d1 = $("<div/>").addClass("buffContainer").attr("id","bc"+uniqueid+buff.id);
             $("<div/>").addClass("buffContainerIcon").html(buff.icon).appendTo(d1);
-            console.log(buff.stacks);
             $("<div/>").addClass("buffContainerCount").attr("id","bcount"+uniqueid+buff.id).html(buff.stacks).appendTo(d1);
         return d1;
     },

@@ -113,7 +113,7 @@ SkillManager.skillEffects['S0005'] = function (skill,attacker,power,target,dunge
 
 SkillManager.skillEffects['S0006'] = function (skill,attacker,power,target,dungeonid) {
     const attack = new Attack(attacker, power, skill, dungeonid);
-    target.forEach(t => t.takeAttack(attack));
+    target.takeAttack(attack);
     attacker.heal(power);
 }
 

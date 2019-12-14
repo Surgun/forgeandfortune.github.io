@@ -107,10 +107,22 @@ const $G003Workers = $("#G003Workers");
 const $G004Workers = $("#G004Workers");
 
 function refreshSideWorkers() {
-    $G001WorkerFree.html(WorkerManager.freeByGuild("G001"));
-    $G002WorkerFree.html(WorkerManager.freeByGuild("G002"));
-    $G003WorkerFree.html(WorkerManager.freeByGuild("G003"));
-    $G004WorkerFree.html(WorkerManager.freeByGuild("G004"));
+    const g1free = WorkerManager.freeByGuild("G001");
+    const g2free = WorkerManager.freeByGuild("G001");
+    const g3free = WorkerManager.freeByGuild("G001");
+    const g4free = WorkerManager.freeByGuild("G001");
+    $G001WorkerFree.html(g1free);
+    $G002WorkerFree.html(g2free);
+    $G003WorkerFree.html(g3free);
+    $G004WorkerFree.html(g4free);
+    if (g1free > 0) $G001Workers.removeClass("noWorkersAvailable");
+    else $G001Workers.addClass("noWorkersAvailable");
+    if (g2free > 0) $G002Workers.removeClass("noWorkersAvailable");
+    else $G002Workers.addClass("noWorkersAvailable");
+    if (g3free > 0) $G003Workers.removeClass("noWorkersAvailable");
+    else $G003Workers.addClass("noWorkersAvailable");
+    if (g4free > 0) $G004Workers.removeClass("noWorkersAvailable");
+    else $G004Workers.addClass("noWorkersAvailable");
     if (WorkerManager.ownedByGuild("G001")) $G001Workers.show();
     else $G001Workers.hide();
     if (WorkerManager.ownedByGuild("G002")) $G002Workers.show();
@@ -119,4 +131,5 @@ function refreshSideWorkers() {
     else $G003Workers.hide();
     if (WorkerManager.ownedByGuild("G004")) $G004Workers.show();
     else $G004Workers.hide();
+    if ()
 };

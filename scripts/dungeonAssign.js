@@ -252,7 +252,6 @@ function refreshHPBar(hero) {
     const hptypes = ["Dung","turnOrder"];
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
-    console.log(hero.hp,hero.maxHP());
     hptypes.forEach(type => {
         $(`#hp${type}${hero.uniqueid}`).attr("data-label",hero.hp+"/"+hero.maxHP());
         $(`#hpFill${type}${hero.uniqueid}`).css('width', hpWidth);
@@ -282,7 +281,6 @@ function refreshDungeonMatBar(dungeonid) {
 $(document).on("click", ".dungeonFarmStatus", (e) => {
     e.preventDefault();
     e.stopPropagation();
-    console.log("toggled dungeon progress");
     const gid = $(e.currentTarget).data("gid");
     DungeonManager.dungeonByID(gid).toggleProgress();
 });

@@ -135,7 +135,6 @@ class Combatant {
     heal(hp) {
         if (this.hp === 0) return;
         this.hp = Math.min(this.hp+hp,this.maxHP());
-        console.log(this.hp);
         if (!CombatManager.refreshLater) refreshHPBar(this);
     }
     healPercent(hpPercent) {

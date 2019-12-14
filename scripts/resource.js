@@ -96,7 +96,7 @@ const ResourceManager = {
         return `<img src="images/resources/${type}.png" alt="${type}">`
     },
     formatCost(res,amt) {
-        return this.materialIcon(res)+"&nbsp;"+amt;
+        return `<div class="matIcon">${this.materialIcon(res)}</div> <span class="matAmt">${amt}</span>`;
     },
     sidebarMaterial(resID) {
         const res = this.materials.find(resource => resource.id == resID)

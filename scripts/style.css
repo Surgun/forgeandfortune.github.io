@@ -333,7 +333,7 @@ p.hamster {
 
 .guildWorkersSide {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding: 5px;
     background-color: var(--bg-tertiary);
@@ -1896,21 +1896,44 @@ Rarities
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px 10px;
+    font-size: 0.85rem;
     background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-primary);
+    border: 2px solid var(--border-secondary);
     border-radius: 5px;
 }
 
-.isMastered .matCost {
-    background-color: rgba(255,255,255,.01);
-    border-color: rgba(255,255,255,.02);
-    color:  rgba(255,255,255,.5);
+.indvCost > i, .indvCost > .matIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 1rem;
+    padding: 5px;
+    height: 30px;
+    border-radius: 3px 0 0 3px;
 }
 
-.isMastered .matCost > img {
-    opacity: 0.5;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+.indvCost > .matIcon {
+    background-color: var(--border-secondary);
+    flex-grow: 0;
+}
+
+.indvCost > .matAmt {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.indvCost.matCost.isMastered {
+    border-color: var(--highlight);
+}
+
+.indvCost.matCost.isMastered .matIcon {
+    background: var(--gradient-secondary);
+    flex-grow: 1;
+}
+
+.indvCost.matCost.isMastered .matAmt {
+    display: none;
 }
 
 .recipeStatList {
@@ -2056,23 +2079,6 @@ Rarities
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
-}
-
-.indvCost > img {
-    max-height: 20px;
-}
-
-.indvCost.masteredMat > img {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
-    filter: grayscale(100%);
-}
-
-.indvCost.masteredMat {
-    color: var(--text-tertiary);
 }
 
 .bpShop {

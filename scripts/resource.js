@@ -58,8 +58,6 @@ const ResourceManager = {
         $("#dsbr"+mat.id).html(mat.amt);
         refreshTinkerMats();
         DungeonManager.dungeonMatRefresh(mat.id);
-        refreshShopEvent();
-        refreshShop();
         if (mat.id === "M002") refreshMonsterReward();
         if (mat.id !== "M001") return;
         $goldSidebarAmt.html(formatToUnits(mat.amt,2));

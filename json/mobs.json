@@ -4,9 +4,11 @@
     "name": "Green Ooze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB009",
+    "protection": 0,
+    "skill1": "S0001",
+    "skill2": "S0010",
+    "skill3": "S0001",
+    "skill4": "S0001",
     "event": "normal"
   },
   {
@@ -14,9 +16,11 @@
     "name": "Pink Ooze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -24,9 +28,11 @@
     "name": "Navy Ooze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -34,9 +40,11 @@
     "name": "Orange Ooze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -44,9 +52,11 @@
     "name": "Brown Ooze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -54,9 +64,11 @@
     "name": "Transparent Ooze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -64,9 +76,11 @@
     "name": "Red Ooze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -74,9 +88,11 @@
     "name": "Gray Ooze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -84,9 +100,11 @@
     "name": "Blue Ooze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -94,9 +112,11 @@
     "name": "Rainbow Ooze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -104,9 +124,11 @@
     "name": "Bumbling Bee",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB004",
+    "protection": 0,
+    "skill1": "S0001",
+    "skill2": "S0005",
+    "skill3": "S0001",
+    "skill4": "S0001",
     "event": "normal"
   },
   {
@@ -114,9 +136,11 @@
     "name": "Crazy Cobra",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -124,9 +148,11 @@
     "name": "Wiggle Worm",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -134,9 +160,11 @@
     "name": "Reckless Rat",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -144,9 +172,11 @@
     "name": "Scary Scorpion",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -154,9 +184,11 @@
     "name": "Stinky Spider",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -164,9 +196,11 @@
     "name": "Slinky Snake",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -174,9 +208,11 @@
     "name": "Pure Parasite",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -184,9 +220,11 @@
     "name": "Wistful Wasp",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -194,9 +232,11 @@
     "name": "Badgering Bat",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -204,9 +244,11 @@
     "name": "Earth Shaman",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB011",
+    "protection": 0,
+    "skill1": "S0001",
+    "skill2": "S0001",
+    "skill3": "S0001",
+    "skill4": "S0012",
     "event": "normal"
   },
   {
@@ -214,9 +256,11 @@
     "name": "Psychic Shaman",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -224,9 +268,11 @@
     "name": "Life Shaman",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -234,9 +280,11 @@
     "name": "Wind Shaman",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -244,9 +292,11 @@
     "name": "Lightning Shaman",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -254,9 +304,11 @@
     "name": "Fire Shaman",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -264,9 +316,11 @@
     "name": "Ice Shaman",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -274,9 +328,11 @@
     "name": "Poison Shaman",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -284,9 +340,11 @@
     "name": "Storm Shaman",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -294,9 +352,11 @@
     "name": "Death Shaman",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -304,9 +364,11 @@
     "name": "Crusty Crab",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB014",
+    "protection": 0,
+    "skill1": "S0001",
+    "skill2": "S0001",
+    "skill3": "S0015",
+    "skill4": "S0001",
     "event": "normal"
   },
   {
@@ -314,9 +376,11 @@
     "name": "Tepid Turtle",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -324,9 +388,11 @@
     "name": "Obese Octopus",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -334,9 +400,11 @@
     "name": "Fiesty Frog",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -344,9 +412,11 @@
     "name": "Amphabulous",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -354,9 +424,11 @@
     "name": "Beefy Bear",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -364,9 +436,11 @@
     "name": "Shroom Toad",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -374,9 +448,11 @@
     "name": "Mean Moose",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -384,9 +460,11 @@
     "name": "Achy Alligator",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -394,9 +472,11 @@
     "name": "Dinky Dinosaur",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -404,9 +484,11 @@
     "name": "Dwarf Minor",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB015",
+    "protection": 0,
+    "skill1": "S0001",
+    "skill2": "S0001",
+    "skill3": "S0001",
+    "skill4": "S0016",
     "event": "normal"
   },
   {
@@ -414,9 +496,11 @@
     "name": "Dwarf Cadet",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -424,9 +508,11 @@
     "name": "Dwarf Sentry",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -434,9 +520,11 @@
     "name": "Dwarf Captain",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -444,9 +532,11 @@
     "name": "Dwarf Warrior",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -454,9 +544,11 @@
     "name": "Dwarf Berserker",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -464,9 +556,11 @@
     "name": "Dwarf Magus",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -474,9 +568,11 @@
     "name": "Dwarf Knight",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -484,9 +580,11 @@
     "name": "Dwarf Templar",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -494,9 +592,11 @@
     "name": "Dwarf Champion",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -504,9 +604,11 @@
     "name": "Elf Adventurer",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB005",
+    "protection": 0,
+    "skill1": "S0006",
+    "skill2": "S0001",
+    "skill3": "S0001",
+    "skill4": "S0001",
     "event": "normal"
   },
   {
@@ -514,9 +616,11 @@
     "name": "Elf Scout",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -524,9 +628,11 @@
     "name": "Elf Sniper",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -534,9 +640,11 @@
     "name": "Elf Mender",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -544,9 +652,11 @@
     "name": "Elf Fighter",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -554,9 +664,11 @@
     "name": "Elf Assassin",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -564,9 +676,11 @@
     "name": "Elf Monk",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -574,9 +688,11 @@
     "name": "Elf Sorcerer",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -584,9 +700,11 @@
     "name": "Elf Ranger",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -594,119 +712,23 @@
     "name": "Elf Noble",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
-  },
-  {
-    "id": "B901",
-    "name": "Grumpy Gift",
-    "hpMod": 100,
-    "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
-    "event": "christmas"
-  },
-  {
-    "id": "B902",
-    "name": "Peculiar Present",
-    "hpMod": 200,
-    "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
-    "event": "christmas"
-  },
-  {
-    "id": "B903",
-    "name": "Grimy Gift",
-    "hpMod": 300,
-    "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
-    "event": "christmas"
-  },
-  {
-    "id": "B904",
-    "name": "Plain Present",
-    "hpMod": 400,
-    "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
-    "event": "christmas"
-  },
-  {
-    "id": "B905",
-    "name": "Glorious Gift",
-    "hpMod": 500,
-    "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
-    "event": "christmas"
-  },
-  {
-    "id": "B906",
-    "name": "Pleasant Present",
-    "hpMod": 600,
-    "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
-    "event": "christmas"
-  },
-  {
-    "id": "B907",
-    "name": "Grand Gift",
-    "hpMod": 700,
-    "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
-    "event": "christmas"
-  },
-  {
-    "id": "B908",
-    "name": "Perfect Present",
-    "hpMod": 800,
-    "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
-    "event": "christmas"
-  },
-  {
-    "id": "B909",
-    "name": "Mrs Claus",
-    "hpMod": 900,
-    "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
-    "event": "christmas"
-  },
-  {
-    "id": "B910",
-    "name": "Santa",
-    "hpMod": 1000,
-    "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
-    "event": "christmas"
   },
   {
     "id": "B0101",
     "name": "Dusty Alien",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB012",
+    "protection": 0,
+    "skill1": "S0013",
+    "skill2": "S0001",
+    "skill3": "S0001",
+    "skill4": "S0001",
     "event": "normal"
   },
   {
@@ -714,9 +736,11 @@
     "name": "Boney Alien",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -724,9 +748,11 @@
     "name": "Grimy Alien",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -734,9 +760,11 @@
     "name": "Loamy Alien",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -744,9 +772,11 @@
     "name": "Foamy Alien",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -754,9 +784,11 @@
     "name": "Deadly Alien",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -764,9 +796,11 @@
     "name": "Creepy Alien",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -774,9 +808,11 @@
     "name": "Chilly Alien",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -784,9 +820,11 @@
     "name": "Fruity Alien",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -794,9 +832,11 @@
     "name": "Funky Alien",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -804,9 +844,11 @@
     "name": "Violet Death",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB010",
+    "protection": 0,
+    "skill1": "S0001",
+    "skill2": "S0001",
+    "skill3": "S0011",
+    "skill4": "S0001",
     "event": "normal"
   },
   {
@@ -814,9 +856,11 @@
     "name": "Rusted Evil",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -824,9 +868,11 @@
     "name": "Emerald Horror",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -834,9 +880,11 @@
     "name": "Cerulean Curse",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -844,9 +892,11 @@
     "name": "Magenta Meanie",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -854,9 +904,11 @@
     "name": "Cyan Abomination",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -864,9 +916,11 @@
     "name": "Orange Crush",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -874,9 +928,11 @@
     "name": "Wicked Greens",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -884,9 +940,11 @@
     "name": "Plum Torment",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -894,9 +952,11 @@
     "name": "Teal Terror",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -904,9 +964,11 @@
     "name": "Flood",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB007",
+    "protection": 0,
+    "skill1": "S0001",
+    "skill2": "S0001",
+    "skill3": "S0001",
+    "skill4": "S0008",
     "event": "normal"
   },
   {
@@ -914,9 +976,11 @@
     "name": "Blaze",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -924,9 +988,11 @@
     "name": "Blight",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -934,9 +1000,11 @@
     "name": "Rockfall",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -944,9 +1012,11 @@
     "name": "Toxin",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -954,9 +1024,11 @@
     "name": "Contagion",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -964,9 +1036,11 @@
     "name": "Venom",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -974,9 +1048,11 @@
     "name": "Mudslide",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -984,9 +1060,11 @@
     "name": "Monsoon",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -994,9 +1072,11 @@
     "name": "Fabulous Elemental",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1004,9 +1084,11 @@
     "name": "Minimush",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB006",
+    "protection": 0,
+    "skill1": "S0001",
+    "skill2": "S0001",
+    "skill3": "S0007",
+    "skill4": "S0001",
     "event": "normal"
   },
   {
@@ -1014,9 +1096,11 @@
     "name": "Maximush",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1024,9 +1108,11 @@
     "name": "Flowering Doom",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1034,9 +1120,11 @@
     "name": "Coco Nutty",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1044,9 +1132,11 @@
     "name": "Shyshroom",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1054,9 +1144,11 @@
     "name": "Shredshroom",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1064,9 +1156,11 @@
     "name": "Shrunkshroom",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1074,9 +1168,11 @@
     "name": "Shrubshroom",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1084,9 +1180,11 @@
     "name": "Shrimpshroom",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1094,9 +1192,11 @@
     "name": "Shrewdshroom",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1104,9 +1204,11 @@
     "name": "Stinkie",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB008",
+    "protection": 0,
+    "skill1": "S0009",
+    "skill2": "S0001",
+    "skill3": "S0001",
+    "skill4": "S0001",
     "event": "normal"
   },
   {
@@ -1114,9 +1216,11 @@
     "name": "Smokie",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1124,9 +1228,11 @@
     "name": "Pinkie",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1134,9 +1240,11 @@
     "name": "Pokie",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1144,9 +1252,11 @@
     "name": "Blinkie",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1154,9 +1264,11 @@
     "name": "Honkie",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1164,9 +1276,11 @@
     "name": "Inkie",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1174,9 +1288,11 @@
     "name": "Tonkie",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1184,9 +1300,11 @@
     "name": "Clyde",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1194,9 +1312,11 @@
     "name": "Dale",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1204,9 +1324,11 @@
     "name": "Fred Femur",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": "PB013",
+    "protection": 0,
+    "skill1": "S0001",
+    "skill2": "S0014",
+    "skill3": "S0001",
+    "skill4": "S0001",
     "event": "normal"
   },
   {
@@ -1214,9 +1336,11 @@
     "name": "Richard Rib",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1224,9 +1348,11 @@
     "name": "Johnny Jaw",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1234,9 +1360,11 @@
     "name": "Katie Kneecap",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1244,9 +1372,11 @@
     "name": "Tiffany Temporal",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1254,9 +1384,11 @@
     "name": "Mandible Manny",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1264,9 +1396,11 @@
     "name": "Phil Philange",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1274,9 +1408,11 @@
     "name": "Henry Humerus",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1284,9 +1420,11 @@
     "name": "Clive Clavicle",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1294,9 +1432,11 @@
     "name": "Ziggy Zygo",
     "hpMod": 1,
     "powMod": 1,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "normal"
   },
   {
@@ -1304,9 +1444,11 @@
     "name": "Loathing Oak",
     "hpMod": 2000,
     "powMod": 90,
-    "armor": 25,
-    "resist": 0,
-    "playbook": "PB016",
+    "protection": 0,
+    "skill1": "S0001",
+    "skill2": "S0001",
+    "skill3": "S0017",
+    "skill4": "S0001",
     "event": "boss"
   },
   {
@@ -1314,9 +1456,11 @@
     "name": "Lost Phoenix",
     "hpMod": 4800,
     "powMod": 120,
-    "armor": 50,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "boss"
   },
   {
@@ -1324,9 +1468,11 @@
     "name": "Blue Knight",
     "hpMod": 6500,
     "powMod": 350,
-    "armor": 200,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "boss"
   },
   {
@@ -1334,9 +1480,11 @@
     "name": "Lich Suit Lawrence",
     "hpMod": 10000,
     "powMod": 200,
-    "armor": 250,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "boss"
   },
   {
@@ -1344,9 +1492,11 @@
     "name": "Beclutcher",
     "hpMod": 36000,
     "powMod": 400,
-    "armor": 200,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "boss"
   },
   {
@@ -1354,9 +1504,11 @@
     "name": "Aggressive Oak",
     "hpMod": 13000,
     "powMod": 1000,
-    "armor": 200,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "boss"
   },
   {
@@ -1364,9 +1516,11 @@
     "name": "Enraged Phoenix",
     "hpMod": 40000,
     "powMod": 1000,
-    "armor": 250,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "boss"
   },
   {
@@ -1374,9 +1528,11 @@
     "name": "Melancholy Knight",
     "hpMod": 70000,
     "powMod": 2500,
-    "armor": 450,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "boss"
   },
   {
@@ -1384,9 +1540,11 @@
     "name": "Lawrence The Second",
     "hpMod": 125000,
     "powMod": 2000,
-    "armor": 750,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "boss"
   },
   {
@@ -1394,9 +1552,11 @@
     "name": "Begrasper",
     "hpMod": 160000,
     "powMod": 3333,
-    "armor": 1350,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "boss"
   },
   {
@@ -1404,9 +1564,11 @@
     "name": "Albert",
     "hpMod": 50,
     "powMod": 200,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "temp"
   },
   {
@@ -1414,9 +1576,11 @@
     "name": "Lowe",
     "hpMod": 60,
     "powMod": 100,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "temp"
   },
   {
@@ -1424,9 +1588,11 @@
     "name": "Sierra",
     "hpMod": 70,
     "powMod": 50,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "temp"
   },
   {
@@ -1434,9 +1600,11 @@
     "name": "Dead Bard",
     "hpMod": 490,
     "powMod": 500,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "temp"
   },
   {
@@ -1444,9 +1612,11 @@
     "name": "Seaborn Sam",
     "hpMod": 495,
     "powMod": 500,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "temp"
   },
   {
@@ -1454,9 +1624,11 @@
     "name": "Burnt Sienna",
     "hpMod": 500,
     "powMod": 500,
-    "armor": 0,
-    "resist": 0,
-    "playbook": null,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
     "event": "temp"
   }
 ]

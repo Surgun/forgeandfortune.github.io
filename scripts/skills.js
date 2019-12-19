@@ -22,6 +22,10 @@ const PlaybookManager = {
     generatePlayBook(playbookID) {
         const playbookTemplate = this.idToPlaybook(playbookID);
         return new Playbook(playbookTemplate);
+    },
+    generatePlayBookFromSkills(s1,s2,s3,s4) {
+        const skills = {skill1:s1,skill2:s2,skill3:s3,skill4:s4};
+        return new Playbook(skills);
     }
 }
 
@@ -35,17 +39,6 @@ class Skill {
     constructor (props) {
         Object.assign(this, props);
     }
-    execute(attacker,allies,enemies,dungeonid) {
-        const target = this.targetEnemies ? getTarget(enemies, attacker, this.targetType) : getTarget(allies, attacker, this.targetType);
-        const power = attacker.getPow() * this.powMod;
-        BattleLog.addEntry(dungeonid,this.icon,this.battleText(attacker.name,target.name,power))
-        SkillManager.skillEffects[this.id](this,attacker,power,target,dungeonid);
-    }
-    battleText(attacker,defender,damage) {
-        let battleTextEdit = this.bText.replace("#ATTACKER#",attacker);
-        battleTextEdit = battleTextEdit.replace("#DEFENDER#",defender);
-        return battleTextEdit.replace("#DAMAGE#",damage);
-    } 
 }
 
 class Playbook {
@@ -79,62 +72,87 @@ class Playbook {
     }
 }
 
-SkillManager.skillEffects['S0001'] = function(skill,attacker,power,target,dungeonid) {
-    //Regular Attack
-    const attack = new Attack(attacker, power, skill, dungeonid);
-    target.takeAttack(attack);
+SkillManager.skillEffects['S0001'] = function(combatParams) {
+    //Attack
+    const targets = combatParams.getTarget();
+    targets.forEach(target => target.takeAttack(combatParams));
 }
 
-SkillManager.skillEffects['S0002'] = function (skill,attacker,power,target,dungeonid) {
-    //Power Attack
-    const attack = new Attack(attacker, power, skill, dungeonid);
-    target.takeAttack(attack);
-    target.takeAttack(attack);
+SkillManager.skillEffects['S0002'] = function (combatParams) {
+    //Double Tap
+    const targets = combatParams.getTarget();
+    targets.forEach(target => target.takeAttack(combatParams));
 }
 
-SkillManager.skillEffects['S0003'] = function (skill,attacker,power,target,dungeonid) {
-    //Armor Buff
-    BuffManager.generateBuff('B0003',target,power);
+SkillManager.skillEffects['S0003'] = function (combatParams) {
+    //Reinforce
+    const targets = combatParams.getTarget();
+    targets.forEach(target => BuffManager.generateBuff('B0003',target,combatParams.power))
+    
 }
 
-SkillManager.skillEffects['S0004'] = function (skill,attacker,power,target,dungeonid) {
+SkillManager.skillEffects['S0004'] = function (combatParams) {
     //Meteor
-    const attack = new Attack(attacker, power, skill, dungeonid);
-    target.forEach(t => t.takeAttack(attack));
+    const targets = combatParams.getTarget();
+    targets.forEach(target => target.takeAttack(combatParams));
 }
 
-SkillManager.skillEffects['S0005'] = function (skill,attacker,power,target,dungeonid) {
-    const attack = new Attack(attacker, power, skill, dungeonid);
-    target.takeAttack(attack);
-    target.takeAttack(attack);
-    target.takeAttack(attack);
-    target.takeAttack(attack);
+SkillManager.skillEffects['S0005'] = function (combatParams) {
+    //sting
+    for (let i=0;i<4;i++) {
+        const targets = combatParams.getTarget();
+        targets.forEach(target => target.takeAttack(combatParams));
+    }
 }
 
-SkillManager.skillEffects['S0006'] = function (skill,attacker,power,target,dungeonid) {
-    const attack = new Attack(attacker, power, skill, dungeonid);
-    target.takeAttack(attack);
-    attacker.heal(power);
+SkillManager.skillEffects['S0006'] = function (combatParams) {
+    //swift strike
+    const targets = combatParams.getTarget();
+    targets.forEach(target => target.takeAttack(combatParams));
+    const secondaryTargets = combatParams.getTarget("allAllies");
+    secondaryTargets.forEach(target => target.heal(combatParams.power));
 }
 
-SkillManager.skillEffects['S0007'] = function (skill,attacker,power,target,dungeonid) {
-    BuffManager.generateBuff('B0007',target,power);
+SkillManager.skillEffects['S0007'] = function (combatParams) {
+    //Spore
+    const targets = combatParams.getTarget();
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        BuffManager.generateBuff('B0007',target,combatParams.power);
+    });
 }
 
-SkillManager.skillEffects['S0008'] = function (skill,attacker,power,target,dungeonid) {
-    BuffManager.generateBuff('B0008',target,power);
+SkillManager.skillEffects['S0008'] = function (combatParams) {
+    //healing aura
+    const targets = combatParams.getTarget();
+    targets.forEach(target => {
+        BuffManager.generateBuff('B0008',target,combatParams.power);
+    });
 }
 
-SkillManager.skillEffects['S0009'] = function (skill,attacker,power,target,dungeonid) {
-    BuffManager.generateBuff('B0009',target,power);
+SkillManager.skillEffects['S0009'] = function (combatParams) {
+    //Translucent
+    const targets = combatParams.getTarget();
+    targets.forEach(target => {
+        BuffManager.generateBuff('B0009',target,combatParams.power);
+    });
 }
 
-SkillManager.skillEffects['S0010'] = function (skill,attacker,power,target,dungeonid) {
-    attacker.heal(power);
+SkillManager.skillEffects['S0010'] = function (combatParams) {
+    //Poison Touch
+    const targets = combatParams.getTarget();
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        BuffManager.generateBuff('B0010',target,combatParams.power);
+    });
 }
 
-SkillManager.skillEffects['S0011'] = function (skill,attacker,power,target,dungeonid) {
-    BuffManager.generateBuff('B0011',target,power);
+SkillManager.skillEffects['S0011'] = function (combatParams) {
+    const targets = combatParams.getTarget();
+    targets.forEach(target => {
+        BuffManager.generateBuff('B0011',target,power);
+    })
+    
 }
 
 SkillManager.skillEffects['S0012'] = function (skill,attacker,power,target,dungeonid) {

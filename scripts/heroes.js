@@ -19,6 +19,7 @@ class Hero extends Combatant {
         this.head = '<img src="images/heroes/heads/'+this.id+'.png">';
         this.owned = false;
         this.inDungeon = false;
+        this.protection = 0;
         this.playbook = GetPlaybook(this.id);
     }
     createSave() {

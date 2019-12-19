@@ -52,10 +52,9 @@ class Buff {
         return this.stacks <= 0;
     }
     onTick() { return; }
-    getArmor() { return 0; }
-    getDodge() { return 0; }
     onHit() { return; }
     getPow() { return 0; }
+    getSpow() { return 0; }
 }
 
 const BuffManager = {
@@ -132,8 +131,8 @@ class B0003 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    getArmor() {
-        return this.power;
+    getProtection() {
+        return 0.5;
     }
 }
 
@@ -141,8 +140,8 @@ class B0007 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    onTick() {
-        this.target.takeDamage(this.power);
+    getSpow() {
+        return -this.power;
     }
 }
 
@@ -159,8 +158,8 @@ class B0009 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    getDodge() {
-        return 100;
+    getProtection() {
+        return 1;
     } 
 }
 
@@ -172,6 +171,15 @@ class B0011 extends Buff {
         attacker.takeDamage(this.power);
     }
 }
+
+/*class B0011 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    onHit(attacker) {
+        attacker.takeDamage(this.power);
+    }
+}*/
 
 class B0012 extends Buff {
     constructor (buffTemplate,target,power) {

@@ -7,39 +7,51 @@ const CombatManager = {
         const allies = (attacker.unitType === "hero") ? dungeon.party.heroes : dungeon.mobs;
         const enemies = (attacker.unitType === "hero") ? dungeon.mobs : dungeon.party.heroes;
         const attack = attacker.getSkill();
-        attack.execute(attacker,allies,enemies,dungeon.id);
+        const combatRound = new combatRoundParams(attacker,allies,enemies,attack,dungeon.id);
+        combatRound.execute();
         attacker.buffTick("onHitting");
         dungeon.order.nextPosition();
     },
 }
 
-function getTarget(wholeparty, self, type) {
-    const party = wholeparty.filter(h => h.alive());
-    if (type === "first") return party[0]
-    else if (type === "second") {
-        if (party.length === 1) return party[0];
-        return party[1];
+class combatRoundParams {
+    constructor (attacker,allies,enemies,attack,dungeonid) {
+        this.attacker = attacker;
+        this.allies = allies;
+        this.enemies = enemies;
+        this.attack = attack;
+        this.power = this.attacker.getPow() * this.attack.powerMod;
+        this.dungeonid = dungeonid;
     }
-    else if (type === "third") {
-        if (party.length === 1) return party[0];
-        if (party.length === 2) return party[2];
-        return party[3]
+    getTarget(override) {
+        const livingAllies = allies.filter(h=>h.alive());
+        const target = override || this.attack.targetType;
+        const livingEnemies = enemies.filter(h=>h.alive());
+        if (target === "first") return [livingEnemies[0]];
+        if (target === "second") {
+            if (livingEnemies.length === 1) return [livingEnemies[0]];
+            return [livingEnemies[1]];
+        }
+        if (target === "third") {
+            if (livingEnemies.length === 1) return [livingEnemies[0]];
+            if (livingEnemies.length === 2) return [livingEnemies[1]];
+            return [livingEnemies[3]];
+        }
+        if (target === "last") return [livingEnemies[livingEnemies.length-1]];
+        if (target === "random") return [livingEnemies[Math.floor(Math.random()*livingEnemies.length)]];
+        if (target === "self") return [attacker];
+        if (target === "allEnemies") return livingEnemies;
+        if (target === "allAllies") return livingAllies;
     }
-    else if (type === "last") return party[party.length-1];
-    else if (type === "reverse") return party.reverse()[0];
-    else if (type === "random") {
-        return party[Math.floor(Math.random()*party.length)];
+    execute() {
+        SkillManager.skillEffects[attack.id](this);
+        BattleLog.addEntry(this.dungeonid,this.icon,this.battleText());
     }
-    else if (type === "highhp") return party.sort((a,b) => {return b.hp - a.hp})[0];
-    else if (type === "lowhp") return party.sort((a,b) => {return a.hp - b.hp})[0];
-    else if (type === "lowmaxHP") return party.sort((a,b) => {return b.maxHP() - a.maxHP()})[0];
-    else if (type === "lowMissingHp") return party.sort((a,b) => {return b.missingHP() - a.missingHP()})[0];
-    else if (type === "self") return self;
-    else if (type === "all") return wholeparty;
-}
-
-function rollStat(stat) {
-    return stat > Math.floor(Math.random()*100) + 1
+    battleText() {
+        let battleTextEdit = this.bText.replace("#ATTACKER#",this.attacker.name);
+        battleTextEdit = battleTextEdit.replace("#DEFENDER#",this.defender.name);
+        return battleTextEdit.replace("#DAMAGE#",this.power);
+    } 
 }
 
 const $drLog = $("#drLog");
@@ -69,17 +81,6 @@ const BattleLog = {
     },
 }
 
-class Attack {
-    constructor (attacker, power, skill, dungeonid) {
-        this.attacker = attacker;
-        this.power = power;
-        this.type = skill.damageType;
-        this.element = skill.damageElement;
-        this.canDodge = skill.canDodge;
-        this.dungeonid = dungeonid;
-    }
-}
-
 class Combatant {
     constructor (props) {
         Object.assign(this,props);
@@ -94,7 +95,7 @@ class Combatant {
         this.buffs = this.buffs.filter(buff => !buff.expired());
     }
     takeAttack(attack) {
-        const reducedDmg = attack.power;
+        const reducedDmg = attack.power * this.getProtection();
         BattleLog.addEntry(attack.dungeonid,miscIcons.takeDamage,`${this.name} takes ${reducedDmg} damage`);
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);
@@ -116,6 +117,12 @@ class Combatant {
     }
     getPow() {
         return this.pow + this.getBuffPower();
+    }
+    getSpow() {
+        return this.spow + this.getBuffSpower();
+    }
+    getProtection() {
+        return 1 - (this.protection + this.getBuffProtection());
     }
     getAdjPow() {
         return this.getPow();
@@ -158,16 +165,16 @@ class Combatant {
     getSkillIDs() {
         return this.playbook.getSkillIDs();
     }
-    getBuffArmor() {
-        const buffs = this.buffs.map(b=>b.getArmor());
-        return buffs.reduce((a,b) => a+b, 0);
-    }
-    getBuffDodge() {
-        const buffs = this.buffs.map(b=>b.getDodge());
+    getBuffProtection() {
+        const buffs = this.buffs.map(b=>b.getProtection());
         return buffs.reduce((a,b) => a+b, 0);
     }
     getBuffPower() {
         const buffs = this.buffs.map(b=>b.getPow());
+        return buffs.reduce((a,b) => a+b, 0);
+    }
+    getBuffSpower() {
+        const buffs = this.buffs.map(b=>b.getSpow());
         return buffs.reduce((a,b) => a+b, 0);
     }
     removeBuffs() {

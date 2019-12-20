@@ -2575,20 +2575,39 @@ Rarities
 }
 
 .alPerk {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
     text-align: center;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
 }
 
 .alTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--highlight);
+    background: var(--bg-tertiary);
+    margin: -10px -10px 0;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid var(--border-primary);
 }
 
 .alImage {
     margin: 5px 0;
+    padding: 10px;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
 }
 
 .alDesc {
-    margin-bottom: 10px;
+    padding: 10px;
     color: var(--text-secondary);
+    font-size: 0.85rem;
 }
 
 .guildOrder, .guildSales, .guildWorkers, .guildMasteryCardContainer {
@@ -5203,7 +5222,7 @@ label.selection-container.party-selection-container {
     margin: 0;
 }
 
-.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .alPerk, .desynthSlot, .desynthGroup, .fortuneItem, .tinkerCommand, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard, .lineRewardContainer, .recipeMasteryGuildCard {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .desynthSlot, .desynthGroup, .fortuneItem, .tinkerCommand, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard, .lineRewardContainer, .recipeMasteryGuildCard {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;

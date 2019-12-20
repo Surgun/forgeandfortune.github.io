@@ -8672,11 +8672,15 @@ span.beta-tag {
     padding: 10px;
 }
 
-.marketSales {
+.marketSales, .perkTypeContainer {
     display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(225px, 1fr));
     grid-gap: 10px;
+}
+
+.alPerk.perkLocked {
+    opacity: .5;
 }
 
 .alPerkBuy {

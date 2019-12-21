@@ -198,7 +198,7 @@
   {
     "id": "skill_desc",
     "title": "#name#",
-    "description": "#description#",
+    "description": "#description#</br><span class=\"tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span> <span class=\"tooltipSPower\"><i class=\"fas fa-book-spells statSPOW\"></i> #spowerPercent#</span>",
     "icon": "#icon#",
     "type": "skill"
   }

@@ -8,6 +8,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
+    "spowMod": 0,
     "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE# damage"
   },
   {
@@ -19,6 +20,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
+    "spowMod": 0,
     "bText": "#ATTACKER# launches a super attack against #DEFENDER# for #DAMAGE# damage"
   },
   {
@@ -30,18 +32,20 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 0.5,
+    "spowMod": 0,
     "bText": "#ATTACKER# braces himself"
   },
   {
     "id": "S0004",
-    "name": "Meteor",
-    "description": "Attacks all enemies with a magic attack.",
-    "icon": "<i class=\"fas fa-meteor\"></i>",
+    "name": "Frost Strike",
+    "description": "Attacks and applies a chilled effect. If the target already has the chilled effect, increase the damage by 2.5x",
+    "icon": "<i class=\"fas fa-snowflake\"></i>",
     "type": "magical",
     "targetEnemies": true,
-    "targetType": "all",
-    "powMod": 1.5,
-    "bText": "#ATTACKER# sends a rain of meteors for #DAMAGE# damage"
+    "targetType": "first",
+    "powMod": 1,
+    "spowMod": 1.5,
+    "bText": "#ATTACKER# shoots a frosty blast towards #DEFENDER# for #DAMAGE# damage"
   },
   {
     "id": "S0005",
@@ -50,8 +54,9 @@
     "icon": "<i class=\"fab fa-forumbee\"></i>",
     "type": "physical",
     "targetEnemies": true,
-    "targetType": "all",
+    "targetType": "allEnemies",
     "powMod": 0.5,
+    "spowMod": 0,
     "bText": "#ATTACKER# lets out four quick stings at #DEFENDER# for #DAMAGE# damage"
   },
   {
@@ -63,17 +68,19 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 2,
+    "spowMod": 0,
     "bText": "#ATTACKER# strikes #DEFENDER# for #DAMAGE# damage and heals the same amount"
   },
   {
     "id": "S0007",
-    "name": "Poison Spore",
-    "description": "Poisons the enemy, dealing damage every turn.",
-    "icon": "<i class=\"fas fa-flask-poison\"></i>",
+    "name": "Spore",
+    "description": "Damages enemies and lowers their sPow",
+    "icon": "<i class=\"fad fa-star-christmas\"></i>",
     "type": "magical",
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 0.5,
+    "spowMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -85,6 +92,7 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 2,
+    "spowMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -96,28 +104,31 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 1,
+    "spowMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
     "id": "S0010",
-    "name": "Regenerate",
-    "description": "Heals the caster.",
+    "name": "Poison Touch",
+    "description": "Deals damage every turn",
     "icon": "<i class=\"fas fa-prescription-bottle-alt\"></i>",
     "type": "magical",
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 3,
+    "spowMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
     "id": "S0011",
-    "name": "Needles",
-    "description": "Deals damage to the attacker every turn.",
+    "name": "Death Shade",
+    "description": "Deals damage to all enemies over two turns",
     "icon": "<i class=\"fab fa-hornbill\"></i>",
     "type": "physical",
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 1,
+    "spowMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -129,6 +140,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 2,
+    "spowMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -140,6 +152,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 3,
+    "spowMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -151,6 +164,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 2,
+    "spowMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -162,6 +176,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 3,
+    "spowMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -173,6 +188,7 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 0.5,
+    "spowMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -184,6 +200,7 @@
     "targetEnemies": true,
     "targetType": "second",
     "powMod": 2,
+    "spowMod": 0,
     "bText": "#ATTACKER# trees you for #DAMAGE# damage"
   }
 ]

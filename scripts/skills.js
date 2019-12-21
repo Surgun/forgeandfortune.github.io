@@ -38,6 +38,8 @@ class playBookTemplate {
 class Skill {
     constructor (props) {
         Object.assign(this, props);
+        this.powerPercent = (props.powMod * 100).toString() + "%";
+        this.spowerPercent = (props.spowMod * 100).toString() + "%";
     }
 }
 
@@ -72,10 +74,18 @@ class Playbook {
     }
 }
 
+function battleText(combatParams,target) {
+    let battleTextEdit = combatParams.attack.bText.replace("#ATTACKER#",combatParams.attacker.name);
+    battleTextEdit = battleTextEdit.replace("#DEFENDER#",target.name);
+    return battleTextEdit.replace("#DAMAGE#",combatParams.power);
+} 
+
 SkillManager.skillEffects['S0001'] = function(combatParams) {
     //Attack
     const targets = combatParams.getTarget();
-    targets.forEach(target => target.takeAttack(combatParams));
+    targets.forEach(target => {
+        target.takeAttack(combatParams)
+    });
 }
 
 SkillManager.skillEffects['S0002'] = function (combatParams) {
@@ -92,15 +102,26 @@ SkillManager.skillEffects['S0003'] = function (combatParams) {
 }
 
 SkillManager.skillEffects['S0004'] = function (combatParams) {
-    //Meteor
+    //Frost Attack
     const targets = combatParams.getTarget();
-    targets.forEach(target => target.takeAttack(combatParams));
+    const originalPower = combatParams.power;
+    targets.forEach(target => {
+        if (target.hasBuff("B0004")) {
+            combatParams.power = Math.floor(2.5 * originalPower);
+            target.takeAttack(combatParams);
+        }
+        else {
+            target.takeAttack(combatParams);
+            BuffManager.generateBuff("B0004",target,0);
+        }
+    });
 }
 
 SkillManager.skillEffects['S0005'] = function (combatParams) {
     //sting
     for (let i=0;i<4;i++) {
         const targets = combatParams.getTarget();
+        console.log(targets);
         targets.forEach(target => target.takeAttack(combatParams));
     }
 }

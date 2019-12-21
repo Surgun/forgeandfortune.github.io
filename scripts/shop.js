@@ -104,25 +104,41 @@ function refreshShop() {
         $craftPerks.append(createALperk(perk,firstPerk));
         if (!perk.purchased) firstPerk = true;
     });
+    $craftPerks.append(showRemainingPerks("Crafting"));
     firstPerk = false;
     Shop.perksByType("Dungeon").forEach(perk => {
         $adventurePerks.append(createALperk(perk,firstPerk));
         if (!perk.purchased) firstPerk = true;
     });
+    $adventurePerks.append(showRemainingPerks("Dungeon"));
     firstPerk = false;
     Shop.perksByType("Town").forEach(perk => {
         $townPerks.append(createALperk(perk,firstPerk));
         if (!perk.purchased) firstPerk = true;
     });
+    $townPerks.append(showRemainingPerks("Town"));
+}
+
+function showRemainingPerks(type) {
+    const perkCount =  Shop.perksByType(type).length - Shop.perksByType(type).filter(perk => perk.purchased).length;
+    if (perkCount > 1) {
+        const d1 = $("<div/>").addClass("alPerkRemaining");
+            $("<div/>").addClass("alTitle").html(`Perks Remaining`).appendTo(d1);
+            $("<div/>").addClass("alPerkCount").html(`+${perkCount - 1}`).appendTo(d1);
+            $("<div/>").addClass("alDesc").html(`more perks for available for purchase`).appendTo(d1);
+        return d1;
+    }
+    return;
 }
 
 function createALperk(perk,firstperk) {
     const d1 = $("<div/>").addClass("alPerk");
     if (firstperk) {
-        d1.addClass("perkLocked");
-        $("<div/>").addClass("alTitle").html("Perk Locked").appendTo(d1);
-        $("<div/>").addClass("alDesc").html("Purchase Previous Perk First!").appendTo(d1);
-        return d1;
+        // d1.addClass("perkLocked");
+        // $("<div/>").addClass("alTitle").html("Perk Locked").appendTo(d1);
+        // $("<div/>").addClass("alDesc").html("Purchase Previous Perk First!").appendTo(d1);
+        // return d1;
+        return;
     }
     $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
     $("<div/>").addClass("alImage").html(perk.image).appendTo(d1);

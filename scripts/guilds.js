@@ -377,6 +377,7 @@ function refreshRecipeMastery(guild) {
     $guildNotice.empty();
     $guildMasteryContainer.empty();
     if (guild.unmastered.length === 0) $guildNotice.addClass("noMasteryAvailable").html("No recipes to master currently.");
+    else $guildNotice.removeClass("noMasteryAvailable");
     guild.unmastered.forEach(rid => {
         const recipe = recipeList.idToItem(rid);
         $guildMasteryContainer.append(createRecipeMasteryCard(recipe));

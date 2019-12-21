@@ -7,26 +7,31 @@ const CombatManager = {
         const allies = (attacker.unitType === "hero") ? dungeon.party.heroes : dungeon.mobs;
         const enemies = (attacker.unitType === "hero") ? dungeon.mobs : dungeon.party.heroes;
         const attack = attacker.getSkill();
-        const combatRound = new combatRoundParams(attacker,allies,enemies,attack,dungeon.id);
-        combatRound.execute();
-        attacker.buffTick("onHitting");
+        const combatParams = new combatRoundParams(attacker,allies,enemies,attack,dungeon.id);
+        this.execute(combatParams);
         dungeon.order.nextPosition();
     },
+    execute(combatRound) {
+        SkillManager.skillEffects[combatRound.attack.id](combatRound);
+        combatRound.attacker.buffTick("onHitting");
+    }
 }
 
 class combatRoundParams {
     constructor (attacker,allies,enemies,attack,dungeonid) {
+        console.log(attacker);
         this.attacker = attacker;
         this.allies = allies;
         this.enemies = enemies;
         this.attack = attack;
-        this.power = this.attacker.getPow() * this.attack.powerMod;
+        this.power = Math.floor(this.attacker.getPow() * this.attack.powMod + this.attacker.getSpow() * this.attack.spowMod);
         this.dungeonid = dungeonid;
     }
     getTarget(override) {
-        const livingAllies = allies.filter(h=>h.alive());
+        const livingAllies = this.allies.filter(h=>h.alive());
         const target = override || this.attack.targetType;
-        const livingEnemies = enemies.filter(h=>h.alive());
+        console.log(target);
+        const livingEnemies = this.enemies.filter(h=>h.alive());
         if (target === "first") return [livingEnemies[0]];
         if (target === "second") {
             if (livingEnemies.length === 1) return [livingEnemies[0]];
@@ -39,19 +44,10 @@ class combatRoundParams {
         }
         if (target === "last") return [livingEnemies[livingEnemies.length-1]];
         if (target === "random") return [livingEnemies[Math.floor(Math.random()*livingEnemies.length)]];
-        if (target === "self") return [attacker];
+        if (target === "self") return [this.attacker];
         if (target === "allEnemies") return livingEnemies;
         if (target === "allAllies") return livingAllies;
     }
-    execute() {
-        SkillManager.skillEffects[attack.id](this);
-        BattleLog.addEntry(this.dungeonid,this.icon,this.battleText());
-    }
-    battleText() {
-        let battleTextEdit = this.bText.replace("#ATTACKER#",this.attacker.name);
-        battleTextEdit = battleTextEdit.replace("#DEFENDER#",this.defender.name);
-        return battleTextEdit.replace("#DAMAGE#",this.power);
-    } 
 }
 
 const $drLog = $("#drLog");
@@ -95,6 +91,8 @@ class Combatant {
         this.buffs = this.buffs.filter(buff => !buff.expired());
     }
     takeAttack(attack) {
+        console.log(attack);
+        battleText(attack,this);
         const reducedDmg = attack.power * this.getProtection();
         BattleLog.addEntry(attack.dungeonid,miscIcons.takeDamage,`${this.name} takes ${reducedDmg} damage`);
         this.hp = Math.max(this.hp-reducedDmg,0);
@@ -119,7 +117,7 @@ class Combatant {
         return this.pow + this.getBuffPower();
     }
     getSpow() {
-        return this.spow + this.getBuffSpower();
+        return 0;
     }
     getProtection() {
         return 1 - (this.protection + this.getBuffProtection());

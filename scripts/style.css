@@ -2606,7 +2606,6 @@ Rarities
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--highlight);
     background: var(--bg-tertiary);
     margin: -10px -10px 0;
     padding: 10px;
@@ -2625,10 +2624,6 @@ Rarities
     padding: 10px;
     color: var(--text-secondary);
     font-size: 0.85rem;
-}
-
-.alPerkRemaining .alDesc {
-    font-style: italic;
 }
 
 .alPerkCount {
@@ -8759,10 +8754,6 @@ span.beta-tag {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(225px, 1fr));
     grid-gap: 10px;
-}
-
-.alPerk.perkLocked {
-    opacity: .5;
 }
 
 .alPerkBuy {

@@ -42,7 +42,7 @@ const Shop = {
     },
     nextUnlocks(type) {
         const notPurchased = this.perks.filter(p=>p.category === type && !p.purchased).sort((a,b) => a.order-b.order)
-        return notPurchased.slice(0, 1);
+        return notPurchased.slice(1, 2)[0];
     }
 }
 
@@ -108,28 +108,42 @@ function refreshShop() {
         $craftPerks.append(createALperk(perk,firstPerk));
         if (!perk.purchased) firstPerk = true;
     });
+    $craftPerks.append(showNextPerk("Crafting"));
     $craftPerks.append(showRemainingPerks("Crafting"));
     firstPerk = false;
     Shop.perksByType("Dungeon").forEach(perk => {
         $adventurePerks.append(createALperk(perk,firstPerk));
         if (!perk.purchased) firstPerk = true;
     });
+    $adventurePerks.append(showNextPerk("Dungeon"));
     $adventurePerks.append(showRemainingPerks("Dungeon"));
     firstPerk = false;
     Shop.perksByType("Town").forEach(perk => {
         $townPerks.append(createALperk(perk,firstPerk));
         if (!perk.purchased) firstPerk = true;
     });
+    $townPerks.append(showNextPerk("Town"));
     $townPerks.append(showRemainingPerks("Town"));
+}
+
+function showNextPerk(type) {
+    const perk = Shop.nextUnlocks(type);
+    if (perk === undefined) return;
+    const d1 = $("<div/>").addClass("alPerk");
+        $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
+        $("<div/>").addClass("alImage").html(perk.image).appendTo(d1);
+        $("<div/>").addClass("alDesc").html(perk.description).appendTo(d1);
+        $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock next.`).appendTo(d1);
+    return d1;
 }
 
 function showRemainingPerks(type) {
     const perkCount =  Shop.perksByType(type).length - Shop.perksByType(type).filter(perk => perk.purchased).length;
-    if (perkCount > 1) {
+    if (perkCount > 2) {
         const d1 = $("<div/>").addClass("alPerkRemaining");
             $("<div/>").addClass("alTitle").html(`Perks Remaining`).appendTo(d1);
-            $("<div/>").addClass("alPerkCount").html(`+${perkCount - 1}`).appendTo(d1);
-            $("<div/>").addClass("alDesc").html(`More perks for available for purchase.`).appendTo(d1);
+            $("<div/>").addClass("alPerkCount").html(`+${perkCount - 2}`).appendTo(d1);
+            $("<div/>").addClass("alDesc").html(`More perks available for purchase.`).appendTo(d1);
             $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock next.`).appendTo(d1);
         return d1;
     }

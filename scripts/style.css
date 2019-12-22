@@ -2638,8 +2638,9 @@ Rarities
     align-items: center;
     margin: 10px auto;
     width: 125px;
-    height: 100px;
+    height: 80px;
     font-size: 3rem;
+    font-weight: bold;
     color: transparent;
     -webkit-text-fill-color: transparent;
     background-image: var(--gradient-secondary);
@@ -2657,6 +2658,19 @@ Rarities
     content: "";
     border: 5px solid var(--border-tertiary);
     border-radius: 10px;
+    box-shadow: 5px 5px 0 0 var(--bg-tertiary);
+}
+
+.alBuyPrev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-grow: 1;
+    color: var(--highlight);
+    font-size: 0.85rem;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
 }
 
 .guildOrder, .guildSales, .guildWorkers, .guildMasteryCardContainer {

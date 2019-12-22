@@ -39,6 +39,10 @@ const Shop = {
     },
     perksByType(type) {
         return this.perks.filter(p=>p.category === type).sort((a,b) => a.order-b.order);
+    },
+    nextUnlocks(type) {
+        const notPurchased = this.perks.filter(p=>p.category === type && !p.purchased).sort((a,b) => a.order-b.order)
+        return notPurchased.slice(0, 1);
     }
 }
 

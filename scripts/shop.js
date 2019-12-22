@@ -22,11 +22,12 @@ const Shop = {
     },
     buyPerk(id) {
         const perk = this.idToPerk(id);
-        if (ResourceManager.materialAvailable("M001") < perk.goldCost) {
+        if (ResourceManager.materialAvailable("M001") < perk.goldCost || ResourceManager.materialAvailable(perk.mat) < perk.matAmt) {
             Notifications.perkCost();
             return;
         }
         ResourceManager.deductMoney(perk.goldCost);
+        ResourceManager.addMaterial(perk.mat,-perk.matAmt)
         perk.purchase();
         refreshShop();
         refreshProgress();
@@ -42,7 +43,7 @@ const Shop = {
     },
     nextUnlocks(type) {
         const notPurchased = this.perks.filter(p=>p.category === type && !p.purchased).sort((a,b) => a.order-b.order)
-        return notPurchased.slice(1, 2)[0];
+        return {canPurchase:notPurchased[0],nextUp:notPurchased[1]};
     }
 }
 
@@ -53,7 +54,7 @@ class Perk {
         this.purchased = false;
     }
     canBuy() {
-        return ResourceManager.materialAvailable("M001") >= this.goldCost;
+        return ResourceManager.materialAvailable("M001") >= this.goldCost && ResourceManager.materialAvailable(this.mat) >= this.matAmt;
     }
     purchase() {
         this.purchased = true;
@@ -62,6 +63,7 @@ class Perk {
             WorkerManager.gainWorker(this.subtype);
             initializeGuilds();
         }
+        if (this.type === "dungeon") DungeonManager.unlockDungeon(this.subtype);
         if (this.type === "boss") DungeonManager.unlockDungeon(this.subtype);
         if (this.type === "craft") actionSlotManager.upgradeSlot();
         if (this.type === "adventure") DungeonManager.partySize += 1;
@@ -103,31 +105,21 @@ function refreshShop() {
     $craftPerks.empty();
     $adventurePerks.empty();
     $townPerks.empty();
-    let firstPerk = false;
-    Shop.perksByType("Crafting").forEach(perk => {
-        $craftPerks.append(createALperk(perk,firstPerk));
-        if (!perk.purchased) firstPerk = true;
-    });
-    $craftPerks.append(showNextPerk("Crafting"));
+    const craftperks = Shop.nextUnlocks("Crafting");
+    $craftPerks.append(createALperk(craftperks.canPurchase));
+    $craftPerks.append(showNextPerk(craftperks.nextUp));
     $craftPerks.append(showRemainingPerks("Crafting"));
-    firstPerk = false;
-    Shop.perksByType("Dungeon").forEach(perk => {
-        $adventurePerks.append(createALperk(perk,firstPerk));
-        if (!perk.purchased) firstPerk = true;
-    });
-    $adventurePerks.append(showNextPerk("Dungeon"));
+    const dungperks = Shop.nextUnlocks("Dungeon");
+    $adventurePerks.append(createALperk(dungperks.canPurchase));
+    $adventurePerks.append(showNextPerk(dungperks.nextUp));
     $adventurePerks.append(showRemainingPerks("Dungeon"));
-    firstPerk = false;
-    Shop.perksByType("Town").forEach(perk => {
-        $townPerks.append(createALperk(perk,firstPerk));
-        if (!perk.purchased) firstPerk = true;
-    });
-    $townPerks.append(showNextPerk("Town"));
+    const townperks = Shop.nextUnlocks("Town");
+    $townPerks.append(createALperk(townperks.canPurchase));
+    $townPerks.append(showNextPerk(townperks.nextUp));
     $townPerks.append(showRemainingPerks("Town"));
 }
 
-function showNextPerk(type) {
-    const perk = Shop.nextUnlocks(type);
+function showNextPerk(perk) {
     if (perk === undefined) return;
     const d1 = $("<div/>").addClass("alPerk");
         $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
@@ -139,19 +131,16 @@ function showNextPerk(type) {
 
 function showRemainingPerks(type) {
     const perkCount =  Shop.perksByType(type).length - Shop.perksByType(type).filter(perk => perk.purchased).length;
-    if (perkCount > 2) {
-        const d1 = $("<div/>").addClass("alPerkRemaining");
-            $("<div/>").addClass("alTitle").html(`Perks Remaining`).appendTo(d1);
-            $("<div/>").addClass("alPerkCount").html(`+${perkCount - 2}`).appendTo(d1);
-            $("<div/>").addClass("alDesc").html(`More perks available for purchase.`).appendTo(d1);
-            $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock more perks.`).appendTo(d1);
-        return d1;
-    }
-    return;
+    if (perkCount <= 2) return;
+    const d1 = $("<div/>").addClass("alPerkRemaining");
+        $("<div/>").addClass("alTitle").html(`Perks Remaining`).appendTo(d1);
+        $("<div/>").addClass("alPerkCount").html(`+${perkCount - 2}`).appendTo(d1);
+        $("<div/>").addClass("alDesc").html(`More perks available for purchase.`).appendTo(d1);
+        $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock more perks.`).appendTo(d1);
+    return d1;
 }
 
-function createALperk(perk,firstperk) {
-    if (firstperk) return;
+function createALperk(perk) {
     const d1 = $("<div/>").addClass("alPerk");
     $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
     $("<div/>").addClass("alImage").html(perk.image).appendTo(d1);
@@ -165,6 +154,7 @@ function createALperk(perk,firstperk) {
         $("<div/>").addClass("alPerkBuyText").html("Purchase").appendTo(d5);
         const d5a = $("<div/>").addClass("alPerkBuyCost").appendTo(d5);
             $("<div/>").addClass("buyCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(perk.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(perk.goldCost,2)}`).appendTo(d5a);
+            $("<div/>").addClass("buyCost tooltip").attr({"data-tooltip": "material_desc", "data-tooltip-value": perk.mat}).html(`${ResourceManager.materialIcon(perk.mat)} ${perk.matAmt}`).appendTo(d5a);
     return d1;
 }
 

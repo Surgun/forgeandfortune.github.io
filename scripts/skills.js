@@ -77,7 +77,8 @@ class Playbook {
 function battleText(combatParams,target) {
     let battleTextEdit = combatParams.attack.bText.replace("#ATTACKER#",combatParams.attacker.name);
     battleTextEdit = battleTextEdit.replace("#DEFENDER#",target.name);
-    return battleTextEdit.replace("#DAMAGE#",combatParams.power);
+    battleTextEdit = battleTextEdit.replace("#DAMAGE#",combatParams.power);
+    BattleLog.addEntry(combatParams.dungeonid,combatParams.attack.icon,battleTextEdit);
 } 
 
 SkillManager.skillEffects['S0001'] = function(combatParams) {
@@ -106,7 +107,7 @@ SkillManager.skillEffects['S0004'] = function (combatParams) {
     const targets = combatParams.getTarget();
     const originalPower = combatParams.power;
     targets.forEach(target => {
-        if (target.hasBuff("B0004")) {
+        if (target.isChilled()) {
             combatParams.power = Math.floor(2.5 * originalPower);
             target.takeAttack(combatParams);
         }
@@ -121,7 +122,6 @@ SkillManager.skillEffects['S0005'] = function (combatParams) {
     //sting
     for (let i=0;i<4;i++) {
         const targets = combatParams.getTarget();
-        console.log(targets);
         targets.forEach(target => target.takeAttack(combatParams));
     }
 }

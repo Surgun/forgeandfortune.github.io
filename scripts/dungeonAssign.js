@@ -28,7 +28,7 @@ const $dungeonListingsBosses = $("#dungeonListingsBosses");
 function refreshDungeonSelect() {
     //shows each dungeon so you can select that shit...
     $dungeonListings.empty();
-    DungeonManager.dungeons.filter(d=>d.type==="regular").forEach(dungeon => {
+    DungeonManager.dungeons.filter(d=>d.type==="regular" && DungeonManager.dungeonCanSee(d.id)).forEach(dungeon => {
         $dungeonListings.append(dungeonBlock(dungeon));
     });
     $dungeonListingsBosses.empty();

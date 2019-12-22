@@ -172,7 +172,7 @@ class Dungeon {
         if (this.floorCount > 0 && this.type === "boss") return this.dungeonComplete(previousFloor);
         if (!previousFloor && this.floorCount > 0) this.addRewards();
         if (previousFloor) {
-            this.resetDungeon();
+            //this.resetDungeon();
             this.floorCount = Math.max(1,this.floorCount-1);
             this.toggleProgress(false);
         }
@@ -230,6 +230,10 @@ const DungeonManager = {
     partySize : 1,
     unlockDungeon(id) {
         this.dungeonPaid.push(id);
+    },
+    dungeonCanSee(id) {
+        console.log(id,this.dungeonPaid);
+        return this.dungeonPaid.includes(id);
     },
     bossDungeonCanSee(id) {
         if (MonsterHall.bossRefight()) return this.dungeonPaid.includes(id);

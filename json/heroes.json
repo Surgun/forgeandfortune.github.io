@@ -6,13 +6,7 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Heavy"
     ],
@@ -34,9 +28,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "armor",
-    "description": "Beorn is the model all young warriors strive to become.  He's quite the celebrity.",
-    "abilityDesc": "Beorn harnesses the power of the sun to gain temporary armor until his next turn."
+    "playbook": "PB002",
+    "description": "Beorn is the model all young warriors strive to become.  He's quite the celebrity."
   },
   {
     "id": "H002",
@@ -45,13 +38,7 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Heavy"
     ],
@@ -73,9 +60,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "parry",
-    "description": "Cedric's parents died mysteriously, and will do anything to find out what happened.",
-    "abilityDesc": "Cedric uses his tactical prowess to parry an attack, negating the damage of the first attack before his next turn and dealing a blow to the attacker."
+    "playbook": "PB001",
+    "description": "Cedric's parents died mysteriously, and will do anything to find out what happened."
   },
   {
     "id": "H003",
@@ -84,13 +70,7 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Heavy"
     ],
@@ -112,9 +92,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "bloodlet",
-    "description": "Grim knows what happened to Cedric's parents, but must keep the secret at all costs.",
-    "abilityDesc": "Grim unleashes a powerful attack, taking 5% of his current HP to deal a massive blow."
+    "playbook": "PB001",
+    "description": "Grim knows what happened to Cedric's parents, but must keep the secret at all costs."
   },
   {
     "id": "H004",
@@ -123,13 +102,7 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Heavy"
     ],
@@ -151,9 +124,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "ravage",
-    "description": "Lambug's family are poor fisherman, and she's looking to improve her lot in life.",
-    "abilityDesc": "Lambug eyes narrow as she strikes her target for additional damage, healing if she kills her target."
+    "playbook": "PB001",
+    "description": "Lambug's family are poor fisherman, and she's looking to improve her lot in life."
   },
   {
     "id": "H101",
@@ -162,13 +134,7 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Arcane"
     ],
@@ -190,9 +156,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "meteor",
-    "description": "Zoe was born with the gift of magic, and is unaware of the sheer power she possesses.",
-    "abilityDesc": "Zoe unleashes a meteor attack, damaging all enemies on the field."
+    "playbook": "PB001",
+    "description": "Zoe was born with the gift of magic, and is unaware of the sheer power she possesses."
   },
   {
     "id": "H102",
@@ -201,13 +166,7 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Arcane"
     ],
@@ -229,9 +188,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "blast",
-    "description": "Neve's goal in life is to spread the word of love, peace and harmony through magic.",
-    "abilityDesc": "Neve's eyes glow as she unleashes a powerful attack against her target, ignoring armor."
+    "playbook": "PB003",
+    "description": "Neve's goal in life is to spread the word of love, peace and harmony through magic."
   },
   {
     "id": "H103",
@@ -240,13 +198,7 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Arcane"
     ],
@@ -268,9 +220,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "heal",
-    "description": "Titus is totally a human, with real human skin and hair and everything.",
-    "abilityDesc": "Titus's spirit radiates as he heals the lowest HP member of the party."
+    "playbook": "PB001",
+    "description": "Titus is totally a human, with real human skin and hair and everything."
   },
   {
     "id": "H104",
@@ -279,13 +230,7 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Arcane"
     ],
@@ -307,9 +252,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "massHeal",
-    "description": "Troy is a magician's apprentice, looking to make a name for himself.",
-    "abilityDesc": "Troy channels his divinity to heal all party members."
+    "playbook": "PB001",
+    "description": "Troy is a magician's apprentice, looking to make a name for himself."
   },
   {
     "id": "H201",
@@ -318,13 +262,7 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Light"
     ],
@@ -346,9 +284,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "amplify",
-    "description": "Alok comes from a wealthy family, and enjoys stealing worthless items from the poor.",
-    "abilityDesc": "Alok plays his instrument to boost his allie's spirits - boosting the damage they deal to the current threats."
+    "playbook": "PB001",
+    "description": "Alok comes from a wealthy family, and enjoys stealing worthless items from the poor."
   },
   {
     "id": "H202",
@@ -357,13 +294,7 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Light"
     ],
@@ -385,9 +316,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "sniper",
-    "description": "Grogmar has a long list of offenses, and is hoping they don't catch up with him.",
-    "abilityDesc": "Grogmar sneaks in the shadows to deal massive damage to the lowest HP enemy."
+    "playbook": "PB001",
+    "description": "Grogmar has a long list of offenses, and is hoping they don't catch up with him."
   },
   {
     "id": "H203",
@@ -396,13 +326,7 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Light"
     ],
@@ -424,9 +348,8 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "double",
-    "description": "Revere has nothing to prove, because she knows the truth: she can do anything.",
-    "abilityDesc": "Revere uses her nimbleness to attack the enemy twice."
+    "playbook": "PB001",
+    "description": "Revere has nothing to prove, because she knows the truth: she can do anything."
   },
   {
     "id": "H204",
@@ -435,13 +358,7 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "initialArmor": 0,
-    "initialResist": 0,
-    "initialCrit": 5,
-    "initialDodge": 0,
     "initialSpow": 0,
-    "initialApen": 0,
-    "initialMpen": 0,
     "slot1Type": [
       "Light"
     ],
@@ -463,8 +380,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "special": "stun",
-    "description": "Caeda uses both her charm and charisma to get almost anything she wants.",
-    "abilityDesc": "Caeda steathily deals a crippling blow to the enemy, stunning them so they skip their next turn."
+    "playbook": "PB001",
+    "description": "Caeda uses both her charm and charisma to get almost anything she wants."
   }
 ]

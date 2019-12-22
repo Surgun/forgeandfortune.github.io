@@ -10,6 +10,16 @@
     "type": "buff"
   },
   {
+    "id": "B0004",
+    "name": "Chilled",
+    "icon": "<i class=\"fas fa-snowflake\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "debuff"
+  },
+  {
     "id": "B0007",
     "name": "Poison Stack",
     "icon": "<i class=\"fas fa-flask-poison\"></i>",

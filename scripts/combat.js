@@ -19,7 +19,6 @@ const CombatManager = {
 
 class combatRoundParams {
     constructor (attacker,allies,enemies,attack,dungeonid) {
-        console.log(attacker);
         this.attacker = attacker;
         this.allies = allies;
         this.enemies = enemies;
@@ -30,7 +29,6 @@ class combatRoundParams {
     getTarget(override) {
         const livingAllies = this.allies.filter(h=>h.alive());
         const target = override || this.attack.targetType;
-        console.log(target);
         const livingEnemies = this.enemies.filter(h=>h.alive());
         if (target === "first") return [livingEnemies[0]];
         if (target === "second") {
@@ -91,7 +89,6 @@ class Combatant {
         this.buffs = this.buffs.filter(buff => !buff.expired());
     }
     takeAttack(attack) {
-        console.log(attack);
         battleText(attack,this);
         const reducedDmg = attack.power * this.getProtection();
         BattleLog.addEntry(attack.dungeonid,miscIcons.takeDamage,`${this.name} takes ${reducedDmg} damage`);
@@ -177,6 +174,9 @@ class Combatant {
     }
     removeBuffs() {
         this.buffs = [];
+    }
+    isChilled() {
+        return this.buffs.some(b=>b.isChilled());
     }
 }
 

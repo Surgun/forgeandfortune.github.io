@@ -55,6 +55,8 @@ class Buff {
     onHit() { return; }
     getPow() { return 0; }
     getSpow() { return 0; }
+    isChilled() { return false; }
+    getProtection() { return 0; }
 }
 
 const BuffManager = {
@@ -136,6 +138,15 @@ class B0003 extends Buff {
     }
 }
 
+class B0004 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    isChilled() {
+        return true;
+    }
+}
+
 class B0007 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
@@ -201,7 +212,8 @@ class B0016 extends Buff {
 
 
 const BuffLookup = {
-    B0003,
+    B0003, 
+    B0004,
     B0007,
     B0008,
     B0009,

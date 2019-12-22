@@ -6,7 +6,6 @@ class Tooltip {
     if (this.type === "value") return id;
     else if (this.type === "buff") return BuffManager.idToBuff(id)[prop];
     else if (this.type === "dungeon") return DungeonManager.dungeonByID(id)[prop];
-    else if (this.type === "event") return EventManager.idToEventDB(id)[prop];
     else if (this.type === "guild") return GuildManager.idToGuild(id)[prop];
     else if (this.type === "hero") return HeroManager.idToHero(id)[prop];
     else if (this.type === "material") return ResourceManager.idToMaterial(id)[prop];

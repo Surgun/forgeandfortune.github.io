@@ -20,7 +20,7 @@ class Hero extends Combatant {
         this.owned = false;
         this.inDungeon = false;
         this.protection = 0;
-        this.playbook = GetPlaybook(this.id);
+        this.playbook = PlaybookManager.generatePlayBook(this.playbook);
     }
     createSave() {
         const save = {};
@@ -290,11 +290,4 @@ const HeroManager = {
     hasContainer(containerID) {
         return this.heroes.map(h=>h.getEquipSlots(true)).flat().map(i=>i.containerID).includes(containerID);
     }
-}
-
-function GetPlaybook(heroID) {
-    if (heroID === "H203") return PlaybookManager.generatePlayBook("PB001");
-    if (heroID === "H001") return PlaybookManager.generatePlayBook("PB002");
-    if (heroID === "H101") return PlaybookManager.generatePlayBook("PB003");
-    return PlaybookManager.generatePlayBook("PB004");
 }

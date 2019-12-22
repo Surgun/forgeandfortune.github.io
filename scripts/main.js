@@ -17,12 +17,12 @@ function afterLoad() {
         recipeList.idToItem("R13001").owned = true;
         HeroManager.idToHero("H203").owned = true;
         achievementStats.startTime = Date.now();
-        EventManager.addEvent("E001");
         GuildManager.guilds.forEach(g=>{
             g.generateNewOrder(1);
             g.generateNewOrder(2);
             g.generateNewOrder(3);
         });
+        DungeonManager.dungeonPaid.push("D001");
     }
     refreshMasteryBar()
     refreshInventory();
@@ -30,7 +30,6 @@ function afterLoad() {
     initializeActionSlots();
     initializeHeroList();
     refreshRecipeFilters();
-    refreshEvents();
     hardMatRefresh();
     refreshProgress();
     initializeSideBarDungeon();
@@ -111,5 +110,4 @@ function mainLoop() {
         actionSlotManager.removeBldgSlots();
         TownManager.purgeSlots = false;
     }
-    eventChecker();
 }

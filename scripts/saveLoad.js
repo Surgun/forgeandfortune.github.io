@@ -47,7 +47,6 @@ function createSave() {
     saveFile["v"] = "0334"
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
-    saveFile["e"] = EventManager.createSave();
     saveFile["h"] = HeroManager.createSave();
     saveFile["i"] = Inventory.createSave();
     saveFile["r"] = recipeList.createSave();
@@ -83,7 +82,6 @@ function loadGame() {
     loadGame = saveUpdate(loadGame);
     if (typeof loadGame["as"] !== "undefined") actionSlotManager.loadSave(loadGame["as"]);
     if (typeof loadGame["d"] !== "undefined") DungeonManager.loadSave(loadGame["d"]);
-    if (typeof loadGame["e"] !== "undefined") EventManager.loadSave(loadGame["e"]);
     if (typeof loadGame["h"] !== "undefined") HeroManager.loadSave(loadGame["h"]);
     if (typeof loadGame["i"] !== "undefined") Inventory.loadSave(loadGame["i"]);
     if (typeof loadGame["r"] !== "undefined") recipeList.loadSave(loadGame["r"]);
@@ -506,8 +504,6 @@ function saveUpdate(loadGame) {
     }
     if (loadGame.v === "0317") {
         loadGame.v = "032";
-        const eventIDs = EventManager.allDungeonEventIDs();
-        eventIDs.forEach(eventID => EventManager.readEvent(eventID));
         delete loadGame["fo"];
         loadGame["r"].forEach(recipe=> {
             if (recipe.craftCount >= 100) recipe.mastered = true;

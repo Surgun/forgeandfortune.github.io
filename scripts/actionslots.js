@@ -112,7 +112,6 @@ const actionSlotManager = {
         if (item.recipeType !== "normal" && this.isAlreadySlotted(itemid)) return;
         if (!item.owned) return Notifications.recipeNotOwned();
         if (!item.canProduce) {
-            EventManager.badCraft();
             Notifications.craftWarning();
             return;
         }

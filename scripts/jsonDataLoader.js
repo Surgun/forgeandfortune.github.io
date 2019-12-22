@@ -142,20 +142,7 @@ function loadMobs() {
             const mob = new MobTemplate(props);
             MobManager.addMob(mob);
         });
-        loadEvents();
-    });
-}
-
-function loadEvents() {
-    $.ajax({
-        url: "json/events.json",
-    }).done((data) => {
-        $.each(data, function(i,props){
-            const event = new Event(props)
-            EventManager.loadEvent(event);
-        });
         loadDungeons();
-        //afterLoad();
     });
 }
 

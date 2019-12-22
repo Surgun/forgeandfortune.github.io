@@ -133,7 +133,7 @@ function showNextPerk(type) {
         $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
         $("<div/>").addClass("alImage").html(perk.image).appendTo(d1);
         $("<div/>").addClass("alDesc").html(perk.description).appendTo(d1);
-        $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock next.`).appendTo(d1);
+        $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock this perk.`).appendTo(d1);
     return d1;
 }
 
@@ -144,7 +144,7 @@ function showRemainingPerks(type) {
             $("<div/>").addClass("alTitle").html(`Perks Remaining`).appendTo(d1);
             $("<div/>").addClass("alPerkCount").html(`+${perkCount - 2}`).appendTo(d1);
             $("<div/>").addClass("alDesc").html(`More perks available for purchase.`).appendTo(d1);
-            $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock next.`).appendTo(d1);
+            $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock more perks.`).appendTo(d1);
         return d1;
     }
     return;

@@ -57,6 +57,7 @@ const ResourceManager = {
         $("#amt"+mat.id).html(mat.amt,2);
         $("#dsbr"+mat.id).html(mat.amt);
         refreshTinkerMats();
+        refreshShop();
         DungeonManager.dungeonMatRefresh(mat.id);
         if (mat.id === "M002") refreshMonsterReward();
         if (mat.id !== "M001") return;

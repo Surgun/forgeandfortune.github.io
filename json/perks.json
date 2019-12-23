@@ -385,7 +385,7 @@
   },
   {
     "id": "AL2004",
-    "title": "Mindful Bond II",
+    "title": "Mindful Bond",
     "description": "Unlocks Neve, the focused mage.",
     "category": "Dungeon",
     "order": 4,
@@ -433,7 +433,7 @@
   },
   {
     "id": "AL2008",
-    "title": "Mindful Bond",
+    "title": "Mindful Bond II",
     "description": "Unlocks Zoe, the cunning sorcerer.",
     "category": "Dungeon",
     "order": 8,

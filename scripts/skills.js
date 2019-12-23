@@ -92,7 +92,10 @@ SkillManager.skillEffects['S0001'] = function(combatParams) {
 SkillManager.skillEffects['S0002'] = function (combatParams) {
     //Double Tap
     const targets = combatParams.getTarget();
-    targets.forEach(target => target.takeAttack(combatParams));
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        target.takeAttack(combatParams);
+    });
 }
 
 SkillManager.skillEffects['S0003'] = function (combatParams) {

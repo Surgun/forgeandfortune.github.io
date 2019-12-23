@@ -39,7 +39,7 @@ class Skill {
     constructor (props) {
         Object.assign(this, props);
         this.powerPercent = (props.powMod * 100).toString() + "%";
-        this.spowerPercent = (props.spowMod * 100).toString() + "%";
+        this.techPercent = (props.techMod * 100).toString() + "%";
     }
 }
 

@@ -8,7 +8,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE# damage"
   },
   {
@@ -20,7 +20,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# launches a super attack against #DEFENDER# for #DAMAGE# damage"
   },
   {
@@ -32,7 +32,7 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 0.5,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# braces himself"
   },
   {
@@ -44,7 +44,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 1,
-    "spowMod": 1.5,
+    "techMod": 1.5,
     "bText": "#ATTACKER# shoots a frosty blast towards #DEFENDER# for #DAMAGE# damage"
   },
   {
@@ -56,7 +56,7 @@
     "targetEnemies": true,
     "targetType": "allEnemies",
     "powMod": 0.5,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# lets out four quick stings at #DEFENDER# for #DAMAGE# damage"
   },
   {
@@ -68,7 +68,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 2,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# strikes #DEFENDER# for #DAMAGE# damage and heals the same amount"
   },
   {
@@ -80,7 +80,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 0.5,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -92,7 +92,7 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 2,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -104,7 +104,7 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 1,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -116,7 +116,7 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 3,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -128,7 +128,7 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 1,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -140,7 +140,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 2,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -152,7 +152,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 3,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -164,7 +164,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 2,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -176,7 +176,7 @@
     "targetEnemies": true,
     "targetType": "first",
     "powMod": 3,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -188,7 +188,7 @@
     "targetEnemies": false,
     "targetType": "self",
     "powMod": 0.5,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# i'll write this later"
   },
   {
@@ -200,7 +200,7 @@
     "targetEnemies": true,
     "targetType": "second",
     "powMod": 2,
-    "spowMod": 0,
+    "techMod": 0,
     "bText": "#ATTACKER# trees you for #DAMAGE# damage"
   }
 ]

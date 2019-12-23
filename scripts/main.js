@@ -50,8 +50,8 @@ function afterLoad() {
     refreshCraftTimes();
     GuildManager.repopulateUnmastered();
     refreshAllRecipeMastery();
+    townTabVisibility();
     loading_screen.finish();
-    console.timeEnd("Load Time");
 }
 
 /* Load Message Selection */
@@ -110,4 +110,11 @@ function mainLoop() {
         actionSlotManager.removeBldgSlots();
         TownManager.purgeSlots = false;
     }
+}
+
+const $townTabLink = $("#townTabLink");
+
+function townTabVisibility() {
+    if (DungeonManager.killedFirstBoss()) $townTabLink.show();
+    else $townTabLink.hide();
 }

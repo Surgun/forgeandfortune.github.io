@@ -52,7 +52,7 @@ class itemContainer {
         this.scale = 0;
         this.powRatio = this.item.pow;
         this.hpRatio = this.item.hp;
-        this.spowRatio = this.item.spow;
+        this.techRatio = this.item.tech;
         this.pts = this.item.pts;
         containerid += 1;
     }
@@ -70,7 +70,7 @@ class itemContainer {
         save.scale = this.scale;
         save.powRatio = this.powRatio;
         save.hpRatio = this.hpRatio;
-        save.spowRatio = this.spowRatio;
+        save.techRatio = this.techRatio;
         return save;
     }
     loadSave(save) {
@@ -79,7 +79,7 @@ class itemContainer {
         if (save.scale !== undefined) this.scale = save.scale;
         if (save.powRatio !== undefined) this.powRatio = save.powRatio;
         if (save.hpRatio !== undefined) this.hpRatio = save.hpRatio;
-        if (save.spowRatio !== undefined) this.spowRatio = save.spowRatio;
+        if (save.techRatio !== undefined) this.techRatio = save.techRatio;
     }
     picName() {
         const sharp = this.sharp > 0 ? `+${this.sharp} ` : "";
@@ -95,7 +95,7 @@ class itemContainer {
     }
     pow(sharpIncrease) { return this.statCalc(this.powRatio*this.pts,this.item.powScale,sharpIncrease); }
     hp(sharpIncrease) { return this.statCalc(9*this.hpRatio*this.pts,this.item.hpScale,sharpIncrease); }
-    spow(sharpIncrease) { return this.statCalc(this.spowRatio*this.pts,this.item.spowScale,sharpIncrease); }
+    tech(sharpIncrease) { return this.statCalc(this.techRatio*this.pts,this.item.techScale,sharpIncrease); }
     statCalc(flat,scale,sharpIncrease) {
         const sharpAdd = sharpIncrease ? 1 : 0;
         return Math.floor((flat * miscLoadedValues.rarityMod[this.rarity] + Math.ceil(scale * this.scale)) * (1+0.05*(this.sharp+sharpAdd)));
@@ -123,7 +123,7 @@ class itemContainer {
         const stats = {};
         stats[heroStat.pow] = this.pow(sharpIncrease);
         stats[heroStat.hp] = this.hp(sharpIncrease);
-        stats[heroStat.spow] = this.spow(sharpIncrease);
+        stats[heroStat.tech] = this.tech(sharpIncrease);
         return stats;
     }
     isTrinket() {
@@ -131,17 +131,17 @@ class itemContainer {
     }
     rerollRatio() {
         const ratios = [[3,0,0],[2,1,0],[2,0,1],[1,2,0],[1,0,2],[1,1,1],[0,3,0],[0,2,1],[0,1,2],[0,0,3]];
-        let filteredRatios = ratios.filter(r =>  Math.abs(r[0]-this.powRatio) <= 1 && Math.abs(r[1]-this.hpRatio) <= 1 && Math.abs(r[2]-this.spowRatio) <= 1)
-        filteredRatios = filteredRatios.filter(r => r[0] !== this.powRatio || r[1] !== this.hpRatio || r[2] !== this.spowRatio);
+        let filteredRatios = ratios.filter(r =>  Math.abs(r[0]-this.powRatio) <= 1 && Math.abs(r[1]-this.hpRatio) <= 1 && Math.abs(r[2]-this.techRatio) <= 1)
+        filteredRatios = filteredRatios.filter(r => r[0] !== this.powRatio || r[1] !== this.hpRatio || r[2] !== this.techRatio);
         //TODO: seed this
         const choice = Math.floor(Math.random()*filteredRatios.length);
         this.powRatio = filteredRatios[choice][0];
         this.hpRatio = filteredRatios[choice][1];
-        this.spowRatio = filteredRatios[choice][2];
+        this.techRatio = filteredRatios[choice][2];
     }
     prefix() {
-        if (this.powRatio === this.item.pow && this.hpRatio === this.item.hp && this.spowRatio === this.item.spow) return "";
-        return `${adjective[this.powRatio.toString() + this.hpRatio.toString() + this.spowRatio.toString()]} `
+        if (this.powRatio === this.item.pow && this.hpRatio === this.item.hp && this.techRatio === this.item.tech) return "";
+        return `${adjective[this.powRatio.toString() + this.hpRatio.toString() + this.techRatio.toString()]} `
     }
 }
 
@@ -162,7 +162,7 @@ function blankItemStat() {
     const stats = {};
     stats[heroStat.pow] = 0;
     stats[heroStat.hp] = 0;
-    stats[heroStat.spow] = 0;
+    stats[heroStat.tech] = 0;
     return stats;
 }
 

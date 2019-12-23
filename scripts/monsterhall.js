@@ -207,7 +207,7 @@ function refreshHallMonsterInspect(monster) {
         if (monster.event === "boss") mhiBlock("Skill",`${monster.skillText}`).appendTo(d2b);
         d2.append(d2a,d2b);
     const d3 = $("<div/>").addClass("mhiStats");
-    const stats = [`${monster.getHP(floorRange.min)} - ${monster.getHP(floorRange.max)}`,`${monster.getPow(floorRange.min)} - ${monster.getPow(floorRange.max)}`, monster.spow];
+    const stats = [`${monster.getHP(floorRange.min)} - ${monster.getHP(floorRange.max)}`,`${monster.getPow(floorRange.min)} - ${monster.getPow(floorRange.max)}`, 0];
     for (let i=0;i<stats.length;i++) {
         d3.append(statRow(statName[i],stats[i],statDesc[i]));
     }

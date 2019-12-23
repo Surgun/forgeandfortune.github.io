@@ -12,12 +12,12 @@ const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory","Tri
 const statName = [
     `${miscIcons.hp} <span>HP</span>`,
     `${miscIcons.pow} <span>Power</span>`,
-    `${miscIcons.spow} <span>SPower</span>`,
+    `${miscIcons.tech} <span>Technique</span>`,
 ];
 const statDesc = [
     "hp",
     "pow",
-    "spow",
+    "tech",
 ];
 
 function initializeHeroList() {
@@ -80,7 +80,7 @@ function examineHero(ID) {
     const htd = $("<div/>").addClass("heroExamineHeading");
     const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
     heroExamineStats.append(htd.append(htd1));
-    const stats = [hero.maxHP(),hero.getPow(), hero.getSpow()];
+    const stats = [hero.maxHP(),hero.getPow(), hero.getTech()];
     for (let i=0;i<stats.length;i++) {
         heroExamineStats.append(statRow(statName[i],stats[i],statDesc[i]));
     }

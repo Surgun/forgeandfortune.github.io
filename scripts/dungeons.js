@@ -350,4 +350,7 @@ const DungeonManager = {
             refreshDungeonMatBar(dungeon.id);
         });
     },
+    killedFirstBoss() {
+        return this.bossesBeat.includes("BB010");
+    }
 };

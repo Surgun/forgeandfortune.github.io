@@ -100,23 +100,24 @@ const $craftPerks = $("#craftPerks");
 const $adventurePerks = $("#adventurePerks");
 const $townPerks = $("#townPerks");
 
+const shopDivs = {
+    "Crafting" : $("#craftPerks"),
+    "Dungeon" : $("#adventurePerks"),
+    "Town" : $("#townPerks"),
+}
+
+const $townPerkDiv = $("#townPerkDiv");
 
 function refreshShop() {
-    $craftPerks.empty();
-    $adventurePerks.empty();
-    $townPerks.empty();
-    const craftperks = Shop.nextUnlocks("Crafting");
-    $craftPerks.append(createALperk(craftperks.canPurchase));
-    $craftPerks.append(showNextPerk(craftperks.nextUp));
-    $craftPerks.append(showRemainingPerks("Crafting"));
-    const dungperks = Shop.nextUnlocks("Dungeon");
-    $adventurePerks.append(createALperk(dungperks.canPurchase));
-    $adventurePerks.append(showNextPerk(dungperks.nextUp));
-    $adventurePerks.append(showRemainingPerks("Dungeon"));
-    const townperks = Shop.nextUnlocks("Town");
-    $townPerks.append(createALperk(townperks.canPurchase));
-    $townPerks.append(showNextPerk(townperks.nextUp));
-    $townPerks.append(showRemainingPerks("Town"));
+    for (let [name, div] of Object.entries(shopDivs)) {
+        div.empty();
+        const perks = Shop.nextUnlocks(name);
+        div.append(createALperk(perks.canPurchase));
+        div.append(showNextPerk(perks.nextUp));
+        div.append(showRemainingPerks(name));
+    }
+    if (DungeonManager.killedFirstBoss()) $townPerkDiv.show();
+    else $townPerkDiv.hide();
 }
 
 function showNextPerk(perk) {

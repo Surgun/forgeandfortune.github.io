@@ -75,10 +75,10 @@ class Item{
         const d = $("<div/>").addClass("recipeStatList");
         const pow = this.pow*this.pts;
         const hp = 9*this.hp*this.pts;
-        const spow = this.spow*this.pts;
+        const tech = this.tech*this.pts;
         if (pow > 0) $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "pow").html(`${miscIcons.pow} ${pow}`).appendTo(d);
         if (hp > 0) $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "hp").html(`${miscIcons.hp} ${hp}`).appendTo(d);
-        if (spow > 0) $("<div/>").addClass("recipeStatListSPow tooltip").attr("data-tooltip", "spow").html(`${miscIcons.spow} ${spow}`).appendTo(d);
+        if (tech > 0) $("<div/>").addClass("recipeStatListTech tooltip").attr("data-tooltip", "tech").html(`${miscIcons.tech} ${tech}`).appendTo(d);
         return d;
     }
     count() {

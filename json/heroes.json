@@ -6,7 +6,6 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "initialSpow": 0,
     "slot1Type": [
       "Heavy"
     ],
@@ -38,7 +37,6 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "initialSpow": 0,
     "slot1Type": [
       "Heavy"
     ],
@@ -70,7 +68,6 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "initialSpow": 0,
     "slot1Type": [
       "Heavy"
     ],
@@ -102,7 +99,6 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "initialSpow": 0,
     "slot1Type": [
       "Heavy"
     ],
@@ -134,7 +130,6 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "initialSpow": 0,
     "slot1Type": [
       "Arcane"
     ],
@@ -166,7 +161,6 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "initialSpow": 0,
     "slot1Type": [
       "Arcane"
     ],
@@ -198,7 +192,6 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "initialSpow": 0,
     "slot1Type": [
       "Arcane"
     ],
@@ -230,7 +223,6 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "initialSpow": 0,
     "slot1Type": [
       "Arcane"
     ],
@@ -262,7 +254,6 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "initialSpow": 0,
     "slot1Type": [
       "Light"
     ],
@@ -294,7 +285,6 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "initialSpow": 0,
     "slot1Type": [
       "Light"
     ],
@@ -326,7 +316,6 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "initialSpow": 0,
     "slot1Type": [
       "Light"
     ],
@@ -358,7 +347,6 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "initialSpow": 0,
     "slot1Type": [
       "Light"
     ],

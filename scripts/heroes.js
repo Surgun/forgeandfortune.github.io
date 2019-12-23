@@ -98,13 +98,13 @@ class Hero extends Combatant {
         if (slots.length === 0) return this.initialHP;
         return this.initialHP + slots.reduce((a,b) => a + b);
     }
-    getSpow() {
-        const slots = this.getEquipSlots(true).map(s=>s.spow());
-        if (slots.length === 0) return this.initialSpow;
-        return this.initialSpow + slots.reduce((a,b) => a+b);
+    getTech() {
+        const slots = this.getEquipSlots(true).map(s=>s.tech());
+        if (slots.length === 0) return 0;
+        return slots.reduce((a,b) => a+b);
     }
-    getAdjPow(spow) {
-        if (spow) return Math.floor(this.getPow() + this.getSpow());
+    getAdjPow(tech) {
+        if (tech) return Math.floor(this.getPow() + this.getTech());
         return Math.floor(this.getPow());
     }
     getPowSlot(slot) {

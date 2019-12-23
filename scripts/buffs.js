@@ -54,7 +54,7 @@ class Buff {
     onTick() { return; }
     onHit() { return; }
     getPow() { return 0; }
-    getSpow() { return 0; }
+    getTech() { return 0; }
     isChilled() { return false; }
     getProtection() { return 0; }
 }
@@ -151,7 +151,7 @@ class B0007 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    getSpow() {
+    getTech() {
         return -this.power;
     }
 }

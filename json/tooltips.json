@@ -28,31 +28,10 @@
     "type": "static"
   },
   {
-    "id": "spow",
-    "title": "Special Power",
+    "id": "tech",
+    "title": "Technique",
     "description": "The amount of damage an entity can deal with special attacks.",
-    "icon": "<i class=\"fas fa-book-spells statSPOW\"></i>",
-    "type": "static"
-  },
-  {
-    "id": "armor",
-    "title": "Armor",
-    "description": "The damage resistance an entity possesses.",
-    "icon": "<i class=\"fas fa-shield statARMOR\"></i>",
-    "type": "static"
-  },
-  {
-    "id": "crit",
-    "title": "Critical Chance",
-    "description": "The chance an entity will deal bonus damage on attack.",
-    "icon": "<i class=\"fas fa-dagger statCRIT\"></i>",
-    "type": "static"
-  },
-  {
-    "id": "dodge",
-    "title": "Dodge",
-    "description": "The chance an entity will avoid an attack.",
-    "icon": "<i class=\"fas fa-hood-cloak statDODGE\"></i>",
+    "icon": "<i class=\"fas fa-book-spells statTECH\"></i>",
     "type": "static"
   },
   {
@@ -198,7 +177,7 @@
   {
     "id": "skill_desc",
     "title": "#name#",
-    "description": "#description#</br><span class=\"tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span> <span class=\"tooltipSPower\"><i class=\"fas fa-book-spells statSPOW\"></i> #spowerPercent#</span>",
+    "description": "#description#</br><span class=\"tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span> <span class=\"tooltipSPower\"><i class=\"fas fa-book-spells statTECH\"></i> #techPercent#</span>",
     "icon": "#icon#",
     "type": "skill"
   }

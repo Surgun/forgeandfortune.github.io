@@ -70,7 +70,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon, .tinkerCommand, .dreStatContainer, .dreActionButton, .dreLootDropCard, .dreTeamHero, #guildList, #RecipeFilter, #eventListContainer, .tinkerRangeBox, .smithButton, .fortuneSlot, .fortuneItemClose:hover, .fortuneItemSetClose:hover, .monsterCard, .monsterActionsButton, .mhiStats .heroExamineStatRow, .monsterDetails, .lineRewardContainer, .selection-container, #battleLogValue, #battleLogSet, #battleLogReset, .monsterRewardTrophy, .monsterRewardWarp, .orderCard, .recipeMasteryGuildCard, .recipeBuyCard, .workerBuyCard, .alPerk, .alPerkRemaining, .smithHeroButton {
+.back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon, .tinkerCommand, .dreStatContainer, .dreActionButton, .dreLootDropCard, .dreTeamHero, #guildList, #RecipeFilter, #eventListContainer, .tinkerRangeBox, .smithButton, .fortuneSlot, .fortuneItemClose:hover, .fortuneItemSetClose:hover, .monsterCard, .monsterActionsButton, .mhiStats .heroExamineStatRow, .monsterDetails, .lineRewardContainer, .selection-container, #battleLogValue, #battleLogSet, #battleLogReset, .monsterRewardTrophy, .monsterRewardWarp, .orderCard, .recipeMasteryGuildCard, .recipeBuyCard, .workerBuyCard, .alPerk, .alPerkRemaining, .alPurchasedPerk, .smithHeroButton {
     -ms-box-shadow: var(--box-shadow);
     -o-box-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
@@ -1298,17 +1298,13 @@ Rarities
 
 #RecipeFilter a.recipeSelect {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 3px 5px;
+    align-items: center;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    text-decoration: none;
     border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
-    color: var(--text-primary);
-    text-decoration: none;
 }
 
 #RecipeFilter a.recipeSelect.selected, #RecipeFilter a.recipeSelect.selected:hover {
@@ -1342,10 +1338,10 @@ Rarities
     display: inline-block;
     position: relative;
     content: "";
-    margin-right: 5px;
-    margin-bottom: 2px;
-    width: 32px;
-    height: 32px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.25);
     background-image: url('../../images/userpics/nopic.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -2591,7 +2587,7 @@ Rarities
     text-shadow: 2px 2px 0 black;
 }
 
-.alPerk, .alPerkRemaining {
+.alPerk, .alPerkRemaining, .alPurchasedPerk {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -2602,7 +2598,7 @@ Rarities
     border-radius: 10px;
 }
 
-.alTitle {
+.alTitle, .purchasedPerkTitle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2613,10 +2609,16 @@ Rarities
     border-bottom: 2px solid var(--border-primary);
 }
 
-.alImage {
+.alImage, .purchasedPerkImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5px 0;
     padding: 10px;
+    height: 90px;
+    font-size: 2.5rem;
     background-color: var(--bg-secondary);
+    border: 2px solid var(--border-primary);
     border-radius: 10px;
 }
 

@@ -173,8 +173,8 @@ function createALperk(perk) {
 
 function createPurchasedperk(perk) {
     const d1 = $("<div/>").addClass("alPurchasedPerk tooltip").attr({"data-tooltip": "perk_desc", "data-tooltip-value": perk.id});
-    $("<div/>").addClass("purchasedPerkImage").html(perk.icon).appendTo(d1);
     $("<div/>").addClass("purchasedPerkTitle").html(perk.title).appendTo(d1);
+    $("<div/>").addClass("purchasedPerkImage").html(perk.icon).appendTo(d1);
     return d1;
 }
 

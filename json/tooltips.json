@@ -180,5 +180,12 @@
     "description": "#description#</br><span class=\"tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span> <span class=\"tooltipSPower\"><i class=\"fas fa-book-spells statTECH\"></i> #techPercent#</span>",
     "icon": "#icon#",
     "type": "skill"
+  },
+  {
+    "id": "perk_desc",
+    "title": "#title#",
+    "description": "#description#",
+    "icon": "#icon#",
+    "type": "perk"
   }
 ]

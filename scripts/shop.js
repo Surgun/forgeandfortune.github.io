@@ -44,6 +44,9 @@ const Shop = {
     nextUnlocks(type) {
         const notPurchased = this.perks.filter(p=>p.category === type && !p.purchased).sort((a,b) => a.order-b.order)
         return {canPurchase:notPurchased[0],nextUp:notPurchased[1]};
+    },
+    boughtPerks() {
+        return this.perks.filter(p=>p.purchased);
     }
 }
 
@@ -106,7 +109,8 @@ const shopDivs = {
 }
 
 const $townPerkDiv = $("#townPerkDiv");
-
+const $boughtPerksDiv = $("#boughtPerksDiv");
+const $boughtPerks = $("#boughtPerks");
 function refreshShop() {
     for (let [name, div] of Object.entries(shopDivs)) {
         div.empty();
@@ -117,6 +121,15 @@ function refreshShop() {
     }
     if (DungeonManager.killedFirstBoss()) $townPerkDiv.show();
     else $townPerkDiv.hide();
+    const boughtPerks = Shop.boughtPerks();
+    if (boughtPerks.length > 0) {
+        $boughtPerksDiv.show();
+        $boughtPerks.empty();
+        boughtPerks.forEach(perk => {
+            createPurchasedperk(perk).appendTo($boughtPerks);
+        });
+    }
+    else $boughtPerksDiv.hide();
 }
 
 function showNextPerk(perk) {
@@ -155,6 +168,13 @@ function createALperk(perk) {
         const d5a = $("<div/>").addClass("alPerkBuyCost").appendTo(d5);
             $("<div/>").addClass("buyCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(perk.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(perk.goldCost,2)}`).appendTo(d5a);
             $("<div/>").addClass("buyCost tooltip").attr({"data-tooltip": "material_desc", "data-tooltip-value": perk.mat}).html(`${ResourceManager.materialIcon(perk.mat)} ${perk.matAmt}`).appendTo(d5a);
+    return d1;
+}
+
+function createPurchasedperk(perk) {
+    const d1 = $("<div/>").addClass("alPurchasedPerk tooltip").attr({"data-tooltip": "perk_desc", "data-tooltip-value": perk.id});
+    $("<div/>").addClass("purchasedPerkImage").html(perk.icon).appendTo(d1);
+    $("<div/>").addClass("purchasedPerkTitle").html(perk.title).appendTo(d1);
     return d1;
 }
 

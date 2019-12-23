@@ -24,14 +24,12 @@ function showDungeonReward(dungeonID) {
             $("<div/>").addClass("dreTeamHeroName").html(hero.name).appendTo(d1);
     });
     $dreStats.empty();
-    const d3 = $("<div/>").addClass("dreStatContainer").appendTo($dreStats);
-        $("<div/>").addClass("dreStatHeading").html("Total Time").appendTo(d3);
     const d5 = $("<div/>").addClass("dreStatContainer").appendTo($dreStats);
         $("<div/>").addClass("dreStatHeading").html("Turns Taken").appendTo(d5);
         $("<div/>").addClass("dreStatDescription").html(dungeon.beatTotal + " turns").appendTo(d5);
     const d6 = $("<div/>").addClass("dreStatContainer").appendTo($dreStats);
-        $("<div/>").addClass("dreStatHeading").html("Boss Percent").appendTo(d6);
-        $("<div/>").addClass("dreStatDescription").html(dungeon.bossPercent()).appendTo(d6);
+        $("<div/>").addClass("dreStatHeading").html("Boss HP").appendTo(d6);
+        $("<div/>").addClass("dreStatDescription").html(dungeon.bossHPStyling()).appendTo(d6);
     $dreCollect.html("Accept")
 }
 

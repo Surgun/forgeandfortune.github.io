@@ -78,6 +78,11 @@ $(document).on("click", ".dungeonContainer", (e) => {
     screenDirectDungeon(dungeonID);
 });
 
+$(document).on("click", "#dAbandonAll", (e) => {
+    e.preventDefault();
+    DungeonManager.abandonAllDungeons();
+});
+
 function screenDirectDungeon(dungeonID) {
     DungeonManager.dungeonView = dungeonID;
     const lastParty = DungeonManager.dungeonByID(dungeonID).lastParty;

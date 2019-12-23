@@ -141,6 +141,7 @@ class Dungeon {
         this.lastParty = party.heroID;
     }
     resetDungeon() {
+        if (this.status !== DungeonStatus.ADVENTURING) return;
         this.party.heroes.forEach(h=>{
             h.inDungeon = false;
             h.hp = h.maxHP()
@@ -188,14 +189,14 @@ class Dungeon {
         $("#dsb"+this.id).html(`${this.name} - ${this.floorCount}`);
         refreshSidebarDungeonMats(this.id);
     }
-    dungeonComplete(lost) {
+    dungeonComplete() {
         this.status = DungeonStatus.COLLECT;
         if (DungeonManager.dungeonView === this.id) showDungeonReward(this.id);
     }
-    bossPercent() {
-        if (this.type !== "boss") return "0%";
+    bossHPStyling() {
+        if (this.type !== "boss") return "0 (0%)";
         const boss = this.mobs.find(m=>m.event === "boss")
-        return Math.round(100*boss.hp/boss.maxHP())+"%";
+        return `${formatToUnits(boss.hp,2)} (${Math.round(100*boss.hp/boss.maxHP())+"%"})`;
     }
     bossDifficulty() {
         if (this.type === "regular") return 0;
@@ -352,5 +353,10 @@ const DungeonManager = {
     },
     killedFirstBoss() {
         return this.bossesBeat.includes("BB010");
+    },
+    abandonAllDungeons() {
+        this.dungeons.forEach(dungeon => {
+            dungeon.resetDungeon();
+        })
     }
 };

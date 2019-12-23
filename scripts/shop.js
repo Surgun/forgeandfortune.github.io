@@ -50,7 +50,6 @@ const Shop = {
 class Perk {
     constructor (props) {
         Object.assign(this, props);
-        this.image = `<img src='images/perks/${this.id}.png'>`;
         this.purchased = false;
     }
     canBuy() {
@@ -124,7 +123,7 @@ function showNextPerk(perk) {
     if (perk === undefined) return;
     const d1 = $("<div/>").addClass("alPerk");
         $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
-        $("<div/>").addClass("alImage").html(perk.image).appendTo(d1);
+        $("<div/>").addClass("alImage").html(perk.icon).appendTo(d1);
         $("<div/>").addClass("alDesc").html(perk.description).appendTo(d1);
         $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock this perk.`).appendTo(d1);
     return d1;
@@ -144,7 +143,7 @@ function showRemainingPerks(type) {
 function createALperk(perk) {
     const d1 = $("<div/>").addClass("alPerk");
     $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
-    $("<div/>").addClass("alImage").html(perk.image).appendTo(d1);
+    $("<div/>").addClass("alImage").html(perk.icon).appendTo(d1);
     $("<div/>").addClass("alDesc").html(perk.description).appendTo(d1);
     if (perk.purchased) {
         return d1.addClass("perkPurchased");

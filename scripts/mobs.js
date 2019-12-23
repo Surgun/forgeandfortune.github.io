@@ -104,8 +104,10 @@ class Mob extends Combatant {
         super(mobTemplate);
         this.lvl = lvl;
         this.difficulty = difficulty;
-        this.pow = Math.floor(DungeonManager.getPowFloor(lvl)*this.powMod*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
-        this.hpmax = Math.floor(DungeonManager.getHpFloor(lvl)*this.hpMod*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
+        const powFloor = mobTemplate.event === "normal" ? DungeonManager.getPowFloor(lvl) : 1;
+        const hpFloor = mobTemplate.event === "normal" ? DungeonManager.getHpFloor(lvl) : 1;
+        this.pow = Math.floor(powFloor*this.powMod*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
+        this.hpmax = Math.floor(hpFloor*this.hpMod*Math.pow(miscLoadedValues.bossMultiplier,difficulty));
         this.hp = this.hpmax;
         this.uniqueid = MobManager.getUniqueID();
         this.playbook = PlaybookManager.generatePlayBookFromSkills(this.skill1,this.skill2,this.skill3,this.skill4);

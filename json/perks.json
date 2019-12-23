@@ -2,14 +2,15 @@
   {
     "id": "AL1001",
     "title": "Aviation Association",
-    "description": "Unlocks access to the Avian Association Crafting Guild",
+    "description": "Unlocks access to the Aviation Association Crafting Guild",
     "category": "Crafting",
     "order": 1,
     "goldCost": 300,
     "mat": "M101",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN001"
+    "subtype": "WN001",
+    "icon": "<i class=\"fas fa-crow\"></i>"
   },
   {
     "id": "AL1002",
@@ -21,7 +22,8 @@
     "mat": "M101",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN101"
+    "subtype": "WN101",
+    "icon": "<i class=\"fas fa-salad\"></i>"
   },
   {
     "id": "AL1003",
@@ -33,7 +35,8 @@
     "mat": "M101",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN301"
+    "subtype": "WN301",
+    "icon": "<i class=\"fas fa-fish\"></i>"
   },
   {
     "id": "AL1004",
@@ -45,7 +48,8 @@
     "mat": "M101",
     "matAmt": 50,
     "type": "craft",
-    "subtype": null
+    "subtype": null,
+    "icon": "<i class=\"fas fa-drafting-compass\"></i>"
   },
   {
     "id": "AL1005",
@@ -57,7 +61,8 @@
     "mat": "M101",
     "matAmt": 50,
     "type": "boss",
-    "subtype": "D010"
+    "subtype": "D010",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL1006",
@@ -69,7 +74,8 @@
     "mat": "M201",
     "matAmt": 25,
     "type": "craft",
-    "subtype": null
+    "subtype": null,
+    "icon": "<i class=\"fas fa-drafting-compass\"></i>"
   },
   {
     "id": "AL1007",
@@ -81,7 +87,8 @@
     "mat": "M201",
     "matAmt": 25,
     "type": "craft",
-    "subtype": null
+    "subtype": null,
+    "icon": "<i class=\"fas fa-drafting-compass\"></i>"
   },
   {
     "id": "AL1008",
@@ -93,7 +100,8 @@
     "mat": "M301",
     "matAmt": 25,
     "type": "boss",
-    "subtype": "D011"
+    "subtype": "D011",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL1009",
@@ -105,19 +113,21 @@
     "mat": "M301",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN202"
+    "subtype": "WN202",
+    "icon": "<i class=\"fas fa-paw\"></i>"
   },
   {
     "id": "AL1010",
     "title": "Did You Lose Weight",
-    "description": "Unlock Bird Arms worker: Eryn",
+    "description": "Unlock Aviation Association worker: Eryn",
     "category": "Crafting",
     "order": 10,
     "goldCost": 4000,
     "mat": "M301",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN002"
+    "subtype": "WN002",
+    "icon": "<i class=\"fas fa-crow\"></i>"
   },
   {
     "id": "AL1011",
@@ -129,7 +139,8 @@
     "mat": "M301",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN102"
+    "subtype": "WN102",
+    "icon": "<i class=\"fas fa-salad\"></i>"
   },
   {
     "id": "AL1012",
@@ -141,7 +152,8 @@
     "mat": "M301",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN302"
+    "subtype": "WN302",
+    "icon": "<i class=\"fas fa-fish\"></i>"
   },
   {
     "id": "AL1013",
@@ -153,7 +165,8 @@
     "mat": "M301",
     "matAmt": 25,
     "type": "craft",
-    "subtype": null
+    "subtype": null,
+    "icon": "<i class=\"fas fa-drafting-compass\"></i>"
   },
   {
     "id": "AL1014",
@@ -165,7 +178,8 @@
     "mat": "M401",
     "matAmt": 25,
     "type": "boss",
-    "subtype": "D012"
+    "subtype": "D012",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL1015",
@@ -177,7 +191,8 @@
     "mat": "M501",
     "matAmt": 25,
     "type": "boss",
-    "subtype": "D013"
+    "subtype": "D013",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL1016",
@@ -189,19 +204,21 @@
     "mat": "M601",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN203"
+    "subtype": "WN203",
+    "icon": "<i class=\"fas fa-paw\"></i>"
   },
   {
     "id": "AL1017",
     "title": "You Sound Familiar",
-    "description": "Unlock Bird Arms worker: Herbie",
+    "description": "Unlock Aviation Association worker: Herbie",
     "category": "Crafting",
     "order": 17,
     "goldCost": 300000,
     "mat": "M601",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN003"
+    "subtype": "WN003",
+    "icon": "<i class=\"fas fa-crow\"></i>"
   },
   {
     "id": "AL1018",
@@ -213,7 +230,8 @@
     "mat": "M601",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN103"
+    "subtype": "WN103",
+    "icon": "<i class=\"fas fa-salad\"></i>"
   },
   {
     "id": "AL1019",
@@ -225,7 +243,8 @@
     "mat": "M601",
     "matAmt": 25,
     "type": "worker",
-    "subtype": "WN303"
+    "subtype": "WN303",
+    "icon": "<i class=\"fas fa-fish\"></i>"
   },
   {
     "id": "AL1020",
@@ -237,7 +256,8 @@
     "mat": "M701",
     "matAmt": 25,
     "type": "boss",
-    "subtype": "D014"
+    "subtype": "D014",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL1021",
@@ -249,7 +269,8 @@
     "mat": "M801",
     "matAmt": 25,
     "type": "boss",
-    "subtype": "D015"
+    "subtype": "D015",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL1022",
@@ -261,19 +282,21 @@
     "mat": null,
     "matAmt": null,
     "type": "worker",
-    "subtype": "WN204"
+    "subtype": "WN204",
+    "icon": "<i class=\"fas fa-paw\"></i>"
   },
   {
     "id": "AL1023",
     "title": "Birds of A Feather",
-    "description": "Unlock Bird Arms worker: Lakur",
+    "description": "Unlock Aviation Association worker: Lakur",
     "category": "Crafting",
     "order": 23,
     "goldCost": 4000000,
     "mat": null,
     "matAmt": null,
     "type": "worker",
-    "subtype": "WN004"
+    "subtype": "WN004",
+    "icon": "<i class=\"fas fa-crow\"></i>"
   },
   {
     "id": "AL1024",
@@ -285,7 +308,8 @@
     "mat": null,
     "matAmt": null,
     "type": "worker",
-    "subtype": "WN104"
+    "subtype": "WN104",
+    "icon": "<i class=\"fas fa-salad\"></i>"
   },
   {
     "id": "AL1025",
@@ -297,7 +321,8 @@
     "mat": null,
     "matAmt": null,
     "type": "worker",
-    "subtype": "WN304"
+    "subtype": "WN304",
+    "icon": "<i class=\"fas fa-fish\"></i>"
   },
   {
     "id": "AL1026",
@@ -309,7 +334,8 @@
     "mat": null,
     "matAmt": null,
     "type": "boss",
-    "subtype": "D016"
+    "subtype": "D016",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL1027",
@@ -321,7 +347,8 @@
     "mat": null,
     "matAmt": null,
     "type": "boss",
-    "subtype": "D017"
+    "subtype": "D017",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL1028",
@@ -333,7 +360,8 @@
     "mat": null,
     "matAmt": null,
     "type": "boss",
-    "subtype": "D018"
+    "subtype": "D018",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL1029",
@@ -345,7 +373,8 @@
     "mat": null,
     "matAmt": null,
     "type": "boss",
-    "subtype": "D019"
+    "subtype": "D019",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL2001",
@@ -357,7 +386,8 @@
     "mat": "M101",
     "matAmt": 15,
     "type": "dungeon",
-    "subtype": "D002"
+    "subtype": "D002",
+    "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
     "id": "AL2002",
@@ -369,7 +399,8 @@
     "mat": "M102",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H001"
+    "subtype": "H001",
+    "icon": "<i class=\"fas fa-fist-raised\"></i>"
   },
   {
     "id": "AL2003",
@@ -381,7 +412,8 @@
     "mat": "M102",
     "matAmt": 50,
     "type": "dungeon",
-    "subtype": "D003"
+    "subtype": "D003",
+    "icon": "<i class=\"fas fa-spider\"></i>"
   },
   {
     "id": "AL2004",
@@ -393,7 +425,8 @@
     "mat": "M102",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H102"
+    "subtype": "H102",
+    "icon": "<i class=\"fas fa-hat-wizard\"></i>"
   },
   {
     "id": "AL2005",
@@ -405,7 +438,8 @@
     "mat": "M202",
     "matAmt": 50,
     "type": "adventure",
-    "subtype": null
+    "subtype": null,
+    "icon": "<i class=\"fas fa-users\"></i>"
   },
   {
     "id": "AL2006",
@@ -417,7 +451,8 @@
     "mat": "M202",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H201"
+    "subtype": "H201",
+    "icon": "<i class=\"fas fa-mask\"></i>"
   },
   {
     "id": "AL2007",
@@ -429,7 +464,8 @@
     "mat": "M202",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H002"
+    "subtype": "H002",
+    "icon": "<i class=\"fas fa-fist-raised\"></i>"
   },
   {
     "id": "AL2008",
@@ -441,7 +477,8 @@
     "mat": "M202",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H101"
+    "subtype": "H101",
+    "icon": "<i class=\"fas fa-hat-wizard\"></i>"
   },
   {
     "id": "AL2009",
@@ -453,7 +490,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "adventure",
-    "subtype": null
+    "subtype": null,
+    "icon": "<i class=\"fas fa-users\"></i>"
   },
   {
     "id": "AL2010",
@@ -465,7 +503,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H202"
+    "subtype": "H202",
+    "icon": "<i class=\"fas fa-mask\"></i>"
   },
   {
     "id": "AL2011",
@@ -477,7 +516,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H003"
+    "subtype": "H003",
+    "icon": "<i class=\"fas fa-fist-raised\"></i>"
   },
   {
     "id": "AL2012",
@@ -489,7 +529,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H103"
+    "subtype": "H103",
+    "icon": "<i class=\"fas fa-hat-wizard\"></i>"
   },
   {
     "id": "AL2013",
@@ -501,7 +542,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "adventure",
-    "subtype": null
+    "subtype": null,
+    "icon": "<i class=\"fas fa-users\"></i>"
   },
   {
     "id": "AL2014",
@@ -513,7 +555,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H204"
+    "subtype": "H204",
+    "icon": "<i class=\"fas fa-mask\"></i>"
   },
   {
     "id": "AL2015",
@@ -525,7 +568,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H004"
+    "subtype": "H004",
+    "icon": "<i class=\"fas fa-fist-raised\"></i>"
   },
   {
     "id": "AL2016",
@@ -537,7 +581,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "hero",
-    "subtype": "H104"
+    "subtype": "H104",
+    "icon": "<i class=\"fas fa-hat-wizard\"></i>"
   },
   {
     "id": "AL3001",
@@ -549,7 +594,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "monster",
-    "subtype": "open"
+    "subtype": "open",
+    "icon": "<i class=\"fas fa-pastafarianism\"></i>"
   },
   {
     "id": "AL3002",
@@ -561,7 +607,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "desynth",
-    "subtype": "open"
+    "subtype": "open",
+    "icon": "<i class=\"fas fa-building\"></i>"
   },
   {
     "id": "AL3003",
@@ -573,7 +620,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "cauldron",
-    "subtype": "open"
+    "subtype": "open",
+    "icon": "<i class=\"fas fa-vihara\"></i>"
   },
   {
     "id": "AL3004",
@@ -585,7 +633,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "bank",
-    "subtype": "open"
+    "subtype": "open",
+    "icon": "<i class=\"fas fa-landmark\"></i>"
   },
   {
     "id": "AL3005",
@@ -597,7 +646,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "monster",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-pastafarianism\"></i>"
   },
   {
     "id": "AL3006",
@@ -609,7 +659,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "forge",
-    "subtype": "open"
+    "subtype": "open",
+    "icon": "<i class=\"fas fa-hammer-war\"></i>"
   },
   {
     "id": "AL3007",
@@ -621,7 +672,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "tinker",
-    "subtype": "open"
+    "subtype": "open",
+    "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
     "id": "AL3008",
@@ -633,7 +685,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "cauldron",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-vihara\"></i>"
   },
   {
     "id": "AL3009",
@@ -645,7 +698,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "monster",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-pastafarianism\"></i>"
   },
   {
     "id": "AL3010",
@@ -657,7 +711,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "fortune",
-    "subtype": "open"
+    "subtype": "open",
+    "icon": "<i class=\"fas fa-hat-witch\"></i>"
   },
   {
     "id": "AL3011",
@@ -669,7 +724,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "bank",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-landmark\"></i>"
   },
   {
     "id": "AL3012",
@@ -681,7 +737,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "tinker",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
     "id": "AL3013",
@@ -693,7 +750,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "cauldron",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-vihara\"></i>"
   },
   {
     "id": "AL3014",
@@ -705,7 +763,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "forge",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-hammer-war\"></i>"
   },
   {
     "id": "AL3015",
@@ -717,7 +776,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "tinker",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
     "id": "AL3016",
@@ -729,7 +789,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "bank",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-landmark\"></i>"
   },
   {
     "id": "AL3017",
@@ -741,7 +802,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "fortune",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-hat-witch\"></i>"
   },
   {
     "id": "AL3018",
@@ -753,7 +815,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "tinker",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
     "id": "AL3019",
@@ -765,7 +828,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "forge",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-hammer-war\"></i>"
   },
   {
     "id": "AL3020",
@@ -777,7 +841,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "fortune",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-hat-witch\"></i>"
   },
   {
     "id": "AL3021",
@@ -789,7 +854,8 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "tinker",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
     "id": "AL3022",
@@ -801,6 +867,7 @@
     "mat": "M201",
     "matAmt": 50,
     "type": "tinker",
-    "subtype": "level"
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-tools\"></i>"
   }
 ]

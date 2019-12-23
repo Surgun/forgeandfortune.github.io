@@ -8734,6 +8734,11 @@ span.beta-tag {
     color: var(--text-secondary);
 }
 
+.tooltipStat {
+    display: inline-block;
+    margin: 5px 5px 0 0;
+}
+
 /* End Tooltips */
 
 /* Market */

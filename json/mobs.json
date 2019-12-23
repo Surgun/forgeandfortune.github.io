@@ -1442,8 +1442,8 @@
   {
     "id": "BB010",
     "name": "Loathing Oak",
-    "hpMod": 100000,
-    "powMod": 90,
+    "hpMod": 5400,
+    "powMod": 100,
     "protection": 0,
     "skill1": "S0001",
     "skill2": "S0001",

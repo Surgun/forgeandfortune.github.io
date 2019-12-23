@@ -1442,7 +1442,7 @@
   {
     "id": "BB010",
     "name": "Loathing Oak",
-    "hpMod": 2000,
+    "hpMod": 100000,
     "powMod": 90,
     "protection": 0,
     "skill1": "S0001",
@@ -1454,7 +1454,7 @@
   {
     "id": "BB011",
     "name": "Lost Phoenix",
-    "hpMod": 4800,
+    "hpMod": 100000,
     "powMod": 120,
     "protection": 0,
     "skill1": null,
@@ -1466,7 +1466,7 @@
   {
     "id": "BB012",
     "name": "Blue Knight",
-    "hpMod": 6500,
+    "hpMod": 100000,
     "powMod": 350,
     "protection": 0,
     "skill1": null,
@@ -1478,7 +1478,7 @@
   {
     "id": "BB013",
     "name": "Lich Suit Lawrence",
-    "hpMod": 10000,
+    "hpMod": 100000,
     "powMod": 200,
     "protection": 0,
     "skill1": null,
@@ -1490,7 +1490,7 @@
   {
     "id": "BB014",
     "name": "Beclutcher",
-    "hpMod": 36000,
+    "hpMod": 100000,
     "powMod": 400,
     "protection": 0,
     "skill1": null,
@@ -1502,7 +1502,7 @@
   {
     "id": "BB015",
     "name": "Aggressive Oak",
-    "hpMod": 13000,
+    "hpMod": 100000,
     "powMod": 1000,
     "protection": 0,
     "skill1": null,
@@ -1514,7 +1514,7 @@
   {
     "id": "BB016",
     "name": "Enraged Phoenix",
-    "hpMod": 40000,
+    "hpMod": 100000,
     "powMod": 1000,
     "protection": 0,
     "skill1": null,
@@ -1526,7 +1526,7 @@
   {
     "id": "BB017",
     "name": "Melancholy Knight",
-    "hpMod": 70000,
+    "hpMod": 100000,
     "powMod": 2500,
     "protection": 0,
     "skill1": null,

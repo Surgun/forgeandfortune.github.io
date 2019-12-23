@@ -199,7 +199,7 @@
     "type": "physical",
     "targetEnemies": true,
     "targetType": "second",
-    "powMod": 2,
+    "powMod": 7,
     "techMod": 0,
     "bText": "#ATTACKER# trees you for #DAMAGE# damage"
   }

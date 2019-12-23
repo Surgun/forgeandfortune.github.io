@@ -202,3 +202,11 @@ SkillManager.skillEffects['S0015'] = function (skill,attacker,power,target,dunge
 SkillManager.skillEffects['S0016'] = function (skill,attacker,power,target,dungeonid) {
     uffManager.generateBuff('B0016',target,power);
 }
+
+SkillManager.skillEffects['S0017'] = function (combatParams) {
+    //tree wallop
+    const targets = combatParams.getTarget();
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+}

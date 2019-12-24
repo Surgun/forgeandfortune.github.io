@@ -78,7 +78,7 @@
                     <button class="tablinks" id="progressTabLink"onclick="openTab('progressTab')"><div><i class="fas fa-tasks"></i> Progress</div></button>
                 </div>
                 <div id="inventoryTab" class="tabcontent">
-                    <div id="inventory-container">
+                    <div id="inventory-container" class="inventoryContainer">
                         <div class="inventoryContent">
                             <div class="materialContentContainer">
                                 <div class="materialsHeader">Materials</div>
@@ -86,28 +86,45 @@
                             </div>
                             <div class="inventoryContentContainer">
                                 <div class="inventoryActions">
-                                    <div id="goToBank" class="invActionButton">
+                                    <div id="goToBank" class="actionButton">
                                         <i class="fas fa-university"></i>
                                         <span>View Bank</span>
                                     </div>
                                     <div class="invSubActionsContainer">
-                                        <div id="sortInventory" class="invActionButton"><i class="fas fa-sort-size-up-alt"></i><span>Sort Inventory</span></div>
-                                        <div id="sellAllCommons" class="invActionButton"><i class="fas fa-funnel-dollar"></i><span>Sell All Commons</span></div>
+                                        <div id="sortInventory" class="actionButton">
+                                            <i class="fas fa-sort-size-up-alt"></i>
+                                            <span>Sort Inventory</span>
+                                        </div>
+                                        <div id="sellAllCommons" class="actionButton">
+                                            <i class="fas fa-funnel-dollar"></i>
+                                            <span>Sell All Commons</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div id="inventory"></div>
+                                <div id="inventory" class="inventoryCardContainer"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="inventoryEquipTab" class="tabcontent">
-                    <div class="inventoryActions">
-                        <div id="closeEquipItem" class="invActionButton backToInventory"><i class="fas fa-arrow-left"></i> Back to Inventory</div>
+                    <div class="inventoryEquipContainer">
+                        <div class="inventoryActions">
+                            <div id="closeEquipItem" class="actionButton">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back to Inventory</span>
+                            </div>
+                        </div>
+                        <div class="inventoryEquipContent">
+                            <div class="equipContentContainer equipContentItems">
+                                <div class="equipHeading">Item Being Equipped</div>
+                                <div id="ietEquip" class="equipItems"></div>
+                            </div>
+                            <div class="equipContentContainer equipContentHeroes">
+                                <div class="equipHeading">Applicable Heroes</div>
+                                <div id="ietHero" class="equipHeroes"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="equipHeading">Equipping Item</div>
-                    <div id="ietEquip"></div>
-                    <div class="equipHeading">Possible Heroes</div>
-                    <div id="ietHero"></div>
                 </div>
                 <div id="recipesTab" class="tabcontent">
                     <div id="recipes-container">

@@ -2659,8 +2659,8 @@ Rarities
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: auto;
     padding: 10px;
-    flex-grow: 1;
     color: var(--highlight);
     font-size: 0.85rem;
     background-color: var(--bg-secondary);
@@ -8732,14 +8732,20 @@ span.beta-tag {
 }
 
 .marketSalesContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fit, minmax(700px, 1fr));
+    grid-gap: 10px;
     padding: 10px;
 }
 
-.marketSales, .perkTypeContainer {
-    display: -ms-grid;
+.perkTypeContainer {
     display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(225px, 1fr));
+    grid-template: auto / repeat(auto-fill, 225px);
     grid-gap: 10px;
+}
+
+.purchasedPerks {
+    grid-column: 1 / -1;
 }
 
 .alPerkBuy {

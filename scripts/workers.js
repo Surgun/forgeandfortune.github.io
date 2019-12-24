@@ -108,9 +108,9 @@ const $G004WorkersSide = $("#G004WorkersSide");
 
 function refreshSideWorkers() {
     const g1free = WorkerManager.freeByGuild("G001");
-    const g2free = WorkerManager.freeByGuild("G001");
-    const g3free = WorkerManager.freeByGuild("G001");
-    const g4free = WorkerManager.freeByGuild("G001");
+    const g2free = WorkerManager.freeByGuild("G002");
+    const g3free = WorkerManager.freeByGuild("G003");
+    const g4free = WorkerManager.freeByGuild("G004");
     $G001WorkerFree.html(g1free);
     $G002WorkerFree.html(g2free);
     $G003WorkerFree.html(g3free);

@@ -12,7 +12,8 @@ body.pg-loading {
   top: 0;
   z-index: 1000000;
   opacity: 1;
-  background-color: #FFF;
+  background-color: var(--bg-primary);
+  background: center / cover no-repeat url(/images/loadbg.png);
   -webkit-transition: background-color 0.4s ease-in-out 0s;
   -moz-transition: background-color 0.4s ease-in-out 0s;
   -ms-transition: background-color 0.4s ease-in-out 0s;
@@ -90,7 +91,6 @@ body.pg-loading {
 }
 /* line 91, ../src/please-wait.scss */
 .pg-loading-screen .pg-loading-html {
-  margin-top: 35px;
   padding: 0 20px;
 }
 /* line 94, ../src/please-wait.scss */
@@ -125,19 +125,48 @@ body.pg-loaded > #content, body.pg-loaded > #mobile-content {
 }
 
 .loadingMessage {
-  font-family: 'Varela Round', sans-serif;
-  color: var(--text-tertiary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  max-width: 500px;
+  color: var(--highlight);
+  background-color: rgba(0,0,0,0.25);
+  border-radius: 5px;
 }
 
 .spinner {
   width: 40px;
   height: 40px;
   margin: 35px auto;
-  background-color: var(--border-tertiary);
+  border: 5px solid var(--border-tertiary);
+  border-right: 5px solid rgba(0,0,0,0.25);
+  border-bottom: 5px solid rgba(0,0,0,0.25);
+  border-left: 5px solid rgba(0,0,0,0.25);
   border-radius: 100%;  
-  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-  animation: sk-scaleout 1.0s infinite ease-in-out;
+  -webkit-animation: spinner 1s 0s infinite ease-in-out;
+  animation: spinner 1s 0s infinite ease-in-out;
 }
+
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0);
+  } 
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  } 
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 @-webkit-keyframes sk-scaleout {
   0% { -webkit-transform: scale(0) }

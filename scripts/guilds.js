@@ -145,8 +145,8 @@ class guildOrderItem {
         this.lvl = lvl;
         this.rarity = this.generateRarity(lvl);
         this.sharp = this.generateSharp(lvl);
-        this.amt = this.generateAmt();
-        this.rep = 11-this.amt;
+        this.amt = this.generateAmt(lvl);
+        this.rep = this.generateRep(lvl,this.amt);
         this.fufilled = 0;
         this.displayName = this.generateName();
     }
@@ -182,11 +182,16 @@ class guildOrderItem {
     left() {
         return this.amt - this.fufilled;
     }
-    generateAmt() {
-        let startAmt = 10;
+    generateAmt(lvl) {
+        const max = miscLoadedValues["goMax"][lvl];
+        const min = miscLoadedValues["goMin"][lvl];
+        let startAmt = Math.floor(Math.random() * (max - min + 1)) + min;
         startAmt -= this.rarity*2;
         startAmt -= Math.floor(this.sharp/1.5);
         return Math.max(1,startAmt);
+    }
+    generateRep(lvl,amt) {
+        return 1 + miscLoadedValues["goMax"][lvl] - amt;
     }
     generateRarity(lvl) {
         const epicChance = miscLoadedValues["goEpic"][lvl];

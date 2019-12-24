@@ -201,9 +201,12 @@ $(document).on('click',".heroCounter", (e) => {
 });
 
 const $heroOverviewButton = $("#heroOverviewButton");
+const $trinketTab = $("#trinketTab");
 
 // Show or hide hero's info
 function showHeroInfo(show) {
+    if (TownManager.status("tinker") !== BuildingState.built) $trinketTab.hide();
+    else $trinketTab.hide();
     if (show) {
         $(".heroTabContainer").addClass("grid-show");
         $(".heroOwnedCard").removeClass("highlight");

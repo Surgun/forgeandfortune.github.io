@@ -94,14 +94,16 @@ class Guild {
         if (devtools.orderBypass) return true;
         return this.order.every(o=>o.complete());
     }
-    generateNewOrder(orderNum) {
-        const possibleItems = recipeList.guildOrderItems(this.lvl);
+    generateNewOrder(orderNum,previous="ignore") {
+        let possibleItems = recipeList.guildOrderItems(this.lvl);
         if (orderNum === 1) {
-            const possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
+            let possibleGuildItems = possibleItems.filter(r => r.guildUnlock === this.id);
+            if (possibleGuildItems.length > 1) possibleGuildItems = possibleGuildItems.filter(r=>r.id !== previous);
             const chosenGuildItem = possibleGuildItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleGuildItems.length)];
             this.order1 = new guildOrderItem(this.id,chosenGuildItem.id,this.lvl);
             return;
         }
+        if (possibleItems.length > 1) possibleItems = possibleItems.filter(r=>r.id !== previous);
         const chosenItem = possibleItems[Math.floor(GuildSeedManager.fauxRand(this.id)*possibleItems.length)];
         if (orderNum === 2) this.order2 = new guildOrderItem(this.id,chosenItem.id,this.lvl);
         if (orderNum === 3) this.order3 = new guildOrderItem(this.id,chosenItem.id,this.lvl);
@@ -118,7 +120,7 @@ class Guild {
         this.addRep(submitContainer.rep);
         achievementStats.gold(submitContainer.goldValue());
         ResourceManager.addMaterial("M001",submitContainer.goldValue());
-        if (submitContainer.complete()) this.generateNewOrder(slot);
+        if (submitContainer.complete()) this.generateNewOrder(slot, submitContainer.id);
         refreshAllOrders();
     }
     goldValue() {

@@ -41,6 +41,9 @@ class Party {
             hero.removeBuffs();
         })
     }
+    setMaxFloor(id,floor) {
+        this.heroes.forEach(h => h.setMax(id,floor));
+    }
 }
 
 const PartyCreator = {
@@ -94,16 +97,21 @@ const PartyCreator = {
         const statuses = team.map(h=>HeroManager.idToHero(h).inDungeon)
         if (statuses.some(h=>h)) return;
         team.forEach(h => this.addMember(h));
+    },
+    getStartFloor() {
+        if (this.heroes.length === 0) return 0;
+        const heroes = this.heroes.map(p=>HeroManager.idToHero(p));
+        return Math.min(...heroes.map(p => p.getMax(DungeonManager.dungeonCreatingID)));
     }
 }
 
 function refreshHeroSelect() {
     const dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonCreatingID);
-    //builds the div that we hide and can show when we're selecting for that area
     //Team Banner
     $dtsBanner.empty();
     const b1 = $("<div/>").addClass(`dts${dungeon.id} dtsBackground`).appendTo($dtsBanner);
     const b2 = $("<div/>").addClass(`dts${dungeon.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
+    $("<div/>").addClass(`dtsMaxFloor`).html("Max Floor Skip: 100").appendTo($dtsBanner);
     $("<div/>").addClass(`dts${dungeon.id} dtsBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($dtsBanner);
     if (dungeon.type === "boss") {
         b1.addClass("DBoss");
@@ -146,13 +154,17 @@ function refreshHeroSelect() {
         d.prepend(d1a);
     }
     $dtsTop.append(d);
-    const dbutton = $("<div/>").attr("id","dungeonTeamButton").html("Launch Adventure");
-    if (PartyCreator.heroes.length === 0) dbutton.addClass('dungeonStartNotAvailable')
-    $dtsTop.append(dbutton);
-    if (dungeon.type === "regular" && MonsterHall.lvl >= 3) {
-        const label = $("<label/>").attr("for","partySkip").addClass("selection-container party-selection-container").html("Skip Stages").appendTo($dtsTop);
-        $("<input/>").attr({"type":"checkbox","id":"partySkip"}).addClass("partySkipCheck").prop("defaultChecked","checked").appendTo(label);
-        $("<span/>").addClass("selection").appendTo(label);
+    const buttons = $("<div/>").addClass("partyLaunchButton").appendTo($dtsTop);
+    const dbutton1 = $("<div/>").addClass("dungeonTeamButton").attr("id","dungeonTeamButtonSkip").html(`Start at Floor ${PartyCreator.getStartFloor()}`).appendTo(buttons);
+    const or = $("<span/>").html(" or ").appendTo(buttons);
+    const dbutton2 = $("<div/>").addClass("dungeonTeamButton").attr("id","dungeonTeamButton").html("Start at Floor 1").appendTo(buttons);
+    if (PartyCreator.getStartFloor() <= 1) {
+        or.hide();
+        dbutton2.hide();
+    }
+    if (PartyCreator.heroes.length === 0) {
+        dbutton1.addClass('dungeonStartNotAvailable');
+        dbutton2.addClass('dungeonStartNotAvailable');
     }
     $dtsBottom.empty();
     //available heroes
@@ -210,9 +222,21 @@ $(document).on('click', "div.dungeonAvailableCardClick", (e) => {
 //locking in a team to start a dungeon
 $(document).on('click', "#dungeonTeamButton", (e) => {
     e.preventDefault();
-    const skipStage = $("#partySkip").is(":checked");
     if (PartyCreator.validTeam()) {
-        DungeonManager.createDungeon(skipStage);
+        DungeonManager.createDungeon(1);
+        initializeSideBarDungeon();
+        $dungeonTeamSelect.hide();
+        $dungeonRun.show();
+    }
+    else {
+        Notifications.noPartySelected();
+    }
+});
+
+$(document).on('click', "#dungeonTeamButtonSkip", (e) => {
+    e.preventDefault();
+    if (PartyCreator.validTeam()) {
+        DungeonManager.createDungeon(PartyCreator.getStartFloor());
         initializeSideBarDungeon();
         $dungeonTeamSelect.hide();
         $dungeonRun.show();
@@ -224,22 +248,21 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
 
 function characterCard(prefix,dv,ID,status) {
     const d = $("<div/>").addClass(prefix+"Card").attr("data-value",dv);
-    const dclick = $("<div/>").addClass(prefix+"CardClick").attr("heroID",dv);
     if (!ID) {
-        const d1a = $("<div/>").addClass(prefix+"Image").html('<img src="images/heroes/blank.png">');
-        const d2a = $("<div/>").addClass(prefix+"Name").html("Empty");
-        return d.append(d1a,d2a);
+        $("<div/>").addClass(prefix+"Image").html('<img src="images/heroes/blank.png">').appendTo(d);
+        $("<div/>").addClass(prefix+"Name").html("Empty").appendTo(d);
+        return d;
     }
+    const dclick = $("<div/>").addClass(prefix+"CardClick").attr("heroID",dv).appendTo(d);
     const hero = HeroManager.idToHero(ID);
-    const d1 = $("<div/>").addClass(prefix+"Image").html(hero.image);
-    const d2 = $("<div/>").addClass(prefix+"Name").html(hero.name);
-    const d3 = $("<div/>").addClass(prefix+"Stats");
-        const d3a = $("<div/>").addClass(prefix+"HP"+" heroStat"+" tooltip").attr("data-tooltip","hp").html(`${miscIcons.hp} ${hero.maxHP()}`);
-        d3.append(d3a);
-    const d4 = $("<div/>").addClass(prefix+"Pow"+" heroPowStat"+" tooltip").attr("data-tooltip","pow").html(`${miscIcons.pow} ${hero.getPow()}`);
-    const d5 = $("<div/>").addClass("heroStatus").html(status);
+    $("<div/>").addClass(prefix+"Image").html(hero.image).appendTo(dclick);
+    $("<div/>").addClass(prefix+"Name").html(hero.name).appendTo(dclick);
+    const d3 = $("<div/>").addClass(prefix+"Stats").appendTo(dclick);
+        $("<div/>").addClass(prefix+"HP"+" heroStat"+" tooltip").attr("data-tooltip","hp").html(`${miscIcons.hp} ${hero.maxHP()}`).appendTo(d3);
+        $("<div/>").addClass(prefix+"Pow"+" heroPowStat"+" tooltip").attr("data-tooltip","pow").html(`${miscIcons.pow} ${hero.getPow()}`).appendTo(d3);
+    const d5 = $("<div/>").addClass("heroStatus").html(status).appendTo(dclick);
     if (status === null) d5.hide();
     else d.addClass("heroUnavailable");
-    dclick.append(d1,d2,d3,d4,d5);
-    return d.append(dclick);
+    $("<div/>").addClass("partyMaxFloor").html(`Floor ${hero.getMax(DungeonManager.dungeonCreatingID)}`).appendTo(dclick);
+    return d;
 }

@@ -183,9 +183,11 @@ SkillManager.skillEffects['S0012'] = function (skill,attacker,power,target,dunge
     BuffManager.generateBuff('B0012',target,power);
 }
 
-SkillManager.skillEffects['S0013'] = function (skill,attacker,power,target,dungeonid) {
-    const attack = new Attack(attacker, power, skill, dungeonid);
-    target.takeAttack(attack);
+SkillManager.skillEffects['S0013'] = function (combatParams) {
+    const targets = combatParams.getTarget();
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
 }
 
 SkillManager.skillEffects['S0014'] = function (skill,attacker,power,target,dungeonid) {

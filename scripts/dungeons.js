@@ -141,7 +141,7 @@ class Dungeon {
         this.lastParty = party.heroID;
     }
     resetDungeon() {
-        if (this.status !== DungeonStatus.ADVENTURING) return;
+        if (this.status !== DungeonStatus.ADVENTURING && this.status !== DungeonStatus.COLLECT) return;
         this.party.heroes.forEach(h=>{
             h.inDungeon = false;
             h.hp = h.maxHP()
@@ -171,7 +171,10 @@ class Dungeon {
     }
     nextFloor(refreshLater, previousFloor) {
         if (this.floorCount > 0 && this.type === "boss") return this.dungeonComplete(previousFloor);
-        if (!previousFloor && this.floorCount > 0) this.addRewards();
+        if (!previousFloor && this.floorCount > 0) {
+            this.addRewards();
+            this.party.setMaxFloor(this.id,this.floorCount)
+        }
         if (previousFloor) {
             //this.resetDungeon();
             this.floorCount = Math.max(1,this.floorCount-1);
@@ -233,7 +236,6 @@ const DungeonManager = {
         this.dungeonPaid.push(id);
     },
     dungeonCanSee(id) {
-        console.log(id,this.dungeonPaid);
         return this.dungeonPaid.includes(id);
     },
     bossDungeonCanSee(id) {
@@ -281,13 +283,13 @@ const DungeonManager = {
         dungeon.progressNextFloor = true;
         initializeSideBarDungeon();
     },
-    createDungeon(floorSkip) {
+    createDungeon(floor) {
         const party = PartyCreator.lockParty();
         const dungeon = this.dungeonByID(this.dungeonCreatingID);
         dungeon.beatTotal = 0;
         dungeon.floorCount = 0;
         dungeon.progressNextFloor = true;
-        if (dungeon.type !== "boss" && floorSkip) dungeon.floorCount = MonsterHall.floorSkip();
+        dungeon.floorCount = floor-1;
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = this.dungeonCreatingID;
         dungeon.initializeParty(party);

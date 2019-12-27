@@ -53,10 +53,10 @@ const $drLog = $("#drLog");
 
 const BattleLog = {
     log : [],
-    logLength : settings.battleLogLength,
     addEntry(dungeonid,icon,m) {
         if (dungeonid !== DungeonManager.dungeonView) return;
-        if (this.log.length >= this.logLength) {
+        if (this.log.length >= 25) {
+            console.log("poppin! " + this.log.length)
             this.log.shift();
         }
         this.log.push(`${icon}&nbsp;&nbsp;${m}`);

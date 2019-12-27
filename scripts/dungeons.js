@@ -120,12 +120,10 @@ class Dungeon {
                 this.dungeonTime -= dungeonWaitTime;
                 return;
             }
+            if (!refreshLater && DungeonManager.dungeonView === this.id) $(`#beatbarFill${this.order.getCurrentID()}`).css('width',"0%");
             CombatManager.nextTurn(this);
             this.dungeonTime -= dungeonWaitTime;
-            if (!refreshLater) {
-                refreshTurnOrder(this.id);
-                $(".beatBarFill").css("width","0%");
-            }
+            if (!refreshLater && DungeonManager.dungeonView === this.id) refreshTurnOrder(this.id);
         }
         if (refreshLater) {
             initiateDungeonFloor(this.id);

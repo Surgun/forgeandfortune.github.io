@@ -1,5 +1,7 @@
 "use strict";
 
+const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,RANDOM:4,SELF:5,ALLENEMIES:6,ALLALLIES:7});
+
 const CombatManager = {
     refreshLater : false,
     nextTurn(dungeon) {
@@ -26,25 +28,24 @@ class combatRoundParams {
         this.power = Math.floor(this.attacker.getPow() * this.attack.powMod + this.attacker.getTech() * this.attack.techMod);
         this.dungeonid = dungeonid;
     }
-    getTarget(override) {
+    getTarget(target) {
         const livingAllies = this.allies.filter(h=>h.alive());
-        const target = override || this.attack.targetType;
         const livingEnemies = this.enemies.filter(h=>h.alive());
-        if (target === "first") return [livingEnemies[0]];
-        if (target === "second") {
+        if (target === TargetType.FIRST) return [livingEnemies[0]];
+        if (target === TargetType.SECOND) {
             if (livingEnemies.length === 1) return [livingEnemies[0]];
             return [livingEnemies[1]];
         }
-        if (target === "third") {
+        if (target === TargetType.THIRD) {
             if (livingEnemies.length === 1) return [livingEnemies[0]];
             if (livingEnemies.length === 2) return [livingEnemies[1]];
             return [livingEnemies[3]];
         }
-        if (target === "last") return [livingEnemies[livingEnemies.length-1]];
-        if (target === "random") return [livingEnemies[Math.floor(Math.random()*livingEnemies.length)]];
-        if (target === "self") return [this.attacker];
-        if (target === "allEnemies") return livingEnemies;
-        if (target === "allAllies") return livingAllies;
+        if (target === TargetType.FOURTH) return [livingEnemies[livingEnemies.length-1]];
+        if (target === TargetType.RANDOM) return [livingEnemies[Math.floor(Math.random()*livingEnemies.length)]];
+        if (target === TargetType.SELF) return [this.attacker];
+        if (target === TargetType.ALLENEMIES) return livingEnemies;
+        if (target === TargetType.ALLALLIES) return livingAllies;
     }
 }
 
@@ -129,7 +130,7 @@ class Combatant {
         return this.hp > 0;
     }
     maxHP() {
-        return this.hpmax;
+        return this.hpmax + this.getBuffMaxHP();
     }
     missingHP() {
         return this.maxHP()-this.hp;
@@ -172,8 +173,16 @@ class Combatant {
         const buffs = this.buffs.map(b=>b.getTech());
         return buffs.reduce((a,b) => a+b, 0);
     }
+    getBuffMaxHP() {
+        const buffs = this.buffs.map(b=>b.maxHP());
+        return buffs.reduce((a,b) => a+b, 0);
+    }
+    buffCount() {
+        return this.buffs.length;
+    }
     removeBuffs() {
         this.buffs = [];
+        this.hp = Math.min(this.hp,this.maxHP());
     }
     isChilled() {
         return this.buffs.some(b=>b.isChilled());

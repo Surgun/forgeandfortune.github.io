@@ -27,7 +27,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB002",
+    "playbookTemplate": "PB0010",
     "description": "Beorn is the model all young warriors strive to become.  He's quite the celebrity."
   },
   {
@@ -58,7 +58,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB001",
+    "playbookTemplate": "PB0020",
     "description": "Cedric's parents died mysteriously, and will do anything to find out what happened."
   },
   {
@@ -89,7 +89,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB001",
+    "playbookTemplate": "PB0030",
     "description": "Grim knows what happened to Cedric's parents, but must keep the secret at all costs."
   },
   {
@@ -120,7 +120,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB001",
+    "playbookTemplate": "PB0040",
     "description": "Lambug's family are poor fisherman, and she's looking to improve her lot in life."
   },
   {
@@ -151,7 +151,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB001",
+    "playbookTemplate": "PB0050",
     "description": "Zoe was born with the gift of magic, and is unaware of the sheer power she possesses."
   },
   {
@@ -182,7 +182,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB003",
+    "playbookTemplate": "PB0060",
     "description": "Neve's goal in life is to spread the word of love, peace and harmony through magic."
   },
   {
@@ -213,7 +213,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB001",
+    "playbookTemplate": "PB0070",
     "description": "Titus is totally a human, with real human skin and hair and everything."
   },
   {
@@ -244,7 +244,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB001",
+    "playbookTemplate": "PB0080",
     "description": "Troy is a magician's apprentice, looking to make a name for himself."
   },
   {
@@ -275,7 +275,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB001",
+    "playbookTemplate": "PB0090",
     "description": "Alok comes from a wealthy family, and enjoys stealing worthless items from the poor."
   },
   {
@@ -306,7 +306,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB001",
+    "playbookTemplate": "PB0100",
     "description": "Grogmar has a long list of offenses, and is hoping they don't catch up with him."
   },
   {
@@ -337,7 +337,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB001",
+    "playbookTemplate": "PB0110",
     "description": "Revere has nothing to prove, because she knows the truth: she can do anything."
   },
   {
@@ -368,7 +368,7 @@
     "slot7Type": [
       "Trinkets"
     ],
-    "playbook": "PB001",
+    "playbookTemplate": "PB0120",
     "description": "Caeda uses both her charm and charisma to get almost anything she wants."
   }
 ]

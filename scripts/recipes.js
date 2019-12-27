@@ -136,7 +136,7 @@ class Item{
         return this.craftTime * MonsterHall.lineIncrease(this.type,0);
     }
     masteryCost() {
-        const amt = Math.max(100,1000-9*this.craftCount);
+        const amt = Math.max(this.minMastery,this.maxMastery-this.reductionMastery*this.craftCount);
         const material = this.mcost ? Object.keys(this.mcost)[0] : "M201";
         return new idAmt(material,amt);
     }

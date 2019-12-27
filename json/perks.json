@@ -79,32 +79,19 @@
   },
   {
     "id": "AL1007",
-    "title": "Fourth Slot",
-    "description": "Unlocks the fourth crafting slot.",
-    "category": "Crafting",
-    "order": 7,
-    "goldCost": 4000,
-    "mat": "M102",
-    "matAmt": 25,
-    "type": "craft",
-    "subtype": null,
-    "icon": "<i class=\"fas fa-drafting-compass\"></i>"
-  },
-  {
-    "id": "AL1008",
     "title": "Wear Sunscreen",
     "description": "Defeating this difficult enemy will unlock more recipes.",
     "category": "Crafting",
     "order": 8,
     "goldCost": 4000,
-    "mat": "M103",
+    "mat": "M102",
     "matAmt": 25,
     "type": "boss",
     "subtype": "D011",
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
-    "id": "AL1009",
+    "id": "AL1008",
     "title": "Feline Fine",
     "description": "Unlock The Cat's Meow worker: Squeaks",
     "category": "Crafting",
@@ -115,6 +102,19 @@
     "type": "worker",
     "subtype": "WN202",
     "icon": "<i class=\"fas fa-paw\"></i>"
+  },
+  {
+    "id": "AL1009",
+    "title": "Fourth Slot",
+    "description": "Unlocks the fourth crafting slot.",
+    "category": "Crafting",
+    "order": 7,
+    "goldCost": 4000,
+    "mat": "M102",
+    "matAmt": 25,
+    "type": "craft",
+    "subtype": null,
+    "icon": "<i class=\"fas fa-drafting-compass\"></i>"
   },
   {
     "id": "AL1010",
@@ -157,19 +157,6 @@
   },
   {
     "id": "AL1013",
-    "title": "Jackslot",
-    "description": "Unlocks the fifth crafting slot.",
-    "category": "Crafting",
-    "order": 13,
-    "goldCost": 20000,
-    "mat": "M103",
-    "matAmt": 25,
-    "type": "craft",
-    "subtype": null,
-    "icon": "<i class=\"fas fa-drafting-compass\"></i>"
-  },
-  {
-    "id": "AL1014",
     "title": "He Who Walks Softly",
     "description": "Defeating this difficult enemy will unlock more recipes.",
     "category": "Crafting",
@@ -180,6 +167,19 @@
     "type": "boss",
     "subtype": "D012",
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
+  },
+  {
+    "id": "AL1014",
+    "title": "Jackslot",
+    "description": "Unlocks the fifth crafting slot.",
+    "category": "Crafting",
+    "order": 13,
+    "goldCost": 20000,
+    "mat": "M103",
+    "matAmt": 25,
+    "type": "craft",
+    "subtype": null,
+    "icon": "<i class=\"fas fa-drafting-compass\"></i>"
   },
   {
     "id": "AL1015",

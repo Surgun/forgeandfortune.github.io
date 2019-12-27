@@ -138,8 +138,8 @@ class B1010 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    isChilled() {
-        return true;
+    onTick() {
+        this.target.takeDamage(this.power);
     }
 }
 
@@ -147,8 +147,8 @@ class B1020 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    onTick() {
-        this.target.takeDamage(this.power);
+    isChilled() {
+        return true;
     }
 }
 

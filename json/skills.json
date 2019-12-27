@@ -102,12 +102,12 @@
   {
     "id": "SM201",
     "name": "Purge",
-    "description": "Removes all buffs from enemies and damages for each buff removed",
+    "description": "Removes all debuffs from allies and damages for each debuff removed",
     "icon": "<i class=\"fas fa-broom\"></i>",
     "targetEnemies": true,
     "powMod": 1,
     "techMod": 0,
-    "bText": "#ATTACKER# purges the enemy team of buffs"
+    "bText": "#ATTACKER# purges his allies of buffs and lets out an attack for #DAMAGE# damage"
   },
   {
     "id": "SM300",

@@ -180,8 +180,15 @@ class Combatant {
     buffCount() {
         return this.buffs.length;
     }
+    debuffCount() {
+        return this.buffs.filter(b => b.type === "debuff").length;
+    }
     removeBuffs() {
         this.buffs = [];
+        this.hp = Math.min(this.hp,this.maxHP());
+    }
+    removeDebuffs() {
+        this.buffs = this.buffs.filter(b => b.type === "debuff");
         this.hp = Math.min(this.hp,this.maxHP());
     }
     isChilled() {

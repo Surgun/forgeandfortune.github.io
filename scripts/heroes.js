@@ -27,7 +27,7 @@ class floorTracker {
         if (id === "D001") return this.d001;
         if (id === "D002") return this.d002;
         if (id === "D003") return this.d003;
-        return 0;
+        return 1;
     }
 }
 

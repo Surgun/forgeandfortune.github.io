@@ -26,7 +26,6 @@ class Buff {
         save.stacks = this.stacks;
         save.power = this.power;
         save.id = this.id;
-        console.log(save);
         return save;
     }
     loadSave(save) {
@@ -74,7 +73,6 @@ const BuffManager = {
     },
     generateSaveBuff(buffID,target,power) {
         const buffTemplate = this.idToBuff(buffID);
-        console.log(buffID,target,power);
         const buff = new BuffLookup[buffID](buffTemplate,target,power);
         return buff;
     }

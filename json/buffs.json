@@ -1,6 +1,6 @@
 [
   {
-    "id": "B0003",
+    "id": "B0010",
     "name": "Armor Up",
     "icon": "<i class=\"fas fa-shield-cross\"></i>",
     "maxStack": 2,
@@ -10,7 +10,17 @@
     "type": "buff"
   },
   {
-    "id": "B0004",
+    "id": "B0020",
+    "name": "Toughen",
+    "icon": "<i class=\"fas fa-helmet-battle\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "B1010",
     "name": "Chilled",
     "icon": "<i class=\"fas fa-snowflake\"></i>",
     "maxStack": 1,
@@ -20,63 +30,33 @@
     "type": "debuff"
   },
   {
-    "id": "B0007",
-    "name": "Poison Stack",
-    "icon": "<i class=\"fas fa-flask-poison\"></i>",
+    "id": "B1020",
+    "name": "Meteor",
+    "icon": "<i class=\"fas fa-fire\"></i>",
     "maxStack": 1,
     "stackCast": 1,
-    "onCast": "stack",
+    "onCast": "refresh",
     "decrease": "never",
     "type": "debuff"
   },
   {
-    "id": "B0008",
-    "name": "Healing Aura",
-    "icon": "<i class=\"fas fa-praying-hands\"></i>",
-    "maxStack": 4,
-    "stackCast": 4,
+    "id": "B2010",
+    "name": "Inspire",
+    "icon": "<i class=\"fas fa-lightbulb\"></i>",
+    "maxStack": 2,
+    "stackCast": 2,
     "onCast": "refresh",
-    "decrease": "onTurn",
+    "decrease": "onHitting",
     "type": "buff"
   },
   {
-    "id": "B0009",
+    "id": "BM200",
     "name": "Translucent",
     "icon": "<i class=\"fas fa-ghost\"></i>",
     "maxStack": 1,
     "stackCast": 1,
     "onCast": "refresh",
     "decrease": "onHit",
-    "type": "buff"
-  },
-  {
-    "id": "B0011",
-    "name": "Needles",
-    "icon": "<i class=\"fab fa-hornbill\"></i>",
-    "maxStack": 4,
-    "stackCast": 4,
-    "onCast": "refresh",
-    "decrease": "onHit",
-    "type": "buff"
-  },
-  {
-    "id": "B0012",
-    "name": "Lethargy",
-    "icon": "<i class=\"fas fa-tired\"></i>",
-    "maxStack": 3,
-    "stackCast": 1,
-    "onCast": "stack",
-    "decrease": "onHitting",
-    "type": "debuff"
-  },
-  {
-    "id": "B0016",
-    "name": "Invigorate",
-    "icon": "<i class=\"fas fa-dumbbell\"></i>",
-    "maxStack": 3,
-    "stackCast": 1,
-    "onCast": "stack",
-    "decrease": "onHitting",
     "type": "buff"
   }
 ]

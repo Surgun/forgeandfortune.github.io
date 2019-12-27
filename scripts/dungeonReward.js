@@ -14,9 +14,8 @@ function showDungeonReward(dungeonID) {
     const dungeon = DungeonManager.dungeonByID(dungeonID);
     const state = dungeon.completeState;
     if (dungeon.status !== DungeonStatus.COLLECT) return;
-    if (dungeon.type === "boss" && state === "partyDead") $dreHeader.html(`${dungeon.name} Failed`);
-    else if (state === "abandoned") $dreHeader.html(`${dungeon.name} Abandoned`);
-    else $dreHeader.html(`${dungeon.name} Complete!`);
+    if (dungeon.floorComplete()) $dreHeader.html(`${dungeon.name} Complete!`);
+    else $dreHeader.html(`${dungeon.name} Failed`);
     $dreTeam.empty();
     dungeon.party.heroes.forEach(hero => {
         const d1 = $("<div/>").addClass("dreTeamHero").appendTo($dreTeam);
@@ -38,6 +37,7 @@ const $dreRepeat = $("#dreRepeat");
 $(document).on('click', "#dreCollect", (e) => {
     const dungeonID = DungeonManager.dungeonView;
     const dungeon = DungeonManager.dungeonByID(dungeonID);
+    if (dungeon.floorComplete()) DungeonManager.completeBoss(dungeonID);
     dungeon.resetDungeon();
     openTab("dungeonsTab");
 })

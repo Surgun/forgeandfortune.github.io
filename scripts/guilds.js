@@ -379,6 +379,7 @@ function refreshAllRecipeMastery() {
 }
 
 function refreshRecipeMastery(guild) {
+    guild.repopulateUnmastered();
     const $guildNotice = $(`#${guild.id}Mastery .guildMasteryNotice`);
     const $guildMasteryContainer = $(`#${guild.id}Mastery .guildMasteryCardContainer`)
     $guildNotice.empty();

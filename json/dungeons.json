@@ -3,104 +3,91 @@
     "id": "D001",
     "name": "Groovy Grove",
     "bannedHero": [],
-    "seed": 784,
-    "type": "regular",
-    "eventLetter": "E014"
+    "seed": 1,
+    "type": "regular"
   },
   {
     "id": "D002",
     "name": "Spooky Spot",
     "bannedHero": [],
-    "seed": 7576,
-    "type": "regular",
-    "eventLetter": "E015"
+    "seed": 2,
+    "type": "regular"
   },
   {
     "id": "D003",
     "name": "Creepy Crag",
     "bannedHero": [],
-    "seed": 7236,
-    "type": "regular",
-    "eventLetter": "E016"
+    "seed": 3,
+    "type": "regular"
   },
   {
     "id": "D010",
     "name": "Loathing Oak",
     "bannedHero": [],
-    "seed": 0,
-    "type": "boss",
-    "eventLetter": "E013"
+    "seed": 4,
+    "type": "boss"
   },
   {
     "id": "D011",
     "name": "Lost Phoenix",
     "bannedHero": [],
-    "seed": 0,
-    "type": "boss",
-    "eventLetter": "E013"
+    "seed": 5,
+    "type": "boss"
   },
   {
     "id": "D012",
     "name": "Blue Knight",
     "bannedHero": [],
-    "seed": 0,
-    "type": "boss",
-    "eventLetter": "E013"
+    "seed": 6,
+    "type": "boss"
   },
   {
     "id": "D013",
     "name": "Lich Suit Lawrence",
     "bannedHero": [],
-    "seed": 0,
-    "type": "boss",
-    "eventLetter": "E013"
+    "seed": 7,
+    "type": "boss"
   },
   {
     "id": "D014",
     "name": "Beclutcher",
     "bannedHero": [],
-    "seed": 0,
-    "type": "boss",
-    "eventLetter": "E013"
+    "seed": 8,
+    "type": "boss"
   },
   {
     "id": "D015",
     "name": "Aggressive Oak",
     "bannedHero": [],
-    "seed": 0,
-    "type": "boss",
-    "eventLetter": "E013"
+    "seed": 9,
+    "type": "boss"
   },
   {
     "id": "D016",
     "name": "Enraged Phoenix",
     "bannedHero": [],
-    "seed": 0,
-    "type": "boss",
-    "eventLetter": "E013"
+    "seed": 10,
+    "type": "boss"
   },
   {
     "id": "D017",
     "name": "Melancholy Knight",
     "bannedHero": [],
-    "seed": 0,
-    "type": "boss",
-    "eventLetter": "E013"
+    "seed": 11,
+    "type": "boss"
   },
   {
     "id": "D018",
     "name": "Lawrence The Second",
     "bannedHero": [],
-    "seed": 0,
-    "type": "boss",
-    "eventLetter": "E013"
+    "seed": 12,
+    "type": "boss"
   },
   {
     "id": "D019",
     "name": "Begrasper",
     "bannedHero": [],
-    "seed": 0,
-    "type": "boss",
-    "eventLetter": "E013"
+    "seed": 13,
+    "type": "boss"
   }
 ]

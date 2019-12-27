@@ -564,7 +564,7 @@ function saveUpdate(loadGame) {
                 "seen" : true,
             }
             const dungeonBoss = {
-                "D010" : "BB010",
+                "D010" : "B901",
                 "D011" : "BB011",
                 "D012" : "BB012",
                 "D013" : "BB013",

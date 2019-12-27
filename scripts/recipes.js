@@ -182,7 +182,7 @@ const recipeList = {
         ResourceManager.deductMoney(recipe.goldCost);
         recipe.owned = true;
         Notifications.buyRecipe(recipe.name);
-        refreshRecipeMastery(recipe.guildUnlock);
+        refreshRecipeMastery(GuildManager.idToGuild(recipe.guildUnlock));
         refreshRecipeFilters();
         checkCraftableStatus();
         refreshAllSales();

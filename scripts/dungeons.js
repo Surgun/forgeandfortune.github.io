@@ -111,13 +111,11 @@ class Dungeon {
             //take a turn
             this.buffTick("onTurn");
             if (this.floorComplete()) {
-                console.log("floor complete");
                 this.nextFloor(refreshLater);
                 this.dungeonTime -= dungeonWaitTime;
                 return;
             }
             if (this.party.isDead()) {
-                console.log("floor failed");
                 this.nextFloor(refreshLater,true);
                 this.dungeonTime -= dungeonWaitTime;
                 return;
@@ -168,6 +166,10 @@ class Dungeon {
         return new idAmt(floor.mat,floor.matAmt)
     }
     addRewards() {
+        if (this.type === "boss") {
+            this.bossesBeat.push(this.id);
+            return
+        };
         const rewards = this.getRewards();
         ResourceManager.addMaterial(rewards.id,rewards.amt);
     }
@@ -195,6 +197,7 @@ class Dungeon {
     }
     dungeonComplete() {
         this.status = DungeonStatus.COLLECT;
+        refreshDungeonSelect();
         if (DungeonManager.dungeonView === this.id) showDungeonReward(this.id);
     }
     bossHPStyling() {
@@ -354,11 +357,16 @@ const DungeonManager = {
         });
     },
     killedFirstBoss() {
-        return this.bossesBeat.includes("BB010");
+        return this.bossesBeat.includes("B901");
     },
     abandonAllDungeons() {
         this.dungeons.forEach(dungeon => {
             dungeon.resetDungeon();
         })
+    },
+    completeBoss(id) {
+        this.bossesBeat.push(id);
+        refreshAllOrders();
+        refreshAllSales();
     }
 };

@@ -192,7 +192,7 @@ SkillManager.skillEffects['SM201'] = function (combatParams) {
 
 SkillManager.skillEffects['SM300'] = function (combatParams) {
     //Ray Gun - Dusty Alien
-    const targets = combatParams.getTarget();
+    const targets = combatParams.getTarget(TargetType.FIRST);
     targets.forEach(target => {
         target.takeAttack(combatParams);
     });
@@ -211,7 +211,7 @@ SkillManager.skillEffects['SM301'] = function (combatParams) {
  //    BOSS SKILLS   //
 //------------------//
 
-SkillManager.skillEffects['SM301'] = function (combatParams) {
+SkillManager.skillEffects['SM901'] = function (combatParams) {
     //Tree Wallop - Loathing Oak
     const targets = combatParams.getTarget(TargetType.SECOND);
     targets.forEach(target => {

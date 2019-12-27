@@ -39,7 +39,7 @@ class Party {
             hero.hp = hero.maxHP();
             hero.resetPlaybookPosition();
             hero.removeBuffs();
-        })
+        });
     }
     setMaxFloor(id,floor) {
         this.heroes.forEach(h => h.setMax(id,floor));

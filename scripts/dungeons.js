@@ -10,7 +10,7 @@ class TurnOrder {
         this.nextNotDead();
     }
     nextNotDead() {
-        while (this.order[this.position].dead()) this.position++;
+        while (this.order[this.position].dead()) this.position += 1;
     }
     getOrder() {
         return this.order;
@@ -111,11 +111,13 @@ class Dungeon {
             //take a turn
             this.buffTick("onTurn");
             if (this.floorComplete()) {
+                console.log("floor complete");
                 this.nextFloor(refreshLater);
                 this.dungeonTime -= dungeonWaitTime;
                 return;
             }
             if (this.party.isDead()) {
+                console.log("floor failed");
                 this.nextFloor(refreshLater,true);
                 this.dungeonTime -= dungeonWaitTime;
                 return;
@@ -173,10 +175,9 @@ class Dungeon {
         if (this.floorCount > 0 && this.type === "boss") return this.dungeonComplete(previousFloor);
         if (!previousFloor && this.floorCount > 0) {
             this.addRewards();
-            this.party.setMaxFloor(this.id,this.floorCount)
+            this.party.setMaxFloor(this.id,this.floorCount);
         }
         if (previousFloor) {
-            //this.resetDungeon();
             this.floorCount = Math.max(1,this.floorCount-1);
             this.toggleProgress(false);
         }
@@ -185,8 +186,8 @@ class Dungeon {
         const floor = FloorManager.getFloor(this.id, this.floorCount);
         this.floorID = floor.id;
         this.mobs = MobManager.generateDungeonFloor(floor,this.floorCount,this.bossDifficulty());
-        this.order = new TurnOrder(this.party.heroes,this.mobs);
         this.party.resetForFloor();
+        this.order = new TurnOrder(this.party.heroes,this.mobs);
         if (refreshLater) return;
         initiateDungeonFloor(this.id);
         $("#dsb"+this.id).html(`${this.name} - ${this.floorCount}`);
@@ -271,7 +272,6 @@ const DungeonManager = {
         this.dungeons.forEach(dungeon => {
             dungeon.addTime(t);
         });
-
     },
     dungeonStatus(dungeonID) {
         return this.dungeons.find(d=>d.id===dungeonID).status;

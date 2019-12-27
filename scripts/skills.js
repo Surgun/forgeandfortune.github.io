@@ -46,7 +46,6 @@ class Skill {
 class Playbook {
     constructor (pbTemplate) {
         Object.assign(this, pbTemplate);
-        console.log(pbTemplate);
         this.skills = [
             SkillManager.idToSkill(pbTemplate.skill1),
             SkillManager.idToSkill(pbTemplate.skill2),
@@ -174,7 +173,7 @@ SkillManager.skillEffects['SM200'] = function (combatParams) {
     //Translucent - Blinkie
     const targets = combatParams.getTarget(TargetType.SELF);
     targets.forEach(target => {
-        BuffManager.generateBuff('B0009',target,combatParams.power);
+        BuffManager.generateBuff('BM200',target,combatParams.power);
     });
 }
 

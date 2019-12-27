@@ -91,13 +91,12 @@ class Item{
     }
     attemptMastery() {
         if (this.isMastered()) return;
-        const material = (this.mcost) ? Object.keys(this.mcost)[0] : "M201";
-        const amt = Math.max(100,1000-9*this.craftCount);
-        if (ResourceManager.materialAvailable(material) < amt) {
+        const masteryCost = this.masteryCost();
+        if (ResourceManager.materialAvailable(masteryCost.id) < masteryCost.amt) {
             Notifications.recipeMasterNeedMore();
             return;
         }
-        ResourceManager.addMaterial(material,-amt);
+        ResourceManager.addMaterial(masteryCost.id,-masteryCost.amt);
         this.mastered = true;
         Notifications.masterRecipe(this.name);
         initializeActionSlots();
@@ -183,6 +182,7 @@ const recipeList = {
         ResourceManager.deductMoney(recipe.goldCost);
         recipe.owned = true;
         Notifications.buyRecipe(recipe.name);
+        refreshRecipeMastery(recipe.guildUnlock);
         refreshRecipeFilters();
         checkCraftableStatus();
         refreshAllSales();

@@ -26,19 +26,11 @@ class Buff {
         save.stacks = this.stacks;
         save.power = this.power;
         save.id = this.id;
+        console.log(save);
         return save;
     }
     loadSave(save) {
         this.stacks = save.stacks;
-        this.power = save.power;
-    }
-    buffCache() {
-        return {
-            id : this.id,
-            turns : this.turns,
-            stacks : this.stacks,
-            icon : this.icon,
-        };
     }
     buffTick(type) {
         if (type !== this.decrease) return;
@@ -62,7 +54,6 @@ class Buff {
 
 const BuffManager = {
     buffDB : [],
-    buffIDCount : 1,
     addBuffTemplate(buff) {
         this.buffDB.push(buff);
     },
@@ -77,17 +68,14 @@ const BuffManager = {
             return;
         }
         const buffTemplate = this.idToBuff(buffID);
-        const buff = new BuffLookup[buffID](buffTemplate,target,power);        
-        buff.buffInstanceID = this.buffIDCount;
-        this.buffIDCount += 1;
+        const buff = new BuffLookup[buffID](buffTemplate,target,power);
         target.addBuff(buff);
         BuffRefreshManager.addBuff(buff,target);
     },
     generateSaveBuff(buffID,target,power) {
         const buffTemplate = this.idToBuff(buffID);
+        console.log(buffID,target,power);
         const buff = new BuffLookup[buffID](buffTemplate,target,power);
-        buff.buffInstanceID = this.buffIDCount;
-        this.buffIDCount += 1;
         return buff;
     }
 }

@@ -218,7 +218,9 @@ function dbEnable() {
             $("<button/>").addClass("trinketUnlockOption dbActionButton").html("Add Trinkets").appendTo(d1j);
         const d1k = $("<div/>");
             $("<button/>").addClass("testRealmUnlockOption dbActionButton").html("Test Dungeon").appendTo(d1k);
-        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g,d1h,d1i,d1j,d1k);
+        const d1l = $("<div/>");
+            $("<button/>").addClass("timewarpOption dbActionButton").html("Time Warp").appendTo(d1l);
+        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g,d1h,d1i,d1j,d1k,d1l);
 
     const d4 = $("<div/>").addClass("addItemContainer dbActionContainer");
         const d4a = $("<div/>").addClass("addItemTitle").html("Add Item to Inventory");
@@ -305,6 +307,10 @@ $(document).on('click', '.trinketUnlockOption', (e) => {
 
 $(document).on('click', '.testRealmUnlockOption', (e) => {
     devtools.testRealm();
+})
+
+$(document).on('click', '.timewarpOption', (e) => {
+    devtools.timeWarp();
 })
 
 $(document).on('click', '.addGoldBtn', (e) => {

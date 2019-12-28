@@ -126,5 +126,8 @@ const devtools = {
         DungeonManager.unlockDungeon("D004");
         DungeonManager.partySize = 4;
         refreshDungeonSelect();
+    },
+    timeWarp() {
+        player.lastTime -= 28800000;
     }
 }

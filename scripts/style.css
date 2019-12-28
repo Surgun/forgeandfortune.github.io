@@ -498,15 +498,19 @@ p.hamster {
 }
 
 .inventoryItemRarity.RT1 {
-    color: rgb(0, 255, 0);
+    color: #fff;
+}
+
+.inventoryItemRarity.RT1 {
+    color: rgb(44, 255, 89);
 }
 
 .inventoryItemRarity.RT2 {
-    color: rgb(0, 132, 255);
+    color: rgb(8, 173, 255);
 }
 
 .inventoryItemRarity.RT3 {
-    color: rgb(183, 0, 255);
+    color: rgb(255, 79, 167);
 }
 
 .inventoryProps {
@@ -8644,6 +8648,22 @@ span.beta-tag {
 .tooltipStat {
     display: inline-block;
     margin: 5px 5px 0 0;
+}
+
+.tooltip-item_common {
+    color: #fff;
+}
+
+.tooltip-item_good {
+    color: rgb(44, 255, 89);
+}
+
+.tooltip-item_great {
+    color: rgb(8, 173, 255);
+}
+
+.tooltip-item_epic {
+    color: rgb(255, 79, 167);
 }
 
 /* End Tooltips */

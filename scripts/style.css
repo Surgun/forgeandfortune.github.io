@@ -503,11 +503,23 @@ p.hamster {
 }
 
 .inventoryItemRarity.RT0 > i:before {
-    display: none;  
+    opacity: 0.25; 
+}
+
+.inventoryItemRarity.RT0 > i:after {
+    opacity: 0; 
 }
 
 .inventoryItemRarity.RT1 {
     color: rgb(44, 255, 89);
+}
+
+.inventoryItemRarity.RT1 > i:before {
+    transform: scale(1.25);
+}
+
+.inventoryItemRarity.RT1 > i:after {
+    opacity: 0;
 }
 
 .inventoryItemRarity.RT2 {

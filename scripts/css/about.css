@@ -138,7 +138,8 @@ nav {
 }
 
 .user-card .user-pic.jakerson {
-    background: center no-repeat / contain url(/images/userpics/staff/akerson.png);
+    background-image: url(/images/userpics/staff/akerson.png);
+    background-size: contain;
 }
 
 .user-card .user-pic.richard {

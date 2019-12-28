@@ -101,7 +101,7 @@ class itemContainer {
         return Math.floor((flat * miscLoadedValues.rarityMod[this.rarity] + Math.ceil(scale * this.scale)) * (1+0.05*(this.sharp+sharpAdd)));
     }
     goldValueFormatted() {
-        return ResourceManager.materialIcon("M001") + "&nbsp;" + formatToUnits(this.goldValue(),2);
+        return `${ResourceManager.materialIcon("M001")} <span class="goldValue">${formatToUnits(this.goldValue(),2)}</span>`;
     }
     goldValue() {
         return Math.round(this.item.value * (this.rarity+1) * (1+this.sharp*0.1));
@@ -408,10 +408,10 @@ function refreshInventory() {
             return;
         }
         itemdiv.addClass("R"+item.rarity)
-        const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
+        const itemName = $("<div/>").addClass("inventoryItemName").attr({"id": item.id, "r": item.rarity}).html(item.picName());
         const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${item.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[item.rarity].toLowerCase()}`}).html(miscIcons.rarity);
         const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(item.goldValue())}).html(item.goldValueFormatted());
-        const itemLevel = $("<div/>").addClass("inventoryItemLevel").html(item.itemLevel());
+        const itemLevel = $("<div/>").addClass("inventoryItemLevel tooltip").attr({"data-tooltip": "item_level"}).html(item.itemLevel());
         if (item.goldValue() === 0) {
             itemCost.hide();
         }
@@ -421,11 +421,15 @@ function refreshInventory() {
         const itemProps = $("<div/>").addClass("inventoryProps");
         for (const [stat, val] of Object.entries(item.itemStat(false))) {
             if (val === 0) continue;
-            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
         };
         const actionBtns = $("<div/>").addClass("inventoryButtons");
         if (item.item.recipeType === "normal" || item.item.recipeType === "trinket") {
             $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip").appendTo(actionBtns);
+        }
+        if (item.item.recipeType === "trinket") {
+            itemLevel.attr({"data-tooltip": "star_rating"});
+            itemRarity.hide();
         }
         if (item.goldValue() > 0) {
             $("<div/>").addClass('inventorySell').attr("id",i).html("Sell").appendTo(actionBtns);
@@ -454,12 +458,16 @@ function gearEquipFromInventory(invID) {
     itemdiv.addClass("R"+equipContainerTarget.rarity)
     const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
     const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${equipContainerTarget.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[equipContainerTarget.rarity].toLowerCase()}`}).html(miscIcons.rarity);
-    const itemLevel = $("<div/>").addClass("equipItemLevel").html(equipContainerTarget.itemLevel());
+    const itemLevel = $("<div/>").addClass("equipItemLevel tooltip").attr({"data-tooltip": "item_level"}).html(equipContainerTarget.itemLevel());
     const itemProps = $("<div/>").addClass("equipItemProps");
     for (const [stat, val] of Object.entries(equipContainerTarget.itemStat(false))) {
         if (val === 0) continue;
-        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
+        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
     };
+    if (equipContainerTarget.item.recipeType === "trinket") {
+        itemLevel.attr({"data-tooltip": "star_rating"});
+        itemRarity.hide();
+    }
     itemdiv.append(itemName,itemRarity,itemLevel,itemProps);
     $ietEquip.html(itemdiv);
     const heroBlocks = HeroManager.slotsByItem(item);
@@ -480,8 +488,8 @@ function gearEquipFromInventory(invID) {
                 if (deltaStat === 0 && val === 0) continue;
                 same = false;
                 const d4a = $('<div/>').addClass('heroEquipBlockEquipStat tooltip').attr("data-tooltip", stat).appendTo(d4);
-                if (deltaStat > 0) d4a.addClass("hebPositive").html(`${miscIcons[stat]}${val} (+${deltaStat})`);
-                else if (deltaStat < 0) d4a.addClass("hebNegative").html(`${miscIcons[stat]}${val} (${deltaStat})`);
+                if (deltaStat > 0) d4a.addClass("hebPositive").html(`${miscIcons[stat]} <span class="statValue">${val} (+${deltaStat})</span>`);
+                else if (deltaStat < 0) d4a.addClass("hebNegative").html(`${miscIcons[stat]} <span class="statValue">${val} (${deltaStat})</span>`);
                 else d4a.html(`${miscIcons[stat]}${val}`);
             }
             if (same) $("<div/>").addClass("heroEquipBlockEquipStat").html("No Change").appendTo(d4);

@@ -14,6 +14,90 @@
     "type": "static"
   },
   {
+    "id": "recipe_desc",
+    "title": "#name#",
+    "description": "#description#",
+    "icon": "/images/recipes/#type#/#id#.png",
+    "type": "recipe"
+  },
+  {
+    "id": "recipe_gold",
+    "title": "#goldComma# Gold",
+    "description": "The amount of gold this recipe is worth.",
+    "icon": "/images/resources/M001.png",
+    "type": "recipe"
+  },
+  {
+    "id": "gold_value",
+    "title": "#value# Gold",
+    "description": "Standard currency used for purchases.",
+    "icon": "/images/resources/M001.png",
+    "type": "value"
+  },
+  {
+    "id": "crafting_time",
+    "title": "Crafting Time",
+    "description": "The amount of time needed to craft this recipe.",
+    "icon": "<i class=\"fas fa-clock\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "fuse_time",
+    "title": "Fuse Time",
+    "description": "The amount of time needed to complete the fusion of this recipe.",
+    "icon": "<i class=\"fas fa-clock\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "recipe_level",
+    "title": "Recipe Level",
+    "description": "This is the level of this recipe.",
+    "icon": null,
+    "type": "static"
+  },
+  {
+    "id": "item_level",
+    "title": "Item Level",
+    "description": "This is the level of this item.",
+    "icon": null,
+    "type": "static"
+  },
+  {
+    "id": "star_rating",
+    "title": "Star Rating",
+    "description": "Increases the stats of this item.",
+    "icon": "<i class=\"fas fa-star\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "rarity_common",
+    "title": "Common Rarity",
+    "description": "This item is of <span class=\"tooltip-item_common\">Common</span> rarity.",
+    "icon": "<i class=\"fad fa-diamond\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "rarity_good",
+    "title": "Good Rarity",
+    "description": "This item is of <span class=\"tooltip-item_good\">Good</span> rarity.",
+    "icon": "<i class=\"fad fa-diamond\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "rarity_great",
+    "title": "Great Rarity",
+    "description": "This item is of <span class=\"tooltip-item_great\">Great</span> rarity.",
+    "icon": "<i class=\"fad fa-diamond\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "rarity_epic",
+    "title": "Epic Rarity",
+    "description": "This item is of <span class=\"tooltip-item_epic\">Epic</span> rarity.",
+    "icon": "<i class=\"fad fa-diamond\"></i>",
+    "type": "static"
+  },
+  {
     "id": "hp",
     "title": "Health",
     "description": "The amount of damage an entity can sustain before being downed.",
@@ -32,6 +116,83 @@
     "title": "Technique",
     "description": "The amount of damage an entity can deal with special attacks.",
     "icon": "<i class=\"fas fa-book-spells statTECH\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "material_desc",
+    "title": "#name#",
+    "description": "#description#</br>You have #amt#.",
+    "icon": "/images/resources/#id#.png",
+    "type": "material"
+  },
+  {
+    "id": "material_desc_mastered",
+    "title": "#name# Cost Removed",
+    "description": "Mastering this recipe has removed this material cost.",
+    "icon": "/images/resources/#id#.png",
+    "type": "material"
+  },
+  {
+    "id": "guild_worker",
+    "title": "#name#",
+    "description": "Represents a worker for the guild.",
+    "icon": "#icon#",
+    "type": "guild"
+  },
+  {
+    "id": "worker_desc",
+    "title": "#name#",
+    "description": "#description#",
+    "icon": null,
+    "type": "worker"
+  },
+  {
+    "id": "skill_desc",
+    "title": "#name#",
+    "description": "#description#</br><span class=\"tooltipStat tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span> <span class=\"tooltipStat tooltipSPower\"><i class=\"fas fa-book-spells statTECH\"></i> #techPercent#</span>",
+    "icon": "#icon#",
+    "type": "skill"
+  },
+  {
+    "id": "perk_desc",
+    "title": "#title#",
+    "description": "#description#",
+    "icon": "#icon#",
+    "type": "perk"
+  },
+  {
+    "id": "autosell_none",
+    "title": "Auto-Sell Setting: None",
+    "description": "You are currently not autoselling any qualities of this item.",
+    "icon": null,
+    "type": "static"
+  },
+  {
+    "id": "autosell_common",
+    "title": "Auto-Sell Setting: Common",
+    "description": "You are currently autoselling common quality for this item.",
+    "icon": null,
+    "type": "static"
+  },
+  {
+    "id": "autosell_good",
+    "title": "Auto-Sell Setting: Good and below",
+    "description": "You are currently autoselling good and common quality for this item.",
+    "icon": null,
+    "type": "static"
+  },
+  {
+    "id": "autosell_great",
+    "title": "Auto-Sell Setting: Great and below",
+    "description": "You are currently autoselling great, good and common quality for this item.",
+    "icon": null,
+    "type": "static"
+  },
+  {
+    "id": "autosell_epic",
+    "title": "Auto-Sell Setting: All",
+    "description": "You are currently autoselling all qualities (common, good, great and epic) of this item.",
+    "icon": null,
     "type": "static"
   },
   {
@@ -74,146 +235,6 @@
     "title": "Development Options",
     "description": "Development and debugging options for testing various mechanics and features.",
     "icon": "<i class=\"fas fa-bug\"></i>",
-    "type": "static"
-  },
-  {
-    "id": "crafting_time",
-    "title": "Crafting Time",
-    "description": "The amount of time needed to craft this recipe.",
-    "icon": "<i class=\"fas fa-clock\"></i>",
-    "type": null
-  },
-  {
-    "id": "recipe_gold",
-    "title": "#goldComma# Gold",
-    "description": "The amount of gold this recipe is worth.",
-    "icon": "/images/resources/M001.png",
-    "type": "recipe"
-  },
-  {
-    "id": "recipe_desc",
-    "title": "#name#",
-    "description": "#description#",
-    "icon": "/images/recipes/#type#/#id#.png",
-    "type": "recipe"
-  },
-  {
-    "id": "fuse_time",
-    "title": "Fuse Time",
-    "description": "The amount of time needed to complete the fusion of this recipe.",
-    "icon": "<i class=\"fas fa-clock\"></i>",
-    "type": null
-  },
-  {
-    "id": "material_desc",
-    "title": "#name#",
-    "description": "#description#</br>You have #amt#.",
-    "icon": "/images/resources/#id#.png",
-    "type": "material"
-  },
-  {
-    "id": "material_desc_mastered",
-    "title": "#name# Cost Removed",
-    "description": "Mastering this recipe has removed this material cost.",
-    "icon": "/images/resources/#id#.png",
-    "type": "material"
-  },
-  {
-    "id": "guild_worker",
-    "title": "#name#",
-    "description": "Represents a worker for the guild.",
-    "icon": "#icon#",
-    "type": "guild"
-  },
-  {
-    "id": "autosell_none",
-    "title": "Auto-Sell Setting: None",
-    "description": "You are currently not autoselling any qualities of this item.",
-    "icon": null,
-    "type": "static"
-  },
-  {
-    "id": "autosell_common",
-    "title": "Auto-Sell Setting: Common",
-    "description": "You are currently autoselling common quality for this item.",
-    "icon": null,
-    "type": "static"
-  },
-  {
-    "id": "autosell_good",
-    "title": "Auto-Sell Setting: Good and below",
-    "description": "You are currently autoselling good and common quality for this item.",
-    "icon": null,
-    "type": "static"
-  },
-  {
-    "id": "autosell_great",
-    "title": "Auto-Sell Setting: Great and below",
-    "description": "You are currently autoselling great, good and common quality for this item.",
-    "icon": null,
-    "type": "static"
-  },
-  {
-    "id": "autosell_epic",
-    "title": "Auto-Sell Setting: All",
-    "description": "You are currently autoselling all qualities (common, good, great and epic) of this item.",
-    "icon": null,
-    "type": "static"
-  },
-  {
-    "id": "worker_desc",
-    "title": "#name#",
-    "description": "#description#",
-    "icon": null,
-    "type": "worker"
-  },
-  {
-    "id": "gold_value",
-    "title": "#value# Gold",
-    "description": "Standard currency used for purchases.",
-    "icon": "/images/resources/M001.png",
-    "type": "value"
-  },
-  {
-    "id": "skill_desc",
-    "title": "#name#",
-    "description": "#description#</br><span class=\"tooltipStat tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span> <span class=\"tooltipStat tooltipSPower\"><i class=\"fas fa-book-spells statTECH\"></i> #techPercent#</span>",
-    "icon": "#icon#",
-    "type": "skill"
-  },
-  {
-    "id": "perk_desc",
-    "title": "#title#",
-    "description": "#description#",
-    "icon": "#icon#",
-    "type": "perk"
-  },
-  {
-    "id": "rarity_common",
-    "title": "Common Rarity",
-    "description": "This item is of <span class=\"tooltip-item_common\">Common</span> rarity.",
-    "icon": "<i class=\"fad fa-diamond\"></i>",
-    "type": "static"
-  },
-  {
-    "id": "rarity_good",
-    "title": "Good Rarity",
-    "description": "This item is of <span class=\"tooltip-item_good\">Good</span> rarity.",
-    "icon": "<i class=\"fad fa-diamond\"></i>",
-    "type": "static"
-  },
-  {
-    "id": "rarity_great",
-    "title": "Great Rarity",
-    "description": "This item is of <span class=\"tooltip-item_great\">Great</span> rarity.",
-    "icon": "<i class=\"fad fa-diamond\"></i>",
-    "type": "static"
-  },
-  {
-    "id": "rarity_epic",
-    "title": "Epic Rarity",
-    "description": "This item is of <span class=\"tooltip-item_epic\">Epic</span> rarity.",
-    "icon": "<i class=\"fad fa-diamond\"></i>",
     "type": "static"
   }
 ]

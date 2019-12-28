@@ -56,7 +56,6 @@ const BattleLog = {
     addEntry(dungeonid,icon,m) {
         if (dungeonid !== DungeonManager.dungeonView) return;
         if (this.log.length >= 25) {
-            console.log("poppin! " + this.log.length)
             this.log.shift();
         }
         this.log.push(`${icon}&nbsp;&nbsp;${m}`);
@@ -184,11 +183,17 @@ class Combatant {
         return this.buffs.filter(b => b.type === "debuff").length;
     }
     removeBuffs() {
+        this.buffs.forEach(buff => {
+            BuffRefreshManager.removeBuff(buff,this);
+        });
         this.buffs = [];
         this.hp = Math.min(this.hp,this.maxHP());
     }
     removeDebuffs() {
-        this.buffs = this.buffs.filter(b => b.type === "debuff");
+        this.buffs.forEach(buff => {
+            if (buff.type === "debuff") BuffRefreshManager.removeBuff(buff,this);
+        });
+        this.buffs = this.buffs.filter(b => b.type !== "debuff");
         this.hp = Math.min(this.hp,this.maxHP());
     }
     isChilled() {

@@ -796,5 +796,17 @@
     "type": "boss",
     "mat": null,
     "matAmt": null
+  },
+  {
+    "id": "F9999",
+    "dungeon": "D004",
+    "minFloor": 1,
+    "maxFloor": 100,
+    "mobs": [
+      "B101"
+    ],
+    "type": "normal",
+    "mat": "M101",
+    "matAmt": 1
   }
 ]

@@ -181,13 +181,13 @@ SkillManager.skillEffects['SM201'] = function (combatParams) {
     //Purge - Earth Shaman
     const targets = combatParams.getTarget(TargetType.ALLALLIES);
     const debuffCount = targets.reduce((a,b) => a + b.debuffCount(),0);
-    console.log(debuffCount);
+    const originalPower = combatParams.power;
     targets.forEach(target => {
         target.removeDebuffs();
     });
     if (debuffCount > 0) {
         const targets2 = combatParams.getTarget(TargetType.FIRST);
-        combatParams.power = combatParams.originalPower * debuffCount;
+        combatParams.power = originalPower * debuffCount;
         targets2.forEach(target => {
             target.takeAttack(combatParams);
         });

@@ -65,9 +65,7 @@ const FloorManager = {
         return this.floors.find(f=>f.id === id);
     },
     getFloor(dungeon,floor) {
-        console.log(dungeon,floor);
         const possibleFloors = this.floors.filter(f => f.dungeon === dungeon && f.minFloor <= floor && f.maxFloor >= floor);
-        console.log(possibleFloors);
         const rand = DungeonSeedManager.getFloorSeed(dungeon,floor);
         return possibleFloors[Math.floor(rand*possibleFloors.length)];
     },

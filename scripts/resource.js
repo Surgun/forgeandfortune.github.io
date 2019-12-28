@@ -49,11 +49,10 @@ const ResourceManager = {
         mat.amt += amt;
         if (mat.id !== "M001") mat.amt = Math.min(mat.amt,1000);
         mat.seen = true;
+        if (ResourceManager.materialsEmpty()) $(".noMaterials").show();
+        else $(".noMaterials").hide();
         if (mat.amt === 0) $("#"+mat.id).hide();
-        else {
-            $(".noMaterials").remove();
-            $("#"+mat.id).show();
-        }
+        else $("#"+mat.id).show();
         $("#amt"+mat.id).html(mat.amt,2);
         $("#dsbr"+mat.id).html(mat.amt);
         refreshTinkerMats();
@@ -114,6 +113,9 @@ const ResourceManager = {
         }
         return this.materials.find(mat => mat.id === matID).amt;
     },
+    materialsEmpty() {
+        return ResourceManager.materials.filter(mat => mat.id !== "M001").every(mat => mat.amt === 0)
+    },
     nameForWorkerSac(mat) {
         const item = recipeList.idToItem(mat);
         if (item === undefined) return this.idToMaterial(mat).name;
@@ -159,18 +161,15 @@ function initializeMats() {
             $materials.append(d);
         }
     })
-    const noMats = $("<div/>").addClass("noMaterials").html("No materials currently in your inventory. Try the dungeons!");
-    $materials.append(noMats);
 }
 
 function hardMatRefresh() {
     //used when we first load in
+    if (ResourceManager.materialsEmpty()) $(".noMaterials").show();
+    else $(".noMaterials").hide();
     ResourceManager.materials.forEach(mat=> {
         if (mat.amt === 0) $("#"+mat.id).hide();
-        else {
-            $(".noMaterials").remove();
-            $("#"+mat.id).show();
-        }
+        else $("#"+mat.id).show();
         $("#amt"+mat.id).html(mat.amt);
         if (mat.id === "M001") {
             $goldSidebarAmt.html(formatToUnits(mat.amt,2));

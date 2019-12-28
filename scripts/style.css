@@ -257,10 +257,6 @@ p.hamster {
     width: 100%;
 }
 
-.equipItemName {
-    margin-bottom: auto;
-}
-
 .inventoryItemName > img, .equipItemName > img, .heroEquipBlockPic {
     padding: 10px;
     height: 56px;
@@ -340,6 +336,10 @@ p.hamster {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+.equipItemProps {
+    margin-bottom: auto;
 }
 
 .inventoryItemValue, .heroEquipBlockEquipStat {

@@ -196,27 +196,29 @@ function dbEnable() {
     const d = $("<button/>").addClass("dbClose").html(`<i class="fas fa-times"></i>`);
 
     const d1 = $("<div/>").addClass("singleActionContainer");
-        const d1a = $("<div/>").addClass("gmContainer");
+        const d1a = $("<div/>");
             $("<button/>").addClass("gmOption dbActionButton").html("God Mode").appendTo(d1a);
-        const d1b = $("<div/>").addClass("heroTestContainer");
+        const d1b = $("<div/>");
             $("<button/>").addClass("heroTestOption dbActionButton").html("Hero Equipment Test").appendTo(d1b);
-        const d1c = $("<div/>").addClass("materialContainer");
+        const d1c = $("<div/>");
             $("<button/>").addClass("materialOption dbActionButton").html("Add Materials").appendTo(d1c);
-        const d1d = $("<div/>").addClass("dmContainer");
+        const d1d = $("<div/>");
             $("<button/>").addClass("dmOption dbActionButton").html("UI / UX Mode").appendTo(d1d);
-        const d1e = $("<div/>").addClass("hyperSpeedContainer");
+        const d1e = $("<div/>");
             $("<button/>").addClass("hyperSpeedOption dbActionButton").html("Hyper Speed").appendTo(d1e);
-        const d1f = $("<div/>").addClass("forceTownContainer");
+        const d1f = $("<div/>");
             $("<button/>").addClass("forceTownOption dbActionButton").html("Unlock Town").appendTo(d1f);
-        const d1g = $("<div>").addClass("dungeonUnlockContainer");
+        const d1g = $("<div>");
             $("<button/>").addClass("dungeonUnlockOption dbActionButton").html("Unlock Dungeons").appendTo(d1g);
-        const d1h = $("<div/>").addClass("heroUnlockContainer");
+        const d1h = $("<div/>");
             $("<button/>").addClass("heroUnlockOption dbActionButton").html("Unlock Heroes").appendTo(d1h);
-        const d1i = $("<div/>").addClass("perkUnlockContainer");
+        const d1i = $("<div/>");
             $("<button/>").addClass("perkUnlockOption dbActionButton").html("Unlock Perks").appendTo(d1i);
-        const d1j = $("<div/>").addClass("trinketUnlockContainer");
+        const d1j = $("<div/>");
             $("<button/>").addClass("trinketUnlockOption dbActionButton").html("Add Trinkets").appendTo(d1j);
-        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g,d1h,d1i,d1j);
+        const d1k = $("<div/>");
+            $("<button/>").addClass("testRealmUnlockOption dbActionButton").html("Test Dungeon").appendTo(d1k);
+        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g,d1h,d1i,d1j,d1k);
 
     const d4 = $("<div/>").addClass("addItemContainer dbActionContainer");
         const d4a = $("<div/>").addClass("addItemTitle").html("Add Item to Inventory");
@@ -300,6 +302,10 @@ $(document).on('click', '.perkUnlockOption', (e) => {
 $(document).on('click', '.trinketUnlockOption', (e) => {
     devtools.addTrinkets();
 });
+
+$(document).on('click', '.testRealmUnlockOption', (e) => {
+    devtools.testRealm();
+})
 
 $(document).on('click', '.addGoldBtn', (e) => {
     const goldAmount = parseInt(document.querySelector(".addGoldInput").value);

@@ -21,6 +21,13 @@
     "type": "regular"
   },
   {
+    "id": "D004",
+    "name": "Test Realm",
+    "bannedHero": [],
+    "seed": 3,
+    "type": "regular"
+  },
+  {
     "id": "D010",
     "name": "Loathing Oak",
     "bannedHero": [],

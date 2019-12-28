@@ -119,5 +119,12 @@ const devtools = {
             i.rerollRatio();
         });
         refreshInventoryPlaces();
+    },
+    testRealm() {
+        HeroManager.heroes.forEach(h=> h.owned = true);
+        initializeHeroList();
+        DungeonManager.unlockDungeon("D004");
+        DungeonManager.partySize = 4;
+        refreshDungeonSelect();
     }
 }

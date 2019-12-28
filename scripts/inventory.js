@@ -158,6 +158,13 @@ const adjective = {
     "003" : "Mystical",
 }
 
+const rarities = {
+    0: "Common",
+    1: "Good",
+    2: "Great",
+    3: "Epic"
+}
+
 function blankItemStat() {
     const stats = {};
     stats[heroStat.pow] = 0;
@@ -402,6 +409,7 @@ function refreshInventory() {
         }
         itemdiv.addClass("R"+item.rarity)
         const itemName = $("<div/>").addClass("inventoryItemName").attr("id",item.id).attr("r",item.rarity).html(item.picName());
+        const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${item.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[item.rarity].toLowerCase()}`}).html(miscIcons.rarity);
         const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(item.goldValue())}).html(item.goldValueFormatted());
         const itemLevel = $("<div/>").addClass("inventoryItemLevel").html(item.itemLevel());
         if (item.goldValue() === 0) {
@@ -425,7 +433,7 @@ function refreshInventory() {
         else {
             $("<div/>").addClass('inventorySell').attr("id",i).html("Discard").appendTo(actionBtns);
         }
-        itemdiv.append(itemName,itemLevel,itemCost,itemProps,actionBtns);
+        itemdiv.append(itemName,itemRarity,itemLevel,itemCost,itemProps,actionBtns);
         $inventory.append(itemdiv);
     });
     $sideInventoryAmt.html(`${Inventory.inventoryCount()}/20`)
@@ -445,13 +453,14 @@ function gearEquipFromInventory(invID) {
     const itemdiv = $("<div/>").addClass("equipItem");
     itemdiv.addClass("R"+equipContainerTarget.rarity)
     const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
+    const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${equipContainerTarget.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[equipContainerTarget.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemLevel = $("<div/>").addClass("equipItemLevel").html(equipContainerTarget.itemLevel());
     const itemProps = $("<div/>").addClass("equipItemProps");
     for (const [stat, val] of Object.entries(equipContainerTarget.itemStat(false))) {
         if (val === 0) continue;
         $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} ${val}`).appendTo(itemProps);
     };
-    itemdiv.append(itemName,itemLevel,itemProps);
+    itemdiv.append(itemName,itemRarity,itemLevel,itemProps);
     $ietEquip.html(itemdiv);
     const heroBlocks = HeroManager.slotsByItem(item);
     heroBlocks.forEach(hb=> {

@@ -200,7 +200,7 @@ p.hamster {
 
 .inventoryCardContainer, .equipItems, .equipHeroes {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     grid-gap: 10px;
     margin: 10px;
     transform-origin: left top;
@@ -442,80 +442,71 @@ p.hamster {
 }
 
 .inventoryItem, .equipItem, .heroEquipBlock {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
+    min-height: 212px;
+    color: var(--text-primary);
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
-    color: var(--text-primary);
-    min-height: 212px;
     overflow: hidden;
 }
 
 .inventoryItemName, .equipItemName {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-align: center;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 10px;
 }
 
-.inventoryItemName > .item-name, .equipItemName > .item-name {
-    margin-top: 15px;
-    width: 100%;
-    -ms-flex-item-align: start;
-        align-self: flex-start;
+.equipItemName {
+    margin-bottom: auto;
+}
+
+.equipItemProps {
+    margin-bottom: auto;
 }
 
 .inventoryItemName > img, .equipItemName > img {
-    display: inline-block;
-    height: 24px;
-    pointer-events: none;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.25);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
 }
 
-.inventorySellButtons {
-    margin-right: 10px;
-}
-
-.inventorySellButtons > div {
-    padding: 3px 15px;
+.inventoryItemName .item-prefix-name, .equipItemName .item-prefix-name {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
     text-align: center;
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 15px;
-    cursor: pointer;
+    border-bottom: 2px solid rgba(255,255,255,0.05);
 }
 
-.inventorySellButtons > div:hover {
-    background-color: rgba(255,255,255,0.25);
+.inventoryItemRarity {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 8px;
+    font-size: 1.5rem;
+    background-color: rgba(255,255,255,.05);
+    border-radius: 10px;
 }
 
-.inventorySellButtons > div + div {
-    margin-top: 3px;
+.inventoryItemRarity.RT1 {
+    color: rgb(0, 255, 0);
+}
+
+.inventoryItemRarity.RT2 {
+    color: rgb(0, 132, 255);
+}
+
+.inventoryItemRarity.RT3 {
+    color: rgb(183, 0, 255);
 }
 
 .inventoryProps {
@@ -530,19 +521,12 @@ p.hamster {
     padding: 5px 10px;
 }
 
-.inventoryItemValue, .invProp {
+.inventoryItemValue {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
 }
 
@@ -574,6 +558,26 @@ p.hamster {
     text-align: center;
 }
 
+.inventorySellButtons {
+    margin-right: 10px;
+}
+
+.inventorySellButtons > div {
+    padding: 3px 15px;
+    text-align: center;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.inventorySellButtons > div:hover {
+    background-color: rgba(255,255,255,0.25);
+}
+
+.inventorySellButtons > div + div {
+    margin-top: 3px;
+}
+
 .inventoryEquip + .inventorySell {
     margin-left: 10px;
 }
@@ -592,10 +596,6 @@ p.hamster {
 .inventorySell:hover, .inventoryEquip:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
-}
-
-.equipItemProps {
-    margin-top: 15px;
 }
 
 .heroEquipBlock {
@@ -688,54 +688,6 @@ Rarities
     background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
     /*border-color: rgba(243, 6, 144, 0.25);*/
-}
-
-.inventoryItem.R0 > .inventoryItemName:before, 
-.inventoryItem.R1 > .inventoryItemName:before, 
-.inventoryItem.R2 > .inventoryItemName:before, 
-.inventoryItem.R3 > .inventoryItemName:before {
-    display: block;
-    position: absolute;  
-    top: -50px;
-    right: 0;
-    left: 0;
-    padding: 25px 10px 5px;
-    background-color: var(--bg-primary);
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    z-index: 10;
-}
-
-.inventoryItem.R0 > .inventoryItemName:before {
-    content: "Common";
-    background-color: var(--bg-primary);
-}
-
-.inventoryItem.R1 > .inventoryItemName:before {
-    content: "Good";
-    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(27, 223, 69, 0.15) 100%);
-    background-size: 100% 212px;
-}
-
-.inventoryItem.R2 > .inventoryItemName:before {
-    content: "Great";
-    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(2, 121, 223, 0.15) 100%);
-    background-size: 100% 212px;
-}
-
-.inventoryItem.R3 > .inventoryItemName:before {
-    content: "Epic";
-    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(243, 6, 144, 0.15) 100%);
-    background-size: 100% 212px;
-}
-
-.inventoryItem.R0 > .inventoryItemName:hover:before, .inventoryItem.R1 > .inventoryItemName:hover:before, .inventoryItem.R2 > .inventoryItemName:hover:before, .inventoryItem.R3 > .inventoryItemName:hover:before {
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    top: 0;
 }
 
 .inventoryItem > .inventoryItemName, 
@@ -5719,30 +5671,6 @@ label.selection-container.party-selection-container {
     font-size: .85rem;
     margin-bottom: 10px;
     color: var(--highlight);
-}
-
-.item-prefix-name {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-    margin: auto 0;
-}
-
-.item-prefix {
-    margin-right: 5px;
-}
-
-.EHPEname > .item-prefix-name {
-    width: unset;
 }
 
 /* Forge Building */ 

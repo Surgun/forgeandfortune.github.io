@@ -187,5 +187,33 @@
     "description": "#description#",
     "icon": "#icon#",
     "type": "perk"
+  },
+  {
+    "id": "rarity_common",
+    "title": "Common Rarity",
+    "description": "This item is of <span class=\"tooltip-item_common\">Common</span> rarity.",
+    "icon": "<i class=\"fad fa-diamond\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "rarity_good",
+    "title": "Good Rarity",
+    "description": "This item is of <span class=\"tooltip-item_good\">Good</span> rarity.",
+    "icon": "<i class=\"fad fa-diamond\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "rarity_great",
+    "title": "Great Rarity",
+    "description": "This item is of <span class=\"tooltip-item_great\">Great</span> rarity.",
+    "icon": "<i class=\"fad fa-diamond\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "rarity_epic",
+    "title": "Epic Rarity",
+    "description": "This item is of <span class=\"tooltip-item_epic\">Epic</span> rarity.",
+    "icon": "<i class=\"fad fa-diamond\"></i>",
+    "type": "static"
   }
 ]

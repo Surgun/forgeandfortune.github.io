@@ -1344,9 +1344,10 @@ footer {
     min-height: 36px;
 }
 
-.recipeTotalCrafted.isMastered, .recipeMasteredStatus.isMastered {
+.recipeTotalCrafted.isMastered, .recipeMasteredStatus.isMastered, .recipeTotalCrafted.isMastered:hover {
     position: relative;
     color: var(--highlight);
+    background-color: var(--bg-tertiary);
     border: 2px solid var(--border-secondary);
     cursor: default;
 }

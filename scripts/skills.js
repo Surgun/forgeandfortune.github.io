@@ -243,8 +243,8 @@ SkillManager.skillEffects['SM902A'] = function (combatParams) {
 SkillManager.skillEffects['SM902B'] = function (combatParams) {
     const target = combatParams.getTarget(TargetType.SELF)[0];
     target.state = null;
-    target.img = '<img src="images/enemies/B902.gif">';
-    $("#mobImage"+target.uniqueid).html(target.img);
+    target.image = '<img src="images/enemies/B902.gif">';
+    $("#mobImage"+target.uniqueid).html(target.image);
     target.playbook = PlaybookManager.generatePlayBookFromSkills(target.skill1,target.skill2,target.skill3,target.skill4);
     refreshSkillUnit(target);
     target.healPercent(100)
@@ -261,8 +261,8 @@ SkillManager.skillEffects['SMP902'] = function (type,target) {
     if (type !== "onTurn") return;
     if (target.hp > target.maxHP()/4 || target.state !== null) return;
     target.state = "egg";
-    target.img = '<img src="images/enemies/B902A.gif">';
-    $("#mobImage"+target.uniqueid).html(target.img);
+    target.image = '<img src="images/enemies/B902A.gif">';
+    $("#mobImage"+target.uniqueid).html(target.image);
     target.playbook = PlaybookManager.generatePlayBookFromSkills("SM902A","SM902A","SM902A","SM902B");
     refreshSkillUnit(target);
     BuffManager.generateBuff('BM902A',target,0);

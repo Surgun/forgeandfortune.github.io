@@ -134,6 +134,7 @@ class Mob extends Combatant {
         this.buffs.forEach(buff => {
             save.buffs.push(buff.createSave());
         });
+        save.state = this.state; 
         return save;
     }
     loadSave(save) {
@@ -146,5 +147,17 @@ class Mob extends Combatant {
                 this.buffs.push(newBuff);
             });
         }
+        this.state = save.state;
+        adjustState(this);
+    }
+}
+
+function adjustState(mob) {
+    console.log(mob);
+    if (mob.state === "egg") {
+        mob.image = '<img src="images/enemies/B902A.gif">';
+        $("#mobImage"+mob.uniqueid).html(mob.image);
+        console.log(mob.uniqueid);
+        mob.playbook = PlaybookManager.generatePlayBookFromSkills("SM902A","SM902A","SM902A","SM902B");
     }
 }

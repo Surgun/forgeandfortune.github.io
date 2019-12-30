@@ -405,7 +405,7 @@ function refreshInventory() {
             return;
         }
         itemdiv.addClass("R"+item.rarity)
-        const itemName = $("<div/>").addClass("inventoryItemName").attr({"id": item.id, "r": item.rarity}).html(item.picName());
+        const itemName = $("<div/>").addClass("inventoryItemName itemName").attr({"id": item.id, "r": item.rarity}).html(item.picName());
         const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${item.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[item.rarity].toLowerCase()}`}).html(miscIcons.rarity);
         const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(item.goldValue())}).html(item.goldValueFormatted());
         const itemLevel = $("<div/>").addClass("inventoryItemLevel tooltip").attr({"data-tooltip": "item_level"}).html(item.itemLevel());
@@ -453,7 +453,7 @@ function gearEquipFromInventory(invID) {
     const item = equipContainerTarget.item;
     const itemdiv = $("<div/>").addClass("equipItem");
     itemdiv.addClass("R"+equipContainerTarget.rarity)
-    const itemName = $("<div/>").addClass("equipItemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
+    const itemName = $("<div/>").addClass("equipItemName itemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
     const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${equipContainerTarget.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[equipContainerTarget.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemLevel = $("<div/>").addClass("equipItemLevel tooltip").attr({"data-tooltip": "item_level"}).html(equipContainerTarget.itemLevel());
     const itemProps = $("<div/>").addClass("equipItemProps");

@@ -96,7 +96,7 @@ function refreshBankBank() {
 
 function itemCard(item,inBank) {
     const itemdiv = $("<div/>").addClass("bankItem").addClass("R"+item.rarity);
-    const itemName = $("<div/>").addClass("bankItemName").html(item.picName());
+    const itemName = $("<div/>").addClass("bankItemName itemName").html(item.picName());
     const itemLevel = $("<div/>").addClass("bankItemLevel").html(item.itemLevel());
     if (item.item.recipeType === "building") itemLevel.hide();
     const itemProps = $("<div/>").addClass("bankProps");

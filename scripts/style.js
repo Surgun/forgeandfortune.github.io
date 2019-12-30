@@ -17,49 +17,11 @@ navTabs.forEach((navTab) => {
     navTab.addEventListener("click", navTabHighlight);
 });
 
-function navTabHighlight(evt, tgt) {
+function navTabHighlight(e) {
     navTabs.forEach((navTab) => {
-        navTab.classList.remove("tab-selected");
+        $(navTab).removeClass("tab-selected");
     });
-    if (tgt) {
-        tgt.classList.add("tab-selected");
-    } else {
-        evt.target.parentNode.classList.add("tab-selected");
-    }      
-}
-
-// Status Container Expand and Collapse
-
-const sideHeadings = document.querySelectorAll("#side-content .heading");
-
-sideHeadings.forEach((heading) => heading.addEventListener("click", toggleState));
-
-function toggleState(e) {
-    if (e.currentTarget.parentNode.classList.contains("height-collapse")) {
-        e.currentTarget.parentNode.classList.remove("height-collapse");
-        let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
-        arrow[0].classList.remove("arrow-rotate");
-    } else {
-        e.currentTarget.parentNode.classList.add("height-collapse");
-        let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
-        arrow[0].classList.add("arrow-rotate");
-    }
-}
-
-const versionHeadings = document.querySelectorAll("#cc-container .version-heading");
-
-versionHeadings.forEach((heading) => heading.addEventListener("click", toggleAboutState));
-
-function toggleAboutState(e) {
-    if (e.currentTarget.nextElementSibling.classList.contains("expanded")) {
-        e.currentTarget.nextElementSibling.classList.remove("expanded");
-        let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
-        arrow[0].classList.remove("arrow-rotate");
-    } else {
-        e.currentTarget.nextElementSibling.classList.add("expanded");
-        let arrow = e.currentTarget.getElementsByClassName("heading-arrow");
-        arrow[0].classList.add("arrow-rotate");
-    }
+    $(e.currentTarget).addClass("tab-selected");     
 }
 
 // Back To Top Button
@@ -262,7 +224,7 @@ function addButtonDB() {
     const footer = $("#bottom-left");
     let dbButton = $("#debug");
     if (!dbButton.length) {
-        dbButton = $("<a/>").attr("id", "debug").addClass("isDialog tooltip").attr("data-tooltip", "debug").html(`<i class="fas fa-bug"></i> Debug`)
+        dbButton = $("<a/>").attr("id", "debug").addClass("isDialog tooltip").attr("data-tooltip", "debug").html(`<i class="fas fa-bug"></i><div class="footerButtonText">Debug</div>`)
         footer.append(dbButton);
     }
 }

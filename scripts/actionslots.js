@@ -226,7 +226,7 @@ function initializeActionSlots() {
         if (actionSlotManager.resList(i) !== null) {
             const d5 = $("<div/>").addClass("asRes").appendTo(d);
             actionSlotManager.resList(i).forEach(g => {
-                $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(`<img src="images/resources/${g}.png" alt="${g}">`).appendTo(d5);
+                $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d5);
             });
         };
         $ActionSlots.append(d);

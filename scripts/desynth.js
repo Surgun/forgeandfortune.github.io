@@ -103,7 +103,7 @@ function refreshDesynthInventory() {
     if (DesynthManager.possibleDesynth().length === 0) $("<div/>").addClass("desynthBlank").html("No Items to Magically Desynth").appendTo(d1)
     DesynthManager.possibleDesynth().forEach(container => {
         const d3 = $("<div/>").addClass("desynthGroup").addClass("R"+container.rarity);
-            $("<div/>").addClass("desynthName").html(`${container.picName()}`).appendTo(d3);
+            $("<div/>").addClass("desynthName itemName").html(`${container.picName()}`).appendTo(d3);
             $("<div/>").addClass("desynthLevel").html(`${container.itemLevel()}`).appendTo(d3);
             $("<div/>").addClass("desynthButton").attr("container",container.containerID).html("Desynth").appendTo(d3);
         d1.append(d3);
@@ -117,14 +117,14 @@ function refreshDesynthStage() {
     $desynthReward.show();
     if (DesynthManager.slot === null) {
         const d1 = $("<div/>").addClass("desynthSlot");
-        const d2 = $("<div/>").addClass("desynthSlotName slotEmpty").html("Empty");
+        const d2 = $("<div/>").addClass("desynthSlotName itemName slotEmpty").html("Empty");
         d1.append(d2);
         $desynthSlot.append(d2);
         $desynthReward.hide();
         return;
     }
     const d3 = $("<div/>").addClass("desynthSlot").addClass("R"+DesynthManager.slot.rarity);
-    const d4 = $("<div/>").addClass("desynthSlotName").html(DesynthManager.slot.picName());
+    const d4 = $("<div/>").addClass("desynthSlotName itemName").html(DesynthManager.slot.picName());
     const d4a = $('<div/>').attr("id","desynthRemove").html(`<i class="fas fa-times"></i>`).hide();
     const d4b = $('<div/>').addClass("desynthLevel").html(DesynthManager.slot.itemLevel());
     const d5 = createDesynthBar().hide();

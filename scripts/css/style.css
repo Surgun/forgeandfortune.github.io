@@ -714,7 +714,7 @@ footer {
     width: 100%;
 }
 
-.tablinks:hover {
+.tablinks:hover, .tablinks:focus {
     color: var(--highlight);
 }
 
@@ -728,7 +728,7 @@ footer {
     transition: width var(--transition_linear);
 }
 
-.tablinks:hover:after {
+.tablinks:hover:after, .tablinks:focus:after {
     width: 100%;
 }
 
@@ -1101,14 +1101,14 @@ footer {
     border-bottom: 1px solid var(--border-primary);
 }
 
+.recipeSelect:hover, .recipeSelect:focus {
+    background-color: var(--bg-secondary);
+}
+
 .recipeSelect.selected, .recipeSelect.selected:hover {
     color: var(--highlight);
     background-color: var(--border-primary);
     border-color: var(--border-tertiary);
-}
-
-.recipeSelect:hover {
-    background-color: var(--bg-secondary);
 }
 
 .recipeSelect.luckyFortune.luckyGood > i {
@@ -1361,7 +1361,7 @@ footer {
     position: relative;
     color: var(--highlight);
     background-color: var(--bg-tertiary);
-    border: 2px solid var(--border-secondary);
+    border: 2px solid var(--border-primary);
     cursor: default;
 }
 

@@ -81,7 +81,7 @@ body {
 
 /* .back-to-top, .user-card, .player-card, .asset-card, .Worker, .ASBlock, .ASBuySlot, .progressRecipe, .progressWorker, .progressHero, .progressOverall, .bpShop, #eventTab.hasEvent:before, .invActionButton, .inventoryItem, .purchaseWorkerCard, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .eventMessage, .rewardCard, .ProgressCard, .statBox, .heroEquipBlock, .equipItem, .dsc, .dsm, .dungeonContainer, span.beta-tag, .fuseSlot, .possibleFusegroup, .fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .fortuneItem, .footer_more-list, .recipeCardFront, .recipeCardBack, #buildingList, .heroOwnedCard, .heroOverviewButton, .buyNewHeroCard, .orderUnit, .hpBarDiv, .apBarDiv, .heroExamineEquipment, .dbActionButton, .eventContainer, .dtsBackButton:hover, .heroOverviewCard, .dungeonSpeedButtons, #dungeonAbandon, .tinkerCommand, .dreStatContainer, .dreActionButton, .dreLootDropCard, .dreTeamHero, #guildList, #RecipeFilter, #eventListContainer, .tinkerRangeBox, .smithButton, .fortuneSlot, .fortuneItemClose:hover, .fortuneItemSetClose:hover, .monsterCard, .monsterActionsButton, .mhiStats .heroExamineStatRow, .monsterDetails, .lineRewardContainer, .selection-container, #battleLogValue, #battleLogSet, #battleLogReset, .monsterRewardTrophy, .monsterRewardWarp, .orderCard, .recipeMasteryGuildCard, .recipeBuyCard, .workerBuyCard, .alPerk, .alPerkRemaining, .alPurchasedPerk, .smithHeroButton { */
 
-.inventoryItem, .equipItem, .heroEquipBlock, .ASBlock, .recipeFilterList {
+.inventoryItem, .equipItem, .heroEquipBlock, .ASBlock, .recipeFilterList, .recipeCardFront, .recipeCardBack {
     box-shadow: var(--box-shadow);
 }
 
@@ -1242,7 +1242,7 @@ footer {
     max-width: 350px;
     perspective: 1000px;
     transform: perspective(1000px) rotateX(360deg) translateZ(0);
-    animation: 0.2s flip-in ease-in-out;
+    animation: .25s flip-in ease-in-out;
 }
 
 .recipeCardContainer.buildingCard {
@@ -1277,8 +1277,21 @@ footer {
             backface-visibility: hidden;
 }
 
+.recipeCardFront:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background-color: var(--bg-primary);
+    border-radius: 10px;
+    animation: .125s .125s flip-card-back forwards;
+    pointer-events: none;
+}
+
 .recipeCardBack {
-    font-size: 0.9em;
+    font-size: 0.85rem;
     transform: rotateX(180deg);
 }
 
@@ -6679,8 +6692,8 @@ span.beta-tag {
 
 @-webkit-keyframes flip-in {
     0% {
-        -webkit-transform: perspective(1000px) rotateX(270deg) translateZ(0);
-                transform: perspective(1000px) rotateX(270deg) translateZ(0);
+        -webkit-transform: perspective(1000px) rotateX(180deg) translateZ(0);
+                transform: perspective(1000px) rotateX(180deg) translateZ(0);
     }
     100% {
         -webkit-transform: perspective(1000px) rotateX(360deg) translateZ(0);
@@ -6690,12 +6703,28 @@ span.beta-tag {
 
 @keyframes flip-in {
     0% {
-        -webkit-transform: perspective(1000px) rotateX(270deg) translateZ(0);
-                transform: perspective(1000px) rotateX(270deg) translateZ(0);
+        -webkit-transform: perspective(1000px) rotateX(180deg) translateZ(0);
+                transform: perspective(1000px) rotateX(180deg) translateZ(0);
     }
     100% {
         -webkit-transform: perspective(1000px) rotateX(360deg) translateZ(0);
                 transform: perspective(1000px) rotateX(360deg) translateZ(0);
+    }
+}
+
+@keyframes flip-card-back {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes flip-card-back {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
     }
 }
 

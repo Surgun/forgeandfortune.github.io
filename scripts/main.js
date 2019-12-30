@@ -103,7 +103,7 @@ function mainLoop() {
     DungeonManager.addTime(elapsedTime);
     FusionManager.addTime(elapsedTime);
     DesynthManager.addTime(elapsedTime);
-    actionSlotManager.craftAdvance(elapsedTime);
+    actionSlotManager.addTime(elapsedTime);
     PatchManager.patchTimer(elapsedTime);
     TinkerManager.addTime(elapsedTime);
     if (TownManager.purgeSlots) {

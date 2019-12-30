@@ -84,10 +84,10 @@ class Item{
     count() {
         return Math.min(this.craftCount,100);
     }
-    addCount() {
+    addCount(skipAnimation) {
         this.craftCount += 1;
-        refreshMasteryBar();
-        refreshCraftedCount();
+        refreshMasteryBar(skipAnimation);
+        refreshCraftedCount(skipAnimation);
     }
     attemptMastery() {
         if (this.isMastered()) return;

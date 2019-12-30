@@ -106,9 +106,6 @@ class itemContainer {
     goldValue() {
         return Math.round(this.item.value * (this.rarity+1) * (1+this.sharp*0.1));
     }
-    getSmithResourceCost() {
-        return this.item.smithCost;
-    }
     material() {
         if (!this.item.mcost) return "M201";
         return Object.keys(this.item.mcost)[0]
@@ -202,24 +199,24 @@ const Inventory = {
             examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache);
         }
     },
-    addToInventory(container) {
+    addToInventory(container,skipAnimation) {
         if (this.full()) this.sellContainer(container);
         else {
-            this.findempty(container);
+            this.findempty(container,skipAnimation);
             if (examineGearTypesCache.includes(container.item.type)) {
-                examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache);
+                examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache,skipAnimation);
             }
         }
     },
-    findempty(item) {
+    findempty(item,skipAnimation) {
         const i = this.inv.findIndex(r=>r===null);
         this.inv[i] = item;
-        refreshInventoryPlaces();
+        refreshInventoryPlaces(skipAnimation);
     },
-    craftToInventory(id) {
+    craftToInventory(id,skipAnimation) {
         if (TownManager.buildingRecipes().includes(id)) return TownManager.unlockBldg(id);
         const item = recipeList.idToItem(id)
-        item.addCount();
+        item.addCount(skipAnimation);
         const roll = Math.floor(Math.random() * 1000);
         const sellToggleChart = {
             "None" : 0,
@@ -233,35 +230,35 @@ const Inventory = {
         if (roll < procRate.epic) {
             const epicItem = new itemContainer(id,3);
             if (sellToggle < 4) {
-                this.addToInventory(epicItem);
+                this.addToInventory(epicItem,skipAnimation);
                 Notifications.exceptionalCraft(item.name,"Epic","craftEpic");
             }
-            else this.sellContainer(epicItem);
+            else this.sellContainer(epicItem,skipAnimation);
             achievementStats.craftedItem("Epic");
         }
         else if (roll < (procRate.epic+procRate.great)) {
             const greatItem = new itemContainer(id,2);
             if (sellToggle < 3) {
-                this.addToInventory(greatItem);
+                this.addToInventory(greatItem,skipAnimation);
                 Notifications.exceptionalCraft(item.name,"Great","craftGreat");
             }
-            else this.sellContainer(greatItem);
+            else this.sellContainer(greatItem,skipAnimation);
             achievementStats.craftedItem("Great");
         }
         else if (roll < (procRate.epic+procRate.great+procRate.good)) {
             const goodItem = new itemContainer(id,1);
             if (sellToggle < 2) {
-                this.addToInventory(goodItem);
+                this.addToInventory(goodItem,skipAnimation);
                 Notifications.exceptionalCraft(item.name,"Good","craftGood");
             }
-            else this.sellContainer(goodItem);
+            else this.sellContainer(goodItem,skipAnimation);
             achievementStats.craftedItem("Good");
             
         }
         else {
             const commonItem = new itemContainer(id,0);
-            if (sellToggle < 1) this.addToInventory(commonItem);
-            else this.sellContainer(commonItem);
+            if (sellToggle < 1) this.addToInventory(commonItem,skipAnimation);
+            else this.sellContainer(commonItem,skipAnimation);
             achievementStats.craftedItem("Common");
         }
     },
@@ -293,12 +290,12 @@ const Inventory = {
         this.sellContainer(item);
         refreshInventoryPlaces()
     },
-    sellContainer(container) {
+    sellContainer(container,skipAnimation) {
         const tinkerAteIt = TinkerManager.feedCommon(container);
         if (tinkerAteIt) return;
         const gold = container.goldValue();
         achievementStats.gold(gold);
-        ResourceManager.addMaterial("M001",gold);
+        ResourceManager.addMaterial("M001",gold,skipAnimation);
     },
     listbyType(types) {
         return this.nonblank().filter(r=>types.includes(r.type));
@@ -503,7 +500,8 @@ function gearEquipFromInventory(invID) {
     $("#inventoryEquipTab").show();
 }
 
-function refreshInventoryPlaces() {
+function refreshInventoryPlaces(skipAnimation) {
+    if (skipAnimation) return;
     refreshInventory();
     refreshCardInvCount();
     refreshOrderInvCount()

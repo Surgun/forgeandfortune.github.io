@@ -40,7 +40,7 @@ const ResourceManager = {
     addNewMaterial(material) {
         this.materials.push(material);
     },
-    addMaterial(res,amt) {
+    addMaterial(res,amt,skipAnimation) {
         if (res.charAt(0) === "R") {
             for (let i=0;i<amt;i++) Inventory.addToInventory(res,0,-1);
             return;
@@ -49,6 +49,7 @@ const ResourceManager = {
         mat.amt += amt;
         if (mat.id !== "M001") mat.amt = Math.min(mat.amt,1000);
         mat.seen = true;
+        if (skipAnimation) return;
         if (ResourceManager.materialsEmpty()) $(".noMaterials").show();
         else $(".noMaterials").hide();
         if (mat.amt === 0) $("#"+mat.id).hide();
@@ -73,14 +74,10 @@ const ResourceManager = {
     deductMoney(amt) {
         this.addMaterial("M001",-amt);
     },
-    deductMaterial(item) {
+    deductMaterial(item,skipAnimation) {
         if (item.mcost === null) return;
         for (const [resource, amt] of Object.entries(item.mcost)) {
-            if (resource.charAt(0) === "R") {
-                Inventory.removePrecraft(resource, amt);
-                continue;
-            }
-            this.addMaterial(resource,-amt);
+            this.addMaterial(resource,-amt,skipAnimation);
         }
     },
     refundMaterial(item) {

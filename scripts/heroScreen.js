@@ -142,7 +142,8 @@ function clearExaminePossibleEquip() {
     examineGearTypesCache = [];
 }
 
-function examineHeroPossibleEquip(slot,heroID) {
+function examineHeroPossibleEquip(slot,heroID,skipAnimation) {
+    if (skipAnimation) return;
     const hero = HeroManager.idToHero(heroID);
     examineGearSlotCache = slot;
     examineGearHeroIDCache = heroID;

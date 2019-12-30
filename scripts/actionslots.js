@@ -24,7 +24,6 @@ class actionSlot {
     constructor(itemid) {
         this.itemid = itemid;
         this.item = recipeList.idToItem(itemid);
-        this.itemname = this.item.name;
         this.craftTime = 0;
         this.status = slotState.NEEDMATERIAL;
     }
@@ -42,16 +41,16 @@ class actionSlot {
     itemPicName() {
         return this.item.itemPicName();
     }
-    craftAdvance(t) {
+    addTime(t,skipAnimation) {
         if (this.status === slotState.NEEDMATERIAL) this.attemptStart();
         if (this.status !== slotState.CRAFTING) return;
         this.craftTime += t;
-        if (this.craftTime > this.maxCraft()) {
+        while (this.craftTime > this.maxCraft()) {
             this.craftTime -= this.maxCraft();
-            Inventory.craftToInventory(this.itemid);
-            refreshRecipeMasteryAmt(this.item);
+            Inventory.craftToInventory(this.itemid,skipAnimation);
+            refreshRecipeMasteryAmt(this.item, skipAnimation);
             this.status = slotState.NEEDMATERIAL;
-            this.attemptStart();
+            this.attemptStart(skipAnimation);
         }
         this.progress = (this.craftTime/this.maxCraft()).toFixed(3)*100+"%";
     }
@@ -61,14 +60,14 @@ class actionSlot {
     timeRemaining() {
         return this.maxCraft()-this.craftTime;
     }
-    attemptStart() {
+    attemptStart(skipAnimation) {
         //attempts to consume requried material, if successful start crafting
         if (this.item.isMastered()) {
             this.status = slotState.CRAFTING;
             return;
         }
         if (!ResourceManager.canAffordMaterial(this.item)) return;
-        ResourceManager.deductMaterial(this.item);
+        ResourceManager.deductMaterial(this.item,skipAnimation);
         this.status = slotState.CRAFTING;
     }
     autoSellToggle() {
@@ -86,6 +85,7 @@ class actionSlot {
 const actionSlotManager = {
     maxSlots : 1,
     slots : [],
+    minTime : 0,
     createSave() {
         const save = {};
         save.maxSlots = this.maxSlots;
@@ -116,14 +116,23 @@ const actionSlotManager = {
             return;
         }
         this.slots.push(new actionSlot(itemid));
+        this.adjustMinTime();
         initializeActionSlots();
         refreshSideWorkers();
         recipeList.canCraft();
         checkCraftableStatus();
     },
+    adjustMinTime() {
+        if (this.slots.length === 0) {
+            this.minTime = 0;
+            return;
+        }
+        this.minTime = Math.min(...this.slots.map(s => s.maxCraft()));
+    },
     removeSlot(slot) {
         this.slots[slot].refundMaterial();
         this.slots.splice(slot,1);
+        this.adjustMinTime();
         initializeActionSlots();
         refreshSideWorkers();
         recipeList.canCraft();
@@ -131,6 +140,7 @@ const actionSlotManager = {
     },
     removeBldgSlots() {
         this.slots = this.slots.filter(s => s.item.recipeType === "normal");
+        this.adjustMinTime();
         initializeActionSlots();
         refreshSideWorkers();
         recipeList.canCraft();
@@ -153,14 +163,18 @@ const actionSlotManager = {
     asPicName(slotnum) {
         return this.slots[slotnum].itemPicName();
     },
-    craftAdvance(t) {
-        $.each(this.slots, (i,slot) => {
-            slot.craftAdvance(t)
+    addTime(t) {
+        const skipAnimation = t >= 2 *this.minTime;
+        this.slots.forEach(slot => {
+            slot.addTime(t,skipAnimation);
+        });
+        /*
             $("#ASBarFill"+i).css('width', slot.progress);
             //3const material= ResourceManager.idToMaterial(slot.item.material()).img;
             if (slot.status === slotState.CRAFTING) $("#ASBar"+i).removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));
             else if (slot.status === slotState.NEEDMATERIAL) $("#ASBar"+i).addClass("matsNeeded").attr("data-label",`Requires more material`);
         });
+        */
     },
     upgradeSlot() {
         if (this.maxSlots === 5) return;

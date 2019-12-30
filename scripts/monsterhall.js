@@ -191,10 +191,10 @@ function refreshHallMonsterList() {
 
 function refreshHallMonsterInspect(monster) {
     $monsterMobsInspect.empty();
-    const d = $("<div/>").addClass("monsterInspectContainer");
-    const d1 = $("<div/>").addClass("monsterActionsContainer");
+    const d = $("<div/>").addClass("monsterInspectContainer").appendTo($monsterMobsInspect);
+    const d1 = $("<div/>").addClass("monsterActionsContainer").appendTo(d);
     $("<div/>").addClass("monsterActionsButton").attr("id","mhiBackButton").html(`<i class="fas fa-arrow-left"></i> Back to Beastiary`).appendTo(d1);
-    const d2 = $("<div/>").addClass("monsterDetails");
+    const d2 = $("<div/>").addClass("monsterDetails").appendTo(d);
         const d2a = $("<div/>").addClass("monsterInfoDetails");
         const floorRange = FloorManager.floorRangeByMob(monster.id);
         const dungeonName = FloorManager.dungeonNameByMob(monster.id);
@@ -206,13 +206,15 @@ function refreshHallMonsterInspect(monster) {
         mhiBlock("Kills",`${MonsterHall.monsterKillCount(monster.id)}`).appendTo(d2b);
         if (monster.event === "boss") mhiBlock("Skill",`${monster.skillText}`).appendTo(d2b);
         d2.append(d2a,d2b);
-    const d3 = $("<div/>").addClass("mhiStats");
-    const stats = [`${monster.getHP(floorRange.min)} - ${monster.getHP(floorRange.max)}`,`${monster.getPow(floorRange.min)} - ${monster.getPow(floorRange.max)}`, 0];
-    for (let i=0;i<stats.length;i++) {
-        d3.append(statRow(statName[i],stats[i],statDesc[i]));
-    }
-    d.append(d1,d2,d3);
-    $monsterMobsInspect.append(d);
+    const d3 = $("<div/>").addClass("mhiStats").appendTo(d);
+        const stats = [`${monster.getHPForFloor(floorRange.min)} - ${monster.getHPForFloor(floorRange.max)}`,`${monster.getPOWForFloor(floorRange.min)} - ${monster.getPOWForFloor(floorRange.max)}`];
+        for (let i=0;i<stats.length;i++) {
+            d3.append(statRow(statName[i],stats[i],statDesc[i]));
+        }
+    const d4 = $("<div/>").addClass("mhiSkills").appendTo(d);
+        $("<div/>").addClass("mhiSkillHeading").html("Monster Skills").appendTo(d4);
+        const d4a = $("<div/>").addClass("mhiSkillBox").appendTo(d4);
+        generateSkillIcons(monster).appendTo(d4a);
 }
 
 function mhiBlock(heading,text) {

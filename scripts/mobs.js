@@ -42,11 +42,20 @@ class MobTemplate {
         this.image = '<img src="images/enemies/' + this.id + '.gif">';
         this.head = '<img src="images/enemies/heads/' + this.id + '.png">';
     }
-    getPow(floor) {
-        return Math.floor(this.powBase + this.powLvl*floor);
+    //used in the monster hall
+    getHPForFloor(floor) {
+        const hpFloor = this.event === "normal" ? DungeonManager.getHpFloor(floor) : 1;
+        return this.hpMod * hpFloor;
     }
-    getHP(floor) {
-        return Math.floor(this.hpBase + this.hpLvl*floor);
+    getPOWForFloor(floor) {
+        const powFloor = this.event === "normal" ? DungeonManager.getPowFloor(floor) : 1;
+        return this.powMod * powFloor;
+    }
+    getSkillIDs() {
+        return [this.skill1,this.skill2,this.skill3,this.skill4];
+    }
+    getSkillIcons() {
+        return [SkillManager.idToSkill(this.skill1).icon,SkillManager.idToSkill(this.skill2).icon,SkillManager.idToSkill(this.skill3).icon,SkillManager.idToSkill(this.skill4).icon];
     }
 }
 

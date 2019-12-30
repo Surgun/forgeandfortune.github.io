@@ -16,8 +16,9 @@ $(document).on("click", ".ASBuySlotButton", (e) => {
 
 $(document).on("click", ".ASauto", (e) => {
     e.preventDefault();
-    const slot = $(e.currentTarget).attr("id");
-    actionSlotManager.toggleAuto(slot);
+    const slot = parseInt($(e.currentTarget).data("slotNum"));
+    const newRarity = actionSlotManager.toggleAuto(slot);
+    actionSlotVisualManager.updateAutoSell(e,newRarity);
 });
 
 class actionSlot {
@@ -192,7 +193,7 @@ const actionSlotManager = {
         return this.slots[i].autoSell();
     },
     toggleAuto(i) {
-        this.slots[i].autoSellToggle();
+        return this.slots[i].autoSellToggle();
     },
     guildUsage() {
         const mats = flattenArray(...[this.slots.map(s=>s.item.gcost)]);
@@ -230,7 +231,7 @@ function newActionSlot(slot) {
     const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+slot.slotNum).attr("data-label","").appendTo(d);
     const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+slot.slotNum).appendTo(d3);
     if (slot.isMastered()) s3.addClass("ProgressBarFillMaster");
-    const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `autosell_${slot.autoSell().toLowerCase()}`).attr("id","asAuto"+slot.slotNum).html(miscIcons.autoSell).appendTo(d);
+    const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `autosell_${slot.autoSell().toLowerCase()}`).attr("id","asAuto"+slot.slotNum).data("slotNum",slot.slotNum).html(miscIcons.autoSell).appendTo(d);
     if (slot.autoSell() !== "None") d4.addClass("ASautoEnabled"+slot.autoSell());
     if (slot.isBuildingMaterial()) d4.hide();
     if (!slot.resList) return d;
@@ -297,6 +298,12 @@ const actionSlotVisualManager = {
                 compareSlot.timeRef.attr("data-label",msToTime(slot.timeRemaining()));
             }
         });
+    },
+    updateAutoSell(e,newRarity) {
+        $(e.currentTarget).removeClass("ASautoEnabledCommon ASautoEnabledGood ASautoEnabledGreat ASautoEnabledEpic").addClass("ASautoEnabled"+newRarity);
+        $(e.currentTarget).attr("data-tooltip", `autosell_${newRarity.toLowerCase()}`);
+        destroyTooltip();
+        generateTooltip(e);
     }
 }
 

@@ -117,6 +117,7 @@ class Item{
         else if (this.autoSell === "Good") this.autoSell = "Great";
         else if (this.autoSell === "Great") this.autoSell = "Epic";
         else this.autoSell = "None";
+        return this.autoSell;
     }
     setCanCraft(canProduceBucket) {
         const needBucket = groupArray(this.gcost);

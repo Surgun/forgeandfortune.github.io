@@ -153,6 +153,9 @@ const TinkerManager = {
     feedCommon(container) {
         if (container.rarity !== 0) return false;
         return this.idToCommand("T001").feedCommon(container);
+    },
+    tinkerMats() {
+        return ["M700","M701","M702","M802"];
     }
 }
 
@@ -163,9 +166,8 @@ function initiateTinkerBldg () {
 }
 
 function refreshTinkerMats() {
-    const mats = ["M700","M701","M702","M802"];
     $tinkerMaterials.empty();
-    mats.forEach(mat => {
+    TinkerManager.tinkerMats().forEach(mat => {
         $("<div/>").addClass("tinkerMat tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":mat}).html(ResourceManager.sidebarMaterial(mat)).appendTo($tinkerMaterials);
     });
 };  

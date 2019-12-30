@@ -7,7 +7,6 @@ const player = {
 }
 
 function afterLoad() {
-    console.time("Load Time");
     $("#versionNum").html(PatchManager.lastVersion());
     refreshPatchNotes();
     initializeRecipes();
@@ -38,6 +37,7 @@ function afterLoad() {
     refreshInventoryPlaces();
     recipeList.canCraft();
     checkCraftableStatus();
+    player.lastTime = Date.now();
     setInterval(mainLoop, 10);
     recipeList.recipeFilterType = "Light";
     recipeList.recipeFilterString = "";
@@ -95,7 +95,8 @@ loadMisc(); //the others are loaded in order
 openTab("recipesTab");
 
 function mainLoop() {
-    const elapsedTime = (Date.now()-player.lastTime)*player.timeWarp;
+    let elapsedTime = (Date.now()-player.lastTime)*player.timeWarp;
+    elapsedTime = Math.min(elapsedTime,28800000);
     achievementStats.setTimePlayed(elapsedTime);
     saveGame(Date.now()-player.lastTime);
     player.lastTime = Date.now();

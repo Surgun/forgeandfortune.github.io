@@ -111,6 +111,7 @@ const shopDivs = {
 const $townPerkDiv = $("#townPerkDiv");
 const $boughtPerksDiv = $("#boughtPerksDiv");
 const $boughtPerks = $("#boughtPerks");
+
 function refreshShop() {
     for (let [name, div] of Object.entries(shopDivs)) {
         div.empty();
@@ -131,6 +132,7 @@ function refreshShop() {
     }
     else $boughtPerksDiv.hide();
 }
+
 
 function showNextPerk(perk) {
     if (perk === undefined) return;
@@ -167,8 +169,15 @@ function createALperk(perk) {
         $("<div/>").addClass("alPerkBuyText").html("Purchase").appendTo(d5);
         const d5a = $("<div/>").addClass("alPerkBuyCost").appendTo(d5);
             $("<div/>").addClass("buyCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(perk.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(perk.goldCost,2)}`).appendTo(d5a);
-            $("<div/>").addClass("buyCost tooltip").attr({"data-tooltip": "material_desc", "data-tooltip-value": perk.mat}).html(`${ResourceManager.materialIcon(perk.mat)} ${perk.matAmt}`).appendTo(d5a);
+            $("<div/>").addClass("buyCost tooltip").addClass("shopMat"+perk.mat).data("perkID",perk.id).attr({"data-tooltip": "material_desc", "data-tooltip-value": perk.mat}).html(`${ResourceManager.materialIcon(perk.mat)} ${perk.matAmt}`).appendTo(d5a);
     return d1;
+}
+
+function refreshPerkMaterial(matID) {
+    $(".shopMat"+matID).each(() => {
+        const perk = Shop.idToPerk($(this).data("perkID"));
+        $(this).html(`${ResourceManager.materialIcon(perk.mat)} ${perk.matAmt}`);
+    });
 }
 
 function createPurchasedperk(perk) {

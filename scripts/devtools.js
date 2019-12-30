@@ -133,6 +133,6 @@ const devtools = {
         refreshDungeonSelect();
     },
     timeWarp() {
-        player.lastTime -= 28800000;
+        player.lastTime -= 600000;
     }
 }

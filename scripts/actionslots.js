@@ -45,13 +45,16 @@ class actionSlot {
         return this.item.itemPicName();
     }
     addTime(t,skipAnimation) {
-        if (this.status === slotState.NEEDMATERIAL) this.attemptStart();
-        if (this.status !== slotState.CRAFTING) return;
+        if (this.status === slotState.NEEDMATERIAL) this.attemptStart(skipAnimation);
+        if (this.status !== slotState.CRAFTING) {
+            this.craftTime = 0;
+            return;
+        }
         this.craftTime += t;
-        while (this.craftTime > this.maxCraft()) {
+        if (this.craftTime > this.maxCraft()) {
             this.craftTime -= this.maxCraft();
             Inventory.craftToInventory(this.itemid,skipAnimation);
-            refreshRecipeMasteryAmt(this.item, skipAnimation);
+            if (!skipAnimation) refreshRecipeMasteryAmt(this.item);
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart(skipAnimation);
         }
@@ -106,6 +109,7 @@ const actionSlotManager = {
         this.slots.forEach(s => {
             save.slots.push(s.createSave());
         })
+        save.minTime = this.minTime;
         return save;
     },
     loadSave(save) {
@@ -115,6 +119,7 @@ const actionSlotManager = {
             slot.loadSave(s);
             this.slots.push(slot);
         });
+        this.minTime = save.minTime;
     },
     addSlot(itemid) {
         if (this.slots.length >= this.maxSlots) {
@@ -142,7 +147,6 @@ const actionSlotManager = {
         this.minTime = Math.min(...this.slots.map(s => s.maxCraft()));
     },
     removeSlot(slot) {
-        console.log(slot);
         this.slots[slot].refundMaterial();
         this.slots.splice(slot,1);
         this.adjustMinTime();
@@ -161,17 +165,23 @@ const actionSlotManager = {
         return this.slots.map(s=>s.itemid).includes(id)
     },
     addTime(t) {
-        const skipAnimation = t >= 2 *this.minTime;
-        this.slots.forEach(slot => {
-            slot.addTime(t,skipAnimation);
-        });
-        /*
-            $("#ASBarFill"+i).css('width', slot.progress);
-            //3const material= ResourceManager.idToMaterial(slot.item.material()).img;
-            if (slot.status === slotState.CRAFTING) $("#ASBar"+i).removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));
-            else if (slot.status === slotState.NEEDMATERIAL) $("#ASBar"+i).addClass("matsNeeded").attr("data-label",`Requires more material`);
-        });
-        */
+        if (this.slots.length === 0) return;
+        const skipAnimation = t >= this.minTime;
+        if (!skipAnimation) {
+            this.slots.forEach(slot => {
+                slot.addTime(t,false);
+            });
+            return;
+        }
+        let timeRemaining = t;
+        while (timeRemaining > 0) {
+            const timeChunk = Math.min(timeRemaining,this.minTime);
+            this.slots.forEach(slot => {
+                slot.addTime(timeChunk,true);
+            });
+            timeRemaining -= timeChunk;
+        }
+        refreshInventoryAndMaterialPlaces();
     },
     upgradeSlot() {
         if (this.maxSlots === 5) return;
@@ -184,10 +194,14 @@ const actionSlotManager = {
     toggleAuto(i) {
         this.slots[i].autoSellToggle();
     },
-    usage() {
+    guildUsage() {
         const mats = flattenArray(...[this.slots.map(s=>s.item.gcost)]);
         const group = groupArray(mats);
         return group
+    },
+    materialUsage() {
+        const mats = flattenArray(...([this.slots.map(s=>s.item.material())]))
+        const uniqueMats = [...new Set(mats)];
     },
     freeSlots() {
         return this.maxSlots - this.slots.length;
@@ -203,14 +217,12 @@ class actionSlotVisualSlotTracking {
         this.slotNum = slotNum;
     }
     addReference() {
-        console.log(this.slotNum);
         this.timeRef = $(`#ASBar${this.slotNum}`);
         this.progressRef = $(`#ASBarFill${this.slotNum}`);
     }
 }
 
 function newActionSlot(slot) {
-    console.log(slot.slotNum);
     const d = $("<div/>").addClass("ASBlock");
     $("<div/>").addClass("ASName").attr("id","asSlotName"+slot.slotNum).html(slot.itemPicName()).appendTo(d);
     const d2 = $("<div/>").addClass("ASCancel").data("slotNum",slot.slotNum).appendTo(d);
@@ -244,7 +256,6 @@ const actionSlotVisualManager = {
         //slots changed, just redraw everything
         if (this.slots.length !== actionSlotManager.slots.length || this.firstLoad) {
             this.firstLoad = false;
-            console.log("fire!");
             this.slots = [];
             $actionSlots.empty();
             actionSlotManager.slots.forEach((slot,i) => {
@@ -254,7 +265,6 @@ const actionSlotVisualManager = {
                 newSlot.addReference();
             });
             for (let i=0;i<actionSlotManager.freeSlots();i++) {
-                console.log('add free slot')
                 $actionSlots.append(newEmptyActionSlot());
             }
             return;
@@ -272,7 +282,6 @@ const actionSlotVisualManager = {
                 if (!slot.resList) return;
                 const d = $(`#asRes${slot.slotNum}`).empty();
                 slot.resList().forEach(g => {
-                    console.log("update the res")
                     $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d);
                 });
             }
@@ -289,4 +298,12 @@ const actionSlotVisualManager = {
             }
         });
     }
+}
+
+function refreshInventoryAndMaterialPlaces() {
+    refreshInventoryPlaces();
+    //grab ALL the materials we might have consumed and just update where they might show up
+    actionSlotManager.materialUsage().forEach(matID => {
+        refreshMaterial(matID);
+    });
 }

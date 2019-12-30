@@ -401,8 +401,7 @@ function createRecipeMasteryCard(recipe) {
     return d1;
 }
 
-function refreshRecipeMasteryAmt(recipe,skipAnimation) {
-    if (skipAnimation) return;
+function refreshRecipeMasteryAmt(recipe) {
     const masteryCost = recipe.masteryCost();
     $(`#rcm${recipe.id}`).html(`Master for ${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`);
 }

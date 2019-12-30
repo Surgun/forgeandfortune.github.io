@@ -86,8 +86,9 @@ class Item{
     }
     addCount(skipAnimation) {
         this.craftCount += 1;
-        refreshMasteryBar(skipAnimation);
-        refreshCraftedCount(skipAnimation);
+        if (skipAnimation) return;
+        refreshMasteryBar();
+        refreshCraftedCount();
     }
     attemptMastery() {
         if (this.isMastered()) return;

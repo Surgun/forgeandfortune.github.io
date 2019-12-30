@@ -41,28 +41,12 @@ const ResourceManager = {
         this.materials.push(material);
     },
     addMaterial(res,amt,skipAnimation) {
-        if (res.charAt(0) === "R") {
-            for (let i=0;i<amt;i++) Inventory.addToInventory(res,0,-1);
-            return;
-        }
         const mat = this.materials.find(mat => mat.id === res);
         mat.amt += amt;
         if (mat.id !== "M001") mat.amt = Math.min(mat.amt,1000);
         mat.seen = true;
         if (skipAnimation) return;
-        if (ResourceManager.materialsEmpty()) $(".noMaterials").show();
-        else $(".noMaterials").hide();
-        if (mat.amt === 0) $("#"+mat.id).hide();
-        else $("#"+mat.id).show();
-        $("#amt"+mat.id).html(mat.amt,2);
-        $("#dsbr"+mat.id).html(mat.amt);
-        refreshTinkerMats();
-        refreshShop();
-        DungeonManager.dungeonMatRefresh(mat.id);
-        if (mat.id === "M002") refreshMonsterReward();
-        if (mat.id !== "M001") return;
-        $goldSidebarAmt.html(formatToUnits(mat.amt,2));
-        $goldSidebar.addClass("tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(mat.amt)});
+        refreshMaterial(res);
     },
     canAffordMaterial(item) {
         if (item.mcost === null) return true;
@@ -120,7 +104,6 @@ const ResourceManager = {
         return item.name;
     },
     idToMaterial(matID) {
-        if (matID.charAt(0) === "R") return recipeList.idToItem(matID);
         return this.materials.find(m=>m.id === matID);
     },
     isAMaterial(matID) {
@@ -161,10 +144,12 @@ function initializeMats() {
     })
 }
 
+const $noMaterialDiv = $("#noMaterialDiv");
+
 function hardMatRefresh() {
     //used when we first load in
-    if (ResourceManager.materialsEmpty()) $(".noMaterials").show();
-    else $(".noMaterials").hide();
+    if (ResourceManager.materialsEmpty()) $noMaterialDiv.show();
+    else $noMaterialDiv.hide();
     ResourceManager.materials.forEach(mat=> {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
@@ -174,6 +159,23 @@ function hardMatRefresh() {
             $goldSidebar.addClass("tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(mat.amt)})
         }
     })
+}
+
+function refreshMaterial(matID) {
+    const mat = ResourceManager.idToMaterial(matID);
+    if (ResourceManager.materialsEmpty()) $noMaterialDiv.show();
+    else $noMaterialDiv.hide();
+    if (mat.amt === 0) $("#"+matID).hide();
+    else $("#"+matID).show();
+    $("#amt"+matID).html(formatToUnits(mat.amt,2));
+    $("#dsbr"+matID).html(mat.amt);
+    if (TinkerManager.tinkerMats().includes(matID)) refreshTinkerMats();
+    refreshPerkMaterial(matID);
+    DungeonManager.dungeonMatRefresh(mat.id);
+    if (mat.id === "M002") refreshMonsterReward();
+    if (mat.id !== "M001") return;
+    $goldSidebarAmt.html(formatToUnits(mat.amt,2));
+    $goldSidebar.addClass("tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(mat.amt)});
 }
 
 $(document).on("click",".material",(e) => {

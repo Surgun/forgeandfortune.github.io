@@ -80,7 +80,7 @@ const WorkerManager = {
         return left.sort((a,b) => a.repReqForBuy() - b.repReqForBuy())[0];
     },
     freeByGuild(gid) {
-        const usage = actionSlotManager.usage();
+        const usage = actionSlotManager.guildUsage();
         if (usage[gid] === undefined) return this.ownedByGuild(gid);
         return this.ownedByGuild(gid) - usage[gid];
     },

@@ -211,7 +211,8 @@ const Inventory = {
     findempty(item,skipAnimation) {
         const i = this.inv.findIndex(r=>r===null);
         this.inv[i] = item;
-        refreshInventoryPlaces(skipAnimation);
+        if (skipAnimation) return;
+        refreshInventoryPlaces();
     },
     craftToInventory(id,skipAnimation) {
         if (TownManager.buildingRecipes().includes(id)) return TownManager.unlockBldg(id);
@@ -500,8 +501,7 @@ function gearEquipFromInventory(invID) {
     $("#inventoryEquipTab").show();
 }
 
-function refreshInventoryPlaces(skipAnimation) {
-    if (skipAnimation) return;
+function refreshInventoryPlaces() {
     refreshInventory();
     refreshCardInvCount();
     refreshOrderInvCount()

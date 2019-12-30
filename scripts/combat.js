@@ -114,6 +114,7 @@ class Combatant {
     }
     addBuff(buff) {
         this.buffs.push(buff);
+        this.hp = Math.min(this.hp,this.maxHP());
     }
     removeBuff(buffID) {
         this.buffs = this.buffs.filter(b=>b.id !== buffID);

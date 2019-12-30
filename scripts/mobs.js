@@ -95,9 +95,10 @@ const FloorManager = {
     },
     floorRangeByMob(mobID) {
         const floors = this.floors.filter(f=>f.mobs.includes(mobID));
+        console.log(floors);
         const maxFloor = floors.map(f=>f.maxFloor);
         const minFloor = floors.map(f=>f.minFloor);
-        return {"min":Math.min(...minFloor),"max":Math.min(...maxFloor)};
+        return {"min":Math.min(...minFloor),"max":Math.max(...maxFloor)};
     },
     floorsByDungeon(dungeonID) {
         return this.floors.filter(f=>f.dungeon === dungeonID); 

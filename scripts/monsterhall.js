@@ -202,7 +202,7 @@ function refreshHallMonsterInspect(monster) {
         $("<div/>").addClass("mhiBlockImage").html(monster.image).appendTo(d2a);
         const d2b = $("<div/>").addClass("monsterDungeonDetails");
         mhiBlock("Dungeon",dungeonName).appendTo(d2b);
-        if (monster.event !== "boss") mhiBlock("Floors",`${floorRange.min} - ${floorRange.max}`).appendTo(d2b);
+        if (monster.event !== "boss") mhiBlock("Seen on Floors",`${floorRange.min} - ${floorRange.max}`).appendTo(d2b);
         mhiBlock("Kills",`${MonsterHall.monsterKillCount(monster.id)}`).appendTo(d2b);
         d2.append(d2a,d2b);
     const d3 = $("<div/>").addClass("mhiStats").appendTo(d);

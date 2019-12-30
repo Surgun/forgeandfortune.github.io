@@ -107,7 +107,7 @@ const BuffRefreshManager = {
         })
     },
     makeBuffContainer(buff,uniqueid) {
-        const d1 = $("<div/>").addClass("buffContainer").attr("id","bc"+uniqueid+buff.id);
+        const d1 = $("<div/>").addClass("buffContainer tooltip").attr("id","bc"+uniqueid+buff.id).attr({"data-tooltip": "buff_desc", "data-tooltip-value": buff.id});;
             $("<div/>").addClass("buffContainerIcon").html(buff.icon).appendTo(d1);
             $("<div/>").addClass("buffContainerCount").attr("id","bcount"+uniqueid+buff.id).html(buff.stacks).appendTo(d1);
         return d1;

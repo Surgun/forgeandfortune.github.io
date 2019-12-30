@@ -173,13 +173,6 @@ function createALperk(perk) {
     return d1;
 }
 
-function refreshPerkMaterial(matID) {
-    $(".shopMat"+matID).each(() => {
-        const perk = Shop.idToPerk($(this).data("perkID"));
-        $(this).html(`${ResourceManager.materialIcon(perk.mat)} ${perk.matAmt}`);
-    });
-}
-
 function createPurchasedperk(perk) {
     const d1 = $("<div/>").addClass("alPurchasedPerk tooltip").attr({"data-tooltip": "perk_desc", "data-tooltip-value": perk.id});
     $("<div/>").addClass("purchasedPerkTitle").html(perk.title).appendTo(d1);

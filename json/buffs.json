@@ -2,6 +2,7 @@
   {
     "id": "B0010",
     "name": "Armor Up",
+    "description": "Reduces damage taken from attacks by 50% while active",
     "icon": "<i class=\"fas fa-shield-cross\"></i>",
     "maxStack": 2,
     "stackCast": 2,
@@ -12,6 +13,7 @@
   {
     "id": "B0020",
     "name": "Toughen",
+    "description": "Increases max health by #power# per stack",
     "icon": "<i class=\"fas fa-helmet-battle\"></i>",
     "maxStack": 5,
     "stackCast": 1,
@@ -22,6 +24,7 @@
   {
     "id": "B1010",
     "name": "Meteor",
+    "description": "Deals #power# damage on this unit's turn",
     "icon": "<i class=\"fas fa-fire\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -32,6 +35,7 @@
   {
     "id": "B1020",
     "name": "Chilled",
+    "description": "\"Chilled\" status for certain skill effects",
     "icon": "<i class=\"fas fa-snowflake\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -42,6 +46,7 @@
   {
     "id": "B2010",
     "name": "Inspire",
+    "description": "Increases tech of this unit by #power#",
     "icon": "<i class=\"fas fa-lightbulb\"></i>",
     "maxStack": 2,
     "stackCast": 2,
@@ -52,6 +57,7 @@
   {
     "id": "BM200",
     "name": "Translucent",
+    "description": "Reduces damage taken from attacks by 100% while active",
     "icon": "<i class=\"fas fa-ghost\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -62,6 +68,7 @@
   {
     "id": "BM902",
     "name": "Phoenix Fire",
+    "description": "Deals #power# damage on this unit's turn per stack",
     "icon": "<i class=\"fas fa-fire-alt\"></i>",
     "maxStack": 100,
     "stackCast": 1,
@@ -72,6 +79,7 @@
   {
     "id": "BM902A",
     "name": "Hardened",
+    "description": "Reduces damage taken from attacks by 75% while active",
     "icon": "<i class=\"fas fa-egg\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -82,6 +90,7 @@
   {
     "id": "BM902B",
     "name": "Weakened",
+    "description": "Reduces max HP by 10% per stack",
     "icon": "<i class=\"fas fa-temperature-low\"></i>",
     "maxStack": 100,
     "stackCast": 1,

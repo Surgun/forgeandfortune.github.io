@@ -236,5 +236,12 @@
     "description": "Development and debugging options for testing various mechanics and features.",
     "icon": "<i class=\"fas fa-bug\"></i>",
     "type": "static"
+  },
+  {
+    "id": "buff_desc",
+    "title": "#name#",
+    "description": "#description#",
+    "icon": "#icon#",
+    "type": "buff"
   }
 ]

@@ -121,6 +121,7 @@ class Mob extends Combatant {
         this.hp = this.hpmax;
         this.uniqueid = MobManager.getUniqueID();
         this.playbook = PlaybookManager.generatePlayBookFromSkills(this.skill1,this.skill2,this.skill3,this.skill4);
+        this.passive = SkillManager.idToSkill(this.passiveSkill);
     }
     createSave() {
         const save = {};

@@ -52,6 +52,7 @@ class Hero extends Combatant {
         this.inDungeon = false;
         this.protection = 0;
         this.playbook = PlaybookManager.generatePlayBook(this.playbookTemplate);
+        this.passiveSkill = null;
         this.floorTracker = new floorTracker(1,1,1);
     }
     createSave() {

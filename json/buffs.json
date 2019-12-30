@@ -58,5 +58,35 @@
     "onCast": "refresh",
     "decrease": "onHit",
     "type": "buff"
+  },
+  {
+    "id": "BM902",
+    "name": "Phoenix Fire",
+    "icon": "<i class=\"fas fa-fire-alt\"></i>",
+    "maxStack": 100,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "debuff"
+  },
+  {
+    "id": "BM902A",
+    "name": "Hardened",
+    "icon": "<i class=\"fas fa-egg\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM902B",
+    "name": "Weakened",
+    "icon": "<i class=\"fas fa-temperature-low\"></i>",
+    "maxStack": 100,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "debuff"
   }
 ]

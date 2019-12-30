@@ -32,18 +32,20 @@ class Buff {
         this.stacks = save.stacks;
     }
     buffTick(type) {
+        if (type === "onTurn") this.onTick();
+        if (type === "onHit") this.onHit();
+        if (type === "onHitting") this.onHitting();
         if (type !== this.decrease) return;
         this.stacks -= 1;
         if (this.stacks <= 0) BuffRefreshManager.removeBuff(this, this.target);
         else BuffRefreshManager.updateBuffCount(this, this.target);
-        if (type === "onTurn") this.onTick();
-        if (type === "onHit") this.onHit();
     }
     expired() {
         return this.stacks <= 0;
     }
     onTick() { return; }
     onHit() { return; }
+    onHitting() { return; }
     getPow() { return 0; }
     getTech() { return 0; }
     isChilled() { return false; }
@@ -70,6 +72,12 @@ const BuffManager = {
         const buff = new BuffLookup[buffID](buffTemplate,target,power);
         target.addBuff(buff);
         BuffRefreshManager.addBuff(buff,target);
+    },
+    removeBuff(buffID,target) {
+        if (!target.hasBuff(buffID)) return;
+        const buff = target.getBuff(buffID);
+        target.removeBuff(buffID);
+        BuffRefreshManager.removeBuff(buff,target);
     },
     generateSaveBuff(buffID,target,power) {
         const buffTemplate = this.idToBuff(buffID);
@@ -170,6 +178,33 @@ class BM200 extends Buff {
     }
 }
 
+class BM902 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    onHitting() {
+        this.target.takeDamage(this.power*this.stacks);
+    }
+}
+
+class BM902A extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 0.75;
+    }
+}
+
+class BM902B extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    maxHP() {
+        return -Math.floor(this.target.hpmax/10)*this.stacks;
+    }
+}
+
 const BuffLookup = {
     B0010,
     B0020, 
@@ -177,4 +212,7 @@ const BuffLookup = {
     B1020,
     B2010,
     BM200,
+    BM902,
+    BM902A,
+    BM902B,
 }

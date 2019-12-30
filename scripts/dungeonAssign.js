@@ -154,7 +154,7 @@ function initiateDungeonFloor(dungeonID) {
     dungeon.mobs.forEach((mob) => {
         const d6 = $("<div/>").addClass("dfm").attr("id","dfm"+mob.uniqueid);
         const d7 = $("<div/>").addClass("dfmName").html(mob.name);
-        const d8 = $("<div/>").addClass("dfmImage").html(mob.image);
+        const d8 = $("<div/>").addClass("dfmImage").attr("id","mobImage"+mob.uniqueid).html(mob.image);
         const d9 = $("<div/>").addClass("buffListContent").attr("id","buffList"+mob.uniqueid);
         d6.append(d7,d8,d9);
         if (mob.hp === 0) d6.addClass("mobDead");
@@ -175,11 +175,17 @@ function generateTurnOrder(dungeonID) {
         $("<div/>").addClass("orderUnitHeadImg").html(unit.head).appendTo(d1);
         $("<div/>").addClass("orderUnitHead").html(unit.name).appendTo(d1);
         $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder")).appendTo(d1);
-        generateSkillIcons(unit).appendTo(d1);
+        const d1a = $("<div/>").attr("id","orderSkills"+unit.uniqueid).appendTo(d1);
+        generateSkillIcons(unit).appendTo(d1a);
         const d2 = $("<div/>").addClass("beatBarDiv").appendTo(d1);
         $("<span/>").addClass("beatBarFill").attr("id","beatbarFill"+unit.uniqueid).css('width', "0%").appendTo(d2);
     });
     refreshTurnOrder(dungeonID);
+}
+
+function refreshSkillUnit(target) {
+    const d = $("#orderSkills"+target.uniqueid).empty();
+    generateSkillIcons(target).appendTo(d);
 }
 
 function refreshTurnOrder(dungeonID) {
@@ -197,7 +203,6 @@ function refreshTurnOrder(dungeonID) {
 
 function generateSkillIcons(unit) {
     const d1 = $("<div/>").addClass("orderUnitSkills");
-    console.log(unit);
     const skillIDs = unit.getSkillIDs();
     unit.getSkillIcons().forEach((icon,i) => {
         $("<div/>").addClass("orderUnitSkill tooltip").attr({"id":"oUS"+unit.uniqueid+i,"data-tooltip":"skill_desc","data-tooltip-value":skillIDs[i]}).html(icon).appendTo(d1);
@@ -218,7 +223,8 @@ function initializeSideBarDungeon() {
             const d2 = $("<div/>").addClass("dungeonFarmStatus").attr("id","dungeonFarm"+dungeon.id).data("gid",dungeon.id).html(`<i class="fas fa-recycle"></i>`).appendTo(d1);
             if (!dungeon.progressNextFloor) d2.addClass("dungeonFarmActive");
             $("<div/>").addClass("dungeonSidebarFloor").attr("id","dsb"+dungeon.id).html(`${dungeon.name} - ${dungeon.floorCount}`).appendTo(d1);
-            $("<div/>").addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon.getRewards(),dungeon.id)).appendTo(d);
+            console.log(dungeon.id,dungeon.getRewards());
+            if (dungeon.type !== "boss") $("<div/>").addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon.getRewards(),dungeon.id)).appendTo(d);
         }
         else d1.html(`${dungeon.name}`);
     });
@@ -233,6 +239,7 @@ function refreshDungeonFarmStatus(dungeonid) {
 
 function refreshSidebarDungeonMats(dungeonID) {
     const dungeon = DungeonManager.dungeonByID(dungeonID);
+    console.log(dungeon.type);
     if (dungeon.type === "boss") return;
     const rewards = dungeon.getRewards();
     $("#dRR"+dungeonID).html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`);

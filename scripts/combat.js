@@ -81,6 +81,7 @@ class Combatant {
         this.hp = 1;
         this.critDmg = 1.5;
         this.buffs = [];
+        this.state = null;
     }
     buffTick(type) {
         this.buffs.forEach(buff => {
@@ -88,9 +89,13 @@ class Combatant {
         });
         this.buffs = this.buffs.filter(buff => !buff.expired());
     }
+    passiveCheck(type) {
+        if (this.passiveSkill === null) return;
+        SkillManager.idToSkill(this.passiveSkill).passiveCheck(type,this);
+    }
     takeAttack(attack) {
         battleText(attack,this);
-        const reducedDmg = attack.power * this.getProtection();
+        const reducedDmg = Math.floor(attack.power * this.getProtection());
         BattleLog.addEntry(attack.dungeonid,miscIcons.takeDamage,`${this.name} takes ${reducedDmg} damage`);
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);
@@ -109,6 +114,9 @@ class Combatant {
     }
     addBuff(buff) {
         this.buffs.push(buff);
+    }
+    removeBuff(buffID) {
+        this.buffs = this.buffs.filter(b=>b.id !== buffID);
     }
     getPow() {
         return this.pow + this.getBuffPower();

@@ -110,6 +110,7 @@ class Dungeon {
         while (this.dungeonTime >= dungeonWaitTime) {
             //take a turn
             this.buffTick("onTurn");
+            this.passiveCheck("onTurn");
             if (this.floorComplete()) {
                 this.nextFloor(refreshLater);
                 this.dungeonTime -= dungeonWaitTime;
@@ -214,6 +215,14 @@ class Dungeon {
         })
         this.mobs.forEach(enemy => {
             enemy.buffTick(type);
+        })
+    }
+    passiveCheck(type) {
+        this.party.heroes.forEach(hero => {
+            hero.passiveCheck(type);
+        })
+        this.mobs.forEach(enemy => {
+            enemy.passiveCheck(type);
         })
     }
     toggleProgress(toggle) {

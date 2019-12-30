@@ -122,6 +122,7 @@ const ResourceManager = {
     },
     materialSeenDungeon(dungeonID) {
         //returns a list of materials you've seen
+        if (dungeonID === "D004") return [];
         const matids = MobManager.allMobDropsByDungeon(dungeonID);
         const materials = matids.map(m => this.idToMaterial(m));
         return materials.filter(m => m.seen);

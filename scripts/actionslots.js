@@ -2,10 +2,10 @@
 
 const slotState = Object.freeze({NEEDMATERIAL:0,CRAFTING:1});
 
-$('#ActionSlots').on("click", "a.ASCancelText", (e) => {
+$(document).on("click", ".ASCancel", (e) => {
     e.preventDefault();
     e.stopPropagation();
-    const slot = parseInt($(e.target).parent().attr("href"));
+    const slot = parseInt($(e.target).parent().data("slotNum"));
     actionSlotManager.removeSlot(slot);
 });
 
@@ -21,22 +21,25 @@ $(document).on("click", ".ASauto", (e) => {
 });
 
 class actionSlot {
-    constructor(itemid) {
+    constructor(itemid,slotNum) {
         this.itemid = itemid;
         this.item = recipeList.idToItem(itemid);
         this.craftTime = 0;
         this.status = slotState.NEEDMATERIAL;
+        this.slotNum = slotNum;
     }
     createSave() {
         const save = {};
         save.itemid = this.itemid;
         save.craftTime = this.craftTime;
         save.status = this.status;
+        save.slotNum = this.slotNum;
         return save;
     }
     loadSave(save) {
         this.craftTime = save.craftTime;
         this.status = save.status;
+        this.slotNum = save.slotNum;
     }
     itemPicName() {
         return this.item.itemPicName();
@@ -80,6 +83,16 @@ class actionSlot {
         if (this.status !== slotState.CRAFTING || this.item.isMastered()) return;
         ResourceManager.refundMaterial(this.item);
     }
+    isMastered() {
+        return this.item.isMastered();
+    }
+    isBuildingMaterial() {
+        const types = ["foundry","bank", "fuse", "smith", "fortune"];
+        return types.includes(this.item.recipeType);
+    }
+    resList() {
+        return this.item.gcost;
+    }
 }
 
 const actionSlotManager = {
@@ -115,9 +128,8 @@ const actionSlotManager = {
             Notifications.craftWarning();
             return;
         }
-        this.slots.push(new actionSlot(itemid));
+        this.slots.push(new actionSlot(itemid,this.slots.length));
         this.adjustMinTime();
-        initializeActionSlots();
         refreshSideWorkers();
         recipeList.canCraft();
         checkCraftableStatus();
@@ -130,10 +142,10 @@ const actionSlotManager = {
         this.minTime = Math.min(...this.slots.map(s => s.maxCraft()));
     },
     removeSlot(slot) {
+        console.log(slot);
         this.slots[slot].refundMaterial();
         this.slots.splice(slot,1);
         this.adjustMinTime();
-        initializeActionSlots();
         refreshSideWorkers();
         recipeList.canCraft();
         checkCraftableStatus();
@@ -141,27 +153,12 @@ const actionSlotManager = {
     removeBldgSlots() {
         this.slots = this.slots.filter(s => s.item.recipeType === "normal");
         this.adjustMinTime();
-        initializeActionSlots();
         refreshSideWorkers();
         recipeList.canCraft();
         checkCraftableStatus();
     },
-    hasSlot(slotnum) {
-        return this.slots.length > slotnum;
-    },
-    isBuildingMaterial(slotnum) {
-        const types = ["foundry","bank", "fuse", "smith", "fortune"];
-        if (!this.hasSlot(slotnum)) return false;
-        return types.includes(this.slots[slotnum].item.recipeType);
-    },
-    isEmptySlot() {
-        return `<img class='ASEmptyImg' src='images/recipes/noitem.png' /> Empty Slot`;
-    },
     isAlreadySlotted(id) {
         return this.slots.map(s=>s.itemid).includes(id)
-    },
-    asPicName(slotnum) {
-        return this.slots[slotnum].itemPicName();
     },
     addTime(t) {
         const skipAnimation = t >= 2 *this.minTime;
@@ -179,7 +176,6 @@ const actionSlotManager = {
     upgradeSlot() {
         if (this.maxSlots === 5) return;
         this.maxSlots += 1;
-        initializeActionSlots();
     },
     autoSell(i) {
         if (this.slots.length <= i) return "";
@@ -187,48 +183,110 @@ const actionSlotManager = {
     },
     toggleAuto(i) {
         this.slots[i].autoSellToggle();
-        initializeActionSlots();
-    },
-    isMastered(i) {
-        if (i >= this.slots.length) return false;
-        return this.slots[i].item.isMastered();
-    },
-    resList(i) {
-        if (i >= this.slots.length) return null;
-        return this.slots[i].item.gcost;
     },
     usage() {
         const mats = flattenArray(...[this.slots.map(s=>s.item.gcost)]);
         const group = groupArray(mats);
         return group
+    },
+    freeSlots() {
+        return this.maxSlots - this.slots.length;
     }
 }
 
-const $ActionSlots = $("#ActionSlots");
+const $actionSlots = $("#actionSlots");
 
-function initializeActionSlots() {
-    $ActionSlots.empty();
-    for (let i=0;i<actionSlotManager.maxSlots;i++) {
-        const d = $("<div/>").addClass("ASBlock");
-        const d1 = $("<div/>").addClass("ASName");
-        if (actionSlotManager.hasSlot(i)) d1.html(actionSlotManager.asPicName(i));
-        else d1.html(actionSlotManager.isEmptySlot());
-        const d2 = $("<div/>").addClass("ASCancel").attr("id",i);
-            $("<a/>").addClass("ASCancelText").attr("href",i).html('<i class="fas fa-times"></i>').appendTo(d2);
-        if (!actionSlotManager.hasSlot(i)) d2.hide();
-        const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+i).attr("data-label","");
-            const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+i).appendTo(d3);
-        if (actionSlotManager.isMastered(i)) s3.addClass("ProgressBarFillMaster");
-        const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `autosell_${actionSlotManager.autoSell(i).toLowerCase()}`).attr("id",i).html(`<i class="fas fa-dollar-sign"></i>`);
-        if (actionSlotManager.autoSell(i) !== "None") d4.addClass("ASautoEnabled"+actionSlotManager.autoSell(i));
-        if (!actionSlotManager.hasSlot(i) || actionSlotManager.isBuildingMaterial(i)) d4.hide();
-        d.append(d1,d2,d3,d4);
-        if (actionSlotManager.resList(i) !== null) {
-            const d5 = $("<div/>").addClass("asRes").appendTo(d);
-            actionSlotManager.resList(i).forEach(g => {
-                $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d5);
+class actionSlotVisualSlotTracking {
+    constructor(id,status,slotNum) {
+        this.id = id;
+        this.status = status;
+        this.slotNum = slotNum;
+    }
+    addReference() {
+        console.log(this.slotNum);
+        this.timeRef = $(`#ASBar${this.slotNum}`);
+        this.progressRef = $(`#ASBarFill${this.slotNum}`);
+    }
+}
+
+function newActionSlot(slot) {
+    console.log(slot.slotNum);
+    const d = $("<div/>").addClass("ASBlock");
+    $("<div/>").addClass("ASName").attr("id","asSlotName"+slot.slotNum).html(slot.itemPicName()).appendTo(d);
+    const d2 = $("<div/>").addClass("ASCancel").data("slotNum",slot.slotNum).appendTo(d);
+    $("<div/>").addClass("ASCancelText").data("slotNum",slot.slotNum).html(`${miscIcons.cancelSlot}`).appendTo(d2);
+    const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+slot.slotNum).attr("data-label","").appendTo(d);
+    const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+slot.slotNum).appendTo(d3);
+    if (slot.isMastered()) s3.addClass("ProgressBarFillMaster");
+    const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `autosell_${slot.autoSell().toLowerCase()}`).attr("id","asAuto"+slot.slotNum).html(miscIcons.autoSell).appendTo(d);
+    if (slot.autoSell() !== "None") d4.addClass("ASautoEnabled"+slot.autoSell());
+    if (slot.isBuildingMaterial()) d4.hide();
+    if (!slot.resList) return d;
+    const d5 = $("<div/>").addClass("asRes").attr("id","asRes"+slot.slotNum).appendTo(d);
+    slot.resList().forEach(g => {
+        $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d5);
+    });
+    return d;
+}
+
+function newEmptyActionSlot() {
+    const d = $("<div/>").addClass("ASBlock");
+    $("<div/>").addClass("ASName").html(`${miscIcons.emptySlot} Empty Slot`).appendTo(d);
+    return d;
+}
+
+const actionSlotVisualManager = {
+    slots : [],
+    firstLoad : true,
+    disableRefresh : false,
+    updateSlots() {
+        if (this.disableRefresh) return;
+        //slots changed, just redraw everything
+        if (this.slots.length !== actionSlotManager.slots.length || this.firstLoad) {
+            this.firstLoad = false;
+            console.log("fire!");
+            this.slots = [];
+            $actionSlots.empty();
+            actionSlotManager.slots.forEach((slot,i) => {
+                const newSlot = new actionSlotVisualSlotTracking(slot.itemid,slot.status,i);
+                $actionSlots.append(newActionSlot(slot));
+                this.slots.push(newSlot);
+                newSlot.addReference();
             });
-        };
-        $ActionSlots.append(d);
+            for (let i=0;i<actionSlotManager.freeSlots();i++) {
+                console.log('add free slot')
+                $actionSlots.append(newEmptyActionSlot());
+            }
+            return;
+        }
+        //otherwise let's just update what we have....
+        actionSlotManager.slots.forEach((slot,i) => {
+            const compareSlot = this.slots[i];
+            if (slot.id !== compareSlot.id) {
+                compareSlot.id = slot.id;
+                //if the craft isn't the same pop the new one in
+                $(`#asSlotName${slot.slotNum}`).html(slot.itemPicName());
+                if (slot.isMastered()) $(`#ASBarFill${slot.slotNum}`).addClass("ProgressBarFillMaster");
+                else $(`#ASBarFill${slot.slotNum}`).removeClass("ProgressBarFillMaster");
+                $(`#asAuto${slot.slotNum}`).removeClass("ASautoEnabledCommon ASautoEnabledGood ASautoEnabledGreat ASautoEnabledEpic").addClass("ASautoEnabled"+slot.autoSell());
+                if (!slot.resList) return;
+                const d = $(`#asRes${slot.slotNum}`).empty();
+                slot.resList().forEach(g => {
+                    console.log("update the res")
+                    $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d);
+                });
+            }
+            if (compareSlot.status === slotState.NEEDMATERIAL && slot.status === slotState.CRAFTING) {
+                //update for time format
+                compareSlot.timeRef.removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));
+            }
+            else if (compareSlot.status === slotState.CRAFTING && slot.status === slotState.NEEDMATERIAL) {
+                compareSlot.timeRef.addClass("matsNeeded").attr("data-label","Requires more material");
+            }
+            else if (compareSlot.status === slotState.CRAFTING) {
+                compareSlot.progressRef.css('width', slot.progress);
+                compareSlot.timeRef.attr("data-label",msToTime(slot.timeRemaining()));
+            }
+        });
     }
 }

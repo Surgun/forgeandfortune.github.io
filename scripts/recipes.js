@@ -99,7 +99,6 @@ class Item{
         ResourceManager.addMaterial(masteryCost.id,-masteryCost.amt);
         this.mastered = true;
         Notifications.masterRecipe(this.name);
-        initializeActionSlots();
         refreshCraftedCount();
         destroyTooltip(); // Removes stuck tooltip after mastering item on recipe card
         refreshProgress();

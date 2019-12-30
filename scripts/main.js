@@ -27,7 +27,6 @@ function afterLoad() {
     refreshMasteryBar()
     refreshInventory();
     refreshSideWorkers();
-    initializeActionSlots();
     initializeHeroList();
     refreshRecipeFilters();
     hardMatRefresh();
@@ -104,6 +103,7 @@ function mainLoop() {
     FusionManager.addTime(elapsedTime);
     DesynthManager.addTime(elapsedTime);
     actionSlotManager.addTime(elapsedTime);
+    actionSlotVisualManager.updateSlots();
     PatchManager.patchTimer(elapsedTime);
     TinkerManager.addTime(elapsedTime);
     if (TownManager.purgeSlots) {

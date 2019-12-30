@@ -204,10 +204,10 @@ function refreshHallMonsterInspect(monster) {
         mhiBlock("Dungeon",dungeonName).appendTo(d2b);
         if (monster.event !== "boss") mhiBlock("Floors",`${floorRange.min} - ${floorRange.max}`).appendTo(d2b);
         mhiBlock("Kills",`${MonsterHall.monsterKillCount(monster.id)}`).appendTo(d2b);
-        if (monster.event === "boss") mhiBlock("Skill",`${monster.skillText}`).appendTo(d2b);
         d2.append(d2a,d2b);
     const d3 = $("<div/>").addClass("mhiStats").appendTo(d);
-        const stats = [`${monster.getHPForFloor(floorRange.min)} - ${monster.getHPForFloor(floorRange.max)}`,`${monster.getPOWForFloor(floorRange.min)} - ${monster.getPOWForFloor(floorRange.max)}`];
+        let stats = [`${monster.getHPForFloor(floorRange.min)} - ${monster.getHPForFloor(floorRange.max)}`,`${monster.getPOWForFloor(floorRange.min)} - ${monster.getPOWForFloor(floorRange.max)}`];
+        if (monster.event === "boss") stats = [`${monster.getHPForFloor(1)}`,`${monster.getPOWForFloor(1)}`];
         for (let i=0;i<stats.length;i++) {
             d3.append(statRow(statName[i],stats[i],statDesc[i]));
         }

@@ -317,13 +317,29 @@ function recipeSort() {
     }).appendTo($recipeContents);
 }
 
-function recipeFilterList() {
+function recipeFilterList(n) {
+    // if "n" not provided, set to 0
+    n = n || 0;
     //uses two recipeLists to cycle through all the items and display as appropriate
-    Object.values(sortOrder.recipeDivDict).forEach(div => div.hide());
-    recipeList.filteredRecipeList().map(r=>r.id).forEach(recipe => {
+    if (n === 0) Object.values(sortOrder.recipeDivDict).forEach(div => div.hide());
+    recipeList.filteredRecipeList().map(r=>r.id).slice(0,n+30).forEach(recipe => {
         sortOrder.recipeDivDict[recipe].show();
     })
 };
+
+function triggerRecipeLoad() {
+    let loadCount = 0;
+    recipeList.filteredRecipeList().map(r=>r.id).forEach((recipe, i) => {
+        if (sortOrder.recipeDivDict[recipe].is(":visible")) loadCount = i ;
+    })
+    recipeFilterList(loadCount);
+}
+
+$("#recipes-list").scroll(function () {
+    const condition1 = $("#RecipeResults").height() - $(this).height() + $("#tabs").height() + $("footer").height() - 10;
+    const condition2 = $(this).scrollTop();
+    if (condition1 <= condition2 + 400) triggerRecipeLoad();
+})
 
 function recipeCardFront(recipe) {
     const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());

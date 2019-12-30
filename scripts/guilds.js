@@ -300,11 +300,11 @@ function createOrderCard(item,id,index) {
     const d1 = $("<div/>").addClass(`orderCard R${item.rarity}`).data({"slot":index,"gid":id});
     if (item.complete()) d1.addClass('orderComplete');
     $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id)).appendTo(d1);
-    $("<div/>").addClass("orderName").addClass(`orderName`).html(item.displayName).appendTo(d1);
+    $("<div/>").addClass("orderName itemName").html(item.displayName).appendTo(d1);
     $("<div/>").addClass("itemToSac tooltip").attr({"data-tooltip":"recipe_desc","data-tooltip-value":item.id}).appendTo(d1);
     const d2 = $("<div/>").addClass("orderMaterials").appendTo(d1);
     item.item.gcost.forEach(g => {
-        $("<div/>").addClass("asResIcon").html(`<img src="images/resources/${g}.png" alt="${g}">`).appendTo(d2);
+        $("<div/>").addClass("orderGuildWorker").html(GuildManager.idToGuild(g).icon).appendTo(d2);
     });
     $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Left`).appendTo(d1);
     $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","in_inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(d1);
@@ -369,7 +369,7 @@ function createWorkerBuyCard(worker) {
     const d1 = $("<div/>").addClass("workerBuyCard");
     const d2 = $("<div/>").addClass("workerBuyCardBodyImage").html(worker.pic);
     const d3 = $("<div/>").addClass("workerBuyCardBodyName").html(worker.name);
-    const d4 = $("<div/>").addClass("workerBuyCardBodyProduction").html(worker.productionText());
+    const d4 = $("<div/>").addClass("workerBuyCardBodyProduction tooltip").attr({"data-tooltip": "guild_worker", "data-tooltip-value": worker.production}).html(worker.productionText());
     const d5 = $('<div/>').addClass('workerBuyCardDesc tooltip').attr({"data-tooltip":"worker_desc","data-tooltip-value":worker.workerID}).html("<i class='fas fa-info-circle'></i>");
     return d1.append(d2,d3,d4,d5);
 };

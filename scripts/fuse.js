@@ -184,7 +184,7 @@ function refreshFuseSlots() {
     $fuseSlots.empty();
     FusionManager.slots.forEach(slot => {
         const d1 = $("<div/>").addClass("fuseSlot").addClass("R"+slot.rarity);
-        const d2 = $("<div/>").addClass("fuseSlotName").html(slot.name);
+        const d2 = $("<div/>").addClass("fuseSlotName itemName").html(slot.name);
         const d3 = createFuseBar(slot);
         const d4 = $("<div/>").addClass("fuseSlotCollect").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html("Collect Fuse").hide();
         const d5 = $("<div/>").addClass("fuseSlotStart").attr("id","fuseSlotStart"+slot.fuseID).attr("fuseid",slot.fuseID).html("Start Fuse").hide();
@@ -203,7 +203,7 @@ function refreshFuseSlots() {
     });
     for (let i=0;i<FusionManager.maxSlots()-FusionManager.slots.length;i++) {
         const d4 = $("<div/>").addClass("fuseSlot");
-        const d5 = $("<div/>").addClass("fuseSlotName").html("Empty");
+        const d5 = $("<div/>").addClass("fuseSlotName itemName").html("Empty");
         d4.append(d5);
         $fuseSlots.append(d4);
     }

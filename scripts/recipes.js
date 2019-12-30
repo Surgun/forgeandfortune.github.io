@@ -76,9 +76,9 @@ class Item{
         const pow = this.pow*this.pts;
         const hp = 9*this.hp*this.pts;
         const tech = this.tech*this.pts;
-        if (pow > 0) $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "pow").html(`${miscIcons.pow} ${pow}`).appendTo(d);
-        if (hp > 0) $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "hp").html(`${miscIcons.hp} ${hp}`).appendTo(d);
-        if (tech > 0) $("<div/>").addClass("recipeStatListTech tooltip").attr("data-tooltip", "tech").html(`${miscIcons.tech} ${tech}`).appendTo(d);
+        if (pow > 0) $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "pow").html(`${miscIcons.pow}<span class="statValue">${pow}</span>`).appendTo(d);
+        if (hp > 0) $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "hp").html(`${miscIcons.hp}<span class="statValue">${hp}</span>`).appendTo(d);
+        if (tech > 0) $("<div/>").addClass("recipeStatListTech tooltip").attr("data-tooltip", "tech").html(`${miscIcons.tech}<span class="statValue">${tech}</span>`).appendTo(d);
         return d;
     }
     count() {
@@ -328,7 +328,7 @@ function recipeFilterList() {
 function recipeCardFront(recipe) {
     const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
     const td2 = $('<div/>').addClass('recipeDescription').html("<i class='fas fa-info-circle'></i>");
-    const td3 = $('<div/>').addClass('recipeItemLevel').html(recipe.itemLevel());
+    const td3 = $('<div/>').addClass('recipeItemLevel tooltip').attr({"data-tooltip": "recipe_level"}).html(recipe.itemLevel());
     if (recipe.recipeType !== "normal") td3.hide();
     const td4 = $('<div/>').addClass('recipecostdiv').attr("id",recipe.id+"rcd");
         if (recipe.isMastered()) td4.addClass("isMastered");
@@ -355,7 +355,7 @@ function recipeCardFront(recipe) {
 
     const td6 = $('<div/>').addClass('recipeCountAndCraft');
         const td6a = $('<div/>').addClass('recipeMasteredStatus').attr("id","rms"+recipe.id).html(`UNMASTERED`);
-        if (recipe.isMastered()) td6a.addClass('isMastered').html("MASTERED");
+        if (recipe.isMastered()) td6a.addClass('isMastered').html(`<i class="fas fa-star-christmas"></i> MASTERED`);
         if (recipe.recipeType !== "normal") td6a.hide();
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
         recipe.recipeDiv = td6b;
@@ -393,7 +393,7 @@ function recipeCardBack(recipe) {
             const td9a2 = $('<div/>').addClass('recipeTotalCrafted tooltip').attr({"id": "rcc"+recipe.id, "data-tooltip":"material_desc","data-tooltip-value":masteryCost.id}).data("rid",recipe.id).html(`Master for ${masteryCost.amt} ${ResourceManager.idToMaterial(masteryCost.id).img}`);
             if (recipe.isMastered()) {
                 td9a1.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
-                td9a2.addClass("isMastered").html("MASTERED");
+                td9a2.addClass("isMastered").html(`<i class="fas fa-star-christmas"></i> MASTERED`);
             }
             if (recipe.recipeType !== "normal") td9a2.hide();
         td9a.append(td9a1,td9a2);
@@ -432,8 +432,8 @@ function refreshCraftedCount() {
         rcc.html(`Master for ${Math.max(100,1000-9*recipe.craftCount)} ${ResourceManager.idToMaterial(material).img}`);
         if (recipe.isMastered()) {
             rbd.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
-            rcc.addClass("isMastered").removeClass("tooltip").html("MASTERED");
-            rms.addClass("isMastered").html("MASTERED");
+            rcc.addClass("isMastered").removeClass("tooltip").html(`<i class="fas fa-star-christmas"></i> MASTERED`);
+            rms.addClass("isMastered").html(`<i class="fas fa-star-christmas"></i> MASTERED`);
             rcd.find(".matCost").attr({"data-tooltip":"material_desc_mastered","data-tooltip-value":material.id}).addClass("isMastered");
         }
     });

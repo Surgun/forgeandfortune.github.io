@@ -172,7 +172,7 @@ function refreshFortuneGear() {
 
 function createFortuneInv(item) {
     const itemdiv = $("<div/>").addClass("fortuneItem").addClass("R"+item.rarity);
-    const itemName = $("<div/>").addClass("fortuneItemName").html(item.picName());
+    const itemName = $("<div/>").addClass("fortuneItemName itemName").html(item.picName());
     const itemLevel = $("<div/>").addClass("fortuneItemLevel").html(item.itemLevel());
     const fortuneButton = $("<div/>").addClass("fortuneStage").attr("containerID",item.containerID).html("Offer");
     return itemdiv.append(itemName,itemLevel,fortuneButton);
@@ -181,7 +181,7 @@ function createFortuneInv(item) {
 function createFortuneCard(slot) {
     const rarity = ["Common","Good","Great","Epic"];
     const itemdiv = $("<div/>").addClass("fortuneSlot").addClass("R"+slot.rarity);
-        $("<div/>").addClass("fortuneItemName").html(slot.picName()).appendTo(itemdiv);
+        $("<div/>").addClass("fortuneItemName itemName").html(slot.picName()).appendTo(itemdiv);
         $("<div/>").addClass("fortuneItemLevel").html(slot.itemLevel()).appendTo(itemdiv);
     $("<div/>").addClass("fortuneItemDesc").html(`2x ${rarity[slot.rarity+1]} Chance`).appendTo(itemdiv);
     const cost = FortuneManager.getMaterialCost(slot);
@@ -195,7 +195,7 @@ function createFortuneCard(slot) {
 function createFortuneCardLocked(slot) {
     const rarity = ["Common","Good","Great","Epic"];
     const itemdiv = $("<div/>").addClass("fortuneSlot").addClass("R"+(slot.rarity));
-        $("<div/>").addClass("fortuneItemName").html(slot.picName()).appendTo(itemdiv);
+        $("<div/>").addClass("fortuneItemName itemName").html(slot.picName()).appendTo(itemdiv);
         $("<div/>").addClass("fortuneItemLevel").html(slot.itemLevel()).appendTo(itemdiv);
     $("<div/>").addClass("fortuneItemDesc").html(`2x ${rarity[slot.rarity]} Chance`).appendTo(itemdiv);
     $("<div/>").addClass("fortuneItemAmt").html(`${slot.amt} Crafts Left`).appendTo(itemdiv);

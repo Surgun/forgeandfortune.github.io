@@ -136,7 +136,7 @@ function refreshSmithStage() {
 
 function itemCardSmith(item,location,locationText) {
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+item.rarity);
-        $("<div/>").addClass("smithItemName").html(item.picName()).appendTo(itemdiv);
+        $("<div/>").addClass("smithItemName itemName").html(item.picName()).appendTo(itemdiv);
         $("<div/>").addClass("smithItemLevel").html(item.itemLevel()).appendTo(itemdiv);
         $("<div/>").addClass("smithItemMaterial tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":item.material()}).html(ResourceManager.materialIcon(item.material())).appendTo(itemdiv);
         const itemProps = $("<div/>").addClass("smithProps").appendTo(itemdiv);
@@ -152,7 +152,7 @@ function itemCardSmith(item,location,locationText) {
 function itemStageCardSmith(slot,upgrade) {
     if (slot === null) return;
     const itemdiv = $("<div/>").addClass("smithItem").addClass("R"+slot.rarity);
-    const itemName = $("<div/>").addClass("smithItemName");
+    const itemName = $("<div/>").addClass("smithItemName itemName");
     if (upgrade) itemName.html(slot.picNamePlus());
     else itemName.html(slot.picName());
     const itemLevel = $("<div/>").addClass("smithItemLevel").html(slot.itemLevel());

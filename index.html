@@ -67,14 +67,54 @@
         <section class="game-content">
             <div class="game-wrapper" role="main">
                 <div id="tabs" class="tab">
-                    <button class="tablinks" id="inventoryTabLink" onclick="openTab('inventoryTab')"><div><i class="fas fa-cube"></i> Inventory</div></button>
-                    <button class="tablinks" id="guildTabLink" onclick="openTab('guildTab')"><div><i class="fas fa-fist-raised"></i> Guilds</div></button>
-                    <button class="tablinks tab-selected" id="recipesTabLink" onclick="openTab('recipesTab')"><div><i class="fas fa-book"></i> Recipes</div></button>
-                    <button class="tablinks" id="heroesTabLink" onclick="openTab('heroesTab')"><div id="heroTab"><i class="fas fa-helmet-battle"></i> Heroes</div></button>
-                    <button class="tablinks" id="dungeonsTabLink" onclick="openTab('dungeonsTab')"><div id="dungeonTab"><i class="fas fa-swords"></i> Adventures</div></button>
-                    <button class="tablinks" id="townTabLink" onclick="openTab('townsTab')"><div id="townTab"><i class="fas fa-city"></i> Town</div></button>
-                    <button class="tablinks" id="marketTabLink" onclick="openTab('marketTab')"><div id="marketsTab"><i class="fas fa-store"></i> Market</div></button>
-                    <button class="tablinks" id="progressTabLink"onclick="openTab('progressTab')"><div><i class="fas fa-tasks"></i> Progress</div></button>
+                    <button class="tablinks" id="inventoryTabLink" onclick="openTab('inventoryTab')">
+                        <div>
+                            <i class="fas fa-cube"></i>
+                            <span class="tabLinkName">Inventory</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="guildTabLink" onclick="openTab('guildTab')">
+                        <div>
+                            <i class="fas fa-fist-raised"></i>
+                            <span class="tabLinkName">Guilds</span>
+                        </div>
+                    </button>
+                    <button class="tablinks tab-selected" id="recipesTabLink" onclick="openTab('recipesTab')">
+                        <div>
+                            <i class="fas fa-book"></i>
+                            <span class="tabLinkName">Recipes</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="heroesTabLink" onclick="openTab('heroesTab')">
+                        <div id="heroTab">
+                            <i class="fas fa-helmet-battle"></i>
+                            <span class="tabLinkName">Heroes</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="dungeonsTabLink" onclick="openTab('dungeonsTab')">
+                        <div id="dungeonTab">
+                            <i class="fas fa-swords"></i>
+                            <span class="tabLinkName">Adventures</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="townTabLink" onclick="openTab('townsTab')">
+                        <div id="townTab">
+                            <i class="fas fa-city"></i>
+                            <span class="tabLinkName">Town</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="marketTabLink" onclick="openTab('marketTab')">
+                        <div id="marketsTab">
+                            <i class="fas fa-store"></i>
+                            <span class="tabLinkName">Market</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="progressTabLink"onclick="openTab('progressTab')">
+                        <div>
+                            <i class="fas fa-tasks"></i>
+                            <span class="tabLinkName">Progress</span>
+                        </div>
+                    </button>
                 </div>
                 <div id="inventoryTab" class="tabcontent">
                     <div id="inventory-container" class="inventoryContainer">
@@ -128,8 +168,8 @@
                     </div>
                 </div>
                 <div id="recipesTab" class="tabcontent">
-                    <div id="recipes-container">
-                        <div id="RecipeFilter">
+                    <div id="recipes-container" class="recipesContainer">
+                        <div id="RecipeFilter" class="recipeFilterList">
                             <a class="recipeSelect" id="rfMatless" href="NoMatSelector">No Materials</a>
                             <a class="recipeSelect" id="rfArcane" href="ArcaneSelector">Arcane</a>
                             <a class="recipeSelect" id="rfArmor" href="ArmorSelector">Armor</a>
@@ -140,7 +180,7 @@
                             <a class="recipeSelect" id="rfHats" href="HatSelector">Hats</a>
                             <a class="recipeSelect" id="rfHeavy" href="HeavySelector">Heavy</a>
                             <a class="recipeSelect" id="rfHelmets" href="HelmetSelector">Helmets</a>
-                            <a class="recipeSelect" id="rfLight" href="LightSelector">Light</a>
+                            <a class="recipeSelect selected" id="rfLight" href="LightSelector">Light</a>
                             <a class="recipeSelect" id="rfMasks" href="MaskSelector">Masks</a>
                             <a class="recipeSelect" id="rfPendants" href="PendantSelector">Pendants</a>
                             <a class="recipeSelect" id="rfRings" href="RingSelector">Rings</a>
@@ -150,14 +190,14 @@
                             <a class="recipeSelect" id="rfTomes" href="TomeSelector">Tomes</a>
                             <a class="recipeSelect" id="rfVests" href="VestSelector">Vests</a>
                         </div>
-                        <div id="recipes-list">
+                        <div id="recipes-list" class="recipeCardsList">
                             <div id="RecipeTop" class="recipeTopContainer">
                                 <div id="RecipeSorting" class="recipeSortContainer">
-                                    <div class="recipeActionButton" data-filter="name">Name <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
-                                    <div class="recipeActionButton" data-filter="lvl">Level <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
-                                    <div class="recipeActionButton" data-filter="value">Value <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
-                                    <div class="recipeActionButton" data-filter="time">Craft Time <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
-                                    <div class="recipeActionButton" data-filter="mastery">Mastery <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton actionButton" data-filter="name">Name <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton actionButton" data-filter="lvl">Level <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton actionButton" data-filter="value">Value <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton actionButton" data-filter="time">Craft Time <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton actionButton" data-filter="mastery">Mastery <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
                                     <div class="recipeSortSearch">
                                         <input id="recipeSortInput" class="recipeSortInput" type="text" name="recipe-search" placeholder="Search for a recipe...">
                                         <div class="recipeSortButton"><i class="fas fa-search"></i></div>
@@ -631,26 +671,6 @@
                     </div>
                 </div>
             </div>
-            <footer role="contentinfo">
-                <div id="bottom-left">
-                    <a id="clearSave" data-dialog-id="clear_save" class="isDialog tooltip" data-tooltip="clear_save"><i class="fas fa-file-times"></i> Clear Save</a>
-                    <a id="exportSave" data-dialog-id="export_save" class="isDialog tooltip" data-tooltip="export_save"><i class="fas fa-file-export"></i> Export Save</a>
-                    <a id="importSave" data-dialog-id="import_save" class="isDialog tooltip" data-tooltip="import_save"><i class="fas fa-file-import"></i> Import Save</a>
-                    <a id="cloudSave" data-dialog-id="playfab" class="isDialog tooltip" data-tooltip="cloud_save"><i class="fas fa-cloud-download"></i> Cloud Save</a>
-                    <a id="settings" data-dialog-id="settings" class="isDialog tooltip" data-tooltip="settings"><i class="fas fa-cog"></i> Settings</a>
-                </div>
-                <div id="bottom-right">
-                    <a class="isDialog" data-dialog-id="patch_notes" id="versionNum">fetching...</a>
-                    <div class="footer_more-container">
-                        <span class="footer_more-btn">View Links &amp; Resources<i class="fas fa-angle-up"></i></span>
-                        <ul class="footer_more-list">
-                            <li><a href="about.html" target="_blank" rel="noopener"><i class="fas fa-users"></i>About &amp; Crediting</a></li>
-                            <li><a href="http://www.discord.gg/qGBAVNR" target="_blank" rel="noopener"><i class="fab fa-discord"></i>Discord Server</a></li>
-                            <li><a href="https://www.patreon.com/forgeandfortune" target="_blank" rel="noopener"><i class="fab fa-patreon"></i>Support on Patreon</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
             <div id='right-side-content' class="right-side-content">
                 <div id="comptitle1" class="heading">Gold &amp; Inventory</div>
                 <div class="sidebarContentContainer">
@@ -691,6 +711,59 @@
                     <div id="DungeonSideBarTeam"></div>
                 </div>
             </div>
+            <footer role="contentinfo">
+                <div id="bottom-left" class="dialogOptions">
+                    <a id="clearSave" data-dialog-id="clear_save" class="isDialog clearSave tooltip" data-tooltip="clear_save">
+                        <i class="fas fa-file-times"></i>
+                        <div class="footerButtonText">Clear Save</div>
+                    </a>
+                    <a id="exportSave" data-dialog-id="export_save" class="isDialog tooltip" data-tooltip="export_save">
+                        <i class="fas fa-file-export"></i>
+                        <div class="footerButtonText">Export Save</div>
+                    </a>
+                    <a id="importSave" data-dialog-id="import_save" class="isDialog tooltip" data-tooltip="import_save">
+                        <i class="fas fa-file-import"></i>
+                        <div class="footerButtonText">Import Save</div>
+                    </a>
+                    <a id="cloudSave" data-dialog-id="playfab" class="isDialog tooltip" data-tooltip="cloud_save">
+                        <i class="fas fa-cloud-download"></i>
+                        <div class="footerButtonText">Cloud Save</div>
+                    </a>
+                    <a id="settings" data-dialog-id="settings" class="isDialog tooltip" data-tooltip="settings">
+                        <i class="fas fa-cog"></i>
+                        <div class="footerButtonText">Settings</div>
+                    </a>
+                </div>
+                <div id="bottom-right" class="extraOptions">
+                    <a class="isDialog" data-dialog-id="patch_notes" id="versionNum">fetching...</a>
+                    <div class="footer_more-container">
+                        <div class="footer_more-btn">
+                            <div class="footer_more-text">View Links &amp; Resources</div>
+                            <i class="fas fa-angle-up"></i>
+                        </div>
+                        <ul class="footer_more-list">
+                            <li>
+                                <a class="footer_more-content" href="about.html" target="_blank" rel="noopener">
+                                    <i class="fas fa-users"></i>
+                                    <div class="footerButtonText">About &amp; Crediting</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer_more-content" href="http://www.discord.gg/qGBAVNR" target="_blank" rel="noopener">
+                                    <i class="fab fa-discord"></i>
+                                    <div class="footerButtonText">Join us on Discord</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer_more-content" href="https://www.patreon.com/forgeandfortune" target="_blank" rel="noopener">
+                                    <i class="fab fa-patreon"></i>
+                                    <div class="footerButtonText">Support on Patreon</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
         </section>
     </main>
     <section id="mobile-content">

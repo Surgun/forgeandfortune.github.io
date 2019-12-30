@@ -98,10 +98,10 @@ function heroCurrentGearEquip(hero,slotNum,equip) {
     if (hero.equipUpgradeAvailable(slotNum)) d5.addClass("equipUpgradeAvailable")
     $("<div/>").addClass("heroExamineEquipmentSlot").html(slotName[slotNum]).appendTo(d5);
     if (equip === null) {
-        $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R0").html(hero.slotTypeIcons(slotNum)).appendTo(d5);
+        $("<div/>").addClass("heroExamineEquipmentEquip itemName").addClass("R0").html(hero.slotTypeIcons(slotNum)).appendTo(d5);
         return d5;
     }
-    const d5b = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+equip.rarity).html(equip.picName()).appendTo(d5);
+    const d5b = $("<div/>").addClass("heroExamineEquipmentEquip itemName").addClass("R"+equip.rarity).html(equip.picName()).appendTo(d5);
     const d5b1 = $("<div/>").addClass("equipLevel").appendTo(d5b);
     if (equip.scale > 0) {
         $("<div/>").addClass("level_text").html(`${miscIcons.star}`).appendTo(d5b1);
@@ -175,7 +175,7 @@ function heroEqupCard(hero, itemContainer) {
     const equippedItem = hero.currenEquipByType(itemContainer.type)
     const slotNum = hero.typeToSlot(itemContainer.type);
     const card = $('<div/>').addClass('gearItem').addClass("R"+itemContainer.rarity).attr({"id":itemContainer.containerID,"heroID":hero.id,"slotNum":slotNum});
-        $('<div/>').addClass('gearItemName').html(itemContainer.picName()).appendTo(card);
+        $('<div/>').addClass('gearItemName itemName').html(itemContainer.picName()).appendTo(card);
         $('<div/>').addClass('gearItemLevel').html(itemContainer.itemLevel()).appendTo(card);
     const equippedStats = equippedItem ? equippedItem.itemStat() : blankItemStat();
     for (const [stat, val] of Object.entries(itemContainer.itemStat())) {

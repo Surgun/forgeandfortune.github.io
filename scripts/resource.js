@@ -91,6 +91,7 @@ const ResourceManager = {
     },
     materialIcon(type) {
         if (type[0] === "R") return recipeList.idToItem(type).itemPic();
+        if (type[0] === "G") return GuildManager.idToGuild(type).icon;
         return `<img src="images/resources/${type}.png" alt="${type}">`
     },
     formatCost(res,amt) {

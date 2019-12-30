@@ -150,6 +150,7 @@ const actionSlotManager = {
     removeSlot(slot) {
         this.slots[slot].refundMaterial();
         this.slots.splice(slot,1);
+        this.slots.forEach((s,i) => s.slotNum = i);
         this.adjustMinTime();
         refreshSideWorkers();
         recipeList.canCraft();
@@ -212,14 +213,13 @@ const actionSlotManager = {
 const $actionSlots = $("#actionSlots");
 
 class actionSlotVisualSlotTracking {
-    constructor(id,status,slotNum) {
+    constructor(id,status) {
         this.id = id;
         this.status = status;
-        this.slotNum = slotNum;
     }
-    addReference() {
-        this.timeRef = $(`#ASBar${this.slotNum}`);
-        this.progressRef = $(`#ASBarFill${this.slotNum}`);
+    addReference(i) {
+        this.timeRef = $(`#ASBar${i}`);
+        this.progressRef = $(`#ASBarFill${i}`);
     }
 }
 
@@ -260,10 +260,11 @@ const actionSlotVisualManager = {
             this.slots = [];
             $actionSlots.empty();
             actionSlotManager.slots.forEach((slot,i) => {
-                const newSlot = new actionSlotVisualSlotTracking(slot.itemid,slot.status,i);
+                console.log(slot.itemid);
+                const newSlot = new actionSlotVisualSlotTracking(slot.item.id,slot.status);
                 $actionSlots.append(newActionSlot(slot));
+                newSlot.addReference(i);
                 this.slots.push(newSlot);
-                newSlot.addReference();
             });
             for (let i=0;i<actionSlotManager.freeSlots();i++) {
                 $actionSlots.append(newEmptyActionSlot());
@@ -273,8 +274,8 @@ const actionSlotVisualManager = {
         //otherwise let's just update what we have....
         actionSlotManager.slots.forEach((slot,i) => {
             const compareSlot = this.slots[i];
-            if (slot.id !== compareSlot.id) {
-                compareSlot.id = slot.id;
+            /*if (slot.item.id !== compareSlot.id) {
+                compareSlot.id = slot.item.id;
                 //if the craft isn't the same pop the new one in
                 $(`#asSlotName${slot.slotNum}`).html(slot.itemPicName());
                 if (slot.isMastered()) $(`#ASBarFill${slot.slotNum}`).addClass("ProgressBarFillMaster");
@@ -285,7 +286,7 @@ const actionSlotVisualManager = {
                 slot.resList().forEach(g => {
                     $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d);
                 });
-            }
+            }*/
             if (compareSlot.status === slotState.NEEDMATERIAL && slot.status === slotState.CRAFTING) {
                 //update for time format
                 compareSlot.timeRef.removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));

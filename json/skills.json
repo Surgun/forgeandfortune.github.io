@@ -145,7 +145,7 @@
     "description": "Burns the first enemy, dealing damage for every stack",
     "icon": "<i class=\"fas fa-fire-alt\"></i>",
     "targetEnemies": true,
-    "powMod": 0.1,
+    "powMod": 0.14,
     "techMod": 0,
     "bText": "#ATTACKER# burns #DEFENDER#"
   },

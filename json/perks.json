@@ -604,7 +604,7 @@
     "category": "Town",
     "order": 2,
     "goldCost": 2000,
-    "mat": "M303",
+    "mat": "M302",
     "matAmt": 50,
     "type": "desynth",
     "subtype": "open",
@@ -617,7 +617,7 @@
     "category": "Town",
     "order": 3,
     "goldCost": 8000,
-    "mat": "M203",
+    "mat": "M202",
     "matAmt": 50,
     "type": "cauldron",
     "subtype": "open",
@@ -651,10 +651,23 @@
   },
   {
     "id": "AL3006",
+    "title": "Get your Fix",
+    "description": "Adds new capabilities to the Desynth Building",
+    "category": "Town",
+    "order": 6,
+    "goldCost": 85000,
+    "mat": "M203",
+    "matAmt": 50,
+    "type": "desynth",
+    "subtype": "level",
+    "icon": "<i class=\"fas fa-building\"></i>"
+  },
+  {
+    "id": "AL3007",
     "title": "Can I Be Your Plus One",
     "description": "Unlocks the Forge Building, so you can improve item stats.",
     "category": "Town",
-    "order": 6,
+    "order": 7,
     "goldCost": 90000,
     "mat": "M203",
     "matAmt": 50,
@@ -663,11 +676,11 @@
     "icon": "<i class=\"fas fa-hammer-war\"></i>"
   },
   {
-    "id": "AL3007",
+    "id": "AL3008",
     "title": "Over Engineered",
     "description": "Unlocks the Tinker Hut, to make trinkets.",
     "category": "Town",
-    "order": 7,
+    "order": 8,
     "goldCost": 300000,
     "mat": "M203",
     "matAmt": 50,
@@ -676,11 +689,11 @@
     "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
-    "id": "AL3008",
+    "id": "AL3009",
     "title": "Offer You Can't Re-Fuse  II",
     "description": "Adds another slot to your Fusion Cabin.",
     "category": "Town",
-    "order": 8,
+    "order": 9,
     "goldCost": 150000,
     "mat": "M203",
     "matAmt": 50,
@@ -689,11 +702,11 @@
     "icon": "<i class=\"fas fa-vihara\"></i>"
   },
   {
-    "id": "AL3009",
+    "id": "AL3010",
     "title": "Numbers Go Down",
     "description": "Adds special privileges to the Monster House.",
     "category": "Town",
-    "order": 9,
+    "order": 10,
     "goldCost": 800000,
     "mat": "M203",
     "matAmt": 50,
@@ -702,11 +715,11 @@
     "icon": "<i class=\"fas fa-pastafarianism\"></i>"
   },
   {
-    "id": "AL3010",
+    "id": "AL3011",
     "title": "Your Future Is Green",
     "description": "Unlocks the Fortune Teller Building, to increase exceptional craft odds.",
     "category": "Town",
-    "order": 10,
+    "order": 11,
     "goldCost": 1200000,
     "mat": "M203",
     "matAmt": 50,
@@ -715,11 +728,11 @@
     "icon": "<i class=\"fas fa-hat-witch\"></i>"
   },
   {
-    "id": "AL3011",
+    "id": "AL3012",
     "title": "More To Store",
     "description": "Increases the storage capability of the Bank.",
     "category": "Town",
-    "order": 11,
+    "order": 12,
     "goldCost": 1600000,
     "mat": "M203",
     "matAmt": 50,
@@ -728,11 +741,11 @@
     "icon": "<i class=\"fas fa-landmark\"></i>"
   },
   {
-    "id": "AL3012",
+    "id": "AL3013",
     "title": "Not The Train Kind",
     "description": "Increases the max star rating of trinkets.",
     "category": "Town",
-    "order": 12,
+    "order": 13,
     "goldCost": 3000000,
     "mat": "M203",
     "matAmt": 50,
@@ -741,11 +754,11 @@
     "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
-    "id": "AL3013",
+    "id": "AL3014",
     "title": "Offer You Can't Re-Fuse III",
     "description": "Adds another slot to your Fusion Cabin.",
     "category": "Town",
-    "order": 13,
+    "order": 14,
     "goldCost": 4500000,
     "mat": "M203",
     "matAmt": 50,
@@ -754,11 +767,11 @@
     "icon": "<i class=\"fas fa-vihara\"></i>"
   },
   {
-    "id": "AL3014",
+    "id": "AL3015",
     "title": "Can I Be Your Plus Two",
     "description": "Increases forge limits from +3 to +6.",
     "category": "Town",
-    "order": 14,
+    "order": 15,
     "goldCost": 4500000,
     "mat": "M203",
     "matAmt": 50,
@@ -767,11 +780,11 @@
     "icon": "<i class=\"fas fa-hammer-war\"></i>"
   },
   {
-    "id": "AL3015",
+    "id": "AL3016",
     "title": "Electrotastic",
     "description": "Increases the max star rating of trinkets.",
     "category": "Town",
-    "order": 15,
+    "order": 16,
     "goldCost": 30000000,
     "mat": "M203",
     "matAmt": 50,
@@ -780,11 +793,11 @@
     "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
-    "id": "AL3016",
+    "id": "AL3017",
     "title": "You Can Bank On It",
     "description": "Increases the storage capability of the Bank.",
     "category": "Town",
-    "order": 16,
+    "order": 17,
     "goldCost": 60000000,
     "mat": "M203",
     "matAmt": 50,
@@ -793,11 +806,11 @@
     "icon": "<i class=\"fas fa-landmark\"></i>"
   },
   {
-    "id": "AL3017",
+    "id": "AL3018",
     "title": "Crystal Ballerina",
     "description": "Adds an additional Fortune Teller building option.",
     "category": "Town",
-    "order": 17,
+    "order": 18,
     "goldCost": 45000000,
     "mat": "M203",
     "matAmt": 50,
@@ -806,11 +819,11 @@
     "icon": "<i class=\"fas fa-hat-witch\"></i>"
   },
   {
-    "id": "AL3018",
+    "id": "AL3019",
     "title": "Hertz Doughnuts",
     "description": "Increases the max star rating of trinkets.",
     "category": "Town",
-    "order": 18,
+    "order": 19,
     "goldCost": 150000000,
     "mat": "M203",
     "matAmt": 50,
@@ -819,11 +832,11 @@
     "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
-    "id": "AL3019",
+    "id": "AL3020",
     "title": "Can I Be Your Plus Three",
     "description": "Increases forge limits from +6 to +10.",
     "category": "Town",
-    "order": 19,
+    "order": 20,
     "goldCost": 300000000,
     "mat": "M203",
     "matAmt": 50,
@@ -832,11 +845,11 @@
     "icon": "<i class=\"fas fa-hammer-war\"></i>"
   },
   {
-    "id": "AL3020",
+    "id": "AL3021",
     "title": "With Less Ads",
     "description": "Adds an additional Fortune Teller building option.",
     "category": "Town",
-    "order": 20,
+    "order": 21,
     "goldCost": 225000000,
     "mat": "M203",
     "matAmt": 50,
@@ -845,11 +858,11 @@
     "icon": "<i class=\"fas fa-hat-witch\"></i>"
   },
   {
-    "id": "AL3021",
+    "id": "AL3022",
     "title": "Safety Not Guaranteed",
     "description": "Increases the max star rating of trinkets.",
     "category": "Town",
-    "order": 21,
+    "order": 22,
     "goldCost": 625000000,
     "mat": "M203",
     "matAmt": 50,
@@ -858,11 +871,11 @@
     "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
-    "id": "AL3022",
+    "id": "AL3023",
     "title": "Push It To The Limit",
     "description": "Increases the max star rating of trinkets.",
     "category": "Town",
-    "order": 22,
+    "order": 23,
     "goldCost": 32500000000,
     "mat": "M203",
     "matAmt": 50,

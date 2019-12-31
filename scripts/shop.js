@@ -94,60 +94,42 @@ class Perk {
     }
 }
 
-const $shopPerks = $("#shopPerks");
 const $marketsTab = $("#marketsTab");
-
-
-const $craftPerks = $("#craftPerks");
-const $adventurePerks = $("#adventurePerks");
-const $townPerks = $("#townPerks");
-
-const shopDivs = {
-    "Crafting" : $("#craftPerks"),
-    "Dungeon" : $("#adventurePerks"),
-    "Town" : $("#townPerks"),
-}
-
-const $townPerkDiv = $("#townPerkDiv");
-const $boughtPerksDiv = $("#boughtPerksDiv");
+const $purchasePerks = $("#purchasePerks");
+const $remainingPerks = $("#remainingPerks");
 const $boughtPerks = $("#boughtPerks");
+const $purchasedPerks = $("#purchasedPerks");
+
+const shopDivs = [
+    "Crafting",
+    "Dungeon",
+    "Town",
+]
 
 function refreshShop() {
-    for (let [name, div] of Object.entries(shopDivs)) {
-        div.empty();
-        const perks = Shop.nextUnlocks(name);
-        div.append(createALperk(perks.canPurchase));
-        div.append(showNextPerk(perks.nextUp));
-        div.append(showRemainingPerks(name));
-    }
-    if (DungeonManager.killedFirstBoss()) $townPerkDiv.show();
-    else $townPerkDiv.hide();
+    $purchasePerks.empty();
+    $remainingPerks.empty();
+    shopDivs.forEach(type => {
+        const perks = Shop.nextUnlocks(type);
+        $purchasePerks.append(createALperk(perks.canPurchase,type));
+        $remainingPerks.append(showRemainingPerks(type));
+    })
     const boughtPerks = Shop.boughtPerks();
     if (boughtPerks.length > 0) {
-        $boughtPerksDiv.show();
+        $purchasedPerks.show();
         $boughtPerks.empty();
         boughtPerks.forEach(perk => {
             createPurchasedperk(perk).appendTo($boughtPerks);
         });
     }
-    else $boughtPerksDiv.hide();
-}
-
-
-function showNextPerk(perk) {
-    if (perk === undefined) return;
-    const d1 = $("<div/>").addClass("alPerk");
-        $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
-        $("<div/>").addClass("alImage").html(perk.icon).appendTo(d1);
-        $("<div/>").addClass("alDesc").html(perk.description).appendTo(d1);
-        $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock this perk.`).appendTo(d1);
-    return d1;
+    else $purchasedPerks.hide();
 }
 
 function showRemainingPerks(type) {
     const perkCount =  Shop.perksByType(type).length - Shop.perksByType(type).filter(perk => perk.purchased).length;
     if (perkCount <= 2) return;
     const d1 = $("<div/>").addClass("alPerkRemaining");
+        $("<div/>").addClass("alType").html(type).appendTo(d1);
         $("<div/>").addClass("alTitle").html(`Perks Remaining`).appendTo(d1);
         $("<div/>").addClass("alPerkCount").html(`+${perkCount - 2}`).appendTo(d1);
         $("<div/>").addClass("alDesc").html(`More perks available for purchase.`).appendTo(d1);
@@ -155,8 +137,9 @@ function showRemainingPerks(type) {
     return d1;
 }
 
-function createALperk(perk) {
+function createALperk(perk,name) {
     const d1 = $("<div/>").addClass("alPerk");
+    $("<div/>").addClass("alSection").html(name).appendTo(d1);
     $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
     $("<div/>").addClass("alImage").html(perk.icon).appendTo(d1);
     $("<div/>").addClass("alDesc").html(perk.description).appendTo(d1);

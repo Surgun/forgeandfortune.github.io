@@ -473,7 +473,7 @@
     "description": "Unlocks Zoe, the cunning sorcerer.",
     "category": "Dungeon",
     "order": 8,
-    "goldCost": 500,
+    "goldCost": 2000,
     "mat": "M202",
     "matAmt": 50,
     "type": "hero",

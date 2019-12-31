@@ -138,7 +138,7 @@ class B0020 extends Buff {
         super(buffTemplate,target,power);
     }
     maxHP() {
-        return this.power();
+        return this.power;
     }
 }
 

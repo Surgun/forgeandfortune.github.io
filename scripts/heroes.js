@@ -130,8 +130,8 @@ class Hero extends Combatant {
     }
     maxHP() {
         const slots = this.getEquipSlots(true).map(s=>s.hp());
-        if (slots.length === 0) return this.initialHP;
-        return this.initialHP + slots.reduce((a,b) => a + b);
+        const hpFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a + b);
+        return this.initialHP + hpFromGear + this.getBuffMaxHP();
     }
     getTech() {
         const slots = this.getEquipSlots(true).map(s=>s.tech());

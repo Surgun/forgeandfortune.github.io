@@ -108,9 +108,13 @@ SkillManager.skillEffects['S0020'] = function (combatParams) {
     //Toughen - Cedric
     const targets = combatParams.getTarget(TargetType.SELF);
     targets.forEach(target => {
+        if (target.getBuffStacks('B0020') === 5) return;
+        console.log(target.getBuffStacks('B0020'))
         BuffManager.generateBuff('B0020',target,combatParams.power)
-        target.heal(combatParams.power);   
+        target.heal(combatParams.power);
+        refreshHPBar(target);
     });
+    
 }
 
 SkillManager.skillEffects['S1010'] = function (combatParams) {
@@ -247,9 +251,9 @@ SkillManager.skillEffects['SM902B'] = function (combatParams) {
     $("#mobImage"+target.uniqueid).html(target.image);
     target.playbook = PlaybookManager.generatePlayBookFromSkills(target.skill1,target.skill2,target.skill3,target.skill4);
     refreshSkillUnit(target);
-    target.healPercent(100)
     BuffManager.removeBuff('BM902A',target)
     BuffManager.generateBuff('BM902B',target,0);
+    target.healPercent(100);
 }
 
   //--------------------//

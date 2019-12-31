@@ -133,6 +133,7 @@ function initiateMonsterBldg() {
     $monsterNavButton.removeClass("selected");
     $monsterNavMobs.addClass("selected");
     $monsterMobs.show().addClass("selected");
+    if (MonsterHall.lvl < 2) $monsterNavRewards.hide();
     refreshHallMonsterList();
 }
 

@@ -261,13 +261,11 @@ function refreshBeatBar(uniqueid,dungeonTime) {
 }
 
 function refreshHPBar(hero) {
-    const hptypes = ["Dung","turnOrder"];
+    console.log("refresh hp for: "+hero.name);
     const hpPercent = hero.hp/hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
-    hptypes.forEach(type => {
-        $(`#hp${type}${hero.uniqueid}`).attr("data-label",hero.hp+"/"+hero.maxHP());
-        $(`#hpFill${type}${hero.uniqueid}`).css('width', hpWidth);
-    })
+    $(`#hpturnOrder${hero.uniqueid}`).attr("data-label",hero.hp+"/"+hero.maxHP());
+    $(`#hpFillturnOrder${hero.uniqueid}`).css('width', hpWidth);
 }
 
 function createDungeonSidebarReward(rewards,dungeonid) {

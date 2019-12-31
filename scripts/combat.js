@@ -112,6 +112,10 @@ class Combatant {
     getBuff(buffID) {
         return this.buffs.find(b => b.id === buffID);
     }
+    getBuffStacks(buffID) {
+        if (!this.hasBuff(buffID)) return 0;
+        return this.getBuff(buffID).stacks;
+    }
     addBuff(buff) {
         this.buffs.push(buff);
         this.hp = Math.min(this.hp,this.maxHP());
@@ -182,6 +186,7 @@ class Combatant {
         return buffs.reduce((a,b) => a+b, 0);
     }
     getBuffMaxHP() {
+        console.log(this.buffs);
         const buffs = this.buffs.map(b=>b.maxHP());
         return buffs.reduce((a,b) => a+b, 0);
     }

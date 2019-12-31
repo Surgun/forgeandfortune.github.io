@@ -1,77 +1,48 @@
 // Tab Selection for Recipes List
 
-const recipeItems = document.querySelectorAll(".recipeSelect");
+$(".recipeSelect").on("click", tabHighlight);
 
-recipeItems.forEach((recipeItem) => recipeItem.addEventListener("click", tabHighlight));
-
-function tabHighlight() {
-    recipeItems.forEach((recipeItem) => recipeItem.classList.remove("selected"));
-    this.classList.add("selected");
+function tabHighlight(e) {
+    $(".recipeSelect").removeClass("selected");
+    $(e.currentTarget).addClass("selected");
 }
 
 // Tab Selection for Navigation
 
-const navTabs = document.querySelectorAll(".tablinks");
-
-navTabs.forEach((navTab) => {
-    navTab.addEventListener("click", navTabHighlight);
-});
+$(".tablinks").on("click", navTabHighlight);
 
 function navTabHighlight(e) {
-    navTabs.forEach((navTab) => {
-        $(navTab).removeClass("tab-selected");
-    });
-    $(e.currentTarget).addClass("tab-selected");     
+    $(".tablinks").removeClass("tab-selected");
+    $(e.currentTarget).addClass("tab-selected");   
 }
 
 // Back To Top Button
 
-const backToTopButton = document.querySelector(".back-to-top");
+const $backToTopButton = $(".back-to-top");
 
-function backToTop() {
-    if (document.body.scrollTop || document.documentElement.scrollTop > 200) {
-        backToTopButton.classList.add("show-button");
-    } else {
-        backToTopButton.classList.remove("show-button");
-    }
-}
-
-if (backToTopButton) window.onscroll = () => backToTop();
+if ($backToTopButton) $(window).scroll(() => {
+    if ($("body").scrollTop() || $(document).scrollTop() > 200) $backToTopButton.addClass("show-button");
+    else $backToTopButton.removeClass("show-button");
+});
 
 // Toast Positioning Setting
 
-const toastSettings = document.querySelectorAll("#settings_notificationLocation .selection-container");
-
-$(document).on("input", "#settings_notificationLocation .selection-container input", (e) => {
-    assignToastPosition(e);
-});
-
-function assignToastPosition(e) {
-    const option = e.target.getAttribute("value");
-    toastSettings.forEach((selection) => {
-        selection.querySelector("input").removeAttribute("checked")
-    });
-    e.target.setAttribute("checked", "checked");
-    toastPosition = option;
+$(document).on("change", ".toastPositionSelection", () => {
+    $toastSettings.removeAttr("checked");
+    $(e.target).attr("checked", "checked")
     $.toast().reset('all');
-    settings.toastPosition = toastPosition;
+    settings.toastPosition = $(e.target).val();
     saveSettings();
-}
+});
 
 // Event Functions
 
 function disableEventLayers() {
-    const layers = document.querySelectorAll(".bgContainer .layer");
-    layers.forEach((layer)=> {
-        layer.classList.remove("christmasEvent"); // Add event classes to be removed
-    });
+    $(".bgContainer .layer").removeClass("christmasEvent"); // Add event classes to be removed
 }
 
 function enableChristmasLayers() {
-    const layers = document.querySelectorAll(".bgContainer .layer");
-    layers.forEach((layer)=> {
-        layer.classList.add("christmasEvent");
-    });
+    $(".bgContainer .layer").addClass("christmasEvent");
 }
 
 //
@@ -149,11 +120,10 @@ function dbEnable() {
 }
 
 function addButtonDB() {
-    const footer = $("#bottom-left");
     let dbButton = $("#debug");
     if (!dbButton.length) {
         dbButton = $("<a/>").attr("id", "debug").addClass("isDialog tooltip").attr("data-tooltip", "debug").html(`<i class="fas fa-bug"></i><div class="footerButtonText">Debug</div>`)
-        footer.append(dbButton);
+        $("#bottom-left").append(dbButton);
     }
 }
 

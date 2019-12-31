@@ -562,38 +562,3 @@ $(document).on('blur','.recipeSortInput', (e) => {
     settings.dialogStatus = 0;
     saveSettings();
 });
-
-const $RecipeLogistics = $("#RecipeLogistics");
-const $recipeDropdownButton = $(".recipeDropdownButton");
-
-$(document).on('click','.recipeDropdownButton', (e) => {
-    e.preventDefault(); 
-    const toggleFilter = $(e.currentTarget).hasClass("filterActive");
-    const filter = $(e.currentTarget).attr("data-filter");
-    $RecipeLogistics.show();
-    if (filter === "materials") {
-        $recipeDropdownButton.removeClass("filterActive")
-        $(e.currentTarget).addClass("filterActive");
-        $(".logisticContainer ").removeClass("expanded");
-        $("#materials").addClass("expanded");
-        settings.expandedLogistics.materials = 1;
-    }
-    if (toggleFilter) {
-        $(e.currentTarget).removeClass("filterActive");
-        $(".logisticContainer ").removeClass("expanded");
-        $RecipeLogistics.hide();
-        settings.expandedLogistics[filter] = 0;
-    }
-    saveSettings();
-});
-
-function checkLogisticsStatus() {
-    $RecipeLogistics.hide();
-    if (settings.expandedLogistics.materials === 1) {
-        $RecipeLogistics.show();
-        $(".recipeDropdownButton[data-filter=materials]").addClass("filterActive");
-        $("#materials").addClass("expanded");
-    }
-}
-
-checkLogisticsStatus();

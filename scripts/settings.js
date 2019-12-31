@@ -7,9 +7,6 @@ const settings = {
     dialogStatus: 0,
     battleLogLength: 999,
     db: 0,
-    expandedLogistics: { 
-        materials: 0
-    },
     expandedMaterials: {
         D001: 1, 
         D002: 1, 
@@ -39,6 +36,7 @@ loadSettings();
 
 // Port Settings - Remove old settings, update to new setting values, etc.
 function portSettings() {
+    delete settings.expandedLogistics;
     delete settings.toggleTurnOrderBars;
     if (settings.battleLogLength !== 999) settings.battleLogLength = 999;
 }

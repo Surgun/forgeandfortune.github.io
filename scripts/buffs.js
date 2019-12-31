@@ -138,7 +138,7 @@ class B0020 extends Buff {
         super(buffTemplate,target,power);
     }
     maxHP() {
-        return this.power;
+        return this.power*this.stacks;
     }
 }
 
@@ -146,7 +146,7 @@ class B1010 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    onTick() {
+    onHitting() {
         this.target.takeDamage(this.power);
     }
 }

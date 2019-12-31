@@ -118,6 +118,15 @@ SkillManager.skillEffects['S0020'] = function (combatParams) {
 }
 
 SkillManager.skillEffects['S1010'] = function (combatParams) {
+    //Meteor - Zoe
+    const targets = combatParams.getTarget(TargetType.ALLENEMIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        BuffManager.generateBuff("B1010",target,Math.floor(combatParams.power/10));
+    });
+};
+
+SkillManager.skillEffects['S1020'] = function (combatParams) {
     //Frost Strike - Neve
     const targets = combatParams.getTarget(TargetType.FIRST);
     const originalPower = combatParams.power;
@@ -128,17 +137,8 @@ SkillManager.skillEffects['S1010'] = function (combatParams) {
         }
         else {
             target.takeAttack(combatParams);
-            BuffManager.generateBuff("B1010",target,0);
+            BuffManager.generateBuff("B1020",target,0);
         }
-    });
-};
-
-SkillManager.skillEffects['S1020'] = function (combatParams) {
-    //Meteor - Zoe
-    const targets = combatParams.getTarget(TargetType.ALLENEMIES);
-    targets.forEach(target => {
-        target.takeAttack(combatParams);
-        BuffManager.generateBuff("B1020",target,Math.floor(combatParams.power/10));
     });
 };
 

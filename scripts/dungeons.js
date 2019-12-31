@@ -364,9 +364,6 @@ const DungeonManager = {
             refreshDungeonMatBar(dungeon.id);
         });
     },
-    killedFirstBoss() {
-        return this.bossesBeat.includes("B901");
-    },
     abandonAllDungeons() {
         this.dungeons.forEach(dungeon => {
             dungeon.resetDungeon();

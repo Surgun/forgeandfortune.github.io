@@ -218,7 +218,7 @@ class actionSlotVisualSlotTracking {
         this.status = status;
     }
     addReference(i) {
-        this.timeRef = $(`#ASBar${i}`);
+        this.timeRef = $(`#ASBar${i} .ASProgressBarTimer`);
         this.progressRef = $(`#ASBarFill${i}`);
     }
 }
@@ -227,8 +227,9 @@ function newActionSlot(slot) {
     const d = $("<div/>").addClass("ASBlock");
     $("<div/>").addClass("ASName").attr("id","asSlotName"+slot.slotNum).html(slot.itemPicName()).appendTo(d);
     const d2 = $("<div/>").addClass("ASCancel").data("slotNum",slot.slotNum).appendTo(d);
-    $("<div/>").addClass("ASCancelText").data("slotNum",slot.slotNum).html(`${miscIcons.cancelSlot}`).appendTo(d2);
-    const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+slot.slotNum).attr("data-label","").appendTo(d);
+    $("<div/>").addClass("ASCancelText tooltip").attr({"data-tooltip": "cancel_craft"}).data("slotNum",slot.slotNum).html(`${miscIcons.cancelSlot}`).appendTo(d2);
+    const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+slot.slotNum).appendTo(d);
+        $("<div/>").addClass("ASProgressBarTimer tooltip").appendTo(d3);
     const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+slot.slotNum).appendTo(d3);
     if (slot.isMastered()) s3.addClass("ProgressBarFillMaster");
     const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `autosell_${slot.autoSell().toLowerCase()}`).attr("id","asAuto"+slot.slotNum).data("slotNum",slot.slotNum).html(miscIcons.autoSell).appendTo(d);
@@ -244,7 +245,9 @@ function newActionSlot(slot) {
 
 function newEmptyActionSlot() {
     const d = $("<div/>").addClass("ASBlock");
-    $("<div/>").addClass("ASName").html(`${miscIcons.emptySlot} Empty Slot`).appendTo(d);
+    const d1 = $("<div/>").addClass("ASName ASEmpty").appendTo(d);
+        $("<div/>").addClass("ASEmptyIcon").html(`${miscIcons.emptySlot}`).appendTo(d1);
+        $("<div/>").addClass("ASEmptyText").html(`Empty Slot`).appendTo(d1);
     return d;
 }
 
@@ -275,14 +278,14 @@ const actionSlotVisualManager = {
             const compareSlot = this.slots[i];
             if (compareSlot.status === slotState.NEEDMATERIAL && slot.status === slotState.CRAFTING) {
                 //update for time format
-                compareSlot.timeRef.removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));
+                compareSlot.timeRef.removeClass("matsNeeded").attr({"data-tooltip": "remaining_time"}).html(miscIcons.time + msToTime(slot.timeRemaining()));
             }
             else if (compareSlot.status === slotState.CRAFTING && slot.status === slotState.NEEDMATERIAL) {
-                compareSlot.timeRef.addClass("matsNeeded").attr("data-label","Requires more material");
+                compareSlot.timeRef.addClass("matsNeeded").attr({"data-tooltip": "materials_needed"}).html(miscIcons.alert + "Materials Needed");
             }
             else if (compareSlot.status === slotState.CRAFTING) {
                 compareSlot.progressRef.css('width', slot.progress);
-                compareSlot.timeRef.attr("data-label",msToTime(slot.timeRemaining()));
+                compareSlot.timeRef.attr({"data-tooltip": "remaining_time"}).html(miscIcons.time + msToTime(slot.timeRemaining()));
             }
         });
     },

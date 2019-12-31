@@ -42,6 +42,20 @@
     "type": "static"
   },
   {
+    "id": "remaining_time",
+    "title": "Remaining Craft Time",
+    "description": "The amount of time remaining before this recipe is crafted.",
+    "icon": "<i class=\"fas fa-clock\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "materials_needed",
+    "title": "Missing Required Materials",
+    "description": "You do not have the required materials need to craft this recipe.",
+    "icon": "<i class=\"fas fa-exclamation-circle\"></i>",
+    "type": "static"
+  },
+  {
     "id": "fuse_time",
     "title": "Fuse Time",
     "description": "The amount of time needed to complete the fusion of this recipe.",
@@ -192,6 +206,13 @@
     "id": "autosell_epic",
     "title": "Auto-Sell Setting: All",
     "description": "You are currently autoselling all qualities (common, good, great and epic) of this item.",
+    "icon": null,
+    "type": "static"
+  },
+  {
+    "id": "cancel_craft",
+    "title": "Cancel Crafting",
+    "description": "Cancel crafting this recipe. Materials will be refunded.",
     "icon": null,
     "type": "static"
   },

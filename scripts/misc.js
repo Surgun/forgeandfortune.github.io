@@ -111,9 +111,11 @@ const miscIcons = Object.freeze({
     takeDamage : '<i class="fas fa-shield-cross"></i>',
     guildRep : '<i class="far fa-grin-alt"></i>',
     rarity: '<i class="fad fa-diamond"></i>',
-    emptySlot: `<img class='ASEmptyImg' src='images/recipes/noitem.png' />`,
+    emptySlot: `<i class="fas fa-question-circle"></i>`,
     cancelSlot: `<i class="fas fa-times"></i>`,
     autoSell: `<i class="fas fa-dollar-sign"></i>`,
+    time: `<i class="fas fa-clock"></i>`,
+    alert: `<i class="fas fa-exclamation-circle"></i>`
 });
 
 const heroStat = Object.freeze({

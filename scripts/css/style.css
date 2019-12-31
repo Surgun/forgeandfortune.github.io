@@ -30,6 +30,8 @@ body {
     --text-black: #000;
     --highlight: #ffc100;
 
+    --text-border: 1px 1px 0 #1f161f, -1px 1px 0 #1f161f, 1px -1px 0 #1f161f, -1px -1px 0 #1f161f, 0px 1px 0 #1f161f, 0px -1px 0 #1f161f, -1px 0px 0 #1f161f, 1px 0px 0 #1f161f, 0 0 5px #1f161f;
+
     --green-primary: #11dc82;
     --green-secondary: #1e7c52;
     --green-tertiary: #15925b;
@@ -75,7 +77,7 @@ body {
 
 /* .game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #actionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, .heroOverviewButton, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, .dungeonTeamButton, .eventList, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, .invSideContainer, .invSideContainer > i, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .buildingName:after, .footer_more-list, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .workerBuyCardDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, #db-panel input, .alPerkBuy, .guildOrderSubmit, .orderCraft, .dtsMaterialTitle, .dtsBackButton, #updateRefresh, .desynthGroup, .desynthButton, #desynthSlotStart, #desynthRemove, .heroUnequipSlot, #desynthSlotCollect, .desynthPowerSetting, #collectResmith, .eventActionButton, #dungeonAbandon, .heroOverviewCard, .fortuneStage, .dreActionButton, .tinkerCommand, .toggleStatus, .toggleCue, .smithButton, .recipeTotalCrafted, .fortuneItemClose, .fortuneItemSetClose .fortuneItemSac, .fuseClose, .fuseSlotStart, .monsterCard, .monsterActionsButton, .monsterActionsButton > i, .monsterNavButton, .monsterNavButton:after, .lineRewardPay, .workerBuyCardDesc, .fortuneItemSac, .smithHeroButton, .smithHeroButton.smithHeroBackButton > i, .recipeMasteryGuildButton { */
 
-.game-content, .isDialog, .dbActionButton, .dbActionContainer input, .dbClose, .footer_more-list, .footer_more-btn, .footer_more-content, .inventoryButtons > div, .heroEquipBlockEquipButton, .recipeFilterList, .recipeSelect, .recipeCardInfo, .recipeCardFront, .recipeCardBack, .recipeBackTab, .recipeCraft, .recipeDescription, .recipeClose, .recipeTotalCrafted, .recipeSortInput, .recipeSortButton {
+.game-content, .isDialog, .dbActionButton, .dbActionContainer input, .dbClose, .footer_more-list, .footer_more-btn, .footer_more-content, .inventoryButtons > div, .heroEquipBlockEquipButton, .recipeFilterList, .recipeSelect, .recipeCardInfo, .recipeCardFront, .recipeCardBack, .recipeBackTab, .recipeCraft, .recipeDescription, .recipeClose, .recipeTotalCrafted, .recipeSortInput, .recipeSortButton, .ASCancelText, .ASauto {
     transition: all var(--transition_ease-in-out);
 } 
 
@@ -124,7 +126,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: all var(--transition_linear);
-    animation: scale-in 0.2s linear;
+    animation: scale-in var(--transition_linear);
 }
 
 .actionButton:hover,
@@ -146,26 +148,29 @@ body {
     border-radius: 5px;
 }
 
+.sectionHeading {
+    padding: 0 5px 5px;
+    margin: 0 0 10px;
+    font-weight: normal;
+    font-size: 1rem;
+    border-bottom: 2px solid var(--border-primary);
+}
+
 /* End Reusable Components */
 
 /* General Content */
 
 p.hamster {
     color: var(--text-tertiary);
-    font-size: 10.4px;
     font-size: .65rem;
     opacity: 0.25;
-}
-
-#content, footer {
-    padding: 0;
-    user-select: none;
 }
 
 .game-content {
     display: grid;
     grid-template: 1fr 52px / 1fr 250px;
     height: 100vh;
+    user-select: none;
 }
 
 .game-wrapper {
@@ -195,7 +200,7 @@ footer {
     grid-row: 1 / 2;
     padding: 0 10px;
     background-color: var(--bg-primary);
-    border-left: 1px solid var(--border-primary);
+    border-left: 2px solid var(--border-primary);
     overflow-y: auto;
 }
 
@@ -740,62 +745,31 @@ footer {
 
 /* End Tabs and Tab Content Layout */
 
-/* Headings */
+/* Crafting Slots */
 
-.equipHeading, .dtsTopTitle > h3, .dtsBotTitle > h3, .rewardDiv:before, .eventMessage:before, .progress-section-title, .dungeonListingsHeading, .dungeonHeader, .rewardDivTitle, .eventStatTitle, .settings-title, .fuseHead, .possibleFuseHead, .bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .EquipmentCardsHeader, .eventNotorietyHeading, .desynthHeading, .fortuneGearHeading, .tinkerHeading, .smithHeading, .heroTrinketEquippedHeader, .fortuneHeading, .monsterRewardHeader {
-    font-weight: normal;
-    font-size: 16px;
-    font-size: 1rem;
-    padding: 0 5px 5px;
-    margin: 0 0 10px;
-    border-bottom: 2px solid var(--border-primary);
-}
-
-#dungeonRun {
-    -webkit-animation: 0.2s fade-in;
-    animation: 0.2s fade-in;
-}
-
-/* Action Slots */
-
-#Actions > h1 {
-    margin: 10px 0;
-    padding: 0 20px;
-}
-
-#actionSlots {
-    display: block;
-    width: 100%;
+.craftingSlotsContainer {
+    display: grid;
+    grid-template-columns: auto / 1fr;
+    grid-gap: 5px;
 }
 
 .ASBlock {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     position: relative;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-primary);
-    border-radius: 10px;
-    margin: 0 0 5px 0;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-height: 100px;
-    overflow: hidden;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-secondary);
+    border-radius: 10px;
 }
 
-.ASProgressBar, .plProgressBar {
+.ASProgressBar {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 23px;
-    margin: 0;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .ASProgressBar {
@@ -805,38 +779,31 @@ footer {
     bottom: 0;
     left: 0;
     height: 100%;
-    pointer-events: none;
-}
+} 
 
-.ASProgressBar:before {
-    content: attr(data-label);
+.ASProgressBarTimer {
     position: absolute;
-    white-space: pre;
-    bottom: 3px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    background-color: rgba(0,0,0,0.15);
-    border-radius: 15px;
-    font-weight: bold;
-    font-size: 0.9em;
-    padding: 0 10px;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    background-color: var(--border-secondary);
+    border-radius: 5px 0 0 0;
+    box-shadow: -2px -2px 5px 0 rgba(0,0,0,.20);
     z-index: 2;
 }
 
-.ASProgressBar.matsNeeded:before {
-    color: var(--highlight);
-    font-weight: normal;
-    font-size: 0.70em;
-    text-transform: uppercase;
-    background: none;
+.ASProgressBarTimer > i {
+    margin-right: 5px;
 }
 
 .ASProgressBar .ProgressBarFill.ProgressBarFillMaster {
     background: var(--gradient-secondary);
 }
 
-.ProgressBarFill, .plProgressBarPercent {
+.ProgressBarFill {
     display: block;
     position: relative;
     height: 100%;
@@ -845,141 +812,136 @@ footer {
 }
 
 .ASName {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    font-size: 0.9rem;
     text-align: center;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    padding: 5px;
-    font-size: 0.9em;
-    text-shadow: 0 0 5px black;
+    text-shadow: var(--text-border);
     z-index: 2;
 }
 
 .ASName img {
-    vertical-align: middle;
-    margin: 3px 0;
+    margin: 5px 0;
 }
 
-.ASEmptyImg {
-    max-height: 32px;
-    opacity: 0.8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+.ASEmptyIcon {
+    padding: 5px;
+    font-size: 3rem;
+    opacity: .1;
 }
 
-.ASCancel {
+.ASEmptyText {
     position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 10px;
+    bottom: 0;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    background-color: var(--border-secondary);
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 -2px 5px 0 rgba(0,0,0,.20);
+}
+
+.ASauto, .ASCancelText {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 1rem;
+    text-shadow: 0 0 3px black;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 2px solid var(--border-secondary);
+    border-radius: 50%;
+    opacity: .75;
+    cursor: pointer;
     z-index: 2;
 }
 
 .ASCancelText {
-    display: block;
-    color: rgba(255, 0, 0, 0.5);
-    text-decoration: none;
+    top: 2.5px;
+    right: 2.5px;
 }
 
 .ASCancelText:hover {
-    color: rgba(255, 0, 0, 1);
-}
-
-.ASCancelText > i {
-    font-size: 2em;
-    padding: 5px;
-}
-
-.ASBuySlot {
-    padding: 10px;
-    text-align: center;
-}
-
-.ASauto, .WSAuto {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    padding: 3px 5px;
-    font-size: 20px;
-    color: #635c5c;
-    opacity: 0.75;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-    cursor: pointer;
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.55), -1px -1px 0 rgba(0,0,0,0.55), 1px -1px 0 rgba(0,0,0,0.55), -1px 1px 0 rgba(0,0,0,0.55);
-}
-
-.ASauto:hover, .WSAuto:hover {
+    background-color: var(--button-cancel);
+    border-color: var(--button-cancel-border);
     opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.ASauto {
+    top: 2.5px;
+    left: 2.5px;
+}
+
+.ASauto:hover {
+    opacity: 1;
 }
 
 .ASautoEnabledCommon, .WSautoEnabled {
-    color: #fff;
-    opacity: 0.9;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 .ASautoEnabledGood {
-    color: rgba(27, 223, 69, 1);
-    opacity: 0.9;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    background-color: rgb(44, 255, 89);
 }
 
 .ASautoEnabledGreat {
-    color: rgba(2, 121, 223, 1);
-    opacity: 0.9;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    background-color: rgb(8, 173, 255);
 }
 
 .ASautoEnabledEpic {
-    color: rgba(243, 6, 144, 1);
-    opacity: 0.9;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    background-color: rgb(255, 79, 167);
 }
 
-.ASautoEnabled:hover {
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-
-.asRes, .orderMaterials {
-    position: relative;
-    left: 5px;
-    display: -webkit-box;
-    display: -ms-flexbox;
+.asRes {
+    position: absolute;
+    bottom: 2.5px;
+    left: 2.5px;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    z-index: 1;
+    align-items: center;
 }
 
 .asResIcon {
-    margin-right: 2px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1px;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    font-size: .85rem;
+    text-shadow: 0 0 3px black;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* End Crafting Slots */
+
+
+.plProgressBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 23px;
+}
+
+.plProgressBarPercent {
+    display: block;
+    position: relative;
+    height: 100%;
+    background: var(--gradient-primary);
+    z-index: 1;
 }
 
 .orderMaterials {
     left: unset;
     margin-top: 5px;
-}
-
-.WSAuto {
-    left: 0;
-    top: unset;
-    bottom: 0;
-    font-size: 15.84px;
-    font-size: .99rem;
 }
 
 .pbLabel {

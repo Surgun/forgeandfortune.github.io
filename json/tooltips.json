@@ -177,35 +177,35 @@
   {
     "id": "autosell_none",
     "title": "Auto-Sell Setting: None",
-    "description": "You are currently not autoselling any qualities of this item.",
+    "description": "You are currently not autoselling any rarities of this item.",
     "icon": null,
     "type": "static"
   },
   {
     "id": "autosell_common",
     "title": "Auto-Sell Setting: Common",
-    "description": "You are currently autoselling common quality for this item.",
+    "description": "You are currently auto-selling <span class=\"tooltip-item_common\">Common</span> rarity for this item.",
     "icon": null,
     "type": "static"
   },
   {
     "id": "autosell_good",
     "title": "Auto-Sell Setting: Good and below",
-    "description": "You are currently autoselling good and common quality for this item.",
+    "description": "You are currently auto-selling <span class=\"tooltip-item_good\">Good</span> and <span class=\"tooltip-item_common\">Common</span> rarity for this item.",
     "icon": null,
     "type": "static"
   },
   {
     "id": "autosell_great",
     "title": "Auto-Sell Setting: Great and below",
-    "description": "You are currently autoselling great, good and common quality for this item.",
+    "description": "You are currently auto-selling <span class=\"tooltip-item_great\">Great</span>, <span class=\"tooltip-item_good\">Good</span> and <span class=\"tooltip-item_common\">Common</span> rarity for this item.",
     "icon": null,
     "type": "static"
   },
   {
     "id": "autosell_epic",
     "title": "Auto-Sell Setting: All",
-    "description": "You are currently autoselling all qualities (common, good, great and epic) of this item.",
+    "description": "You are currently auto-selling all rarities (<span class=\"tooltip-item_epic\">Epic</span>, <span class=\"tooltip-item_great\">Great</span>, <span class=\"tooltip-item_good\">Good</span> and <span class=\"tooltip-item_common\">Common</span>) of this item.",
     "icon": null,
     "type": "static"
   },

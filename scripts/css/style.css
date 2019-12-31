@@ -885,17 +885,17 @@ footer {
     z-index: 2;
 }
 
-.ASCancel a {
+.ASCancelText {
     display: block;
     color: rgba(255, 0, 0, 0.5);
     text-decoration: none;
 }
 
-.ASCancel a:hover {
+.ASCancelText:hover {
     color: rgba(255, 0, 0, 1);
 }
 
-.ASCancel > a > i {
+.ASCancelText > i {
     font-size: 2em;
     padding: 5px;
 }

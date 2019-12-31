@@ -214,7 +214,8 @@
     "minFloor": 56,
     "maxFloor": 60,
     "mobs": [
-      "B200"
+      "B200",
+      "B201"
     ],
     "type": "normal",
     "mat": "M102",
@@ -226,7 +227,8 @@
     "minFloor": 61,
     "maxFloor": 70,
     "mobs": [
-      "B200"
+      "B200",
+      "B201"
     ],
     "type": "normal",
     "mat": "M102",
@@ -238,7 +240,8 @@
     "minFloor": 71,
     "maxFloor": 80,
     "mobs": [
-      "B200"
+      "B200",
+      "B201"
     ],
     "type": "normal",
     "mat": "M102",
@@ -250,7 +253,8 @@
     "minFloor": 81,
     "maxFloor": 90,
     "mobs": [
-      "B200"
+      "B200",
+      "B201"
     ],
     "type": "normal",
     "mat": "M102",
@@ -262,6 +266,7 @@
     "minFloor": 91,
     "maxFloor": 10000,
     "mobs": [
+      "B200",
       "B201"
     ],
     "type": "normal",
@@ -334,7 +339,7 @@
     "minFloor": 51,
     "maxFloor": 55,
     "mobs": [
-      "B300"
+      "B301"
     ],
     "type": "normal",
     "mat": "M302",
@@ -346,6 +351,7 @@
     "minFloor": 56,
     "maxFloor": 60,
     "mobs": [
+      "B301",
       "B300"
     ],
     "type": "normal",
@@ -358,6 +364,7 @@
     "minFloor": 61,
     "maxFloor": 70,
     "mobs": [
+      "B301",
       "B300"
     ],
     "type": "normal",
@@ -370,6 +377,7 @@
     "minFloor": 71,
     "maxFloor": 80,
     "mobs": [
+      "B301",
       "B300"
     ],
     "type": "normal",
@@ -382,6 +390,7 @@
     "minFloor": 81,
     "maxFloor": 90,
     "mobs": [
+      "B301",
       "B300"
     ],
     "type": "normal",
@@ -394,7 +403,8 @@
     "minFloor": 91,
     "maxFloor": 10000,
     "mobs": [
-      "B301"
+      "B301",
+      "B300"
     ],
     "type": "normal",
     "mat": "M302",

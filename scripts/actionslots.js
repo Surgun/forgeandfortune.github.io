@@ -250,17 +250,16 @@ function newEmptyActionSlot() {
 
 const actionSlotVisualManager = {
     slots : [],
-    firstLoad : true,
+    slotCount : 0,
     disableRefresh : false,
     updateSlots() {
         if (this.disableRefresh) return;
         //slots changed, just redraw everything
-        if (this.slots.length !== actionSlotManager.slots.length || this.firstLoad) {
-            this.firstLoad = false;
+        if (this.slots.length !== actionSlotManager.slots.length || this.slotCount !== actionSlotManager.maxSlots) {
+            this.slotCount = actionSlotManager.maxSlots;
             this.slots = [];
             $actionSlots.empty();
             actionSlotManager.slots.forEach((slot,i) => {
-                console.log(slot.itemid);
                 const newSlot = new actionSlotVisualSlotTracking(slot.item.id,slot.status);
                 $actionSlots.append(newActionSlot(slot));
                 newSlot.addReference(i);
@@ -274,19 +273,6 @@ const actionSlotVisualManager = {
         //otherwise let's just update what we have....
         actionSlotManager.slots.forEach((slot,i) => {
             const compareSlot = this.slots[i];
-            /*if (slot.item.id !== compareSlot.id) {
-                compareSlot.id = slot.item.id;
-                //if the craft isn't the same pop the new one in
-                $(`#asSlotName${slot.slotNum}`).html(slot.itemPicName());
-                if (slot.isMastered()) $(`#ASBarFill${slot.slotNum}`).addClass("ProgressBarFillMaster");
-                else $(`#ASBarFill${slot.slotNum}`).removeClass("ProgressBarFillMaster");
-                $(`#asAuto${slot.slotNum}`).removeClass("ASautoEnabledCommon ASautoEnabledGood ASautoEnabledGreat ASautoEnabledEpic").addClass("ASautoEnabled"+slot.autoSell());
-                if (!slot.resList) return;
-                const d = $(`#asRes${slot.slotNum}`).empty();
-                slot.resList().forEach(g => {
-                    $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d);
-                });
-            }*/
             if (compareSlot.status === slotState.NEEDMATERIAL && slot.status === slotState.CRAFTING) {
                 //update for time format
                 compareSlot.timeRef.removeClass("matsNeeded").attr("data-label",msToTime(slot.timeRemaining()));

@@ -229,7 +229,8 @@ function newActionSlot(slot) {
     const d2 = $("<div/>").addClass("ASCancel").data("slotNum",slot.slotNum).appendTo(d);
     $("<div/>").addClass("ASCancelText tooltip").attr({"data-tooltip": "cancel_craft"}).data("slotNum",slot.slotNum).html(`${miscIcons.cancelSlot}`).appendTo(d2);
     const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+slot.slotNum).appendTo(d);
-        $("<div/>").addClass("ASProgressBarTimer tooltip").appendTo(d3);
+        const d3a = $("<div/>").addClass("ASProgressBarTimer tooltip").appendTo(d3);
+        if (slot.status === slotState.NEEDMATERIAL) d3a.addClass("matsNeeded").attr({"data-tooltip": "materials_needed"}).html(miscIcons.alert + "Materials Needed");
     const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+slot.slotNum).appendTo(d3);
     if (slot.isMastered()) s3.addClass("ProgressBarFillMaster");
     const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `autosell_${slot.autoSell().toLowerCase()}`).attr("id","asAuto"+slot.slotNum).data("slotNum",slot.slotNum).html(miscIcons.autoSell).appendTo(d);

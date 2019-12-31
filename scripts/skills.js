@@ -233,7 +233,7 @@ SkillManager.skillEffects['SM901'] = function (combatParams) {
 
 SkillManager.skillEffects['SM902'] = function (combatParams) {
     //Phoenix Fire - Phoenix
-    const targets = combatParams.getTarget(TargetType.FIRST);
+    const targets = combatParams.getTarget(TargetType.ALLENEMIES);
     targets.forEach(target => {
         target.takeAttack(combatParams);
         BuffManager.generateBuff('BM902',target,combatParams.power);

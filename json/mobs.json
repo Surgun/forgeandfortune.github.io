@@ -93,7 +93,7 @@
   {
     "id": "B902",
     "name": "Phoenix",
-    "hpMod": 10000,
+    "hpMod": 3000,
     "powMod": 200,
     "protection": 0,
     "skill1": "S0000",

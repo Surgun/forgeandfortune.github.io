@@ -285,12 +285,63 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    min-height: 212px;
+    min-height: 240px;
     color: var(--text-primary);
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
     overflow: hidden;
+}
+
+.inventoryItemEmpty {
+    opacity: 0.75;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--bg-primary);
+}
+
+.inventoryItemEmptyIcon {
+    opacity: .75;
+}
+
+.inventoryItemEmptyIcon > i {
+    font-size: 2rem;
+    opacity: .1;
+}
+
+.inventoryItemEmptyText {
+    padding: 5px 10px;
+    color: var(--text-tertiary);
+}
+
+.inventoryItemEmpty .inventoryItemRarity, .inventoryItemEmpty .inventoryItemLevel {
+    height: 38px;
+    width: 37.5px;
+    opacity: .45;
+}
+
+.inventoryItemEmpty .invPropStat {
+    margin-bottom: 5px;
+    height: 36px;
+    opacity: .45;
+}
+
+.inventoryItemEmpty .invPropStat > span {
+    margin-left: auto;
+    height: 26px;
+    width: 80%;
+    background-color: rgba(255,255,255,.05);
+    border-radius: 5px;
+}
+
+.inventoryItemEmpty .inventoryButtons > div {
+    height: 36px;
+    background-color: rgba(255,255,255,.02);
+    cursor: default;
+}
+
+.inventoryItemEmpty .inventoryButtons > div:hover {
+    background-color: rgba(255,255,255,.02);
+    box-shadow: none;
 }
 
 .inventoryItemName, .equipItemName, .heroEquipBlockName {
@@ -301,7 +352,7 @@ footer {
     width: 100%;
 }
 
-.inventoryItemName > img, .equipItemName > img, .heroEquipBlockPic {
+.inventoryItemName > img, .equipItemName > img, .heroEquipBlockPic, .inventoryItemEmptyIcon {
     padding: 10px;
     height: 56px;
     width: 56px;
@@ -310,7 +361,7 @@ footer {
     border-radius: 10px;
 }
 
-.inventoryItemName .item-prefix-name, .equipItemName .item-prefix-name, .heroEquipBlockName {
+.inventoryItemName .item-prefix-name, .equipItemName .item-prefix-name, .heroEquipBlockName, .inventoryItemEmptyText {
     width: 100%;
     margin-bottom: 5px;
     padding: 5px;
@@ -377,6 +428,7 @@ footer {
 
 .inventoryProps, .equipItemProps {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -749,7 +801,7 @@ footer {
 
 .craftingSlotsContainer {
     display: grid;
-    grid-template-columns: auto / 1fr;
+    grid-template: auto / 1fr;
     grid-gap: 5px;
 }
 

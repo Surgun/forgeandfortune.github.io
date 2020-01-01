@@ -51,7 +51,7 @@
   {
     "id": "materials_needed",
     "title": "Missing Required Materials",
-    "description": "You do not have the required materials need to craft this recipe.",
+    "description": "You do not have the required materials needed to craft this recipe.",
     "icon": "<i class=\"fas fa-exclamation-circle\"></i>",
     "type": "static"
   },

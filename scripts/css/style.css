@@ -377,7 +377,7 @@ footer {
     font-size: 1.25rem;
     background-color: rgba(255,255,255,.05);
     border: 2px solid transparent;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .inventoryItemRarity.RT0 {
@@ -680,17 +680,34 @@ footer {
 
 .guildWorkersSide {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    padding: 5px;
+    font-size: 0.85rem;
     background-color: var(--bg-tertiary);
-    border: 2px solid var(--border-primary);
+    border: 2px solid var(--border-secondary);
     border-radius: 5px;
 }
 
-.guildWorkersSide img {
-    margin-bottom: -5px;
-    margin-right: 5px;
+.guildWorkersSide.noWorkersAvailable {
+    background-color: var(--button-cancel-border);
+    border-color: var(--button-cancel);
+}
+
+.guildWorkerSideImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    width: 30px;
+    background-color: var(--border-secondary);
+}
+
+.noWorkersAvailable .guildWorkerSideImage {
+    background-color: var(--button-cancel);
+}
+
+.guildWorkersSide > span {
+    flex-grow: 1;
+    text-align: center;
 }
 
 /* End Right Sidebar Guild Workers */
@@ -1837,6 +1854,13 @@ footer {
     padding: 10px;
     border-radius: 10px 10px 0 0;
     border-bottom: 2px solid var(--border-primary);
+}
+
+.alSection {
+    margin-top: 5px;
+    padding: 3px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
 }
 
 .alImage, .purchasedPerkImage {

@@ -828,7 +828,7 @@ footer {
     flex-direction: column;
     width: 100%;
     min-height: 100px;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     border: 2px solid var(--border-secondary);
     border-radius: 10px;
     overflow: hidden;
@@ -898,7 +898,7 @@ footer {
 .ASEmptyIcon {
     padding: 5px;
     font-size: 3rem;
-    opacity: .1;
+    opacity: .075;
 }
 
 .ASEmptyText {

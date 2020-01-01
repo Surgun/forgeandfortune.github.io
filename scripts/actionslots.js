@@ -5,6 +5,7 @@ const slotState = Object.freeze({NEEDMATERIAL:0,CRAFTING:1});
 $(document).on("click", ".ASCancel", (e) => {
     e.preventDefault();
     e.stopPropagation();
+    destroyTooltip(e);
     const slot = parseInt($(e.target).parent().data("slotNum"));
     actionSlotManager.removeSlot(slot);
 });

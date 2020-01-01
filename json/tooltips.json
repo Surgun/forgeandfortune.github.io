@@ -14,6 +14,13 @@
     "type": "static"
   },
   {
+    "id": "sort_inventory",
+    "title": "Inventory Sorting",
+    "description": "This shit sorts your inventory by cookies, then hamburgers, then your sexual preference.",
+    "icon": "<i class=\"fas fa-sort-size-up-alt\"></i>",
+    "type": "static"
+  },
+  {
     "id": "recipe_desc",
     "title": "#name#",
     "description": "#description#",

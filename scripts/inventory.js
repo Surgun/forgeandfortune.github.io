@@ -414,6 +414,7 @@ function refreshInventory() {
                 $("<div/>").addClass("inventoryItemEmptyText").html(`Empty Slot`).appendTo(itemName);
                 $("<div/>").addClass("invPropStat").html(`<span></span>`).appendTo(itemProps);
                 $("<div/>").addClass("invPropStat").html(`<span></span>`).appendTo(itemProps);
+                $("<div/>").addClass("invPropStat").html(`<span></span>`).appendTo(itemProps);
                 $("<div/>").appendTo(actionBtns);
                 $("<div/>").appendTo(actionBtns);
             itemdiv.append(itemName,itemRarity,itemLevel,itemProps,actionBtns);

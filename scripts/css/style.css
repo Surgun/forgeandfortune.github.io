@@ -487,10 +487,8 @@ footer {
 }
 
 .inventoryProps, .equipItemProps {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-gap: 5px;
     width: 100%;
 }
 

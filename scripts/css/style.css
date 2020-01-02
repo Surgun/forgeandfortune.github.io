@@ -320,9 +320,12 @@ footer {
 }
 
 .inventoryItemEmpty .invPropStat {
-    margin-bottom: 5px;
     height: 36px;
     opacity: .45;
+}
+
+.inventoryItemEmpty .invPropStat + .invPropStat  {
+    margin-top: 5px;
 }
 
 .inventoryItemEmpty .invPropStat > span {

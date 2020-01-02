@@ -342,7 +342,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    min-height: 240px;
+    min-height: 281px;
     color: var(--text-primary);
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
@@ -379,10 +379,6 @@ footer {
 .inventoryItemEmpty .invPropStat {
     height: 36px;
     opacity: .45;
-}
-
-.inventoryItemEmpty .invPropStat + .invPropStat  {
-    margin-top: 5px;
 }
 
 .inventoryItemEmpty .invPropStat > span {

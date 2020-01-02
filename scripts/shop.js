@@ -129,8 +129,7 @@ function showRemainingPerks(type) {
     const perkCount =  Shop.perksByType(type).length - Shop.perksByType(type).filter(perk => perk.purchased).length;
     if (perkCount <= 2) return;
     const d1 = $("<div/>").addClass("alPerkRemaining");
-        $("<div/>").addClass("alType").html(type).appendTo(d1);
-        $("<div/>").addClass("alTitle").html(`Perks Remaining`).appendTo(d1);
+        $("<div/>").addClass("alTitle").html(`${type} Perks`).appendTo(d1);
         $("<div/>").addClass("alPerkCount").html(`+${perkCount - 2}`).appendTo(d1);
         $("<div/>").addClass("alDesc").html(`More perks available for purchase.`).appendTo(d1);
         $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock more perks.`).appendTo(d1);
@@ -139,8 +138,8 @@ function showRemainingPerks(type) {
 
 function createALperk(perk,name) {
     const d1 = $("<div/>").addClass("alPerk");
-    $("<div/>").addClass("alSection").html(name).appendTo(d1);
     $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
+    $("<div/>").addClass("alSection").html(`${name} Perk`).appendTo(d1);
     $("<div/>").addClass("alImage").html(perk.icon).appendTo(d1);
     $("<div/>").addClass("alDesc").html(perk.description).appendTo(d1);
     if (perk.purchased) {
@@ -159,6 +158,7 @@ function createALperk(perk,name) {
 function createPurchasedperk(perk) {
     const d1 = $("<div/>").addClass("alPurchasedPerk tooltip").attr({"data-tooltip": "perk_desc", "data-tooltip-value": perk.id});
     $("<div/>").addClass("purchasedPerkTitle").html(perk.title).appendTo(d1);
+    $("<div/>").addClass("alSection").html(`${perk.category} Perk`).appendTo(d1);
     $("<div/>").addClass("purchasedPerkImage").html(perk.icon).appendTo(d1);
     return d1;
 }

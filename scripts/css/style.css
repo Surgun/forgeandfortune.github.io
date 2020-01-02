@@ -156,7 +156,64 @@ body {
     border-bottom: 2px solid var(--border-primary);
 }
 
+.progressBarContainer {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    font-size: 0.85rem;
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-tertiary);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progressBarText {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 30px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: var(--text-border);
+}
+
+.progressBarContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.progressBarIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: inherit;
+    background-color: var(--border-tertiary);
+}
+
+.progressBar {
+    height: inherit;
+    flex-grow: 1;
+}
+
+.progressBarFill {
+    height: inherit;
+    background: var(--border-primary);
+}
+
 /* End Reusable Components */
+
+/* Custom Progress Bars */
+
+.repMaxBarContainer .progressBarText {
+    color: var(--highlight);
+}
+
+/* End Custom Progress Bars */
 
 /* General Content */
 
@@ -285,12 +342,66 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    min-height: 212px;
+    min-height: 240px;
     color: var(--text-primary);
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
     overflow: hidden;
+}
+
+.inventoryItemEmpty {
+    opacity: 0.75;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--bg-primary);
+}
+
+.inventoryItemEmptyIcon {
+    opacity: .75;
+}
+
+.inventoryItemEmptyIcon > i {
+    font-size: 2rem;
+    opacity: .1;
+}
+
+.inventoryItemEmptyText {
+    padding: 5px 10px;
+    color: var(--text-tertiary);
+}
+
+.inventoryItemEmpty .inventoryItemRarity, .inventoryItemEmpty .inventoryItemLevel {
+    height: 38px;
+    width: 37.5px;
+    opacity: .45;
+}
+
+.inventoryItemEmpty .invPropStat {
+    height: 36px;
+    opacity: .45;
+}
+
+.inventoryItemEmpty .invPropStat + .invPropStat  {
+    margin-top: 5px;
+}
+
+.inventoryItemEmpty .invPropStat > span {
+    margin-left: auto;
+    height: 26px;
+    width: 80%;
+    background-color: rgba(255,255,255,.05);
+    border-radius: 5px;
+}
+
+.inventoryItemEmpty .inventoryButtons > div {
+    height: 36px;
+    background-color: rgba(255,255,255,.02);
+    cursor: default;
+}
+
+.inventoryItemEmpty .inventoryButtons > div:hover {
+    background-color: rgba(255,255,255,.02);
+    box-shadow: none;
 }
 
 .inventoryItemName, .equipItemName, .heroEquipBlockName {
@@ -301,7 +412,7 @@ footer {
     width: 100%;
 }
 
-.inventoryItemName > img, .equipItemName > img, .heroEquipBlockPic {
+.inventoryItemName > img, .equipItemName > img, .heroEquipBlockPic, .inventoryItemEmptyIcon {
     padding: 10px;
     height: 56px;
     width: 56px;
@@ -310,7 +421,7 @@ footer {
     border-radius: 10px;
 }
 
-.inventoryItemName .item-prefix-name, .equipItemName .item-prefix-name, .heroEquipBlockName {
+.inventoryItemName .item-prefix-name, .equipItemName .item-prefix-name, .heroEquipBlockName, .inventoryItemEmptyText {
     width: 100%;
     margin-bottom: 5px;
     padding: 5px;
@@ -326,7 +437,7 @@ footer {
     font-size: 1.25rem;
     background-color: rgba(255,255,255,.05);
     border: 2px solid transparent;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .inventoryItemRarity.RT0 {
@@ -377,6 +488,7 @@ footer {
 
 .inventoryProps, .equipItemProps {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -451,7 +563,7 @@ footer {
     padding: 0 10px 10px;
     height: 100%;
     background-color: var(--bg-primary);
-    border-right: 1px solid var(--border-primary);
+    border-right: 2px solid var(--border-primary);
     overflow: auto;
     transform-origin: left;
     animation: 0.15s scale-x-in forwards;
@@ -628,17 +740,34 @@ footer {
 
 .guildWorkersSide {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    padding: 5px;
+    font-size: 0.85rem;
     background-color: var(--bg-tertiary);
-    border: 2px solid var(--border-primary);
+    border: 2px solid var(--border-secondary);
     border-radius: 5px;
 }
 
-.guildWorkersSide img {
-    margin-bottom: -5px;
-    margin-right: 5px;
+.guildWorkersSide.noWorkersAvailable {
+    background-color: var(--button-cancel-border);
+    border-color: var(--button-cancel);
+}
+
+.guildWorkerSideImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    width: 30px;
+    background-color: var(--border-secondary);
+}
+
+.noWorkersAvailable .guildWorkerSideImage {
+    background-color: var(--button-cancel);
+}
+
+.guildWorkersSide > span {
+    flex-grow: 1;
+    text-align: center;
 }
 
 /* End Right Sidebar Guild Workers */
@@ -749,7 +878,7 @@ footer {
 
 .craftingSlotsContainer {
     display: grid;
-    grid-template-columns: auto / 1fr;
+    grid-template: auto / 1fr;
     grid-gap: 5px;
 }
 
@@ -759,7 +888,7 @@ footer {
     flex-direction: column;
     width: 100%;
     min-height: 100px;
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     border: 2px solid var(--border-secondary);
     border-radius: 10px;
     overflow: hidden;
@@ -829,7 +958,7 @@ footer {
 .ASEmptyIcon {
     padding: 5px;
     font-size: 3rem;
-    opacity: .1;
+    opacity: .075;
 }
 
 .ASEmptyText {
@@ -1785,6 +1914,13 @@ footer {
     padding: 10px;
     border-radius: 10px 10px 0 0;
     border-bottom: 2px solid var(--border-primary);
+}
+
+.alSection {
+    margin-top: 5px;
+    padding: 3px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
 }
 
 .alImage, .purchasedPerkImage {

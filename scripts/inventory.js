@@ -399,12 +399,57 @@ $sideInventoryAmt = $("#invSidebarAmt");
 function refreshInventory() {
     $inventory.empty();
     //build the sorted inventory
-    Inventory.inv.forEach((container,i) => {
-        if (container === null) {
-            $("<div/>").addClass("inventoryItem").html("Empty").appendTo($inventory);
+    Inventory.inv.forEach((item,i) => {
+        const itemdiv = $("<div/>").addClass("inventoryItem");
+        const itemName = $("<div/>").addClass("inventoryItemName");
+        const itemRarity = $("<div/>").addClass(`inventoryItemRarity`);
+        const itemLevel = $("<div/>").addClass("inventoryItemLevel");
+        const itemCost = $("<div/>").addClass("inventoryItemValue")
+        const itemProps = $("<div/>").addClass("inventoryProps");
+        const actionBtns = $("<div/>").addClass("inventoryButtons");
+        if (item === null) {
+            // Empty Inventory Item Filler for Styling
+            itemdiv.addClass("inventoryItemEmpty");
+                $("<div/>").addClass("inventoryItemEmptyIcon").html(miscIcons.emptySlot).appendTo(itemName);
+                $("<div/>").addClass("inventoryItemEmptyText").html(`Empty Slot`).appendTo(itemName);
+                $("<div/>").addClass("invPropStat").html(`<span></span>`).appendTo(itemProps);
+                $("<div/>").addClass("invPropStat").html(`<span></span>`).appendTo(itemProps);
+                $("<div/>").appendTo(actionBtns);
+                $("<div/>").appendTo(actionBtns);
+            itemdiv.append(itemName,itemRarity,itemLevel,itemProps,actionBtns);
+            $inventory.append(itemdiv);
             return;
         }
-        createInventoryCard(container,i).appendTo($inventory);
+        itemdiv.addClass("R"+item.rarity)
+        itemName.addClass("itemName").attr({"id": item.id, "r": item.rarity}).html(item.picName());
+        itemRarity.addClass(`RT${item.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[item.rarity].toLowerCase()}`}).html(miscIcons.rarity);
+        itemCost.addClass("tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(item.goldValue())}).html(item.goldValueFormatted());
+        itemLevel.addClass("tooltip").attr({"data-tooltip": "item_level"}).html(item.itemLevel());
+        if (item.goldValue() === 0) {
+            itemCost.hide();
+        }
+        if (item.lvl === 0 && item.scale === 0) {
+            itemLevel.hide();
+        }
+        for (const [stat, val] of Object.entries(item.itemStat(false))) {
+            if (val === 0) continue;
+            $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
+        };
+        if (item.item.recipeType === "normal" || item.item.recipeType === "trinket") {
+            $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip").appendTo(actionBtns);
+        }
+        if (item.item.recipeType === "trinket") {
+            itemLevel.attr({"data-tooltip": "star_rating"});
+            itemRarity.hide();
+        }
+        if (item.goldValue() > 0) {
+            $("<div/>").addClass('inventorySell').attr("id",i).html("Sell").appendTo(actionBtns);
+        }
+        else {
+            $("<div/>").addClass('inventorySell').attr("id",i).html("Discard").appendTo(actionBtns);
+        }
+        itemdiv.append(itemName,itemRarity,itemLevel,itemCost,itemProps,actionBtns);
+        $inventory.append(itemdiv);
     });
     $sideInventoryAmt.html(`${Inventory.inventoryCount()}/20`)
     if (Inventory.inventoryCount() === 20) $sideInventory.addClass("inventoryFullSide");

@@ -93,9 +93,15 @@ class itemContainer {
         if (this.scale > 0) return `<div class="level_text">${miscIcons.star}</div><div class="level_integer">${this.scale}</div>`;
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
-    pow(sharpIncrease) { return this.statCalc(this.powRatio*this.pts,this.item.powScale,sharpIncrease); }
-    hp(sharpIncrease) { return this.statCalc(9*this.hpRatio*this.pts,this.item.hpScale,sharpIncrease); }
-    tech(sharpIncrease) { return this.statCalc(this.techRatio*this.pts,this.item.techScale,sharpIncrease); }
+    pow(sharpIncrease = 0, ratioMod = 0) {
+        return this.statCalc((this.powRatio + ratioMod) * this.pts , this.item.powScale , sharpIncrease);
+    }
+    hp(sharpIncrease = 0, ratioMod = 0) {
+        return this.statCalc(((9*this.hpRatio) + ratioMod) * this.pts , this.item.hpScale , sharpIncrease);
+    }
+    tech(sharpIncrease = 0, ratioMod = 0) {
+        return this.statCalc((this.techRatio + ratioMod) * this.pts, this.item.techScale , sharpIncrease);
+    }
     statCalc(flat,scale,sharpIncrease) {
         const sharpAdd = sharpIncrease ? 1 : 0;
         return Math.floor((flat * miscLoadedValues.rarityMod[this.rarity] + Math.ceil(scale * this.scale)) * (1+0.05*(this.sharp+sharpAdd)));
@@ -116,29 +122,24 @@ class itemContainer {
     deconAmt() {
         return Math.floor(this.item.craftTime / 4000);
     }
-    itemStat(sharpIncrease) {
+    itemStat(sharpIncrease = 0, powRatio = 0, hpRatio = 0, techRatio = 0) {
         const stats = {};
-        stats[heroStat.pow] = this.pow(sharpIncrease);
-        stats[heroStat.hp] = this.hp(sharpIncrease);
-        stats[heroStat.tech] = this.tech(sharpIncrease);
+        stats[heroStat.pow] = this.pow(sharpIncrease, powRatio);
+        stats[heroStat.hp] = this.hp(sharpIncrease, hpRatio);
+        stats[heroStat.tech] = this.tech(sharpIncrease, techRatio);
         return stats;
     }
     isTrinket() {
         return this.item.type === "Trinkets";
     }
-    rerollRatio() {
-        const ratios = [[3,0,0],[2,1,0],[2,0,1],[1,2,0],[1,0,2],[1,1,1],[0,3,0],[0,2,1],[0,1,2],[0,0,3]];
-        let filteredRatios = ratios.filter(r =>  Math.abs(r[0]-this.powRatio) <= 1 && Math.abs(r[1]-this.hpRatio) <= 1 && Math.abs(r[2]-this.techRatio) <= 1)
-        filteredRatios = filteredRatios.filter(r => r[0] !== this.powRatio || r[1] !== this.hpRatio || r[2] !== this.techRatio);
-        //TODO: seed this
-        const choice = Math.floor(Math.random()*filteredRatios.length);
-        this.powRatio = filteredRatios[choice][0];
-        this.hpRatio = filteredRatios[choice][1];
-        this.techRatio = filteredRatios[choice][2];
-    }
     prefix() {
         if (this.powRatio === this.item.pow && this.hpRatio === this.item.hp && this.techRatio === this.item.tech) return "";
         return `${adjective[this.powRatio.toString() + this.hpRatio.toString() + this.techRatio.toString()]} `
+    }
+    transform(ratio) {
+        this.powRatio += ratio[0];
+        this.hpRatio += ratio[1];
+        this.techRatio += ratio[2];
     }
 }
 
@@ -455,6 +456,41 @@ function refreshInventory() {
     else $sideInventory.removeClass("inventoryFullSide");
 }
 
+function createInventoryCard(container,i) {
+    const itemdiv = $("<div/>").addClass("inventoryItem").addClass("R"+container.rarity);
+    const itemName = $("<div/>").addClass("inventoryItemName itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
+    const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
+    const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(container.goldValue())}).html(container.goldValueFormatted());
+    const itemLevel = $("<div/>").addClass("inventoryItemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
+    if (container.goldValue() === 0) {
+        itemCost.hide();
+    }
+    if (container.lvl === 0 && container.scale === 0) {
+        itemLevel.hide();
+    }
+    const itemProps = $("<div/>").addClass("inventoryProps");
+    for (const [stat, val] of Object.entries(container.itemStat(false))) {
+        if (val === 0) continue;
+        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
+    };
+    const actionBtns = $("<div/>").addClass("inventoryButtons");
+    if (container.item.recipeType === "normal" || container.item.recipeType === "trinket") {
+        $("<div/>").addClass('inventoryEquip').attr("id",i).html("Equip").appendTo(actionBtns);
+    }
+    if (container.item.recipeType === "trinket") {
+        itemLevel.attr({"data-tooltip": "star_rating"});
+        itemRarity.hide();
+    }
+    if (container.goldValue() > 0) {
+        $("<div/>").addClass('inventorySell').attr("id",i).html("Sell").appendTo(actionBtns);
+    }
+    else {
+        $("<div/>").addClass('inventorySell').attr("id",i).html("Discard").appendTo(actionBtns);
+    }
+    itemdiv.append(itemName,itemRarity,itemLevel,itemCost,itemProps,actionBtns);
+    return itemdiv;
+}
+
 let equipContainerTarget = null;
 const $ietEquip = $("#ietEquip");
 const $ietHero = $("#ietHero");
@@ -521,7 +557,7 @@ function refreshInventoryPlaces() {
     refreshBankInventory();
     refreshSmithInventory();
     refreshSmithStage();
-    refreshDesynthInventory();
+    refreshSynthInventory();
     refreshFortuneGear();
     refreshTrinketInventory();
 }

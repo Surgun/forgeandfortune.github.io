@@ -445,24 +445,35 @@
                                 <div id="buildBuilding">
                                     <div id="buildingRecipes"></div>
                                 </div>
-                                <div id="desynthBuilding" class="buildingTab">
-                                    <div id="desynthSide">
-                                        <div id="desynthPower">
-                                            <div id="desynthPowerHead">Desynth Power Level</div>
-                                            <div class="desynthPowerSetting desynthPowerEnabled" id="desynthPowerLow">Low</div>
-                                            <div class="desynthPowerSetting" id="desynthPowerMed"><i class="fas fa-lock"></i> Locked</div>
-                                            <div class="desynthPowerSetting" id="desynthPowerHigh"><i class="fas fa-lock"></i> Locked</div>
+                                <div id="synthBuilding" class="buildingTab">
+                                    <div id="synthSide">
+                                        <div id="synthPower">
+                                            <div id="synthPowerHead">Synthesizer Setting</div>
+                                            <div class="synthPowerSetting synthPowerEnabled" id="synthPowerDesynthesis">Desynthesis</div>
+                                            <div class="synthPowerSetting" id="synthPowerResynthesis"><i class="fas fa-lock"></i> Locked</div>
                                         </div>
-                                        <div id="desynthSlot"></div>
-                                        <div id="desynthRewards">
-                                            <div id="desynthRewardHead">Material Extracted</div>
-                                            <div id="desynthReward">
-                                                <div id="desynthRewardCard"></div>
-                                                <div id="desynthRewardAmt"></div>
+                                        <div id="synthSlot"></div>
+                                        <div class="desynthRewards" id="desynthRewards">
+                                            <div id="synthRewardHead">Material To Be Extracted</div>
+                                            <div id="synthReward">
+                                                <div id="synthRewardCard"></div>
+                                                <div id="synthRewardAmt"></div>
+                                            </div>
+                                        </div>
+                                        <div id="resynthCost">
+                                            <div class="resynthBlock">
+                                                <div class="resynthHead">Material 1</div>
+                                                <div id="resynthMaterial1"></div>
+                                            </div>
+                                            <div class="resynthBlock">
+                                                <div class="resynthHead">Material 2</div>
+                                                <div id="resynthMaterial2"></div>
+                                            </div>
+                                            <div id="resynthMaterials">
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="desynthList"></div>
+                                    <div id="synthList"></div>
                                 </div>          
                                 <div id="fuseBuilding" class="buildingTab">
                                     <div id="fuseSlots"></div>
@@ -807,7 +818,7 @@
     <script src="scripts/bank.js"></script>
     <script src="scripts/blacksmith.js"></script>
     <script src="scripts/fortune.js"></script>
-    <script src="scripts/desynth.js"></script>
+    <script src="scripts/synth.js"></script>
     <script src="scripts/tinker.js"></script>
     <script src="scripts/monsterhall.js"></script>
     <script src="scripts/town.js"></script>

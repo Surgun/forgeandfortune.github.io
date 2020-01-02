@@ -205,6 +205,7 @@ const actionSlotManager = {
     materialUsage() {
         const mats = flattenArray(...([this.slots.map(s=>s.item.material())]))
         const uniqueMats = [...new Set(mats)];
+        return uniqueMats;
     },
     freeSlots() {
         return this.maxSlots - this.slots.length;

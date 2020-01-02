@@ -18,6 +18,7 @@ class Building {
         return save;
     }
     loadSave(save) {
+        console.log(this.id,save.status);
         this.status = save.status;
     }
     getStatus() {
@@ -49,6 +50,7 @@ const TownManager = {
     },
     loadSave(save) {
         if (save.buildings === undefined) return;
+        console.log("i got a save loading");
         save.buildings.forEach(bsave=> {
             const building = this.idToBuilding(bsave.id);
             building.loadSave(bsave);
@@ -146,6 +148,7 @@ function showBldg(type) {
     $buildingHeader.append(d);
     const upper = building.shorthand.replace(/^\w/, c => c.toUpperCase());
     const buildingText = `initiate${upper}Bldg`;
+    console.log(buildingText);
     if (building.getStatus() === BuildingState.built) window[buildingText]();
     else {
         $buildBuilding.show();

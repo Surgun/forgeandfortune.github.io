@@ -248,11 +248,18 @@ function refreshSidebarDungeonMats(dungeonID) {
 
 function createHPBar(hero,tag) {
     const hpPercent = hero.hp/hero.maxHP();
+    const hpBarText = hero.hp+" / "+hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("hpBarDiv").html(miscIcons.hp);
-    const d1a = $("<div/>").addClass("hpBar").attr("data-label",hero.hp+"/"+hero.maxHP()).attr("id","hp"+tag+hero.uniqueid);
-    const s1 = $("<span/>").addClass("hpBarFill").attr("id","hpFill"+tag+hero.uniqueid).css('width', hpWidth);
-    return d1.append(d1a,s1);
+    const options = {
+        prefix: "hp",
+        tooltip: "hp",
+        icon: miscIcons.hp,
+        text: hpBarText,
+        textID: "hp"+tag+hero.uniqueid,
+        width: hpWidth,
+        fill: "hpFill"+tag+hero.uniqueid
+    }
+    return generateProgressBar(options);
 }
 
 function refreshBeatBar(uniqueid,dungeonTime) {
@@ -263,8 +270,9 @@ function refreshBeatBar(uniqueid,dungeonTime) {
 function refreshHPBar(hero) {
     console.log("refresh hp for: "+hero.name);
     const hpPercent = hero.hp/hero.maxHP();
+    const hpBarText = hero.hp+" / "+hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";
-    $(`#hpturnOrder${hero.uniqueid}`).attr("data-label",hero.hp+"/"+hero.maxHP());
+    $(`#hpturnOrder${hero.uniqueid}`).html(hpBarText);
     $(`#hpFillturnOrder${hero.uniqueid}`).css('width', hpWidth);
 }
 

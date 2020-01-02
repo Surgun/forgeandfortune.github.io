@@ -262,14 +262,21 @@ function refreshguildprogress(guild) {
 }
 
 function generateProgressBar(options) {
-    const {prefix, tooltip, text, icon, width} = options;
+    const {prefix, tooltip, text, textID, icon, width, fill} = options;
     const progressBarContainer = $("<div/>").addClass(`progressBarContainer ${prefix}BarContainer`);
     if (tooltip) progressBarContainer.addClass("tooltip").attr({"data-tooltip": tooltip});
-    if (text) $("<div/>").addClass("progressBarText").html(text).appendTo(progressBarContainer);
+
+    const progressBarText = $("<div/>").addClass("progressBarText");
+    if (text) progressBarText.html(text).appendTo(progressBarContainer)
+    if (textID) progressBarText.attr({"id": textID});
+
     const progressBarContent = $("<div/>").addClass("progressBarContent");
     if (icon) $("<div/>").addClass("progressBarIcon").html(icon).appendTo(progressBarContent);
+
     const progressBar = $("<div/>").addClass("progressBar").appendTo(progressBarContent);
-    $("<div/>").addClass("progressBarFill").css("width", width).appendTo(progressBar);
+    const progressBarFill = $("<div/>").addClass("progressBarFill").css("width", width).appendTo(progressBar);
+    if (fill) progressBarFill.attr({"id": fill});
+
     progressBarContainer.append(progressBarContent)
     return progressBarContainer;
 }

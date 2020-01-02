@@ -261,19 +261,36 @@ function refreshguildprogress(guild) {
     $gp.append(createGuildBar(guild));
 }
 
+function generateProgressBar(options) {
+    const {prefix, tooltip, text, icon, width} = options;
+    const progressBarContainer = $("<div/>").addClass(`progressBarContainer ${prefix}BarContainer`);
+    if (tooltip) progressBarContainer.addClass("tooltip").attr({"data-tooltip": tooltip});
+    if (text) $("<div/>").addClass("progressBarText").html(text).appendTo(progressBarContainer);
+    const progressBarContent = $("<div/>").addClass("progressBarContent");
+    if (icon) $("<div/>").addClass("progressBarIcon").html(icon).appendTo(progressBarContent);
+    const progressBar = $("<div/>").addClass("progressBar").appendTo(progressBarContent);
+    $("<div/>").addClass("progressBarFill").css("width", width).appendTo(progressBar);
+    progressBarContainer.append(progressBarContent)
+    return progressBarContainer;
+}
+
 function createGuildBar(guild) {
-    if (guild.maxLvlReached()) {
-        const d1a = $("<div/>").addClass("repBarDiv");
-        const d2a = $("<div/>").addClass("repBar").attr("data-label",`Max Level Reached`);
-        const s1a = $("<span/>").addClass("repBarFill").css('width',"100%");
-        return d1a.append(d2a,s1a);
-    }
+    const repBarText = `Reputation: ${guild.rep}/${guild.repLvl()}`;
     const repPercent = guild.rep/guild.repLvl();
     const repWidth = (repPercent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("repBarDiv"); 
-    const d2 = $("<div/>").addClass("repBar").attr("data-label",`Reputation: ${guild.rep}/${guild.repLvl()}`);
-    const s1 = $("<span/>").addClass("repBarFill").css('width', repWidth);
-    return d1.append(d2,s1);
+    const options = {
+        prefix: "rep",
+        tooltip: "rep",
+        icon: miscIcons.guildRep,
+        text: repBarText,
+        width: repWidth
+    }
+    if (guild.maxLvlReached()) {
+        options.prefix = "repMax"
+        options.text = "Max Level Reached!"
+        options.width = "100%"
+    }
+    return generateProgressBar(options);
 }
 
 function refreshAllOrders() {

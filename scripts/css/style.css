@@ -75,7 +75,7 @@ body {
 
 /* Global */
 
-/* .game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #actionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, .heroOverviewButton, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, .dungeonTeamButton, .eventList, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, .invSideContainer, .invSideContainer > i, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .buildingName:after, .footer_more-list, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .workerBuyCardDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, #db-panel input, .alPerkBuy, .guildOrderSubmit, .orderCraft, .dtsMaterialTitle, .dtsBackButton, #updateRefresh, .desynthGroup, .desynthButton, #desynthSlotStart, #desynthRemove, .heroUnequipSlot, #desynthSlotCollect, .desynthPowerSetting, #collectResmith, .eventActionButton, #dungeonAbandon, .heroOverviewCard, .fortuneStage, .dreActionButton, .tinkerCommand, .toggleStatus, .toggleCue, .smithButton, .recipeTotalCrafted, .fortuneItemClose, .fortuneItemSetClose .fortuneItemSac, .fuseClose, .fuseSlotStart, .monsterCard, .monsterActionsButton, .monsterActionsButton > i, .monsterNavButton, .monsterNavButton:after, .lineRewardPay, .workerBuyCardDesc, .fortuneItemSac, .smithHeroButton, .smithHeroButton.smithHeroBackButton > i, .recipeMasteryGuildButton { */
+/* .game-content, .back-to, .back-to-top, .external-link_inline, .asset-card .asset-link, .workerSideBar, .ASCancel a, .bpShopButton, .dialog, .dialog_close, .dialog_content, .inventoryItemName:before, #actionSlots, #ASTable, .ASBlock, .Worker .BuyWorker, .Worker .HireWorker, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .heroOwnedCard, .heroOverviewButton, #RecipeFilter, #RecipeFilter a.recipeSelect, .recipeHeader, .recipeRow, .recipeCardInfo, .recipeDescription, .EHPEHeader, .EHPErow, .Worker, .inventoryItem a, .progressRecipe, .progressWorker, .progressHero, .progressOverall, #progresslist, #workerList, #heroCard, a.workerDialog, .dungeonTeamCard, .dungeonAvailableCard, .drHeroCard, .dungeonTeamCard, .dungeonAvailableCard, .dungeonTeamButton, .eventList, .inventorySell, .inventoryEquip, .heroExamineEquipment, .buyNewHeroCard, .invActionButton, .ASBuySlot, .healHero, .ASauto, .WSAuto, #heroList, #heroDetails, .heroExamineEquip, .ProgressCard, .statBox, footer a, #bottom-right a > i, .WorkerDesc, .heroEquipBlock, .heroEquipBlockEquipButton, .equipItem, .hpBarDiv, .hpBarFill, .apBarDiv, .apBarFill, .dsbhpBarFill, #eventContent, .dungeonContainer, .dungeonBackground, .heroExamineLvlButton, .selection-container, .selection, .heroExamineEquipmentEquipTypes, .readOption, .readOption:after, .heroTab:after, #dungeonTeamHeal, .invSideContainer, .invSideContainer > i, .isSortableHead, #battleLogValue, #battleLogSet, #battleLogReset, .fuseStart, .bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .buildingName, .buildingName:after, .footer_more-list, .recipeCardInfo, .recipeCraft, .recipeClose, .recipeBackTab, #sortBank, #sortInventoryBank, .recipeActionButton, .recipeDropdownButton, .recipeSortInput, .recipeSortButton, .workerBuyCardDesc > i, #RecipeFilter, .heroTab, .heroPower, .ClipboardCopy, .battleLogNotice, .heroCounter, .dungeonSpeedButtons, .hpBar, .apBar, .dungeonGoldCost, .gearItem, .guildListButton, .orderCard, .recipeBuyCardBuy, .workerBuyCardBuy, .dbClose, .dbActionButton, #db-panel input, .alPerkBuy, .guildOrderSubmit, .orderCraft, .dtsMaterialTitle, .dtsBackButton, #updateRefresh, .synthGroup, .synthButton, #synthSlotStart, #synthRemove, .heroUnequipSlot, #synthSlotCollect, .synthPowerSetting, #collectResmith, .eventActionButton, #dungeonAbandon, .heroOverviewCard, .fortuneStage, .dreActionButton, .tinkerCommand, .toggleStatus, .toggleCue, .smithButton, .recipeTotalCrafted, .fortuneItemClose, .fortuneItemSetClose .fortuneItemSac, .fuseClose, .fuseSlotStart, .monsterCard, .monsterActionsButton, .monsterActionsButton > i, .monsterNavButton, .monsterNavButton:after, .lineRewardPay, .workerBuyCardDesc, .fortuneItemSac, .smithHeroButton, .smithHeroButton.smithHeroBackButton > i, .recipeMasteryGuildButton { */
 
 .game-content, .isDialog, .dbActionButton, .dbActionContainer input, .dbClose, .footer_more-list, .footer_more-btn, .footer_more-content, .inventoryButtons > div, .heroEquipBlockEquipButton, .recipeFilterList, .recipeSelect, .recipeCardInfo, .recipeCardFront, .recipeCardBack, .recipeBackTab, .recipeCraft, .recipeDescription, .recipeClose, .recipeTotalCrafted, .recipeSortInput, .recipeSortButton, .ASCancelText, .ASauto {
     transition: all var(--transition_ease-in-out);
@@ -4095,7 +4095,7 @@ label.selection-container.party-selection-container {
     margin: 0 2px;
 }
 
-.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .repBarDiv, .notoBarDiv, .desynthBarDiv, .tinkerProgressDiv, .tinkerTicksDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .repBarDiv, .notoBarDiv, .synthBarDiv, .tinkerProgressDiv, .tinkerTicksDiv {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4133,7 +4133,7 @@ label.selection-container.party-selection-container {
     margin-top: 10px;
 }
 
-.hpBarDiv > i, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > i, .fuseBarDiv > img, #swBarDiv > img, .repBarDiv > img, .notoBarDiv > img, .desynthBarDiv > img {
+.hpBarDiv > i, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > i, .fuseBarDiv > img, #swBarDiv > img, .repBarDiv > img, .notoBarDiv > img, .synthBarDiv > img {
     position: absolute;
     left: 8px;
     z-index: 1;
@@ -4143,7 +4143,7 @@ label.selection-container.party-selection-container {
     height: 100%;
 }
 
-.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before, .masteryBar:before, .repBar:before, .desynthBar:before, .tinkerBar:before {
+.hpBar:before, .apBar:before, .actBar:before, .dsbhpBar:before, .fuseBar:before, #swBar:before, .masteryBar:before, .repBar:before, .synthBar:before, .tinkerBar:before {
     content: " " attr(data-label);
     position: absolute;
     display: -webkit-box;
@@ -4172,7 +4172,7 @@ label.selection-container.party-selection-container {
     text-shadow: 0 1px 0 rgba(0,0,0,0.3), 1px 0 0 rgba(0,0,0,0.3), 1px 2px 0 rgba(0,0,0,0.3), 2px 1px 0 rgba(0,0,0,0.3), 1px 1px 0 rgba(0,0,0,0.3), 0 0 10px rgba(0,0,0,1);
 }
 
-.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill, .notoBarFill, .desynthBarFill {
+.hpBarFill, .apBarFill, .actBarFill, .dsbhpBarFill, .fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill, .notoBarFill, .synthBarFill {
     display: block;
     position: relative;
     height: 100%;
@@ -4381,9 +4381,9 @@ label.selection-container.party-selection-container {
     background: linear-gradient(to right, transparent 0%, rgb(65, 123, 48) 40%, rgb(65, 123, 48) 60%, transparent 100%), url(/images/townImages/fortuneBuilding/bg.png);
 }
 
-.buildingdesynth .buildingInfoBackground {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/desynthBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/desynthBuilding/bg.png);
+.buildingsynth .buildingInfoBackground {
+    background: -webkit-linear-gradient(left, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/synthBuilding/bg.png);
+    background: linear-gradient(to right, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/images/townImages/synthBuilding/bg.png);
 }
 
 .buildingtinker .buildingInfoBackground {
@@ -4445,7 +4445,7 @@ label.selection-container.party-selection-container {
     filter: grayscale(1);
 }
 
-#fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithHeroSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleDesynthHolder, #fortuneGear, .heroEquipTrinketAllContainer, .fortuneStageContainer, .smithActionsContainer {
+#fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithHeroSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleSynthHolder, #fortuneGear, .heroEquipTrinketAllContainer, .fortuneStageContainer, .smithActionsContainer {
     display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
@@ -4453,7 +4453,7 @@ label.selection-container.party-selection-container {
     margin: 0;
 }
 
-.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .desynthSlot, .desynthGroup, .fortuneItem, .tinkerCommand, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard, .lineRewardContainer, .recipeMasteryGuildCard {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .recipeBuyCard, .workerBuyCard, .synthSlot, .synthGroup, .fortuneItem, .tinkerCommand, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard, .lineRewardContainer, .recipeMasteryGuildCard {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4478,7 +4478,7 @@ label.selection-container.party-selection-container {
     min-height: 160px;
 }
 
-.fuseSlotName, .bankItemName, .possibleFuse, .smithItemName, .fortuneStatusHeading, .gearItemName, .orderName, .desynthName, .fortuneItemName {
+.fuseSlotName, .bankItemName, .possibleFuse, .smithItemName, .fortuneStatusHeading, .gearItemName, .orderName, .synthName, .fortuneItemName {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4495,15 +4495,15 @@ label.selection-container.party-selection-container {
     text-align: center;
 }
 
-.fuseSlotName > img, .bankItemName > img, .possibleFuse > img, .smithItemName > img, .gearItemName > img, .desynthName > img, .fortuneItemName > img {
+.fuseSlotName > img, .bankItemName > img, .possibleFuse > img, .smithItemName > img, .gearItemName > img, .synthName > img, .fortuneItemName > img {
     margin-bottom: 15px;
 }
 
-.fuseSlotName, .desynthName, .desynthSlotName, .fortuneItemName {
+.fuseSlotName, .synthName, .synthSlotName, .fortuneItemName {
     padding: 10px 0;
 }
 
-.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, .repBarDiv, .notoBarDiv, .desynthBarDiv, .tinkerTicksDiv, .tinkerProgressDiv {
+.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, .repBarDiv, .notoBarDiv, .synthBarDiv, .tinkerTicksDiv, .tinkerProgressDiv {
     width: 100%;
     height: 26px;
     line-height: 26px;
@@ -4537,7 +4537,7 @@ label.selection-container.party-selection-container {
     margin-top: 5px;
 }
 
-.fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill, .notoBarFill, .desynthBarFill, .repBarDiv, .notoBarDiv, .tinkerTicksBarFill, .tinkerBarFill {
+.fuseBarFill, #swFill, .masteryBarFill, .beatBarFill, .repBarFill, .notoBarFill, .synthBarFill, .repBarDiv, .notoBarDiv, .tinkerTicksBarFill, .tinkerBarFill {
     background-color: rgba(255,255,255,0.15);
 }
 
@@ -4637,7 +4637,7 @@ label.selection-container.party-selection-container {
     margin-bottom: 10px;
 }
 
-.bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .desynthBlank {
+.bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .synthBlank {
     grid-column: 1 / -1;
     margin-top: 10px;
 }
@@ -4662,7 +4662,7 @@ label.selection-container.party-selection-container {
     animation: none;
 }
 
-.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl, .heroLevel, .gearItemLevel, .workerBuyCardLevel, .desynthLevel, .fortuneItemLevel {
+.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl, .heroLevel, .gearItemLevel, .workerBuyCardLevel, .synthLevel, .fortuneItemLevel {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -4683,7 +4683,7 @@ label.selection-container.party-selection-container {
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .dungeonTeamButton, .recipeBuyCardBuy, .workerBuyCardBuy, .guildOrderSubmit, .fuseStart, .desynthButton, #desynthSlotStart, .desynthPowerSetting, #desynthSlotCollect, #collectResmith, .eventActionButton, .fortuneStage, .dreActionButton, .smithButton, .recipeTotalCrafted, .fortuneItemSac, .fuseSlotStart, .lineRewardPay, .recipeMasteryGuildButton {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .dungeonTeamButton, .recipeBuyCardBuy, .workerBuyCardBuy, .guildOrderSubmit, .fuseStart, .synthButton, #synthSlotStart, .synthPowerSetting, #synthSlotCollect, #collectResmith, .eventActionButton, .fortuneStage, .dreActionButton, .smithButton, .recipeTotalCrafted, .fortuneItemSac, .fuseSlotStart, .lineRewardPay, .recipeMasteryGuildButton {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -4694,12 +4694,12 @@ label.selection-container.party-selection-container {
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .desynthButton:hover, #desynthSlotStart:hover, .desynthPowerSetting:hover, #desynthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .fortuneStage:hover, .dreActionButton:hover, .smithButton:hover, .recipeTotalCrafted:hover, .fortuneItemSac:hover, .fuseSlotStart:hover, .lineRewardPay:hover, .recipeMasteryGuildButton:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .synthButton:hover, #synthSlotStart:hover, .synthPowerSetting:hover, #synthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .fortuneStage:hover, .dreActionButton:hover, .smithButton:hover, .recipeTotalCrafted:hover, .fortuneItemSac:hover, .fuseSlotStart:hover, .lineRewardPay:hover, .recipeMasteryGuildButton:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
-#smithWorkingArea, #desynthSide, #fortuneTop, .tinkerTopContainer {
+#smithWorkingArea, #synthSide, #fortuneTop, .tinkerTopContainer {
     margin: -10px -10px 10px -10px;
     padding: 10px;
     display: -webkit-box;
@@ -4827,7 +4827,7 @@ label.selection-container.party-selection-container {
     width: 100%;
 }
 
-#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .desynthPowerEnabled,  .desynthPowerEnabled:hover, #desynthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .dreCollect:hover, .smithButton:hover, .fuseSlotStart:hover, .lineRewardPay:hover {
+#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .synthPowerEnabled,  .synthPowerEnabled:hover, #synthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .dreCollect:hover, .smithButton:hover, .fuseSlotStart:hover, .lineRewardPay:hover {
     background-color: var(--green-tertiary);
 }
 
@@ -4880,7 +4880,7 @@ label.selection-container.party-selection-container {
     margin-bottom: 20px;
 }
 
-.smithInvBlank, .fuseInvBlank, .desynthBlank {
+.smithInvBlank, .fuseInvBlank, .synthBlank {
     padding: 0 5px;
     color: var(--text-tertiary);
 }
@@ -5266,25 +5266,25 @@ label.selection-container.party-selection-container {
             transform: rotate(-30deg);
 }
 
-#desynthSide {
+#synthSide {
     -webkit-box-align: start;
         -ms-flex-align: start;
                 -ms-grid-row-align: start;
             align-items: start;
 }
 
-#desynthSlot {
+#synthSlot {
     min-width: 200px;
     margin: 0 20px;
     -ms-flex-item-align: center;
         align-self: center;
 }
 
-.desynthSlot {
+.synthSlot {
     min-height: 160px;
 }
 
-#desynthRemove, .heroUnequipSlot {
+#synthRemove, .heroUnequipSlot {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -5310,29 +5310,29 @@ label.selection-container.party-selection-container {
     padding: 5px;
 }
 
-#desynthRemove:hover, .heroUnequipSlot:hover {
+#synthRemove:hover, .heroUnequipSlot:hover {
     background-color: rgba(255, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
-#desynthRemove > i {
+#synthRemove > i {
     margin-top: 5px;
 }
 
-#desynthPower, #desynthRewards {
+#synthPower, #desynthRewards {
     padding: 10px;
     margin-top: 10px;
 }
 
-.desynthPowerSetting {
+.synthPowerSetting {
     margin-top: 10px;
 }
 
-.possibleDesynthHead {
+.possibleSynthHead {
     margin-top: 20px;
 }
 
-#desynthReward {
+#synthReward {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5349,11 +5349,11 @@ label.selection-container.party-selection-container {
     border-radius: 5px;
 }
 
-.desynthMaterialPic > img {
+.synthMaterialPic > img {
     margin-right: 5px;
 }
 
-.desynthSlotName.slotEmpty {
+.synthSlotName.slotEmpty {
     color: var(--highlight);
 }
 

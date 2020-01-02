@@ -53,7 +53,7 @@ function createSave() {
     saveFile["rs"] = ResourceManager.createSave();
     saveFile["w"] = WorkerManager.createSave();
     saveFile["ac"] = achievementStats.createSave();
-    saveFile["ds"] = DesynthManager.createSave();
+    saveFile["ds"] = SynthManager.createSave();
     saveFile["fb"] = FusionManager.createSave();
     saveFile["bb"] = BankManager.createSave();
     saveFile["bs"] = bloopSmith.createSave();
@@ -88,7 +88,7 @@ function loadGame() {
     if (typeof loadGame["rs"] !== "undefined") ResourceManager.loadSave(loadGame["rs"]);
     if (typeof loadGame["w"] !== "undefined") WorkerManager.loadSave(loadGame["w"]);
     if (typeof loadGame["ac"] !== "undefined") achievementStats.loadSave(loadGame["ac"]);
-    if (typeof loadGame["ds"] !== "undefined") DesynthManager.loadSave(loadGame["ds"]);
+    if (typeof loadGame["ds"] !== "undefined") SynthManager.loadSave(loadGame["ds"]);
     if (typeof loadGame["fb"] !== "undefined") FusionManager.loadSave(loadGame["fb"]);
     if (typeof loadGame["bb"] !== "undefined") BankManager.loadSave(loadGame["bb"]);
     if (typeof loadGame["bs"] !== "undefined") bloopSmith.loadSave(loadGame["bs"]);
@@ -583,7 +583,7 @@ function saveUpdate(loadGame) {
         loadGame["tm"].buildings = [
         {
             "id" : "TB001",
-            "status" : loadGame["tm"].DesynthStatus,
+            "status" : loadGame["tm"].SynthStatus,
         },
         {
             "id" : "TB002",

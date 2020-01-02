@@ -587,7 +587,7 @@
   {
     "id": "AL3001",
     "title": "Omega Moo",
-    "description": "Unlocks the Monster House, a quizzical building.",
+    "description": "Unlocks the Monster House, to catalog your adventures.",
     "category": "Town",
     "order": 1,
     "goldCost": 1000,
@@ -600,13 +600,13 @@
   {
     "id": "AL3002",
     "title": "You Need A Break",
-    "description": "Unlocks the Desynth Building, to break down your stuff.",
+    "description": "Unlocks the Magical Synthesizer Building, capable of interacting with the magical properties of items",
     "category": "Town",
     "order": 2,
     "goldCost": 2000,
     "mat": "M302",
     "matAmt": 50,
-    "type": "desynth",
+    "type": "synth",
     "subtype": "open",
     "icon": "<i class=\"fas fa-building\"></i>"
   },
@@ -658,7 +658,7 @@
     "goldCost": 85000,
     "mat": "M203",
     "matAmt": 50,
-    "type": "desynth",
+    "type": "synth",
     "subtype": "level",
     "icon": "<i class=\"fas fa-building\"></i>"
   },

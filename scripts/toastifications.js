@@ -255,7 +255,7 @@ const Notifications = {
     },
     synthCollectInvFull() {
         const text = "Inventory is full.";
-        const heading = "Cannot Collect Desynth";
+        const heading = "Cannot Collect Desynthesis";
         const icon = "error";
         popToast(text,heading,icon);
     },
@@ -274,6 +274,12 @@ const Notifications = {
     cantSmithMax() {
         const text = 'Item is at max enhancement';
         const heading = "Cannot smith item";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
+    insufficientResynthMats() {
+        const text = 'You do not have enough materials';
+        const heading = "Cannot perform resynthesis";
         const icon = "error";
         popToast(text,heading,icon);
     }

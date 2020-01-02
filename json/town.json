@@ -1,12 +1,9 @@
 [
   {
     "id": "TB001",
-    "name": "Magical Desynth",
-    "description": [
-      "Take items of higher quality and melt out the magic",
-      ""
-    ],
-    "shorthand": "desynth",
+    "name": "Magical Synthezier",
+    "description": "Interact with the magical properties of items",
+    "shorthand": "synth",
     "recipeID": "R99410"
   },
   {

@@ -20,7 +20,7 @@ const devtools = {
         TownManager.smithStatus = BuildingState.built;
         TownManager.fortuneStatus = BuildingState.built;
         TownManager.tinkerStatus = BuildingState.built;
-        TownManager.desynthStatus = BuildingState.built;
+        TownManager.synthStatus = BuildingState.built;
         TownManager.monsterStatus = BuildingState.built;
         forceSave();
         location.replace('/');
@@ -36,9 +36,6 @@ const devtools = {
         TownManager.fortuneUnlock = false;
         forceSave();  
     },
-    hyperSpeed() {
-        DungeonManager.speed = 50;
-    },
     materials : function() {
         ResourceManager.materials.forEach(material => {
             ResourceManager.addMaterial(material.id,10000);
@@ -50,20 +47,9 @@ const devtools = {
     speed(amt) {
         player.timeWarp = amt;
     },
-    workersTest() {
-        WorkerManager.workers.forEach(worker => {
-            worker.owned = true;
-
-        })
-        refreshWorkers();
-    },
-    heroTest() {
-        Inventory.addToInventory("R0101",0);
-        Inventory.addToInventory("R0201",0);
-        Inventory.addToInventory("R0301",0);
-    },
     addItem(itemID, rarity) {
-        Inventory.addToInventory(itemID,rarity,-1)
+        const container = new itemContainer(itemID,rarity);
+        Inventory.addToInventory(container,false);
     },
     gearHeroes(lvl=1,rarity=0,sharp=0) {
         const recipes = recipeList.recipes.filter(r => r.lvl === lvl);
@@ -86,7 +72,6 @@ const devtools = {
         })
         if (!DungeonManager.bossesBeat.includes("B901")) {
             DungeonManager.bossesBeat.push("B901");
-            townTabVisibility();
             refreshShop();
         }
         refreshSideTown();

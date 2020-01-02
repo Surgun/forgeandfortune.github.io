@@ -69,7 +69,7 @@ class Perk {
         if (this.type === "boss") DungeonManager.unlockDungeon(this.subtype);
         if (this.type === "craft") actionSlotManager.upgradeSlot();
         if (this.type === "adventure") DungeonManager.partySize += 1;
-        if (this.type === "desynth" && this.subtype === "open") TownManager.buildingPerk("desynth");
+        if (this.type === "synth" && this.subtype === "open") TownManager.buildingPerk("synth");
         if (this.type === "bank" && this.subtype === "open") TownManager.buildingPerk("bank");
         if (this.type === "bank" && this.subtype === "level") BankManager.addLevel();
         if (this.type === "cauldron" && this.subtype === "open") TownManager.buildingPerk("fusion");

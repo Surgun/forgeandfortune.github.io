@@ -5720,12 +5720,12 @@
   },
   {
     "id": "R99410",
-    "name": "Magical Desynth",
-    "description": "Harvest the magical energy from your rare items.",
+    "name": "Magical Synthesizer",
+    "description": "Interact with the magical energy from your rare items.",
     "lvl": 1,
     "value": 0,
     "craftTime": 900000,
-    "type": "desynth",
+    "type": "synth",
     "gcost": [
       "G003"
     ],

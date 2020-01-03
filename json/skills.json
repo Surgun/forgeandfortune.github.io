@@ -85,7 +85,7 @@
     "description": "Heals self instead of attacking",
     "icon": "<i class=\"fas fa-heart-circle\"></i>",
     "targetEnemies": false,
-    "powMod": 2,
+    "powMod": 4,
     "techMod": 0,
     "bText": "#ATTACKER# heals itself"
   },

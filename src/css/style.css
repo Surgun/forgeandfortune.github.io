@@ -1902,7 +1902,7 @@ footer {
     height: 200px;
     background-color: var(--bg-tertiary);
     background: -webkit-linear-gradient(left, transparent 0%, rgb(84, 127, 139) 40%, rgb(84, 127, 139) 60%, transparent 100%), url(/assets/images/guildImages/default.png);
-    background: linear-gradient(to right, transparent 0%, rgb(84, 127, 139) 40%, rgb(84, 127, 139) 60%, transparent 100%), url(/assets/imagesguildImages/default.png);
+    background: linear-gradient(to right, transparent 0%, rgb(84, 127, 139) 40%, rgb(84, 127, 139) 60%, transparent 100%), url(/assets/images/guildImages/default.png);
     border-bottom: 2px solid var(--border-primary);
 }
 

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "watch \"npm run build\" src",
     "build": "babel src -d public",
-    "live-server": "live-server public",
+    "live-server": "live-server public --wait=5000",
     "start": "npm-run-all -s build -p live-server watch"
   },
   "repository": {

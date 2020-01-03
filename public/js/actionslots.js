@@ -18,6 +18,7 @@ var slotState = Object.freeze({
   NEEDMATERIAL: 0,
   CRAFTING: 1
 });
+console.log("yes");
 $(document).on("click", ".ASCancel", function (e) {
   e.preventDefault();
   e.stopPropagation();

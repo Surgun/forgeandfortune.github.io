@@ -243,7 +243,8 @@ function refreshSidebarDungeonMats(dungeonID) {
     console.log(dungeon.type);
     if (dungeon.type === "boss") return;
     const rewards = dungeon.getRewards();
-    $("#dRR"+dungeonID).html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`);
+    $(`#dRR${dungeonID} .dungeonRewardRateIcon`).html(ResourceManager.materialIcon(rewards.id));
+    $(`#dRR${dungeonID} .dungeonRewardRateAmt`).html(`+${rewards.amt}`);
 }
 
 function createHPBar(hero,tag) {
@@ -280,12 +281,17 @@ function createDungeonSidebarReward(rewards,dungeonid) {
     const haveReward = ResourceManager.materialAvailable(rewards.id);
     const matWidth = (haveReward/10).toFixed(1)+"%";
     const d = $("<div/>").addClass("dungeonRewardDiv");
-        $("<div/>").addClass("dungeonRewardRate").attr("id","dRR"+dungeonid).html(`+${rewards.amt} ${ResourceManager.materialIcon(rewards.id)}`).appendTo(d);
-    const d1 = $("<div/>").addClass("dungeonRewardBarDiv");
-    const d1a = $("<div/>").addClass("dungeonRewardBar").attr("id","dsbr"+dungeonid).html(haveReward);
-    const s1 = $("<span/>").addClass("dungeonRewardFill").attr("id","dsbrf"+dungeonid).css('width',matWidth);
-    d1.append(d1a,s1)
-    return d.append(d1);
+        const t1 = $("<div/>").addClass("dungeonRewardRate").attr("id","dRR"+dungeonid).appendTo(d);
+            $("<div/>").addClass("dungeonRewardRateIcon").html(`${ResourceManager.materialIcon(rewards.id)}`).appendTo(t1);
+            $("<div/>").addClass("dungeonRewardRateAmt").html(`+${rewards.amt}`).appendTo(t1);
+    const options = {
+        prefix: "dungeonReward",
+        text: haveReward.toString(),
+        textID: "dsbr"+dungeonid, 
+        width: matWidth,
+        fill: "dsbrf"+dungeonid
+    }
+    return d.append(generateProgressBar(options));
 }
 
 function refreshDungeonMatBar(dungeonid) {

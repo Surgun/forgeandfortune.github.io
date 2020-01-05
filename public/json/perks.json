@@ -2,7 +2,7 @@
   {
     "id": "AL1001",
     "title": "Aviation Association",
-    "description": "Unlocks access to the Aviation Association Crafting Guild",
+    "description": "Unlocks access to the Aviation Association Crafting Guild.",
     "category": "Crafting",
     "order": 1,
     "goldCost": 75,
@@ -15,7 +15,7 @@
   {
     "id": "AL1002",
     "title": "Green Guard",
-    "description": "Unlocks access to the Green Guard Crafting Guild",
+    "description": "Unlocks access to the Green Guard Crafting Guild.",
     "category": "Crafting",
     "order": 2,
     "goldCost": 150,
@@ -28,7 +28,7 @@
   {
     "id": "AL1003",
     "title": "Second Slot",
-    "description": "Unlocks the second crafting slot.",
+    "description": "Unlocks the second Crafting Slot.",
     "category": "Crafting",
     "order": 3,
     "goldCost": 200,
@@ -41,7 +41,7 @@
   {
     "id": "AL1004",
     "title": "Trawled Treasures",
-    "description": "Unlocks access to the Trawled Treasures Crafting Guild",
+    "description": "Unlocks access to the Trawled Treasures Crafting Guild.",
     "category": "Crafting",
     "order": 4,
     "goldCost": 350,
@@ -67,7 +67,7 @@
   {
     "id": "AL1006",
     "title": "Third Slot",
-    "description": "Unlocks the third crafting slot.",
+    "description": "Unlocks the third Crafting Slot.",
     "category": "Crafting",
     "order": 6,
     "goldCost": 1000,
@@ -93,7 +93,7 @@
   {
     "id": "AL1008",
     "title": "Feline Fine",
-    "description": "Unlock The Cat's Meow worker: Squeaks",
+    "description": "Unlocks Squeaks, a worker for The Cat's Meow.",
     "category": "Crafting",
     "order": 9,
     "goldCost": 4000,
@@ -106,7 +106,7 @@
   {
     "id": "AL1009",
     "title": "Fourth Slot",
-    "description": "Unlocks the fourth crafting slot.",
+    "description": "Unlocks the fourth Crafting Slot.",
     "category": "Crafting",
     "order": 7,
     "goldCost": 4000,
@@ -119,7 +119,7 @@
   {
     "id": "AL1010",
     "title": "Did You Lose Weight",
-    "description": "Unlock Aviation Association worker: Eryn",
+    "description": "Unlocks Eryn, a worker for Aviation Association.",
     "category": "Crafting",
     "order": 10,
     "goldCost": 4000,
@@ -132,7 +132,7 @@
   {
     "id": "AL1011",
     "title": "Kale is Gross",
-    "description": "Unlock Green Guard worker: Crash",
+    "description": "Unlocks Crash, a worker for Green Guard.",
     "category": "Crafting",
     "order": 11,
     "goldCost": 4000,
@@ -145,7 +145,7 @@
   {
     "id": "AL1012",
     "title": "Shiny Bubbles",
-    "description": "Unlock Trawled Treasures worker: Gillian",
+    "description": "Unlocks Gillian, a worker for Trawled Treasures.",
     "category": "Crafting",
     "order": 12,
     "goldCost": 4000,
@@ -171,7 +171,7 @@
   {
     "id": "AL1014",
     "title": "Jackslot",
-    "description": "Unlocks the fifth crafting slot.",
+    "description": "Unlocks the fifth Crafting Slot.",
     "category": "Crafting",
     "order": 13,
     "goldCost": 20000,
@@ -197,7 +197,7 @@
   {
     "id": "AL1016",
     "title": "Not A Dog Person",
-    "description": "Unlock The Cat's Meow worker: Renae",
+    "description": "Unlocks Renae, a worker for The Cat's Meow.",
     "category": "Crafting",
     "order": 16,
     "goldCost": 300000,
@@ -210,7 +210,7 @@
   {
     "id": "AL1017",
     "title": "You Sound Familiar",
-    "description": "Unlock Aviation Association worker: Herbie",
+    "description": "Unlocks Herbie, a worker for Aviation Association.",
     "category": "Crafting",
     "order": 17,
     "goldCost": 300000,
@@ -223,7 +223,7 @@
   {
     "id": "AL1018",
     "title": "Sesame Seed Money",
-    "description": "Unlock Green Guard worker: Titan",
+    "description": "Unlocks Titan, a worker for Green Guard.",
     "category": "Crafting",
     "order": 18,
     "goldCost": 300000,
@@ -236,7 +236,7 @@
   {
     "id": "AL1019",
     "title": "Rollin In The Deep",
-    "description": "Unlock Trawled Treasures worker: Gilfred",
+    "description": "Unlocks Gilfred, a worker for Trawled Treasures.",
     "category": "Crafting",
     "order": 19,
     "goldCost": 300000,
@@ -275,7 +275,7 @@
   {
     "id": "AL1022",
     "title": "Hot Tin Roof",
-    "description": "Unlock The Cat's Meow worker: Tawny",
+    "description": "Unlocks Tawny, a worker for The Cat's Meow.",
     "category": "Crafting",
     "order": 22,
     "goldCost": 4000000,
@@ -288,7 +288,7 @@
   {
     "id": "AL1023",
     "title": "Birds of A Feather",
-    "description": "Unlock Aviation Association worker: Lakur",
+    "description": "nlocks Lakur, a worker for Aviation Association.",
     "category": "Crafting",
     "order": 23,
     "goldCost": 4000000,
@@ -301,7 +301,7 @@
   {
     "id": "AL1024",
     "title": "Having A Ball",
-    "description": "Unlock Green Guard worker: Smash",
+    "description": "Unlocks Smash, a worker for Green Guard.",
     "category": "Crafting",
     "order": 24,
     "goldCost": 4000000,
@@ -314,7 +314,7 @@
   {
     "id": "AL1025",
     "title": "Stinky Divers",
-    "description": "Unlock Trawled Treasures worker: Gilda",
+    "description": "Unlocks Gilda, a worker for Trawled Treasures.",
     "category": "Crafting",
     "order": 25,
     "goldCost": 4000000,
@@ -379,7 +379,7 @@
   {
     "id": "AL2001",
     "title": "Spooky Spot",
-    "description": "Unlocks the Spooky Spot",
+    "description": "Unlocks the Spooky Spot dungeon.",
     "category": "Dungeon",
     "order": 1,
     "goldCost": 50,
@@ -405,7 +405,7 @@
   {
     "id": "AL2003",
     "title": "Creepy Crag",
-    "description": "Unlocks the Creepy Crag",
+    "description": "Unlocks the Creepy Crag dungeon.",
     "category": "Dungeon",
     "order": 3,
     "goldCost": 250,
@@ -431,7 +431,7 @@
   {
     "id": "AL2005",
     "title": "Big Parties",
-    "description": "Increases party size for dungeons to 2",
+    "description": "Increases Party Size for Adventures to 2.",
     "category": "Dungeon",
     "order": 5,
     "goldCost": 1500,
@@ -483,7 +483,7 @@
   {
     "id": "AL2009",
     "title": "Bigger Parties",
-    "description": "Increases party size for dungeons to 3",
+    "description": "Increases Party Size for Adventures to 3.",
     "category": "Dungeon",
     "order": 9,
     "goldCost": 15000,
@@ -535,7 +535,7 @@
   {
     "id": "AL2013",
     "title": "Biggest Parties",
-    "description": "Increases party size for dungeons to 4",
+    "description": "Increases Party Size for Adventures to 4.",
     "category": "Dungeon",
     "order": 13,
     "goldCost": 75000,
@@ -600,7 +600,7 @@
   {
     "id": "AL3002",
     "title": "You Need A Break",
-    "description": "Unlocks the Magical Synthesizer Building, capable of interacting with the magical properties of items",
+    "description": "Unlocks the Magical Synthesizer, capable of interacting with the magical properties of items.",
     "category": "Town",
     "order": 2,
     "goldCost": 2000,
@@ -613,7 +613,7 @@
   {
     "id": "AL3003",
     "title": "Offer You Can't Re-Fuse",
-    "description": "Unlocks the Fusion Cabin Building, so you can increase item quality.",
+    "description": "Unlocks the Fusion Cabin, so you can increase item quality.",
     "category": "Town",
     "order": 3,
     "goldCost": 8000,
@@ -626,7 +626,7 @@
   {
     "id": "AL3004",
     "title": "Take It To The Bank",
-    "description": "Unlocks the Bank Building, so you can store your stuff.",
+    "description": "Unlocks the Bank, so you can store your stuff.",
     "category": "Town",
     "order": 4,
     "goldCost": 60000,
@@ -652,7 +652,7 @@
   {
     "id": "AL3006",
     "title": "Get your Fix",
-    "description": "Adds new capabilities to the Desynth Building",
+    "description": "Adds new capabilities to the Magical Synthesizer.",
     "category": "Town",
     "order": 6,
     "goldCost": 85000,
@@ -665,7 +665,7 @@
   {
     "id": "AL3007",
     "title": "Can I Be Your Plus One",
-    "description": "Unlocks the Forge Building, so you can improve item stats.",
+    "description": "Unlocks the Forge, so you can improve item stats.",
     "category": "Town",
     "order": 7,
     "goldCost": 90000,
@@ -717,7 +717,7 @@
   {
     "id": "AL3011",
     "title": "Your Future Is Green",
-    "description": "Unlocks the Fortune Teller Building, to increase exceptional craft odds.",
+    "description": "Unlocks the Fortune Teller, to increase exceptional craft odds.",
     "category": "Town",
     "order": 11,
     "goldCost": 1200000,
@@ -808,7 +808,7 @@
   {
     "id": "AL3018",
     "title": "Crystal Ballerina",
-    "description": "Adds an additional Fortune Teller building option.",
+    "description": "Adds an additional Fortune Teller option.",
     "category": "Town",
     "order": 18,
     "goldCost": 45000000,
@@ -847,7 +847,7 @@
   {
     "id": "AL3021",
     "title": "With Less Ads",
-    "description": "Adds an additional Fortune Teller building option.",
+    "description": "Adds an additional Fortune Teller option.",
     "category": "Town",
     "order": 21,
     "goldCost": 225000000,

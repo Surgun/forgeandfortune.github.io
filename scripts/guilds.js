@@ -272,6 +272,7 @@ function generateProgressBar(options) {
 
     const progressBarContent = $("<div/>").addClass("progressBarContent");
     if (icon) $("<div/>").addClass("progressBarIcon").html(icon).appendTo(progressBarContent);
+    if (icon && text) progressBarText.addClass("containsIcon");
 
     const progressBar = $("<div/>").addClass("progressBar").appendTo(progressBarContent);
     const progressBarFill = $("<div/>").addClass("progressBarFill").css("width", width).appendTo(progressBar);

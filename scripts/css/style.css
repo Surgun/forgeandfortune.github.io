@@ -132,6 +132,7 @@ body {
 .actionButton:hover,
 .actionButton:focus {
     background-color: var(--button-primary-active);
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.15);
 }
 
 .actionButton > i,
@@ -171,12 +172,16 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    left: 30px;
+    left: 0;
     bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     text-shadow: var(--text-border);
+}
+
+.progressBarText.containsIcon {
+    left: 30px;
 }
 
 .progressBarContent {
@@ -342,7 +347,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    min-height: 240px;
+    min-height: 281px;
     color: var(--text-primary);
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
@@ -379,10 +384,6 @@ footer {
 .inventoryItemEmpty .invPropStat {
     height: 36px;
     opacity: .45;
-}
-
-.inventoryItemEmpty .invPropStat + .invPropStat  {
-    margin-top: 5px;
 }
 
 .inventoryItemEmpty .invPropStat > span {
@@ -487,10 +488,8 @@ footer {
 }
 
 .inventoryProps, .equipItemProps {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-gap: 5px;
     width: 100%;
 }
 
@@ -683,8 +682,13 @@ footer {
 
 /* Right Sidebar Dungeons */
 
+.dungeonSidebarContainer {
+    margin-bottom: 20px;
+}
+
 .dungeonGroup {
     margin-bottom: 10px;
+    box-shadow: var(--box-shadow);
 }
 
 .DungeonSideBarStatus {
@@ -693,20 +697,18 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 5px;
+    color: var(--text-tertiary);
     text-align: center;
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-secondary);
     border: 2px solid var(--border-primary);
     border-radius: 10px 10px 0 0;
     cursor: pointer;
 }
 
-.DungeonSideBarStatus.DungeonSideBarIdle {
-    background: var(--bg-secondary);
-    color: var(--text-secondary);
-}
-
-.DungeonSideBarStatus.DungeonSideBarCollect {
-    background: var(--green-tertiary);
+.DungeonSideBarStatus.DungeonSideBarAdventuring {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
+    border-color:var(--border-secondary);
 }
 
 .dungeonFarmStatus {
@@ -726,6 +728,49 @@ footer {
 
 .dungeonSidebarFloor {
     flex-grow: 1;
+}
+
+.dungeonSidebarReward {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: -3px;
+    padding: 8px 10px 5px;
+    font-size: 0.85rem;
+    border: 2px solid var(--border-secondary);
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+.dungeonRewardDiv {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.dungeonRewardRate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+}
+
+.dungeonRewardRateIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.dungeonRewardBarContainer {
+    margin-left: 10px;
+    border: 0;
+}
+
+.dungeonRewardBarContainer .progressBarFill {
+    background-color: var(--border-secondary);
 }
 
 /* End Right Sidebar Dungeons */
@@ -7595,23 +7640,6 @@ span.beta-tag {
     align-items: center;
 }
 
-.floorRewards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto -40px;
-    padding: 10px;
-    max-width: 400px;
-    color: var(--text-primary);
-    text-align: center;
-    background-color: var(--button-primary-active);
-    border-radius: 10px;
-}
-
-.floorRewards > img {
-    margin: 0 5px;
-}
-
 .dungeonToggleProgress {
     display: flex;
     justify-content: center;
@@ -7628,85 +7656,22 @@ span.beta-tag {
     background-color: rgba(0,0,0,.3);
 }
 
-#DungeonSideBar {
-    margin-bottom: 20px;
-}
-
-.dungeonSidebarReward {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-primary);
-    padding: 5px 10px;
-    border: 2px solid var(--border-primary);
-    border-top: 0;
-    border-radius: 0 0 10px 10px;
-    overflow: hidden;
-}
-
-.dungeonRewardDiv {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.dungeonRewardRate {
+.floorRewards {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 80px;
+    margin: 0 auto -40px;
+    padding: 10px;
+    max-width: 400px;
+    color: var(--text-primary);
     text-align: center;
+    background-color: var(--button-primary-active);
+    border-radius: 10px;
 }
 
-.dungeonRewardRate > img {
-    margin-left: 5px;
-    max-height: 16px;
+.floorRewards > img {
+    margin: 0 5px;
 }
-
-.dungeonRewardBarDiv, .notorietyBarDiv {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    min-height: 25px;
-    background-color: var(--bg-tertiary);
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.dungeonRewardBarDiv {
-    margin-left: 10px;
-}
-
-.dungeonRewardBar, .notoBar {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 0.85rem;
-    z-index: 1;
-}
-
-.notoBar:before {
-    content: " " attr(data-label);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.85rem;
-    width: 100%;
-    height: 100%;
-    white-space: pre;
-    z-index: 2;
-}
-
-.dungeonRewardFill, .notoBarFill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--border-secondary);
-    height: 100%;
-} 
 
 /* End New Combat*/
 
@@ -7779,6 +7744,7 @@ span.beta-tag {
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: flex-start;
     font-size: 1.5rem;
     margin: 0 10px 0 0;
     padding: 5px 10px;

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postcss": "postcss src/css -d public/css",
     "prepare-build": "babel src -d public",
-    "watch": "watch \"npm run build\" src",
+    "watch": "onchange \"src\" -- npm run build",
     "build": "npm-run-all postcss prepare-build",
     "live-server": "live-server public --wait=5000",
     "start": "npm-run-all build -p watch live-server"
@@ -31,7 +31,7 @@
     "cssnano-preset-advanced": "^4.0.7",
     "live-server": "^1.2.1",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.3",
-    "watch": "^1.0.2"
+    "onchange": "^6.1.0",
+    "postcss-cli": "^6.1.3"
   }
 }

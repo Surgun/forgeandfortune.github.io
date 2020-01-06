@@ -94,13 +94,13 @@ class itemContainer {
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
     pow(sharpIncrease = 0, ratioMod = 0) {
-        return this.statCalc((this.powRatio + ratioMod) * this.pts , this.item.powScale , sharpIncrease);
+        return this.statCalc(Math.max(0,this.powRatio + ratioMod) * this.pts , this.item.powScale , sharpIncrease);
     }
     hp(sharpIncrease = 0, ratioMod = 0) {
-        return this.statCalc(((9*this.hpRatio) + ratioMod) * this.pts , this.item.hpScale , sharpIncrease);
+        return this.statCalc(Math.max(0,9*(this.hpRatio + ratioMod)) * this.pts , this.item.hpScale , sharpIncrease);
     }
     tech(sharpIncrease = 0, ratioMod = 0) {
-        return this.statCalc((this.techRatio + ratioMod) * this.pts, this.item.techScale , sharpIncrease);
+        return this.statCalc(Math.max(0,this.techRatio + ratioMod) * this.pts, this.item.techScale , sharpIncrease);
     }
     statCalc(flat,scale,sharpIncrease) {
         const sharpAdd = sharpIncrease ? 1 : 0;
@@ -137,9 +137,12 @@ class itemContainer {
         return `${adjective[this.powRatio.toString() + this.hpRatio.toString() + this.techRatio.toString()]} `
     }
     transform(ratio) {
-        this.powRatio += ratio[0];
-        this.hpRatio += ratio[1];
-        this.techRatio += ratio[2];
+        this.powRatio = Math.max(0,this.powRatio + ratio[0]);
+        this.hpRatio = Math.max(0,this.hpRatio + ratio[1]);
+        this.techRatio = Math.max(0,this.techRatio + ratio[2]);
+    }
+    maxRatio() {
+        return Math.max(this.powRatio,this.hpRatio,this.techRatio);
     }
 }
 

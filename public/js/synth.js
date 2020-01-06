@@ -15,7 +15,7 @@ var synthToggle = Object.freeze({
 var $synthPowerResynthesis = $("#synthPowerResynthesis");
 var SynthManager = {
   slot: null,
-  resynth: [null, null],
+  resynth: null,
   setting: synthToggle.DESYNTH,
   state: "empty",
   time: 0,
@@ -77,8 +77,8 @@ var SynthManager = {
     Inventory.addToInventory(this.slot);
     this.slot = null;
     this.state = "empty";
-    this.clearResynthSlot(0);
-    this.clearResynthSlot(1);
+    this.resynth = null;
+    this.clearResynthSlot();
     initiateSynthBldg();
   },
   stageButton: function stageButton() {
@@ -92,6 +92,7 @@ var SynthManager = {
     this.time = this.cookTime;
   },
   startResynth: function startResynth() {
+    if (this.state !== "staged" || this.resynth === null) return;
     var cost = this.resynthCosts();
 
     if (!ResourceManager.available("M700", cost.M700) || !ResourceManager.available("M701", cost.M701) || !ResourceManager.available("M702", cost.M702)) {
@@ -115,7 +116,7 @@ var SynthManager = {
     if (this.state === "desynthing") this.slot.rarity -= 1;
     if (this.state === "resynthing") this.slot.transform(this.resynthChange());
     this.state = "complete";
-    this.resynth = [null, null];
+    this.resynth = null;
     synthBarText("Collect");
     refreshSynthStage();
     refreshResynth();
@@ -137,6 +138,7 @@ var SynthManager = {
     Inventory.addToInventory(this.slot);
     this.slot = null;
     this.state = "empty";
+    this.resynth = null;
     initiateSynthBldg();
   },
   desynthRewards: function desynthRewards(increase) {
@@ -156,58 +158,66 @@ var SynthManager = {
       M702: 0
     };
     if (this.slot === null) return resynthCost;
-    var baseline = this.slot.item.craftTime / 4000;
+    var baseline = Math.floor(this.slot.item.craftTime / 4000);
 
-    if (this.slot.rarity === 1) {
-      resynthCost.M700 = Math.floor(baseline);
-      resynthCost.M701 = Math.floor(baseline / 1.5);
-      resynthCost.M702 = Math.floor(baseline / 3);
-    }
-
-    if (this.slot.rarity === 2) {
-      resynthCost.M700 = Math.floor(baseline);
-      resynthCost.M701 = Math.floor(baseline);
-      resynthCost.M702 = Math.floor(baseline / 1.5);
-    }
-
-    if (this.slot.rarity === 3) {
-      resynthCost.M700 = Math.floor(baseline);
-      resynthCost.M701 = Math.floor(baseline);
-      resynthCost.M702 = Math.floor(baseline);
+    if (this.slot.maxRatio() === 3) {
+      resynthCost.M700 = this.slot.powRatio === 3 ? 0 : baseline;
+      resynthCost.M701 = this.slot.hpRatio === 3 ? 0 : baseline;
+      resynthCost.M702 = this.slot.techRatio === 3 ? 0 : baseline;
+    } else {
+      resynthCost.M700 = this.slot.powRatio === 0 ? 0 : baseline;
+      resynthCost.M701 = this.slot.hpRatio === 0 ? 0 : baseline;
+      resynthCost.M702 = this.slot.techRatio === 0 ? 0 : baseline;
     }
 
     return resynthCost;
   },
   resynthChange: function resynthChange() {
     var change = [0, 0, 0];
-    if (this.resynth[0] === null || this.resynth[1] === null) return change;
-    if (this.resynth[0] === "M700") change[0] -= 1;
-    if (this.resynth[0] === "M701") change[1] -= 1;
-    if (this.resynth[0] === "M702") change[2] -= 1;
-    if (this.resynth[1] === "M700") change[0] += 1;
-    if (this.resynth[1] === "M701") change[1] += 1;
-    if (this.resynth[1] === "M702") change[2] += 1;
+    if (this.slot === null || this.resynth === null) return change;
+
+    if (this.resynth === "M700") {
+      change[0] += 1;
+      change[1] -= 1;
+      change[2] -= 1;
+    }
+
+    if (this.resynth === "M701") {
+      change[0] -= 1;
+      change[1] += 1;
+      change[2] -= 1;
+    }
+
+    if (this.resynth === "M702") {
+      change[0] -= 1;
+      change[1] -= 1;
+      change[2] += 1;
+    }
+
     return change;
   },
-  clearResynthSlot: function clearResynthSlot(num) {
+  clearResynthSlot: function clearResynthSlot() {
     if (this.state !== "staged") return;
-    this.resynth[num] = null;
+    this.resynth = null;
     refreshResynth();
   },
   fillResynthSlot: function fillResynthSlot(value) {
     if (this.state !== "staged") return;
-    var ratios = {
+    var ratio = {
       "M700": SynthManager.slot.powRatio,
       "M701": SynthManager.slot.hpRatio,
       "M702": SynthManager.slot.techRatio
     };
+    var maxRatio = Math.max(SynthManager.slot.powRatio, SynthManager.slot.hpRatio, SynthManager.slot.techRatio);
 
-    if (this.resynth[0] === null) {
-      if (ratios[value] < 1 || this.resynth[1] == value) return;
-      this.resynth[0] = value;
-    } else {
-      if (this.resynth[0] === value) return;
-      this.resynth[1] = value;
+    if (maxRatio === 3) {
+      //we are all-in on a material, ratio = 3 is the one we can't use
+      if (ratio[value] === 3) return;
+      this.resynth = value;
+    } else if (maxRatio === 2) {
+      //we are mixed, ratio = 0 is the one we can't use
+      if (ratio[value] === 0) return;
+      this.resynth = value;
     }
 
     refreshResynth();
@@ -254,8 +264,7 @@ function refreshSynthStage() {
 
 var $desynthRewards = $("#desynthRewards");
 var $resynthCost = $("#resynthCost");
-var $resynthMaterial1 = $("#resynthMaterial1");
-var $resynthMaterial2 = $("#resynthMaterial2");
+var $resynthMaterial = $("#resynthMaterial");
 var $resynthMaterials = $("#resynthMaterials");
 
 function refreshDesynth() {
@@ -281,6 +290,7 @@ function refreshDesynth() {
     "data-tooltip-value": reward.id
   });
   synthBarText("Desynthesize");
+  refreshSynthStage();
 }
 
 function refreshResynth() {
@@ -290,17 +300,11 @@ function refreshResynth() {
   if (SynthManager.state === "empty") return $resynthCost.hide();
   $resynthCost.show();
   var idAmts = SynthManager.resynthCosts();
-  $resynthMaterial1.empty();
-  var mat1 = SynthManager.resynth[0];
-  var mat2 = SynthManager.resynth[1];
-  if (mat1 !== null) $resynthMaterial1.html("".concat(ResourceManager.idToMaterial(mat1).img, " ").concat(idAmts[mat1]));else $resynthMaterial1.empty();
-  if (mat2 !== null) $resynthMaterial2.html("".concat(ResourceManager.idToMaterial(mat2).img, " ").concat(idAmts[mat2]));else $resynthMaterial2.empty();
-  var mats = ["M700", "M701", "M702"];
-  var ratios = [SynthManager.slot.powRatio, SynthManager.slot.hpRatio, SynthManager.slot.techRatio];
   $resynthMaterials.empty();
-  mats.forEach(function (mat, i) {
-    var d = $("<div/>").addClass("resynthMaterial").data("matid", mat).html("".concat(ResourceManager.idToMaterial(mat).img, " ").concat(idAmts[mat])).appendTo($resynthMaterials);
-    if (ratios[i] === 0) d.addClass("resynthMaterialDisable");
+  var mats = ["M700", "M701", "M702"];
+  mats.forEach(function (mat) {
+    if (idAmts[mat] === 0) return;
+    $("<div/>").addClass("resynthMaterial").data("matid", mat).html("".concat(ResourceManager.idToMaterial(mat).img, " ").concat(idAmts[mat])).appendTo($resynthMaterials);
   });
 
   if (SynthManager.state === "staged") {
@@ -372,18 +376,10 @@ $(document).on('click', '#synthPowerResynthesis', function (e) {
 
 $(document).on('click', '.resynthMaterial', function (e) {
   e.preventDefault();
+  $(".resynthMaterial").removeClass("selected");
+  $(e.currentTarget).addClass("selected");
   var type = $(e.currentTarget).data("matid");
   if (SynthManager.state === "staged") SynthManager.fillResynthSlot(type);
-}); //click on a slotted material to remove it
-
-$(document).on('click', '#resynthMaterial1', function (e) {
-  e.preventDefault();
-  if (SynthManager.state === "staged") SynthManager.clearResynthSlot(0);
-}); //click on a slotted material to remove it
-
-$(document).on('click', '#resynthMaterial2', function (e) {
-  e.preventDefault();
-  if (SynthManager.state === "staged") SynthManager.clearResynthSlot(1);
 });
 
 function createSynthCard(container) {
@@ -439,8 +435,12 @@ function createSynthStageCard(container) {
   ;
   itemdiv.append(itemName, stageRemove, itemLevel, itemProps);
 
-  if (SynthManager.state === "staged") {
+  if (SynthManager.state === "staged" && SynthManager.resynth !== null) {
     createSynthBar("Resynthesize").appendTo(itemdiv);
+  }
+
+  if (SynthManager.state === "staged" && SynthManager.resynth === null) {
+    createSynthBar("Select Material").appendTo(itemdiv);
   }
 
   if (SynthManager.state === "complete") {

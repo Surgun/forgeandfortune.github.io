@@ -133,21 +133,21 @@ function () {
     value: function pow() {
       var sharpIncrease = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       var ratioMod = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-      return this.statCalc((this.powRatio + ratioMod) * this.pts, this.item.powScale, sharpIncrease);
+      return this.statCalc(Math.max(0, this.powRatio + ratioMod) * this.pts, this.item.powScale, sharpIncrease);
     }
   }, {
     key: "hp",
     value: function hp() {
       var sharpIncrease = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       var ratioMod = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-      return this.statCalc((9 * this.hpRatio + ratioMod) * this.pts, this.item.hpScale, sharpIncrease);
+      return this.statCalc(Math.max(0, 9 * (this.hpRatio + ratioMod)) * this.pts, this.item.hpScale, sharpIncrease);
     }
   }, {
     key: "tech",
     value: function tech() {
       var sharpIncrease = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
       var ratioMod = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-      return this.statCalc((this.techRatio + ratioMod) * this.pts, this.item.techScale, sharpIncrease);
+      return this.statCalc(Math.max(0, this.techRatio + ratioMod) * this.pts, this.item.techScale, sharpIncrease);
     }
   }, {
     key: "statCalc",
@@ -208,9 +208,14 @@ function () {
   }, {
     key: "transform",
     value: function transform(ratio) {
-      this.powRatio += ratio[0];
-      this.hpRatio += ratio[1];
-      this.techRatio += ratio[2];
+      this.powRatio = Math.max(0, this.powRatio + ratio[0]);
+      this.hpRatio = Math.max(0, this.hpRatio + ratio[1]);
+      this.techRatio = Math.max(0, this.techRatio + ratio[2]);
+    }
+  }, {
+    key: "maxRatio",
+    value: function maxRatio() {
+      return Math.max(this.powRatio, this.hpRatio, this.techRatio);
     }
   }]);
 

@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="us">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97625874-3"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-97625874-3');
+    </script>
+    <!-- Google Analytics -->
+    <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-97625874-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    <!-- Font Awesome Integration -->
+    <script src="https://kit.fontawesome.com/f1907b3369.js"></script>
+    <!-- End Font Awesome -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Forge &amp; Fortune</title>
+    <!-- SEO -->
+    <meta name='subject' content="Incremental Idle Game">
+    <meta name="description" content="Forge & Fortune is an idle and/or active-play incremental crafting and adventuring game.">
+    <meta name="keywords" content="Idle, Incremental, Game, Dungeon, Questing, Crafting, Heroes, Adventures, HTML5, JavaScript">
+    <meta name='language' content='en'>
+    <meta name="robots" content="index, follow">
+    <!-- Social Media -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="og:url" content="https://www.forgeandfortune.com"/>
+    <meta property="og:title" content="Forge & Fortune - Incremental Game"/>
+    <meta property="og:description" content="Forge & Fortune is an idle and/or active-play incremental crafting and adventuring game."/>
+    <meta property="og:image" content="https://forgeandfortune.com/assets/images/social/social_image.jpg"/>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <!-- CSS & Fonts -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/jquery.toast.css" rel="stylesheet">
+    <link href="/css/please-wait.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <!-- Favicons & Application Styling -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#21262b">
+    <meta name="msapplication-TileImage" content="/assets/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#21262b">
+    <!-- End of Favicons & Application Styling -->
+</head>
+<body>
+    <main id="content">
+        <section class="game-content">
+            <div class="game-wrapper" role="main">
+                <div id="tabs" class="tab">
+                    <button class="tablinks" id="inventoryTabLink" onclick="openTab('inventoryTab')">
+                        <div>
+                            <i class="fas fa-cube"></i>
+                            <span class="tabLinkName">Inventory</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="guildTabLink" onclick="openTab('guildTab')">
+                        <div>
+                            <i class="fas fa-fist-raised"></i>
+                            <span class="tabLinkName">Guilds</span>
+                        </div>
+                    </button>
+                    <button class="tablinks tab-selected" id="recipesTabLink" onclick="openTab('recipesTab')">
+                        <div>
+                            <i class="fas fa-book"></i>
+                            <span class="tabLinkName">Recipes</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="heroesTabLink" onclick="openTab('heroesTab')">
+                        <div id="heroTab">
+                            <i class="fas fa-helmet-battle"></i>
+                            <span class="tabLinkName">Heroes</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="dungeonsTabLink" onclick="openTab('dungeonsTab')">
+                        <div id="dungeonTab">
+                            <i class="fas fa-swords"></i>
+                            <span class="tabLinkName">Adventures</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="townTabLink" onclick="openTab('townsTab')">
+                        <div id="townTab">
+                            <i class="fas fa-city"></i>
+                            <span class="tabLinkName">Town</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="marketTabLink" onclick="openTab('marketTab')">
+                        <div id="marketsTab">
+                            <i class="fas fa-store"></i>
+                            <span class="tabLinkName">Market</span>
+                        </div>
+                    </button>
+                    <button class="tablinks" id="progressTabLink"onclick="openTab('progressTab')">
+                        <div>
+                            <i class="fas fa-tasks"></i>
+                            <span class="tabLinkName">Progress</span>
+                        </div>
+                    </button>
+                </div>
+                <div id="inventoryTab" class="tabcontent">
+                    <div id="inventory-container" class="inventoryContainer">
+                        <div class="inventoryContent">
+                            <div class="materialContentContainer">
+                                <div class="materialsHeader">Materials</div>
+                                <div id="materials" class="materialsList">
+                                    <div class="noMaterials" id="noMaterialDiv">No materials currently in your inventory. Try the dungeons!</div>
+                                </div>
+                            </div>
+                            <div class="inventoryContentContainer">
+                                <div class="inventoryActions">
+                                    <div id="goToBank" class="actionButton">
+                                        <i class="fas fa-university"></i>
+                                        <span>View Bank</span>
+                                    </div>
+                                    <div class="invSubActionsContainer">
+                                        <div id="sortInventory" class="actionButton tooltip" data-tooltip="sort_inventory">
+                                            <i class="fas fa-sort-size-up-alt"></i>
+                                            <span>Sort Inventory</span>
+                                        </div>
+                                        <div id="sellAllCommons" class="actionButton">
+                                            <i class="fas fa-funnel-dollar"></i>
+                                            <span>Sell All Commons</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="inventory" class="inventoryCardContainer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="inventoryEquipTab" class="tabcontent">
+                    <div class="inventoryEquipContainer">
+                        <div class="inventoryActions">
+                            <div id="closeEquipItem" class="actionButton">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back to Inventory</span>
+                            </div>
+                        </div>
+                        <div class="inventoryEquipContent">
+                            <div class="equipContentContainer equipContentItems">
+                                <div class="sectionHeading">Item Being Equipped</div>
+                                <div id="ietEquip" class="equipItems"></div>
+                            </div>
+                            <div class="equipContentContainer equipContentHeroes">
+                                <div class="sectionHeading">Applicable Heroes</div>
+                                <div id="ietHero" class="equipHeroes"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="recipesTab" class="tabcontent">
+                    <div id="recipes-container" class="recipesContainer">
+                        <div id="RecipeFilter" class="recipeFilterList">
+                            <a class="recipeSelect" id="rfMatless" href="NoMatSelector">No Materials</a>
+                            <a class="recipeSelect" id="rfArcane" href="ArcaneSelector">Arcane</a>
+                            <a class="recipeSelect" id="rfArmor" href="ArmorSelector">Armor</a>
+                            <a class="recipeSelect" id="rfBelts" href="BeltSelector">Belts</a>
+                            <a class="recipeSelect" id="rfCloaks" href="CloakSelector">Cloaks</a>
+                            <a class="recipeSelect" id="rfGauntlets" href="GauntletSelector">Gauntlets</a>
+                            <a class="recipeSelect" id="rfGloves" href="GloveSelector">Gloves</a>
+                            <a class="recipeSelect" id="rfHats" href="HatSelector">Hats</a>
+                            <a class="recipeSelect" id="rfHeavy" href="HeavySelector">Heavy</a>
+                            <a class="recipeSelect" id="rfHelmets" href="HelmetSelector">Helmets</a>
+                            <a class="recipeSelect selected" id="rfLight" href="LightSelector">Light</a>
+                            <a class="recipeSelect" id="rfMasks" href="MaskSelector">Masks</a>
+                            <a class="recipeSelect" id="rfPendants" href="PendantSelector">Pendants</a>
+                            <a class="recipeSelect" id="rfRings" href="RingSelector">Rings</a>
+                            <a class="recipeSelect" id="rfShields" href="ShieldSelector">Shields</a>
+                            <a class="recipeSelect" id="rfShoes" href="ShoeSelector">Shoes</a>
+                            <a class="recipeSelect" id="rfThrown" href="ThrownSelector">Thrown</a>
+                            <a class="recipeSelect" id="rfTomes" href="TomeSelector">Tomes</a>
+                            <a class="recipeSelect" id="rfVests" href="VestSelector">Vests</a>
+                        </div>
+                        <div id="recipes-list" class="recipeCardsList">
+                            <div id="RecipeTop" class="recipeTopContainer">
+                                <div id="RecipeSorting" class="recipeSortContainer">
+                                    <div class="recipeActionButton actionButton" data-filter="name">Name <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton actionButton" data-filter="lvl">Level <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton actionButton" data-filter="value">Value <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton actionButton" data-filter="time">Craft Time <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeActionButton actionButton" data-filter="mastery">Mastery <div class="filterStatus"><i class="fas fa-chevron-down"></i></div></div>
+                                    <div class="recipeSortSearch">
+                                        <input id="recipeSortInput" class="recipeSortInput" type="text" name="recipe-search" placeholder="Search for a recipe...">
+                                        <div class="recipeSortButton"><i class="fas fa-search"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="RecipeResults">
+                                <div id="recipeTable" class="recipeTable">
+                                    <div id="recipeContents" class="recipeContents"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="heroesTab" class="tabcontent">
+                    <div id="heroContainer">
+                        <div id="heroList"></div>
+                        <div id="heroCard">
+                            <div class="heroTabContainer">
+                                <div class="heroTab heroTab1">Details</div>
+                                <div class="heroTab heroTab2">Equipment</div>
+                                <div class="heroTab heroTab3" id="trinketTab">Trinket</div>
+                            </div>
+                            <div class="heroTabContent">
+                                <div id="heroOverview" class="heroOverviewContainer"></div>
+                                <div id="heroDetails" class="heroDetailsContainer heroContentContainer none">
+                                    <span class="hero-placeholder-details">Select a Hero from the list to see their details.</span>
+                                </div>
+                                <div id="heroGear" class="heroContentContainer none">
+                                    <div id="heroGearSlots">
+                                        <span class="hero-placeholder-equip">Select a Hero from the list to see their equipment.</span>
+                                    </div>
+                                    <div id="heroEquipmentList"></div>
+                                </div>
+                                <div id="heroTrinket" class="heroContentContainer none">
+                                    <div class="heroTrinketEquippedHeader">Currently Equpped Trinket</div>
+                                    <div id="heroEquipTrinket" class="heroEquipTrinketContainer"></div>
+                                    <div class="heroTrinketEquippedHeader">Available Trinkets</div>
+                                    <div id="heroEquipTrinketAll" class="heroEquipTrinketAllContainer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="guildTab" class="tabcontent">
+                    <div id="guildsContainer">
+                        <div id="guildList"></div>
+                        <div id="G001" class="guildContainer">
+                            <div id="G001Summary" class="guildSummary">
+                                <div id="G001Name" class="guildName"></div>
+                                <div id="G001Desc" class="guildDesc"></div>
+                                <div id="G001Progress" class="guildProgress"></div>
+                            </div>
+                            <div class="guildOrderContainer">
+                                <div class="guildHeading">Guild Orders</div>
+                                <div class="guildContext">Complete guild orders to level up your guild.</div>
+                                <div id="G001Order" class="guildOrder"></div>
+                            </div>
+                            <div class="guildSalesContainer">
+                                <div class="guildHeading">Guild Sales</div>
+                                <div class="guildContext">Level up your guild to unlock new recipes to purchase.</div>
+                                <div id="G001Sales" class="guildSales"></div>
+                            </div>
+                            <div class="guildMasteryContainer">
+                                <div class="guildHeading">Guild Recipe Mastery</div>
+                                <div class="guildContext">Master recipes to eliminate resource costs and produce higher rarity crafts.</div>
+                                <div id="G001Mastery" class="guildMastery">
+                                    <div class="guildMasteryNotice"></div>
+                                    <div class="guildMasteryCardContainer"></div>
+                                </div>
+                            </div>
+                            <div class="guildWorkersContainer">
+                                <div class="guildHeading">Guild Workers</div>
+                                <div class="guildContext">Guild Workers are allocated to craft recipes.</div>
+                                <div id="G001Workers" class="guildWorkers"></div>
+                            </div>
+                        </div>
+                        <div id="G002" class="guildContainer">
+                            <div id="G002Summary" class="guildSummary">
+                                <div id="G002Name" class="guildName"></div>
+                                <div id="G002Desc" class="guildDesc"></div>
+                                <div id="G002Progress" class="guildProgress"></div>
+                            </div> 
+                            <div class="guildOrderContainer">
+                                <div class="guildHeading">Guild Orders</div>
+                                <div class="guildContext">Complete guild orders to level up your guild.</div>
+                                <div id="G002Order" class="guildOrder"></div>
+                            </div>
+                            <div class="guildSalesContainer">
+                                <div class="guildHeading">Guild Sales</div>
+                                <div class="guildContext">Level up your guild to unlock new recipes to purchase.</div>
+                                <div id="G002Sales" class="guildSales"></div>
+                            </div>
+                            <div class="guildMasteryContainer">
+                                <div class="guildHeading">Guild Recipe Mastery</div>
+                                <div class="guildContext">Master recipes to eliminate resource costs and produce higher rarity crafts.</div>
+                                <div id="G002Mastery" class="guildMastery">
+                                    <div class="guildMasteryNotice"></div>
+                                    <div class="guildMasteryCardContainer"></div>
+                                </div>
+                            </div>
+                            <div class="guildWorkersContainer">
+                                <div class="guildHeading">Guild Workers</div>
+                                <div class="guildContext">Guild Workers are allocated to craft recipes.</div>
+                                <div id="G002Workers" class="guildWorkers"></div>
+                            </div>
+                        </div>
+                        <div id="G003" class="guildContainer">
+                            <div id="G003Summary" class="guildSummary">
+                                <div id="G003Name" class="guildName"></div>
+                                <div id="G003Desc" class="guildDesc"></div>
+                                <div id="G003Progress" class="guildProgress"></div>
+                            </div>
+                            <div class="guildOrderContainer">
+                                <div class="guildHeading">Guild Orders</div>
+                                <div class="guildContext">Complete guild orders to level up your guild.</div>
+                                <div id="G003Order" class="guildOrder"></div>
+                            </div>
+                            <div class="guildSalesContainer">
+                                <div class="guildHeading">Guild Sales</div>
+                                <div class="guildContext">Level up your guild to unlock new recipes to purchase.</div>
+                                <div id="G003Sales" class="guildSales"></div>
+                            </div>
+                            <div class="guildMasteryContainer">
+                                <div class="guildHeading">Guild Recipe Mastery</div>
+                                <div class="guildContext">Master recipes to eliminate resource costs and produce higher rarity crafts.</div>
+                                <div id="G003Mastery" class="guildMastery">
+                                    <div class="guildMasteryNotice"></div>
+                                    <div class="guildMasteryCardContainer"></div>
+                                </div>
+                            </div>
+                            <div class="guildWorkersContainer">
+                                <div class="guildHeading">Guild Workers</div>
+                                <div class="guildContext">Guild Workers are allocated to craft recipes.</div>
+                                <div id="G003Workers" class="guildWorkers"></div>
+                            </div>
+                        </div>
+                        <div id="G004" class="guildContainer">
+                            <div id="G004Summary" class="guildSummary">
+                                <div id="G004Name" class="guildName"></div>
+                                <div id="G004Desc" class="guildDesc"></div>
+                                <div id="G004Progress" class="guildProgress"></div>
+                            </div>
+                            <div class="guildOrderContainer">
+                                <div class="guildHeading">Guild Orders</div>
+                                <div class="guildContext">Complete guild orders to level up your guild.</div>
+                                <div id="G004Order" class="guildOrder"></div>
+                            </div>
+                            <div class="guildSalesContainer">
+                                <div class="guildHeading">Guild Sales</div>
+                                <div class="guildContext">Level up your guild to unlock new recipes to purchase.</div>
+                                <div id="G004Sales" class="guildSales"></div>
+                            </div>
+                            <div class="guildMasteryContainer">
+                                <div class="guildHeading">Guild Recipe Mastery</div>
+                                <div class="guildContext">Master recipes to eliminate resource costs and produce higher rarity crafts.</div>
+                                <div id="G004Mastery" class="guildMastery">
+                                    <div class="guildMasteryNotice"></div>
+                                    <div class="guildMasteryCardContainer"></div>
+                                </div>
+                            </div>
+                            <div class="guildWorkersContainer">
+                                <div class="guildHeading">Guild Workers</div>
+                                <div class="guildContext">Guild Workers are allocated to craft recipes.</div>
+                                <div id="G004Workers" class="guildWorkers"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dungeonsTab" class="tabcontent">
+                    <div id="dungeon-container">
+                        <div id="dungeonCloseup">
+                            <div id="dungeonSelect">
+                                <div class="dungeonAbandonAll" id="dAbandonAll">Abandon All Dungeons</div>
+                                <div class="dungeonListingsHeading">Dungeons</div>
+                                <div class="dungeonListings" id="dungeonListings"></div>
+                                <div class="dungeonListingsHeading dungeonBossDivs">Bosses</div>
+                                <div class="dungeonListings dungeonBossDivs" id="dungeonListingsBosses"></div>
+                            </div>
+                            <div id="dungeonTeamSelect">
+                                <div id="dtsBanner"></div>
+                                <div id="dtsMaterials"></div>
+                                <div id="dtsTop"></div>
+                                <div id="dtsBottom"></div>
+                            </div>
+                            <div id="dungeonRun">
+                                <div id="drContentWrapper">
+                                    <div id="drContent">
+                                        <div id="drArena">
+                                            <div class="bgContainer">
+                                                <div class="layer layer1"></div>
+                                                <div class="layer layer2"></div>
+                                                <div class="layer layer3"></div>
+                                                <div class="layer layer4"></div>
+                                                <div class="layer layer5"></div>
+                                                <div class="layer layer6"></div>
+                                                <div class="layer layer7"></div>
+                                                <div class="layer layer8"></div>
+                                                <div class="layer layer9"></div>
+                                            </div>
+                                            <div id="dungeonAbandon">Abandon Dungeon</div>
+                                            <div id="toggleProgress" class="dungeonToggleProgress">Progressing</div>
+                                            <h3><div id="floorID">Floor 1</div></h3>
+                                            <div id="floorRewards" class="floorRewards"></div>
+                                            <div id="dungeonListContainer">
+                                                <div id="dungeonHeroList"></div>
+                                                <div id="dungeonMobList"></div>
+                                            </div>
+                                        </div>
+                                        <div class="drTurnOrderLogContainer">
+                                            <div class="drTurnOrderLogTitles">
+                                                <h2 class="drTitle"><i class="far fa-hourglass"></i>Turn Order</h2>
+                                                <h2 class="drTitle"><i class="fas fa-align-left"></i>Battle Log</h2>
+                                            </div>
+                                            <div id="drTurnOrder"></div>
+                                            <div id="drLog"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="dungeonRewards" class="dungeonRewards">
+                                <div id="dreHeader" class="dreHeader">Dungeon Complete</div>
+                                <div id="dreTeamContainer" class="dreTeamContainer">
+                                    <div class="dungeonRewardsHeader">Team</div>
+                                    <div id="dreTeam" class="dreTeam"></div>
+                                </div>
+                                <div id="dreStatsContainer" class="dreStatsContainer">
+                                    <div class="dungeonRewardsHeader">Statistics</div>
+                                    <div id="dreStats" class="dreStats"></div>
+                                </div>
+                                <div class="dreActions">
+                                    <div id="dreCollect" class="dreCollect dreActionButton">Collect Rewards</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="townsTab" class="tabcontent">
+                    <div id="townContainer">
+                        <div id="emptyTown"><i class="fas fa-question"></i> The town looks empty - except for your Shop, of course. Perhaps the Action League can help with that?</div>
+                        <div id="buildingContentContainer" class="buildingContentContainer">
+                            <div id="buildingList"></div>
+                            <div id="buildingContent">
+                                <div id="buildingHeader"></div>
+                                <div id="buildBuilding">
+                                    <div id="buildingRecipes"></div>
+                                </div>
+                                <div id="synthBuilding" class="buildingTab">
+                                    <div id="synthSide">
+                                        <div id="synthPower">
+                                            <div id="synthPowerHead">Synthesizer Setting</div>
+                                            <div class="synthPowerSetting synthPowerEnabled" id="synthPowerDesynthesis">Desynthesis</div>
+                                            <div class="synthPowerSetting" id="synthPowerResynthesis"><i class="fas fa-lock"></i> Locked</div>
+                                        </div>
+                                        <div id="synthSlot"></div>
+                                        <div class="desynthRewards" id="desynthRewards">
+                                            <div id="synthRewardHead">Material To Be Extracted</div>
+                                            <div id="synthReward">
+                                                <div id="synthRewardCard"></div>
+                                                <div id="synthRewardAmt"></div>
+                                            </div>
+                                        </div>
+                                        <div id="resynthCost">
+                                            <div class="resynthBlock">
+                                                <div class="resynthHead">Material to Infuse</div>
+                                                <div id="resynthMaterials"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="synthList"></div>
+                                </div>         
+                                <div id="fuseBuilding" class="buildingTab">
+                                    <div id="fuseSlots"></div>
+                                    <div id="fuseList"></div>
+                                </div>
+                                <div id="bankBuilding" class="buildingTab">
+                                    <div id="bankContainer">
+                                        <div id="bankInvSlots"></div>
+                                        <div id="bankBankSlots"></div>
+                                    </div>
+                                </div>
+                                <div id="smithBuilding" class="buildingTab">
+                                    <div class="smithHeading">Item To Smith</div>
+                                    <div id="smithNoSelectionDiv" class="smithNoselection">Select an Item to Improve</div>
+                                    <div id="smithCanImproveDiv" class="smithCanImprove">
+                                        <div class="smithImproveContainer">
+                                            <div id="smithOriginal"></div>
+                                            <div id="smithArrow" class="smithArrow"><i class="fas fa-arrow-right"></i></div>
+                                            <div id="smithImproved"></div>
+                                        </div>
+                                        <div id="smithConfirm" class="smithButton">Improve for 1 bajillion gold</div>
+                                    </div>
+                                    <div id="smithCantImproveDiv" class="smithCantImprove">
+                                        <div class="smithMaxHeading">Max Level Reached!</div>
+                                        <div id="smithMax" class="smithMax"></div>
+                                    </div>
+                                    <div class="smithHeading">Inventory</div>
+                                    <div id="smithInvSlots"></div>
+                                    <div class="smithHeading">Hero Equipment</div>
+                                    <div id="smithHeroSlots"></div>
+                                </div>
+                                <div id="fortuneBuilding" class="buildingTab">
+                                    <div class="fortuneHeading">Selected Offering</div>
+                                    <div id="fortuneStage" class="fortuneStageContainer"></div>                            
+                                    <div class="fortuneHeading">Possible Fortune Offerings</div>
+                                    <div id="fortuneGear"></div>
+                                </div>
+                                <div id="tinkerBuilding" class="buildingTab">
+                                    <div class="tinkerTopContainer">
+                                        <div class="tinkerHeading">Available Materials</div>
+                                        <div id="tinkerMaterials" class="tinkerMaterialsContainer"></div>
+                                    </div>
+                                    <div class="tinkerBottomContainer">
+                                        <div class="tinkerHeading">Commands</div>
+                                        <div id="tinkerCommands" class="tinkerCommandsContainer"></div>
+                                    </div>
+                                    <div class="tinkerOptions">
+                                        <div class="tinkerHeading">Auto-Discard Threshholds</div>
+                                        <div id="tinkerRangeContainer" class="tinkerRangeContainer"></div>
+                                    </div>
+                                </div>
+                                <div id="monsterBuilding" class="buildingTab">
+                                    <div class="monsterNav">
+                                        <div class="monsterNavButton selected" id="monsterNavMobs">Beastiary</div>
+                                        <div class="monsterNavButton" id="monsterNavRewards">Rewards</div>
+                                    </div>
+                                    <div class="monsterDiv" id="monsterMobs">
+                                        <div class="monsterFiltersContainer">
+                                            <label for="monsterHallFilterD001" class="selection-container">Groovy Grove
+                                                <input type="checkbox" id="monsterHallFilterD001" class="monsterHallFilterCheck" checked>
+                                                <span class="selection"></span>
+                                            </label>
+                                            <label for="monsterHallFilterD002" class="selection-container">Spooky Spot
+                                                <input type="checkbox" id="monsterHallFilterD002" class="monsterHallFilterCheck" checked>
+                                                <span class="selection"></span>
+                                            </label>
+                                            <label for="monsterHallFilterD003" class="selection-container">Creepy Crag
+                                                <input type="checkbox" id="monsterHallFilterD003" class="monsterHallFilterCheck" checked>
+                                                <span class="selection"></span>
+                                            </label>
+                                            <label for="monsterHallFilterBosses" class="selection-container">Bosses
+                                                <input type="checkbox" id="monsterHallFilterBosses" class="monsterHallFilterCheck" checked>
+                                                <span class="selection"></span>
+                                            </label>
+                                        </div>
+                                        <div class="monsterDivMobs" id="monsterMobsList"></div>
+                                    </div> <!--Monster Hall-->
+                                    <div class="monsterDiv" id="monsterRewards">
+                                        <div class="monsterRewardTop">
+                                            <div class="monsterRewardTopTrophy">
+                                                <div class="monsterRewardHeader"><img src="/assets/images/resources/M002.png"> Monster Trophies</div>
+                                                <div class="monsterRewardTrophyContainer">
+                                                    <div class="monsterRewardTrophy">Total Trophies Earned: <span id="mRTmax">0</span></div>
+                                                    <div class="monsterRewardTrophy">Unspent Trophies: <span id="mRTavail">0</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="monsterRewardTopWarp" id="monsterRewardWarpContainer">
+                                                <div class="monsterRewardHeader">Floor Warp</div>
+                                                <div class="monsterRewardTopWarpContainer">
+                                                    <div class="monsterRewardWarp">Total Recipes Mastered: <span id="mRWM">0</span></div>
+                                                    <div class="monsterRewardWarp">Total Skippable Floors: <span id="mRWS">0</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="monsterRewardBottom">
+                                            <div class="monsterRewardHeader">Available Upgrades</div>
+                                            <div class="monsterRewardLines" id="mRewardLines"></div>
+                                        </div>
+                                    </div> <!--Rewards-->
+                                    <div class="monsterDiv" id="monsterMobsInspect"></div> <!--Monster Inspect-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="marketTab" class="tabcontent">
+                    <div id="actionLeague" class="marketContainer">
+                        <div class="guildSummary">
+                            <div class="guildName"><h2>The Marketplace</h2></div>
+                            <div class="guildDesc">Stop in to buy some cool upgrades!</div>
+                        </div>
+                        <div class="marketSalesContainer">
+                            <div class="shopPerks">
+                                <div class="guildHeading">Perks Available for Purchase</div>
+                                <div class="guildContext"></div> <!-- Don't remove, this contains necessary styling for layout -->
+                                <div id="purchasePerks" class="perkTypeContainer"></div>
+                            </div>
+                            <div class="shopPerks">
+                                <div class="guildHeading">Perks Remaining</div>
+                                <div class="guildContext"></div> <!-- Don't remove, this contains necessary styling for layout -->
+                                <div id="remainingPerks" class="perkTypeContainer"></div>
+                            </div>
+                            <div class="shopPerks purchasedPerks">
+                                <div class="guildHeading">Previously Purchased Perks</div>
+                                <div class="guildContext"></div> <!-- Don't remove, this contains necessary styling for layout -->
+                                <div id="boughtPerks" class="perkTypeContainer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="progressTab" class="tabcontent">
+                    <div id="progresslist">
+                        <div id="progress_container">
+                            <h3 class="progress-section-title">Progress Tracker</h3>
+                            <div class="progressRecipe"><h2>Bosses Beat</h2><p class="progress-desc">Your progress for bosses beat.</p><span id="plBoss">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbBoss"></span></div></div>
+                            <div class="progressRecipe"><h2>Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/300</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
+                            <div class="progressRecipe"><h2>Perks Bought</h2><p class="progress-desc"> Your progress for Action League perks bought.</p><span id="plPerk">0/60</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbPerk"></span></div></div>
+                            <div class="progressOverall"><h2>Overall</h2><p class="progress-desc">Your overall game progress.</p><span id="plOverall">0%</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbOverall"></span></div></div>
+                        </div>
+                        <div id="achievements">
+                            <h3 id="db-init" class="progress-section-title">Statistics</h3>
+                            <div class="stat-box-container">
+ 
+                                <div class="statBox">
+                                    <div class="statHeading">Groovy Grove Floor Reached</div>
+                                    <div class="statNormal" id="statMaxFloorD001">?</div>
+                                </div>
+
+                                <div class="statBox">
+                                    <div class="statHeading">Spooky Spot Floor Reached</div>
+                                    <div class="statNormal" id="statMaxFloorD002">?</div>
+                                </div>
+
+                                <div class="statBox">
+                                    <div class="statHeading">Creepy Crag Floor Reached</div>
+                                    <div class="statNormal" id="statMaxFloorD003">?</div>
+                                </div>
+
+                                <div class="statBox">
+                                    <div class="statHeading">Total Floors Beaten</div>
+                                    <div class="statNormal" id="statFloors">?</div>
+                                </div>
+                                <div class="statBox">
+                                    <div class="statHeading">Total Gold Earned</div>
+                                    <div class="statNormal" id="statTotalGoldEarned">?</div>
+                                </div>
+                                <div class="statBox">
+                                    <div class="statHeading">Total Items Crafted</div>
+                                    <div class="statNormal" id="statTotalItems">?</div>
+                                </div>
+                                <div class="statBox">
+                                    <div class="statHeading">Total Commons Crafted</div>
+                                    <div class="statNormal" id="statCommons">?</div>
+                                </div>
+                                <div class="statBox">
+                                    <div class="statHeading">Total Goods Crafted</div>
+                                    <div class="statNormal" id="statGoods">?</div>
+                                </div>
+                                <div class="statBox">
+                                    <div class="statHeading">Total Greats Crafted</div>
+                                    <div class="statNormal" id="statGreats">?</div> 
+                                </div>
+                                <div class="statBox">
+                                    <div class="statHeading">Total Epics Crafted</div>
+                                    <div class="statNormal" id="statEpics">?</div>
+                                </div>
+                                <div class="statBox">
+                                    <div class="statHeading">Time Played</div>
+                                    <div class="statNormal" id="statTimePlayed">?</div>
+                                </div>
+                                <div class="statBox">
+                                    <div class="statHeading">Total Game Time</div>
+                                    <div class="statNormal" id="gameTime">?</div>
+                                </div>
+                                <div class="statBox">
+                                    <div class="statHeading">Completion Time</div>
+                                    <div class="statNormal"id="completeTime">Achieve 100% Overall to complete!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='right-side-content' class="right-side-content">
+                <div id="comptitle1" class="heading">Gold &amp; Inventory</div>
+                <div class="sidebarContentContainer">
+                    <div id="goldSidebar" class="invSideContainer">
+                        <img src="/assets/images/resources/M001.png" alt="Gold">
+                        <span id="goldSidebarAmt" class="goldSidebarAmt">0</span>
+                    </div>
+                    <div id="inventorySidebar" class="invSideContainer">
+                        <i class="fas fa-cube"></i>
+                        <span id="invSidebarAmt" class="invSidebarAmt">0/20</span>
+                    </div>
+                </div>
+                <div id="comptitle2" class="heading">Crafting Slots</div>
+                <div id="actionSlots" class="craftingSlotsContainer"></div>
+                <div id="comptitle3" class="heading">Guild Workers</div>
+                <div id="GuildWorkers">
+                    <div class="guildWorkersSideContainer">
+                        <div id="G001WorkersSide" class="guildWorkersSide tooltip" data-tooltip="guild_worker" data-tooltip-value="G001">
+                            <div id="G001Image" class="guildWorkerSideImage"><i class="fas fa-crow"></i></div>
+                            <span id="G001WorkerFree">0</span>
+                        </div>
+                        <div id="G002WorkersSide" class="guildWorkersSide tooltip" data-tooltip="guild_worker" data-tooltip-value="G002">
+                            <div id="G002Image" class="guildWorkerSideImage"><i class="fas fa-salad"></i></div>
+                            <span id="G002WorkerFree">0</span>
+                        </div>
+                        <div id="G003WorkersSide" class="guildWorkersSide tooltip" data-tooltip="guild_worker" data-tooltip-value="G003">
+                            <div id="G003Image" class="guildWorkerSideImage"><i class="fas fa-paw"></i></div>
+                            <span id="G003WorkerFree">0</span>
+                        </div>
+                        <div id="G004WorkersSide" class="guildWorkersSide tooltip" data-tooltip="guild_worker" data-tooltip-value="G004">
+                            <div id="G004Image" class="guildWorkerSideImage"><i class="fas fa-fish"></i></div>
+                            <span id="G004WorkerFree">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="comptitle4" class="heading">Dungeons</div>
+                <div id="DungeonSideBar" class="dungeonSidebarContainer">
+                    <div id="DungeonSideBarTeam"></div>
+                </div>
+            </div>
+            <footer role="contentinfo">
+                <div id="bottom-left" class="dialogOptions">
+                    <a id="clearSave" data-dialog-id="clear_save" class="isDialog clearSave tooltip" data-tooltip="clear_save">
+                        <i class="fas fa-file-times"></i>
+                        <div class="footerButtonText">Clear Save</div>
+                    </a>
+                    <a id="exportSave" data-dialog-id="export_save" class="isDialog tooltip" data-tooltip="export_save">
+                        <i class="fas fa-file-export"></i>
+                        <div class="footerButtonText">Export Save</div>
+                    </a>
+                    <a id="importSave" data-dialog-id="import_save" class="isDialog tooltip" data-tooltip="import_save">
+                        <i class="fas fa-file-import"></i>
+                        <div class="footerButtonText">Import Save</div>
+                    </a>
+                    <a id="cloudSave" data-dialog-id="playfab" class="isDialog tooltip" data-tooltip="cloud_save">
+                        <i class="fas fa-cloud-download"></i>
+                        <div class="footerButtonText">Cloud Save</div>
+                    </a>
+                    <a id="settings" data-dialog-id="settings" class="isDialog tooltip" data-tooltip="settings">
+                        <i class="fas fa-cog"></i>
+                        <div class="footerButtonText">Settings</div>
+                    </a>
+                </div>
+                <div id="bottom-right" class="extraOptions">
+                    <a class="isDialog" data-dialog-id="patch_notes" id="versionNum">fetching...</a>
+                    <div class="footer_more-container">
+                        <div class="footer_more-btn">
+                            <div class="footer_more-text">View Links &amp; Resources</div>
+                            <i class="fas fa-angle-up"></i>
+                        </div>
+                        <ul class="footer_more-list">
+                            <li>
+                                <a class="footer_more-content" href="about.html" target="_blank" rel="noopener">
+                                    <i class="fas fa-users"></i>
+                                    <div class="footerButtonText">About &amp; Crediting</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer_more-content" href="http://www.discord.gg/qGBAVNR" target="_blank" rel="noopener">
+                                    <i class="fab fa-discord"></i>
+                                    <div class="footerButtonText">Join us on Discord</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer_more-content" href="https://www.patreon.com/forgeandfortune" target="_blank" rel="noopener">
+                                    <i class="fab fa-patreon"></i>
+                                    <div class="footerButtonText">Support on Patreon</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </main>
+    <section id="mobile-content">
+        <nav class="mobile-nav">
+            <ul class="mobile-nav-listing">
+                <li class="nav-item"><a href="/about.html" rel="noopener">About &amp; Crediting</a></li>
+                <li class="nav-item"><a href="http://www.discord.gg/qGBAVNR" rel="noopener">Discord Server</a></li>
+                <li class="nav-item"><a href="https://www.patreon.com/forgeandfortune" rel="noopener">Support on Patreon</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-notice">
+            <img class="mobile-notice-logo" src="/assets/images/site-logo.png">
+            <h1 class="mobile-notice-headline">Game not available on this device</h1>
+            <p class="mobile-notice-description">Thanks for checking us out, unfortunately, we don't support a screen of this size. Please visit us on your computer, laptop or on a device with a larger screen.</p>
+            <p class="mobile-notice-description">Feel free to check out our About &amp; Crediting page or join us on Discord.</p>
+        </div>
+    </section>
+    <div id="db-panel"></div>
+    <div id="tooltips"></div>
+
+    <script type="text/javascript" src="/externals/js/please-wait.min.js"></script>
+    <script src="/externals/js/jquery.js"></script>
+    <script src="/externals/js/jquery.toast.js"></script>
+    <script src="/js/jsonDataLoader.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/patch.js"></script>
+    <script src="/js/misc.js"></script>
+    <script src="/js/tabs.js"></script>
+    <script src="/js/fauxRandom.js"></script>
+    <script src="/js/recipes.js"></script>
+    <script src="/js/resource.js"></script>
+    <script src="/js/combat.js"></script>
+    <script src="/js/buffs.js"></script>
+    <script src="/js/heroes.js"></script>
+    <script src="/js/heroScreen.js"></script>
+    <script src="/js/mobs.js"></script>
+    <script src="/js/party.js"></script>
+    <script src="/js/dungeons.js"></script>
+    <script src="/js/dungeonAssign.js"></script>
+    <script src="/js/dungeonReward.js"></script>
+    <script src="/js/workers.js"></script>
+    <script src="/js/inventory.js"></script>
+    <script src="/js/actionslots.js"></script>
+    <script src="/js/devtools.js"></script>
+    <script src="/js/fuse.js"></script>
+    <script src="/js/bank.js"></script>
+    <script src="/js/blacksmith.js"></script>
+    <script src="/js/fortune.js"></script>
+    <script src="/js/synth.js"></script>
+    <script src="/js/tinker.js"></script>
+    <script src="/js/monsterhall.js"></script>
+    <script src="/js/town.js"></script>
+    <script src="/js/guilds.js"></script>
+    <script src="/js/shop.js"></script>
+    <script src="/js/dialogs.js"></script>
+    <script src="/js/skills.js"></script>
+    <script type="text/javascript" src="https://download.playfab.com/PlayFabClientApi.js"></script>
+    <script src="/js/playfab.js"></script>
+    <script type="text/javascript" src="/externals/js/pako.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/saveLoad.js"></script>
+    <script src="/js/progress.js"></script>
+    <script src="/js/specialAttack.js"></script>
+    <script src="/js/FileSaver.js"></script>
+    <script language="javascript" src="/externals/js/lz-string.js"></script>
+    <script src="/externals/js/toastifications.js"></script>
+    <script src="/js/style.js"></script>
+    <script src="/js/tooltips.js"></script>
+</body>
+</html>

@@ -1,9 +1,9 @@
 # forgeandfortune.github.io
-Hey there, 
+This is the working repository for the incremental game Forge & Fortune (formerly known as Abqu Heroes).
 
-This is the working directory for the game Forge & Fortune (formerly Abqu Heroes).
+Have any questions or concerns, reach out to us at support@forgeandfortune.com or join our Discord using the link below.
 
-Any questions/concerns, reach out to us at support@forgeandfortune.com.
+Play the game at: https://www.forgeandfortune.com  
+Join us on Discord: https://www.discord.gg/qGBAVNR  
+Support us on Patreon: https://www.patreon.com/forgeandfortune  
 
-Our Discord Server: http://www.discord.gg/qGBAVNR  
-Direct Link to the Game: http://www.forgeandfortune.com

@@ -6,27 +6,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var ProgressBarManager = {
-  bars: [],
-  addBar: function addBar(id, currentRef, maxRef, text, icon, tooltip, classes) {
-    var bar = new ProgressBar(id, currentRef, maxRef, text, icon, tooltip, classes);
-    this.bars.push(bar);
-    return bar.container;
-  },
-  refreshBars: function refreshBars() {
-    this.bars = this.bars.filter(bar.container.length === 0);
-    this.bars.forEach(function (bar) {
-      return bar.refreshContent;
-    });
-  },
-  updateText: function updateText(id, text) {
-    var bar = this.bars.find(function (bar) {
-      return bar.id === id || bar.currentRef === undefined;
-    });
-    bar.setText(text);
-  }
-};
-
 var ProgressBar =
 /*#__PURE__*/
 function () {
@@ -67,8 +46,10 @@ function () {
     }
   }, {
     key: "refreshContent",
-    value: function refreshContent() {
-      var width = (this.currentRef / this.maxRef * 100).toFixed(1) + "%";
+    value: function refreshContent(value, max) {
+      this.currentRef = value;
+      this.maxRef = max;
+      var width = (value / max * 100).toFixed(1) + "%";
       this.filldiv.css("width", width);
     }
   }, {

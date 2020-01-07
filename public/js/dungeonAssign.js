@@ -157,7 +157,6 @@ function initiateDungeonFloor(dungeonID) {
   dungeon.mobs.forEach(function (mob) {
     var d6 = $("<div/>").addClass("dfm").attr("id", "dfm" + mob.uniqueid);
     var d7 = $("<div/>").addClass("dfmName").html(mob.name);
-    console.log(mob.image);
     var d8 = $("<div/>").addClass("dfmImage").attr("id", "mobImage" + mob.uniqueid).html(mob.image);
     var d9 = $("<div/>").addClass("buffListContent").attr("id", "buffList" + mob.uniqueid);
     d6.append(d7, d8, d9);

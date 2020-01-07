@@ -1,22 +1,5 @@
 "use strict";
 
-const ProgressBarManager = {
-    bars : [],
-    addBar(id,currentRef,maxRef,text,icon,tooltip,classes) {
-        const bar = new ProgressBar(id, currentRef, maxRef, text, icon, tooltip, classes);
-        this.bars.push(bar);
-        return bar.container;
-    },
-    refreshBars() {
-        this.bars = this.bars.filter(bar.container.length === 0);
-        this.bars.forEach(bar => bar.refreshContent);
-    },
-    updateText(id,text) {
-        const bar = this.bars.find(bar => bar.id === id || bar.currentRef === undefined);
-        bar.setText(text);
-    }
-}
-
 class ProgressBar {
     constructor (id, currentRef, maxRef, text, icon, tooltip, classes) {
         this.id = id;
@@ -45,8 +28,10 @@ class ProgressBar {
 
         return progressBarContainer;
     }
-    refreshContent() {
-        const width = (this.currentRef/this.maxRef*100).toFixed(1)+"%";
+    refreshContent(value,max) {
+        this.currentRef = value;
+        this.maxRef = max;
+        const width = (value/max*100).toFixed(1)+"%";
         this.filldiv.css("width",width);
     }
     setText(text) {

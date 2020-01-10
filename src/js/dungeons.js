@@ -170,7 +170,6 @@ class Dungeon {
             return
         };
         const rewards = this.getRewards();
-        console.log(rewards);
         ResourceManager.addMaterial(rewards.id,rewards.amt);
     }
     nextFloor(refreshLater, previousFloor) {

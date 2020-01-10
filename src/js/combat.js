@@ -186,7 +186,6 @@ class Combatant {
         return buffs.reduce((a,b) => a+b, 0);
     }
     getBuffMaxHP() {
-        console.log(this.buffs);
         const buffs = this.buffs.map(b=>b.maxHP());
         return buffs.reduce((a,b) => a+b, 0);
     }

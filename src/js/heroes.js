@@ -156,7 +156,7 @@ class Hero extends Combatant {
         //return an object with 
         const slots = [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6,this.slot7];
         if (!nonblank) return slots;
-        return slots.filter(s=>s!==null);
+        return slots.filter(s=>s!==null && s!==undefined);
     }
     equip(item,slot) {
         if (slot === 0) this.slot1 = item;

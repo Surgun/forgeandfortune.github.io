@@ -165,7 +165,6 @@ var FloorManager = {
     var floors = this.floors.filter(function (f) {
       return f.mobs.includes(mobID);
     });
-    console.log(floors);
     var maxFloor = floors.map(function (f) {
       return f.maxFloor;
     });
@@ -256,12 +255,9 @@ function (_Combatant) {
 }(Combatant);
 
 function adjustState(mob) {
-  console.log(mob);
-
   if (mob.state === "egg") {
     mob.image = '<img src="/assets/images/enemies/B902A.gif">';
     $("#mobImage" + mob.uniqueid).html(mob.image);
-    console.log(mob.uniqueid);
     mob.playbook = PlaybookManager.generatePlayBookFromSkills("SM902A", "SM902A", "SM902A", "SM902B");
   }
 }

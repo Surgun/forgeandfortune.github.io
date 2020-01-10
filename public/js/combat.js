@@ -299,7 +299,6 @@ function () {
   }, {
     key: "getBuffMaxHP",
     value: function getBuffMaxHP() {
-      console.log(this.buffs);
       var buffs = this.buffs.map(function (b) {
         return b.maxHP();
       });

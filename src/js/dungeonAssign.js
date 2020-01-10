@@ -223,7 +223,6 @@ function initializeSideBarDungeon() {
             const d2 = $("<div/>").addClass("dungeonFarmStatus").attr("id","dungeonFarm"+dungeon.id).data("gid",dungeon.id).html(`<i class="fas fa-recycle"></i>`).appendTo(d1);
             if (!dungeon.progressNextFloor) d2.addClass("dungeonFarmActive");
             $("<div/>").addClass("dungeonSidebarFloor").attr("id","dsb"+dungeon.id).html(`${dungeon.name} - ${dungeon.floorCount}`).appendTo(d1);
-            console.log(dungeon.id,dungeon.getRewards());
             if (dungeon.type !== "boss") $("<div/>").addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon.getRewards(),dungeon.id)).appendTo(d);
         }
         else d1.html(`${dungeon.name}`);
@@ -239,7 +238,6 @@ function refreshDungeonFarmStatus(dungeonid) {
 
 function refreshSidebarDungeonMats(dungeonID) {
     const dungeon = DungeonManager.dungeonByID(dungeonID);
-    console.log(dungeon.type);
     if (dungeon.type === "boss") return;
     const rewards = dungeon.getRewards();
     $(`#dRR${dungeonID} .dungeonRewardRateIcon`).html(ResourceManager.materialIcon(rewards.id));
@@ -268,7 +266,6 @@ function refreshBeatBar(uniqueid,dungeonTime) {
 }
 
 function refreshHPBar(hero) {
-    console.log("refresh hp for: "+hero.name);
     const hpPercent = hero.hp/hero.maxHP();
     const hpBarText = hero.hp+" / "+hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";

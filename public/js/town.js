@@ -37,7 +37,6 @@ function () {
   }, {
     key: "loadSave",
     value: function loadSave(save) {
-      console.log(this.id, save.status);
       this.status = save.status;
     }
   }, {
@@ -80,7 +79,6 @@ var TownManager = {
     var _this = this;
 
     if (save.buildings === undefined) return;
-    console.log("i got a save loading");
     save.buildings.forEach(function (bsave) {
       var building = _this.idToBuilding(bsave.id);
 
@@ -193,7 +191,6 @@ function showBldg(type) {
     return c.toUpperCase();
   });
   var buildingText = "initiate".concat(upper, "Bldg");
-  console.log(buildingText);
   if (building.getStatus() === BuildingState.built) window[buildingText]();else {
     $buildBuilding.show();
     buildScreen(building.shorthand);

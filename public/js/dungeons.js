@@ -242,7 +242,6 @@ function () {
 
       ;
       var rewards = this.getRewards();
-      console.log(rewards);
       ResourceManager.addMaterial(rewards.id, rewards.amt);
     }
   }, {

@@ -63,7 +63,6 @@ function () {
   _createClass(Skill, [{
     key: "passiveCheck",
     value: function passiveCheck(type, target) {
-      console.log(this.id);
       SkillManager.skillEffects[this.id](type, target);
     }
   }]);
@@ -150,7 +149,6 @@ SkillManager.skillEffects['S0020'] = function (combatParams) {
   var targets = combatParams.getTarget(TargetType.SELF);
   targets.forEach(function (target) {
     if (target.getBuffStacks('B0020') === 5) return;
-    console.log(target.getBuffStacks('B0020'));
     BuffManager.generateBuff('B0020', target, combatParams.power);
     target.heal(combatParams.power);
     refreshHPBar(target);

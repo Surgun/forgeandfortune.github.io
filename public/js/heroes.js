@@ -236,7 +236,7 @@ function (_Combatant) {
       var slots = [this.slot1, this.slot2, this.slot3, this.slot4, this.slot5, this.slot6, this.slot7];
       if (!nonblank) return slots;
       return slots.filter(function (s) {
-        return s !== null;
+        return s !== null && s !== undefined;
       });
     }
   }, {

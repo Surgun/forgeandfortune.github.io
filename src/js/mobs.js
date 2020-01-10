@@ -95,7 +95,6 @@ const FloorManager = {
     },
     floorRangeByMob(mobID) {
         const floors = this.floors.filter(f=>f.mobs.includes(mobID));
-        console.log(floors);
         const maxFloor = floors.map(f=>f.maxFloor);
         const minFloor = floors.map(f=>f.minFloor);
         return {"min":Math.min(...minFloor),"max":Math.max(...maxFloor)};
@@ -153,11 +152,9 @@ class Mob extends Combatant {
 }
 
 function adjustState(mob) {
-    console.log(mob);
     if (mob.state === "egg") {
         mob.image = '<img src="/assets/images/enemies/B902A.gif">';
         $("#mobImage"+mob.uniqueid).html(mob.image);
-        console.log(mob.uniqueid);
         mob.playbook = PlaybookManager.generatePlayBookFromSkills("SM902A","SM902A","SM902A","SM902B");
     }
 }

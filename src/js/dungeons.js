@@ -39,66 +39,94 @@ class TurnOrder {
     }
 }
 
-class Dungeon {
+class Area {
     constructor(props) {
         Object.assign(this, props);
-        this.maxMonster = 4;
-        this.party = null;
-        this.mobs = [];
-        this.dropList = [];
-        this.dungeonTime = 0;
-        this.floorCount = 0;
-        this.order = null;
-        this.status = DungeonStatus.EMPTY;
-        this.lastParty = null;
-        this.floorMaterial = null;
-        this.completeState = "none";
-        this.progressNextFloor = true;
+        this.unlocked = false;
     }
     createSave() {
         const save = {};
         save.id = this.id;
-        save.lastParty = this.lastParty;
-        save.floorID = this.floorID;
-        if (this.party === null) save.party = null;
-        else save.party = this.party.createSave();
-        save.mobs = [];
-        this.mobs.forEach(m=>{
-            save.mobs.push(m.createSave());
+        save.unlocked = this.unlocked;
+        return save;
+    }
+    loadSave(save) {
+        this.unlocked = save.unlocked;
+    }
+    unlock() {
+        this.unlocked = true;
+    }
+}
+
+const AreaManager = {
+    areas : [],
+    addArea(area) {
+        this.areas.push(area);
+    },
+    idToArea(areaID) {
+        return this.areas.find(a=>a.id === areaID);
+    },
+    createSave() {
+        const save = {};
+        save.areas = [];
+        this.areas.forEach(area => save.areas.push(area.createSave()));
+    },
+    loadSave(save) {
+        save.areas.forEach(areaSave => {
+            const area = this.idToArea(areaSave.id);
+            area.loadSave(areaSave);
         });
-        save.dropList = this.dropList;
-        save.dungeonTime = this.dungeonTime;
-        save.floorCount = this.floorCount;
-        save.order = [];
-        if (this.order === null) save.order = null;
-        else save.order = this.order.createSave();
+    },
+    unlockArea(areaID) {
+        const area = this.idToArea(areaID);
+        area.unlock();
+    }
+}
+
+class Dungeon {
+    constructor(props) {
+        Object.assign(this, props);
+        this.party = null;
+        this.mobs = [];
+        this.maxFloor = 0;
+        this.floor = 0;
+        this.order = null;
+        this.status = DungeonStatus.EMPTY;
+        this.lastParty = null;
+    }
+    createSave() {
+        const save = {};
+        save.id = this.id;
+        if (save.party !== null) save.party = this.party.createSave();
+        else save.party = null;
+        save.mobs = [];
+        this.mobs.forEach(mob => {
+            save.mobs.push(mob.createSave());
+        });
+        save.maxFloor = this.maxFloor;
+        save.floor = this.floor;
+        if (this.order !== null) save.order = this.order.createSave();
+        else save.order = null;
         save.status = this.status;
-        save.completeState = this.completeState;
-        save.progressNextFloor = this.progressNextFloor;
+        save.lastParty = this.lastParty;
         return save;
     }
     loadSave(save) {
         if (save.party !== null) this.party = new Party(save.party.heroID);
-        else save.party = null;
-        if (save.lastParty !== undefined) this.lastParty = save.lastParty;
-        if (save.floorID !== undefined) this.floorID = save.floorID;
-        this.mobs = [];
         save.mobs.forEach(mobSave => {
             const mobTemplate = MobManager.idToMob(mobSave.id);
             const mob = new Mob(mobSave.lvl, mobTemplate, mobSave.difficulty);
             mob.loadSave(mobSave);
             this.mobs.push(mob);
         });
+        if (this.maxFloor !== undefined) this.maxFloor = save.maxFloor;
+        if (this.floor !== undefined) this.floor = save.floor;
         if (save.order !== null) {
             this.order = new TurnOrder(this.party.heroes,this.mobs);
             this.order.loadSave(save.order);
-        }   
-        this.dropList = save.dropList;
-        this.dungeonTime = save.dungeonTime;
-        this.floorCount = save.floorCount;
+        }
         this.status = save.status;
-        if (save.completeState !== undefined) this.completeState = save.completeState;
-        if (save.progressNextFloor !== undefined) this.progressNextFloor = save.progressNextFloor;
+        this.lastParty = save.lastParty;
     }
     addTime(t) {
         //if there's enough time, grab the next guy and do some combat
@@ -145,7 +173,6 @@ class Dungeon {
             h.inDungeon = false;
             h.hp = h.maxHP()
         });
-        DungeonManager.removeDungeon(this.id);
         if (DungeonManager.dungeonView === this.id) {
             BattleLog.clear();
             openTab("dungeonsTab");
@@ -153,40 +180,19 @@ class Dungeon {
         initializeSideBarDungeon();
         refreshDungeonSelect();
         this.status = DungeonStatus.EMPTY;
+        this.party = null;
         this.order = null;
-        this.dungeonTime = 0;
-        this.floorCount = 0;
-        this.beatTotal = 0;
-        this.completeState = "none";
+        this.mobs = [];
+        this.floor = 0;
         return;
-    }
-    getRewards() {
-        const floor = FloorManager.floorByID(this.floorID);
-        return new idAmt(floor.mat,floor.matAmt)
-    }
-    addRewards() {
-        if (this.type === "boss") {
-            this.bossesBeat.push(this.id);
-            return
-        };
-        const rewards = this.getRewards();
-        ResourceManager.addMaterial(rewards.id,rewards.amt);
     }
     nextFloor(refreshLater, previousFloor) {
         if (this.floorCount > 0 && this.type === "boss") return this.dungeonComplete(previousFloor);
-        if (!previousFloor && this.floorCount > 0) {
-            this.addRewards();
-            this.party.setMaxFloor(this.id,this.floorCount);
-        }
-        if (previousFloor) {
-            this.floorCount = Math.max(1,this.floorCount-1);
-            this.toggleProgress(false);
-        }
-        else if (this.progressNextFloor || this.floorCount === 0) this.floorCount += 1;
-        achievementStats.floorRecord(this.id, this.floorCount);
-        const floor = FloorManager.getFloor(this.id, this.floorCount);
-        this.floorID = floor.id;
-        this.mobs = MobManager.generateDungeonFloor(floor,this.floorCount,this.bossDifficulty());
+        if (previousFloor) this.floor -= 1;
+        else this.floorCount += 1;
+        this.maxFloor = Math.max(this.maxFloor,this.floor);
+        achievementStats.floorRecord(this.id, this.maxFloor);
+        this.mobs = MobManager.generateDungeonFloor(this,this.floor,this.bossDifficulty());
         this.party.resetForFloor();
         this.order = new TurnOrder(this.party.heroes,this.mobs);
         if (refreshLater) return;
@@ -225,22 +231,12 @@ class Dungeon {
             enemy.passiveCheck(type);
         })
     }
-    toggleProgress(toggle) {
-        toggle = toggle || !this.progressNextFloor;
-        this.progressNextFloor = toggle;
-        refreshDungeonFarmStatus(this.id);
-        if (DungeonManager.dungeonView !== this.id) return;
-        if (toggle) $toggleProgress.html("Progressing");
-        else $toggleProgress.html("Farming");
-    }
 }
 
 const DungeonManager = {
     dungeons : [],
-    dungeonCreatingID : null,
     dungeonView : null,
     speed : 1500,
-    dungeonPaid : [],
     bossesBeat : [],
     partySize : 1,
     unlockDungeon(id) {
@@ -285,13 +281,6 @@ const DungeonManager = {
     },
     dungeonStatus(dungeonID) {
         return this.dungeons.find(d=>d.id===dungeonID).status;
-    },
-    removeDungeon(dungeonID) {
-        const dungeon = this.dungeonByID(dungeonID);
-        dungeon.party = null;
-        dungeon.status = DungeonStatus.EMPTY;
-        dungeon.progressNextFloor = true;
-        initializeSideBarDungeon();
     },
     createDungeon(floor) {
         const party = PartyCreator.lockParty();

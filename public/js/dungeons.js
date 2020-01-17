@@ -472,3 +472,4 @@ var DungeonManager = {
     refreshAllSales();
   }
 };
+//# sourceMappingURL=dungeons.js.map

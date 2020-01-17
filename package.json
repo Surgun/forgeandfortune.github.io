@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postcss": "postcss src/css -d public/css",
-    "prepare-build": "babel src -d public",
+    "prepare-build": "babel src -d public --source-maps",
     "watch": "onchange \"src\" -- npm run build",
     "build": "npm-run-all postcss prepare-build",
     "live-server": "live-server public --wait=5000",

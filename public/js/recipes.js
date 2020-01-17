@@ -755,3 +755,4 @@ $(document).on('blur', '.recipeSortInput', function (e) {
   settings.dialogStatus = 0;
   saveSettings();
 });
+//# sourceMappingURL=recipes.js.map

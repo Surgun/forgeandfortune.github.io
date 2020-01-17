@@ -340,3 +340,4 @@ $(document).on('click', "#monsterPay", function (e) {
   var type = $(e.currentTarget).data("line");
   MonsterHall.buyLine(type);
 });
+//# sourceMappingURL=monsterhall.js.map

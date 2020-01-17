@@ -206,3 +206,4 @@ function SAfearap(attacker, enemies, dungeonid) {
   battleMessage.html("".concat(logIcon("fas fa-bolt"), " ").concat(logName(attacker.name), " really strikes fear in the heart of ").concat(logName(target.name), "!"));
   BattleLog.addEntry(dungeonid, battleMessage);
 }
+//# sourceMappingURL=specialAttack.js.map

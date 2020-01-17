@@ -353,3 +353,4 @@ function () {
 
   return Combatant;
 }();
+//# sourceMappingURL=combat.js.map

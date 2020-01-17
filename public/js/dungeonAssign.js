@@ -309,3 +309,4 @@ $(document).on("click", ".dungeonFarmStatus", function (e) {
   var gid = $(e.currentTarget).data("gid");
   DungeonManager.dungeonByID(gid).toggleProgress();
 });
+//# sourceMappingURL=dungeonAssign.js.map

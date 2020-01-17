@@ -402,3 +402,4 @@ var BuffLookup = {
   BM902A: BM902A,
   BM902B: BM902B
 };
+//# sourceMappingURL=buffs.js.map

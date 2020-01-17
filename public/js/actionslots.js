@@ -420,3 +420,4 @@ function refreshInventoryAndMaterialPlaces() {
     refreshMaterial(matID);
   });
 }
+//# sourceMappingURL=actionslots.js.map

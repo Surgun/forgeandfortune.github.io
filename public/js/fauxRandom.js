@@ -61,3 +61,4 @@ function getRandomFromItem(item) {
   item.seed = (item.seed * 9301 + 49297) % 233280;
   return Math.floor(item.seed / 233280 * 100);
 }
+//# sourceMappingURL=fauxRandom.js.map

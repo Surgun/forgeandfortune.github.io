@@ -452,3 +452,4 @@ function createSynthStageCard(container) {
 }
 
 ;
+//# sourceMappingURL=synth.js.map

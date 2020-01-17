@@ -387,3 +387,4 @@ function refreshTrinketInventory() {
     heroEqupCard(hero, trinket).appendTo($heroEquipTrinketAll);
   });
 }
+//# sourceMappingURL=heroScreen.js.map

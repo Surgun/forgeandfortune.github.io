@@ -349,3 +349,4 @@ function characterCard(prefix, dv, ID, status) {
   $("<div/>").addClass("partyMaxFloor").html("Floor ".concat(hero.getMax(DungeonManager.dungeonCreatingID))).appendTo(dclick);
   return d;
 }
+//# sourceMappingURL=party.js.map

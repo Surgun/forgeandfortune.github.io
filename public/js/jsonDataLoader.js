@@ -218,3 +218,4 @@ function loadTown() {
     });
   }
 }
+//# sourceMappingURL=jsonDataLoader.js.map

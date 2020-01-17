@@ -42,3 +42,4 @@ function portSettings() {
   delete settings.toggleTurnOrderBars;
   if (settings.battleLogLength !== 999) settings.battleLogLength = 999;
 }
+//# sourceMappingURL=settings.js.map

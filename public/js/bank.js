@@ -149,3 +149,4 @@ $(document).on("click", "#sortInventoryBank", function (e) {
   e.preventDefault();
   Inventory.sortInventory();
 });
+//# sourceMappingURL=bank.js.map

@@ -261,3 +261,4 @@ function adjustState(mob) {
     mob.playbook = PlaybookManager.generatePlayBookFromSkills("SM902A", "SM902A", "SM902A", "SM902B");
   }
 }
+//# sourceMappingURL=mobs.js.map

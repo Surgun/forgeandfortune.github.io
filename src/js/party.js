@@ -34,15 +34,12 @@ class Party {
             h.addTime(t, dungeonID);
         })
     }
-    resetForFloor() {
+    reset() {
         this.heroes.forEach(hero => {
             hero.hp = hero.maxHP();
             hero.resetPlaybookPosition();
             hero.removeBuffs();
         });
-    }
-    setMaxFloor(id,floor) {
-        this.heroes.forEach(h => h.setMax(id,floor));
     }
 }
 
@@ -64,7 +61,7 @@ const PartyCreator = {
     validTeam() {
         if (this.heroes.length === 0) return false;
         const heroesReal = this.heroes.map(hid => HeroManager.idToHero(hid));
-        return heroesReal.some(h => h.alive());
+        return heroesReal.every(h => h.alive());
     },
     lockParty() {
         this.heroes.map(hid => HeroManager.idToHero(hid)).forEach(h=>{
@@ -74,23 +71,6 @@ const PartyCreator = {
         const party = new Party(this.heroes);
         this.heroes = [];
         return party;
-    },
-    healCost() {
-        if (this.heroes.length === 0) return 0;
-        return this.heroes.map(h=>HeroManager.idToHero(h).healCost()).reduce((total,h) => total + h);
-    },
-    noheal() {
-        if (this.heroes.length === 0) return true;
-        return this.heroes.map(h=>HeroManager.idToHero(h)).every(h=>h.hp === h.maxHP());
-    },
-    payHealPart() {
-        const amt = this.healCost();
-        if (ResourceManager.materialAvailable("M001") < amt) {
-            Notifications.cantAffordHealParty();
-            return;
-        }
-        ResourceManager.deductMoney(amt);
-        this.heroes.map(h=>HeroManager.idToHero(h)).forEach(h=>h.healPercent(100));
     },
     startingTeam(team) {
         if (team === null) return;
@@ -111,13 +91,7 @@ function refreshHeroSelect() {
     $dtsBanner.empty();
     const b1 = $("<div/>").addClass(`dts${dungeon.id} dtsBackground`).appendTo($dtsBanner);
     const b2 = $("<div/>").addClass(`dts${dungeon.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
-    $("<div/>").addClass(`dtsMaxFloor`).html("Max Floor Skip: 100").appendTo($dtsBanner);
     $("<div/>").addClass(`dts${dungeon.id} dtsBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($dtsBanner);
-    if (dungeon.type === "boss") {
-        b1.addClass("DBoss");
-        b2.addClass("DBoss");
-        if (dungeon.bossDifficulty() > 0) $("<div/>").addClass("dtsBossDifficulty").html(`${dungeon.bossDifficulty()} ${miscIcons.skull}`).appendTo($dtsBanner);
-    }
     //Materials in Dungeon
     $dtsMaterials.empty();
     if (dungeon.type !== "boss") {

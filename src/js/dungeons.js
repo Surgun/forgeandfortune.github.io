@@ -43,6 +43,7 @@ class Area {
     constructor(props) {
         Object.assign(this, props);
         this.unlocked = false;
+        this.dungeons = [];
     }
     createSave() {
         const save = {};
@@ -56,10 +57,26 @@ class Area {
     unlock() {
         this.unlocked = true;
     }
+    addDungeon(dungeon) {
+        this.dungeons.push(dungeon);
+    }
+    status() {
+        if (this.dungeons.some(d => d.status === DungeonStatus.COLLECT)) return DungeonStatus.COLLECT;
+        if (this.dungeons.some(d => d.status === DungeonStatus.ADVENTURING)) return DungeonStatus.ADVENTURING;
+        return DungeonStatus.EMPTY;
+    }
+    activeParty() {
+        const dungeon = this.dungeons.find(d => d.status === DungeonStatus.ADVENTURING);
+        return dungeon.party;
+    }
+    activeDungeonID() {
+        return this.dungeons.find(d => d.status === DungeonStatus.ADVENTURING || d.status === DungeonStatus.COLLECT).id;
+    }
 }
 
 const AreaManager = {
     areas : [],
+    areaView : null,
     addArea(area) {
         this.areas.push(area);
     },
@@ -80,6 +97,10 @@ const AreaManager = {
     unlockArea(areaID) {
         const area = this.idToArea(areaID);
         area.unlock();
+    },
+    addDungeon(dungeon) {
+        const area = this.idToArea(dungeon.area);
+        area.addDungeon(dungeon);
     }
 }
 
@@ -90,6 +111,7 @@ class Dungeon {
         this.mobs = [];
         this.maxFloor = 0;
         this.floor = 0;
+        this.floorClear = 0;
         this.order = null;
         this.status = DungeonStatus.EMPTY;
         this.lastParty = null;
@@ -160,9 +182,6 @@ class Dungeon {
         }
         if (DungeonManager.dungeonView === this.id) refreshBeatBar(this.order.getCurrentID(),this.dungeonTime);
     }
-    floorComplete() {
-        return this.mobs.every(m=>m.dead());
-    }
     initializeParty(party) {
         this.party = party;
         this.lastParty = party.heroID;
@@ -188,12 +207,12 @@ class Dungeon {
     }
     nextFloor(refreshLater, previousFloor) {
         if (this.floorCount > 0 && this.type === "boss") return this.dungeonComplete(previousFloor);
-        if (previousFloor) this.floor -= 1;
+        if (previousFloor) this.floor = Math.max(1,this.floor - 1);
         else this.floorCount += 1;
         this.maxFloor = Math.max(this.maxFloor,this.floor);
         achievementStats.floorRecord(this.id, this.maxFloor);
-        this.mobs = MobManager.generateDungeonFloor(this,this.floor,this.bossDifficulty());
-        this.party.resetForFloor();
+        this.mobs = MobManager.generateDungeonFloor(this.id,this.floor,this.bossDifficulty());
+        this.party.reset();
         this.order = new TurnOrder(this.party.heroes,this.mobs);
         if (refreshLater) return;
         initiateDungeonFloor(this.id);
@@ -231,24 +250,15 @@ class Dungeon {
             enemy.passiveCheck(type);
         })
     }
+    materialGain() {
+        const amt = this.floorClear
+    }
 }
 
 const DungeonManager = {
     dungeons : [],
     dungeonView : null,
     speed : 1500,
-    bossesBeat : [],
-    partySize : 1,
-    unlockDungeon(id) {
-        this.dungeonPaid.push(id);
-    },
-    dungeonCanSee(id) {
-        return this.dungeonPaid.includes(id);
-    },
-    bossDungeonCanSee(id) {
-        if (MonsterHall.bossRefight()) return this.dungeonPaid.includes(id);
-        return this.dungeonPaid.includes(id) && !DungeonManager.bossCleared(id);
-    },
     createSave() {
         const save = {};
         save.dungeons = [];
@@ -263,6 +273,7 @@ const DungeonManager = {
     },
     addDungeon(dungeon) {
         this.dungeons.push(dungeon);
+        AreaManager.addDungeon(dungeon);
     },
     loadSave(save) {
         save.dungeons.forEach(d => {
@@ -298,68 +309,13 @@ const DungeonManager = {
     dungeonByID(dungeonID) {
         return this.dungeons.find(d => d.id === dungeonID);
     },
-    getCurrentDungeon() {
-        return this.dungeonByID(this.dungeonView);
-    },
-    dungeonSlotCount() {
-        const dungeon = this.dungeonByID(this.dungeonCreatingID);
-        if (dungeon.type == "boss") return 4;
-        return this.partySize;
-    },
-    bossCount() {
-        return this.bossesBeat.length;
-    },
-    bossCleared(id) {
-        return this.bossesBeat.includes(id);
-    },
-    bossMaxCount() {
-        return this.dungeons.filter(d => d.type === "boss").length;
-    },
     abandonCurrentDungeon() {
-        const dungeon = this.getCurrentDungeon();
+        const dungeon = this.dungeonByID(this.dungeonView);
         dungeon.resetDungeon();
-    },
-    bossByDungeon(dungeonid) {
-        return FloorManager.mobsByDungeon(dungeonid)[0];
-    },
-    toggleProgress() {
-        this.getCurrentDungeon().toggleProgress();
-    },
-    getHpFloor(x2) {
-        const fl = Math.floor((x2-1)/100);
-        const ce = Math.ceil((x2-1)/100);
-        const x1 = fl*100+1;
-        const x3 = ce*100+1;
-        const y1 = miscLoadedValues.hpFloor[fl];
-        const y3 = miscLoadedValues.hpFloor[ce];
-        if (fl === ce) return y1;
-        return Math.round((x2-x1)*(y3-y1)/(x3-x1)+y1);
-    },
-    getPowFloor(x2) {
-        const fl = Math.floor((x2-1)/100);
-        const ce = Math.ceil((x2-1)/100);
-        const x1 = fl*100+1;
-        const x3 = ce*100+1;
-        const y1 = miscLoadedValues.powFloor[fl];
-        const y3 = miscLoadedValues.powFloor[ce];
-        if (fl === ce) return y1;
-        return Math.round((x2-x1)*(y3-y1)/(x3-x1)+y1);
-    },
-    dungeonMatRefresh(matID) {
-        this.dungeons.forEach(dungeon => {
-            if (dungeon.status !== DungeonStatus.ADVENTURING) return;
-            if (FloorManager.floorByID(dungeon.floorID).mat !== matID) return;
-            refreshDungeonMatBar(dungeon.id);
-        });
     },
     abandonAllDungeons() {
         this.dungeons.forEach(dungeon => {
             dungeon.resetDungeon();
         })
     },
-    completeBoss(id) {
-        this.bossesBeat.push(id);
-        refreshAllOrders();
-        refreshAllSales();
-    }
 };

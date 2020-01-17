@@ -142,6 +142,18 @@ function loadMobs() {
             const mob = new MobTemplate(props);
             MobManager.addMob(mob);
         });
+        loadAreas();
+    });
+}
+
+function loadAreas() {
+    $.ajax({
+        url: "json/areas.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            const area = new Area(props)
+            AreaManager.addArea(area);
+        });
         loadDungeons();
     });
 }
@@ -153,18 +165,6 @@ function loadDungeons() {
         $.each(data, function(i,props){
             const event = new Dungeon(props)
             DungeonManager.addDungeon(event);
-        });
-        loadDungeonFloors();
-    });
-}
-
-function loadDungeonFloors() {
-    $.ajax({
-        url: "json/dungeonFloors.json",
-    }).done((data) => {
-        $.each(data, function(i,props){
-            const floor = new FloorTemplate(props);
-            FloorManager.addFloor(floor);
         });
         loadTinker();
     });

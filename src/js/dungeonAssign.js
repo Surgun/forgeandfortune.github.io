@@ -72,7 +72,7 @@ function screenDirectDungeon(areaID) {
     const area = AreaManager.idToArea(areaID);
     if (area.status() === DungeonStatus.ADVENTURING) showDungeon(area.activeDungeonID());
     else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.COLLECT) showDungeonReward(area.activeDungeonID(),false);
-    else if (area.status() === DungeonStatus.EMPTY) startPartyCreation();
+    else if (area.status() === DungeonStatus.EMPTY) startPartyCreation(area);
 }
 
 /*-----------------------------------------

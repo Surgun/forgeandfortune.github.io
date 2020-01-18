@@ -143,6 +143,18 @@ function loadMobs() {
       var mob = new MobTemplate(props);
       MobManager.addMob(mob);
     });
+    loadAreas();
+  });
+}
+
+function loadAreas() {
+  $.ajax({
+    url: "json/areas.json"
+  }).done(function (data) {
+    $.each(data, function (i, props) {
+      var area = new Area(props);
+      AreaManager.addArea(area);
+    });
     loadDungeons();
   });
 }
@@ -154,18 +166,6 @@ function loadDungeons() {
     $.each(data, function (i, props) {
       var event = new Dungeon(props);
       DungeonManager.addDungeon(event);
-    });
-    loadDungeonFloors();
-  });
-}
-
-function loadDungeonFloors() {
-  $.ajax({
-    url: "json/dungeonFloors.json"
-  }).done(function (data) {
-    $.each(data, function (i, props) {
-      var floor = new FloorTemplate(props);
-      FloorManager.addFloor(floor);
     });
     loadTinker();
   });

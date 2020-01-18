@@ -1,107 +1,77 @@
 "use strict";
 
 /*Dungeons consist of three sets of screens:
-Clicking on the "Adventures" tab will relocate to the dungeon screen.
-This screen JUST has a list of dungeons on it. You can see the progress
-of any dungeon (as well as which are available).
+Clicking on the "Adventures" tab will relocate to the area screen.
+This screen JUST has a list of areas on it. You can see the status
+of any areas (as well as which are available).
 
-Clicking on a dungeon WITHOUT a team brings you to the party selection
-screen, where you can select party members for this dungeon. Confirming
+Clicking on a area WITHOUT a team there brings you to the party selection
+screen, where you can select the dungeon and a party. Confirming
 a party locks it in and begins the dungeon and brings you to third screen
 
-Adventure screen! Get here by clicking on a dungeon with a group or confirming
+Adventure screen! Get here by clicking on an area with a group or confirming
 a group...
 */
-var $dungeonSelect = $("#dungeonSelect");
-var $dungeonRun = $("#dungeonRun");
+//tabs
+var $areaSelect = $("#areaSelect");
+var $areaTeamSelect = $("#areaTeamSelect");
+var $dungeonRun = $("#dungeonRun"); //area screen
+
+var $areaListings = $("#areaListings");
 var $DungeonSideBarTeam = $("#DungeonSideBarTeam");
-var $dsd1 = $("#dsd1");
-var $toggleProgress = $("#toggleProgress");
-var $floorRewards = $("#floorRewards");
 /*---------------------------
-/*-   DUNGEON SELECT CODE   -
-/*---------------------------*/
+  -     AREA SELECT CODE    -
+  ---------------------------*/
 
-var $dungeonListings = $("#dungeonListings");
-var $dungeonListingsBosses = $("#dungeonListingsBosses");
-
-function refreshDungeonSelect() {
-  //shows each dungeon so you can select that shit...
-  $dungeonListings.empty();
-  DungeonManager.dungeons.filter(function (d) {
-    return d.type === "regular" && DungeonManager.dungeonCanSee(d.id);
-  }).forEach(function (dungeon) {
-    $dungeonListings.append(dungeonBlock(dungeon));
-  });
-  $dungeonListingsBosses.empty();
-  var bosses = DungeonManager.dungeons.filter(function (d) {
-    return d.type === "boss" && DungeonManager.bossDungeonCanSee(d.id);
-  });
-  if (bosses.length === 0) $(".dungeonBossDivs").hide();else {
-    $(".dungeonBossDivs").show();
-    DungeonManager.dungeons.filter(function (d) {
-      return d.type === "boss" && DungeonManager.bossDungeonCanSee(d.id);
-    }).forEach(function (dungeon) {
-      $dungeonListingsBosses.append(dungeonBlock(dungeon));
-    });
-  }
+function dungeonsTabClicked() {
+  DungeonManager.dungeonView = null;
+  AreaManager.areaView = null;
+  $areaSelect.show();
+  $areaTeamSelect.hide();
+  $dungeonRun.hide();
+  refreshAreaSelect();
 }
 
-function dungeonBlock(dungeon) {
-  var d1 = $("<div/>").addClass("dungeonContainer").attr("id", dungeon.id);
-  var d2 = $("<div/>").addClass("dungeonHeader").html(dungeon.name);
+function refreshAreaSelect() {
+  $areaListings.empty();
+  AreaManager.areas.forEach(function (area) {
+    createAreaBlock(area).appendTo($areaListings);
+  });
+}
 
-  if (dungeon.type === "boss") {
-    d1.addClass("dungeonTypeBoss");
-    var bossID = DungeonManager.bossByDungeon(dungeon.id);
-    if (MonsterHall.bossRefight()) $("<div/>").addClass("dungeonBossLvl").html("".concat(MonsterHall.monsterKillCount(bossID), " ").concat(miscIcons.skull)).appendTo(d1);
-  }
+function createAreaBlock(area) {
+  var statuses = ["Idle", "Fight In Progress", "Run Complete"];
+  var d = $("<div/>").addClass("areaContainer").data("areaID", area.id);
+  $("<div/>").addClass("areaHeader").html(area.name).appendTo(d);
+  $("<div/>").addClass("areaStatus").html(statuses[area.status()]).appendTo(d);
+  $("<div/>").addClass("dungeonBackground").appendTo(d);
 
-  var d3 = $("<div/>").addClass("dungeonStatus").attr("id", "ds" + dungeon.id);
-  if (dungeon.status === DungeonStatus.ADVENTURING) d3.addClass("dungeonInProgress").html("Fight in Progress");else if (dungeon.status === DungeonStatus.COLLECT) d3.addClass("dungeonComplete").html("Run Complete");else d3.addClass("dungeonIdle").html("Idle");
-  var d4 = $("<div/>").addClass("dungeonBackground");
-  var d5 = $("<div/>").addClass("dungeonAdventurers");
-  var d6 = $("<div/>").addClass("dungeonBossPortrait ".concat(dungeon.id));
-  d1.append(d2, d3, d4, d5);
-  if (dungeon.type === "boss") d1.append(d6);
-
-  if (dungeon.status === DungeonStatus.ADVENTURING) {
-    dungeon.party.heroes.forEach(function (h) {
-      var d5a = $("<div/>").addClass("dungeonHeroDungeonSelect").html(h.head);
-      d5.append(d5a);
+  if (area.status() === DungeonStatus.ADVENTURING) {
+    var d2 = $("<div/>").addClass("areaAdventurers").appendTo(d);
+    area.activeParty().heroes.forEach(function (h) {
+      $("<div/>").addClass("areaHero").html(h.head).appendTo(d2);
     });
   }
 
-  return d1;
+  return d;
 } //click on a dungeon to start making a team!
 
 
-$(document).on("click", ".dungeonContainer", function (e) {
+$(document).on("click", ".areaContainer", function (e) {
   e.preventDefault();
-  var dungeonID = $(e.currentTarget).attr("id");
-  var dungeon = DungeonManager.dungeonByID(dungeonID);
-  if (dungeon.type === "boss" && DungeonManager.bossCleared(dungeonID) && !MonsterHall.bossRefight()) return;
-  screenDirectDungeon(dungeonID);
+  var areaID = $(e.currentTarget).data("areaID");
+  AreaManager.areaView = areaID;
+  screenDirectDungeon(areaID);
 });
 $(document).on("click", "#dAbandonAll", function (e) {
   e.preventDefault();
   DungeonManager.abandonAllDungeons();
 });
 
-function screenDirectDungeon(dungeonID) {
-  DungeonManager.dungeonView = dungeonID;
-  var lastParty = DungeonManager.dungeonByID(dungeonID).lastParty;
-  $dungeonSelect.hide();
-  if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.ADVENTURING) showDungeon(dungeonID);else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.COLLECT) {
-    showDungeonReward(dungeonID, false);
-  } else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.EMPTY) {
-    DungeonManager.dungeonCreatingID = dungeonID;
-    PartyCreator.clearMembers();
-    PartyCreator.startingTeam(lastParty);
-    refreshHeroSelect();
-    $dungeonSelect.hide();
-    $dungeonTeamSelect.show();
-  }
+function screenDirectDungeon(areaID) {
+  $areaSelect.hide();
+  var area = AreaManager.idToArea(areaID);
+  if (area.status() === DungeonStatus.ADVENTURING) showDungeon(area.activeDungeonID());else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.COLLECT) showDungeonReward(area.activeDungeonID(), false);else if (area.status() === DungeonStatus.EMPTY) startPartyCreation(area);
 }
 /*-----------------------------------------
 /*-   DUNGEON RUNNING CODE
@@ -110,26 +80,14 @@ function screenDirectDungeon(dungeonID) {
 
 function showDungeon(dungeonID) {
   DungeonManager.dungeonView = dungeonID;
-  var dungeon = DungeonManager.dungeonByID(dungeonID);
-
-  if (dungeon.status === DungeonStatus.EMPTY) {
-    return;
-  }
-
+  $dungeonRun.show();
   BattleLog.clear();
   initiateDungeonFloor(dungeonID);
-  $dungeonSelect.hide();
-  $dungeonRun.show().removeClass().addClass(dungeonID);
-  if (DungeonManager.dungeonByID(dungeonID).type === "boss") $dungeonRun.addClass("DBoss");
 }
 
 $(document).on("click", "#dungeonAbandon", function (e) {
   e.preventDefault();
   DungeonManager.abandonCurrentDungeon();
-});
-$(document).on("click", "#toggleProgress", function (e) {
-  e.preventDefault();
-  DungeonManager.toggleProgress();
 });
 var $floorID = $("#floorID");
 var $dungeonHeroList = $("#dungeonHeroList");
@@ -302,10 +260,3 @@ function refreshDungeonMatBar(dungeonid) {
   $("#dsbr" + dungeonid).html(haveReward);
   $("#dsbrf" + dungeonid).css('width', matWidth);
 }
-
-$(document).on("click", ".dungeonFarmStatus", function (e) {
-  e.preventDefault();
-  e.stopPropagation();
-  var gid = $(e.currentTarget).data("gid");
-  DungeonManager.dungeonByID(gid).toggleProgress();
-});

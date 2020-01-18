@@ -19,6 +19,8 @@ const $dungeonRun = $("#dungeonRun");
 //area screen
 const $areaListings = $("#areaListings");
 
+const $DungeonSideBarTeam = $("#DungeonSideBarTeam");
+
 /*---------------------------
   -     AREA SELECT CODE    -
   ---------------------------*/

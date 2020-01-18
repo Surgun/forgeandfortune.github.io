@@ -14,10 +14,9 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var $dungeonTeamSelect = $("#dungeonTeamSelect");
 var $dtsBanner = $("#dtsBanner");
-var $dtsMaterials = $("#dtsMaterials");
-var $dtsTop = $("#dtsTop");
+var $dtsDungeons = $("#dtsDungeons");
+var $dungeonTeamCollection = $("#dungeonTeamCollection");
 var $dtsBottom = $("#dtsBottom");
 
 var Party =
@@ -71,19 +70,12 @@ function () {
       });
     }
   }, {
-    key: "resetForFloor",
-    value: function resetForFloor() {
+    key: "reset",
+    value: function reset() {
       this.heroes.forEach(function (hero) {
         hero.hp = hero.maxHP();
         hero.resetPlaybookPosition();
         hero.removeBuffs();
-      });
-    }
-  }, {
-    key: "setMaxFloor",
-    value: function setMaxFloor(id, floor) {
-      this.heroes.forEach(function (h) {
-        return h.setMax(id, floor);
       });
     }
   }]);
@@ -93,9 +85,7 @@ function () {
 
 var PartyCreator = {
   heroes: [],
-  emptyPartySlots: function emptyPartySlots() {
-    return DungeonManager.dungeonSlotCount() - this.heroes.length;
-  },
+  dungeonSelect: null,
   removeMember: function removeMember(slotNum) {
     this.heroes.splice(slotNum, 1);
   },
@@ -111,7 +101,7 @@ var PartyCreator = {
     var heroesReal = this.heroes.map(function (hid) {
       return HeroManager.idToHero(hid);
     });
-    return heroesReal.some(function (h) {
+    return heroesReal.every(function (h) {
       return h.alive();
     });
   },
@@ -125,37 +115,6 @@ var PartyCreator = {
     var party = new Party(this.heroes);
     this.heroes = [];
     return party;
-  },
-  healCost: function healCost() {
-    if (this.heroes.length === 0) return 0;
-    return this.heroes.map(function (h) {
-      return HeroManager.idToHero(h).healCost();
-    }).reduce(function (total, h) {
-      return total + h;
-    });
-  },
-  noheal: function noheal() {
-    if (this.heroes.length === 0) return true;
-    return this.heroes.map(function (h) {
-      return HeroManager.idToHero(h);
-    }).every(function (h) {
-      return h.hp === h.maxHP();
-    });
-  },
-  payHealPart: function payHealPart() {
-    var amt = this.healCost();
-
-    if (ResourceManager.materialAvailable("M001") < amt) {
-      Notifications.cantAffordHealParty();
-      return;
-    }
-
-    ResourceManager.deductMoney(amt);
-    this.heroes.map(function (h) {
-      return HeroManager.idToHero(h);
-    }).forEach(function (h) {
-      return h.healPercent(100);
-    });
   },
   startingTeam: function startingTeam(team) {
     var _this = this;
@@ -182,60 +141,32 @@ var PartyCreator = {
   }
 };
 
-function refreshHeroSelect() {
-  var dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonCreatingID); //Team Banner
-
+function refreshHeroSelect(area) {
+  //Team Banner
   $dtsBanner.empty();
-  var b1 = $("<div/>").addClass("dts".concat(dungeon.id, " dtsBackground")).appendTo($dtsBanner);
-  var b2 = $("<div/>").addClass("dts".concat(dungeon.id, " dtsHeader")).html(dungeon.name).appendTo($dtsBanner);
-  $("<div/>").addClass("dtsMaxFloor").html("Max Floor Skip: 100").appendTo($dtsBanner);
-  $("<div/>").addClass("dts".concat(dungeon.id, " dtsBackButton")).html("<i class=\"fas fa-arrow-left\"></i>").appendTo($dtsBanner);
+  $("<div/>").addClass("dts".concat(area.id, " dtsBackground")).appendTo($dtsBanner);
+  $("<div/>").addClass("dts".concat(area.id, " dtsHeader")).html(area.name).appendTo($dtsBanner);
+  $("<div/>").addClass("dts".concat(area.id, " dtsBackButton")).html("<i class=\"fas fa-arrow-left\"></i>").appendTo($dtsBanner); //Possible Dungeons
 
-  if (dungeon.type === "boss") {
-    b1.addClass("DBoss");
-    b2.addClass("DBoss");
-    if (dungeon.bossDifficulty() > 0) $("<div/>").addClass("dtsBossDifficulty").html("".concat(dungeon.bossDifficulty(), " ").concat(miscIcons.skull)).appendTo($dtsBanner);
-  } //Materials in Dungeon
-
-
-  $dtsMaterials.empty();
-
-  if (dungeon.type !== "boss") {
-    var dmTitle = $("<div/>").addClass("dtsMaterialTitle").attr("data-value", dungeon.id).html("Materials Found In This Dungeon <i class=\"fas fa-chevron-down\"></i>").appendTo($dtsMaterials);
-    var dm = $("<div/>").addClass("dtsMaterialContainer");
-
-    if (settings.expandedMaterials[dungeon.id] === 1) {
-      dmTitle.addClass("toggleActive");
-      dm.addClass("expanded");
-    }
-
-    if (ResourceManager.materialSeenDungeon(dungeon.id).length === 0) {
-      var dm1 = $("<div/>").addClass("dtsMaterialNone").html("You have not discovered any materials.");
-      dm.append(dm1);
-    }
-
-    ResourceManager.materialSeenDungeon(dungeon.id).forEach(function (m) {
-      var dm1 = $("<div/>").addClass("dtsMaterial").appendTo(dm);
-      $("<div/>").addClass("dtsMaterialIcon").html(m.img).appendTo(dm1);
-      $("<div/>").addClass("dtsMaterialName").html(m.name).appendTo(dm1);
-      $("<div/>").addClass("dtsMaterialAmt tooltip").attr("data-tooltip", "in_inventory").html(formatToUnits(m.amt, 2)).appendTo(dm1);
-    });
-    $dtsMaterials.append(dm);
-  }
-
-  $dtsTop.empty();
-  var d1top = $("<div/>").addClass("dtsTopTitle").html("<h3>Assemble your Team!</h3>");
-  $dtsTop.append(d1top);
-  var d = $("<div/>").addClass("dungeonTeamCollection"); //actual members
+  $dtsDungeons.empty();
+  area.dungeons.forEach(function (dungeon) {
+    var d = $("<div/>").addClass("dtsDungeon").data("dungeonID", dungeon.id);
+    $("<div/>").addClass("dtsDungeonName").html(dungon.name).appendTo(d);
+    if (dungeon.mat !== null) $("<div/>").addClass("dtsMaterial tooltip").attr({
+      "data-tooltip": "material_desc",
+      "data-tooltip-value": dungeon.mat
+    }).appendTo(d);
+  });
+  $dungeonTeamCollection.empty(); //actual members
 
   PartyCreator.heroes.forEach(function (hero, i) {
-    var d1 = characterCard("dungeonTeam", i, hero);
-    d.prepend(d1);
-  }); //empty slots
+    characterCard("dungeonTeam", i, hero).prependTo($dungeonTeamCollection);
+  });
+  var emptySlots = DungeonManager.dungeonByID(PartyCreator.dungeonSelect).partySize - PartyCreator.heroes.length;
 
-  for (var i = 0; i < PartyCreator.emptyPartySlots(); i++) {
+  for (var i = 0; i < emptySlots; i++) {
     var d1a = characterCard("dungeonTeam", i).addClass("noHeroDungeonSelect");
-    d.prepend(d1a);
+    $dungeonTeamCollection.prepend(d1a);
   }
 
   $dtsTop.append(d);
@@ -263,26 +194,8 @@ function refreshHeroSelect() {
     if (dungeon.bannedHero.includes(hero.id)) characterCard("heroBanned dungeonNotAvailable", hero.uniqueid, hero.id, "Banned from Here").appendTo(d2);else if (hero.inDungeon) characterCard("dungeonNotAvailable", hero.uniqueid, hero.id, "In Dungeon").appendTo(d2);else if (PartyCreator.heroes.includes(hero.id)) characterCard("partyHero dungeonNotAvailable", hero.uniqueid, hero.id, "Already in Party").appendTo(d2);else characterCard("dungeonAvailable", hero.uniqueid, hero.id, null).appendTo(d2);
   });
   $dtsBottom.append(d2);
-} // Toggle displaying dungeon materials on select screen
+} //Go back to dungeon select screen
 
-
-$(document).on('click', '.dtsMaterialTitle', function (e) {
-  e.preventDefault();
-  var toggleActive = $(e.currentTarget).hasClass("toggleActive");
-  var title = $(".dtsMaterialTitle");
-  var dungeonID = title.attr("data-value");
-  $(".dtsMaterialContainer").addClass("expanded");
-  title.addClass("toggleActive");
-  settings.expandedMaterials[dungeonID] = 1;
-
-  if (toggleActive) {
-    $(e.currentTarget).removeClass("toggleActive");
-    $(".dtsMaterialContainer").removeClass("expanded");
-    settings.expandedMaterials[dungeonID] = 0;
-  }
-
-  saveSettings();
-}); //Go back to dungeon select screen
 
 $(document).on('click', ".dtsBackButton", function (e) {
   e.preventDefault();

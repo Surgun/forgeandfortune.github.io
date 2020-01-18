@@ -13,12 +13,12 @@ function refreshProgress() {
   //big progress boxes
   var tally = 0;
   var max = 0;
-  $plBoss.html("".concat(DungeonManager.bossCount(), "/").concat(DungeonManager.bossMaxCount()));
-  var bossPercent = (DungeonManager.bossCount() / DungeonManager.bossMaxCount() * 100).toFixed(2);
+  $plBoss.html("1/1}");
+  var bossPercent = 100 .toFixed(2);
   $pbBoss.css('width', bossPercent + "%");
   if (bossPercent === "100.00") $pbBoss.addClass("Completed");
-  tally += DungeonManager.bossCount();
-  max += DungeonManager.bossMaxCount();
+  tally += 1;
+  max += 1;
   $plRecipeMastery.html("".concat(recipeList.masteryCount(), "/").concat(recipeList.recipeCount()));
   var recipePercent = (recipeList.masteryCount() / recipeList.recipeCount() * 100).toFixed(2);
   $pbRecipe.css('width', recipePercent + "%");

@@ -76,6 +76,108 @@ function () {
   return TurnOrder;
 }();
 
+var Area =
+/*#__PURE__*/
+function () {
+  function Area(props) {
+    _classCallCheck(this, Area);
+
+    Object.assign(this, props);
+    this.unlocked = false;
+    this.dungeons = [];
+  }
+
+  _createClass(Area, [{
+    key: "createSave",
+    value: function createSave() {
+      var save = {};
+      save.id = this.id;
+      save.unlocked = this.unlocked;
+      return save;
+    }
+  }, {
+    key: "loadSave",
+    value: function loadSave(save) {
+      this.unlocked = save.unlocked;
+    }
+  }, {
+    key: "unlock",
+    value: function unlock() {
+      this.unlocked = true;
+    }
+  }, {
+    key: "addDungeon",
+    value: function addDungeon(dungeon) {
+      this.dungeons.push(dungeon);
+    }
+  }, {
+    key: "status",
+    value: function status() {
+      if (this.dungeons.some(function (d) {
+        return d.status === DungeonStatus.COLLECT;
+      })) return DungeonStatus.COLLECT;
+      if (this.dungeons.some(function (d) {
+        return d.status === DungeonStatus.ADVENTURING;
+      })) return DungeonStatus.ADVENTURING;
+      return DungeonStatus.EMPTY;
+    }
+  }, {
+    key: "activeParty",
+    value: function activeParty() {
+      var dungeon = this.dungeons.find(function (d) {
+        return d.status === DungeonStatus.ADVENTURING;
+      });
+      return dungeon.party;
+    }
+  }, {
+    key: "activeDungeonID",
+    value: function activeDungeonID() {
+      return this.dungeons.find(function (d) {
+        return d.status === DungeonStatus.ADVENTURING || d.status === DungeonStatus.COLLECT;
+      }).id;
+    }
+  }]);
+
+  return Area;
+}();
+
+var AreaManager = {
+  areas: [],
+  areaView: null,
+  addArea: function addArea(area) {
+    this.areas.push(area);
+  },
+  idToArea: function idToArea(areaID) {
+    return this.areas.find(function (a) {
+      return a.id === areaID;
+    });
+  },
+  createSave: function createSave() {
+    var save = {};
+    save.areas = [];
+    this.areas.forEach(function (area) {
+      return save.areas.push(area.createSave());
+    });
+  },
+  loadSave: function loadSave(save) {
+    var _this = this;
+
+    save.areas.forEach(function (areaSave) {
+      var area = _this.idToArea(areaSave.id);
+
+      area.loadSave(areaSave);
+    });
+  },
+  unlockArea: function unlockArea(areaID) {
+    var area = this.idToArea(areaID);
+    area.unlock();
+  },
+  addDungeon: function addDungeon(dungeon) {
+    var area = this.idToArea(dungeon.area);
+    area.addDungeon(dungeon);
+  }
+};
+
 var Dungeon =
 /*#__PURE__*/
 function () {
@@ -83,18 +185,14 @@ function () {
     _classCallCheck(this, Dungeon);
 
     Object.assign(this, props);
-    this.maxMonster = 4;
     this.party = null;
     this.mobs = [];
-    this.dropList = [];
-    this.dungeonTime = 0;
-    this.floorCount = 0;
+    this.maxFloor = 0;
+    this.floor = 0;
+    this.floorClear = 0;
     this.order = null;
     this.status = DungeonStatus.EMPTY;
     this.lastParty = null;
-    this.floorMaterial = null;
-    this.completeState = "none";
-    this.progressNextFloor = true;
   }
 
   _createClass(Dungeon, [{
@@ -102,51 +200,41 @@ function () {
     value: function createSave() {
       var save = {};
       save.id = this.id;
-      save.lastParty = this.lastParty;
-      save.floorID = this.floorID;
-      if (this.party === null) save.party = null;else save.party = this.party.createSave();
+      if (save.party !== null) save.party = this.party.createSave();else save.party = null;
       save.mobs = [];
-      this.mobs.forEach(function (m) {
-        save.mobs.push(m.createSave());
+      this.mobs.forEach(function (mob) {
+        save.mobs.push(mob.createSave());
       });
-      save.dropList = this.dropList;
-      save.dungeonTime = this.dungeonTime;
-      save.floorCount = this.floorCount;
-      save.order = [];
-      if (this.order === null) save.order = null;else save.order = this.order.createSave();
+      save.maxFloor = this.maxFloor;
+      save.floor = this.floor;
+      if (this.order !== null) save.order = this.order.createSave();else save.order = null;
       save.status = this.status;
-      save.completeState = this.completeState;
-      save.progressNextFloor = this.progressNextFloor;
+      save.lastParty = this.lastParty;
       return save;
     }
   }, {
     key: "loadSave",
     value: function loadSave(save) {
-      var _this = this;
+      var _this2 = this;
 
-      if (save.party !== null) this.party = new Party(save.party.heroID);else save.party = null;
-      if (save.lastParty !== undefined) this.lastParty = save.lastParty;
-      if (save.floorID !== undefined) this.floorID = save.floorID;
-      this.mobs = [];
+      if (save.party !== null) this.party = new Party(save.party.heroID);
       save.mobs.forEach(function (mobSave) {
         var mobTemplate = MobManager.idToMob(mobSave.id);
         var mob = new Mob(mobSave.lvl, mobTemplate, mobSave.difficulty);
         mob.loadSave(mobSave);
 
-        _this.mobs.push(mob);
+        _this2.mobs.push(mob);
       });
+      if (this.maxFloor !== undefined) this.maxFloor = save.maxFloor;
+      if (this.floor !== undefined) this.floor = save.floor;
 
       if (save.order !== null) {
         this.order = new TurnOrder(this.party.heroes, this.mobs);
         this.order.loadSave(save.order);
       }
 
-      this.dropList = save.dropList;
-      this.dungeonTime = save.dungeonTime;
-      this.floorCount = save.floorCount;
       this.status = save.status;
-      if (save.completeState !== undefined) this.completeState = save.completeState;
-      if (save.progressNextFloor !== undefined) this.progressNextFloor = save.progressNextFloor;
+      this.lastParty = save.lastParty;
     }
   }, {
     key: "addTime",
@@ -189,13 +277,6 @@ function () {
       if (DungeonManager.dungeonView === this.id) refreshBeatBar(this.order.getCurrentID(), this.dungeonTime);
     }
   }, {
-    key: "floorComplete",
-    value: function floorComplete() {
-      return this.mobs.every(function (m) {
-        return m.dead();
-      });
-    }
-  }, {
     key: "initializeParty",
     value: function initializeParty(party) {
       this.party = party;
@@ -209,7 +290,6 @@ function () {
         h.inDungeon = false;
         h.hp = h.maxHP();
       });
-      DungeonManager.removeDungeon(this.id);
 
       if (DungeonManager.dungeonView === this.id) {
         BattleLog.clear();
@@ -219,51 +299,21 @@ function () {
       initializeSideBarDungeon();
       refreshDungeonSelect();
       this.status = DungeonStatus.EMPTY;
+      this.party = null;
       this.order = null;
-      this.dungeonTime = 0;
-      this.floorCount = 0;
-      this.beatTotal = 0;
-      this.completeState = "none";
+      this.mobs = [];
+      this.floor = 0;
       return;
-    }
-  }, {
-    key: "getRewards",
-    value: function getRewards() {
-      var floor = FloorManager.floorByID(this.floorID);
-      return new idAmt(floor.mat, floor.matAmt);
-    }
-  }, {
-    key: "addRewards",
-    value: function addRewards() {
-      if (this.type === "boss") {
-        this.bossesBeat.push(this.id);
-        return;
-      }
-
-      ;
-      var rewards = this.getRewards();
-      ResourceManager.addMaterial(rewards.id, rewards.amt);
     }
   }, {
     key: "nextFloor",
     value: function nextFloor(refreshLater, previousFloor) {
       if (this.floorCount > 0 && this.type === "boss") return this.dungeonComplete(previousFloor);
-
-      if (!previousFloor && this.floorCount > 0) {
-        this.addRewards();
-        this.party.setMaxFloor(this.id, this.floorCount);
-      }
-
-      if (previousFloor) {
-        this.floorCount = Math.max(1, this.floorCount - 1);
-        this.toggleProgress(false);
-      } else if (this.progressNextFloor || this.floorCount === 0) this.floorCount += 1;
-
-      achievementStats.floorRecord(this.id, this.floorCount);
-      var floor = FloorManager.getFloor(this.id, this.floorCount);
-      this.floorID = floor.id;
-      this.mobs = MobManager.generateDungeonFloor(floor, this.floorCount, this.bossDifficulty());
-      this.party.resetForFloor();
+      if (previousFloor) this.floor = Math.max(1, this.floor - 1);else this.floorCount += 1;
+      this.maxFloor = Math.max(this.maxFloor, this.floor);
+      achievementStats.floorRecord(this.id, this.maxFloor);
+      this.mobs = MobManager.generateDungeonFloor(this.id, this.floor, this.bossDifficulty());
+      this.party.reset();
       this.order = new TurnOrder(this.party.heroes, this.mobs);
       if (refreshLater) return;
       initiateDungeonFloor(this.id);
@@ -314,13 +364,9 @@ function () {
       });
     }
   }, {
-    key: "toggleProgress",
-    value: function toggleProgress(toggle) {
-      toggle = toggle || !this.progressNextFloor;
-      this.progressNextFloor = toggle;
-      refreshDungeonFarmStatus(this.id);
-      if (DungeonManager.dungeonView !== this.id) return;
-      if (toggle) $toggleProgress.html("Progressing");else $toggleProgress.html("Farming");
+    key: "materialGain",
+    value: function materialGain() {
+      var amt = this.floorClear;
     }
   }]);
 
@@ -329,22 +375,8 @@ function () {
 
 var DungeonManager = {
   dungeons: [],
-  dungeonCreatingID: null,
   dungeonView: null,
   speed: 1500,
-  dungeonPaid: [],
-  bossesBeat: [],
-  partySize: 1,
-  unlockDungeon: function unlockDungeon(id) {
-    this.dungeonPaid.push(id);
-  },
-  dungeonCanSee: function dungeonCanSee(id) {
-    return this.dungeonPaid.includes(id);
-  },
-  bossDungeonCanSee: function bossDungeonCanSee(id) {
-    if (MonsterHall.bossRefight()) return this.dungeonPaid.includes(id);
-    return this.dungeonPaid.includes(id) && !DungeonManager.bossCleared(id);
-  },
   createSave: function createSave() {
     var save = {};
     save.dungeons = [];
@@ -359,6 +391,7 @@ var DungeonManager = {
   },
   addDungeon: function addDungeon(dungeon) {
     this.dungeons.push(dungeon);
+    AreaManager.addDungeon(dungeon);
   },
   loadSave: function loadSave(save) {
     save.dungeons.forEach(function (d) {
@@ -380,13 +413,6 @@ var DungeonManager = {
       return d.id === dungeonID;
     }).status;
   },
-  removeDungeon: function removeDungeon(dungeonID) {
-    var dungeon = this.dungeonByID(dungeonID);
-    dungeon.party = null;
-    dungeon.status = DungeonStatus.EMPTY;
-    dungeon.progressNextFloor = true;
-    initializeSideBarDungeon();
-  },
   createDungeon: function createDungeon(floor) {
     var party = PartyCreator.lockParty();
     var dungeon = this.dungeonByID(this.dungeonCreatingID);
@@ -405,70 +431,13 @@ var DungeonManager = {
       return d.id === dungeonID;
     });
   },
-  getCurrentDungeon: function getCurrentDungeon() {
-    return this.dungeonByID(this.dungeonView);
-  },
-  dungeonSlotCount: function dungeonSlotCount() {
-    var dungeon = this.dungeonByID(this.dungeonCreatingID);
-    if (dungeon.type == "boss") return 4;
-    return this.partySize;
-  },
-  bossCount: function bossCount() {
-    return this.bossesBeat.length;
-  },
-  bossCleared: function bossCleared(id) {
-    return this.bossesBeat.includes(id);
-  },
-  bossMaxCount: function bossMaxCount() {
-    return this.dungeons.filter(function (d) {
-      return d.type === "boss";
-    }).length;
-  },
   abandonCurrentDungeon: function abandonCurrentDungeon() {
-    var dungeon = this.getCurrentDungeon();
+    var dungeon = this.dungeonByID(this.dungeonView);
     dungeon.resetDungeon();
-  },
-  bossByDungeon: function bossByDungeon(dungeonid) {
-    return FloorManager.mobsByDungeon(dungeonid)[0];
-  },
-  toggleProgress: function toggleProgress() {
-    this.getCurrentDungeon().toggleProgress();
-  },
-  getHpFloor: function getHpFloor(x2) {
-    var fl = Math.floor((x2 - 1) / 100);
-    var ce = Math.ceil((x2 - 1) / 100);
-    var x1 = fl * 100 + 1;
-    var x3 = ce * 100 + 1;
-    var y1 = miscLoadedValues.hpFloor[fl];
-    var y3 = miscLoadedValues.hpFloor[ce];
-    if (fl === ce) return y1;
-    return Math.round((x2 - x1) * (y3 - y1) / (x3 - x1) + y1);
-  },
-  getPowFloor: function getPowFloor(x2) {
-    var fl = Math.floor((x2 - 1) / 100);
-    var ce = Math.ceil((x2 - 1) / 100);
-    var x1 = fl * 100 + 1;
-    var x3 = ce * 100 + 1;
-    var y1 = miscLoadedValues.powFloor[fl];
-    var y3 = miscLoadedValues.powFloor[ce];
-    if (fl === ce) return y1;
-    return Math.round((x2 - x1) * (y3 - y1) / (x3 - x1) + y1);
-  },
-  dungeonMatRefresh: function dungeonMatRefresh(matID) {
-    this.dungeons.forEach(function (dungeon) {
-      if (dungeon.status !== DungeonStatus.ADVENTURING) return;
-      if (FloorManager.floorByID(dungeon.floorID).mat !== matID) return;
-      refreshDungeonMatBar(dungeon.id);
-    });
   },
   abandonAllDungeons: function abandonAllDungeons() {
     this.dungeons.forEach(function (dungeon) {
       dungeon.resetDungeon();
     });
-  },
-  completeBoss: function completeBoss(id) {
-    this.bossesBeat.push(id);
-    refreshAllOrders();
-    refreshAllSales();
   }
 };

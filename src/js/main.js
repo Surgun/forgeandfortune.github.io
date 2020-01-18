@@ -21,7 +21,6 @@ function afterLoad() {
             g.generateNewOrder(2);
             g.generateNewOrder(3);
         });
-        DungeonManager.dungeonPaid.push("D001");
     }
     refreshMasteryBar()
     refreshInventory();

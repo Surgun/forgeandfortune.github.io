@@ -17,12 +17,12 @@ function refreshProgress() {
     let tally = 0;
     let max = 0;
 
-    $plBoss.html(`${DungeonManager.bossCount()}/${DungeonManager.bossMaxCount()}`);
-    const bossPercent = (DungeonManager.bossCount()/DungeonManager.bossMaxCount()*100).toFixed(2);
+    $plBoss.html(`1/1}`);
+    const bossPercent = (100).toFixed(2);
     $pbBoss.css('width', bossPercent+"%");
     if (bossPercent === "100.00") $pbBoss.addClass("Completed");
-    tally += DungeonManager.bossCount();
-    max += DungeonManager.bossMaxCount();
+    tally += 1;
+    max += 1;
 
     $plRecipeMastery.html(`${recipeList.masteryCount()}/${recipeList.recipeCount()}`);
     const recipePercent = (recipeList.masteryCount()/recipeList.recipeCount()*100).toFixed(2);

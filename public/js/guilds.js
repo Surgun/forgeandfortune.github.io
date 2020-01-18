@@ -647,3 +647,4 @@ $(document).on('click', '.orderCraft', function (e) {
   var itemID = $(e.currentTarget).attr("id");
   actionSlotManager.addSlot(itemID);
 });
+//# sourceMappingURL=guilds.js.map

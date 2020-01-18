@@ -116,3 +116,4 @@ function hashtagReplace(tooltip, id, html) {
   var prop = html.substring(start + 1, end);
   return hashtagReplace(tooltip, id, html.substring(0, start) + tooltip.tooltipValue(id, prop) + html.substring(end + 1));
 }
+//# sourceMappingURL=tooltips.js.map

@@ -281,3 +281,4 @@ $(document).on('click', '.fortuneItemSetClose', function (e) {
   FortuneManager.removeLockedFortune(fortuneID);
   refreshFortuneSlots();
 });
+//# sourceMappingURL=fortune.js.map

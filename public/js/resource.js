@@ -260,3 +260,4 @@ $(document).on("click", ".material", function (e) {
   var matID = $(e.currentTarget).attr("id");
   initializeRecipes(matID, "default");
 });
+//# sourceMappingURL=resource.js.map

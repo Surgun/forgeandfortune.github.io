@@ -182,3 +182,4 @@ function loadCallback(result, error) {
     }
   }
 }
+//# sourceMappingURL=playfab.js.map

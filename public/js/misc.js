@@ -263,3 +263,4 @@ function normalDistribution(min, max, skew) {
 function extractPounds(text) {
   return text.split("#")[1];
 }
+//# sourceMappingURL=misc.js.map

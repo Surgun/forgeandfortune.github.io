@@ -203,3 +203,4 @@ $(document).on('click', '#clearSettings', function (e) {
   e.preventDefault();
   clearSettings();
 });
+//# sourceMappingURL=style.js.map

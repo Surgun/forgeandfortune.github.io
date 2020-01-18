@@ -39,3 +39,4 @@ $(document).on('click', "#dreCollect", function (e) {
   dungeon.resetDungeon();
   openTab("dungeonsTab");
 });
+//# sourceMappingURL=dungeonReward.js.map

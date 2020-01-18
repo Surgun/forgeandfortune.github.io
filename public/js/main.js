@@ -90,3 +90,4 @@ function mainLoop() {
     TownManager.purgeSlots = false;
   }
 }
+//# sourceMappingURL=main.js.map

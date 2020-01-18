@@ -80,3 +80,4 @@ function showPatchNotes() {
 $(document).on("click", "#updateRefresh", function (e) {
   location.replace('/');
 });
+//# sourceMappingURL=patch.js.map

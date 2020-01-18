@@ -309,3 +309,4 @@ $(document).on('keyup', function (e) {
 $(document).on('click', '.dialogContainer', function (e) {
   if (e.target === e.currentTarget) setDialogClose();
 });
+//# sourceMappingURL=dialogs.js.map

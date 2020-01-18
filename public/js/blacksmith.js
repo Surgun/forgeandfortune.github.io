@@ -80,6 +80,7 @@ var bloopSmith = {
     refreshSmithStage();
   }
 };
+console.log("yes");
 
 function initiateForgeBldg() {
   $smithBuilding.show();
@@ -231,3 +232,4 @@ $(document).on("click", ".smithHeroButton", function (e) {
   bloopSmith.heroView = heroID;
   refreshSmithInventory();
 });
+//# sourceMappingURL=blacksmith.js.map

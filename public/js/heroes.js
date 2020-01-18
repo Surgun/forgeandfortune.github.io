@@ -466,3 +466,4 @@ var HeroManager = {
     }).includes(containerID);
   }
 };
+//# sourceMappingURL=heroes.js.map

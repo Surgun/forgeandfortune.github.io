@@ -222,3 +222,4 @@ $(document).on("click", ".alPerkBuy", function (e) {
   var perkid = $(e.currentTarget).data("pid");
   Shop.buyPerk(perkid);
 });
+//# sourceMappingURL=shop.js.map

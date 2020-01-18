@@ -199,3 +199,4 @@ function makeItem(hid, slot) {
   item.sharp = Sharp.indexOf(sharpText);
   return item;
 }
+//# sourceMappingURL=saveeditor.js.map

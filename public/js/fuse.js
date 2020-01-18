@@ -313,3 +313,4 @@ $(document).on('click', '.fuseSlotCollect', function (e) {
   var id = parseInt($(e.currentTarget).attr("fuseid"));
   FusionManager.collectFuse(id);
 });
+//# sourceMappingURL=fuse.js.map

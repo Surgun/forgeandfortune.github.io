@@ -333,3 +333,4 @@ $(document).on('click', '.tinkerCommand', function (e) {
   var command = TinkerManager.idToCommand(commandID);
   if (command.enabled) $("#enable" + commandID).addClass("tinkerCommandEnable").removeClass("tinkerCommandDisable");else $("#enable" + commandID).removeClass("tinkerCommandEnable").addClass("tinkerCommandDisable");
 });
+//# sourceMappingURL=tinker.js.map

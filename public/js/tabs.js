@@ -78,3 +78,4 @@ $(document).on("keypress", function (e) {
     if (e.which === 49) tabClick(e, "inventoryTab");else if (e.which === 50) tabClick(e, "guildTab");else if (e.which === 51) tabClick(e, "recipesTab");else if (e.which === 52) tabClick(e, "heroesTab");else if (e.which === 53) tabClick(e, "dungeonsTab");else if (e.which === 54) tabClick(e, "townsTab");else if (e.which === 55) tabClick(e, "marketTab");else if (e.which === 56) tabClick(e, "eventsTab");else if (e.which === 57) tabClick(e, "progressTab");
   }
 });
+//# sourceMappingURL=tabs.js.map

@@ -12,7 +12,8 @@
     "hp": 15,
     "powGain": 1,
     "hpGain": 1,
-    "partySize": 1
+    "partySize": 1,
+    "type": "dungeon"
   },
   {
     "id": "D102",
@@ -27,7 +28,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 2
+    "partySize": 2,
+    "type": "dungeon"
   },
   {
     "id": "D103",
@@ -42,7 +44,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 3
+    "partySize": 3,
+    "type": "dungeon"
   },
   {
     "id": "D104",
@@ -57,7 +60,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D105",
@@ -72,7 +76,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D106",
@@ -87,7 +92,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D107",
@@ -102,7 +108,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D108",
@@ -117,7 +124,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D109",
@@ -132,7 +140,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D110",
@@ -147,7 +156,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D201",
@@ -162,7 +172,8 @@
     "hp": 15,
     "powGain": 1,
     "hpGain": 1,
-    "partySize": 1
+    "partySize": 1,
+    "type": "dungeon"
   },
   {
     "id": "D202",
@@ -177,7 +188,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 2
+    "partySize": 2,
+    "type": "dungeon"
   },
   {
     "id": "D203",
@@ -192,7 +204,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 3
+    "partySize": 3,
+    "type": "dungeon"
   },
   {
     "id": "D204",
@@ -207,7 +220,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D205",
@@ -222,7 +236,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D206",
@@ -237,7 +252,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D207",
@@ -252,7 +268,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D208",
@@ -267,7 +284,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D209",
@@ -282,7 +300,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D210",
@@ -297,7 +316,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D301",
@@ -312,7 +332,8 @@
     "hp": 15,
     "powGain": 1,
     "hpGain": 1,
-    "partySize": 1
+    "partySize": 1,
+    "type": "dungeon"
   },
   {
     "id": "D302",
@@ -327,7 +348,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 2
+    "partySize": 2,
+    "type": "dungeon"
   },
   {
     "id": "D303",
@@ -342,7 +364,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 3
+    "partySize": 3,
+    "type": "dungeon"
   },
   {
     "id": "D304",
@@ -357,7 +380,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D305",
@@ -372,7 +396,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D306",
@@ -387,7 +412,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D307",
@@ -402,7 +428,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D308",
@@ -417,7 +444,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D309",
@@ -432,7 +460,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D310",
@@ -447,7 +476,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "dungeon"
   },
   {
     "id": "D401",
@@ -462,7 +492,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 1
+    "partySize": 1,
+    "type": "boss"
   },
   {
     "id": "D402",
@@ -477,7 +508,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 2
+    "partySize": 2,
+    "type": "boss"
   },
   {
     "id": "D403",
@@ -492,7 +524,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 3
+    "partySize": 3,
+    "type": "boss"
   },
   {
     "id": "D404",
@@ -507,7 +540,8 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "boss"
   },
   {
     "id": "D405",
@@ -522,6 +556,7 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 4
+    "partySize": 4,
+    "type": "boss"
   }
 ]

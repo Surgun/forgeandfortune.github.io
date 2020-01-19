@@ -200,7 +200,7 @@ function () {
     value: function createSave() {
       var save = {};
       save.id = this.id;
-      if (save.party !== null) save.party = this.party.createSave();else save.party = null;
+      if (save.party !== null && save.party !== undefined) save.party = this.party.createSave();else save.party = null;
       save.mobs = [];
       this.mobs.forEach(function (mob) {
         save.mobs.push(mob.createSave());
@@ -297,7 +297,7 @@ function () {
       }
 
       initializeSideBarDungeon();
-      refreshDungeonSelect();
+      dungeonsTabClicked();
       this.status = DungeonStatus.EMPTY;
       this.party = null;
       this.order = null;
@@ -324,7 +324,7 @@ function () {
     key: "dungeonComplete",
     value: function dungeonComplete() {
       this.status = DungeonStatus.COLLECT;
-      refreshDungeonSelect();
+      dungeonsTabClicked();
       if (DungeonManager.dungeonView === this.id) showDungeonReward(this.id);
     }
   }, {
@@ -439,6 +439,14 @@ var DungeonManager = {
     this.dungeons.forEach(function (dungeon) {
       dungeon.resetDungeon();
     });
+  },
+  bossCount: function bossCount() {
+    var bossDung = this.dungeons.filter(function (d) {
+      return d.type === "boss";
+    });
+    return bossDung.filter(function (d) {
+      return d.maxFloor > 0;
+    }).length;
   }
 };
 //# sourceMappingURL=dungeons.js.map

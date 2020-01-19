@@ -10,10 +10,7 @@ function openTab(tabName) {
     }
     if (tabName === "dungeonsTab") {
         $dungeonSelect.show();
-        refreshDungeonSelect();
-        $dungeonTeamSelect.hide();
-        $dungeonRun.hide();
-        $dungeonRewards.hide();
+        dungeonsTabClicked();
     }
     if (tabName === "townTab") {
         refreshSideTown();

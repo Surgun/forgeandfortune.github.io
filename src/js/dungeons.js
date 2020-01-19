@@ -119,7 +119,7 @@ class Dungeon {
     createSave() {
         const save = {};
         save.id = this.id;
-        if (save.party !== null) save.party = this.party.createSave();
+        if (save.party !== null && save.party !== undefined) save.party = this.party.createSave();
         else save.party = null;
         save.mobs = [];
         this.mobs.forEach(mob => {
@@ -197,7 +197,7 @@ class Dungeon {
             openTab("dungeonsTab");
         }
         initializeSideBarDungeon();
-        refreshDungeonSelect();
+        dungeonsTabClicked();
         this.status = DungeonStatus.EMPTY;
         this.party = null;
         this.order = null;
@@ -221,7 +221,7 @@ class Dungeon {
     }
     dungeonComplete() {
         this.status = DungeonStatus.COLLECT;
-        refreshDungeonSelect();
+        dungeonsTabClicked();
         if (DungeonManager.dungeonView === this.id) showDungeonReward(this.id);
     }
     bossHPStyling() {
@@ -318,4 +318,8 @@ const DungeonManager = {
             dungeon.resetDungeon();
         })
     },
+    bossCount() {
+        const bossDung = this.dungeons.filter(d => d.type === "boss")
+        return bossDung.filter(d => d.maxFloor > 0).length;
+    }
 };

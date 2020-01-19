@@ -80,7 +80,6 @@ var bloopSmith = {
     refreshSmithStage();
   }
 };
-console.log("yes");
 
 function initiateForgeBldg() {
   $smithBuilding.show();

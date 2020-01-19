@@ -13,9 +13,11 @@ Adventure screen! Get here by clicking on an area with a group or confirming
 a group...
 */
 //tabs
+var $dungeonSelect = $("#dungeonSelect");
 var $areaSelect = $("#areaSelect");
 var $areaTeamSelect = $("#areaTeamSelect");
-var $dungeonRun = $("#dungeonRun"); //area screen
+var $dungeonRun = $("#dungeonRun");
+var $dungeonRewards = $("#dungeonRewards"); //area screen
 
 var $areaListings = $("#areaListings");
 var $DungeonSideBarTeam = $("#DungeonSideBarTeam");
@@ -29,6 +31,7 @@ function dungeonsTabClicked() {
   $areaSelect.show();
   $areaTeamSelect.hide();
   $dungeonRun.hide();
+  $dungeonRewards.hide();
   refreshAreaSelect();
 }
 
@@ -260,3 +263,4 @@ function refreshDungeonMatBar(dungeonid) {
   $("#dsbr" + dungeonid).html(haveReward);
   $("#dsbrf" + dungeonid).css('width', matWidth);
 }
+//# sourceMappingURL=dungeonAssign.js.map

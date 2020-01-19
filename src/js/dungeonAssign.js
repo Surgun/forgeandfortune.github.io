@@ -12,9 +12,11 @@ a group...
 */
 
 //tabs
+const $dungeonSelect = $("#dungeonSelect");
 const $areaSelect = $("#areaSelect");
 const $areaTeamSelect = $("#areaTeamSelect");
 const $dungeonRun = $("#dungeonRun");
+const $dungeonRewards = $("#dungeonRewards");
 
 //area screen
 const $areaListings = $("#areaListings");
@@ -31,6 +33,7 @@ function dungeonsTabClicked() {
     $areaSelect.show();
     $areaTeamSelect.hide();
     $dungeonRun.hide();
+    $dungeonRewards.hide();
     refreshAreaSelect();
 }
 

@@ -260,3 +260,4 @@ function refreshDungeonMatBar(dungeonid) {
   $("#dsbr" + dungeonid).html(haveReward);
   $("#dsbrf" + dungeonid).css('width', matWidth);
 }
+//# sourceMappingURL=dungeonAssign.js.map

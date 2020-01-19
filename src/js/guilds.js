@@ -28,7 +28,7 @@ const GuildManager = {
         guild.submitOrder();
     },
     maxGuildLevel() {
-        return (DungeonManager.bossCount()+1)*4-1;
+        // return (DungeonManager.bossCount()+1)*4-1;
     },
     maxLvl() {
         return Math.max(...this.guilds.map(g=>g.lvl));

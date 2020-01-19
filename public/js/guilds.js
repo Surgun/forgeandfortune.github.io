@@ -46,8 +46,7 @@ var GuildManager = {
     var guild = this.idToGuild(gid);
     guild.submitOrder();
   },
-  maxGuildLevel: function maxGuildLevel() {
-    return (DungeonManager.bossCount() + 1) * 4 - 1;
+  maxGuildLevel: function maxGuildLevel() {// return (DungeonManager.bossCount()+1)*4-1;
   },
   maxLvl: function maxLvl() {
     return Math.max.apply(Math, _toConsumableArray(this.guilds.map(function (g) {

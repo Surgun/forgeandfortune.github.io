@@ -49,8 +49,9 @@ const MonsterHall = {
         return (killCount === undefined) ? 0 : killCount.amt;
     },
     totalKills() {
-        const bossKills = this.kills.filter(m=>MobManager.idToMob(m.id).event === "boss");
-        return bossKills.reduce((a,b) => a+b.amt,0);
+        return 0;
+        /*const bossKills = this.kills.filter(m=>MobManager.idToMob(m.id).event === "boss");
+        return bossKills.reduce((a,b) => a+b.amt,0);*/
     },
     lineUpgradesAvailable() {
         return ResourceManager.materialAvailable("M002");
@@ -175,7 +176,7 @@ const $monsterHallFilterD003 = $("#monsterHallFilterD003");
 const $monsterHallFilterBosses = $("#monsterHallFilterBosses")
 
 function refreshHallMonsterList() {
-    const dungeons = [];
+    /*const dungeons = [];
     if ($monsterHallFilterD001.is(':checked')) dungeons.push("D001");
     if ($monsterHallFilterD002.is(':checked')) dungeons.push("D002");
     if ($monsterHallFilterD003.is(':checked')) dungeons.push("D003");
@@ -187,7 +188,7 @@ function refreshHallMonsterList() {
         if (shownMobs.includes(monsterID) && MonsterHall.haveSeen(monsterID)) monsterDiv.show();
         else if (showBoss && monster.event === "boss" && MonsterHall.haveSeen(monsterID)) monsterDiv.show();
         else monsterDiv.hide();
-    });
+    });*/
 }
 
 function refreshHallMonsterInspect(monster) {

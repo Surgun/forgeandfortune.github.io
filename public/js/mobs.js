@@ -29,30 +29,21 @@ var MobManager = {
       return mob.id === id;
     });
   },
-  generateDungeonMob: function generateDungeonMob(mobID, atk, hp) {
-    disableEventLayers();
-    var mobTemplate = this.monsterDB.find(function (m) {
-      return m.id === mobID;
-    });
-    var mob = new Mob(mobTemplate, atk, hp);
-    return mob;
-  },
   getUniqueID: function getUniqueID() {
     this.idCount += 1;
     return this.idCount;
   },
-  generateDungeonFloor: function generateDungeonFloor(dungeon, floorNum, bossMultiplier) {
-    var _this = this;
-
-    var mobs = [];
-    var mobIDs = [dungeon.mob1, dungeon.mob2, dungeon.mob3, dungeon.mob4];
-    var atk = (dungeon.pow + floorNum * dungeon.powGain) * Math.pow(miscLoadedValues.bossMultiplier, bossMultiplier);
-    var hp = (dungeon.hp + floorNum * dungeon.hpGain) * Math.pow(miscLoadedValues.bossMultiplier, bossMultiplier);
-    mobIDs.forEach(function (mobID) {
-      mobs.push(_this.generateDungeonMob(mobID, atk, hp));
-      MonsterHall.findMonster(mob);
+  generateMob: function generateMob(mobID, dungeon) {
+    disableEventLayers();
+    var atk = dungeon.pow + dungeon.floor * dungeon.powGain;
+    var hp = dungeon.hp + dungeon.floor * dungeon.hpGain;
+    var mobTemplate = this.monsterDB.find(function (m) {
+      return m.id === mobID;
     });
-    return mobs;
+    var mob = new Mob(mobTemplate, atk, hp);
+    MonsterHall.findMonster(mobID);
+    console.log(mob);
+    return mob;
   }
 };
 
@@ -88,18 +79,18 @@ function (_Combatant) {
   _inherits(Mob, _Combatant);
 
   function Mob(mobTemplate, atk, hp) {
-    var _this2;
+    var _this;
 
     _classCallCheck(this, Mob);
 
-    _this2 = _possibleConstructorReturn(this, _getPrototypeOf(Mob).call(this, mobTemplate));
-    _this2.pow = Math.floor(atk * _this2.powMod);
-    _this2.hpmax = Math.floor(hp * _this2.hpMod);
-    _this2.hp = _this2.hpmax;
-    _this2.uniqueid = MobManager.getUniqueID();
-    _this2.playbook = PlaybookManager.generatePlayBookFromSkills(_this2.skill1, _this2.skill2, _this2.skill3, _this2.skill4);
-    _this2.passive = SkillManager.idToSkill(_this2.passiveSkill);
-    return _this2;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Mob).call(this, mobTemplate));
+    _this.pow = Math.floor(atk * _this.powMod);
+    _this.hpmax = Math.floor(hp * _this.hpMod);
+    _this.hp = _this.hpmax;
+    _this.uniqueid = MobManager.getUniqueID();
+    _this.playbook = PlaybookManager.generatePlayBookFromSkills(_this.skill1, _this.skill2, _this.skill3, _this.skill4);
+    _this.passive = SkillManager.idToSkill(_this.passiveSkill);
+    return _this;
   }
 
   _createClass(Mob, [{
@@ -119,17 +110,17 @@ function (_Combatant) {
   }, {
     key: "loadSave",
     value: function loadSave(save) {
-      var _this3 = this;
+      var _this2 = this;
 
       this.hp = save.hp;
       this.uniqueid = save.uniqueid;
 
       if (save.buffs !== undefined) {
         save.buffs.forEach(function (buff) {
-          var newBuff = BuffManager.generateSaveBuff(buff.id, _this3, buff.power);
+          var newBuff = BuffManager.generateSaveBuff(buff.id, _this2, buff.power);
           newBuff.loadSave(buff);
 
-          _this3.buffs.push(newBuff);
+          _this2.buffs.push(newBuff);
         });
       }
 

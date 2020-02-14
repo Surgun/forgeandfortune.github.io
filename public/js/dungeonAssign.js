@@ -74,7 +74,11 @@ $(document).on("click", "#dAbandonAll", function (e) {
 function screenDirectDungeon(areaID) {
   $areaSelect.hide();
   var area = AreaManager.idToArea(areaID);
-  if (area.status() === DungeonStatus.ADVENTURING) showDungeon(area.activeDungeonID());else if (DungeonManager.dungeonStatus(dungeonID) === DungeonStatus.COLLECT) showDungeonReward(area.activeDungeonID(), false);else if (area.status() === DungeonStatus.EMPTY) startPartyCreation(area);
+  if (area.status() === DungeonStatus.ADVENTURING) showDungeon(area.activeDungeonID());else if (area.status() === DungeonStatus.COLLECT) showDungeonReward(area.activeDungeonID(), false);else if (area.status() === DungeonStatus.EMPTY) {
+    PartyCreator.areaSelect = area;
+    PartyCreator.dungeonSelect = null;
+    startPartyCreation();
+  }
 }
 /*-----------------------------------------
 /*-   DUNGEON RUNNING CODE
@@ -99,10 +103,10 @@ var $drTurnOrder = $("#drTurnOrder");
 
 function initiateDungeonFloor(dungeonID) {
   if (DungeonManager.dungeonView !== dungeonID) return;
-  var dungeon = DungeonManager.getCurrentDungeon();
+  var dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonView);
   $dungeonRun.removeClass().addClass(dungeon.id);
   if (dungeon.type === "boss") $dungeonRun.addClass("DBoss");
-  $floorID.html("Floor " + dungeon.floorCount);
+  $floorID.html("Floor " + dungeon.floor);
   var rewards = dungeon.getRewards();
   if (dungeon.type === "normal") $floorRewards.html("Earning ".concat(rewards.amt, " ").concat(ResourceManager.materialIcon(rewards.id), " per clear"));
   $dungeonHeroList.empty();
@@ -124,7 +128,6 @@ function initiateDungeonFloor(dungeonID) {
     if (mob.hp === 0) d6.addClass("mobDead");
     $dungeonMobList.prepend(d6);
   });
-  if (dungeon.progressNextFloor) $toggleProgress.html("Progressing");else $toggleProgress.html("Farming");
   generateTurnOrder(dungeonID);
   BuffRefreshManager.hardRefreshBuff();
 }
@@ -132,7 +135,7 @@ function initiateDungeonFloor(dungeonID) {
 function generateTurnOrder(dungeonID) {
   if (DungeonManager.dungeonView !== dungeonID) return;
   $drTurnOrder.empty();
-  var dungeon = DungeonManager.getCurrentDungeon();
+  var dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonView);
   dungeon.order.getOrder().forEach(function (unit, i) {
     var d1 = $("<div/>").addClass("orderUnit").appendTo($drTurnOrder);
     $("<div/>").addClass("orderUnitHeadImg").html(unit.head).appendTo(d1);
@@ -153,7 +156,7 @@ function refreshSkillUnit(target) {
 
 function refreshTurnOrder(dungeonID) {
   if (DungeonManager.dungeonView !== dungeonID) return;
-  var dungeon = DungeonManager.getCurrentDungeon();
+  var dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonView);
   var uniqueid = dungeon.order.getCurrentID();
   $(".orderUnit").removeClass("orderUnitActive");
   $("#orderUnit" + uniqueid).addClass("orderUnitActive");
@@ -190,7 +193,7 @@ function initializeSideBarDungeon() {
       d1.addClass("DungeonSideBarAdventuring");
       var d2 = $("<div/>").addClass("dungeonFarmStatus").attr("id", "dungeonFarm" + dungeon.id).data("gid", dungeon.id).html("<i class=\"fas fa-recycle\"></i>").appendTo(d1);
       if (!dungeon.progressNextFloor) d2.addClass("dungeonFarmActive");
-      $("<div/>").addClass("dungeonSidebarFloor").attr("id", "dsb" + dungeon.id).html("".concat(dungeon.name, " - ").concat(dungeon.floorCount)).appendTo(d1);
+      $("<div/>").addClass("dungeonSidebarFloor").attr("id", "dsb" + dungeon.id).html("".concat(dungeon.name, " - ").concat(dungeon.floor)).appendTo(d1);
       if (dungeon.type !== "boss") $("<div/>").addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon.getRewards(), dungeon.id)).appendTo(d);
     } else d1.html("".concat(dungeon.name));
   });

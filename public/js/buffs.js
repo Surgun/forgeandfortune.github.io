@@ -164,7 +164,7 @@ var BuffRefreshManager = {
     var _this = this;
 
     //populate the divs as they're supposed to be!
-    var dungeon = DungeonManager.getCurrentDungeon();
+    var dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonView);
     dungeon.party.heroes.forEach(function (ally) {
       var $heroDiv = $("#buffList" + ally.uniqueid);
       $heroDiv.empty();

@@ -189,15 +189,16 @@ function () {
     this.mobs = [];
     this.mobIDs = [];
     this.mobIDs.push(this.mob1);
-    if (this.mob2 !== undefined) this.mobIDs.push(this.mob2);
-    if (this.mob3 !== undefined) this.mobIDs.push(this.mob3);
-    if (this.mob4 !== undefined) this.mobIDs.push(this.mob4);
+    if (this.mob2 !== null) this.mobIDs.push(this.mob2);
+    if (this.mob3 !== null) this.mobIDs.push(this.mob3);
+    if (this.mob4 !== null) this.mobIDs.push(this.mob4);
     this.maxFloor = 0;
     this.floor = 0;
     this.floorClear = 0;
     this.order = null;
     this.status = DungeonStatus.EMPTY;
     this.lastParty = null;
+    this.dungeonTime = 0;
   }
 
   _createClass(Dungeon, [{
@@ -249,13 +250,14 @@ function () {
       //if there's enough time, grab the next guy and do some combat
       if (this.status !== DungeonStatus.ADVENTURING) return;
       this.dungeonTime += t;
-      var dungeonWaitTime = 750;
+      var dungeonWaitTime = DungeonManager.speed;
       var refreshLater = this.dungeonTime >= 1500;
       CombatManager.refreshLater = refreshLater;
 
       while (this.dungeonTime >= dungeonWaitTime) {
         this.dungeonTime -= dungeonWaitTime; //take a turn
 
+        console.log("hi");
         this.buffTick("onTurn");
         this.passiveCheck("onTurn");
 
@@ -354,7 +356,9 @@ function () {
 
       this.mobs = [];
       this.mobIDs.forEach(function (mobID) {
-        MobManager.generateMob(mobID, _this3);
+        var mob = MobManager.generateMob(mobID, _this3);
+
+        _this3.mobs.push(mob);
       });
       this.party.reset();
       this.order = new TurnOrder(this.party.heroes, this.mobs);

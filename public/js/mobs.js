@@ -35,13 +35,14 @@ var MobManager = {
   },
   generateMob: function generateMob(mobID, dungeon) {
     disableEventLayers();
-    var atk = (dungeon.pow + dungeon.floor * dungeon.powGain) * Math.pow(miscLoadedValues.bossMultiplier, dungeon.bossMultiplier);
-    var hp = (dungeon.hp + dungeon.floor * dungeon.powGain) * Math.pow(miscLoadedValues.bossMultiplier, dungeon.bossMultiplier);
+    var atk = dungeon.pow + dungeon.floor * dungeon.powGain;
+    var hp = dungeon.hp + dungeon.floor * dungeon.hpGain;
     var mobTemplate = this.monsterDB.find(function (m) {
       return m.id === mobID;
     });
     var mob = new Mob(mobTemplate, atk, hp);
     MonsterHall.findMonster(mobID);
+    console.log(mob);
     return mob;
   }
 };

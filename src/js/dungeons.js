@@ -111,15 +111,16 @@ class Dungeon {
         this.mobs = [];
         this.mobIDs = [];
         this.mobIDs.push(this.mob1);
-        if (this.mob2 !== undefined) this.mobIDs.push(this.mob2);
-        if (this.mob3 !== undefined) this.mobIDs.push(this.mob3);
-        if (this.mob4 !== undefined) this.mobIDs.push(this.mob4);
+        if (this.mob2 !== null) this.mobIDs.push(this.mob2);
+        if (this.mob3 !== null) this.mobIDs.push(this.mob3);
+        if (this.mob4 !== null) this.mobIDs.push(this.mob4);
         this.maxFloor = 0;
         this.floor = 0;
         this.floorClear = 0;
         this.order = null;
         this.status = DungeonStatus.EMPTY;
         this.lastParty = null;
+        this.dungeonTime = 0;
     }
     createSave() {
         const save = {};
@@ -161,12 +162,13 @@ class Dungeon {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
-        const dungeonWaitTime = 750;
+        const dungeonWaitTime = DungeonManager.speed;
         const refreshLater = this.dungeonTime >= 1500;
         CombatManager.refreshLater = refreshLater;
         while (this.dungeonTime >= dungeonWaitTime) {
             this.dungeonTime -= dungeonWaitTime;
             //take a turn
+            console.log("hi");
             this.buffTick("onTurn");
             this.passiveCheck("onTurn");
             if (this.mobs.every(m=>m.dead())) {
@@ -235,7 +237,8 @@ class Dungeon {
     resetFloor(refreshLater) {
         this.mobs = [];
         this.mobIDs.forEach(mobID => {
-            MobManager.generateMob(mobID,this);
+            const mob = MobManager.generateMob(mobID,this);
+            this.mobs.push(mob);
         });
         this.party.reset();
         this.order = new TurnOrder(this.party.heroes,this.mobs);

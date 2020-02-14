@@ -15,11 +15,12 @@ const MobManager = {
     },
     generateMob(mobID,dungeon) {
         disableEventLayers();
-        const atk = (dungeon.pow + dungeon.floor * dungeon.powGain) * Math.pow(miscLoadedValues.bossMultiplier,dungeon.bossMultiplier);
-        const hp = (dungeon.hp + dungeon.floor * dungeon.powGain) * Math.pow(miscLoadedValues.bossMultiplier,dungeon.bossMultiplier);
+        const atk = (dungeon.pow + dungeon.floor * dungeon.powGain);
+        const hp = (dungeon.hp + dungeon.floor * dungeon.hpGain);
         const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
         const mob = new Mob(mobTemplate, atk, hp);
         MonsterHall.findMonster(mobID);
+        console.log(mob);
         return mob;
     },
 }

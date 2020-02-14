@@ -9,19 +9,26 @@ const MobManager = {
     idToMob(id) {
         return this.monsterDB.find(mob => mob.id === id);
     },
+    generateDungeonMob(mobID, atk, hp) {
+        disableEventLayers();
+        const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
+        const mob = new Mob(mobTemplate, atk, hp);
+        return mob;
+    },
     getUniqueID() {
         this.idCount += 1;
         return this.idCount;
     },
-    generateMob(mobID,dungeon) {
-        disableEventLayers();
-        const atk = (dungeon.pow + dungeon.floor * dungeon.powGain);
-        const hp = (dungeon.hp + dungeon.floor * dungeon.hpGain);
-        const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
-        const mob = new Mob(mobTemplate, atk, hp);
-        MonsterHall.findMonster(mobID);
-        console.log(mob);
-        return mob;
+    generateDungeonFloor(dungeon,floorNum,bossMultiplier) {
+        const mobs = [];
+        const mobIDs = [dungeon.mob1,dungeon.mob2,dungeon.mob3,dungeon.mob4];
+        const atk = (dungeon.pow + floorNum * dungeon.powGain) * Math.pow(miscLoadedValues.bossMultiplier,bossMultiplier);
+        const hp = (dungeon.hp + floorNum * dungeon.hpGain) * Math.pow(miscLoadedValues.bossMultiplier,bossMultiplier);
+        mobIDs.forEach(mobID => {
+            mobs.push(this.generateDungeonMob(mobID,atk,hp));
+            MonsterHall.findMonster(mob);
+        });
+        return mobs;
     },
 }
 

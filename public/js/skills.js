@@ -104,7 +104,6 @@ function () {
   }, {
     key: "getSkillIDs",
     value: function getSkillIDs() {
-      console.log(this.skills);
       return this.skills.map(function (s) {
         return s.id;
       });

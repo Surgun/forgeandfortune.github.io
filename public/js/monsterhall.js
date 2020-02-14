@@ -60,9 +60,12 @@ var MonsterHall = {
     return killCount === undefined ? 0 : killCount.amt;
   },
   totalKills: function totalKills() {
-    return 0;
-    /*const bossKills = this.kills.filter(m=>MobManager.idToMob(m.id).event === "boss");
-    return bossKills.reduce((a,b) => a+b.amt,0);*/
+    var bossKills = this.kills.filter(function (m) {
+      return MobManager.idToMob(m.id).event === "boss";
+    });
+    return bossKills.reduce(function (a, b) {
+      return a + b.amt;
+    }, 0);
   },
   lineUpgradesAvailable: function lineUpgradesAvailable() {
     return ResourceManager.materialAvailable("M002");
@@ -212,19 +215,17 @@ var $monsterHallFilterD003 = $("#monsterHallFilterD003");
 var $monsterHallFilterBosses = $("#monsterHallFilterBosses");
 
 function refreshHallMonsterList() {
-  /*const dungeons = [];
+  var dungeons = [];
   if ($monsterHallFilterD001.is(':checked')) dungeons.push("D001");
   if ($monsterHallFilterD002.is(':checked')) dungeons.push("D002");
   if ($monsterHallFilterD003.is(':checked')) dungeons.push("D003");
-  const showBoss = ($monsterHallFilterBosses.is(':checked')) ? true : false;
-  const shownMobs = FloorManager.mobsByDungeons(dungeons);
-  monsterHallMonserDivs.forEach(monsterDiv => {
-      const monsterID = monsterDiv.data("monsterID");
-      const monster = MobManager.idToMob(monsterID);
-      if (shownMobs.includes(monsterID) && MonsterHall.haveSeen(monsterID)) monsterDiv.show();
-      else if (showBoss && monster.event === "boss" && MonsterHall.haveSeen(monsterID)) monsterDiv.show();
-      else monsterDiv.hide();
-  });*/
+  var showBoss = $monsterHallFilterBosses.is(':checked') ? true : false;
+  var shownMobs = FloorManager.mobsByDungeons(dungeons);
+  monsterHallMonserDivs.forEach(function (monsterDiv) {
+    var monsterID = monsterDiv.data("monsterID");
+    var monster = MobManager.idToMob(monsterID);
+    if (shownMobs.includes(monsterID) && MonsterHall.haveSeen(monsterID)) monsterDiv.show();else if (showBoss && monster.event === "boss" && MonsterHall.haveSeen(monsterID)) monsterDiv.show();else monsterDiv.hide();
+  });
 }
 
 function refreshHallMonsterInspect(monster) {

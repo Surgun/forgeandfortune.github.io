@@ -90,7 +90,7 @@ const BuffRefreshManager = {
     //this is responsible for tracking and updating buffs so we don't have to!
     hardRefreshBuff() {
         //populate the divs as they're supposed to be!
-        const dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonView);
+        const dungeon = DungeonManager.getCurrentDungeon();
         dungeon.party.heroes.forEach(ally => {
             const $heroDiv = $("#buffList"+ally.uniqueid);
             $heroDiv.empty();

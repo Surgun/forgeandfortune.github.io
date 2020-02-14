@@ -109,23 +109,17 @@ class Dungeon {
         Object.assign(this, props);
         this.party = null;
         this.mobs = [];
-        this.mobIDs = [];
-        this.mobIDs.push(this.mob1);
-        if (this.mob2 !== null) this.mobIDs.push(this.mob2);
-        if (this.mob3 !== null) this.mobIDs.push(this.mob3);
-        if (this.mob4 !== null) this.mobIDs.push(this.mob4);
         this.maxFloor = 0;
         this.floor = 0;
         this.floorClear = 0;
         this.order = null;
         this.status = DungeonStatus.EMPTY;
         this.lastParty = null;
-        this.dungeonTime = 0;
     }
     createSave() {
         const save = {};
         save.id = this.id;
-        if (this.party !== null) save.party = this.party.createSave();
+        if (save.party !== null && save.party !== undefined) save.party = this.party.createSave();
         else save.party = null;
         save.mobs = [];
         this.mobs.forEach(mob => {
@@ -133,7 +127,6 @@ class Dungeon {
         });
         save.maxFloor = this.maxFloor;
         save.floor = this.floor;
-        save.floorClear = this.floorClear;
         if (this.order !== null) save.order = this.order.createSave();
         else save.order = null;
         save.status = this.status;
@@ -148,9 +141,8 @@ class Dungeon {
             mob.loadSave(mobSave);
             this.mobs.push(mob);
         });
-        if (save.maxFloor !== undefined) this.maxFloor = save.maxFloor;
-        if (save.floor !== undefined) this.floor = save.floor;
-        if (save.floorClear !== undefined) this.floorClear = save.floorClear;
+        if (this.maxFloor !== undefined) this.maxFloor = save.maxFloor;
+        if (this.floor !== undefined) this.floor = save.floor;
         if (save.order !== null) {
             this.order = new TurnOrder(this.party.heroes,this.mobs);
             this.order.loadSave(save.order);
@@ -163,33 +155,26 @@ class Dungeon {
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
         const dungeonWaitTime = DungeonManager.speed;
-        const refreshLater = this.dungeonTime >= 1500;
+        const refreshLater = this.dungeonTime >= 2*dungeonWaitTime;
         CombatManager.refreshLater = refreshLater;
         while (this.dungeonTime >= dungeonWaitTime) {
-            this.dungeonTime -= dungeonWaitTime;
             //take a turn
-            console.log("hi");
             this.buffTick("onTurn");
             this.passiveCheck("onTurn");
-            if (this.mobs.every(m=>m.dead())) {
+            if (this.floorComplete()) {
                 this.nextFloor(refreshLater);
+                this.dungeonTime -= dungeonWaitTime;
                 return;
             }
-            else if (this.party.isDead()) {
-                this.previousFloor(refreshLater,true);
+            if (this.party.isDead()) {
+                this.nextFloor(refreshLater,true);
+                this.dungeonTime -= dungeonWaitTime;
                 return;
             }
             if (!refreshLater && DungeonManager.dungeonView === this.id) $(`#beatbarFill${this.order.getCurrentID()}`).css('width',"0%");
             CombatManager.nextTurn(this);
             this.dungeonTime -= dungeonWaitTime;
             if (!refreshLater && DungeonManager.dungeonView === this.id) refreshTurnOrder(this.id);
-            //we repeat this because we need it early for passives, and late for combat
-            if (this.mobs.every(m=>m.dead())) {
-                this.nextFloor(refreshLater);
-            }
-            else if (this.party.isDead()) {
-                this.previousFloor(refreshLater,true);
-            }
         }
         if (refreshLater) {
             initiateDungeonFloor(this.id);
@@ -218,33 +203,20 @@ class Dungeon {
         this.order = null;
         this.mobs = [];
         this.floor = 0;
-        this.floorClear = 0;
         return;
     }
-    previousFloor(refreshLater) {
-        if (this.type === "boss") return this.dungeonComplete(previousFloor);
-        this.floor = Math.max(1,this.floor - 1);
-        this.resetFloor(refreshLater);
-    }
     nextFloor(refreshLater, previousFloor) {
-        if (this.type === "boss") return this.dungeonComplete(previousFloor);   
-        this.floorClear = this.floor;
+        if (this.floorCount > 0 && this.type === "boss") return this.dungeonComplete(previousFloor);
+        if (previousFloor) this.floor = Math.max(1,this.floor - 1);
+        else this.floorCount += 1;
         this.maxFloor = Math.max(this.maxFloor,this.floor);
-        this.floor += 1;        
         achievementStats.floorRecord(this.id, this.maxFloor);
-        this.resetFloor(refreshLater);
-    }
-    resetFloor(refreshLater) {
-        this.mobs = [];
-        this.mobIDs.forEach(mobID => {
-            const mob = MobManager.generateMob(mobID,this);
-            this.mobs.push(mob);
-        });
+        this.mobs = MobManager.generateDungeonFloor(this.id,this.floor,this.bossDifficulty());
         this.party.reset();
         this.order = new TurnOrder(this.party.heroes,this.mobs);
-        if (refreshLater || DungeonManager.dungeonView !== this.id) return;
+        if (refreshLater) return;
         initiateDungeonFloor(this.id);
-        $("#dsb"+this.id).html(`${this.name} - ${this.floor}`);
+        $("#dsb"+this.id).html(`${this.name} - ${this.floorCount}`);
         refreshSidebarDungeonMats(this.id);
     }
     dungeonComplete() {
@@ -258,10 +230,9 @@ class Dungeon {
         return `${formatToUnits(boss.hp,2)} (${Math.round(100*boss.hp/boss.maxHP())+"%"})`;
     }
     bossDifficulty() {
-        return 0;
-        //if (this.type === "regular") return 0;
-        //const boss = DungeonManager.bossByDungeon(this.id);
-        //return MonsterHall.monsterKillCount(boss);
+        if (this.type === "regular") return 0;
+        const boss = DungeonManager.bossByDungeon(this.id);
+        return MonsterHall.monsterKillCount(boss);
     }
     buffTick(type) {
         this.party.heroes.forEach(hero => {
@@ -281,9 +252,6 @@ class Dungeon {
     }
     materialGain() {
         const amt = this.floorClear
-    }
-    getRewards() {
-        return new idAmt("M201",1);
     }
 }
 
@@ -325,14 +293,17 @@ const DungeonManager = {
     dungeonStatus(dungeonID) {
         return this.dungeons.find(d=>d.id===dungeonID).status;
     },
-    createDungeon(dungeonID,floorSkip) {
+    createDungeon(floor) {
         const party = PartyCreator.lockParty();
-        const dungeon = this.dungeonByID(dungeonID);
-        dungeon.floor = floorSkip ? dungeon.maxFloor : 1;
+        const dungeon = this.dungeonByID(this.dungeonCreatingID);
+        dungeon.beatTotal = 0;
+        dungeon.floorCount = 0;
+        dungeon.progressNextFloor = true;
+        dungeon.floorCount = floor-1;
         dungeon.status = DungeonStatus.ADVENTURING;
-        this.dungeonView = dungeonID;
+        this.dungeonView = this.dungeonCreatingID;
         dungeon.initializeParty(party);
-        dungeon.resetFloor();
+        dungeon.nextFloor();
         initializeSideBarDungeon();
     },
     dungeonByID(dungeonID) {

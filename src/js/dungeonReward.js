@@ -5,7 +5,6 @@ const $dreTeam = $("#dreTeam");
 const $dreLoot = $("#dreLoot");
 const $dreStats = $("#dreStats");
 const $dreCollect = $("#dreCollect");
-const $dungeonRewards = $("#dungeonRewards");
 
 function showDungeonReward(dungeonID) {
     $dungeonSelect.hide();

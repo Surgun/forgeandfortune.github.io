@@ -5,7 +5,6 @@ const $dtsBanner = $("#dtsBanner");
 const $dtsDungeons = $("#dtsDungeons");
 const $dungeonTeamCollection = $("#dungeonTeamCollection");
 const $dtsBottom = $("#dtsBottom");
-const $areaTeamSelect = $("#areaTeamSelect");
 
 const $dungeonTeamButton = $("#dungeonTeamButton");
 const $dungeonTeamButtonSkip = $("#dungeonTeamButtonSkip");

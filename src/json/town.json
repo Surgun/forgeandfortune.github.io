@@ -1,0 +1,60 @@
+[
+  {
+    "id": "TB001",
+    "name": "Magical Synthezier",
+    "description": "Interact with the magical properties of items",
+    "shorthand": "synth",
+    "recipeID": "R99410"
+  },
+  {
+    "id": "TB002",
+    "name": "The Bank",
+    "description": "Store your important items at the bank.",
+    "shorthand": "bank",
+    "recipeID": "R99110"
+  },
+  {
+    "id": "TB003",
+    "name": "Fusion Cabin",
+    "description": "Fuse three of the same item into a higher rarity of the same item.",
+    "shorthand": "fusion",
+    "recipeID": "R99210"
+  },
+  {
+    "id": "TB004",
+    "name": "The Forge",
+    "description": "Upgrade your gear at the forge.",
+    "shorthand": "forge",
+    "recipeID": "R99310"
+  },
+  {
+    "id": "TB005",
+    "name": "Fortune Teller",
+    "description": [
+      "Use your items to make higher rarities more common",
+      ""
+    ],
+    "shorthand": "fortune",
+    "recipeID": "R99510"
+  },
+  {
+    "id": "TB006",
+    "name": "Tinker Hut",
+    "description": [
+      "Turn your leftover commons and desynth materials into trinkets",
+      ""
+    ],
+    "shorthand": "tinker",
+    "recipeID": "R99610"
+  },
+  {
+    "id": "TB007",
+    "name": "Monster Hall",
+    "description": [
+      "Check out monsters you've encountered and re-challenge old bosses",
+      ""
+    ],
+    "shorthand": "monster",
+    "recipeID": "R99710"
+  }
+]

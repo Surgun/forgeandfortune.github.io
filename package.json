@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postcss": "postcss src/css -d public/css",
-    "prepare-build": "babel src -d public --source-maps",
+    "prepare-build": "babel src -d public --ignore \"/externals/\" --source-maps",
     "build": "npm-run-all cpx postcss prepare-build",
     "live-server": "live-server src",
     "start": "npm-run-all live-server",

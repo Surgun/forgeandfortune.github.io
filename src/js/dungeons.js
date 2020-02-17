@@ -1,4 +1,5 @@
 "use strict";
+
 const DungeonStatus = Object.freeze({EMPTY:0,ADVENTURING:1,COLLECT:2});
 
 class TurnOrder {
@@ -70,7 +71,16 @@ class Area {
         return dungeon.party;
     }
     activeDungeonID() {
-        return this.dungeons.find(d => d.status === DungeonStatus.ADVENTURING || d.status === DungeonStatus.COLLECT).id;
+        const dungeon = this.activeDungeon();
+        return dungeon ? dungeon.id : dungeon;
+    }
+    activeDungeon() {
+        const dungeon = this.dungeons.find(d => d.status === DungeonStatus.ADVENTURING || d.status === DungeonStatus.COLLECT);
+        return dungeon ? dungeon : null;
+    }
+    lastOpen() {
+        const dungeons = this.dungeons.filter(d => d.unlocked);
+        return dungeons[dungeons.length-1];
     }
 }
 
@@ -121,6 +131,8 @@ class Dungeon {
         this.status = DungeonStatus.EMPTY;
         this.lastParty = null;
         this.dungeonTime = 0;
+        this.rewardTime = 0;
+        this.unlocked = true;
     }
     createSave() {
         const save = {};
@@ -138,13 +150,15 @@ class Dungeon {
         else save.order = null;
         save.status = this.status;
         save.lastParty = this.lastParty;
+        save.rewardAmt = this.rewardAmt;
+        save.rewardTimeRate = this.rewardTimeRate;
         return save;
     }
     loadSave(save) {
         if (save.party !== null) this.party = new Party(save.party.heroID);
         save.mobs.forEach(mobSave => {
             const mobTemplate = MobManager.idToMob(mobSave.id);
-            const mob = new Mob(mobSave.lvl, mobTemplate, mobSave.difficulty);
+            const mob = new Mob(mobTemplate,0,0);
             mob.loadSave(mobSave);
             this.mobs.push(mob);
         });
@@ -157,18 +171,20 @@ class Dungeon {
         }
         this.status = save.status;
         this.lastParty = save.lastParty;
+        this.rewardAmt = save.rewardAmt;
+        this.rewardTimeRate = save.rewardTimeRate;
     }
     addTime(t) {
         //if there's enough time, grab the next guy and do some combat
         if (this.status !== DungeonStatus.ADVENTURING) return;
         this.dungeonTime += t;
         const dungeonWaitTime = DungeonManager.speed;
-        const refreshLater = this.dungeonTime >= 1500;
+        const refreshLater = this.dungeonTime >= DungeonManager.speed * 2;
         CombatManager.refreshLater = refreshLater;
+        this.addDungeonReward(t,refreshLater);
         while (this.dungeonTime >= dungeonWaitTime) {
             this.dungeonTime -= dungeonWaitTime;
             //take a turn
-            console.log("hi");
             this.buffTick("onTurn");
             this.passiveCheck("onTurn");
             if (this.mobs.every(m=>m.dead())) {
@@ -181,7 +197,6 @@ class Dungeon {
             }
             if (!refreshLater && DungeonManager.dungeonView === this.id) $(`#beatbarFill${this.order.getCurrentID()}`).css('width',"0%");
             CombatManager.nextTurn(this);
-            this.dungeonTime -= dungeonWaitTime;
             if (!refreshLater && DungeonManager.dungeonView === this.id) refreshTurnOrder(this.id);
             //we repeat this because we need it early for passives, and late for combat
             if (this.mobs.every(m=>m.dead())) {
@@ -196,6 +211,20 @@ class Dungeon {
             BattleLog.refresh();
         }
         if (DungeonManager.dungeonView === this.id) refreshBeatBar(this.order.getCurrentID(),this.dungeonTime);
+    }
+    addDungeonReward(time,skipAnimation) {
+        this.rewardTime += time;
+        if (this.rewardTime > this.rewardTimeRate) {
+            this.rewardTime -= this.rewardTimeRate;
+            ResourceManager.addMaterial(this.mat,this.rewardAmt,skipAnimation)
+        }
+        if (!skipAnimation) refreshDungeonMatBar(this.id);
+    }
+    setRewardRate(floor) {
+        console.log(floor,this.floorClear);
+        this.floorClear = Math.max(floor,this.floorClear);
+        this.rewardAmt = Math.ceil(floor/10);
+        this.rewardTimeRate = this.rewardAmt/(floor*0.01+0.09)*1000;
     }
     initializeParty(party) {
         this.party = party;
@@ -219,20 +248,24 @@ class Dungeon {
         this.mobs = [];
         this.floor = 0;
         this.floorClear = 0;
+        this.rewardAmt = 0;
+        this.rewardTimeRate = 0;
+        this.rewardTime = 0;
         return;
     }
     previousFloor(refreshLater) {
-        if (this.type === "boss") return this.dungeonComplete(previousFloor);
+        if (this.type === "boss") return this.dungeonComplete(false);
         this.floor = Math.max(1,this.floor - 1);
         this.resetFloor(refreshLater);
     }
-    nextFloor(refreshLater, previousFloor) {
-        if (this.type === "boss") return this.dungeonComplete(previousFloor);   
-        this.floorClear = this.floor;
+    nextFloor(refreshLater) {
+        if (this.type === "boss") return this.dungeonComplete(true);   
+        this.setRewardRate(this.floor);
         this.maxFloor = Math.max(this.maxFloor,this.floor);
         this.floor += 1;        
         achievementStats.floorRecord(this.id, this.maxFloor);
         this.resetFloor(refreshLater);
+        refreshFloorMaterial(this.id,this.rewardAmt);
     }
     resetFloor(refreshLater) {
         this.mobs = [];
@@ -244,7 +277,7 @@ class Dungeon {
         this.order = new TurnOrder(this.party.heroes,this.mobs);
         if (refreshLater || DungeonManager.dungeonView !== this.id) return;
         initiateDungeonFloor(this.id);
-        $("#dsb"+this.id).html(`${this.name} - ${this.floor}`);
+        $("#dsb"+this.id).html(`${this.name} - ${this.floorClear}`);
         refreshSidebarDungeonMats(this.id);
     }
     dungeonComplete() {
@@ -341,11 +374,15 @@ const DungeonManager = {
     abandonCurrentDungeon() {
         const dungeon = this.dungeonByID(this.dungeonView);
         dungeon.resetDungeon();
+        initializeSideBarDungeon();
+        refreshAreaSelect();
     },
     abandonAllDungeons() {
         this.dungeons.forEach(dungeon => {
             dungeon.resetDungeon();
-        })
+        });
+        initializeSideBarDungeon();
+        refreshAreaSelect();
     },
     bossCount() {
         const bossDung = this.dungeons.filter(d => d.type === "boss")

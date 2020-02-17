@@ -20,7 +20,6 @@ const MobManager = {
         const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
         const mob = new Mob(mobTemplate, atk, hp);
         MonsterHall.findMonster(mobID);
-        console.log(mob);
         return mob;
     },
 }
@@ -53,7 +52,9 @@ class Mob extends Combatant {
         const save = {};
         save.id = this.id;
         save.uniqueid = this.uniqueid;
+        save.atk = this.atk;
         save.hp = this.hp;
+        save.hpmax = this.hpmax;
         save.buffs = [];
         this.buffs.forEach(buff => {
             save.buffs.push(buff.createSave());
@@ -62,8 +63,10 @@ class Mob extends Combatant {
         return save;
     }
     loadSave(save) {
-        this.hp = save.hp;
         this.uniqueid = save.uniqueid;
+        this.atk = save.atk;
+        this.hp = save.hp;
+        this.hpmax = save.hpmax;
         if (save.buffs !== undefined) {
             save.buffs.forEach(buff => {
                 const newBuff = BuffManager.generateSaveBuff(buff.id,this,buff.power);

@@ -83,13 +83,16 @@ const PartyCreator = {
     emptyPartySlots() {
         const dungeon = DungeonManager.dungeonByID(this.dungeonSelect);
         return dungeon.partySize - this.heroes.length;
+    },
+    setDungeon(dungeonid) {
+        PartyCreator.dungeonSelect = dungeonid;
+        console.log(PartyCreator.dungeonSelect);
     }
 }
 
 function startPartyCreation() {
     const area = PartyCreator.areaSelect;
-    const dungeon = DungeonManager.dungeonByID(PartyCreator.dungeonSelect);
-    if (PartyCreator.dungeonSelect === null) PartyCreator.dungeonSelect = area.dungeons[0].id;
+    if (PartyCreator.dungeonSelect === null) PartyCreator.setDungeon(area.lastOpen().id);
     $areaTeamSelect.show();
     //Team Banner
     $dtsBanner.empty();
@@ -99,9 +102,13 @@ function startPartyCreation() {
     //Possible Dungeons
     $dtsDungeons.empty();
     area.dungeons.forEach(dungeon => {
-        const d = $("<div/>").addClass("dtsDungeon").data("dungeonID",dungeon.id);
+        const d = $("<div/>").addClass("dtsDungeon").data("dungeonID",dungeon.id).appendTo(dtsDungeons);
+        if (PartyCreator.dungeonSelect === dungeon.id) d.addClass("dtsHighlight");
+        if (dungeon.mat !== null) {
+            const mat = ResourceManager.idToMaterial(dungeon.mat);
+            $("<div/>").addClass("dtsMaterial tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":dungeon.mat}).html(mat.img).appendTo(d);
+        }
         $("<div/>").addClass("dtsDungeonName").html(dungeon.name).appendTo(d);
-        if (dungeon.mat !== null) $("<div/>").addClass("dtsMaterial tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":dungeon.mat}).appendTo(d);
     });
     $dungeonTeamCollection.empty();
     //actual members
@@ -135,6 +142,16 @@ function startPartyCreation() {
     $dtsBottom.append(d2);
 }
 
+//change dungeon selection
+$(document).on('click', ".dtsDungeon", (e) => {
+    e.preventDefault();
+    const dungeonid = $(e.currentTarget).data("dungeonID");
+    if (PartyCreator.dungeonSelect === dungeonid) return;
+    PartyCreator.setDungeon(dungeonid);
+    PartyCreator.clearMembers();
+    startPartyCreation();
+});
+
 //Go back to dungeon select screen
 $(document).on('click', ".dtsBackButton", (e) => {
     e.preventDefault();
@@ -161,6 +178,7 @@ $(document).on('click', "div.dungeonAvailableCardClick", (e) => {
 $(document).on('click', "#dungeonTeamButton", (e) => {
     e.preventDefault();
     if (PartyCreator.validTeam()) {
+        console.log(PartyCreator.dungeonSelect);
         DungeonManager.createDungeon(PartyCreator.dungeonSelect,false);
         initializeSideBarDungeon();
         $areaTeamSelect.hide();
@@ -174,6 +192,7 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
 $(document).on('click', "#dungeonTeamButtonSkip", (e) => {
     e.preventDefault();
     if (PartyCreator.validTeam()) {
+        console.log(PartyCreator.dungeonSelect);
         DungeonManager.createDungeon(PartyCreator.dungeonSelect,true);
         initializeSideBarDungeon();
         $areaTeamSelect.hide();

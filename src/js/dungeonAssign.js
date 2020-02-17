@@ -70,6 +70,7 @@ $(document).on("click", ".areaContainer", (e) => {
 $(document).on("click", "#dAbandonAll", (e) => {
     e.preventDefault();
     DungeonManager.abandonAllDungeons();
+    refreshAreaSelect()
 });
 
 function screenDirectDungeon(areaID) {
@@ -112,8 +113,6 @@ function initiateDungeonFloor(dungeonID) {
     $dungeonRun.removeClass().addClass(dungeon.id);
     if (dungeon.type === "boss") $dungeonRun.addClass("DBoss");
     $floorID.html("Floor "+dungeon.floor);
-    const rewards = dungeon.getRewards();
-    if (dungeon.type === "normal") $floorRewards.html(`Earning ${rewards.amt} ${ResourceManager.materialIcon(rewards.id)} per clear`)
     $dungeonHeroList.empty();
     $dungeonMobList.empty();
     dungeon.party.heroes.forEach(hero => {
@@ -185,27 +184,21 @@ const $dungeonTab = $("#dungeonTab");
 
 function initializeSideBarDungeon() {
     $DungeonSideBarTeam.empty();
-    DungeonManager.dungeons.forEach(dungeon => {
-        if (dungeon.type !== "regular" && dungeon.status === DungeonStatus.EMPTY) return;
+    AreaManager.areas.forEach(area => {
+        if (area.type === "boss" && area.status() === DungeonStatus.EMPTY) return;
         const d = $("<div/>").addClass("dungeonGroup").appendTo($DungeonSideBarTeam);
-        const d1 = $("<div/>").addClass("DungeonSideBarStatus").data("dungeonID",dungeon.id).appendTo(d);
-        if (dungeon.type === "regular" && dungeon.status === DungeonStatus.ADVENTURING) {
+        const d1 = $("<div/>").addClass("DungeonSideBarStatus").data("areaID",area.id).appendTo(d);
+        if (area.status() === DungeonStatus.ADVENTURING) {
             d1.addClass("DungeonSideBarAdventuring");
-            const d2 = $("<div/>").addClass("dungeonFarmStatus").attr("id","dungeonFarm"+dungeon.id).data("gid",dungeon.id).html(`<i class="fas fa-recycle"></i>`).appendTo(d1);
-            if (!dungeon.progressNextFloor) d2.addClass("dungeonFarmActive");
-            $("<div/>").addClass("dungeonSidebarFloor").attr("id","dsb"+dungeon.id).html(`${dungeon.name} - ${dungeon.floor}`).appendTo(d1);
-            if (dungeon.type !== "boss") $("<div/>").addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon.getRewards(),dungeon.id)).appendTo(d);
+            const dungeon = area.activeDungeon();
+            $("<div/>").addClass("dungeonSidebarFloor").attr("id","dsb"+dungeon.id).html(`${dungeon.name} - ${dungeon.floorClear}`).appendTo(d1);
+            if (dungeon.type !== "boss") $("<div/>").addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon)).appendTo(d);
         }
-        else d1.html(`${dungeon.name}`);
+        else {
+            d1.html(area.name);
+        }
     });
-}
-
-function refreshDungeonFarmStatus(dungeonid) {
-    const dungeon = DungeonManager.dungeonByID(dungeonid);
-    if (dungeon.type === "boss") return;
-    if (dungeon.progressNextFloor) $("#dungeonFarm"+dungeonid).removeClass("dungeonFarmActive");
-    else $("#dungeonFarm"+dungeonid).addClass("dungeonFarmActive");
-}
+};
 
 function refreshSidebarDungeonMats(dungeonID) {
     const dungeon = DungeonManager.dungeonByID(dungeonID);
@@ -244,27 +237,30 @@ function refreshHPBar(hero) {
     $(`#hpFillturnOrder${hero.uniqueid}`).css('width', hpWidth);
 }
 
-function createDungeonSidebarReward(rewards,dungeonid) {
-    const haveReward = ResourceManager.materialAvailable(rewards.id);
-    const matWidth = (haveReward/10).toFixed(1)+"%";
+function createDungeonSidebarReward(dungeon) {
+    const matWidth = dungeon.rewardTimeRate === 0 ? "0%" : (dungeon.rewardTime/dungeon.rewardTimeRate).toFixed(1)+"%";
     const d = $("<div/>").addClass("dungeonRewardDiv");
-        const t1 = $("<div/>").addClass("dungeonRewardRate").attr("id","dRR"+dungeonid).appendTo(d);
-            $("<div/>").addClass("dungeonRewardRateIcon").html(`${ResourceManager.materialIcon(rewards.id)}`).appendTo(t1);
-            $("<div/>").addClass("dungeonRewardRateAmt").html(`+${rewards.amt}`).appendTo(t1);
+        const t1 = $("<div/>").addClass("dungeonRewardRate").attr("id","dRR"+dungeon.id).appendTo(d);
+            $("<div/>").addClass("dungeonRewardRateIcon").html(`${ResourceManager.materialIcon(dungeon.mat)}`).appendTo(t1);
+            $("<div/>").addClass("dungeonRewardRateAmt").attr("id","dRA"+dungeon.id).html(`+${dungeon.rewardAmt}`).appendTo(t1);
     const options = {
         prefix: "dungeonReward",
-        text: haveReward.toString(),
-        textID: "dsbr"+dungeonid, 
+        text: ResourceManager.materialAvailable(dungeon.mat),
+        textID: "dsbr"+dungeon.id, 
         width: matWidth,
-        fill: "dsbrf"+dungeonid
+        fill: "dsbrf"+dungeon.id
     }
     return d.append(generateProgressBar(options));
 }
 
+function refreshFloorMaterial(dungeonid,rewardAmt) {
+    console.log(dungeonid, rewardAmt);
+    $("#dRA"+dungeonid).html(`+${rewardAmt}`);
+}
+
 function refreshDungeonMatBar(dungeonid) {
-    const rewards = DungeonManager.dungeonByID(dungeonid).getRewards();
-    const haveReward = ResourceManager.materialAvailable(rewards.id);
-    const matWidth = (haveReward/10).toFixed(1)+"%";
-    $("#dsbr"+dungeonid).html(haveReward);
+    const dungeon = DungeonManager.dungeonByID(dungeonid);
+    const matWidth = dungeon.rewardTimeRate === 0 ? "0%" : (dungeon.rewardTime/dungeon.rewardTimeRate*100).toFixed(1)+"%";
     $("#dsbrf"+dungeonid).css('width',matWidth);
+    $("#dsbr"+dungeonid).html(ResourceManager.materialAvailable(dungeon.mat));
 }

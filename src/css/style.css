@@ -3510,11 +3510,6 @@ div.EquipmentCardsContainer {
     overflow: hidden;
 }
 
-#drArena.reducedHeight {
-    min-height: 250px;
-    max-height: 250px;
-}
-
 .bgContainer {
     position: absolute;
     top: 0;
@@ -7881,3 +7876,83 @@ span.beta-tag {
 }
 
 /* End Market */
+
+
+
+/* Dungeon Selection Screen */
+
+.dungeonListingsHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 10px 10px;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.areaListings {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.areaContainer {
+    position: relative;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}
+
+.areaContainer:hover {
+    border-color: var(--border-tertiary);
+}
+
+.dungeonBackground {
+    height: 150px;
+    width: 100%;
+    background-size: cover;
+    background-position: center bottom;
+    border-top: 2px solid var(--border-primary);
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.areaHeader {
+    padding: 10px;
+    text-align: center;
+    background-color: var(--bg-tertiary);
+    border-radius: 10px 10px 0 0;
+}
+
+.areaStatus {
+    padding: 10px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.areaAdventurers {
+    position: absolute;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.areaHero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 2.5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 3px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* End Dungeon Selection Screen */

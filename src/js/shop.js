@@ -82,6 +82,7 @@ class Perk {
         if (this.type === "tinker" && this.subtype === "level") TinkerManager.addLevel();
         if (this.type === "monster" && this.subtype === "open") TownManager.buildingPerk("monster");
         if (this.type === "monster" && this.subtype === "level") MonsterHall.addLevel();
+        if (this.type === "museum" && this.subtype === "open") TownManager.buildingPerk("museum");
     }
     createSave() {
         const save = {};

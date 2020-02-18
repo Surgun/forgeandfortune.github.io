@@ -17,6 +17,7 @@ class Item{
         this.autoSell = "None";
         this.owned = false;
         this.goldComma = this.itemValueCommas(this.value);
+        this.musem = createArray(4,11);
     }
     createSave() {
         const save = {};
@@ -25,6 +26,7 @@ class Item{
         save.autoSell = this.autoSell;
         save.owned = this.owned;
         save.mastered = this.mastered;
+        save.museum = this.museum;
         return save;
     }
     loadSave(save) {
@@ -32,6 +34,7 @@ class Item{
         this.autoSell = save.autoSell;
         this.owned = save.owned;
         if (save.mastered !== undefined) this.mastered = save.mastered;
+        if (save.museum !== undefined) this.museum = save.museum;
     }
     itemDescription() {
         return this.description;
@@ -206,6 +209,9 @@ const recipeList = {
     },
     filterByGuild(guildID) {
         return this.recipes.filter(r=>r.guildUnlock === guildID);
+    },
+    filterByType(type) {
+        return this.recipes.filter(r =>r.type === type);
     },
     guildOrderItems(lvl) {
         const items = [];

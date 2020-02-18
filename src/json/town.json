@@ -40,21 +40,22 @@
   {
     "id": "TB006",
     "name": "Tinker Hut",
-    "description": [
-      "Turn your leftover commons and desynth materials into trinkets",
-      ""
-    ],
+    "description": "Turn your leftover commons and desynth materials",
     "shorthand": "tinker",
     "recipeID": "R99610"
   },
   {
     "id": "TB007",
-    "name": "Monster Hall",
-    "description": [
-      "Check out monsters you've encountered and re-challenge old bosses",
-      ""
-    ],
+    "name": "Monster House",
+    "description": "Check out monsters you've encountered",
     "shorthand": "monster",
     "recipeID": "R99710"
+  },
+  {
+    "id": "TB008",
+    "name": "Museum",
+    "description": "A permanent list of all your crafting achievements",
+    "shorthand": "museum",
+    "recipeID": "R99810"
   }
 ]

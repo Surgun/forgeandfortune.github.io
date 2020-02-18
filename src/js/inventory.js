@@ -175,7 +175,7 @@ function blankItemStat() {
 }
 
 const Inventory = {
-    inv : createArray(20,null),
+    inv : new Array(20).fill(null),
     invMax : 20,
     createSave() {
         const save = [];
@@ -425,6 +425,7 @@ function refreshInventory() {
             return;
         }
         itemdiv.addClass("R"+item.rarity)
+        console.log(item);
         itemName.addClass("itemName").attr({"id": item.id, "r": item.rarity}).html(item.picName());
         itemRarity.addClass(`RT${item.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[item.rarity].toLowerCase()}`}).html(miscIcons.rarity);
         itemCost.addClass("tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(item.goldValue())}).html(item.goldValueFormatted());

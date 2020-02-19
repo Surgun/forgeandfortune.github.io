@@ -284,7 +284,7 @@ const Inventory = {
     removeContainerFromInventory(containerID) {
         this.inv = this.inv.filter(c=>c === null || c.containerID !== containerID);
         this.inv.push(null);
-        refreshInventoryPlaces()
+        refreshInventoryPlaces();
     },
     hasContainer(containerID) {
         return this.nonblank().some(c => c.containerID === containerID);
@@ -565,4 +565,5 @@ function refreshInventoryPlaces() {
     refreshSynthInventory();
     refreshFortuneGear();
     refreshTrinketInventory();
+    refreshMuseumInv();
 }

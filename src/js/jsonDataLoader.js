@@ -192,6 +192,7 @@ function loadTown() {
         });
         loadDialogs();
     });
+}
 
 function loadDialogs() {
     $.ajax({

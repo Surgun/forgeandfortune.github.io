@@ -97,7 +97,6 @@ class Perk {
 
 const $marketsTab = $("#marketsTab");
 const $purchasePerks = $("#purchasePerks");
-const $remainingPerks = $("#remainingPerks");
 const $boughtPerks = $("#boughtPerks");
 const $purchasedPerks = $("#purchasedPerks");
 
@@ -109,11 +108,9 @@ const shopDivs = [
 
 function refreshShop() {
     $purchasePerks.empty();
-    $remainingPerks.empty();
     shopDivs.forEach(type => {
         const perks = Shop.nextUnlocks(type);
         $purchasePerks.append(createALperk(perks.canPurchase,type));
-        $remainingPerks.append(showRemainingPerks(type));
     })
     const boughtPerks = Shop.boughtPerks();
     if (boughtPerks.length > 0) {
@@ -126,22 +123,13 @@ function refreshShop() {
     else $purchasedPerks.hide();
 }
 
-function showRemainingPerks(type) {
-    const perkCount =  Shop.perksByType(type).length - Shop.perksByType(type).filter(perk => perk.purchased).length;
-    if (perkCount <= 2) return;
-    const d1 = $("<div/>").addClass("alPerkRemaining");
-        $("<div/>").addClass("alTitle").html(`${type} Perks`).appendTo(d1);
-        $("<div/>").addClass("alPerkCount").html(`+${perkCount - 2}`).appendTo(d1);
-        $("<div/>").addClass("alDesc").html(`More perks available for purchase.`).appendTo(d1);
-        $("<div/>").addClass("alBuyPrev").html(`Purchase previous perk to unlock more perks.`).appendTo(d1);
-    return d1;
-}
-
 function createALperk(perk,name) {
+    const perkCount =  Shop.perksByType(name).length - Shop.perksByType(name).filter(perk => perk.purchased).length;
     const d1 = $("<div/>").addClass("alPerk");
     $("<div/>").addClass("alTitle").html(perk.title).appendTo(d1);
     $("<div/>").addClass("alSection").html(`${name} Perk`).appendTo(d1);
-    $("<div/>").addClass("alImage").html(perk.icon).appendTo(d1);
+    const perkImage = $("<div/>").addClass("alImage").html(perk.icon).appendTo(d1);
+    if (perkCount > 1) $("<div/>").addClass("alPerkCount tooltip").attr({"data-tooltip": "perks_remaining"}).html(`+${perkCount - 1}`).appendTo(perkImage);
     $("<div/>").addClass("alDesc").html(perk.description).appendTo(d1);
     if (perk.purchased) {
         return d1.addClass("perkPurchased");

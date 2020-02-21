@@ -1939,96 +1939,6 @@ footer {
     text-shadow: 2px 2px 0 black;
 }
 
-.alPerk, .alPerkRemaining, .alPurchasedPerk {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    text-align: center;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-primary);
-    border-radius: 10px;
-}
-
-.alTitle, .purchasedPerkTitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--bg-tertiary);
-    margin: -10px -10px 0;
-    padding: 10px;
-    border-radius: 10px 10px 0 0;
-    border-bottom: 2px solid var(--border-primary);
-}
-
-.alSection {
-    margin-top: 5px;
-    padding: 3px;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-}
-
-.alImage, .purchasedPerkImage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0;
-    padding: 10px;
-    height: 90px;
-    font-size: 2.5rem;
-    background-color: var(--bg-secondary);
-    border: 2px solid var(--border-primary);
-    border-radius: 10px;
-}
-
-.alDesc {
-    padding: 10px;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-}
-
-.alPerkCount {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px auto;
-    width: 125px;
-    height: 80px;
-    font-size: 3rem;
-    font-weight: bold;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    background-image: var(--gradient-secondary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    z-index: 1;
-}
-
-.alPerkCount:before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    content: "";
-    border: 5px solid var(--border-tertiary);
-    border-radius: 10px;
-    box-shadow: 5px 5px 0 0 var(--bg-tertiary);
-}
-
-.alBuyPrev {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    padding: 10px;
-    color: var(--highlight);
-    font-size: 0.85rem;
-    background-color: var(--bg-secondary);
-    border-radius: 5px;
-}
-
 .guildOrder, .guildSales, .guildWorkers, .guildMasteryCardContainer {
     display: -ms-grid;
     display: grid;
@@ -7699,19 +7609,88 @@ span.beta-tag {
 
 .marketSalesContainer {
     display: grid;
-    grid-template: auto / repeat(auto-fit, minmax(700px, 1fr));
+    grid-template: auto / 1fr;
     grid-gap: 10px;
     padding: 10px;
 }
 
 .perkTypeContainer {
     display: grid;
-    grid-template: auto / repeat(auto-fill, 225px);
-    grid-gap: 10px;
+    grid-template: auto / repeat(auto-fill, 250px);
+    grid-gap: 25px;
 }
 
 .purchasedPerks {
     grid-column: 1 / -1;
+}
+
+.alPerk, .alPurchasedPerk {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+}
+
+.alTitle, .purchasedPerkTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-tertiary);
+    margin: -10px -10px 0;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.alSection {
+    margin-top: 5px;
+    padding: 3px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.alImage, .purchasedPerkImage {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    padding: 10px;
+    height: 90px;
+    font-size: 2.5rem;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+}
+
+.alDesc {
+    padding: 10px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.alPerkCount {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    width: 60px;
+    height: 40px;
+    color: var(--highlight);
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: var(--bg-primary);
+    border-radius: 10px;
+    border: 5px solid var(--border-tertiary);
+    box-shadow: 0 3px 0 0 rgba(0,0,0,.25);
+    z-index: 1;
 }
 
 .alPerkBuy {

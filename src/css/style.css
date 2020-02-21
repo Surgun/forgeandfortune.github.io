@@ -2280,232 +2280,6 @@ footer {
     overflow: auto;
 }
 
-#dtsBanner {
-    position: relative;
-}
-
-.dtsBackground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 200px;
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="15" /></filter></svg>#filter');
-    -webkit-filter: blur(15px);
-            filter: blur(15px);
-    z-index: -1;
-}
-
-.dtsD001.dtsBackground {
-    background: -webkit-linear-gradient(top, transparent 0%, var(--bg-secondary) 100%), url(/assets/images/dungeonPreviews/dungeon_1.png);
-    background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%), url(/assets/images/dungeonPreviews/dungeon_1.png);
-    background-size: contain;
-}
-
-.dtsD002.dtsBackground {
-    background: -webkit-linear-gradient(top, transparent 0%, var(--bg-secondary) 100%), url(/assets/images/dungeonPreviews/dungeon_2.png);
-    background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%), url(/assets/images/dungeonPreviews/dungeon_2.png);
-    background-size: contain;
-}
-
-.dtsD003.dtsBackground {
-    background: -webkit-linear-gradient(top, transparent 0%, var(--bg-secondary) 100%), url(/assets/images/dungeonPreviews/dungeon_3.png);
-    background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%), url(/assets/images/dungeonPreviews/dungeon_3.png);
-    background-size: contain;
-}
-
-.DBoss.dtsBackground {
-    background: -webkit-linear-gradient(top, transparent 0%, var(--bg-secondary) 100%), url(/assets/images/dungeonPreviews/dungeon_boss.png);
-    background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%), url(/assets/images/dungeonPreviews/dungeon_boss.png);
-    background-size: contain;
-}
-
-.dungeonBossPortrait {
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    opacity: 1;
-    z-index: -1;
-}
-
-/* Boss Portraits */
-
-.dungeonBossPortrait.D010 {
-    background: url(/assets/images/enemies/B901.gif);
-}
-
-.dungeonBossPortrait.D011 {
-    background: url(/assets/images/enemies/B902.gif);
-}
-
-.dungeonBossPortrait.D012 {
-    background: url(/assets/images/enemies/B903.gif);
-}
-
-.dungeonBossPortrait.D013 {
-    background: url(/assets/images/enemies/B903.gif);
-}
-
-.dungeonBossPortrait.D014 {
-    background: url(/assets/images/enemies/B904.gif);
-}
-
-.dungeonBossPortrait.D015 {
-    background: url(/assets/images/enemies/B905.gif);
-}
-
-.dungeonBossPortrait.D016 {
-    background: url(/assets/images/enemies/B906.gif);
-}
-
-.dungeonBossPortrait.D017 {
-    background: url(/assets/images/enemies/B907.gif);
-}
-
-.dungeonBossPortrait.D018 {
-    background: url(/assets/images/enemies/B908.gif);
-}
-
-.dungeonBossPortrait.D019 {
-    background: url(/assets/images/enemies/B909.gif);
-}
-
-/* End Boss Portraits */
-
-.dtsBackButton {
-    position: absolute;
-    top: 35px;
-    left: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    font-size: 24px;
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.15);
-    cursor: pointer;
-}
-
-.dtsBackButton:hover {
-    background-color: rgba(255,255,255,0.2);
-}
-
-.dtsBossDifficulty {
-    position: absolute;
-    top: 85px;
-    left: 80px;
-    padding: 5px 15px;
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 20px;
-}
-
-.dtsHeader {
-    padding: 30px 20px 10px;
-    margin-left: 60px;
-    font-size: 48px;
-    font-size: 3rem;
-    text-shadow: 3px 3px 0 black;
-}
-
-.dtsMaterialTitle {
-    position: relative;
-    padding: 0 25px 10px;
-    color: var(--text-secondary);
-    cursor: pointer;
-}
-
-.dtsMaterialTitle:hover {
-    color: var(--text-primary);
-}
-
-.dtsMaterialTitle.toggleActive {
-    color: var(--highlight);
-}
-
-.dtsMaterialTitle > i {
-    position: absolute;
-    margin: 2px 5px 0;
-    -webkit-transition: -webkit-transform 0.2s ease-in-out;
-    transition: -webkit-transform 0.2s ease-in-out;
-    transition: transform 0.2s ease-in-out;
-    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-}
-
-.dtsMaterialTitle.toggleActive > i {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-}
-
-.dtsMaterialNone {
-    color: var(--text-tertiary);
-    grid-column: 1 / -1;
-}
-
-.dtsMaterialContainer {
-    display: none;
-    grid-template: auto / repeat(auto-fill,minmax(200px,1fr));
-    grid-gap: 5px;
-    padding: 0 25px;
-    -webkit-transform-origin: top;
-            transform-origin: top;
-    -webkit-animation: 0.2s scale-y-in;
-    animation: 0.2s scale-y-in;
-}
-
-.dtsMaterialContainer.expanded {
-    display: -ms-grid;
-    display: grid;
-}
-
-.dtsMaterial {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 10px;
-    background-color: rgba(255,255,255,0.05);
-    border-radius: 5px;
-    font-size: 12px;
-    font-size: 0.75rem;
-}
-
-.dtsMaterialIcon {
-    margin-bottom: -3px;
-    margin-right: 5px;
-}
-
-.dtsMaterialName {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-}
-
-.dtsMaterialAmt {
-    position: relative;
-    background-color: rgba(255,255,255,0.1);
-    padding: 5px 10px;
-    border-radius: 10px;
-}
-
 .dungeonTeamCard, .dungeonAvailableCard, .dungeonNotAvailableCard, .drHeroCard, .dreTeamHero {
     position: relative;
     display: -webkit-box;
@@ -3293,258 +3067,13 @@ div.EquipmentCardsContainer {
 }
 
 #drArena {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     position: relative;
     min-height: 300px;
     max-height: 300px;
     border-bottom: 2px solid var(--border-primary);
     overflow: hidden;
-}
-
-.bgContainer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.bgContainer .layer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-/* Groovy Grove Background */
-
-.D001 .bgContainer .layer1 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_1/layer1.jpg');
-    background-size: 500px;
-}
-
-.D001 .bgContainer .layer2 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_1/layer2.png');
-    background-size: 500px;
-}
-
-.D001 .bgContainer .layer3 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_1/layer3.png');
-    background-size: 500px;
-}
-
-.D001 .bgContainer .layer4 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_1/layer4.png');
-    background-size: 500px;
-    -webkit-animation: 2s linear infinite gleam;
-    animation: 2s linear infinite gleam;
-}
-
-.D001 .bgContainer .layer5 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_1/layer5.png');
-    background-size: 500px;
-    -webkit-animation: 5s linear infinite gleam;
-    animation: 5s linear infinite gleam;
-}
-
-.D001 .bgContainer .layer6 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_1/layer6.jpg');
-    background-repeat: repeat-x;
-    background-position-y: bottom;
-    background-size: 400px;
-}
-
-/* Spooky Spot Backgorund */
-
-.D002 .bgContainer .layer1 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_2/layer1.png');
-    background-size: 500px;
-}
-
-.D002 .bgContainer .layer2 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_2/layer2.png');
-    background-size: 500px;
-}
-
-.D002 .bgContainer .layer3 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_2/layer3.png');
-    background-size: 500px;
-    background-repeat: no-repeat;
-    background-position: right -50px;
-}
-
-.D002 .bgContainer .layer4 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_2/layer4.png');
-    background-size: 500px;
-}
-
-.D002 .bgContainer .layer5 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_2/layer5.png');
-    background-size: 500px;
-}
-
-.D002 .bgContainer .layer6 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_2/layer6.png');
-    background-size: 500px;
-}
-
-.D002 .bgContainer .layer7 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_2/layer7.png');
-    background-size: 500px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.D002 .bgContainer .layer8 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_2/layer8.png');
-    background-size: 500px;
-    background-repeat: repeat-x;
-    background-position: 0 100px;
-    -webkit-animation: 5s 3s ascend-hands infinite;
-    animation: 5s 3s ascend-hands infinite;
-    opacity: 0.75;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
-}
-
-.D002 .bgContainer .layer9 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_2/layer9.png');
-    background-size: 800px;
-    background-position: bottom;
-}
-
-/* Creepy Crag Background */
-
-.D003 .bgContainer .layer1 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_3/layer1.png');
-    background-size: 500px;
-}
-
-.D003 .bgContainer .layer2 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_3/layer2.png');
-    background-size: 500px;
-}
-
-.D003 .bgContainer .layer3 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_3/layer3.png');
-    background-size: 500px;
-}
-
-.D003 .bgContainer .layer4 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_3/layer4.png');
-    background-size: 500px;
-}
-
-.D003 .bgContainer .layer5 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_3/layer5.png');
-    background-size: 500px;
-    background-position: 30% -300px;
-    background-repeat: repeat-x;
-    -webkit-animation: 5s 6s descend-spiders-1 infinite;
-    animation: 5s 6s descend-spiders-1 infinite;
-}
-
-.D003 .bgContainer .layer6 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_3/layer6.png');
-    background-size: 500px;
-    background-position: center -300px;
-    background-repeat: repeat-x;
-    -webkit-animation: 5s 4s descend-spiders-2 infinite;
-    animation: 5s 4s descend-spiders-2 infinite;
-}
-
-.D003 .bgContainer .layer7 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_3/layer7.png');
-    background-size: 500px;
-}
-
-.D003 .bgContainer .layer8 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_3/layer8.png');
-    background-size: 800px;
-    background-position: bottom;
-}
-
-/* Boss Background */
-
-.DBoss .bgContainer .layer1 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_boss/layer1.png');
-    background-size: 500px;
-}
-
-.DBoss .bgContainer .layer2 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_boss/layer2.png');
-    background-size: 500px;
-}
-
-.DBoss .bgContainer .layer3 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_boss/layer3.png');
-    background-size: 500px;
-}
-
-.DBoss .bgContainer .layer4 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_boss/layer4.png');
-    background-size: 500px;
-}
-
-.DBoss .bgContainer .layer5 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_boss/layer5.png');
-    background-size: 500px;
-}
-
-.DBoss .bgContainer .layer6 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_boss/layer6.png');
-    background-size: 500px;
-}
-
-.DBoss .bgContainer .layer7 {
-    background: url('/assets/images/dungeonBackgrounds/dungeon_boss/layer7.png');
-    background-size: 800px;
-    background-position: bottom;
-}
-
-/* Christmas Event Background */
-
-.bgContainer .layer1.christmasEvent {
-    background: url('/assets/images/dungeonBackgrounds/christmas_event/dungeon_1/layer1.jpg');
-    background-size: 500px;
-}
-
-.bgContainer .layer2.christmasEvent {
-    background: url('/assets/images/dungeonBackgrounds/christmas_event/dungeon_1/layer2.png');
-    background-size: 500px;
-}
-
-.bgContainer .layer3.christmasEvent {
-    background: url('/assets/images/dungeonBackgrounds/christmas_event/dungeon_1/layer3.png');
-    background-size: 500px;
-}
-
-.bgContainer .layer4.christmasEvent {
-    background: url('/assets/images/dungeonBackgrounds/christmas_event/dungeon_1/layer4.png');
-    background-size: 500px;
-    -webkit-animation: 8s linear infinite gleam;
-    animation: 8s linear infinite gleam;
-}
-
-.bgContainer .layer5.christmasEvent {
-    background: url('/assets/images/dungeonBackgrounds/christmas_event/dungeon_1/layer5.png');
-    background-size: 500px;
-    -webkit-animation: 5s linear infinite gleam;
-    animation: 5s linear infinite gleam;
-}
-
-.bgContainer .layer6.christmasEvent {
-    background: url('/assets/images/dungeonBackgrounds/christmas_event/dungeon_1/layer6.png');
-    background-repeat: repeat-x;
-    background-position-y: bottom;
-    background-size: 500px;
 }
 
 #drArena > h3 {
@@ -3901,7 +3430,7 @@ div.EquipmentCardsContainer {
         flex-wrap: wrap;
 }
 
-.dungeonTeamCollection, .dungeonAvailableCollection, .dreTeam {
+.dreTeam {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (minmax(165px, 1fr))[auto-fill];
@@ -3909,29 +3438,7 @@ div.EquipmentCardsContainer {
     grid-gap: 5px;
 }
 
-#dtsTop, #dtsBottom, #drTop {
-    padding: 20px;
-}
-
-div.dungeonTeamButton {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    position: relative;
-    margin-top: 20px;
-    padding: 15px;
-    font-size: 13.6px;
-    font-size: 0.85rem;
-    text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
-    max-width: 200px;
-}
-
-div.dungeonTeamButton:not(.dungeonStartNotAvailable):after, .heroExamineLvlButton:after {
+.heroExamineLvlButton:after {
     display: block;
     position: absolute;
     top: 0;
@@ -3950,20 +3457,6 @@ div.dungeonTeamButton:not(.dungeonStartNotAvailable):after, .heroExamineLvlButto
     transform: scaleY(1) scaleX(1);
     -webkit-animation: 1s button-active infinite;
     animation: 1s button-active infinite;
-}
-
-div.dungeonTeamButton.dungeonStartNotAvailable {
-    border-color: var(--border-primary);
-    background-color: var(--bg-primary);
-    cursor: not-allowed;
-    opacity: 0.5;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-}
-
-label.selection-container.party-selection-container {
-    margin-left: 20px;
-    padding: 12px 15px 12px 50px;
-    border-radius: 5px;
 }
 
 .dungeonAvailableStats, .dungeonNotAvailableStats, .dungeonTeamStats {
@@ -4656,7 +4149,7 @@ label.selection-container.party-selection-container {
     margin: 10px 0;
 }
 
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .dungeonTeamButton, .recipeBuyCardBuy, .workerBuyCardBuy, .guildOrderSubmit, .fuseStart, .synthButton, #synthSlotStart, .synthPowerSetting, #synthSlotCollect, #collectResmith, .eventActionButton, .fortuneStage, .dreActionButton, .smithButton, .recipeTotalCrafted, .fortuneItemSac, .fuseSlotStart, .lineRewardPay, .recipeMasteryGuildButton {
+.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .dungeonGoldCost, .recipeBuyCardBuy, .workerBuyCardBuy, .guildOrderSubmit, .fuseStart, .synthButton, #synthSlotStart, .synthPowerSetting, #synthSlotCollect, #collectResmith, .eventActionButton, .fortuneStage, .dreActionButton, .smithButton, .recipeTotalCrafted, .fortuneItemSac, .fuseSlotStart, .lineRewardPay, .recipeMasteryGuildButton {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -4667,7 +4160,7 @@ label.selection-container.party-selection-container {
     cursor: pointer;
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .synthButton:hover, #synthSlotStart:hover, .synthPowerSetting:hover, #synthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .fortuneStage:hover, .dreActionButton:hover, .smithButton:hover, .recipeTotalCrafted:hover, .fortuneItemSac:hover, .fuseSlotStart:hover, .lineRewardPay:hover, .recipeMasteryGuildButton:hover {
+.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .synthButton:hover, #synthSlotStart:hover, .synthPowerSetting:hover, #synthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .fortuneStage:hover, .dreActionButton:hover, .smithButton:hover, .recipeTotalCrafted:hover, .fortuneItemSac:hover, .fuseSlotStart:hover, .lineRewardPay:hover, .recipeMasteryGuildButton:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
@@ -4800,7 +4293,7 @@ label.selection-container.party-selection-container {
     width: 100%;
 }
 
-#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .dungeonTeamButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .synthPowerEnabled,  .synthPowerEnabled:hover, #synthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .dreCollect:hover, .smithButton:hover, .fuseSlotStart:hover, .lineRewardPay:hover {
+#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .dungeonGoldCost:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .synthPowerEnabled,  .synthPowerEnabled:hover, #synthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .dreCollect:hover, .smithButton:hover, .fuseSlotStart:hover, .lineRewardPay:hover {
     background-color: var(--green-tertiary);
 }
 
@@ -7747,7 +7240,7 @@ span.beta-tag {
 
 /* Dungeon Selection Screen */
 
-.dungeonListingsHeadingContainer {
+.dungeonListingsHeadingContainer, .dtsTopHeader {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -7768,10 +7261,6 @@ span.beta-tag {
     margin-right: 10px;
     padding: 0 10px;
     font-size: 2rem;
-}
-
-.headingTitle {
-    font-size: 1rem;
 }
 
 .headingDescription {
@@ -7850,6 +7339,125 @@ span.beta-tag {
     border-radius: 5px;
     backdrop-filter: blur(10px);
     box-shadow: 0 3px 0 rgba(255, 255, 255, 0.1);
+}
+
+.areaSelectContainer {
+    height: 100%
+}
+
+.areaTeamSelectionContainer {
+    display: flex;
+    height: 100%;
+    overflow: auto;
+}
+
+.dungeonSelectionList {
+    flex-basis: 220px;
+    background-color: var(--bg-primary);
+    border-right: 2px solid var(--border-primary);
+    overflow: auto;
+}
+
+.dtsDungeon {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
+    cursor: pointer;
+}
+
+.dtsDungeon:hover, .dtsDungeon:focus {
+    background-color: var(--bg-secondary);
+}
+
+.dtsDungeon.dtsHighlight, .dtsDungeon.dtsHighlight:hover {
+    color: var(--highlight);
+    background-color: var(--border-primary);
+    border-color: var(--border-tertiary);
+}
+
+.dtsMaterial {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.25);
+}
+
+.dtsDungeonName {
+    padding: 10px;
+    font-size: 0.85rem;
+}
+
+.dungeonSelectionContent {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.dungeonSelectionBanner {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.dtsBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100px;
+    filter: blur(15px);
+    z-index: -1;
+}
+
+.dtsBackButton {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.dtsBackButton:hover {
+    background-color: var(--button-cancel);
+}
+
+.dtsHeader {
+    font-size: 2.5rem;
+    padding: 25px 70px 0;
+}
+
+.partyLaunchButton {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.dungeonTeamButton.dungeonStartNotAvailable {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+.dungeonTeamButton:not(.dungeonStartNotAvailable):hover {
+    background-color: var(--green-secondary);
+}
+
+.dungeonSelectionTop, .dungeonSelectionBottom {
+    padding: 10px;
+}
+
+.dungeonTeamCollection, .dungeonAvailableCollection {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    padding: 10px;
 }
 
 /* End Dungeon Selection Screen */

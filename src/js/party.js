@@ -96,7 +96,7 @@ function startPartyCreation() {
     $areaTeamSelect.show();
     //Team Banner
     $dtsBanner.empty();
-    $("<div/>").addClass(`dts${area.id} dtsBackground`).appendTo($dtsBanner);
+    $("<div/>").addClass(`dts${area.id} dtsBackground`).css({"background-image": `url(/assets/images/dungeonpreviews/${area.id}.png)`}).appendTo($dtsBanner);
     $("<div/>").addClass(`dts${area.id} dtsHeader`).html(area.name).appendTo($dtsBanner);
     $("<div/>").addClass(`dts${area.id} dtsBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($dtsBanner);
     //Possible Dungeons
@@ -130,7 +130,10 @@ function startPartyCreation() {
     }
     $dtsBottom.empty();
     //available heroes
-    const d1bot = $("<div/>").addClass("dtsBotTitle").html("<h3>Your Available Heroes</h3>");
+    const d1bot = $("<div/>").addClass("dtsTopHeader");
+        const d1bota = $("<div/>").addClass("headingDetails").appendTo(d1bot);
+        $("<div/>").addClass("headingTitle").html("Your Available Heroes").appendTo(d1bota);
+        $("<div/>").addClass("headingDescription").html("Select the heroes to send on this adventure.").appendTo(d1bota);
     $dtsBottom.append(d1bot);
     const d2 = $("<div/>").addClass("dungeonAvailableCollection");
     HeroManager.ownedHeroes().forEach(hero => {

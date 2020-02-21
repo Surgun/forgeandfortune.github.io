@@ -385,18 +385,27 @@
                                 </div>
                                 <div class="areaListings" id="areaListings"></div>
                             </div>
-                            <div id="areaTeamSelect">
-                                <div id="dtsBanner"></div>
-                                <div id="dtsDungeons"></div>
-                                <div id="dtsTop">
-                                    <div class="dtsTopTitle"><h3>Assemble your Team!</h3></div>
-                                    <div class="dungeonTeamCollection" id="dungeonTeamCollection"></div>
-                                    <div class="partyLaunchButton">
-                                        <div class="dungeonTeamButton" id="dungeonTeamButtonSkip">Start At Highest Floor Reached</div>
-                                        <div class="dungeonTeamButton" id="dungeonTeamButton">Start At Floor 1</div>
+                            <div id="areaTeamSelect" class="areaSelectContainer">
+                                <div class="areaTeamSelectionContainer">
+                                    <div id="dtsDungeons" class="dungeonSelectionList"></div>
+                                    <div class="dungeonSelectionContent">
+                                        <div id="dtsBanner" class="dungeonSelectionBanner"></div>
+                                        <div class="partyLaunchButton">
+                                            <div id="dungeonTeamButtonSkip" class="dungeonTeamButton actionButton">Start At Highest Floor Reached</div>
+                                            <div id="dungeonTeamButton" class="dungeonTeamButton actionButton">Start At Floor 1</div>
+                                        </div>
+                                        <div id="dtsTop" class="dungeonSelectionTop">
+                                            <div class="dtsTopHeader">
+                                                <div class="headingDetails">
+                                                    <div class="headingTitle">Your Adventure Party</div>
+                                                    <div class="headingDescription">The heroes you have selected for this adventure.</div>
+                                                </div>
+                                            </div>
+                                            <div class="dungeonTeamCollection" id="dungeonTeamCollection"></div>                                          
+                                        </div>
+                                        <div id="dtsBottom" class="dungeonSelectionBottom"></div>
                                     </div>
                                 </div>
-                                <div id="dtsBottom"></div>
                             </div>
                             <div id="dungeonRun">
                                 <div id="drContentWrapper">

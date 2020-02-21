@@ -17,7 +17,7 @@ class Item{
         this.autoSell = "None";
         this.owned = false;
         this.goldComma = this.itemValueCommas(this.value);
-        this.musem = createArray(4,11);
+        this.museum = createArray(4,11);
     }
     createSave() {
         const save = {};

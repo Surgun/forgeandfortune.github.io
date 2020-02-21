@@ -213,7 +213,18 @@ function loadTooltips() {
             const tooltip = new Tooltip(props);
             TooltipManager.addTooltip(tooltip);
         });
-        afterLoad();
+        loadMuseum();
     });
 }
+
+function loadMuseum() {
+    $.ajax({
+        url: "json/museum.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            const reward = new MuseumReward(props);
+            Museum.addReward(reward);
+        });
+        afterLoad();
+    });
 }

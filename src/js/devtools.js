@@ -70,10 +70,6 @@ const devtools = {
             if (building.getStatus() === BuildingState.seen) building.setStatus(BuildingState.built);
             else if (building.getStatus() !== BuildingState.built) building.setStatus(BuildingState.seen);
         })
-        if (!DungeonManager.bossesBeat.includes("B901")) {
-            DungeonManager.bossesBeat.push("B901");
-            refreshShop();
-        }
         refreshSideTown();
     },
     dungeonUnlock() {

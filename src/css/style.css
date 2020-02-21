@@ -7932,6 +7932,10 @@ span.beta-tag {
     color: var(--text-secondary);
 }
 
+.areaStatus.statusAdventuring {
+    color: var(--highlight);
+}
+
 .areaAdventurers {
     position: absolute;
     bottom: 50%;

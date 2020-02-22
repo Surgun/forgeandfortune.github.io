@@ -102,7 +102,7 @@ function startPartyCreation() {
     //Possible Dungeons
     $dtsDungeons.empty();
     area.dungeons.forEach(dungeon => {
-        const d = $("<div/>").addClass("dtsDungeon").data("dungeonID",dungeon.id).appendTo(dtsDungeons);
+        const d = $("<div/>").addClass("dtsDungeon").data("dungeonID",dungeon.id).prependTo(dtsDungeons);
         if (PartyCreator.dungeonSelect === dungeon.id) d.addClass("dtsHighlight");
         if (dungeon.mat !== null) {
             const mat = ResourceManager.idToMaterial(dungeon.mat);

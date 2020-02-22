@@ -7110,7 +7110,7 @@ span.beta-tag {
 .perkTypeContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, 250px);
-    grid-gap: 25px;
+    grid-gap: 10px;
 }
 
 .purchasedPerks {

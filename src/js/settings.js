@@ -5,7 +5,6 @@
 const settings = {
     toastPosition: "top-left",
     dialogStatus: 0,
-    battleLogLength: 999,
     db: 0,
     expandedMaterials: {
         D001: 1, 
@@ -38,5 +37,5 @@ loadSettings();
 function portSettings() {
     delete settings.expandedLogistics;
     delete settings.toggleTurnOrderBars;
-    if (settings.battleLogLength !== 999) settings.battleLogLength = 999;
+    delete settings.battleLogLength;
 }

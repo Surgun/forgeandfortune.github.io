@@ -175,6 +175,20 @@
     "type": "skill"
   },
   {
+    "id": "hero_in_combat",
+    "title": "Hero Already Adventuring",
+    "description": "This hero is already on another adventure.",
+    "icon": "<i class=\"fas fa-swords\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "hero_in_party",
+    "title": "Hero Added To Party",
+    "description": "This hero is already assigned to your party.",
+    "icon": "<i class=\"fas fa-check\"></i>",
+    "type": "static"
+  },
+  {
     "id": "perk_desc",
     "title": "#title#",
     "description": "#description#",

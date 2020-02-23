@@ -81,7 +81,6 @@ function battleText(combatParams,target) {
     let battleTextEdit = combatParams.attack.bText.replace("#ATTACKER#",combatParams.attacker.name);
     battleTextEdit = battleTextEdit.replace("#DEFENDER#",target.name);
     battleTextEdit = battleTextEdit.replace("#DAMAGE#",combatParams.power);
-    BattleLog.addEntry(combatParams.dungeonid,combatParams.attack.icon,battleTextEdit);
 } 
 
 

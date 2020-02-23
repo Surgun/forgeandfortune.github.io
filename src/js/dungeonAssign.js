@@ -93,7 +93,6 @@ function screenDirectDungeon(areaID) {
 function showDungeon(dungeonID) {
     DungeonManager.dungeonView = dungeonID;
     $dungeonRun.show();
-    BattleLog.clear();
     initiateDungeonFloor(dungeonID);
 }
 

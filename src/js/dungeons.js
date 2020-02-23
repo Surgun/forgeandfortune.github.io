@@ -208,7 +208,6 @@ class Dungeon {
         }
         if (refreshLater) {
             initiateDungeonFloor(this.id);
-            BattleLog.refresh();
         }
         if (DungeonManager.dungeonView === this.id) refreshBeatBar(this.order.getCurrentID(),this.dungeonTime);
     }
@@ -237,7 +236,6 @@ class Dungeon {
             h.hp = h.maxHP()
         });
         if (DungeonManager.dungeonView === this.id) {
-            BattleLog.clear();
             openTab("dungeonsTab");
         }
         initializeSideBarDungeon();

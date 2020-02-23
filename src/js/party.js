@@ -98,7 +98,6 @@ function startPartyCreation() {
     $dtsBanner.empty();
     $("<div/>").addClass(`dts${area.id} dtsBackground`).css({"background-image": `url(/assets/images/dungeonpreviews/${area.id}.png)`}).appendTo($dtsBanner);
     $("<div/>").addClass(`dts${area.id} dtsHeader`).html(area.name).appendTo($dtsBanner);
-    $("<div/>").addClass(`dts${area.id} dtsBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($dtsBanner);
     //Possible Dungeons
     $dtsDungeons.empty();
     area.dungeons.forEach(dungeon => {
@@ -138,8 +137,8 @@ function startPartyCreation() {
     const d2 = $("<div/>").addClass("dungeonAvailableCollection");
     HeroManager.ownedHeroes().forEach(hero => {
         //if (dungeon.bannedHero.includes(hero.id)) characterCard("heroBanned dungeonNotAvailable",hero.uniqueid,hero.id, "Banned from Here").appendTo(d2);
-        if (hero.inDungeon) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"In Dungeon").appendTo(d2);
-        else if (PartyCreator.heroes.includes(hero.id)) characterCard("partyHero dungeonNotAvailable",hero.uniqueid,hero.id, "Already in Party").appendTo(d2);
+        if (hero.inDungeon) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"in_dungeon").appendTo(d2);
+        else if (PartyCreator.heroes.includes(hero.id)) characterCard("partyHero dungeonNotAvailable",hero.uniqueid,hero.id, "in_party").appendTo(d2);
         else characterCard("dungeonAvailable",hero.uniqueid,hero.id,null).appendTo(d2);
     });
     $dtsBottom.append(d2);
@@ -167,6 +166,7 @@ $(document).on('click', "div.dungeonTeamCardClick", (e) => {
     const heroID = $(e.currentTarget).attr("heroID");
     PartyCreator.removeMember(heroID);
     startPartyCreation(DungeonManager.dungeonCreatingID);
+    destroyTooltip();
 });
 
 //clicking a hero to add them to your party
@@ -208,21 +208,39 @@ $(document).on('click', "#dungeonTeamButtonSkip", (e) => {
 
 function characterCard(prefix,dv,ID,status) {
     const d = $("<div/>").addClass(prefix+"Card").attr("data-value",dv);
+    // Create empty stats container for empty party slots
+    const heroStatsContainer = $("<div/>").addClass(`heroStatsContainer emptyPartySlot`);
+        const hpStat= $("<div/>").addClass(`heroStat`).appendTo(heroStatsContainer);
+            const hpStatValue = $("<div/>").addClass('statValue').appendTo(hpStat);
+        const powStat = $("<div/>").addClass(`heroStat`).appendTo(heroStatsContainer);
+            const powStatValue = $("<div/>").addClass('statValue').appendTo(powStat);
+        const techStat = $("<div/>").addClass(`heroStat`).appendTo(heroStatsContainer);
+            const techStatValue = $("<div/>").addClass('statValue').appendTo(techStat);
+    // Return empty party slot    
     if (!ID) {
-        $("<div/>").addClass(prefix+"Image").html('<img src="/assets/images/heroes/blank.png">').appendTo(d);
-        $("<div/>").addClass(prefix+"Name").html("Empty").appendTo(d);
+        $("<div/>").addClass(prefix+"Image").html('<i class="fas fa-question-circle"></i>').appendTo(d);
+        $("<div/>").addClass(prefix+"Name").html("Empty Party Slot").appendTo(d);
+        heroStatsContainer.appendTo(d)
         return d;
     }
+    // Return hero cards with stats
     const dclick = $("<div/>").addClass(prefix+"CardClick").attr("heroID",dv).appendTo(d);
     const hero = HeroManager.idToHero(ID);
     $("<div/>").addClass(prefix+"Image").html(hero.image).appendTo(dclick);
     $("<div/>").addClass(prefix+"Name").html(hero.name).appendTo(dclick);
     const d3 = $("<div/>").addClass(prefix+"Stats").appendTo(dclick);
-        $("<div/>").addClass(prefix+"HP"+" heroStat"+" tooltip").attr("data-tooltip","hp").html(`${miscIcons.hp} ${hero.maxHP()}`).appendTo(d3);
-        $("<div/>").addClass(prefix+"Pow"+" heroPowStat"+" tooltip").attr("data-tooltip","pow").html(`${miscIcons.pow} ${hero.getPow()}`).appendTo(d3);
-    const d5 = $("<div/>").addClass("heroStatus").html(status).appendTo(dclick);
-    if (status === null) d5.hide();
-    else d.addClass("heroUnavailable");
-    $("<div/>").addClass("partyMaxFloor").html(`Floor ${hero.getMax(DungeonManager.dungeonCreatingID)}`).appendTo(dclick);
+        hpStat.addClass(`${prefix}HP tooltip`).attr("data-tooltip","hp").html(`${miscIcons.hp}`).appendTo(d3);
+            hpStatValue.html(`${hero.maxHP()}`).appendTo(hpStat);
+        powStat.addClass(`${prefix}Pow tooltip`).attr("data-tooltip","pow").html(`${miscIcons.pow}`).appendTo(d3);
+            powStatValue.html(`${hero.getPow()}`).appendTo(powStat);
+        techStat.addClass(`${prefix}Tech tooltip`).attr("data-tooltip","tech").html(`${miscIcons.tech}`).appendTo(d3);
+            techStatValue.html(`${hero.getTech()}`).appendTo(techStat);
+    heroStatsContainer.appendTo(d3);
+    // Add status to hero cards with character statuses present (e.g. In Combat, In Party)
+    if (status !== null && status !== undefined) {
+        if (status === "in_dungeon") $("<div/>").addClass("heroStatus tooltip statusDungeon").attr({"data-tooltip": "hero_in_combat"}).html(`<i class="fas fa-swords"></i>`).appendTo(dclick);
+        if (status === "in_party") $("<div/>").addClass("heroStatus tooltip statusParty").attr({"data-tooltip": "hero_in_party"}).html(`<i class="fas fa-check"></i>`).appendTo(dclick);
+        else console.error('Invalid status passed. Could not render proper status for hero card.');
+    }
     return d;
 }

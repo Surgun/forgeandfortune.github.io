@@ -63,7 +63,7 @@ class actionSlot {
         this.progress = (this.craftTime/this.maxCraft()).toFixed(3)*100+"%";
     }
     maxCraft() {
-        return this.item.craftTime * MonsterHall.lineIncrease(this.item.type,0)
+        return Math.floor(this.item.craftTime * Museum.crafTime());
     }
     timeRemaining() {
         return this.maxCraft()-this.craftTime;

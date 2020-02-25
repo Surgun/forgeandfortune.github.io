@@ -106,7 +106,8 @@ const miscIcons = Object.freeze({
     cancelSlot: `<i class="fas fa-times"></i>`,
     autoSell: `<i class="fas fa-dollar-sign"></i>`,
     time: `<i class="fas fa-clock"></i>`,
-    alert: `<i class="fas fa-exclamation-circle"></i>`
+    alert: `<i class="fas fa-exclamation-circle"></i>`,
+    checkmark: `<i class="fas fa-check"></i>`,
 });
 
 const heroStat = Object.freeze({

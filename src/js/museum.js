@@ -6,15 +6,27 @@ const $museumRecipeContributions = $("#museumRecipeContributions");
 const $museumRewards = $("#museumRewards");
 const $museumInv = $("#museumInv");
 const $museumTop = $(".museumTop");
+const $museumNavReward = $("#museumNavReward");
+const $museumNavCollection = $("#museumNavCollection");
 
 const Museum = {
-    craftTime : 0,
-    goodChance : 0,
-    greatChance : 0,
-    epicChance : 0,
     rewards : [],
     addReward(reward) {
         this.rewards.push(reward);
+    },
+    createSave() {
+        const save = {};
+        save.rewards = [];
+        this.rewards.forEach(reward => {
+            save.rewards.push(reward.createSave());
+        });
+        return save;
+    },
+    loadSave(save) {
+        save.rewards.forEach(rewardSave => {
+            const reward = this.idToReward(rewardSave.id);
+            reward.loadSave(rewardSave);
+        });
     },
     idToReward(id) {
         return this.rewards.find(r=>r.id === id);
@@ -44,6 +56,30 @@ const Museum = {
     },
     remainingPoints() {
         return this.earnedPoints()-this.rewards.map(r=>r.spent()).reduce((a,b) => a+b);
+    },
+    purchaseReward(rewardID) {
+        const reward = this.idToReward(rewardID);
+        if (this.remainingPoints() < reward.purchaseCost()) {
+            Notifications.cantAffordMuseumReward();
+            return;
+        }
+        reward.purchase();
+    },
+    crafTime() {
+        const reward = this.idToReward("MU001");
+        return 1-reward.lvl*0.02;
+    },
+    goodChance() {
+        const reward = this.idToReward("MU002");
+        return reward*5;
+    },
+    greatChance() {
+        const reward = this.idToReward("MU003");
+        return Math.floor(reward*2.5);
+    },
+    epicChance() {
+        const reward = this.idToReward("MU004");
+        return reward;
     }
 }
 
@@ -54,6 +90,7 @@ class MuseumReward {
     }
     createSave() {
         const save = {};
+        save.id = this.id;
         save.lvl = this.lvl;
         return save;
     }
@@ -64,16 +101,28 @@ class MuseumReward {
         return this.cost[this.lvl];
     }
     spent() {
-        return this.cost.slice(0,this.lvl+1).reduce((a,b)=>a+b);
+        if (this.lvl === 0) return 0;
+        return this.cost.slice(0,this.lvl).reduce((a,b)=>a+b);
     }
     purchase() {
         if (Museum.remainingPoints() < this.purchaseCost()) return;
         this.lvl += 1;
     }
+    currentReward() {
+        return this.rewardText[this.lvl];
+    }
+    nextReward() {
+        return this.rewardText[this.lvl+1];
+    }
+    maxLvl() {
+        return this.lvl === 20;
+    }
 }
 
 function initiateMuseumBldg() {
     $museumBuilding.show();
+    $museumNavReward.removeClass("selected");
+    $museumNavCollection.addClass("selected");
     refreshMuseumTop();
     refreshMuseumInv();
 }
@@ -84,7 +133,7 @@ function refreshMuseumTop() {
     ItemType.forEach(type => {
         const d = $("<div/>").addClass("museumTypeDiv").data("recipeType",type).appendTo($museumRecipeTypes);
         $("<div/>").addClass("museumTypeName").html(type).appendTo(d);
-        const percent = (Museum.percentCompleteByType(type)/44).toFixed(1)+"%";
+        const percent = (Museum.completeByType(type)/44*100).toFixed(1)+"%";
         $("<div/>").addClass("museumTypeComplete").html(percent).appendTo(d);
     });
 };
@@ -99,8 +148,9 @@ function showMuseumType(type) {
         const d1 = $("<div/>").addClass("museumRecipeContributions").appendTo(d);
         recipe.museum.forEach((rarity,j) => {
             rarity.forEach((sharp,i) => {
-                const d2 = $("<div/>").addClass("museumRecipe"+j).html(`+${i}`).appendTo(d1);
-                if (sharp) d2.addClass("museumRecipeEntryComplete");
+                const d2 = $("<div/>").addClass("museumRecipe"+j).appendTo(d1);
+                if (sharp) d2.addClass("museumRecipeEntryComplete").html(miscIcons.checkmark);
+                else d2.html(`+${i}`);
             });
         });
     });
@@ -109,7 +159,21 @@ function showMuseumType(type) {
 function showMuseumRewards() {
     $museumTop.hide();
     $museumRewards.empty().show();
-
+    const d1 = $("<div/>").addClass("museumRewardPointContainer").appendTo($museumRewards);
+    $("<div/>").addClass("museumRewardPoint").html(`You have ${Museum.remainingPoints()} points left`).appendTo(d1);
+    $("<div/>").addClass("museumRewardPointText").html(`Earn more points by donating unique items to the museum`).appendTo(d1);
+    Museum.rewards.forEach(reward => {
+        const d = $("<div/>").addClass("museumRewardDiv").appendTo($museumRewards);
+        $("<div/>").addClass("museumRewardTitle").html(reward.name).appendTo(d);
+        $("<div/>").addClass("museumRewardLvl").html(`Level ${reward.lvl}`).appendTo(d);
+        $("<div/>").addClass("museumRewardHeading").html("Current Reward").appendTo(d);
+        $("<div/>").addClass("museumRewardCurrent").html(reward.currentReward()).appendTo(d);
+        if (!reward.maxLvl()) {
+            $("<div/>").addClass("museumRewardHeading").html("Next Reward").appendTo(d);
+            $("<div/>").addClass("museumRewardNext").html(reward.nextReward()).appendTo(d);
+            $("<div/>").addClass("museumRewardComplete").data("rid",reward.id).html(`Purchase ${reward.purchaseCost()}`).appendTo(d);
+        }
+    });
 }
 
 function refreshMuseumInv() {
@@ -156,4 +220,24 @@ $(document).on("click",".museumDonate",(e) => {
     Museum.donate(containerid);
     refreshMuseumTop();
     refreshMuseumInv();
+});
+
+$(document).on("click",".museumRewardComplete",(e) => {
+    const rewardID = $(e.target).data("rid");
+    Museum.purchaseReward(rewardID);
+    showMuseumRewards();
+});
+
+$(document).on("click","#museumNavReward",(e) => {
+    e.preventDefault();
+    $museumNavReward.addClass("selected");
+    $museumNavCollection.removeClass("selected");
+    showMuseumRewards();
+});
+
+$(document).on("click","#museumNavCollection",(e) => {
+    e.preventDefault();
+    $museumNavReward.removeClass("selected");
+    $museumNavCollection.addClass("selected");
+    refreshMuseumTop();
 });

@@ -271,9 +271,9 @@ const Inventory = {
         const masterMod = item.isMastered() ? 2 : 1;
         const fortuneMod = FortuneManager.getProcModifier(item.type, item.lvl);
         const mods = {};
-        mods.good = miscLoadedValues.qualityCheck[1]*masterMod*fortuneMod[0];
-        mods.great = miscLoadedValues.qualityCheck[2]*masterMod*fortuneMod[1];
-        mods.epic = miscLoadedValues.qualityCheck[3]*masterMod*fortuneMod[2];
+        mods.good = (miscLoadedValues.qualityCheck[1]+Museum.goodChance())*masterMod*fortuneMod[0];
+        mods.great = (miscLoadedValues.qualityCheck[2]+Museum.greatChance())*masterMod*fortuneMod[1];
+        mods.epic = (miscLoadedValues.qualityCheck[3]+Museum.epicChance())*masterMod*fortuneMod[2];
         return mods;
     },
     removeFromInventoryUID(uniqueID) {
@@ -424,8 +424,7 @@ function refreshInventory() {
             $inventory.append(itemdiv);
             return;
         }
-        itemdiv.addClass("R"+item.rarity)
-        console.log(item);
+        itemdiv.addClass("R"+item.rarity);
         itemName.addClass("itemName").attr({"id": item.id, "r": item.rarity}).html(item.picName());
         itemRarity.addClass(`RT${item.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[item.rarity].toLowerCase()}`}).html(miscIcons.rarity);
         itemCost.addClass("tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(item.goldValue())}).html(item.goldValueFormatted());

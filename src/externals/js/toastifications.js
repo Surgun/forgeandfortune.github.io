@@ -282,6 +282,12 @@ const Notifications = {
         const heading = "Cannot perform resynthesis";
         const icon = "error";
         popToast(text,heading,icon);
+    },
+    cantAffordMuseumReward() {
+        const text = 'You do not have enough points to purchase this reward';
+        const heading = "Cannot afford Reward";
+        const icon = "error";
+        popToast(text,heading,icon);
     }
 }
 

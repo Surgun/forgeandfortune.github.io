@@ -49,32 +49,6 @@ class combatRoundParams {
     }
 }
 
-const $drLog = $("#drLog");
-
-const BattleLog = {
-    log : [],
-    addEntry(dungeonid,icon,m) {
-        if (dungeonid !== DungeonManager.dungeonView) return;
-        if (this.log.length >= 25) {
-            this.log.shift();
-        }
-        this.log.push(`${icon}&nbsp;&nbsp;${m}`);
-        if (CombatManager.refreshLater) return;
-        this.refresh();
-    },
-    clear() {
-        this.log = [];
-        $drLog.empty();
-    },
-    refresh() {
-        $drLog.empty();
-        this.log.forEach(m=> {
-            const d = $("<div/>").addClass("battleLog").html(m);
-            $drLog.prepend(d);
-        });
-    },
-}
-
 class Combatant {
     constructor (props) {
         Object.assign(this,props);
@@ -96,10 +70,8 @@ class Combatant {
     takeAttack(attack) {
         battleText(attack,this);
         const reducedDmg = Math.floor(attack.power * this.getProtection());
-        BattleLog.addEntry(attack.dungeonid,miscIcons.takeDamage,`${this.name} takes ${reducedDmg} damage`);
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);
-        if (this.hp === 0) BattleLog.addEntry(attack.dungeonid,miscIcons.dead,`${this.name} has fallen!`);
         this.buffTick("onHit");
     }
     takeDamage(dmg) {

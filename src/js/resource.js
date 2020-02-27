@@ -171,7 +171,6 @@ function refreshMaterial(matID) {
     $("#amt"+matID).html(formatToUnits(mat.amt,2));
     $("#dsbr"+matID).html(mat.amt);
     if (TinkerManager.tinkerMats().includes(matID)) refreshTinkerMats();
-    if (mat.id === "M002") refreshMonsterReward();
     if (mat.id !== "M001") return;
     $goldSidebarAmt.html(formatToUnits(mat.amt,2));
     $goldSidebar.addClass("tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(mat.amt)});

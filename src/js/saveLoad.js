@@ -63,7 +63,6 @@ function createSave() {
     saveFile["g"] = GuildManager.createSave();
     saveFile["al"] = Shop.createSave();
     saveFile["t"] = TinkerManager.createSave();
-    saveFile["mh"] = MonsterHall.createSave();
     saveFile["m"] = Museum.createSave();
     saveFile["saveTime"] = Date.now();
     return JSON.stringify(saveFile);
@@ -99,7 +98,6 @@ function loadGame() {
     if (typeof loadGame["g"] !== "undefined") GuildManager.loadSave(loadGame["g"]);
     if (typeof loadGame["al"] !== "undefined") Shop.loadSave(loadGame["al"]);
     if (typeof loadGame["t"] !== "undefined") TinkerManager.loadSave(loadGame["t"]);
-    if (typeof loadGame["mh"] !== "undefined") MonsterHall.loadSave(loadGame["mh"]);
     if (typeof loadGame["m"] !== "undefined") Museum.loadSave(loadGame["m"]);
     return true;
 }

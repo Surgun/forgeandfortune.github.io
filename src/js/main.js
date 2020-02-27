@@ -42,9 +42,6 @@ function afterLoad() {
     recipeList.recipeFilterString = "";
     recipeFilterList();
     populateTinkerRange();
-    initiateMonsterHall();
-    refreshMonsterReward();
-    refreshMonsterRewardLines();
     refreshCraftTimes();
     GuildManager.repopulateUnmastered();
     refreshAllRecipeMastery();

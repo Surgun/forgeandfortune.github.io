@@ -1,36 +1,5 @@
 "use strict";
 
-class floorTracker {
-    constructor (d001,d002,d003) {
-        this.d001 = d001;
-        this.d002 = d002;
-        this.d003 = d003;
-    }
-    createSave() {
-        const save = {};
-        save.d001 = this.d001;
-        save.d002 = this.d002;
-        save.d003 = this.d003;
-        return save;
-    }
-    loadSave(save) {
-        if (save.d001) this.d001 = save.d001;
-        if (save.d002) this.d002 = save.d002;
-        if (save.d003) this.d003 = save.d003;
-    }
-    setMax(id,floor) {
-        if (id === "D001") this.d001 = Math.max(this.d001,floor);
-        if (id === "D002") this.d002 = Math.max(this.d002,floor);
-        if (id === "D003") this.d003 = Math.max(this.d003,floor);
-    }
-    getMax(id) {
-        if (id === "D001") return this.d001;
-        if (id === "D002") return this.d002;
-        if (id === "D003") return this.d003;
-        return 1;
-    }
-}
-
 class Hero extends Combatant {
     constructor (props) {
         super(props);
@@ -48,12 +17,13 @@ class Hero extends Combatant {
         this.slot7 = null;
         this.image = '<img src="/assets/images/heroes/'+this.id+'.gif">';
         this.head = '<img src="/assets/images/heroes/heads/'+this.id+'.png">';
+        this.portrait = '<img src="/assets/images/heroes/portraits/'+this.id+'.png">';
         this.owned = false;
         this.inDungeon = false;
         this.protection = 0;
-        this.playbook = PlaybookManager.generatePlayBook(this.playbookTemplate);
+        this.playbook = PlaybookManager.generatePlayBook(this.startingPlaybook);
+        this.playbooks = [this.startingPlaybook];
         this.passiveSkill = null;
-        this.floorTracker = new floorTracker(1,1,1);
     }
     createSave() {
         const save = {};
@@ -79,7 +49,7 @@ class Hero extends Combatant {
         this.buffs.forEach(buff => {
             save.buffs.push(buff.createSave());
         });
-        save.floorTracker = this.floorTracker.createSave();
+        save.playbooks = this.playbooks;
         return save;
     }
     loadSave(save) {
@@ -120,8 +90,8 @@ class Hero extends Combatant {
                 this.buffs.push(newBuff);
             });
         }
+        if (save.playbooks !== undefined) this.playbooks = save.playbooks;
         this.owned = save.owned;
-        if (save.floorTracker) this.floorTracker.loadSave(save.floorTracker);
     }
     getPow() {
         const slots = this.getEquipSlots(true).map(s=>s.pow());
@@ -243,12 +213,6 @@ class Hero extends Combatant {
     }
     canEquipType(type) {
         return this.slot1Type.includes(type) || this.slot2Type.includes(type) || this.slot3Type.includes(type) || this.slot4Type.includes(type) || this.slot5Type.includes(type) || this.slot6Type.includes(type) || this.slot7Type.includes(type);
-    }
-    getMax(dungeonID) {
-        return this.floorTracker.getMax(dungeonID);
-    }
-    setMax(id,floor) {
-        this.floorTracker.setMax(id,floor);
     }
 }
 

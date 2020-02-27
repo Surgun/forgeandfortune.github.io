@@ -2,6 +2,7 @@
 //creates a party as outlined in DungeonManager. Initated with CreateParty();
 
 const $dtsBanner = $("#dtsBanner");
+const $dtsMobsCollection = $("#dtsMobsCollection");
 const $dtsDungeons = $("#dtsDungeons");
 const $dungeonTeamCollection = $("#dungeonTeamCollection");
 const $dtsBottom = $("#dtsBottom");
@@ -99,9 +100,9 @@ function startPartyCreation() {
     $("<div/>").addClass(`dts${area.id} dtsBackground`).css({"background-image": `url(/assets/images/dungeonpreviews/${area.id}.png)`}).appendTo($dtsBanner);
     $("<div/>").addClass(`dts${area.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
     //sorry richard i am using this space!!!
-    const dm = $("<div/>").addClass("dtsMobs").appendTo($dtsBanner);
+    $dtsMobsCollection.empty();
     dungeon.mobIDs.forEach(mobID => {
-        mobCard(mobID).appendTo(dm);
+        mobCard(mobID).appendTo(dtsMobsCollection);
     });
     //Possible Dungeons
     $dtsDungeons.empty();
@@ -134,7 +135,7 @@ function startPartyCreation() {
     }
     $dtsBottom.empty();
     //available heroes
-    const d1bot = $("<div/>").addClass("dtsTopHeader");
+    const d1bot = $("<div/>").addClass("dtsSelectHeader");
         const d1bota = $("<div/>").addClass("headingDetails").appendTo(d1bot);
         $("<div/>").addClass("headingTitle").html("Your Available Heroes").appendTo(d1bota);
         $("<div/>").addClass("headingDescription").html("Select the heroes to send on this adventure.").appendTo(d1bota);
@@ -178,6 +179,10 @@ $(document).on('click', "div.dungeonTeamCardClick", (e) => {
 $(document).on('click', "div.dungeonAvailableCardClick", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("heroid");
+    if (PartyCreator.heroes.includes(ID)) {
+        PartyCreator.removeMember(ID);
+        return;
+    }
     PartyCreator.addMember(ID);
     startPartyCreation(DungeonManager.dungeonCreatingID);
 });
@@ -253,8 +258,8 @@ function characterCard(prefix,dv,ID,status) {
 function mobCard(mobID) {
     const mob = MobManager.idToMob(mobID);
     const d = $("<div/>").addClass("dtsMobDiv");
-    $("<div/>").addClass("dtsMobName").html(mob.name).appendTo(d);
     $("<div/>").addClass("dtsMobPic").html(mob.image).appendTo(d);
+    $("<div/>").addClass("dtsMobName").html(mob.name).appendTo(d);
     generateSkillIcons(mob).appendTo(d);
     return d;
 }

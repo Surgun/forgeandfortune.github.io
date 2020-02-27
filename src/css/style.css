@@ -994,7 +994,7 @@ footer {
     overflow: auto;
 }
 
-.dungeonListingsHeadingContainer, .dtsTopHeader {
+.dungeonListingsHeadingContainer, .dtsSelectHeader {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -1162,7 +1162,7 @@ footer {
 
 .dungeonSelectionBanner {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .dtsBackground {
@@ -1219,20 +1219,20 @@ footer {
     background-color: var(--green-secondary);
 }
 
-.dungeonSelectionTop, .dungeonSelectionBottom {
+.dungeonSelectionTop, .dungeonSelectionBottom, .dtsMobs {
     padding: 10px;
     transform-origin: right;
     animation: scale-x-in var(--transition_linear);
 }
 
-.dungeonTeamCollection, .dungeonAvailableCollection {
+.dungeonTeamCollection, .dungeonAvailableCollection, .dtsMobsCollection {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
     padding: 10px;
 }
 
-.dungeonTeamCard, .dungeonAvailableCard, .dungeonNotAvailableCard {
+.dungeonTeamCard, .dungeonAvailableCard, .dungeonNotAvailableCard, .dtsMobDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1249,6 +1249,11 @@ footer {
     border-color: var(--border-tertiary);
 }
 
+.dtsMobDiv {
+    padding: 10px;
+    min-height: auto;
+}
+
 .noHeroDungeonSelect {
     padding: 10px;
     cursor: default;
@@ -1261,17 +1266,6 @@ footer {
 
 .dungeonNotAvailableCard {
     cursor: default;
-}
-
-.dungeonTeamImage, .dungeonAvailableImage, .dungeonNotAvailableImage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-    background-color: rgba(0,0,0,0.25);
-    border: 2px solid var(--border-primary);
-    border-radius: 10px;
 }
 
 .dungeonTeamCardClick, .dungeonAvailableCardClick, .dungeonNotAvailableCardClick {
@@ -1304,7 +1298,18 @@ footer {
     border-color: var(--green-tertiary);
 }
 
-.dungeonTeamImage > img, .dungeonAvailableImage > img, .dungeonNotAvailableImage > img {
+.dungeonTeamImage, .dungeonAvailableImage, .dungeonNotAvailableImage, .dtsMobPic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.25);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+}
+
+.dungeonTeamImage > img, .dungeonAvailableImage > img, .dungeonNotAvailableImage > img, .dtsMobPic > img {
     height: 64px;
 }
 
@@ -1313,7 +1318,7 @@ footer {
     opacity: .1;
 }
 
-.dungeonTeamName, .dungeonAvailableName, .dungeonNotAvailableName {
+.dungeonTeamName, .dungeonAvailableName, .dungeonNotAvailableName, .dtsMobName {
     width: 100%;
     margin-bottom: 5px;
     padding: 5px;

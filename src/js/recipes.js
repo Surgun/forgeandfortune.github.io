@@ -106,7 +106,6 @@ class Item{
         refreshCraftedCount();
         destroyTooltip(); // Removes stuck tooltip after mastering item on recipe card
         refreshProgress();
-        refreshMonsterReward();
         GuildManager.repopulateUnmastered();
         refreshAllRecipeMastery();
     }
@@ -136,7 +135,7 @@ class Item{
         return Object.keys(this.mcost)[0]
     }
     reducedCraft() {
-        return this.craftTime * MonsterHall.lineIncrease(this.type,0);
+        return this.craftTime;
     }
     masteryCost() {
         const amt = Math.max(this.minMastery,this.maxMastery-this.reductionMastery*this.craftCount);

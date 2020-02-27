@@ -66,24 +66,33 @@ function examineHero(ID) {
     $heroDetails.empty();
     $heroGearSlots.empty();
     const heroExamineTop = $("<div/>").addClass("heroExamineTop heroExamineContainer");
-    const d1 = $("<div/>").addClass("heroExamineName").html(hero.name);
-    const d2 = $("<div/>").addClass("heroExamineImage").html(hero.image);
-    const d3 = $("<div/>").addClass("heroExamineDescription").html(hero.description);
-    const d4 = $("<div/>").addClass("heroExamineLvlClassContainer");
+    $("<div/>").addClass("heroExamineName").html(hero.name).appendTo(heroExamineTop);
+    $("<div/>").addClass("heroExaminePortait").html(hero.portrait).appendTo(heroExamineTop);
+    $("<div/>").addClass("heroExamineImage").html(hero.image).appendTo(heroExamineTop);
+    $("<div/>").addClass("heroExamineDescription").html(hero.description).appendTo(heroExamineTop);
+    const d4 = $("<div/>").addClass("heroExamineLvlClassContainer").appendTo(heroExamineTop);
         $("<div/>").addClass("heroClassHeading").html("Hero Class").appendTo(d4);
         $("<div/>").addClass("heroClassText").html(hero.class).appendTo(d4);
-    const d5 = $("<div/>").addClass("heroAbilityContainer");
-        $("<div/>").addClass("heroAbilityHeading").html("Hero Ability").appendTo(d5);
-        $("<div/>").addClass("heroAbilityText").html(hero.abilityDesc).appendTo(d5);
-    heroExamineTop.append(d1,d2,d3,d4,d5);
     const heroExamineStats = $("<div/>").addClass("heroExamineStats heroExamineContainer");
-    const htd = $("<div/>").addClass("heroExamineHeading");
-    const htd1 = $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats");
-    heroExamineStats.append(htd.append(htd1));
+    $("<div/>").addClass("heroExamineHeading").appendTo(heroExamineStats);
+    $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats").appendTo(heroExamineStats);
     const stats = [hero.maxHP(),hero.getPow(), hero.getTech()];
     for (let i=0;i<stats.length;i++) {
         heroExamineStats.append(statRow(statName[i],stats[i],statDesc[i]));
     }
+    $("<div/>").addClass("heroExamineSkillsHeading").html("Available Playbooks").appendTo(heroExamineTop);
+    $("<div/>").addClass("heroExamineSkillsHeading").html("Unlock additional playbooks in the Market").appendTo(heroExamineTop);
+    const p = $("<div/>").addClass("heroExaminePlaybooks").appendTo(heroExamineTop);
+    hero.playbooks.forEach(playbookID => {
+        const playbook = PlaybookManager.idToPlaybook(playbookID);
+        const d = $("<div/>").addClass("playbookDiv").appendTo(p);
+        $("<div/>").addClass("playbookName").html(playbook.name).appendTo(d);
+        if (hero.playbook.id === playbookID) d.addClass("playbookSelected");
+        playbook.skillIDs().forEach(skillID => {
+            const skill = SkillManager.idToSkill(skillID);
+            $("<div/>").addClass("heroSelectSkill tooltip").attr({"data-tooltip":"skill_desc","data-tooltip-value":skill.id}).html(skill.icon).appendTo(d);
+        });
+    })
     const lowerDiv = $("<div/>").addClass("heroExamineEquip");
     const slots = hero.getEquipSlots();
     $.each(slots, (slotNum,equip) => {

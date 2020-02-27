@@ -45,13 +45,6 @@
     "recipeID": "R99610"
   },
   {
-    "id": "TB007",
-    "name": "Monster House",
-    "description": "Check out monsters you've encountered",
-    "shorthand": "monster",
-    "recipeID": "R99710"
-  },
-  {
     "id": "TB008",
     "name": "Museum",
     "description": "A permanent list of all your crafting achievements",

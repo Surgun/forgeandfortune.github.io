@@ -1,6 +1,7 @@
 [
   {
     "id": "PB0010",
+    "name": "Beorn Playbook",
     "skill1": "S0010",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -8,6 +9,7 @@
   },
   {
     "id": "PB0011",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -15,6 +17,7 @@
   },
   {
     "id": "PB0012",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -22,6 +25,7 @@
   },
   {
     "id": "PB0020",
+    "name": "Cedric Playbook",
     "skill1": "S0020",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -29,6 +33,7 @@
   },
   {
     "id": "PB0021",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -36,6 +41,7 @@
   },
   {
     "id": "PB0022",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -43,6 +49,7 @@
   },
   {
     "id": "PB0030",
+    "name": "Grim Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -50,6 +57,7 @@
   },
   {
     "id": "PB0031",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -57,6 +65,7 @@
   },
   {
     "id": "PB0032",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -64,6 +73,7 @@
   },
   {
     "id": "PB0040",
+    "name": "Lambug Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -71,6 +81,7 @@
   },
   {
     "id": "PB0041",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -78,6 +89,7 @@
   },
   {
     "id": "PB0042",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -85,6 +97,7 @@
   },
   {
     "id": "PB0050",
+    "name": "Zoe Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -92,6 +105,7 @@
   },
   {
     "id": "PB0051",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -99,6 +113,7 @@
   },
   {
     "id": "PB0052",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -106,6 +121,7 @@
   },
   {
     "id": "PB0060",
+    "name": "Neve Playbook",
     "skill1": "S0000",
     "skill2": "S1020",
     "skill3": "S0000",
@@ -113,6 +129,7 @@
   },
   {
     "id": "PB0061",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -120,6 +137,7 @@
   },
   {
     "id": "PB0062",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -127,6 +145,7 @@
   },
   {
     "id": "PB0070",
+    "name": "Titus Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -134,6 +153,7 @@
   },
   {
     "id": "PB0071",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -141,6 +161,7 @@
   },
   {
     "id": "PB0072",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -148,6 +169,7 @@
   },
   {
     "id": "PB0080",
+    "name": "Troy Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -155,6 +177,7 @@
   },
   {
     "id": "PB0081",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -162,6 +185,7 @@
   },
   {
     "id": "PB0082",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -169,6 +193,7 @@
   },
   {
     "id": "PB0090",
+    "name": "Alok Playbook",
     "skill1": "S0000",
     "skill2": "S2010",
     "skill3": "S0000",
@@ -176,6 +201,7 @@
   },
   {
     "id": "PB0091",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -183,6 +209,7 @@
   },
   {
     "id": "PB0092",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -190,6 +217,7 @@
   },
   {
     "id": "PB0100",
+    "name": "Grogmar Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -197,6 +225,7 @@
   },
   {
     "id": "PB0101",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -204,6 +233,7 @@
   },
   {
     "id": "PB0102",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -211,6 +241,7 @@
   },
   {
     "id": "PB0110",
+    "name": "Revere Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S2030",
@@ -218,6 +249,7 @@
   },
   {
     "id": "PB0111",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -225,6 +257,7 @@
   },
   {
     "id": "PB0112",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -232,6 +265,7 @@
   },
   {
     "id": "PB0120",
+    "name": "Caeda Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -239,6 +273,7 @@
   },
   {
     "id": "PB0121",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -246,6 +281,7 @@
   },
   {
     "id": "PB0122",
+    "name": null,
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",

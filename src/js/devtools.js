@@ -21,7 +21,6 @@ const devtools = {
         TownManager.fortuneStatus = BuildingState.built;
         TownManager.tinkerStatus = BuildingState.built;
         TownManager.synthStatus = BuildingState.built;
-        TownManager.monsterStatus = BuildingState.built;
         forceSave();
         location.replace('/');
     },
@@ -92,12 +91,6 @@ const devtools = {
             item.scale = 100;
             Inventory.addToInventory(item);
         })
-    },
-    testMonsterHall() {
-        MonsterHall.lvl = 2;
-        MobManager.monsterDB.forEach(mob => {
-            MonsterHall.addKill(mob.id);
-        });
     },
     suffixTest() {
         Inventory.inv.forEach(i=>{

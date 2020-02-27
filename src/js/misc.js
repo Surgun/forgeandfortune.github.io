@@ -3,6 +3,22 @@ const weeksInSeason = 4;
 const seasonsInYear = 4;
 const seasonWords = ["Spring","Summer","Fall","Winter"];
 
+class idAmt {
+    constructor (id,amt) {
+        this.id = id;
+        this.amt = amt;
+    }
+    createSave() {
+        const save = {};
+        save.id = this.id;
+        save.amt = this.amt;
+        return save;
+    }
+    loadSave(save) {
+        return;
+    }
+}
+
 function formatToUnits(number, precision) {
     const abbrev = ['', ' K', ' M', ' B', ' T', 'Q'];
     const unrangifiedOrder = Math.floor(Math.log10(Math.abs(number)) / 3)

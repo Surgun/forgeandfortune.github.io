@@ -86,18 +86,23 @@ const PartyCreator = {
     },
     setDungeon(dungeonid) {
         PartyCreator.dungeonSelect = dungeonid;
-        console.log(PartyCreator.dungeonSelect);
     }
 }
 
 function startPartyCreation() {
     const area = PartyCreator.areaSelect;
     if (PartyCreator.dungeonSelect === null) PartyCreator.setDungeon(area.lastOpen().id);
+    const dungeon = DungeonManager.dungeonByID(PartyCreator.dungeonSelect);
     $areaTeamSelect.show();
     //Team Banner
     $dtsBanner.empty();
     $("<div/>").addClass(`dts${area.id} dtsBackground`).css({"background-image": `url(/assets/images/dungeonpreviews/${area.id}.png)`}).appendTo($dtsBanner);
-    $("<div/>").addClass(`dts${area.id} dtsHeader`).html(area.name).appendTo($dtsBanner);
+    $("<div/>").addClass(`dts${area.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
+    //sorry richard i am using this space!!!
+    const dm = $("<div/>").addClass("dtsMobs").appendTo($dtsBanner);
+    dungeon.mobIDs.forEach(mobID => {
+        mobCard(mobID).appendTo(dm);
+    });
     //Possible Dungeons
     $dtsDungeons.empty();
     area.dungeons.forEach(dungeon => {
@@ -242,5 +247,14 @@ function characterCard(prefix,dv,ID,status) {
         if (status === "in_party") $("<div/>").addClass("heroStatus tooltip statusParty").attr({"data-tooltip": "hero_in_party"}).html(`<i class="fas fa-check"></i>`).appendTo(dclick);
         else console.error('Invalid status passed. Could not render proper status for hero card.');
     }
+    return d;
+}
+
+function mobCard(mobID) {
+    const mob = MobManager.idToMob(mobID);
+    const d = $("<div/>").addClass("dtsMobDiv");
+    $("<div/>").addClass("dtsMobName").html(mob.name).appendTo(d);
+    $("<div/>").addClass("dtsMobPic").html(mob.image).appendTo(d);
+    generateSkillIcons(mob).appendTo(d);
     return d;
 }

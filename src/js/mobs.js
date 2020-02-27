@@ -19,7 +19,6 @@ const MobManager = {
         const hp = (dungeon.hp + dungeon.floor * dungeon.hpGain);
         const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
         const mob = new Mob(mobTemplate, atk, hp);
-        MonsterHall.findMonster(mobID);
         return mob;
     },
 }

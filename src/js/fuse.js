@@ -25,7 +25,7 @@ class fuse {
         this.fuseTime = Math.min(this.fuseTime+ms,this.getMaxFuse());
     }
     getMaxFuse() {
-        return this.recipe.craftTime*MonsterHall.lineIncrease(this.recipe.type,0)*this.rarity;
+        return this.recipe.craftTime*this.rarity;
     }
     timeRemaining() {
         return this.getMaxFuse() - this.fuseTime;
@@ -143,7 +143,7 @@ const FusionManager = {
     getMaxFuse(uniqueIDProperties) {
         //this takes a uniqueIDProperties return (which is only from the fusion creation screen) to give fuse time
         const recipe = recipeList.idToItem(uniqueIDProperties.id);
-        return recipe.craftTime*MonsterHall.lineIncrease(recipe.type,0)*uniqueIDProperties.rarity;
+        return recipe.craftTime*uniqueIDProperties.rarity;
     }
 }
 

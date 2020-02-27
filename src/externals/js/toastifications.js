@@ -265,12 +265,6 @@ const Notifications = {
         const icon = 'info'; // Type of toast icon
         popToast(text,heading,icon);
     },
-    cantAffordLineUpgrade() {
-        const text = 'You do not have enough Monster Trophies.';
-        const heading = "Cannot afford Upgrade";
-        const icon = "error";
-        popToast(text,heading,icon);
-    },
     cantSmithMax() {
         const text = 'Item is at max enhancement';
         const heading = "Cannot smith item";

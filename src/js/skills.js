@@ -33,6 +33,9 @@ class playBookTemplate {
     constructor (props) {
         Object.assign(this, props);
     }
+    skillIDs() {
+        return [this.skill1,this.skill2,this.skill3,this.skill4];
+    }
 }
 
 class Skill {

@@ -187,6 +187,15 @@ $(document).on('click', "div.dungeonAvailableCardClick", (e) => {
     startPartyCreation(DungeonManager.dungeonCreatingID);
 });
 
+//potentially remove a hero in the party
+$(document).on('click', "div.dungeonNotAvailableCardClick", (e) => {
+    e.preventDefault();
+    const ID = $(e.currentTarget).attr("heroid");
+    if (!PartyCreator.heroes.includes(ID)) return;
+    PartyCreator.removeMember(ID);
+    startPartyCreation(DungeonManager.dungeonCreatingID);
+});
+
 //locking in a team to start a dungeon
 $(document).on('click', "#dungeonTeamButton", (e) => {
     e.preventDefault();

@@ -1245,13 +1245,22 @@ footer {
     transition: all var(--transition_ease-in-out);
 }
 
-.dungeonTeamCard:hover, .dungeonTeamCard:focus, .dungeonAvailableCard:hover, .dungeonAvailableCard:focus {
+.dungeonTeamCard:hover, .dungeonTeamCard:focus, .dungeonAvailableCard:hover, .dungeonAvailableCard:focus, .dungeonNotAvailableCard:hover, .dungeonNotAvailableCard:focus {
     border-color: var(--border-tertiary);
+}
+
+.noHeroDungeonSelect:hover, .noHeroDungeonSelect:focus, .dungeonNotAvailableCard:not(.partyHero):hover, .dungeonNotAvailableCard:not(.partyHero):focus {
+    border-color: var(--border-primary);
+}
+
+.dungeonNotAvailableCard:not(.partyHero) {
+    cursor: default;
 }
 
 .dtsMobDiv {
     padding: 10px;
     min-height: auto;
+    cursor: default;
 }
 
 .noHeroDungeonSelect {
@@ -1260,21 +1269,13 @@ footer {
     opacity: 0.5;
 }
 
-.noHeroDungeonSelect:hover, .noHeroDungeonSelect:focus {
-    border-color: var(--border-primary);
-}
-
-.dungeonNotAvailableCard {
-    cursor: default;
-}
-
 .dungeonTeamCardClick, .dungeonAvailableCardClick, .dungeonNotAvailableCardClick {
     position: relative;
     padding: 10px;
     width: 100%;
 }
 
-.heroStatus {
+.heroStatus, .heroPlaybook  {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -1285,7 +1286,7 @@ footer {
     background-color: var(--bg-primary);
     border: 2px solid var(--border-tertiary);
     border-radius: 100%;
-    box-shadow: 2px 2px 0 rgba(0,0,0,.5);
+    box-shadow: 0 2px 0 rgba(0,0,0,.5);
 }
 
 .heroStatus.statusDungeon {
@@ -1296,6 +1297,21 @@ footer {
 .heroStatus.statusParty {
     background-color: var(--green-secondary);
     border-color: var(--green-tertiary);
+}
+
+.heroPlaybook {
+    left: unset;
+    right: 5px;
+    color: var(--text-secondary);
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    cursor: pointer;
+    transition: all var(--transition_ease-in-out);
+}
+
+.heroPlaybook:hover, .heroPlaybook:focus {
+    color: var(--text-primary);
+    border-color: var(--border-tertiary);
 }
 
 .dungeonTeamImage, .dungeonAvailableImage, .dungeonNotAvailableImage, .dtsMobPic {

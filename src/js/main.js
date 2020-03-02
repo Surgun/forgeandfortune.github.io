@@ -45,46 +45,8 @@ function afterLoad() {
     refreshCraftTimes();
     GuildManager.repopulateUnmastered();
     refreshAllRecipeMastery();
-    loading_screen.finish();
+    preloader.contentLoaded();
 }
-
-/* Load Message Selection */
-const loadMessages = [
-    "Spreading misinformation.",
-    "Rewriting all of the code.",
-    "Delaying Version 0.4.",
-    "Getting ducks in a row.",
-    "Increasing functionality by 19%.",
-    "Making bad puns.",
-    "Learning Javascript.",
-    "Translating Latin.",
-    "Temporarily reviewing accounts.",
-    "Recoloring sprites.",
-    "Hyping Elites.",
-    "Leaking outdated information.",
-    "Rebooting idea machine.",
-    "Sourcing locally grown lettuce.",
-    "Finding cute animal gifs.",
-    "Introducing game breaking bugs.",
-    "Lowering self esteem.",
-    "Redesigning game...again.",
-    "Deleting important files.",
-    "2 + 2 = 4 - 1 = 3"
-];
-
-function selectLoadMessage() {
-    const randomNumber = Math.floor(Math.random()*loadMessages.length);
-    return loadMessages[randomNumber];
-}
-
-const loading_screen = pleaseWait({
-    logo: "/assets/images/site-logo.png",
-    backgroundColor: 'var(--bg-primary)',
-    loadingHtml: `
-    <div class="loadingMessage">${selectLoadMessage()}</div>
-    <div class="spinner"></div>
-    `
-});
 
 loadMisc(); //the others are loaded in order
 openTab("recipesTab");

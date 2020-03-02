@@ -1,0 +1,150 @@
+#preloader {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+#preloader.contentLoaded {
+  animation: fadeOut 300ms linear;
+}
+
+.preload-background {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: var(--bg-primary);
+  background: center / cover no-repeat url(/assets/images/loadbg.png);
+  opacity: 1;
+  transition: background-color 0.4s ease-in-out 0s;
+  z-index: -1; 
+}
+
+.preload-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.preload-logo {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  max-height: 500px;
+  background: center / contain no-repeat url(/assets/images/site-logo.png);
+}
+
+.preload-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 500px;
+  color: var(--highlight);
+  background-color: rgba(0,0,0,0.25);
+  border-radius: 5px;
+}
+
+.preload-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 35px auto;
+  border: 5px solid var(--border-tertiary);
+  border-right: 5px solid rgba(0,0,0,0.25);
+  border-bottom: 5px solid rgba(0,0,0,0.25);
+  border-left: 5px solid rgba(0,0,0,0.25);
+  border-radius: 100%;  
+  animation: spinner 1s 0s infinite ease-in-out;
+}
+
+.preload-extended-container.loaded {
+  display: none;
+}
+
+.preload-extended-container {
+  position: fixed;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  background-color: #21262b;
+  border: 1px solid #333f4a;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.25);
+  animation: fadeIn 300ms linear;
+  overflow: hidden;
+}
+
+.preload-extended-message {
+  padding: 20px;
+  color: var(--highlight);
+  text-align: center;
+}
+
+.preload-extended-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  background-color: #191c21;
+  border-top: 1px solid #333f4a;
+}
+
+.preload-extended-action {
+  margin: 0 5px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: rgba(255,255,255,0.1);
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.preload-extended-action:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+.preload-extended-action-delete:hover {
+  background-color: #af1a1a;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  } 
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  } 
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  } 
+  100% {
+    opacity: 1;
+  }
+}
+
+

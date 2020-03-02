@@ -38,9 +38,9 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <!-- CSS & Fonts -->
+    <link href="/css/preloader.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/externals/css/jquery.toast.css" rel="stylesheet">
-    <link href="/externals/css/please-wait.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <!-- Favicons & Application Styling -->
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-icon-57x57.png">
@@ -63,6 +63,28 @@
     <!-- End of Favicons & Application Styling -->
 </head>
 <body>
+    <section id="preloader">
+        <div class="preload-background"></div>
+        <div class="preload-container">
+
+            <div class="preload-logo"></div>
+
+            <div id="preload-message" class="preload-message">Initializing game...</div>
+
+            <div class="preload-spinner"></div>
+
+            <div id="preload-extended-container" class="preload-extended-container loaded">
+                <div class="preload-extended-message">
+                    Your game is taking an extended period to load. This may be due to a slow connection or corrupted data. If this continues, please download your save using the button below and share it with the developers on Discord. You may also delete your current save to start a new game.
+                </div>
+                <div class="preload-extended-actions">
+                    <button class="preload-extended-action preload-extended-action-copy" onclick="downloadSave()">Download Save</button>
+                    <button class="preload-extended-action preload-extended-action-delete" onclick="ClearSave()">Delete Data</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <main id="content">
         <section class="game-content">
             <div class="game-wrapper" role="main">
@@ -766,17 +788,16 @@
                 <li class="nav-item"><a href="https://www.patreon.com/forgeandfortune" rel="noopener">Support on Patreon</a></li>
             </ul>
         </nav>
-        <div class="mobile-notice">
+        <!-- <div class="mobile-notice">
             <img class="mobile-notice-logo" src="/assets/images/site-logo.png">
             <h1 class="mobile-notice-headline">Game not available on this device</h1>
             <p class="mobile-notice-description">Thanks for checking us out, unfortunately, we don't support a screen of this size. Please visit us on your computer, laptop or on a device with a larger screen.</p>
             <p class="mobile-notice-description">Feel free to check out our About &amp; Crediting page or join us on Discord.</p>
-        </div>
+        </div> -->
     </section>
     <div id="db-panel"></div>
     <div id="tooltips"></div>
-
-    <script type="text/javascript" src="/externals/js/please-wait.min.js"></script>
+    <script src="/js/preloader.js"></script>
     <script src="/externals/js/jquery.js"></script>
     <script src="/externals/js/jquery.toast.js"></script>
     <script src="/js/jsonDataLoader.js"></script>

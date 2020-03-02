@@ -34,5 +34,11 @@
     "icon": "<i class=\"fas fa-file-edit\"></i>",
     "title": "Patch Notes",
     "description": "Read the latest additions, improvements and changes made to Forge & Fortune."
+  },
+  {
+    "id": "playbook",
+    "icon": "<i class=\"fas fa-file-edit\"></i>",
+    "title": "Hero Playbook",
+    "description": "Playbook"
   }
 ]

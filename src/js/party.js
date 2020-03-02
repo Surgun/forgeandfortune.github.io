@@ -144,7 +144,7 @@ function startPartyCreation() {
     HeroManager.ownedHeroes().forEach(hero => {
         //if (dungeon.bannedHero.includes(hero.id)) characterCard("heroBanned dungeonNotAvailable",hero.uniqueid,hero.id, "Banned from Here").appendTo(d2);
         if (hero.inDungeon) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"in_dungeon").appendTo(d2);
-        else if (PartyCreator.heroes.includes(hero.id)) characterCard("partyHero dungeonNotAvailable",hero.uniqueid,hero.id, "in_party").appendTo(d2);
+        else if (PartyCreator.heroes.includes(hero.id)) characterCard("partyHero dungeonNotAvailable",hero.uniqueid,hero.id,"in_party").appendTo(d2);
         else characterCard("dungeonAvailable",hero.uniqueid,hero.id,null).appendTo(d2);
     });
     $dtsBottom.append(d2);
@@ -179,10 +179,6 @@ $(document).on('click', "div.dungeonTeamCardClick", (e) => {
 $(document).on('click', "div.dungeonAvailableCardClick", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("heroid");
-    if (PartyCreator.heroes.includes(ID)) {
-        PartyCreator.removeMember(ID);
-        return;
-    }
     PartyCreator.addMember(ID);
     startPartyCreation(DungeonManager.dungeonCreatingID);
 });
@@ -238,6 +234,7 @@ function characterCard(prefix,dv,ID,status) {
     const hero = HeroManager.idToHero(ID);
     $("<div/>").addClass(prefix+"Image").html(hero.image).appendTo(dclick);
     $("<div/>").addClass(prefix+"Name").html(hero.name).appendTo(dclick);
+    $("<div/>").addClass(`${prefix}Playbook heroPlaybook tooltip`).data("heroID",ID).attr({"data-tooltip": "hero_playbook", "data-dialog-id": "playbook"}).html(`<i class="fas fa-book"></i>`).appendTo(dclick);
     const d3 = $("<div/>").addClass(prefix+"Stats").appendTo(dclick);
         hpStat.addClass(`${prefix}HP tooltip`).attr("data-tooltip","hp").html(`${miscIcons.hp}`).appendTo(d3);
             hpStatValue.html(`${hero.maxHP()}`).appendTo(hpStat);
@@ -254,6 +251,41 @@ function characterCard(prefix,dv,ID,status) {
     }
     return d;
 }
+
+function renderHeroDialogActions(hero) {
+    const playbooks = PlaybookManager.playbookDB.filter(playbook => hero.playbooks.includes(playbook.id));
+    const contentTabContainer = $("<div/>").addClass('contentTabContainer');
+    playbooks.forEach(playbook => {
+        $("<div/>").addClass('contentTab').html(playbook.name).appendTo(contentTabContainer);
+    });
+    return contentTabContainer;
+}
+
+function setHeroDialogOpen(heroID) {
+    const hero = HeroManager.idToHero(heroID);
+    // Dialog Parent Containers
+    const dialogContainer = $("<div/>").attr({id: 'dialogContainer'}).addClass('dialogContainer').appendTo(document.body);
+    const dialogBoxContainer = $("<div/>").addClass('dialogContent dialogOpening').appendTo(dialogContainer);
+    // Dialog Upper Content
+    const dialogClose = $("<div/>").attr({role: "button", tabindex: 1, 'aria-label': "Close Dialog"}).addClass('dialogClose').html('<i class="fas fa-times"></i>').appendTo(dialogBoxContainer);
+    const dialogTitle = $("<div/>").addClass('dialogTitle').appendTo(dialogBoxContainer);
+      $("<div/>").addClass('dialogTitleIcon').html(hero.image).appendTo(dialogTitle);
+      $("<div/>").addClass('dialogTitleText').html(`${hero.name}'s Playbooks`).appendTo(dialogTitle);
+    const dialogContentContainer = $("<div/>").addClass('dialogContentContainer').appendTo(dialogBoxContainer);
+    if (hero.description) $("<div/>").addClass('dialogDescription').html(hero.description).appendTo(dialogContentContainer);
+    const dialogActions = renderHeroDialogActions(hero);
+    dialogActions.appendTo(dialogContentContainer);
+    // Settings update
+    settings.dialogStatus = 1;
+    saveSettings();
+  }
+
+$(document).on('click', '.heroPlaybook', (e) => {
+    e.stopPropagation();
+    const id = $(e.currentTarget).attr("data-dialog-id");
+    const heroID = $(e.currentTarget).data("heroID");
+    if (settings.dialogStatus === 0 && id) setHeroDialogOpen(heroID);
+  });
 
 function mobCard(mobID) {
     const mob = MobManager.idToMob(mobID);

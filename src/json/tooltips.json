@@ -292,5 +292,12 @@
     "description": "#description#",
     "icon": "#icon#",
     "type": "buff"
+  },
+  {
+    "id": "hero_playbook",
+    "title": "Hero Playbook",
+    "description": "View and/or change your current hero playbook.",
+    "icon": "<i class=\"fas fa-book\"></i>",
+    "type": "static"
   }
 ]

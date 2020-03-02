@@ -46,6 +46,7 @@ function loadRecipes() {
             recipeList.addItem(item);
         });
         loadWorkers();
+        preloader.setMessage('Populating recipes...');
     });
 };
 
@@ -107,6 +108,7 @@ function loadHeroes() {
             HeroManager.addHero(hero);
         });
         loadGuilds();
+        preloader.setMessage('Gathering your heroes...');
     });
 }
 
@@ -167,6 +169,7 @@ function loadDungeons() {
             DungeonManager.addDungeon(event);
         });
         loadTinker();
+        preloader.setMessage('Crawling the dungeons...');
     });
 }
 
@@ -215,6 +218,7 @@ function loadTooltips() {
             TooltipManager.addTooltip(tooltip);
         });
         loadMuseum();
+        preloader.setMessage('Informing the uninformed...');
     });
 }
 
@@ -227,5 +231,6 @@ function loadMuseum() {
             Museum.addReward(reward);
         });
         afterLoad();
+        preloader.setMessage('Finalizing your progress...');
     });
 }

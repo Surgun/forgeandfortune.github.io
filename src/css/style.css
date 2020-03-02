@@ -86,7 +86,7 @@ body {
 }
   
 #preloader.contentLoaded {
-    animation: fade-out 0.3s linear;
+    animation: fade-out 0.3s linear forwards;
 }
   
 .preload-background {
@@ -99,7 +99,7 @@ body {
     opacity: 1;
     transition: background-color 0.4s ease-in-out 0s;
     z-index: -1; 
-    animation: fade-in 0.5s linear;
+    animation: fade-in 0.3s linear;
 }
   
 .preload-container {
@@ -108,7 +108,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    animation: fade-in 0.5s linear;
+    animation: fade-in 0.3s linear;
 }
   
 .preload-logo {

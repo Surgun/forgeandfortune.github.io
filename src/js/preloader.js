@@ -9,23 +9,23 @@ const preloaderExtended = document.querySelector('#preload-extended-container');
 const preloader = {
   loaded: false,
   contentLoading() {
-    this.loaded = false,
+    this.loaded = false;
     content.style.display = 'none';
-    preloaderContent.style.display = ''
+    preloaderContent.style.display = '';
     setTimeout(() => {
-      if (!this.loaded) preloaderExtended.classList.remove('loaded')
+      if (!this.loaded) preloaderExtended.classList.remove('loaded');
     }, 25000)
   },
   contentLoaded() {
-    this.loaded = true,
-    preloaderContent.classList.add('contentLoaded')
+    this.loaded = true;
+    preloaderContent.classList.add('contentLoaded');
     setTimeout(() => {
-      content.style.display = '',
-      preloaderContent.style.display = 'none'
+      content.style.display = '';
+      preloaderContent.style.display = 'none';
     }, 300)
   },
   setMessage(message) {
-    preloaderMessage.textContent = message
+    preloaderMessage.textContent = message;
   }
 }
 

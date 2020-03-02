@@ -5565,12 +5565,30 @@ span.beta-tag {
 
 /* Animation Keyframes */
 
+@keyframes spinner {
+    0% {
+      transform: rotate(0);
+    } 
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
 @keyframes fade-in {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+      opacity: 1;
+    } 
+    100% {
+      opacity: 0;
     }
 }
 

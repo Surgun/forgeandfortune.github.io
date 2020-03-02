@@ -14,7 +14,7 @@ const preloader = {
     preloaderContent.style.display = ''
     setTimeout(() => {
       if (!this.loaded) preloaderExtended.classList.remove('loaded')
-    }, 10000)
+    }, 25000)
   },
   contentLoaded() {
     this.loaded = true,

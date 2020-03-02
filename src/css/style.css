@@ -81,6 +81,7 @@ body {
     left: 0;
     right: 0;
     top: 0;
+    background-color: var(--bg-primary);
     z-index: 10000;
 }
   
@@ -94,11 +95,11 @@ body {
     left: 0;
     right: 0;
     top: 0;
-    background-color: var(--bg-primary);
     background: center / cover no-repeat url(/assets/images/loadbg.png);
     opacity: 1;
     transition: background-color 0.4s ease-in-out 0s;
     z-index: -1; 
+    animation: fade-in 0.5s linear;
 }
   
 .preload-container {
@@ -107,6 +108,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    animation: fade-in 0.5s linear;
 }
   
 .preload-logo {

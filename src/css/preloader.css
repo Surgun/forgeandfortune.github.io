@@ -4,10 +4,11 @@
   left: 0;
   right: 0;
   top: 0;
+  z-index: 10000;
 }
 
 #preloader.contentLoaded {
-  animation: fadeOut 300ms linear;
+  animation: fadeOut 0.3s linear;
 }
 
 .preload-background {

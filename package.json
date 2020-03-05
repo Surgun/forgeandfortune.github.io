@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postcss": "postcss src/css -d public/css",
-    "prepare-build": "babel src -d public --ignore \"src/externals/\" --source-maps",
+    "prepare-build": "babel public -d public --ignore \"public/externals/\" --source-maps",
     "build": "npm-run-all cpx postcss prepare-build",
     "live-server": "live-server src",
     "start": "npm-run-all live-server",
-    "cpx": "cpx \"src/**/*\" public"
+    "cpx": "cpx \"src/**/!(devtools.js)\" public"
   },
   "repository": {
     "type": "git",

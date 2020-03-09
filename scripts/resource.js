@@ -174,10 +174,3 @@ function hardMatRefresh() {
         }
     })
 }
-
-$(document).on("click",".material",(e) => {
-    e.preventDefault();
-    tabClick(e, "recipesTab");
-    const matID = $(e.currentTarget).attr("id");
-    initializeRecipes(matID,"default");
-});

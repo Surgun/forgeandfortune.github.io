@@ -302,8 +302,9 @@ const Inventory = {
         achievementStats.gold(gold);
         ResourceManager.addMaterial("M001",gold,skipAnimation);
     },
-    listbyType(types) {
-        return this.nonblank().filter(r=>types.includes(r.type));
+    listbyType(type) {
+        console.log(type);
+        return this.nonblank().filter(r=>r.type === type);
     },
     containerToItem(containerID) {
         return this.nonblank().find(r=>r.containerID===containerID)
@@ -325,17 +326,23 @@ const Inventory = {
         }
         refreshInventoryPlaces()
     },
-    getMaxPowByTypes(types) {
+    getMaxPowByType(type) {
         //given a list of types, return highest power
-        const pows = this.inv.filter(i => i !== null && types.includes(i.type)).map(p => p.pow());
+        const pows = this.inv.filter(i => i !== null && i.type === type).map(p => p.pow());
         if (pows.length === 0) return 0;
         return Math.max(...pows);
     },
-    getMaxHPByTypes(types) {
+    getMaxHPByType(type) {
         //given a list of types, return highest power
-        const hps = this.inv.filter(i => i !== null && types.includes(i.type)).map(p => p.hp());
+        const hps = this.inv.filter(i => i !== null && i.type === type).map(p => p.hp());
         if (hps.length === 0) return 0;
         return Math.max(...hps);
+    },
+    getMaxTechByType(type) {
+        //given a list of types, return highest power
+        const techs = this.inv.filter(i => i !== null && i.type === type).map(p => p.tech());
+        if (techs.length === 0) return 0;
+        return Math.max(...techs);
     },
     sellCommons() {
         this.inv.forEach((ic,indx) => {

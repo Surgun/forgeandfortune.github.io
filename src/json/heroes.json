@@ -6,27 +6,13 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "slot1Type": [
-      "Heavy"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Belts"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Heavy",
+    "slot2Type": "Helmets",
+    "slot3Type": "Gauntlets",
+    "slot4Type": "Armor",
+    "slot5Type": "Shields",
+    "slot6Type": "Belts",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0010",
     "description": "Beorn is the model all young warriors strive to become.  He's quite the celebrity."
   },
@@ -37,27 +23,13 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "slot1Type": [
-      "Heavy"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Belts"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Heavy",
+    "slot2Type": "Helmets",
+    "slot3Type": "Gauntlets",
+    "slot4Type": "Armor",
+    "slot5Type": "Shields",
+    "slot6Type": "Belts",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0020",
     "description": "Cedric's parents died mysteriously, and will do anything to find out what happened."
   },
@@ -68,27 +40,13 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "slot1Type": [
-      "Heavy"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Belts"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Heavy",
+    "slot2Type": "Helmets",
+    "slot3Type": "Gauntlets",
+    "slot4Type": "Armor",
+    "slot5Type": "Shields",
+    "slot6Type": "Belts",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0030",
     "description": "Grim knows what happened to Cedric's parents, but must keep the secret at all costs."
   },
@@ -99,27 +57,13 @@
     "type": "Might",
     "initialHP": 50,
     "initialPow": 10,
-    "slot1Type": [
-      "Heavy"
-    ],
-    "slot2Type": [
-      "Helmets"
-    ],
-    "slot3Type": [
-      "Gauntlets"
-    ],
-    "slot4Type": [
-      "Armor"
-    ],
-    "slot5Type": [
-      "Shields"
-    ],
-    "slot6Type": [
-      "Belts"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Heavy",
+    "slot2Type": "Helmets",
+    "slot3Type": "Gauntlets",
+    "slot4Type": "Armor",
+    "slot5Type": "Shields",
+    "slot6Type": "Belts",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0040",
     "description": "Lambug's family are poor fisherman, and she's looking to improve her lot in life."
   },
@@ -130,27 +74,13 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "slot1Type": [
-      "Arcane"
-    ],
-    "slot2Type": [
-      "Hats"
-    ],
-    "slot3Type": [
-      "Gloves"
-    ],
-    "slot4Type": [
-      "Cloaks"
-    ],
-    "slot5Type": [
-      "Tomes"
-    ],
-    "slot6Type": [
-      "Pendants"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Arcane",
+    "slot2Type": "Hats",
+    "slot3Type": "Gloves",
+    "slot4Type": "Cloaks",
+    "slot5Type": "Tomes",
+    "slot6Type": "Pendants",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0050",
     "description": "Zoe was born with the gift of magic, and is unaware of the sheer power she possesses."
   },
@@ -161,27 +91,13 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "slot1Type": [
-      "Arcane"
-    ],
-    "slot2Type": [
-      "Hats"
-    ],
-    "slot3Type": [
-      "Gloves"
-    ],
-    "slot4Type": [
-      "Cloaks"
-    ],
-    "slot5Type": [
-      "Tomes"
-    ],
-    "slot6Type": [
-      "Pendants"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Arcane",
+    "slot2Type": "Hats",
+    "slot3Type": "Gloves",
+    "slot4Type": "Cloaks",
+    "slot5Type": "Tomes",
+    "slot6Type": "Pendants",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0060",
     "description": "Neve's goal in life is to spread the word of love, peace and harmony through magic."
   },
@@ -192,27 +108,13 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "slot1Type": [
-      "Arcane"
-    ],
-    "slot2Type": [
-      "Hats"
-    ],
-    "slot3Type": [
-      "Gloves"
-    ],
-    "slot4Type": [
-      "Cloaks"
-    ],
-    "slot5Type": [
-      "Tomes"
-    ],
-    "slot6Type": [
-      "Pendants"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Arcane",
+    "slot2Type": "Hats",
+    "slot3Type": "Gloves",
+    "slot4Type": "Cloaks",
+    "slot5Type": "Tomes",
+    "slot6Type": "Pendants",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0070",
     "description": "Titus is totally a human, with real human skin and hair and everything."
   },
@@ -223,27 +125,13 @@
     "type": "Mind",
     "initialHP": 25,
     "initialPow": 20,
-    "slot1Type": [
-      "Arcane"
-    ],
-    "slot2Type": [
-      "Hats"
-    ],
-    "slot3Type": [
-      "Gloves"
-    ],
-    "slot4Type": [
-      "Cloaks"
-    ],
-    "slot5Type": [
-      "Tomes"
-    ],
-    "slot6Type": [
-      "Pendants"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Arcane",
+    "slot2Type": "Hats",
+    "slot3Type": "Gloves",
+    "slot4Type": "Cloaks",
+    "slot5Type": "Tomes",
+    "slot6Type": "Pendants",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0080",
     "description": "Troy is a magician's apprentice, looking to make a name for himself."
   },
@@ -254,27 +142,13 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "slot1Type": [
-      "Light"
-    ],
-    "slot2Type": [
-      "Masks"
-    ],
-    "slot3Type": [
-      "Shoes"
-    ],
-    "slot4Type": [
-      "Vests"
-    ],
-    "slot5Type": [
-      "Thrown"
-    ],
-    "slot6Type": [
-      "Rings"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Light",
+    "slot2Type": "Masks",
+    "slot3Type": "Shoes",
+    "slot4Type": "Vests",
+    "slot5Type": "Thrown",
+    "slot6Type": "Rings",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0090",
     "description": "Alok comes from a wealthy family, and enjoys stealing worthless items from the poor."
   },
@@ -285,27 +159,13 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "slot1Type": [
-      "Light"
-    ],
-    "slot2Type": [
-      "Masks"
-    ],
-    "slot3Type": [
-      "Shoes"
-    ],
-    "slot4Type": [
-      "Vests"
-    ],
-    "slot5Type": [
-      "Thrown"
-    ],
-    "slot6Type": [
-      "Rings"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Light",
+    "slot2Type": "Masks",
+    "slot3Type": "Shoes",
+    "slot4Type": "Vests",
+    "slot5Type": "Thrown",
+    "slot6Type": "Rings",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0100",
     "description": "Grogmar has a long list of offenses, and is hoping they don't catch up with him."
   },
@@ -316,27 +176,13 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "slot1Type": [
-      "Light"
-    ],
-    "slot2Type": [
-      "Masks"
-    ],
-    "slot3Type": [
-      "Shoes"
-    ],
-    "slot4Type": [
-      "Vests"
-    ],
-    "slot5Type": [
-      "Thrown"
-    ],
-    "slot6Type": [
-      "Rings"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Light",
+    "slot2Type": "Masks",
+    "slot3Type": "Shoes",
+    "slot4Type": "Vests",
+    "slot5Type": "Thrown",
+    "slot6Type": "Rings",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0110",
     "description": "Revere has nothing to prove, because she knows the truth: she can do anything."
   },
@@ -347,27 +193,13 @@
     "type": "Moxie",
     "initialHP": 35,
     "initialPow": 15,
-    "slot1Type": [
-      "Light"
-    ],
-    "slot2Type": [
-      "Masks"
-    ],
-    "slot3Type": [
-      "Shoes"
-    ],
-    "slot4Type": [
-      "Vests"
-    ],
-    "slot5Type": [
-      "Thrown"
-    ],
-    "slot6Type": [
-      "Rings"
-    ],
-    "slot7Type": [
-      "Trinkets"
-    ],
+    "slot1Type": "Light",
+    "slot2Type": "Masks",
+    "slot3Type": "Shoes",
+    "slot4Type": "Vests",
+    "slot5Type": "Thrown",
+    "slot6Type": "Rings",
+    "slot7Type": "Trinkets",
     "startingPlaybook": "PB0120",
     "description": "Caeda uses both her charm and charisma to get almost anything she wants."
   }

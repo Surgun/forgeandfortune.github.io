@@ -187,6 +187,8 @@ $(document).on('click', "div.dungeonAvailableCardClick", (e) => {
 $(document).on('click', "div.dungeonNotAvailableCardClick", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("heroid");
+    const hero = HeroManager.idToHero(ID);
+    console.log(ID,hero.name);
     if (!PartyCreator.heroes.includes(ID)) return;
     PartyCreator.removeMember(ID);
     startPartyCreation(DungeonManager.dungeonCreatingID);

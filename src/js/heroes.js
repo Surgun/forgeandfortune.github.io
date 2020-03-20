@@ -8,13 +8,7 @@ class Hero extends Combatant {
         this.pow = this.initialPow;
         this.critdmg = 1.5;
         this.unitType = "hero";
-        this.slot1 = null;
-        this.slot2 = null;
-        this.slot3 = null;
-        this.slot4 = null;
-        this.slot5 = null;
-        this.slot6 = null;
-        this.slot7 = null;
+        this.gearSlots = this.populateGearSlots();
         this.image = '<img src="/assets/images/heroes/'+this.id+'.gif">';
         this.head = '<img src="/assets/images/heroes/heads/'+this.id+'.png">';
         this.portrait = '<img src="/assets/images/heroes/portraits/'+this.id+'.png">';
@@ -30,20 +24,10 @@ class Hero extends Combatant {
         save.id = this.id;
         save.hp = this.hp;
         save.inDungeon = this.inDungeon;
-        if (this.slot1 === null) save.slot1 = null;
-        else save.slot1 = this.slot1.createSave();
-        if (this.slot2 === null) save.slot2 = null;
-        else save.slot2 = this.slot2.createSave();
-        if (this.slot3 === null) save.slot3 = null;
-        else save.slot3 = this.slot3.createSave();
-        if (this.slot4 === null) save.slot4 = null;
-        else save.slot4 = this.slot4.createSave();
-        if (this.slot5 === null) save.slot5 = null;
-        else save.slot5 = this.slot5.createSave();
-        if (this.slot6 === null) save.slot6 = null;
-        else save.slot6 = this.slot6.createSave();
-        if (this.slot7 === null) save.slot7 = null;
-        else save.slot7 = this.slot7.createSave();
+        save.gearSlots = [];
+        this.gearSlots.forEach(gearSlot => {
+            save.gearSlots.push(gearSlot.createSave());
+        });
         save.owned = this.owned;
         save.buffs = [];
         this.buffs.forEach(buff => {
@@ -55,164 +39,125 @@ class Hero extends Combatant {
     loadSave(save) {
         this.hp = save.hp;
         this.inDungeon = save.inDungeon;
-        if (save.slot1 !== null) {
-            this.slot1 = new itemContainer(save.slot1.id,save.slot1.rarity);
-            this.slot1.loadSave(save.slot1);
-        }
-        if (save.slot2 !== null) {
-            this.slot2 = new itemContainer(save.slot2.id,save.slot2.rarity);
-            this.slot2.loadSave(save.slot2);
-        }
-        if (save.slot3 !== null) {
-            this.slot3 = new itemContainer(save.slot3.id,save.slot3.rarity);
-            this.slot3.loadSave(save.slot3);
-        }
-        if (save.slot4 !== null) {
-            this.slot4 = new itemContainer(save.slot4.id,save.slot4.rarity);
-            this.slot4.loadSave(save.slot4);
-        }
-        if (save.slot5 !== null) {
-            this.slot5 = new itemContainer(save.slot5.id,save.slot5.rarity);
-            this.slot5.loadSave(save.slot5);
-        }
-        if (save.slot6 !== null) {
-            this.slot6 = new itemContainer(save.slot6.id,save.slot6.rarity);
-            this.slot6.loadSave(save.slot6);
-        }
-        if (save.slot7 !== null && save.slot7 !== undefined) {
-            this.slot7 = new itemContainer(save.slot7.id,save.slot7.rarity);
-            this.slot7.loadSave(save.slot7);
-        }
-        if (save.buffs !== undefined) {
-            save.buffs.forEach(buff => {
-                const newBuff = BuffManager.generateSaveBuff(buff.id,this,buff.power);
-                newBuff.loadSave(buff);
-                this.buffs.push(newBuff);
-            });
-        }
+        save.gearSlots.forEach((gearSlot,i) => {
+            this.gearSlots[i].loadSave(gearSlot);
+        });
         if (save.playbooks !== undefined) this.playbooks = save.playbooks;
         this.owned = save.owned;
     }
+    populateGearSlots() {
+        const gearslots = [];
+        for (let i=1;i<8;i++) {
+            gearslots.push(new gearSlot(this[`slot${i}Type`]));
+        }
+        return gearslots;
+    }
     getPow() {
-        const slots = this.getEquipSlots(true).map(s=>s.pow());
-        const powerFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a+b);
-        return this.initialPow + powerFromGear + this.getBuffPower();
+        return this.initialPow + this.gearSlots.map(g=>g.pow()).reduce((a,b) => a+b) + this.getBuffPower();
     }
     maxHP() {
-        const slots = this.getEquipSlots(true).map(s=>s.hp());
-        const hpFromGear = slots.length === 0 ? 0 : slots.reduce((a,b) => a + b);
-        return this.initialHP + hpFromGear + this.getBuffMaxHP();
+        return this.initialHP + this.gearSlots.map(g=>g.hp()).reduce((a,b) => a+b) + this.getBuffMaxHP();
     }
     getTech() {
-        const slots = this.getEquipSlots(true).map(s=>s.tech());
-        if (slots.length === 0) return 0;
-        return slots.reduce((a,b) => a+b);
+        return this.gearSlots.map(g=>g.tech()).reduce((a,b) => a+b) + this.getBuffTech();
     }
     getAdjPow(tech) {
         if (tech) return Math.floor(this.getPow() + this.getTech());
         return Math.floor(this.getPow());
     }
-    getPowSlot(slot) {
-        const slots = this.getEquipSlots();
-        if (slots[slot] === null) return 0;
-        return slots[slot].pow();
-    }
-    getHPSlot(slot) {
-        const slots = this.getEquipSlots();
-        if (slots[slot] === null) return 0;
-        return slots[slot].hp();
-    }
     getEquipSlots(nonblank) {
-        //return an object with 
-        const slots = [this.slot1,this.slot2,this.slot3,this.slot4,this.slot5,this.slot6,this.slot7];
-        if (!nonblank) return slots;
-        return slots.filter(s=>s!==null && s!==undefined);
+        if (nonblank) return this.gearSlots.map(g=>g.gear).filter(s => s !== null);
+        else return this.gearSlots.map(g=>g.gear);
     }
-    equip(item,slot) {
-        if (slot === 0) this.slot1 = item;
-        if (slot === 1) this.slot2 = item;
-        if (slot === 2) this.slot3 = item;
-        if (slot === 3) this.slot4 = item;
-        if (slot === 4) this.slot5 = item;
-        if (slot === 5) this.slot6 = item;
-        if (slot === 6) this.slot7 = item;
+    equip(container) {
+        const gearSlot = this.getSlot(container.type);
+        if (gearSlot !== undefined) gearSlot.setGear(container);
     }
-    removeSlot(slot) {
-        if (slot === 0) this.slot1 = null;
-        if (slot === 1) this.slot2 = null;
-        if (slot === 2) this.slot3 = null;
-        if (slot === 3) this.slot4 = null;
-        if (slot === 4) this.slot5 = null;
-        if (slot === 5) this.slot6 = null;
-        if (slot === 6) this.slot7 = null;
+    remove(type) {
+        const gearSlot = this.getSlot(type);
+        if (gearSlot !== undefined) gearSlot.removeGear();
     }
-    slotTypesByNum(num) {
-        return this.getSlotTypes()[num];
+    slotEmpty(type) {
+        const gearSlot = this.getSlot(type);
+        if (gearSlot === undefined) return true;
+        return gearSlot.empty();
     }
-    getSlotTypes() {
-        return [this.slot1Type,this.slot2Type,this.slot3Type,this.slot4Type,this.slot5Type,this.slot6Type,this.slot7Type];
+    getSlot(type) {
+        return this.gearSlots.find(g=>g.type === type);
     }
-    slotTypeIcons(num) {
-        let s = ""
-        this.slotTypesByNum(num).forEach(slot => {
-            s += slot.toUpperCase() + "<br>";
-        })
-        return s;
-    }
-    slotEmpty(slot) {
-        return this.getEquipSlots()[slot] === null;
-    }
-    getSlot(slot) {
-        return this.getEquipSlots()[slot];
-    }
-    unequip(slot) {
+    unequip(type) {
         if (Inventory.full()) {
             Notifications.inventoryFull();
             return;
         }
-        const item = this.getSlot(slot);
-        if (item === null) return;
-        this.removeSlot(slot);
-        Inventory.addToInventory(item);
-    }
-    currenEquipByType(type) {
-        if (this.slot1Type.includes(type)) return this.slot1;
-        if (this.slot2Type.includes(type)) return this.slot2;
-        if (this.slot3Type.includes(type)) return this.slot3;
-        if (this.slot4Type.includes(type)) return this.slot4;
-        if (this.slot5Type.includes(type)) return this.slot5;
-        if (this.slot6Type.includes(type)) return this.slot6;
-        if (this.slot7Type.includes(type)) return this.slot7;
-        return null;
+        const item = this.getSlot(type);
+        if (item === undefined) return;
+        Inventory.addToInventory(item.gear);
+        this.remove(type);
     }
     hasEquip(type) {
-        if (this.slot1Type.includes(type)) return this.slot1 !== null;
-        if (this.slot2Type.includes(type)) return this.slot2 !== null;
-        if (this.slot3Type.includes(type)) return this.slot3 !== null;
-        if (this.slot4Type.includes(type)) return this.slot4 !== null;
-        if (this.slot5Type.includes(type)) return this.slot5 !== null;
-        if (this.slot6Type.includes(type)) return this.slot6 !== null;
-        if (this.slot7Type.includes(type)) return this.slot7 !== null;
+        const gearSlot = this.getSlot(type);
+        if (gearSlot === undefined) return false;
+        return !gearSlot.empty();
     }
-    typeToSlot(type) {
-        if (this.slot1Type.includes(type)) return 0;
-        if (this.slot2Type.includes(type)) return 1;
-        if (this.slot3Type.includes(type)) return 2;
-        if (this.slot4Type.includes(type)) return 3;
-        if (this.slot5Type.includes(type)) return 4;
-        if (this.slot6Type.includes(type)) return 5;
-        if (this.slot7Type.includes(type)) return 6;
-    }
-    equipUpgradeAvailable(slot) {
-        const types = this.slotTypesByNum(slot)
-        const currentPow = this.getPowSlot(slot);
-        const currentHP = this.getHPSlot(slot);
-        const invMaxPow = Inventory.getMaxPowByTypes(types);
-        const invMaxHP = Inventory.getMaxHPByTypes(types);
-        return invMaxPow > currentPow || invMaxHP > currentHP;
+    equipUpgradeAvailable(type) {
+        const currentPow = this.getPow(type);
+        const currentHP = this.maxHP(type);
+        const currentTech = this.getTech(type);
+        const invMaxPow = Inventory.getMaxPowByType(type);
+        const invMaxHP = Inventory.getMaxHPByType(type);
+        const invMaxTech = Inventory.getMaxTechByType(type);
+        return invMaxPow > currentPow || invMaxHP > currentHP || invMaxTech > currentTech;
     }
     canEquipType(type) {
-        return this.slot1Type.includes(type) || this.slot2Type.includes(type) || this.slot3Type.includes(type) || this.slot4Type.includes(type) || this.slot5Type.includes(type) || this.slot6Type.includes(type) || this.slot7Type.includes(type);
+        return this.getSlot(type) !== undefined;
+    }
+    trinket() {
+        return this.gearSlots[6];
+    }
+}
+
+class gearSlot {
+    constructor (type) {
+        this.gear = null;
+        this.type = type;
+        this.lvl = 0;
+    }
+    createSave() {
+        const save = {};
+        if (this.gear !== null) save.gear = this.gear.createSave();
+        else save.gear = null;
+        save.lvl = this.lvl;
+        return save;
+    }
+    loadSave(save) {
+        this.lvl = save.lvl;
+        if (save.gear !== null) {
+            const newGear = new itemContainer(save.gear.id,save.gear.rarity);
+            newGear.loadSave(save.gear);
+            this.gear = newGear;
+        }
+    }
+    setGear(container) {
+        this.gear = container;
+    }
+    removeGear() {
+        this.gear = null;
+    }
+    pow() {
+        if (this.gear === null) return 0;
+        return Math.floor(this.gear.pow() * (1+this.lvl*0.1));
+    }
+    hp() {
+        if (this.gear === null) return 0;
+        return Math.floor(this.gear.hp() * (1+this.lvl*0.1));
+    }
+    tech() {
+        if (this.gear === null) return 0;
+        return Math.floor(this.gear.tech() * (1+this.lvl*0.1));
+    }
+    empty() {
+        return this.gear === null;
     }
 }
 
@@ -245,24 +190,11 @@ const HeroManager = {
     isHeroID(ID) {
         return this.heroes.some(hero => hero.id === ID);
     },
-    equipItem(containerID,heroID,slot) {
+    equipItem(containerID,heroID) {
         const item = Inventory.containerToItem(containerID);
         const hero = this.idToHero(heroID);
-        Inventory.removeContainerFromInventory(containerID);
-        hero.unequip(slot);
-        hero.equip(item,slot);
-    },
-    getSlotTypes(slot,heroID) {
-        const hero = this.idToHero(heroID);
-        return hero.slotTypesByNum(slot);
-    },
-    slotEmpty(slot,heroID) {
-        const hero = this.idToHero(heroID);
-        return hero.slotEmpty(slot);
-    },
-    unequip(slot,heroID) {
-        const hero = this.idToHero(heroID);
-        hero.unequip(slot);
+        Inventory.removeContainerFromInventory(containerID);  
+        hero.equip(item);
     },
     ownedHeroes() {
         return this.heroes.filter(hero => hero.owned);
@@ -270,9 +202,6 @@ const HeroManager = {
     gainHero(heroID) {
         this.idToHero(heroID).owned = true;
         initializeHeroList();
-    },
-    heroPower(hero) {
-        return `<div class="pow_img">${miscIcons.pow}</div><div class="pow_interger">${hero.getPow()}</div>`
     },
     slotsByItem(item) {
         //return a list of heroes and the appropriate slot

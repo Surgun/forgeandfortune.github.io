@@ -220,7 +220,6 @@ class Dungeon {
         if (!skipAnimation) refreshDungeonMatBar(this.id);
     }
     setRewardRate(floor) {
-        console.log(floor,this.floorClear);
         this.floorClear = Math.max(floor,this.floorClear);
         this.rewardAmt = Math.ceil(floor/10);
         this.rewardTimeRate = this.rewardAmt/(floor*0.01+0.09)*1000;

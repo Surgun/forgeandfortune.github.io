@@ -102,19 +102,16 @@ function examineHero(ID) {
 
     const lowerDiv = $("<div/>").addClass("heroExamineEquip").appendTo($heroGearSlots);
     hero.gearSlots.forEach(slot => {
-        console.log(slot);
         if (slot.type !== "Trinkets") lowerDiv.append(heroCurrentGearEquip(hero,slot));
     });
 }
 
 function heroCurrentGearEquip(hero,gearSlot) {
     const type = gearSlot.type;
-    console.log(gearSlot);
     const gear = gearSlot.gear;
     const d = $("<div/>").addClass("heroExamineEquipment").data({"heroID":hero.id,"gearType":type})
     if (hero.equipUpgradeAvailable(type)) d.addClass("equipUpgradeAvailable")
     $("<div/>").addClass("heroExamineEquipmentSlot").html(type).appendTo(d);
-    console.log(gear);
     if (gear === null) {
         $("<div/>").addClass("heroExamineEquipmentEquip itemName").addClass("R0").html(type).appendTo(d);
         return d;
@@ -171,7 +168,6 @@ function examineHeroPossibleEquip(heroID,gearType,skipAnimation) {
     }
     let upgradeAvaialable = false;
     const currentTypes = [];
-    console.log(gearType);
     //idk why listbytype is returning gear slots
     Inventory.listbyType(gearType).forEach(itemContainer => {
         if (currentTypes.includes(itemContainer.uniqueID())) return;
@@ -187,7 +183,6 @@ function heroEqupCard(hero, itemContainer) {
     const card = $('<div/>').addClass('gearItem').addClass("R"+itemContainer.rarity).data({"heroID":hero.id,"containerID":itemContainer.containerID});
         $('<div/>').addClass('gearItemName itemName').html(itemContainer.picName()).appendTo(card);
         $('<div/>').addClass('gearItemLevel').html(itemContainer.itemLevel()).appendTo(card);
-    console.log(equippedItem);
     const equippedStats = equippedItem ? equippedItem.itemStat() : blankItemStat();
     for (const [stat, val] of Object.entries(itemContainer.itemStat())) {
         const deltaStat = val - equippedStats[stat];
@@ -352,7 +347,6 @@ $(document).on('click', ".heroUnequipSlot", (e) => {
     e.preventDefault();
     const heroID = $(e.currentTarget).data("heroID");
     const gearType = $(e.currentTarget).data("gearType");
-    console.log("GEARSLOT: " + gearType);
     unequipSlot(heroID,gearType);
     examineHeroPossibleEquip(heroID,gearType);
     refreshTrinketScreen(HeroManager.idToHero(heroID));

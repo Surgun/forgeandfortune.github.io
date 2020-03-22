@@ -70,8 +70,13 @@ class Hero extends Combatant {
         else return this.gearSlots.map(g=>g.gear);
     }
     equip(container) {
-        const gearSlot = this.getSlot(container.type);
-        if (gearSlot !== undefined) gearSlot.setGear(container);
+        const gearSlot = this.getSlot(container.type)
+        if (gearSlot === undefined) return;
+        if (gearSlot.gear !== null) {
+            Inventory.addToInventory(gearSlot.gear,false);
+            gearSlot.removeGear();
+        }
+        gearSlot.setGear(container);
     }
     remove(type) {
         const gearSlot = this.getSlot(type);
@@ -193,7 +198,7 @@ const HeroManager = {
     equipItem(containerID,heroID) {
         const item = Inventory.containerToItem(containerID);
         const hero = this.idToHero(heroID);
-        Inventory.removeContainerFromInventory(containerID);  
+        Inventory.removeContainerFromInventory(containerID);
         hero.equip(item);
     },
     ownedHeroes() {
@@ -203,6 +208,9 @@ const HeroManager = {
         this.idToHero(heroID).owned = true;
         initializeHeroList();
     },
+    heroesThatCanEquip(item) {
+        return this.heroes.filter(h=>h.owned && h.canEquipType(item.type));
+    },
     slotsByItem(item) {
         //return a list of heroes and the appropriate slot
         const type = item.type;
@@ -211,8 +219,8 @@ const HeroManager = {
             const hres = {}
             hres.id = hero.id;
             hres.canEquip = [];
-            hero.getSlotTypes().forEach(slot => {
-                hres.canEquip.push(slot.includes(type));
+            hero.gearSlots.forEach(slot => {
+                hres.canEquip.push(slot.type === type);
             });
             results.push(hres);
         });

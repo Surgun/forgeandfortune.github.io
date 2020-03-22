@@ -254,7 +254,6 @@ function createDungeonSidebarReward(dungeon) {
 }
 
 function refreshFloorMaterial(dungeonid,rewardAmt) {
-    console.log(dungeonid, rewardAmt);
     $("#dRA"+dungeonid).html(`+${rewardAmt}`);
 }
 

@@ -28,9 +28,9 @@ $(document).on("click","#closeEquipItem",(e) => {
 })
 
 $(document).on("click",".heroEquipBlockEquipButton",(e) => {
-    const heroID = $(e.target).attr("hid");
-    const equippingTo = parseInt($(e.target).attr("sid"));
-    HeroManager.equipItem(equipContainerTarget.containerID,heroID,equippingTo);
+    const heroID = $(e.target).data("hid");
+    const containerID = parseInt($(e.target).data("containerID"));
+    HeroManager.equipItem(containerID,heroID);
     if (HeroManager.heroView === heroID) examineHero(heroID);
     $(".tabcontent").hide();
     $("#inventoryTab").show();
@@ -303,7 +303,6 @@ const Inventory = {
         ResourceManager.addMaterial("M001",gold,skipAnimation);
     },
     listbyType(type) {
-        console.log(type);
         return this.nonblank().filter(r=>r.type === type);
     },
     containerToItem(containerID) {
@@ -527,33 +526,29 @@ function gearEquipFromInventory(invID) {
     }
     itemdiv.append(itemName,itemRarity,itemLevel,itemProps);
     $ietEquip.html(itemdiv);
-    const heroBlocks = HeroManager.slotsByItem(item);
-    heroBlocks.forEach(hb=> {
-        const hero = HeroManager.idToHero(hb.id);
+    const heroes = HeroManager.heroesThatCanEquip(item);
+    heroes.forEach(hero=> {
         const d = $("<div/>").addClass("heroEquipBlock");
-        const d1 = $("<div/>").addClass("heroEquipBlockPic").html(hero.head);
-        const d2 = $("<div/>").addClass("heroEquipBlockName").html(hero.name);
-        const d3 = $("<div/>").addClass("heroEquipBlockEquips");
-        hb.canEquip.forEach((tf,i) => {
-            if (!tf) return;
-            const d4 = $("<div/>").addClass("heroEquipBlockEquip").appendTo(d3);
-            const currentStats = hero.getSlot(i) ? hero.getSlot(i).itemStat() : blankItemStat();
-            const newStats = equipContainerTarget.itemStat();
-            let same = true;
-            for (const [stat, val] of Object.entries(newStats)) {
-                const deltaStat = val - currentStats[stat];
-                if (deltaStat === 0 && val === 0) continue;
-                same = false;
-                const d4a = $('<div/>').addClass('heroEquipBlockEquipStat tooltip').attr("data-tooltip", stat).appendTo(d4);
-                if (deltaStat > 0) d4a.addClass("hebPositive").html(`${miscIcons[stat]} <span class="statValue">${val} (+${deltaStat})</span>`);
-                else if (deltaStat < 0) d4a.addClass("hebNegative").html(`${miscIcons[stat]} <span class="statValue">${val} (${deltaStat})</span>`);
-                else d4a.html(`${miscIcons[stat]}${val}`);
-            }
-            if (same) $("<div/>").addClass("heroEquipBlockEquipStat").html("No Change").appendTo(d4);
-            $("<div/>").addClass("heroEquipBlockEquipButton").attr("hid",hb.id).attr("sid",i).html("Equip").appendTo(d4);
-
-        });
-        d.append(d1,d2,d3);
+        $("<div/>").addClass("heroEquipBlockPic").html(hero.head).appendTo(d);
+        $("<div/>").addClass("heroEquipBlockName").html(hero.name).appendTo(d);
+        const d3 = $("<div/>").addClass("heroEquipBlockEquips").appendTo(d);
+        const slot = hero.getSlot(item.type);
+        const gear = slot.gear;
+        const d4 = $("<div/>").addClass("heroEquipBlockEquip").appendTo(d3);
+        const currentStats = gear !== null ? gear.itemStat() : blankItemStat();
+        const newStats = equipContainerTarget.itemStat();
+        let same = true;
+        for (const [stat, val] of Object.entries(newStats)) {
+            const deltaStat = val - currentStats[stat];
+            if (deltaStat === 0 && val === 0) continue;
+            same = false;
+            const d4a = $('<div/>').addClass('heroEquipBlockEquipStat tooltip').attr("data-tooltip", stat).appendTo(d4);
+            if (deltaStat > 0) d4a.addClass("hebPositive").html(`${miscIcons[stat]} <span class="statValue">${val} (+${deltaStat})</span>`);
+            else if (deltaStat < 0) d4a.addClass("hebNegative").html(`${miscIcons[stat]} <span class="statValue">${val} (${deltaStat})</span>`);
+            else d4a.html(`${miscIcons[stat]}${val}`);
+        }
+        if (same) $("<div/>").addClass("heroEquipBlockEquipStat").html("No Change").appendTo(d4);
+        $("<div/>").addClass("heroEquipBlockEquipButton").data({"hid":hero.id,"containerID":equipContainerTarget.containerID}).html("Equip").appendTo(d4);
         $ietHero.append(d);
     });
     $(".tabcontent").hide();

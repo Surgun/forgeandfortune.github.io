@@ -188,7 +188,6 @@ $(document).on('click', "div.dungeonNotAvailableCardClick", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("heroid");
     const hero = HeroManager.idToHero(ID);
-    console.log(ID,hero.name);
     if (!PartyCreator.heroes.includes(ID)) return;
     PartyCreator.removeMember(ID);
     startPartyCreation(DungeonManager.dungeonCreatingID);
@@ -198,7 +197,6 @@ $(document).on('click', "div.dungeonNotAvailableCardClick", (e) => {
 $(document).on('click', "#dungeonTeamButton", (e) => {
     e.preventDefault();
     if (PartyCreator.validTeam()) {
-        console.log(PartyCreator.dungeonSelect);
         DungeonManager.createDungeon(PartyCreator.dungeonSelect,false);
         initializeSideBarDungeon();
         $areaTeamSelect.hide();
@@ -212,7 +210,6 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
 $(document).on('click', "#dungeonTeamButtonSkip", (e) => {
     e.preventDefault();
     if (PartyCreator.validTeam()) {
-        console.log(PartyCreator.dungeonSelect);
         DungeonManager.createDungeon(PartyCreator.dungeonSelect,true);
         initializeSideBarDungeon();
         $areaTeamSelect.hide();

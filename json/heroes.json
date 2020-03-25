@@ -1,7 +1,7 @@
 [
   {
     "id": "H001",
-    "name": "Beorn",
+    "name": "Bumbling Bee",
     "class": "Fighter",
     "type": "Might",
     "initialHP": 50,
@@ -40,7 +40,7 @@
   },
   {
     "id": "H002",
-    "name": "Cedric",
+    "name": "Dwarf Cadet",
     "class": "Fighter",
     "type": "Might",
     "initialHP": 50,
@@ -79,7 +79,7 @@
   },
   {
     "id": "H003",
-    "name": "Grim",
+    "name": "Clive Clavicle",
     "class": "Fighter",
     "type": "Might",
     "initialHP": 50,
@@ -118,7 +118,7 @@
   },
   {
     "id": "H004",
-    "name": "Lambug",
+    "name": "Elf Sniper",
     "class": "Fighter",
     "type": "Might",
     "initialHP": 50,
@@ -157,7 +157,7 @@
   },
   {
     "id": "H101",
-    "name": "Zoe",
+    "name": "Orange Crush",
     "class": "Caster",
     "type": "Mind",
     "initialHP": 25,
@@ -196,7 +196,7 @@
   },
   {
     "id": "H102",
-    "name": "Neve",
+    "name": "Monsoon",
     "class": "Caster",
     "type": "Mind",
     "initialHP": 25,
@@ -235,7 +235,7 @@
   },
   {
     "id": "H103",
-    "name": "Titus",
+    "name": "Reckless Rat",
     "class": "Caster",
     "type": "Mind",
     "initialHP": 25,
@@ -274,7 +274,7 @@
   },
   {
     "id": "H104",
-    "name": "Troy",
+    "name": "Inkie",
     "class": "Caster",
     "type": "Mind",
     "initialHP": 25,
@@ -313,7 +313,7 @@
   },
   {
     "id": "H201",
-    "name": "Alok",
+    "name": "Beefy Bear",
     "class": "Thief",
     "type": "Moxie",
     "initialHP": 35,
@@ -352,7 +352,7 @@
   },
   {
     "id": "H202",
-    "name": "Grogmar",
+    "name": "Rainbow Ooze",
     "class": "Thief",
     "type": "Moxie",
     "initialHP": 35,
@@ -391,7 +391,7 @@
   },
   {
     "id": "H203",
-    "name": "Revere",
+    "name": "Elf Assassin",
     "class": "Thief",
     "type": "Moxie",
     "initialHP": 35,
@@ -430,7 +430,7 @@
   },
   {
     "id": "H204",
-    "name": "Caeda",
+    "name": "Elf Noble",
     "class": "Thief",
     "type": "Moxie",
     "initialHP": 35,

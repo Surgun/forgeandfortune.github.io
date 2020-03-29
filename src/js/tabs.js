@@ -5,8 +5,7 @@ function openTab(tabName) {
     DungeonManager.dungeonView = null;
     //HeroManager.heroView = null;
     if (tabName === "heroesTab") {
-        clearExaminePossibleEquip();
-       $(".heroExamineEquipment").removeClass("hEEactive");
+        refreshHeroOverview();
     }
     if (tabName === "dungeonsTab") {
         $dungeonSelect.show();

@@ -120,6 +120,13 @@ class Hero extends Combatant {
     trinket() {
         return this.gearSlots[6];
     }
+    totalUpgrades() {
+        const upgrades = this.gearSlots.map(g=>g.lvl);
+        return upgrades.reduce((a,b) => a + b);
+    }
+    upgradeSlot(type) {
+        this.getSlot(type).addLevel();
+    }
 }
 
 class gearSlot {
@@ -164,12 +171,15 @@ class gearSlot {
     empty() {
         return this.gear === null;
     }
+    addLevel() {
+        this.lvl += 1;
+    }
 }
 
 const HeroManager = {
     heroes : [],
     heroView : null,
-    tabSelected : "heroTab1",
+    tabSelected : "Details",
     addHero(hero) {
         this.heroes.push(hero);
     },
@@ -206,7 +216,6 @@ const HeroManager = {
     },
     gainHero(heroID) {
         this.idToHero(heroID).owned = true;
-        initializeHeroList();
     },
     heroesThatCanEquip(item) {
         return this.heroes.filter(h=>h.owned && h.canEquipType(item.type));
@@ -231,5 +240,14 @@ const HeroManager = {
     },
     hasContainer(containerID) {
         return this.heroes.map(h=>h.getEquipSlots(true)).flat().map(i=>i.containerID).includes(containerID);
+    },
+    upgradeSlot(heroID,gearType) {
+        if (this.totalUpgrades() >= DungeonManager.availableUpgrades()) return Notifications.cantAffordSlotUpgrade();
+        const hero = this.idToHero(heroID);
+        hero.upgradeSlot(gearType);
+    },
+    totalUpgrades() {
+        const upgrades = this.heroes.map(h => h.totalUpgrades());
+        return upgrades.reduce((a,b) => a+b);
     }
 }

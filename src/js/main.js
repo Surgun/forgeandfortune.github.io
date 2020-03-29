@@ -25,7 +25,6 @@ function afterLoad() {
     refreshMasteryBar()
     refreshInventory();
     refreshSideWorkers();
-    initializeHeroList();
     refreshRecipeFilters();
     hardMatRefresh();
     refreshProgress();

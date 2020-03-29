@@ -31,7 +31,6 @@ $(document).on("click",".heroEquipBlockEquipButton",(e) => {
     const heroID = $(e.target).data("hid");
     const containerID = parseInt($(e.target).data("containerID"));
     HeroManager.equipItem(containerID,heroID);
-    if (HeroManager.heroView === heroID) examineHero(heroID);
     $(".tabcontent").hide();
     $("#inventoryTab").show();
 })
@@ -565,6 +564,5 @@ function refreshInventoryPlaces() {
     refreshSmithStage();
     refreshSynthInventory();
     refreshFortuneGear();
-    refreshTrinketInventory();
     refreshMuseumInv();
 }

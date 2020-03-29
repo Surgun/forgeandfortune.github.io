@@ -1,14 +1,51 @@
 "use strict";
 
-const $heroTab = $("#heroTab");
-const $heroGear = $("#heroGear");
-const $heroTrinket = $("#heroTrinket");
+//main divs
+const $heroOverviewContainer = $("#heroOverviewContainer");
+const $heroInspectIndividual = $("#heroInspectIndividual");
+const $heroExamineContainer = $(".heroExamineContainer");
 const $heroList = $("#heroList");
-const $heroDetails = $("#heroDetails");
-const $heroGearSlots = $("#heroGearSlots");
-const $heroOverview = $("#heroOverview");
 
-const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory","Trinket"];
+//hero overview screen
+const $overviewContainer = $("#overviewContainer");
+const $heroContentContainer = $(".heroContentContainer");
+
+//other????
+const $heroTab = $("#heroTab");
+const $heroEquipmentList = $("#heroEquipmentList");
+
+//tabs
+const $heroDetailsTab = $("#heroDetailsTab"); //this is just shown up top and needs a direct highlight when it's your "first" tab
+const $heroOverview = $("#heroOverview");
+const $heroGear = $("#heroGear");
+const $heroDetails = $("#heroDetails");
+const $heroTrinket = $("#heroTrinket");
+const $heroUpgrades = $("#heroUpgrades");
+
+//hero details
+const $heroExamineDetails = $("#heroExamineDetails");
+const $heroExamineName = $("#heroExamineName");
+const $heroExaminePortait = $("#heroExaminePortait");
+const $heroExamineImage = $("#heroExamineImage");
+const $heroExamineDescription = $("#heroExamineDescription");
+const $heroClassText = $("#heroClassText");
+const $heroExamineStatsList = $("#heroExamineStatsList");
+const $heroExaminePlaybooks = $("#heroExaminePlaybooks");
+
+//hero gear
+const $heroGearSlotList = $("#heroGearSlotList");
+
+//upgrades
+const $heroUpgradesGear = $("#heroUpgradesGear");
+const $heroUpgradesGearText = $("#heroUpgradesGearText");
+//trinket
+const $heroEquipTrinket = $("#heroEquipTrinket");
+const $heroEquipTrinketAll = $("#heroEquipTrinketAll");
+
+const $heroOverviewButton = $("#heroOverviewButton");
+const $trinketTab = $("#trinketTab");
+
+//const slotName = ["Weapon","Head","Armament","Chest","Handheld","Accessory","Trinket"];
 const statName = [
     `${miscIcons.hp} <span>HP</span>`,
     `${miscIcons.pow} <span>Power</span>`,
@@ -21,91 +58,117 @@ const statDesc = [
     "tech",
 ];
 
+function refreshHeroOverview() {
+    HeroManager.heroView = null;
+    $heroOverviewContainer.show();
+    $heroInspectIndividual.hide();
+    initializeHeroList();
+    $overviewContainer.empty();
+    HeroManager.heroes.filter(h=>h.owned).forEach(hero => {
+        createHeroOverlayCard(hero).appendTo($overviewContainer);
+    });
+}
+
+//populate the sidebar hero list
 function initializeHeroList() {
     $heroList.empty();
     $("<div/>").attr("id","heroOverviewButton").addClass("heroOverviewButton highlight").html(`<i class="fas fa-info-circle"></i> Hero Overview`).appendTo($heroList);
     HeroManager.heroes.forEach(hero => {
-        const d = $("<div/>").addClass("heroOwnedCard heroInspect").attr("data-value",hero.id);
-        const d1 = $("<div/>").addClass("heroOwnedImage").html(hero.head);
-        const d2 = $("<div/>").addClass("heroOwnedName").html(hero.name);
-        const d3 = $("<div/>").addClass("heroPower").html(hero.getPow());
+        const d = $("<div/>").addClass("heroOwnedCard heroInspect").attr("data-value",hero.id).appendTo($heroList);
+        $("<div/>").addClass("heroOwnedImage").html(hero.head).appendTo(d);
+        $("<div/>").addClass("heroOwnedName").html(hero.name).appendTo(d);
+        const d3 = $("<div/>").addClass("heroPower").html(hero.getPow()).appendTo(d);
             $("<div/>").addClass("pow_img").html(miscIcons.pow).appendTo(d3);
             $("<div/>").addClass("pow_integer").html(hero.getPow()).appendTo(d3);
-        d.append(d1,d2,d3);
         if (!hero.owned) d.hide();
-        $heroList.append(d);
     });
     if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
-        const bh1 = $("<div/>").addClass("buyNewHeroCard")
-        const bh2 = $("<div/>").addClass("buyNewHeroTitle").html(`Looking for more Heroes?`);
-        const bh3 = $("<div/>").addClass("buyNewHeroDesc").html(`Check the Market to get more!`);
-        bh1.append(bh2,bh3);
-        $heroList.append(bh1);
+        const bh1 = $("<div/>").addClass("buyNewHeroCard").appendTo($heroList);
+        $("<div/>").addClass("buyNewHeroTitle").html(`Looking for more Heroes?`).appendTo(bh1);
+        $("<div/>").addClass("buyNewHeroDesc").html(`Check the Market to get more!`).appendTo(bh1);
     }
-    viewHeroOverview();
 }
 
-function viewHeroOverview() {
-    $heroOverview.empty();
-    const overviewContainer = $("<div/>").addClass("overviewContainer");
-    const overviewTitle = $("<div/>").addClass("overviewTitle").html("Hero Overview");
-    const overviewDesc = $("<div/>").addClass("overviewDescription").html("A quick glance at all your heroes and their stats.");
-    HeroManager.heroes.filter(hero => hero.owned).forEach(hero => {
-        const d = $("<div/>").addClass("heroOverviewCard heroInspect").attr("data-value",hero.id);
-            const heroInfo = $("<div/>").addClass("heroOverviewInfo").appendTo(d);
-                $("<div/>").addClass("heroOverviewImage").html(hero.image).appendTo(heroInfo);
-                $("<div/>").addClass("heroOverviewName").html(hero.name).appendTo(heroInfo);
-                $("<div/>").addClass("heroOverviewClass").html(hero.class).appendTo(heroInfo);
-            const heroStats = $("<div/>").addClass("heroOverviewStats").appendTo(d);
-                $("<div/>").addClass("heroOverviewHP overviewStat tooltip").attr("data-tooltip","hp").html(`${miscIcons.hp} ${hero.maxHP()}`).appendTo(heroStats);
-            $("<div/>").addClass("heroOverviewPow overviewStat tooltip").attr("data-tooltip","pow").html(`${miscIcons.pow} ${hero.getPow()}`).appendTo(d);
-            d.appendTo(overviewContainer)
-    });
-    $heroOverview.append(overviewTitle,overviewDesc,overviewContainer);
+function createHeroOverlayCard(hero) {
+    const d = $("<div/>").addClass("heroOverviewCard heroInspect").attr("data-value",hero.id);
+        const heroInfo = $("<div/>").addClass("heroOverviewInfo").appendTo(d);
+            $("<div/>").addClass("heroOverviewImage").html(hero.image).appendTo(heroInfo);
+            $("<div/>").addClass("heroOverviewName").html(hero.name).appendTo(heroInfo);
+            $("<div/>").addClass("heroOverviewClass").html(hero.class).appendTo(heroInfo);
+        const heroStats = $("<div/>").addClass("heroOverviewStats").appendTo(d);
+            $("<div/>").addClass("heroOverviewHP overviewStat tooltip").attr("data-tooltip","hp").html(`${miscIcons.hp} ${hero.maxHP()}`).appendTo(heroStats);
+            $("<div/>").addClass("heroOverviewPow overviewStat tooltip").attr("data-tooltip","pow").html(`${miscIcons.pow} ${hero.getPow()}`).appendTo(heroStats);
+    return d;
 }
 
-function examineHero(ID) {
-    const hero = HeroManager.idToHero(ID);
-    $heroDetails.empty();
-    $heroGearSlots.empty();
-    const heroExamineTop = $("<div/>").addClass("heroExamineTop heroExamineContainer").appendTo($heroDetails);
-    $("<div/>").addClass("heroExamineName").html(hero.name).appendTo(heroExamineTop);
-    $("<div/>").addClass("heroExaminePortait").html(hero.portrait).appendTo(heroExamineTop);
-    $("<div/>").addClass("heroExamineImage").html(hero.image).appendTo(heroExamineTop);
-    $("<div/>").addClass("heroExamineDescription").html(hero.description).appendTo(heroExamineTop);
-    const d4 = $("<div/>").addClass("heroExamineLvlClassContainer").appendTo(heroExamineTop);
-        $("<div/>").addClass("heroClassHeading").html("Hero Class").appendTo(d4);
-        $("<div/>").addClass("heroClassText").html(hero.class).appendTo(d4);
-    const heroExamineStats = $("<div/>").addClass("heroExamineStats heroExamineContainer").appendTo($heroDetails);
-    $("<div/>").addClass("heroExamineHeading").appendTo(heroExamineStats);
-    $("<div/>").addClass("heroExamineStatHeading").html("Hero Stats").appendTo(heroExamineStats);
+function showHeroDetails() {
+    $heroContentContainer.hide();
+    $heroDetails.show();
+    const hero = HeroManager.idToHero(HeroManager.heroView);
+    $heroExamineName.html(hero.name);
+    $heroExaminePortait.html(hero.portrait);
+    $heroExamineImage.html(hero.image);
+    $heroExamineDescription.html(hero.description);
+    $heroClassText.html(hero.class);
+    $heroExamineStatsList.empty();
     const stats = [hero.maxHP(),hero.getPow(), hero.getTech()];
     for (let i=0;i<stats.length;i++) {
-        heroExamineStats.append(statRow(statName[i],stats[i],statDesc[i]));
+        $heroExamineStatsList.append(statRow(statName[i],stats[i],statDesc[i]));
     }
-    $("<div/>").addClass("heroExamineSkillsHeading").html("Available Playbooks").appendTo(heroExamineTop);
-    $("<div/>").addClass("heroExamineSkillsHeading").html("Unlock additional playbooks in the Market").appendTo(heroExamineTop);
-    const p = $("<div/>").addClass("heroExaminePlaybooks").appendTo(heroExamineTop);
+    $heroExaminePlaybooks.empty();
     hero.playbooks.forEach(playbookID => {
         const playbook = PlaybookManager.idToPlaybook(playbookID);
-        const d = $("<div/>").addClass("playbookDiv").appendTo(p);
+        const d = $("<div/>").addClass("playbookDiv").appendTo($heroExaminePlaybooks);
         $("<div/>").addClass("playbookName").html(playbook.name).appendTo(d);
         if (hero.playbook.id === playbookID) d.addClass("playbookSelected");
         playbook.skillIDs().forEach(skillID => {
             const skill = SkillManager.idToSkill(skillID);
             $("<div/>").addClass("heroSelectSkill tooltip").attr({"data-tooltip":"skill_desc","data-tooltip-value":skill.id}).html(skill.icon).appendTo(d);
         });
-    })
-    const d3 = $("<div/>").addClass("heroSlotUpgrades").appendTo(heroExamineTop);
-    $("<div/>").addClass("heroSlotUpgradeHeading").html("Equipment Upgrades").appendTo(d3);
-    $("<div/>").addClass("heroSlotUpgradeDesc").html(`Use upgrades from monster kills to upgrade your slots. You have ${0} points left to spend`).appendTo(d3);
-
-    const lowerDiv = $("<div/>").addClass("heroExamineEquip").appendTo($heroGearSlots);
-    hero.gearSlots.forEach(slot => {
-        if (slot.type !== "Trinkets") lowerDiv.append(heroCurrentGearEquip(hero,slot));
     });
 }
 
+function showHeroGear() {
+    $heroContentContainer.hide();
+    $heroGear.show();
+    const hero = HeroManager.idToHero(HeroManager.heroView);
+    $heroGearSlotList.empty();
+    hero.gearSlots.forEach(slot => {
+        if (slot.type !== "Trinkets") heroCurrentGearEquip(hero,slot).appendTo($heroGearSlotList);
+    });
+}
+
+function showHeroUpgrades() {
+    $heroContentContainer.hide();
+    $heroUpgrades.show();
+    $heroUpgradesGear.empty();
+    $heroUpgradesGearText.html(`You have ${DungeonManager.availableUpgrades() - HeroManager.totalUpgrades()} Monster Trophies available for Upgrades`)
+    const hero = HeroManager.idToHero(HeroManager.heroView);
+    hero.gearSlots.forEach(slot => {
+        if (slot.type !== "Trinkets") heroUpgradeSlot(HeroManager.heroView,slot).appendTo($heroUpgradesGear);
+    });
+}
+
+function showHeroTrinket() {
+    $heroContentContainer.hide();
+    $heroTrinket.show();
+    const hero = HeroManager.idToHero(HeroManager.heroView);
+    $heroEquipTrinket.empty();
+    $heroEquipTrinket.html(heroCurrentGearEquip(hero,hero.trinket()));
+    refreshTrinketInventory();
+}
+
+function refreshTrinketInventory() {
+    if (HeroManager.heroView === null) return;
+    $heroEquipTrinketAll.empty();
+    const hero = HeroManager.idToHero(HeroManager.heroView);
+    if (Inventory.listbyType("Trinkets").length === 0) $("<div/>").addClass("heroUpgradeTrinketsText").html("No Trinkets Available").appendTo($heroEquipTrinketAll);
+    Inventory.listbyType("Trinkets").forEach(trinket => {
+        heroEqupCard(hero,trinket).appendTo($heroEquipTrinketAll);
+    });
+}
+
+//creates a gear "slot" used on gear screen and trinket screen
 function heroCurrentGearEquip(hero,gearSlot) {
     const type = gearSlot.type;
     const gear = gearSlot.gear;
@@ -131,6 +194,19 @@ function heroCurrentGearEquip(hero,gearSlot) {
     return d;
 }
 
+//creates a gear "slot" used on upgrades screen
+function heroUpgradeSlot(heroid,gearSlot) {
+    const type = gearSlot.type;
+    const d = $("<div/>").addClass("heroGearUpgradeSlot");
+    $("<div/>").addClass("heroGearUpgradeSlotType").html(type).appendTo(d);
+    $("<div/>").addClass("heroGearUpgradeSlotLvl").html(`${gearSlot.lvl}/2`).appendTo(d);
+    const d1 = $("<div/>").data({"heroID":heroid,"gearType":gearSlot.type}).appendTo(d);
+    if (gearSlot.lvl == 2) d1.html("Max Level").addClass("heroGearUpgradeSlotButtonMax");
+    else d1.html("Upgrade").addClass("heroGearUpgradeSlotButton");
+    return d;
+}
+
+//used for cards to show a stat
 function statRow(name,value,description) {
     const d1 = $("<div/>").addClass("heroExamineStatRow tooltip").attr("data-tooltip",description);
     const d2 = $("<div/>").addClass("heroExamineStatRowName").html(name);
@@ -138,8 +214,8 @@ function statRow(name,value,description) {
     return d1.append(d2,d3);
 }
 
-const $heroEquipmentList = $("#heroEquipmentList");
 
+//used for things that populate your inventory so it actually goes
 let examineGearSlotCache = null;
 let examineGearHeroIDCache = null;
 let examineGearTypesCache = [];
@@ -178,6 +254,7 @@ function examineHeroPossibleEquip(heroID,gearType,skipAnimation) {
     return upgradeAvaialable;
 };
 
+//compares a card to see if it's actually an upgrade versus what's equipped before returning
 function heroEqupCard(hero, itemContainer) {
     const equippedItem = hero.getSlot(itemContainer.type).gear;
     const card = $('<div/>').addClass('gearItem').addClass("R"+itemContainer.rarity).data({"heroID":hero.id,"containerID":itemContainer.containerID});
@@ -199,113 +276,62 @@ function heroEqupCard(hero, itemContainer) {
 function unequipSlot(heroID,type) {
     const hero = HeroManager.idToHero(heroID);
     hero.unequip(type);
-    examineHero(heroID);
+    showHeroGear();
 }
 
-$(document).on('click',".heroCounter", (e) => {
-    e.preventDefault();
-    tabClick(e, "dungeonsTab");
-});
-
-const $heroOverviewButton = $("#heroOverviewButton");
-const $trinketTab = $("#trinketTab");
-
-// Show or hide hero's info
-function showHeroInfo(show) {
-    if (TownManager.status("tinker") !== BuildingState.built) $trinketTab.hide();
-    else $trinketTab.hide();
-    if (show) {
-        $(".heroTabContainer").addClass("grid-show");
-        $(".heroOwnedCard").removeClass("highlight");
-        $heroOverviewButton.removeClass("highlight");
-        $heroOverview.hide();
-        return;
-    }
-    $(".heroOwnedCard").removeClass("highlight");
-    $(".heroTabContainer").removeClass("grid-show");
-    $(".heroContentContainer").addClass("none");
-    $heroOverviewButton.addClass("highlight");
-    $heroOverview.show();
+function updateHeroPower() {
+    HeroManager.heroes.forEach(hero => {
+        const heroCard = $(`.heroOwnedCard[data-value=${hero.id}]`);
+        $(heroCard).find(".pow_integer").html(hero.getPow());
+    });
 }
 
-// Show details tab of selected hero
-function showHeroDetailsTab() {
-    $heroDetails.removeClass("none");
-    $heroGear.addClass("none");
-    $heroTrinket.addClass("none");
-}
-
-// Show gear tab of selected hero
-function showHeroGearTab() {
-    $heroDetails.addClass("none");
-    $heroGear.removeClass("none");
-    $heroTrinket.addClass("none");
-}
-
-function showHeroTrinketTab() {
-    $heroDetails.addClass("none");
-    $heroGear.addClass("none");
-    $heroTrinket.removeClass("none");
-    refreshTrinketScreen(HeroManager.idToHero(HeroManager.heroView));
-}
-
+//click the "Hero Overview" button
 $(document).on('click',"#heroOverviewButton", (e) => {
     e.preventDefault();
-    showHeroInfo(false);
-    $(".heroTab").removeClass("selected");
+    HeroManager.heroView = null;
+    HeroManager.tabSelected = "Details";
     $("#heroOverviewButton").addClass("highlight");
-    viewHeroOverview();
+    $(".heroOwnedCard").removeClass("highlight");
+    $(".heroTab").removeClass("selected");
+    $heroDetailsTab.addClass("selected");
+    initializeHeroList();
+    $heroOverviewContainer.show();
+    $heroInspectIndividual.hide();
 });
 
-$(document).on('click', "div.heroInspect", (e) => {
-    //pop up the detailed character card
+//Click on a hero to bring up the details for them
+$(document).on('click', ".heroInspect", (e) => {
     e.preventDefault();
-    showHeroInfo(true);
-    //Checks if no tab would be selected and defaults to tab 1, if true
     const ID = $(e.currentTarget).attr("data-value");
-    $(`.heroOwnedCard[data-value=${ID}]`).addClass("highlight");
     HeroManager.heroView = ID;
-    examineHero(ID);
-    $(".heroTab").removeClass("selected");
+    console.log(HeroManager.heroView);
     $("#heroOverviewButton").removeClass("highlight");
-    if (HeroManager.tabSelected === "heroTab1") {
-        showHeroDetailsTab();
-        $(".heroTab1").addClass("selected");
-    }
-    else if (HeroManager.tabSelected === "heroTab2") {
-        showHeroGearTab();
-        $(".heroTab2").addClass("selected");
-    }
-    else {
-        showHeroTrinketTab();
-        $(".heroTab3").addClass("selected");
-    }
+    $(`.heroOwnedCard`).removeClass("highlight");
+    $(`.heroOwnedCard[data-value=${ID}]`).addClass("highlight");
+    $heroOverviewContainer.hide();
+    $heroInspectIndividual.show();
     clearExaminePossibleEquip();
+    showTab(HeroManager.tabSelected);
 });
 
-$(document).on('click', ".heroTab1", (e) => {
+//click on a tab on hero page
+$(document).on('click', ".heroTab", (e) => {
     e.preventDefault();
     $(".heroTab").removeClass("selected");
     $(e.currentTarget).addClass("selected");
-    HeroManager.tabSelected = "heroTab1";
-    showHeroDetailsTab();
-})
+    const tabType = $(e.currentTarget).html();
+    if (HeroManager.tabSelected === tabType) return;
+    HeroManager.tabSelected = tabType;
+    showTab(tabType);
+});
 
-$(document).on('click', ".heroTab2", (e) => {
-    e.preventDefault();
-    $(".heroTab").removeClass("selected");
-    $(e.currentTarget).addClass("selected");
-    HeroManager.tabSelected = "heroTab2";
-    showHeroGearTab();
-})
-
-$(document).on('click', ".heroTab3", (e) => {
-    e.preventDefault();
-    $(".heroTab").removeClass("selected");
-    $(e.currentTarget).addClass("selected");
-    HeroManager.tabSelected = "heroTab3";
-    showHeroTrinketTab(HeroManager.idToHero(HeroManager.heroView));
-})
+function showTab(tabName) {
+    if (tabName === "Details") showHeroDetails();
+    if (tabName === "Equipment") showHeroGear();
+    if (tabName === "Upgrades") showHeroUpgrades();
+    if (tabName === "Trinket") showHeroTrinket();
+}
 
 $(document).on('click', "div.heroExamineEquipment", (e) => {
     //select an item type to display what you can equip
@@ -323,51 +349,30 @@ $(document).on('click', "div.gearItem", (e) => {
     const heroID = $(e.currentTarget).data("heroID");
     const containerID = $(e.currentTarget).data("containerID");
     HeroManager.equipItem(containerID,heroID);
-    examineHero(heroID);
-    refreshTrinketScreen(HeroManager.idToHero(heroID));
+    showHeroGear();
     clearExaminePossibleEquip();
     updateHeroPower();
     refreshSmithInventory(); //because hero gear is here
 });
 
-function updateHeroPower() {
-    HeroManager.heroes.forEach(hero => {
-        const heroCard = $(`.heroOwnedCard[data-value=${hero.id}]`);
-        $(heroCard).find(".pow_integer").html(hero.getPow());
-    });
-}
-
-$(document).on('click', ".buyNewHeroButton", (e) => {
-    e.preventDefault();
-    HeroManager.purchaseHero();    
-})
 
 $(document).on('click', ".heroUnequipSlot", (e) => {
+    //unequip the item
     e.stopPropagation();
     e.preventDefault();
     const heroID = $(e.currentTarget).data("heroID");
     const gearType = $(e.currentTarget).data("gearType");
     unequipSlot(heroID,gearType);
     examineHeroPossibleEquip(heroID,gearType);
-    refreshTrinketScreen(HeroManager.idToHero(heroID));
     updateHeroPower();
     refreshSmithInventory(); //because hero gear is here
 });
 
-const $heroEquipTrinket = $("#heroEquipTrinket");
-const $heroEquipTrinketAll = $("#heroEquipTrinketAll");
+$(document).on('click', ".heroGearUpgradeSlotButton", (e) => {
+    e.preventDefault();
+    const heroID = $(e.currentTarget).data("heroID");
+    const gearType = $(e.currentTarget).data("gearType");
+    HeroManager.upgradeSlot(heroID,gearType);
+    showHeroUpgrades();
+})
 
-function refreshTrinketScreen(hero) {
-    $heroEquipTrinket.empty();
-    $heroEquipTrinket.html(heroCurrentGearEquip(hero,hero.trinket()));
-    refreshTrinketInventory();
-}
-
-function refreshTrinketInventory() {
-    if (HeroManager.heroView === null) return;
-    $heroEquipTrinketAll.empty();
-    const hero = HeroManager.idToHero(HeroManager.heroView);
-    Inventory.listbyType("Trinkets").forEach(trinket => {
-        heroEqupCard(hero,trinket).appendTo($heroEquipTrinketAll);
-    });
-}

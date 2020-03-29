@@ -282,6 +282,12 @@ const Notifications = {
         const heading = "Cannot afford Reward";
         const icon = "error";
         popToast(text,heading,icon);
+    },
+    cantAffordSlotUpgrade() {
+        const text = 'You do not have enough Monster Trophies to purchase this upgrade';
+        const heading = "Cannot afford Upgrade";
+        const icon = "error";
+        popToast(text,heading,icon);
     }
 }
 

@@ -235,29 +235,59 @@
                 </div>
                 <div id="heroesTab" class="tabcontent">
                     <div id="heroContainer">
-                        <div id="heroList"></div>
-                        <div id="heroCard">
-                            <div class="heroTabContainer">
-                                <div class="heroTab heroTab1">Details</div>
-                                <div class="heroTab heroTab2">Equipment</div>
-                                <div class="heroTab heroTab3" id="trinketTab">Trinket</div>
+                        <div id="heroList"></div> <!-- Hero sidebar list -->
+                        <div class="heroInspectBox">
+                            <div class="heroOverviewContainer" id="heroOverviewContainer">
+                                <div class="overviewTitle">Hero Overview</div>
+                                <div class="overviewDescription">A quick glance at all your heroes and their stats.</div>
+                                <div class="overviewContainer" id="overviewContainer"></div>
                             </div>
-                            <div class="heroTabContent">
-                                <div id="heroOverview" class="heroOverviewContainer"></div>
-                                <div id="heroDetails" class="heroDetailsContainer heroContentContainer none">
-                                    <span class="hero-placeholder-details">Select a Hero from the list to see their details.</span>
+                            <div class="heroInspectIndividual" id="heroInspectIndividual">
+                                <div class="heroTabContainer">
+                                    <div class="heroTab selected" id="heroDetailsTab">Details</div>
+                                    <div class="heroTab">Equipment</div>
+                                    <div class="heroTab">Upgrades</div>
+                                    <div class="heroTab">Trinket</div>
                                 </div>
-                                <div id="heroGear" class="heroContentContainer none">
-                                    <div id="heroGearSlots">
-                                        <span class="hero-placeholder-equip">Select a Hero from the list to see their equipment.</span>
+                                <div class="heroTabContent">
+                                    <div id="heroDetails" class="heroContentContainer">
+                                        <div class="heroExamineTop heroExamineContainer" id="heroExamineDetails">
+                                            <div id="heroExamineName" class="heroExamineName"></div>
+                                            <div id="heroExaminePortait" class="heroExaminePortait"></div>
+                                            <div id="heroExamineImage" class="heroExamineImage"></div>
+                                            <div id="heroExamineDescription" class="heroExamineDescription"></div>
+                                            <div class="heroExamineLvlClassContainer">
+                                                <div class="heroClassHeading">Hero Class</div>
+                                                <div id="heroClassText" class="heroClassText"></div>
+                                            </div>
+                                        </div>
+                                        <div class="heroExamineStats heroExamineContainer">
+                                            <div class="heroExamineStatHeading">Hero Stats</div>
+                                            <div id="heroExamineStatsList"></div>
+                                        </div>
+                                        <div class="heroExaminePlaybooks heroExamineContainer">
+                                            <div class="heroExaminePlaybookHeading">Available Playbooks</div>
+                                            <div class="heroExaminePlaybookHeading">Unlock additional playbooks in the Market</div>
+                                            <div class="heroExaminePlaybooks" id="heroExaminePlaybooks"></div>
+                                        </div>
                                     </div>
-                                    <div id="heroEquipmentList"></div>
-                                </div>
-                                <div id="heroTrinket" class="heroContentContainer none">
-                                    <div class="heroTrinketEquippedHeader">Currently Equpped Trinket</div>
-                                    <div id="heroEquipTrinket" class="heroEquipTrinketContainer"></div>
-                                    <div class="heroTrinketEquippedHeader">Available Trinkets</div>
-                                    <div id="heroEquipTrinketAll" class="heroEquipTrinketAllContainer"></div>
+                                    <div id="heroGear" class="heroContentContainer">
+                                        <div id="heroGearSlots">
+                                            <div class="heroExamineEquip" id="heroGearSlotList"></div>
+                                        </div>
+                                        <div id="heroEquipmentList"></div>
+                                    </div>
+                                    <div id="heroTrinket" class="heroContentContainer">
+                                        <div class="heroTrinketEquippedHeader">Currently Equpped Trinket</div>
+                                        <div id="heroEquipTrinket" class="heroEquipTrinketContainer"></div>
+                                        <div class="heroTrinketEquippedHeader">Available Trinkets</div>
+                                        <div id="heroEquipTrinketAll" class="heroEquipTrinketAllContainer"></div>
+                                    </div>
+                                    <div id="heroUpgrades" class="heroContentContainer">
+                                        <div class="heroUpgradesHeader">Use Monster Trophies to upgrade your heroes' equipment slots! 5% increase in all stats per upgrade.</div>
+                                        <div class="heroUpgradesHeader2" id="heroUpgradesGearText">You have 0 Monster Trophies available for upgrades</div>
+                                        <div class="heroUpgradesGear" id="heroUpgradesGear"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

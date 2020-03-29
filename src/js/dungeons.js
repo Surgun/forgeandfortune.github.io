@@ -382,7 +382,11 @@ const DungeonManager = {
         refreshAreaSelect();
     },
     bossCount() {
-        const bossDung = this.dungeons.filter(d => d.type === "boss")
+        const bossDung = this.dungeons.filter(d => d.type === "boss");
         return bossDung.filter(d => d.maxFloor > 0).length;
+    },
+    availableUpgrades() {
+        const bossDung = this.dungeons.filter(d => d.type === "boss").map(d => d.maxFloor);
+        return bossDung.reduce((a,b) => a + b);
     }
 };

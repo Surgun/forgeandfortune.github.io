@@ -2924,7 +2924,7 @@ footer {
     position: relative;
 }
 
-#heroCard {
+.heroInspectBox {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2948,9 +2948,6 @@ footer {
     display: none;
     grid-template: auto / repeat(auto-fill, 125px);
     border: 1px solid var(--border-primary);
-}
-
-.heroTabContainer.grid-show {
     display: -ms-grid;
     display: grid;
 }

@@ -214,5 +214,11 @@
     "version": "v0.3.3.4",
     "date": "September 30th, 2019",
     "body": "<ul><li>Fixed a bug where trinkets were forgable. Removed all enhancements from trinkets (sorry!)</li><li>Added the bank button back to inventory screen</li></ul>"
+  },
+  {
+    "patchCount": 37,
+    "version": "v0.4.2.0",
+    "date": "March 31st, 2020",
+    "body": "<ul><li>Several back-end optimizations and under-the-hood tweaks.</li><li>You should notice significantly less lag while playing!</li></ul>"
   }
 ]

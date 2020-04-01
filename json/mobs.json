@@ -190,7 +190,7 @@
   },
   {
     "id": "B110",
-    "name": "Grogmar",
+    "name": "Rainbow Ooze",
     "hpBase": 40,
     "hpLvl": 1.08,
     "powBase": 4,
@@ -211,7 +211,7 @@
   },
   {
     "id": "B201",
-    "name": "Beorn",
+    "name": "Bumbling Bee",
     "hpBase": 25,
     "hpLvl": 0.2,
     "powBase": 2,
@@ -274,7 +274,7 @@
   },
   {
     "id": "B204",
-    "name": "Titus",
+    "name": "Reckless Rat",
     "hpBase": 25,
     "hpLvl": 0.1,
     "powBase": 2,
@@ -736,7 +736,7 @@
   },
   {
     "id": "B406",
-    "name": "Alok",
+    "name": "Beefy Bear",
     "hpBase": 60,
     "hpLvl": 1.62,
     "powBase": 4,
@@ -862,7 +862,7 @@
   },
   {
     "id": "B502",
-    "name": "Cedric",
+    "name": "Dwarf Cadet",
     "hpBase": 60,
     "hpLvl": 0.9,
     "powBase": 3,
@@ -1093,7 +1093,7 @@
   },
   {
     "id": "B603",
-    "name": "Lambug",
+    "name": "Elf Sniper",
     "hpBase": 50,
     "hpLvl": 0.2,
     "powBase": 3,
@@ -1156,7 +1156,7 @@
   },
   {
     "id": "B606",
-    "name": "Revere",
+    "name": "Elf Assassin",
     "hpBase": 50,
     "hpLvl": 0.36,
     "powBase": 4,
@@ -1240,7 +1240,7 @@
   },
   {
     "id": "B610",
-    "name": "Caeda",
+    "name": "Elf Noble",
     "hpBase": 50,
     "hpLvl": 1.08,
     "powBase": 4,
@@ -1857,7 +1857,7 @@
   },
   {
     "id": "B0207",
-    "name": "Zoe",
+    "name": "Orange Crush",
     "hpBase": 55,
     "hpLvl": 3.36,
     "powBase": 2,
@@ -2109,7 +2109,7 @@
   },
   {
     "id": "B0309",
-    "name": "Neve",
+    "name": "Monsoon",
     "hpBase": 35,
     "hpLvl": 1.26,
     "powBase": 4,
@@ -2487,7 +2487,7 @@
   },
   {
     "id": "B0507",
-    "name": "Troy",
+    "name": "Inkie",
     "hpBase": 10,
     "hpLvl": 0.24,
     "powBase": 1,
@@ -2739,7 +2739,7 @@
   },
   {
     "id": "B0609",
-    "name": "Grim",
+    "name": "Clive Clavicle",
     "hpBase": 50,
     "hpLvl": 0.84,
     "powBase": 3,

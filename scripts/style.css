@@ -3,8 +3,7 @@
 @font-face {
     font-family: 'Hellvetica';
     src: url('/external/font/hellvetica-webfont.woff2') format('woff2'),
-         url('/external/font/hellvetica-webfont.woff') format('woff'),
-         url('/external/font/Hellvetica.tff') format('truetype');
+         url('/external/font/hellvetica-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }

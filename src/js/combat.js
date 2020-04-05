@@ -1,6 +1,6 @@
 "use strict";
 
-const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,RANDOM:4,SELF:5,ALLENEMIES:6,ALLALLIES:7});
+const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,RANDOM:4,SELF:5,ALLENEMIES:6,ALLALLIES:7,ALLYMISSINGHP:8,ENEMYMISSINGHP:9,ENEMYLOWESTHP:10});
 
 const CombatManager = {
     refreshLater : false,
@@ -46,6 +46,9 @@ class combatRoundParams {
         if (target === TargetType.SELF) return [this.attacker];
         if (target === TargetType.ALLENEMIES) return livingEnemies;
         if (target === TargetType.ALLALLIES) return livingAllies;
+        if (target === TargetType.ALLYMISSINGHP) return livingAllies.reduce((a,b) => a.missingHP() - a.missingHP() >= b.hp ? a : b);
+        if (target === TargetType.ENEMYMISSINGHP) return livingEnemies.reduce((a,b) => a.missingHP() >= b.missingHP() ? a : b);
+        if (target === TargetType.ENEMYLOWESTHP) return livingEnemies.reduce((a,b) => a.hp >= b.hp ? a : b);
     }
 }
 
@@ -76,7 +79,12 @@ class Combatant {
     }
     takeDamage(dmg) {
         this.hp = Math.max(this.hp-dmg,0);
-        refreshHPBar(this);
+        if (!CombatManager.refreshLater) refreshHPBar(this);
+    }
+    takeDamagePercent(hpPercent) {
+        this.hp -= Math.floor(this.maxHP()*hpPercent/100);
+        this.hp = Math.max(0,this.hp);
+        if (!CombatManager.refreshLater) refreshHPBar(this);
     }
     hasBuff(buffID) {
         return this.buffs.some(b => b.id === buffID);
@@ -121,11 +129,13 @@ class Combatant {
     }
     heal(hp) {
         if (this.hp === 0) return;
+        if (this.isWilt()) hp = Math.floor(hp/2);
         this.hp = Math.min(this.hp+hp,this.maxHP());
         if (!CombatManager.refreshLater) refreshHPBar(this);
     }
     healPercent(hpPercent) {
         if (this.hp === 0) return;
+        if (this.isWilt()) hp = Math.floor(hp/2);
         this.hp += Math.floor(this.maxHP()*hpPercent/100);
         this.hp = Math.min(this.maxHP(),this.hp);
         if (!CombatManager.refreshLater) refreshHPBar(this);
@@ -183,6 +193,12 @@ class Combatant {
     }
     isChilled() {
         return this.buffs.some(b=>b.isChilled());
+    }
+    isWilt() {
+        return this.buffs.some(b=>b.isChilled());
+    }
+    underHalfHP() {
+        return 2*this.hp <= this.maxHP();
     }
 }
 

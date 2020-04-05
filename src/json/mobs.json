@@ -26,6 +26,19 @@
     "event": "normal"
   },
   {
+    "id": "B102",
+    "name": "Monster A",
+    "hpMod": 1,
+    "powMod": 1,
+    "protection": 0,
+    "skill1": "S0000",
+    "skill2": "S0000",
+    "skill3": "S0000",
+    "skill4": "SM102",
+    "passiveSkill": null,
+    "event": "normal"
+  },
+  {
     "id": "B200",
     "name": "Blinkie",
     "hpMod": 1,
@@ -52,6 +65,19 @@
     "event": "normal"
   },
   {
+    "id": "B202",
+    "name": "Monster B",
+    "hpMod": 1,
+    "powMod": 1,
+    "protection": 0,
+    "skill1": "S0000",
+    "skill2": "SM202",
+    "skill3": "S0000",
+    "skill4": "S0000",
+    "passiveSkill": null,
+    "event": "normal"
+  },
+  {
     "id": "B300",
     "name": "Dusty Alien",
     "hpMod": 1,
@@ -73,6 +99,19 @@
     "skill1": "SM301",
     "skill2": "S0000",
     "skill3": "S0000",
+    "skill4": "S0000",
+    "passiveSkill": null,
+    "event": "normal"
+  },
+  {
+    "id": "B302",
+    "name": "Monster C",
+    "hpMod": 1,
+    "powMod": 1,
+    "protection": 0,
+    "skill1": "S0000",
+    "skill2": "S0000",
+    "skill3": "SM302",
     "skill4": "S0000",
     "passiveSkill": null,
     "event": "normal"

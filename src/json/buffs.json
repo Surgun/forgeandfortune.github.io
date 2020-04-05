@@ -55,6 +55,17 @@
     "type": "buff"
   },
   {
+    "id": "BM102",
+    "name": "Wilt",
+    "description": "Reduce healing received by 50%",
+    "icon": "<i class=\"fas fa-disease\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "debuff"
+  },
+  {
     "id": "BM200",
     "name": "Translucent",
     "description": "Reduces damage taken from attacks by 100% while active",

@@ -52,7 +52,7 @@
     "name": "Grim Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
-    "skill3": "S0000",
+    "skill3": "S0030",
     "skill4": "S0000"
   },
   {
@@ -148,7 +148,7 @@
     "name": "Titus Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
-    "skill3": "S0000",
+    "skill3": "S1030",
     "skill4": "S0000"
   },
   {
@@ -221,7 +221,7 @@
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
-    "skill4": "S0000"
+    "skill4": "S2020"
   },
   {
     "id": "PB0101",

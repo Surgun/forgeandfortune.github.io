@@ -49,6 +49,7 @@ class Buff {
     getPow() { return 0; }
     getTech() { return 0; }
     isChilled() { return false; }
+    isWilt() { return false; }
     getProtection() { return 0; }
     maxHP() { return 0; }
 }
@@ -166,6 +167,15 @@ class B2010 extends Buff {
     }
     getTech() {
         return this.power;
+    }
+}
+
+class BM102 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    isWilt() {
+        return true;
     }
 }
 

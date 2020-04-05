@@ -114,7 +114,22 @@ SkillManager.skillEffects['S0020'] = function (combatParams) {
         target.heal(combatParams.power);
         refreshHPBar(target);
     });
-    
+}
+
+SkillManager.skillEffects['S0030'] = function (combatParams) {
+    //Exert - Grim
+    const targets = combatParams.getTarget(TargetType.SELF);
+    let hpDamage = 0;
+    targets.forEach(target => {
+        hpDamage = Math.floor(target.hp/10);
+        target.takeDamagePercent(15);
+        refreshHPBar(target);
+    });
+    combatParams.power += hpDamage * 2;
+    const targets2 = combatParams.getTarget(TargetType.FIRST);
+    targets2.forEach(target => {
+        target.takeAttack(combatParams);
+    });
 }
 
 SkillManager.skillEffects['S1010'] = function (combatParams) {
@@ -142,11 +157,27 @@ SkillManager.skillEffects['S1020'] = function (combatParams) {
     });
 };
 
+SkillManager.skillEffects['S1030'] = function (combatParams) {
+    //Holy Prayer - Titus
+    const targets = combatParams.getTarget(TargetType.ALLYMISSINGHP);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+};
+
 SkillManager.skillEffects['S2010'] = function (combatParams) {
     //Inspiration - Alok
     const targets = combatParams.getTarget(TargetType.ALLALLIES);
     targets.forEach(target => {
         BuffManager.generateBuff("B2010",target,Math.floor(combatParams.power));
+    });
+};
+
+SkillManager.skillEffects['S2020'] = function (combatParams) {
+    //Snipe - Grogmar
+    const targets = combatParams.getTarget(TargetType.ENEMYLOWESTHP);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
     });
 };
 
@@ -177,6 +208,15 @@ SkillManager.skillEffects['SM101'] = function (combatParams) {
     targets.forEach(target => target.heal(combatParams.power));
 }
 
+SkillManager.skillEffects['SM102'] = function (combatParams) {
+    //Monster A - Wilt
+    const targets = combatParams.getTarget(TargetType.FIRST);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        BuffManager.generateBuff('BM202',target,combatParams.power);
+    });
+}
+
 SkillManager.skillEffects['SM200'] = function (combatParams) {
     //Translucent - Blinkie
     const targets = combatParams.getTarget(TargetType.SELF);
@@ -202,6 +242,17 @@ SkillManager.skillEffects['SM201'] = function (combatParams) {
     }
 }
 
+SkillManager.skillEffects['SM202'] = function (combatParams) {
+    //Monster B - OverPower
+    const originalDmg = combatParams.power;
+    const targets = combatParams.getTarget(TargetType.FIRST);
+    targets.forEach(target => {
+        if (target.underHalfHP()) combatParams.power = Math.floor(originalDmg * 1.5);
+        else combatParams.power = originalDmg;
+        target.takeAttack(combatParams);
+    });
+}
+
 SkillManager.skillEffects['SM300'] = function (combatParams) {
     //Ray Gun - Dusty Alien
     const targets = combatParams.getTarget(TargetType.FIRST);
@@ -215,6 +266,14 @@ SkillManager.skillEffects['SM301'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.FIRST);
     targets.forEach(target => {
         combatParams.power = Math.floor(target.maxHP() * 0.25);
+        target.takeAttack(combatParams);
+    });
+}
+
+SkillManager.skillEffects['SM203'] = function (combatParams) {
+    //Monster C - Mega Attack
+    const targets = combatParams.getTarget(TargetType.FIRST);
+    targets.forEach(target => {
         target.takeAttack(combatParams);
     });
 }

@@ -180,7 +180,7 @@
     "bText": "#ATTACKER# purges his allies of buffs and lets out an attack for #DAMAGE# damage"
   },
   {
-    "id": "SM203",
+    "id": "SM202",
     "name": "Overpower",
     "description": "Deals additional damage if below 50% HP",
     "icon": "<i class=\"fab fa-superpowers\"></i>",

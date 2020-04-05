@@ -58,7 +58,7 @@
     "id": "BM102",
     "name": "Wilt",
     "description": "Reduce healing received by 50%",
-    "icon": "<i class=\"fas fa-disease\"></i>",
+    "icon": "<i class=\"fas fa-virus\"></i>",
     "maxStack": 1,
     "stackCast": 1,
     "onCast": "refresh",

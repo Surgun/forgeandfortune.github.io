@@ -160,8 +160,9 @@ SkillManager.skillEffects['S1020'] = function (combatParams) {
 SkillManager.skillEffects['S1030'] = function (combatParams) {
     //Holy Prayer - Titus
     const targets = combatParams.getTarget(TargetType.ALLYMISSINGHP);
+    console.log(targets);
     targets.forEach(target => {
-        target.takeAttack(combatParams);
+        target.heal(combatParams.power);
     });
 };
 

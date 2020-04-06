@@ -46,9 +46,9 @@ class combatRoundParams {
         if (target === TargetType.SELF) return [this.attacker];
         if (target === TargetType.ALLENEMIES) return livingEnemies;
         if (target === TargetType.ALLALLIES) return livingAllies;
-        if (target === TargetType.ALLYMISSINGHP) return livingAllies.reduce((a,b) => a.missingHP() - a.missingHP() >= b.hp ? a : b);
-        if (target === TargetType.ENEMYMISSINGHP) return livingEnemies.reduce((a,b) => a.missingHP() >= b.missingHP() ? a : b);
-        if (target === TargetType.ENEMYLOWESTHP) return livingEnemies.reduce((a,b) => a.hp >= b.hp ? a : b);
+        if (target === TargetType.ALLYMISSINGHP) return [livingAllies.reduce((a,b) => a.missingHP() >= b.missingHP() ? a : b)];
+        if (target === TargetType.ENEMYMISSINGHP) return [livingEnemies.reduce((a,b) => a.missingHP() >= b.missingHP() ? a : b)];
+        if (target === TargetType.ENEMYLOWESTHP) return [livingEnemies.reduce((a,b) => a.hp < b.hp ? a : b)];
     }
 }
 

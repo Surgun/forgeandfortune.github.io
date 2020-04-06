@@ -53,13 +53,13 @@ const devtools = {
     gearHeroes(lvl=1,rarity=0,sharp=0) {
         const recipes = recipeList.recipes.filter(r => r.lvl === lvl);
         HeroManager.heroes.forEach(hero => {
-            const slots = hero.getSlotTypes();
-            slots.forEach((slotType,i) => {
-                if (slotType[0] === "Trinkets") return;
-                const item = recipes.find(r => r.type === slotType[0]);
+            const slots = hero.gearSlots.map(g=>g.type);
+            slots.forEach(slotType => {
+                if (slotType === "Trinkets") return;
+                const item = recipes.find(r => r.type === slotType);
                 const container = new itemContainer(item.id,rarity);
                 container.sharp = sharp;
-                hero.equip(container,i);
+                hero.equip(container);
             })
         })
     },

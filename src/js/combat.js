@@ -195,7 +195,7 @@ class Combatant {
         return this.buffs.some(b=>b.isChilled());
     }
     isWilt() {
-        return this.buffs.some(b=>b.isChilled());
+        return this.buffs.some(b=>b.isWilt());
     }
     underHalfHP() {
         return 2*this.hp <= this.maxHP();

@@ -70,6 +70,7 @@ const BuffManager = {
             return;
         }
         const buffTemplate = this.idToBuff(buffID);
+        console.log(buffID,buffTemplate);
         const buff = new BuffLookup[buffID](buffTemplate,target,power);
         target.addBuff(buff);
         BuffRefreshManager.addBuff(buff,target);
@@ -221,6 +222,7 @@ const BuffLookup = {
     B1010,
     B1020,
     B2010,
+    BM102,
     BM200,
     BM902,
     BM902A,

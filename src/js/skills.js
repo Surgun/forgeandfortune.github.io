@@ -214,7 +214,7 @@ SkillManager.skillEffects['SM102'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.FIRST);
     targets.forEach(target => {
         target.takeAttack(combatParams);
-        BuffManager.generateBuff('BM202',target,combatParams.power);
+        BuffManager.generateBuff('BM102',target,combatParams.power);
     });
 }
 
@@ -271,7 +271,7 @@ SkillManager.skillEffects['SM301'] = function (combatParams) {
     });
 }
 
-SkillManager.skillEffects['SM203'] = function (combatParams) {
+SkillManager.skillEffects['SM302'] = function (combatParams) {
     //Monster C - Mega Attack
     const targets = combatParams.getTarget(TargetType.FIRST);
     targets.forEach(target => {

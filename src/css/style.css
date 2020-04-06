@@ -1880,6 +1880,7 @@ footer {
     text-decoration: none;
     border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
+    transition: all var(--transition_linear);
 }
 
 .recipeSelect:hover, .recipeSelect:focus {
@@ -2042,6 +2043,8 @@ footer {
     min-height: 220px;
     -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
+    transition: all var(--transition_linear);
+    box-shadow: var(--box-shadow);
 }
 
 .recipeCardFront, .recipeCardBack {
@@ -2136,6 +2139,7 @@ footer {
     align-items: center;
     font-size: 0.85rem;
     min-height: 36px;
+    transition: all var(--transition_linear);
 }
 
 .recipeTotalCrafted.isMastered, .recipeMasteredStatus.isMastered, .recipeTotalCrafted.isMastered:hover {
@@ -2209,6 +2213,7 @@ footer {
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
+    transition: all var(--transition_linear);
 }
 
 .recipeCraft > span {
@@ -2263,6 +2268,7 @@ footer {
     color: var(--text-secondary);
     height: 100%;
     cursor: pointer;
+    transition: var(--transition_linear);
 }
 
 .recipeBackTab:hover {
@@ -2302,6 +2308,7 @@ footer {
     background-color: rgba(255,255,255,0.05);
     border-radius: 5px;
     cursor: pointer;
+    transition: all var(--transition_linear);
 }
 
 .recipeDescription:hover, .recipeClose:hover, .workerBuyCardDesc:hover {

@@ -473,30 +473,28 @@
                             <div id="dungeonRun">
                                 <div id="drContentWrapper">
                                     <div id="drContent">
-                                        <div id="drArena">
-                                            <div class="bgContainer">
-                                                <div class="layer layer1"></div>
-                                                <div class="layer layer2"></div>
-                                                <div class="layer layer3"></div>
-                                                <div class="layer layer4"></div>
-                                                <div class="layer layer5"></div>
-                                                <div class="layer layer6"></div>
-                                                <div class="layer layer7"></div>
-                                                <div class="layer layer8"></div>
-                                                <div class="layer layer9"></div>
+                                        <div id="drArena" class="drArenaContainer">
+                                            <div id="combatBackgroundContainer" class="combatBackgroundContainer"></div>
+                                            <div class="combatActionsContainer">
+                                                <div class="dungeonBackButton">
+                                                    <i class="fas fa-arrow-left"></i>
+                                                </div>
+                                                <div class="combatFloorContainer">
+                                                    <div id="floorID" class="combatFloorCounter">Floor 1</div>
+                                                </div>
+                                                <div id="dungeonAbandon" class="actionButton dungeonAbandon">Abandon Dungeon</div>
                                             </div>
-                                            <div id="dungeonAbandon">Abandon Dungeon</div>
-                                            <h3><div id="floorID">Floor 1</div></h3>
-                                            <div id="dungeonListContainer">
-                                                <div id="dungeonHeroList"></div>
-                                                <div id="dungeonMobList"></div>
+                                            <div id="dungeonListContainer" class="dungeonListContainer">
+                                                <div id="dungeonHeroList" class="dungeonHeroList"></div>
+                                                <div id="dungeonMobList" class="dungeonMobList"></div>
                                             </div>
                                         </div>
                                         <div class="drTurnOrderLogContainer">
-                                            <div class="drTurnOrderLogTitles">
-                                                <h2 class="drTitle"><i class="far fa-hourglass"></i>Turn Order</h2>
+                                            <div class="drBoxHeaderContainer">
+                                                <div class="drBoxHeader">Turn Order</div>
+                                                <div class="drBoxDescription">The order in which actions will be taken during this adventure.</div>
                                             </div>
-                                            <div id="drTurnOrder"></div>
+                                            <div id="drTurnOrder" class="drTurnOrder"></div>
                                         </div>
                                     </div>
                                 </div>

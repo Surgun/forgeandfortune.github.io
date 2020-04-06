@@ -106,11 +106,13 @@ const $floorID = $("#floorID");
 const $dungeonHeroList = $("#dungeonHeroList");
 const $dungeonMobList = $("#dungeonMobList");
 const $drTurnOrder = $("#drTurnOrder");
+const $combatBackgroundContainer = $("#combatBackgroundContainer");
 
 function initiateDungeonFloor(dungeonID) {
     if (DungeonManager.dungeonView !== dungeonID) return;
     const dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonView);
     $dungeonRun.removeClass().addClass(dungeon.id);
+    $combatBackgroundContainer.css({backgroundImage: `url(/assets/images/dungeonBackgrounds/${dungeon.id}.jpg)`});
     if (dungeon.type === "boss") $dungeonRun.addClass("DBoss");
     $floorID.html("Floor "+dungeon.floor);
     $dungeonHeroList.empty();
@@ -145,7 +147,7 @@ function generateTurnOrder(dungeonID) {
         $("<div/>").addClass("orderUnitHeadImg").html(unit.head).appendTo(d1);
         $("<div/>").addClass("orderUnitHead").html(unit.name).appendTo(d1);
         $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder")).appendTo(d1);
-        const d1a = $("<div/>").attr("id","orderSkills"+unit.uniqueid).appendTo(d1);
+        const d1a = $("<div/>").attr("id","orderSkills"+unit.uniqueid).addClass("orderSkills").appendTo(d1);
         generateSkillIcons(unit).appendTo(d1a);
         const d2 = $("<div/>").addClass("beatBarDiv").appendTo(d1);
         $("<span/>").addClass("beatBarFill").attr("id","beatbarFill"+unit.uniqueid).css('width', "0%").appendTo(d2);
@@ -263,3 +265,9 @@ function refreshDungeonMatBar(dungeonid) {
     $("#dsbrf"+dungeonid).css('width',matWidth);
     $("#dsbr"+dungeonid).html(ResourceManager.materialAvailable(dungeon.mat));
 }
+
+//Go back to dungeon select screen
+$(document).on('click', ".dungeonBackButton", (e) => {
+    e.preventDefault();
+    tabClick(e, "dungeonsTab");
+});

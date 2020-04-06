@@ -1159,7 +1159,7 @@ footer {
     padding: 10px;
 }
 
-.dungeonAbandonAll:hover {
+.dungeonAbandonAll:hover, .dungeonAbandonAll:focus, .dungeonAbandon:hover, .dungeonAbandon:focus {
     background-color: var(--button-cancel);
 }
 
@@ -1496,28 +1496,6 @@ footer {
 }
 
 /* End Dungeon Selection Screen */
-
-/* Dungeon Combat Screen */ 
-
-#dungeonListContainer, #dungeonHeroList, #dungeonMobList, #drTurnOrder {
-    display: flex;
-    justify-content: space-between;
-}
-
-.orderUnit {
-    position: relative;
-    border: 2px dotted gray;
-    padding: 10px;
-}
-
-/* End Dungeon Combat Screen */
-
-
-
-/* ------------- split ------------- */
-
-
-
 
 /* Tabs and Tab Content Layout */
 
@@ -6450,17 +6428,202 @@ span.beta-tag {
 
 /* New Combat */
 
-.orderUnitSkills {
+.combatActionsContainer {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5) 50%, transparent);
+    transform-origin: top;
+    animation: scale-y-in var(--transition_linear);
+    z-index: 1;
+}
+
+.dungeonBackButton {
+    display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background-color var(--transition_linear);
+    box-shadow: var(--box-shadow);
+    animation: scale-in var(--transition_linear);
+}
+
+.dungeonBackButton:hover, .dungeonBackButton:focus {
+    background-color: var(--button-cancel);
+}
+
+.combatFloorCounter {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: var(--text-border);
+}
+
+.combatFloorCounter:after {
+    display: block;
+    content: "";
+    position: relative;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    margin: 5px auto;
+    background-color: var(--highlight);
+    animation: 1s 0.3s width forwards;
+}
+
+.drArenaContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+.dungeonListContainer {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.dungeonHeroList, .dungeonMobList {
+    display: flex;
+    flex-grow: 1;
+    padding: 0 10px;
+    justify-content: center;
+}
+
+.dfc, .dfm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    width: 100%;
+    max-width: 150px;
+}
+
+.dfcName, .dfmName {
+    padding: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    font-size: 0.85rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.heroDead .dfcImage, .mobDead .dfmImage {
+    opacity: 0.5;
+}
+
+.heroDead .dfcName, .mobDead .dfmName {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.combatBackgroundContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 300px;
+    background-repeat: repeat-x;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.dungeonListContainer {
+    position: relative;
+    z-index: 1;
+}
+
+.drTurnOrderLogContainer {
+    transform-origin: top;
+    animation: scale-y-in var(--transition_linear);
+}
+
+.drBoxHeaderContainer {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.drBoxDescription {
+    color: var(--text-secondary);
+}
+
+.drTurnOrder {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.orderUnit {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.orderUnitHeadImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 56px;
+    width: 56px;
+    background-color: rgba(0,0,0,0.25);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+}
+
+.orderUnitHead {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.orderUnitHP {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.orderSkills {
+    width: 100%;
+}
+
+.orderUnitSkills {
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    grid-gap: 5px;
+    margin-top: 10px;
     width: 100%;
 }
 
 .orderUnitSkill {
-    flex-grow: 1;
-    margin: 2.5px;
     padding: 5px;
     color: var(--text-secondary);
     text-align: center;

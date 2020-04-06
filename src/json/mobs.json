@@ -27,7 +27,7 @@
   },
   {
     "id": "B102",
-    "name": "Monster A",
+    "name": "Minimush",
     "hpMod": 1,
     "powMod": 1,
     "protection": 0,
@@ -66,7 +66,7 @@
   },
   {
     "id": "B202",
-    "name": "Monster B",
+    "name": "Violet Death",
     "hpMod": 1,
     "powMod": 1,
     "protection": 0,
@@ -105,9 +105,9 @@
   },
   {
     "id": "B302",
-    "name": "Monster C",
-    "hpMod": 1,
-    "powMod": 1,
+    "name": "Dwarf Minor",
+    "hpMod": 0.5,
+    "powMod": 1.25,
     "protection": 0,
     "skill1": "S0000",
     "skill2": "S0000",

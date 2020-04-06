@@ -123,6 +123,7 @@ function initiateDungeonFloor(dungeonID) {
         const d3 = $("<div/>").addClass("dfcImage").html(hero.image);
         const d4 = $("<div/>").addClass("buffListContent").attr("id","buffList"+hero.uniqueid);
         d1.append(d2,d3,d4);
+        if (hero.hp === 0) d1.addClass("heroDead");
         $dungeonHeroList.prepend(d1);
     });
     dungeon.mobs.forEach((mob) => {

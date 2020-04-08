@@ -22,12 +22,11 @@ const Shop = {
     },
     buyPerk(id) {
         const perk = this.idToPerk(id);
-        if (ResourceManager.materialAvailable("M001") < perk.goldCost || ResourceManager.materialAvailable(perk.mat) < perk.matAmt) {
+        if (ResourceManager.materialAvailable("M001") < perk.goldCost) {
             Notifications.perkCost();
             return;
         }
         ResourceManager.deductMoney(perk.goldCost);
-        ResourceManager.addMaterial(perk.mat,-perk.matAmt)
         perk.purchase();
         refreshShop();
         refreshProgress();
@@ -47,6 +46,10 @@ const Shop = {
     },
     boughtPerks() {
         return this.perks.filter(p=>p.purchased);
+    },
+    alreadyPurchased(perkID) {
+        const perk = this.idToPerk(perkID);
+        return perk.alreadyPurchased();
     }
 }
 
@@ -56,7 +59,7 @@ class Perk {
         this.purchased = false;
     }
     canBuy() {
-        return ResourceManager.materialAvailable("M001") >= this.goldCost && ResourceManager.materialAvailable(this.mat) >= this.matAmt;
+        return ResourceManager.materialAvailable("M001") >= this.goldCost;
     }
     purchase() {
         this.purchased = true;
@@ -65,8 +68,6 @@ class Perk {
             WorkerManager.gainWorker(this.subtype);
             initializeGuilds();
         }
-        if (this.type === "dungeon") DungeonManager.unlockDungeon(this.subtype);
-        if (this.type === "boss") DungeonManager.unlockDungeon(this.subtype);
         if (this.type === "craft") actionSlotManager.upgradeSlot();
         if (this.type === "adventure") DungeonManager.partySize += 1;
         if (this.type === "synth" && this.subtype === "open") TownManager.buildingPerk("synth");
@@ -90,6 +91,9 @@ class Perk {
     }
     loadSave(save) {
         this.purchased = save.purchased;
+    }
+    alreadyPurchased() {
+        return this.purchased;
     }
 }
 
@@ -138,7 +142,6 @@ function createALperk(perk,name) {
         $("<div/>").addClass("alPerkBuyText").html("Purchase").appendTo(d5);
         const d5a = $("<div/>").addClass("alPerkBuyCost").appendTo(d5);
             $("<div/>").addClass("buyCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(perk.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(perk.goldCost,2)}`).appendTo(d5a);
-            $("<div/>").addClass("buyCost tooltip").addClass("shopMat"+perk.mat).data("perkID",perk.id).attr({"data-tooltip": "material_desc", "data-tooltip-value": perk.mat}).html(`${ResourceManager.materialIcon(perk.mat)} ${perk.matAmt}`).appendTo(d5a);
     return d1;
 }
 

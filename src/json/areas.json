@@ -22,11 +22,5 @@
     "name": "Boss Realm",
     "bannedHero": [],
     "type": "boss"
-  },
-  {
-    "id": "A05",
-    "name": "Test Realm",
-    "bannedHero": [],
-    "type": "boss"
   }
 ]

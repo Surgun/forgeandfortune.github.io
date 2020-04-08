@@ -70,7 +70,6 @@ const BuffManager = {
             return;
         }
         const buffTemplate = this.idToBuff(buffID);
-        console.log(buffID,buffTemplate);
         const buff = new BuffLookup[buffID](buffTemplate,target,power);
         target.addBuff(buff);
         BuffRefreshManager.addBuff(buff,target);

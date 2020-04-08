@@ -305,7 +305,6 @@ $(document).on('click', ".heroInspect", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("data-value");
     HeroManager.heroView = ID;
-    console.log(HeroManager.heroView);
     $("#heroOverviewButton").removeClass("highlight");
     $(`.heroOwnedCard`).removeClass("highlight");
     $(`.heroOwnedCard[data-value=${ID}]`).addClass("highlight");

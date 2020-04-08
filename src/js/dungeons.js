@@ -308,7 +308,10 @@ class Dungeon {
         if (this.unlockedBy === null) return true;
         if (this.type === "dungeon") return Shop.alreadyPurchased(this.unlockedBy);
         const bossDungeon = DungeonManager.dungeonByID(this.unlockedBy);
-        return bossDungeon.maxFloor > 0;
+        return bossDungeon.beaten();
+    }
+    beaten() {
+        return this.maxFloor > 0;
     }
 }
 
@@ -383,5 +386,9 @@ const DungeonManager = {
     availableUpgrades() {
         const bossDung = this.dungeons.filter(d => d.type === "boss").map(d => d.maxFloor);
         return bossDung.reduce((a,b) => a + b);
+    },
+    beaten(dungeonID) {
+        const dungeon = this.dungeonByID(dungeonID);
+        return dungeon.beaten();
     }
 };

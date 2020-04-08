@@ -95,6 +95,10 @@ class Perk {
     alreadyPurchased() {
         return this.purchased;
     }
+    availableForPurchase() {
+        if (this.unlockReq === null) return true;
+        return DungeonManager.beaten(this.unlockReq);
+    }
 }
 
 const $marketsTab = $("#marketsTab");
@@ -135,6 +139,10 @@ function createALperk(perk,name) {
     $("<div/>").addClass("alDesc").html(perk.description).appendTo(d1);
     if (perk.purchased) {
         return d1.addClass("perkPurchased");
+    }
+    if (!perk.availableForPurchase()) {
+        $("<div/>").addClass("alBossBeat").html("Beat next boss to unlock!").appendTo(d1);
+        return d1;
     }
     const d5 = $("<div/>").addClass("alPerkBuy").data("pid",perk.id).appendTo(d1);
         if (!perk.canBuy()) d5.addClass("cannotAfford");

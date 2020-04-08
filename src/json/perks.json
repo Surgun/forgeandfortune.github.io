@@ -8,6 +8,7 @@
     "goldCost": 75,
     "type": "worker",
     "subtype": "WN001",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-crow\"></i>"
   },
   {
@@ -19,6 +20,7 @@
     "goldCost": 150,
     "type": "worker",
     "subtype": "WN101",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-salad\"></i>"
   },
   {
@@ -30,6 +32,7 @@
     "goldCost": 200,
     "type": "craft",
     "subtype": null,
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-drafting-compass\"></i>"
   },
   {
@@ -41,6 +44,7 @@
     "goldCost": 350,
     "type": "worker",
     "subtype": "WN301",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-fish\"></i>"
   },
   {
@@ -52,6 +56,7 @@
     "goldCost": 700,
     "type": "boss",
     "subtype": "D010",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -63,6 +68,7 @@
     "goldCost": 1000,
     "type": "craft",
     "subtype": null,
+    "unlockReq": "D401",
     "icon": "<i class=\"fas fa-drafting-compass\"></i>"
   },
   {
@@ -74,6 +80,7 @@
     "goldCost": 4000,
     "type": "boss",
     "subtype": "D011",
+    "unlockReq": "D401",
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -85,6 +92,7 @@
     "goldCost": 4000,
     "type": "worker",
     "subtype": "WN202",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-paw\"></i>"
   },
   {
@@ -96,6 +104,7 @@
     "goldCost": 4000,
     "type": "craft",
     "subtype": null,
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-drafting-compass\"></i>"
   },
   {
@@ -107,6 +116,7 @@
     "goldCost": 4000,
     "type": "worker",
     "subtype": "WN002",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-crow\"></i>"
   },
   {
@@ -118,6 +128,7 @@
     "goldCost": 4000,
     "type": "worker",
     "subtype": "WN102",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-salad\"></i>"
   },
   {
@@ -129,6 +140,7 @@
     "goldCost": 4000,
     "type": "worker",
     "subtype": "WN302",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-fish\"></i>"
   },
   {
@@ -140,6 +152,7 @@
     "goldCost": 30000,
     "type": "boss",
     "subtype": "D012",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -151,6 +164,7 @@
     "goldCost": 20000,
     "type": "craft",
     "subtype": null,
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-drafting-compass\"></i>"
   },
   {
@@ -162,6 +176,7 @@
     "goldCost": 200000,
     "type": "boss",
     "subtype": "D013",
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -173,6 +188,7 @@
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN203",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-paw\"></i>"
   },
   {
@@ -184,6 +200,7 @@
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN003",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-crow\"></i>"
   },
   {
@@ -195,6 +212,7 @@
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN103",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-salad\"></i>"
   },
   {
@@ -206,6 +224,7 @@
     "goldCost": 300000,
     "type": "worker",
     "subtype": "WN303",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-fish\"></i>"
   },
   {
@@ -217,6 +236,7 @@
     "goldCost": 800000,
     "type": "boss",
     "subtype": "D014",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -228,6 +248,7 @@
     "goldCost": 3000000,
     "type": "boss",
     "subtype": "D015",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -239,6 +260,7 @@
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN204",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-paw\"></i>"
   },
   {
@@ -250,6 +272,7 @@
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN004",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-crow\"></i>"
   },
   {
@@ -261,6 +284,7 @@
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN104",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-salad\"></i>"
   },
   {
@@ -272,6 +296,7 @@
     "goldCost": 4000000,
     "type": "worker",
     "subtype": "WN304",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-fish\"></i>"
   },
   {
@@ -283,6 +308,7 @@
     "goldCost": 30000000,
     "type": "boss",
     "subtype": "D016",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -294,6 +320,7 @@
     "goldCost": 150000000,
     "type": "boss",
     "subtype": "D017",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -305,6 +332,7 @@
     "goldCost": 625000000,
     "type": "boss",
     "subtype": "D018",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -316,6 +344,7 @@
     "goldCost": 32500000000,
     "type": "boss",
     "subtype": "D019",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -327,6 +356,7 @@
     "goldCost": 5,
     "type": "dungeon",
     "subtype": "D101",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-coffin\"></i>"
   },
   {
@@ -338,6 +368,7 @@
     "goldCost": 50,
     "type": "dungeon",
     "subtype": "D201",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -349,6 +380,7 @@
     "goldCost": 200,
     "type": "hero",
     "subtype": "H001",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-fist-raised\"></i>"
   },
   {
@@ -360,6 +392,7 @@
     "goldCost": 250,
     "type": "dungeon",
     "subtype": "D301",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-spider\"></i>"
   },
   {
@@ -371,6 +404,7 @@
     "goldCost": 450,
     "type": "hero",
     "subtype": "H102",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-hat-wizard\"></i>"
   },
   {
@@ -382,6 +416,7 @@
     "goldCost": 1500,
     "type": "dungeon",
     "subtype": "D102",
+    "unlockReq": "D401",
     "icon": "<i class=\"fas fa-coffin\"></i>"
   },
   {
@@ -393,6 +428,7 @@
     "goldCost": 1600,
     "type": "dungeon",
     "subtype": "D202",
+    "unlockReq": "D401",
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -404,6 +440,7 @@
     "goldCost": 1700,
     "type": "hero",
     "subtype": "H201",
+    "unlockReq": "D401",
     "icon": "<i class=\"fas fa-mask\"></i>"
   },
   {
@@ -415,6 +452,7 @@
     "goldCost": 1800,
     "type": "dungeon",
     "subtype": "D302",
+    "unlockReq": "D401",
     "icon": "<i class=\"fas fa-spider\"></i>"
   },
   {
@@ -426,6 +464,7 @@
     "goldCost": 1900,
     "type": "hero",
     "subtype": "H002",
+    "unlockReq": "D401",
     "icon": "<i class=\"fas fa-fist-raised\"></i>"
   },
   {
@@ -437,6 +476,7 @@
     "goldCost": 2000,
     "type": "hero",
     "subtype": "H101",
+    "unlockReq": "D401",
     "icon": "<i class=\"fas fa-hat-wizard\"></i>"
   },
   {
@@ -448,6 +488,7 @@
     "goldCost": 15000,
     "type": "dungeon",
     "subtype": "D103",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-coffin\"></i>"
   },
   {
@@ -459,6 +500,7 @@
     "goldCost": 16000,
     "type": "dungeon",
     "subtype": "D203",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -470,6 +512,7 @@
     "goldCost": 17000,
     "type": "hero",
     "subtype": "H202",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-mask\"></i>"
   },
   {
@@ -481,6 +524,7 @@
     "goldCost": 18000,
     "type": "dungeon",
     "subtype": "D303",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-spider\"></i>"
   },
   {
@@ -492,6 +536,7 @@
     "goldCost": 19000,
     "type": "hero",
     "subtype": "H003",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-fist-raised\"></i>"
   },
   {
@@ -503,6 +548,7 @@
     "goldCost": 20000,
     "type": "hero",
     "subtype": "H103",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-hat-wizard\"></i>"
   },
   {
@@ -514,6 +560,7 @@
     "goldCost": 100000,
     "type": "dungeon",
     "subtype": "D104",
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-coffin\"></i>"
   },
   {
@@ -525,6 +572,7 @@
     "goldCost": 110000,
     "type": "dungeon",
     "subtype": "D204",
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-skull-crossbones\"></i>"
   },
   {
@@ -536,6 +584,7 @@
     "goldCost": 120000,
     "type": "hero",
     "subtype": "H204",
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-mask\"></i>"
   },
   {
@@ -547,6 +596,7 @@
     "goldCost": 130000,
     "type": "dungeon",
     "subtype": "D304",
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-spider\"></i>"
   },
   {
@@ -558,6 +608,7 @@
     "goldCost": 140000,
     "type": "hero",
     "subtype": "H004",
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-fist-raised\"></i>"
   },
   {
@@ -569,6 +620,7 @@
     "goldCost": 150000,
     "type": "hero",
     "subtype": "H104",
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-hat-wizard\"></i>"
   },
   {
@@ -580,6 +632,7 @@
     "goldCost": 1000,
     "type": "monster",
     "subtype": "open",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-pastafarianism\"></i>"
   },
   {
@@ -591,6 +644,7 @@
     "goldCost": 2000,
     "type": "synth",
     "subtype": "open",
+    "unlockReq": "D401",
     "icon": "<i class=\"fas fa-building\"></i>"
   },
   {
@@ -602,6 +656,7 @@
     "goldCost": 8000,
     "type": "cauldron",
     "subtype": "open",
+    "unlockReq": "D401",
     "icon": "<i class=\"fas fa-vihara\"></i>"
   },
   {
@@ -613,6 +668,7 @@
     "goldCost": 60000,
     "type": "bank",
     "subtype": "open",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-landmark\"></i>"
   },
   {
@@ -624,18 +680,8 @@
     "goldCost": 1,
     "type": "museum",
     "subtype": "open",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-archway\"></i>"
-  },
-  {
-    "id": "AL3005",
-    "title": "Quality Of Death",
-    "description": "Adds special privileges to the Monster House.",
-    "category": "Town",
-    "order": 6,
-    "goldCost": 75000,
-    "type": "monster",
-    "subtype": "level",
-    "icon": "<i class=\"fas fa-pastafarianism\"></i>"
   },
   {
     "id": "AL3006",
@@ -646,6 +692,7 @@
     "goldCost": 85000,
     "type": "synth",
     "subtype": "level",
+    "unlockReq": "D402",
     "icon": "<i class=\"fas fa-building\"></i>"
   },
   {
@@ -657,6 +704,7 @@
     "goldCost": 90000,
     "type": "forge",
     "subtype": "open",
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-hammer-war\"></i>"
   },
   {
@@ -668,6 +716,7 @@
     "goldCost": 300000,
     "type": "tinker",
     "subtype": "open",
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
@@ -679,18 +728,8 @@
     "goldCost": 150000,
     "type": "cauldron",
     "subtype": "level",
+    "unlockReq": "D403",
     "icon": "<i class=\"fas fa-vihara\"></i>"
-  },
-  {
-    "id": "AL3010",
-    "title": "Numbers Go Down",
-    "description": "Adds special privileges to the Monster House.",
-    "category": "Town",
-    "order": 11,
-    "goldCost": 800000,
-    "type": "monster",
-    "subtype": "level",
-    "icon": "<i class=\"fas fa-pastafarianism\"></i>"
   },
   {
     "id": "AL3011",
@@ -701,6 +740,7 @@
     "goldCost": 1200000,
     "type": "fortune",
     "subtype": "open",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-hat-witch\"></i>"
   },
   {
@@ -712,6 +752,7 @@
     "goldCost": 1600000,
     "type": "bank",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-landmark\"></i>"
   },
   {
@@ -723,6 +764,7 @@
     "goldCost": 3000000,
     "type": "tinker",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
@@ -734,6 +776,7 @@
     "goldCost": 4500000,
     "type": "cauldron",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-vihara\"></i>"
   },
   {
@@ -745,6 +788,7 @@
     "goldCost": 4500000,
     "type": "forge",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-hammer-war\"></i>"
   },
   {
@@ -756,6 +800,7 @@
     "goldCost": 30000000,
     "type": "tinker",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
@@ -767,6 +812,7 @@
     "goldCost": 60000000,
     "type": "bank",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-landmark\"></i>"
   },
   {
@@ -778,6 +824,7 @@
     "goldCost": 45000000,
     "type": "fortune",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-hat-witch\"></i>"
   },
   {
@@ -789,6 +836,7 @@
     "goldCost": 150000000,
     "type": "tinker",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
@@ -800,6 +848,7 @@
     "goldCost": 300000000,
     "type": "forge",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-hammer-war\"></i>"
   },
   {
@@ -811,6 +860,7 @@
     "goldCost": 225000000,
     "type": "fortune",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-hat-witch\"></i>"
   },
   {
@@ -822,6 +872,7 @@
     "goldCost": 625000000,
     "type": "tinker",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
@@ -833,6 +884,7 @@
     "goldCost": 32500000000,
     "type": "tinker",
     "subtype": "level",
+    "unlockReq": null,
     "icon": "<i class=\"fas fa-tools\"></i>"
   }
 ]

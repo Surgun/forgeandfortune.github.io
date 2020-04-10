@@ -66,19 +66,19 @@ const Museum = {
         reward.purchase();
     },
     crafTime() {
-        const reward = this.idToReward("MU001");
-        return 1-reward.lvl*0.02;
+        const reward = this.idToReward("MU001").lvl;
+        return 1-reward*0.02;
     },
     goodChance() {
-        const reward = this.idToReward("MU002");
+        const reward = this.idToReward("MU002").lvl;
         return reward*5;
     },
     greatChance() {
-        const reward = this.idToReward("MU003");
+        const reward = this.idToReward("MU003").lvl;
         return Math.floor(reward*2.5);
     },
     epicChance() {
-        const reward = this.idToReward("MU004");
+        const reward = this.idToReward("MU004").lvl;
         return reward;
     }
 }

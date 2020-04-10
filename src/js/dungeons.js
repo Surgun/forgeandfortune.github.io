@@ -43,20 +43,17 @@ class TurnOrder {
 class Area {
     constructor(props) {
         Object.assign(this, props);
-        this.unlocked = false;
         this.dungeons = [];
     }
     createSave() {
         const save = {};
-        save.id = this.id;
-        save.unlocked = this.unlocked;
         return save;
     }
     loadSave(save) {
-        this.unlocked = save.unlocked;
+        return;
     }
-    unlock() {
-        this.unlocked = true;
+    unlocked() {
+        return this.dungeons.some(d => d.unlocked());
     }
     addDungeon(dungeon) {
         this.dungeons.push(dungeon);
@@ -79,7 +76,7 @@ class Area {
         return dungeon ? dungeon : null;
     }
     lastOpen() {
-        const dungeons = this.dungeons.filter(d => d.unlocked);
+        const dungeons = this.dungeons.filter(d => d.unlocked());
         return dungeons[dungeons.length-1];
     }
 }
@@ -103,10 +100,6 @@ const AreaManager = {
             const area = this.idToArea(areaSave.id);
             area.loadSave(areaSave);
         });
-    },
-    unlockArea(areaID) {
-        const area = this.idToArea(areaID);
-        area.unlock();
     },
     addDungeon(dungeon) {
         const area = this.idToArea(dungeon.area);
@@ -132,7 +125,6 @@ class Dungeon {
         this.lastParty = null;
         this.dungeonTime = 0;
         this.rewardTime = 0;
-        this.unlocked = true;
     }
     createSave() {
         const save = {};
@@ -309,11 +301,17 @@ class Dungeon {
             enemy.passiveCheck(type);
         })
     }
-    materialGain() {
-        const amt = this.floorClear
-    }
     getRewards() {
         return new idAmt("M201",1);
+    }
+    unlocked() {
+        if (this.unlockedBy === null) return true;
+        if (this.type === "dungeon") return Shop.alreadyPurchased(this.unlockedBy);
+        const bossDungeon = DungeonManager.dungeonByID(this.unlockedBy);
+        return bossDungeon.beaten();
+    }
+    beaten() {
+        return this.maxFloor > 0;
     }
 }
 
@@ -388,5 +386,9 @@ const DungeonManager = {
     availableUpgrades() {
         const bossDung = this.dungeons.filter(d => d.type === "boss").map(d => d.maxFloor);
         return bossDung.reduce((a,b) => a + b);
+    },
+    beaten(dungeonID) {
+        const dungeon = this.dungeonByID(dungeonID);
+        return dungeon.beaten();
     }
 };

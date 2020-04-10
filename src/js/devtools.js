@@ -14,6 +14,9 @@ const devtools = {
         ResourceManager.materials.forEach(material => {
             ResourceManager.addMaterial(material.id,9999999);
         })
+        DungeonManager.dungeons.forEach(dungeon => {
+            if (dungeon.type === "boss") dungeon.maxFloor = 1;
+        })
         DungeonManager.bossesBeat = DungeonManager.dungeons.filter(d=>d.type==="boss").map(d=>d.id);
         TownManager.bankStatus = BuildingState.built;
         TownManager.fuseStatus = BuildingState.built;
@@ -72,9 +75,12 @@ const devtools = {
         refreshSideTown();
     },
     dungeonUnlock() {
-        DungeonManager.bossesBeat = [];
-        DungeonManager.dungeonPaid.push("D010","D011","D012","D013","D014","D015","D016","D017","D018","D019");
-        refreshDungeonSelect();
+        AreaManager.areas.forEach(area => {
+            area.unlocked = true;
+        });
+        DungeonManager.dungeons.forEach(dungeon => {
+            if (dungeon.type === "boss") dungeon.maxFloor = 1;
+        });
     },
     heroUnlock() {
         HeroManager.heroes.forEach(h=> h.owned = true);

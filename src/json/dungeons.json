@@ -13,7 +13,8 @@
     "powGain": 1,
     "hpGain": 15,
     "partySize": 1,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2001"
   },
   {
     "id": "D102",
@@ -29,7 +30,8 @@
     "powGain": 1,
     "hpGain": 10,
     "partySize": 2,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2006"
   },
   {
     "id": "D103",
@@ -45,7 +47,8 @@
     "powGain": 1.2,
     "hpGain": 24,
     "partySize": 3,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2012"
   },
   {
     "id": "D104",
@@ -61,7 +64,8 @@
     "powGain": 1.3,
     "hpGain": 24,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2018"
   },
   {
     "id": "D105",
@@ -77,7 +81,8 @@
     "powGain": 1.7,
     "hpGain": 30,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2018"
   },
   {
     "id": "D106",
@@ -93,7 +98,8 @@
     "powGain": 2.4,
     "hpGain": 44,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2018"
   },
   {
     "id": "D107",
@@ -109,7 +115,8 @@
     "powGain": 4,
     "hpGain": 72,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2018"
   },
   {
     "id": "D108",
@@ -125,7 +132,8 @@
     "powGain": 6,
     "hpGain": 108,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2018"
   },
   {
     "id": "D109",
@@ -141,7 +149,8 @@
     "powGain": 8,
     "hpGain": 144,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2018"
   },
   {
     "id": "D110",
@@ -157,7 +166,8 @@
     "powGain": 10,
     "hpGain": 180,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2018"
   },
   {
     "id": "D201",
@@ -173,7 +183,8 @@
     "powGain": 1,
     "hpGain": 15,
     "partySize": 1,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2002"
   },
   {
     "id": "D202",
@@ -189,7 +200,8 @@
     "powGain": 1,
     "hpGain": 10,
     "partySize": 2,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2007"
   },
   {
     "id": "D203",
@@ -205,7 +217,8 @@
     "powGain": 1.2,
     "hpGain": 24,
     "partySize": 3,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2013"
   },
   {
     "id": "D204",
@@ -221,7 +234,8 @@
     "powGain": 1.3,
     "hpGain": 24,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2019"
   },
   {
     "id": "D205",
@@ -237,7 +251,8 @@
     "powGain": 1.7,
     "hpGain": 30,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2019"
   },
   {
     "id": "D206",
@@ -253,7 +268,8 @@
     "powGain": 2.4,
     "hpGain": 44,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2019"
   },
   {
     "id": "D207",
@@ -269,7 +285,8 @@
     "powGain": 4,
     "hpGain": 72,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2019"
   },
   {
     "id": "D208",
@@ -285,7 +302,8 @@
     "powGain": 6,
     "hpGain": 108,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2019"
   },
   {
     "id": "D209",
@@ -301,7 +319,8 @@
     "powGain": 8,
     "hpGain": 144,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2019"
   },
   {
     "id": "D210",
@@ -317,7 +336,8 @@
     "powGain": 10,
     "hpGain": 180,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2019"
   },
   {
     "id": "D301",
@@ -333,7 +353,8 @@
     "powGain": 1,
     "hpGain": 15,
     "partySize": 1,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2004"
   },
   {
     "id": "D302",
@@ -349,7 +370,8 @@
     "powGain": 1,
     "hpGain": 10,
     "partySize": 2,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2009"
   },
   {
     "id": "D303",
@@ -365,7 +387,8 @@
     "powGain": 1.2,
     "hpGain": 24,
     "partySize": 3,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2015"
   },
   {
     "id": "D304",
@@ -381,7 +404,8 @@
     "powGain": 1.3,
     "hpGain": 24,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2021"
   },
   {
     "id": "D305",
@@ -397,7 +421,8 @@
     "powGain": 1.7,
     "hpGain": 30,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2021"
   },
   {
     "id": "D306",
@@ -413,7 +438,8 @@
     "powGain": 2.4,
     "hpGain": 44,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2021"
   },
   {
     "id": "D307",
@@ -429,7 +455,8 @@
     "powGain": 4,
     "hpGain": 72,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2021"
   },
   {
     "id": "D308",
@@ -445,7 +472,8 @@
     "powGain": 6,
     "hpGain": 108,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2021"
   },
   {
     "id": "D309",
@@ -461,7 +489,8 @@
     "powGain": 8,
     "hpGain": 144,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2021"
   },
   {
     "id": "D310",
@@ -477,7 +506,8 @@
     "powGain": 10,
     "hpGain": 180,
     "partySize": 4,
-    "type": "dungeon"
+    "type": "dungeon",
+    "unlockedBy": "AL2021"
   },
   {
     "id": "D401",
@@ -492,8 +522,9 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 1,
-    "type": "boss"
+    "partySize": 3,
+    "type": "boss",
+    "unlockedBy": null
   },
   {
     "id": "D402",
@@ -508,14 +539,15 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 2,
-    "type": "boss"
+    "partySize": 4,
+    "type": "boss",
+    "unlockedBy": "D401"
   },
   {
     "id": "D403",
     "name": "Blue Knight",
     "area": "A04",
-    "mob1": null,
+    "mob1": "B902",
     "mob2": null,
     "mob3": null,
     "mob4": null,
@@ -524,14 +556,15 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 3,
-    "type": "boss"
+    "partySize": 4,
+    "type": "boss",
+    "unlockedBy": "D402"
   },
   {
     "id": "D404",
     "name": "Lich Suit Lawrence",
     "area": "A04",
-    "mob1": null,
+    "mob1": "B902",
     "mob2": null,
     "mob3": null,
     "mob4": null,
@@ -541,13 +574,14 @@
     "powGain": null,
     "hpGain": null,
     "partySize": 4,
-    "type": "boss"
+    "type": "boss",
+    "unlockedBy": "D403"
   },
   {
     "id": "D405",
     "name": "Beclutcher",
     "area": "A04",
-    "mob1": null,
+    "mob1": "B902",
     "mob2": null,
     "mob3": null,
     "mob4": null,
@@ -557,6 +591,7 @@
     "powGain": null,
     "hpGain": null,
     "partySize": 4,
-    "type": "boss"
+    "type": "boss",
+    "unlockedBy": "D404"
   }
 ]

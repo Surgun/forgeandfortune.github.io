@@ -40,6 +40,7 @@ function dungeonsTabClicked() {
 function refreshAreaSelect() {
     $areaListings.empty();
     AreaManager.areas.forEach(area => {
+        if (!area.unlocked()) return;
         createAreaBlock(area).appendTo($areaListings);
     });
 }

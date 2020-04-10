@@ -256,7 +256,6 @@ function characterCard(prefix,dv,ID,status) {
     if (status !== null && status !== undefined) {
         if (status === "in_dungeon") $("<div/>").addClass("heroStatus tooltip statusDungeon").attr({"data-tooltip": "hero_in_combat"}).html(`<i class="fas fa-swords"></i>`).appendTo(dclick);
         if (status === "in_party") $("<div/>").addClass("heroStatus tooltip statusParty").attr({"data-tooltip": "hero_in_party"}).html(`<i class="fas fa-check"></i>`).appendTo(dclick);
-        else console.error('Invalid status passed. Could not render proper status for hero card.');
     }
     return d;
 }

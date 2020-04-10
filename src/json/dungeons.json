@@ -522,7 +522,7 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 1,
+    "partySize": 3,
     "type": "boss",
     "unlockedBy": null
   },
@@ -539,7 +539,7 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 2,
+    "partySize": 4,
     "type": "boss",
     "unlockedBy": "D401"
   },
@@ -556,7 +556,7 @@
     "hp": null,
     "powGain": null,
     "hpGain": null,
-    "partySize": 3,
+    "partySize": 4,
     "type": "boss",
     "unlockedBy": "D402"
   },

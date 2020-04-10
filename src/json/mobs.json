@@ -141,5 +141,18 @@
     "skill4": "S0000",
     "passiveSkill": "SMP902",
     "event": "boss"
+  },
+  {
+    "id": "B903",
+    "name": "Blue Knight",
+    "hpMod": 10000,
+    "powMod": 350,
+    "protection": 0,
+    "skill1": "SM903A",
+    "skill2": "S0000",
+    "skill3": "SM903B",
+    "skill4": "S0000",
+    "passiveSkill": "SMP903",
+    "event": "boss"
   }
 ]

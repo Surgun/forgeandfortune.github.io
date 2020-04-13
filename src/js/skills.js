@@ -345,6 +345,7 @@ SkillManager.skillEffects['SM903A'] = function (combatParams) {
 }
 
 SkillManager.skillEffects['SM903A'] = function (combatParams) {
+    //KNIGHT - GAIN BUFF
     const targets = combatParams.getTarget(TargetType.ALLENEMIES);
     const thisMob = combatParams.getTarget(TargetType.SELF);
     if (this.state === null || this.state === targets.length-1) this.state = 0;
@@ -353,19 +354,15 @@ SkillManager.skillEffects['SM903A'] = function (combatParams) {
     target.takeAttack(combatParams);
     if (target.type === "Might") {
         BuffManager.generateBuff('BM903A',thisMob,combatParams.power);
-        thisMob.removeBuff("BM903B");
-        thisMob.removeBuff("BM903C");
         thisMob.image = '<img src="/assets/images/enemies/BM903A.gif">';
         $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
     }
     else if (target.type === "Mind") {
-        thisMob.removeBuff("BM903A");
         BuffManager.generateBuff('BM903B',thisMob,combatParams.power);
-        thisMob.removeBuff("BM903C");
+        thisMob.image = '<img src="/assets/images/enemies/BM903B.gif">';
+        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
     }
     else if (target.type === "Moxie") {
-        thisMob.removeBuff("BM903A");
-        thisMob.removeBuff("BM903B");
         BuffManager.generateBuff('BM903C',thisMob,combatParams.power);
         thisMob.image = '<img src="/assets/images/enemies/BM903C.gif">';
         $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
@@ -374,44 +371,23 @@ SkillManager.skillEffects['SM903A'] = function (combatParams) {
 
 SkillManager.skillEffects['SM903B'] = function (combatParams) {
     const thisMob = combatParams.getTarget(TargetType.SELF);
-    if (this.hasBuff("BM903A")) {
-        this.removeBuff("BM903A"); 
+    thisMob.image = '<img src="/assets/images/enemies/BM903.gif">';
+    $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
+    if (thisMob.hasBuff("BM903A")) {
+        thisMob.removeBuff("BM903A"); 
         BuffManager.generateBuff("BM903D",thisMob,combatParams.power);
     }
-    else if (this.hasBuff("BM903B")) {
-        this.removeBuff("BM903B");
+    else if (thisMob.hasBuff("BM903B")) {
+        const stacks = thisMob.getBuffStacks("BM903E");
+        thisMob.removeBuff("BM903B");
+        const healAmt = Math.floor(combatParams.power*(1+stacks*0.1));
+        thisMob.heal(healAmt);
         BuffManager.generateBuff("BM903E",thisMob,combatParams.power);
-
     }
-    else if (this.hasBuff("BM903C")) {
-
-    }
-    const targets = combatParams.getTarget(TargetType.ALLENEMIES);
-    const thisMob = combatParams.getTarget(TargetType.SELF);
-    if (this.state === null || this.state === targets.length-1) this.state = 0;
-    else this.state += 1;
-    const target = targets[this.state];
-    target.takeAttack(combatParams);
-    if (target.type === "Might") {
-        BuffManager.generateBuff('BM903A',thisMob,combatParams.power);
-        thisMob.removeBuff("BM903B");
+    else if (thisMob.hasBuff("BM903C")) {
         thisMob.removeBuff("BM903C");
-        thisMob.image = '<img src="/assets/images/enemies/BM903A.gif">';
-        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
-    }
-    else if (target.type === "Mind") {
-        thisMob.removeBuff("BM903A");
-        BuffManager.generateBuff('BM903B',thisMob,combatParams.power);
-        thisMob.removeBuff("BM903C");
-        thisMob.image = '<img src="/assets/images/enemies/BM903B.gif">';
-        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
-    }
-    else if (target.type === "Moxie") {
-        thisMob.removeBuff("BM903A");
-        thisMob.removeBuff("BM903B");
-        BuffManager.generateBuff('BM903C',thisMob,combatParams.power);
-        thisMob.image = '<img src="/assets/images/enemies/BM903C.gif">';
-        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
+        const buffTarget = combatParams.getTarget(TargetType.FIRST);
+        BuffManager.generateBuff("BM903F",buffTarget,combatParams.power);
     }
 }
 

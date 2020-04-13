@@ -141,5 +141,38 @@
     "onCast": "refresh",
     "decrease": "never",
     "type": "buff"
+  },
+  {
+    "id": "BM903D",
+    "name": "Mighty Mail",
+    "description": "Reduces damage taken from attacks by 10%",
+    "icon": "<i class=\"fas fa-shield-cross\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM903E",
+    "name": "Mindful Meditation",
+    "description": "Heal and add buff to increase healing received.",
+    "icon": "<i class=\"fas fa-spa\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM903F",
+    "name": "Moxious Maneuver",
+    "description": "Increases damage taken by 20%",
+    "icon": "<i class=\"fas fa-angry\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "debuff"
   }
 ]

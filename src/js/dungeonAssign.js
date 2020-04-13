@@ -113,7 +113,7 @@ function initiateDungeonFloor(dungeonID) {
     if (DungeonManager.dungeonView !== dungeonID) return;
     const dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonView);
     $dungeonRun.removeClass().addClass(dungeon.id);
-    $combatBackgroundContainer.css({backgroundImage: `url(/assets/images/dungeonBackgrounds/${dungeon.id}.jpg)`});
+    $combatBackgroundContainer.css({backgroundImage: `url(/assets/images/dungeonBackgrounds/${dungeon.area}.jpg)`});
     if (dungeon.type === "boss") $dungeonRun.addClass("DBoss");
     $floorID.html("Floor "+dungeon.floor);
     $dungeonHeroList.empty();

@@ -72,7 +72,7 @@ class Combatant {
     }
     takeAttack(attack) {
         battleText(attack,this);
-        const reducedDmg = Math.floor(attack.power * this.getProtection());
+        const reducedDmg = Math.floor(attack.power * this.getProtection() * this.getVulnerability(attack.attacker));
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);
         this.buffTick("onHit",attack);
@@ -111,6 +111,9 @@ class Combatant {
     }
     getProtection() {
         return 1 - (this.protection + this.getBuffProtection());
+    }
+    getVulnerability(attacker) {
+        return 1 + this.getBuffVulnerability(attacker);   
     }
     getAdjPow() {
         return this.getPow();
@@ -157,6 +160,10 @@ class Combatant {
     }
     getBuffProtection() {
         const buffs = this.buffs.map(b=>b.getProtection());
+        return buffs.reduce((a,b) => a+b, 0);
+    }
+    getBuffVulnerability(attacker) {
+        const buffs = this.buffs.map(b=>b.getVulnerability(attacker));
         return buffs.reduce((a,b) => a+b, 0);
     }
     getBuffPower() {

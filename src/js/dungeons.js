@@ -56,7 +56,9 @@ class Area {
         return this.dungeons.some(d => d.unlocked());
     }
     addDungeon(dungeon) {
+        dungeon.area = this.id;
         this.dungeons.push(dungeon);
+        
     }
     status() {
         if (this.dungeons.some(d => d.status === DungeonStatus.COLLECT)) return DungeonStatus.COLLECT;
@@ -180,6 +182,7 @@ class Dungeon {
             this.buffTick("onTurn");
             this.passiveCheck("onTurn");
             if (this.mobs.every(m=>m.dead())) {
+                console.log('mobs are dead?')
                 this.nextFloor(refreshLater);
                 return;
             }
@@ -204,6 +207,7 @@ class Dungeon {
         if (DungeonManager.dungeonView === this.id) refreshBeatBar(this.order.getCurrentID(),this.dungeonTime);
     }
     addDungeonReward(time,skipAnimation) {
+        if (this.type === "boss") return;
         this.rewardTime += time;
         if (this.rewardTime > this.rewardTimeRate) {
             this.rewardTime -= this.rewardTimeRate;
@@ -243,12 +247,15 @@ class Dungeon {
         return;
     }
     previousFloor(refreshLater) {
-        if (this.type === "boss") return this.dungeonComplete(false);
+        if (this.type === "boss") return this.resetDungeon(); 
         this.floor = Math.max(1,this.floor - 1);
         this.resetFloor(refreshLater);
     }
     nextFloor(refreshLater) {
-        if (this.type === "boss") return this.dungeonComplete(true);   
+        if (this.type === "boss") {
+            this.maxFloor += 1;
+            return this.resetDungeon();
+        }
         this.setRewardRate(this.floor);
         this.maxFloor = Math.max(this.maxFloor,this.floor);
         this.floor += 1;        
@@ -268,11 +275,6 @@ class Dungeon {
         initiateDungeonFloor(this.id);
         $("#dsb"+this.id).html(`${this.name} - ${this.floorClear}`);
         refreshSidebarDungeonMats(this.id);
-    }
-    dungeonComplete() {
-        this.status = DungeonStatus.COLLECT;
-        dungeonsTabClicked();
-        if (DungeonManager.dungeonView === this.id) showDungeonReward(this.id);
     }
     bossHPStyling() {
         if (this.type !== "boss") return "0 (0%)";

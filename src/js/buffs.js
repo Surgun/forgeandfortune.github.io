@@ -51,6 +51,7 @@ class Buff {
     isChilled() { return false; }
     isWilt() { return false; }
     getProtection() { return 0; }
+    getVulnerability() { return 0; }
     maxHP() { return 0; }
 }
 
@@ -197,21 +198,57 @@ class BM902 extends Buff {
     }
 }
 
-class BM902A extends Buff {
+class BM903A extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability(attacker) {
+        if (attacker.type === "Might") return 1;
+        return 0;
+    }
+}
+
+class BM903B extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability(attacker) {
+        if (attacker.type === "Mind") return 1;
+        return 0;
+    }
+}
+
+class BM903C extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability(attacker) {
+        if (attacker.type === "Moxie") return 1;
+        return 0;
+    }
+}
+
+class BM903D extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
     getProtection() {
-        return 0.75;
+        return this.stacks * 0.1
     }
 }
 
-class BM902B extends Buff {
+class BM903E extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    maxHP() {
-        return -Math.floor(this.target.hpmax/10)*this.stacks;
+}
+
+class BM903F extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability() {
+        return this.stacks * 0.2;
     }
 }
 
@@ -226,4 +263,10 @@ const BuffLookup = {
     BM902,
     BM902A,
     BM902B,
+    BM903A,
+    BM903B,
+    BM903C,
+    BM903D,
+    BM903E,
+    BM903F,
 }

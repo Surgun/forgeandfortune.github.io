@@ -108,5 +108,38 @@
     "onCast": "stack",
     "decrease": "never",
     "type": "debuff"
+  },
+  {
+    "id": "BM903A",
+    "name": "Mighty",
+    "description": "Take double damage from Might heroes.",
+    "icon": "<i class=\"fas fa-fist-raised\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM903B",
+    "name": "Mindful",
+    "description": "Take double damage from Mind heroes.",
+    "icon": "<i class=\"fas fa-hat-wizard\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM903C",
+    "name": "Moxious",
+    "description": "Take double damage from Moxie heroes.",
+    "icon": "<i class=\"fas fa-cocktail\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
   }
 ]

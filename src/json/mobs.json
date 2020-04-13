@@ -150,9 +150,9 @@
     "protection": 0,
     "skill1": "SM903A",
     "skill2": "S0000",
-    "skill3": "SM903B",
-    "skill4": "S0000",
-    "passiveSkill": "SMP903",
+    "skill3": "S0000",
+    "skill4": "SM903B",
+    "passiveSkill": null,
     "event": "boss"
   }
 ]

@@ -31,9 +31,9 @@ class Buff {
     loadSave(save) {
         this.stacks = save.stacks;
     }
-    buffTick(type) {
+    buffTick(type,attack) {
         if (type === "onTurn") this.onTick();
-        if (type === "onHit") this.onHit();
+        if (type === "onHit") this.onHit(attack);
         if (type === "onHitting") this.onHitting();
         if (type !== this.decrease) return;
         this.stacks -= 1;

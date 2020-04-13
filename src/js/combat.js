@@ -60,22 +60,22 @@ class Combatant {
         this.buffs = [];
         this.state = null;
     }
-    buffTick(type) {
+    buffTick(type,attack) {
         this.buffs.forEach(buff => {
-            buff.buffTick(type);
+            buff.buffTick(type,attack);
         });
         this.buffs = this.buffs.filter(buff => !buff.expired());
     }
-    passiveCheck(type) {
+    passiveCheck(type,attack) {
         if (this.passiveSkill === null) return;
-        SkillManager.idToSkill(this.passiveSkill).passiveCheck(type,this);
+        SkillManager.idToSkill(this.passiveSkill).passiveCheck(type,this,attack);
     }
     takeAttack(attack) {
         battleText(attack,this);
         const reducedDmg = Math.floor(attack.power * this.getProtection());
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);
-        this.buffTick("onHit");
+        this.buffTick("onHit",attack);
     }
     takeDamage(dmg) {
         this.hp = Math.max(this.hp-dmg,0);

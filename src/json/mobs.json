@@ -145,7 +145,7 @@
   {
     "id": "B903",
     "name": "Paintbrush Knight",
-    "hpMod": 100000,
+    "hpMod": 22500,
     "powMod": 750,
     "protection": 0,
     "skill1": "SM903A",

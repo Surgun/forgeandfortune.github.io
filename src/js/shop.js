@@ -30,6 +30,7 @@ const Shop = {
         perk.purchase();
         refreshShop();
         refreshProgress();
+        tabHide();
     },
     perkCount() {
         return this.purchased.length;

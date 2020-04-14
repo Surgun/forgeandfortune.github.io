@@ -524,7 +524,7 @@
     "hpGain": null,
     "partySize": 3,
     "type": "boss",
-    "unlockedBy": null
+    "unlockedBy": "AL20051"
   },
   {
     "id": "D402",

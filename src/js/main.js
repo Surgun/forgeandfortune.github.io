@@ -14,7 +14,6 @@ function afterLoad() {
     if (!loadGame()) {
         WorkerManager.gainWorker("WN201");
         recipeList.idToItem("R13001").owned = true;
-        HeroManager.idToHero("H203").owned = true;
         achievementStats.startTime = Date.now();
         GuildManager.guilds.forEach(g=>{
             g.generateNewOrder(1);
@@ -22,6 +21,7 @@ function afterLoad() {
             g.generateNewOrder(3);
         });
     }
+    tabHide();
     refreshMasteryBar()
     refreshInventory();
     refreshSideWorkers();

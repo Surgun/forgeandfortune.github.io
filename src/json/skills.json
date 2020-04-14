@@ -263,13 +263,23 @@
     ]
   },
   {
-    "id": "SMP902",
-    "name": "Rising Phoenix",
-    "description": "Once below 25%, Phoenix will turn into an egg and attempt to regenerate health",
-    "icon": "<i class=\"fab fa-phoenix-framework\"></i>",
-    "targetEnemies": true,
+    "id": "SM903A",
+    "name": "Blank Canvas",
+    "description": "Attack a Hero and absorb their Type",
+    "icon": "<i class=\"fas fa-paint-brush\"></i>",
+    "targetEnemies": false,
     "powMod": 0,
     "techMod": 0,
-    "bText": null
+    "bText": "#ATTACKER# regroups"
+  },
+  {
+    "id": "SM903B",
+    "name": "Masterpiece",
+    "description": "Attack and perform an action based off form - Mighty: Gain stacking protective shield. Mindful: Heal and gain a % heal buff. Moxious: Add debuff to take additional damage",
+    "icon": "<i class=\"far fa-rectangle-portrait\"></i>",
+    "targetEnemies": true,
+    "powMod": 1,
+    "techMod": 0,
+    "bText": "#ATTACKER# trees #DEFENDER# for #DAMAGE# damage"
   }
 ]

@@ -75,9 +75,6 @@ const devtools = {
         refreshSideTown();
     },
     dungeonUnlock() {
-        AreaManager.areas.forEach(area => {
-            area.unlocked = true;
-        });
         DungeonManager.dungeons.forEach(dungeon => {
             if (dungeon.type === "boss") dungeon.maxFloor = 1;
         });

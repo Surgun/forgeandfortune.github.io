@@ -347,45 +347,45 @@ SkillManager.skillEffects['SM903A'] = function (combatParams) {
 SkillManager.skillEffects['SM903A'] = function (combatParams) {
     //KNIGHT - GAIN BUFF
     const targets = combatParams.getTarget(TargetType.ALLENEMIES);
-    const thisMob = combatParams.getTarget(TargetType.SELF);
-    if (this.state === null || this.state === targets.length-1) this.state = 0;
+    const thisMob = combatParams.getTarget(TargetType.SELF)[0];
+    if (this.state === undefined || this.state === targets.length-1) this.state = 0;
     else this.state += 1;
     const target = targets[this.state];
     target.takeAttack(combatParams);
     if (target.type === "Might") {
         BuffManager.generateBuff('BM903A',thisMob,combatParams.power);
-        thisMob.image = '<img src="/assets/images/enemies/BM903A.gif">';
+        thisMob.image = '<img src="/assets/images/enemies/B903A.gif">';
         $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
     }
     else if (target.type === "Mind") {
         BuffManager.generateBuff('BM903B',thisMob,combatParams.power);
-        thisMob.image = '<img src="/assets/images/enemies/BM903B.gif">';
+        thisMob.image = '<img src="/assets/images/enemies/B903B.gif">';
         $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
     }
     else if (target.type === "Moxie") {
         BuffManager.generateBuff('BM903C',thisMob,combatParams.power);
-        thisMob.image = '<img src="/assets/images/enemies/BM903C.gif">';
+        thisMob.image = '<img src="/assets/images/enemies/B903C.gif">';
         $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
     }
 }
 
 SkillManager.skillEffects['SM903B'] = function (combatParams) {
-    const thisMob = combatParams.getTarget(TargetType.SELF);
-    thisMob.image = '<img src="/assets/images/enemies/BM903.gif">';
+    const thisMob = combatParams.getTarget(TargetType.SELF)[0];
+    thisMob.image = '<img src="/assets/images/enemies/B903.gif">';
     $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
     if (thisMob.hasBuff("BM903A")) {
-        thisMob.removeBuff("BM903A"); 
+        BuffManager.removeBuff("BM903A",thisMob);
         BuffManager.generateBuff("BM903D",thisMob,combatParams.power);
     }
     else if (thisMob.hasBuff("BM903B")) {
         const stacks = thisMob.getBuffStacks("BM903E");
-        thisMob.removeBuff("BM903B");
+        BuffManager.removeBuff("BM903B",thisMob);
         const healAmt = Math.floor(combatParams.power*(1+stacks*0.1));
         thisMob.heal(healAmt);
         BuffManager.generateBuff("BM903E",thisMob,combatParams.power);
     }
     else if (thisMob.hasBuff("BM903C")) {
-        thisMob.removeBuff("BM903C");
+        BuffManager.removeBuff("BM903C",thisMob);
         const buffTarget = combatParams.getTarget(TargetType.FIRST);
         BuffManager.generateBuff("BM903F",buffTarget,combatParams.power);
     }

@@ -198,6 +198,24 @@ class BM902 extends Buff {
     }
 }
 
+class BM902A extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 0.75;
+    }
+}
+
+class BM902B extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    maxHP() {
+        return -Math.floor(this.target.hpmax/10)*this.stacks;
+    }
+}
+
 class BM903A extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);

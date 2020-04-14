@@ -268,7 +268,7 @@
     "description": "Attack a Hero and absorb their Type",
     "icon": "<i class=\"fas fa-paint-brush\"></i>",
     "targetEnemies": false,
-    "powMod": 0,
+    "powMod": 1,
     "techMod": 0,
     "bText": "#ATTACKER# regroups"
   },

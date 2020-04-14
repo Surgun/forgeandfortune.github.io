@@ -345,7 +345,7 @@ SkillManager.skillEffects['SM903A'] = function (combatParams) {
 }
 
 SkillManager.skillEffects['SM903A'] = function (combatParams) {
-    //KNIGHT - GAIN BUFF
+    //PAINTBRUSH KNIGHT - CANVAS
     const targets = combatParams.getTarget(TargetType.ALLENEMIES);
     const thisMob = combatParams.getTarget(TargetType.SELF)[0];
     if (this.state === undefined || this.state === targets.length-1) this.state = 0;
@@ -370,6 +370,7 @@ SkillManager.skillEffects['SM903A'] = function (combatParams) {
 }
 
 SkillManager.skillEffects['SM903B'] = function (combatParams) {
+    //PAINTBRUSH KNIGHT - MASTERPIECE
     const thisMob = combatParams.getTarget(TargetType.SELF)[0];
     thisMob.image = '<img src="/assets/images/enemies/B903.gif">';
     $("#mobImage"+thisMob.uniqueid).html(thisMob.image);

@@ -278,7 +278,7 @@
     "description": "Attack and perform an action based off form - Mighty: Gain stacking protective shield. Mindful: Heal and gain a % heal buff. Moxious: Add debuff to take additional damage",
     "icon": "<i class=\"far fa-rectangle-portrait\"></i>",
     "targetEnemies": true,
-    "powMod": 1,
+    "powMod": 2,
     "techMod": 0,
     "bText": "#ATTACKER# trees #DEFENDER# for #DAMAGE# damage"
   }

@@ -387,7 +387,7 @@ SkillManager.skillEffects['SM903B'] = function (combatParams) {
     }
     else if (thisMob.hasBuff("BM903C")) {
         BuffManager.removeBuff("BM903C",thisMob);
-        const buffTarget = combatParams.getTarget(TargetType.FIRST);
+        const buffTarget = combatParams.getTarget(TargetType.FIRST)[0];
         BuffManager.generateBuff("BM903F",buffTarget,combatParams.power);
     }
 }

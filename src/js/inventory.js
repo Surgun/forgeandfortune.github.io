@@ -295,9 +295,11 @@ const Inventory = {
         refreshInventoryPlaces()
     },
     sellContainer(container,skipAnimation) {
-        const tinkerAteIt = TinkerManager.feedCommon(container);
-        if (tinkerAteIt) return;
         const gold = container.goldValue();
+        if (achievementStats.totalGoldEarned === 0) {
+            $marketTabSpan.addClass("hasEvent");
+            $marketTabLink.show();
+        }
         achievementStats.gold(gold);
         ResourceManager.addMaterial("M001",gold,skipAnimation);
     },

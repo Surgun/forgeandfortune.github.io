@@ -15,10 +15,12 @@ function openTab(tabName) {
         refreshSideTown();
     }
     if (tabName === "inventoryTab") {
+        $inventoryTabSpan.removeClass("hasEvent");
         if (TownManager.typeToBuilding('bank').status === BuildingState.built) $("#goToBank").show();
         else $("#goToBank").hide();
     }
     if (tabName === "marketTab") {
+        $marketTabSpan.removeClass("hasEvent");
         refreshShop();
     }
     $(".tabcontent").hide();
@@ -90,8 +92,14 @@ const $heroesTabLink = $("#heroesTabLink");
 const $dungeonsTabLink = $("#dungeonsTabLink");
 const $progressTabLink = $("#progressTabLink");
 const $guildTabLink = $("#guildTabLink");
+const $inventoryTabLink = $("#inventoryTabLink");
+const $inventoryTabSpan = $("#inventoryTabSpan");
+const $marketTabLink = $("#marketTabLink");
+const $marketTabSpan = $("#marketTabSpan");
 
 function tabHide() {
+    if (recipeList.idToItem("R13001").craftCount > 0) $inventoryTabLink.show();
+    else $inventoryTabLink.hide();
     if (HeroManager.heroOwned("H203")) $heroesTabLink.show();
     else $heroesTabLink.hide();
     if (AreaManager.idToArea("A01").unlocked()) $dungeonsTabLink.show();
@@ -102,4 +110,6 @@ function tabHide() {
     else $progressTabLink.hide();
     if (Shop.alreadyPurchased("AL1000")) $guildTabLink.show();
     else $guildTabLink.hide();
+    if (achievementStats.totalGoldEarned > 0) $marketTabLink.show();
+    else $marketTabLink.hide();
 }

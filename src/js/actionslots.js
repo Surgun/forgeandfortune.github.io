@@ -56,6 +56,10 @@ class actionSlot {
         if (this.craftTime > this.maxCraft()) {
             this.craftTime -= this.maxCraft();
             Inventory.craftToInventory(this.itemid,skipAnimation);
+            if (this.itemid === "R13001" && recipeList.idToItem("R13001").craftCount === 1) {
+                $inventoryTabSpan.addClass("hasEvent");
+                tabHide();
+            }
             if (!skipAnimation) refreshRecipeMasteryAmt(this.item);
             this.status = slotState.NEEDMATERIAL;
             this.attemptStart(skipAnimation);

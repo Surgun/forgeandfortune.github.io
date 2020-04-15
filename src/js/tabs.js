@@ -59,8 +59,8 @@ $comptitle4.click((e) => {
 $(document).on('click', ".DungeonSideBarStatus", (e) => {
     e.preventDefault();
     tabClick(e, "dungeonsTab");
-    const dungeonID = $(e.currentTarget).data("dungeonID");
-    screenDirectDungeon(dungeonID);
+    const areaID = $(e.currentTarget).data("areaID");
+    screenDirectDungeon(areaID);
 });
 
 $(document).on('click', "#goToBank", (e) => {

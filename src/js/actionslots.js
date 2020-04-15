@@ -215,9 +215,10 @@ const actionSlotManager = {
 const $actionSlots = $("#actionSlots");
 
 class actionSlotVisualSlotTracking {
-    constructor(id,status) {
+    constructor(id,status,mastered) {
         this.id = id;
         this.status = status;
+        this.mastered = mastered;
     }
     addReference(i) {
         this.timeRef = $(`#ASBar${i} .ASProgressBarTimer`);
@@ -237,7 +238,7 @@ function newActionSlot(slot) {
     if (slot.isMastered()) s3.addClass("ProgressBarFillMaster");
     const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `autosell_${slot.autoSell().toLowerCase()}`).attr("id","asAuto"+slot.slotNum).data("slotNum",slot.slotNum).html(miscIcons.autoSell).appendTo(d);
     if (slot.autoSell() !== "None") d4.addClass("ASautoEnabled"+slot.autoSell());
-    if (slot.isBuildingMaterial()) d4.hide();
+    if (slot.isBuildingMaterial() || !Shop.alreadyPurchased("AL3002")) d4.hide();
     if (!slot.resList) return d;
     const d5 = $("<div/>").addClass("asRes").attr("id","asRes"+slot.slotNum).appendTo(d);
     slot.resList().forEach(g => {
@@ -266,7 +267,7 @@ const actionSlotVisualManager = {
             this.slots = [];
             $actionSlots.empty();
             actionSlotManager.slots.forEach((slot,i) => {
-                const newSlot = new actionSlotVisualSlotTracking(slot.item.id,slot.status);
+                const newSlot = new actionSlotVisualSlotTracking(slot.item.id,slot.status,slot.isMastered());
                 $actionSlots.append(newActionSlot(slot));
                 newSlot.addReference(i);
                 this.slots.push(newSlot);
@@ -290,6 +291,10 @@ const actionSlotVisualManager = {
                 compareSlot.progressRef.css('width', slot.progress);
                 compareSlot.timeRef.attr({"data-tooltip": "remaining_time"}).html(miscIcons.time + msToTime(slot.timeRemaining()));
             }
+            if (slot.isMastered() && !compareSlot.mastered) {
+                compareSlot.mastered = true;
+                $("#ASBarFill"+slot.slotNum).addClass("ProgressBarFillMaster");
+            } 
         });
     },
     updateAutoSell(e,newRarity) {

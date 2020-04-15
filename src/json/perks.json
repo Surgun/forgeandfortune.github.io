@@ -553,15 +553,15 @@
   },
   {
     "id": "AL3001",
-    "title": "Omega Moo",
-    "description": "Unlocks the Monster House, to catalog your adventures.",
+    "title": "Auto Sell",
+    "description": "Unlocks ability to Auto Sell, located on each crafting slot",
     "category": "Town",
     "order": 2,
     "goldCost": 1000,
-    "type": "monster",
+    "type": "autosell",
     "subtype": "open",
     "unlockReq": null,
-    "icon": "<i class=\"fas fa-pastafarianism\"></i>"
+    "icon": "<i class=\"fas fa-coin\"></i>"
   },
   {
     "id": "AL3002",

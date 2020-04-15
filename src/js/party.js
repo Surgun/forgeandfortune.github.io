@@ -10,7 +10,6 @@ const $dtsBottom = $("#dtsBottom");
 const $dungeonTeamButton = $("#dungeonTeamButton");
 const $dungeonTeamButtonSkip = $("#dungeonTeamButtonSkip");
 
-
 class Party {
     constructor (heroID) {
         this.heroID = heroID;
@@ -90,10 +89,14 @@ const PartyCreator = {
     }
 }
 
-function startPartyCreation() {
+function startPartyCreation(partyStarted) {
     const area = PartyCreator.areaSelect;
     if (PartyCreator.dungeonSelect === null) PartyCreator.setDungeon(area.lastOpen().id);
     const dungeon = DungeonManager.dungeonByID(PartyCreator.dungeonSelect);
+    if (!partyStarted) {
+        PartyCreator.clearMembers();
+        PartyCreator.startingTeam(dungeon.lastParty);
+    }
     $areaTeamSelect.show();
     //Team Banner
     $dtsBanner.empty();
@@ -149,6 +152,15 @@ function startPartyCreation() {
         else characterCard("dungeonAvailable",hero.uniqueid,hero.id,null).appendTo(d2);
     });
     $dtsBottom.append(d2);
+    //adjust buttons as appropriate
+    if (dungeon.type === "boss") {
+        $dungeonTeamButtonSkip.html("Start Boss Fight");
+        $dungeonTeamButton.hide();
+    }
+    else {
+        $dungeonTeamButtonSkip.html("Start At Highest Floor Reached");
+        $dungeonTeamButton.show();
+    }
 }
 
 //change dungeon selection
@@ -172,7 +184,7 @@ $(document).on('click', "div.dungeonTeamCardClick", (e) => {
     e.preventDefault();
     const heroID = $(e.currentTarget).attr("heroID");
     PartyCreator.removeMember(heroID);
-    startPartyCreation(DungeonManager.dungeonCreatingID);
+    startPartyCreation(true);
     destroyTooltip();
 });
 
@@ -181,7 +193,7 @@ $(document).on('click', "div.dungeonAvailableCardClick", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("heroid");
     PartyCreator.addMember(ID);
-    startPartyCreation(DungeonManager.dungeonCreatingID);
+    startPartyCreation(true);
 });
 
 //potentially remove a hero in the party
@@ -191,7 +203,7 @@ $(document).on('click', "div.dungeonNotAvailableCardClick", (e) => {
     const hero = HeroManager.idToHero(ID);
     if (!PartyCreator.heroes.includes(ID)) return;
     PartyCreator.removeMember(ID);
-    startPartyCreation(DungeonManager.dungeonCreatingID);
+    startPartyCreation(true);
 });
 
 //locking in a team to start a dungeon

@@ -66,9 +66,10 @@ class Perk {
         this.purchased = true;
         if (this.type === "hero") HeroManager.gainHero(this.subtype);
         if (this.type === "worker") {
-            WorkerManager.gainWorker(this.subtype);
+            if (this.subtype !== null) WorkerManager.gainWorker(this.subtype);
             initializeGuilds();
         }
+        if (this.type === "autosell") $(".ASauto").show();
         if (this.type === "craft") actionSlotManager.upgradeSlot();
         if (this.type === "adventure") DungeonManager.partySize += 1;
         if (this.type === "synth" && this.subtype === "open") TownManager.buildingPerk("synth");

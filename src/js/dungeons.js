@@ -261,7 +261,6 @@ class Dungeon {
         this.floor += 1;        
         achievementStats.floorRecord(this.id, this.maxFloor);
         this.resetFloor(refreshLater);
-        refreshFloorMaterial(this.id,this.rewardAmt);
     }
     resetFloor(refreshLater) {
         this.mobs = [];
@@ -271,10 +270,10 @@ class Dungeon {
         });
         this.party.reset();
         this.order = new TurnOrder(this.party.heroes,this.mobs);
-        if (refreshLater || DungeonManager.dungeonView !== this.id) return;
-        initiateDungeonFloor(this.id);
+        if (refreshLater) return;
         $("#dsb"+this.id).html(`${this.name} - ${this.floorClear}`);
         refreshSidebarDungeonMats(this.id);
+        if (DungeonManager.dungeonView === this.id) initiateDungeonFloor(this.id);
     }
     bossHPStyling() {
         if (this.type !== "boss") return "0 (0%)";

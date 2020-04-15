@@ -257,7 +257,7 @@ function createDungeonSidebarReward(dungeon) {
             $("<div/>").addClass("dungeonRewardRateAmt").attr("id","dRA"+dungeon.id).html(`+${dungeon.rewardAmt}`).appendTo(t1);
     const options = {
         prefix: "dungeonReward",
-        text: ResourceManager.materialAvailable(dungeon.mat),
+        text: ResourceManager.materialAvailable(dungeon.mat).toString(),
         textID: "dsbr"+dungeon.id, 
         width: matWidth,
         fill: "dsbrf"+dungeon.id

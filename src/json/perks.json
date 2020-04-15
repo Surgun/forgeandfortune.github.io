@@ -541,27 +541,27 @@
   },
   {
     "id": "AL3000",
-    "title": "Progress Tracker",
-    "description": "Unlocks the Progress Tracking Page",
-    "category": "Town",
-    "order": 1,
-    "goldCost": 200,
-    "type": "progress",
-    "subtype": "open",
-    "unlockReq": null,
-    "icon": "<i class=\"fas fa-tasks\"></i>"
-  },
-  {
-    "id": "AL3001",
     "title": "Auto Sell",
     "description": "Unlocks ability to Auto Sell, located on each crafting slot",
     "category": "Town",
-    "order": 2,
-    "goldCost": 1000,
+    "order": 1,
+    "goldCost": 350,
     "type": "autosell",
     "subtype": "open",
     "unlockReq": null,
     "icon": "<i class=\"fas fa-coin\"></i>"
+  },
+  {
+    "id": "AL3001",
+    "title": "Progress Tracker",
+    "description": "Unlocks the Progress Tracking Page",
+    "category": "Town",
+    "order": 2,
+    "goldCost": 850,
+    "type": "progress",
+    "subtype": "open",
+    "unlockReq": null,
+    "icon": "<i class=\"fas fa-tasks\"></i>"
   },
   {
     "id": "AL3002",

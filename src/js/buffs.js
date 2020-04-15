@@ -31,9 +31,9 @@ class Buff {
     loadSave(save) {
         this.stacks = save.stacks;
     }
-    buffTick(type) {
+    buffTick(type,attack) {
         if (type === "onTurn") this.onTick();
-        if (type === "onHit") this.onHit();
+        if (type === "onHit") this.onHit(attack);
         if (type === "onHitting") this.onHitting();
         if (type !== this.decrease) return;
         this.stacks -= 1;
@@ -51,6 +51,7 @@ class Buff {
     isChilled() { return false; }
     isWilt() { return false; }
     getProtection() { return 0; }
+    getVulnerability() { return 0; }
     maxHP() { return 0; }
 }
 
@@ -215,6 +216,60 @@ class BM902B extends Buff {
     }
 }
 
+class BM903A extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability(attacker) {
+        if (attacker.type === "Might") return 1;
+        return 0;
+    }
+}
+
+class BM903B extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability(attacker) {
+        if (attacker.type === "Mind") return 1;
+        return 0;
+    }
+}
+
+class BM903C extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability(attacker) {
+        if (attacker.type === "Moxie") return 1;
+        return 0;
+    }
+}
+
+class BM903D extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return this.stacks * 0.1
+    }
+}
+
+class BM903E extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+}
+
+class BM903F extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability() {
+        return this.stacks * 0.2;
+    }
+}
+
 const BuffLookup = {
     B0010,
     B0020, 
@@ -226,4 +281,10 @@ const BuffLookup = {
     BM902,
     BM902A,
     BM902B,
+    BM903A,
+    BM903B,
+    BM903C,
+    BM903D,
+    BM903E,
+    BM903F,
 }

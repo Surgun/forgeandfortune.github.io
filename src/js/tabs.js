@@ -59,8 +59,8 @@ $comptitle4.click((e) => {
 $(document).on('click', ".DungeonSideBarStatus", (e) => {
     e.preventDefault();
     tabClick(e, "dungeonsTab");
-    const dungeonID = $(e.currentTarget).data("dungeonID");
-    screenDirectDungeon(dungeonID);
+    const areaID = $(e.currentTarget).data("areaID");
+    screenDirectDungeon(areaID);
 });
 
 $(document).on('click', "#goToBank", (e) => {
@@ -85,3 +85,21 @@ $(document).on( "keypress", (e) => {
         else if (e.which === 57) tabClick(e, "progressTab");
     }
 });
+
+const $heroesTabLink = $("#heroesTabLink");
+const $dungeonsTabLink = $("#dungeonsTabLink");
+const $progressTabLink = $("#progressTabLink");
+const $guildTabLink = $("#guildTabLink");
+
+function tabHide() {
+    if (HeroManager.heroOwned("H203")) $heroesTabLink.show();
+    else $heroesTabLink.hide();
+    if (AreaManager.idToArea("A01").unlocked()) $dungeonsTabLink.show();
+    else $dungeonsTabLink.hide();
+    if (Shop.alreadyPurchased("AL3000")) $progressTabLink.show();
+    else $progressTabLink.hide();
+    if (Shop.alreadyPurchased("AL3000")) $progressTabLink.show();
+    else $progressTabLink.hide();
+    if (Shop.alreadyPurchased("AL1000")) $guildTabLink.show();
+    else $guildTabLink.hide();
+}

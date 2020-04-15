@@ -15,9 +15,12 @@ const MobManager = {
     },
     generateMob(mobID,dungeon) {
         disableEventLayers();
+        const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
+        if (dungeon.type === "boss") {
+            return new Mob(mobTemplate);
+        }
         const atk = (dungeon.pow + dungeon.floor * dungeon.powGain);
         const hp = (dungeon.hp + dungeon.floor * dungeon.hpGain);
-        const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
         const mob = new Mob(mobTemplate, atk, hp);
         return mob;
     },
@@ -40,9 +43,16 @@ class MobTemplate {
 class Mob extends Combatant {
     constructor (mobTemplate, atk, hp) {
         super(mobTemplate);
-        this.pow = Math.floor(atk*this.powMod);
-        this.hpmax = Math.floor(hp*this.hpMod);
-        this.hp = this.hpmax;
+        if (this.event === "boss") {
+            this.pow = this.powMod;
+            this.hpmax = this.hpMod;
+            this.hp = this.hpMod;
+        }
+        else {
+            this.pow = Math.floor(atk*this.powMod);
+            this.hpmax = Math.floor(hp*this.hpMod);
+            this.hp = this.hpmax;
+        }
         this.uniqueid = MobManager.getUniqueID();
         this.playbook = PlaybookManager.generatePlayBookFromSkills(this.skill1,this.skill2,this.skill3,this.skill4);
         this.passive = SkillManager.idToSkill(this.passiveSkill);

@@ -524,7 +524,7 @@
     "hpGain": null,
     "partySize": 3,
     "type": "boss",
-    "unlockedBy": null
+    "unlockedBy": "AL20051"
   },
   {
     "id": "D402",
@@ -545,9 +545,9 @@
   },
   {
     "id": "D403",
-    "name": "Blue Knight",
+    "name": "Paintbrush Knight",
     "area": "A04",
-    "mob1": "B902",
+    "mob1": "B903",
     "mob2": null,
     "mob3": null,
     "mob4": null,

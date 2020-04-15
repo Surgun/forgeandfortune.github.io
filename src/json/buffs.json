@@ -108,5 +108,71 @@
     "onCast": "stack",
     "decrease": "never",
     "type": "debuff"
+  },
+  {
+    "id": "BM903A",
+    "name": "Mighty",
+    "description": "Take double damage from Might heroes.",
+    "icon": "<i class=\"fas fa-fist-raised\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM903B",
+    "name": "Mindful",
+    "description": "Take double damage from Mind heroes.",
+    "icon": "<i class=\"fas fa-hat-wizard\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM903C",
+    "name": "Moxious",
+    "description": "Take double damage from Moxie heroes.",
+    "icon": "<i class=\"fas fa-cocktail\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM903D",
+    "name": "Mighty Mail",
+    "description": "Reduces damage taken from attacks per stack",
+    "icon": "<i class=\"fas fa-shield-cross\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM903E",
+    "name": "Mindful Meditation",
+    "description": "Increases healing per stack",
+    "icon": "<i class=\"fas fa-spa\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM903F",
+    "name": "Moxious Maneuver",
+    "description": "Increases damage taken per stack",
+    "icon": "<i class=\"fas fa-angry\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "debuff"
   }
 ]

@@ -85,7 +85,7 @@ class Guild {
         return miscLoadedValues["guildRepForLvls"][givenlvl];
     }
     recipeToBuy() {
-        return recipeList.filterByGuild(this.id).filter(r =>!r.owned && r.repReq <= GuildManager.maxGuildLevel()).sort((a,b) => a.repReq-b.repReq);
+        return recipeList.filterByGuild(this.id).filter(r =>!r.owned && r.repReq < GuildManager.maxGuildLevel()).sort((a,b) => a.repReq-b.repReq);
     }
     workers() {
         return WorkerManager.filterByGuild(this.id).filter(w => w.owned);

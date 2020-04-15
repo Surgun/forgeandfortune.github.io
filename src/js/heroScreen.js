@@ -1,8 +1,7 @@
 "use strict";
 
 //main divs
-const $heroOverviewContainer = $("#heroOverviewContainer");
-const $heroInspectIndividual = $("#heroInspectIndividual");
+const $heroInspectBox = $(".heroInspectBox");
 const $heroExamineContainer = $(".heroExamineContainer");
 const $heroList = $("#heroList");
 
@@ -60,10 +59,8 @@ const statDesc = [
 
 function refreshHeroOverview() {
     HeroManager.heroView = null;
-    $heroOverviewContainer.show();
-    $heroInspectIndividual.hide();
+    $heroInspectBox.hide();
     initializeHeroList();
-    $overviewContainer.empty();
     HeroManager.heroes.filter(h=>h.owned).forEach(hero => {
         createHeroOverlayCard(hero).appendTo($overviewContainer);
     });
@@ -72,20 +69,28 @@ function refreshHeroOverview() {
 //populate the sidebar hero list
 function initializeHeroList() {
     $heroList.empty();
-    $("<div/>").attr("id","heroOverviewButton").addClass("heroOverviewButton highlight").html(`<i class="fas fa-info-circle"></i> Hero Overview`).appendTo($heroList);
+    // $("<div/>").attr("id","heroOverviewButton").addClass("heroOverviewButton highlight").html(`<i class="fas fa-info-circle"></i> Hero Overview`).appendTo($heroList);
     HeroManager.heroes.forEach(hero => {
         const d = $("<div/>").addClass("heroOwnedCard heroInspect").attr("data-value",hero.id).appendTo($heroList);
-        $("<div/>").addClass("heroOwnedImage").html(hero.head).appendTo(d);
+        $("<div/>").addClass("heroOwnedImage").html(hero.portrait).appendTo(d);
         $("<div/>").addClass("heroOwnedName").html(hero.name).appendTo(d);
-        const d3 = $("<div/>").addClass("heroPower").html(hero.getPow()).appendTo(d);
-            $("<div/>").addClass("pow_img").html(miscIcons.pow).appendTo(d3);
-            $("<div/>").addClass("pow_integer").html(hero.getPow()).appendTo(d3);
+        const d3 = $("<div/>").addClass("heroHP heroStat").appendTo(d);
+            $("<div/>").addClass("hp_img").html(miscIcons.hp).appendTo(d3);
+            $("<div/>").addClass("hp_integer statValue").html(hero.maxHP()).appendTo(d3);
+        const d4 = $("<div/>").addClass("heroPower heroStat").appendTo(d);
+            $("<div/>").addClass("pow_img").html(miscIcons.pow).appendTo(d4);
+            $("<div/>").addClass("pow_integer statValue").html(hero.getPow()).appendTo(d4);
+        const d5 = $("<div/>").addClass("heroTech heroStat").appendTo(d);
+            $("<div/>").addClass("tech_img").html(miscIcons.tech).appendTo(d5);
+            $("<div/>").addClass("tech_integer statValue").html(hero.getTech()).appendTo(d5);
         if (!hero.owned) d.hide();
     });
     if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
-        const bh1 = $("<div/>").addClass("buyNewHeroCard").appendTo($heroList);
-        $("<div/>").addClass("buyNewHeroTitle").html(`Looking for more Heroes?`).appendTo(bh1);
-        $("<div/>").addClass("buyNewHeroDesc").html(`Check the Market to get more!`).appendTo(bh1);
+        const d = $("<div/>").addClass("heroOwnedCard emptyHeroSlot").appendTo($heroList);
+        $("<div/>").addClass("heroOwnedImage").html(miscIcons.emptySlot).appendTo(d);
+        $("<div/>").addClass("heroOwnedName").html("More Heroes?").appendTo(d);
+        $("<div/>").addClass("emptyHeroSlotDescription").html("You can find more heroes by purchasing perks in the Market.").appendTo(d);
+        $("<div/>").addClass("emptyHeroSlotMarket actionButton").html(`<i class="fas fa-store"></i> View Market`).appendTo(d);
     }
 }
 
@@ -286,19 +291,20 @@ function updateHeroPower() {
     });
 }
 
-//click the "Hero Overview" button
-$(document).on('click',"#heroOverviewButton", (e) => {
+$(document).on('click',".heroBackButton", (e) => {
     e.preventDefault();
-    HeroManager.heroView = null;
-    HeroManager.tabSelected = "Details";
-    $("#heroOverviewButton").addClass("highlight");
-    $(".heroOwnedCard").removeClass("highlight");
-    $(".heroTab").removeClass("selected");
-    $heroDetailsTab.addClass("selected");
-    initializeHeroList();
-    $heroOverviewContainer.show();
-    $heroInspectIndividual.hide();
+    $heroInspectBox.addClass('heroInspectClosed');
+    setTimeout(() => {
+        refreshHeroOverview();
+        $heroInspectBox.removeClass('heroInspectClosed');
+    }, 200);
 });
+
+$(document).on('click',".emptyHeroSlotMarket", (e) => {
+    e.preventDefault();
+    tabClick(e, 'marketTab');
+});
+
 
 //Click on a hero to bring up the details for them
 $(document).on('click', ".heroInspect", (e) => {
@@ -308,8 +314,7 @@ $(document).on('click', ".heroInspect", (e) => {
     $("#heroOverviewButton").removeClass("highlight");
     $(`.heroOwnedCard`).removeClass("highlight");
     $(`.heroOwnedCard[data-value=${ID}]`).addClass("highlight");
-    $heroOverviewContainer.hide();
-    $heroInspectIndividual.show();
+    $heroInspectBox.show();
     clearExaminePossibleEquip();
     showTab(HeroManager.tabSelected);
 });

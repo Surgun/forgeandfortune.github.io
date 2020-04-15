@@ -175,10 +175,3 @@ function refreshMaterial(matID) {
     $goldSidebarAmt.html(formatToUnits(mat.amt,2));
     $goldSidebar.addClass("tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(mat.amt)});
 }
-
-$(document).on("click",".material",(e) => {
-    e.preventDefault();
-    tabClick(e, "recipesTab");
-    const matID = $(e.currentTarget).attr("id");
-    initializeRecipes(matID,"default");
-});

@@ -2901,32 +2901,149 @@ footer {
 }
 
 #heroContainer {
-    display: flex;
     height: 100%;
+    overflow: auto;
 }
 
 #heroTab {
     position: relative;
 }
 
-.heroInspectBox {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.heroListContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(195px, 2fr));
+    grid-gap: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.heroesHeadingContainer {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-primary);
+    animation: fade-in var(--transition_linear);
+}
+
+.heroesListingsHeading {
+    display: flex;
+    align-items: center;
+}
+
+.heroOwnedCard {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
     background-color: var(--bg-primary);
-    border-left: 1px solid var(--border-primary);
-    overflow: auto;
-    -webkit-transform-origin: right;
-            transform-origin: right;
-    -webkit-animation: 0.2s scale-x-in;
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.heroOwnedCard:hover, .heroOwnedCard:focus {
+    border-color: var(--border-tertiary);
+}
+
+.heroOwnedImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 10px;
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+}
+
+.heroOwnedImage, .heroOwnedImage > img {
+    position: relative;
+    width: 100%;
+}
+
+.heroOwnedImage > img {
+    border-radius: 10px;
+}
+
+.heroOwnedName {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 2px solid rgba(255,255,255,0.05);
+}
+
+.emptyHeroSlot:hover, .emptyHeroSlot:focus {
+    border-color: var(--border-primary);
+    cursor: default;
+}
+
+.emptyHeroSlot .heroOwnedImage > i {
+    padding: 5px;
+    font-size: 7rem;
+    opacity: .075;
+}
+
+.emptyHeroSlot .heroOwnedName {
+    color: var(--highlight);
+}
+
+.emptyHeroSlot .emptyHeroSlotDescription {
+    padding: 10px 0;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.emptyHeroSlotMarket {
+    margin-top: auto;
+}
+
+.heroInspectBox {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    right: 250px;
+    bottom: 0;
+    height: calc(100% - (52px + 38px));
+    pointer-events: none;
+}
+
+.heroInspectIndividualBackground {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.75);
+    backdrop-filter: blur(10px);
+    transition: all 0.2s ease-in-out;
+    pointer-events: all;
+}
+
+.heroInspectClosed .heroInspectIndividualBackground {
+    opacity: 0;
+}
+
+.heroInspectIndividual {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    background-color: var(--bg-primary);
+    border-left: 2px solid var(--border-primary);
+    transform-origin: right;
     animation: 0.2s scale-x-in;
+    pointer-events: all;
+    overflow: auto;
+}
+
+.heroInspectClosed .heroInspectIndividual {
+    transform-origin: right;
+    animation: 0.2s scale-x-out forwards;
 }
 
 .heroTabContainer {
@@ -2939,7 +3056,6 @@ footer {
 
 .heroTabContent {
     margin-top: 2px;
-    height: 100%;
     overflow: auto;
 }
 
@@ -5816,6 +5932,18 @@ span.beta-tag {
     }
 }
 
+@keyframes scale-x-out {
+    from {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+    }
+    to {
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+    }
+}
+
+
 @keyframes scale-y-in {
     from {
         -webkit-transform: scaleY(0);
@@ -5899,62 +6027,6 @@ span.beta-tag {
 /* Hide content completely, removing both the content and its effect on elements */
 .none {
     display: none;
-}
-
-@media screen and (max-width: 1679px) and (min-width: 1550px) {
-    #heroList {
-        max-width: 200px;
-    }
-
-    #heroList .heroOwnedCard .heroOwnedImage {
-        display: none;
-    }
-
-    .buyNewHeroButton {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-    }
-
-    .buyHeroText {
-        margin-right: 0;
-    }
-
-    .buyHeroCost {
-        margin-top: 5px;
-    }
-}
-
-@media screen and (max-width: 1170px) {
-    #heroList {
-        max-width: 200px;
-    }
-
-    #heroList .heroOwnedCard .heroOwnedImage {
-        display: none;
-    }
-
-    .buyNewHeroButton {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-    }
-
-    .buyHeroText {
-        margin-right: 0;
-    }
-
-    .buyHeroCost {
-        margin-top: 5px;
-    }
 }
 
 /* Enables mobile notice on screens game is not supported on */

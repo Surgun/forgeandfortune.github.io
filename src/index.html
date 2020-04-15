@@ -235,15 +235,23 @@
                 </div>
                 <div id="heroesTab" class="tabcontent">
                     <div id="heroContainer">
-                        <div id="heroList"></div> <!-- Hero sidebar list -->
-                        <div class="heroInspectBox">
-                            <div class="heroOverviewContainer" id="heroOverviewContainer">
-                                <div class="overviewTitle">Hero Overview</div>
-                                <div class="overviewDescription">A quick glance at all your heroes and their stats.</div>
-                                <div class="overviewContainer" id="overviewContainer"></div>
+                        <div class="heroesHeadingContainer">
+                            <div class="heroesListingsHeading">
+                                <div class="headingIcon">
+                                    <i class="fas fa-helmet-battle"></i>
+                                </div>
+                                <div class="headingDetails">
+                                    <div class="headingTitle">Heroes</div>
+                                    <div class="headingDescription">A list of all of your heroes and a quick overview of their stats.</div>
+                                </div>
                             </div>
+                        </div>
+                        <div id="heroList" class="heroListContainer"></div>
+                        <div class="heroInspectBox">
+                            <div class="heroInspectIndividualBackground"></div>
                             <div class="heroInspectIndividual" id="heroInspectIndividual">
                                 <div class="heroTabContainer">
+                                    <div class="heroBackButton actionButton"><i class="fas fa-arrow-left"></i></div>
                                     <div class="heroTab selected" id="heroDetailsTab">Details</div>
                                     <div class="heroTab">Equipment</div>
                                     <div class="heroTab">Upgrades</div>

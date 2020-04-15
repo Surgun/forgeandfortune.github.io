@@ -11,9 +11,10 @@ function tabHighlight(e) {
 
 $(".tablinks").on("click", navTabHighlight);
 
-function navTabHighlight(e) {
+function navTabHighlight(e, tab = null) {
     $(".tablinks").removeClass("tab-selected");
-    $(e.currentTarget).addClass("tab-selected");   
+    if (tab) $(tab).addClass("tab-selected");
+    else $(e.currentTarget).addClass("tab-selected");
 }
 
 // Back To Top Button

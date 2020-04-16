@@ -87,7 +87,7 @@ function renderDialogActions(id) {
     settingsBoilerplate(notificationLocation_details).appendTo(notificationLocation);
 
     const selectionsGrid = $("<div/>").addClass("selections-grid").appendTo(notificationLocation);
-    const locations = ["Top-Left", "Top-Right", "Top-Center", "Bottom-Center", "Bottom-Left",  "Bottom-Right"];
+    const locations = ["Top-Left", "Top-Center", "Top-Right", "Bottom-Left", "Bottom-Center", "Bottom-Right"];
     locations.forEach((location, i) => {
       const label = $("<label/>").addClass("selection-container toastPositionSelection").html(location);
         $("<input/>").attr({type: "radio", name: "toast", value: location.toLowerCase(), checked: location.toLowerCase() === settings.toastPosition ? "checked" : null}).appendTo(label);

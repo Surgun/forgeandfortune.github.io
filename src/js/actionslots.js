@@ -242,7 +242,7 @@ function newActionSlot(slot) {
     if (slot.isMastered()) s3.addClass("ProgressBarFillMaster");
     const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `autosell_${slot.autoSell().toLowerCase()}`).attr("id","asAuto"+slot.slotNum).data("slotNum",slot.slotNum).html(miscIcons.autoSell).appendTo(d);
     if (slot.autoSell() !== "None") d4.addClass("ASautoEnabled"+slot.autoSell());
-    if (slot.isBuildingMaterial() || !Shop.alreadyPurchased("AL3002")) d4.hide();
+    if (slot.isBuildingMaterial() || !Shop.alreadyPurchased("AL3000")) d4.hide();
     if (!slot.resList) return d;
     const d5 = $("<div/>").addClass("asRes").attr("id","asRes"+slot.slotNum).appendTo(d);
     slot.resList().forEach(g => {

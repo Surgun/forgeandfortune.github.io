@@ -287,11 +287,14 @@ const actionSlotVisualManager = {
             if (compareSlot.status === slotState.NEEDMATERIAL && slot.status === slotState.CRAFTING) {
                 //update for time format
                 compareSlot.timeRef.removeClass("matsNeeded").attr({"data-tooltip": "remaining_time"}).html(miscIcons.time + msToTime(slot.timeRemaining()));
+                compareSlot.status = slotState.CRAFTING;
             }
             else if (compareSlot.status === slotState.CRAFTING && slot.status === slotState.NEEDMATERIAL) {
                 compareSlot.timeRef.addClass("matsNeeded").attr({"data-tooltip": "materials_needed"}).html(miscIcons.alert + "Materials Needed");
+                compareSlot.progressRef.css('width', '0%');
+                compareSlot.status = slotState.NEEDMATERIAL;
             }
-            else if (compareSlot.status === slotState.CRAFTING) {
+            if (compareSlot.status === slotState.CRAFTING) {
                 compareSlot.progressRef.css('width', slot.progress);
                 compareSlot.timeRef.attr({"data-tooltip": "remaining_time"}).html(miscIcons.time + msToTime(slot.timeRemaining()));
             }

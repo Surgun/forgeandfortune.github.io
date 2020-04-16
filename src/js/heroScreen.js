@@ -284,18 +284,21 @@ function unequipSlot(heroID,type) {
     showHeroGear();
 }
 
-function updateHeroPower() {
+function updateHeroStats() {
     HeroManager.heroes.forEach(hero => {
         const heroCard = $(`.heroOwnedCard[data-value=${hero.id}]`);
         $(heroCard).find(".pow_integer").html(hero.getPow());
+        $(heroCard).find(".hp_integer").html(hero.maxHP());
+        $(heroCard).find(".tech_integer").html(hero.getTech());
     });
+    $heroInspectBox.hide();
 }
 
 $(document).on('click',".heroBackButton", (e) => {
     e.preventDefault();
     $heroInspectBox.addClass('heroInspectClosed');
     setTimeout(() => {
-        refreshHeroOverview();
+        updateHeroStats();
         $heroInspectBox.removeClass('heroInspectClosed');
     }, 200);
 });
@@ -355,7 +358,7 @@ $(document).on('click', "div.gearItem", (e) => {
     HeroManager.equipItem(containerID,heroID);
     showHeroGear();
     clearExaminePossibleEquip();
-    updateHeroPower();
+    updateHeroStats();
     refreshSmithInventory(); //because hero gear is here
 });
 
@@ -368,7 +371,7 @@ $(document).on('click', ".heroUnequipSlot", (e) => {
     const gearType = $(e.currentTarget).data("gearType");
     unequipSlot(heroID,gearType);
     examineHeroPossibleEquip(heroID,gearType);
-    updateHeroPower();
+    updateHeroStats();
     refreshSmithInventory(); //because hero gear is here
 });
 

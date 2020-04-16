@@ -2942,6 +2942,7 @@ footer {
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     cursor: pointer;
+    animation: 0.2s scale-in forwards;
 }
 
 .heroOwnedCard:hover, .heroOwnedCard:focus {

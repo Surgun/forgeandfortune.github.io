@@ -256,6 +256,7 @@ class Dungeon {
             this.maxFloor += 1;
             refreshAllSales();
             refreshAllOrders();
+            refreshAllProgress();
             return this.resetDungeon();
         }
         this.setRewardRate(this.floor);

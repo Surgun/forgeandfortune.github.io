@@ -355,6 +355,10 @@ function refreshAllSales() {
     GuildManager.guilds.forEach(g => refreshSales(g));
 };
 
+function refreshAllProgress() {
+    GuildManager.guilds.forEach(g => refreshguildprogress(g));
+};
+
 function refreshSales(guild) {
     const $gs = $(`#${guild.id}Sales`);
     $gs.empty();

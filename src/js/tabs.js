@@ -104,9 +104,9 @@ function tabHide() {
     else $heroesTabLink.hide();
     if (AreaManager.idToArea("A01").unlocked()) $dungeonsTabLink.show();
     else $dungeonsTabLink.hide();
-    if (Shop.alreadyPurchased("AL3000")) $progressTabLink.show();
+    if (Shop.alreadyPurchased("AL3001")) $progressTabLink.show();
     else $progressTabLink.hide();
-    if (Shop.alreadyPurchased("AL3000")) $progressTabLink.show();
+    if (Shop.alreadyPurchased("AL3001")) $progressTabLink.show();
     else $progressTabLink.hide();
     if (Shop.alreadyPurchased("AL1000")) $guildTabLink.show();
     else $guildTabLink.hide();

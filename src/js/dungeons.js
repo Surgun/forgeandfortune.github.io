@@ -303,7 +303,7 @@ class Dungeon {
         })
     }
     getRewards() {
-        return new idAmt("M201",1);
+        return new idAmt(this.mat,this.rewardAmt);
     }
     unlocked() {
         if (this.unlockedBy === null) return true;

@@ -3003,6 +3003,7 @@ footer {
 }
 
 .heroInspectBox {
+    display: none;
     position: absolute;
     top: 38px;
     left: 0;
@@ -3012,12 +3013,17 @@ footer {
     pointer-events: none;
 }
 
+.heroInspectBox.isOpened {
+    display: flex;
+}
+
 .heroInspectIndividualBackground {
+    position: absolute;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,.75);
     backdrop-filter: blur(10px);
-    transition: all 0.2s ease-in-out;
+    transition: all var(--transition_linear);
     pointer-events: all;
 }
 
@@ -3025,15 +3031,41 @@ footer {
     opacity: 0;
 }
 
+.heroInspectPreviewCardContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    animation: scale-in var(--transition_linear) forwards;
+    pointer-events: all;
+}
+
+.previewCardCycle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 50%;
+}
+
+.previewCardHero .heroOwnedCard {
+    max-width: 225px;
+    animation: none;
+}
+
 .heroInspectIndividual {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 1200px;
+    flex-grow: 1;
+    margin-left: auto;
     height: 100%;
     background-color: var(--bg-primary);
     border-left: 2px solid var(--border-primary);
@@ -3041,6 +3073,7 @@ footer {
     animation: 0.2s scale-x-in;
     pointer-events: all;
     overflow: auto;
+    z-index: 1; 
 }
 
 .heroInspectClosed .heroInspectIndividual {
@@ -3050,30 +3083,65 @@ footer {
 
 .heroInspectNav {
     display: flex;
+    border-bottom: 2px solid var(--border-primary);
 }
 
 .heroBackButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    padding:0;
-    margin: 5px;
-    color: var(--text-primary);
-    background-color: var(--button-primary);
-    border: 0;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all var(--transition_linear);
-    animation: scale-in var(--transition_linear);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: all;
+    z-index: 1;
+}
+
+.heroBackButton:hover, .heroBackButton:focus {
+    background-color: var(--button-cancel);
+}
+
+.heroBackButtonText {
+    margin-left: 5px;
 }
 
 .heroTabContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, 125px);
     flex-grow: 1;
-    border: 1px solid var(--border-primary);
+}
+
+.heroTab {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 12px 15px;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: all var(--transition_linear);
+}
+
+.heroTab:after {
+    position: absolute;
+    bottom: -2px;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: transparent;
+    transition: all var(--transition_linear);
+}
+
+.heroTab:hover {
+    background-color: var(--bg-secondary);
+}
+
+.heroTab.selected {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.heroTab.selected:after {
+    width: 100%;
+    background-color: var(--highlight);
 }
 
 .heroTabContent {
@@ -3082,12 +3150,8 @@ footer {
 }
 
 .heroDetailsContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    justify-content: flex-start;
     overflow: auto;
 }
 
@@ -3096,7 +3160,6 @@ footer {
 }
 
 .overviewContainer {
-    display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill,minmax(175px,1fr));
     grid-gap: 10px;
@@ -5313,249 +5376,8 @@ div.EquipmentCardsContainer {
     background-color: rgba(162,21,0,1);
     color: var(--text-white);
     border-radius: 50%;
-    -webkit-animation: 2s ease-in-out infinite notification;
     animation: 2s ease-in-out infinite notification;
     z-index: 10;
-}
-
-#eventContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100%;
-    overflow: auto;
-}
-
-#eventListContainer {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: 100%;
-    width: 100%;
-    max-width: 250px;
-    background-color: var(--bg-primary);
-    border-right: 1px solid var(--border-primary);
-    overflow: auto;
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    -webkit-animation: 0.15s scale-x-in;
-    animation: 0.15s scale-x-in;
-}
-
-#readUnread {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-align: center;
-    color: var(--text-tertiary);
-    border-bottom: 1px solid var(--border-primary)
-}
-
-.readOption, .heroTab {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: relative;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    padding: 12px 15px;
-    color: var(--text-tertiary);
-    cursor: pointer;
-}
-
-.readOption:after, .heroTab:after {
-    position: absolute;
-    bottom: -2px;
-    content: "";
-    height: 2px;
-    width: 0;
-    background-color: transparent;
-}
-
-.readOption:hover, .heroTab:hover {
-    background-color: var(--bg-secondary);
-}
-
-.readOption.readActive, .heroTab.selected {
-    background-color: var(--border-primary);
-    color: var(--text-primary);
-}
-
-.readOption.readActive:after, .heroTab.selected:after {
-    width: 100%;
-    background-color: var(--highlight);
-}
-
-#eventList {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    padding-bottom: 20px;
-}
-
-.eventList {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 12px 15px;
-    border-top: 1px solid var(--border-primary);
-    border-bottom: 1px solid var(--border-primary);
-    cursor: pointer;
-}
-
-.eventList > img {
-    margin-right: 5px;
-}
-
-.eventList.highlight, .eventList.highlight:hover {
-    background-color: var(--border-primary);
-    border-color: var(--border-tertiary);
-    color: var(--highlight);
-}
-
-.eventList:hover {
-    background-color: var(--bg-secondary);
-}
-
-#eventContent {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    font-size: 14.4px;
-    font-size: 0.9rem;
-    padding: 15px;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    -webkit-animation: 0.2s .15s fade-in forwards;
-    animation: 0.2s .15s fade-in forwards;
-}
-
-.eventBody {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    -webkit-animation: 0.2s .15s fade-in forwards;
-    animation: 0.2s .15s fade-in forwards;
-}
-
-.eventAuthor {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    padding: 5px 10px;
-    color: var(--text-tertiary);
-}
-
-.eventAuthor > span {
-    font-weight: bold;
-    color: var(--text-secondary);
-    margin-right: 5px;
-}
-
-.eventMessage {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 15px;
-    margin: 10px 0;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-primary);
-    border-radius: 10px;
-}
-
-.eventStatsContainer {
-    display: -ms-grid;
-    display: grid;
-    grid-template: auto / repeat(auto-fill,minmax(300px,1fr));
-    grid-gap: 5px;
-}
-
-.eventContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 10px;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-primary);
-    border-radius: 10px;
-    -webkit-animation: 0.2s scale-in;
-    animation: 0.2s scale-in;
-}
-
-.eventHeading {
-    padding: 5px;
-    border-bottom: 2px solid var(--border-primary);
-    max-width: 300px;
-}
-
-.eventDescription {
-    padding: 10px 5px;
-    color: var(--text-secondary);
-}
-
-.dreNotoriety {
-    padding: 5px 0;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px 0 0 0;
-    color: var(--highlight);
-}
-
-.eventActionsContainer {
-    display: -ms-grid;
-    display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(100px, 1fr));
-    grid-gap: 10px;
-    margin: 20px 0;
-}
-
-.eventActionButton {
-    box-shadow: var(--box-shadow);
-}
-
-.eventConfirm {
-    -ms-grid-column-span: 2;
-    -ms-grid-column: 1;
-        grid-column: 1 / span 2;
-}
-
-#eventCollectAll {
-    -ms-grid-column-span: 3;
-    -ms-grid-column: 3;
-        grid-column: 3 / span 3;
 }
 
 .rewardDivTitle {

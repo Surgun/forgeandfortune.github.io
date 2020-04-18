@@ -11,6 +11,7 @@ const $heroContentContainer = $(".heroContentContainer");
 
 //other????
 const $heroTab = $("#heroTab");
+const $previewCardHero = $('.previewCardHero');
 const $heroEquipmentList = $("#heroEquipmentList");
 
 //tabs
@@ -59,7 +60,7 @@ const statDesc = [
 
 function refreshHeroOverview() {
     HeroManager.heroView = null;
-    $heroInspectBox.hide();
+    $heroInspectBox.removeClass('isOpened');
     initializeHeroList();
     HeroManager.heroes.filter(h=>h.owned).forEach(hero => {
         createHeroOverlayCard(hero).appendTo($overviewContainer);
@@ -69,9 +70,22 @@ function refreshHeroOverview() {
 //populate the sidebar hero list
 function initializeHeroList() {
     $heroList.empty();
-    // $("<div/>").attr("id","heroOverviewButton").addClass("heroOverviewButton highlight").html(`<i class="fas fa-info-circle"></i> Hero Overview`).appendTo($heroList);
     HeroManager.heroes.forEach(hero => {
-        const d = $("<div/>").addClass("heroOwnedCard heroInspect").attr("data-value",hero.id).appendTo($heroList);
+        const d = generateHeroCard(hero, true).appendTo($heroList);
+        if (!hero.owned) d.hide();
+    });
+    if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
+        const d = $("<div/>").addClass("heroOwnedCard emptyHeroSlot").appendTo($heroList);
+        $("<div/>").addClass("heroOwnedImage").html(miscIcons.emptySlot).appendTo(d);
+        $("<div/>").addClass("heroOwnedName").html("More Heroes?").appendTo(d);
+        $("<div/>").addClass("emptyHeroSlotDescription").html("You can find more heroes by purchasing perks in the Market.").appendTo(d);
+        $("<div/>").addClass("emptyHeroSlotMarket actionButton").html(`<i class="fas fa-store"></i> View Market`).appendTo(d);
+    }
+}
+
+function generateHeroCard(hero, inspect) {
+    const d = $("<div/>").addClass("heroOwnedCard").attr("data-value",hero.id);
+        if (inspect) d.addClass('heroInspect');
         $("<div/>").addClass("heroOwnedImage").html(hero.portrait).appendTo(d);
         $("<div/>").addClass("heroOwnedName").html(hero.name).appendTo(d);
         const d3 = $("<div/>").addClass("heroHP heroStat").appendTo(d);
@@ -83,15 +97,7 @@ function initializeHeroList() {
         const d5 = $("<div/>").addClass("heroTech heroStat").appendTo(d);
             $("<div/>").addClass("tech_img").html(miscIcons.tech).appendTo(d5);
             $("<div/>").addClass("tech_integer statValue").html(hero.getTech()).appendTo(d5);
-        if (!hero.owned) d.hide();
-    });
-    if (HeroManager.heroes.filter(h=>!h.owned).length > 0) {
-        const d = $("<div/>").addClass("heroOwnedCard emptyHeroSlot").appendTo($heroList);
-        $("<div/>").addClass("heroOwnedImage").html(miscIcons.emptySlot).appendTo(d);
-        $("<div/>").addClass("heroOwnedName").html("More Heroes?").appendTo(d);
-        $("<div/>").addClass("emptyHeroSlotDescription").html("You can find more heroes by purchasing perks in the Market.").appendTo(d);
-        $("<div/>").addClass("emptyHeroSlotMarket actionButton").html(`<i class="fas fa-store"></i> View Market`).appendTo(d);
-    }
+    return d;
 }
 
 function createHeroOverlayCard(hero) {
@@ -105,6 +111,42 @@ function createHeroOverlayCard(hero) {
             $("<div/>").addClass("heroOverviewPow overviewStat tooltip").attr("data-tooltip","pow").html(`${miscIcons.pow} ${hero.getPow()}`).appendTo(heroStats);
     return d;
 }
+
+function inspectHeroPreview(hero) {
+    $previewCardHero.empty();
+    $previewCardHero.append(generateHeroCard(hero, false))
+}
+
+function cyclePreviewHeroPrevious() {
+    const ID = $('.previewCardHero .heroOwnedCard').attr("data-value");
+    const heroIndex = HeroManager.heroes.findIndex(hero => hero.id === ID);
+    let newHeroIndex = 0;
+    if (heroIndex > 0) newHeroIndex = heroIndex - 1
+    else newHeroIndex = HeroManager.heroes.length - 1
+    HeroManager.heroView = HeroManager.heroes[newHeroIndex].id
+}
+
+function cyclePreviewHeroNext() {
+    const ID = $('.previewCardHero .heroOwnedCard').attr("data-value");
+    const heroIndex = HeroManager.heroes.findIndex(hero => hero.id === ID);
+    let newHeroIndex = 0;
+    if (heroIndex < HeroManager.heroes.length - 1) newHeroIndex = heroIndex + 1
+    HeroManager.heroView = HeroManager.heroes[newHeroIndex].id
+}
+
+$(document).on('click', ".previewCardPrevious", (e) => {
+    cyclePreviewHeroPrevious();
+    inspectHeroPreview(HeroManager.idToHero(HeroManager.heroView))
+    clearExaminePossibleEquip();
+    showTab(HeroManager.tabSelected);
+});
+
+$(document).on('click', ".previewCardNext", (e) => {
+    cyclePreviewHeroNext();
+    inspectHeroPreview(HeroManager.idToHero(HeroManager.heroView))
+    clearExaminePossibleEquip();
+    showTab(HeroManager.tabSelected);
+});
 
 function showHeroDetails() {
     $heroContentContainer.hide();
@@ -291,7 +333,7 @@ function updateHeroStats() {
         $(heroCard).find(".hp_integer").html(hero.maxHP());
         $(heroCard).find(".tech_integer").html(hero.getTech());
     });
-    $heroInspectBox.hide();
+    $heroInspectBox.removeClass('isOpened');
 }
 
 $(document).on('click',".heroBackButton", (e) => {
@@ -299,7 +341,7 @@ $(document).on('click',".heroBackButton", (e) => {
     $heroInspectBox.addClass('heroInspectClosed');
     setTimeout(() => {
         updateHeroStats();
-        $heroInspectBox.removeClass('heroInspectClosed');
+        $heroInspectBox.removeClass('heroInspectClosed isOpened');
     }, 200);
 });
 
@@ -314,10 +356,8 @@ $(document).on('click', ".heroInspect", (e) => {
     e.preventDefault();
     const ID = $(e.currentTarget).attr("data-value");
     HeroManager.heroView = ID;
-    $("#heroOverviewButton").removeClass("highlight");
-    $(`.heroOwnedCard`).removeClass("highlight");
-    $(`.heroOwnedCard[data-value=${ID}]`).addClass("highlight");
-    $heroInspectBox.show();
+    $heroInspectBox.addClass('isOpened');
+    inspectHeroPreview(HeroManager.idToHero(ID))
     clearExaminePossibleEquip();
     showTab(HeroManager.tabSelected);
 });

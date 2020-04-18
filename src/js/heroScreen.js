@@ -119,19 +119,21 @@ function inspectHeroPreview(hero) {
 
 function cyclePreviewHeroPrevious() {
     const ID = $('.previewCardHero .heroOwnedCard').attr("data-value");
-    const heroIndex = HeroManager.heroes.findIndex(hero => hero.id === ID);
+    const heroesList = HeroManager.heroes.filter(hero => hero.owned);
+    const heroIndex = heroesList.findIndex(hero => hero.id === ID);
     let newHeroIndex = 0;
     if (heroIndex > 0) newHeroIndex = heroIndex - 1
-    else newHeroIndex = HeroManager.heroes.length - 1
-    HeroManager.heroView = HeroManager.heroes[newHeroIndex].id
+    else newHeroIndex = heroesList.length - 1
+    HeroManager.heroView = heroesList[newHeroIndex].id
 }
 
 function cyclePreviewHeroNext() {
     const ID = $('.previewCardHero .heroOwnedCard').attr("data-value");
-    const heroIndex = HeroManager.heroes.findIndex(hero => hero.id === ID);
+    const heroesList = HeroManager.heroes.filter(hero => hero.owned);
+    const heroIndex = heroesList.findIndex(hero => hero.id === ID);
     let newHeroIndex = 0;
-    if (heroIndex < HeroManager.heroes.length - 1) newHeroIndex = heroIndex + 1
-    HeroManager.heroView = HeroManager.heroes[newHeroIndex].id
+    if (heroIndex < heroesList.length - 1) newHeroIndex = heroIndex + 1
+    HeroManager.heroView = heroesList[newHeroIndex].id
 }
 
 $(document).on('click', ".previewCardPrevious", (e) => {

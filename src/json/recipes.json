@@ -10,7 +10,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M101": 1
+    },
     "smithCost": "M301",
     "pts": 6,
     "pow": 3,
@@ -20,8 +22,8 @@
     "hpScale": 0,
     "techScale": 0,
     "guildUnlock": "G001",
-    "goldCost": 10,
-    "repReq": 0,
+    "goldCost": 80,
+    "repReq": 1,
     "deconType": "M800",
     "minMastery": 10,
     "maxMastery": 100,
@@ -648,9 +650,7 @@
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M101": 1
-    },
+    "mcost": null,
     "smithCost": "M101",
     "pts": 6,
     "pow": 3,
@@ -660,8 +660,8 @@
     "hpScale": 0,
     "techScale": 0,
     "guildUnlock": "G001",
-    "goldCost": 80,
-    "repReq": 1,
+    "goldCost": 10,
+    "repReq": 0,
     "deconType": "M802",
     "minMastery": 10,
     "maxMastery": 100,

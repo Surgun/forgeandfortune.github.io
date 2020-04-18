@@ -14,7 +14,9 @@ const Shop = {
     },
     loadSave(save) {
         save.perks.forEach(perk => {
-            this.idToPerk(perk.id).loadSave(perk);
+            const perka = this.idToPerk(perk.id);
+            if (perka === undefined) return;
+            perka.loadSave(perk);
         });
     },
     idToPerk(id) {

@@ -254,6 +254,9 @@ class Dungeon {
     nextFloor(refreshLater) {
         if (this.type === "boss") {
             this.maxFloor += 1;
+            refreshAllSales();
+            refreshAllOrders();
+            refreshAllProgress();
             return this.resetDungeon();
         }
         this.setRewardRate(this.floor);
@@ -307,7 +310,7 @@ class Dungeon {
     }
     unlocked() {
         if (this.unlockedBy === null) return true;
-        if (this.type === "dungeon" || this.id === "D401") return Shop.alreadyPurchased(this.unlockedBy);
+        if (this.unlockedBy.charAt(0) === "A") return Shop.alreadyPurchased(this.unlockedBy);
         const bossDungeon = DungeonManager.dungeonByID(this.unlockedBy);
         return bossDungeon.beaten();
     }

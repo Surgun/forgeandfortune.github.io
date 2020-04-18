@@ -31,7 +31,7 @@
     "hpGain": 10,
     "partySize": 2,
     "type": "dungeon",
-    "unlockedBy": "AL2006"
+    "unlockedBy": "D401"
   },
   {
     "id": "D103",
@@ -48,7 +48,7 @@
     "hpGain": 24,
     "partySize": 3,
     "type": "dungeon",
-    "unlockedBy": "AL2012"
+    "unlockedBy": "D402"
   },
   {
     "id": "D104",
@@ -65,7 +65,7 @@
     "hpGain": 24,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2018"
+    "unlockedBy": "D403"
   },
   {
     "id": "D105",
@@ -82,7 +82,7 @@
     "hpGain": 30,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2018"
+    "unlockedBy": "D404"
   },
   {
     "id": "D106",
@@ -99,7 +99,7 @@
     "hpGain": 44,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2018"
+    "unlockedBy": "D405"
   },
   {
     "id": "D107",
@@ -116,7 +116,7 @@
     "hpGain": 72,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2018"
+    "unlockedBy": "D405"
   },
   {
     "id": "D108",
@@ -133,7 +133,7 @@
     "hpGain": 108,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2018"
+    "unlockedBy": "D405"
   },
   {
     "id": "D109",
@@ -150,7 +150,7 @@
     "hpGain": 144,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2018"
+    "unlockedBy": "D405"
   },
   {
     "id": "D110",
@@ -167,7 +167,7 @@
     "hpGain": 180,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2018"
+    "unlockedBy": "D405"
   },
   {
     "id": "D201",
@@ -201,7 +201,7 @@
     "hpGain": 10,
     "partySize": 2,
     "type": "dungeon",
-    "unlockedBy": "AL2007"
+    "unlockedBy": "D401"
   },
   {
     "id": "D203",
@@ -218,7 +218,7 @@
     "hpGain": 24,
     "partySize": 3,
     "type": "dungeon",
-    "unlockedBy": "AL2013"
+    "unlockedBy": "D402"
   },
   {
     "id": "D204",
@@ -235,7 +235,7 @@
     "hpGain": 24,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2019"
+    "unlockedBy": "D403"
   },
   {
     "id": "D205",
@@ -252,7 +252,7 @@
     "hpGain": 30,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2019"
+    "unlockedBy": "D404"
   },
   {
     "id": "D206",
@@ -269,7 +269,7 @@
     "hpGain": 44,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2019"
+    "unlockedBy": "D405"
   },
   {
     "id": "D207",
@@ -286,7 +286,7 @@
     "hpGain": 72,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2019"
+    "unlockedBy": "D405"
   },
   {
     "id": "D208",
@@ -303,7 +303,7 @@
     "hpGain": 108,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2019"
+    "unlockedBy": "D405"
   },
   {
     "id": "D209",
@@ -320,7 +320,7 @@
     "hpGain": 144,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2019"
+    "unlockedBy": "D405"
   },
   {
     "id": "D210",
@@ -337,7 +337,7 @@
     "hpGain": 180,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2019"
+    "unlockedBy": "D405"
   },
   {
     "id": "D301",
@@ -371,7 +371,7 @@
     "hpGain": 10,
     "partySize": 2,
     "type": "dungeon",
-    "unlockedBy": "AL2009"
+    "unlockedBy": "D401"
   },
   {
     "id": "D303",
@@ -388,7 +388,7 @@
     "hpGain": 24,
     "partySize": 3,
     "type": "dungeon",
-    "unlockedBy": "AL2015"
+    "unlockedBy": "D402"
   },
   {
     "id": "D304",
@@ -405,7 +405,7 @@
     "hpGain": 24,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2021"
+    "unlockedBy": "D403"
   },
   {
     "id": "D305",
@@ -422,7 +422,7 @@
     "hpGain": 30,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2021"
+    "unlockedBy": "D404"
   },
   {
     "id": "D306",
@@ -439,7 +439,7 @@
     "hpGain": 44,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2021"
+    "unlockedBy": "D405"
   },
   {
     "id": "D307",
@@ -456,7 +456,7 @@
     "hpGain": 72,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2021"
+    "unlockedBy": "D405"
   },
   {
     "id": "D308",
@@ -473,7 +473,7 @@
     "hpGain": 108,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2021"
+    "unlockedBy": "D405"
   },
   {
     "id": "D309",
@@ -490,7 +490,7 @@
     "hpGain": 144,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2021"
+    "unlockedBy": "D405"
   },
   {
     "id": "D310",
@@ -507,7 +507,7 @@
     "hpGain": 180,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "AL2021"
+    "unlockedBy": "D405"
   },
   {
     "id": "D401",

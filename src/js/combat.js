@@ -1,6 +1,7 @@
 "use strict";
 
 const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,RANDOM:4,SELF:5,ALLENEMIES:6,ALLALLIES:7,ALLYMISSINGHP:8,ENEMYMISSINGHP:9,ENEMYLOWESTHP:10});
+const SideType = Object.freeze({ALLIES:0,ENEMIES:1});
 
 const CombatManager = {
     refreshLater : false,
@@ -28,27 +29,38 @@ class combatRoundParams {
         this.power = Math.floor(this.attacker.getPow() * this.attack.powMod + this.attacker.getTech() * this.attack.techMod);
         this.dungeonid = dungeonid;
     }
-    getTarget(target) {
-        const livingAllies = this.allies.filter(h=>h.alive());
-        const livingEnemies = this.enemies.filter(h=>h.alive());
-        if (target === TargetType.FIRST) return [livingEnemies[0]];
+    getTarget(target,side) {
+        const aliveEnemys = this.enemies.filter(h=>h.alive());
+        const enemies = aliveEnemys.some(h=>h.mark()) ? aliveEnemys.filter(h=>h.mark()) : aliveEnemys;
+        const living = side === SideType.ALLIES ? this.allies.filter(h=>h.alive()) : enemies;
+        if (target === TargetType.FIRST) return [living[0]];
         if (target === TargetType.SECOND) {
-            if (livingEnemies.length === 1) return [livingEnemies[0]];
-            return [livingEnemies[1]];
+            if (living.length === 1) return [living[0]];
+            return [living[1]];
         }
         if (target === TargetType.THIRD) {
-            if (livingEnemies.length === 1) return [livingEnemies[0]];
-            if (livingEnemies.length === 2) return [livingEnemies[1]];
-            return [livingEnemies[3]];
+            if (living.length === 1) return [living[0]];
+            if (living.length === 2) return [living[1]];
+            return [living[3]];
         }
-        if (target === TargetType.FOURTH) return [livingEnemies[livingEnemies.length-1]];
-        if (target === TargetType.RANDOM) return [livingEnemies[Math.floor(Math.random()*livingEnemies.length)]];
+        if (target === TargetType.FOURTH) return [living[living.length-1]];
         if (target === TargetType.SELF) return [this.attacker];
-        if (target === TargetType.ALLENEMIES) return livingEnemies;
-        if (target === TargetType.ALLALLIES) return livingAllies;
-        if (target === TargetType.ALLYMISSINGHP) return [livingAllies.reduce((a,b) => a.missingHP() >= b.missingHP() ? a : b)];
-        if (target === TargetType.ENEMYMISSINGHP) return [livingEnemies.reduce((a,b) => a.missingHP() >= b.missingHP() ? a : b)];
-        if (target === TargetType.ENEMYLOWESTHP) return [livingEnemies.reduce((a,b) => a.hp < b.hp ? a : b)];
+        if (target === TargetType.ALL) return living;
+        if (target === TargetType.MISSINGHP) return [living.reduce((a,b) => a.missingHP() >= b.missingHP() ? a : b)];
+        if (target === TargetType.LOWESTHP) return [living.reduce((a,b) => a.hp < b.hp ? a : b)];
+        //[Beorn,Titus,Alok,Grim] => indx 1 returns 0
+        if (target === TargetType.BEFORE) {
+            const uid = this.attacker.uniqueid;
+            const indx = living.findIndex(h=>h.uniqueid === uid);
+            if (indx === 0) return null;
+            return [living[indx-1]];
+        }
+        if (target === TargetType.AFTER) {
+            const uid = this.attacker.uniqueid;
+            const indx = living.findIndex(h=>h.uniqueid === uid);
+            if (indx === living.length-1) return null;
+            return [living[indx+1]];
+        }
     }
 }
 
@@ -157,6 +169,9 @@ class Combatant {
     }
     getSkillIDs() {
         return this.playbook.getSkillIDs();
+    }
+    mark() {
+        return this.buffs.some(b=>b.mark());
     }
     getBuffProtection() {
         const buffs = this.buffs.map(b=>b.getProtection());

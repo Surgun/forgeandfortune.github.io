@@ -53,6 +53,7 @@ class Buff {
     getProtection() { return 0; }
     getVulnerability() { return 0; }
     maxHP() { return 0; }
+    mark() { return false; }
 }
 
 const BuffManager = {
@@ -144,6 +145,12 @@ class B0020 extends Buff {
     }
 }
 
+class B0040 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+}
+
 class B1010 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
@@ -162,12 +169,30 @@ class B1020 extends Buff {
     }
 }
 
+class B1030 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    onTurn() {
+        this.target.takeDamage(this.power*this.stacks);
+    }
+}
+
 class B2010 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
     getTech() {
         return this.power;
+    }
+}
+
+class B2040 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    mark() {
+        return true;
     }
 }
 
@@ -272,10 +297,12 @@ class BM903F extends Buff {
 
 const BuffLookup = {
     B0010,
-    B0020, 
+    B0020,
+    B0040,
     B1010,
     B1020,
     B2010,
+    B2040,
     BM102,
     BM200,
     BM902,

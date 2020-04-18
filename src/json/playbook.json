@@ -75,7 +75,7 @@
     "id": "PB0040",
     "name": "Lambug Playbook",
     "skill1": "S0000",
-    "skill2": "S0000",
+    "skill2": "S0040",
     "skill3": "S0000",
     "skill4": "S0000"
   },
@@ -146,9 +146,9 @@
   {
     "id": "PB0070",
     "name": "Titus Playbook",
-    "skill1": "S0000",
+    "skill1": "S1030",
     "skill2": "S0000",
-    "skill3": "S1030",
+    "skill3": "S0000",
     "skill4": "S0000"
   },
   {
@@ -172,7 +172,7 @@
     "name": "Troy Playbook",
     "skill1": "S0000",
     "skill2": "S0000",
-    "skill3": "S0000",
+    "skill3": "S1040",
     "skill4": "S0000"
   },
   {
@@ -266,7 +266,7 @@
   {
     "id": "PB0120",
     "name": "Caeda Playbook",
-    "skill1": "S0000",
+    "skill1": "S2040",
     "skill2": "S0000",
     "skill3": "S0000",
     "skill4": "S0000"

@@ -25,11 +25,9 @@ const $heroUpgrades = $("#heroUpgrades");
 //hero details
 const $heroExamineDetails = $("#heroExamineDetails");
 const $heroExamineName = $("#heroExamineName");
-const $heroExaminePortait = $("#heroExaminePortait");
 const $heroExamineImage = $("#heroExamineImage");
 const $heroExamineDescription = $("#heroExamineDescription");
 const $heroClassText = $("#heroClassText");
-const $heroExamineStatsList = $("#heroExamineStatsList");
 const $heroExaminePlaybooks = $("#heroExaminePlaybooks");
 
 //hero gear
@@ -88,13 +86,13 @@ function generateHeroCard(hero, inspect) {
         if (inspect) d.addClass('heroInspect');
         $("<div/>").addClass("heroOwnedImage").html(hero.portrait).appendTo(d);
         $("<div/>").addClass("heroOwnedName").html(hero.name).appendTo(d);
-        const d3 = $("<div/>").addClass("heroHP heroStat").appendTo(d);
+        const d3 = $("<div/>").addClass("heroHP heroStat tooltip").attr("data-tooltip","hp").appendTo(d);
             $("<div/>").addClass("hp_img").html(miscIcons.hp).appendTo(d3);
             $("<div/>").addClass("hp_integer statValue").html(hero.maxHP()).appendTo(d3);
-        const d4 = $("<div/>").addClass("heroPower heroStat").appendTo(d);
+        const d4 = $("<div/>").addClass("heroPower heroStat tooltip").attr("data-tooltip","pow").appendTo(d);
             $("<div/>").addClass("pow_img").html(miscIcons.pow).appendTo(d4);
             $("<div/>").addClass("pow_integer statValue").html(hero.getPow()).appendTo(d4);
-        const d5 = $("<div/>").addClass("heroTech heroStat").appendTo(d);
+        const d5 = $("<div/>").addClass("heroTech heroStat tooltip").attr("data-tooltip","tech").appendTo(d);
             $("<div/>").addClass("tech_img").html(miscIcons.tech).appendTo(d5);
             $("<div/>").addClass("tech_integer statValue").html(hero.getTech()).appendTo(d5);
     return d;
@@ -155,15 +153,9 @@ function showHeroDetails() {
     $heroDetails.show();
     const hero = HeroManager.idToHero(HeroManager.heroView);
     $heroExamineName.html(hero.name);
-    $heroExaminePortait.html(hero.portrait);
     $heroExamineImage.html(hero.image);
     $heroExamineDescription.html(hero.description);
     $heroClassText.html(hero.class);
-    $heroExamineStatsList.empty();
-    const stats = [hero.maxHP(),hero.getPow(), hero.getTech()];
-    for (let i=0;i<stats.length;i++) {
-        $heroExamineStatsList.append(statRow(statName[i],stats[i],statDesc[i]));
-    }
     $heroExaminePlaybooks.empty();
     hero.playbooks.forEach(playbookID => {
         const playbook = PlaybookManager.idToPlaybook(playbookID);

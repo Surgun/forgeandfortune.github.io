@@ -1079,14 +1079,15 @@ footer {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
-    background-color: rgba(255,255,255,.05);
     color: var(--text-primary);
     text-align: center;
+    background-color: rgba(255,255,255,.05);
     border-radius: 5px;
+    transition: all var(--transition_linear);
     cursor: pointer;
 }
 
-.alPerkBuy.cannotAfford {
+.alPerkBuy.cannotAfford, .alPerkBuy.cannotAfford:hover, .alPerkBuy.cannotAfford:focus {
     background-color: rgba(255, 0, 0, 0.1);
 }
 
@@ -2946,6 +2947,7 @@ footer {
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
+    transition: all var(--transition_linear);
     box-shadow: var(--box-shadow);
     cursor: pointer;
     animation: 0.2s scale-in forwards;
@@ -3319,6 +3321,11 @@ footer {
     position: absolute;
     top: 15px;
     left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 84px;
     padding: 5px;
     background-color: var(--bg-secondary);
     border: 2px solid var(--border-primary);
@@ -3326,7 +3333,6 @@ footer {
 }
 
 .heroExamineImage > img {
-    -webkit-animation: 0.2s fade-in;
     animation: 0.2s fade-in;
 }
 

@@ -18,7 +18,7 @@
   },
   {
     "id": "D102",
-    "name": "Groovy Grass",
+    "name": "Groovy Grove II",
     "area": "A01",
     "mob1": "B101",
     "mob2": "B100",
@@ -35,7 +35,7 @@
   },
   {
     "id": "D103",
-    "name": "Groovy Ground",
+    "name": "Groovy Grove III",
     "area": "A01",
     "mob1": "B101",
     "mob2": "B100",
@@ -52,12 +52,12 @@
   },
   {
     "id": "D104",
-    "name": "Groovy Gradient",
+    "name": "Groovy Grove IV",
     "area": "A01",
     "mob1": "B101",
     "mob2": "B100",
-    "mob3": null,
-    "mob4": null,
+    "mob3": "B103",
+    "mob4": "B102",
     "mat": "M204",
     "pow": 160,
     "hp": 2700,
@@ -69,7 +69,7 @@
   },
   {
     "id": "D105",
-    "name": "Groovy Grotto",
+    "name": "Groovy Grove V",
     "area": "A01",
     "mob1": "B101",
     "mob2": "B100",
@@ -86,7 +86,7 @@
   },
   {
     "id": "D106",
-    "name": "Groovy Growth",
+    "name": "Groovy Grove VI",
     "area": "A01",
     "mob1": "B101",
     "mob2": "B100",
@@ -103,7 +103,7 @@
   },
   {
     "id": "D107",
-    "name": "Groovy Griddle",
+    "name": "Groovy Grove VII",
     "area": "A01",
     "mob1": "B101",
     "mob2": "B100",
@@ -120,7 +120,7 @@
   },
   {
     "id": "D108",
-    "name": "Groovy Groove",
+    "name": "Groovy Grove VIII",
     "area": "A01",
     "mob1": "B101",
     "mob2": "B100",
@@ -137,7 +137,7 @@
   },
   {
     "id": "D109",
-    "name": "Groovy Granary",
+    "name": "Groovy Grove IX",
     "area": "A01",
     "mob1": "B101",
     "mob2": "B100",
@@ -154,7 +154,7 @@
   },
   {
     "id": "D110",
-    "name": "Groovy Grail",
+    "name": "Groovy Grove X",
     "area": "A01",
     "mob1": "B101",
     "mob2": "B100",
@@ -188,7 +188,7 @@
   },
   {
     "id": "D202",
-    "name": "Spooky Space",
+    "name": "Spooky Spot II",
     "area": "A02",
     "mob1": "B200",
     "mob2": "B201",
@@ -205,7 +205,7 @@
   },
   {
     "id": "D203",
-    "name": "Spooky Spectacle",
+    "name": "Spooky Spot III",
     "area": "A02",
     "mob1": "B200",
     "mob2": "B201",
@@ -222,12 +222,12 @@
   },
   {
     "id": "D204",
-    "name": "Spooky Sprout",
+    "name": "Spooky Spot IV",
     "area": "A02",
     "mob1": "B200",
-    "mob2": "B201",
-    "mob3": null,
-    "mob4": null,
+    "mob2": "B203",
+    "mob3": "B201",
+    "mob4": "B202",
     "mat": "M104",
     "pow": 160,
     "hp": 2700,
@@ -239,7 +239,7 @@
   },
   {
     "id": "D205",
-    "name": "Spooky Spur",
+    "name": "Spooky Spot V",
     "area": "A02",
     "mob1": "B200",
     "mob2": "B201",
@@ -256,7 +256,7 @@
   },
   {
     "id": "D206",
-    "name": "Spooky Sprawl",
+    "name": "Spooky Spot VI",
     "area": "A02",
     "mob1": "B200",
     "mob2": "B201",
@@ -273,7 +273,7 @@
   },
   {
     "id": "D207",
-    "name": "Spooky Spit",
+    "name": "Spooky Spot VII",
     "area": "A02",
     "mob1": "B200",
     "mob2": "B201",
@@ -290,7 +290,7 @@
   },
   {
     "id": "D208",
-    "name": "Spooky Span",
+    "name": "Spooky Spot VIII",
     "area": "A02",
     "mob1": "B200",
     "mob2": "B201",
@@ -307,7 +307,7 @@
   },
   {
     "id": "D209",
-    "name": "Spooky Spread",
+    "name": "Spooky Spot IX",
     "area": "A02",
     "mob1": "B200",
     "mob2": "B201",
@@ -324,7 +324,7 @@
   },
   {
     "id": "D210",
-    "name": "Spooky Spire",
+    "name": "Spooky Spot X",
     "area": "A02",
     "mob1": "B200",
     "mob2": "B201",
@@ -358,7 +358,7 @@
   },
   {
     "id": "D302",
-    "name": "Creepy Crypt",
+    "name": "Creepy Crag II",
     "area": "A03",
     "mob1": "B301",
     "mob2": "B300",
@@ -375,7 +375,7 @@
   },
   {
     "id": "D303",
-    "name": "Creepy Crossing",
+    "name": "Creepy Crag III",
     "area": "A03",
     "mob1": "B301",
     "mob2": "B300",
@@ -392,12 +392,12 @@
   },
   {
     "id": "D304",
-    "name": "Creepy Crawl",
+    "name": "Creepy Crag IV",
     "area": "A03",
-    "mob1": "B301",
-    "mob2": "B300",
-    "mob3": null,
-    "mob4": null,
+    "mob1": "B303",
+    "mob2": "B301",
+    "mob3": "B300",
+    "mob4": "B302",
     "mat": "M304",
     "pow": 160,
     "hp": 2700,
@@ -409,7 +409,7 @@
   },
   {
     "id": "D305",
-    "name": "Creepy Crevice",
+    "name": "Creepy Crag V",
     "area": "A03",
     "mob1": "B301",
     "mob2": "B300",
@@ -426,7 +426,7 @@
   },
   {
     "id": "D306",
-    "name": "Creepy Crack",
+    "name": "Creepy Crag VI",
     "area": "A03",
     "mob1": "B301",
     "mob2": "B300",
@@ -443,7 +443,7 @@
   },
   {
     "id": "D307",
-    "name": "Creepy Cranny",
+    "name": "Creepy Crag VII",
     "area": "A03",
     "mob1": "B301",
     "mob2": "B300",
@@ -460,7 +460,7 @@
   },
   {
     "id": "D308",
-    "name": "Creepy Crater",
+    "name": "Creepy Crag VIII",
     "area": "A03",
     "mob1": "B301",
     "mob2": "B300",
@@ -477,7 +477,7 @@
   },
   {
     "id": "D309",
-    "name": "Creepy Creek",
+    "name": "Creepy Crag IX",
     "area": "A03",
     "mob1": "B301",
     "mob2": "B300",
@@ -494,7 +494,7 @@
   },
   {
     "id": "D310",
-    "name": "Creepy Crucible",
+    "name": "Creepy Crag X",
     "area": "A03",
     "mob1": "B301",
     "mob2": "B300",

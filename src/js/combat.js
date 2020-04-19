@@ -80,6 +80,7 @@ class Combatant {
     }
     passiveCheck(type,attack) {
         if (this.passiveSkill === null) return;
+        console.log(this.passiveSkill);
         SkillManager.idToSkill(this.passiveSkill).passiveCheck(type,this,attack);
     }
     takeAttack(attack) {

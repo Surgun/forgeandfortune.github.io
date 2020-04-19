@@ -135,7 +135,7 @@ SkillManager.skillEffects['S0030'] = function (combatParams) {
 SkillManager.skillEffects['S0040'] = function (combatParams) {
     //Frontload - Lambug
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
-    const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
     combatParams.power -=  0.5*selfTarget.getBuffStacks("B0040");
     targets.forEach(target => {
         target.takeAttack(combatParams);
@@ -177,6 +177,7 @@ SkillManager.skillEffects['S1030'] = function (combatParams) {
         target.takeAttack(combatParams);
     })
     targets.forEach(target => {
+        console.log(target.name);
         BuffManager.generateBuff("B1030",target,combatParams.power);
     });
 };

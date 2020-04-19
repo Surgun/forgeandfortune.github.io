@@ -3044,10 +3044,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     min-width: 300px;
     max-width: 400px;
     width: 100%;
-    padding: 20px;
+    transition: all var(--transition_linear);
     animation: scale-in var(--transition_linear) forwards;
     pointer-events: all;
 }
@@ -3067,6 +3068,18 @@ footer {
     border-radius: 50%;
     cursor: pointer;
     transition: all var(--transition_linear);
+}
+
+@media screen and (max-width: 1755px) {
+    .heroInspectPreviewCardContainer {
+        padding: 0;
+        max-width: 300px;
+    }
+    .previewCardCycle {
+        margin: 0 5px;
+        width: 40px;
+        height: 40px;
+    }
 }
 
 .previewCardCycle:hover, .previewCardCycle:focus {
@@ -3181,112 +3194,68 @@ footer {
     overflow: auto;
 }
 
-.heroOverviewContainer {
-    padding: 20px;
+.heroExamineContainer {
+    padding: 0 10px;
 }
 
-.overviewContainer {
-    display: grid;
-    grid-template: auto / repeat(auto-fill,minmax(175px,1fr));
-    grid-gap: 10px;
-}
-
-.overviewTitle {
-    padding: 0 5px 5px;
-    margin-bottom: 5px;
-    font-size: 24px;
-    font-size: 1.5rem;
-    color: var(--highlight);
+.playbooksHeadingContainer {
+    margin: 0 0 10px;
+    padding: 10px;
     border-bottom: 2px solid var(--border-primary);
 }
 
-.overviewDescription {
-    padding: 5px;
-    margin-bottom: 10px;
-    color: var(--text-secondary);
+.heroExaminePlaybooks {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, 200px);
+    grid-gap: 10px;
 }
 
-.heroOverviewCard {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.playbooksHeroContainer {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     border: 2px solid var(--border-primary);
     border-radius: 10px;
-    -webkit-animation: 0.2s scale-in forwards;
-    animation: 0.2s scale-in forwards;
+    box-shadow: var(--box-shadow);
+    transition: all var(--transition_linear);
     cursor: pointer;
 }
 
-.heroOverviewCard:hover {
+.playbooksHeroContainer:hover, .playbooksHeroContainer:focus {
     border-color: var(--border-tertiary);
 }
 
-.heroOverviewInfo {
-    -ms-flex-item-align: center;
-        align-self: center;
-    text-align: center;
+.playbooksHeroContainer.playbookSelected {
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-secondary);
 }
 
-.heroOverviewName {
-    color: var(--highlight);
-    padding: 5px;
-}
-
-.heroOverviewClass {
-    color: var(--text-secondary);
+.playbookName {
     padding-bottom: 5px;
+    border-bottom: 2px solid var(--border-primary);
 }
 
-.heroOverviewStats {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+.playbookSkillsContainer {
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    grid-gap: 5px;
+    margin-top: 10px;
+    width: 100%;
 }
 
-.overviewStat {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    margin: 2.5px;
-    padding: 5px 10px;
-    background-color: var(--border-primary);
+.heroSelectSkill {
+    padding: 5px;
+    color: var(--text-secondary);
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid var(--border-secondary);
     border-radius: 5px;
 }
 
-.heroOverviewPow {
-    -webkit-box-flex: unset;
-        -ms-flex-positive: unset;
-            flex-grow: unset;
-}
-
-.overviewStat > img {
-    margin-right: 5px;
-}
-
 .heroExamineContainer {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
 }
 
 .hero-placeholder-details, .hero-placeholder-equip, .events-placeholder-details {
@@ -3339,12 +3308,12 @@ footer {
 .heroExamineName, .heroExamineHeading {
     width: 100%;
     padding: 10px 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-bottom: 2px solid var(--border-primary);
 }
 
 .heroExamineName {
-    padding-left: 90px;
+    padding-left: 80px;
     color: var(--highlight);
 }
 
@@ -3353,7 +3322,7 @@ footer {
 }
 
 .heroExamineDescription {
-    margin-left: 90px;
+    margin-left: 80px;
     color: var(--text-secondary);
 }
 
@@ -6037,16 +6006,11 @@ span.beta-tag {
 }
 
 /* Expand equip slots to use all available space on large displays */
-@media screen and (min-width: 1550px) {
+@media screen and (min-width: 1650px) {
     .heroExamineEquip {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        -webkit-box-pack: start;
-            -ms-flex-pack: start;
-                justify-content: flex-start;
+        flex-wrap: wrap;
+        justify-content: flex-start;
         max-width: 1100px;
     }
 }

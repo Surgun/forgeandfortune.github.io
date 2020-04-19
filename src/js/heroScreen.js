@@ -159,12 +159,13 @@ function showHeroDetails() {
     $heroExaminePlaybooks.empty();
     hero.playbooks.forEach(playbookID => {
         const playbook = PlaybookManager.idToPlaybook(playbookID);
-        const d = $("<div/>").addClass("playbookDiv").appendTo($heroExaminePlaybooks);
-        $("<div/>").addClass("playbookName").html(playbook.name).appendTo(d);
+        const d = $("<div/>").addClass("playbooksHeroContainer").appendTo($heroExaminePlaybooks);
+            $("<div/>").addClass("playbookName").html(playbook.name).appendTo(d);
+        const d1 = $("<div/>").addClass("playbookSkillsContainer").appendTo(d);
         if (hero.playbook.id === playbookID) d.addClass("playbookSelected");
         playbook.skillIDs().forEach(skillID => {
             const skill = SkillManager.idToSkill(skillID);
-            $("<div/>").addClass("heroSelectSkill tooltip").attr({"data-tooltip":"skill_desc","data-tooltip-value":skill.id}).html(skill.icon).appendTo(d);
+            $("<div/>").addClass("heroSelectSkill tooltip").attr({"data-tooltip":"skill_desc","data-tooltip-value":skill.id}).html(skill.icon).appendTo(d1);
         });
     });
 }

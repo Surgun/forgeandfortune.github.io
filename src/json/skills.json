@@ -30,7 +30,7 @@
     "id": "S0030",
     "name": "Exert",
     "description": "Consumes a portion of HP to deal additional damage",
-    "icon": "<i class=\"fal fa-axe-battle\"></i>",
+    "icon": "<i class=\"fas fa-axe-battle\"></i>",
     "powMod": 1,
     "techMod": 0,
     "bText": "#ATTACKER# hits #DEFENDER# for #DAMAGE# damage"

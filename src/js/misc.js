@@ -253,3 +253,12 @@ function createArray(length) {
     }
     return arr;
 }
+
+function displayText(id) {
+    const lang = settings.lang || "en";
+    const string = globalTexts.find(text => text.tid === id);
+    // Return ID you attempted to pull, useful for finding missing or incorrect strings.
+    if (!string) return `[${id}]`;
+    // Return string if ID is found.
+    return string[lang];
+}

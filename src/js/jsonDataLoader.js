@@ -21,6 +21,18 @@ function loadPatchnotes() {
             const patch = new PatchNote(props);
             PatchManager.addPatch(patch,true);
         });
+        loadGlobalTexts();
+    });
+}
+
+let globalTexts = null;
+
+function loadGlobalTexts() {
+    $.ajax({
+        url: "json/texts.json",
+    }).done((data) => {
+            globalTexts = Object.values(data)
+        });
         loadMaterials();
     });
 }

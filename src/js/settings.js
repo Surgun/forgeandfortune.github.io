@@ -3,6 +3,7 @@
 // place all individual settings code and management in the style.js file
 
 const settings = {
+    lang: 'en',
     toastPosition: "top-left",
     dialogStatus: 0,
     db: 0,

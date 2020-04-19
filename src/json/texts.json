@@ -1,0 +1,42 @@
+[
+  {
+    "tid": "tab_inventory",
+    "en": "Inventory",
+    "es": "Inventario"
+  },
+  {
+    "tid": "tab_guilds",
+    "en": "Guilds",
+    "es": "Gremios"
+  },
+  {
+    "tid": "tab_recipes",
+    "en": "Recipes",
+    "es": "Recetas"
+  },
+  {
+    "tid": "tab_heroes",
+    "en": "Heroes",
+    "es": "Héroes"
+  },
+  {
+    "tid": "tab_adventures",
+    "en": "Adventures",
+    "es": "Aventuras"
+  },
+  {
+    "tid": "tab_town",
+    "en": "Town",
+    "es": "Pueblo"
+  },
+  {
+    "tid": "tab_market",
+    "en": "Market",
+    "es": "Mercado"
+  },
+  {
+    "tid": "tab_progress",
+    "en": "Progress",
+    "es": "Progreso"
+  }
+]

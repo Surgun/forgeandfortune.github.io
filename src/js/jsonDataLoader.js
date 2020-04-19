@@ -31,8 +31,7 @@ function loadGlobalTexts() {
     $.ajax({
         url: "json/texts.json",
     }).done((data) => {
-            globalTexts = Object.values(data)
-        });
+        globalTexts = Object.values(data)
         loadMaterials();
     });
 }

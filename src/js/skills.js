@@ -182,7 +182,6 @@ SkillManager.skillEffects['S1030'] = function (combatParams) {
     });
 };
 
-
 SkillManager.skillEffects['S1040'] = function (combatParams) {
     //Holy Prayer - Titus
     const targets = combatParams.getTarget(TargetType.MISSINGHP,SideType.ALLIES);
@@ -253,6 +252,16 @@ SkillManager.skillEffects['SM102'] = function (combatParams) {
     });
 }
 
+SkillManager.skillEffects['SM103'] = function (combatParams) {
+    //Monster A - Attack A
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
+    if (selfTarget.hp === selfTarget.maxHP()) combatParams.power = Math.floor(combatParams.power*1.5);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+}
+
 SkillManager.skillEffects['SM200'] = function (combatParams) {
     //Translucent - Blinkie
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
@@ -289,6 +298,14 @@ SkillManager.skillEffects['SM202'] = function (combatParams) {
     });
 }
 
+SkillManager.skillEffects['SM203'] = function (combatParams) {
+    //Monster B - Attack B
+    const targets = combatParams.getTarget(TargetType.MISSINGHP,SideType.ALLIES);
+    targets.forEach(target => {
+        target.heal(combatParams.power);
+    });
+};
+
 SkillManager.skillEffects['SM300'] = function (combatParams) {
     //Ray Gun - Dusty Alien
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
@@ -313,6 +330,16 @@ SkillManager.skillEffects['SM302'] = function (combatParams) {
         target.takeAttack(combatParams);
     });
 }
+
+SkillManager.skillEffects['SM303'] = function (combatParams) {
+    //Monster C - Attack C
+    const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    const allyCount = combatParams.getTarget(TargetType.ALL,SideType.ALLIES).length-1;
+    combatParams.power = Math.floor(combatParams.power * (1+0.5*allyCount));
+    targets.forEach(target => {
+        target.heal(combatParams.power);
+    });
+};
 
   //------------------//
  //    BOSS SKILLS   //

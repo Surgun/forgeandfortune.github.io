@@ -144,6 +144,15 @@
     "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
   },
   {
+    "id": "SM103",
+    "name": "Attack A",
+    "description": "Massive damage if at full health",
+    "icon": "<i class=\"fab fa-accessible-icon\"></i>",
+    "powMod": 2,
+    "techMod": 0,
+    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
+  },
+  {
     "id": "SM200",
     "name": "Translucent",
     "description": "Negates damage taken next time being hit.",
@@ -166,6 +175,15 @@
     "name": "Overpower",
     "description": "Deals additional damage if below 50% HP",
     "icon": "<i class=\"fas fa-chart-line\"></i>",
+    "powMod": 2,
+    "techMod": 0,
+    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
+  },
+  {
+    "id": "SM203",
+    "name": "Attack B",
+    "description": "Heals teammate",
+    "icon": "<i class=\"fas fa-child\"></i>",
     "powMod": 2,
     "techMod": 0,
     "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
@@ -194,6 +212,15 @@
     "description": "Deals triple damage",
     "icon": "<i class=\"fas fa-axe\"></i>",
     "powMod": 3,
+    "techMod": 0,
+    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
+  },
+  {
+    "id": "SM303",
+    "name": "Attack C",
+    "description": "Heals for each living ally",
+    "icon": "<i class=\"fas fa-digging\"></i>",
+    "powMod": 1,
     "techMod": 0,
     "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
   },

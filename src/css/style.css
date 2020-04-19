@@ -3037,11 +3037,15 @@ footer {
     justify-content: center;
     align-items: center;
     min-width: 300px;
-    max-width: 500px;
+    max-width: 400px;
     width: 100%;
     padding: 20px;
     animation: scale-in var(--transition_linear) forwards;
     pointer-events: all;
+}
+
+.heroInspectClosed .heroInspectPreviewCardContainer {
+    animation: scale-out-fade var(--transition_linear) forwards;
 }
 
 .previewCardCycle {
@@ -3051,14 +3055,24 @@ footer {
     margin: 0 10px;
     width: 50px;
     height: 50px;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-primary);
+    background-color: var(--button-primary);
     border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition_linear);
+}
+
+.previewCardCycle:hover, .previewCardCycle:focus {
+    background-color: var(--button-primary-active);
 }
 
 .previewCardHero .heroOwnedCard {
     max-width: 225px;
     animation: none;
+}
+
+.previewCardHero .heroOwnedCard:hover, .previewCardHero .heroOwnedCard:focus {
+    border-color: var(--border-primary);
+    cursor: default;
 }
 
 .heroInspectIndividual {
@@ -3096,6 +3110,10 @@ footer {
 
 .heroBackButton:hover, .heroBackButton:focus {
     background-color: var(--button-cancel);
+}
+
+.heroInspectClosed .heroBackButton {
+    animation: scale-out-fade var(--transition_linear) forwards;
 }
 
 .heroBackButtonText {
@@ -5761,6 +5779,30 @@ span.beta-tag {
     to {
         -webkit-transform: scale(1);
                 transform: scale(1);
+    }
+}
+
+@keyframes scale-out {
+    from {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+    }
+}
+
+@keyframes scale-out-fade {
+    from {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+                opacity: 1;
+    }
+    to {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+                opacity: 0;
     }
 }
 

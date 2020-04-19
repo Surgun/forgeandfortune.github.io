@@ -335,7 +335,6 @@ function updateHeroStats() {
         $(heroCard).find(".hp_integer").html(hero.maxHP());
         $(heroCard).find(".tech_integer").html(hero.getTech());
     });
-    $heroInspectBox.removeClass('isOpened');
 }
 
 $(document).on('click',".heroBackButton", (e) => {

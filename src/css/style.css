@@ -1045,6 +1045,12 @@ footer {
     font-size: 0.85rem;
 }
 
+.alBossBeat {
+    margin-top: auto;
+    color: var(--highlight);
+    font-size: 0.85rem;
+}
+
 .alPerkCount {
     position: absolute;
     top: -5px;

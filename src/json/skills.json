@@ -5,8 +5,7 @@
     "description": "A standard attack.",
     "icon": "<i class=\"fas fa-swords\"></i>",
     "powMod": 1,
-    "techMod": 0,
-    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE# damage"
+    "techMod": 0
   },
   {
     "id": "S0010",
@@ -14,8 +13,7 @@
     "description": "Increases armor for next two times being hit.",
     "icon": "<i class=\"fas fa-shield-cross\"></i>",
     "powMod": 0,
-    "techMod": 0,
-    "bText": "#ATTACKER# braces himself"
+    "techMod": 0
   },
   {
     "id": "S0020",
@@ -23,8 +21,7 @@
     "description": "Increases maxHP and heals for the same amount",
     "icon": "<i class=\"fas fa-helmet-battle\"></i>",
     "powMod": 1,
-    "techMod": 1,
-    "bText": "#ATTACKER# increases his HP by #DAMAGE#"
+    "techMod": 1
   },
   {
     "id": "S0030",
@@ -32,8 +29,7 @@
     "description": "Consumes a portion of HP to deal additional damage",
     "icon": "<i class=\"fas fa-axe-battle\"></i>",
     "powMod": 1,
-    "techMod": 0,
-    "bText": "#ATTACKER# hits #DEFENDER# for #DAMAGE# damage"
+    "techMod": 0
   },
   {
     "id": "S0040",
@@ -41,8 +37,7 @@
     "description": "Large attack that decreases damage each recast",
     "icon": "<i class=\"fas fa-angry\"></i>",
     "powMod": 3,
-    "techMod": 0,
-    "bText": "#ATTACKER# hits #DEFENDER# for #DAMAGE# damage"
+    "techMod": 0
   },
   {
     "id": "S1010",
@@ -50,8 +45,7 @@
     "description": "Attacks all enemies and applies the scorched debuff. Enemies with the scorched debuff take damage every turn",
     "icon": "<i class=\"fas fa-fire\"></i>",
     "powMod": 1,
-    "techMod": 1.5,
-    "bText": "#ATTACKER# launches a meteor strike on all enemies"
+    "techMod": 1.5
   },
   {
     "id": "S1020",
@@ -59,8 +53,7 @@
     "description": "Attacks and applies a chilled effect. If the target already has the chilled effect, increase the damage by 2.5x",
     "icon": "<i class=\"fas fa-snowflake\"></i>",
     "powMod": 1,
-    "techMod": 1.5,
-    "bText": "#ATTACKER# shoots a frosty blast towards #DEFENDER# for #DAMAGE# damage"
+    "techMod": 1.5
   },
   {
     "id": "S1030",
@@ -68,8 +61,7 @@
     "description": "Deals damage to ally in front to damage an enemy over time",
     "icon": "<i class=\"fas fa-book-dead\"></i>",
     "powMod": 1,
-    "techMod": 2,
-    "bText": "#ATTACKER# heals #DEFENDER# for #DAMAGE#"
+    "techMod": 2
   },
   {
     "id": "S1040",
@@ -77,8 +69,7 @@
     "description": "Heal the teammate with the lowest % missing HP",
     "icon": "<i class=\"fas fa-bible\"></i>",
     "powMod": 1,
-    "techMod": 2,
-    "bText": "#ATTACKER# heals #DEFENDER# for #DAMAGE#"
+    "techMod": 2
   },
   {
     "id": "S2010",
@@ -86,8 +77,7 @@
     "description": "Inspires all teammates, increasing their Tech for the next two skills",
     "icon": "<i class=\"fas fa-lightbulb\"></i>",
     "powMod": 1,
-    "techMod": 1,
-    "bText": "#ATTACKER# inspires his teammates"
+    "techMod": 1
   },
   {
     "id": "S2020",
@@ -95,8 +85,7 @@
     "description": "Attack enemy with lowest HP. If less than 50% deal additional tech damage.",
     "icon": "<i class=\"fas fa-crosshairs\"></i>",
     "powMod": 1,
-    "techMod": 1,
-    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE# damage"
+    "techMod": 1
   },
   {
     "id": "S2030",
@@ -104,8 +93,7 @@
     "description": "Attacks twice in the same round.",
     "icon": "<i class=\"fas fa-fist-raised\"></i>",
     "powMod": 1,
-    "techMod": 0,
-    "bText": "#ATTACKER# launches a super attack against #DEFENDER# for #DAMAGE# damage"
+    "techMod": 0
   },
   {
     "id": "S2040",
@@ -113,8 +101,7 @@
     "description": "Marks the second unit in enemy list to focus team attacks and attacks",
     "icon": "<i class=\"fas fa-arrow-circle-down\"></i>",
     "powMod": 1,
-    "techMod": 0,
-    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE# damage"
+    "techMod": 0
   },
   {
     "id": "SM100",
@@ -122,8 +109,7 @@
     "description": "Attacks the enemy and heals for the same amount.",
     "icon": "<i class=\"fab fa-swift\"></i>",
     "powMod": 2,
-    "techMod": 0,
-    "bText": "#ATTACKER# strikes #DEFENDER# for #DAMAGE# damage and heals the same amount"
+    "techMod": 0
   },
   {
     "id": "SM101",
@@ -131,8 +117,7 @@
     "description": "Heals self instead of attacking",
     "icon": "<i class=\"fas fa-heart-circle\"></i>",
     "powMod": 4,
-    "techMod": 0,
-    "bText": "#ATTACKER# heals itself"
+    "techMod": 0
   },
   {
     "id": "SM102",
@@ -140,8 +125,7 @@
     "description": "Reduce healing of target attacked",
     "icon": "<i class=\"fas fa-viruses\"></i>",
     "powMod": 1,
-    "techMod": 0,
-    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
+    "techMod": 0
   },
   {
     "id": "SM103",
@@ -149,8 +133,7 @@
     "description": "Massive damage if at full health",
     "icon": "<i class=\"fab fa-accessible-icon\"></i>",
     "powMod": 2,
-    "techMod": 0,
-    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
+    "techMod": 0
   },
   {
     "id": "SM200",
@@ -158,8 +141,7 @@
     "description": "Negates damage taken next time being hit.",
     "icon": "<i class=\"fas fa-ghost\"></i>",
     "powMod": 1,
-    "techMod": 0,
-    "bText": "#ATTACKER# turns transparent"
+    "techMod": 0
   },
   {
     "id": "SM201",
@@ -167,8 +149,7 @@
     "description": "Removes all debuffs from allies and damages for each debuff removed",
     "icon": "<i class=\"fas fa-broom\"></i>",
     "powMod": 1,
-    "techMod": 0,
-    "bText": "#ATTACKER# purges his allies of buffs and lets out an attack for #DAMAGE# damage"
+    "techMod": 0
   },
   {
     "id": "SM202",
@@ -176,8 +157,7 @@
     "description": "Deals additional damage if below 50% HP",
     "icon": "<i class=\"fas fa-chart-line\"></i>",
     "powMod": 2,
-    "techMod": 0,
-    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
+    "techMod": 0
   },
   {
     "id": "SM203",
@@ -185,8 +165,7 @@
     "description": "Heals teammate",
     "icon": "<i class=\"fas fa-child\"></i>",
     "powMod": 2,
-    "techMod": 0,
-    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
+    "techMod": 0
   },
   {
     "id": "SM300",
@@ -194,8 +173,7 @@
     "description": "Deal a powerful magical attack to the enemy.",
     "icon": "<i class=\"fas fa-scanner\"></i>",
     "powMod": 3,
-    "techMod": 0,
-    "bText": "#ATTACKER# lets out a powerful laser attack"
+    "techMod": 0
   },
   {
     "id": "SM301",
@@ -203,8 +181,7 @@
     "description": "Attacks for 25% of max HP of defender",
     "icon": "<i class=\"fas fa-hammer\"></i>",
     "powMod": 0,
-    "techMod": 0,
-    "bText": "#ATTACKER# whips out his crab hammer"
+    "techMod": 0
   },
   {
     "id": "SM302",
@@ -212,8 +189,7 @@
     "description": "Deals triple damage",
     "icon": "<i class=\"fas fa-axe\"></i>",
     "powMod": 3,
-    "techMod": 0,
-    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
+    "techMod": 0
   },
   {
     "id": "SM303",
@@ -221,8 +197,23 @@
     "description": "Heals for each living ally",
     "icon": "<i class=\"fas fa-digging\"></i>",
     "powMod": 1,
-    "techMod": 0,
-    "bText": "#ATTACKER# attacks #DEFENDER# for #DAMAGE#"
+    "techMod": 0
+  },
+  {
+    "id": "SM904A",
+    "name": "Boneplosion",
+    "description": "Deals massive damage to each enemy",
+    "icon": "<i class=\"fas fa-bone\"></i>",
+    "powMod": 3,
+    "techMod": 0
+  },
+  {
+    "id": "SM904B",
+    "name": "Bone Up",
+    "description": "Revives itself",
+    "icon": "<i class=\"fas fa-skull\"></i>",
+    "powMod": 0,
+    "techMod": 0
   },
   {
     "id": "SM901",
@@ -230,8 +221,7 @@
     "description": "High damage attack to second in order",
     "icon": "<i class=\"fas fa-tree\"></i>",
     "powMod": 7,
-    "techMod": 0,
-    "bText": "#ATTACKER# trees #DEFENDER# for #DAMAGE# damage"
+    "techMod": 0
   },
   {
     "id": "SM902",
@@ -239,8 +229,7 @@
     "description": "Burns the first enemy, dealing damage for every stack",
     "icon": "<i class=\"fas fa-fire-alt\"></i>",
     "powMod": 0.14,
-    "techMod": 0,
-    "bText": "#ATTACKER# burns #DEFENDER#"
+    "techMod": 0
   },
   {
     "id": "SM902A",
@@ -248,8 +237,7 @@
     "description": "Monster is sleeping and performs no action",
     "icon": "<i class=\"fas fa-snooze\"></i>",
     "powMod": 0,
-    "techMod": 0,
-    "bText": "#ATTACKER# seems to be hibernating"
+    "techMod": 0
   },
   {
     "id": "SM902B",
@@ -257,11 +245,7 @@
     "description": "Monster returns to its original form",
     "icon": "<i class=\"fas fa-heartbeat\"></i>",
     "powMod": 0,
-    "techMod": 0,
-    "bText": [
-      "The egg has hatched",
-      ""
-    ]
+    "techMod": 0
   },
   {
     "id": "SM903A",
@@ -269,8 +253,7 @@
     "description": "Attack a Hero and absorb their Type",
     "icon": "<i class=\"fas fa-paint-brush\"></i>",
     "powMod": 1,
-    "techMod": 0,
-    "bText": "#ATTACKER# regroups"
+    "techMod": 0
   },
   {
     "id": "SM903B",
@@ -278,8 +261,7 @@
     "description": "Attack and perform an action based off form - Mighty: Gain stacking protective shield. Mindful: Heal and gain a % heal buff. Moxious: Add debuff to take additional damage",
     "icon": "<i class=\"far fa-rectangle-portrait\"></i>",
     "powMod": 2,
-    "techMod": 0,
-    "bText": "#ATTACKER# trees #DEFENDER# for #DAMAGE# damage"
+    "techMod": 0
   },
   {
     "id": "SMP902",
@@ -287,7 +269,14 @@
     "description": "Once below 25%, Phoenix will turn into an egg and attempt to regenerate health",
     "icon": "<i class=\"fab fa-phoenix-framework\"></i>",
     "powMod": 0,
-    "techMod": 0,
-    "bText": "#ATTACKER#"
+    "techMod": 0
+  },
+  {
+    "id": "SM904",
+    "name": "Decay",
+    "description": "Deals 2% max HP damage to each enemy",
+    "icon": "<i class=\"fas fa-scythe\"></i>",
+    "powMod": 0,
+    "techMod": 0
   }
 ]

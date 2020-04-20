@@ -78,6 +78,9 @@ const devtools = {
         DungeonManager.dungeons.forEach(dungeon => {
             if (dungeon.type === "boss") dungeon.maxFloor = 1;
         });
+        Shop.idToPerk("AL2001").purchase();
+        Shop.idToPerk("AL2002").purchase();
+        Shop.idToPerk("AL2004").purchase();
     },
     heroUnlock() {
         HeroManager.heroes.forEach(h=> h.owned = true);

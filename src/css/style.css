@@ -3254,6 +3254,87 @@ footer {
     border-radius: 5px;
 }
 
+.heroUpgradesHeadingContainer {
+    margin: 0 10px;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.heroUpgradesGearText {
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
+}
+
+.heroUpgradesGearCount {
+    color: var(--highlight);
+}
+
+.heroUpgradesGear {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, 175px);
+    grid-gap: 10px;
+    margin: 10px;
+}
+
+.heroGearUpgradeSlot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.heroGearUpgradeSlotType {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-tertiary);
+    margin: -10px -10px 0;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.heroGearUpgradeSlotLvl {
+    padding: 10px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.heroGearUpgradeSlotButton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding: 8px 10px;
+    width: 100%;
+    color: var(--text-primary);
+    text-align: center;
+    background-color: var(--button-primary);
+    border-radius: 5px;
+    transition: all var(--transition_linear);
+    cursor: pointer;
+}
+
+.heroGearUpgradeSlotButtonMax {
+    margin-top: auto;
+    padding: 5px 10px;
+    color: var(--highlight);
+    text-align: center;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
+}
+
+.heroGearUpgradeSlotButton:hover, .heroGearUpgradeSlotButton:focus {
+    background-color: var(--button-primary-active);
+}
+
 .heroExamineContainer {
     flex-grow: 1;
 }

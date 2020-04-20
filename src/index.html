@@ -171,9 +171,9 @@
                 <div id="inventoryEquipTab" class="tabcontent">
                     <div class="inventoryEquipContainer">
                         <div class="inventoryActions">
-                            <div id="closeEquipItem" class="actionButton">
+                            <div id="closeEquipItem" class="inventoryBackButton actionButton">
                                 <i class="fas fa-arrow-left"></i>
-                                <span>Back to Inventory</span>
+                                <span class="backButtonText">Back to Inventory</span>
                             </div>
                         </div>
                         <div class="inventoryEquipContent">
@@ -251,7 +251,7 @@
                             <div class="heroInspectIndividualBackground"></div>
                             <div class="heroBackButton actionButton">
                                 <i class="fas fa-arrow-left"></i>
-                                <span class="heroBackButtonText">Back to Heroes</span>
+                                <span class="backButtonText">Back to Heroes</span>
                             </div>
                             <div class="heroInspectPreviewCardContainer">
                                 <div class="previewCardCycle previewCardPrevious">
@@ -305,8 +305,13 @@
                                         <div id="heroEquipTrinketAll" class="heroEquipTrinketAllContainer"></div>
                                     </div>
                                     <div id="heroUpgrades" class="heroContentContainer">
-                                        <div class="heroUpgradesHeader">Use Monster Trophies to upgrade your heroes' equipment slots! 5% increase in all stats per upgrade.</div>
-                                        <div class="heroUpgradesHeader2" id="heroUpgradesGearText">You have 0 Monster Trophies available for upgrades</div>
+                                        <div class="heroUpgradesHeadingContainer">
+                                            <div class="headingDetails">
+                                                <div class="headingTitle">Hero Equipment Upgrades</div>
+                                                <div class="headingDescription">Upgrade your equipment slots by 5% for each stat using Monster Trophies.</div>
+                                            </div>
+                                        </div>
+                                        <div class="heroUpgradesGearText">You have <span class="heroUpgradesGearCount" id="heroUpgradesGearText">0 Monster Trophies</span> available for Upgrades.</div>
                                         <div class="heroUpgradesGear" id="heroUpgradesGear"></div>
                                     </div>
                                 </div>
@@ -461,14 +466,7 @@
                                 <div class="areaTeamSelectionContainer">
                                     <div id="dtsDungeons" class="dungeonSelectionList"></div>
                                     <div class="dungeonSelectionContent">
-                                        <div id="dtsBackButton" class="dtsBackButton">
-                                            <i class="fas fa-arrow-left"></i>
-                                        </div>
-                                        <div id="dtsBanner" class="dungeonSelectionBanner"></div>
-                                        <div class="partyLaunchButton">
-                                            <div id="dungeonTeamButtonSkip" class="dungeonTeamButton actionButton">Start At Highest Floor Reached</div>
-                                            <div id="dungeonTeamButton" class="dungeonTeamButton actionButton">Start At Floor 1</div>
-                                        </div>
+                                        <div id="dtsHeader" class="dungeonActionsContainer"></div>
                                         <div id="dtsMobs" class="dtsMobs">
                                             <div class="dtsSelectHeader">
                                                 <div class="headingDetails">

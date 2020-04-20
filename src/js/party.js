@@ -1,14 +1,11 @@
 "use strict";
 //creates a party as outlined in DungeonManager. Initated with CreateParty();
 
-const $dtsBanner = $("#dtsBanner");
+const $dtsHeader = $("#dtsHeader");
 const $dtsMobsCollection = $("#dtsMobsCollection");
 const $dtsDungeons = $("#dtsDungeons");
 const $dungeonTeamCollection = $("#dungeonTeamCollection");
 const $dtsBottom = $("#dtsBottom");
-
-const $dungeonTeamButton = $("#dungeonTeamButton");
-const $dungeonTeamButtonSkip = $("#dungeonTeamButtonSkip");
 
 class Party {
     constructor (heroID) {
@@ -99,9 +96,21 @@ function startPartyCreation(partyStarted) {
     }
     $areaTeamSelect.show();
     //Team Banner
-    $dtsBanner.empty();
-    $("<div/>").addClass(`dts${area.id} dtsBackground`).css({"background-image": `url(/assets/images/dungeonpreviews/${area.id}.png)`}).appendTo($dtsBanner);
-    $("<div/>").addClass(`dts${area.id} dtsHeader`).html(dungeon.name).appendTo($dtsBanner);
+    // Condition check needed to prevent animation from triggering on hero add/remove
+    if (!partyStarted) {
+        $dtsHeader.empty();
+        $("<div/>").addClass(`dtsBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($dtsHeader);
+        $("<div/>").addClass(`dungeonAreaBanner`).css("background", `url(/assets/images/dungeonpreviews/${area.id}.png)`).appendTo($dtsHeader);
+        $("<div/>").addClass(`dungeonAreaTitle`).html(dungeon.name).appendTo($dtsHeader);
+        const partyLaunch = $("<div/>").addClass(`partyLaunchButtonContainer`).appendTo($dtsHeader);
+            if (dungeon.type === "boss") $("<div/>").attr("id", "dungeonTeamButtonBoss").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor_boss')).appendTo(partyLaunch);
+            else {
+                $("<div/>").attr("id", "dungeonTeamButtonSkip").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor_highest')).appendTo(partyLaunch);
+                $("<div/>").attr("id", "dungeonTeamButton").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor')).appendTo(partyLaunch);
+            }
+    }
+    // Needed to update dungeon title when previous code block does not trigger
+    $(".dungeonAreaTitle").html(dungeon.name);
     //sorry richard i am using this space!!!
     $dtsMobsCollection.empty();
     dungeon.mobIDs.forEach(mobID => {
@@ -125,6 +134,9 @@ function startPartyCreation(partyStarted) {
         characterCard("dungeonTeam",i,hero).prependTo($dungeonTeamCollection);
     });
     const emptySlots = DungeonManager.dungeonByID(PartyCreator.dungeonSelect).partySize - PartyCreator.heroes.length;
+    const $dungeonTeamButton = $("#dungeonTeamButton");
+    const $dungeonTeamButtonSkip = $("#dungeonTeamButtonSkip");
+    const $dungeonTeamButtonBoss = $("#dungeonTeamButtonBoss")
     for (let i=0;i<emptySlots;i++) {
         const d1a = characterCard("dungeonTeam",i).addClass("noHeroDungeonSelect");
         $dungeonTeamCollection.prepend(d1a);
@@ -132,10 +144,12 @@ function startPartyCreation(partyStarted) {
     if (PartyCreator.heroes.length === 0) {
         $dungeonTeamButton.addClass('dungeonStartNotAvailable');
         $dungeonTeamButtonSkip.addClass('dungeonStartNotAvailable');
+        $dungeonTeamButtonBoss.addClass('dungeonStartNotAvailable');
     }
     else {
         $dungeonTeamButton.removeClass('dungeonStartNotAvailable');
         $dungeonTeamButtonSkip.removeClass('dungeonStartNotAvailable');
+        $dungeonTeamButtonBoss.removeClass('dungeonStartNotAvailable');
     }
     $dtsBottom.empty();
     //available heroes
@@ -152,15 +166,6 @@ function startPartyCreation(partyStarted) {
         else characterCard("dungeonAvailable",hero.uniqueid,hero.id,null).appendTo(d2);
     });
     $dtsBottom.append(d2);
-    //adjust buttons as appropriate
-    if (dungeon.type === "boss") {
-        $dungeonTeamButtonSkip.html("Start Boss Fight");
-        $dungeonTeamButton.hide();
-    }
-    else {
-        $dungeonTeamButtonSkip.html("Start At Highest Floor Reached");
-        $dungeonTeamButton.show();
-    }
 }
 
 //change dungeon selection
@@ -170,7 +175,7 @@ $(document).on('click', ".dtsDungeon", (e) => {
     if (PartyCreator.dungeonSelect === dungeonid) return;
     PartyCreator.setDungeon(dungeonid);
     PartyCreator.clearMembers();
-    startPartyCreation();
+    startPartyCreation(true);
 });
 
 //Go back to dungeon select screen

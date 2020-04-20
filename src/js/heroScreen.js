@@ -184,7 +184,7 @@ function showHeroUpgrades() {
     $heroContentContainer.hide();
     $heroUpgrades.show();
     $heroUpgradesGear.empty();
-    $heroUpgradesGearText.html(`You have ${DungeonManager.availableUpgrades() - HeroManager.totalUpgrades()} Monster Trophies available for Upgrades`)
+    $heroUpgradesGearText.html(`${DungeonManager.availableUpgrades() - HeroManager.totalUpgrades()} Monster Trophies`)
     const hero = HeroManager.idToHero(HeroManager.heroView);
     hero.gearSlots.forEach(slot => {
         if (slot.type !== "Trinkets") heroUpgradeSlot(HeroManager.heroView,slot).appendTo($heroUpgradesGear);

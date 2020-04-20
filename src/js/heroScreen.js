@@ -77,7 +77,8 @@ function initializeHeroList() {
         $("<div/>").addClass("heroOwnedImage").html(miscIcons.emptySlot).appendTo(d);
         $("<div/>").addClass("heroOwnedName").html("More Heroes?").appendTo(d);
         $("<div/>").addClass("emptyHeroSlotDescription").html("You can find more heroes by purchasing perks in the Market.").appendTo(d);
-        $("<div/>").addClass("emptyHeroSlotMarket actionButton").html(`<i class="fas fa-store"></i> View Market`).appendTo(d);
+        const marketButton = $("<div/>").addClass("emptyHeroSlotMarket actionButton").html(`<i class="fas fa-store"></i>`).appendTo(d);
+            $("<div/>").addClass("actionButtonTextRight").html(`View Market`).appendTo(marketButton);
     }
 }
 

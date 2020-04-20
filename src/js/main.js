@@ -20,6 +20,7 @@ function afterLoad() {
             g.generateNewOrder(2);
             g.generateNewOrder(3);
         });
+        pregearHeroes();
     }
     tabHide();
     refreshMasteryBar()
@@ -67,4 +68,78 @@ function mainLoop() {
         actionSlotManager.removeBldgSlots();
         TownManager.purgeSlots = false;
     }
+}
+
+function pregearHeroes() {
+    const Alok = HeroManager.idToHero("H201");
+    Alok.equip(new itemContainer("R13001",1));
+    Alok.equip(new itemContainer("R2301",1));
+    Alok.equip(new itemContainer("R3301",1));
+    Alok.equip(new itemContainer("R4301",1));
+    Alok.equip(new itemContainer("R5301",1));
+    Alok.equip(new itemContainer("R6301",1));
+
+    const Cedric = HeroManager.idToHero("H002");
+    Cedric.equip(new itemContainer("R12001",1));
+    Cedric.equip(new itemContainer("R2101",1));
+    Cedric.equip(new itemContainer("R3101",1));
+    Cedric.equip(new itemContainer("R4101",1));
+    Cedric.equip(new itemContainer("R5101",1));
+    Cedric.equip(new itemContainer("R6501",1));
+
+    const Zoe = HeroManager.idToHero("H101");
+    Zoe.equip(new itemContainer("R11001",1));
+    Zoe.equip(new itemContainer("R2201",1));
+    Zoe.equip(new itemContainer("R3201",1));
+    Zoe.equip(new itemContainer("R4201",1));
+    Zoe.equip(new itemContainer("R5501",1));
+    Zoe.equip(new itemContainer("R6201",1));
+
+    const Grogmar = HeroManager.idToHero("H202");
+    Grogmar.equip(new itemContainer("R13002",1));
+    Grogmar.equip(new itemContainer("R2302",1));
+    Grogmar.equip(new itemContainer("R3302",1));
+    Grogmar.equip(new itemContainer("R4302",1));
+    Grogmar.equip(new itemContainer("R5302",1));
+    Grogmar.equip(new itemContainer("R6302",1));
+
+    const Grim = HeroManager.idToHero("H003");
+    Grim.equip(new itemContainer("R12002",1));
+    Grim.equip(new itemContainer("R2102",1));
+    Grim.equip(new itemContainer("R3102",1));
+    Grim.equip(new itemContainer("R4102",1));
+    Grim.equip(new itemContainer("R5102",1));
+    Grim.equip(new itemContainer("R6502",1));
+
+    const Troy = HeroManager.idToHero("H104");
+    Troy.equip(new itemContainer("R11002",1));
+    Troy.equip(new itemContainer("R2202",1));
+    Troy.equip(new itemContainer("R3202",1));
+    Troy.equip(new itemContainer("R4202",1));
+    Troy.equip(new itemContainer("R5502",1));
+    Troy.equip(new itemContainer("R6202",1));
+
+    const Caeda = HeroManager.idToHero("H204");
+    Caeda.equip(new itemContainer("R13003",1));
+    Caeda.equip(new itemContainer("R2303",1));
+    Caeda.equip(new itemContainer("R3303",1));
+    Caeda.equip(new itemContainer("R4303",1));
+    Caeda.equip(new itemContainer("R5303",1));
+    Caeda.equip(new itemContainer("R6303",1));
+
+    const Lambug = HeroManager.idToHero("H004");
+    Lambug.equip(new itemContainer("R12003",1));
+    Lambug.equip(new itemContainer("R2103",1));
+    Lambug.equip(new itemContainer("R3103",1));
+    Lambug.equip(new itemContainer("R4103",1));
+    Lambug.equip(new itemContainer("R5103",1));
+    Lambug.equip(new itemContainer("R6503",1));
+
+    const Titus = HeroManager.idToHero("H103");
+    Titus.equip(new itemContainer("R11003",1));
+    Titus.equip(new itemContainer("R2203",1));
+    Titus.equip(new itemContainer("R3203",1));
+    Titus.equip(new itemContainer("R4203",1));
+    Titus.equip(new itemContainer("R5503",1));
+    Titus.equip(new itemContainer("R6203",1));
 }

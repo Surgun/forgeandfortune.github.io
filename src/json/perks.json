@@ -2,7 +2,7 @@
   {
     "id": "AL1000",
     "title": "The Cat's Meow",
-    "description": "Unlocks access to The Cat's Meow and guild orders",
+    "description": "Unlocks access to the Guild Feature and the Cat's Meow guild.  Work on those Guild Orders.",
     "category": "Crafting",
     "order": 1,
     "goldCost": 30,
@@ -14,7 +14,7 @@
   {
     "id": "AL1001",
     "title": "Aviation Association",
-    "description": "Unlocks access to the Aviation Association Crafting Guild.",
+    "description": "Unlocks access to the Aviation Association Crafting Guild.  They specialize in Weaponmaking.",
     "category": "Crafting",
     "order": 2,
     "goldCost": 75,
@@ -26,7 +26,7 @@
   {
     "id": "AL1002",
     "title": "Green Guard",
-    "description": "Unlocks access to the Green Guard Crafting Guild.",
+    "description": "Unlocks access to the Green Guard Crafting Guild.  They are experts in Defensive goods.",
     "category": "Crafting",
     "order": 3,
     "goldCost": 150,
@@ -38,7 +38,7 @@
   {
     "id": "AL1003",
     "title": "Second Slot",
-    "description": "Unlocks the second Crafting Slot.",
+    "description": "Unlocks the second Crafting Slot.  Now you can craft from two different Guilds at the same time.",
     "category": "Crafting",
     "order": 4,
     "goldCost": 200,
@@ -50,7 +50,7 @@
   {
     "id": "AL1004",
     "title": "Trawled Treasures",
-    "description": "Unlocks access to the Trawled Treasures Crafting Guild.",
+    "description": "Unlocks access to the Trawled Treasures Crafting Guild, home of mysterious Valuables.",
     "category": "Crafting",
     "order": 5,
     "goldCost": 350,
@@ -206,7 +206,7 @@
   {
     "id": "AL1023",
     "title": "Birds of A Feather",
-    "description": "nlocks Lakur, a worker for Aviation Association.",
+    "description": "Unlocks Lakur, a worker for Aviation Association.",
     "category": "Crafting",
     "order": 18,
     "goldCost": 4000000,
@@ -242,7 +242,10 @@
   {
     "id": "AL2000",
     "title": "Real Moxie",
-    "description": "Unlocks Revere, the tactful explorer",
+    "description": [
+      "Unlocks Revere, your very first Adventurer",
+      "Make sure to give her good equipment."
+    ],
     "category": "Dungeon",
     "order": 1,
     "goldCost": 5,
@@ -253,8 +256,8 @@
   },
   {
     "id": "AL2001",
-    "title": "Groovy Grove I",
-    "description": "Unlocks the Groovy Grove I Dungeon",
+    "title": "Groovy Grove",
+    "description": "Unlocks your first Dungeon, the Groovy Grove, where you can collect rare crafting materials.",
     "category": "Dungeon",
     "order": 2,
     "goldCost": 10,
@@ -265,8 +268,8 @@
   },
   {
     "id": "AL2002",
-    "title": "Spooky Spot I",
-    "description": "Unlocks the Spooky Spot I dungeon.",
+    "title": "Spooky Spot",
+    "description": "Unlocks the Spooky Spot dungeon, home of the Slime crafting material.",
     "category": "Dungeon",
     "order": 3,
     "goldCost": 50,
@@ -278,7 +281,7 @@
   {
     "id": "AL2003",
     "title": "Mighty Allies",
-    "description": "Unlocks Beorn, the noble warrior.",
+    "description": "Unlocks Beorn, the noble warrior.  Don't forget to give him a sword.",
     "category": "Dungeon",
     "order": 4,
     "goldCost": 200,
@@ -289,8 +292,8 @@
   },
   {
     "id": "AL2004",
-    "title": "Creepy Crag I",
-    "description": "Unlocks the Creepy Crag I dungeon.",
+    "title": "Creepy Crag",
+    "description": "Unlocks the Creepy Crag dungeon, home of the rare crafting material, Crystals.",
     "category": "Dungeon",
     "order": 5,
     "goldCost": 250,
@@ -302,10 +305,10 @@
   {
     "id": "AL2005",
     "title": "Mindful Bond",
-    "description": "Unlocks Neve, the focused mage.",
+    "description": "Unlocks Neve, the focused mage.  Now you can farm all dungeons at the same time.",
     "category": "Dungeon",
     "order": 6,
-    "goldCost": 450,
+    "goldCost": 350,
     "type": "hero",
     "subtype": "H102",
     "unlockReq": null,
@@ -314,10 +317,10 @@
   {
     "id": "AL20051",
     "title": "Boss Battle",
-    "description": "Unlock the Boss Realm, to fight bosses",
+    "description": "Unlock the Boss Realm.  Slay these difficult enemies to unlock more content.",
     "category": "Dungeon",
     "order": 7,
-    "goldCost": 550,
+    "goldCost": 600,
     "type": "dungeon",
     "subtype": "D401",
     "unlockReq": null,
@@ -434,7 +437,7 @@
   {
     "id": "AL3000",
     "title": "Auto Sell",
-    "description": "Unlocks ability to Auto Sell, located on each crafting slot",
+    "description": "Unlocks ability to Auto Sell items you're crafting.  Saves time managing your inventory.",
     "category": "Town",
     "order": 1,
     "goldCost": 350,
@@ -446,7 +449,7 @@
   {
     "id": "AL3001",
     "title": "Progress Tracker",
-    "description": "Unlocks the Progress Tracking Page",
+    "description": "Unlocks the Progress Tracking Page.  This will tell you how far you are in the game.",
     "category": "Town",
     "order": 2,
     "goldCost": 850,
@@ -494,7 +497,7 @@
   {
     "id": "AL30041",
     "title": "Museum",
-    "description": "It's a museum",
+    "description": "Unlocks the Museum feature, where you can improve your crafting chances.",
     "category": "Town",
     "order": 6,
     "goldCost": 1,

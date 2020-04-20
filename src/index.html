@@ -150,16 +150,16 @@
                                 <div class="inventoryActions">
                                     <div id="goToBank" class="actionButton">
                                         <i class="fas fa-university"></i>
-                                        <span>View Bank</span>
+                                        <span class="actionButtonTextRight">View Bank</span>
                                     </div>
                                     <div class="invSubActionsContainer">
                                         <div id="sortInventory" class="actionButton tooltip" data-tooltip="sort_inventory">
                                             <i class="fas fa-sort-size-up-alt"></i>
-                                            <span>Sort Inventory</span>
+                                            <span class="actionButtonTextRight">Sort Inventory</span>
                                         </div>
                                         <div id="sellAllCommons" class="actionButton">
                                             <i class="fas fa-funnel-dollar"></i>
-                                            <span>Sell All Commons</span>
+                                            <span class="actionButtonTextRight">Sell All Commons</span>
                                         </div>
                                     </div>
                                 </div>
@@ -473,8 +473,12 @@
                                                     <div class="headingTitle">Adventure Enemy Party</div>
                                                     <div class="headingDescription">The enemies you will battle in this adventure.</div>
                                                 </div>
+                                                <div id="mobsToggleButton" class="mobsToggleButton actionButton">
+                                                    <span class="actionButtonTextLeft">Show Enemy Party</span>
+                                                    <i class="fas fa-chevron-down"></i>
+                                                </div>
                                             </div>
-                                            <div class="dtsMobsCollection" id="dtsMobsCollection"></div>
+                                            <div class="dtsMobsCollection collapsedMobsCollection" id="dtsMobsCollection"></div>
                                         </div>
                                         <div id="dtsTop" class="dungeonSelectionTop">
                                             <div class="dtsSelectHeader">

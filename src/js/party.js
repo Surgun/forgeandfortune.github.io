@@ -6,6 +6,7 @@ const $dtsMobsCollection = $("#dtsMobsCollection");
 const $dtsDungeons = $("#dtsDungeons");
 const $dungeonTeamCollection = $("#dungeonTeamCollection");
 const $dtsBottom = $("#dtsBottom");
+const $mobsToggleButton = $("#mobsToggleButton")
 
 class Party {
     constructor (heroID) {
@@ -167,6 +168,27 @@ function startPartyCreation(partyStarted) {
     });
     $dtsBottom.append(d2);
 }
+
+function toggleMobsPreview() {
+    if ($dtsMobsCollection.hasClass("collapsedMobsCollection")) {
+        $dtsMobsCollection.removeClass("collapsedMobsCollection hideMobsCollection").addClass("showMobsCollection");
+        $mobsToggleButton.addClass("toggledOn");
+        $mobsToggleButton.find(".actionButtonTextLeft").html("Hide Enemy Party");
+    }
+    else {
+        $dtsMobsCollection.addClass("hideMobsCollection").removeClass("showMobsCollection");
+        $mobsToggleButton.removeClass("toggledOn");
+        $mobsToggleButton.find(".actionButtonTextLeft").html("Show Enemy Party");
+        setTimeout(() => {
+            $dtsMobsCollection.addClass("collapsedMobsCollection")
+        }, 200);
+    }
+}
+
+$(document).on('click', "#mobsToggleButton", (e) => {
+    e.preventDefault();
+    toggleMobsPreview();
+});
 
 //change dungeon selection
 $(document).on('click', ".dtsDungeon", (e) => {

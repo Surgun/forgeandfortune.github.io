@@ -288,11 +288,11 @@ const Inventory = {
     hasContainer(containerID) {
         return this.nonblank().some(c => c.containerID === containerID);
     },
-    sellInventoryIndex(indx) {
+    sellInventoryIndex(indx, noRefresh) {
         const item = this.inv[indx];
         this.inv[indx] = null;
         this.sellContainer(item);
-        refreshInventoryPlaces()
+        if (!noRefresh) refreshInventoryPlaces()
     },
     sellContainer(container,skipAnimation) {
         const gold = container.goldValue();
@@ -346,8 +346,9 @@ const Inventory = {
     },
     sellCommons() {
         this.inv.forEach((ic,indx) => {
-            if (ic !== null && ic.rarity === 0 && ic.item.recipeType === "normal") this.sellInventoryIndex(indx);
+            if (ic !== null && ic.rarity === 0 && ic.item.recipeType === "normal") this.sellInventoryIndex(indx, true);
         })
+        refreshInventoryPlaces();
     },
     getFusePossibilities() {
         const fuses = this.nonblank().filter(container => container.item.recipeType === "normal").map(container=>container.uniqueID())

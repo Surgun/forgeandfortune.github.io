@@ -1,7 +1,7 @@
 [
   {
     "id": "PB0010",
-    "name": "Beorn Playbook",
+    "name": "Shield Up",
     "skill1": "S0010",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -25,7 +25,7 @@
   },
   {
     "id": "PB0020",
-    "name": "Cedric Playbook",
+    "name": "Dig Deep",
     "skill1": "S0020",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -49,7 +49,7 @@
   },
   {
     "id": "PB0030",
-    "name": "Grim Playbook",
+    "name": "Bloodlust",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0030",
@@ -73,7 +73,7 @@
   },
   {
     "id": "PB0040",
-    "name": "Lambug Playbook",
+    "name": "Waning Blows",
     "skill1": "S0000",
     "skill2": "S0040",
     "skill3": "S0000",
@@ -97,7 +97,7 @@
   },
   {
     "id": "PB0050",
-    "name": "Zoe Playbook",
+    "name": "Rain Fire",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -121,7 +121,7 @@
   },
   {
     "id": "PB0060",
-    "name": "Neve Playbook",
+    "name": "Icy Embrace",
     "skill1": "S0000",
     "skill2": "S1020",
     "skill3": "S0000",
@@ -145,7 +145,7 @@
   },
   {
     "id": "PB0070",
-    "name": "Titus Playbook",
+    "name": "Unholy Bond",
     "skill1": "S1030",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -169,7 +169,7 @@
   },
   {
     "id": "PB0080",
-    "name": "Troy Playbook",
+    "name": "Healing Glance",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S1040",
@@ -193,7 +193,7 @@
   },
   {
     "id": "PB0090",
-    "name": "Alok Playbook",
+    "name": "Invigorate",
     "skill1": "S0000",
     "skill2": "S2010",
     "skill3": "S0000",
@@ -217,7 +217,7 @@
   },
   {
     "id": "PB0100",
-    "name": "Grogmar Playbook",
+    "name": "Wounded Target",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -241,7 +241,7 @@
   },
   {
     "id": "PB0110",
-    "name": "Revere Playbook",
+    "name": "Punching Bag",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S2030",
@@ -265,7 +265,7 @@
   },
   {
     "id": "PB0120",
-    "name": "Caeda Playbook",
+    "name": "Marked for Death",
     "skill1": "S2040",
     "skill2": "S0000",
     "skill3": "S0000",

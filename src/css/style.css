@@ -6524,6 +6524,10 @@ span.beta-tag {
     max-height: 64px;
 }
 
+.dfmBoss .dfmImage > img {
+    max-height: 96px;
+}
+
 .heroDead .dfcImage, .mobDead .dfmImage {
     opacity: 0.5;
 }

@@ -114,5 +114,29 @@ const devtools = {
     },
     timeWarp() {
         player.lastTime -= 600000;
+    },
+    testRolls(itemID,num) {
+        const before = [
+            achievementStats.commonsCrafted,
+            achievementStats.goodsCrafted,
+            achievementStats.greatsCrafted,
+            achievementStats.epicsCrafted,
+        ]
+        for (let i=0;i<num;i++) {
+            Inventory.craftToInventory(itemID,true);
+        }
+        const delta = [
+            achievementStats.commonsCrafted-before[0],
+            achievementStats.goodsCrafted-before[1],
+            achievementStats.greatsCrafted-before[2],
+            achievementStats.epicsCrafted-before[3],
+        ]
+        const total = delta.reduce((a,b)=>a+b);
+        return [
+            (delta[0]/total).toFixed(4)*100+"%",
+            (delta[1]/total).toFixed(4)*100+"%",
+            (delta[2]/total).toFixed(4)*100+"%",
+            (delta[3]/total).toFixed(4)*100+"%",
+        ]
     }
 }

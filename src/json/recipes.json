@@ -5724,15 +5724,15 @@
     "description": "Interact with the magical energy from your rare items.",
     "lvl": 1,
     "value": 0,
-    "craftTime": 900000,
+    "craftTime": 300000,
     "type": "synth",
     "gcost": [
       "G003"
     ],
     "mcost": {
-      "M102": 100,
-      "M202": 100,
-      "M302": 100
+      "M102": 50,
+      "M202": 50,
+      "M302": 50
     },
     "smithCost": null,
     "pts": null,
@@ -5790,15 +5790,15 @@
     "description": "Combine items to make better stuff.",
     "lvl": 1,
     "value": 0,
-    "craftTime": 1800000,
+    "craftTime": 450000,
     "type": "fusion",
     "gcost": [
       "G002"
     ],
     "mcost": {
-      "M103": 40,
-      "M203": 40,
-      "M303": 40
+      "M102": 100,
+      "M202": 100,
+      "M302": 100
     },
     "smithCost": null,
     "pts": null,

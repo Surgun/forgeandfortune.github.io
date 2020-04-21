@@ -5757,15 +5757,16 @@
     "description": "Store your precious keepsakes here.",
     "lvl": 1,
     "value": 0,
-    "craftTime": 900000,
+    "craftTime": 600000,
     "type": "bank",
     "gcost": [
+      "G001",
       "G004"
     ],
     "mcost": {
-      "M101": 40,
-      "M201": 40,
-      "M301": 40
+      "M103": 50,
+      "M203": 50,
+      "M303": 50
     },
     "smithCost": null,
     "pts": null,
@@ -5823,7 +5824,7 @@
     "description": "All or nothing, baby.",
     "lvl": 1,
     "value": 0,
-    "craftTime": 1800000,
+    "craftTime": 1200000,
     "type": "forge",
     "gcost": [
       "G001"
@@ -5856,7 +5857,7 @@
     "description": "Hopefully she shows up.",
     "lvl": 1,
     "value": 0,
-    "craftTime": 2700000,
+    "craftTime": 1800000,
     "type": "fortune",
     "gcost": [
       "G004"
@@ -5955,15 +5956,16 @@
     "description": "Catalogue all the items you've made for history",
     "lvl": 1,
     "value": 0,
-    "craftTime": 1200000,
+    "craftTime": 750000,
     "type": "museum",
     "gcost": [
-      "G002"
+      "G002",
+      "G003"
     ],
     "mcost": {
-      "M101": 100,
-      "M201": 100,
-      "M301": 100
+      "M103": 100,
+      "M203": 100,
+      "M303": 100
     },
     "smithCost": null,
     "pts": null,

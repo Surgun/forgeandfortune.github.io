@@ -216,6 +216,14 @@
     "techMod": 0
   },
   {
+    "id": "SM904C",
+    "name": "Sleepytime",
+    "description": "This skill does nothing",
+    "icon": "<i class=\"fas fa-snooze\"></i>",
+    "powMod": 0,
+    "techMod": 0
+  },
+  {
     "id": "SM901",
     "name": "Tree Wallop",
     "description": "High damage attack to second in order",
@@ -281,7 +289,7 @@
   },
   {
     "id": "SMP904A",
-    "name": "Dry Bone",
+    "name": "Bone Down",
     "description": "When dead, turn into a pile of bones instead",
     "icon": "<i class=\"fas fa-skull\"></i>",
     "powMod": 0,

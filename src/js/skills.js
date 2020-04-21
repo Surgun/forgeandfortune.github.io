@@ -477,6 +477,10 @@ SkillManager.skillEffects['SM904B'] = function (combatParams) {
     refreshSkillUnit(target);
 }
 
+SkillManager.skillEffects['SM904C'] = function (combatParams) {
+    //lol it does nothing
+}
+
   //--------------------//
  //   PASSIVE SKILLS   //
 //--------------------//
@@ -501,7 +505,7 @@ SkillManager.skillEffects['SMP904A'] = function (type,target) {
     target.hp = 1;
     BuffManager.clearBuffs(target);
     $("#mobImage"+target.uniqueid).html(target.image);
-    target.playbook = PlaybookManager.generatePlayBookFromSkills("S0000","S0000","S0000","SM904B");
+    target.playbook = PlaybookManager.generatePlayBookFromSkills("SM904C","SM904C","SM904C","SM904B");
     refreshSkillUnit(target);
     BuffManager.generateBuff('BM904A',target,0);
 }

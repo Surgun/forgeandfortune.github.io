@@ -207,5 +207,16 @@
     "onCast": "stack",
     "decrease": "never",
     "type": "debuff"
+  },
+  {
+    "id": "BM904B",
+    "name": "Bone Up",
+    "description": "Take no damage",
+    "icon": "<i class=\"fas fa-skull\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
   }
 ]

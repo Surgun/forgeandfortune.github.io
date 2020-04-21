@@ -193,5 +193,31 @@
     "skill4": "SM903B",
     "passiveSkill": null,
     "event": "boss"
+  },
+  {
+    "id": "B904",
+    "name": "Lich",
+    "hpMod": 22500,
+    "powMod": 750,
+    "protection": 0,
+    "skill1": "SM904",
+    "skill2": "SM904",
+    "skill3": "SM904",
+    "skill4": "SM904",
+    "passiveSkill": null,
+    "event": "boss"
+  },
+  {
+    "id": "B904A",
+    "name": "Bones",
+    "hpMod": 1000,
+    "powMod": 500,
+    "protection": 0,
+    "skill1": "S0000",
+    "skill2": "S0000",
+    "skill3": "S0000",
+    "skill4": "SM904A",
+    "passiveSkill": "SMP904A",
+    "event": "boss"
   }
 ]

@@ -134,7 +134,7 @@ function initiateDungeonFloor(dungeonID) {
         const d9 = $("<div/>").addClass("buffListContent").attr("id","buffList"+mob.uniqueid);
         d6.append(d7,d8,d9);
         if (mob.hp === 0) d6.addClass("mobDead");
-        $dungeonMobList.prepend(d6);
+        $dungeonMobList.append(d6);
     });
     generateTurnOrder(dungeonID);
     BuffRefreshManager.hardRefreshBuff();

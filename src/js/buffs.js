@@ -54,6 +54,7 @@ class Buff {
     getVulnerability() { return 0; }
     maxHP() { return 0; }
     mark() { return false; }
+    debuffImmune() { return false; }
 }
 
 const BuffManager = {
@@ -65,6 +66,7 @@ const BuffManager = {
         return this.buffDB.find(b => b.id === buffID);
     },
     generateBuff(buffID,target,power=0) {
+        if (target.debuffImmune()) return;
         if (target.hasBuff(buffID)) {
             const buff = target.getBuff(buffID);
             buff.addCast();
@@ -81,6 +83,11 @@ const BuffManager = {
         const buff = target.getBuff(buffID);
         target.removeBuff(buffID);
         BuffRefreshManager.removeBuff(buff,target);
+    },
+    clearBuffs(target) {
+        target.buffs.forEach(buff => {
+            this.removeBuff(buff.id,target);
+        })
     },
     generateSaveBuff(buffID,target,power) {
         const buffTemplate = this.idToBuff(buffID);
@@ -295,6 +302,18 @@ class BM903F extends Buff {
     }
 }
 
+class BM904A extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 1;
+    }
+    debuffImmune() {
+        return true;
+    }
+}
+
 const BuffLookup = {
     B0010,
     B0020,
@@ -315,4 +334,5 @@ const BuffLookup = {
     BM903D,
     BM903E,
     BM903F,
+    BM904A,
 }

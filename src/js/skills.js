@@ -457,6 +457,26 @@ SkillManager.skillEffects['SM904'] = function (combatParams) {
     });
 }
 
+SkillManager.skillEffects['SM904A'] = function (combatParams) {
+    //BONESPLOSION - DRY BONES
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+}
+
+SkillManager.skillEffects['SM904B'] = function (combatParams) {
+    //BONE GROWTH - DRY BONES
+    const target = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
+    BuffManager.clearBuffs(target);
+    target.healPercent(100);
+    target.state = null;
+    target.image = '<img src="/assets/images/enemies/B904A.gif">';
+    $("#mobImage"+target.uniqueid).html(target.image);
+    target.playbook = PlaybookManager.generatePlayBookFromSkills("S0000","S0000","S0000","SM904A");
+    refreshSkillUnit(target);
+}
+
   //--------------------//
  //   PASSIVE SKILLS   //
 //--------------------//
@@ -471,4 +491,17 @@ SkillManager.skillEffects['SMP902'] = function (type,target) {
     target.playbook = PlaybookManager.generatePlayBookFromSkills("SM902A","SM902A","SM902A","SM902B");
     refreshSkillUnit(target);
     BuffManager.generateBuff('BM902A',target,0);
+}
+
+SkillManager.skillEffects['SMP904A'] = function (type,target) {
+    //BONE DEATH - DRY BONES
+    if (type !== "dead" || target.state !== null) return;
+    target.state = "bones";
+    target.image = '<img src="/assets/images/enemies/B904B.gif">';
+    target.hp = 1;
+    BuffManager.clearBuffs(target);
+    $("#mobImage"+target.uniqueid).html(target.image);
+    target.playbook = PlaybookManager.generatePlayBookFromSkills("S0000","S0000","S0000","SM904B");
+    refreshSkillUnit(target);
+    BuffManager.generateBuff('BM904A',target,0);
 }

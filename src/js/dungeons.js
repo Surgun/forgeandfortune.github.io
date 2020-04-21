@@ -182,7 +182,6 @@ class Dungeon {
             this.buffTick("onTurn");
             this.passiveCheck("onTurn");
             if (this.mobs.every(m=>m.dead())) {
-                console.log('mobs are dead?')
                 this.nextFloor(refreshLater);
                 return;
             }

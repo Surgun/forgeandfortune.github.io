@@ -278,5 +278,13 @@
     "icon": "<i class=\"fas fa-scythe\"></i>",
     "powMod": 0,
     "techMod": 0
+  },
+  {
+    "id": "SMP904A",
+    "name": "Dry Bone",
+    "description": "When dead, turn into a pile of bones instead",
+    "icon": "<i class=\"fas fa-skull\"></i>",
+    "powMod": 0,
+    "techMod": 0
   }
 ]

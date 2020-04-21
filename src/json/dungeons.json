@@ -562,10 +562,10 @@
   },
   {
     "id": "D404",
-    "name": "Lich Suit Lawrence",
+    "name": "Lich",
     "area": "A04",
-    "mob1": "B902",
-    "mob2": null,
+    "mob1": "B904",
+    "mob2": "B904A",
     "mob3": null,
     "mob4": null,
     "mat": null,

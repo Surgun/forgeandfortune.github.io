@@ -80,12 +80,12 @@ class Combatant {
     }
     passiveCheck(type,attack) {
         if (this.passiveSkill === null) return;
-        console.log(this.passiveSkill);
         SkillManager.idToSkill(this.passiveSkill).passiveCheck(type,this,attack);
     }
     takeAttack(attack) {
         const reducedDmg = Math.floor(attack.power * this.getProtection() * this.getVulnerability(attack.attacker));
         this.hp = Math.max(this.hp-reducedDmg,0);
+        if (this.hp === 0) this.passiveCheck("dead",attack);
         refreshHPBar(this);
         this.buffTick("onHit",attack);
     }
@@ -192,6 +192,9 @@ class Combatant {
     getBuffMaxHP() {
         const buffs = this.buffs.map(b=>b.maxHP());
         return buffs.reduce((a,b) => a+b, 0);
+    }
+    debuffImmune() {
+        return this.buffs.some(b=>b.debuffImmune());
     }
     buffCount() {
         return this.buffs.length;

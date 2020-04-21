@@ -158,9 +158,24 @@ function showHeroDetails() {
     $heroExamineDescription.html(hero.description);
     $heroClassText.html(hero.class);
     $heroExaminePlaybooks.empty();
+    // hero.playbooks.forEach(playbookID => {
+    //     const playbook = PlaybookManager.idToPlaybook(playbookID);
+    //     const d = $("<div/>").addClass("playbooksHeroContainer").appendTo($heroExaminePlaybooks);
+    //         $("<div/>").addClass("playbookName").html(playbook.name).appendTo(d);
+    //     const d1 = $("<div/>").addClass("playbookSkillsContainer").appendTo(d);
+    //     if (hero.playbook.id === playbookID) d.addClass("playbookSelected");
+    //     playbook.skillIDs().forEach(skillID => {
+    //         const skill = SkillManager.idToSkill(skillID);
+    //         $("<div/>").addClass("heroSelectSkill tooltip").attr({"data-tooltip":"skill_desc","data-tooltip-value":skill.id}).html(skill.icon).appendTo(d1);
+    //     });
+    // });
+    generateHeroPlaybooks(hero).appendTo($heroExaminePlaybooks);
+}
+
+function generateHeroPlaybooks(hero) {
+    const d = $("<div/>").addClass("playbooksHeroContainer");
     hero.playbooks.forEach(playbookID => {
         const playbook = PlaybookManager.idToPlaybook(playbookID);
-        const d = $("<div/>").addClass("playbooksHeroContainer").appendTo($heroExaminePlaybooks);
             $("<div/>").addClass("playbookName").html(playbook.name).appendTo(d);
         const d1 = $("<div/>").addClass("playbookSkillsContainer").appendTo(d);
         if (hero.playbook.id === playbookID) d.addClass("playbookSelected");
@@ -169,6 +184,7 @@ function showHeroDetails() {
             $("<div/>").addClass("heroSelectSkill tooltip").attr({"data-tooltip":"skill_desc","data-tooltip-value":skill.id}).html(skill.icon).appendTo(d1);
         });
     });
+    return d;
 }
 
 function showHeroGear() {

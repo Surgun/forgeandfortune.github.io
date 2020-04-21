@@ -313,11 +313,8 @@ function characterCard(prefix,dv,ID,status) {
 }
 
 function renderHeroDialogActions(hero) {
-    const playbooks = PlaybookManager.playbookDB.filter(playbook => hero.playbooks.includes(playbook.id));
     const contentTabContainer = $("<div/>").addClass('contentTabContainer');
-    playbooks.forEach(playbook => {
-        $("<div/>").addClass('contentTab').html(playbook.name).appendTo(contentTabContainer);
-    });
+    generateHeroPlaybooks(hero).appendTo(contentTabContainer);
     return contentTabContainer;
 }
 
@@ -329,7 +326,7 @@ function setHeroDialogOpen(heroID) {
     // Dialog Upper Content
     const dialogClose = $("<div/>").attr({role: "button", tabindex: 1, 'aria-label': "Close Dialog"}).addClass('dialogClose').html('<i class="fas fa-times"></i>').appendTo(dialogBoxContainer);
     const dialogTitle = $("<div/>").addClass('dialogTitle').appendTo(dialogBoxContainer);
-      $("<div/>").addClass('dialogTitleIcon').html(hero.image).appendTo(dialogTitle);
+      $("<div/>").addClass('dialogTitleIcon heroPlayBookDialogPortrait').html(hero.portrait).appendTo(dialogTitle);
       $("<div/>").addClass('dialogTitleText').html(`${hero.name}'s Playbooks`).appendTo(dialogTitle);
     const dialogContentContainer = $("<div/>").addClass('dialogContentContainer').appendTo(dialogBoxContainer);
     if (hero.description) $("<div/>").addClass('dialogDescription').html(hero.description).appendTo(dialogContentContainer);

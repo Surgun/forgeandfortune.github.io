@@ -1491,6 +1491,20 @@ footer {
     border-color: var(--border-tertiary);
 }
 
+.heroPlayBookDialogPortrait {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-primary);
+    border-radius: 5px;
+}
+
+.heroPlayBookDialogPortrait > img {
+    max-height: 30px;
+}
+
 .dungeonTeamImage, .dungeonAvailableImage, .dungeonNotAvailableImage, .dtsMobPic {
     display: flex;
     justify-content: center;
@@ -6777,7 +6791,7 @@ span.beta-tag {
     border: 2px solid var(--border-secondary);
     border-radius: 5px;
     box-shadow: var(--box-shadow);
-    z-index: 999;
+    z-index: 9999;
     max-width: 350px;
     width: 100%;
     transition: all 200ms ease-in-out;

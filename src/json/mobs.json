@@ -40,8 +40,8 @@
   },
   {
     "id": "B103",
-    "name": "Monster A",
-    "hpMod": 0.9,
+    "name": "Bumbling Bee",
+    "hpMod": 0.6,
     "powMod": 1.2,
     "protection": 0,
     "skill1": "SM103",
@@ -92,7 +92,7 @@
   },
   {
     "id": "B203",
-    "name": "Monster B",
+    "name": "Flood",
     "hpMod": 1,
     "powMod": 1,
     "protection": 0,
@@ -106,7 +106,7 @@
   {
     "id": "B300",
     "name": "Dusty Alien",
-    "hpMod": 1,
+    "hpMod": 0.9,
     "powMod": 1,
     "protection": 0,
     "skill1": "S0000",
@@ -119,7 +119,7 @@
   {
     "id": "B301",
     "name": "Crusty Crab",
-    "hpMod": 1,
+    "hpMod": 0.8,
     "powMod": 1,
     "protection": 0,
     "skill1": "SM301",
@@ -144,7 +144,7 @@
   },
   {
     "id": "B303",
-    "name": "Monster C",
+    "name": "Femur Fred",
     "hpMod": 1.25,
     "powMod": 0.75,
     "protection": 0,
@@ -196,8 +196,8 @@
   },
   {
     "id": "B904",
-    "name": "Lich",
-    "hpMod": 22500,
+    "name": "Lich King Larry",
+    "hpMod": 24000,
     "powMod": 750,
     "protection": 0,
     "skill1": "SM904",
@@ -209,7 +209,7 @@
   },
   {
     "id": "B904A",
-    "name": "Bones",
+    "name": "Larry Jr",
     "hpMod": 1000,
     "powMod": 500,
     "protection": 0,

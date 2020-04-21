@@ -129,7 +129,7 @@
   },
   {
     "id": "SM103",
-    "name": "Attack A",
+    "name": "Full Force",
     "description": "Massive damage if at full health",
     "icon": "<i class=\"fab fa-accessible-icon\"></i>",
     "powMod": 2,
@@ -161,7 +161,7 @@
   },
   {
     "id": "SM203",
-    "name": "Attack B",
+    "name": "Helping Hand",
     "description": "Heals teammate",
     "icon": "<i class=\"fas fa-child\"></i>",
     "powMod": 2,
@@ -193,7 +193,7 @@
   },
   {
     "id": "SM303",
-    "name": "Attack C",
+    "name": "Stronger Together",
     "description": "Heals for each living ally",
     "icon": "<i class=\"fas fa-digging\"></i>",
     "powMod": 1,
@@ -201,7 +201,7 @@
   },
   {
     "id": "SM904A",
-    "name": "Boneplosion",
+    "name": "Bonesplosion",
     "description": "Deals massive damage to each enemy",
     "icon": "<i class=\"fas fa-bone\"></i>",
     "powMod": 3,
@@ -210,7 +210,7 @@
   {
     "id": "SM904B",
     "name": "Bone Up",
-    "description": "Revives itself",
+    "description": "Regenerates to full health",
     "icon": "<i class=\"fas fa-skull\"></i>",
     "powMod": 0,
     "techMod": 0
@@ -218,7 +218,7 @@
   {
     "id": "SM904C",
     "name": "Sleepytime",
-    "description": "This skill does nothing",
+    "description": "Maybe he's doing yoga?",
     "icon": "<i class=\"fas fa-snooze\"></i>",
     "powMod": 0,
     "techMod": 0

@@ -247,6 +247,19 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
     }
 });
 
+$(document).on('click', "#dungeonTeamButtonBoss", (e) => {
+    e.preventDefault();
+    if (PartyCreator.validTeam()) {
+        DungeonManager.createDungeon(PartyCreator.dungeonSelect,false);
+        initializeSideBarDungeon();
+        $areaTeamSelect.hide();
+        $dungeonRun.show();
+    }
+    else {
+        Notifications.noPartySelected();
+    }
+});
+
 $(document).on('click', "#dungeonTeamButtonSkip", (e) => {
     e.preventDefault();
     if (PartyCreator.validTeam()) {

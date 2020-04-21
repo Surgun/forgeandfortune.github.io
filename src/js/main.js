@@ -120,26 +120,26 @@ function pregearHeroes() {
     Troy.equip(new itemContainer("R6202",1));
 
     const Caeda = HeroManager.idToHero("H204");
-    Caeda.equip(new itemContainer("R13003",1));
-    Caeda.equip(new itemContainer("R2303",1));
-    Caeda.equip(new itemContainer("R3303",1));
-    Caeda.equip(new itemContainer("R4303",1));
-    Caeda.equip(new itemContainer("R5303",1));
-    Caeda.equip(new itemContainer("R6303",1));
+    Caeda.equip(new itemContainer("R13003",2));
+    Caeda.equip(new itemContainer("R2303",2));
+    Caeda.equip(new itemContainer("R3303",2));
+    Caeda.equip(new itemContainer("R4303",2));
+    Caeda.equip(new itemContainer("R5303",2));
+    Caeda.equip(new itemContainer("R6303",2));
 
     const Lambug = HeroManager.idToHero("H004");
-    Lambug.equip(new itemContainer("R12003",1));
-    Lambug.equip(new itemContainer("R2103",1));
-    Lambug.equip(new itemContainer("R3103",1));
-    Lambug.equip(new itemContainer("R4103",1));
-    Lambug.equip(new itemContainer("R5103",1));
-    Lambug.equip(new itemContainer("R6503",1));
+    Lambug.equip(new itemContainer("R12003",2));
+    Lambug.equip(new itemContainer("R2103",2));
+    Lambug.equip(new itemContainer("R3103",2));
+    Lambug.equip(new itemContainer("R4103",2));
+    Lambug.equip(new itemContainer("R5103",2));
+    Lambug.equip(new itemContainer("R6503",2));
 
     const Titus = HeroManager.idToHero("H103");
-    Titus.equip(new itemContainer("R11003",1));
-    Titus.equip(new itemContainer("R2203",1));
-    Titus.equip(new itemContainer("R3203",1));
-    Titus.equip(new itemContainer("R4203",1));
-    Titus.equip(new itemContainer("R5503",1));
-    Titus.equip(new itemContainer("R6203",1));
+    Titus.equip(new itemContainer("R11003",2));
+    Titus.equip(new itemContainer("R2203",2));
+    Titus.equip(new itemContainer("R3203",2));
+    Titus.equip(new itemContainer("R4203",2));
+    Titus.equip(new itemContainer("R5503",2));
+    Titus.equip(new itemContainer("R6203",2));
 }

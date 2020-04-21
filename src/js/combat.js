@@ -84,7 +84,6 @@ class Combatant {
         SkillManager.idToSkill(this.passiveSkill).passiveCheck(type,this,attack);
     }
     takeAttack(attack) {
-        battleText(attack,this);
         const reducedDmg = Math.floor(attack.power * this.getProtection() * this.getVulnerability(attack.attacker));
         this.hp = Math.max(this.hp-reducedDmg,0);
         refreshHPBar(this);

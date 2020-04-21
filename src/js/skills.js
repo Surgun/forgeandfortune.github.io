@@ -80,13 +80,6 @@ class Playbook {
     }
 }
 
-function battleText(combatParams,target) {
-    let battleTextEdit = combatParams.attack.bText.replace("#ATTACKER#",combatParams.attacker.name);
-    battleTextEdit = battleTextEdit.replace("#DEFENDER#",target.name);
-    battleTextEdit = battleTextEdit.replace("#DAMAGE#",combatParams.power);
-} 
-
-
 SkillManager.skillEffects['S0000'] = function(combatParams) {
     //Regular Attack
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
@@ -231,7 +224,7 @@ SkillManager.skillEffects['S2040'] = function (combatParams) {
 
 SkillManager.skillEffects['SM100'] = function (combatParams) {
     //swift strike - Elf Adventurer
-    const targets = combatParams.getTarget(TargetType.FIRST,SideType>ENEMIES);
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     targets.forEach(target => target.takeAttack(combatParams));
     const secondaryTargets = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
     secondaryTargets.forEach(target => target.heal(combatParams.power));
@@ -453,6 +446,15 @@ SkillManager.skillEffects['SM903B'] = function (combatParams) {
         const buffTarget = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES)[0];
         BuffManager.generateBuff("BM903F",buffTarget,combatParams.power);
     }
+}
+
+SkillManager.skillEffects['SM904'] = function (combatParams) {
+    //DRAIN - LICH
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    targets.forEach(target => {
+        combatParams.power = Math.ceil(target.maxHP()*0.02);
+        target.takeAttack(combatParams);
+    });
 }
 
   //--------------------//

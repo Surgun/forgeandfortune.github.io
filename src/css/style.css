@@ -3102,9 +3102,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    min-width: 300px;
-    max-width: 400px;
+    max-width: 350px;
     width: 100%;
     transition: all var(--transition_linear);
     animation: scale-in var(--transition_linear) forwards;
@@ -3119,7 +3117,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 10px;
+    margin: 5px;
     width: 50px;
     height: 50px;
     background-color: var(--button-primary);
@@ -3130,13 +3128,20 @@ footer {
 
 @media screen and (max-width: 1755px) {
     .heroInspectPreviewCardContainer {
-        padding: 0;
+        flex-wrap: wrap;
+        align-content: center;
         max-width: 300px;
+        
     }
     .previewCardCycle {
-        margin: 0 5px;
-        width: 40px;
-        height: 40px;
+        order: -1;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .heroInspectPreviewCardContainer {
+        max-width: 255px;
+        
     }
 }
 
@@ -5952,7 +5957,7 @@ span.beta-tag {
 }
 
 /* Enables mobile notice on screens game is not supported on */
-@media screen and (max-width: 1099px) {
+@media screen and (max-width: 1100px) {
 
     main {display: none!important;}
 
@@ -6039,7 +6044,7 @@ span.beta-tag {
 }
 
 /* Disables mobile notice on screens game is supported on */
-@media screen and (min-width: 1099px) {
+@media screen and (min-width: 1101px) {
     #mobile-content {display: none!important;}
 }
 

@@ -353,5 +353,6 @@ function mobCard(mobID) {
     $("<div/>").addClass("dtsMobPic").html(mob.image).appendTo(d);
     $("<div/>").addClass("dtsMobName").html(mob.name).appendTo(d);
     generateSkillIcons(mob).appendTo(d);
+    generatePassiveSkill(mob).appendTo(d);
     return d;
 }

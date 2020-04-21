@@ -151,6 +151,7 @@ function generateTurnOrder(dungeonID) {
         $("<div/>").addClass("orderUnitHP").html(createHPBar(unit,"turnOrder")).appendTo(d1);
         const d1a = $("<div/>").attr("id","orderSkills"+unit.uniqueid).addClass("orderSkills").appendTo(d1);
         generateSkillIcons(unit).appendTo(d1a);
+        generatePassiveSkill(unit).appendTo(d1a);
         const d2 = $("<div/>").addClass("beatBarDiv").appendTo(d1);
         $("<span/>").addClass("beatBarFill").attr("id","beatbarFill"+unit.uniqueid).css('width', "0%").appendTo(d2);
     });
@@ -160,6 +161,7 @@ function generateTurnOrder(dungeonID) {
 function refreshSkillUnit(target) {
     const d = $("#orderSkills"+target.uniqueid).empty();
     generateSkillIcons(target).appendTo(d);
+    generatePassiveSkill(target).appendTo(d);
 }
 
 function refreshTurnOrder(dungeonID) {
@@ -181,6 +183,13 @@ function generateSkillIcons(unit) {
     unit.getSkillIcons().forEach((icon,i) => {
         $("<div/>").addClass("orderUnitSkill tooltip").attr({"id":"oUS"+unit.uniqueid+i,"data-tooltip":"skill_desc","data-tooltip-value":skillIDs[i]}).html(icon).appendTo(d1);
     });
+    return d1;
+}
+
+function generatePassiveSkill(unit) {
+    const d1 = $("<div/>").addClass("orderUnitPassiveSkill");
+    const passiveID = unit.passiveSkill;
+    if (passiveID) $("<div/>").addClass("orderUnitPassive tooltip").attr({"id":"oUP"+unit.id,"data-tooltip":"skill_desc","data-tooltip-value":passiveID}).html(SkillManager.idToSkill(passiveID).icon).appendTo(d1);
     return d1;
 }
 

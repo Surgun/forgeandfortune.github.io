@@ -1434,6 +1434,7 @@ footer {
 }
 
 .dtsMobDiv {
+    position: relative;
     padding: 10px;
     min-height: auto;
     cursor: default;
@@ -2949,6 +2950,8 @@ footer {
     border-bottom: 2px solid var(--border-primary);
 }
 
+/* Heroes */
+
 #heroContainer {
     height: 100%;
     overflow: auto;
@@ -3225,20 +3228,42 @@ footer {
     overflow: auto;
 }
 
-.heroDetailsContainer {
-    display: flex;
-    justify-content: flex-start;
-    overflow: auto;
-}
-
-.heroExamineContainer {
-    padding: 0 10px;
-}
-
-.playbooksHeadingContainer {
+.heroHeadingContainer {
     margin: 0 0 10px;
     padding: 10px;
     border-bottom: 2px solid var(--border-primary);
+}
+
+.heroExamineTop {
+    position: relative;
+    display: flex;
+}
+
+.heroExamineContainer {
+    padding: 10px;
+}
+
+.heroMainDetails {
+    display: flex;
+}
+
+.heroExamineImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-primary);
+    border-radius: 5px;
+}
+
+.heroMainDetailsInfo {
+    flex-grow: 1;
+}
+
+.heroExamineDescription {
+    padding: 0 10px;
 }
 
 .heroExaminePlaybooks {
@@ -3372,132 +3397,7 @@ footer {
     background-color: var(--button-primary-active);
 }
 
-.heroExamineContainer {
-    flex-grow: 1;
-}
-
-.hero-placeholder-details, .hero-placeholder-equip, .events-placeholder-details {
-    display: block;
-    padding: 20px;
-}
-
-.heroExamineTop, .heroExamineStats {
-    padding: 10px 20px;
-}
-
-.heroExamineTop {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-    max-width: 500px;
-}
-
-.heroExamineImage {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 64px;
-    height: 84px;
-    padding: 5px;
-    background-color: var(--bg-secondary);
-    border: 2px solid var(--border-primary);
-    border-radius: 5px;
-}
-
-.heroExamineImage > img {
-    animation: 0.2s fade-in;
-}
-
-.heroExamineName, .heroExamineHeading {
-    width: 100%;
-    padding: 10px 5px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid var(--border-primary);
-}
-
-.heroExamineName {
-    padding-left: 80px;
-    color: var(--highlight);
-}
-
-.heroExamineHeading {
-    grid-column: 1 / -1;
-}
-
-.heroExamineDescription {
-    margin-left: 80px;
-    color: var(--text-secondary);
-}
-
-.heroExamineLvlClassContainer, .heroAbilityContainer {
-    margin-top: 15px;
-    width: 100%;
-}
-
-.heroClassHeading, .heroAbilityHeading {
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 2px solid var(--border-primary);
-}
-
-.heroClassText, .heroAbilityText {
-    color: var(--text-secondary);
-}
-
-.heroExamineStats, .mhiStats {
-    display: -ms-grid;
-    display: grid;
-    grid-template: auto / repeat(auto-fill,minmax(200px,1fr));
-    grid-gap: 5px;
-    -ms-flex-line-pack: start;
-        align-content: start;
-}
-
-.heroExamineStatRow {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 15px 20px;
-    font-size: 13.6px;
-    font-size: 0.85rem;
-    background-color:  var(--bg-secondary);
-    border-radius: 5px;
-}
-
-.heroExamineStatRowName {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-}
-
-.heroExamineStatRowName > span {
-    margin-left: 5px;
-}
+/* End of Heroes */
 
 #heroGear {
     -webkit-box-flex: 1;
@@ -6705,7 +6605,7 @@ span.beta-tag {
     width: 100%;
 }
 
-.orderUnitSkill {
+.orderUnitSkill, .orderUnitPassive {
     padding: 5px;
     color: var(--text-secondary);
     text-align: center;
@@ -6717,6 +6617,24 @@ span.beta-tag {
 .orderUnitSkill.orderUnitActiveSkill {
     color: var(--highlight);
     background-color: rgba(255,255,255,.05);
+}
+
+.orderUnitPassiveSkill {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.orderUnitPassive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: var(--bg-primary);
+    border-color: var(--border-tertiary);
+    border-radius: 50%;
+    box-shadow: 0 2px 0 rgba(0,0,0,.5);
 }
 
 .buffListContent {

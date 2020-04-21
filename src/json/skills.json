@@ -116,7 +116,7 @@
     "name": "Regenerate",
     "description": "Heals self instead of attacking",
     "icon": "<i class=\"fas fa-heart-circle\"></i>",
-    "powMod": 4,
+    "powMod": 2,
     "techMod": 0
   },
   {

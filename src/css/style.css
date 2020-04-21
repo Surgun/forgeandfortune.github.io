@@ -6475,6 +6475,7 @@ span.beta-tag {
 .dungeonListContainer {
     position: relative;
     display: flex;
+    justify-content: center;
     align-items: flex-end;
     flex-grow: 1;
     margin-bottom: 20px;
@@ -6485,8 +6486,18 @@ span.beta-tag {
 .dungeonHeroList, .dungeonMobList {
     display: flex;
     flex-grow: 1;
+    max-width: 600px;
     padding: 0 10px;
-    justify-content: center;
+}
+
+.dungeonHeroList {
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+.dungeonMobList {
+    justify-content: flex-start;
+    margin-left: 50px;
 }
 
 .dfc, .dfm {
@@ -6530,11 +6541,6 @@ span.beta-tag {
     height: 300px;
     background-repeat: repeat-x;
     border-bottom: 2px solid var(--border-primary);
-}
-
-.dungeonListContainer {
-    position: relative;
-    z-index: 1;
 }
 
 .drTurnOrderLogContainer {

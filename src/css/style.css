@@ -6492,7 +6492,7 @@ span.beta-tag {
 .dfc, .dfm {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     margin: 0 5px;
     width: 100%;
@@ -6509,8 +6509,13 @@ span.beta-tag {
     border-radius: 5px;
 }
 
+.dfcImage > img, .dfmImage > img {
+    max-height: 64px;
+}
+
 .heroDead .dfcImage, .mobDead .dfmImage {
     opacity: 0.5;
+    max-height: 64px;
 }
 
 .heroDead .dfcName, .mobDead .dfmName {
@@ -6534,6 +6539,7 @@ span.beta-tag {
 }
 
 .drTurnOrderLogContainer {
+    padding: 0 10px;
     transform-origin: top;
     animation: scale-y-in var(--transition_linear);
 }

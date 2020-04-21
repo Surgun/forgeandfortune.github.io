@@ -120,18 +120,18 @@ function initiateDungeonFloor(dungeonID) {
     $dungeonMobList.empty();
     dungeon.party.heroes.forEach(hero => {
         const d1 = $("<div/>").addClass("dfc");
-        const d2 = $("<div/>").addClass("dfcName").html(hero.name);
-        const d3 = $("<div/>").addClass("dfcImage").html(hero.image);
-        const d4 = $("<div/>").addClass("buffListContent").attr("id","buffList"+hero.uniqueid);
+        const d2 = $("<div/>").addClass("buffListContent").attr("id","buffList"+hero.uniqueid);
+        const d3 = $("<div/>").addClass("dfcName").html(hero.name);
+        const d4 = $("<div/>").addClass("dfcImage").html(hero.image);
         d1.append(d2,d3,d4);
         if (hero.hp === 0) d1.addClass("heroDead");
         $dungeonHeroList.prepend(d1);
     });
     dungeon.mobs.forEach((mob) => {
         const d6 = $("<div/>").addClass("dfm").attr("id","dfm"+mob.uniqueid);
-        const d7 = $("<div/>").addClass("dfmName").html(mob.name);
-        const d8 = $("<div/>").addClass("dfmImage").attr("id","mobImage"+mob.uniqueid).html(mob.image);
-        const d9 = $("<div/>").addClass("buffListContent").attr("id","buffList"+mob.uniqueid);
+        const d7 = $("<div/>").addClass("buffListContent").attr("id","buffList"+mob.uniqueid);
+        const d8 = $("<div/>").addClass("dfmName").html(mob.name);
+        const d9 = $("<div/>").addClass("dfmImage").attr("id","mobImage"+mob.uniqueid).html(mob.image);
         d6.append(d7,d8,d9);
         if (mob.hp === 0) d6.addClass("mobDead");
         $dungeonMobList.append(d6);

@@ -6515,7 +6515,6 @@ span.beta-tag {
 
 .heroDead .dfcImage, .mobDead .dfmImage {
     opacity: 0.5;
-    max-height: 64px;
 }
 
 .heroDead .dfcName, .mobDead .dfmName {

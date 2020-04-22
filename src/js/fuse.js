@@ -103,7 +103,7 @@ const FusionManager = {
             Notifications.fuseInvFull();
             return;
         }
-        ResourceManager.addMaterial("M001",this.getFuseCost(fuse));
+        ResourceManager.addMaterial("M001",this.getFuseCost(fuse,1));
         Inventory.addFuseToInventory(fuse,true);
         Inventory.addFuseToInventory(fuse,true);
         Inventory.addFuseToInventory(fuse,true);

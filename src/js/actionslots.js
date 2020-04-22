@@ -18,8 +18,10 @@ $(document).on("click", ".ASBuySlotButton", (e) => {
 $(document).on("click", ".ASauto", (e) => {
     e.preventDefault();
     const slot = parseInt($(e.currentTarget).data("slotNum"));
-    const newRarity = actionSlotManager.toggleAuto(slot);
-    actionSlotVisualManager.updateAutoSell(e,newRarity);
+    actionSlotManager.toggleAuto(slot);
+    actionSlotVisualManager.updateAutoSell();
+    destroyTooltip();
+    generateTooltip(e);
 });
 
 class actionSlot {
@@ -304,11 +306,12 @@ const actionSlotVisualManager = {
             } 
         });
     },
-    updateAutoSell(e,newRarity) {
-        $(e.currentTarget).removeClass("ASautoEnabledCommon ASautoEnabledGood ASautoEnabledGreat ASautoEnabledEpic").addClass("ASautoEnabled"+newRarity);
-        $(e.currentTarget).attr("data-tooltip", `autosell_${newRarity.toLowerCase()}`);
-        destroyTooltip();
-        generateTooltip(e);
+    updateAutoSell() {
+        $(".ASauto").removeClass("ASautoEnabledCommon ASautoEnabledGood ASautoEnabledGreat ASautoEnabledEpic")
+        actionSlotManager.slots.forEach(slot => {
+            const rarity = slot.autoSell();
+            $("#asAuto"+slot.slotNum).addClass("ASautoEnabled"+rarity).attr("data-tooltip",`autosell_${rarity.toLowerCase()}`);
+        });
     }
 }
 

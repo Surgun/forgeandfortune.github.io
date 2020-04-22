@@ -192,14 +192,14 @@ const Inventory = {
             this.inv[i] = container;
         });
     },
-    addFuseToInventory(fuse) {
+    addFuseToInventory(fuse,skipAnimation) {
         if (this.full()) return;
         const container = new itemContainer(fuse.id,fuse.rarity);
         container.sharp = fuse.sharp;
-        this.findempty(container);
+        this.findempty(container,skipAnimation);
         const item = recipeList.idToItem(container.id);
         if (examineGearTypesCache.includes(item.type)) {
-            examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache);
+            examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache,skipAnimation);
         }
     },
     addToInventory(container,skipAnimation) {
@@ -275,15 +275,14 @@ const Inventory = {
         mods.epic = (miscLoadedValues.qualityCheck[3]+Museum.epicChance())*masterMod*fortuneMod[2];
         return mods;
     },
-    removeFromInventoryUID(uniqueID) {
+    removeFromInventoryUID(uniqueID,skipAnimation) {
         const container = this.nonblank().find(i=>i.uniqueID() === uniqueID);
-        this.removeContainerFromInventory(container.containerID);
-        refreshInventoryPlaces();
+        this.removeContainerFromInventory(container.containerID,skipAnimation);
     },
-    removeContainerFromInventory(containerID) {
+    removeContainerFromInventory(containerID,skipAnimation) {
         this.inv = this.inv.filter(c=>c === null || c.containerID !== containerID);
         this.inv.push(null);
-        refreshInventoryPlaces();
+        if (!skipAnimation) refreshInventoryPlaces();
     },
     hasContainer(containerID) {
         return this.nonblank().some(c => c.containerID === containerID);
@@ -560,8 +559,8 @@ function gearEquipFromInventory(invID) {
 function refreshInventoryPlaces() {
     refreshInventory();
     refreshCardInvCount();
-    refreshOrderInvCount()
-    refreshPossibleFuse();
+    refreshOrderInvCount();
+    if (lastTab === "townsTab" && TownManager.lastBldg === "fusion") refreshPossibleFuse();
     refreshBankInventory();
     refreshSmithInventory();
     refreshSmithStage();

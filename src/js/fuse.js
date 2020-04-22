@@ -73,19 +73,20 @@ const FusionManager = {
             return;
         }
         const fuseProps = uniqueIDProperties(uniqueid);
-        if (ResourceManager.materialAvailable("M001") < this.getFuseCost(fuseProps)) {
+        if (ResourceManager.materialAvailable("M001") < this.getFuseCost(fuseProps,1)) {
             Notifications.cantAffordFuse();
             return;
         }
-        ResourceManager.deductMoney(this.getFuseCost(fuseProps));
-        Inventory.removeFromInventoryUID(uniqueid);
-        Inventory.removeFromInventoryUID(uniqueid);
-        Inventory.removeFromInventoryUID(uniqueid);
+        ResourceManager.deductMoney(this.getFuseCost(fuseProps,1));
+        Inventory.removeFromInventoryUID(uniqueid,true);
+        Inventory.removeFromInventoryUID(uniqueid,true);
+        Inventory.removeFromInventoryUID(uniqueid,true);
         const newFuse = new fuse(uniqueid);
         newFuse.fuseID = this.fuseNum;
         this.fuseNum += 1;
         this.slots.push(newFuse);
         refreshFuseSlots();
+        refreshPossibleFuse();
     },
     fuseByID(fuseID) {
         return this.slots.find(f => f.fuseID === fuseID);
@@ -103,11 +104,12 @@ const FusionManager = {
             return;
         }
         ResourceManager.addMaterial("M001",this.getFuseCost(fuse));
-        Inventory.addFuseToInventory(fuse);
-        Inventory.addFuseToInventory(fuse);
-        Inventory.addFuseToInventory(fuse);
+        Inventory.addFuseToInventory(fuse,true);
+        Inventory.addFuseToInventory(fuse,true);
+        Inventory.addFuseToInventory(fuse,true);
         this.slots = this.slots.filter(f=>f.fuseID !== fuseid);
         refreshFuseSlots();
+        refreshPossibleFuse();
     },
     addTime(ms) {
         this.slots.forEach(fuse => {
@@ -115,9 +117,9 @@ const FusionManager = {
         });
         refreshFuseBars();
     },
-    getFuseCost(fuse) {
-        const item = recipeList.idToItem(fuse.id);
-        return 4*item.value*fuse.rarity;
+    getFuseCost(fuse,rarityBoost=0) {
+        const item = recipeList.idToItem(fuse.id);;
+        return 4*item.value*(fuse.rarity+rarityBoost);
     },
     aFuseIsDone() {
         return this.slots.some(f=>f.fuseComplete());
@@ -223,7 +225,7 @@ function refreshPossibleFuse() {
             const d6 = $("<div/>").addClass("fuseTime tooltip").attr("data-tooltip","fuse_time").html(`<i class="fas fa-clock"></i> ${msToTime(FusionManager.getMaxFuse(f))}`);
             const d7 = $("<div/>").addClass("fuseStart").attr("uniqueid",f.uniqueID);
                 $("<div/>").addClass("fuseStartText").html("Fuse").appendTo(d7);
-                $("<div/>").addClass("fuseStartCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(FusionManager.getFuseCost(f))}).html(`${ResourceManager.materialIcon("M001")}${formatToUnits(FusionManager.getFuseCost(f),2)}`).appendTo(d7);
+                $("<div/>").addClass("fuseStartCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(FusionManager.getFuseCost(f,0))}).html(`${ResourceManager.materialIcon("M001")}${formatToUnits(FusionManager.getFuseCost(f),2)}`).appendTo(d7);
             d3.append(d4,d5,d6,d7);
             d2.append(d3);
         });

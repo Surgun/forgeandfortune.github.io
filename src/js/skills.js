@@ -170,7 +170,6 @@ SkillManager.skillEffects['S1030'] = function (combatParams) {
         target.takeAttack(combatParams);
     })
     targets.forEach(target => {
-        console.log(target.name);
         BuffManager.generateBuff("B1030",target,combatParams.power);
     });
 };

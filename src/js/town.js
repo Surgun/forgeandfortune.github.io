@@ -153,6 +153,11 @@ function showBldg(type) {
     }
 }
 
+function refreshTownBuilding() {
+    if (!TownManager.lastBldg) return;
+    showBldg(TownManager.lastBldg);
+}
+
 $(document).on('click', ".buildingName", (e) => {
     e.preventDefault();
     const type = $(e.currentTarget).data("bldgType");

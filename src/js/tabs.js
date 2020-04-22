@@ -1,6 +1,9 @@
 "use strict";
 
+let lastTab = null;
+
 function openTab(tabName) {
+    lastTab = tabName;
     // Declare all variables
     DungeonManager.dungeonView = null;
     //HeroManager.heroView = null;
@@ -11,8 +14,9 @@ function openTab(tabName) {
         $dungeonSelect.show();
         dungeonsTabClicked();
     }
-    if (tabName === "townTab") {
+    if (tabName === "townsTab") {
         refreshSideTown();
+        refreshTownBuilding();
     }
     if (tabName === "inventoryTab") {
         $inventoryTabSpan.removeClass("hasEvent");

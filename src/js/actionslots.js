@@ -165,6 +165,7 @@ const actionSlotManager = {
     },
     removeBldgSlots() {
         this.slots = this.slots.filter(s => s.item.recipeType === "normal");
+        this.slots.forEach((s,i) => s.slotNum = i);
         this.adjustMinTime();
         refreshSideWorkers();
         recipeList.canCraft();

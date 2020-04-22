@@ -44,8 +44,8 @@ class Skill {
         this.powerPercent = (props.powMod * 100).toString() + "%";
         this.techPercent = (props.techMod * 100).toString() + "%";
     }
-    passiveCheck(type,target) {
-        SkillManager.skillEffects[this.id](type,target);
+    passiveCheck(type,target,attack) {
+        SkillManager.skillEffects[this.id](type,target,attack);
     }
 }
 
@@ -497,9 +497,11 @@ SkillManager.skillEffects['SMP902'] = function (type,target) {
     BuffManager.generateBuff('BM902A',target,0);
 }
 
-SkillManager.skillEffects['SMP904A'] = function (type,target) {
-    //BONE DEATH - DRY BONES
+SkillManager.skillEffects['SMP904A'] = function (type,target,attack) {
     if (type !== "dead" || target.state !== null) return;
+    //BONE DEATH - DRY BONES
+    const lichDead = attack.enemies.find(m=>m.id==="B904").dead();
+    if (lichDead) return;
     target.state = "bones";
     target.image = '<img src="/assets/images/enemies/B904B.gif">';
     target.hp = 1;

@@ -32,7 +32,7 @@ class combatRoundParams {
     getTarget(target,side) {
         const aliveEnemys = this.enemies.filter(h=>h.alive());
         const enemies = aliveEnemys.some(h=>h.mark()) ? aliveEnemys.filter(h=>h.mark()) : aliveEnemys;
-        const living = side === SideType.ALLIES ? this.allies.filter(h=>h.alive()) : enemies;
+        const living = (side === SideType.ALLIES) ? this.allies.filter(h=>h.alive()) : enemies;
         if (target === TargetType.FIRST) return [living[0]];
         if (target === TargetType.SECOND) {
             if (living.length === 1) return [living[0]];

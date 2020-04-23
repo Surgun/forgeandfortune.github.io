@@ -206,7 +206,7 @@ class Dungeon {
         if (DungeonManager.dungeonView === this.id) refreshBeatBar(this.order.getCurrentID(),this.dungeonTime);
     }
     addDungeonReward(time,skipAnimation) {
-        if (this.type === "boss") return;
+        if (this.type === "boss" || this.floorClear === 0) return;
         this.rewardTime += time;
         if (this.rewardTime > this.rewardTimeRate) {
             this.rewardTime -= this.rewardTimeRate;

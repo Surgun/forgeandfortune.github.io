@@ -61,6 +61,7 @@ class Mob extends Combatant {
         const save = {};
         save.id = this.id;
         save.uniqueid = this.uniqueid;
+        save.pow = this.pow;
         save.atk = this.atk;
         save.hp = this.hp;
         save.hpmax = this.hpmax;
@@ -73,7 +74,7 @@ class Mob extends Combatant {
     }
     loadSave(save) {
         this.uniqueid = save.uniqueid;
-        this.atk = save.atk;
+        this.pow = save.pow;
         this.hp = save.hp;
         this.hpmax = save.hpmax;
         if (save.buffs !== undefined) {

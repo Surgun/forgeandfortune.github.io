@@ -3955,7 +3955,7 @@ footer {
     margin: 0;
 }
 
-.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .synthSlot, .synthGroup, .fortuneItem, .tinkerCommand, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard, .lineRewardContainer, .recipeMasteryGuildCard {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .synthSlot, .synthGroup, .fortuneItem, .tinkerCommand, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard, .lineRewardContainer, .recipeMasteryGuildCard, .recipeBuyCard, .workerBuyCard {
     position: relative;
     display: flex;
     flex-direction: column;

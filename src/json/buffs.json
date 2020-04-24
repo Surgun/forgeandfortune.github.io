@@ -111,102 +111,14 @@
   },
   {
     "id": "BM902",
-    "name": "Phoenix Fire",
-    "description": "Deals #power# damage on this unit's turn per stack",
-    "icon": "<i class=\"fas fa-fire-alt\"></i>",
-    "maxStack": 100,
-    "stackCast": 1,
-    "onCast": "stack",
-    "decrease": "never",
-    "type": "debuff"
-  },
-  {
-    "id": "BM902A",
-    "name": "Hardened",
-    "description": "Reduces damage taken from attacks by 75% while active",
-    "icon": "<i class=\"fas fa-egg\"></i>",
+    "name": "Cactus Time",
+    "description": "Take damage sometimes",
+    "icon": "<i class=\"fal fa-cactus\"></i>",
     "maxStack": 1,
     "stackCast": 1,
     "onCast": "refresh",
     "decrease": "never",
     "type": "buff"
-  },
-  {
-    "id": "BM902B",
-    "name": "Weakened",
-    "description": "Reduces max HP by 10% per stack",
-    "icon": "<i class=\"fas fa-temperature-low\"></i>",
-    "maxStack": 100,
-    "stackCast": 1,
-    "onCast": "stack",
-    "decrease": "never",
-    "type": "debuff"
-  },
-  {
-    "id": "BM903A",
-    "name": "Mighty",
-    "description": "Take double damage from Might heroes.",
-    "icon": "<i class=\"fas fa-fist-raised\"></i>",
-    "maxStack": 1,
-    "stackCast": 1,
-    "onCast": "refresh",
-    "decrease": "never",
-    "type": "buff"
-  },
-  {
-    "id": "BM903B",
-    "name": "Mindful",
-    "description": "Take double damage from Mind heroes.",
-    "icon": "<i class=\"fas fa-hat-wizard\"></i>",
-    "maxStack": 1,
-    "stackCast": 1,
-    "onCast": "refresh",
-    "decrease": "never",
-    "type": "buff"
-  },
-  {
-    "id": "BM903C",
-    "name": "Moxious",
-    "description": "Take double damage from Moxie heroes.",
-    "icon": "<i class=\"fas fa-cocktail\"></i>",
-    "maxStack": 1,
-    "stackCast": 1,
-    "onCast": "refresh",
-    "decrease": "never",
-    "type": "buff"
-  },
-  {
-    "id": "BM903D",
-    "name": "Mighty Mail",
-    "description": "Reduces damage taken from attacks per stack",
-    "icon": "<i class=\"fas fa-shield-cross\"></i>",
-    "maxStack": 5,
-    "stackCast": 1,
-    "onCast": "stack",
-    "decrease": "never",
-    "type": "buff"
-  },
-  {
-    "id": "BM903E",
-    "name": "Mindful Meditation",
-    "description": "Increases healing per stack",
-    "icon": "<i class=\"fas fa-spa\"></i>",
-    "maxStack": 5,
-    "stackCast": 1,
-    "onCast": "stack",
-    "decrease": "never",
-    "type": "buff"
-  },
-  {
-    "id": "BM903F",
-    "name": "Moxious Maneuver",
-    "description": "Increases damage taken per stack",
-    "icon": "<i class=\"fas fa-angry\"></i>",
-    "maxStack": 5,
-    "stackCast": 1,
-    "onCast": "stack",
-    "decrease": "never",
-    "type": "debuff"
   },
   {
     "id": "BM904B",
@@ -218,5 +130,104 @@
     "onCast": "refresh",
     "decrease": "never",
     "type": "buff"
+  },
+  {
+    "id": "BM905A",
+    "name": "Mighty",
+    "description": "Take double damage from Might heroes.",
+    "icon": "<i class=\"fas fa-fist-raised\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM905B",
+    "name": "Mindful",
+    "description": "Take double damage from Mind heroes.",
+    "icon": "<i class=\"fas fa-hat-wizard\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM905C",
+    "name": "Moxious",
+    "description": "Take double damage from Moxie heroes.",
+    "icon": "<i class=\"fas fa-cocktail\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM905D",
+    "name": "Mighty Mail",
+    "description": "Reduces damage taken from attacks per stack",
+    "icon": "<i class=\"fas fa-shield-cross\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM905E",
+    "name": "Mindful Meditation",
+    "description": "Increases healing per stack",
+    "icon": "<i class=\"fas fa-spa\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM905F",
+    "name": "Moxious Maneuver",
+    "description": "Increases damage taken per stack",
+    "icon": "<i class=\"fas fa-angry\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "debuff"
+  },
+  {
+    "id": "BM906",
+    "name": "Phoenix Fire",
+    "description": "Deals #power# damage on this unit's turn per stack",
+    "icon": "<i class=\"fas fa-fire-alt\"></i>",
+    "maxStack": 100,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "debuff"
+  },
+  {
+    "id": "BM906A",
+    "name": "Hardened",
+    "description": "Reduces damage taken from attacks by 75% while active",
+    "icon": "<i class=\"fas fa-egg\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM906B",
+    "name": "Weakened",
+    "description": "Reduces max HP by 10% per stack",
+    "icon": "<i class=\"fas fa-temperature-low\"></i>",
+    "maxStack": 100,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "debuff"
   }
 ]

@@ -272,6 +272,8 @@ class Dungeon {
         });
         this.party.reset();
         this.order = new TurnOrder(this.party.heroes,this.mobs);
+        this.mobs.forEach(mob => mob.passiveCheck("initial",null));
+        this.party.heroes.forEach(hero => hero.passiveCheck("initial",null));
         if (refreshLater) return;
         $("#dsb"+this.id).html(`${this.name} - ${this.floorClear}`);
         refreshSidebarDungeonMats(this.id);

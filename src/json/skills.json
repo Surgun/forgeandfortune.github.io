@@ -232,51 +232,27 @@
     "techMod": 0
   },
   {
-    "id": "SM902",
-    "name": "Phoenix Fire",
-    "description": "Burns the first enemy, dealing damage for every stack",
-    "icon": "<i class=\"fas fa-fire-alt\"></i>",
-    "powMod": 0.14,
-    "techMod": 0
-  },
-  {
-    "id": "SM902A",
-    "name": "Hibernate",
-    "description": "Monster is sleeping and performs no action",
-    "icon": "<i class=\"fas fa-snooze\"></i>",
-    "powMod": 0,
-    "techMod": 0
-  },
-  {
-    "id": "SM902B",
-    "name": "Rise",
-    "description": "Monster returns to its original form",
-    "icon": "<i class=\"fas fa-heartbeat\"></i>",
-    "powMod": 0,
-    "techMod": 0
-  },
-  {
-    "id": "SM903A",
-    "name": "Blank Canvas",
-    "description": "Attack a Hero and absorb their Type",
-    "icon": "<i class=\"fas fa-paint-brush\"></i>",
+    "id": "SMP902",
+    "name": "Spiky Skin",
+    "description": "Attacking this enemy damages the hero",
+    "icon": "<i class=\"fal fa-cactus\"></i>",
     "powMod": 1,
     "techMod": 0
   },
   {
-    "id": "SM903B",
-    "name": "Masterpiece",
-    "description": "Attack and perform an action based off form - Mighty: Gain stacking protective shield. Mindful: Heal and gain a % heal buff. Moxious: Add debuff to take additional damage",
-    "icon": "<i class=\"far fa-rectangle-portrait\"></i>",
-    "powMod": 2,
+    "id": "SM902",
+    "name": "1000 Needles",
+    "description": "Deals 500 damage to the first and second heroes",
+    "icon": "<i class=\"fad fa-wand\"></i>",
+    "powMod": 1,
     "techMod": 0
   },
   {
-    "id": "SMP902",
-    "name": "Rising Phoenix",
-    "description": "Once below 25%, Phoenix will turn into an egg and attempt to regenerate health",
-    "icon": "<i class=\"fab fa-phoenix-framework\"></i>",
-    "powMod": 0,
+    "id": "SM903",
+    "name": "Forgotten Wish",
+    "description": "Redistributes enemy health to be equal",
+    "icon": "<i class=\"fas fa-star-shooting\"></i>",
+    "powMod": 1,
     "techMod": 0
   },
   {
@@ -292,6 +268,54 @@
     "name": "Bone Down",
     "description": "When dead, turn into a pile of bones instead",
     "icon": "<i class=\"fas fa-skull\"></i>",
+    "powMod": 0,
+    "techMod": 0
+  },
+  {
+    "id": "SM905A",
+    "name": "Blank Canvas",
+    "description": "Attack a Hero and absorb their Type",
+    "icon": "<i class=\"fas fa-paint-brush\"></i>",
+    "powMod": 1,
+    "techMod": 0
+  },
+  {
+    "id": "SM905B",
+    "name": "Masterpiece",
+    "description": "Attack and perform an action based off form - Mighty: Gain stacking protective shield. Mindful: Heal and gain a % heal buff. Moxious: Add debuff to take additional damage",
+    "icon": "<i class=\"far fa-rectangle-portrait\"></i>",
+    "powMod": 2,
+    "techMod": 0
+  },
+  {
+    "id": "SMP902",
+    "name": "Rising Phoenix",
+    "description": "Once below 25%, Phoenix will turn into an egg and attempt to regenerate health",
+    "icon": "<i class=\"fab fa-phoenix-framework\"></i>",
+    "powMod": 0,
+    "techMod": 0
+  },
+  {
+    "id": "SM906",
+    "name": "Phoenix Fire",
+    "description": "Burns the first enemy, dealing damage for every stack",
+    "icon": "<i class=\"fas fa-fire-alt\"></i>",
+    "powMod": 0.14,
+    "techMod": 0
+  },
+  {
+    "id": "SM906A",
+    "name": "Hibernate",
+    "description": "Monster is sleeping and performs no action",
+    "icon": "<i class=\"fas fa-snooze\"></i>",
+    "powMod": 0,
+    "techMod": 0
+  },
+  {
+    "id": "SM906B",
+    "name": "Rise",
+    "description": "Monster returns to its original form",
+    "icon": "<i class=\"fas fa-heartbeat\"></i>",
     "powMod": 0,
     "techMod": 0
   }

@@ -83,11 +83,12 @@ class Combatant {
         SkillManager.idToSkill(this.passiveSkill).passiveCheck(type,this,attack);
     }
     takeAttack(attack) {
-        const reducedDmg = Math.floor(attack.power * this.getProtection() * this.getVulnerability(attack.attacker));
+        const reducedDmg = Math.floor(attack.power * this.getProtection() * this.getVulnerability(attack.attacker)); //attack.attacker because you need his type
         this.hp = Math.max(this.hp-reducedDmg,0);
         if (this.hp === 0) this.passiveCheck("dead",attack);
         refreshHPBar(this);
         this.buffTick("onHit",attack);
+        if (this.thorns() > 0) attack.attacker.takeDamage(this.thorns());
     }
     takeDamage(dmg) {
         this.hp = Math.max(this.hp-dmg,0);
@@ -153,6 +154,11 @@ class Combatant {
         if (this.isWilt()) hp = Math.floor(hp/2);
         this.hp += Math.floor(this.maxHP()*hpPercent/100);
         this.hp = Math.min(this.maxHP(),this.hp);
+        if (!CombatManager.refreshLater) refreshHPBar(this);
+    }
+    setHP(hp) {
+        if (this.hp === 0) return;
+        this.hp = Math.min(hp,this.maxHP());
         if (!CombatManager.refreshLater) refreshHPBar(this);
     }
     resetPlaybookPosition() {
@@ -224,6 +230,10 @@ class Combatant {
     }
     underHalfHP() {
         return 2*this.hp <= this.maxHP();
+    }
+    thorns() {
+        const thorns = this.buffs.map(b=>b.thorns());
+        return thorns.reduce((a,b) => a+b, 0);
     }
 }
 

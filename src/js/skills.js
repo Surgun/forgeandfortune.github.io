@@ -45,7 +45,7 @@ class Skill {
         this.techPercent = (props.techMod * 100).toString() + "%";
     }
     passiveCheck(type,target,attack) {
-        SkillManager.skillEffects[this.id](type,target,attack);
+        SkillManager.skillEffects[this.id](type,target,attack,this);
     }
 }
 
@@ -346,105 +346,25 @@ SkillManager.skillEffects['SM901'] = function (combatParams) {
 }
 
 SkillManager.skillEffects['SM902'] = function (combatParams) {
-    //Phoenix Fire - Phoenix
-    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
-    targets.forEach(target => {
+    //500 Needles - Cactus
+    const target1 = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    target1.forEach(target => {
         target.takeAttack(combatParams);
-        BuffManager.generateBuff('BM902',target,combatParams.power);
+    });
+    const target2 = combatParams.getTarget(TargetType.SECOND,SideType.ENEMIES);
+    target2.forEach(target => {
+        target.takeAttack(combatParams);
     });
 }
 
-SkillManager.skillEffects['SM902A'] = function (combatParams) {
-    //lol it does nothing
-}
-
-SkillManager.skillEffects['SM902B'] = function (combatParams) {
-    const target = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
-    target.state = null;
-    target.image = '<img src="/assets/images/enemies/B902.gif">';
-    $("#mobImage"+target.uniqueid).html(target.image);
-    target.playbook = PlaybookManager.generatePlayBookFromSkills(target.skill1,target.skill2,target.skill3,target.skill4);
-    refreshSkillUnit(target);
-    BuffManager.removeBuff('BM902A',target)
-    BuffManager.generateBuff('BM902B',target,0);
-    target.healPercent(100);
-}
-
-SkillManager.skillEffects['SM903A'] = function (combatParams) {
+SkillManager.skillEffects['SM903'] = function (combatParams) {
+    //Same HP - Blue Thing
     const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
-    const thisMob = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
-    if (this.state === null || this.state === targets.length-1) this.state = 0;
-    else this.state += 1;
-    const target = targets[this.state];
-    if (target.type === "Might") {
-        BuffManager.generateBuff('BM903A',thisMob,combatParams.power);
-        thisMob.removeBuff("BM903B");
-        thisMob.removeBuff("BM903C");
-        thisMob.image = '<img src="/assets/images/enemies/BM903A.gif">';
-        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
-    }
-    else if (target.type === "Mind") {
-        thisMob.removeBuff("BM903A");
-        BuffManager.generateBuff('BM903B',thisMob,combatParams.power);
-        thisMob.removeBuff("BM903C");
-        thisMob.image = '<img src="/assets/images/enemies/BM903B.gif">';
-        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
-    }
-    else if (target.type === "Moxie") {
-        thisMob.removeBuff("BM903A");
-        thisMob.removeBuff("BM903B");
-        BuffManager.generateBuff('BM903C',thisMob,combatParams.power);
-        thisMob.image = '<img src="/assets/images/enemies/BM903C.gif">';
-        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
-    }
-}
-
-SkillManager.skillEffects['SM903A'] = function (combatParams) {
-    //PAINTBRUSH KNIGHT - CANVAS
-    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
-    const thisMob = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
-    if (this.state === undefined || this.state === targets.length-1) this.state = 0;
-    else this.state += 1;
-    const target = targets[this.state];
-    target.takeAttack(combatParams);
-    if (target.type === "Might") {
-        BuffManager.generateBuff('BM903A',thisMob,combatParams.power);
-        thisMob.image = '<img src="/assets/images/enemies/B903A.gif">';
-        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
-    }
-    else if (target.type === "Mind") {
-        BuffManager.generateBuff('BM903B',thisMob,combatParams.power);
-        thisMob.image = '<img src="/assets/images/enemies/B903B.gif">';
-        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
-    }
-    else if (target.type === "Moxie") {
-        BuffManager.generateBuff('BM903C',thisMob,combatParams.power);
-        thisMob.image = '<img src="/assets/images/enemies/B903C.gif">';
-        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
-    }
-}
-
-SkillManager.skillEffects['SM903B'] = function (combatParams) {
-    //PAINTBRUSH KNIGHT - MASTERPIECE
-    const thisMob = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
-    thisMob.image = '<img src="/assets/images/enemies/B903.gif">';
-    $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
-    if (thisMob.hasBuff("BM903A")) {
-        BuffManager.removeBuff("BM903A",thisMob);
-        BuffManager.generateBuff("BM903D",thisMob,combatParams.power);
-    }
-    else if (thisMob.hasBuff("BM903B")) {
-        const stacks = thisMob.getBuffStacks("BM903E");
-        BuffManager.removeBuff("BM903B",thisMob);
-        const healAmt = Math.floor(combatParams.power*(1+stacks*0.1));
-        thisMob.heal(healAmt);
-        BuffManager.generateBuff("BM903E",thisMob,combatParams.power);
-    }
-    else if (thisMob.hasBuff("BM903C")) {
-        BuffManager.removeBuff("BM903C",thisMob);
-        const buffTarget = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES)[0];
-        BuffManager.generateBuff("BM903F",buffTarget,combatParams.power);
-    }
+    const hps = targets.map(t=>t.hp).reduce((a,b)=>a+b,0);
+    const equalizedHP = Math.floor(hps/targets.length);
+    targets.forEach(target => {
+        target.setHP(equalizedHP);
+    });
 }
 
 SkillManager.skillEffects['SM904'] = function (combatParams) {
@@ -480,23 +400,96 @@ SkillManager.skillEffects['SM904C'] = function (combatParams) {
     //lol it does nothing
 }
 
+
+
+SkillManager.skillEffects['SM905A'] = function (combatParams) {
+    //PAINTBRUSH KNIGHT - CANVAS
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    const thisMob = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
+    if (this.state === undefined || this.state === targets.length-1) this.state = 0;
+    else this.state += 1;
+    const target = targets[this.state];
+    target.takeAttack(combatParams);
+    if (target.type === "Might") {
+        BuffManager.generateBuff('BM905A',thisMob,combatParams.power);
+        thisMob.image = '<img src="/assets/images/enemies/B905A.gif">';
+        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
+    }
+    else if (target.type === "Mind") {
+        BuffManager.generateBuff('BM905B',thisMob,combatParams.power);
+        thisMob.image = '<img src="/assets/images/enemies/B905B.gif">';
+        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
+    }
+    else if (target.type === "Moxie") {
+        BuffManager.generateBuff('BM905C',thisMob,combatParams.power);
+        thisMob.image = '<img src="/assets/images/enemies/B905C.gif">';
+        $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
+    }
+}
+
+SkillManager.skillEffects['SM905B'] = function (combatParams) {
+    //PAINTBRUSH KNIGHT - MASTERPIECE
+    const thisMob = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
+    thisMob.image = '<img src="/assets/images/enemies/B905.gif">';
+    $("#mobImage"+thisMob.uniqueid).html(thisMob.image);
+    if (thisMob.hasBuff("BM905A")) {
+        BuffManager.removeBuff("BM905A",thisMob);
+        BuffManager.generateBuff("BM905D",thisMob,combatParams.power);
+    }
+    else if (thisMob.hasBuff("BM905B")) {
+        const stacks = thisMob.getBuffStacks("BM905E");
+        BuffManager.removeBuff("BM905B",thisMob);
+        const healAmt = Math.floor(combatParams.power*(1+stacks*0.1));
+        thisMob.heal(healAmt);
+        BuffManager.generateBuff("BM905E",thisMob,combatParams.power);
+    }
+    else if (thisMob.hasBuff("BM905C")) {
+        BuffManager.removeBuff("BM905C",thisMob);
+        const buffTarget = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES)[0];
+        BuffManager.generateBuff("BM905F",buffTarget,combatParams.power);
+    }
+}
+
+
+
+SkillManager.skillEffects['SM906'] = function (combatParams) {
+    //Phoenix Fire - Phoenix
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        BuffManager.generateBuff('BM906',target,combatParams.power);
+    });
+}
+
+SkillManager.skillEffects['SM906A'] = function (combatParams) {
+    //lol it does nothing
+}
+
+SkillManager.skillEffects['SM906B'] = function (combatParams) {
+    const target = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
+    target.state = null;
+    target.image = '<img src="/assets/images/enemies/B906.gif">';
+    $("#mobImage"+target.uniqueid).html(target.image);
+    target.playbook = PlaybookManager.generatePlayBookFromSkills(target.skill1,target.skill2,target.skill3,target.skill4);
+    refreshSkillUnit(target);
+    BuffManager.removeBuff('BM906A',target)
+    BuffManager.generateBuff('BM906B',target,0);
+    target.healPercent(100);
+}
+
+
+
   //--------------------//
  //   PASSIVE SKILLS   //
 //--------------------//
 
-SkillManager.skillEffects['SMP902'] = function (type,target) {
-    //Rising Phoenix - Phoenix
-    if (type !== "onTurn") return;
-    if (target.hp > target.maxHP()/4 || target.state !== null) return;
-    target.state = "egg";
-    target.image = '<img src="/assets/images/enemies/B902A.gif">';
-    $("#mobImage"+target.uniqueid).html(target.image);
-    target.playbook = PlaybookManager.generatePlayBookFromSkills("SM902A","SM902A","SM902A","SM902B");
-    refreshSkillUnit(target);
-    BuffManager.generateBuff('BM902A',target,0);
+SkillManager.skillEffects['SMP902'] = function (type,target,attack,skillParams) {
+    //Spiky Self - Cactus
+    if (type !== "initial") return;
+    BuffManager.generateBuff("BM902",target,skillParams.powMod*target.pow);
 }
 
-SkillManager.skillEffects['SMP904A'] = function (type,target,attack) {
+SkillManager.skillEffects['SMP904A'] = function (type,target,attack,skillParams) {
     if (type !== "dead" || target.state !== null) return;
     //BONE DEATH - DRY BONES
     const lichDead = attack.enemies.find(m=>m.id==="B904").dead();
@@ -509,4 +502,16 @@ SkillManager.skillEffects['SMP904A'] = function (type,target,attack) {
     target.playbook = PlaybookManager.generatePlayBookFromSkills("SM904C","SM904C","SM904C","SM904B");
     refreshSkillUnit(target);
     BuffManager.generateBuff('BM904A',target,0);
+}
+
+SkillManager.skillEffects['SMP906'] = function (type,target,attack,skillParams) {
+    //Rising Phoenix - Phoenix
+    if (type !== "onTurn") return;
+    if (target.hp > target.maxHP()/4 || target.state !== null) return;
+    target.state = "egg";
+    target.image = '<img src="/assets/images/enemies/B906A.gif">';
+    $("#mobImage"+target.uniqueid).html(target.image);
+    target.playbook = PlaybookManager.generatePlayBookFromSkills("SM906A","SM906A","SM906A","SM906B");
+    refreshSkillUnit(target);
+    BuffManager.generateBuff('BM906A',target,0);
 }

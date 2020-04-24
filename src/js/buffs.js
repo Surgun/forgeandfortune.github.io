@@ -55,6 +55,7 @@ class Buff {
     maxHP() { return 0; }
     mark() { return false; }
     debuffImmune() { return false; }
+    thorns() { return 0; }
 }
 
 const BuffManager = {
@@ -225,80 +226,8 @@ class BM902 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    onHitting() {
-        this.target.takeDamage(this.power*this.stacks);
-    }
-}
-
-class BM902A extends Buff {
-    constructor (buffTemplate,target,power) {
-        super(buffTemplate,target,power);
-    }
-    getProtection() {
-        return 0.75;
-    }
-}
-
-class BM902B extends Buff {
-    constructor (buffTemplate,target,power) {
-        super(buffTemplate,target,power);
-    }
-    maxHP() {
-        return -Math.floor(this.target.hpmax/10)*this.stacks;
-    }
-}
-
-class BM903A extends Buff {
-    constructor (buffTemplate,target,power) {
-        super(buffTemplate,target,power);
-    }
-    getVulnerability(attacker) {
-        if (attacker.type === "Might") return 1;
-        return 0;
-    }
-}
-
-class BM903B extends Buff {
-    constructor (buffTemplate,target,power) {
-        super(buffTemplate,target,power);
-    }
-    getVulnerability(attacker) {
-        if (attacker.type === "Mind") return 1;
-        return 0;
-    }
-}
-
-class BM903C extends Buff {
-    constructor (buffTemplate,target,power) {
-        super(buffTemplate,target,power);
-    }
-    getVulnerability(attacker) {
-        if (attacker.type === "Moxie") return 1;
-        return 0;
-    }
-}
-
-class BM903D extends Buff {
-    constructor (buffTemplate,target,power) {
-        super(buffTemplate,target,power);
-    }
-    getProtection() {
-        return this.stacks * 0.1
-    }
-}
-
-class BM903E extends Buff {
-    constructor (buffTemplate,target,power) {
-        super(buffTemplate,target,power);
-    }
-}
-
-class BM903F extends Buff {
-    constructor (buffTemplate,target,power) {
-        super(buffTemplate,target,power);
-    }
-    getVulnerability() {
-        return this.stacks * 0.2;
+    thorns() {
+        return this.power;
     }
 }
 
@@ -314,6 +243,87 @@ class BM904A extends Buff {
     }
 }
 
+class BM905A extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability(attacker) {
+        if (attacker.type === "Might") return 1;
+        return 0;
+    }
+}
+
+class BM905B extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability(attacker) {
+        if (attacker.type === "Mind") return 1;
+        return 0;
+    }
+}
+
+class BM905C extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability(attacker) {
+        if (attacker.type === "Moxie") return 1;
+        return 0;
+    }
+}
+
+class BM905D extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return this.stacks * 0.1
+    }
+}
+
+class BM905E extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+}
+
+class BM905F extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getVulnerability() {
+        return this.stacks * 0.2;
+    }
+}
+
+class BM906 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    onHitting() {
+        this.target.takeDamage(this.power*this.stacks);
+    }
+}
+
+class BM906A extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 0.75;
+    }
+}
+
+class BM906B extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    maxHP() {
+        return -Math.floor(this.target.hpmax/10)*this.stacks;
+    }
+}
+
 const BuffLookup = {
     B0010,
     B0020,
@@ -326,13 +336,14 @@ const BuffLookup = {
     BM102,
     BM200,
     BM902,
-    BM902A,
-    BM902B,
-    BM903A,
-    BM903B,
-    BM903C,
-    BM903D,
-    BM903E,
-    BM903F,
     BM904A,
+    BM905A,
+    BM905B,
+    BM905C,
+    BM905D,
+    BM905E,
+    BM905F,
+    BM906,
+    BM906A,
+    BM906B,
 }

@@ -170,7 +170,7 @@
   },
   {
     "id": "B902",
-    "name": "Flustered Phoenix",
+    "name": "Cactus",
     "hpMod": 2500,
     "powMod": 300,
     "protection": 0,
@@ -183,14 +183,14 @@
   },
   {
     "id": "B903",
-    "name": "Paintbrush Knight",
+    "name": "Fifth Element",
     "hpMod": 22500,
     "powMod": 750,
     "protection": 0,
-    "skill1": "SM903A",
+    "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
-    "skill4": "SM903B",
+    "skill4": "SM903",
     "passiveSkill": null,
     "event": "boss"
   },
@@ -205,6 +205,32 @@
     "skill3": "SM904",
     "skill4": "SM904",
     "passiveSkill": null,
+    "event": "boss"
+  },
+  {
+    "id": "B905",
+    "name": "Paintbrush Knight",
+    "hpMod": 22500,
+    "powMod": 750,
+    "protection": 0,
+    "skill1": "SM905A",
+    "skill2": "S0000",
+    "skill3": "S0000",
+    "skill4": "SM905B",
+    "passiveSkill": null,
+    "event": "boss"
+  },
+  {
+    "id": "B906",
+    "name": "Cinder Phoenix",
+    "hpMod": 2500,
+    "powMod": 300,
+    "protection": 0,
+    "skill1": "S0000",
+    "skill2": "SM906",
+    "skill3": "S0000",
+    "skill4": "S0000",
+    "passiveSkill": "SMP906",
     "event": "boss"
   },
   {

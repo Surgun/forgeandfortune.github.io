@@ -168,6 +168,13 @@
     "type": "worker"
   },
   {
+    "id": "equipment_remove",
+    "title": "Remove Slotted Equipment",
+    "description": "This will remove the currently equipped item on this slot and return it to your inventory. ",
+    "icon": "<i class=\"fas fa-times\"></i>",
+    "type": "static"
+  },
+  {
     "id": "skill_desc",
     "title": "#name#",
     "description": "#description#</br><span class=\"tooltipStat tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span> <span class=\"tooltipStat tooltipSPower\"><i class=\"fas fa-book-spells statTECH\"></i> #techPercent#</span>",
@@ -241,7 +248,7 @@
     "id": "cancel_craft",
     "title": "Cancel Crafting",
     "description": "Cancel crafting this recipe. Materials will be refunded.",
-    "icon": null,
+    "icon": "<i class=\"fas fa-times\"></i>",
     "type": "static"
   },
   {
@@ -292,12 +299,5 @@
     "description": "#description#",
     "icon": "#icon#",
     "type": "buff"
-  },
-  {
-    "id": "hero_playbook",
-    "title": "Hero Playbook",
-    "description": "View and/or change your current hero playbook.",
-    "icon": "<i class=\"fas fa-book\"></i>",
-    "type": "static"
   }
 ]

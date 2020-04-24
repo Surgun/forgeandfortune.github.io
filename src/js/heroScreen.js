@@ -158,17 +158,6 @@ function showHeroDetails() {
     $heroExamineDescription.html(hero.description);
     $heroClassText.html(hero.class);
     $heroExaminePlaybooks.empty();
-    // hero.playbooks.forEach(playbookID => {
-    //     const playbook = PlaybookManager.idToPlaybook(playbookID);
-    //     const d = $("<div/>").addClass("playbooksHeroContainer").appendTo($heroExaminePlaybooks);
-    //         $("<div/>").addClass("playbookName").html(playbook.name).appendTo(d);
-    //     const d1 = $("<div/>").addClass("playbookSkillsContainer").appendTo(d);
-    //     if (hero.playbook.id === playbookID) d.addClass("playbookSelected");
-    //     playbook.skillIDs().forEach(skillID => {
-    //         const skill = SkillManager.idToSkill(skillID);
-    //         $("<div/>").addClass("heroSelectSkill tooltip").attr({"data-tooltip":"skill_desc","data-tooltip-value":skill.id}).html(skill.icon).appendTo(d1);
-    //     });
-    // });
     generateHeroPlaybooks(hero).appendTo($heroExaminePlaybooks);
 }
 
@@ -221,9 +210,14 @@ function refreshTrinketInventory() {
     if (HeroManager.heroView === null) return;
     $heroEquipTrinketAll.empty();
     const hero = HeroManager.idToHero(HeroManager.heroView);
-    if (Inventory.listbyType("Trinkets").length === 0) $("<div/>").addClass("heroUpgradeTrinketsText").html("No Trinkets Available").appendTo($heroEquipTrinketAll);
+    const trinketsCardsHeadingContainer = $('<div/>').addClass('equipCardsTrinketsHeadingContainer').appendTo($heroEquipTrinketAll);
+        const headingDetails = $('<div/>').addClass('headingDetails').appendTo(trinketsCardsHeadingContainer);
+            $('<div/>').addClass('headingTitle').html("Select Your Hero Trinket").appendTo(headingDetails);
+            $('<div/>').addClass('headingDescription').html("Equip your hero with the following trinkets.").appendTo(headingDetails);
+    const trinketsGearContainer = $('<div/>').addClass('trinketsGearContainer').appendTo($heroEquipTrinketAll);
+    if (Inventory.listbyType("Trinkets").length === 0) $("<div/>").addClass("heroUpgradeTrinketsText").html("You have no Trinkets available to equip in this slot.").appendTo($heroEquipTrinketAll);
     Inventory.listbyType("Trinkets").forEach(trinket => {
-        heroEqupCard(hero,trinket).appendTo($heroEquipTrinketAll);
+        trinketsGearContainer.append(heroEquipCard(hero,trinket));
     });
 }
 
@@ -235,21 +229,32 @@ function heroCurrentGearEquip(hero,gearSlot) {
     if (hero.equipUpgradeAvailable(type)) d.addClass("equipUpgradeAvailable")
     $("<div/>").addClass("heroExamineEquipmentSlot").html(type).appendTo(d);
     if (gear === null) {
-        $("<div/>").addClass("heroExamineEquipmentEquip itemName").addClass("R0").html(type).appendTo(d);
+        const d1 = $("<div/>").addClass("heroExamineEquipmentEquip emptyGearSlot").appendTo(d);
+            $("<div/>").addClass("emptyGearSlotIcon").html(miscIcons.emptySlot).appendTo(d1);
+            $("<div/>").addClass("emptyGearSlotTitle").html('Empty Slot').appendTo(d1);
+            $("<div/>").addClass("emptyGearSlotLevel equipLevel").appendTo(d1);
+            $("<div/>").addClass("emptyGearSlotRarity equipRarity").appendTo(d1);
+            const equipStats = $("<div/>").addClass("emptyEquipStats").appendTo(d1);
+            for (let i = 0; i < 2; i++) {
+                const ed = $("<div/>").addClass('gearStat').appendTo(equipStats);
+                $("<div/>").addClass(`empty_img`).appendTo(ed);
+                $("<div/>").addClass(`empty_integer statValue`).appendTo(ed);
+            }
         return d;
     }
     const d1 = $("<div/>").addClass("heroExamineEquipmentEquip itemName").addClass("R"+gear.rarity).html(gear.picName()).appendTo(d);
     const d2 = $("<div/>").addClass("equipLevel").appendTo(d1);
         $("<div/>").addClass("level_text").html(`LVL`).appendTo(d2);
         $("<div/>").addClass("level_integer").html(`${gear.lvl}`).appendTo(d2);
+    $("<div/>").addClass("equipRarity itemRarity").addClass(`RT${gear.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[gear.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d1);
     const equipStats = $("<div/>").addClass("equipStats").appendTo(d1);
     for (const [stat, val] of Object.entries(gear.itemStat())) {
         if (val === 0) continue;
-        const ed = $("<div/>").addClass("gearStatContainer").appendTo(equipStats);
-            $("<div/>").addClass('gearStat').html(`${miscIcons[stat]}${val}`).appendTo(ed);
+        const ed = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": stat}).appendTo(equipStats);
+            $("<div/>").addClass(`${stat}_img`).html(miscIcons[stat]).appendTo(ed);
+            $("<div/>").addClass(`${stat}_integer statValue`).html(val).appendTo(ed);
     }
-    const d3 = $("<div/>").addClass("heroExamineEquipmentEquipTypes").html(type).appendTo(d);
-        $("<div/>").addClass("heroUnequipSlot").data({"heroID":hero.id,"gearType":type}).html('<i class="fas fa-times"></i> Unslot Equipment').appendTo(d3);
+    $("<div/>").attr({"data-tooltip": "equipment_remove"}).addClass("heroUnequipSlot tooltip").data({"heroID":hero.id,"gearType":type}).html('<i class="fas fa-times"></i>').appendTo(d);
     return d;
 }
 
@@ -294,8 +299,12 @@ function examineHeroPossibleEquip(heroID,gearType,skipAnimation) {
     examineGearTypesCache = gearType;
     $heroEquipmentList.empty();
     //cycle through everything in bp's and make the div for it
-    const equipCardsContainer = $('<div/>').addClass('EquipmentCardsContainer').appendTo($heroEquipmentList);
-        $('<div/>').addClass('EquipmentCardsHeader').html("Select Your Equipment").appendTo(equipCardsContainer);
+    const equipCardsHeadingContainer = $('<div/>').addClass('equipCardsHeadingContainer').appendTo($heroEquipmentList);
+        const headingDetails = $('<div/>').addClass('headingDetails').appendTo(equipCardsHeadingContainer);
+            $('<div/>').addClass('headingTitle').html("Select Your Hero Equipment").appendTo(headingDetails);
+            $('<div/>').addClass('headingDescription').html("Equip your hero with the following items.").appendTo(headingDetails);
+        $('<div/>').attr({id: 'equipRecipeButton'}).data("recipeType", examineGearTypesCache).addClass('equipRecipeButton actionButton').html(`View ${examineGearTypesCache} Recipes`).appendTo(equipCardsHeadingContainer);
+    const equipCardsContainer = $('<div/>').addClass('equipCardsContainer').appendTo($heroEquipmentList);
     // Check if gear available to display in list
     if (Inventory.listbyType(gearType).length === 0) {
         $('<div/>').addClass('noGearMessage').html(`You have no gear available to equip in this slot.`).appendTo($heroEquipmentList);
@@ -307,27 +316,41 @@ function examineHeroPossibleEquip(heroID,gearType,skipAnimation) {
     Inventory.listbyType(gearType).forEach(itemContainer => {
         if (currentTypes.includes(itemContainer.uniqueID())) return;
         currentTypes.push(itemContainer.uniqueID());
-        equipCardsContainer.append(heroEqupCard(hero,itemContainer));
+        equipCardsContainer.append(heroEquipCard(hero,itemContainer));
     });
     //returns a value if this slot has an upgrade available
     return upgradeAvaialable;
 };
 
 //compares a card to see if it's actually an upgrade versus what's equipped before returning
-function heroEqupCard(hero, itemContainer) {
+function heroEquipCard(hero, itemContainer) {
     const equippedItem = hero.getSlot(itemContainer.type).gear;
     const card = $('<div/>').addClass('gearItem').addClass("R"+itemContainer.rarity).data({"heroID":hero.id,"containerID":itemContainer.containerID});
         $('<div/>').addClass('gearItemName itemName').html(itemContainer.picName()).appendTo(card);
         $('<div/>').addClass('gearItemLevel').html(itemContainer.itemLevel()).appendTo(card);
+        $("<div/>").addClass("gearItemRarity itemRarity").addClass(`RT${itemContainer.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[itemContainer.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(card);
     const equippedStats = equippedItem ? equippedItem.itemStat() : blankItemStat();
+    const d3 = $('<div/>').addClass('equipStats').appendTo(card);
     for (const [stat, val] of Object.entries(itemContainer.itemStat())) {
         const deltaStat = val - equippedStats[stat];
         if (deltaStat === 0 && val === 0) continue;
-        const d3 = $('<div/>').addClass('gearStatContainer').appendTo(card);
         const d3a = $('<div/>').addClass('gearStat tooltip').attr("data-tooltip", stat).appendTo(d3);
-        if (deltaStat > 0) d3a.addClass("gearStatPositive").html(`${miscIcons[stat]}${val} (+${deltaStat})`);
-        else if (deltaStat < 0) d3a.addClass("gearStatNegative").html(`${miscIcons[stat]}${val} (${deltaStat})`);
-        else d3a.html(`${miscIcons[stat]}${val}`);
+            const d3a1 = $("<div/>").addClass(`${stat}_img`).appendTo(d3a);
+            const d3a2 = $("<div/>").addClass(`${stat}_integer statValue`).appendTo(d3a);
+        if (deltaStat > 0) {
+            d3a.addClass("gearStatPositive");
+            d3a1.html(miscIcons[stat]);
+            d3a2.html(`${val} (+${deltaStat})`);
+        }
+        else if (deltaStat < 0) {
+            d3a.addClass("gearStatNegative");
+            d3a1.html(miscIcons[stat]);
+            d3a2.html(`${val} (${deltaStat})`);
+        }
+        else {
+            d3a1.html(miscIcons[stat]);
+            d3a2.html(`${val}`);
+        }
     }
     return card;
 }
@@ -346,6 +369,21 @@ function updateHeroStats() {
         $(heroCard).find(".tech_integer").html(hero.getTech());
     });
 }
+
+function equipHeroRecipesButton(e) {
+    tabClick(e, 'recipesTab');
+    const type = $(e.target).data("recipeType");
+    recipeList.recipeFilterType = type;
+    recipeList.recipeFilterString = "";
+    recipeFilterList();
+    $(".recipeSelect").removeClass("selected");
+    $(`#rf${type}`).addClass("selected");  
+}
+
+$(document).on('click',".equipRecipeButton", (e) => {
+    e.preventDefault();
+    equipHeroRecipesButton(e);
+});
 
 $(document).on('click',".heroBackButton", (e) => {
     e.preventDefault();
@@ -411,6 +449,7 @@ $(document).on('click', "div.gearItem", (e) => {
     clearExaminePossibleEquip();
     updateHeroStats();
     refreshSmithInventory(); //because hero gear is here
+    destroyTooltip();
 });
 
 
@@ -424,6 +463,7 @@ $(document).on('click', ".heroUnequipSlot", (e) => {
     examineHeroPossibleEquip(heroID,gearType);
     updateHeroStats();
     refreshSmithInventory(); //because hero gear is here
+    destroyTooltip();
 });
 
 $(document).on('click', ".heroGearUpgradeSlotButton", (e) => {

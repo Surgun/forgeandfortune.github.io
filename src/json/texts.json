@@ -53,5 +53,135 @@
     "tid": "adventure_launch_floor_boss",
     "en": "Start Boss Fight",
     "es": null
+  },
+  {
+    "tid": "equipment_select_title",
+    "en": "Select Your Hero Equipment",
+    "es": null
+  },
+  {
+    "tid": "equipment_select_desc",
+    "en": "Equip your hero with items from your inventory.",
+    "es": null
+  },
+  {
+    "tid": "trinket_select_title",
+    "en": "Select Your Hero Trinket",
+    "es": null
+  },
+  {
+    "tid": "trinket_select_desc",
+    "en": "Equip your hero with trinkets from your inventory.",
+    "es": null
+  },
+  {
+    "tid": "no_equipment_desc",
+    "en": "No equipment available to equip in this slot.",
+    "es": null
+  },
+  {
+    "tid": "no_trinkets_desc",
+    "en": "No trinkets available to equip in this slot.",
+    "es": null
+  },
+  {
+    "tid": "equipment_recipes_button",
+    "en": "View {0} Recipes",
+    "es": null
+  },
+  {
+    "tid": "type_arcane",
+    "en": "Arcane",
+    "es": null
+  },
+  {
+    "tid": "type_armor",
+    "en": "Armor",
+    "es": null
+  },
+  {
+    "tid": "type_belts",
+    "en": "Belts",
+    "es": null
+  },
+  {
+    "tid": "type_cloaks",
+    "en": "Cloaks",
+    "es": null
+  },
+  {
+    "tid": "type_gauntlets",
+    "en": "Gauntlets",
+    "es": null
+  },
+  {
+    "tid": "type_gloves",
+    "en": "Gloves",
+    "es": null
+  },
+  {
+    "tid": "type_hats",
+    "en": "Hats",
+    "es": null
+  },
+  {
+    "tid": "type_heavy",
+    "en": "Heavy",
+    "es": null
+  },
+  {
+    "tid": "type_helmets",
+    "en": "Helmets",
+    "es": null
+  },
+  {
+    "tid": "type_light",
+    "en": "Light",
+    "es": null
+  },
+  {
+    "tid": "type_masks",
+    "en": "Masks",
+    "es": null
+  },
+  {
+    "tid": "type_pendants",
+    "en": "Pendants",
+    "es": null
+  },
+  {
+    "tid": "type_rings",
+    "en": "Rings",
+    "es": null
+  },
+  {
+    "tid": "type_shields",
+    "en": "Shields",
+    "es": null
+  },
+  {
+    "tid": "type_shoes",
+    "en": "Shoes",
+    "es": null
+  },
+  {
+    "tid": "type_thrown",
+    "en": "Thrown",
+    "es": null
+  },
+  {
+    "tid": "type_tomes",
+    "en": "Tomes",
+    "es": null
+  },
+  {
+    "tid": "type_vests",
+    "en": "Vests",
+    "es": null
+  },
+  {
+    "tid": "type_trinkets",
+    "en": "Trinkets",
+    "es": null
   }
 ]

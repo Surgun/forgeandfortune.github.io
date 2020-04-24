@@ -256,7 +256,8 @@ function createArray(length) {
 
 function displayText(id) {
     const lang = settings.lang || "en";
-    const string = globalTexts.find(text => text.tid === id);
+    const sanitizedID = id.toLowerCase().toString();
+    const string = globalTexts.find(text => text.tid === sanitizedID);
     // Return ID you attempted to pull, useful for finding missing or incorrect strings.
     if (!string) return `[${id}]`;
     // Return string if ID is found.

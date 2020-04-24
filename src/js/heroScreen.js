@@ -212,10 +212,10 @@ function refreshTrinketInventory() {
     const hero = HeroManager.idToHero(HeroManager.heroView);
     const trinketsCardsHeadingContainer = $('<div/>').addClass('equipCardsTrinketsHeadingContainer').appendTo($heroEquipTrinketAll);
         const headingDetails = $('<div/>').addClass('headingDetails').appendTo(trinketsCardsHeadingContainer);
-            $('<div/>').addClass('headingTitle').html("Select Your Hero Trinket").appendTo(headingDetails);
-            $('<div/>').addClass('headingDescription').html("Equip your hero with the following trinkets.").appendTo(headingDetails);
+            $('<div/>').addClass('headingTitle').html(displayText("trinket_select_title")).appendTo(headingDetails);
+            $('<div/>').addClass('headingDescription').html(displayText("trinket_select_desc")).appendTo(headingDetails);
     const trinketsGearContainer = $('<div/>').addClass('trinketsGearContainer').appendTo($heroEquipTrinketAll);
-    if (Inventory.listbyType("Trinkets").length === 0) $("<div/>").addClass("heroUpgradeTrinketsText").html("You have no Trinkets available to equip in this slot.").appendTo($heroEquipTrinketAll);
+    if (Inventory.listbyType("Trinkets").length === 0) $("<div/>").addClass("heroUpgradeTrinketsText").html(displayText("no_trinkets_desc")).appendTo($heroEquipTrinketAll);
     Inventory.listbyType("Trinkets").forEach(trinket => {
         trinketsGearContainer.append(heroEquipCard(hero,trinket));
     });
@@ -227,7 +227,7 @@ function heroCurrentGearEquip(hero,gearSlot) {
     const gear = gearSlot.gear;
     const d = $("<div/>").addClass("heroExamineEquipment").data({"heroID":hero.id,"gearType":type})
     if (hero.equipUpgradeAvailable(type)) d.addClass("equipUpgradeAvailable")
-    $("<div/>").addClass("heroExamineEquipmentSlot").html(type).appendTo(d);
+    $("<div/>").addClass("heroExamineEquipmentSlot").html(displayText(`type_${type}`)).appendTo(d);
     if (gear === null) {
         const d1 = $("<div/>").addClass("heroExamineEquipmentEquip emptyGearSlot").appendTo(d);
             $("<div/>").addClass("emptyGearSlotIcon").html(miscIcons.emptySlot).appendTo(d1);
@@ -301,13 +301,13 @@ function examineHeroPossibleEquip(heroID,gearType,skipAnimation) {
     //cycle through everything in bp's and make the div for it
     const equipCardsHeadingContainer = $('<div/>').addClass('equipCardsHeadingContainer').appendTo($heroEquipmentList);
         const headingDetails = $('<div/>').addClass('headingDetails').appendTo(equipCardsHeadingContainer);
-            $('<div/>').addClass('headingTitle').html("Select Your Hero Equipment").appendTo(headingDetails);
-            $('<div/>').addClass('headingDescription').html("Equip your hero with the following items.").appendTo(headingDetails);
-        $('<div/>').attr({id: 'equipRecipeButton'}).data("recipeType", examineGearTypesCache).addClass('equipRecipeButton actionButton').html(`View ${examineGearTypesCache} Recipes`).appendTo(equipCardsHeadingContainer);
+            $('<div/>').addClass('headingTitle').html(displayText("equipment_select_title")).appendTo(headingDetails);
+            $('<div/>').addClass('headingDescription').html(displayText("equipment_select_desc")).appendTo(headingDetails);
+        $('<div/>').attr({id: 'equipRecipeButton'}).data("recipeType", examineGearTypesCache).addClass('equipRecipeButton actionButton').html(displayText("equipment_recipes_button").replace("{0}", examineGearTypesCache)).appendTo(equipCardsHeadingContainer);
     const equipCardsContainer = $('<div/>').addClass('equipCardsContainer').appendTo($heroEquipmentList);
     // Check if gear available to display in list
     if (Inventory.listbyType(gearType).length === 0) {
-        $('<div/>').addClass('noGearMessage').html(`You have no gear available to equip in this slot.`).appendTo($heroEquipmentList);
+        $('<div/>').addClass('noGearMessage').html(displayText("no_equipment_desc")).appendTo($heroEquipmentList);
         return;
     }
     let upgradeAvaialable = false;

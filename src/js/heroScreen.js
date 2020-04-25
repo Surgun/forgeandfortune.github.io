@@ -249,7 +249,8 @@ function heroCurrentGearEquip(hero,gearSlot) {
             }
         return d;
     }
-    const d1 = $("<div/>").addClass("heroExamineEquipmentEquip itemName").addClass("R"+gear.rarity).html(gear.picName()).appendTo(d);
+    const d1 = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+gear.rarity).appendTo(d);
+        $("<div/>").addClass("itemName").html(gear.picName()).appendTo(d1);
     const d2 = $("<div/>").addClass("equipLevel").appendTo(d1);
         $("<div/>").addClass("level_text").html(`LVL`).appendTo(d2);
         $("<div/>").addClass("level_integer").html(`${gear.lvl}`).appendTo(d2);

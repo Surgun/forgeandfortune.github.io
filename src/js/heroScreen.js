@@ -63,7 +63,14 @@ function refreshHeroOverview() {
     HeroManager.heroes.filter(h=>h.owned).forEach(hero => {
         createHeroOverlayCard(hero).appendTo($overviewContainer);
     });
+    if (Shop.alreadyPurchased("AL3007")) $heroTabUpgrade.show();
+    else $heroTabUpgrade.hide();
+    if (TinkerManager.lvl > 0) $heroTabTrinket.show();
+    else $heroTabTrinket.hide();
 }
+
+const $heroTabUpgrade = $("#heroTabUpgrade");
+const $heroTabTrinket = $("#heroTabTrinket");
 
 //populate the sidebar hero list
 function initializeHeroList() {

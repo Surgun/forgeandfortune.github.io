@@ -98,7 +98,7 @@ class tinkerCommand {
 
 const TinkerManager = {
     commands : [],
-    lvl : 1,
+    lvl : 0,
     dT002 : 0,
     dT003 : 0,
     dT004 : 0,

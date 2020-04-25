@@ -212,6 +212,7 @@ function showHeroTrinket() {
     const hero = HeroManager.idToHero(HeroManager.heroView);
     $heroEquipTrinket.empty();
     $heroEquipTrinket.html(heroCurrentGearEquip(hero,hero.trinket()));
+    $(".heroExamineEquipment:first-of-type").addClass("selected");
     refreshTrinketInventory();
 }
 

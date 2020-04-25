@@ -82,7 +82,7 @@
   {
     "id": "S2020",
     "name": "Snipe",
-    "description": "Attack enemy with lowest HP. If less than 50% deal additional tech damage.",
+    "description": "Attack enemy with lowest HP. If less than 50% deal additional damage",
     "icon": "<i class=\"fas fa-crosshairs\"></i>",
     "powMod": 1,
     "techMod": 1
@@ -233,15 +233,15 @@
   },
   {
     "id": "SMP902",
-    "name": "Spiky Skin",
+    "name": "Prickly Personality",
     "description": "Attacking this enemy damages the hero",
     "icon": "<i class=\"fal fa-cactus\"></i>",
-    "powMod": 1,
+    "powMod": 0.2,
     "techMod": 0
   },
   {
     "id": "SM902",
-    "name": "1000 Needles",
+    "name": "Needle Barrage",
     "description": "Deals 500 damage to the first and second heroes",
     "icon": "<i class=\"fad fa-wand\"></i>",
     "powMod": 1,

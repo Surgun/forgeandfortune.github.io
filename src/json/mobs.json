@@ -170,9 +170,9 @@
   },
   {
     "id": "B902",
-    "name": "Cactus",
-    "hpMod": 2500,
-    "powMod": 300,
+    "name": "Caddish Cactus",
+    "hpMod": 8000,
+    "powMod": 200,
     "protection": 0,
     "skill1": "S0000",
     "skill2": "SM902",

@@ -57,7 +57,7 @@
     "repReq": 7,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -88,7 +88,7 @@
     "repReq": 10,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -105,7 +105,7 @@
       "G004"
     ],
     "mcost": {
-      "M304": 1
+      "M304": 2
     },
     "smithCost": "M304",
     "pts": 16,
@@ -137,7 +137,7 @@
       "G004"
     ],
     "mcost": {
-      "M105": 1
+      "M105": 3
     },
     "smithCost": "M105",
     "pts": 22,
@@ -169,7 +169,7 @@
       "G004"
     ],
     "mcost": {
-      "M206": 1
+      "M206": 4
     },
     "smithCost": "M206",
     "pts": 31,
@@ -202,7 +202,7 @@
       "G001"
     ],
     "mcost": {
-      "M107": 1
+      "M107": 5
     },
     "smithCost": "M107",
     "pts": 43,
@@ -235,7 +235,7 @@
       "G001"
     ],
     "mcost": {
-      "M308": 1
+      "M308": 6
     },
     "smithCost": "M308",
     "pts": 60,
@@ -268,7 +268,7 @@
       "G001"
     ],
     "mcost": {
-      "M209": 1
+      "M209": 7
     },
     "smithCost": "M209",
     "pts": 83,
@@ -301,7 +301,7 @@
       "G001"
     ],
     "mcost": {
-      "M110": 1
+      "M110": 8
     },
     "smithCost": "M110",
     "pts": 117,
@@ -376,7 +376,7 @@
     "repReq": 7,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -407,7 +407,7 @@
     "repReq": 10,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -424,7 +424,7 @@
       "G004"
     ],
     "mcost": {
-      "M204": 1
+      "M204": 2
     },
     "smithCost": "M204",
     "pts": 16,
@@ -456,7 +456,7 @@
       "G004"
     ],
     "mcost": {
-      "M305": 1
+      "M305": 3
     },
     "smithCost": "M305",
     "pts": 22,
@@ -488,7 +488,7 @@
       "G004"
     ],
     "mcost": {
-      "M106": 1
+      "M106": 4
     },
     "smithCost": "M106",
     "pts": 31,
@@ -521,7 +521,7 @@
       "G003"
     ],
     "mcost": {
-      "M207": 1
+      "M207": 5
     },
     "smithCost": "M207",
     "pts": 43,
@@ -554,7 +554,7 @@
       "G003"
     ],
     "mcost": {
-      "M108": 1
+      "M108": 6
     },
     "smithCost": "M108",
     "pts": 60,
@@ -587,7 +587,7 @@
       "G003"
     ],
     "mcost": {
-      "M309": 1
+      "M309": 7
     },
     "smithCost": "M309",
     "pts": 83,
@@ -620,7 +620,7 @@
       "G003"
     ],
     "mcost": {
-      "M310": 1
+      "M310": 8
     },
     "smithCost": "M310",
     "pts": 117,
@@ -695,7 +695,7 @@
     "repReq": 4,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -726,7 +726,7 @@
     "repReq": 11,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -743,7 +743,7 @@
       "G001"
     ],
     "mcost": {
-      "M104": 1
+      "M104": 2
     },
     "smithCost": "M104",
     "pts": 16,
@@ -775,7 +775,7 @@
       "G001"
     ],
     "mcost": {
-      "M205": 1
+      "M205": 3
     },
     "smithCost": "M205",
     "pts": 22,
@@ -807,7 +807,7 @@
       "G001"
     ],
     "mcost": {
-      "M306": 1
+      "M306": 4
     },
     "smithCost": "M306",
     "pts": 31,
@@ -840,7 +840,7 @@
       "G003"
     ],
     "mcost": {
-      "M307": 1
+      "M307": 5
     },
     "smithCost": "M307",
     "pts": 43,
@@ -873,7 +873,7 @@
       "G003"
     ],
     "mcost": {
-      "M208": 1
+      "M208": 6
     },
     "smithCost": "M208",
     "pts": 60,
@@ -906,7 +906,7 @@
       "G003"
     ],
     "mcost": {
-      "M109": 1
+      "M109": 7
     },
     "smithCost": "M109",
     "pts": 83,
@@ -939,7 +939,7 @@
       "G003"
     ],
     "mcost": {
-      "M210": 1
+      "M210": 8
     },
     "smithCost": "M210",
     "pts": 117,
@@ -1014,7 +1014,7 @@
     "repReq": 7,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -1045,7 +1045,7 @@
     "repReq": 10,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -1061,7 +1061,7 @@
       "G002"
     ],
     "mcost": {
-      "M304": 1
+      "M304": 2
     },
     "smithCost": "M304",
     "pts": 16,
@@ -1092,7 +1092,7 @@
       "G002"
     ],
     "mcost": {
-      "M105": 1
+      "M105": 3
     },
     "smithCost": "M105",
     "pts": 22,
@@ -1124,7 +1124,7 @@
       "G004"
     ],
     "mcost": {
-      "M206": 1
+      "M206": 4
     },
     "smithCost": "M206",
     "pts": 31,
@@ -1156,7 +1156,7 @@
       "G004"
     ],
     "mcost": {
-      "M107": 1
+      "M107": 5
     },
     "smithCost": "M107",
     "pts": 43,
@@ -1188,7 +1188,7 @@
       "G004"
     ],
     "mcost": {
-      "M308": 1
+      "M308": 6
     },
     "smithCost": "M308",
     "pts": 60,
@@ -1220,7 +1220,7 @@
       "G004"
     ],
     "mcost": {
-      "M209": 1
+      "M209": 7
     },
     "smithCost": "M209",
     "pts": 83,
@@ -1252,7 +1252,7 @@
       "G004"
     ],
     "mcost": {
-      "M110": 1
+      "M110": 8
     },
     "smithCost": "M110",
     "pts": 117,
@@ -1329,7 +1329,7 @@
     "repReq": 4,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -1360,7 +1360,7 @@
     "repReq": 11,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -1376,7 +1376,7 @@
       "G003"
     ],
     "mcost": {
-      "M304": 1
+      "M304": 2
     },
     "smithCost": "M304",
     "pts": 16,
@@ -1407,7 +1407,7 @@
       "G003"
     ],
     "mcost": {
-      "M105": 1
+      "M105": 3
     },
     "smithCost": "M105",
     "pts": 22,
@@ -1439,7 +1439,7 @@
       "G001"
     ],
     "mcost": {
-      "M206": 1
+      "M206": 4
     },
     "smithCost": "M206",
     "pts": 31,
@@ -1471,7 +1471,7 @@
       "G001"
     ],
     "mcost": {
-      "M107": 1
+      "M107": 5
     },
     "smithCost": "M107",
     "pts": 43,
@@ -1503,7 +1503,7 @@
       "G001"
     ],
     "mcost": {
-      "M308": 1
+      "M308": 6
     },
     "smithCost": "M308",
     "pts": 60,
@@ -1535,7 +1535,7 @@
       "G001"
     ],
     "mcost": {
-      "M209": 1
+      "M209": 7
     },
     "smithCost": "M209",
     "pts": 83,
@@ -1567,7 +1567,7 @@
       "G001"
     ],
     "mcost": {
-      "M110": 1
+      "M110": 8
     },
     "smithCost": "M110",
     "pts": 117,
@@ -1644,7 +1644,7 @@
     "repReq": 5,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -1675,7 +1675,7 @@
     "repReq": 8,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -1691,7 +1691,7 @@
       "G003"
     ],
     "mcost": {
-      "M104": 1
+      "M104": 2
     },
     "smithCost": "M104",
     "pts": 16,
@@ -1722,7 +1722,7 @@
       "G003"
     ],
     "mcost": {
-      "M205": 1
+      "M205": 3
     },
     "smithCost": "M205",
     "pts": 22,
@@ -1754,7 +1754,7 @@
       "G003"
     ],
     "mcost": {
-      "M306": 1
+      "M306": 4
     },
     "smithCost": "M306",
     "pts": 31,
@@ -1786,7 +1786,7 @@
       "G003"
     ],
     "mcost": {
-      "M307": 1
+      "M307": 5
     },
     "smithCost": "M307",
     "pts": 43,
@@ -1818,7 +1818,7 @@
       "G003"
     ],
     "mcost": {
-      "M208": 1
+      "M208": 6
     },
     "smithCost": "M208",
     "pts": 60,
@@ -1850,7 +1850,7 @@
       "G003"
     ],
     "mcost": {
-      "M109": 1
+      "M109": 7
     },
     "smithCost": "M109",
     "pts": 83,
@@ -1882,7 +1882,7 @@
       "G003"
     ],
     "mcost": {
-      "M210": 1
+      "M210": 8
     },
     "smithCost": "M210",
     "pts": 117,
@@ -1959,7 +1959,7 @@
     "repReq": 5,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -1990,7 +1990,7 @@
     "repReq": 8,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -2006,7 +2006,7 @@
       "G001"
     ],
     "mcost": {
-      "M204": 1
+      "M204": 2
     },
     "smithCost": "M204",
     "pts": 16,
@@ -2037,7 +2037,7 @@
       "G001"
     ],
     "mcost": {
-      "M305": 1
+      "M305": 3
     },
     "smithCost": "M305",
     "pts": 22,
@@ -2069,7 +2069,7 @@
       "G002"
     ],
     "mcost": {
-      "M106": 1
+      "M106": 4
     },
     "smithCost": "M106",
     "pts": 31,
@@ -2101,7 +2101,7 @@
       "G002"
     ],
     "mcost": {
-      "M207": 1
+      "M207": 5
     },
     "smithCost": "M207",
     "pts": 43,
@@ -2133,7 +2133,7 @@
       "G002"
     ],
     "mcost": {
-      "M108": 1
+      "M108": 6
     },
     "smithCost": "M108",
     "pts": 60,
@@ -2165,7 +2165,7 @@
       "G002"
     ],
     "mcost": {
-      "M309": 1
+      "M309": 7
     },
     "smithCost": "M309",
     "pts": 83,
@@ -2197,7 +2197,7 @@
       "G002"
     ],
     "mcost": {
-      "M310": 1
+      "M310": 8
     },
     "smithCost": "M310",
     "pts": 117,
@@ -2274,7 +2274,7 @@
     "repReq": 4,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -2305,7 +2305,7 @@
     "repReq": 11,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -2589,7 +2589,7 @@
     "repReq": 5,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -2620,7 +2620,7 @@
     "repReq": 8,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -2904,7 +2904,7 @@
     "repReq": 5,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -2935,7 +2935,7 @@
     "repReq": 10,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -3225,7 +3225,7 @@
     "repReq": 5,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -3256,7 +3256,7 @@
     "repReq": 10,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -3273,7 +3273,7 @@
       "G002"
     ],
     "mcost": {
-      "M204": 1
+      "M204": 2
     },
     "smithCost": "M204",
     "pts": 16,
@@ -3305,7 +3305,7 @@
       "G002"
     ],
     "mcost": {
-      "M305": 1
+      "M305": 3
     },
     "smithCost": "M305",
     "pts": 22,
@@ -3337,7 +3337,7 @@
       "G002"
     ],
     "mcost": {
-      "M106": 1
+      "M106": 4
     },
     "smithCost": "M106",
     "pts": 31,
@@ -3370,7 +3370,7 @@
       "G001"
     ],
     "mcost": {
-      "M207": 1
+      "M207": 5
     },
     "smithCost": "M207",
     "pts": 43,
@@ -3403,7 +3403,7 @@
       "G001"
     ],
     "mcost": {
-      "M108": 1
+      "M108": 6
     },
     "smithCost": "M108",
     "pts": 60,
@@ -3436,7 +3436,7 @@
       "G001"
     ],
     "mcost": {
-      "M309": 1
+      "M309": 7
     },
     "smithCost": "M309",
     "pts": 83,
@@ -3469,7 +3469,7 @@
       "G001"
     ],
     "mcost": {
-      "M310": 1
+      "M310": 8
     },
     "smithCost": "M310",
     "pts": 117,
@@ -3546,7 +3546,7 @@
     "repReq": 6,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -3577,7 +3577,7 @@
     "repReq": 9,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -3594,7 +3594,7 @@
       "G003"
     ],
     "mcost": {
-      "M204": 1
+      "M204": 2
     },
     "smithCost": "M204",
     "pts": 16,
@@ -3626,7 +3626,7 @@
       "G003"
     ],
     "mcost": {
-      "M305": 1
+      "M305": 3
     },
     "smithCost": "M305",
     "pts": 22,
@@ -3658,7 +3658,7 @@
       "G003"
     ],
     "mcost": {
-      "M106": 1
+      "M106": 4
     },
     "smithCost": "M106",
     "pts": 31,
@@ -3691,7 +3691,7 @@
       "G004"
     ],
     "mcost": {
-      "M207": 1
+      "M207": 5
     },
     "smithCost": "M207",
     "pts": 43,
@@ -3724,7 +3724,7 @@
       "G004"
     ],
     "mcost": {
-      "M108": 1
+      "M108": 6
     },
     "smithCost": "M108",
     "pts": 60,
@@ -3757,7 +3757,7 @@
       "G004"
     ],
     "mcost": {
-      "M309": 1
+      "M309": 7
     },
     "smithCost": "M309",
     "pts": 83,
@@ -3790,7 +3790,7 @@
       "G004"
     ],
     "mcost": {
-      "M310": 1
+      "M310": 8
     },
     "smithCost": "M310",
     "pts": 117,
@@ -3865,7 +3865,7 @@
     "repReq": 7,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -3896,7 +3896,7 @@
     "repReq": 10,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -3912,7 +3912,7 @@
       "G004"
     ],
     "mcost": {
-      "M304": 1
+      "M304": 2
     },
     "smithCost": "M304",
     "pts": 16,
@@ -3943,7 +3943,7 @@
       "G004"
     ],
     "mcost": {
-      "M105": 1
+      "M105": 3
     },
     "smithCost": "M105",
     "pts": 22,
@@ -3975,7 +3975,7 @@
       "G002"
     ],
     "mcost": {
-      "M206": 1
+      "M206": 4
     },
     "smithCost": "M206",
     "pts": 31,
@@ -4007,7 +4007,7 @@
       "G002"
     ],
     "mcost": {
-      "M107": 1
+      "M107": 5
     },
     "smithCost": "M107",
     "pts": 43,
@@ -4039,7 +4039,7 @@
       "G002"
     ],
     "mcost": {
-      "M308": 1
+      "M308": 6
     },
     "smithCost": "M308",
     "pts": 60,
@@ -4071,7 +4071,7 @@
       "G002"
     ],
     "mcost": {
-      "M209": 1
+      "M209": 7
     },
     "smithCost": "M209",
     "pts": 83,
@@ -4103,7 +4103,7 @@
       "G002"
     ],
     "mcost": {
-      "M110": 1
+      "M110": 8
     },
     "smithCost": "M110",
     "pts": 117,
@@ -4180,7 +4180,7 @@
     "repReq": 6,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -4211,7 +4211,7 @@
     "repReq": 9,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -4227,7 +4227,7 @@
       "G001"
     ],
     "mcost": {
-      "M104": 1
+      "M104": 2
     },
     "smithCost": "M104",
     "pts": 16,
@@ -4258,7 +4258,7 @@
       "G001"
     ],
     "mcost": {
-      "M205": 1
+      "M205": 3
     },
     "smithCost": "M205",
     "pts": 22,
@@ -4290,7 +4290,7 @@
       "G003"
     ],
     "mcost": {
-      "M306": 1
+      "M306": 4
     },
     "smithCost": "M306",
     "pts": 31,
@@ -4322,7 +4322,7 @@
       "G003"
     ],
     "mcost": {
-      "M307": 1
+      "M307": 5
     },
     "smithCost": "M307",
     "pts": 43,
@@ -4354,7 +4354,7 @@
       "G003"
     ],
     "mcost": {
-      "M208": 1
+      "M208": 6
     },
     "smithCost": "M208",
     "pts": 60,
@@ -4386,7 +4386,7 @@
       "G003"
     ],
     "mcost": {
-      "M109": 1
+      "M109": 7
     },
     "smithCost": "M109",
     "pts": 83,
@@ -4418,7 +4418,7 @@
       "G003"
     ],
     "mcost": {
-      "M210": 1
+      "M210": 8
     },
     "smithCost": "M210",
     "pts": 117,
@@ -4495,7 +4495,7 @@
     "repReq": 4,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -4526,7 +4526,7 @@
     "repReq": 11,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -4542,7 +4542,7 @@
       "G004"
     ],
     "mcost": {
-      "M204": 1
+      "M204": 2
     },
     "smithCost": "M204",
     "pts": 16,
@@ -4573,7 +4573,7 @@
       "G004"
     ],
     "mcost": {
-      "M305": 1
+      "M305": 3
     },
     "smithCost": "M305",
     "pts": 22,
@@ -4608,7 +4608,7 @@
       "G001"
     ],
     "mcost": {
-      "M106": 1
+      "M106": 4
     },
     "smithCost": "M106",
     "pts": 31,
@@ -4640,7 +4640,7 @@
       "G001"
     ],
     "mcost": {
-      "M207": 1
+      "M207": 5
     },
     "smithCost": "M207",
     "pts": 43,
@@ -4672,7 +4672,7 @@
       "G001"
     ],
     "mcost": {
-      "M108": 1
+      "M108": 6
     },
     "smithCost": "M108",
     "pts": 60,
@@ -4704,7 +4704,7 @@
       "G001"
     ],
     "mcost": {
-      "M309": 1
+      "M309": 7
     },
     "smithCost": "M309",
     "pts": 83,
@@ -4736,7 +4736,7 @@
       "G001"
     ],
     "mcost": {
-      "M310": 1
+      "M310": 8
     },
     "smithCost": "M310",
     "pts": 117,
@@ -4813,7 +4813,7 @@
     "repReq": 5,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -4844,7 +4844,7 @@
     "repReq": 8,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -4861,7 +4861,7 @@
       "G004"
     ],
     "mcost": {
-      "M104": 1
+      "M104": 2
     },
     "smithCost": "M104",
     "pts": 16,
@@ -4893,7 +4893,7 @@
       "G004"
     ],
     "mcost": {
-      "M205": 1
+      "M205": 3
     },
     "smithCost": "M205",
     "pts": 22,
@@ -4925,7 +4925,7 @@
       "G004"
     ],
     "mcost": {
-      "M306": 1
+      "M306": 4
     },
     "smithCost": "M306",
     "pts": 31,
@@ -4958,7 +4958,7 @@
       "G002"
     ],
     "mcost": {
-      "M307": 1
+      "M307": 5
     },
     "smithCost": "M307",
     "pts": 43,
@@ -4991,7 +4991,7 @@
       "G002"
     ],
     "mcost": {
-      "M208": 1
+      "M208": 6
     },
     "smithCost": "M208",
     "pts": 60,
@@ -5024,7 +5024,7 @@
       "G002"
     ],
     "mcost": {
-      "M109": 1
+      "M109": 7
     },
     "smithCost": "M109",
     "pts": 83,
@@ -5057,7 +5057,7 @@
       "G002"
     ],
     "mcost": {
-      "M210": 1
+      "M210": 8
     },
     "smithCost": "M210",
     "pts": 117,
@@ -5134,7 +5134,7 @@
     "repReq": 6,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -5165,7 +5165,7 @@
     "repReq": 9,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -5182,7 +5182,7 @@
       "G003"
     ],
     "mcost": {
-      "M304": 1
+      "M304": 2
     },
     "smithCost": "M304",
     "pts": 16,
@@ -5214,7 +5214,7 @@
       "G003"
     ],
     "mcost": {
-      "M105": 1
+      "M105": 3
     },
     "smithCost": "M105",
     "pts": 22,
@@ -5246,7 +5246,7 @@
       "G003"
     ],
     "mcost": {
-      "M206": 1
+      "M206": 4
     },
     "smithCost": "M206",
     "pts": 31,
@@ -5279,7 +5279,7 @@
       "G001"
     ],
     "mcost": {
-      "M107": 1
+      "M107": 5
     },
     "smithCost": "M107",
     "pts": 43,
@@ -5312,7 +5312,7 @@
       "G001"
     ],
     "mcost": {
-      "M308": 1
+      "M308": 6
     },
     "smithCost": "M308",
     "pts": 60,
@@ -5345,7 +5345,7 @@
       "G001"
     ],
     "mcost": {
-      "M209": 1
+      "M209": 7
     },
     "smithCost": "M209",
     "pts": 83,
@@ -5378,7 +5378,7 @@
       "G001"
     ],
     "mcost": {
-      "M110": 1
+      "M110": 8
     },
     "smithCost": "M110",
     "pts": 117,
@@ -5455,7 +5455,7 @@
     "repReq": 6,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 200,
+    "maxMastery": 180,
     "reductionMastery": 4,
     "recipeType": "normal"
   },
@@ -5486,7 +5486,7 @@
     "repReq": 9,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 300,
+    "maxMastery": 280,
     "reductionMastery": 5,
     "recipeType": "normal"
   },
@@ -5503,7 +5503,7 @@
       "G001"
     ],
     "mcost": {
-      "M104": 1
+      "M104": 2
     },
     "smithCost": "M104",
     "pts": 16,
@@ -5535,7 +5535,7 @@
       "G001"
     ],
     "mcost": {
-      "M205": 1
+      "M205": 3
     },
     "smithCost": "M205",
     "pts": 22,
@@ -5567,7 +5567,7 @@
       "G001"
     ],
     "mcost": {
-      "M306": 1
+      "M306": 4
     },
     "smithCost": "M306",
     "pts": 31,
@@ -5600,7 +5600,7 @@
       "G002"
     ],
     "mcost": {
-      "M307": 1
+      "M307": 5
     },
     "smithCost": "M307",
     "pts": 43,
@@ -5633,7 +5633,7 @@
       "G002"
     ],
     "mcost": {
-      "M208": 1
+      "M208": 6
     },
     "smithCost": "M208",
     "pts": 60,
@@ -5666,7 +5666,7 @@
       "G002"
     ],
     "mcost": {
-      "M109": 1
+      "M109": 7
     },
     "smithCost": "M109",
     "pts": 83,
@@ -5699,7 +5699,7 @@
       "G002"
     ],
     "mcost": {
-      "M210": 1
+      "M210": 8
     },
     "smithCost": "M210",
     "pts": 117,
@@ -5764,9 +5764,9 @@
       "G004"
     ],
     "mcost": {
-      "M103": 50,
-      "M203": 50,
-      "M303": 50
+      "M103": 100,
+      "M203": 100,
+      "M303": 100
     },
     "smithCost": null,
     "pts": null,

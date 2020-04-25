@@ -242,9 +242,9 @@
   {
     "id": "SM902",
     "name": "Needle Barrage",
-    "description": "Deals 500 damage to the first and second heroes",
+    "description": "Hurls a thousand needles at the two nearest targets",
     "icon": "<i class=\"fad fa-wand\"></i>",
-    "powMod": 1,
+    "powMod": 2.5,
     "techMod": 0
   },
   {

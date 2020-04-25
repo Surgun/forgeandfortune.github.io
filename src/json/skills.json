@@ -68,7 +68,7 @@
     "name": "Holy Prayer",
     "description": "Heal the teammate with the lowest % missing HP",
     "icon": "<i class=\"fas fa-bible\"></i>",
-    "powMod": 1,
+    "powMod": 1.5,
     "techMod": 2
   },
   {

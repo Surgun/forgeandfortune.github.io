@@ -183,9 +183,9 @@
   },
   {
     "id": "B903",
-    "name": "Fifth Element",
-    "hpMod": 22500,
-    "powMod": 750,
+    "name": "Distribution Djinn",
+    "hpMod": 100000,
+    "powMod": 1250,
     "protection": 0,
     "skill1": "S0000",
     "skill2": "S0000",

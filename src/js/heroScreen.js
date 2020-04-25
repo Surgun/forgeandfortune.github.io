@@ -191,6 +191,8 @@ function showHeroGear() {
     hero.gearSlots.forEach(slot => {
         if (slot.type !== "Trinkets") heroCurrentGearEquip(hero,slot).appendTo($heroGearSlotList);
     });
+    examineHeroPossibleEquip(hero.id,hero.slot1Type);
+    $(".heroExamineEquipment:first-of-type").addClass("selected");
 }
 
 function showHeroUpgrades() {
@@ -442,9 +444,9 @@ $(document).on('click', "div.heroExamineEquipment", (e) => {
     e.preventDefault();
     const heroID = $(e.currentTarget).data("heroID");
     const gearType = $(e.currentTarget).data("gearType");
-    $(".heroExamineEquipment").removeClass("hEEactive");
-    $(e.currentTarget).addClass("hEEactive");
-    examineHeroPossibleEquip(heroID,gearType)
+    $(".heroExamineEquipment").removeClass("selected");
+    $(e.currentTarget).addClass("selected");
+    examineHeroPossibleEquip(heroID,gearType);
 });
 
 $(document).on('click', "div.gearItem", (e) => {

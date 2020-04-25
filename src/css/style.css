@@ -3421,7 +3421,7 @@ footer {
     cursor: pointer;
 }
 
-.heroExamineEquipment.hEEactive {
+.heroExamineEquipment.selected {
     border-color: var(--border-secondary);
 }
 
@@ -3448,7 +3448,7 @@ footer {
     border-radius: 10px 10px 0 0;
 }
 
-.heroExamineEquipment.hEEactive .heroExamineEquipmentSlot {
+.heroExamineEquipment.selected .heroExamineEquipmentSlot {
     color: var(--highlight);
 }
 
@@ -3590,7 +3590,6 @@ footer {
         flex-wrap: wrap;
         align-content: center;
         max-width: 300px;
-        
     }
     .previewCardCycle {
         order: -1;
@@ -3600,7 +3599,6 @@ footer {
 @media screen and (max-width: 1745px) {
     .heroInspectPreviewCardContainer {
         max-width: 255px;
-        
     }
 }
 

@@ -54,7 +54,7 @@
   {
     "id": "B200",
     "name": "Blinkie",
-    "hpMod": 0.85,
+    "hpMod": 0.6,
     "powMod": 1,
     "protection": 0,
     "skill1": "SM200",

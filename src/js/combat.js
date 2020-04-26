@@ -1,6 +1,6 @@
 "use strict";
 
-const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,RANDOM:4,SELF:5,ALLENEMIES:6,ALLALLIES:7,ALLYMISSINGHP:8,ENEMYMISSINGHP:9,ENEMYLOWESTHP:10});
+const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,RANDOM:4,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8});
 const SideType = Object.freeze({ALLIES:0,ENEMIES:1});
 
 const CombatManager = {

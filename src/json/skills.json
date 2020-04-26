@@ -68,7 +68,7 @@
     "name": "Holy Prayer",
     "description": "Heal the teammate with the lowest % missing HP",
     "icon": "<i class=\"fas fa-bible\"></i>",
-    "powMod": 1,
+    "powMod": 1.5,
     "techMod": 2
   },
   {
@@ -82,7 +82,7 @@
   {
     "id": "S2020",
     "name": "Snipe",
-    "description": "Attack enemy with lowest HP. If less than 50% deal additional tech damage.",
+    "description": "Attack enemy with lowest HP. If less than 50% deal additional damage",
     "icon": "<i class=\"fas fa-crosshairs\"></i>",
     "powMod": 1,
     "techMod": 1
@@ -233,18 +233,18 @@
   },
   {
     "id": "SMP902",
-    "name": "Spiky Skin",
+    "name": "Prickly Personality",
     "description": "Attacking this enemy damages the hero",
     "icon": "<i class=\"fal fa-cactus\"></i>",
-    "powMod": 1,
+    "powMod": 0.2,
     "techMod": 0
   },
   {
     "id": "SM902",
-    "name": "1000 Needles",
-    "description": "Deals 500 damage to the first and second heroes",
+    "name": "Needle Barrage",
+    "description": "Hurls a thousand needles at the two nearest targets",
     "icon": "<i class=\"fad fa-wand\"></i>",
-    "powMod": 1,
+    "powMod": 2.5,
     "techMod": 0
   },
   {
@@ -288,7 +288,7 @@
     "techMod": 0
   },
   {
-    "id": "SMP902",
+    "id": "SMP906",
     "name": "Rising Phoenix",
     "description": "Once below 25%, Phoenix will turn into an egg and attempt to regenerate health",
     "icon": "<i class=\"fab fa-phoenix-framework\"></i>",

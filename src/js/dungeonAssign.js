@@ -190,6 +190,7 @@ function generateSkillIcons(unit) {
 function generatePassiveSkill(unit) {
     const d1 = $("<div/>").addClass("orderUnitPassiveSkill");
     const passiveID = unit.passiveSkill;
+    console.log(unit.name,passiveID);
     if (passiveID) $("<div/>").addClass("orderUnitPassive tooltip").attr({"id":"oUP"+unit.id,"data-tooltip":"skill_desc","data-tooltip-value":passiveID}).html(SkillManager.idToSkill(passiveID).icon).appendTo(d1);
     return d1;
 }

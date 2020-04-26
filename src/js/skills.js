@@ -175,8 +175,9 @@ SkillManager.skillEffects['S1030'] = function (combatParams) {
 };
 
 SkillManager.skillEffects['S1040'] = function (combatParams) {
-    //Holy Prayer - Titus
+    //Holy Prayer - Troy
     const targets = combatParams.getTarget(TargetType.MISSINGHP,SideType.ALLIES);
+    console.log(targets);
     targets.forEach(target => {
         target.heal(combatParams.power);
     });

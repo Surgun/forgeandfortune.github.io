@@ -184,8 +184,8 @@
   {
     "id": "B903",
     "name": "Distribution Djinn",
-    "hpMod": 14000,
-    "powMod": 1250,
+    "hpMod": 12000,
+    "powMod": 1000,
     "protection": 0,
     "skill1": "S0000",
     "skill2": "S0000",

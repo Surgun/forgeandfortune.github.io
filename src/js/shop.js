@@ -44,7 +44,7 @@ const Shop = {
         return this.perks.filter(p=>p.category === type).sort((a,b) => a.order-b.order);
     },
     nextUnlocks(type) {
-        const notPurchased = this.perks.filter(p=>p.category === type && !p.purchased).sort((a,b) => a.order-b.order)
+        const notPurchased = this.perks.filter(p=>p.category === type && !p.purchased).sort((a,b) => a.order-b.order);
         return {canPurchase:notPurchased[0],nextUp:notPurchased[1]};
     },
     boughtPerks() {
@@ -120,6 +120,7 @@ function refreshShop() {
     $purchasePerks.empty();
     shopDivs.forEach(type => {
         const perks = Shop.nextUnlocks(type);
+        if (perks.canPurchase === undefined) return;
         $purchasePerks.append(createALperk(perks.canPurchase,type));
     })
     const boughtPerks = Shop.boughtPerks();

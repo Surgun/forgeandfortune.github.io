@@ -191,6 +191,8 @@ function showHeroGear() {
     hero.gearSlots.forEach(slot => {
         if (slot.type !== "Trinkets") heroCurrentGearEquip(hero,slot).appendTo($heroGearSlotList);
     });
+    examineHeroPossibleEquip(hero.id,hero.slot1Type);
+    $(".heroExamineEquipment:first-of-type").addClass("selected");
 }
 
 function showHeroUpgrades() {
@@ -210,6 +212,7 @@ function showHeroTrinket() {
     const hero = HeroManager.idToHero(HeroManager.heroView);
     $heroEquipTrinket.empty();
     $heroEquipTrinket.html(heroCurrentGearEquip(hero,hero.trinket()));
+    $(".heroExamineEquipment:first-of-type").addClass("selected");
     refreshTrinketInventory();
 }
 
@@ -249,7 +252,8 @@ function heroCurrentGearEquip(hero,gearSlot) {
             }
         return d;
     }
-    const d1 = $("<div/>").addClass("heroExamineEquipmentEquip itemName").addClass("R"+gear.rarity).html(gear.picName()).appendTo(d);
+    const d1 = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+gear.rarity).appendTo(d);
+        $("<div/>").addClass("itemName").html(gear.picName()).appendTo(d1);
     const d2 = $("<div/>").addClass("equipLevel").appendTo(d1);
         $("<div/>").addClass("level_text").html(`LVL`).appendTo(d2);
         $("<div/>").addClass("level_integer").html(`${gear.lvl}`).appendTo(d2);
@@ -441,9 +445,9 @@ $(document).on('click', "div.heroExamineEquipment", (e) => {
     e.preventDefault();
     const heroID = $(e.currentTarget).data("heroID");
     const gearType = $(e.currentTarget).data("gearType");
-    $(".heroExamineEquipment").removeClass("hEEactive");
-    $(e.currentTarget).addClass("hEEactive");
-    examineHeroPossibleEquip(heroID,gearType)
+    $(".heroExamineEquipment").removeClass("selected");
+    $(e.currentTarget).addClass("selected");
+    examineHeroPossibleEquip(heroID,gearType);
 });
 
 $(document).on('click', "div.gearItem", (e) => {

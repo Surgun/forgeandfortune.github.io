@@ -528,7 +528,7 @@
   },
   {
     "id": "D402",
-    "name": "Cactus",
+    "name": "Caddish Cactus",
     "area": "A04",
     "mob1": "B902",
     "mob2": null,
@@ -545,7 +545,7 @@
   },
   {
     "id": "D403",
-    "name": "Fifth Element",
+    "name": "Distribution Djinn",
     "area": "A04",
     "mob1": "B903",
     "mob2": null,

@@ -48,6 +48,7 @@ const PartyCreator = {
     heroes : [],
     dungeonSelect : null,
     areaSelect : null,
+    mobPartyHidden: true,
     removeMember(slotNum) {
         this.heroes.splice(slotNum,1);
     },
@@ -117,6 +118,7 @@ function startPartyCreation(partyStarted) {
     dungeon.mobIDs.forEach(mobID => {
         mobCard(mobID).appendTo(dtsMobsCollection);
     });
+    $mobsToggleButton.find(".actionButtonTextLeft").html(PartyCreator.mobPartyHidden ? displayText("enemy_party_show") : displayText("enemy_party_hide"));
     //Possible Dungeons
     $dtsDungeons.empty();
     area.dungeons.forEach(dungeon => {
@@ -156,8 +158,8 @@ function startPartyCreation(partyStarted) {
     //available heroes
     const d1bot = $("<div/>").addClass("dtsSelectHeader");
         const d1bota = $("<div/>").addClass("headingDetails").appendTo(d1bot);
-        $("<div/>").addClass("headingTitle").html("Your Available Heroes").appendTo(d1bota);
-        $("<div/>").addClass("headingDescription").html("Select the heroes to send on this adventure.").appendTo(d1bota);
+        $("<div/>").addClass("headingTitle").html(displayText("header_party_heroes_title")).appendTo(d1bota);
+        $("<div/>").addClass("headingDescription").html(displayText("header_party_heroes_desc")).appendTo(d1bota);
     $dtsBottom.append(d1bot);
     const d2 = $("<div/>").addClass("dungeonAvailableCollection");
     HeroManager.ownedHeroes().forEach(hero => {
@@ -173,15 +175,17 @@ function toggleMobsPreview() {
     if ($dtsMobsCollection.hasClass("collapsedMobsCollection")) {
         $dtsMobsCollection.removeClass("collapsedMobsCollection hideMobsCollection").addClass("showMobsCollection");
         $mobsToggleButton.addClass("toggledOn");
-        $mobsToggleButton.find(".actionButtonTextLeft").html("Hide Enemy Party");
+        $mobsToggleButton.find(".actionButtonTextLeft").html(displayText("enemy_party_hide"));
+        PartyCreator.mobPartyHidden = false;
     }
     else {
         $dtsMobsCollection.addClass("hideMobsCollection").removeClass("showMobsCollection");
         $mobsToggleButton.removeClass("toggledOn");
-        $mobsToggleButton.find(".actionButtonTextLeft").html("Show Enemy Party");
+        $mobsToggleButton.find(".actionButtonTextLeft").html(displayText("enemy_party_show"));
         setTimeout(() => {
             $dtsMobsCollection.addClass("collapsedMobsCollection")
         }, 200);
+        PartyCreator.mobPartyHidden = true;
     }
 }
 
@@ -286,7 +290,7 @@ function characterCard(prefix,dv,ID,status) {
     // Return empty party slot    
     if (!ID) {
         $("<div/>").addClass(prefix+"Image").html('<i class="fas fa-question-circle"></i>').appendTo(d);
-        $("<div/>").addClass(prefix+"Name").html("Empty Party Slot").appendTo(d);
+        $("<div/>").addClass(prefix+"Name").html(displayText("slot_party_empty")).appendTo(d);
         heroStatsContainer.appendTo(d)
         return d;
     }

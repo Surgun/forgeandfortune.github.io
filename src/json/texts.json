@@ -40,56 +40,6 @@
     "es": "Progreso"
   },
   {
-    "tid": "adventure_launch_floor",
-    "en": "Start At Floor 1",
-    "es": null
-  },
-  {
-    "tid": "adventure_launch_floor_highest",
-    "en": "Start At Highest Floor Reached",
-    "es": null
-  },
-  {
-    "tid": "adventure_launch_floor_boss",
-    "en": "Start Boss Fight",
-    "es": null
-  },
-  {
-    "tid": "equipment_select_title",
-    "en": "Select Your Hero Equipment",
-    "es": null
-  },
-  {
-    "tid": "equipment_select_desc",
-    "en": "Equip your hero with items from your inventory.",
-    "es": null
-  },
-  {
-    "tid": "trinket_select_title",
-    "en": "Select Your Hero Trinket",
-    "es": null
-  },
-  {
-    "tid": "trinket_select_desc",
-    "en": "Equip your hero with trinkets from your inventory.",
-    "es": null
-  },
-  {
-    "tid": "no_equipment_desc",
-    "en": "No equipment available to equip in this slot.",
-    "es": null
-  },
-  {
-    "tid": "no_trinkets_desc",
-    "en": "No trinkets available to equip in this slot.",
-    "es": null
-  },
-  {
-    "tid": "equipment_recipes_button",
-    "en": "View {0} Recipes",
-    "es": null
-  },
-  {
     "tid": "type_arcane",
     "en": "Arcane",
     "es": null
@@ -182,6 +132,81 @@
   {
     "tid": "type_trinkets",
     "en": "Trinkets",
+    "es": null
+  },
+  {
+    "tid": "equipment_select_title",
+    "en": "Select Your Hero Equipment",
+    "es": null
+  },
+  {
+    "tid": "equipment_select_desc",
+    "en": "Equip your hero with items from your inventory.",
+    "es": null
+  },
+  {
+    "tid": "trinket_select_title",
+    "en": "Select Your Hero Trinket",
+    "es": null
+  },
+  {
+    "tid": "trinket_select_desc",
+    "en": "Equip your hero with trinkets from your inventory.",
+    "es": null
+  },
+  {
+    "tid": "no_equipment_desc",
+    "en": "No equipment available to equip in this slot.",
+    "es": null
+  },
+  {
+    "tid": "no_trinkets_desc",
+    "en": "No trinkets available to equip in this slot.",
+    "es": null
+  },
+  {
+    "tid": "equipment_recipes_button",
+    "en": "View {0} Recipes",
+    "es": null
+  },
+  {
+    "tid": "adventure_launch_floor",
+    "en": "Start At Floor 1",
+    "es": null
+  },
+  {
+    "tid": "adventure_launch_floor_highest",
+    "en": "Start At Highest Floor Reached",
+    "es": null
+  },
+  {
+    "tid": "adventure_launch_floor_boss",
+    "en": "Start Boss Fight",
+    "es": null
+  },
+  {
+    "tid": "slot_party_empty",
+    "en": "Empty Party Slot",
+    "es": null
+  },
+  {
+    "tid": "enemy_party_show",
+    "en": "Show Enemy Party",
+    "es": null
+  },
+  {
+    "tid": "enemy_party_hide",
+    "en": "Hide Enemy Party",
+    "es": null
+  },
+  {
+    "tid": "header_party_heroes_title",
+    "en": "Your Available Heroes",
+    "es": null
+  },
+  {
+    "tid": "header_party_heroes_desc",
+    "en": "Select the heroes to send on this adventure.",
     "es": null
   }
 ]

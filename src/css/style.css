@@ -236,6 +236,7 @@ body {
     margin: 5px;
     padding: 10px 15px;
     color: var(--text-primary);
+    text-align: center;
     background-color: var(--button-primary);
     border: 0;
     border-radius: 5px;
@@ -534,7 +535,7 @@ footer {
     width: 100%;
 }
 
-.inventoryItemName > img, .equipItemName > img, .heroEquipBlockPic, .inventoryItemEmptyIcon, .heroExamineEquipmentEquip.itemName > img, .gearItemName > img {
+.inventoryItemName > img, .equipItemName > img, .heroEquipBlockPic, .inventoryItemEmptyIcon, .heroExamineEquipmentEquip .itemName > img, .gearItemName > img {
     padding: 10px;
     height: 56px;
     width: 56px;
@@ -543,7 +544,7 @@ footer {
     border-radius: 10px;
 }
 
-.inventoryItemName .item-prefix-name, .equipItemName .item-prefix-name, .heroEquipBlockName, .inventoryItemEmptyText, .heroExamineEquipmentEquip .item-prefix-name, .emptyGearSlotTitle, .gearItemName {
+.inventoryItemName .item-prefix-name, .equipItemName .item-prefix-name, .heroEquipBlockName, .inventoryItemEmptyText, .heroExamineEquipmentEquip .itemName, .emptyGearSlotTitle, .gearItemName {
     width: 100%;
     margin-bottom: 5px;
     padding: 5px;
@@ -1057,8 +1058,11 @@ footer {
 
 .alBossBeat {
     margin-top: auto;
+    padding: 10px 5px;
     color: var(--highlight);
     font-size: 0.85rem;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
 }
 
 .alPerkCount {
@@ -3125,25 +3129,6 @@ footer {
     transition: all var(--transition_linear);
 }
 
-@media screen and (max-width: 1755px) {
-    .heroInspectPreviewCardContainer {
-        flex-wrap: wrap;
-        align-content: center;
-        max-width: 300px;
-        
-    }
-    .previewCardCycle {
-        order: -1;
-    }
-}
-
-@media screen and (max-width: 1170px) {
-    .heroInspectPreviewCardContainer {
-        max-width: 255px;
-        
-    }
-}
-
 .previewCardCycle:hover, .previewCardCycle:focus {
     background-color: var(--button-primary-active);
 }
@@ -3415,8 +3400,6 @@ footer {
     background-color: var(--button-primary-active);
 }
 
-/* End of Heroes */
-
 .heroExamineEquip, .heroEquipTrinketContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, 190px);
@@ -3438,7 +3421,7 @@ footer {
     cursor: pointer;
 }
 
-.heroExamineEquipment.hEEactive {
+.heroExamineEquipment.selected {
     border-color: var(--border-secondary);
 }
 
@@ -3465,7 +3448,7 @@ footer {
     border-radius: 10px 10px 0 0;
 }
 
-.heroExamineEquipment.hEEactive .heroExamineEquipmentSlot {
+.heroExamineEquipment.selected .heroExamineEquipmentSlot {
     color: var(--highlight);
 }
 
@@ -3476,7 +3459,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    padding: 5px;
+    padding: 5px 10px;
     width: 100%;
     border-radius: 0 0 10px 10px;
 }
@@ -3601,6 +3584,40 @@ footer {
 .gearItem:hover, .gearItem:focus {
     border-color: var(--border-tertiary);
 }
+
+@media screen and (max-width: 1795px) {
+    .heroInspectPreviewCardContainer {
+        flex-wrap: wrap;
+        align-content: center;
+        max-width: 300px;
+    }
+    .previewCardCycle {
+        order: -1;
+    }
+}
+
+@media screen and (max-width: 1745px) {
+    .heroInspectPreviewCardContainer {
+        max-width: 255px;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .heroInspectPreviewCardContainer {
+        max-width: 225px;
+    }
+    .previewCardHero .heroOwnedCard {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 1670px) {
+    .heroExamineEquip {
+        grid-template: auto / repeat(3, 190px);
+    }
+}
+
+/* End of Heroes */
 
 .hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .repBarDiv, .notoBarDiv, .synthBarDiv, .tinkerProgressDiv, .tinkerTicksDiv {
     position: relative;

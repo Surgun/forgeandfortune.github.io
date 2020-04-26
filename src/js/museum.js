@@ -1,13 +1,12 @@
 "use strict";
 
 const $museumBuilding = $("#museumBuilding");
+const $museumNavigation = $("#museumNavigation");
 const $museumRecipeTypes = $("#museumRecipeTypes");
 const $museumRecipeContributions = $("#museumRecipeContributions");
 const $museumRewards = $("#museumRewards");
 const $museumInv = $("#museumInv");
 const $museumTop = $(".museumTop");
-const $museumNavReward = $("#museumNavReward");
-const $museumNavCollection = $("#museumNavCollection");
 
 const Museum = {
     rewards : [],
@@ -121,8 +120,11 @@ class MuseumReward {
 
 function initiateMuseumBldg() {
     $museumBuilding.show();
-    $museumNavReward.removeClass("selected");
-    $museumNavCollection.addClass("selected");
+    $museumNavigation.empty();
+    $("<div/>").addClass("museumTabNavigation").attr({id: "museumNavCollection"}).html(displayText("museum_nav_collections")).appendTo($museumNavigation);
+    $("<div/>").addClass("museumTabNavigation").attr({id: "museumNavReward"}).html(displayText("museum_nav_rewards")).appendTo($museumNavigation);
+    $("#museumNavReward").removeClass("selected");
+    $("#museumNavCollection").addClass("selected");
     refreshMuseumTop();
     refreshMuseumInv();
 }
@@ -130,9 +132,14 @@ function initiateMuseumBldg() {
 function refreshMuseumTop() {
     $museumTop.hide();
     $museumRecipeTypes.empty().show();
+    const museumItemTypesHeader = $("<div/>").addClass(`museumItemTypesHeader`).appendTo($museumRecipeTypes);
+        const headingDetails = $("<div/>").addClass("headingDetails").appendTo(museumItemTypesHeader);
+            $("<div/>").addClass("headingTitle").html(displayText("header_museum_item_types_title")).appendTo(headingDetails);
+            $("<div/>").addClass("headingDescription").html(displayText("header_museum_item_types_desc")).appendTo(headingDetails);
+    const museumItemTypesContainer = $("<div/>").addClass(`museumItemTypesContainer`).appendTo($museumRecipeTypes);
     ItemType.forEach(type => {
-        const d = $("<div/>").addClass("museumTypeDiv").data("recipeType",type).appendTo($museumRecipeTypes);
-        $("<div/>").addClass("museumTypeName").html(type).appendTo(d);
+        const d = $("<div/>").addClass("museumTypeDiv").data("recipeType",type).appendTo(museumItemTypesContainer);
+        $("<div/>").addClass("museumTypeName").html(displayText(`type_${type}`)).appendTo(d);
         const percent = (Museum.completeByType(type)/44*100).toFixed(1)+"%";
         $("<div/>").addClass("museumTypeComplete").html(percent).appendTo(d);
     });
@@ -141,14 +148,20 @@ function refreshMuseumTop() {
 function showMuseumType(type) {
     $museumTop.hide();
     $museumRecipeContributions.empty().show();
-    $("<div/>").addClass(`museumBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($museumRecipeContributions);
+
+    const museumContributionsActions = $("<div/>").addClass("museumContributionsActions").appendTo($museumRecipeContributions);
+    const backButton = $("<div/>").addClass(`museumBackButton actionButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo(museumContributionsActions);
+        $("<div/>").addClass(`backButtonText`).html(displayText("museum_item_types_back_button")).appendTo(backButton);
+
+    const museumContributionsList = $("<div/>").addClass("museumContributionsList").appendTo($museumRecipeContributions);
     recipeList.filterByType(type).forEach(recipe => {
-        const d = $("<div/>").addClass("museumRecipeDiv").appendTo($museumRecipeContributions);
-        $("<div/>").addClass("museumRecipeImage").html(recipe.itemPic()).appendTo(d);
-        const d1 = $("<div/>").addClass("museumRecipeContributions").appendTo(d);
+        const d = $("<div/>").addClass("museumRecipeDiv").appendTo(museumContributionsList);
+        $("<div/>").addClass("museumRecipeImage").html(recipe.itemPicName()).appendTo(d);
+        const d1 = $("<div/>").addClass("museumRecipeCon").appendTo(d);
         recipe.museum.forEach((rarity,j) => {
+            const d1a = $("<div/>").addClass("museumRecipeConItem").appendTo(d1);
             rarity.forEach((sharp,i) => {
-                const d2 = $("<div/>").addClass("museumRecipe"+j).appendTo(d1);
+                const d2 = $("<div/>").addClass(`museumRecipe R${j}`).appendTo(d1a);
                 if (sharp) d2.addClass("museumRecipeEntryComplete").html(miscIcons.checkmark);
                 else d2.html(`+${i}`);
             });
@@ -162,8 +175,9 @@ function showMuseumRewards() {
     const d1 = $("<div/>").addClass("museumRewardPointContainer").appendTo($museumRewards);
     $("<div/>").addClass("museumRewardPoint").html(`You have ${Museum.remainingPoints()} points left`).appendTo(d1);
     $("<div/>").addClass("museumRewardPointText").html(`Earn more points by donating unique items to the museum`).appendTo(d1);
+    const museumRewardCardsContainer = $("<div/>").addClass("museumRewardCardsContainer").appendTo($museumRewards);
     Museum.rewards.forEach(reward => {
-        const d = $("<div/>").addClass("museumRewardDiv").appendTo($museumRewards);
+        const d = $("<div/>").addClass("museumRewardDiv").appendTo(museumRewardCardsContainer);
         $("<div/>").addClass("museumRewardTitle").html(reward.name).appendTo(d);
         $("<div/>").addClass("museumRewardLvl").html(`Level ${reward.lvl}`).appendTo(d);
         $("<div/>").addClass("museumRewardHeading").html("Current Reward").appendTo(d);
@@ -171,7 +185,7 @@ function showMuseumRewards() {
         if (!reward.maxLvl()) {
             $("<div/>").addClass("museumRewardHeading").html("Next Reward").appendTo(d);
             $("<div/>").addClass("museumRewardNext").html(reward.nextReward()).appendTo(d);
-            $("<div/>").addClass("museumRewardComplete").data("rid",reward.id).html(`Purchase ${reward.purchaseCost()}`).appendTo(d);
+            $("<div/>").addClass("museumRewardComplete museumActionButton").data("rid",reward.id).html(`Purchase ${reward.purchaseCost()}`).appendTo(d);
         }
     });
 }
@@ -179,28 +193,33 @@ function showMuseumRewards() {
 function refreshMuseumInv() {
     $museumInv.empty();
     const donations = Museum.possibleInventoryDonations();
+    const museumDonationsHeader = $("<div/>").addClass(`museumItemTypesHeader`).appendTo($museumInv);
+    const headingDetails = $("<div/>").addClass("headingDetails").appendTo(museumDonationsHeader);
+        $("<div/>").addClass("headingTitle").html(displayText("header_museum_donations_title")).appendTo(headingDetails);
+        $("<div/>").addClass("headingDescription").html(displayText("header_museum_donations_desc")).appendTo(headingDetails);
+    const museumDonationCardsContainer = $("<div/>").addClass(`museumDonationCardsContainer`).appendTo($museumInv);
     if (donations.length === 0) {
-        $("<div/>").addClass("museumNoItems").html("You don't have any items for new donations");
+        $("<div/>").addClass("museumNoItems").html(displayText("museum_no_donations_message")).appendTo($museumInv);
         return;
     }
     Museum.possibleInventoryDonations().forEach(container => {
-        createMuseumCard(container).appendTo($museumInv);
+        createMuseumCard(container).appendTo(museumDonationCardsContainer);
     });
 }
 
 
 function createMuseumCard(container) {
     const d = $("<div/>").addClass("museumItem").addClass("R"+container.rarity);
-    $("<div/>").addClass("museumItemName").html(container.picName()).appendTo(d);
-    $("<div/>").addClass(`museumItemRarity museumRarity${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d);
-    $("<div/>").addClass("museumtemLevel").html(container.itemLevel()).appendTo(d);
-    const itemProps = $("<div/>").addClass("museumItemProps").appendTo(d);
+    $("<div/>").addClass("itemName").html(container.picName()).appendTo(d);
+    $("<div/>").addClass(`itemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d);
+    $("<div/>").addClass("itemLevel").html(container.itemLevel()).appendTo(d);
+    const itemProps = $("<div/>").addClass("equipStats").appendTo(d);
     for (const [stat, val] of Object.entries(container.itemStat(false))) {
         if (val === 0) continue;
-        $("<div/>").addClass("museumPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
+        $("<div/>").addClass("gearStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
     };
     const actionBtns = $("<div/>").addClass("museumButtons").appendTo(d);
-    $("<div/>").addClass('museumDonate').data("containerid",container.containerID).html("Donate").appendTo(actionBtns);
+    $("<div/>").addClass('museumDonate museumActionButton').data("containerid",container.containerID).html(displayText("museum_donations_donate_button")).appendTo(actionBtns);
     return d;
 }
 
@@ -230,14 +249,14 @@ $(document).on("click",".museumRewardComplete",(e) => {
 
 $(document).on("click","#museumNavReward",(e) => {
     e.preventDefault();
-    $museumNavReward.addClass("selected");
-    $museumNavCollection.removeClass("selected");
+    $("#museumNavCollection").removeClass("selected");
+    $("#museumNavReward").addClass("selected");
     showMuseumRewards();
 });
 
 $(document).on("click","#museumNavCollection",(e) => {
     e.preventDefault();
-    $museumNavReward.removeClass("selected");
-    $museumNavCollection.addClass("selected");
+    $("#museumNavReward").removeClass("selected");
+    $("#museumNavCollection").addClass("selected");
     refreshMuseumTop();
 });

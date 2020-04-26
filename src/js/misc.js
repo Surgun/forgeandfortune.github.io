@@ -259,7 +259,7 @@ function displayText(id) {
     const sanitizedID = id.toLowerCase().toString();
     const string = globalTexts.find(text => text.tid === sanitizedID);
     // Return ID you attempted to pull, useful for finding missing or incorrect strings.
-    if (!string) return `[${id}]`;
+    if (!string || !string[lang]) return `[${id}]`;
     // Return string if ID is found.
     return string[lang];
 }

@@ -208,5 +208,60 @@
     "tid": "header_party_heroes_desc",
     "en": "Select the heroes to send on this adventure.",
     "es": null
+  },
+  {
+    "tid": "header_museum_item_types_title",
+    "en": null,
+    "es": null
+  },
+  {
+    "tid": "header_museum_item_types_desc",
+    "en": null,
+    "es": null
+  },
+  {
+    "tid": "header_museum_donations_title",
+    "en": null,
+    "es": null
+  },
+  {
+    "tid": "header_museum_donations_desc",
+    "en": null,
+    "es": null
+  },
+  {
+    "tid": "museum_no_donations_message",
+    "en": "You have no items available to donate.",
+    "es": null
+  },
+  {
+    "tid": "museum_donations_donate_button",
+    "en": "Donate",
+    "es": null
+  },
+  {
+    "tid": null,
+    "en": null,
+    "es": null
+  },
+  {
+    "tid": "museum_item_types_back_button",
+    "en": "Back to Recipe Types",
+    "es": null
+  },
+  {
+    "tid": null,
+    "en": null,
+    "es": null
+  },
+  {
+    "tid": "museum_nav_collections",
+    "en": "Collection",
+    "es": null
+  },
+  {
+    "tid": "museum_nav_rewards",
+    "en": "Rewards",
+    "es": null
   }
 ]

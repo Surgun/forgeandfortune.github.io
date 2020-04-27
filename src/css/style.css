@@ -6839,6 +6839,7 @@ span.beta-tag {
     margin: 10px 0;
     padding: 10px;
     border-bottom: 2px solid var(--border-primary);
+    animation: fade-in var(--transition_linear);
 }
 
 .museumItemTypesContainer {
@@ -6858,6 +6859,7 @@ span.beta-tag {
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     transition: all var(--transition_linear);
+    animation: scale-in var(--transition_linear);
     cursor: pointer;
 }
 
@@ -6865,7 +6867,7 @@ span.beta-tag {
     border-color: var(--border-tertiary);
 }
 
-.museumTypeName {
+.museumTypeName, .museumRewardTitle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6916,9 +6918,10 @@ span.beta-tag {
 .museumNoItems {
     padding: 10px;
     color: rgb(255, 130, 130);
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     border-radius: 5px;
     animation: fade-in var(--transition_linear);
+    box-shadow: var(--box-shadow);
 }
 
 .museumContributionsActions {
@@ -7000,6 +7003,19 @@ span.beta-tag {
     grid-gap: 5px;
 }
 
+.museumRewardPoint {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--bg-primary);
+    border-radius: 5px;
+    animation: fade-in var(--transition_linear);
+    box-shadow: var(--box-shadow);
+}
+
+.museumRewardPoint > span {
+    color: var(--highlight);
+}
+
 .museumRewardDiv {
     display: flex;
     flex-direction: column;
@@ -7009,4 +7025,31 @@ span.beta-tag {
     border: 2px solid var(--border-primary);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
+    animation: scale-in var(--transition_linear);
+}
+
+.museumRewardLvl {
+    margin-top: 5px;
+    padding: 5px;
+    color: var(--highlight);
+    text-align: center;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
+}
+
+.museumRewardHeading {
+    margin: 10px 0 5px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.museumRewardText {
+    color: var(--text-secondary);
+}
+
+.museumRewardNext {
+    color: var(--green-primary);
+}
+
+.museumRewardComplete {
+    margin-top: 10px;
 }

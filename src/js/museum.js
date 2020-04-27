@@ -172,20 +172,28 @@ function showMuseumType(type) {
 function showMuseumRewards() {
     $museumTop.hide();
     $museumRewards.empty().show();
+
+    const museumRewardsHeader = $("<div/>").addClass(`museumItemTypesHeader`).appendTo($museumRewards);
+    const headingDetails = $("<div/>").addClass("headingDetails").appendTo(museumRewardsHeader);
+        $("<div/>").addClass("headingTitle").html(displayText("header_museum_reward_points_title")).appendTo(headingDetails);
+        $("<div/>").addClass("headingDescription").html(displayText("header_museum_reward_points_desc")).appendTo(headingDetails);
+
     const d1 = $("<div/>").addClass("museumRewardPointContainer").appendTo($museumRewards);
-    $("<div/>").addClass("museumRewardPoint").html(`You have ${Museum.remainingPoints()} points left`).appendTo(d1);
-    $("<div/>").addClass("museumRewardPointText").html(`Earn more points by donating unique items to the museum`).appendTo(d1);
+        const pointsLeft = Museum.remainingPoints() !== 1 ? `museum_reward_points_balance_plural` : `museum_reward_points_balance`;
+        $("<div/>").addClass("museumRewardPoint").html(displayText(pointsLeft).replace("{0}",Museum.remainingPoints())).appendTo(d1);
+
     const museumRewardCardsContainer = $("<div/>").addClass("museumRewardCardsContainer").appendTo($museumRewards);
     Museum.rewards.forEach(reward => {
         const d = $("<div/>").addClass("museumRewardDiv").appendTo(museumRewardCardsContainer);
-        $("<div/>").addClass("museumRewardTitle").html(reward.name).appendTo(d);
-        $("<div/>").addClass("museumRewardLvl").html(`Level ${reward.lvl}`).appendTo(d);
-        $("<div/>").addClass("museumRewardHeading").html("Current Reward").appendTo(d);
-        $("<div/>").addClass("museumRewardCurrent").html(reward.currentReward()).appendTo(d);
+        $("<div/>").addClass("museumRewardTitle").html(displayText(`museum_reward_${reward.name}_title`)).appendTo(d);
+        $("<div/>").addClass("museumRewardLvl").html(displayText(`museum_reward_level`).replace('{0}',reward.lvl)).appendTo(d);
+        $("<div/>").addClass("museumRewardHeading").html(displayText(`museum_reward_current`)).appendTo(d);
+        $("<div/>").addClass("museumRewardText museumRewardCurrent").html(displayText(`museum_reward_${reward.name}_desc`).replace("{0}",reward.currentReward())).appendTo(d);
         if (!reward.maxLvl()) {
-            $("<div/>").addClass("museumRewardHeading").html("Next Reward").appendTo(d);
-            $("<div/>").addClass("museumRewardNext").html(reward.nextReward()).appendTo(d);
-            $("<div/>").addClass("museumRewardComplete museumActionButton").data("rid",reward.id).html(`Purchase ${reward.purchaseCost()}`).appendTo(d);
+            $("<div/>").addClass("museumRewardHeading").html(displayText(`museum_reward_next`)).appendTo(d);
+            $("<div/>").addClass("museumRewardText museumRewardNext").html(displayText(`museum_reward_${reward.name}_desc`).replace("{0}",reward.nextReward())).appendTo(d);
+            const purchaseCost = reward.purchaseCost() !== 1 ? `museum_reward_purchase_plural` : `museum_reward_purchase`;
+            $("<div/>").addClass("museumRewardComplete museumActionButton").data("rid",reward.id).html(displayText(purchaseCost).replace('{0}',reward.purchaseCost())).appendTo(d);
         }
     });
 }

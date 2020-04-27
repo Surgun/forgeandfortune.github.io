@@ -211,22 +211,22 @@
   },
   {
     "tid": "header_museum_item_types_title",
-    "en": null,
+    "en": "Recipe Lines",
     "es": null
   },
   {
     "tid": "header_museum_item_types_desc",
-    "en": null,
+    "en": "View your contribution details for each line.",
     "es": null
   },
   {
     "tid": "header_museum_donations_title",
-    "en": null,
+    "en": "Contribute to the Museum",
     "es": null
   },
   {
     "tid": "header_museum_donations_desc",
-    "en": null,
+    "en": "Donate your items to earn points to spend on bonuses for your recipe lines.",
     "es": null
   },
   {
@@ -262,6 +262,101 @@
   {
     "tid": "museum_nav_rewards",
     "en": "Rewards",
+    "es": null
+  },
+  {
+    "tid": null,
+    "en": null,
+    "es": null
+  },
+  {
+    "tid": "header_museum_reward_points_title",
+    "en": "Museum Rewards",
+    "es": null
+  },
+  {
+    "tid": "header_museum_reward_points_desc",
+    "en": "Earn more points by donating unique items to the museum.",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_points_balance",
+    "en": "You have <span>{0} point</span> left to spend.",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_points_balance_plural",
+    "en": "You have <span>{0} points</span> left to spend.",
+    "es": null
+  },
+  {
+    "tid": null,
+    "en": null,
+    "es": null
+  },
+  {
+    "tid": "museum_reward_craft_time_redux_title",
+    "en": "Craft Time Reduction",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_craft_good_rate_title",
+    "en": "Good Rarity Rate",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_craft_great_rate_title",
+    "en": "Great Rarity Rate",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_craft_epic_rate_title",
+    "en": "Epic Rarity Rate",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_craft_time_redux_desc",
+    "en": "{0} Base Crafting Time",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_craft_good_rate_desc",
+    "en": "{0} Base Good Rarity Chance",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_craft_great_rate_desc",
+    "en": "{0} Base Great Rarity Chance",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_craft_epic_rate_desc",
+    "en": "{0} Base Epic Rarity Chance",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_level",
+    "en": "Level {0}",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_current",
+    "en": "Current Reward",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_next",
+    "en": "Next Reward",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_purchase",
+    "en": "Purchase ({0} Point)",
+    "es": null
+  },
+  {
+    "tid": "museum_reward_purchase_plural",
+    "en": "Purchase ({0} Points)",
     "es": null
   }
 ]

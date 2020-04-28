@@ -84,8 +84,8 @@
     "name": "Grim Skill 2",
     "description": "Attack and heal himself if they have titus debuff",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": null,
-    "techMod": null,
+    "powMod": 2,
+    "techMod": 0,
     "mod1": 0.5,
     "mod2": null
   },

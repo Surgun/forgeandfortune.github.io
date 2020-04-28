@@ -168,9 +168,7 @@ SkillManager.skillEffects['S0030'] = function (combatParams) {
     //Exert - Grim
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
     const thisSkill = SkillManager.idToSkill(combatParams.attack.id);
-    let hpDamage = 0;
     targets.forEach(target => {
-        hpDamage = Math.floor(target.hp/10);
         target.takeDamagePercent(thisSkill.mod1);
         refreshHPBar(target);
     });
@@ -191,6 +189,20 @@ SkillManager.skillEffects['S0031'] = function (combatParams) {
             const healAmt = Math.floor(combatParams.power * thisSkill.mod1);
             thisunit.heal(healAmt);
         }
+    });
+}
+
+SkillManager.skillEffects['S0032'] = function (combatParams) {
+    //Skill 3 - Grim
+    const thisUnit = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    const thisSkill = SkillManager.idToSkill(combatParams.attack.id);
+    thisUnit.forEach(target => {
+        target.takeDamagePercent(thisSkill.mod1);
+        refreshHPBar(target);
+    });
+    const targets = combatParams.getTarget(TargetType.CLEAVE,SideType.ENEMIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
     });
 }
 

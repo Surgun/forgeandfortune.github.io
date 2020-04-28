@@ -44,6 +44,28 @@
     "type": "buff"
   },
   {
+    "id": "B0021",
+    "name": "Taunt",
+    "description": "Taunt",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "maxStack": 2,
+    "stackCast": 2,
+    "onCast": "refresh",
+    "decrease": "onHit",
+    "type": "buff"
+  },
+  {
+    "id": "B0022",
+    "name": "Cedric 3",
+    "description": "Cedric 3",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "maxStack": 5,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
     "id": "B0040",
     "name": "Frontload",
     "description": "Decreases damage of Frontload attack",

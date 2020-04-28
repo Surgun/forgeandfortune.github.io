@@ -128,18 +128,11 @@ SkillManager.skillEffects['S0011'] = function (combatParams) {
     targets.forEach(target => BuffManager.generateBuff('B0011',target,combatParams.power));
 }
 
-SkillManager.skillEffects['S0011'] = function (combatParams) {
+SkillManager.skillEffects['S0012'] = function (combatParams) {
     //Stand Behind Me - Beorn
     const targets = combatParams.getTarget(TargetType.BEHIND,SideType.ALLIES);
-    console.log(targets);
     if (targets === null) return;
-    targets.forEach(target => BuffManager.generateBuff('B0012',target,combatParams.power,combatParams.attacker));
-}
-
-SkillManager.skillEffects['S0013'] = function (combatParams) {
-    //Skill 3 - Beorn
-    const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
-    targets.forEach(target => BuffManager.generateBuff('B0012',target));
+    targets.forEach(target => BuffManager.generateBuff('B0012',target,combatParams.power));
 }
 
 SkillManager.skillEffects['S0020'] = function (combatParams) {
@@ -160,9 +153,15 @@ SkillManager.skillEffects['S0021'] = function (combatParams) {
 }
 
 SkillManager.skillEffects['S0022'] = function (combatParams) {
-    //Taunt - Cedric
+    //Attack 3 - Cedric
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
-    targets.forEach(target => BuffManager.generateBuff('B0022',target));
+    targets.forEach(target => {
+        if (target.getBuffStacks('B0022') === 5) return;
+        const power1 = combatParams.power*combatParams.attack.mod1;
+        const power2 = combatParams.power*combatParams.attack.mod2;
+        BuffManager.generateBuff('B0022',target,power1,power2);
+        refreshHPBar(target);
+    });
 }
 
 SkillManager.skillEffects['S0030'] = function (combatParams) {

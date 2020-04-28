@@ -128,7 +128,7 @@ class Combatant {
         this.buffs = this.buffs.filter(b=>b.id !== buffID);
     }
     getPow() {
-        return this.pow + this.getBuffPower();
+        return Math.floor(this.pow + this.getBuffPower());
     }
     getTech() {
         return 0;
@@ -149,7 +149,7 @@ class Combatant {
         return this.hp > 0;
     }
     maxHP() {
-        return this.hpmax + this.getBuffMaxHP();
+        return Math.floor(this.hpmax + this.getBuffMaxHP());
     }
     missingHP() {
         return this.maxHP()-this.hp;

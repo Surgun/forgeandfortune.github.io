@@ -79,7 +79,7 @@ class Mob extends Combatant {
         this.hpmax = save.hpmax;
         if (save.buffs !== undefined) {
             save.buffs.forEach(buff => {
-                const newBuff = BuffManager.generateSaveBuff(buff.id,this,buff.power);
+                const newBuff = BuffManager.generateSaveBuff(buff.id,this,buff.power,buff.power2);
                 newBuff.loadSave(buff);
                 this.buffs.push(newBuff);
             });

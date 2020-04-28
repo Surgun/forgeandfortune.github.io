@@ -16,7 +16,7 @@
     "icon": "<i class=\"fas fa-shield-cross\"></i>",
     "powMod": 0,
     "techMod": 0,
-    "mod1": 0.75,
+    "mod1": 0.5,
     "mod2": null
   },
   {
@@ -26,17 +26,17 @@
     "icon": "<i class=\"fas fa-poo\"></i>",
     "powMod": 1,
     "techMod": 0,
-    "mod1": null,
+    "mod1": 0.5,
     "mod2": null
   },
   {
     "id": "S0012",
-    "name": "Beorn Skill 3",
+    "name": "Stand Behind Me",
     "description": "Buff for people behind him, taunt for % taken",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "powMod": 0,
     "techMod": 0,
-    "mod1": null,
+    "mod1": 0.5,
     "mod2": null
   },
   {
@@ -52,7 +52,7 @@
   {
     "id": "S0021",
     "name": "Cedric Skill 2",
-    "description": "Situational taunt? Next attack attack/skill/next two",
+    "description": "Taunt for next two times hit",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "powMod": 0,
     "techMod": 0,
@@ -64,10 +64,10 @@
     "name": "Cedric Skill 3",
     "description": "Reduce max HP but increase damage",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": null,
-    "techMod": null,
-    "mod1": null,
-    "mod2": null
+    "powMod": 1,
+    "techMod": 0,
+    "mod1": 0.1,
+    "mod2": 0.1
   },
   {
     "id": "S0030",

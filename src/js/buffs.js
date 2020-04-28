@@ -7,11 +7,12 @@ class buffTemplate {
 }
 
 class Buff {
-    constructor (buffTemplate,target,power) {
+    constructor (buffTemplate,target,power,power2) {
         Object.assign(this, buffTemplate);
         this.stacks = this.stackCast;
         this.target = target;
         this.power = power;
+        this.power2 = power2;
     }
     addCast() {
         if (this.onCast === "refresh") {
@@ -25,6 +26,7 @@ class Buff {
         const save = {};
         save.stacks = this.stacks;
         save.power = this.power;
+        save.power2 = this.power2;
         save.id = this.id;
         return save;
     }
@@ -69,7 +71,7 @@ const BuffManager = {
     idToBuff(buffID) {
         return this.buffDB.find(b => b.id === buffID);
     },
-    generateBuff(buffID,target,power=0,target2) {
+    generateBuff(buffID,target,power=0,power2=0) {
         if (target.debuffImmune()) return;
         if (target.hasBuff(buffID)) {
             const buff = target.getBuff(buffID);
@@ -78,7 +80,7 @@ const BuffManager = {
             return;
         }
         const buffTemplate = this.idToBuff(buffID);
-        const buff = new BuffLookup[buffID](buffTemplate,target,power,target2);
+        const buff = new BuffLookup[buffID](buffTemplate,target,power,power2);
         target.addBuff(buff);
         BuffRefreshManager.addBuff(buff,target);
     },
@@ -93,9 +95,9 @@ const BuffManager = {
             this.removeBuff(buff.id,target);
         })
     },
-    generateSaveBuff(buffID,target,power) {
+    generateSaveBuff(buffID,target,power,power2=0) {
         const buffTemplate = this.idToBuff(buffID);
-        const buff = new BuffLookup[buffID](buffTemplate,target,power);
+        const buff = new BuffLookup[buffID](buffTemplate,target,power,power2);
         return buff;
     }
 }
@@ -177,6 +179,28 @@ class B0020 extends Buff {
     }
     maxHP() {
         return this.power*this.stacks;
+    }
+}
+
+class B0021 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    mark() {
+        return true;
+    }
+}
+
+class B0022 extends Buff {
+    constructor (buffTemplate,target,power,power2) {
+        super(buffTemplate,target,power);
+        this.power2 = power2;
+    }
+    maxHP() {
+        return -this.power*this.stacks;
+    }
+    pow() {
+        return this.power2*this.stacks;
     }
 }
 
@@ -359,6 +383,8 @@ const BuffLookup = {
     B0011,
     B0012,
     B0020,
+    B0021,
+    B0022,
     B0040,
     B1010,
     B1020,

@@ -199,7 +199,7 @@ const Inventory = {
         this.findempty(container,skipAnimation);
         const item = recipeList.idToItem(container.id);
         if (examineGearTypesCache.includes(item.type)) {
-            examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache,skipAnimation);
+            examineHeroPossibleEquip(examineGearHeroIDCache,examineGearSlotCache,skipAnimation);
         }
     },
     addToInventory(container,skipAnimation) {
@@ -207,7 +207,7 @@ const Inventory = {
         else {
             this.findempty(container,skipAnimation);
             if (examineGearTypesCache.includes(container.item.type)) {
-                examineHeroPossibleEquip(examineGearSlotCache,examineGearHeroIDCache,skipAnimation);
+                examineHeroPossibleEquip(examineGearHeroIDCache,examineGearSlotCache,skipAnimation);
             }
         }
     },

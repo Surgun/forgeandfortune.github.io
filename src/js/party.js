@@ -317,16 +317,16 @@ function characterCard(prefix,dv,ID,status) {
 }
 
 function renderHeroDialogActions(hero) {
-    const contentTabContainer = $("<div/>").addClass('contentTabContainer');
-    generateHeroPlaybooks(hero).appendTo(contentTabContainer);
-    return contentTabContainer;
+    const playbooksContainer = $("<div/>").addClass('examinePartyPlaybooksContainer');
+    generateHeroPlaybooks(hero).appendTo(playbooksContainer);
+    return playbooksContainer;
 }
 
 function setHeroDialogOpen(heroID) {
     const hero = HeroManager.idToHero(heroID);
     // Dialog Parent Containers
     const dialogContainer = $("<div/>").attr({id: 'dialogContainer'}).addClass('dialogContainer').appendTo(document.body);
-    const dialogBoxContainer = $("<div/>").addClass('dialogContent dialogOpening').appendTo(dialogContainer);
+    const dialogBoxContainer = $("<div/>").addClass('heroPlaybookDialog dialogContent dialogOpening').appendTo(dialogContainer);
     // Dialog Upper Content
     const dialogClose = $("<div/>").attr({role: "button", tabindex: 1, 'aria-label': "Close Dialog"}).addClass('dialogClose').html('<i class="fas fa-times"></i>').appendTo(dialogBoxContainer);
     const dialogTitle = $("<div/>").addClass('dialogTitle').appendTo(dialogBoxContainer);

@@ -174,8 +174,12 @@ function generateHeroPlaybooks(hero) {
         const d = $("<div/>").addClass("playbooksHeroContainer").appendTo(dd);
         const playbook = PlaybookManager.idToPlaybook(playbookID);
         if (!playbook.unlocked) {
+            d.addClass("playbookLocked");
             $("<div/>").addClass("playbookName").html(displayText("playbook_locked")).appendTo(d);
-            $("<div/>").addClass("playbookSkillsContainerLocked").html("&nbsp;").appendTo(d);
+            const pbSkillsContainer = $("<div/>").addClass("playbookSkillsContainer").appendTo(d);
+            for (let i = 0; i < 4; i++) {
+                $("<div/>").addClass("heroSelectSkill").html(`<i class="fas fa-lock-alt"></i>`).appendTo(pbSkillsContainer);
+            }
             return;
         }
         d.addClass("playbookSelectable").data({"pbid":playbookID,"hid":hero.id})

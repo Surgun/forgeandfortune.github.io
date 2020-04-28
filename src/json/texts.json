@@ -170,6 +170,11 @@
     "es": null
   },
   {
+    "tid": "playbook_locked",
+    "en": "Locked",
+    "es": null
+  },
+  {
     "tid": "adventure_launch_floor",
     "en": "Start At Floor 1",
     "es": null
@@ -210,6 +215,16 @@
     "es": null
   },
   {
+    "tid": "museum_nav_collections",
+    "en": "Collection",
+    "es": null
+  },
+  {
+    "tid": "museum_nav_rewards",
+    "en": "Rewards",
+    "es": null
+  },
+  {
     "tid": "header_museum_item_types_title",
     "en": "Recipe Lines",
     "es": null
@@ -226,7 +241,7 @@
   },
   {
     "tid": "header_museum_donations_desc",
-    "en": "Donate your items to earn points to spend on bonuses for your recipe lines.",
+    "en": "Donate your items to earn points to spend on museum rewards.",
     "es": null
   },
   {
@@ -240,33 +255,8 @@
     "es": null
   },
   {
-    "tid": null,
-    "en": null,
-    "es": null
-  },
-  {
     "tid": "museum_item_types_back_button",
     "en": "Back to Recipe Types",
-    "es": null
-  },
-  {
-    "tid": null,
-    "en": null,
-    "es": null
-  },
-  {
-    "tid": "museum_nav_collections",
-    "en": "Collection",
-    "es": null
-  },
-  {
-    "tid": "museum_nav_rewards",
-    "en": "Rewards",
-    "es": null
-  },
-  {
-    "tid": null,
-    "en": null,
     "es": null
   },
   {
@@ -287,11 +277,6 @@
   {
     "tid": "museum_reward_points_balance_plural",
     "en": "You have <span>{0} points</span> left to spend.",
-    "es": null
-  },
-  {
-    "tid": null,
-    "en": null,
     "es": null
   },
   {

@@ -1494,6 +1494,10 @@ footer {
     border-color: var(--border-tertiary);
 }
 
+.heroPlaybookDialog.dialogContent {
+    max-width: 700px;
+}
+
 .heroPlayBookDialogPortrait {
     display: flex;
     justify-content: center;
@@ -3270,10 +3274,21 @@ footer {
     padding: 0 10px;
 }
 
-.heroExaminePlaybooks {
+.playbooksHeroContainerAll {
     display: grid;
     grid-template: auto / repeat(auto-fill, 200px);
     grid-gap: 10px;
+}
+
+.examinePartyPlaybooksContainer .playbooksHeroContainerAll {
+    justify-content: center;
+    padding: 10px;
+    margin: 0 -20px;
+    max-height: 400px;
+    background-color: var(--bg-tertiary);
+    border-top: 2px solid var(--border-primary);
+    border-bottom: 2px solid var(--border-primary);
+    overflow: auto;
 }
 
 .playbooksHeroContainer {
@@ -3282,6 +3297,8 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    min-height: 150px;
+    background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
@@ -3293,14 +3310,29 @@ footer {
     border-color: var(--border-tertiary);
 }
 
+.playbooksHeroContainer.playbookLocked {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.playbooksHeroContainer.playbookLocked:hover, .playbooksHeroContainer.playbookLocked:focus {
+    border-color: var(--border-primary);
+}
+
 .playbooksHeroContainer.playbookSelected {
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-secondary);
     border-color: var(--border-secondary);
 }
 
 .playbookName {
     padding-bottom: 5px;
+    width: 100%;
+    text-align: center;
     border-bottom: 2px solid var(--border-primary);
+}
+
+.playbookSelected .playbookName {
+    color: var(--highlight);
 }
 
 .playbookSkillsContainer {

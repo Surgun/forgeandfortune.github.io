@@ -14,6 +14,11 @@
     "slot6Type": "Belts",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0010",
+    "playbooks": [
+      "PB0010",
+      "PB0011",
+      "PB0012"
+    ],
     "description": "Beorn is the model all young warriors strive to become.  He's quite the celebrity."
   },
   {
@@ -31,6 +36,11 @@
     "slot6Type": "Belts",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0020",
+    "playbooks": [
+      "PB0020",
+      "PB0021",
+      "PB0022"
+    ],
     "description": "Cedric's parents died mysteriously, and will do anything to find out what happened."
   },
   {
@@ -48,6 +58,11 @@
     "slot6Type": "Belts",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0030",
+    "playbooks": [
+      "PB0030",
+      "PB0031",
+      "PB0032"
+    ],
     "description": "Grim knows what happened to Cedric's parents, but must keep the secret at all costs."
   },
   {
@@ -65,6 +80,11 @@
     "slot6Type": "Belts",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0040",
+    "playbooks": [
+      "PB0040",
+      "PB0041",
+      "PB0042"
+    ],
     "description": "Lambug's family are poor fisherman, and she's looking to improve her lot in life."
   },
   {
@@ -82,6 +102,11 @@
     "slot6Type": "Pendants",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0050",
+    "playbooks": [
+      "PB0050",
+      "PB0051",
+      "PB0052"
+    ],
     "description": "Zoe was born with the gift of magic, and is unaware of the sheer power she possesses."
   },
   {
@@ -99,6 +124,11 @@
     "slot6Type": "Pendants",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0060",
+    "playbooks": [
+      "PB0060",
+      "PB0061",
+      "PB0062"
+    ],
     "description": "Neve's goal in life is to spread the word of love, peace and harmony through magic."
   },
   {
@@ -116,6 +146,11 @@
     "slot6Type": "Pendants",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0070",
+    "playbooks": [
+      "PB0070",
+      "PB0071",
+      "PB0072"
+    ],
     "description": "Titus is totally a human, with real human skin and hair and everything."
   },
   {
@@ -133,6 +168,11 @@
     "slot6Type": "Pendants",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0080",
+    "playbooks": [
+      "PB0080",
+      "PB0081",
+      "PB0082"
+    ],
     "description": "Troy is a magician's apprentice, looking to make a name for himself."
   },
   {
@@ -150,6 +190,11 @@
     "slot6Type": "Rings",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0090",
+    "playbooks": [
+      "PB0090",
+      "PB0091",
+      "PB0092"
+    ],
     "description": "Alok comes from a wealthy family, and enjoys stealing worthless items from the poor."
   },
   {
@@ -167,6 +212,11 @@
     "slot6Type": "Rings",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0100",
+    "playbooks": [
+      "PB0100",
+      "PB0101",
+      "PB0102"
+    ],
     "description": "Grogmar has a long list of offenses, and is hoping they don't catch up with him."
   },
   {
@@ -184,6 +234,11 @@
     "slot6Type": "Rings",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0110",
+    "playbooks": [
+      "PB0110",
+      "PB0111",
+      "PB0112"
+    ],
     "description": "Revere has nothing to prove, because she knows the truth: she can do anything."
   },
   {
@@ -201,6 +256,11 @@
     "slot6Type": "Rings",
     "slot7Type": "Trinkets",
     "startingPlaybook": "PB0120",
+    "playbooks": [
+      "PB0120",
+      "PB0121",
+      "PB0122"
+    ],
     "description": "Caeda uses both her charm and charisma to get almost anything she wants."
   }
 ]

@@ -16,7 +16,6 @@ class Hero extends Combatant {
         this.inDungeon = false;
         this.protection = 0;
         this.playbook = PlaybookManager.generatePlayBook(this.startingPlaybook);
-        this.playbooks = [this.startingPlaybook];
         this.passiveSkill = null;
     }
     createSave() {
@@ -33,7 +32,7 @@ class Hero extends Combatant {
         this.buffs.forEach(buff => {
             save.buffs.push(buff.createSave());
         });
-        save.playbooks = this.playbooks;
+        save.playbook = this.playbook.id;
         return save;
     }
     loadSave(save) {
@@ -42,7 +41,9 @@ class Hero extends Combatant {
         save.gearSlots.forEach((gearSlot,i) => {
             this.gearSlots[i].loadSave(gearSlot);
         });
-        if (save.playbooks !== undefined) this.playbooks = save.playbooks;
+        if (save.playbook !== undefined) {
+            this.playbook = PlaybookManager.generatePlayBook(save.playbook);
+        }
         this.owned = save.owned;
     }
     populateGearSlots() {
@@ -126,6 +127,12 @@ class Hero extends Combatant {
     }
     upgradeSlot(type) {
         this.getSlot(type).addLevel();
+    }
+    changePlaybook(playbookID) {
+        this.playbook = PlaybookManager.generatePlayBook(playbookID);
+    }
+    swapPlaybook(pbid) {
+        this.playbook = PlaybookManager.generatePlayBook(pbid);
     }
 }
 
@@ -249,5 +256,9 @@ const HeroManager = {
     totalUpgrades() {
         const upgrades = this.heroes.map(h => h.totalUpgrades());
         return upgrades.reduce((a,b) => a+b);
+    },
+    swapPlaybook(hid,pbid) {
+        const hero = this.idToHero(hid);
+        hero.swapPlaybook(pbid);
     }
 }

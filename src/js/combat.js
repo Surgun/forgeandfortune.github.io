@@ -16,7 +16,7 @@ const CombatManager = {
     },
     execute(combatRound) {
         SkillManager.skillEffects[combatRound.attack.id](combatRound);
-        combatRound.attacker.buffTick("onHitting");
+        combatRound.attacker.buffTick("onHitting");        
     }
 }
 
@@ -26,6 +26,7 @@ class combatRoundParams {
         this.allies = allies;
         this.enemies = enemies;
         this.attack = attack;
+        console.log(this.attacker.getPow() * this.attack.powMod + this.attacker.getTech(),this.attack.techMod);
         this.power = Math.floor(this.attacker.getPow() * this.attack.powMod + this.attacker.getTech() * this.attack.techMod);
         this.dungeonid = dungeonid;
     }
@@ -87,8 +88,9 @@ class Combatant {
         this.hp = Math.max(this.hp-reducedDmg,0);
         if (this.hp === 0) this.passiveCheck("dead",attack);
         refreshHPBar(this);
-        this.buffTick("onHit",attack);
         if (this.thorns() > 0) attack.attacker.takeDamage(this.thorns());
+        if (this.parry() > 0) attack.attacker.takeDamage(this.parry());
+        this.buffTick("onHit",attack); //this has to be after thorns/parry so it can remove them as appropriate
     }
     takeDamage(dmg) {
         this.hp = Math.max(this.hp-dmg,0);
@@ -179,6 +181,9 @@ class Combatant {
     mark() {
         return this.buffs.some(b=>b.mark());
     }
+    parry() {
+        return this.buffs.map(b=>b.parry()).reduce((a,b) => a+b,0);
+    }
     getBuffProtection() {
         const buffs = this.buffs.map(b=>b.getProtection());
         return buffs.reduce((a,b) => a+b, 0);
@@ -224,6 +229,9 @@ class Combatant {
     }
     isChilled() {
         return this.buffs.some(b=>b.isChilled());
+    }
+    isLifeTapped() {
+        return this.buffs.some(b=>b.isLifeTapped());
     }
     isWilt() {
         return this.buffs.some(b=>b.isWilt());

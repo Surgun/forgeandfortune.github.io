@@ -11,6 +11,9 @@ const devtools = {
         HeroManager.heroes.forEach(hero => {
             hero.owned = true;
         })
+        PlaybookManager.playbookDB.forEach(playbook => {
+            playbook.unlocked = true;
+        })
         ResourceManager.materials.forEach(material => {
             ResourceManager.addMaterial(material.id,9999999);
         })

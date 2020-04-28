@@ -169,10 +169,17 @@ function showHeroDetails() {
 }
 
 function generateHeroPlaybooks(hero) {
-    const d = $("<div/>").addClass("playbooksHeroContainer");
+    const dd = $("<div/>").addClass("playbooksHeroContainerAll");
     hero.playbooks.forEach(playbookID => {
+        const d = $("<div/>").addClass("playbooksHeroContainer").appendTo(dd);
         const playbook = PlaybookManager.idToPlaybook(playbookID);
-            $("<div/>").addClass("playbookName").html(playbook.name).appendTo(d);
+        if (!playbook.unlocked) {
+            $("<div/>").addClass("playbookName").html(displayText("playbook_locked")).appendTo(d);
+            $("<div/>").addClass("playbookSkillsContainerLocked").html("&nbsp;").appendTo(d);
+            return;
+        }
+        d.addClass("playbookSelectable").data({"pbid":playbookID,"hid":hero.id})
+        $("<div/>").addClass("playbookName").html(playbook.name).appendTo(d);
         const d1 = $("<div/>").addClass("playbookSkillsContainer").appendTo(d);
         if (hero.playbook.id === playbookID) d.addClass("playbookSelected");
         playbook.skillIDs().forEach(skillID => {
@@ -180,8 +187,17 @@ function generateHeroPlaybooks(hero) {
             $("<div/>").addClass("heroSelectSkill tooltip").attr({"data-tooltip":"skill_desc","data-tooltip-value":skill.id}).html(skill.icon).appendTo(d1);
         });
     });
-    return d;
+    return dd;
 }
+
+$(document).on('click',".playbookSelectable", (e) => {
+    e.preventDefault();
+    $(".playbookSelectable").removeClass("playbookSelected");
+    $(e.currentTarget).addClass("playbookSelected");
+    const hid = $(e.currentTarget).data("hid");
+    const pbid = $(e.currentTarget).data("pbid");
+    HeroManager.swapPlaybook(hid,pbid);
+});
 
 function showHeroGear() {
     $heroContentContainer.hide();

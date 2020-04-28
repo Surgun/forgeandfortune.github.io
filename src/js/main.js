@@ -21,6 +21,9 @@ function afterLoad() {
             g.generateNewOrder(3);
         });
         pregearHeroes();
+        HeroManager.heroes.forEach(hero => {
+            PlaybookManager.idToPlaybook(hero.startingPlaybook).unlocked = true;
+        })
     }
     tabHide();
     refreshMasteryBar()
@@ -143,3 +146,4 @@ function pregearHeroes() {
     Titus.equip(new itemContainer("R5503",2));
     Titus.equip(new itemContainer("R6203",2));
 }
+

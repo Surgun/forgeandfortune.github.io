@@ -50,12 +50,14 @@ class Buff {
     getTech() { return 0; }
     isChilled() { return false; }
     isWilt() { return false; }
+    isLifeTapped() { return false; }
     getProtection() { return 0; }
     getVulnerability() { return 0; }
     maxHP() { return 0; }
     mark() { return false; }
     debuffImmune() { return false; }
     thorns() { return 0; }
+    parry() { return 0; }
 }
 
 const BuffManager = {
@@ -140,7 +142,17 @@ class B0010 extends Buff {
         super(buffTemplate,target,power);
     }
     getProtection() {
-        return 0.5;
+        console.log(this.power);
+        return this.power;
+    }
+}
+
+class B0011 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    parry() {
+        return this.power;
     }
 }
 
@@ -183,6 +195,9 @@ class B1030 extends Buff {
     }
     onTurn() {
         this.target.takeDamage(this.power*this.stacks);
+    }
+    isLifeTapped() {
+        return true;
     }
 }
 
@@ -326,6 +341,7 @@ class BM906B extends Buff {
 
 const BuffLookup = {
     B0010,
+    B0011,
     B0020,
     B0040,
     B1010,

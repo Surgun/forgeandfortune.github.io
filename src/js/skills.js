@@ -19,6 +19,20 @@ const PlaybookManager = {
     idToPlaybook(id) {
         return this.playbookDB.find(playbook => playbook.id === id);
     },
+    createSave() {
+        const save = {};
+        save.playbookDB = [];
+        this.playbookDB.forEach(playbook => {
+            save.playbookDB.push(playbook.createSave());
+        });
+        return save;
+    },
+    loadSave(save) {
+        save.playbookDB.forEach(playbookSave => {
+            const playbook = this.idToPlaybook(playbookSave.id);
+            playbook.loadSave(playbookSave);
+        })
+    },
     generatePlayBook(playbookID) {
         const playbookTemplate = this.idToPlaybook(playbookID);
         return new Playbook(playbookTemplate);
@@ -26,15 +40,25 @@ const PlaybookManager = {
     generatePlayBookFromSkills(s1,s2,s3,s4) {
         const skills = {skill1:s1,skill2:s2,skill3:s3,skill4:s4};
         return new Playbook(skills);
-    }
+    },
 }
 
 class playBookTemplate {
     constructor (props) {
         Object.assign(this, props);
+        this.unlocked = false;
     }
     skillIDs() {
         return [this.skill1,this.skill2,this.skill3,this.skill4];
+    }
+    createSave() {
+        const save = {};
+        save.id = this.id;
+        save.unlocked = this.unlocked;
+        return save;
+    }
+    loadSave(save) {
+        this.unlocked = save.unlocked;
     }
 }
 
@@ -95,7 +119,19 @@ SkillManager.skillEffects['S0000'] = function(combatParams) {
 SkillManager.skillEffects['S0010'] = function (combatParams) {
     //Reinforce - Beorn
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
-    targets.forEach(target => BuffManager.generateBuff('B0010',target));
+    targets.forEach(target => BuffManager.generateBuff('B0010',target,combatParams.attack.mod1));
+}
+
+SkillManager.skillEffects['S0011'] = function (combatParams) {
+    //Skill 2 - Beorn
+    const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    targets.forEach(target => BuffManager.generateBuff('B0011',target,combatParams.power));
+}
+
+SkillManager.skillEffects['S0013'] = function (combatParams) {
+    //Skill 3 - Beorn
+    const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    targets.forEach(target => BuffManager.generateBuff('B0012',target));
 }
 
 SkillManager.skillEffects['S0020'] = function (combatParams) {
@@ -109,21 +145,59 @@ SkillManager.skillEffects['S0020'] = function (combatParams) {
     });
 }
 
+SkillManager.skillEffects['S0021'] = function (combatParams) {
+    //Taunt - Cedric
+    const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    targets.forEach(target => BuffManager.generateBuff('B0021',target));
+}
+
+SkillManager.skillEffects['S0022'] = function (combatParams) {
+    //Taunt - Cedric
+    const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    targets.forEach(target => BuffManager.generateBuff('B0022',target));
+}
+
 SkillManager.skillEffects['S0030'] = function (combatParams) {
     //Exert - Grim
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    const thisSkill = SkillManager.idToSkill(combatParams.attack.id);
     let hpDamage = 0;
     targets.forEach(target => {
         hpDamage = Math.floor(target.hp/10);
-        target.takeDamagePercent(15);
+        target.takeDamagePercent(thisSkill.mod1);
         refreshHPBar(target);
     });
-    combatParams.power += hpDamage * 2;
     const targets2 = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     targets2.forEach(target => {
         target.takeAttack(combatParams);
     });
 }
+
+SkillManager.skillEffects['S0031'] = function (combatParams) {
+    //Skill 2 - Grim
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    const thisunit = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
+    const thisSkill = SkillManager.idToSkill(combatParams.attack.id);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        if (target.isLifeTapped()) {
+            const healAmt = Math.floor(combatParams.power * thisSkill.mod1);
+            thisunit.heal(healAmt);
+        }
+    });
+}
+
+SkillManager.skillEffects['S0032'] = function (combatParams) {
+    //Exert - Grim
+    const targets = combatParams.getTarget(TargetType.CLEAVE,SideType.ENEMIES);
+    targets.forEach(target => {
+        hpDamage = Math.floor(target.hp/10);
+        target.takeDamagePercent(15);
+        refreshHPBar(target);
+    });
+}
+
+
 
 SkillManager.skillEffects['S0040'] = function (combatParams) {
     //Frontload - Lambug

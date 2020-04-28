@@ -47,6 +47,7 @@ const devtools = {
         })
     },
     forceTown() {
+        this.tutorialSkip();
         TownManager.buildings.forEach(building => {
             recipeList.idToItem(building.recipeID).owned = true;
             console.log(building.getStatus());
@@ -56,6 +57,7 @@ const devtools = {
         refreshSideTown();
     },
     dungeonUnlock() {
+        this.tutorialSkip();
         DungeonManager.dungeons.forEach(dungeon => {
             if (dungeon.type === "boss") dungeon.maxFloor = 1;
         });
@@ -64,10 +66,12 @@ const devtools = {
         Shop.idToPerk("AL2004").purchase();
     },
     heroUnlock() {
+        this.tutorialSkip();
         HeroManager.heroes.forEach(h=> h.owned = true);
         initializeHeroList();
     },
     allPerks() {
+        this.tutorialSkip();
         this.addGold(1000000000000000);
         Shop.perks.forEach(p=>Shop.buyPerk(p.id));
     },

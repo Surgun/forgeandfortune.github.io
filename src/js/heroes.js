@@ -33,6 +33,7 @@ class Hero extends Combatant {
             save.buffs.push(buff.createSave());
         });
         save.playbook = this.playbook.id;
+        save.state = this.state;
         return save;
     }
     loadSave(save) {
@@ -45,6 +46,14 @@ class Hero extends Combatant {
             this.playbook = PlaybookManager.generatePlayBook(save.playbook);
         }
         this.owned = save.owned;
+        if (save.buffs !== undefined) {
+            save.buffs.forEach(buff => {
+                const newBuff = BuffManager.generateSaveBuff(buff.id,this,buff.power,buff.power2);
+                newBuff.loadSave(buff);
+                this.buffs.push(newBuff);
+            });
+        }
+        if (save.state !== undefined) this.state = save.state;
     }
     populateGearSlots() {
         const gearslots = [];
@@ -54,10 +63,10 @@ class Hero extends Combatant {
         return gearslots;
     }
     getPow() {
-        return this.initialPow + this.gearSlots.map(g=>g.pow()).reduce((a,b) => a+b) + this.getBuffPower();
+        return Math.floor(this.initialPow + this.gearSlots.map(g=>g.pow()).reduce((a,b) => a+b) + this.getBuffPower());
     }
     maxHP() {
-        return this.initialHP + this.gearSlots.map(g=>g.hp()).reduce((a,b) => a+b) + this.getBuffMaxHP();
+        return Math.floor(this.initialHP + this.gearSlots.map(g=>g.hp()).reduce((a,b) => a+b) + this.getBuffMaxHP());
     }
     getTech() {
         return this.gearSlots.map(g=>g.tech()).reduce((a,b) => a+b) + this.getBuffTech();

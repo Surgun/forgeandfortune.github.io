@@ -32,7 +32,7 @@ class Buff {
         this.stacks = save.stacks;
     }
     buffTick(type,attack) {
-        if (type === "onTurn") this.onTick();
+        if (type === "onTurn" || type === "onMyTurn") this.onTick();
         if (type === "onHit") this.onHit(attack);
         if (type === "onHitting") this.onHitting();
         if (type !== this.decrease) return;
@@ -58,6 +58,7 @@ class Buff {
     debuffImmune() { return false; }
     thorns() { return 0; }
     parry() { return 0; }
+    beornTank() { return 0; }
 }
 
 const BuffManager = {
@@ -68,7 +69,7 @@ const BuffManager = {
     idToBuff(buffID) {
         return this.buffDB.find(b => b.id === buffID);
     },
-    generateBuff(buffID,target,power=0) {
+    generateBuff(buffID,target,power=0,target2) {
         if (target.debuffImmune()) return;
         if (target.hasBuff(buffID)) {
             const buff = target.getBuff(buffID);
@@ -77,7 +78,7 @@ const BuffManager = {
             return;
         }
         const buffTemplate = this.idToBuff(buffID);
-        const buff = new BuffLookup[buffID](buffTemplate,target,power);
+        const buff = new BuffLookup[buffID](buffTemplate,target,power,target2);
         target.addBuff(buff);
         BuffRefreshManager.addBuff(buff,target);
     },
@@ -142,7 +143,6 @@ class B0010 extends Buff {
         super(buffTemplate,target,power);
     }
     getProtection() {
-        console.log(this.power);
         return this.power;
     }
 }
@@ -153,6 +153,21 @@ class B0011 extends Buff {
     }
     parry() {
         return this.power;
+    }
+    getProtection() {
+        return 1;
+    }
+}
+
+class B0012 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return this.power;
+    }
+    beornTank() {
+        return 1-this.power;
     }
 }
 
@@ -342,6 +357,7 @@ class BM906B extends Buff {
 const BuffLookup = {
     B0010,
     B0011,
+    B0012,
     B0020,
     B0040,
     B1010,

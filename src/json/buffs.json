@@ -11,6 +11,28 @@
     "type": "buff"
   },
   {
+    "id": "B0011",
+    "name": "Parry",
+    "description": "Parry",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "onHit",
+    "type": "buff"
+  },
+  {
+    "id": "B0012",
+    "name": "Stand Behind Me",
+    "description": "Stand Behind Me",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "onMyTurn",
+    "type": "buff"
+  },
+  {
     "id": "B0020",
     "name": "Toughen",
     "description": "Increases max health by #power# per stack",

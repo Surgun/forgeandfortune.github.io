@@ -128,6 +128,14 @@ SkillManager.skillEffects['S0011'] = function (combatParams) {
     targets.forEach(target => BuffManager.generateBuff('B0011',target,combatParams.power));
 }
 
+SkillManager.skillEffects['S0011'] = function (combatParams) {
+    //Stand Behind Me - Beorn
+    const targets = combatParams.getTarget(TargetType.BEHIND,SideType.ALLIES);
+    console.log(targets);
+    if (targets === null) return;
+    targets.forEach(target => BuffManager.generateBuff('B0012',target,combatParams.power,combatParams.attacker));
+}
+
 SkillManager.skillEffects['S0013'] = function (combatParams) {
     //Skill 3 - Beorn
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);

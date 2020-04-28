@@ -1,12 +1,13 @@
 "use strict";
 
-const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,RANDOM:4,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8});
+const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,RANDOM:4,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9});
 const SideType = Object.freeze({ALLIES:0,ENEMIES:1});
 
 const CombatManager = {
     refreshLater : false,
     nextTurn(dungeon) {
         const attacker = dungeon.order.nextTurn();
+        attacker.buffTick("onMyTurn");
         const allies = (attacker.unitType === "hero") ? dungeon.party.heroes : dungeon.mobs;
         const enemies = (attacker.unitType === "hero") ? dungeon.mobs : dungeon.party.heroes;
         const attack = attacker.getSkill();
@@ -26,7 +27,6 @@ class combatRoundParams {
         this.allies = allies;
         this.enemies = enemies;
         this.attack = attack;
-        console.log(this.attacker.getPow() * this.attack.powMod + this.attacker.getTech(),this.attack.techMod);
         this.power = Math.floor(this.attacker.getPow() * this.attack.powMod + this.attacker.getTech() * this.attack.techMod);
         this.dungeonid = dungeonid;
     }
@@ -62,6 +62,12 @@ class combatRoundParams {
             if (indx === living.length-1) return null;
             return [living[indx+1]];
         }
+        if (target === TargetType.BEHIND) {
+            const uid = this.attacker.uniqueid;
+            const indx = living.findIndex(h=>h.uniqueid === uid);
+            if (indx === living.length-1) return null;
+            return living.slice(indx+1,living.length);
+        }
     }
 }
 
@@ -90,6 +96,9 @@ class Combatant {
         refreshHPBar(this);
         if (this.thorns() > 0) attack.attacker.takeDamage(this.thorns());
         if (this.parry() > 0) attack.attacker.takeDamage(this.parry());
+        if (this.beornTank() > 0) {
+            HeroManager.idToHero("H001").takeDamage(this.beornTank());
+        }
         this.buffTick("onHit",attack); //this has to be after thorns/parry so it can remove them as appropriate
     }
     takeDamage(dmg) {
@@ -242,6 +251,9 @@ class Combatant {
     thorns() {
         const thorns = this.buffs.map(b=>b.thorns());
         return thorns.reduce((a,b) => a+b, 0);
+    }
+    beornTank() {
+        return this.buffs.map(b=>b.beornTank()).reduce((a,b) => a+b, 0);
     }
 }
 

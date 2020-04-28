@@ -58,31 +58,15 @@ function dbEnable() {
     const d = $("<button/>").addClass("dbClose").html(`<i class="fas fa-times"></i>`);
 
     const d1 = $("<div/>").addClass("singleActionContainer");
-        const d1a = $("<div/>");
-            $("<button/>").addClass("gmOption dbActionButton").html("God Mode").appendTo(d1a);
-        const d1b = $("<div/>");
-            $("<button/>").addClass("heroTestOption dbActionButton").html("Hero Equipment Test").appendTo(d1b);
-        const d1c = $("<div/>");
-            $("<button/>").addClass("materialOption dbActionButton").html("Add Materials").appendTo(d1c);
-        const d1d = $("<div/>");
-            $("<button/>").addClass("dmOption dbActionButton").html("UI / UX Mode").appendTo(d1d);
-        const d1e = $("<div/>");
-            $("<button/>").addClass("hyperSpeedOption dbActionButton").html("Hyper Speed").appendTo(d1e);
-        const d1f = $("<div/>");
-            $("<button/>").addClass("forceTownOption dbActionButton").html("Unlock Town").appendTo(d1f);
-        const d1g = $("<div>");
-            $("<button/>").addClass("dungeonUnlockOption dbActionButton").html("Unlock Dungeons").appendTo(d1g);
-        const d1h = $("<div/>");
-            $("<button/>").addClass("heroUnlockOption dbActionButton").html("Unlock Heroes").appendTo(d1h);
-        const d1i = $("<div/>");
-            $("<button/>").addClass("perkUnlockOption dbActionButton").html("Unlock Perks").appendTo(d1i);
-        const d1j = $("<div/>");
-            $("<button/>").addClass("trinketUnlockOption dbActionButton").html("Add Trinkets").appendTo(d1j);
-        const d1k = $("<div/>");
-            $("<button/>").addClass("testRealmUnlockOption dbActionButton").html("Test Dungeon").appendTo(d1k);
-        const d1l = $("<div/>");
-            $("<button/>").addClass("timewarpOption dbActionButton").html("Time Warp").appendTo(d1l);
-        d1.append(d1a,d1b,d1c,d1d,d1e,d1f,d1g,d1h,d1i,d1j,d1k,d1l);
+        $("<button/>").addClass("dbActionButton").data("devToolType","tutorialSkip").html("Skip Tutorial").appendTo(d1);
+        $("<button/>").addClass("dbActionButton").data("devToolType","godMode").html("God Mode").appendTo(d1);
+        $("<button/>").addClass("dbActionButton").data("devToolType","addMaterial").html("Add Materials").appendTo(d1);
+        $("<button/>").addClass("dbActionButton").data("devToolType","uiux").html("UI / UX Mode").appendTo(d1);
+        $("<button/>").addClass("dbActionButton").data("devToolType","townUnlock").html("Unlock Town").appendTo(d1);
+        $("<button/>").addClass("dbActionButton").data("devToolType","dungeonUnlock").html("Unlock Dungeons").appendTo(d1);
+        $("<button/>").addClass("dbActionButton").data("devToolType","unlockHeroes").html("Unlock Heroes").appendTo(d1);
+        $("<button/>").addClass("dbActionButton").data("devToolType","unlockPerks").html("Unlock Perks").appendTo(d1);
+        $("<button/>").addClass("dbActionButton").data("devToolType","timeWarp").html("Time Warp").appendTo(d1);
 
     const d4 = $("<div/>").addClass("addItemContainer dbActionContainer");
         const d4a = $("<div/>").addClass("addItemTitle").html("Add Item to Inventory");
@@ -134,45 +118,17 @@ function checkDB() {
 
 checkDB();
 
-$(document).on('click', '.materialOption', (e) => {
-    devtools.materials();
+$(document).on('click', '.dbActionButton', (e) => {
+    const type = $(e.currentTarget).data("devToolType");
+    if (type === "tutorialSkip") devtools.tutorialSkip();
+    if (type === "godMode") devtools.godmode();
+    if (type === "addMaterial") devtools.materials();
+    if (type === "townUnlock") devtools.forceTown();
+    if (type === "dungeonUnlock") devtools.dungeonUnlock();
+    if (type === "unlockHeroes") devtools.heroUnlock();
+    if (type === "unlockPerks") devtools.allPerks();
+    if (type === "timeWarp") devtools.timeWarp();
 });
-
-$(document).on('click', '.forceTownOption', (e) => {
-    devtools.forceTown();
-});
-
-$(document).on('click', '.hyperSpeedOption', (e) => {
-    devtools.hyperSpeed();
-});
-
-$(document).on('click', '.dmOption', (e) => {
-    devtools.designmode();
-});
-
-$(document).on('click', '.dungeonUnlockOption', (e) => {
-    devtools.dungeonUnlock();
-})
-
-$(document).on('click', '.heroUnlockOption', (e) => {
-    devtools.heroUnlock();
-})
-
-$(document).on('click', '.perkUnlockOption', (e) => {
-    devtools.allPerks();
-})
-
-$(document).on('click', '.trinketUnlockOption', (e) => {
-    devtools.addTrinkets();
-});
-
-$(document).on('click', '.testRealmUnlockOption', (e) => {
-    devtools.testRealm();
-})
-
-$(document).on('click', '.timewarpOption', (e) => {
-    devtools.timeWarp();
-})
 
 $(document).on('click', '.addGoldBtn', (e) => {
     const goldAmount = parseInt(document.querySelector(".addGoldInput").value);
@@ -200,13 +156,6 @@ $(document).on('click', '.addItemBtn', (e) => {
     devtools.addItem(itemName,itemRarity);
 });
 
-$(document).on('click', '.gmOption', (e) => {
-    devtools.godmode();
-});
-
-$(document).on('click', '.heroTestOption', (e) => {
-    devtools.heroTest();
-});
 
 $(document).on('click', '.dbClose', (e) => {
     setDialogClose();

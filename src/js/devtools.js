@@ -15,6 +15,7 @@ const devtools = {
         devtools.addGold(100000);
         Shop.buyPerk("AL1000");
         Shop.buyPerk("AL2000");
+
         Shop.buyPerk("AL2001");
         ResourceManager.addMaterial("M001",-ResourceManager.idToMaterial("M001").amt);
     },
@@ -67,7 +68,12 @@ const devtools = {
     },
     heroUnlock() {
         this.tutorialSkip();
-        HeroManager.heroes.forEach(h=> h.owned = true);
+        HeroManager.heroes.forEach(h => {
+            h.owned = true
+            h.playbooks.forEach(playbookID => {
+                PlaybookManager.idToPlaybook(playbookID).unlocked = true;
+            });
+        });
         initializeHeroList();
     },
     allPerks() {

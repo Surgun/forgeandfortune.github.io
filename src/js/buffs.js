@@ -264,6 +264,15 @@ class B1030 extends Buff {
     }
 }
 
+class B1042 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    onTick() {
+        this.target.heal(this.power);
+    }
+}
+
 class B2010 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
@@ -416,6 +425,7 @@ const BuffLookup = {
     B1020,
     B1022,
     B1030,
+    B1042,
     B2010,
     B2040,
     BM102,

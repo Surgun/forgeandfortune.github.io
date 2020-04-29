@@ -148,7 +148,7 @@
     "description": "Heal Time",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "maxStack": 4,
-    "stackCast": 1,
+    "stackCast": 4,
     "onCast": "refresh",
     "decrease": "onMyTurn",
     "type": "buff"

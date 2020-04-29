@@ -339,13 +339,27 @@ SkillManager.skillEffects['S1032'] = function (combatParams) {
     });
 };
 
-
 SkillManager.skillEffects['S1040'] = function (combatParams) {
     //Holy Prayer - Troy
     const targets = combatParams.getTarget(TargetType.MISSINGHP,SideType.ALLIES);
-    console.log(targets);
     targets.forEach(target => {
         target.heal(combatParams.power);
+    });
+};
+
+SkillManager.skillEffects['S1041'] = function (combatParams) {
+    //Holy Prayer 2 - Troy
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
+    targets.forEach(target => {
+        target.heal(combatParams.power);
+    });
+};
+
+SkillManager.skillEffects['S1042'] = function (combatParams) {
+    //Holy Prayer 3 - Troy
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ALLIES);
+    targets.forEach(target => {
+        BuffManager.generateBuff("B1042",target,combatParams.power);
     });
 };
 

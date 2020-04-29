@@ -94,9 +94,9 @@
     "name": "Grim Skill 3",
     "description": "Drain HP cleave (first two)",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": null,
-    "techMod": null,
-    "mod1": null,
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": 0.15,
     "mod2": null
   },
   {

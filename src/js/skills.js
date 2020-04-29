@@ -206,18 +206,6 @@ SkillManager.skillEffects['S0032'] = function (combatParams) {
     });
 }
 
-SkillManager.skillEffects['S0032'] = function (combatParams) {
-    //Exert - Grim
-    const targets = combatParams.getTarget(TargetType.CLEAVE,SideType.ENEMIES);
-    targets.forEach(target => {
-        hpDamage = Math.floor(target.hp/10);
-        target.takeDamagePercent(15);
-        refreshHPBar(target);
-    });
-}
-
-
-
 SkillManager.skillEffects['S0040'] = function (combatParams) {
     //Frontload - Lambug
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);

@@ -90,7 +90,10 @@ const PartyCreator = {
 
 function startPartyCreation(partyStarted) {
     const area = PartyCreator.areaSelect;
-    if (PartyCreator.dungeonSelect === null) PartyCreator.setDungeon(area.lastOpen().id);
+    if (PartyCreator.dungeonSelect === null) {
+        if (area.lastVisitedDungeon === null) PartyCreator.setDungeon(area.lastOpen().id);
+        else PartyCreator.setDungeon(area.lastVisitedDungeon);
+    }
     const dungeon = DungeonManager.dungeonByID(PartyCreator.dungeonSelect);
     if (!partyStarted) {
         PartyCreator.clearMembers();

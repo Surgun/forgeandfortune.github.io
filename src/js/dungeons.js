@@ -44,12 +44,15 @@ class Area {
     constructor(props) {
         Object.assign(this, props);
         this.dungeons = [];
+        this.lastVisitedDungeon = null;
     }
     createSave() {
         const save = {};
+        save.lastVisitedDungeon = this.lastVisitedDungeon;
         return save;
     }
     loadSave(save) {
+        if (save.lastVisitedDungeon !== undefined) this.lastVisitedDungeon = save.lastVisitedDungeon;
         return;
     }
     unlocked() {
@@ -80,6 +83,9 @@ class Area {
     lastOpen() {
         const dungeons = this.dungeons.filter(d => d.unlocked());
         return dungeons[dungeons.length-1];
+    }
+    setLastDungeon(dungeonID) {
+        this.lastVisitedDungeon = dungeonID;
     }
 }
 
@@ -364,6 +370,8 @@ const DungeonManager = {
         dungeon.floor = floorSkip ? dungeon.maxFloor : 1;
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = dungeonID;
+        const area = AreaManager.idToArea(dungeon.area);
+        area.setLastDungeon(dungeonID);
         dungeon.initializeParty(party);
         dungeon.resetFloor();
         initializeSideBarDungeon();

@@ -167,9 +167,8 @@ SkillManager.skillEffects['S0022'] = function (combatParams) {
 SkillManager.skillEffects['S0030'] = function (combatParams) {
     //Exert - Grim
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
-    const thisSkill = SkillManager.idToSkill(combatParams.attack.id);
     targets.forEach(target => {
-        target.takeDamagePercent(thisSkill.mod1);
+        target.takeDamagePercent(combatParams.attack.mod1);
         refreshHPBar(target);
     });
     const targets2 = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
@@ -182,11 +181,10 @@ SkillManager.skillEffects['S0031'] = function (combatParams) {
     //Skill 2 - Grim
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     const thisunit = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
-    const thisSkill = SkillManager.idToSkill(combatParams.attack.id);
     targets.forEach(target => {
         target.takeAttack(combatParams);
         if (target.isLifeTapped()) {
-            const healAmt = Math.floor(combatParams.power * thisSkill.mod1);
+            const healAmt = Math.floor(combatParams.power * combatParams.attack.mod1);
             thisunit.heal(healAmt);
         }
     });
@@ -195,9 +193,8 @@ SkillManager.skillEffects['S0031'] = function (combatParams) {
 SkillManager.skillEffects['S0032'] = function (combatParams) {
     //Skill 3 - Grim
     const thisUnit = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
-    const thisSkill = SkillManager.idToSkill(combatParams.attack.id);
     thisUnit.forEach(target => {
-        target.takeDamagePercent(thisSkill.mod1);
+        target.takeDamagePercent(combatParams.attack.mod1);
         refreshHPBar(target);
     });
     const targets = combatParams.getTarget(TargetType.CLEAVE,SideType.ENEMIES);
@@ -229,7 +226,7 @@ SkillManager.skillEffects['S0042'] = function (combatParams) {
     //Frontload - Lambug
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
-    const buffPower = selfTarget.getPow()*combatParams.mod1;
+    const buffPower = selfTarget.getPow()*combatParams.attack.mod1;
     BuffManager.generateBuff("B0042",selfTarget,buffPower);
     targets.forEach(target => {
         target.takeAttack(combatParams);
@@ -241,7 +238,30 @@ SkillManager.skillEffects['S1010'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
     targets.forEach(target => {
         target.takeAttack(combatParams);
-        BuffManager.generateBuff("B1010",target,Math.floor(combatParams.power/10));
+        BuffManager.generateBuff("B1010",target,Math.floor(combatParams.power*combatParams.attack.mod1));
+    });
+};
+
+SkillManager.skillEffects['S1011'] = function (combatParams) {
+    //Meteor - Zoe
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        BuffManager.generateBuff("B1010",target,Math.floor(combatParams.power*combatParams.attack.mod1));
+    });
+};
+
+SkillManager.skillEffects['S1012'] = function (combatParams) {
+    //Powder Keg - Zoe
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    targets.forEach(target => {
+        if (target.getBuffStacks("B1012") === 2) {
+            const dmg = target.getBuff("B1012").power;
+            target.takeDamage(dmg);
+            BuffManager.removeBuff("B1012",target);
+            return;
+        }
+        BuffManager.generateBuff("B1012",target,Math.floor(combatParams.power));
     });
 };
 
@@ -251,13 +271,31 @@ SkillManager.skillEffects['S1020'] = function (combatParams) {
     const originalPower = combatParams.power;
     targets.forEach(target => {
         if (target.isChilled()) {
-            combatParams.power = Math.floor(2.5 * originalPower);
+            combatParams.power = Math.floor(combatParams.attack.mod1 * originalPower);
             target.takeAttack(combatParams);
         }
         else {
             target.takeAttack(combatParams);
             BuffManager.generateBuff("B1020",target,0);
         }
+    });
+};
+
+SkillManager.skillEffects['S1021'] = function (combatParams) {
+    //Blizzard - Neve
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        BuffManager.generateBuff("B1020",target,0);
+    });
+};
+
+SkillManager.skillEffects['S1022'] = function (combatParams) {
+    //Blizzard - Neve
+    const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        BuffManager.generateBuff("B1022",target,0);
     });
 };
 

@@ -228,6 +228,12 @@ class B1010 extends Buff {
     }
 }
 
+class B1012 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+}
+
 class B1020 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
@@ -237,11 +243,20 @@ class B1020 extends Buff {
     }
 }
 
+class B1022 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 1.0;
+    }
+}
+
 class B1030 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    onTurn() {
+    onTick() {
         this.target.takeDamage(this.power*this.stacks);
     }
     isLifeTapped() {
@@ -397,7 +412,9 @@ const BuffLookup = {
     B0041,
     B0042,
     B1010,
+    B1012,
     B1020,
+    B1022,
     B1030,
     B2010,
     B2040,

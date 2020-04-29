@@ -89,12 +89,23 @@
   },
   {
     "id": "B1010",
-    "name": "Meteor",
+    "name": "Scorched",
     "description": "Deals #power# damage on this unit's turn",
     "icon": "<i class=\"fas fa-fire\"></i>",
     "maxStack": 1,
     "stackCast": 1,
     "onCast": "refresh",
+    "decrease": "never",
+    "type": "debuff"
+  },
+  {
+    "id": "B1012",
+    "name": "Powder Keg",
+    "description": "On third stack deals massive damage",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "maxStack": 3,
+    "stackCast": 1,
+    "onCast": "stack",
     "decrease": "never",
     "type": "debuff"
   },
@@ -110,6 +121,17 @@
     "type": "debuff"
   },
   {
+    "id": "B1022",
+    "name": "Ice Box",
+    "description": "Ice Box",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "onMyTurn",
+    "type": "buff"
+  },
+  {
     "id": "B1030",
     "name": "Transfer Life",
     "description": "This unit takes damage at the start of its turn",
@@ -119,6 +141,17 @@
     "onCast": "stack",
     "decrease": "never",
     "type": "debuff"
+  },
+  {
+    "id": "B1042",
+    "name": "Heal Time",
+    "description": "Heal Time",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "maxStack": 4,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "onMyTurn",
+    "type": "buff"
   },
   {
     "id": "B2010",

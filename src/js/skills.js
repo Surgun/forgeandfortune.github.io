@@ -368,10 +368,27 @@ SkillManager.skillEffects['S2010'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
     targets.forEach(target => {
         BuffManager.generateBuff("B2010",target,Math.floor(combatParams.power));
+        const stacks = target.getBuffStacks("B2010");
+        target.heal(combatParams.power*stacks);
+        refreshHPBar(target);
     });
 };
 
-SkillManager.skillEffects['S2020'] = function (combatParams) {
+SkillManager.skillEffects['S2011'] = function (combatParams) {
+    //Inspiration - Alok
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
+    targets.forEach(target => {
+        BuffManager.generateBuff("B2011",target,Math.floor(combatParams.power));
+    });
+};
+SkillManager.skillEffects['S2012'] = function (combatParams) {
+    //Inspiration - Alok
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
+    targets.forEach(target => {
+        BuffManager.generateBuff("B2012",target,Math.floor(combatParams.power));
+    });
+};
+SkillManager.skillEffects['S2022'] = function (combatParams) {
     //Snipe - Grogmar
     const targets = combatParams.getTarget(TargetType.LOWESTHP,SideType.ENEMIES);
     targets.forEach(target => {

@@ -277,8 +277,26 @@ class B2010 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
+    getHP() {
+        return this.power*this.stacks;
+    }
+}
+
+class B2011 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getPow() {
+        return this.power*this.stacks;
+    }
+}
+
+class B2012 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
     getTech() {
-        return this.power;
+        return this.power*this.stacks;
     }
 }
 
@@ -427,6 +445,8 @@ const BuffLookup = {
     B1030,
     B1042,
     B2010,
+    B2011,
+    B2012,
     B2040,
     BM102,
     BM200,

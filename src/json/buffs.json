@@ -155,13 +155,35 @@
   },
   {
     "id": "B2010",
+    "name": "Alok 1",
+    "description": "Increase health",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "B2011",
+    "name": "Alok 2",
+    "description": "Increase power",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "B2012",
     "name": "Inspire",
     "description": "Increases tech of this unit by #power#",
     "icon": "<i class=\"fas fa-lightbulb\"></i>",
-    "maxStack": 2,
-    "stackCast": 2,
+    "maxStack": 1,
+    "stackCast": 1,
     "onCast": "refresh",
-    "decrease": "onHitting",
+    "decrease": "never",
     "type": "buff"
   },
   {

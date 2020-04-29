@@ -84,7 +84,7 @@ const PartyCreator = {
         return dungeon.partySize - this.heroes.length;
     },
     setDungeon(dungeonid) {
-        PartyCreator.dungeonSelect = dungeonid;
+        this.dungeonSelect = dungeonid;
     }
 }
 
@@ -200,8 +200,7 @@ $(document).on('click', ".dtsDungeon", (e) => {
     const dungeonid = $(e.currentTarget).data("dungeonID");
     if (PartyCreator.dungeonSelect === dungeonid) return;
     PartyCreator.setDungeon(dungeonid);
-    PartyCreator.clearMembers();
-    startPartyCreation(true);
+    startPartyCreation(false);
 });
 
 //Go back to dungeon select screen

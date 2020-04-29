@@ -73,17 +73,17 @@
   },
   {
     "id": "PB0040",
-    "name": "Waning Blows",
-    "skill1": "S0000",
-    "skill2": "S0040",
+    "name": "Lambug 1",
+    "skill1": "S0040",
+    "skill2": "S0000",
     "skill3": "S0000",
     "skill4": "S0000"
   },
   {
     "id": "PB0041",
-    "name": "Lambug 2",
-    "skill1": "S0041",
-    "skill2": "S0000",
+    "name": "Waning Blows",
+    "skill1": "S0000",
+    "skill2": "S0041",
     "skill3": "S0000",
     "skill4": "S0000"
   },

@@ -66,7 +66,7 @@
     "type": "buff"
   },
   {
-    "id": "B0040",
+    "id": "B0041",
     "name": "Frontload",
     "description": "Decreases damage of Frontload attack",
     "icon": "<i class=\"fas fa-angry\"></i>",
@@ -74,6 +74,17 @@
     "stackCast": 1,
     "onCast": "stack",
     "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "B0042",
+    "name": "Lambug 3",
+    "description": "Increases damage until hit",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "maxStack": 3,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "onHit",
     "type": "buff"
   },
   {

@@ -207,14 +207,33 @@ SkillManager.skillEffects['S0032'] = function (combatParams) {
 }
 
 SkillManager.skillEffects['S0040'] = function (combatParams) {
-    //Frontload - Lambug
-    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
-    const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
-    combatParams.power -=  0.5*selfTarget.getBuffStacks("B0040");
+    //Cleave - Lambug
+    const targets = combatParams.getTarget(TargetType.CLEAVE,SideType.ENEMIES);
     targets.forEach(target => {
         target.takeAttack(combatParams);
     });
-    BuffManager.generateBuff("B0040",selfTarget,0);
+}
+
+SkillManager.skillEffects['S0041'] = function (combatParams) {
+    //Frontload - Lambug
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
+    combatParams.power -=  0.5*selfTarget.getBuffStacks("B0041");
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+    BuffManager.generateBuff("B0041",selfTarget,0);
+}
+
+SkillManager.skillEffects['S0042'] = function (combatParams) {
+    //Frontload - Lambug
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
+    const buffPower = selfTarget.getPow()*combatParams.mod1;
+    BuffManager.generateBuff("B0042",selfTarget,buffPower);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
 }
 
 SkillManager.skillEffects['S1010'] = function (combatParams) {

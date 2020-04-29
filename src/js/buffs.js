@@ -204,9 +204,18 @@ class B0022 extends Buff {
     }
 }
 
-class B0040 extends Buff {
+class B0041 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
+    }
+}
+
+class B0042 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    pow() {
+        return this.power*this.stacks;
     }
 }
 
@@ -385,7 +394,8 @@ const BuffLookup = {
     B0020,
     B0021,
     B0022,
-    B0040,
+    B0041,
+    B0042,
     B1010,
     B1020,
     B1030,

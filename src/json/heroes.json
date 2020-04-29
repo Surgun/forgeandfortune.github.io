@@ -19,7 +19,8 @@
       "PB0011",
       "PB0012"
     ],
-    "description": "Beorn is the model all young warriors strive to become.  He's quite the celebrity."
+    "description": "Beorn is the model all young warriors strive to become.  He's quite the celebrity.",
+    "race": "human"
   },
   {
     "id": "H002",
@@ -41,7 +42,8 @@
       "PB0021",
       "PB0022"
     ],
-    "description": "Cedric's parents died mysteriously, and will do anything to find out what happened."
+    "description": "Cedric's parents died mysteriously, and will do anything to find out what happened.",
+    "race": "elf"
   },
   {
     "id": "H003",
@@ -63,7 +65,8 @@
       "PB0031",
       "PB0032"
     ],
-    "description": "Grim knows what happened to Cedric's parents, but must keep the secret at all costs."
+    "description": "Grim knows what happened to Cedric's parents, but must keep the secret at all costs.",
+    "race": "undead"
   },
   {
     "id": "H004",
@@ -85,7 +88,8 @@
       "PB0041",
       "PB0042"
     ],
-    "description": "Lambug's family are poor fisherman, and she's looking to improve her lot in life."
+    "description": "Lambug's family are poor fisherman, and she's looking to improve her lot in life.",
+    "race": "orc"
   },
   {
     "id": "H101",
@@ -107,7 +111,8 @@
       "PB0051",
       "PB0052"
     ],
-    "description": "Zoe was born with the gift of magic, and is unaware of the sheer power she possesses."
+    "description": "Zoe was born with the gift of magic, and is unaware of the sheer power she possesses.",
+    "race": "elf"
   },
   {
     "id": "H102",
@@ -129,7 +134,8 @@
       "PB0061",
       "PB0062"
     ],
-    "description": "Neve's goal in life is to spread the word of love, peace and harmony through magic."
+    "description": "Neve's goal in life is to spread the word of love, peace and harmony through magic.",
+    "race": "elf"
   },
   {
     "id": "H103",
@@ -151,7 +157,8 @@
       "PB0071",
       "PB0072"
     ],
-    "description": "Titus is totally a human, with real human skin and hair and everything."
+    "description": "Titus is totally a human, with real human skin and hair and everything.",
+    "race": "undead"
   },
   {
     "id": "H104",
@@ -173,7 +180,8 @@
       "PB0081",
       "PB0082"
     ],
-    "description": "Troy is a magician's apprentice, looking to make a name for himself."
+    "description": "Troy is a magician's apprentice, looking to make a name for himself.",
+    "race": "human"
   },
   {
     "id": "H201",
@@ -195,7 +203,8 @@
       "PB0091",
       "PB0092"
     ],
-    "description": "Alok comes from a wealthy family, and enjoys stealing worthless items from the poor."
+    "description": "Alok comes from a wealthy family, and enjoys stealing worthless items from the poor.",
+    "race": "elf"
   },
   {
     "id": "H202",
@@ -217,7 +226,8 @@
       "PB0101",
       "PB0102"
     ],
-    "description": "Grogmar has a long list of offenses, and is hoping they don't catch up with him."
+    "description": "Grogmar has a long list of offenses, and is hoping they don't catch up with him.",
+    "race": "orc"
   },
   {
     "id": "H203",
@@ -239,7 +249,8 @@
       "PB0111",
       "PB0112"
     ],
-    "description": "Revere has nothing to prove, because she knows the truth: she can do anything."
+    "description": "Revere has nothing to prove, because she knows the truth: she can do anything.",
+    "race": "human"
   },
   {
     "id": "H204",
@@ -261,6 +272,7 @@
       "PB0121",
       "PB0122"
     ],
-    "description": "Caeda uses both her charm and charisma to get almost anything she wants."
+    "description": "Caeda uses both her charm and charisma to get almost anything she wants.",
+    "race": "human"
   }
 ]

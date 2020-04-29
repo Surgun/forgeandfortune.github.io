@@ -1,6 +1,6 @@
 "use strict";
 
-const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,RANDOM:4,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9,CLEAVE:10});
+const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9,CLEAVE:10,BEFORE:11,AFTER:12});
 const SideType = Object.freeze({ALLIES:0,ENEMIES:1});
 
 const CombatManager = {
@@ -61,6 +61,12 @@ class combatRoundParams {
             const indx = living.findIndex(h=>h.uniqueid === uid);
             if (indx === living.length-1) return null;
             return [living[indx+1]];
+        }
+        if (target === TargetType.BEFORE) {
+            const uid = this.attacker.uniqueid;
+            const indx = living.findIndex(h=>h.uniqueid === uid);
+            if (indx === 0) return null;
+            return [living[indx-1]];
         }
         if (target === TargetType.BEHIND) {
             const uid = this.attacker.uniqueid;

@@ -300,9 +300,9 @@ SkillManager.skillEffects['S1022'] = function (combatParams) {
 };
 
 SkillManager.skillEffects['S1030'] = function (combatParams) {
-    //Transfer Life - Grim
+    //Transfer Life - Titus
     const lifeDrain = combatParams.getTarget(TargetType.BEFORE,SideType.ALLIES);
-    if (lifeDrain === null) return;
+    if (lifeDrain === null || lifeDrain[0].race === "undead") return;
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     lifeDrain.forEach(target => {
         target.takeAttack(combatParams);
@@ -311,6 +311,34 @@ SkillManager.skillEffects['S1030'] = function (combatParams) {
         BuffManager.generateBuff("B1030",target,combatParams.power);
     });
 };
+
+SkillManager.skillEffects['S1031'] = function (combatParams) {
+    //Transfer Life 2 - Titus
+    const lifeDrain = combatParams.getTarget(TargetType.AFTER,SideType.ALLIES);
+    if (lifeDrain === null || lifeDrain[0].race === "undead") return;
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    lifeDrain.forEach(target => {
+        target.takeAttack(combatParams);
+    })
+    targets.forEach(target => {
+        BuffManager.generateBuff("B1030",target,combatParams.power);
+    });
+};
+
+
+SkillManager.skillEffects['S1032'] = function (combatParams) {
+    //Transfer Life 3 - Titus
+    const lifeDrainAllies = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
+    const lifeDrainEnemies = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    lifeDrainAllies.forEach(target => {
+        if (target.race === "undead") return;
+        BuffManager.generateBuff("B1030",target,combatParams.power);
+    });
+    lifeDrainEnemies.forEach(target => {
+        BuffManager.generateBuff("B1030",target,combatParams.power);
+    });
+};
+
 
 SkillManager.skillEffects['S1040'] = function (combatParams) {
     //Holy Prayer - Troy

@@ -100,9 +100,6 @@ function generateHeroCard(hero, inspect) {
         const d4 = $("<div/>").addClass("heroPower heroStat tooltip").attr("data-tooltip","pow").appendTo(d);
             $("<div/>").addClass("pow_img").html(miscIcons.pow).appendTo(d4);
             $("<div/>").addClass("pow_integer statValue").html(hero.getPow()).appendTo(d4);
-        const d5 = $("<div/>").addClass("heroTech heroStat tooltip").attr("data-tooltip","tech").appendTo(d);
-            $("<div/>").addClass("tech_img").html(miscIcons.tech).appendTo(d5);
-            $("<div/>").addClass("tech_integer statValue").html(hero.getTech()).appendTo(d5);
     return d;
 }
 
@@ -265,11 +262,9 @@ function heroCurrentGearEquip(hero,gearSlot) {
             $("<div/>").addClass("emptyGearSlotLevel equipLevel").appendTo(d1);
             $("<div/>").addClass("emptyGearSlotRarity equipRarity").appendTo(d1);
             const equipStats = $("<div/>").addClass("emptyEquipStats").appendTo(d1);
-            for (let i = 0; i < 2; i++) {
                 const ed = $("<div/>").addClass('gearStat').appendTo(equipStats);
                 $("<div/>").addClass(`empty_img`).appendTo(ed);
                 $("<div/>").addClass(`empty_integer statValue`).appendTo(ed);
-            }
         return d;
     }
     const d1 = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+gear.rarity).appendTo(d);
@@ -397,7 +392,6 @@ function updateHeroStats() {
         const heroCard = $(`.heroOwnedCard[data-value=${hero.id}]`);
         $(heroCard).find(".pow_integer").html(hero.getPow());
         $(heroCard).find(".hp_integer").html(hero.maxHP());
-        $(heroCard).find(".tech_integer").html(hero.getTech());
     });
 }
 

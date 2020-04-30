@@ -287,8 +287,6 @@ function characterCard(prefix,dv,ID,status) {
             const hpStatValue = $("<div/>").addClass('statValue').appendTo(hpStat);
         const powStat = $("<div/>").addClass(`heroStat`).appendTo(heroStatsContainer);
             const powStatValue = $("<div/>").addClass('statValue').appendTo(powStat);
-        const techStat = $("<div/>").addClass(`heroStat`).appendTo(heroStatsContainer);
-            const techStatValue = $("<div/>").addClass('statValue').appendTo(techStat);
     // Return empty party slot    
     if (!ID) {
         $("<div/>").addClass(prefix+"Image").html('<i class="fas fa-question-circle"></i>').appendTo(d);
@@ -307,8 +305,6 @@ function characterCard(prefix,dv,ID,status) {
             hpStatValue.html(`${hero.maxHP()}`).appendTo(hpStat);
         powStat.addClass(`${prefix}Pow tooltip`).attr("data-tooltip","pow").html(`${miscIcons.pow}`).appendTo(d3);
             powStatValue.html(`${hero.getPow()}`).appendTo(powStat);
-        techStat.addClass(`${prefix}Tech tooltip`).attr("data-tooltip","tech").html(`${miscIcons.tech}`).appendTo(d3);
-            techStatValue.html(`${hero.getTech()}`).appendTo(techStat);
     heroStatsContainer.appendTo(d3);
     // Add status to hero cards with character statuses present (e.g. In Combat, In Party)
     if (status !== null && status !== undefined) {

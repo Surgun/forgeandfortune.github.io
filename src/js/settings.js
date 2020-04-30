@@ -6,12 +6,7 @@ const settings = {
     lang: 'en',
     toastPosition: "top-left",
     dialogStatus: 0,
-    db: 0,
-    expandedMaterials: {
-        D001: 1, 
-        D002: 1, 
-        D003: 1
-    }
+    db: 0
 }
 
 function saveSettings() {
@@ -39,4 +34,5 @@ function portSettings() {
     delete settings.expandedLogistics;
     delete settings.toggleTurnOrderBars;
     delete settings.battleLogLength;
+    delete settings.expandedMaterials;
 }

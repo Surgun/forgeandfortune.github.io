@@ -424,7 +424,6 @@ function refreshInventory() {
                 $("<div/>").addClass("inventoryItemEmptyText").html(`Empty Slot`).appendTo(itemName);
                 $("<div/>").addClass("invPropStat").html(`<span></span>`).appendTo(itemProps);
                 $("<div/>").addClass("invPropStat").html(`<span></span>`).appendTo(itemProps);
-                $("<div/>").addClass("invPropStat").html(`<span></span>`).appendTo(itemProps);
                 $("<div/>").appendTo(actionBtns);
                 $("<div/>").appendTo(actionBtns);
             itemdiv.append(itemName,itemRarity,itemLevel,itemProps,actionBtns);
@@ -546,7 +545,7 @@ function gearEquipFromInventory(invID) {
             const d4a = $('<div/>').addClass('heroEquipBlockEquipStat tooltip').attr("data-tooltip", stat).appendTo(d4);
             if (deltaStat > 0) d4a.addClass("hebPositive").html(`${miscIcons[stat]} <span class="statValue">${val} (+${deltaStat})</span>`);
             else if (deltaStat < 0) d4a.addClass("hebNegative").html(`${miscIcons[stat]} <span class="statValue">${val} (${deltaStat})</span>`);
-            else d4a.html(`${miscIcons[stat]}${val}`);
+            else d4a.html(`${miscIcons[stat]} <span class="statValue">${val}`);
         }
         if (same) $("<div/>").addClass("heroEquipBlockEquipStat").html("No Change").appendTo(d4);
         $("<div/>").addClass("heroEquipBlockEquipButton").data({"hid":hero.id,"containerID":equipContainerTarget.containerID}).html("Equip").appendTo(d4);

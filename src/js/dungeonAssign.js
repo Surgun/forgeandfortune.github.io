@@ -49,7 +49,7 @@ function createAreaBlock(area) {
     const statuses = ["Idle","Fight In Progress","Run Complete"];
     const d = $("<div/>").addClass("areaContainer").data("areaID",area.id);
     $("<div/>").addClass("areaHeader").html(area.name).appendTo(d);
-    $("<div/>").addClass("dungeonBackground").css("background-image",`url(/assets/images/dungeonpreviews/${area.id}.png)`).appendTo(d);
+    $("<div/>").addClass("dungeonBackground").css("background-image",`url(/assets/images/dungeonpreviews/${area.id}.jpg)`).appendTo(d);
     const d1 = $("<div/>").addClass("areaStatus").html(statuses[area.status()]).appendTo(d);
     if (area.status() === DungeonStatus.ADVENTURING) {
         d1.addClass("statusAdventuring");

@@ -105,7 +105,7 @@ function startPartyCreation(partyStarted) {
     if (!partyStarted) {
         $dtsHeader.empty();
         $("<div/>").addClass(`dtsBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($dtsHeader);
-        $("<div/>").addClass(`dungeonAreaBanner`).css("background", `url(/assets/images/dungeonpreviews/${area.id}.png)`).appendTo($dtsHeader);
+        $("<div/>").addClass(`dungeonAreaBanner`).css("background", `url(/assets/images/dungeonpreviews/${area.id}.jpg)`).appendTo($dtsHeader);
         $("<div/>").addClass(`dungeonAreaTitle`).html(dungeon.name).appendTo($dtsHeader);
         const partyLaunch = $("<div/>").addClass(`partyLaunchButtonContainer`).appendTo($dtsHeader);
             if (dungeon.type === "boss") $("<div/>").attr("id", "dungeonTeamButtonBoss").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor_boss')).appendTo(partyLaunch);

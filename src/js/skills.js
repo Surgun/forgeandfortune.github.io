@@ -388,11 +388,39 @@ SkillManager.skillEffects['S2012'] = function (combatParams) {
         BuffManager.generateBuff("B2012",target,Math.floor(combatParams.power));
     });
 };
-SkillManager.skillEffects['S2022'] = function (combatParams) {
+
+SkillManager.skillEffects['S2020'] = function (combatParams) {
     //Snipe - Grogmar
     const targets = combatParams.getTarget(TargetType.LOWESTHP,SideType.ENEMIES);
     targets.forEach(target => {
+        const ogPow = combatParams.power;
+        if (target.maxHP()*combatParams.attack.mod1 >= target.hp) {
+            combatParams.power = combatParams.power*combatParams.attack.mod2;
+        }
         target.takeAttack(combatParams);
+        combatParams.power = ogPow;
+    });
+};
+
+SkillManager.skillEffects['S2021'] = function (combatParams) {
+    //Grog 2 - Grogmar
+    const targets = combatParams.getTarget(TargetType.THIRD,SideType.ENEMIES);
+    targets.forEach(target => {
+        const ogPow = combatParams.power;
+        if (target.hasBuff("B1010")) combatParams.power = combatParams.power*combatParams.attack.mod1;
+        target.takeAttack(combatParams);
+        combatParams.power = ogPow;
+    });
+};
+
+SkillManager.skillEffects['S2022'] = function (combatParams) {
+    //Snipe - Grogmar
+    const targets = combatParams.getTarget(TargetType.FOURTH,SideType.ENEMIES);
+    targets.forEach(target => {
+        const ogPow = combatParams.power;
+        if (target.maxHP() === target.hp) combatParams.power = combatParams.power*combatParams.attack.mod1;
+        target.takeAttack(combatParams);
+        combatParams.power = ogPow;
     });
 };
 
@@ -405,9 +433,52 @@ SkillManager.skillEffects['S2030'] = function (combatParams) {
     });
 };
 
+SkillManager.skillEffects['S2031'] = function (combatParams) {
+    //Attack 2 - Revere
+    const targets = combatParams.getTarget(TargetType.SECOND,SideType.ENEMIES);
+    targets.forEach(target => {
+        const ogPow = combatParams.power;
+        if (target.isChilled()) combatParams.power *= combatParams.attack.mod1;
+        target.takeAttack(combatParams);
+        combatParams.power = ogPow;
+    });
+};
+
+SkillManager.skillEffects['S2032'] = function (combatParams) {
+    //Attack 3 - Revere
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    targets.forEach(target => {
+        const ogPow = combatParams.power;
+        if (combatParams.attacker.hp%10 === 7) combatParams.power *= combatParams.attack.mod1;
+        target.takeAttack(combatParams);
+        combatParams.power = ogPow;
+    });
+};
+
 SkillManager.skillEffects['S2040'] = function (combatParams) {
     //Mark - Caeda
     const targets = combatParams.getTarget(TargetType.SECOND,SideType.ENEMIES);
+    targets.forEach(target => {
+        BuffManager.generateBuff("B2040",target,0);
+        target.takeAttack(combatParams);
+    });
+};
+
+
+SkillManager.skillEffects['S2041'] = function (combatParams) {
+    //Mark - Caeda
+    const targets = combatParams.getTarget(TargetType.THIRD,SideType.ENEMIES);
+    targets.forEach(target => {
+        BuffManager.generateBuff("B2040",target,0);
+        target.takeAttack(combatParams);
+    });
+};
+
+
+
+SkillManager.skillEffects['S2042'] = function (combatParams) {
+    //Mark - Caeda
+    const targets = combatParams.getTarget(TargetType.FOURTH,SideType.ENEMIES);
     targets.forEach(target => {
         BuffManager.generateBuff("B2040",target,0);
         target.takeAttack(combatParams);

@@ -24,8 +24,8 @@
     "name": "Boern Skill 2",
     "description": "Parry - next hit damage is negated and attacks back?",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": 1,
-    "techMod": 0,
+    "powMod": 3,
+    "techMod": 3,
     "mod1": 0.5,
     "mod2": null
   },
@@ -74,7 +74,7 @@
     "name": "Exert",
     "description": "Consumes a portion of HP to deal additional damage",
     "icon": "<i class=\"fas fa-axe-battle\"></i>",
-    "powMod": 1,
+    "powMod": 3.5,
     "techMod": 0,
     "mod1": 0.15,
     "mod2": null
@@ -84,9 +84,9 @@
     "name": "Grim Skill 2",
     "description": "Attack and heal himself if they have titus debuff",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": 2,
+    "powMod": 3,
     "techMod": 0,
-    "mod1": 0.5,
+    "mod1": 0.2,
     "mod2": null
   },
   {
@@ -104,7 +104,7 @@
     "name": "Lambug Skill 1",
     "description": "Cleave (first two)",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": 3,
+    "powMod": 2,
     "techMod": 0,
     "mod1": null,
     "mod2": null
@@ -114,7 +114,7 @@
     "name": "Frontload",
     "description": "Large attack that decreases damage each recast",
     "icon": "<i class=\"fas fa-angry\"></i>",
-    "powMod": 2,
+    "powMod": 5,
     "techMod": 0,
     "mod1": null,
     "mod2": null
@@ -124,9 +124,9 @@
     "name": "Lambug Skill 3",
     "description": "Increase damage until she's lost health",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": 1,
+    "powMod": 3,
     "techMod": 0,
-    "mod1": 0.1,
+    "mod1": 0.25,
     "mod2": null
   },
   {
@@ -134,8 +134,8 @@
     "name": "Meteor",
     "description": "Attacks all enemies and applies the scorched debuff. Enemies with the scorched debuff take damage every turn",
     "icon": "<i class=\"fas fa-fire\"></i>",
-    "powMod": 1,
-    "techMod": 0,
+    "powMod": 0.75,
+    "techMod": 0.75,
     "mod1": 0.05,
     "mod2": null
   },
@@ -144,8 +144,8 @@
     "name": "Zoe 2",
     "description": "Single target scorched debuff. Enemies with scorched take damage every turn",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": 2,
-    "techMod": 0,
+    "powMod": 3,
+    "techMod": 3,
     "mod1": 0.05,
     "mod2": null
   },
@@ -154,8 +154,8 @@
     "name": "Zoe 3",
     "description": "Bomb build up, on third cast BOOM",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": 8,
-    "techMod": 0,
+    "powMod": 10,
+    "techMod": 10,
     "mod1": null,
     "mod2": null
   },
@@ -165,7 +165,7 @@
     "description": "Attacks and applies a chilled effect. If the target already has the chilled effect, this deals increased damage",
     "icon": "<i class=\"fas fa-snowflake\"></i>",
     "powMod": 1,
-    "techMod": 0,
+    "techMod": 1,
     "mod1": 2.5,
     "mod2": null
   },
@@ -174,7 +174,7 @@
     "name": "Neve Skill 2",
     "description": "Blizzard, two casts a round, aoe damge, apply chill (no additional effect)",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": 2,
+    "powMod": 0.6,
     "techMod": 0,
     "mod1": null,
     "mod2": null
@@ -224,7 +224,7 @@
     "name": "Holy Prayer",
     "description": "Heal the teammate with the lowest % missing HP",
     "icon": "<i class=\"fas fa-bible\"></i>",
-    "powMod": 1.5,
+    "powMod": 3,
     "techMod": 0,
     "mod1": null,
     "mod2": null
@@ -244,7 +244,7 @@
     "name": "Troy Skill 3",
     "description": "Heal over four turns (so targets gets healed on every one of troy's turns)",
     "icon": "<i class=\"fas fa-poo\"></i>",
-    "powMod": 2,
+    "powMod": 1.25,
     "techMod": 0,
     "mod1": null,
     "mod2": null
@@ -252,7 +252,27 @@
   {
     "id": "S2010",
     "name": "Inspire",
-    "description": "Inspires all teammates, increasing their Tech for the next two skills",
+    "description": "Inspires all teammates, increasing their HP",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "powMod": 1,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "S2011",
+    "name": "Inspire 2",
+    "description": "Inspires all teammates, increasing their Pow",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "powMod": 1,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "S2012",
+    "name": "Inspire 3",
+    "description": "Inspires all teammates, increasing their Tech",
     "icon": "<i class=\"fas fa-lightbulb\"></i>",
     "powMod": 1,
     "techMod": 0,
@@ -264,9 +284,29 @@
     "name": "Snipe",
     "description": "Attack enemy with lowest HP. If less than 50% deal additional damage",
     "icon": "<i class=\"fas fa-crosshairs\"></i>",
-    "powMod": 1,
+    "powMod": 2,
     "techMod": 0,
-    "mod1": null,
+    "mod1": 0.5,
+    "mod2": 1.5
+  },
+  {
+    "id": "S2021",
+    "name": "Grog 2",
+    "description": "Attack third unit, if scorched consume and deal additional damage",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": 2,
+    "mod2": null
+  },
+  {
+    "id": "S2022",
+    "name": "Grog 3",
+    "description": "Attack fourth unit, if full health deal additional damage.",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": 4,
     "mod2": null
   },
   {
@@ -280,10 +320,50 @@
     "mod2": null
   },
   {
+    "id": "S2031",
+    "name": "Revere 2",
+    "description": "Attack second unit, if chilled do additional damage",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": 2,
+    "mod2": null
+  },
+  {
+    "id": "S2032",
+    "name": "Revere 3",
+    "description": "More damage if end health # is a 7.",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "powMod": 3,
+    "techMod": 0,
+    "mod1": 4,
+    "mod2": null
+  },
+  {
     "id": "S2040",
     "name": "Target Mark",
     "description": "Marks the second unit in enemy list to focus team attacks and attacks",
     "icon": "<i class=\"fas fa-arrow-circle-down\"></i>",
+    "powMod": 1,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "S2041",
+    "name": "Target Mark 2",
+    "description": "Marks the third unit in enemy list to focus team attacks and attacks",
+    "icon": "<i class=\"fas fa-poo\"></i>",
+    "powMod": 1,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "S2042",
+    "name": "Target Mark 3",
+    "description": "Marks the fourth unit in enemy list to focus team attacks and attacks",
+    "icon": "<i class=\"fas fa-poo\"></i>",
     "powMod": 1,
     "techMod": 0,
     "mod1": null,

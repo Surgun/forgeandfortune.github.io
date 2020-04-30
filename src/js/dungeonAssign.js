@@ -18,9 +18,6 @@ const $areaTeamSelect = $("#areaTeamSelect");
 const $dungeonRun = $("#dungeonRun");
 const $dungeonRewards = $("#dungeonRewards");
 
-//area screen
-const $areaListings = $("#areaListings");
-
 const $DungeonSideBarTeam = $("#DungeonSideBarTeam");
 
 /*---------------------------
@@ -34,23 +31,38 @@ function dungeonsTabClicked() {
     $areaTeamSelect.hide();
     $dungeonRun.hide();
     $dungeonRewards.hide();
+    generateAreaSelect();
     refreshAreaSelect();
 }
 
+function generateAreaSelect() {
+    $areaSelect.empty();
+    // Area Header
+    const adventureAreaHeaderContainer = $("<div/>").addClass(`dungeonListingsHeadingContainer`).prependTo($areaSelect);
+    const adventureAreaHeader = $("<div/>").addClass(`dungeonListingsHeading`).appendTo(adventureAreaHeaderContainer);
+        $("<div/>").addClass("headingIcon").html('<i class="fas fa-swords"></i>').appendTo(adventureAreaHeader);
+    const headingDetails = $("<div/>").addClass("headingDetails").appendTo(adventureAreaHeader);
+        $("<div/>").addClass("headingTitle").html(displayText("header_adventure_areas_title")).appendTo(headingDetails);
+        $("<div/>").addClass("headingDescription").html(displayText("header_adventure_areas_desc")).appendTo(headingDetails);
+    $("<div/>").addClass("dungeonAbandonAll actionButton").attr({id: "dAbandonAll"}).html(displayText("adventure_dungeon_abandon_all")).appendTo(adventureAreaHeaderContainer);
+    // Area Listings
+    $("<div/>").addClass("areaListings").attr({id: "areaListings"}).appendTo($areaSelect);
+}
+
 function refreshAreaSelect() {
-    $areaListings.empty();
+    $("#areaListings").empty();
     AreaManager.areas.forEach(area => {
         if (!area.unlocked()) return;
-        createAreaBlock(area).appendTo($areaListings);
+        createAreaBlock(area).appendTo($("#areaListings"));
     });
 }
 
 function createAreaBlock(area) {
-    const statuses = ["Idle","Fight In Progress","Run Complete"];
+    const statuses = ["adventure_area_status_idle","adventure_area_status_in_progress","adventure_area_status_complete"];
     const d = $("<div/>").addClass("areaContainer").data("areaID",area.id);
     $("<div/>").addClass("areaHeader").html(area.name).appendTo(d);
     $("<div/>").addClass("dungeonBackground").css("background-image",`url(/assets/images/dungeonpreviews/${area.id}.jpg)`).appendTo(d);
-    const d1 = $("<div/>").addClass("areaStatus").html(statuses[area.status()]).appendTo(d);
+    const d1 = $("<div/>").addClass("areaStatus").html(displayText(statuses[area.status()])).appendTo(d);
     if (area.status() === DungeonStatus.ADVENTURING) {
         d1.addClass("statusAdventuring");
         const d2 = $("<div/>").addClass("areaAdventurers").appendTo(d);

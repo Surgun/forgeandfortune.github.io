@@ -175,6 +175,41 @@
     "es": null
   },
   {
+    "tid": "header_adventure_areas_title",
+    "en": "Adventure Areas",
+    "es": null
+  },
+  {
+    "tid": "header_adventure_areas_desc",
+    "en": "Select an area for your heroes to explore.",
+    "es": null
+  },
+  {
+    "tid": "adventure_dungeon_abandon",
+    "en": "Abandon Dungeon",
+    "es": null
+  },
+  {
+    "tid": "adventure_dungeon_abandon_all",
+    "en": "Abandon All Dungeons",
+    "es": null
+  },
+  {
+    "tid": "adventure_area_status_idle",
+    "en": "Idle",
+    "es": null
+  },
+  {
+    "tid": "adventure_area_status_in_progress",
+    "en": "Adventure In Progress",
+    "es": null
+  },
+  {
+    "tid": "adventure_area_status_complete",
+    "en": "Adventure Completed",
+    "es": null
+  },
+  {
     "tid": "adventure_launch_floor",
     "en": "Start At Floor 1",
     "es": null

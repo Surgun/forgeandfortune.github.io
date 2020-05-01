@@ -1747,12 +1747,18 @@ footer {
     color: #fff;
     font-size: 1rem;
     text-shadow: 0 0 3px black;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0,0,0,.25);
     border: 2px solid var(--border-secondary);
     border-radius: 50%;
     opacity: .75;
     cursor: pointer;
     z-index: 2;
+    transform: scale(0);
+    transition: all var(--transition_linear);
+}
+
+.ASBlock:hover > .ASauto, .ASBlock:hover .ASCancelText {
+    transform: scale(1);
 }
 
 .ASCancelText {
@@ -1775,19 +1781,23 @@ footer {
     opacity: 1;
 }
 
-.ASautoEnabledCommon, .WSautoEnabled {
+.ASautoEnabledCommon {
+    transform: scale(1);
     background-color: rgba(0, 0, 0, 0.75);
 }
 
 .ASautoEnabledGood {
+    transform: scale(1);
     background-color: rgb(44, 255, 89);
 }
 
 .ASautoEnabledGreat {
+    transform: scale(1);
     background-color: rgb(8, 173, 255);
 }
 
 .ASautoEnabledEpic {
+    transform: scale(1);
     background-color: rgb(255, 79, 167);
 }
 

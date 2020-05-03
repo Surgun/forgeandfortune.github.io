@@ -245,6 +245,10 @@ body {
     animation: scale-in var(--transition_linear);
 }
 
+.actionButton.actionButtonAnimDisabled {
+    animation: none;
+}
+
 .actionButton:hover,
 .actionButton:focus {
     background-color: var(--button-primary-active);
@@ -4013,7 +4017,7 @@ footer {
     filter: grayscale(1);
 }
 
-#fuseSlots, #bankInvSlots, #bankBankSlots, #smithInvSlots, #smithHeroSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleSynthHolder, #fortuneGear, .fortuneStageContainer, .smithActionsContainer {
+#fuseSlots, #smithInvSlots, #smithHeroSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleSynthHolder, #fortuneGear, .fortuneStageContainer, .smithActionsContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
@@ -4030,6 +4034,7 @@ footer {
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
+    box-shadow: var(--box-shadow);
 }
 
 .fuseSlot {
@@ -4166,48 +4171,59 @@ footer {
     border-top: 2px solid var(--border-primary);
 }
 
-#bankContainer {
-    display: -ms-grid;
+/* Bank Building */ 
+
+.bankContainer {
     display: grid;
     grid-template: auto / repeat(2, 1fr);
-    grid-gap: 20px;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    -ms-grid-row-align: start;
-        align-items: start;
+    grid-gap: 15px;
+    align-items: start;
 }
 
-#bankInvSlots, #bankBankSlots {
-    margin-bottom: 10px;
-}
-
-.bankBankHeadContainer, .bankInvHeadContainer, .smithInvHead, .synthBlank {
-    grid-column: 1 / -1;
-    margin-top: 10px;
-}
-
-.bankBankHeadContainer, .bankInvHeadContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
+.bankInventoryHeaderContainer, .bankStorageHeaderContainer {
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-top: 0;
-    min-height: 50px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: -10px 0 10px;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-primary);
 }
 
-#sortBank, #sortInventoryBank {
-    margin: 0;
-    -webkit-animation: none;
-    animation: none;
+.bankInventoryCardsContainer, .bankStorageCardsContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(190px, 1fr));
+    grid-gap: 5px;
+    padding: 0 5px;
 }
 
-.bankItemLevel, .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl, .heroLevel, .gearItemLevel, .workerBuyCardLevel, .synthLevel, .fortuneItemLevel, .itemLevel {
+.bankActionsButtons {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.bankAction {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding: 8px 10px;
+    width: 100%;
+    color: var(--text-primary);
+    text-align: center;
+    background-color: var(--button-primary);
+    border-radius: 5px;
+    transition: all var(--transition_linear);
+    cursor: pointer;
+}
+
+.bankAction:hover, .bankAction:focus {
+    background-color: var(--button-primary-active);
+}
+
+/* End Bank Building */
+
+.smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl, .heroLevel, .gearItemLevel, .workerBuyCardLevel, .synthLevel, .fortuneItemLevel, .itemLevel {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -4219,11 +4235,7 @@ footer {
     padding: 5px 8px;
 }
 
-.bankProps, .smithProps, .smithChance {
-    margin: 10px 0;
-}
-
-.bankStow, .bankTake, .smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .recipeBuyCardBuy, .workerBuyCardBuy, .guildOrderSubmit, .fuseStart, .synthButton, #synthSlotStart, .synthPowerSetting, #synthSlotCollect, #collectResmith, .eventActionButton, .fortuneStage, .dreActionButton, .smithButton, .recipeTotalCrafted, .fortuneItemSac, .fuseSlotStart, .lineRewardPay, .recipeMasteryGuildButton {
+.smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .recipeBuyCardBuy, .workerBuyCardBuy, .guildOrderSubmit, .fuseStart, .synthButton, #synthSlotStart, .synthPowerSetting, #synthSlotCollect, #collectResmith, .eventActionButton, .fortuneStage, .dreActionButton, .smithButton, .recipeTotalCrafted, .fortuneItemSac, .fuseSlotStart, .lineRewardPay, .recipeMasteryGuildButton {
     margin-top: auto;
     padding: 8px 10px;
     width: 100%;
@@ -4235,7 +4247,7 @@ footer {
     transition: all var(--transition_linear);
 }
 
-.bankStow:hover, .bankTake:hover, .smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .synthButton:hover, #synthSlotStart:hover, .synthPowerSetting:hover, #synthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .fortuneStage:hover, .dreActionButton:hover, .smithButton:hover, .recipeTotalCrafted:hover, .fortuneItemSac:hover, .fuseSlotStart:hover, .lineRewardPay:hover, .recipeMasteryGuildButton:hover {
+.smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .synthButton:hover, #synthSlotStart:hover, .synthPowerSetting:hover, #synthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .fortuneStage:hover, .dreActionButton:hover, .smithButton:hover, .recipeTotalCrafted:hover, .fortuneItemSac:hover, .fuseSlotStart:hover, .lineRewardPay:hover, .recipeMasteryGuildButton:hover {
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }

@@ -250,6 +250,46 @@
     "es": null
   },
   {
+    "tid": "header_bank_inventory_title",
+    "en": "Your Inventory",
+    "es": null
+  },
+  {
+    "tid": "header_bank_inventory_desc",
+    "en": "Items you currently have in your inventory.",
+    "es": null
+  },
+  {
+    "tid": "header_bank_storage_title",
+    "en": "Bank Inventory",
+    "es": null
+  },
+  {
+    "tid": "header_bank_storage_desc",
+    "en": "Items you currently have stowed in the bank.",
+    "es": null
+  },
+  {
+    "tid": "bank_sort_inventory_button",
+    "en": "Sort Inventory",
+    "es": null
+  },
+  {
+    "tid": "bank_sort_bank_button",
+    "en": "Sort Bank",
+    "es": null
+  },
+  {
+    "tid": "bank_stow_item_button",
+    "en": "Stow in Bank",
+    "es": null
+  },
+  {
+    "tid": "bank_remove_item_button",
+    "en": "Add to Inventory",
+    "es": null
+  },
+  {
     "tid": "museum_nav_collections",
     "en": "Collection",
     "es": null

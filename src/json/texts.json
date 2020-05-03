@@ -300,6 +300,16 @@
     "es": null
   },
   {
+    "tid": "bank_inventory_empty",
+    "en": "You currently have no items in your inventory.",
+    "es": null
+  },
+  {
+    "tid": "bank_storage_empty",
+    "en": "You currently have no items stored in the bank.",
+    "es": null
+  },
+  {
     "tid": "museum_nav_collections",
     "en": "Collection",
     "es": null

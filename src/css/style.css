@@ -4217,7 +4217,6 @@ footer {
     background-color: var(--highlight);
 }
 
-
 .bankInventoryHeaderContainer, .bankStorageHeaderContainer {
     display: flex;
     justify-content: space-between;
@@ -4257,6 +4256,15 @@ footer {
 
 .bankAction:hover, .bankAction:focus {
     background-color: var(--button-primary-active);
+}
+
+.bankInventoryEmpty, .bankStorageEmpty {
+    padding: 10px;
+    color: rgb(255, 130, 130);
+    background-color: var(--bg-primary);
+    border-radius: 5px;
+    animation: fade-in var(--transition_linear);
+    box-shadow: var(--box-shadow);
 }
 
 /* End Bank Building */

@@ -86,6 +86,7 @@ function refreshBankInventory() {
     $("<div/>").addClass("actionButtonAnimDisabled actionButton").attr({id: "sortInventoryBank"}).html(displayText("bank_sort_inventory_button")).appendTo(bankInventoryHeaderContainer);
     // Bank Inventory Cards
     const bankInventoryCardsContainer = $("<div/>").addClass(`bankInventoryCardsContainer`).attr({id: "bankInventoryCardsContainer"}).appendTo($bankInvSlots);
+    if (Inventory.nonblank().length === 0) $("<div/>").addClass(`bankInventoryEmpty`).html(displayText("bank_inventory_empty")).appendTo($bankInvSlots);
     Inventory.nonblank().forEach(item => {
         bankInventoryCardsContainer.append(itemCard(item,false));
     });
@@ -103,6 +104,7 @@ function refreshBankBank() {
     $("<div/>").addClass("actionButtonAnimDisabled actionButton").attr({id: "sortBank"}).html(displayText("bank_sort_bank_button")).appendTo(bankStorageHeaderContainer);
     // Bank Storage Cards
     const bankStorageCardsContainer = $("<div/>").addClass(`bankStorageCardsContainer`).attr({id: "bankStorageCardsContainer"}).appendTo($bankBankSlots);
+    if (BankManager.slots.length === 0) $("<div/>").addClass(`bankStorageEmpty`).html(displayText("bank_storage_empty")).appendTo($bankBankSlots);
     BankManager.slots.forEach(item => {
         bankStorageCardsContainer.append(itemCard(item,true));
     });

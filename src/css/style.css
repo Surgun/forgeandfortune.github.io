@@ -4173,18 +4173,56 @@ footer {
 
 /* Bank Building */ 
 
-.bankContainer {
+.bankNavigation {
     display: grid;
-    grid-template: auto / repeat(2, 1fr);
-    grid-gap: 15px;
-    align-items: start;
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    margin: -10px -10px 0;
+    background-color: var(--bg-primary);
+    border-bottom: 2px solid var(--border-primary);
 }
+
+.bankTabNavigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 12px 15px;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: all var(--transition_linear);
+}
+
+.bankTabNavigation.selected {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.bankTabNavigation:hover {
+    background-color: var(--bg-secondary);
+}
+
+.bankTabNavigation:after {
+    position: absolute;
+    bottom: -2px;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: transparent;
+    transition: all var(--transition_linear);
+}
+
+.bankTabNavigation.selected:after {
+    width: 100%;
+    background-color: var(--highlight);
+}
+
 
 .bankInventoryHeaderContainer, .bankStorageHeaderContainer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: -10px 0 10px;
+    margin: 0 0 10px;
     padding: 10px;
     border-bottom: 2px solid var(--border-primary);
 }

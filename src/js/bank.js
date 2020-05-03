@@ -3,6 +3,7 @@
 const $bankInvSlots = $("#bankInvSlots");
 const $bankBankSlots = $("#bankBankSlots");
 const $bankBuilding = $("#bankBuilding");
+const $bankNavigation = $("#bankNavigation");
 
 const BankManager = {
     slots : [],
@@ -49,13 +50,12 @@ const BankManager = {
     },
     addContainer(container) {
         this.slots.push(container);
-        refreshBankBank();
     },
     removeFromBank(containerID) {
         if (Inventory.full()) return;
         const container = this.containerToItem(containerID);
         this.removeContainer(containerID);
-        Inventory.addToInventory(container);
+        Inventory.addToInventory(container,true);
     },
     addLevel() {
         this.lvl += 1;
@@ -66,12 +66,17 @@ const BankManager = {
 
 function initiateBankBldg() {
     $bankBuilding.show();
-    refreshBankBank();
+    $bankNavigation.empty();
+    $("<div/>").addClass("bankTabNavigation").attr({id: "bankNavInventory"}).html(displayText("bank_nav_inventory")).appendTo($bankNavigation);
+    $("<div/>").addClass("bankTabNavigation").attr({id: "bankNavStorage"}).html(displayText("bank_nav_storage")).appendTo($bankNavigation);
+    $("#bankNavStorage").removeClass("selected");
+    $("#bankNavInventory").addClass("selected");
     refreshBankInventory();
 }
 
 function refreshBankInventory() {
-    $bankInvSlots.empty();
+    $bankBankSlots.hide();
+    $bankInvSlots.empty().show();
     // Bank Inventory Header
     const bankInventoryHeaderContainer = $("<div/>").addClass(`bankInventoryHeaderContainer`).appendTo($bankInvSlots);
     const bankInventoryHeader = $("<div/>").addClass(`bankInventoryHeader`).appendTo(bankInventoryHeaderContainer);
@@ -87,7 +92,8 @@ function refreshBankInventory() {
 }
 
 function refreshBankBank() {
-    $bankBankSlots.empty();
+    $bankInvSlots.hide();
+    $bankBankSlots.empty().show();
     // Bank Storage Header
     const bankStorageHeaderContainer = $("<div/>").addClass(`bankStorageHeaderContainer`).appendTo($bankBankSlots);
     const bankStorageHeader = $("<div/>").addClass(`bankStorageHeader`).appendTo(bankStorageHeaderContainer);
@@ -142,4 +148,18 @@ $(document).on("click","#sortBank",(e) => {
 $(document).on("click","#sortInventoryBank",(e) => {
     e.preventDefault();
     Inventory.sortInventory();
+});
+
+$(document).on("click","#bankNavInventory",(e) => {
+    e.preventDefault();
+    $("#bankNavStorage").removeClass("selected");
+    $("#bankNavInventory").addClass("selected");
+    refreshBankInventory();
+});
+
+$(document).on("click","#bankNavStorage",(e) => {
+    e.preventDefault();
+    $("#bankNavInventory").removeClass("selected");
+    $("#bankNavStorage").addClass("selected");
+    refreshBankBank();
 });

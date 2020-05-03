@@ -9,7 +9,7 @@
   },
   {
     "id": "PB0011",
-    "name": "Beorn 2",
+    "name": "Revenge",
     "skill1": "S0000",
     "skill2": "S0011",
     "skill3": "S0000",
@@ -17,7 +17,7 @@
   },
   {
     "id": "PB0012",
-    "name": "Stand Behind Me",
+    "name": "Stay Behind Me",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0012",
@@ -33,7 +33,7 @@
   },
   {
     "id": "PB0021",
-    "name": "Cedric 2",
+    "name": "Intercept",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -41,7 +41,7 @@
   },
   {
     "id": "PB0022",
-    "name": "Cedric 3",
+    "name": "Fall From Grace",
     "skill1": "S0000",
     "skill2": "S0022",
     "skill3": "S0000",
@@ -57,7 +57,7 @@
   },
   {
     "id": "PB0031",
-    "name": "Grim 2",
+    "name": "Blood Bond",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -65,7 +65,7 @@
   },
   {
     "id": "PB0032",
-    "name": "Grim 3",
+    "name": "Bloodbath",
     "skill1": "S0000",
     "skill2": "S0032",
     "skill3": "S0000",
@@ -73,7 +73,7 @@
   },
   {
     "id": "PB0040",
-    "name": "Lambug 1",
+    "name": "Swipe",
     "skill1": "S0040",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -89,7 +89,7 @@
   },
   {
     "id": "PB0042",
-    "name": "Lambug 3",
+    "name": "Overexcited",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0042",
@@ -105,7 +105,7 @@
   },
   {
     "id": "PB0051",
-    "name": "Zoe 2",
+    "name": "Catastrophe",
     "skill1": "S0000",
     "skill2": "S1011",
     "skill3": "S0000",
@@ -113,7 +113,7 @@
   },
   {
     "id": "PB0052",
-    "name": "Zoe 3",
+    "name": "Cataclysm",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S1012",
@@ -129,7 +129,7 @@
   },
   {
     "id": "PB0061",
-    "name": "Neve 2",
+    "name": "Blizzard",
     "skill1": "S1021",
     "skill2": "S0000",
     "skill3": "S1021",
@@ -137,7 +137,7 @@
   },
   {
     "id": "PB0062",
-    "name": "Neve 3",
+    "name": "Cold As Ice",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -145,7 +145,7 @@
   },
   {
     "id": "PB0070",
-    "name": "Unholy Bond",
+    "name": "Infection",
     "skill1": "S1030",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -153,7 +153,7 @@
   },
   {
     "id": "PB0071",
-    "name": "Titus 2",
+    "name": "Outbreak",
     "skill1": "S0000",
     "skill2": "S1031",
     "skill3": "S0000",
@@ -161,7 +161,7 @@
   },
   {
     "id": "PB0072",
-    "name": "Titus 3",
+    "name": "Pandemic",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S1032",
@@ -169,7 +169,7 @@
   },
   {
     "id": "PB0080",
-    "name": "Healing Glance",
+    "name": "Light Squeeze",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S1040",
@@ -177,7 +177,7 @@
   },
   {
     "id": "PB0081",
-    "name": "Troy 2",
+    "name": "Light Hug",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -185,7 +185,7 @@
   },
   {
     "id": "PB0082",
-    "name": "Troy 3",
+    "name": "Light Connection",
     "skill1": "S1042",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -193,7 +193,7 @@
   },
   {
     "id": "PB0090",
-    "name": "Invigorate",
+    "name": "idk",
     "skill1": "S0000",
     "skill2": "S2010",
     "skill3": "S0000",
@@ -201,7 +201,7 @@
   },
   {
     "id": "PB0091",
-    "name": "Alok 2",
+    "name": "idk",
     "skill1": "S2011",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -209,7 +209,7 @@
   },
   {
     "id": "PB0092",
-    "name": "Alok 3",
+    "name": "idk",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -225,7 +225,7 @@
   },
   {
     "id": "PB0101",
-    "name": "Grogmar 2",
+    "name": "Marked Target",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S2021",
@@ -233,7 +233,7 @@
   },
   {
     "id": "PB0102",
-    "name": "Grogmar 3",
+    "name": "Smug Target",
     "skill1": "S2022",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -249,7 +249,7 @@
   },
   {
     "id": "PB0111",
-    "name": "Revere 2",
+    "name": "Cold Confidence",
     "skill1": "S0000",
     "skill2": "S2031",
     "skill3": "S0000",
@@ -257,7 +257,7 @@
   },
   {
     "id": "PB0112",
-    "name": "Revere 3",
+    "name": "Better Than Good",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -265,7 +265,7 @@
   },
   {
     "id": "PB0120",
-    "name": "Marked for Death",
+    "name": "Just A Second",
     "skill1": "S2040",
     "skill2": "S0000",
     "skill3": "S0000",
@@ -273,7 +273,7 @@
   },
   {
     "id": "PB0121",
-    "name": "Caeda 2",
+    "name": "Third Time",
     "skill1": "S0000",
     "skill2": "S2041",
     "skill3": "S0000",
@@ -281,7 +281,7 @@
   },
   {
     "id": "PB0122",
-    "name": "Caeda 3",
+    "name": "Back And Fourth",
     "skill1": "S0000",
     "skill2": "S0000",
     "skill3": "S2042",

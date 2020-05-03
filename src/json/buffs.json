@@ -13,7 +13,7 @@
   {
     "id": "B0011",
     "name": "Parry",
-    "description": "Parry",
+    "description": "Next attack does no damage.",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -23,8 +23,8 @@
   },
   {
     "id": "B0012",
-    "name": "Stand Behind Me",
-    "description": "Stand Behind Me",
+    "name": "Shielded",
+    "description": "Beorn will take damage on this adventurer's behalf.",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -35,7 +35,7 @@
   {
     "id": "B0020",
     "name": "Toughen",
-    "description": "Increases max health by #power# per stack",
+    "description": "Increases max health by #power# per stack.",
     "icon": "<i class=\"fas fa-helmet-battle\"></i>",
     "maxStack": 5,
     "stackCast": 1,
@@ -46,7 +46,7 @@
   {
     "id": "B0021",
     "name": "Taunt",
-    "description": "Taunt",
+    "description": "Enemies will focus this target.",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "maxStack": 2,
     "stackCast": 2,
@@ -56,8 +56,8 @@
   },
   {
     "id": "B0022",
-    "name": "Cedric 3",
-    "description": "Cedric 3",
+    "name": "Corrupted",
+    "description": "Cedric is getting stronger in exchange for his health.",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "maxStack": 5,
     "stackCast": 1,
@@ -67,8 +67,8 @@
   },
   {
     "id": "B0041",
-    "name": "Frontload",
-    "description": "Decreases damage of Frontload attack",
+    "name": "Tired",
+    "description": "Damage done by Overexertion decreased.",
     "icon": "<i class=\"fas fa-angry\"></i>",
     "maxStack": 4,
     "stackCast": 1,
@@ -78,7 +78,7 @@
   },
   {
     "id": "B0042",
-    "name": "Lambug 3",
+    "name": "Rested",
     "description": "Increases damage until hit",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "maxStack": 3,
@@ -100,8 +100,8 @@
   },
   {
     "id": "B1012",
-    "name": "Powder Keg",
-    "description": "On third stack deals massive damage",
+    "name": "Chaos",
+    "description": "On third stack, deals massive damage.",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "maxStack": 3,
     "stackCast": 1,
@@ -112,7 +112,7 @@
   {
     "id": "B1020",
     "name": "Chilled",
-    "description": "\"Chilled\" status for certain skill effects",
+    "description": "Feeling a bit cold.",
     "icon": "<i class=\"fas fa-snowflake\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -123,7 +123,7 @@
   {
     "id": "B1022",
     "name": "Ice Box",
-    "description": "Ice Box",
+    "description": "Immune to damage.",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -133,8 +133,8 @@
   },
   {
     "id": "B1030",
-    "name": "Transfer Life",
-    "description": "This unit takes damage at the start of its turn",
+    "name": "Necrosis",
+    "description": "This unit takes damage at the start of its turn.",
     "icon": "<i class=\"fas fa-book-dead\"></i>",
     "maxStack": 10,
     "stackCast": 1,
@@ -144,8 +144,8 @@
   },
   {
     "id": "B1042",
-    "name": "Heal Time",
-    "description": "Heal Time",
+    "name": "Regen",
+    "description": "This unit heals every time Troy takes a turn.",
     "icon": "<i class=\"fas fa-poo\"></i>",
     "maxStack": 4,
     "stackCast": 4,
@@ -189,7 +189,7 @@
   {
     "id": "B2040",
     "name": "Mark",
-    "description": "Allies will attack this unit",
+    "description": "Allies will attack this unit.",
     "icon": "<i class=\"fas fa-arrow-circle-down\"></i>",
     "maxStack": 1,
     "stackCast": 1,

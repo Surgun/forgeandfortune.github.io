@@ -548,7 +548,7 @@ function gearEquipFromInventory(invID) {
             else d4a.html(`${miscIcons[stat]} <span class="statValue">${val}`);
         }
         if (same) $("<div/>").addClass("heroEquipBlockEquipStat").html("No Change").appendTo(d4);
-        $("<div/>").addClass("heroEquipBlockEquipButton").data({"hid":hero.id,"containerID":equipContainerTarget.containerID}).html("Equip").appendTo(d4);
+        $("<div/>").addClass("actionButtonCard heroEquipBlockEquipButton").data({"hid":hero.id,"containerID":equipContainerTarget.containerID}).html("Equip").appendTo(d4);
         $ietHero.append(d);
     });
     $(".tabcontent").hide();

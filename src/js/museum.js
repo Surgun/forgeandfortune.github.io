@@ -193,7 +193,7 @@ function showMuseumRewards() {
             $("<div/>").addClass("museumRewardHeading").html(displayText(`museum_reward_next`)).appendTo(d);
             $("<div/>").addClass("museumRewardText museumRewardNext").html(displayText(`museum_reward_${reward.name}_desc`).replace("{0}",reward.nextReward())).appendTo(d);
             const purchaseCost = reward.purchaseCost() !== 1 ? `museum_reward_purchase_plural` : `museum_reward_purchase`;
-            $("<div/>").addClass("museumRewardComplete museumActionButton").data("rid",reward.id).html(displayText(purchaseCost).replace('{0}',reward.purchaseCost())).appendTo(d);
+            $("<div/>").addClass("actionButtonCard museumRewardComplete").data("rid",reward.id).html(displayText(purchaseCost).replace('{0}',reward.purchaseCost())).appendTo(d);
         }
     });
 }
@@ -227,7 +227,7 @@ function createMuseumCard(container) {
         $("<div/>").addClass("gearStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
     };
     const actionBtns = $("<div/>").addClass("museumButtons").appendTo(d);
-    $("<div/>").addClass('museumDonate museumActionButton').data("containerid",container.containerID).html(displayText("museum_donations_donate_button")).appendTo(actionBtns);
+    $("<div/>").addClass('actionButtonCard museumDonate').data("containerid",container.containerID).html(displayText("museum_donations_donate_button")).appendTo(actionBtns);
     return d;
 }
 

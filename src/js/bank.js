@@ -125,8 +125,8 @@ function itemCard(item,inBank) {
     }
     const bankActionButtons = $("<div/>").addClass("bankActionsButtons");
         const locationButton = $("<div/>").attr("containerID",item.containerID).appendTo(bankActionButtons);
-        if (inBank) locationButton.addClass('bankAction bankTake').html(displayText("bank_remove_item_button"));
-        else locationButton.addClass('bankAction bankStow').html(displayText("bank_stow_item_button"));
+        if (inBank) locationButton.addClass('actionButtonCard bankTake').html(displayText("bank_remove_item_button"));
+        else locationButton.addClass('actionButtonCard bankStow').html(displayText("bank_stow_item_button"));
     return itemdiv.append(itemName,itemLevel,itemRarity,equipStats,bankActionButtons);
 }
 

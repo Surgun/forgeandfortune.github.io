@@ -267,6 +267,27 @@ body {
     margin-left: 10px;
 }
 
+.actionButtonCard {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    color: var(--text-primary);
+    text-align: center;
+    background-color: var(--button-primary);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all var(--transition_linear);  
+}
+
+.actionButtonCard:hover,
+.actionButtonCard:focus {
+    background-color: var(--button-primary-active);
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.15);
+}
+
 .statValue, .goldValue {
     flex-grow: 1;
     margin-left: 10px;
@@ -4017,7 +4038,7 @@ footer {
     filter: grayscale(1);
 }
 
-#fuseSlots, #smithInvSlots, #smithHeroSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleSynthHolder, #fortuneGear, .fortuneStageContainer, .smithActionsContainer {
+#smithInvSlots, #smithHeroSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleSynthHolder, #fortuneGear, .fortuneStageContainer, .smithActionsContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
@@ -4037,20 +4058,12 @@ footer {
     box-shadow: var(--box-shadow);
 }
 
-.fuseSlot {
-    min-height: 160px;
-}
-
 .itemName {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-.fuseSlotName, .synthName, .synthSlotName, .fortuneItemName {
-    padding: 10px 0;
 }
 
 .fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, .repBarDiv, .notoBarDiv, .synthBarDiv, .tinkerTicksDiv, .tinkerProgressDiv {
@@ -4099,36 +4112,30 @@ footer {
     background-color: rgba(255,255,255,0.1);
 }
 
-.possibleFuseHead {
-    margin-top: 15px;
+.possibleFusionHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-primary);
+    animation: fade-in var(--transition_linear);
 }
 
-.possibleFuseHolder {
-    display: -ms-grid;
+.fusionCardsContainer, .possibleFuseHolder {
     display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-template: auto / repeat(auto-fill, minmax(190px, 1fr));
     grid-gap: 10px;
-    margin: 20px 0 0 0;
 }
 
 .possibleFusegroup {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
     padding: 10px;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
+    box-shadow: var(--box-shadow);
 }
 
 .possibleFusegroupHeader {
@@ -4171,104 +4178,6 @@ footer {
     border-top: 2px solid var(--border-primary);
 }
 
-/* Bank Building */ 
-
-.bankNavigation {
-    display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
-    margin: -10px -10px 0;
-    background-color: var(--bg-primary);
-    border-bottom: 2px solid var(--border-primary);
-}
-
-.bankTabNavigation {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    padding: 12px 15px;
-    color: var(--text-tertiary);
-    cursor: pointer;
-    transition: all var(--transition_linear);
-}
-
-.bankTabNavigation.selected {
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-}
-
-.bankTabNavigation:hover {
-    background-color: var(--bg-secondary);
-}
-
-.bankTabNavigation:after {
-    position: absolute;
-    bottom: -2px;
-    content: "";
-    height: 2px;
-    width: 0;
-    background-color: transparent;
-    transition: all var(--transition_linear);
-}
-
-.bankTabNavigation.selected:after {
-    width: 100%;
-    background-color: var(--highlight);
-}
-
-.bankInventoryHeaderContainer, .bankStorageHeaderContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin: 0 0 10px;
-    padding: 10px;
-    border-bottom: 2px solid var(--border-primary);
-}
-
-.bankInventoryCardsContainer, .bankStorageCardsContainer {
-    display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(190px, 1fr));
-    grid-gap: 5px;
-    padding: 0 5px;
-}
-
-.bankActionsButtons {
-    margin-top: 10px;
-    width: 100%;
-}
-
-.bankAction {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    padding: 8px 10px;
-    width: 100%;
-    color: var(--text-primary);
-    text-align: center;
-    background-color: var(--button-primary);
-    border-radius: 5px;
-    transition: all var(--transition_linear);
-    cursor: pointer;
-}
-
-.bankAction:hover, .bankAction:focus {
-    background-color: var(--button-primary-active);
-}
-
-.bankInventoryEmpty, .bankStorageEmpty {
-    padding: 10px;
-    color: rgb(255, 130, 130);
-    background-color: var(--bg-primary);
-    border-radius: 5px;
-    animation: fade-in var(--transition_linear);
-    box-shadow: var(--box-shadow);
-}
-
-/* End Bank Building */
-
 .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl, .heroLevel, .gearItemLevel, .workerBuyCardLevel, .synthLevel, .fortuneItemLevel, .itemLevel {
     position: absolute;
     top: 10px;
@@ -4279,23 +4188,6 @@ footer {
     background-color: rgba(255,255,255,0.05);
     border-radius: 5px;
     padding: 5px 8px;
-}
-
-.smithStage, #swConfirm, #swCollect, .fuseSlotCollect, .heroEquipBlockEquipButton, #fortuneSetButton, .fortuneStatusButton, .buyBuildingBP, .WorkerUpgrade, .buyNewWorkerButton, .buyNewHeroButton, .ASBuySlotButton, .recipeBuyCardBuy, .workerBuyCardBuy, .guildOrderSubmit, .fuseStart, .synthButton, #synthSlotStart, .synthPowerSetting, #synthSlotCollect, #collectResmith, .eventActionButton, .fortuneStage, .dreActionButton, .smithButton, .recipeTotalCrafted, .fortuneItemSac, .fuseSlotStart, .lineRewardPay, .recipeMasteryGuildButton {
-    margin-top: auto;
-    padding: 8px 10px;
-    width: 100%;
-    background-color: rgba(255,255,255,.05);
-    color: var(--text-primary);
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all var(--transition_linear);
-}
-
-.smithStage:hover, #swConfirm:hover, #swCollect:hover, .fuseSlotCollect:hover, .heroEquipBlockEquipButton:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .synthButton:hover, #synthSlotStart:hover, .synthPowerSetting:hover, #synthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .fortuneStage:hover, .dreActionButton:hover, .smithButton:hover, .recipeTotalCrafted:hover, .fortuneItemSac:hover, .fuseSlotStart:hover, .lineRewardPay:hover, .recipeMasteryGuildButton:hover {
-    background-color: rgba(255,255,255,.1);
-    box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
 #smithWorkingArea, #synthSide, #fortuneTop, .tinkerTopContainer {
@@ -6891,6 +6783,83 @@ span.beta-tag {
 
 
 
+/* Bank Building */ 
+
+.bankNavigation {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    margin: -10px -10px 0;
+    background-color: var(--bg-primary);
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.bankTabNavigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 12px 15px;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    transition: all var(--transition_linear);
+}
+
+.bankTabNavigation.selected {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.bankTabNavigation:hover {
+    background-color: var(--bg-secondary);
+}
+
+.bankTabNavigation:after {
+    position: absolute;
+    bottom: -2px;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: transparent;
+    transition: all var(--transition_linear);
+}
+
+.bankTabNavigation.selected:after {
+    width: 100%;
+    background-color: var(--highlight);
+}
+
+.bankInventoryHeaderContainer, .bankStorageHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 0 10px;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.bankInventoryCardsContainer, .bankStorageCardsContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(190px, 1fr));
+    grid-gap: 5px;
+    padding: 0 5px;
+}
+
+.bankActionsButtons {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.bankInventoryEmpty, .bankStorageEmpty {
+    padding: 10px;
+    color: rgb(255, 130, 130);
+    background-color: var(--bg-primary);
+    border-radius: 5px;
+    animation: fade-in var(--transition_linear);
+    box-shadow: var(--box-shadow);
+}
+
+/* End Bank Building */
 
 /* Museum Building */
 
@@ -6999,26 +6968,6 @@ span.beta-tag {
 .museumButtons {
     margin-top: 10px;
     width: 100%;
-}
-
-.museumActionButton {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    padding: 8px 10px;
-    width: 100%;
-    color: var(--text-primary);
-    text-align: center;
-    background-color: var(--button-primary);
-    border-radius: 5px;
-    transition: all var(--transition_linear);
-    cursor: pointer;
-}
-
-.museumActionButton:hover, .museumActionButton:focus {
-    background-color: var(--button-primary-active);
 }
 
 .museumNoItems {
@@ -7159,3 +7108,5 @@ span.beta-tag {
 .museumRewardComplete {
     margin-top: 10px;
 }
+
+/* End Museum Building */

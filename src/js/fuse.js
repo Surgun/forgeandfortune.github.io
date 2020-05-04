@@ -184,6 +184,8 @@ const $fuseList = $("#fuseList");
 
 function refreshFuseSlots() {
     $fuseSlots.empty();
+    // Fusion Slots Cards
+    const fusionCardsContainer = $("<div/>").addClass(`fusionCardsContainer`).appendTo($fuseSlots);
     FusionManager.slots.forEach(slot => {
         const d1 = $("<div/>").addClass("fuseSlot").addClass("R"+slot.rarity);
         const d2 = $("<div/>").addClass("fuseSlotName itemName").html(slot.name);
@@ -201,26 +203,33 @@ function refreshFuseSlots() {
             d6.show();
         }
         d1.append(d2,d3,d4,d5,d6);
-        $fuseSlots.append(d1);
+        fusionCardsContainer.append(d1);
     });
     for (let i=0;i<FusionManager.maxSlots()-FusionManager.slots.length;i++) {
         const d4 = $("<div/>").addClass("fuseSlot");
         const d5 = $("<div/>").addClass("fuseSlotName itemName").html("Empty");
         d4.append(d5);
-        $fuseSlots.append(d4);
+        fusionCardsContainer.append(d4);
     }
 }
 
 function refreshPossibleFuse() {
     $fuseList.empty();
-    const d1 = $("<div/>").addClass("possibleFuseHead").html("Possible Fuses");
+    // Possible Fusions Header
+    const possibleFusionHeaderContainer = $("<div/>").addClass(`possibleFusionHeaderContainer`).prependTo($fuseList);
+    const possibleFusionHeader = $("<div/>").addClass(`possibleFusionHeader`).appendTo(possibleFusionHeaderContainer);
+    const headingDetails = $("<div/>").addClass("headingDetails").appendTo(possibleFusionHeader);
+        $("<div/>").addClass("headingTitle").html(displayText("header_fusion_possible_fuse_title")).appendTo(headingDetails);
+        $("<div/>").addClass("headingDescription").html(displayText("header_fusion_possible_fuse_desc")).appendTo(headingDetails);
+    // Possible Fusions Cards
     const d2 = $("<div/>").addClass('possibleFuseHolder');
-    const rarities = ["Common","Good","Great","Epic"];
+    const rarities = ["rarity_common","rarity_good","rarity_great","rarity_epic"];
     if(Inventory.getFusePossibilities().length === 0) d2.addClass("fuseInvBlank").html("No Items Available to Fuse");
     if(Inventory.getFusePossibilities().length > 0) {
         Inventory.getFusePossibilities().forEach(f => {
             const d3 = $("<div/>").addClass("possibleFusegroup");
-            const d4 = $("<div/>").addClass("possibleFusegroupHeader").addClass("possibleFuseRarity"+f.rarity).html(`${rarities[f.rarity]} Fuse`)
+            const fuseRarity = displayText("fusion_possible_fuse_rarity").replace("{0}",displayText(`${rarities[f.rarity]}`));
+            const d4 = $("<div/>").addClass("possibleFusegroupHeader").addClass("possibleFuseRarity"+f.rarity).html(fuseRarity);
             const d5 = $("<div/>").addClass("possibleFuse").html(f.name);
             const d6 = $("<div/>").addClass("fuseTime tooltip").attr("data-tooltip","fuse_time").html(`<i class="fas fa-clock"></i> ${msToTime(FusionManager.getMaxFuse(f))}`);
             const d7 = $("<div/>").addClass("fuseStart").attr("uniqueid",f.uniqueID);
@@ -230,7 +239,7 @@ function refreshPossibleFuse() {
             d2.append(d3);
         });
     }
-    $fuseList.append(d1,d2);
+    $fuseList.append(d2);
 }
     
 $(document).on('click', '.fuseStart', (e) => {

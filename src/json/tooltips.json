@@ -175,6 +175,13 @@
     "type": "static"
   },
   {
+    "id": "fusion_remove",
+    "title": "Remove Slotted Fusion",
+    "description": "This will remove the currently slotted fusion and return the items to your inventory. ",
+    "icon": "<i class=\"fas fa-times\"></i>",
+    "type": "static"
+  },
+  {
     "id": "skill_desc",
     "title": "#name#",
     "description": "#description#</br><span class=\"tooltipStat tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span> <span class=\"tooltipStat tooltipSPower\"><i class=\"fas fa-book-spells statTECH\"></i> #techPercent#</span>",

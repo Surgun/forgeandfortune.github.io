@@ -190,9 +190,11 @@ function refreshFuseSlots() {
         const d1 = $("<div/>").addClass("fuseSlot").addClass("R"+slot.rarity);
         const d2 = $("<div/>").addClass("fuseSlotName itemName").html(slot.name);
         const d3 = createFuseBar(slot);
-        const d4 = $("<div/>").addClass("fuseSlotCollect").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html("Collect Fuse").hide();
-        const d5 = $("<div/>").addClass("fuseSlotStart").attr("id","fuseSlotStart"+slot.fuseID).attr("fuseid",slot.fuseID).html("Start Fuse").hide();
-        const d6 = $('<div/>').addClass("fuseClose").attr("fuseid",slot.fuseID).html(`<i class="fas fa-times"></i>`).hide();
+        const d4 = $("<div/>").addClass("fuseSlotCollect actionButtonCard").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html("Collect Fuse").hide();
+        const d5 = $("<div/>").addClass("fuseSlotStart actionButtonCard").attr("id","fuseSlotStart"+slot.fuseID).attr("fuseid",slot.fuseID).html("Start Fuse").hide();
+        const d6 = $('<div/>').addClass("fuseCloseContainer").hide();
+        const d7 = $('<div/>').addClass("fuseRarityContainer").hidden();
+            $('<div/>').addClass("fuseClose tooltip").attr({"data-tooltip": "fusion_remove", "fuseid": slot.fuseID}).html(`<i class="fas fa-times"></i>`).appendTo(d6); 
         if (slot.fuseComplete()) {
             d3.hide();
             d4.show();
@@ -201,8 +203,12 @@ function refreshFuseSlots() {
             d3.hide();
             d5.show();
             d6.show();
+            $("<div/>").addClass("fuseRarity").addClass(`RT${slot.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[slot.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d7);
+            $("<div/>").addClass("fuseRaritySeparator").html('<i class="fas fa-arrow-right"></i>').appendTo(d7);
+            $("<div/>").addClass("fuseRarity").addClass(`RT${slot.rarity + 1} tooltip`).attr({"data-tooltip": `rarity_${rarities[slot.rarity + 1].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d7);
+            d7.visible();
         }
-        d1.append(d2,d3,d4,d5,d6);
+        d1.append(d2,d7,d3,d4,d5,d6);
         fusionCardsContainer.append(d1);
     });
     for (let i=0;i<FusionManager.maxSlots()-FusionManager.slots.length;i++) {
@@ -253,6 +259,7 @@ $(document).on('click', '.fuseClose', (e) => {
     e.preventDefault();
     const fuseid = parseInt($(e.currentTarget).attr("fuseid"));
     FusionManager.cancelFuse(fuseid);
+    destroyTooltip();
 })
 
 $(document).on('click', '.fuseSlotStart', (e) => {

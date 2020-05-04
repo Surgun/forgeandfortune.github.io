@@ -272,7 +272,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: auto;
     padding: 10px 15px;
+    width: 100%;
     color: var(--text-primary);
     text-align: center;
     background-color: var(--button-primary);
@@ -622,7 +624,7 @@ footer {
 
 .RT3 {
     color: rgb(255, 79, 167);
-    border-color: var(--border-tertiary);
+    border-color: var(--border-tertiary)!important;
     overflow: hidden;
 }
 
@@ -3692,7 +3694,7 @@ footer {
 
 /* End of Heroes */
 
-.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, .fuseBarDiv, #swBarDiv, .masteryBarDiv, .repBarDiv, .notoBarDiv, .synthBarDiv, .tinkerProgressDiv, .tinkerTicksDiv {
+.hpBarDiv, .apBarDiv, .actBarDiv, .dsbhpBarDiv, #swBarDiv, .masteryBarDiv, .repBarDiv, .notoBarDiv, .synthBarDiv, .tinkerProgressDiv, .tinkerTicksDiv {
     position: relative;
     display: flex;
     align-items: center;
@@ -3726,7 +3728,7 @@ footer {
     margin-top: 10px;
 }
 
-.hpBarDiv > i, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > i, .fuseBarDiv > img, #swBarDiv > img, .repBarDiv > img, .notoBarDiv > img, .synthBarDiv > img {
+.hpBarDiv > i, .apBarDiv > img, .actBarDiv > img, .dsbhpBarDiv > i, #swBarDiv > img, .repBarDiv > img, .notoBarDiv > img, .synthBarDiv > img {
     position: absolute;
     left: 8px;
     z-index: 1;
@@ -4066,7 +4068,7 @@ footer {
     text-align: center;
 }
 
-.fuseBarDiv, #swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, .repBarDiv, .notoBarDiv, .synthBarDiv, .tinkerTicksDiv, .tinkerProgressDiv {
+#swBarDiv, .masteryBarDiv, .beatBarDiv, .hpBarDiv, .apBarDiv, .dsbhpBarDiv, .repBarDiv, .notoBarDiv, .synthBarDiv, .tinkerTicksDiv, .tinkerProgressDiv {
     width: 100%;
     height: 26px;
     line-height: 26px;
@@ -4112,6 +4114,8 @@ footer {
     background-color: rgba(255,255,255,0.1);
 }
 
+/* Fusion Building */
+
 .possibleFusionHeaderContainer {
     display: flex;
     justify-content: space-between;
@@ -4126,6 +4130,70 @@ footer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(190px, 1fr));
     grid-gap: 10px;
+}
+
+.fuseSlot {
+    min-height: 215px;
+}
+
+.fuseClose {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--border-primary);
+    border: 2px solid var(--border-secondary);
+    border-radius: 50%;
+    transition: var(--transition_linear);
+    box-shadow: 0 2px 0 0 rgba(0,0,0,.25);
+    transform: scale(0);
+    cursor: pointer;
+}
+
+.fuseSlot:hover .fuseClose {
+    transform: scale(1);
+}
+
+.fuseClose:hover {
+    background-color: var(--button-cancel);
+    border-color: var(--button-cancel-border);
+}
+
+.fuseRarityContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.fuseRarity {
+    position: relative;
+    background-color: rgba(255,255,255,0.05);
+    padding: 5px 8px;
+    font-size: 1.25rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.fuseRaritySeparator {
+    margin: 0 10px;
+}
+
+.fuseBarDiv {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .possibleFusegroup {
@@ -4583,7 +4651,7 @@ footer {
     padding: 0 5px;
 }
 
-.fortuneItemClose, .fortuneItemSetClose, .fuseClose {
+.fortuneItemClose, .fortuneItemSetClose {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -4593,7 +4661,7 @@ footer {
     cursor: pointer;
 }
 
-.fortuneItemClose:hover, .fortuneItemSetClose:hover, .fuseClose:hover {
+.fortuneItemClose:hover, .fortuneItemSetClose:hover {
     background-color: rgba(255, 0, 0, 0.5);
 }
 

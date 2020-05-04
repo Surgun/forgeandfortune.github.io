@@ -330,16 +330,6 @@
     "es": null
   },
   {
-    "tid": "header_fusion_slot_title",
-    "en": "Fusion Slots",
-    "es": null
-  },
-  {
-    "tid": "header_fusion_slot_desc",
-    "en": "Using these fusion slots, increase the rarity of your items.",
-    "es": null
-  },
-  {
     "tid": "header_fusion_possible_fuse_title",
     "en": "Items Available to Fuse",
     "es": null
@@ -355,6 +345,11 @@
     "es": null
   },
   {
+    "tid": "fusion_slot_empty",
+    "en": "Empty Fusion Slot",
+    "es": null
+  },
+  {
     "tid": "fusion_possible_fuse_rarity",
     "en": "{0} Fusion",
     "es": null
@@ -367,6 +362,11 @@
   {
     "tid": "fusion_slot_start_fuse_button",
     "en": "Start Fusion",
+    "es": null
+  },
+  {
+    "tid": "fusion_slot_collect_fuse_button",
+    "en": "Collect Fused Item",
     "es": null
   },
   {

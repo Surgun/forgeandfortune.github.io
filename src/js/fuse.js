@@ -190,8 +190,8 @@ function refreshFuseSlots() {
         const d1 = $("<div/>").addClass("fuseSlot").addClass("R"+slot.rarity);
         const d2 = $("<div/>").addClass("fuseSlotName itemName").html(slot.name);
         const d3 = createFuseBar(slot);
-        const d4 = $("<div/>").addClass("fuseSlotCollect actionButtonCard").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html("Collect Fuse").hide();
-        const d5 = $("<div/>").addClass("fuseSlotStart actionButtonCard").attr("id","fuseSlotStart"+slot.fuseID).attr("fuseid",slot.fuseID).html("Start Fuse").hide();
+        const d4 = $("<div/>").addClass("fuseSlotCollect actionButtonCard").attr("id","fuseSlotCollect"+slot.fuseID).attr("fuseid",slot.fuseID).html(displayText("fusion_slot_collect_fuse_button")).hide();
+        const d5 = $("<div/>").addClass("fuseSlotStart actionButtonCard").attr("id","fuseSlotStart"+slot.fuseID).attr("fuseid",slot.fuseID).html(displayText("fusion_slot_start_fuse_button")).hide();
         const d6 = $('<div/>').addClass("fuseCloseContainer").hide();
         const d7 = $('<div/>').addClass("fuseRarityContainer").hidden();
             $('<div/>').addClass("fuseClose tooltip").attr({"data-tooltip": "fusion_remove", "fuseid": slot.fuseID}).html(`<i class="fas fa-times"></i>`).appendTo(d6); 
@@ -203,18 +203,25 @@ function refreshFuseSlots() {
             d3.hide();
             d5.show();
             d6.show();
-            $("<div/>").addClass("fuseRarity").addClass(`RT${slot.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[slot.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d7);
+            $("<div/>").addClass(`fuseRarity RT${slot.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[slot.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d7);
             $("<div/>").addClass("fuseRaritySeparator").html('<i class="fas fa-arrow-right"></i>').appendTo(d7);
-            $("<div/>").addClass("fuseRarity").addClass(`RT${slot.rarity + 1} tooltip`).attr({"data-tooltip": `rarity_${rarities[slot.rarity + 1].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d7);
+            $("<div/>").addClass(`fuseRarity RT${slot.rarity + 1} tooltip`).attr({"data-tooltip": `rarity_${rarities[slot.rarity + 1].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d7);
             d7.visible();
         }
         d1.append(d2,d7,d3,d4,d5,d6);
         fusionCardsContainer.append(d1);
     });
     for (let i=0;i<FusionManager.maxSlots()-FusionManager.slots.length;i++) {
-        const d4 = $("<div/>").addClass("fuseSlot");
-        const d5 = $("<div/>").addClass("fuseSlotName itemName").html("Empty");
-        d4.append(d5);
+        const d4 = $("<div/>").addClass("fuseSlot fuseSlotEmpty");
+        const d5 = $("<div/>").addClass("fuseSlotName itemName");
+            $("<div/>").addClass("fuseSlotNameIcon").html(miscIcons.emptySlot).appendTo(d5)
+            $("<div/>").addClass("fuseSlotNameTitle").html(displayText("fusion_slot_empty")).appendTo(d5)
+        const d6 = $("<div/>").addClass("fuseRarityContainer");
+            $("<div/>").addClass("fuseRarity").appendTo(d6);
+            $("<div/>").addClass("fuseRaritySeparator").html('<i class="fas fa-arrow-right"></i>').appendTo(d6);
+            $("<div/>").addClass("fuseRarity").appendTo(d6);
+        const d7 = $("<div/>").addClass("fuseSlotButton");
+        d4.append(d5,d6,d7);
         fusionCardsContainer.append(d4);
     }
 }
@@ -230,17 +237,18 @@ function refreshPossibleFuse() {
     // Possible Fusions Cards
     const d2 = $("<div/>").addClass('possibleFuseHolder');
     const rarities = ["rarity_common","rarity_good","rarity_great","rarity_epic"];
-    if(Inventory.getFusePossibilities().length === 0) d2.addClass("fuseInvBlank").html("No Items Available to Fuse");
+    if(Inventory.getFusePossibilities().length === 0) $("<div/>").addClass("fuseInvBlank").html(displayText("fusion_possible_empty")).appendTo($fuseList);
     if(Inventory.getFusePossibilities().length > 0) {
         Inventory.getFusePossibilities().forEach(f => {
+            console.log(f)
             const d3 = $("<div/>").addClass("possibleFusegroup");
             const fuseRarity = displayText("fusion_possible_fuse_rarity").replace("{0}",displayText(`${rarities[f.rarity]}`));
             const d4 = $("<div/>").addClass("possibleFusegroupHeader").addClass("possibleFuseRarity"+f.rarity).html(fuseRarity);
-            const d5 = $("<div/>").addClass("possibleFuse").html(f.name);
+            const d5 = $("<div/>").addClass("possibleFuse itemName").html(recipeList.idToItem(f.id).itemPicName());
             const d6 = $("<div/>").addClass("fuseTime tooltip").attr("data-tooltip","fuse_time").html(`<i class="fas fa-clock"></i> ${msToTime(FusionManager.getMaxFuse(f))}`);
-            const d7 = $("<div/>").addClass("fuseStart").attr("uniqueid",f.uniqueID);
-                $("<div/>").addClass("fuseStartText").html("Fuse").appendTo(d7);
-                $("<div/>").addClass("fuseStartCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(FusionManager.getFuseCost(f,0))}).html(`${ResourceManager.materialIcon("M001")}${formatToUnits(FusionManager.getFuseCost(f),2)}`).appendTo(d7);
+            const d7 = $("<div/>").addClass("fuseStart actionButtonCardCost").attr("uniqueid",f.uniqueID);
+                $("<div/>").addClass("actionButtonCardText").html(displayText("fusion_possible_assign_button")).appendTo(d7);
+                $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(FusionManager.getFuseCost(f,0))}).html(`${ResourceManager.materialIcon("M001")}${formatToUnits(FusionManager.getFuseCost(f),2)}`).appendTo(d7);
             d3.append(d4,d5,d6,d7);
             d2.append(d3);
         });

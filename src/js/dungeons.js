@@ -222,8 +222,9 @@ class Dungeon {
     }
     setRewardRate(floor) {
         this.floorClear = Math.max(floor,this.floorClear);
-        this.rewardAmt = Math.ceil(floor/10);
-        this.rewardTimeRate = this.rewardAmt/(floor*0.01+0.09)*1000;
+        this.rewardAmt = Math.ceil(floor/40);
+        const rewardRate = Math.floor(floor/10)*0.25+1
+        this.rewardTimeRate = this.rewardAmt*10000/rewardRate;
     }
     initializeParty(party) {
         this.party = party;

@@ -313,7 +313,7 @@
     "id": "S2030",
     "name": "Double Tap",
     "description": "Revere attacks twice in the same round.",
-    "icon": "<img src=\"/assets/svg/plain-daggar.svg\">",
+    "icon": "<img src=\"/assets/svg/plain-dagger.svg\">",
     "powMod": 1,
     "techMod": 0,
     "mod1": null,

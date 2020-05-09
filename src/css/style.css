@@ -4183,6 +4183,12 @@ footer {
     min-height: 215px;
 }
 
+.fuseSlotEmpty {
+    opacity: .75;
+    background-color: var(--bg-secondary);
+    border-color: var(--bg-primary);
+}
+
 .fuseSlotEmpty .fuseSlotName {
     margin-bottom: auto;
     opacity: 0.75;
@@ -4222,7 +4228,7 @@ footer {
 }
 
 .fuseSlotEmpty .fuseRaritySeparator {
-    opacity: .45;
+    opacity: .25;
 }
 
 .fuseClose {

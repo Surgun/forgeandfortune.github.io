@@ -152,6 +152,7 @@ const FusionManager = {
 function initiateFusionBldg() {
     $fuseBuilding.show();
     refreshFuseSlots();
+    generateFusionHeader();
     refreshPossibleFuse();
 }
 
@@ -180,6 +181,7 @@ function refreshFuseBars() {
 }
 
 const $fuseSlots = $("#fuseSlots");
+const $fuseHeader = $("#fuseHeader");
 const $fuseList = $("#fuseList");
 
 function refreshFuseSlots() {
@@ -226,14 +228,18 @@ function refreshFuseSlots() {
     }
 }
 
-function refreshPossibleFuse() {
-    $fuseList.empty();
+function generateFusionHeader() {
+    $fuseHeader.empty();
     // Possible Fusions Header
-    const possibleFusionHeaderContainer = $("<div/>").addClass(`possibleFusionHeaderContainer`).prependTo($fuseList);
+    const possibleFusionHeaderContainer = $("<div/>").addClass(`possibleFusionHeaderContainer`).prependTo($fuseHeader);
     const possibleFusionHeader = $("<div/>").addClass(`possibleFusionHeader`).appendTo(possibleFusionHeaderContainer);
     const headingDetails = $("<div/>").addClass("headingDetails").appendTo(possibleFusionHeader);
         $("<div/>").addClass("headingTitle").html(displayText("header_fusion_possible_fuse_title")).appendTo(headingDetails);
         $("<div/>").addClass("headingDescription").html(displayText("header_fusion_possible_fuse_desc")).appendTo(headingDetails);
+}
+
+function refreshPossibleFuse() {
+    $fuseList.empty();
     // Possible Fusions Cards
     const d2 = $("<div/>").addClass('possibleFuseHolder');
     const rarities = ["rarity_common","rarity_good","rarity_great","rarity_epic"];

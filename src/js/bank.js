@@ -83,7 +83,8 @@ function refreshBankInventory() {
     const bankInventoryHeadingDetails = $("<div/>").addClass("headingDetails").appendTo(bankInventoryHeader);
         $("<div/>").addClass("headingTitle").html(`${displayText("header_bank_inventory_title")} (${Inventory.nonblank().length}/${Inventory.invMax})`).appendTo(bankInventoryHeadingDetails);
         $("<div/>").addClass("headingDescription").html(displayText("header_bank_inventory_desc")).appendTo(bankInventoryHeadingDetails);
-    $("<div/>").addClass("actionButtonAnimDisabled actionButton").attr({id: "sortInventoryBank"}).html(displayText("bank_sort_inventory_button")).appendTo(bankInventoryHeaderContainer);
+    const sortInventoryBtn = $("<div/>").addClass("actionButtonAnimDisabled actionButton tooltip").attr({id: "sortInventoryBank", "data-tooltip": "sort_inventory"}).html('<i class="fas fa-sort-size-up-alt"></i>').appendTo(bankInventoryHeaderContainer);
+        $("<span/>").addClass("actionButtonTextRight").html(displayText("bank_sort_inventory_button")).appendTo(sortInventoryBtn);
     // Bank Inventory Cards
     const bankInventoryCardsContainer = $("<div/>").addClass(`bankInventoryCardsContainer`).attr({id: "bankInventoryCardsContainer"}).appendTo($bankInvSlots);
     if (Inventory.nonblank().length === 0) $("<div/>").addClass(`bankInventoryEmpty`).html(displayText("bank_inventory_empty")).appendTo($bankInvSlots);
@@ -101,7 +102,8 @@ function refreshBankBank() {
     const bankStorageHeadingDetails = $("<div/>").addClass("headingDetails").appendTo(bankStorageHeader);
         $("<div/>").addClass("headingTitle").html(`${displayText("header_bank_storage_title")} (${BankManager.slots.length}/${BankManager.maxSlots()})`).appendTo(bankStorageHeadingDetails);
         $("<div/>").addClass("headingDescription").html(displayText("header_bank_storage_desc")).appendTo(bankStorageHeadingDetails);
-    $("<div/>").addClass("actionButtonAnimDisabled actionButton").attr({id: "sortBank"}).html(displayText("bank_sort_bank_button")).appendTo(bankStorageHeaderContainer);
+    const sortBankBtn = $("<div/>").addClass("actionButtonAnimDisabled actionButton tooltip").attr({id: "sortBank", "data-tooltip": "sort_bank"}).html('<i class="fas fa-sort-size-up-alt"></i>').appendTo(bankStorageHeaderContainer);
+        $("<span/>").addClass("actionButtonTextRight").html(displayText("bank_sort_bank_button")).appendTo(sortBankBtn);
     // Bank Storage Cards
     const bankStorageCardsContainer = $("<div/>").addClass(`bankStorageCardsContainer`).attr({id: "bankStorageCardsContainer"}).appendTo($bankBankSlots);
     if (BankManager.slots.length === 0) $("<div/>").addClass(`bankStorageEmpty`).html(displayText("bank_storage_empty")).appendTo($bankBankSlots);

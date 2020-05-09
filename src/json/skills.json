@@ -224,7 +224,7 @@
     "name": "Restore",
     "description": "Troy heals the teammate missing the most health.",
     "icon": "<img src=\"/assets/svg/fairy-wand.svg\">",
-    "powMod": 3,
+    "powMod": 2,
     "techMod": 0,
     "mod1": null,
     "mod2": null
@@ -234,7 +234,7 @@
     "name": "Rejuvenate",
     "description": "Troy heals all allies equally.",
     "icon": "<img src=\"/assets/svg/circle-sparks.svg\">",
-    "powMod": 2,
+    "powMod": 1.5,
     "techMod": 0,
     "mod1": null,
     "mod2": null
@@ -523,7 +523,7 @@
     "id": "SM901",
     "name": "Tree Wallop",
     "description": "High damage attack to second in order",
-    "icon": "<img src=\"/assets/svg/tree-branche.svg\">",
+    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
     "powMod": 7,
     "techMod": 0,
     "mod1": null,

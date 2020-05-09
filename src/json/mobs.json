@@ -171,7 +171,7 @@
   {
     "id": "B902",
     "name": "Caddish Cactus",
-    "hpMod": 6000,
+    "hpMod": 5400,
     "powMod": 200,
     "protection": 0,
     "skill1": "S0000",
@@ -210,8 +210,8 @@
   {
     "id": "B905",
     "name": "Paintbrush Knight",
-    "hpMod": 22500,
-    "powMod": 750,
+    "hpMod": 80000,
+    "powMod": 1200,
     "protection": 0,
     "skill1": "SM905A",
     "skill2": "S0000",
@@ -223,8 +223,8 @@
   {
     "id": "B906",
     "name": "Cinder Phoenix",
-    "hpMod": 2500,
-    "powMod": 300,
+    "hpMod": 120000,
+    "powMod": 1200,
     "protection": 0,
     "skill1": "S0000",
     "skill2": "SM906",

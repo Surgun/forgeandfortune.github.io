@@ -3425,13 +3425,20 @@ footer {
     width: 100%;
 }
 
-.heroSelectSkill {
+.heroSelectSkill, .orderUnitSkill, .orderUnitPassive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
     color: var(--text-secondary);
     text-align: center;
     background-color: transparent;
     border: 2px solid var(--border-secondary);
     border-radius: 5px;
+}
+
+.heroSelectSkill > img, .orderUnitSkill > img, .orderUnitPassive > img {
+    height: 20px;
 }
 
 .heroUpgradesHeadingContainer {
@@ -6701,15 +6708,6 @@ span.beta-tag {
     width: 100%;
 }
 
-.orderUnitSkill, .orderUnitPassive {
-    padding: 5px;
-    color: var(--text-secondary);
-    text-align: center;
-    background-color: transparent;
-    border: 2px solid var(--border-secondary);
-    border-radius: 5px;
-}
-
 .orderUnitSkill.orderUnitActiveSkill {
     color: var(--highlight);
     background-color: rgba(255,255,255,.05);
@@ -6722,9 +6720,6 @@ span.beta-tag {
 }
 
 .orderUnitPassive {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 35px;
     height: 35px;
     background-color: var(--bg-primary);
@@ -6748,12 +6743,22 @@ span.beta-tag {
     font-size: 0.8rem;
     text-align: center;
     margin: 2.5px;
-    padding: 5px 10px;
+    padding: 5px;
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 5px;
-    backdrop-filter: blur(10px);
     box-shadow: var(--box-shadow);
+}
+
+.buffContainerIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5px;
+}
+
+.buffContainerIcon > img {
+    height: 20px;
 }
 
 .buffContainerCount {
@@ -6877,9 +6882,9 @@ span.beta-tag {
     align-self: flex-start;
     font-size: 1.5rem;
     margin: 0 10px 0 0;
-    padding: 5px 10px;
-    width: 40px;
-    height: 40px;
+    padding: 0;
+    min-width: 40px;
+    min-height: 40px;
     background-color: var(--bg-primary);
     background-position: center;
     background-size: 20px;
@@ -6889,6 +6894,10 @@ span.beta-tag {
 
 .tooltip-icon > i {
     margin: 0;
+}
+
+.tooltip-icon > img {
+    max-height: 30px;
 }
 
 .tooltip-details {

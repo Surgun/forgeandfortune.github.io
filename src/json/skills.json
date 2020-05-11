@@ -410,6 +410,66 @@
     "mod2": null
   },
   {
+    "id": "SM104",
+    "name": "Attack 5",
+    "description": "If target has buff, deals additional damage",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM105",
+    "name": "Attack 6",
+    "description": "Heals self, if below half health gain a 25% shield",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM106",
+    "name": "Attack 7",
+    "description": "Removes debuffs from all allies and heals if debuffed",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM107",
+    "name": "Attack 8",
+    "description": "If less than full health deals additional damage",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM108",
+    "name": "Attack 9",
+    "description": "Heals adjacent units",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM109",
+    "name": "Attack 10",
+    "description": "Damages last hero, if full health deal additional damage",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
     "id": "SM200",
     "name": "Translucent",
     "description": "Negates damage taken next time being hit.",

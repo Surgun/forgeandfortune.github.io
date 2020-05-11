@@ -523,6 +523,68 @@ SkillManager.skillEffects['SM103'] = function (combatParams) {
     });
 }
 
+SkillManager.skillEffects['SM104'] = function (combatParams) {
+    //Attack 5 - Mob 5
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    targets.forEach(target => {
+        const ogPow = combatParams.power;
+        if (target.buffCount() > 0) combatParams.power *= combatParams.attack.mod1;
+        target.takeAttack(combatParams);
+        combatParams.power = ogPow;
+    });
+};
+
+SkillManager.skillEffects['SM105'] = function (combatParams) {
+    //Attack 6 - Mob 6
+    const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    targets.forEach(target => {
+        const ogPow = combatParams.power;
+        if (target.maxHP()*combatParams.attack.mod1 >= target.hp) {
+            combatParams.power = combatParams.power*combatParams.attack.mod2;
+        }
+        target.heal(combatParams);
+        combatParams.power = ogPow;
+    });
+};
+
+SkillManager.skillEffects['SM106'] = function (combatParams) {
+    //Attack 7 - Mob 7
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
+    targets.forEach(target => {
+        if (target.debuffCount() > 0) target.heal(combatParams.power);
+        target.removeDebuffs();
+    });
+}
+
+SkillManager.skillEffects['SM107'] = function (combatParams) {
+    //Attack 8 - Mob 8
+    if (combatParams.attacker.hpLessThan(combatParams.attack.mod1)) combatParams.power *= combatParams.attack.mod2;
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+};
+
+SkillManager.skillEffects['SM108'] = function (combatParams) {
+    //Attack 9 - Mob 9
+    const targets = combatParams.getTarget(TargetType.ADJACENT,SideType.ALLIES);
+    targets.forEach(target => {
+        target.heal(combatParams);
+    });
+}
+
+SkillManager.skillEffects['SM109'] = function (combatParams) {
+    //Attack 9 - Mob 9
+    const targets = combatParams.getTarget(TargetType.LAST,SideType.ENEMIES);
+    targets.forEach(target => {
+        if (combatParams.attacker.hpLessThan(combatParams.attack.mod1)) combatParams.power *= combatParams.attack.mod2;
+        const ogPow = combatParams.power;
+        if (target.hpLessThan(combatParams.attack.mod1)) combatParams.power *= combatParams.attack.mod2;
+        target.takeAttack(combatParams);
+        combatParams.power = ogPow;
+    });
+}
+
 SkillManager.skillEffects['SM200'] = function (combatParams) {
     //Translucent - Blinkie
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);

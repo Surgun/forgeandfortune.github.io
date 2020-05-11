@@ -1,6 +1,6 @@
 "use strict";
 
-const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9,CLEAVE:10,BEFORE:11,AFTER:12});
+const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9,CLEAVE:10,BEFORE:11,AFTER:12,ADJACENT:13,});
 const SideType = Object.freeze({ALLIES:0,ENEMIES:1});
 
 const CombatManager = {
@@ -77,6 +77,14 @@ class combatRoundParams {
         if (target === TargetType.CLEAVE) {
             if (living.length === 1) return [living[0]];
             return living.slice(0,2);
+        }
+        if (target === TargetType.ADJACENT) {
+            const uid = this.attacker.uniqueid;
+            const indx = living.findIndex(h=>h.uniqueid === uid);
+            const targets = [];
+            if (indx !== living.length-1) targets.push(living[indx+1]);
+            if (indx !== 0) targets.push(living[indx-1]);
+            return targets;
         }
     }
 }
@@ -164,6 +172,12 @@ class Combatant {
     missingHP() {
         return this.maxHP()-this.hp;
     }
+    hpLessThan(percent) {
+        return this.maxHP() * percent >= this.hp;
+    }
+    hpGreaterThan(percent) {
+        return this.maxHP() * percent <= this.hp;
+    }
     heal(hp) {
         if (this.hp === 0) return;
         if (this.isWilt()) hp = Math.floor(hp/2);
@@ -227,7 +241,7 @@ class Combatant {
         return this.buffs.some(b=>b.debuffImmune());
     }
     buffCount() {
-        return this.buffs.length;
+        return this.buffs.filter(b => b.type === "buff").length;
     }
     debuffCount() {
         return this.buffs.filter(b => b.type === "debuff").length;

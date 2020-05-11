@@ -145,7 +145,7 @@
   {
     "id": "B1042",
     "name": "Regen",
-    "description": "This unit heals every time Troy takes a turn.",
+    "description": "This unit heals on their turn.",
     "icon": "<img src=\"/assets/svg/star-sattelites.svg\">",
     "maxStack": 4,
     "stackCast": 4,

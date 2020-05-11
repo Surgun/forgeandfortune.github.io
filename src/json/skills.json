@@ -242,7 +242,7 @@
   {
     "id": "S1042",
     "name": "Reinvigorate",
-    "description": "Troy heals an ally every time Troy takes a turn.",
+    "description": "Troy empowers an ally.  The ally will heal on their turn.",
     "icon": "<img src=\"/assets/svg/star-swirl.svg\">",
     "powMod": 1.25,
     "techMod": 0,

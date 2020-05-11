@@ -34,7 +34,7 @@ class Buff {
         this.stacks = save.stacks;
     }
     buffTick(type,attack) {
-        if (type === "onTurn" || type === "onMyTurn") this.onTick();
+        if (type === "onMyTurn") this.onTick();
         if (type === "onHit") this.onHit(attack);
         if (type === "onHitting") this.onHitting();
         if (type !== this.decrease) return;

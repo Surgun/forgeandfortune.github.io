@@ -303,7 +303,7 @@ SkillManager.skillEffects['S1030'] = function (combatParams) {
     //Transfer Life - Titus
     const lifeDrain = combatParams.getTarget(TargetType.BEFORE,SideType.ALLIES);
     if (lifeDrain === null || lifeDrain[0].race === "undead") return;
-    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    const targets = combatParams.getTarget(TargetType.MIRROR,SideType.ENEMIES);
     lifeDrain.forEach(target => {
         target.takeAttack(combatParams);
     })
@@ -316,7 +316,7 @@ SkillManager.skillEffects['S1031'] = function (combatParams) {
     //Transfer Life 2 - Titus
     const lifeDrain = combatParams.getTarget(TargetType.AFTER,SideType.ALLIES);
     if (lifeDrain === null || lifeDrain[0].race === "undead") return;
-    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    const targets = combatParams.getTarget(TargetType.MIRROR,SideType.ENEMIES);
     lifeDrain.forEach(target => {
         target.takeAttack(combatParams);
     })

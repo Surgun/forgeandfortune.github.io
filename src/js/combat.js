@@ -1,6 +1,6 @@
 "use strict";
 
-const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9,CLEAVE:10,BEFORE:11,AFTER:12,ADJACENT:13,});
+const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9,CLEAVE:10,BEFORE:11,AFTER:12,ADJACENT:13,MIRROR:14,});
 const SideType = Object.freeze({ALLIES:0,ENEMIES:1});
 
 const CombatManager = {
@@ -85,6 +85,12 @@ class combatRoundParams {
             if (indx !== living.length-1) targets.push(living[indx+1]);
             if (indx !== 0) targets.push(living[indx-1]);
             return targets;
+        }
+        if (target === TargetType.MIRROR) {
+            const uid = this.attacker.uniqueid;
+            const indx = living.findIndex(h=>h.uniqueid === uid);
+            if (living.length-1 < indx) return living[living.length-1];
+            return living[indx];
         }
     }
 }

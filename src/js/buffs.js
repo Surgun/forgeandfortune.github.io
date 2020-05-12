@@ -327,6 +327,24 @@ class BM200 extends Buff {
     }
 }
 
+class BM205 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 1;
+    }
+}
+
+class BM208 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 1;
+    }
+}
+
 class BM902 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
@@ -450,6 +468,8 @@ const BuffLookup = {
     B2040,
     BM102,
     BM200,
+    BM205,
+    BM208,
     BM902,
     BM904A,
     BM905A,

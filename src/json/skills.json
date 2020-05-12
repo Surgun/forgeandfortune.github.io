@@ -416,18 +416,18 @@
     "icon": "<img src=\"/assets/svg/cherish.svg\">",
     "powMod": 2,
     "techMod": 0,
-    "mod1": null,
+    "mod1": 2,
     "mod2": null
   },
   {
     "id": "SM105",
     "name": "Attack 6",
-    "description": "Heals self, if below half health gain a 25% shield",
+    "description": "Heals self, heals additional if below 50%",
     "icon": "<img src=\"/assets/svg/cherish.svg\">",
     "powMod": 2,
     "techMod": 0,
-    "mod1": null,
-    "mod2": null
+    "mod1": 0.5,
+    "mod2": 2
   },
   {
     "id": "SM106",
@@ -446,8 +446,8 @@
     "icon": "<img src=\"/assets/svg/cherish.svg\">",
     "powMod": 2,
     "techMod": 0,
-    "mod1": null,
-    "mod2": null
+    "mod1": 1,
+    "mod2": 2
   },
   {
     "id": "SM108",
@@ -466,8 +466,8 @@
     "icon": "<img src=\"/assets/svg/cherish.svg\">",
     "powMod": 2,
     "techMod": 0,
-    "mod1": null,
-    "mod2": null
+    "mod1": 1,
+    "mod2": 2
   },
   {
     "id": "SM200",
@@ -507,6 +507,66 @@
     "powMod": 2,
     "techMod": 0,
     "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM204",
+    "name": "Attack 11",
+    "description": "Damages all enemy units",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM205",
+    "name": "Attack 12",
+    "description": "Negates damage until next turn",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM206",
+    "name": "Attack 13",
+    "description": "Heal all teammates, heal additional if undamaged",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": 2,
+    "mod2": null
+  },
+  {
+    "id": "SM207",
+    "name": "Attack 14",
+    "description": "All undamaged units lose 50% of their HP",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": 0.5,
+    "mod2": null
+  },
+  {
+    "id": "SM208",
+    "name": "Attack 15",
+    "description": "Negate damage next hit to all allies next hit",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM209",
+    "name": "Attack 16",
+    "description": "Damage all enemy units. Units take more damage if this unit is full HP",
+    "icon": "<img src=\"/assets/svg/cherish.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": 2,
     "mod2": null
   },
   {

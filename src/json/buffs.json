@@ -220,6 +220,28 @@
     "type": "buff"
   },
   {
+    "id": "BM205",
+    "name": "Translucent 2",
+    "description": "Reduces damage taken from attacks by 100% until next turn",
+    "icon": "<img src=\"/assets/svg/ghost.svg\">",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "onMyTurn",
+    "type": "buff"
+  },
+  {
+    "id": "BM208",
+    "name": "Translucent 3",
+    "description": "Reduces damage taken from attacks by 100% while active",
+    "icon": "<img src=\"/assets/svg/ghost.svg\">",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "onHit",
+    "type": "buff"
+  },
+  {
     "id": "BM902",
     "name": "Cactus Time",
     "description": "Take damage sometimes",

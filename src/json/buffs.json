@@ -242,6 +242,28 @@
     "type": "buff"
   },
   {
+    "id": "BM304",
+    "name": "Buff 1",
+    "description": "Increases damage",
+    "icon": "<img src=\"/assets/svg/cactus.svg\">",
+    "maxStack": 3,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM305",
+    "name": "Strong",
+    "description": "Reduces damage taken by 25%",
+    "icon": "<img src=\"/assets/svg/cactus.svg\">",
+    "maxStack": 2,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
     "id": "BM902",
     "name": "Cactus Time",
     "description": "Take damage sometimes",

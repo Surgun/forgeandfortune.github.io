@@ -116,7 +116,7 @@
     "hpGain": 240,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D406"
   },
   {
     "id": "D108",
@@ -133,7 +133,7 @@
     "hpGain": 330,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D407"
   },
   {
     "id": "D109",
@@ -150,7 +150,7 @@
     "hpGain": 450,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D408"
   },
   {
     "id": "D110",
@@ -167,7 +167,7 @@
     "hpGain": 650,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D409"
   },
   {
     "id": "D201",
@@ -286,7 +286,7 @@
     "hpGain": 240,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D406"
   },
   {
     "id": "D208",
@@ -303,7 +303,7 @@
     "hpGain": 330,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D407"
   },
   {
     "id": "D209",
@@ -320,7 +320,7 @@
     "hpGain": 450,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D408"
   },
   {
     "id": "D210",
@@ -337,7 +337,7 @@
     "hpGain": 650,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D409"
   },
   {
     "id": "D301",
@@ -411,10 +411,10 @@
     "id": "D305",
     "name": "Creepy Crag V",
     "area": "A03",
-    "mob1": "B301",
+    "mob1": "B303",
     "mob2": "B300",
-    "mob3": null,
-    "mob4": null,
+    "mob3": "B304",
+    "mob4": "B302",
     "mat": "M305",
     "pow": 150,
     "hp": 2600,
@@ -428,10 +428,10 @@
     "id": "D306",
     "name": "Creepy Crag VI",
     "area": "A03",
-    "mob1": "B301",
-    "mob2": "B300",
-    "mob3": null,
-    "mob4": null,
+    "mob1": "B305",
+    "mob2": "B301",
+    "mob3": "B302",
+    "mob4": "B300",
     "mat": "M306",
     "pow": 210,
     "hp": 3500,
@@ -445,10 +445,10 @@
     "id": "D307",
     "name": "Creepy Crag VII",
     "area": "A03",
-    "mob1": "B301",
-    "mob2": "B300",
-    "mob3": null,
-    "mob4": null,
+    "mob1": "B305",
+    "mob2": "B306",
+    "mob3": "B304",
+    "mob4": "B302",
     "mat": "M307",
     "pow": 300,
     "hp": 5000,
@@ -456,16 +456,16 @@
     "hpGain": 240,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D406"
   },
   {
     "id": "D308",
     "name": "Creepy Crag VIII",
     "area": "A03",
-    "mob1": "B301",
-    "mob2": "B300",
-    "mob3": null,
-    "mob4": null,
+    "mob1": "B305",
+    "mob2": "B307",
+    "mob3": "B304",
+    "mob4": "B302",
     "mat": "M308",
     "pow": 400,
     "hp": 7000,
@@ -473,16 +473,16 @@
     "hpGain": 330,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D407"
   },
   {
     "id": "D309",
     "name": "Creepy Crag IX",
     "area": "A03",
-    "mob1": "B301",
-    "mob2": "B300",
-    "mob3": null,
-    "mob4": null,
+    "mob1": "B305",
+    "mob2": "B308",
+    "mob3": "B306",
+    "mob4": "B307",
     "mat": "M309",
     "pow": 550,
     "hp": 9800,
@@ -490,16 +490,16 @@
     "hpGain": 450,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D408"
   },
   {
     "id": "D310",
     "name": "Creepy Crag X",
     "area": "A03",
-    "mob1": "B301",
-    "mob2": "B300",
-    "mob3": null,
-    "mob4": null,
+    "mob1": "B305",
+    "mob2": "B308",
+    "mob3": "B309",
+    "mob4": "B307",
     "mat": "M310",
     "pow": 750,
     "hp": 13500,
@@ -507,7 +507,7 @@
     "hpGain": 650,
     "partySize": 4,
     "type": "dungeon",
-    "unlockedBy": "D405"
+    "unlockedBy": "D409"
   },
   {
     "id": "D401",

@@ -703,7 +703,7 @@ SkillManager.skillEffects['SM301'] = function (combatParams) {
 
 SkillManager.skillEffects['SM302'] = function (combatParams) {
     //Monster C - Mega Attack
-    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    const targets = combatParams.getTarget(TargetType.LAST,SideType.ENEMIES);
     targets.forEach(target => {
         target.takeAttack(combatParams);
     });
@@ -718,6 +718,56 @@ SkillManager.skillEffects['SM303'] = function (combatParams) {
         target.heal(combatParams.power);
     });
 };
+
+SkillManager.skillEffects['SM304'] = function (combatParams) {
+    //
+    const targets = combatParams.getTarget(TargetType.ADJACENT,SideType.ALLIES);
+    targets.forEach(target => {
+        BuffManager.generateBuff('BM304',target,combatParams.power);
+    });
+}
+
+SkillManager.skillEffects['SM305'] = function (combatParams) {
+    //
+    const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    targets.forEach(target => {
+        BuffManager.generateBuff('BM305',target,combatParams.power);
+    });
+}
+
+SkillManager.skillEffects['SM306'] = function (combatParams) {
+    const thisunit = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+    thisunit.takeDamagePercent(100);
+}
+
+SkillManager.skillEffects['SM307'] = function (combatParams) {
+    const targets = combatParams.getTarget(TargetType.LOWESTHP,SideType.ENEMIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+}
+
+SkillManager.skillEffects['SM308'] = function (combatParams) {
+    const targets = combatParams.getTarget(TargetType.BEFORE,SideType.ALLIES);
+    targets.forEach(target => {
+        target.heal(combatParams);
+    });
+}
+
+SkillManager.skillEffects['SM309'] = function (combatParams) {
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    const thisunit = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    if (thisunit.hp !== thisunit.maxHP()) combatParams.power = Math.floor(combatParams.power*combatParams.attack.mod1);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+}
+
+
 
   //------------------//
  //    BOSS SKILLS   //

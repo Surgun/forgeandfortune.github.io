@@ -592,7 +592,7 @@
   {
     "id": "SM302",
     "name": "Viking Smash",
-    "description": "Deals triple damage",
+    "description": "Deals damage to last enemy",
     "icon": "<img src=\"/assets/svg/viking-helmet.svg\">",
     "powMod": 3,
     "techMod": 0,
@@ -607,6 +607,66 @@
     "powMod": 1,
     "techMod": 0,
     "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM304",
+    "name": "Attack 17",
+    "description": "Increases damage of each adjacent ally",
+    "icon": "<img src=\"/assets/svg/round-table.svg\">",
+    "powMod": 0.2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM305",
+    "name": "Attack 18",
+    "description": "Gains 25% damage reduction for 4 attacks",
+    "icon": "<img src=\"/assets/svg/round-table.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM306",
+    "name": "Attack 19",
+    "description": "Explodes, killing itself and dealing massive damage",
+    "icon": "<img src=\"/assets/svg/round-table.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM307",
+    "name": "Attack 20",
+    "description": "Deals damage to lowest HP enemy",
+    "icon": "<img src=\"/assets/svg/round-table.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM308",
+    "name": "Attack 21",
+    "description": "Heals unit in front of this enemy",
+    "icon": "<img src=\"/assets/svg/round-table.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM309",
+    "name": "Attack 22",
+    "description": "Damages all enemies, deals additional damage if damaged",
+    "icon": "<img src=\"/assets/svg/round-table.svg\">",
+    "powMod": 2,
+    "techMod": 0,
+    "mod1": 2,
     "mod2": null
   },
   {

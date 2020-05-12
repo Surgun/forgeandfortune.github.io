@@ -345,6 +345,15 @@ class BM208 extends Buff {
     }
 }
 
+class BM304 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getPow() {
+        return this.power*this.stacks;
+    }
+}
+
 class BM902 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
@@ -470,6 +479,7 @@ const BuffLookup = {
     BM200,
     BM205,
     BM208,
+    BM304,
     BM902,
     BM904A,
     BM905A,

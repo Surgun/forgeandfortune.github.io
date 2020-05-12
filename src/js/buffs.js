@@ -295,8 +295,8 @@ class B2012 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    getTech() {
-        return this.power*this.stacks;
+    getVulnerability() {
+        return 1;
     }
 }
 
@@ -351,6 +351,15 @@ class BM304 extends Buff {
     }
     getPow() {
         return this.power*this.stacks;
+    }
+}
+
+class BM305 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 0.25;
     }
 }
 
@@ -480,6 +489,7 @@ const BuffLookup = {
     BM205,
     BM208,
     BM304,
+    BM305,
     BM902,
     BM904A,
     BM905A,

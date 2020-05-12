@@ -272,7 +272,7 @@
   {
     "id": "S2012",
     "name": "idk",
-    "description": "Inspires all teammates, increasing their Tech",
+    "description": "Targets all enemies, increasing damage taken next time they're hit",
     "icon": "<img src=\"/assets/svg/lyre.svg\">",
     "powMod": 1,
     "techMod": 0,

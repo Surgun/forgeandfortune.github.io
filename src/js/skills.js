@@ -383,7 +383,7 @@ SkillManager.skillEffects['S2011'] = function (combatParams) {
 };
 SkillManager.skillEffects['S2012'] = function (combatParams) {
     //Inspiration - Alok
-    const targets = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
     targets.forEach(target => {
         BuffManager.generateBuff("B2012",target,Math.floor(combatParams.power));
     });
@@ -670,7 +670,6 @@ SkillManager.skillEffects['SM208'] = function (combatParams) {
     });
 }
 
-
 SkillManager.skillEffects['SM209'] = function (combatParams) {
     //Translucent - Blinkie
     const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
@@ -681,8 +680,6 @@ SkillManager.skillEffects['SM209'] = function (combatParams) {
         combatParams.power = ogPow;
     });
 }
-
-
 
 SkillManager.skillEffects['SM300'] = function (combatParams) {
     //Ray Gun - Dusty Alien

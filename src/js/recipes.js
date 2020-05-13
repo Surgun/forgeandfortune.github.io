@@ -78,10 +78,8 @@ class Item{
         const d = $("<div/>").addClass("recipeStatList");
         const pow = this.pow*this.pts;
         const hp = 9*this.hp*this.pts;
-        const tech = this.tech*this.pts;
         if (pow > 0) $("<div/>").addClass("recipeStatListPow tooltip").attr("data-tooltip", "pow").html(`${miscIcons.pow}<span class="statValue">${pow}</span>`).appendTo(d);
         if (hp > 0) $("<div/>").addClass("recipeStatListHP tooltip").attr("data-tooltip", "hp").html(`${miscIcons.hp}<span class="statValue">${hp}</span>`).appendTo(d);
-        if (tech > 0) $("<div/>").addClass("recipeStatListTech tooltip").attr("data-tooltip", "tech").html(`${miscIcons.tech}<span class="statValue">${tech}</span>`).appendTo(d);
         return d;
     }
     count() {

@@ -47,13 +47,11 @@ const $trinketTab = $("#trinketTab");
 const statName = [
     `${miscIcons.hp} <span>HP</span>`,
     `${miscIcons.pow} <span>Power</span>`,
-    `${miscIcons.tech} <span>Technique</span>`,
 ];
 
 const statDesc = [
     "hp",
     "pow",
-    "tech",
 ];
 
 function refreshHeroOverview() {

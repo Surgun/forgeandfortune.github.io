@@ -27,7 +27,7 @@ class combatRoundParams {
         this.allies = allies;
         this.enemies = enemies;
         this.attack = attack;
-        this.power = Math.floor(this.attacker.getPow() * this.attack.powMod + this.attacker.getTech() * this.attack.techMod);
+        this.power = Math.floor(this.attacker.getPow() * this.attack.powMod);
         this.dungeonid = dungeonid;
     }
     getTarget(target,side) {
@@ -154,9 +154,6 @@ class Combatant {
     getPow() {
         return Math.floor(this.pow + this.getBuffPower());
     }
-    getTech() {
-        return 0;
-    }
     getProtection() {
         return 1 - (this.protection + this.getBuffProtection());
     }
@@ -233,10 +230,6 @@ class Combatant {
     }
     getBuffPower() {
         const buffs = this.buffs.map(b=>b.getPow());
-        return buffs.reduce((a,b) => a+b, 0);
-    }
-    getBuffTech() {
-        const buffs = this.buffs.map(b=>b.getTech());
         return buffs.reduce((a,b) => a+b, 0);
     }
     getBuffMaxHP() {

@@ -66,7 +66,6 @@ class Skill {
     constructor (props) {
         Object.assign(this, props);
         this.powerPercent = (props.powMod * 100).toString() + "%";
-        this.techPercent = (props.techMod * 100).toString() + "%";
     }
     passiveCheck(type,target,attack) {
         SkillManager.skillEffects[this.id](type,target,attack,this);

@@ -110,7 +110,6 @@ const miscIcons = Object.freeze({
     ap : '<img src="/assets/images/DungeonIcons/ap.png">',
     gold : '<img src="/assets/images/resources/M001.png">',
     star : '<i class="fas fa-star statSTAR"></i>',
-    tech : '<i class="fas fa-book-spells statTECH"></i>',
     skull : '<i class="fas fa-skull"></i>',
     trophy : `<img src='/assets/images/resources/M002.png' alt='Monster Trophy'>`,
     arrow : '<i class="fas fa-arrow-right"></i>',
@@ -129,7 +128,6 @@ const miscIcons = Object.freeze({
 const heroStat = Object.freeze({
     hp : 'hp',
     pow : 'pow',
-    tech: 'tech',
 })
 
 function msToSec(ms) {

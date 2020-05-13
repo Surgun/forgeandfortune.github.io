@@ -48,16 +48,13 @@ class itemContainer {
         this.containerID = containerid;
         this.sharp = 0;
         this.seed = Math.floor(Math.random() * 1000000);
-        this.scale = 0;
         this.powRatio = this.item.pow;
         this.hpRatio = this.item.hp;
-        this.techRatio = this.item.tech;
         this.pts = this.item.pts;
         containerid += 1;
     }
     uniqueID() {
         const result = this.id+"_"+this.rarity+"_"+this.sharp;
-        if (this.scale > 0) return result + "_" + this.scale;
         return result;
     }
     createSave() {
@@ -69,7 +66,6 @@ class itemContainer {
         save.scale = this.scale;
         save.powRatio = this.powRatio;
         save.hpRatio = this.hpRatio;
-        save.techRatio = this.techRatio;
         return save;
     }
     loadSave(save) {
@@ -78,7 +74,6 @@ class itemContainer {
         if (save.scale !== undefined) this.scale = save.scale;
         if (save.powRatio !== undefined) this.powRatio = save.powRatio;
         if (save.hpRatio !== undefined) this.hpRatio = save.hpRatio;
-        if (save.techRatio !== undefined) this.techRatio = save.techRatio;
     }
     picName() {
         const sharp = this.sharp > 0 ? `+${this.sharp} ` : "";
@@ -93,17 +88,14 @@ class itemContainer {
         return `<div class="level_text">LVL</div><div class="level_integer">${this.lvl}</div>`;
     }
     pow(sharpIncrease = 0, ratioMod = 0) {
-        return this.statCalc(Math.max(0,this.powRatio + ratioMod) * this.pts , this.item.powScale , sharpIncrease);
+        return this.statCalc(Math.max(0,this.powRatio + ratioMod) * this.pts , sharpIncrease);
     }
     hp(sharpIncrease = 0, ratioMod = 0) {
-        return this.statCalc(Math.max(0,9*(this.hpRatio + ratioMod)) * this.pts , this.item.hpScale , sharpIncrease);
+        return this.statCalc(Math.max(0,9*(this.hpRatio + ratioMod)) * this.pts , sharpIncrease);
     }
-    tech(sharpIncrease = 0, ratioMod = 0) {
-        return this.statCalc(Math.max(0,this.techRatio + ratioMod) * this.pts, this.item.techScale , sharpIncrease);
-    }
-    statCalc(flat,scale,sharpIncrease) {
+    statCalc(flat,sharpIncrease) {
         const sharpAdd = sharpIncrease ? 1 : 0;
-        return Math.floor((flat * miscLoadedValues.rarityMod[this.rarity] + Math.ceil(scale * this.scale)) * (1+0.05*(this.sharp+sharpAdd)));
+        return Math.floor(flat * miscLoadedValues.rarityMod[this.rarity] * (1+0.05*(this.sharp+sharpAdd)));
     }
     goldValueFormatted() {
         return `${ResourceManager.materialIcon("M001")} <span class="goldValue">${formatToUnits(this.goldValue(),2)}</span>`;
@@ -121,27 +113,25 @@ class itemContainer {
     deconAmt() {
         return Math.floor(this.item.craftTime / 4000);
     }
-    itemStat(sharpIncrease = 0, powRatio = 0, hpRatio = 0, techRatio = 0) {
+    itemStat(sharpIncrease = 0, powRatio = 0, hpRatio = 0) {
         const stats = {};
         stats[heroStat.pow] = this.pow(sharpIncrease, powRatio);
         stats[heroStat.hp] = this.hp(sharpIncrease, hpRatio);
-        stats[heroStat.tech] = this.tech(sharpIncrease, techRatio);
         return stats;
     }
     isTrinket() {
         return this.item.type === "Trinkets";
     }
     prefix() {
-        if (this.powRatio === this.item.pow && this.hpRatio === this.item.hp && this.techRatio === this.item.tech) return "";
-        return `${adjective[this.powRatio.toString() + this.hpRatio.toString() + this.techRatio.toString()]} `
+        if (this.powRatio === this.item.pow && this.hpRatio === this.item.hp) return "";
+        return `${adjective[this.powRatio.toString() + this.hpRatio.toString()]} `
     }
     transform(ratio) {
         this.powRatio = Math.max(0,this.powRatio + ratio[0]);
         this.hpRatio = Math.max(0,this.hpRatio + ratio[1]);
-        this.techRatio = Math.max(0,this.techRatio + ratio[2]);
     }
     maxRatio() {
-        return Math.max(this.powRatio,this.hpRatio,this.techRatio);
+        return Math.max(this.powRatio,this.hpRatio);
     }
 }
 
@@ -169,7 +159,6 @@ function blankItemStat() {
     const stats = {};
     stats[heroStat.pow] = 0;
     stats[heroStat.hp] = 0;
-    stats[heroStat.tech] = 0;
     return stats;
 }
 
@@ -336,12 +325,6 @@ const Inventory = {
         const hps = this.inv.filter(i => i !== null && i.type === type).map(p => p.hp());
         if (hps.length === 0) return 0;
         return Math.max(...hps);
-    },
-    getMaxTechByType(type) {
-        //given a list of types, return highest power
-        const techs = this.inv.filter(i => i !== null && i.type === type).map(p => p.tech());
-        if (techs.length === 0) return 0;
-        return Math.max(...techs);
     },
     sellCommons() {
         this.inv.forEach((ic,indx) => {

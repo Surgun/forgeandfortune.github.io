@@ -68,11 +68,7 @@ class Hero extends Combatant {
     maxHP() {
         return Math.floor(this.initialHP + this.gearSlots.map(g=>g.hp()).reduce((a,b) => a+b) + this.getBuffMaxHP());
     }
-    getTech() {
-        return this.gearSlots.map(g=>g.tech()).reduce((a,b) => a+b) + this.getBuffTech();
-    }
-    getAdjPow(tech) {
-        if (tech) return Math.floor(this.getPow() + this.getTech());
+    getAdjPow() {
         return Math.floor(this.getPow());
     }
     getEquipSlots(nonblank) {
@@ -118,11 +114,9 @@ class Hero extends Combatant {
     equipUpgradeAvailable(type) {
         const currentPow = this.getPow(type);
         const currentHP = this.maxHP(type);
-        const currentTech = this.getTech(type);
         const invMaxPow = Inventory.getMaxPowByType(type);
         const invMaxHP = Inventory.getMaxHPByType(type);
-        const invMaxTech = Inventory.getMaxTechByType(type);
-        return invMaxPow > currentPow || invMaxHP > currentHP || invMaxTech > currentTech;
+        return invMaxPow > currentPow || invMaxHP > currentHP;
     }
     canEquipType(type) {
         return this.getSlot(type) !== undefined;
@@ -179,10 +173,6 @@ class gearSlot {
     hp() {
         if (this.gear === null) return 0;
         return Math.floor(this.gear.hp() * (1+this.lvl*0.1));
-    }
-    tech() {
-        if (this.gear === null) return 0;
-        return Math.floor(this.gear.tech() * (1+this.lvl*0.1));
     }
     empty() {
         return this.gear === null;

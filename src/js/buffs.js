@@ -49,7 +49,6 @@ class Buff {
     onHit() { return; }
     onHitting() { return; }
     getPow() { return 0; }
-    getTech() { return 0; }
     isChilled() { return false; }
     isWilt() { return false; }
     isLifeTapped() { return false; }

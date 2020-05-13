@@ -139,12 +139,10 @@ const SynthManager = {
         if (this.slot.maxRatio() === 3) {
             resynthCost.M700 = this.slot.powRatio === 3 ? 0 : baseline;
             resynthCost.M701 = this.slot.hpRatio === 3 ? 0 : baseline;
-            resynthCost.M702 = this.slot.techRatio === 3 ? 0 : baseline;
         }
         else {
             resynthCost.M700 = this.slot.powRatio === 0 ? 0 : baseline;
             resynthCost.M701 = this.slot.hpRatio === 0 ? 0 : baseline;
-            resynthCost.M702 = this.slot.techRatio === 0 ? 0 : baseline;
         }
         return resynthCost;
     },
@@ -175,8 +173,8 @@ const SynthManager = {
     },
     fillResynthSlot(value) {
         if (this.state !== "staged") return;
-        const ratio = {"M700":SynthManager.slot.powRatio, "M701":SynthManager.slot.hpRatio, "M702":SynthManager.slot.techRatio};
-        const maxRatio = Math.max(SynthManager.slot.powRatio,SynthManager.slot.hpRatio,SynthManager.slot.techRatio);
+        const ratio = {"M700":SynthManager.slot.powRatio, "M701":SynthManager.slot.hpRatio};
+        const maxRatio = Math.max(SynthManager.slot.powRatio,SynthManager.slot.hpRatio);
         if (maxRatio === 3) {
             //we are all-in on a material, ratio = 3 is the one we can't use
             if (ratio[value] === 3) return;

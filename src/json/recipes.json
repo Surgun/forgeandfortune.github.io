@@ -5,22 +5,18 @@
     "description": "Expert water staff users can use floods in expertly timed, awe inspiring bursts of magic.",
     "lvl": 1,
     "value": 11,
-    "craftTime": 11203,
+    "craftTime": 10983,
     "type": "Arcane",
     "gcost": [
       "G001"
     ],
-    "mcost": {
+    "mcostID": {
       "M101": 1
     },
-    "smithCost": "M301",
+    "smithCost": "M101",
     "pts": 6,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 80,
     "repReq": 1,
@@ -36,29 +32,25 @@
     "description": "Technically it's a Barista Rod, but as long as the dream is still alive, I guess it counts.",
     "lvl": 2,
     "value": 67,
-    "craftTime": 17633,
+    "craftTime": 18759,
     "type": "Arcane",
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M102": 1
+    "mcostID": {
+      "M102": 2
     },
     "smithCost": "M102",
     "pts": 8,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 600,
     "repReq": 7,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -72,24 +64,20 @@
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M203": 1
+    "mcostID": {
+      "M203": 3
     },
     "smithCost": "M203",
     "pts": 11,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 1200,
     "repReq": 10,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -98,30 +86,26 @@
     "description": "Honestly the weirdest of the staves, and kind of a boring superpower.",
     "lvl": 4,
     "value": 2488,
-    "craftTime": 43728,
+    "craftTime": 45550,
     "type": "Arcane",
     "gcost": [
       "G001",
       "G004"
     ],
-    "mcost": {
-      "M304": 2
+    "mcostID": {
+      "M304": 5
     },
     "smithCost": "M304",
     "pts": 16,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 8000,
     "repReq": 13,
     "deconType": "M800",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -130,30 +114,26 @@
     "description": "Some rods have all the luck, and the Stewart Rod gets all the breaks.",
     "lvl": 5,
     "value": 15176,
-    "craftTime": 68927,
+    "craftTime": 66276,
     "type": "Arcane",
     "gcost": [
       "G001",
       "G004"
     ],
-    "mcost": {
-      "M105": 3
+    "mcostID": {
+      "M105": 8
     },
     "smithCost": "M105",
     "pts": 22,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 42000,
     "repReq": 16,
     "deconType": "M800",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -162,30 +142,26 @@
     "description": "Speaking scientifically, it's probably lightning, but the person who named it wasn't that bright.",
     "lvl": 6,
     "value": 92573,
-    "craftTime": 108652,
+    "craftTime": 115588,
     "type": "Arcane",
     "gcost": [
       "G001",
       "G004"
     ],
-    "mcost": {
-      "M206": 4
+    "mcostID": {
+      "M206": 13
     },
     "smithCost": "M206",
     "pts": 31,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 294000,
     "repReq": 23,
     "deconType": "M800",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -194,31 +170,27 @@
     "description": "Possibly fake.  It casts an odd shadow.  Could be a movie studio knockoff.",
     "lvl": 7,
     "value": 564695,
-    "craftTime": 171275,
+    "craftTime": 164687,
     "type": "Arcane",
     "gcost": [
       "G001",
       "G004",
       "G001"
     ],
-    "mcost": {
-      "M107": 5
+    "mcostID": {
+      "M107": 22
     },
     "smithCost": "M107",
     "pts": 43,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 2058000,
     "repReq": 26,
     "deconType": "M800",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -227,31 +199,27 @@
     "description": "Romantic comedies are right: trading in glasses for contacts counts as a total makeover.",
     "lvl": 8,
     "value": 3444639,
-    "craftTime": 269990,
+    "craftTime": 245445,
     "type": "Arcane",
     "gcost": [
       "G001",
       "G004",
       "G001"
     ],
-    "mcost": {
-      "M308": 6
+    "mcostID": {
+      "M308": 35
     },
     "smithCost": "M308",
     "pts": 60,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 14406000,
     "repReq": 29,
     "deconType": "M800",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -260,31 +228,27 @@
     "description": "Don't teach a man to fish, feed yourself.  Fishing isn't that hard.",
     "lvl": 9,
     "value": 21012297,
-    "craftTime": 425600,
+    "craftTime": 452766,
     "type": "Arcane",
     "gcost": [
       "G001",
       "G004",
       "G001"
     ],
-    "mcost": {
-      "M209": 7
+    "mcostID": {
+      "M209": 57
     },
     "smithCost": "M209",
     "pts": 83,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 100842000,
     "repReq": 32,
     "deconType": "M800",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -293,31 +257,27 @@
     "description": "Janitorial Staves may be underappreciated, but befriend them early and often.",
     "lvl": 10,
     "value": 128175011,
-    "craftTime": 670897,
+    "craftTime": 632922,
     "type": "Arcane",
     "gcost": [
       "G001",
       "G004",
       "G001"
     ],
-    "mcost": {
-      "M110": 8
+    "mcostID": {
+      "M110": 92
     },
     "smithCost": "M110",
     "pts": 117,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 705894000,
     "repReq": 39,
     "deconType": "M800",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -326,20 +286,16 @@
     "description": "Even the mighty oak starts as a simple acorn.",
     "lvl": 1,
     "value": 9,
-    "craftTime": 9166,
+    "craftTime": 9963,
     "type": "Light",
     "gcost": [
       "G003"
     ],
-    "mcost": null,
+    "mcostID": null,
     "smithCost": "M101",
     "pts": 6,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 10,
     "repReq": 0,
@@ -355,29 +311,25 @@
     "description": "Named by someone who took too many hits to their funny bone.",
     "lvl": 2,
     "value": 54,
-    "craftTime": 14212,
+    "craftTime": 13407,
     "type": "Light",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M202": 1
+    "mcostID": {
+      "M202": 2
     },
     "smithCost": "M202",
     "pts": 8,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 600,
     "repReq": 7,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -386,29 +338,25 @@
     "description": "This is a dish best served cold.",
     "lvl": 3,
     "value": 329,
-    "craftTime": 22376,
+    "craftTime": 21109,
     "type": "Light",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M103": 1
+    "mcostID": {
+      "M103": 3
     },
     "smithCost": "M103",
     "pts": 11,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 1200,
     "repReq": 10,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -417,30 +365,26 @@
     "description": "Check out the low calorie version -- Hard To Believe This Isn't A Butter Knife.",
     "lvl": 4,
     "value": 2006,
-    "craftTime": 35256,
+    "craftTime": 32051,
     "type": "Light",
     "gcost": [
       "G003",
       "G004"
     ],
-    "mcost": {
-      "M204": 2
+    "mcostID": {
+      "M204": 5
     },
     "smithCost": "M204",
     "pts": 16,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 8000,
     "repReq": 13,
     "deconType": "M801",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -449,30 +393,26 @@
     "description": "Now you can shoot enemies with all the colors of the wind.",
     "lvl": 5,
     "value": 12236,
-    "craftTime": 55574,
+    "craftTime": 53436,
     "type": "Light",
     "gcost": [
       "G003",
       "G004"
     ],
-    "mcost": {
-      "M305": 3
+    "mcostID": {
+      "M305": 8
     },
     "smithCost": "M305",
     "pts": 22,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 42000,
     "repReq": 16,
     "deconType": "M801",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -481,30 +421,26 @@
     "description": "Try to detect this whip, not before it's too late, or else you'll get whipped good.",
     "lvl": 6,
     "value": 74639,
-    "craftTime": 87603,
+    "craftTime": 93195,
     "type": "Light",
     "gcost": [
       "G003",
       "G004"
     ],
-    "mcost": {
-      "M106": 4
+    "mcostID": {
+      "M106": 13
     },
     "smithCost": "M106",
     "pts": 31,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 294000,
     "repReq": 23,
     "deconType": "M801",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -513,31 +449,27 @@
     "description": "It's the most exclusive Club in town.",
     "lvl": 7,
     "value": 455297,
-    "craftTime": 138094,
+    "craftTime": 140912,
     "type": "Light",
     "gcost": [
       "G003",
       "G004",
       "G003"
     ],
-    "mcost": {
-      "M207": 5
+    "mcostID": {
+      "M207": 22
     },
     "smithCost": "M207",
     "pts": 43,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 2058000,
     "repReq": 26,
     "deconType": "M801",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -546,31 +478,27 @@
     "description": "This bow is unlicensed.  I'd stand back if I were you.",
     "lvl": 8,
     "value": 2777311,
-    "craftTime": 217685,
+    "craftTime": 241872,
     "type": "Light",
     "gcost": [
       "G003",
       "G004",
       "G003"
     ],
-    "mcost": {
-      "M108": 6
+    "mcostID": {
+      "M108": 35
     },
     "smithCost": "M108",
     "pts": 60,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 14406000,
     "repReq": 29,
     "deconType": "M801",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -579,31 +507,27 @@
     "description": "The qilinbian is mostly used for exercise, but certain instructors can wield it with lethal force.",
     "lvl": 9,
     "value": 16941597,
-    "craftTime": 343149,
+    "craftTime": 381276,
     "type": "Light",
     "gcost": [
       "G003",
       "G004",
       "G003"
     ],
-    "mcost": {
-      "M309": 7
+    "mcostID": {
+      "M309": 57
     },
     "smithCost": "M309",
     "pts": 83,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 100842000,
     "repReq": 32,
     "deconType": "M801",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -612,31 +536,27 @@
     "description": "This magical knife can slay overlords and tyrants, but using it comes with a price.",
     "lvl": 10,
     "value": 103343741,
-    "craftTime": 540924,
+    "craftTime": 500856,
     "type": "Light",
     "gcost": [
       "G003",
       "G004",
       "G003"
     ],
-    "mcost": {
-      "M310": 8
+    "mcostID": {
+      "M310": 92
     },
     "smithCost": "M310",
     "pts": 117,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 705894000,
     "repReq": 39,
     "deconType": "M801",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -645,20 +565,16 @@
     "description": "Use it.  Abuse it.  Lose it.  That's the Meager Sword Motto.",
     "lvl": 1,
     "value": 13,
-    "craftTime": 13240,
+    "craftTime": 12980,
     "type": "Heavy",
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcostID": null,
     "smithCost": "M101",
     "pts": 6,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 10,
     "repReq": 0,
@@ -674,29 +590,25 @@
     "description": "I'm not saying it's a gold digger, but it has been used in such activities in the past.",
     "lvl": 2,
     "value": 79,
-    "craftTime": 20791,
+    "craftTime": 20384,
     "type": "Heavy",
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M202": 1
+    "mcostID": {
+      "M202": 2
     },
     "smithCost": "M202",
     "pts": 8,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 300,
     "repReq": 4,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -710,24 +622,20 @@
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M303": 1
+    "mcostID": {
+      "M303": 3
     },
     "smithCost": "M303",
     "pts": 11,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 1400,
     "repReq": 11,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -736,30 +644,26 @@
     "description": "Set this blade to stun, instead of kill, and have a blast.",
     "lvl": 4,
     "value": 2934,
-    "craftTime": 51566,
+    "craftTime": 49583,
     "type": "Heavy",
     "gcost": [
       "G001",
       "G001"
     ],
-    "mcost": {
-      "M104": 2
+    "mcostID": {
+      "M104": 5
     },
     "smithCost": "M104",
     "pts": 16,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 10000,
     "repReq": 14,
     "deconType": "M802",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -774,24 +678,20 @@
       "G001",
       "G001"
     ],
-    "mcost": {
-      "M205": 3
+    "mcostID": {
+      "M205": 8
     },
     "smithCost": "M205",
     "pts": 22,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 42000,
     "repReq": 17,
     "deconType": "M802",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -800,30 +700,26 @@
     "description": "Nothing good ever happens with this club after two in the morning, so be careful.",
     "lvl": 6,
     "value": 109171,
-    "craftTime": 128133,
+    "craftTime": 133472,
     "type": "Heavy",
     "gcost": [
       "G001",
       "G001"
     ],
-    "mcost": {
-      "M306": 4
+    "mcostID": {
+      "M306": 13
     },
     "smithCost": "M306",
     "pts": 31,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 294000,
     "repReq": 20,
     "deconType": "M802",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -832,31 +728,27 @@
     "description": "A weapon for the eternally angry and margarita fans alike.",
     "lvl": 7,
     "value": 665943,
-    "craftTime": 201984,
+    "craftTime": 187022,
     "type": "Heavy",
     "gcost": [
       "G001",
       "G001",
       "G003"
     ],
-    "mcost": {
-      "M307": 5
+    "mcostID": {
+      "M307": 22
     },
     "smithCost": "M307",
     "pts": 43,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 2058000,
     "repReq": 27,
     "deconType": "M802",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -865,31 +757,27 @@
     "description": "This axe's name varies by region. In some places it is known as Crusade, and in others, Cataclysm.",
     "lvl": 8,
     "value": 4062252,
-    "craftTime": 318398,
+    "craftTime": 294813,
     "type": "Heavy",
     "gcost": [
       "G001",
       "G001",
       "G003"
     ],
-    "mcost": {
-      "M208": 6
+    "mcostID": {
+      "M208": 35
     },
     "smithCost": "M208",
     "pts": 60,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 14406000,
     "repReq": 30,
     "deconType": "M802",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -898,31 +786,27 @@
     "description": "It's the most exclusive Knife in town.",
     "lvl": 9,
     "value": 24779737,
-    "craftTime": 501909,
+    "craftTime": 557676,
     "type": "Heavy",
     "gcost": [
       "G001",
       "G001",
       "G003"
     ],
-    "mcost": {
-      "M109": 7
+    "mcostID": {
+      "M109": 57
     },
     "smithCost": "M109",
     "pts": 83,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 100842000,
     "repReq": 33,
     "deconType": "M802",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -938,24 +822,20 @@
       "G001",
       "G003"
     ],
-    "mcost": {
-      "M210": 8
+    "mcostID": {
+      "M210": 92
     },
     "smithCost": "M210",
     "pts": 117,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 705894000,
     "repReq": 36,
     "deconType": "M802",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -964,20 +844,16 @@
     "description": "A plain, standard issue helmet given to soldiers on their way to war.",
     "lvl": 1,
     "value": 6,
-    "craftTime": 6111,
+    "craftTime": 5765,
     "type": "Helmets",
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcostID": null,
     "smithCost": "M201",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 10,
     "repReq": 0,
@@ -993,29 +869,25 @@
     "description": "This helmet is extremely heat resistant, but it is also highly magnetic.",
     "lvl": 2,
     "value": 39,
-    "craftTime": 10264,
+    "craftTime": 10063,
     "type": "Helmets",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M102": 1
+    "mcostID": {
+      "M102": 2
     },
     "smithCost": "M102",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 600,
     "repReq": 7,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -1024,29 +896,25 @@
     "description": "It does a much better job of preventing brain injuries than a rusty bucket ever could.",
     "lvl": 3,
     "value": 253,
-    "craftTime": 17207,
+    "craftTime": 19119,
     "type": "Helmets",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M303": 1
+    "mcostID": {
+      "M303": 3
     },
     "smithCost": "M303",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 1200,
     "repReq": 10,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -1055,29 +923,25 @@
     "description": "Be grateful that this one doesn't come with that super annoying regional lockout.",
     "lvl": 4,
     "value": 1644,
-    "craftTime": 28894,
+    "craftTime": 30738,
     "type": "Helmets",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M304": 2
+    "mcostID": {
+      "M304": 5
     },
     "smithCost": "M304",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 8000,
     "repReq": 13,
     "deconType": "M800",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -1086,29 +950,25 @@
     "description": "This reactive armor says it reduces damage by 93%, but it's probably just marketing hype.",
     "lvl": 5,
     "value": 10686,
-    "craftTime": 48534,
+    "craftTime": 52754,
     "type": "Helmets",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M105": 3
+    "mcostID": {
+      "M105": 8
     },
     "smithCost": "M105",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 42000,
     "repReq": 16,
     "deconType": "M800",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -1117,30 +977,26 @@
     "description": "Forged from the skull of a giant insect, this helmet smells like jerky and deception.",
     "lvl": 6,
     "value": 69459,
-    "craftTime": 81524,
+    "craftTime": 78388,
     "type": "Helmets",
     "gcost": [
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M206": 4
+    "mcostID": {
+      "M206": 13
     },
     "smithCost": "M206",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 294000,
     "repReq": 23,
     "deconType": "M800",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -1149,30 +1005,26 @@
     "description": "Crafting this helmet always feels like the first time, for the last time.",
     "lvl": 7,
     "value": 451483,
-    "craftTime": 136937,
+    "craftTime": 142643,
     "type": "Helmets",
     "gcost": [
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M107": 5
+    "mcostID": {
+      "M107": 22
     },
     "smithCost": "M107",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 2058000,
     "repReq": 26,
     "deconType": "M800",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -1181,30 +1033,26 @@
     "description": "The ideal helmet for stunt performers and clowns alike.",
     "lvl": 8,
     "value": 2934639,
-    "craftTime": 230016,
+    "craftTime": 225506,
     "type": "Helmets",
     "gcost": [
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M308": 6
+    "mcostID": {
+      "M308": 35
     },
     "smithCost": "M308",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 14406000,
     "repReq": 29,
     "deconType": "M800",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -1213,30 +1061,26 @@
     "description": "The metal in this helmet has been altered at the molecular level.",
     "lvl": 9,
     "value": 19075153,
-    "craftTime": 386363,
+    "craftTime": 371503,
     "type": "Helmets",
     "gcost": [
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M209": 7
+    "mcostID": {
+      "M209": 57
     },
     "smithCost": "M209",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 100842000,
     "repReq": 32,
     "deconType": "M800",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -1245,30 +1089,26 @@
     "description": "The perfect head cover for mine shafts and reunification.",
     "lvl": 10,
     "value": 123988494,
-    "craftTime": 648984,
+    "craftTime": 705417,
     "type": "Helmets",
     "gcost": [
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M110": 8
+    "mcostID": {
+      "M110": 92
     },
     "smithCost": "M110",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 705894000,
     "repReq": 39,
     "deconType": "M800",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -1277,22 +1117,18 @@
     "description": "As long as it covers my bald spot, I'm happy.",
     "lvl": 1,
     "value": 5,
-    "craftTime": 5092,
+    "craftTime": 5417,
     "type": "Hats",
     "gcost": [
       "G003"
     ],
-    "mcost": {
+    "mcostID": {
       "M201": 1
     },
     "smithCost": "M101",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 80,
     "repReq": 1,
@@ -1308,29 +1144,25 @@
     "description": "This tiara isn't for real princesses, but rather those who demand to be treated like one.",
     "lvl": 2,
     "value": 32,
-    "craftTime": 8422,
+    "craftTime": 8098,
     "type": "Hats",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M302": 1
+    "mcostID": {
+      "M302": 2
     },
     "smithCost": "M302",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 300,
     "repReq": 4,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -1339,29 +1171,25 @@
     "description": "It also comes in \"morally grey.\"",
     "lvl": 3,
     "value": 208,
-    "craftTime": 14146,
+    "craftTime": 15049,
     "type": "Hats",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M203": 1
+    "mcostID": {
+      "M203": 3
     },
     "smithCost": "M203",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 1400,
     "repReq": 11,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -1370,29 +1198,25 @@
     "description": "This hat is perfect for summer days, where the sand is coarse, rough and irritating.",
     "lvl": 4,
     "value": 1352,
-    "craftTime": 23762,
+    "craftTime": 25828,
     "type": "Hats",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M304": 2
+    "mcostID": {
+      "M304": 5
     },
     "smithCost": "M304",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 10000,
     "repReq": 14,
     "deconType": "M801",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -1401,29 +1225,25 @@
     "description": "It is made of foam, smells like beer, and comes with a warning against bears, vikings, and lions.",
     "lvl": 5,
     "value": 8788,
-    "craftTime": 39914,
+    "craftTime": 44348,
     "type": "Hats",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M105": 3
+    "mcostID": {
+      "M105": 8
     },
     "smithCost": "M105",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 42000,
     "repReq": 17,
     "deconType": "M801",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -1432,30 +1252,26 @@
     "description": "Concealed inside the lining is a healthy dose of tin foil, for obvious reasons.",
     "lvl": 6,
     "value": 57122,
-    "craftTime": 67044,
+    "craftTime": 63249,
     "type": "Hats",
     "gcost": [
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M206": 4
+    "mcostID": {
+      "M206": 13
     },
     "smithCost": "M206",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 294000,
     "repReq": 20,
     "deconType": "M801",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -1464,30 +1280,26 @@
     "description": "Clearly overcompensating for something.",
     "lvl": 7,
     "value": 371293,
-    "craftTime": 112615,
+    "craftTime": 125128,
     "type": "Hats",
     "gcost": [
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M107": 5
+    "mcostID": {
+      "M107": 22
     },
     "smithCost": "M107",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 2058000,
     "repReq": 27,
     "deconType": "M801",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -1496,30 +1308,26 @@
     "description": "To awaken it's power, recite the following spell --  \"Lorem ipsum dolor sit amet\"",
     "lvl": 8,
     "value": 2413404,
-    "craftTime": 189162,
+    "craftTime": 178455,
     "type": "Hats",
     "gcost": [
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M308": 6
+    "mcostID": {
+      "M308": 35
     },
     "smithCost": "M308",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 14406000,
     "repReq": 30,
     "deconType": "M801",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -1534,24 +1342,20 @@
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M209": 7
+    "mcostID": {
+      "M209": 57
     },
     "smithCost": "M209",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 100842000,
     "repReq": 33,
     "deconType": "M801",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -1560,30 +1364,26 @@
     "description": "As close to \"one size fits all\" as fantasy headwear can be.",
     "lvl": 10,
     "value": 101966319,
-    "craftTime": 533715,
+    "craftTime": 567782,
     "type": "Hats",
     "gcost": [
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M110": 8
+    "mcostID": {
+      "M110": 92
     },
     "smithCost": "M110",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 705894000,
     "repReq": 36,
     "deconType": "M801",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -1592,22 +1392,18 @@
     "description": "The perfect disguise for robbing trains.",
     "lvl": 1,
     "value": 4,
-    "craftTime": 4074,
+    "craftTime": 3772,
     "type": "Masks",
     "gcost": [
       "G003"
     ],
-    "mcost": {
+    "mcostID": {
       "M101": 1
     },
     "smithCost": "M201",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 80,
     "repReq": 2,
@@ -1623,29 +1419,25 @@
     "description": "It matches your complexion perfectly.",
     "lvl": 2,
     "value": 26,
-    "craftTime": 6843,
+    "craftTime": 6221,
     "type": "Masks",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M102": 1
+    "mcostID": {
+      "M102": 2
     },
     "smithCost": "M102",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 400,
     "repReq": 5,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -1654,29 +1446,25 @@
     "description": "Make sure to put the lotion on your skin before wearing this mask again.",
     "lvl": 3,
     "value": 169,
-    "craftTime": 11494,
+    "craftTime": 11052,
     "type": "Masks",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M303": 1
+    "mcostID": {
+      "M303": 3
     },
     "smithCost": "M303",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 800,
     "repReq": 8,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -1685,29 +1473,25 @@
     "description": "Put it into a jar with vinegar and salt to create a tasty snack.",
     "lvl": 4,
     "value": 1098,
-    "craftTime": 19298,
+    "craftTime": 20976,
     "type": "Masks",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M104": 2
+    "mcostID": {
+      "M104": 5
     },
     "smithCost": "M104",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 12000,
     "repReq": 15,
     "deconType": "M802",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -1716,29 +1500,25 @@
     "description": "Seemingly addictive, but comes with strange digestive complications.",
     "lvl": 5,
     "value": 7137,
-    "craftTime": 32415,
+    "craftTime": 31779,
     "type": "Masks",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M205": 3
+    "mcostID": {
+      "M205": 8
     },
     "smithCost": "M205",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 42000,
     "repReq": 18,
     "deconType": "M802",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -1747,30 +1527,26 @@
     "description": "Especially popular in autumn with Basic Wand users.",
     "lvl": 6,
     "value": 46390,
-    "craftTime": 54448,
+    "craftTime": 57923,
     "type": "Masks",
     "gcost": [
       "G003",
       "G003"
     ],
-    "mcost": {
-      "M306": 4
+    "mcostID": {
+      "M306": 13
     },
     "smithCost": "M306",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 294000,
     "repReq": 21,
     "deconType": "M802",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -1785,24 +1561,20 @@
       "G003",
       "G003"
     ],
-    "mcost": {
-      "M307": 5
+    "mcostID": {
+      "M307": 22
     },
     "smithCost": "M307",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 2058000,
     "repReq": 24,
     "deconType": "M802",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -1811,30 +1583,26 @@
     "description": "Highly flammable.  Proceed with caution.",
     "lvl": 8,
     "value": 1959977,
-    "craftTime": 153622,
+    "craftTime": 160023,
     "type": "Masks",
     "gcost": [
       "G003",
       "G003"
     ],
-    "mcost": {
-      "M208": 6
+    "mcostID": {
+      "M208": 35
     },
     "smithCost": "M208",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 14406000,
     "repReq": 31,
     "deconType": "M802",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -1843,30 +1611,26 @@
     "description": "Somehow funny, and spooky, all at the same time, like a comedy about a ghost.",
     "lvl": 9,
     "value": 12739850,
-    "craftTime": 258043,
+    "craftTime": 234585,
     "type": "Masks",
     "gcost": [
       "G003",
       "G003"
     ],
-    "mcost": {
-      "M109": 7
+    "mcostID": {
+      "M109": 57
     },
     "smithCost": "M109",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 100842000,
     "repReq": 34,
     "deconType": "M802",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -1875,30 +1639,26 @@
     "description": "Use this mask to find out exactly where the rainbow ends.",
     "lvl": 10,
     "value": 82809025,
-    "craftTime": 433441,
+    "craftTime": 461108,
     "type": "Masks",
     "gcost": [
       "G003",
       "G003"
     ],
-    "mcost": {
-      "M210": 8
+    "mcostID": {
+      "M210": 92
     },
     "smithCost": "M210",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 705894000,
     "repReq": 37,
     "deconType": "M802",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -1907,22 +1667,18 @@
     "description": "Fresh from the forge, so treat them right.",
     "lvl": 1,
     "value": 10,
-    "craftTime": 10184,
+    "craftTime": 9430,
     "type": "Gauntlets",
     "gcost": [
       "G001"
     ],
-    "mcost": {
+    "mcostID": {
       "M201": 1
     },
     "smithCost": "M201",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 80,
     "repReq": 2,
@@ -1938,29 +1694,25 @@
     "description": "Almost mirror-like, adventurers often confuse their enemies wearing these.",
     "lvl": 2,
     "value": 63,
-    "craftTime": 16580,
+    "craftTime": 18022,
     "type": "Gauntlets",
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M302": 1
+    "mcostID": {
+      "M302": 2
     },
     "smithCost": "M302",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 400,
     "repReq": 5,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -1974,24 +1726,20 @@
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M103": 1
+    "mcostID": {
+      "M103": 3
     },
     "smithCost": "M103",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 800,
     "repReq": 8,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -2000,29 +1748,25 @@
     "description": "These gauntlets have never been touched, until now.  ",
     "lvl": 4,
     "value": 2494,
-    "craftTime": 43833,
+    "craftTime": 42974,
     "type": "Gauntlets",
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M204": 2
+    "mcostID": {
+      "M204": 5
     },
     "smithCost": "M204",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 12000,
     "repReq": 15,
     "deconType": "M800",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -2031,29 +1775,25 @@
     "description": "Legend states that these mythical gauntlets are awarded to dragon raiders and cheese hoarders.",
     "lvl": 5,
     "value": 15712,
-    "craftTime": 71361,
+    "craftTime": 64874,
     "type": "Gauntlets",
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M305": 3
+    "mcostID": {
+      "M305": 8
     },
     "smithCost": "M305",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 42000,
     "repReq": 18,
     "deconType": "M800",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -2062,30 +1802,26 @@
     "description": "For some reason, there's a spot for a gem on the thumb.  That's an odd choice.",
     "lvl": 6,
     "value": 98985,
-    "craftTime": 116178,
+    "craftTime": 129087,
     "type": "Gauntlets",
     "gcost": [
       "G001",
       "G002"
     ],
-    "mcost": {
-      "M106": 4
+    "mcostID": {
+      "M106": 13
     },
     "smithCost": "M106",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 294000,
     "repReq": 21,
     "deconType": "M800",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -2094,30 +1830,26 @@
     "description": "Particularly helpful when your wizards need food badly.",
     "lvl": 7,
     "value": 623605,
-    "craftTime": 189142,
+    "craftTime": 175132,
     "type": "Gauntlets",
     "gcost": [
       "G001",
       "G002"
     ],
-    "mcost": {
-      "M207": 5
+    "mcostID": {
+      "M207": 22
     },
     "smithCost": "M207",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 2058000,
     "repReq": 24,
     "deconType": "M800",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -2126,30 +1858,26 @@
     "description": "The color of these gauntlets baffle smiths and armorcrafters to this day.",
     "lvl": 8,
     "value": 3928711,
-    "craftTime": 307931,
+    "craftTime": 342146,
     "type": "Gauntlets",
     "gcost": [
       "G001",
       "G002"
     ],
-    "mcost": {
-      "M108": 6
+    "mcostID": {
+      "M108": 35
     },
     "smithCost": "M108",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 14406000,
     "repReq": 31,
     "deconType": "M800",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -2164,24 +1892,20 @@
       "G001",
       "G002"
     ],
-    "mcost": {
-      "M309": 7
+    "mcostID": {
+      "M309": 57
     },
     "smithCost": "M309",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 100842000,
     "repReq": 34,
     "deconType": "M800",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -2190,30 +1914,26 @@
     "description": "The top prize awarded to record holders for breaking misunderstood records.",
     "lvl": 10,
     "value": 155930537,
-    "craftTime": 816176,
+    "craftTime": 800172,
     "type": "Gauntlets",
     "gcost": [
       "G001",
       "G002"
     ],
-    "mcost": {
-      "M310": 8
+    "mcostID": {
+      "M310": 92
     },
     "smithCost": "M310",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 705894000,
     "repReq": 37,
     "deconType": "M800",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -2222,22 +1942,18 @@
     "description": "The thumbs are green, as you would expect.",
     "lvl": 1,
     "value": 9,
-    "craftTime": 9166,
+    "craftTime": 9963,
     "type": "Gloves",
     "gcost": [
       "G002"
     ],
-    "mcost": {
+    "mcostID": {
       "M201": 1
     },
     "smithCost": "M201",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 80,
     "repReq": 1,
@@ -2253,29 +1969,25 @@
     "description": "Chapped hands are a real problem, and these are the perfect solution.",
     "lvl": 2,
     "value": 56,
-    "craftTime": 14738,
+    "craftTime": 15679,
     "type": "Gloves",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M102": 1
+    "mcostID": {
+      "M102": 2
     },
     "smithCost": "M102",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 300,
     "repReq": 4,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -2284,29 +1996,25 @@
     "description": "Ergonomically designed so you can snap while you sing.",
     "lvl": 3,
     "value": 352,
-    "craftTime": 23940,
+    "craftTime": 21764,
     "type": "Gloves",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M303": 1
+    "mcostID": {
+      "M303": 3
     },
     "smithCost": "M303",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 1400,
     "repReq": 11,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -2315,29 +2023,25 @@
     "description": "Works great for scrubbing sinks or avoiding the hoi polloi.",
     "lvl": 4,
     "value": 2217,
-    "craftTime": 38965,
+    "craftTime": 36759,
     "type": "Gloves",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M104": 1
+    "mcostID": {
+      "M104": 5
     },
     "smithCost": "M104",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 10000,
     "repReq": 14,
     "deconType": "M801",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -2346,29 +2050,25 @@
     "description": "The knuckles are padded with brass, which seems counterintuitive.",
     "lvl": 5,
     "value": 13967,
-    "craftTime": 63436,
+    "craftTime": 70484,
     "type": "Gloves",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M205": 1
+    "mcostID": {
+      "M205": 8
     },
     "smithCost": "M205",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 42000,
     "repReq": 17,
     "deconType": "M801",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -2377,30 +2077,26 @@
     "description": "Politicians wear these so that they don't actually have to touch the great unwashed.",
     "lvl": 6,
     "value": 87992,
-    "craftTime": 103276,
+    "craftTime": 99303,
     "type": "Gloves",
     "gcost": [
       "G002",
       "G001"
     ],
-    "mcost": {
-      "M306": 1
+    "mcostID": {
+      "M306": 13
     },
     "smithCost": "M306",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 294000,
     "repReq": 20,
     "deconType": "M801",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -2409,30 +2105,26 @@
     "description": "The fingers of these gloves are detachable, because sure, why not.",
     "lvl": 7,
     "value": 554349,
-    "craftTime": 168137,
+    "craftTime": 158619,
     "type": "Gloves",
     "gcost": [
       "G002",
       "G001"
     ],
-    "mcost": {
-      "M307": 1
+    "mcostID": {
+      "M307": 22
     },
     "smithCost": "M307",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 2058000,
     "repReq": 27,
     "deconType": "M801",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -2441,30 +2133,26 @@
     "description": "Ideally speaking, we should all wear gloves before going to bed.",
     "lvl": 8,
     "value": 3492398,
-    "craftTime": 273733,
+    "craftTime": 297536,
     "type": "Gloves",
     "gcost": [
       "G002",
       "G001"
     ],
-    "mcost": {
-      "M208": 1
+    "mcostID": {
+      "M208": 35
     },
     "smithCost": "M208",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 14406000,
     "repReq": 30,
     "deconType": "M801",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -2473,30 +2161,26 @@
     "description": "Named by an architect who had to come up with a last minute change.",
     "lvl": 9,
     "value": 22002107,
-    "craftTime": 445648,
+    "craftTime": 464217,
     "type": "Gloves",
     "gcost": [
       "G002",
       "G001"
     ],
-    "mcost": {
-      "M109": 1
+    "mcostID": {
+      "M109": 57
     },
     "smithCost": "M109",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 100842000,
     "repReq": 33,
     "deconType": "M801",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -2505,30 +2189,26 @@
     "description": "These gloves are the traditional gift given to children the day after Christmas.",
     "lvl": 10,
     "value": 138613274,
-    "craftTime": 725533,
+    "craftTime": 659576,
     "type": "Gloves",
     "gcost": [
       "G002",
       "G001"
     ],
-    "mcost": {
-      "M210": 1
+    "mcostID": {
+      "M210": 92
     },
     "smithCost": "M210",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 705894000,
     "repReq": 36,
     "deconType": "M801",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -2537,22 +2217,18 @@
     "description": "These wooden shoes are tiny, and have bits of romaine stuck inside.",
     "lvl": 1,
     "value": 8,
-    "craftTime": 8147,
+    "craftTime": 8314,
     "type": "Shoes",
     "gcost": [
       "G002"
     ],
-    "mcost": {
+    "mcostID": {
       "M101": 1
     },
     "smithCost": "M101",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 80,
     "repReq": 2,
@@ -2568,29 +2244,25 @@
     "description": "Staunch magical defenders used these in ancient times.",
     "lvl": 2,
     "value": 50,
-    "craftTime": 13159,
+    "craftTime": 14621,
     "type": "Shoes",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M302": 1
+    "mcostID": {
+      "M302": 2
     },
     "smithCost": "M302",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 400,
     "repReq": 5,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -2599,29 +2271,25 @@
     "description": "These boots have odd properties that allow it to change form quickly.",
     "lvl": 3,
     "value": 315,
-    "craftTime": 21424,
+    "craftTime": 20211,
     "type": "Shoes",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M203": 1
+    "mcostID": {
+      "M203": 3
     },
     "smithCost": "M203",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 800,
     "repReq": 8,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -2635,24 +2303,20 @@
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M304": 1
+    "mcostID": {
+      "M304": 5
     },
     "smithCost": "M304",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 12000,
     "repReq": 15,
     "deconType": "M802",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -2661,29 +2325,25 @@
     "description": "Smells like ale, and covered in syrup.",
     "lvl": 5,
     "value": 12499,
-    "craftTime": 56768,
+    "craftTime": 61705,
     "type": "Shoes",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M105": 1
+    "mcostID": {
+      "M105": 8
     },
     "smithCost": "M105",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 42000,
     "repReq": 18,
     "deconType": "M802",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -2692,30 +2352,26 @@
     "description": "Frequently worn around the house, they don't often see the light of day.",
     "lvl": 6,
     "value": 78743,
-    "craftTime": 92420,
+    "craftTime": 90608,
     "type": "Shoes",
     "gcost": [
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M206": 1
+    "mcostID": {
+      "M206": 13
     },
     "smithCost": "M206",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 294000,
     "repReq": 21,
     "deconType": "M802",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -2724,30 +2380,26 @@
     "description": "One of them appears to have a chip.",
     "lvl": 7,
     "value": 496080,
-    "craftTime": 150463,
+    "craftTime": 141947,
     "type": "Shoes",
     "gcost": [
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M107": 1
+    "mcostID": {
+      "M107": 22
     },
     "smithCost": "M107",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 2058000,
     "repReq": 24,
     "deconType": "M802",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -2756,30 +2408,26 @@
     "description": "The best excuse to have a second breakfast.",
     "lvl": 8,
     "value": 3125304,
-    "craftTime": 244960,
+    "craftTime": 255167,
     "type": "Shoes",
     "gcost": [
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M308": 1
+    "mcostID": {
+      "M308": 35
     },
     "smithCost": "M308",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 14406000,
     "repReq": 31,
     "deconType": "M802",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -2788,30 +2436,26 @@
     "description": "You aren't sure why, but wearing these makes you feel more energetic.",
     "lvl": 9,
     "value": 19689415,
-    "craftTime": 398805,
+    "craftTime": 362550,
     "type": "Shoes",
     "gcost": [
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M209": 1
+    "mcostID": {
+      "M209": 57
     },
     "smithCost": "M209",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 100842000,
     "repReq": 34,
     "deconType": "M802",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -2820,30 +2464,26 @@
     "description": "Upon closer inspection, it appears as if the artist has put their name all over these shoes.",
     "lvl": 10,
     "value": 124043314,
-    "craftTime": 649271,
+    "craftTime": 705729,
     "type": "Shoes",
     "gcost": [
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M110": 1
+    "mcostID": {
+      "M110": 92
     },
     "smithCost": "M110",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 705894000,
     "repReq": 37,
     "deconType": "M802",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -2852,22 +2492,18 @@
     "description": "Provides strong protection, but limited mobility.",
     "lvl": 1,
     "value": 14,
-    "craftTime": 14258,
+    "craftTime": 14852,
     "type": "Armor",
     "gcost": [
       "G002"
     ],
-    "mcost": {
+    "mcostID": {
       "M101": 1
     },
     "smithCost": "M101",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 80,
     "repReq": 3,
@@ -2883,29 +2519,25 @@
     "description": "Just make sure you don't get sand in it.",
     "lvl": 2,
     "value": 93,
-    "craftTime": 24476,
+    "craftTime": 23091,
     "type": "Armor",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M302": 1
+    "mcostID": {
+      "M302": 2
     },
     "smithCost": "M302",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 500,
     "repReq": 5,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -2914,29 +2546,25 @@
     "description": "If this armor were any heavier, adventurers would collapse from the weight.",
     "lvl": 3,
     "value": 613,
-    "craftTime": 41691,
+    "craftTime": 37901,
     "type": "Armor",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M203": 1
+    "mcostID": {
+      "M203": 3
     },
     "smithCost": "M203",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 1200,
     "repReq": 10,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -2945,30 +2573,26 @@
     "description": "The history of this armor is mired in controversy.",
     "lvl": 4,
     "value": 3984,
-    "craftTime": 70020,
+    "craftTime": 72938,
     "type": "Armor",
     "gcost": [
       "G002",
       "G002"
     ],
-    "mcost": {
-      "M204": 1
+    "mcostID": {
+      "M204": 5
     },
     "smithCost": "M204",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 10000,
     "repReq": 14,
     "deconType": "M800",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -2983,24 +2607,20 @@
       "G002",
       "G002"
     ],
-    "mcost": {
-      "M305": 1
+    "mcostID": {
+      "M305": 8
     },
     "smithCost": "M305",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 42000,
     "repReq": 19,
     "deconType": "M800",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -3009,30 +2629,26 @@
     "description": "Given the opportunity, you should paint the back in black or really dark grey.",
     "lvl": 6,
     "value": 160631,
-    "craftTime": 188532,
+    "craftTime": 200565,
     "type": "Armor",
     "gcost": [
       "G002",
       "G002"
     ],
-    "mcost": {
-      "M106": 1
+    "mcostID": {
+      "M106": 13
     },
     "smithCost": "M106",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 294000,
     "repReq": 21,
     "deconType": "M800",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -3041,31 +2657,27 @@
     "description": "Named after a torture device, this armor can cause hearing loss.",
     "lvl": 7,
     "value": 995912,
-    "craftTime": 302065,
+    "craftTime": 274604,
     "type": "Armor",
     "gcost": [
       "G002",
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M207": 1
+    "mcostID": {
+      "M207": 22
     },
     "smithCost": "M207",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 2058000,
     "repReq": 26,
     "deconType": "M800",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -3074,31 +2686,27 @@
     "description": "Not to be used as a floatation device.  ",
     "lvl": 8,
     "value": 6075063,
-    "craftTime": 476162,
+    "craftTime": 440890,
     "type": "Armor",
     "gcost": [
       "G002",
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M108": 1
+    "mcostID": {
+      "M108": 35
     },
     "smithCost": "M108",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 14406000,
     "repReq": 30,
     "deconType": "M800",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -3107,31 +2715,27 @@
     "description": "Oddly useful at car washes.",
     "lvl": 9,
     "value": 36450378,
-    "craftTime": 738295,
+    "craftTime": 753362,
     "type": "Armor",
     "gcost": [
       "G002",
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M309": 1
+    "mcostID": {
+      "M309": 57
     },
     "smithCost": "M309",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 100842000,
     "repReq": 35,
     "deconType": "M800",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -3140,31 +2744,27 @@
     "description": "Somehow, this armor only allows one arm through.",
     "lvl": 10,
     "value": 215057230,
-    "craftTime": 1125658,
+    "craftTime": 1061941,
     "type": "Armor",
     "gcost": [
       "G002",
       "G002",
       "G004"
     ],
-    "mcost": {
-      "M310": 1
+    "mcostID": {
+      "M310": 92
     },
     "smithCost": "M310",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 705894000,
     "repReq": 37,
     "deconType": "M800",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -3173,22 +2773,18 @@
     "description": "A simple protective covering.",
     "lvl": 1,
     "value": 12,
-    "craftTime": 12221,
+    "craftTime": 11751,
     "type": "Cloaks",
     "gcost": [
       "G003"
     ],
-    "mcost": {
+    "mcostID": {
       "M301": 1
     },
     "smithCost": "M301",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 80,
     "repReq": 3,
@@ -3204,29 +2800,25 @@
     "description": "Worn by initiates looking to find more steady work.",
     "lvl": 2,
     "value": 80,
-    "craftTime": 21055,
+    "craftTime": 19495,
     "type": "Cloaks",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M202": 1
+    "mcostID": {
+      "M202": 2
     },
     "smithCost": "M202",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 500,
     "repReq": 5,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -3235,29 +2827,25 @@
     "description": "It has a protective coating to prevent forest fires and accidental discharge.",
     "lvl": 3,
     "value": 528,
-    "craftTime": 35910,
+    "craftTime": 35206,
     "type": "Cloaks",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M103": 1
+    "mcostID": {
+      "M103": 3
     },
     "smithCost": "M103",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 1200,
     "repReq": 10,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -3266,30 +2854,26 @@
     "description": "Wandering magi wear it to harness the elements.",
     "lvl": 4,
     "value": 3432,
-    "craftTime": 60319,
+    "craftTime": 62832,
     "type": "Cloaks",
     "gcost": [
       "G003",
       "G002"
     ],
-    "mcost": {
-      "M204": 2
+    "mcostID": {
+      "M204": 5
     },
     "smithCost": "M204",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 10000,
     "repReq": 14,
     "deconType": "M801",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -3298,30 +2882,26 @@
     "description": "The most experienced spellcasters wear this cloak with pride.",
     "lvl": 5,
     "value": 21964,
-    "craftTime": 99757,
+    "craftTime": 92367,
     "type": "Cloaks",
     "gcost": [
       "G003",
       "G002"
     ],
-    "mcost": {
-      "M305": 3
+    "mcostID": {
+      "M305": 8
     },
     "smithCost": "M305",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 42000,
     "repReq": 19,
     "deconType": "M801",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -3330,30 +2910,26 @@
     "description": "This garment is as cold as ice, but it's a sacrifice worth making for the power it gives.",
     "lvl": 6,
     "value": 138373,
-    "craftTime": 162407,
+    "craftTime": 156161,
     "type": "Cloaks",
     "gcost": [
       "G003",
       "G002"
     ],
-    "mcost": {
-      "M106": 4
+    "mcostID": {
+      "M106": 13
     },
     "smithCost": "M106",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 294000,
     "repReq": 21,
     "deconType": "M801",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -3369,24 +2945,20 @@
       "G002",
       "G001"
     ],
-    "mcost": {
-      "M207": 5
+    "mcostID": {
+      "M207": 22
     },
     "smithCost": "M207",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 2058000,
     "repReq": 26,
     "deconType": "M801",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -3395,31 +2967,27 @@
     "description": "Comes with a hydrophobic coating, so you can cause destruction in style.",
     "lvl": 8,
     "value": 5233263,
-    "craftTime": 410181,
+    "craftTime": 445849,
     "type": "Cloaks",
     "gcost": [
       "G003",
       "G002",
       "G001"
     ],
-    "mcost": {
-      "M108": 6
+    "mcostID": {
+      "M108": 35
     },
     "smithCost": "M108",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 14406000,
     "repReq": 30,
     "deconType": "M801",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -3428,31 +2996,27 @@
     "description": "It contains many pockets to hide remedies and antidotes for all occasions.",
     "lvl": 9,
     "value": 31399578,
-    "craftTime": 635992,
+    "craftTime": 706658,
     "type": "Cloaks",
     "gcost": [
       "G003",
       "G002",
       "G001"
     ],
-    "mcost": {
-      "M309": 7
+    "mcostID": {
+      "M309": 57
     },
     "smithCost": "M309",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 100842000,
     "repReq": 35,
     "deconType": "M801",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -3461,31 +3025,27 @@
     "description": "Those who wear this cloak should be forewarned: this cloak may be cursed.",
     "lvl": 10,
     "value": 185257510,
-    "craftTime": 969679,
+    "craftTime": 932384,
     "type": "Cloaks",
     "gcost": [
       "G003",
       "G002",
       "G001"
     ],
-    "mcost": {
-      "M310": 8
+    "mcostID": {
+      "M310": 92
     },
     "smithCost": "M310",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 705894000,
     "repReq": 37,
     "deconType": "M801",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -3494,22 +3054,18 @@
     "description": "Worn by those who hide in plain sight.",
     "lvl": 1,
     "value": 13,
-    "craftTime": 13240,
+    "craftTime": 12259,
     "type": "Vests",
     "gcost": [
       "G002"
     ],
-    "mcost": {
+    "mcostID": {
       "M301": 1
     },
     "smithCost": "M301",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 80,
     "repReq": 3,
@@ -3525,29 +3081,25 @@
     "description": "This vest allows the wearer to move silently.",
     "lvl": 2,
     "value": 87,
-    "craftTime": 22897,
+    "craftTime": 20815,
     "type": "Vests",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M202": 1
+    "mcostID": {
+      "M202": 2
     },
     "smithCost": "M202",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 600,
     "repReq": 6,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -3556,29 +3108,25 @@
     "description": "Has a handy pocket to keep bandanas and knives.",
     "lvl": 3,
     "value": 574,
-    "craftTime": 39039,
+    "craftTime": 39835,
     "type": "Vests",
     "gcost": [
       "G002"
     ],
-    "mcost": {
-      "M103": 1
+    "mcostID": {
+      "M103": 3
     },
     "smithCost": "M103",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 1000,
     "repReq": 9,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -3587,30 +3135,26 @@
     "description": "Also comes in black and white.",
     "lvl": 4,
     "value": 3731,
-    "craftTime": 65574,
+    "craftTime": 68306,
     "type": "Vests",
     "gcost": [
       "G002",
       "G003"
     ],
-    "mcost": {
-      "M204": 2
+    "mcostID": {
+      "M204": 5
     },
     "smithCost": "M204",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 6000,
     "repReq": 12,
     "deconType": "M802",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -3619,30 +3163,26 @@
     "description": "Good for those on the run and trying to prove their innocence.",
     "lvl": 5,
     "value": 23878,
-    "craftTime": 108450,
+    "craftTime": 98591,
     "type": "Vests",
     "gcost": [
       "G002",
       "G003"
     ],
-    "mcost": {
-      "M305": 3
+    "mcostID": {
+      "M305": 8
     },
     "smithCost": "M305",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 42000,
     "repReq": 19,
     "deconType": "M802",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -3651,30 +3191,26 @@
     "description": "Great for protecting against the elements while in exile.",
     "lvl": 6,
     "value": 150431,
-    "craftTime": 176560,
+    "craftTime": 173098,
     "type": "Vests",
     "gcost": [
       "G002",
       "G003"
     ],
-    "mcost": {
-      "M106": 4
+    "mcostID": {
+      "M106": 13
     },
     "smithCost": "M106",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 294000,
     "repReq": 22,
     "deconType": "M802",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -3683,31 +3219,27 @@
     "description": "When grifting someone, make sure they aren't broke, or well connected.",
     "lvl": 7,
     "value": 932672,
-    "craftTime": 282884,
+    "craftTime": 288657,
     "type": "Vests",
     "gcost": [
       "G002",
       "G003",
       "G004"
     ],
-    "mcost": {
-      "M207": 5
+    "mcostID": {
+      "M207": 22
     },
     "smithCost": "M207",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 2058000,
     "repReq": 25,
     "deconType": "M802",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -3716,31 +3248,27 @@
     "description": "Designed by a soft spoken judge who understands criminals quite well.",
     "lvl": 8,
     "value": 5689299,
-    "craftTime": 445925,
+    "craftTime": 495473,
     "type": "Vests",
     "gcost": [
       "G002",
       "G003",
       "G004"
     ],
-    "mcost": {
-      "M108": 6
+    "mcostID": {
+      "M108": 35
     },
     "smithCost": "M108",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 14406000,
     "repReq": 28,
     "deconType": "M802",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -3749,31 +3277,27 @@
     "description": "Hitperson just doesn't sound right, but it's a gender neutral vest.",
     "lvl": 9,
     "value": 34135794,
-    "craftTime": 691414,
+    "craftTime": 705524,
     "type": "Vests",
     "gcost": [
       "G002",
       "G003",
       "G004"
     ],
-    "mcost": {
-      "M309": 7
+    "mcostID": {
+      "M309": 57
     },
     "smithCost": "M309",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 100842000,
     "repReq": 35,
     "deconType": "M802",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -3789,24 +3313,20 @@
       "G003",
       "G004"
     ],
-    "mcost": {
-      "M310": 8
+    "mcostID": {
+      "M310": 92
     },
     "smithCost": "M310",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G002",
     "goldCost": 705894000,
     "repReq": 38,
     "deconType": "M802",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -3815,20 +3335,16 @@
     "description": "Sometimes the easiest way to win is to wait for your enemy to die.",
     "lvl": 1,
     "value": 5,
-    "craftTime": 5092,
+    "craftTime": 4992,
     "type": "Shields",
     "gcost": [
       "G004"
     ],
-    "mcost": null,
+    "mcostID": null,
     "smithCost": "M301",
     "pts": 6,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 10,
     "repReq": 0,
@@ -3844,29 +3360,25 @@
     "description": "Seeing is believing, but blocking with this shield doesn't hurt either.",
     "lvl": 2,
     "value": 35,
-    "craftTime": 9211,
+    "craftTime": 10012,
     "type": "Shields",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M302": 1
+    "mcostID": {
+      "M302": 2
     },
     "smithCost": "M302",
     "pts": 8,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 600,
     "repReq": 7,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -3875,29 +3387,25 @@
     "description": "This shield will help you hold your ground, even in adverse situations.",
     "lvl": 3,
     "value": 248,
-    "craftTime": 16867,
+    "craftTime": 17570,
     "type": "Shields",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M203": 1
+    "mcostID": {
+      "M203": 3
     },
     "smithCost": "M203",
     "pts": 11,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 1200,
     "repReq": 10,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -3906,29 +3414,25 @@
     "description": "Fairness is okay as long as I get what I want.",
     "lvl": 4,
     "value": 1760,
-    "craftTime": 30933,
+    "craftTime": 32907,
     "type": "Shields",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M304": 2
+    "mcostID": {
+      "M304": 5
     },
     "smithCost": "M304",
     "pts": 16,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 8000,
     "repReq": 13,
     "deconType": "M800",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -3937,29 +3441,25 @@
     "description": "Wisdom is knowing not to put tomatoes in a fruit salad.",
     "lvl": 5,
     "value": 12496,
-    "craftTime": 56755,
+    "craftTime": 52551,
     "type": "Shields",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M105": 3
+    "mcostID": {
+      "M105": 8
     },
     "smithCost": "M105",
     "pts": 22,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 42000,
     "repReq": 16,
     "deconType": "M800",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -3968,30 +3468,26 @@
     "description": "Easily able to cover an adventurer and a half.",
     "lvl": 6,
     "value": 88721,
-    "craftTime": 104131,
+    "craftTime": 115701,
     "type": "Shields",
     "gcost": [
       "G004",
       "G002"
     ],
-    "mcost": {
-      "M206": 4
+    "mcostID": {
+      "M206": 13
     },
     "smithCost": "M206",
     "pts": 31,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 294000,
     "repReq": 23,
     "deconType": "M800",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -4000,30 +3496,26 @@
     "description": "This shield is lined with fur, so it will keep you warm at night.",
     "lvl": 7,
     "value": 629919,
-    "craftTime": 191057,
+    "craftTime": 203253,
     "type": "Shields",
     "gcost": [
       "G004",
       "G002"
     ],
-    "mcost": {
-      "M107": 5
+    "mcostID": {
+      "M107": 22
     },
     "smithCost": "M107",
     "pts": 43,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 2058000,
     "repReq": 26,
     "deconType": "M800",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -4032,30 +3524,26 @@
     "description": "The most luxurious possession and richest treasure most people will ever have.",
     "lvl": 8,
     "value": 4472424,
-    "craftTime": 350547,
+    "craftTime": 365153,
     "type": "Shields",
     "gcost": [
       "G004",
       "G002"
     ],
-    "mcost": {
-      "M308": 6
+    "mcostID": {
+      "M308": 35
     },
     "smithCost": "M308",
     "pts": 60,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 14406000,
     "repReq": 29,
     "deconType": "M800",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -4064,30 +3552,26 @@
     "description": "Sometimes the best shield against harm is your own principles.",
     "lvl": 9,
     "value": 31754210,
-    "craftTime": 643175,
+    "craftTime": 584705,
     "type": "Shields",
     "gcost": [
       "G004",
       "G002"
     ],
-    "mcost": {
-      "M209": 7
+    "mcostID": {
+      "M209": 57
     },
     "smithCost": "M209",
     "pts": 83,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 100842000,
     "repReq": 32,
     "deconType": "M800",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -4096,30 +3580,26 @@
     "description": "One good hit to your enemy's skull should help them give up any secrets.",
     "lvl": 10,
     "value": 225454891,
-    "craftTime": 1180082,
+    "craftTime": 1134694,
     "type": "Shields",
     "gcost": [
       "G004",
       "G002"
     ],
-    "mcost": {
-      "M110": 8
+    "mcostID": {
+      "M110": 92
     },
     "smithCost": "M110",
     "pts": 117,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 705894000,
     "repReq": 39,
     "deconType": "M800",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -4128,22 +3608,18 @@
     "description": "Not safe to own in houses made of glass.",
     "lvl": 1,
     "value": 4,
-    "craftTime": 4074,
+    "craftTime": 3843,
     "type": "Thrown",
     "gcost": [
       "G001"
     ],
-    "mcost": {
+    "mcostID": {
       "M301": 1
     },
     "smithCost": "M301",
     "pts": 6,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 80,
     "repReq": 3,
@@ -4159,29 +3635,25 @@
     "description": "Don't shove this in your bike spokes.",
     "lvl": 2,
     "value": 28,
-    "craftTime": 7369,
+    "craftTime": 7676,
     "type": "Thrown",
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M202": 1
+    "mcostID": {
+      "M202": 2
     },
     "smithCost": "M202",
     "pts": 8,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 500,
     "repReq": 6,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -4190,29 +3662,25 @@
     "description": "Use this against yourself before your enemies get the chance.",
     "lvl": 3,
     "value": 198,
-    "craftTime": 13466,
+    "craftTime": 14326,
     "type": "Thrown",
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M103": 1
+    "mcostID": {
+      "M103": 3
     },
     "smithCost": "M103",
     "pts": 11,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 1000,
     "repReq": 9,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -4221,29 +3689,25 @@
     "description": "Protect yourself against bag raiders with a handful of these.",
     "lvl": 4,
     "value": 1405,
-    "craftTime": 24693,
+    "craftTime": 24209,
     "type": "Thrown",
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M104": 2
+    "mcostID": {
+      "M104": 5
     },
     "smithCost": "M104",
     "pts": 16,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 6000,
     "repReq": 12,
     "deconType": "M801",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -4252,29 +3716,25 @@
     "description": "A little poison will go a long way, so use it modestly.",
     "lvl": 5,
     "value": 9975,
-    "craftTime": 45305,
+    "craftTime": 48196,
     "type": "Thrown",
     "gcost": [
       "G001"
     ],
-    "mcost": {
-      "M205": 3
+    "mcostID": {
+      "M205": 8
     },
     "smithCost": "M205",
     "pts": 22,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 42000,
     "repReq": 19,
     "deconType": "M801",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -4283,30 +3743,26 @@
     "description": "Manages to reflect light, even when covered in blood.",
     "lvl": 6,
     "value": 70822,
-    "craftTime": 83123,
+    "craftTime": 84820,
     "type": "Thrown",
     "gcost": [
       "G001",
       "G003"
     ],
-    "mcost": {
-      "M306": 4
+    "mcostID": {
+      "M306": 13
     },
     "smithCost": "M306",
     "pts": 31,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 294000,
     "repReq": 22,
     "deconType": "M801",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -4315,30 +3771,26 @@
     "description": "This weapon broke the mold.  Throw for the moon.",
     "lvl": 7,
     "value": 502836,
-    "craftTime": 152512,
+    "craftTime": 143880,
     "type": "Thrown",
     "gcost": [
       "G001",
       "G003"
     ],
-    "mcost": {
-      "M307": 5
+    "mcostID": {
+      "M307": 22
     },
     "smithCost": "M307",
     "pts": 43,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 2058000,
     "repReq": 25,
     "deconType": "M801",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -4347,30 +3799,26 @@
     "description": "Consider it a really sharp chill pill.",
     "lvl": 8,
     "value": 3570135,
-    "craftTime": 279826,
+    "craftTime": 304159,
     "type": "Thrown",
     "gcost": [
       "G001",
       "G003"
     ],
-    "mcost": {
-      "M208": 6
+    "mcostID": {
+      "M208": 35
     },
     "smithCost": "M208",
     "pts": 60,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 14406000,
     "repReq": 28,
     "deconType": "M801",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -4379,30 +3827,26 @@
     "description": "All it takes is one match to start an explosion.",
     "lvl": 9,
     "value": 25347958,
-    "craftTime": 513418,
+    "craftTime": 503351,
     "type": "Thrown",
     "gcost": [
       "G001",
       "G003"
     ],
-    "mcost": {
-      "M109": 7
+    "mcostID": {
+      "M109": 57
     },
     "smithCost": "M109",
     "pts": 83,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 100842000,
     "repReq": 35,
     "deconType": "M801",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -4411,30 +3855,26 @@
     "description": "The fastest way to your enemy's heart is through his stomach, so aim for that.",
     "lvl": 10,
     "value": 179970501,
-    "craftTime": 942006,
+    "craftTime": 1002134,
     "type": "Thrown",
     "gcost": [
       "G001",
       "G003"
     ],
-    "mcost": {
-      "M210": 8
+    "mcostID": {
+      "M210": 92
     },
     "smithCost": "M210",
     "pts": 117,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G001",
     "goldCost": 705894000,
     "repReq": 38,
     "deconType": "M801",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -4443,22 +3883,18 @@
     "description": "An introduction into the wide world of magic.",
     "lvl": 1,
     "value": 6,
-    "craftTime": 6111,
+    "craftTime": 6235,
     "type": "Tomes",
     "gcost": [
       "G004"
     ],
-    "mcost": {
+    "mcostID": {
       "M101": 1
     },
     "smithCost": "M101",
     "pts": 6,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 80,
     "repReq": 1,
@@ -4474,29 +3910,25 @@
     "description": "Basic ingredients and techniques commonly used.",
     "lvl": 2,
     "value": 42,
-    "craftTime": 11054,
+    "craftTime": 12282,
     "type": "Tomes",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M202": 1
+    "mcostID": {
+      "M202": 2
     },
     "smithCost": "M202",
     "pts": 8,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 300,
     "repReq": 4,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -4505,29 +3937,25 @@
     "description": "Fun stories from former witches and warlocks.",
     "lvl": 3,
     "value": 298,
-    "craftTime": 20267,
+    "craftTime": 19120,
     "type": "Tomes",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M303": 1
+    "mcostID": {
+      "M303": 3
     },
     "smithCost": "M303",
     "pts": 11,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 1400,
     "repReq": 11,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -4536,29 +3964,25 @@
     "description": "How to make your enemies dirty while staying squeaky clean.",
     "lvl": 4,
     "value": 2115,
-    "craftTime": 37172,
+    "craftTime": 40404,
     "type": "Tomes",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M204": 2
+    "mcostID": {
+      "M204": 5
     },
     "smithCost": "M204",
     "pts": 16,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 10000,
     "repReq": 14,
     "deconType": "M802",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -4567,29 +3991,25 @@
     "description": "How to make long distance relationships with magma elementals work.",
     "lvl": 5,
     "value": 15016,
-    "craftTime": 68200,
+    "craftTime": 62000,
     "type": "Tomes",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M305": 3
+    "mcostID": {
+      "M305": 8
     },
     "smithCost": "M305",
     "pts": 22,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 42000,
     "repReq": 17,
     "deconType": "M802",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -4601,30 +4021,26 @@
     ],
     "lvl": 6,
     "value": 106613,
-    "craftTime": 125131,
+    "craftTime": 130345,
     "type": "Tomes",
     "gcost": [
       "G004",
       "G001"
     ],
-    "mcost": {
-      "M106": 4
+    "mcostID": {
+      "M106": 13
     },
     "smithCost": "M106",
     "pts": 31,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 294000,
     "repReq": 20,
     "deconType": "M802",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -4633,30 +4049,26 @@
     "description": "I'm so upset.  How can I be expected to end the world when I can't even get Tommy to notice me?",
     "lvl": 7,
     "value": 756952,
-    "craftTime": 229587,
+    "craftTime": 208716,
     "type": "Tomes",
     "gcost": [
       "G004",
       "G001"
     ],
-    "mcost": {
-      "M207": 5
+    "mcostID": {
+      "M207": 22
     },
     "smithCost": "M207",
     "pts": 43,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 2058000,
     "repReq": 27,
     "deconType": "M802",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -4671,24 +4083,20 @@
       "G004",
       "G001"
     ],
-    "mcost": {
-      "M108": 6
+    "mcostID": {
+      "M108": 35
     },
     "smithCost": "M108",
     "pts": 60,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 14406000,
     "repReq": 30,
     "deconType": "M802",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -4697,30 +4105,26 @@
     "description": "Upon further review, it looks like a manual about divining rods.",
     "lvl": 9,
     "value": 38157948,
-    "craftTime": 772882,
+    "craftTime": 757727,
     "type": "Tomes",
     "gcost": [
       "G004",
       "G001"
     ],
-    "mcost": {
-      "M309": 7
+    "mcostID": {
+      "M309": 57
     },
     "smithCost": "M309",
     "pts": 83,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 100842000,
     "repReq": 33,
     "deconType": "M802",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -4729,30 +4133,26 @@
     "description": "The final volume from an outcast former expert.",
     "lvl": 10,
     "value": 270921430,
-    "craftTime": 1418064,
+    "craftTime": 1447004,
     "type": "Tomes",
     "gcost": [
       "G004",
       "G001"
     ],
-    "mcost": {
-      "M310": 8
+    "mcostID": {
+      "M310": 92
     },
     "smithCost": "M310",
     "pts": 117,
     "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 705894000,
     "repReq": 36,
     "deconType": "M802",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -4766,17 +4166,13 @@
     "gcost": [
       "G004"
     ],
-    "mcost": {
+    "mcostID": {
       "M301": 1
     },
     "smithCost": "M301",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 80,
     "repReq": 2,
@@ -4792,29 +4188,25 @@
     "description": "A little sticky, and a little nutty, but it makes everyone jealous.",
     "lvl": 2,
     "value": 107,
-    "craftTime": 28161,
+    "craftTime": 27608,
     "type": "Pendants",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M102": 1
+    "mcostID": {
+      "M102": 2
     },
     "smithCost": "M102",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 400,
     "repReq": 5,
     "deconType": "M800",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -4823,29 +4215,25 @@
     "description": "Created in fertile farmland where great adventures seem to begin.",
     "lvl": 3,
     "value": 706,
-    "craftTime": 48016,
+    "craftTime": 51081,
     "type": "Pendants",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M203": 1
+    "mcostID": {
+      "M203": 3
     },
     "smithCost": "M203",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 800,
     "repReq": 8,
     "deconType": "M800",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -4854,30 +4242,26 @@
     "description": "Walk softly, and carry a big stick to impale your adversaries with.",
     "lvl": 4,
     "value": 4589,
-    "craftTime": 80654,
+    "craftTime": 74679,
     "type": "Pendants",
     "gcost": [
       "G004",
       "G004"
     ],
-    "mcost": {
-      "M104": 2
+    "mcostID": {
+      "M104": 5
     },
     "smithCost": "M104",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 12000,
     "repReq": 15,
     "deconType": "M800",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -4886,30 +4270,26 @@
     "description": "Manly men in northern regions are particularly suited for this pendant.",
     "lvl": 5,
     "value": 29369,
-    "craftTime": 133389,
+    "craftTime": 144988,
     "type": "Pendants",
     "gcost": [
       "G004",
       "G004"
     ],
-    "mcost": {
-      "M205": 3
+    "mcostID": {
+      "M205": 8
     },
     "smithCost": "M205",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 42000,
     "repReq": 18,
     "deconType": "M800",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -4918,30 +4298,26 @@
     "description": "Contains the feather of an resurrected avian creature.",
     "lvl": 6,
     "value": 185024,
-    "craftTime": 217161,
+    "craftTime": 204869,
     "type": "Pendants",
     "gcost": [
       "G004",
       "G004"
     ],
-    "mcost": {
-      "M306": 4
+    "mcostID": {
+      "M306": 13
     },
     "smithCost": "M306",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 294000,
     "repReq": 21,
     "deconType": "M800",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -4950,31 +4326,27 @@
     "description": "Used by only the most impassioned adventurers.",
     "lvl": 7,
     "value": 1147148,
-    "craftTime": 347935,
+    "craftTime": 322162,
     "type": "Pendants",
     "gcost": [
       "G004",
       "G004",
       "G002"
     ],
-    "mcost": {
-      "M307": 5
+    "mcostID": {
+      "M307": 22
     },
     "smithCost": "M307",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 2058000,
     "repReq": 24,
     "deconType": "M800",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -4983,31 +4355,27 @@
     "description": "This pendant looks good, and works amazingly well.",
     "lvl": 8,
     "value": 6997602,
-    "craftTime": 548470,
+    "craftTime": 498609,
     "type": "Pendants",
     "gcost": [
       "G004",
       "G004",
       "G002"
     ],
-    "mcost": {
-      "M208": 6
+    "mcostID": {
+      "M208": 35
     },
     "smithCost": "M208",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 14406000,
     "repReq": 31,
     "deconType": "M800",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -5016,31 +4384,27 @@
     "description": "Wearing this trinket bestows a sense of pride and accomplishment.",
     "lvl": 9,
     "value": 41985612,
-    "craftTime": 850410,
+    "craftTime": 817702,
     "type": "Pendants",
     "gcost": [
       "G004",
       "G004",
       "G002"
     ],
-    "mcost": {
-      "M109": 7
+    "mcostID": {
+      "M109": 57
     },
     "smithCost": "M109",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 100842000,
     "repReq": 34,
     "deconType": "M800",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -5049,31 +4413,27 @@
     "description": "If this pendant could lose some weight, it would be far more useful.",
     "lvl": 10,
     "value": 247715110,
-    "craftTime": 1296597,
+    "craftTime": 1271173,
     "type": "Pendants",
     "gcost": [
       "G004",
       "G004",
       "G002"
     ],
-    "mcost": {
-      "M210": 8
+    "mcostID": {
+      "M210": 92
     },
     "smithCost": "M210",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 705894000,
     "repReq": 37,
     "deconType": "M800",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -5082,22 +4442,18 @@
     "description": "The soldiers soldered this ring themselves.",
     "lvl": 1,
     "value": 17,
-    "craftTime": 17313,
+    "craftTime": 18819,
     "type": "Rings",
     "gcost": [
       "G004"
     ],
-    "mcost": {
+    "mcostID": {
       "M201": 1
     },
     "smithCost": "M201",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 80,
     "repReq": 3,
@@ -5113,29 +4469,25 @@
     "description": "This ring signifies that the wearer holds no allegiances.",
     "lvl": 2,
     "value": 113,
-    "craftTime": 29740,
+    "craftTime": 27537,
     "type": "Rings",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M302": 1
+    "mcostID": {
+      "M302": 2
     },
     "smithCost": "M302",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 500,
     "repReq": 6,
     "deconType": "M801",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -5144,29 +4496,25 @@
     "description": "Adorned with certain etchings that make it unmistakable.",
     "lvl": 3,
     "value": 745,
-    "craftTime": 50668,
+    "craftTime": 51702,
     "type": "Rings",
     "gcost": [
       "G004"
     ],
-    "mcost": {
-      "M103": 1
+    "mcostID": {
+      "M103": 3
     },
     "smithCost": "M103",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 1000,
     "repReq": 9,
     "deconType": "M801",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -5175,30 +4523,26 @@
     "description": "Gifted to the most prestigious of generals upon retirement.",
     "lvl": 4,
     "value": 4842,
-    "craftTime": 85100,
+    "craftTime": 81827,
     "type": "Rings",
     "gcost": [
       "G004",
       "G003"
     ],
-    "mcost": {
-      "M304": 2
+    "mcostID": {
+      "M304": 5
     },
     "smithCost": "M304",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 6000,
     "repReq": 12,
     "deconType": "M801",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -5207,30 +4551,26 @@
     "description": "Might be a decoder ring, but it's hard to tell.",
     "lvl": 5,
     "value": 30988,
-    "craftTime": 140742,
+    "craftTime": 146606,
     "type": "Rings",
     "gcost": [
       "G004",
       "G003"
     ],
-    "mcost": {
-      "M105": 3
+    "mcostID": {
+      "M105": 8
     },
     "smithCost": "M105",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 42000,
     "repReq": 19,
     "deconType": "M801",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -5239,30 +4579,26 @@
     "description": "Contains a small amount of holy water, just in case.",
     "lvl": 6,
     "value": 195224,
-    "craftTime": 229133,
+    "craftTime": 238680,
     "type": "Rings",
     "gcost": [
       "G004",
       "G003"
     ],
-    "mcost": {
-      "M206": 4
+    "mcostID": {
+      "M206": 13
     },
     "smithCost": "M206",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 294000,
     "repReq": 22,
     "deconType": "M801",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -5278,24 +4614,20 @@
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M107": 5
+    "mcostID": {
+      "M107": 22
     },
     "smithCost": "M107",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 2058000,
     "repReq": 25,
     "deconType": "M801",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -5304,31 +4636,27 @@
     "description": "Signifies a commitment to a difficult and taxing profession.",
     "lvl": 8,
     "value": 7383366,
-    "craftTime": 578706,
+    "craftTime": 526096,
     "type": "Rings",
     "gcost": [
       "G004",
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M308": 6
+    "mcostID": {
+      "M308": 35
     },
     "smithCost": "M308",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 14406000,
     "repReq": 28,
     "deconType": "M801",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -5337,31 +4665,27 @@
     "description": "The love for this ring is like a ticking clock.",
     "lvl": 9,
     "value": 44300196,
-    "craftTime": 897292,
+    "craftTime": 915604,
     "type": "Rings",
     "gcost": [
       "G004",
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M209": 7
+    "mcostID": {
+      "M209": 57
     },
     "smithCost": "M209",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 100842000,
     "repReq": 35,
     "deconType": "M801",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -5370,31 +4694,27 @@
     "description": "Holds some secrets shown to be invaluable to the most skilled sharpshooters.",
     "lvl": 10,
     "value": 261371156,
-    "craftTime": 1368075,
+    "craftTime": 1455399,
     "type": "Rings",
     "gcost": [
       "G004",
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M110": 8
+    "mcostID": {
+      "M110": 92
     },
     "smithCost": "M110",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G004",
     "goldCost": 705894000,
     "repReq": 38,
     "deconType": "M801",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -5403,22 +4723,18 @@
     "description": "Keeps your pants up.",
     "lvl": 1,
     "value": 18,
-    "craftTime": 18332,
+    "craftTime": 17972,
     "type": "Belts",
     "gcost": [
       "G003"
     ],
-    "mcost": {
+    "mcostID": {
       "M201": 1
     },
     "smithCost": "M201",
     "pts": 6,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 80,
     "repReq": 3,
@@ -5434,29 +4750,25 @@
     "description": "Make sure to wear this belt at just the right moment.",
     "lvl": 2,
     "value": 120,
-    "craftTime": 31582,
+    "craftTime": 34328,
     "type": "Belts",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M102": 1
+    "mcostID": {
+      "M102": 2
     },
     "smithCost": "M102",
     "pts": 8,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 600,
     "repReq": 6,
     "deconType": "M802",
     "minMastery": 20,
-    "maxMastery": 180,
-    "reductionMastery": 4,
+    "maxMastery": 200,
+    "reductionMastery": 5,
     "recipeType": "normal"
   },
   {
@@ -5465,29 +4777,25 @@
     "description": "Awarded to the best in competition.",
     "lvl": 3,
     "value": 792,
-    "craftTime": 53865,
+    "craftTime": 50816,
     "type": "Belts",
     "gcost": [
       "G003"
     ],
-    "mcost": {
-      "M303": 1
+    "mcostID": {
+      "M303": 3
     },
     "smithCost": "M303",
     "pts": 11,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 1000,
     "repReq": 9,
     "deconType": "M802",
     "minMastery": 30,
-    "maxMastery": 280,
-    "reductionMastery": 5,
+    "maxMastery": 300,
+    "reductionMastery": 7,
     "recipeType": "normal"
   },
   {
@@ -5496,30 +4804,26 @@
     "description": "Once worn by skilled laborers, many years ago.",
     "lvl": 4,
     "value": 5148,
-    "craftTime": 90478,
+    "craftTime": 94248,
     "type": "Belts",
     "gcost": [
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M104": 2
+    "mcostID": {
+      "M104": 5
     },
     "smithCost": "M104",
     "pts": 16,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 6000,
     "repReq": 12,
     "deconType": "M802",
-    "minMastery": 40,
-    "maxMastery": 400,
-    "reductionMastery": 6,
+    "minMastery": 50,
+    "maxMastery": 500,
+    "reductionMastery": 10,
     "recipeType": "normal"
   },
   {
@@ -5528,30 +4832,26 @@
     "description": "The gawdy buckle is supposed to signify wealth.",
     "lvl": 5,
     "value": 32947,
-    "craftTime": 149639,
+    "craftTime": 143884,
     "type": "Belts",
     "gcost": [
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M205": 3
+    "mcostID": {
+      "M205": 8
     },
     "smithCost": "M205",
     "pts": 22,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 42000,
     "repReq": 19,
     "deconType": "M802",
-    "minMastery": 50,
-    "maxMastery": 500,
-    "reductionMastery": 7,
+    "minMastery": 80,
+    "maxMastery": 800,
+    "reductionMastery": 14,
     "recipeType": "normal"
   },
   {
@@ -5560,30 +4860,26 @@
     "description": "This belt has been left out in the open for way too long.",
     "lvl": 6,
     "value": 207566,
-    "craftTime": 243619,
+    "craftTime": 238842,
     "type": "Belts",
     "gcost": [
       "G003",
       "G001"
     ],
-    "mcost": {
-      "M306": 4
+    "mcostID": {
+      "M306": 13
     },
     "smithCost": "M306",
     "pts": 31,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 294000,
     "repReq": 22,
     "deconType": "M802",
-    "minMastery": 60,
-    "maxMastery": 600,
-    "reductionMastery": 7,
+    "minMastery": 130,
+    "maxMastery": 1300,
+    "reductionMastery": 21,
     "recipeType": "normal"
   },
   {
@@ -5592,31 +4888,27 @@
     "description": "For some reason, this belt is constantly oscillating.",
     "lvl": 7,
     "value": 1286909,
-    "craftTime": 390325,
+    "craftTime": 398291,
     "type": "Belts",
     "gcost": [
       "G003",
       "G001",
       "G002"
     ],
-    "mcost": {
-      "M307": 5
+    "mcostID": {
+      "M307": 22
     },
     "smithCost": "M307",
     "pts": 43,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 2058000,
     "repReq": 25,
     "deconType": "M802",
-    "minMastery": 70,
-    "maxMastery": 700,
-    "reductionMastery": 8,
+    "minMastery": 220,
+    "maxMastery": 2200,
+    "reductionMastery": 33,
     "recipeType": "normal"
   },
   {
@@ -5625,31 +4917,27 @@
     "description": "Matches perfectly with business socks, for business time.",
     "lvl": 8,
     "value": 7850144,
-    "craftTime": 615292,
+    "craftTime": 654566,
     "type": "Belts",
     "gcost": [
       "G003",
       "G001",
       "G002"
     ],
-    "mcost": {
-      "M208": 6
+    "mcostID": {
+      "M208": 35
     },
     "smithCost": "M208",
     "pts": 60,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 14406000,
     "repReq": 28,
     "deconType": "M802",
-    "minMastery": 80,
-    "maxMastery": 800,
-    "reductionMastery": 8,
+    "minMastery": 350,
+    "maxMastery": 3500,
+    "reductionMastery": 48,
     "recipeType": "normal"
   },
   {
@@ -5658,31 +4946,27 @@
     "description": "The leather in this belt was orginally used in a pulley system.",
     "lvl": 9,
     "value": 47100864,
-    "craftTime": 954019,
+    "craftTime": 867290,
     "type": "Belts",
     "gcost": [
       "G003",
       "G001",
       "G002"
     ],
-    "mcost": {
-      "M109": 7
+    "mcostID": {
+      "M109": 57
     },
     "smithCost": "M109",
     "pts": 83,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 100842000,
     "repReq": 35,
     "deconType": "M802",
-    "minMastery": 90,
-    "maxMastery": 900,
-    "reductionMastery": 9,
+    "minMastery": 570,
+    "maxMastery": 5700,
+    "reductionMastery": 73,
     "recipeType": "normal"
   },
   {
@@ -5691,31 +4975,27 @@
     "description": "This belt is just way over the top.  Entirely too much going on.",
     "lvl": 10,
     "value": 277895097,
-    "craftTime": 1454565,
+    "craftTime": 1346820,
     "type": "Belts",
     "gcost": [
       "G003",
       "G001",
       "G002"
     ],
-    "mcost": {
-      "M210": 8
+    "mcostID": {
+      "M210": 92
     },
     "smithCost": "M210",
     "pts": 117,
     "pow": 0,
     "hp": 3,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": "G003",
     "goldCost": 705894000,
     "repReq": 38,
     "deconType": "M802",
-    "minMastery": 100,
-    "maxMastery": 1000,
-    "reductionMastery": 9,
+    "minMastery": 920,
+    "maxMastery": 9200,
+    "reductionMastery": 110,
     "recipeType": "normal"
   },
   {
@@ -5729,7 +5009,7 @@
     "gcost": [
       "G003"
     ],
-    "mcost": {
+    "mcostID": {
       "M102": 50,
       "M202": 50,
       "M302": 50
@@ -5738,10 +5018,6 @@
     "pts": null,
     "pow": 0,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
@@ -5763,7 +5039,7 @@
       "G001",
       "G004"
     ],
-    "mcost": {
+    "mcostID": {
       "M103": 100,
       "M203": 100,
       "M303": 100
@@ -5772,10 +5048,6 @@
     "pts": null,
     "pow": 0,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
@@ -5796,7 +5068,7 @@
     "gcost": [
       "G002"
     ],
-    "mcost": {
+    "mcostID": {
       "M102": 100,
       "M202": 100,
       "M302": 100
@@ -5805,10 +5077,6 @@
     "pts": null,
     "pow": 0,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
@@ -5829,7 +5097,7 @@
     "gcost": [
       "G001"
     ],
-    "mcost": {
+    "mcostID": {
       "M104": 40,
       "M204": 40,
       "M304": 40
@@ -5838,10 +5106,6 @@
     "pts": null,
     "pow": 0,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
@@ -5862,7 +5126,7 @@
     "gcost": [
       "G004"
     ],
-    "mcost": {
+    "mcostID": {
       "M105": 40,
       "M205": 40,
       "M305": 40
@@ -5871,10 +5135,6 @@
     "pts": null,
     "pow": 0,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
@@ -5895,7 +5155,7 @@
     "gcost": [
       "G003"
     ],
-    "mcost": {
+    "mcostID": {
       "M105": 40,
       "M205": 40,
       "M305": 40
@@ -5904,10 +5164,6 @@
     "pts": null,
     "pow": 0,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
@@ -5928,7 +5184,7 @@
     "gcost": [
       "G001"
     ],
-    "mcost": {
+    "mcostID": {
       "M101": 100,
       "M201": 100,
       "M301": 100
@@ -5937,10 +5193,6 @@
     "pts": null,
     "pow": 0,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
@@ -5962,7 +5214,7 @@
       "G002",
       "G003"
     ],
-    "mcost": {
+    "mcostID": {
       "M103": 100,
       "M203": 100,
       "M303": 100
@@ -5971,10 +5223,6 @@
     "pts": null,
     "pow": 0,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
@@ -5986,25 +5234,22 @@
   },
   {
     "id": "R90001",
-    "name": "Philosopher's Trinket",
-    "description": "This trinket provides critical thinking skills and a predisposition to murders by train.",
+    "name": "Healthy Trinket I",
+    "description": "Healthy Trinket",
     "lvl": 1,
-    "value": 0,
-    "craftTime": 0,
+    "value": 500,
+    "craftTime": 300000,
     "type": "Trinkets",
-    "gcost": [],
-    "mcost": {
-      "M700": 1,
-      "M800": 1
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
     },
-    "smithCost": "M700",
-    "pts": null,
+    "smithCost": null,
+    "pts": 5,
     "pow": 0,
-    "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
+    "hp": 3,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
@@ -6016,25 +5261,22 @@
   },
   {
     "id": "R90002",
-    "name": "Theatrical Trinket",
-    "description": "All who doth adorn their personage with yon trinket will acquire expert knowledgeth in the theatricalth arths.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 0,
+    "name": "Healthy Trinket II",
+    "description": "Healthy Trinket",
+    "lvl": 2,
+    "value": 500,
+    "craftTime": 600000,
     "type": "Trinkets",
-    "gcost": [],
-    "mcost": {
-      "M701": 1,
-      "M801": 1
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
     },
-    "smithCost": "M701",
-    "pts": null,
+    "smithCost": null,
+    "pts": 10,
     "pow": 0,
-    "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 0,
+    "hp": 3,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,
@@ -6046,25 +5288,751 @@
   },
   {
     "id": "R90003",
-    "name": "Engineer's Trinket",
-    "description": " Use this trinket.  It will make your skills better.  End of flavor text.",
-    "lvl": 1,
-    "value": 0,
-    "craftTime": 0,
+    "name": "Healthy Trinket III",
+    "description": "Healthy Trinket",
+    "lvl": 3,
+    "value": 500,
+    "craftTime": 1200000,
     "type": "Trinkets",
-    "gcost": [],
-    "mcost": {
-      "M702": 1,
-      "M802": 1
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
     },
-    "smithCost": "M702",
-    "pts": null,
+    "smithCost": null,
+    "pts": 15,
     "pow": 0,
+    "hp": 3,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90004",
+    "name": "Healthy Trinket IV",
+    "description": "Healthy Trinket",
+    "lvl": 4,
+    "value": 500,
+    "craftTime": 1800000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 20,
+    "pow": 0,
+    "hp": 3,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90005",
+    "name": "Healthy Trinket V",
+    "description": "Healthy Trinket",
+    "lvl": 5,
+    "value": 500,
+    "craftTime": 2400000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 25,
+    "pow": 0,
+    "hp": 3,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90006",
+    "name": "Healthy Trinket VI",
+    "description": "Healthy Trinket",
+    "lvl": 6,
+    "value": 500,
+    "craftTime": 3000000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 35,
+    "pow": 0,
+    "hp": 3,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90007",
+    "name": "Healthy Trinket VII",
+    "description": "Healthy Trinket",
+    "lvl": 7,
+    "value": 500,
+    "craftTime": 3600000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 45,
+    "pow": 0,
+    "hp": 3,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90008",
+    "name": "Healthy Trinket VIII",
+    "description": "Healthy Trinket",
+    "lvl": 8,
+    "value": 500,
+    "craftTime": 4200000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 60,
+    "pow": 0,
+    "hp": 3,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90009",
+    "name": "Healthy Trinket IX",
+    "description": "Healthy Trinket",
+    "lvl": 9,
+    "value": 500,
+    "craftTime": 4800000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 90,
+    "pow": 0,
+    "hp": 3,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90010",
+    "name": "Healthy Trinket X",
+    "description": "Healthy Trinket",
+    "lvl": 10,
+    "value": 500,
+    "craftTime": 5400000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 120,
+    "pow": 0,
+    "hp": 3,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90101",
+    "name": "Powerful Trinket I",
+    "description": "Powerful Trinket",
+    "lvl": 1,
+    "value": 500,
+    "craftTime": 300000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 5,
+    "pow": 3,
     "hp": 0,
-    "tech": 0,
-    "powScale": 0,
-    "hpScale": 0,
-    "techScale": 2,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90102",
+    "name": "Powerful Trinket II",
+    "description": "Powerful Trinket",
+    "lvl": 2,
+    "value": 500,
+    "craftTime": 600000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 10,
+    "pow": 3,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90103",
+    "name": "Powerful Trinket III",
+    "description": "Powerful Trinket",
+    "lvl": 3,
+    "value": 500,
+    "craftTime": 1200000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 15,
+    "pow": 3,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90104",
+    "name": "Powerful Trinket IV",
+    "description": "Powerful Trinket",
+    "lvl": 4,
+    "value": 500,
+    "craftTime": 1800000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 20,
+    "pow": 3,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90105",
+    "name": "Powerful Trinket V",
+    "description": "Powerful Trinket",
+    "lvl": 5,
+    "value": 500,
+    "craftTime": 2400000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 25,
+    "pow": 3,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90106",
+    "name": "Powerful Trinket VI",
+    "description": "Powerful Trinket",
+    "lvl": 6,
+    "value": 500,
+    "craftTime": 3000000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 35,
+    "pow": 3,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90107",
+    "name": "Powerful Trinket VII",
+    "description": "Powerful Trinket",
+    "lvl": 7,
+    "value": 500,
+    "craftTime": 3600000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 45,
+    "pow": 3,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90108",
+    "name": "Powerful Trinket VIII",
+    "description": "Powerful Trinket",
+    "lvl": 8,
+    "value": 500,
+    "craftTime": 4200000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 60,
+    "pow": 3,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90109",
+    "name": "Powerful Trinket IX",
+    "description": "Powerful Trinket",
+    "lvl": 9,
+    "value": 500,
+    "craftTime": 4800000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 90,
+    "pow": 3,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90110",
+    "name": "Powerful Trinket X",
+    "description": "Powerful Trinket",
+    "lvl": 10,
+    "value": 500,
+    "craftTime": 5400000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 120,
+    "pow": 3,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90201",
+    "name": "Balanced Trinket I",
+    "description": "Balanced Trinket",
+    "lvl": 1,
+    "value": 500,
+    "craftTime": 300000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 5,
+    "pow": 2,
+    "hp": 2,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90202",
+    "name": "Balanced Trinket II",
+    "description": "Balanced Trinket",
+    "lvl": 2,
+    "value": 500,
+    "craftTime": 600000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 10,
+    "pow": 2,
+    "hp": 2,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90203",
+    "name": "Balanced Trinket III",
+    "description": "Balanced Trinket",
+    "lvl": 3,
+    "value": 500,
+    "craftTime": 1200000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 15,
+    "pow": 2,
+    "hp": 2,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90204",
+    "name": "Balanced Trinket IV",
+    "description": "Balanced Trinket",
+    "lvl": 4,
+    "value": 500,
+    "craftTime": 1800000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 20,
+    "pow": 2,
+    "hp": 2,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90205",
+    "name": "Balanced Trinket V",
+    "description": "Balanced Trinket",
+    "lvl": 5,
+    "value": 500,
+    "craftTime": 2400000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 25,
+    "pow": 2,
+    "hp": 2,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90206",
+    "name": "Balanced Trinket VI",
+    "description": "Balanced Trinket",
+    "lvl": 6,
+    "value": 500,
+    "craftTime": 3000000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 35,
+    "pow": 2,
+    "hp": 2,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90207",
+    "name": "Balanced Trinket VII",
+    "description": "Balanced Trinket",
+    "lvl": 7,
+    "value": 500,
+    "craftTime": 3600000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 45,
+    "pow": 2,
+    "hp": 2,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90208",
+    "name": "Balanced Trinket VIII",
+    "description": "Balanced Trinket",
+    "lvl": 8,
+    "value": 500,
+    "craftTime": 4200000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 60,
+    "pow": 2,
+    "hp": 2,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90209",
+    "name": "Balanced Trinket IX",
+    "description": "Balanced Trinket",
+    "lvl": 9,
+    "value": 500,
+    "craftTime": 4800000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 90,
+    "pow": 2,
+    "hp": 2,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "trinket"
+  },
+  {
+    "id": "R90210",
+    "name": "Balanced Trinket X",
+    "description": "Balanced Trinket",
+    "lvl": 10,
+    "value": 500,
+    "craftTime": 5400000,
+    "type": "Trinkets",
+    "gcost": [
+      "G001"
+    ],
+    "mcostID": {
+      "M001": 100000
+    },
+    "smithCost": null,
+    "pts": 120,
+    "pow": 2,
+    "hp": 2,
     "guildUnlock": null,
     "goldCost": null,
     "repReq": null,

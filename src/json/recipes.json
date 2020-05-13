@@ -14,7 +14,7 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "pts": 6,
+    "pts": 7,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -41,7 +41,7 @@
       "M102": 2
     },
     "smithCost": "M102",
-    "pts": 8,
+    "pts": 9,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -68,7 +68,7 @@
       "M203": 3
     },
     "smithCost": "M203",
-    "pts": 11,
+    "pts": 12,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -96,7 +96,7 @@
       "M304": 5
     },
     "smithCost": "M304",
-    "pts": 16,
+    "pts": 18,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -124,7 +124,7 @@
       "M105": 8
     },
     "smithCost": "M105",
-    "pts": 22,
+    "pts": 24,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -152,7 +152,7 @@
       "M206": 13
     },
     "smithCost": "M206",
-    "pts": 31,
+    "pts": 34,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -181,7 +181,7 @@
       "M107": 22
     },
     "smithCost": "M107",
-    "pts": 43,
+    "pts": 47,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -210,7 +210,7 @@
       "M308": 35
     },
     "smithCost": "M308",
-    "pts": 60,
+    "pts": 66,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -239,7 +239,7 @@
       "M209": 57
     },
     "smithCost": "M209",
-    "pts": 83,
+    "pts": 91,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -268,7 +268,7 @@
       "M110": 92
     },
     "smithCost": "M110",
-    "pts": 117,
+    "pts": 129,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -293,7 +293,7 @@
     ],
     "mcost": null,
     "smithCost": "M101",
-    "pts": 6,
+    "pts": 7,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G003",
@@ -320,7 +320,7 @@
       "M202": 2
     },
     "smithCost": "M202",
-    "pts": 8,
+    "pts": 9,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G003",
@@ -347,7 +347,7 @@
       "M103": 3
     },
     "smithCost": "M103",
-    "pts": 11,
+    "pts": 12,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G003",
@@ -375,7 +375,7 @@
       "M204": 5
     },
     "smithCost": "M204",
-    "pts": 16,
+    "pts": 18,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G003",
@@ -403,7 +403,7 @@
       "M305": 8
     },
     "smithCost": "M305",
-    "pts": 22,
+    "pts": 24,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G003",
@@ -431,7 +431,7 @@
       "M106": 13
     },
     "smithCost": "M106",
-    "pts": 31,
+    "pts": 34,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G003",
@@ -460,7 +460,7 @@
       "M207": 22
     },
     "smithCost": "M207",
-    "pts": 43,
+    "pts": 47,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G003",
@@ -489,7 +489,7 @@
       "M108": 35
     },
     "smithCost": "M108",
-    "pts": 60,
+    "pts": 66,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G003",
@@ -518,7 +518,7 @@
       "M309": 57
     },
     "smithCost": "M309",
-    "pts": 83,
+    "pts": 91,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G003",
@@ -547,7 +547,7 @@
       "M310": 92
     },
     "smithCost": "M310",
-    "pts": 117,
+    "pts": 129,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G003",
@@ -572,7 +572,7 @@
     ],
     "mcost": null,
     "smithCost": "M101",
-    "pts": 6,
+    "pts": 7,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -599,7 +599,7 @@
       "M202": 2
     },
     "smithCost": "M202",
-    "pts": 8,
+    "pts": 9,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -626,7 +626,7 @@
       "M303": 3
     },
     "smithCost": "M303",
-    "pts": 11,
+    "pts": 12,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -654,7 +654,7 @@
       "M104": 5
     },
     "smithCost": "M104",
-    "pts": 16,
+    "pts": 18,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -682,7 +682,7 @@
       "M205": 8
     },
     "smithCost": "M205",
-    "pts": 22,
+    "pts": 24,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -710,7 +710,7 @@
       "M306": 13
     },
     "smithCost": "M306",
-    "pts": 31,
+    "pts": 34,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -739,7 +739,7 @@
       "M307": 22
     },
     "smithCost": "M307",
-    "pts": 43,
+    "pts": 47,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -768,7 +768,7 @@
       "M208": 35
     },
     "smithCost": "M208",
-    "pts": 60,
+    "pts": 66,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -797,7 +797,7 @@
       "M109": 57
     },
     "smithCost": "M109",
-    "pts": 83,
+    "pts": 91,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -826,7 +826,7 @@
       "M210": 92
     },
     "smithCost": "M210",
-    "pts": 117,
+    "pts": 129,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -1676,7 +1676,7 @@
       "M201": 1
     },
     "smithCost": "M201",
-    "pts": 6,
+    "pts": 5,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G001",
@@ -1703,7 +1703,7 @@
       "M302": 2
     },
     "smithCost": "M302",
-    "pts": 8,
+    "pts": 7,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G001",
@@ -1730,7 +1730,7 @@
       "M103": 3
     },
     "smithCost": "M103",
-    "pts": 11,
+    "pts": 10,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G001",
@@ -1757,7 +1757,7 @@
       "M204": 5
     },
     "smithCost": "M204",
-    "pts": 16,
+    "pts": 14,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G001",
@@ -1784,7 +1784,7 @@
       "M305": 8
     },
     "smithCost": "M305",
-    "pts": 22,
+    "pts": 20,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G001",
@@ -1812,7 +1812,7 @@
       "M106": 13
     },
     "smithCost": "M106",
-    "pts": 31,
+    "pts": 28,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G001",
@@ -1840,7 +1840,7 @@
       "M207": 22
     },
     "smithCost": "M207",
-    "pts": 43,
+    "pts": 39,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G001",
@@ -1868,7 +1868,7 @@
       "M108": 35
     },
     "smithCost": "M108",
-    "pts": 60,
+    "pts": 54,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G001",
@@ -1896,7 +1896,7 @@
       "M309": 57
     },
     "smithCost": "M309",
-    "pts": 83,
+    "pts": 75,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G001",
@@ -1924,7 +1924,7 @@
       "M310": 92
     },
     "smithCost": "M310",
-    "pts": 117,
+    "pts": 105,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G001",
@@ -1951,7 +1951,7 @@
       "M201": 1
     },
     "smithCost": "M201",
-    "pts": 6,
+    "pts": 5,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -1978,7 +1978,7 @@
       "M102": 2
     },
     "smithCost": "M102",
-    "pts": 8,
+    "pts": 7,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2005,7 +2005,7 @@
       "M303": 3
     },
     "smithCost": "M303",
-    "pts": 11,
+    "pts": 10,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2032,7 +2032,7 @@
       "M104": 5
     },
     "smithCost": "M104",
-    "pts": 16,
+    "pts": 14,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2059,7 +2059,7 @@
       "M205": 8
     },
     "smithCost": "M205",
-    "pts": 22,
+    "pts": 20,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2087,7 +2087,7 @@
       "M306": 13
     },
     "smithCost": "M306",
-    "pts": 31,
+    "pts": 28,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2115,7 +2115,7 @@
       "M307": 22
     },
     "smithCost": "M307",
-    "pts": 43,
+    "pts": 39,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2143,7 +2143,7 @@
       "M208": 35
     },
     "smithCost": "M208",
-    "pts": 60,
+    "pts": 54,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2171,7 +2171,7 @@
       "M109": 57
     },
     "smithCost": "M109",
-    "pts": 83,
+    "pts": 75,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2199,7 +2199,7 @@
       "M210": 92
     },
     "smithCost": "M210",
-    "pts": 117,
+    "pts": 105,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2226,7 +2226,7 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "pts": 6,
+    "pts": 5,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2253,7 +2253,7 @@
       "M302": 2
     },
     "smithCost": "M302",
-    "pts": 8,
+    "pts": 7,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2280,7 +2280,7 @@
       "M203": 3
     },
     "smithCost": "M203",
-    "pts": 11,
+    "pts": 10,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2307,7 +2307,7 @@
       "M304": 5
     },
     "smithCost": "M304",
-    "pts": 16,
+    "pts": 14,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2334,7 +2334,7 @@
       "M105": 8
     },
     "smithCost": "M105",
-    "pts": 22,
+    "pts": 20,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2362,7 +2362,7 @@
       "M206": 13
     },
     "smithCost": "M206",
-    "pts": 31,
+    "pts": 28,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2390,7 +2390,7 @@
       "M107": 22
     },
     "smithCost": "M107",
-    "pts": 43,
+    "pts": 39,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2418,7 +2418,7 @@
       "M308": 35
     },
     "smithCost": "M308",
-    "pts": 60,
+    "pts": 54,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2446,7 +2446,7 @@
       "M209": 57
     },
     "smithCost": "M209",
-    "pts": 83,
+    "pts": 75,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2474,7 +2474,7 @@
       "M110": 92
     },
     "smithCost": "M110",
-    "pts": 117,
+    "pts": 105,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2501,7 +2501,7 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "pts": 6,
+    "pts": 7,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2528,7 +2528,7 @@
       "M302": 2
     },
     "smithCost": "M302",
-    "pts": 8,
+    "pts": 9,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2555,7 +2555,7 @@
       "M203": 3
     },
     "smithCost": "M203",
-    "pts": 11,
+    "pts": 12,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2583,7 +2583,7 @@
       "M204": 5
     },
     "smithCost": "M204",
-    "pts": 16,
+    "pts": 18,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2611,7 +2611,7 @@
       "M305": 8
     },
     "smithCost": "M305",
-    "pts": 22,
+    "pts": 24,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2639,7 +2639,7 @@
       "M106": 13
     },
     "smithCost": "M106",
-    "pts": 31,
+    "pts": 34,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2668,7 +2668,7 @@
       "M207": 22
     },
     "smithCost": "M207",
-    "pts": 43,
+    "pts": 47,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2697,7 +2697,7 @@
       "M108": 35
     },
     "smithCost": "M108",
-    "pts": 60,
+    "pts": 66,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2726,7 +2726,7 @@
       "M309": 57
     },
     "smithCost": "M309",
-    "pts": 83,
+    "pts": 91,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2755,7 +2755,7 @@
       "M310": 92
     },
     "smithCost": "M310",
-    "pts": 117,
+    "pts": 129,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -2782,7 +2782,7 @@
       "M301": 1
     },
     "smithCost": "M301",
-    "pts": 6,
+    "pts": 7,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G003",
@@ -2809,7 +2809,7 @@
       "M202": 2
     },
     "smithCost": "M202",
-    "pts": 8,
+    "pts": 9,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G003",
@@ -2836,7 +2836,7 @@
       "M103": 3
     },
     "smithCost": "M103",
-    "pts": 11,
+    "pts": 12,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G003",
@@ -2864,7 +2864,7 @@
       "M204": 5
     },
     "smithCost": "M204",
-    "pts": 16,
+    "pts": 18,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G003",
@@ -2892,7 +2892,7 @@
       "M305": 8
     },
     "smithCost": "M305",
-    "pts": 22,
+    "pts": 24,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G003",
@@ -2920,7 +2920,7 @@
       "M106": 13
     },
     "smithCost": "M106",
-    "pts": 31,
+    "pts": 34,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G003",
@@ -2949,7 +2949,7 @@
       "M207": 22
     },
     "smithCost": "M207",
-    "pts": 43,
+    "pts": 47,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G003",
@@ -2978,7 +2978,7 @@
       "M108": 35
     },
     "smithCost": "M108",
-    "pts": 60,
+    "pts": 66,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G003",
@@ -3007,7 +3007,7 @@
       "M309": 57
     },
     "smithCost": "M309",
-    "pts": 83,
+    "pts": 91,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G003",
@@ -3036,7 +3036,7 @@
       "M310": 92
     },
     "smithCost": "M310",
-    "pts": 117,
+    "pts": 129,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G003",
@@ -3063,7 +3063,7 @@
       "M301": 1
     },
     "smithCost": "M301",
-    "pts": 6,
+    "pts": 7,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -3090,7 +3090,7 @@
       "M202": 2
     },
     "smithCost": "M202",
-    "pts": 8,
+    "pts": 9,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -3117,7 +3117,7 @@
       "M103": 3
     },
     "smithCost": "M103",
-    "pts": 11,
+    "pts": 12,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -3145,7 +3145,7 @@
       "M204": 5
     },
     "smithCost": "M204",
-    "pts": 16,
+    "pts": 18,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -3173,7 +3173,7 @@
       "M305": 8
     },
     "smithCost": "M305",
-    "pts": 22,
+    "pts": 24,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -3201,7 +3201,7 @@
       "M106": 13
     },
     "smithCost": "M106",
-    "pts": 31,
+    "pts": 34,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -3230,7 +3230,7 @@
       "M207": 22
     },
     "smithCost": "M207",
-    "pts": 43,
+    "pts": 47,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -3259,7 +3259,7 @@
       "M108": 35
     },
     "smithCost": "M108",
-    "pts": 60,
+    "pts": 66,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -3288,7 +3288,7 @@
       "M309": 57
     },
     "smithCost": "M309",
-    "pts": 83,
+    "pts": 91,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -3317,7 +3317,7 @@
       "M310": 92
     },
     "smithCost": "M310",
-    "pts": 117,
+    "pts": 129,
     "pow": 0,
     "hp": 3,
     "guildUnlock": "G002",
@@ -3342,7 +3342,7 @@
     ],
     "mcost": null,
     "smithCost": "M301",
-    "pts": 6,
+    "pts": 5,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3369,7 +3369,7 @@
       "M302": 2
     },
     "smithCost": "M302",
-    "pts": 8,
+    "pts": 7,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3396,7 +3396,7 @@
       "M203": 3
     },
     "smithCost": "M203",
-    "pts": 11,
+    "pts": 10,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3423,7 +3423,7 @@
       "M304": 5
     },
     "smithCost": "M304",
-    "pts": 16,
+    "pts": 14,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3450,7 +3450,7 @@
       "M105": 8
     },
     "smithCost": "M105",
-    "pts": 22,
+    "pts": 20,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3478,7 +3478,7 @@
       "M206": 13
     },
     "smithCost": "M206",
-    "pts": 31,
+    "pts": 28,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3506,7 +3506,7 @@
       "M107": 22
     },
     "smithCost": "M107",
-    "pts": 43,
+    "pts": 39,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3534,7 +3534,7 @@
       "M308": 35
     },
     "smithCost": "M308",
-    "pts": 60,
+    "pts": 54,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3562,7 +3562,7 @@
       "M209": 57
     },
     "smithCost": "M209",
-    "pts": 83,
+    "pts": 75,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3590,7 +3590,7 @@
       "M110": 92
     },
     "smithCost": "M110",
-    "pts": 117,
+    "pts": 105,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3617,7 +3617,7 @@
       "M301": 1
     },
     "smithCost": "M301",
-    "pts": 6,
+    "pts": 5,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -3644,7 +3644,7 @@
       "M202": 2
     },
     "smithCost": "M202",
-    "pts": 8,
+    "pts": 7,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -3671,7 +3671,7 @@
       "M103": 3
     },
     "smithCost": "M103",
-    "pts": 11,
+    "pts": 10,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -3698,7 +3698,7 @@
       "M104": 5
     },
     "smithCost": "M104",
-    "pts": 16,
+    "pts": 14,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -3725,7 +3725,7 @@
       "M205": 8
     },
     "smithCost": "M205",
-    "pts": 22,
+    "pts": 20,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -3753,7 +3753,7 @@
       "M306": 13
     },
     "smithCost": "M306",
-    "pts": 31,
+    "pts": 28,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -3781,7 +3781,7 @@
       "M307": 22
     },
     "smithCost": "M307",
-    "pts": 43,
+    "pts": 39,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -3809,7 +3809,7 @@
       "M208": 35
     },
     "smithCost": "M208",
-    "pts": 60,
+    "pts": 54,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -3837,7 +3837,7 @@
       "M109": 57
     },
     "smithCost": "M109",
-    "pts": 83,
+    "pts": 75,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -3865,7 +3865,7 @@
       "M210": 92
     },
     "smithCost": "M210",
-    "pts": 117,
+    "pts": 105,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G001",
@@ -3892,7 +3892,7 @@
       "M101": 1
     },
     "smithCost": "M101",
-    "pts": 6,
+    "pts": 5,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3919,7 +3919,7 @@
       "M202": 2
     },
     "smithCost": "M202",
-    "pts": 8,
+    "pts": 7,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3946,7 +3946,7 @@
       "M303": 3
     },
     "smithCost": "M303",
-    "pts": 11,
+    "pts": 10,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -3973,7 +3973,7 @@
       "M204": 5
     },
     "smithCost": "M204",
-    "pts": 16,
+    "pts": 14,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -4000,7 +4000,7 @@
       "M305": 8
     },
     "smithCost": "M305",
-    "pts": 22,
+    "pts": 20,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -4031,7 +4031,7 @@
       "M106": 13
     },
     "smithCost": "M106",
-    "pts": 31,
+    "pts": 28,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -4059,7 +4059,7 @@
       "M207": 22
     },
     "smithCost": "M207",
-    "pts": 43,
+    "pts": 39,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -4087,7 +4087,7 @@
       "M108": 35
     },
     "smithCost": "M108",
-    "pts": 60,
+    "pts": 54,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -4115,7 +4115,7 @@
       "M309": 57
     },
     "smithCost": "M309",
-    "pts": 83,
+    "pts": 75,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",
@@ -4143,7 +4143,7 @@
       "M310": 92
     },
     "smithCost": "M310",
-    "pts": 117,
+    "pts": 105,
     "pow": 3,
     "hp": 0,
     "guildUnlock": "G004",

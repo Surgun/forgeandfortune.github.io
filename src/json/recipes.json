@@ -10,7 +10,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M101": 1
     },
     "smithCost": "M101",
@@ -37,7 +37,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M102": 2
     },
     "smithCost": "M102",
@@ -64,7 +64,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M203": 3
     },
     "smithCost": "M203",
@@ -92,7 +92,7 @@
       "G001",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M304": 5
     },
     "smithCost": "M304",
@@ -120,7 +120,7 @@
       "G001",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M105": 8
     },
     "smithCost": "M105",
@@ -148,7 +148,7 @@
       "G001",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M206": 13
     },
     "smithCost": "M206",
@@ -177,7 +177,7 @@
       "G004",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M107": 22
     },
     "smithCost": "M107",
@@ -206,7 +206,7 @@
       "G004",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M308": 35
     },
     "smithCost": "M308",
@@ -235,7 +235,7 @@
       "G004",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M209": 57
     },
     "smithCost": "M209",
@@ -264,7 +264,7 @@
       "G004",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M110": 92
     },
     "smithCost": "M110",
@@ -291,7 +291,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": null,
+    "mcost": null,
     "smithCost": "M101",
     "pts": 6,
     "pow": 3,
@@ -316,7 +316,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M202": 2
     },
     "smithCost": "M202",
@@ -343,7 +343,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M103": 3
     },
     "smithCost": "M103",
@@ -371,7 +371,7 @@
       "G003",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M204": 5
     },
     "smithCost": "M204",
@@ -399,7 +399,7 @@
       "G003",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M305": 8
     },
     "smithCost": "M305",
@@ -427,7 +427,7 @@
       "G003",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M106": 13
     },
     "smithCost": "M106",
@@ -456,7 +456,7 @@
       "G004",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M207": 22
     },
     "smithCost": "M207",
@@ -485,7 +485,7 @@
       "G004",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M108": 35
     },
     "smithCost": "M108",
@@ -514,7 +514,7 @@
       "G004",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M309": 57
     },
     "smithCost": "M309",
@@ -543,7 +543,7 @@
       "G004",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M310": 92
     },
     "smithCost": "M310",
@@ -570,7 +570,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": null,
+    "mcost": null,
     "smithCost": "M101",
     "pts": 6,
     "pow": 3,
@@ -595,7 +595,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M202": 2
     },
     "smithCost": "M202",
@@ -622,7 +622,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M303": 3
     },
     "smithCost": "M303",
@@ -650,7 +650,7 @@
       "G001",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M104": 5
     },
     "smithCost": "M104",
@@ -678,7 +678,7 @@
       "G001",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M205": 8
     },
     "smithCost": "M205",
@@ -706,7 +706,7 @@
       "G001",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M306": 13
     },
     "smithCost": "M306",
@@ -735,7 +735,7 @@
       "G001",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M307": 22
     },
     "smithCost": "M307",
@@ -764,7 +764,7 @@
       "G001",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M208": 35
     },
     "smithCost": "M208",
@@ -793,7 +793,7 @@
       "G001",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M109": 57
     },
     "smithCost": "M109",
@@ -822,7 +822,7 @@
       "G001",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M210": 92
     },
     "smithCost": "M210",
@@ -849,7 +849,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": null,
+    "mcost": null,
     "smithCost": "M201",
     "pts": 6,
     "pow": 0,
@@ -874,7 +874,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M102": 2
     },
     "smithCost": "M102",
@@ -901,7 +901,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M303": 3
     },
     "smithCost": "M303",
@@ -928,7 +928,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M304": 5
     },
     "smithCost": "M304",
@@ -955,7 +955,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M105": 8
     },
     "smithCost": "M105",
@@ -983,7 +983,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M206": 13
     },
     "smithCost": "M206",
@@ -1011,7 +1011,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M107": 22
     },
     "smithCost": "M107",
@@ -1039,7 +1039,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M308": 35
     },
     "smithCost": "M308",
@@ -1067,7 +1067,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M209": 57
     },
     "smithCost": "M209",
@@ -1095,7 +1095,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M110": 92
     },
     "smithCost": "M110",
@@ -1122,7 +1122,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M201": 1
     },
     "smithCost": "M101",
@@ -1149,7 +1149,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M302": 2
     },
     "smithCost": "M302",
@@ -1176,7 +1176,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M203": 3
     },
     "smithCost": "M203",
@@ -1203,7 +1203,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M304": 5
     },
     "smithCost": "M304",
@@ -1230,7 +1230,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M105": 8
     },
     "smithCost": "M105",
@@ -1258,7 +1258,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M206": 13
     },
     "smithCost": "M206",
@@ -1286,7 +1286,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M107": 22
     },
     "smithCost": "M107",
@@ -1314,7 +1314,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M308": 35
     },
     "smithCost": "M308",
@@ -1342,7 +1342,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M209": 57
     },
     "smithCost": "M209",
@@ -1370,7 +1370,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M110": 92
     },
     "smithCost": "M110",
@@ -1397,7 +1397,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M101": 1
     },
     "smithCost": "M201",
@@ -1424,7 +1424,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M102": 2
     },
     "smithCost": "M102",
@@ -1451,7 +1451,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M303": 3
     },
     "smithCost": "M303",
@@ -1478,7 +1478,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M104": 5
     },
     "smithCost": "M104",
@@ -1505,7 +1505,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M205": 8
     },
     "smithCost": "M205",
@@ -1533,7 +1533,7 @@
       "G003",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M306": 13
     },
     "smithCost": "M306",
@@ -1561,7 +1561,7 @@
       "G003",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M307": 22
     },
     "smithCost": "M307",
@@ -1589,7 +1589,7 @@
       "G003",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M208": 35
     },
     "smithCost": "M208",
@@ -1617,7 +1617,7 @@
       "G003",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M109": 57
     },
     "smithCost": "M109",
@@ -1645,7 +1645,7 @@
       "G003",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M210": 92
     },
     "smithCost": "M210",
@@ -1672,7 +1672,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M201": 1
     },
     "smithCost": "M201",
@@ -1699,7 +1699,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M302": 2
     },
     "smithCost": "M302",
@@ -1726,7 +1726,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M103": 3
     },
     "smithCost": "M103",
@@ -1753,7 +1753,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M204": 5
     },
     "smithCost": "M204",
@@ -1780,7 +1780,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M305": 8
     },
     "smithCost": "M305",
@@ -1808,7 +1808,7 @@
       "G001",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M106": 13
     },
     "smithCost": "M106",
@@ -1836,7 +1836,7 @@
       "G001",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M207": 22
     },
     "smithCost": "M207",
@@ -1864,7 +1864,7 @@
       "G001",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M108": 35
     },
     "smithCost": "M108",
@@ -1892,7 +1892,7 @@
       "G001",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M309": 57
     },
     "smithCost": "M309",
@@ -1920,7 +1920,7 @@
       "G001",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M310": 92
     },
     "smithCost": "M310",
@@ -1947,7 +1947,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M201": 1
     },
     "smithCost": "M201",
@@ -1974,7 +1974,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M102": 2
     },
     "smithCost": "M102",
@@ -2001,7 +2001,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M303": 3
     },
     "smithCost": "M303",
@@ -2028,7 +2028,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M104": 5
     },
     "smithCost": "M104",
@@ -2055,7 +2055,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M205": 8
     },
     "smithCost": "M205",
@@ -2083,7 +2083,7 @@
       "G002",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M306": 13
     },
     "smithCost": "M306",
@@ -2111,7 +2111,7 @@
       "G002",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M307": 22
     },
     "smithCost": "M307",
@@ -2139,7 +2139,7 @@
       "G002",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M208": 35
     },
     "smithCost": "M208",
@@ -2167,7 +2167,7 @@
       "G002",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M109": 57
     },
     "smithCost": "M109",
@@ -2195,7 +2195,7 @@
       "G002",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M210": 92
     },
     "smithCost": "M210",
@@ -2222,7 +2222,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M101": 1
     },
     "smithCost": "M101",
@@ -2249,7 +2249,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M302": 2
     },
     "smithCost": "M302",
@@ -2276,7 +2276,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M203": 3
     },
     "smithCost": "M203",
@@ -2303,7 +2303,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M304": 5
     },
     "smithCost": "M304",
@@ -2330,7 +2330,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M105": 8
     },
     "smithCost": "M105",
@@ -2358,7 +2358,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M206": 13
     },
     "smithCost": "M206",
@@ -2386,7 +2386,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M107": 22
     },
     "smithCost": "M107",
@@ -2414,7 +2414,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M308": 35
     },
     "smithCost": "M308",
@@ -2442,7 +2442,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M209": 57
     },
     "smithCost": "M209",
@@ -2470,7 +2470,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M110": 92
     },
     "smithCost": "M110",
@@ -2497,7 +2497,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M101": 1
     },
     "smithCost": "M101",
@@ -2524,7 +2524,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M302": 2
     },
     "smithCost": "M302",
@@ -2551,7 +2551,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M203": 3
     },
     "smithCost": "M203",
@@ -2579,7 +2579,7 @@
       "G002",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M204": 5
     },
     "smithCost": "M204",
@@ -2607,7 +2607,7 @@
       "G002",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M305": 8
     },
     "smithCost": "M305",
@@ -2635,7 +2635,7 @@
       "G002",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M106": 13
     },
     "smithCost": "M106",
@@ -2664,7 +2664,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M207": 22
     },
     "smithCost": "M207",
@@ -2693,7 +2693,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M108": 35
     },
     "smithCost": "M108",
@@ -2722,7 +2722,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M309": 57
     },
     "smithCost": "M309",
@@ -2751,7 +2751,7 @@
       "G002",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M310": 92
     },
     "smithCost": "M310",
@@ -2778,7 +2778,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M301": 1
     },
     "smithCost": "M301",
@@ -2805,7 +2805,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M202": 2
     },
     "smithCost": "M202",
@@ -2832,7 +2832,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M103": 3
     },
     "smithCost": "M103",
@@ -2860,7 +2860,7 @@
       "G003",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M204": 5
     },
     "smithCost": "M204",
@@ -2888,7 +2888,7 @@
       "G003",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M305": 8
     },
     "smithCost": "M305",
@@ -2916,7 +2916,7 @@
       "G003",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M106": 13
     },
     "smithCost": "M106",
@@ -2945,7 +2945,7 @@
       "G002",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M207": 22
     },
     "smithCost": "M207",
@@ -2974,7 +2974,7 @@
       "G002",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M108": 35
     },
     "smithCost": "M108",
@@ -3003,7 +3003,7 @@
       "G002",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M309": 57
     },
     "smithCost": "M309",
@@ -3032,7 +3032,7 @@
       "G002",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M310": 92
     },
     "smithCost": "M310",
@@ -3059,7 +3059,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M301": 1
     },
     "smithCost": "M301",
@@ -3086,7 +3086,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M202": 2
     },
     "smithCost": "M202",
@@ -3113,7 +3113,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M103": 3
     },
     "smithCost": "M103",
@@ -3141,7 +3141,7 @@
       "G002",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M204": 5
     },
     "smithCost": "M204",
@@ -3169,7 +3169,7 @@
       "G002",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M305": 8
     },
     "smithCost": "M305",
@@ -3197,7 +3197,7 @@
       "G002",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M106": 13
     },
     "smithCost": "M106",
@@ -3226,7 +3226,7 @@
       "G003",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M207": 22
     },
     "smithCost": "M207",
@@ -3255,7 +3255,7 @@
       "G003",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M108": 35
     },
     "smithCost": "M108",
@@ -3284,7 +3284,7 @@
       "G003",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M309": 57
     },
     "smithCost": "M309",
@@ -3313,7 +3313,7 @@
       "G003",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M310": 92
     },
     "smithCost": "M310",
@@ -3340,7 +3340,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": null,
+    "mcost": null,
     "smithCost": "M301",
     "pts": 6,
     "pow": 3,
@@ -3365,7 +3365,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M302": 2
     },
     "smithCost": "M302",
@@ -3392,7 +3392,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M203": 3
     },
     "smithCost": "M203",
@@ -3419,7 +3419,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M304": 5
     },
     "smithCost": "M304",
@@ -3446,7 +3446,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M105": 8
     },
     "smithCost": "M105",
@@ -3474,7 +3474,7 @@
       "G004",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M206": 13
     },
     "smithCost": "M206",
@@ -3502,7 +3502,7 @@
       "G004",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M107": 22
     },
     "smithCost": "M107",
@@ -3530,7 +3530,7 @@
       "G004",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M308": 35
     },
     "smithCost": "M308",
@@ -3558,7 +3558,7 @@
       "G004",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M209": 57
     },
     "smithCost": "M209",
@@ -3586,7 +3586,7 @@
       "G004",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M110": 92
     },
     "smithCost": "M110",
@@ -3613,7 +3613,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M301": 1
     },
     "smithCost": "M301",
@@ -3640,7 +3640,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M202": 2
     },
     "smithCost": "M202",
@@ -3667,7 +3667,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M103": 3
     },
     "smithCost": "M103",
@@ -3694,7 +3694,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M104": 5
     },
     "smithCost": "M104",
@@ -3721,7 +3721,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M205": 8
     },
     "smithCost": "M205",
@@ -3749,7 +3749,7 @@
       "G001",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M306": 13
     },
     "smithCost": "M306",
@@ -3777,7 +3777,7 @@
       "G001",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M307": 22
     },
     "smithCost": "M307",
@@ -3805,7 +3805,7 @@
       "G001",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M208": 35
     },
     "smithCost": "M208",
@@ -3833,7 +3833,7 @@
       "G001",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M109": 57
     },
     "smithCost": "M109",
@@ -3861,7 +3861,7 @@
       "G001",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M210": 92
     },
     "smithCost": "M210",
@@ -3888,7 +3888,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M101": 1
     },
     "smithCost": "M101",
@@ -3915,7 +3915,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M202": 2
     },
     "smithCost": "M202",
@@ -3942,7 +3942,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M303": 3
     },
     "smithCost": "M303",
@@ -3969,7 +3969,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M204": 5
     },
     "smithCost": "M204",
@@ -3996,7 +3996,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M305": 8
     },
     "smithCost": "M305",
@@ -4027,7 +4027,7 @@
       "G004",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M106": 13
     },
     "smithCost": "M106",
@@ -4055,7 +4055,7 @@
       "G004",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M207": 22
     },
     "smithCost": "M207",
@@ -4083,7 +4083,7 @@
       "G004",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M108": 35
     },
     "smithCost": "M108",
@@ -4111,7 +4111,7 @@
       "G004",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M309": 57
     },
     "smithCost": "M309",
@@ -4139,7 +4139,7 @@
       "G004",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M310": 92
     },
     "smithCost": "M310",
@@ -4166,7 +4166,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M301": 1
     },
     "smithCost": "M301",
@@ -4193,7 +4193,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M102": 2
     },
     "smithCost": "M102",
@@ -4220,7 +4220,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M203": 3
     },
     "smithCost": "M203",
@@ -4248,7 +4248,7 @@
       "G004",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M104": 5
     },
     "smithCost": "M104",
@@ -4276,7 +4276,7 @@
       "G004",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M205": 8
     },
     "smithCost": "M205",
@@ -4304,7 +4304,7 @@
       "G004",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M306": 13
     },
     "smithCost": "M306",
@@ -4333,7 +4333,7 @@
       "G004",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M307": 22
     },
     "smithCost": "M307",
@@ -4362,7 +4362,7 @@
       "G004",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M208": 35
     },
     "smithCost": "M208",
@@ -4391,7 +4391,7 @@
       "G004",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M109": 57
     },
     "smithCost": "M109",
@@ -4420,7 +4420,7 @@
       "G004",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M210": 92
     },
     "smithCost": "M210",
@@ -4447,7 +4447,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M201": 1
     },
     "smithCost": "M201",
@@ -4474,7 +4474,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M302": 2
     },
     "smithCost": "M302",
@@ -4501,7 +4501,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M103": 3
     },
     "smithCost": "M103",
@@ -4529,7 +4529,7 @@
       "G004",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M304": 5
     },
     "smithCost": "M304",
@@ -4557,7 +4557,7 @@
       "G004",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M105": 8
     },
     "smithCost": "M105",
@@ -4585,7 +4585,7 @@
       "G004",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M206": 13
     },
     "smithCost": "M206",
@@ -4614,7 +4614,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M107": 22
     },
     "smithCost": "M107",
@@ -4643,7 +4643,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M308": 35
     },
     "smithCost": "M308",
@@ -4672,7 +4672,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M209": 57
     },
     "smithCost": "M209",
@@ -4701,7 +4701,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M110": 92
     },
     "smithCost": "M110",
@@ -4728,7 +4728,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M201": 1
     },
     "smithCost": "M201",
@@ -4755,7 +4755,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M102": 2
     },
     "smithCost": "M102",
@@ -4782,7 +4782,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M303": 3
     },
     "smithCost": "M303",
@@ -4810,7 +4810,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M104": 5
     },
     "smithCost": "M104",
@@ -4838,7 +4838,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M205": 8
     },
     "smithCost": "M205",
@@ -4866,7 +4866,7 @@
       "G003",
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M306": 13
     },
     "smithCost": "M306",
@@ -4895,7 +4895,7 @@
       "G001",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M307": 22
     },
     "smithCost": "M307",
@@ -4924,7 +4924,7 @@
       "G001",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M208": 35
     },
     "smithCost": "M208",
@@ -4953,7 +4953,7 @@
       "G001",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M109": 57
     },
     "smithCost": "M109",
@@ -4982,7 +4982,7 @@
       "G001",
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M210": 92
     },
     "smithCost": "M210",
@@ -5009,7 +5009,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M102": 50,
       "M202": 50,
       "M302": 50
@@ -5039,7 +5039,7 @@
       "G001",
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M103": 100,
       "M203": 100,
       "M303": 100
@@ -5068,7 +5068,7 @@
     "gcost": [
       "G002"
     ],
-    "mcostID": {
+    "mcost": {
       "M102": 100,
       "M202": 100,
       "M302": 100
@@ -5097,7 +5097,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M104": 40,
       "M204": 40,
       "M304": 40
@@ -5126,7 +5126,7 @@
     "gcost": [
       "G004"
     ],
-    "mcostID": {
+    "mcost": {
       "M105": 40,
       "M205": 40,
       "M305": 40
@@ -5155,7 +5155,7 @@
     "gcost": [
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M105": 40,
       "M205": 40,
       "M305": 40
@@ -5184,7 +5184,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M101": 100,
       "M201": 100,
       "M301": 100
@@ -5214,7 +5214,7 @@
       "G002",
       "G003"
     ],
-    "mcostID": {
+    "mcost": {
       "M103": 100,
       "M203": 100,
       "M303": 100
@@ -5243,7 +5243,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5270,7 +5270,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5297,7 +5297,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5324,7 +5324,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5351,7 +5351,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5378,7 +5378,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5405,7 +5405,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5432,7 +5432,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5459,7 +5459,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5486,7 +5486,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5513,7 +5513,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5540,7 +5540,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5567,7 +5567,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5594,7 +5594,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5621,7 +5621,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5648,7 +5648,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5675,7 +5675,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5702,7 +5702,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5729,7 +5729,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5756,7 +5756,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5783,7 +5783,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5810,7 +5810,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5837,7 +5837,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5864,7 +5864,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5891,7 +5891,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5918,7 +5918,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5945,7 +5945,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5972,7 +5972,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -5999,7 +5999,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,
@@ -6026,7 +6026,7 @@
     "gcost": [
       "G001"
     ],
-    "mcostID": {
+    "mcost": {
       "M001": 100000
     },
     "smithCost": null,

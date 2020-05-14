@@ -2137,6 +2137,10 @@ footer {
     background-image: url('/assets/images/recipeFilter/Tomes32.png');
 }
 
+.recipeFilterList a[href="TrinketsSelector"]:before {
+    background-image: url('/assets/images/recipeFilter/Trinkets32.png');
+}
+
 .recipeFilterList a[href="PendantSelector"]:before {
     background-image: url('/assets/images/recipeFilter/Pendants32.png');
 }

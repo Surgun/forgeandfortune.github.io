@@ -5,7 +5,7 @@ const ItemType = ["Swords", "Knives", "Staves",
                     "Gauntlets", "Gloves", "Hats", 
                     "Helmets", "Masks", "Pendants", 
                     "Rings", "Shields", "Shoes", 
-                    "Thrown", "Tomes", "Vests"];
+                    "Thrown", "Tomes", "Trinkets", "Vests"];
 
 const $RecipeResults = $("#RecipeResults");
 
@@ -188,6 +188,13 @@ const recipeList = {
         checkCraftableStatus();
         refreshAllSales();
     },
+    unlockTrinketRecipe(recipeID) {
+        const recipe = this.idToItem(recipeID);
+        recipe.owned = true;
+        refreshRecipeFilters();
+        checkCraftableStatus();
+        refreshAllSales();
+    },
     idToItem(id) {
         return this.recipes.find(recipe => recipe.id === id);
     },
@@ -327,6 +334,7 @@ function recipeFilterList(n) {
     //uses two recipeLists to cycle through all the items and display as appropriate
     if (n === 0) Object.values(sortOrder.recipeDivDict).forEach(div => div.hide());
     recipeList.filteredRecipeList().map(r=>r.id).slice(0,n+30).forEach(recipe => {
+        console.log(recipe);
         sortOrder.recipeDivDict[recipe].show();
     })
 };
@@ -376,7 +384,7 @@ function recipeCardFront(recipe) {
     const td6 = $('<div/>').addClass('recipeCountAndCraft');
         const td6a = $('<div/>').addClass('recipeMasteredStatus').attr("id","rms"+recipe.id).html(`UNMASTERED`);
         if (recipe.isMastered()) td6a.addClass('isMastered').html(`<i class="fas fa-star-christmas"></i> MASTERED`);
-        if (recipe.recipeType !== "normal") td6a.hide();
+        if (recipe.recipeType !== "normal" || recipe.type === "Trinkets") td6a.hide();
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
         recipe.recipeDiv = td6b;
     td6.append(td6a,td6b);
@@ -396,7 +404,7 @@ function recipeCardBack(recipe) {
         const td7a = $('<div/>').addClass('recipeBackTab backTab1 selected').html(`Details`);
         const td7b = $('<div/>').addClass('recipeBackTab backTab2').html(`Mastery`);
     td7.append(td7a);
-    if (recipe.recipeType === 'normal') td7.append(td7b);
+    if (recipe.recipeType === 'normal' && recipe.type !== "Trinkets") td7.append(td7b);
 
     const td8 = $('<div/>').addClass('recipeTabContainer recipeTabDetails');
         const td8a = $('<div/>').addClass('recipeDetailsContainer');
@@ -415,7 +423,7 @@ function recipeCardBack(recipe) {
                 td9a1.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
                 td9a2.addClass("isMastered").html(`<i class="fas fa-star-christmas"></i> MASTERED`);
             }
-            if (recipe.recipeType !== "normal") td9a2.hide();
+            if (recipe.recipeType !== "normal" || recipe.type === "Trinkets") td9a2.hide();
         td9a.append(td9a1,td9a2);
     td9.append(td9a);
 

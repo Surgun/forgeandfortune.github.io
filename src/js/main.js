@@ -44,7 +44,6 @@ function afterLoad() {
     recipeList.recipeFilterType = "Knives";
     recipeList.recipeFilterString = "";
     recipeFilterList();
-    populateTinkerRange();
     refreshCraftTimes();
     GuildManager.repopulateUnmastered();
     refreshAllRecipeMastery();

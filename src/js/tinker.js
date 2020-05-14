@@ -1,114 +1,104 @@
 "use strict";
 
 const $tinkerBuilding = $("#tinkerBuilding");
-const $tinkerMaterials = $("#tinkerMaterials");
-const $tinkerSlots = $("#tinkerSlots");
 const $tinkerCommands = $("#tinkerCommands");
+const $tinkerRecipes = $("#tinkerRecipes");
 
 class tinkerCommand {
     constructor(props) {
         Object.assign(this, props);
         this.time = 0;
-        this.acted = 0;
-        this.min = 1;
-        this.state = "idle";
+        this.progress = 0;
+        this.progressMax = 1000;
+        this.lvl = 0;
         this.enabled = false;
-        this.reward = null;
+        this.paidGold = false;
     }
     createSave() {
         const save = {};
         save.id = this.id;
         save.time = this.time;
-        save.state = this.state;
+        save.progress = this.progress;
+        save.lvl = this.lvl;
         save.enabled = this.enabled;
-        if (this.reward !== null) save.reward = this.reward.createSave();
-        else save.reward = null;
-        save.acted = this.acted;
-        save.min = this.min;
-        save.act = this.act;
+        save.paidGold = this.paygold;
         return save;
     }
     loadSave(save) {
         this.time = save.time;
-        this.state = save.state;
+        this.progress = save.progress;
+        this.lvl = save.lvl;
         this.enabled = save.enabled;
-        if (save.reward !== null) {
-            this.reward = new idAmt(save.reward.id,save.reward.amt);
-            this.reward.loadSave(save.reward);
-        }
-        this.acted = save.acted;
-        this.min = save.min;
+        this.paidGold = save.paidGold;
     }
     addTime(ms) {
         if (!this.enabled) return;
-        if (this.state === "idle" || this.state === "Need Material") this.attemptStart();
-        if (this.state === "Inventory Full" && !Inventory.full()) this.state = "running";
-        if (this.state === "running") {
-            this.time += ms;
-            if (this.time >= this.maxTime) {
-                this.time = this.maxTime
-                this.act();
-            }
+        this.paidGold = this.attemptStart();
+        if (!this.paidGold) {
+            this.time = 0;
+            this.enabled = false;
+            refreshCommandToggle(this);
+            Notifications.tinkerDisable();
+            return;
         }
+        this.time += ms;
+        if (this.time >= this.getTime()) {
+            this.time -= this.getTime();
+            this.act();
+        }
+        refreshTinkerProgressBar(this);
     }
+    attemptStart() {
+        if (this.paidGold) return true;
+        if (!ResourceManager.available("M001",this.paidGoldAmt())) return false;
+        ResourceManager.addMaterial("M001",-this.paidGoldAmt());
+        return true;
+    }
+    act() {
+        this.paidGold = false;
+        this.progress += 1;
+        if (this.progress === 1000) {
+            this.lvl += 1;
+            this.progress = 0;
+        }
+        refreshTinkerLvLBar(this);
+        refreshTrinketCompleteCost(this);
+    }    
     toggle() {
         this.enabled = !this.enabled;
     }
-    attemptStart() {
-        if (this.state === "running") return;
-        if (this.id === "T001")  return;
-        if (!ResourceManager.available(this.mcost1,this.mcost1amt)) return this.state = "Need Material"; 
-        if (!ResourceManager.available(this.mcost2,this.mcost2amt)) return this.state = "Need Material";
-        ResourceManager.addMaterial(this.mcost1,-this.mcost1amt);
-        ResourceManager.addMaterial(this.mcost2,-this.mcost2amt);
-        this.state = "running";
+    getTime() {
+        return this.timeCost[this.lvl];
     }
-    act() {
-        if (this.id === "T001") {
-            if (this.reward.id !== null) ResourceManager.addMaterial(this.reward.id,this.reward.amt);
-            this.reward = null;
-            this.time = 0;
-            this.state = "idle";
-            this.increaseAct();
-            return;
-        }
-        if (Inventory.full()) return this.state = "Inventory Full";
-        TinkerManager.newTrinket(this.id,this.creates,this.min);
+    paidGoldAmt() {
+        return this.goldCost[this.lvl];
+    }
+    completeCost() {
+        return 10*(this.progressMax-this.progress)*this.paidGoldAmt();
+    }
+    completeResearch() {
+        if (!ResourceManager.available("M001",this.completeCost())) return Notifications.tinkerResearch();
+        ResourceManager.addMaterial("M001",-this.completeCost());
+        const recipeID = this.recipeUnlock[this.lvl];
+        recipeList.unlockTrinketRecipe(recipeID);
+        this.lvl += 1;
+        this.progress = 0;
         this.time = 0;
-        this.state = "idle";
-        this.increaseAct();
-    }
-    increaseAct() {
-        if (this.min === TinkerManager.max()) return;
-        this.acted += 1;
-        if (this.acted >= 5) {
-            this.acted = 0;
-            this.min += 1;
-            this.min = Math.min(this.min,TinkerManager.max());
-            refreshTinkerCommands();
-        }
-    }
-    feedCommon(container) {
-        if (this.id !== "T001" || this.state === "running" || container.type === "Trinkets") return false;
-        this.reward = new idAmt("M802",container.deconAmt());
-        this.state = "running";
-        return true;
+        $(".tinkerRecipes").show();
+        refreshTinkerProgressBar(this);
+        refreshTinkerLvLBar(this);
+        refreshTrinketCompleteCost(this);
+        refreshTrinketResearchCost(this);
     }
 }
 
 const TinkerManager = {
     commands : [],
     lvl : 0,
-    dT002 : 0,
-    dT003 : 0,
-    dT004 : 0,
     createSave() {
         const save = {};
         save.lvl = this.lvl;
         save.commands = [];
-        save.dT002 = this.dT002;
-        save.dT003 = this.dT003;
-        save.dT004 = this.dT004;
         this.commands.forEach(c => save.commands.push(c.createSave()));
         return save;
     },
@@ -118,157 +108,129 @@ const TinkerManager = {
             command.loadSave(c);
         });
         this.lvl = save.lvl;
-        if (save.dT002 !== undefined) this.dT002 = save.dT002;
-        if (save.dT003 !== undefined) this.dT003 = save.dT003;
-        if (save.dT004 !== undefined) this.dT004 = save.dT004;
     },
     addTime(ms) {
         this.commands.forEach(command => command.addTime(ms));
-        refreshTinkerSlotProgress();
     },
     idToCommand(id) {
         return this.commands.find(a => a.id === id);
     },
     addCommand(action) {
-        this.commands.push(action);                                                             
-    },
-    newTrinket(commandID,trinketID,min) {
-        const scale = Math.floor(normalDistribution(min,this.max(),3));
-        if (scale < this["d"+commandID]) return;
-        const item = new itemContainer(trinketID,0);
-        item.scale = scale;
-        Inventory.addToInventory(item);
+        this.commands.push(action);
     },
     toggle(commandID) {
         const command = this.idToCommand(commandID);
         command.toggle();
     },
-    max() {
-        return 40+this.lvl*10;
-    },
-    addLevel() {
-        this.lvl += 1;
-        refreshTinkerCommands();
-    },
-    feedCommon(container) {
-        if (container.rarity !== 0) return false;
-        return this.idToCommand("T001").feedCommon(container);
-    },
-    tinkerMats() {
-        return ["M700","M701","M702","M802"];
+    completeResearch(commandID) {
+        const command = this.idToCommand(commandID);
+        command.completeResearch();
     }
+}
+
+function refreshTinkerCommands() {
+    $tinkerCommands.empty();
+    const d = $("<div/>").addClass("tinkerRecipes").html("Unlocked Trinket Recipes").data("recipeType","Trinkets").appendTo($tinkerCommands).hide();
+    if (Math.max(...TinkerManager.commands.map(r=>r.lvl)) > 0) d.show();
+    TinkerManager.commands.forEach(command => {
+        createTinkerCommand(command).appendTo($tinkerCommands);
+    })
+}
+
+function createTinkerCommand(command) {
+    const d = $("<div/>").addClass("tinkerCommand");
+    $("<div/>").addClass("tinkerCommandName").html(command.name).appendTo(d);
+    createTinkerProgressBar(command).appendTo(d);
+    createTinkerLvlBar(command).appendTo(d);
+    const d1 = $("<div/>").addClass("tinkerCommandInline").data("cid",command.id).appendTo(d);
+        if (command.enabled) $("<div/>").addClass("tinkerCommandToggle toggleEnable").attr("id","ct"+command.id).html(`${miscIcons.toggleOn} Enabled`).appendTo(d1);
+        else $("<div/>").addClass("tinkerCommandToggle toggleDisable").attr("id","ct"+command.id).html(`${miscIcons.toggleOff} Disabled`).appendTo(d1);
+        $("<div/>").addClass("tinkerCommandResearchCost").attr("id","tcrc"+command.id).html(`Research Cost: ${miscIcons.gold} ${command.paidGoldAmt()}`).appendTo(d1);
+    $("<div/>").addClass("completeCommand").attr("id","tcc"+command.id).data("cid",command.id).html(`Complete for ${miscIcons.gold} ${command.completeCost()}`).appendTo(d);
+    return d;
+}
+
+function refreshTrinketCompleteCost(command) {
+    $("#tcc"+command.id).html(`Complete for ${miscIcons.gold} ${command.completeCost()}`);
+}
+
+function refreshTrinketResearchCost(command) {
+    $("#tcrc"+command.id).html(`Research Cost: ${miscIcons.gold} ${command.paidGoldAmt()}`);
+}
+
+function createTinkerProgressBar(command) {
+    const commandBarPercent = command.time/command.getTime();
+    const commandBarText = msToTime(command.getTime()-command.time);
+    const commandBarWidth = (commandBarPercent*100).toFixed(1)+"%";
+    const options = {
+        tooltip: "commandTime",
+        icon: miscIcons.commandTime,
+        text: commandBarText,
+        textID: "cb"+command.id,
+        width: commandBarWidth,
+        fill: "cbf"+command.id,
+    }
+    return generateProgressBar(options);
+}
+
+function refreshTinkerProgressBar(command) {
+    const commandBarPercent = command.time/command.getTime();
+    const commandBarText = msToTime(command.getTime()-command.time);
+    const commandBarWidth = (commandBarPercent*100).toFixed(1)+"%";
+    $(`#cb${command.id}`).html(commandBarText);
+    $(`#cbf${command.id}`).css('width', commandBarWidth);
+}
+
+function createTinkerLvlBar(command) {
+    const commandBarPercent = command.progress/1000;
+    const commandBarWidth = (commandBarPercent*100).toFixed(1)+"%";
+    const commandBarText = `Level ${command.lvl} (${commandBarWidth})`;
+    const options = {
+        tooltip: "commandProgress",
+        icon: miscIcons.commandProgress,
+        text: commandBarText,
+        textID: "cbp"+command.id,
+        width: commandBarWidth,
+        fill: "cbpf"+command.id,
+    }
+    return generateProgressBar(options);
+}
+
+function refreshTinkerLvLBar(command) {
+    const commandBarPercent = command.progress/1000;
+    const commandBarWidth = (commandBarPercent*100).toFixed(1)+"%";
+    const commandBarText = `Level ${command.lvl} (${commandBarWidth})`;
+    $(`#cbp${command.id}`).html(commandBarText);
+    $(`#cbpf${command.id}`).css('width', commandBarWidth);
 }
 
 function initiateTinkerBldg () {
     $tinkerBuilding.show();
-    refreshTinkerMats();
     refreshTinkerCommands();
 }
 
-function refreshTinkerMats() {
-    $tinkerMaterials.empty();
-    TinkerManager.tinkerMats().forEach(mat => {
-        $("<div/>").addClass("tinkerMat tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":mat}).html(ResourceManager.sidebarMaterial(mat)).appendTo($tinkerMaterials);
-    });
-};  
-
-function refreshTinkerCommands() {
-    $tinkerCommands.empty();
-    TinkerManager.commands.forEach(command => {
-        const d1 = $("<div/>").addClass("tinkerCommand").data("tinkerID",command.id).appendTo($tinkerCommands);
-            const toggle = $("<div/>").addClass("toggleStatus");
-                $("<div/>").addClass("toggleCue").appendTo(toggle);
-            const enable = $("<div/>").attr("id","enable"+command.id).addClass("tinkerCommandEnable").append(toggle).appendTo(d1);
-            if (!command.enabled) enable.removeClass("tinkerCommandEnable").addClass("tinkerCommandDisable");
-            $("<div/>").addClass("tinkerCommandName").html(command.name).appendTo(d1);
-            $("<div/>").addClass("tinkerCommandHeader").html("Command Start Cost").appendTo(d1);
-            const d2 = $("<div/>").addClass("trinketCommandCost").html("Any sold common item").appendTo(d1);
-            if (command.id !== "T001") {
-                d2.html(createTinkerMaterialDiv(command.mcost1,command.mcost1amt));
-                d2.append(createTinkerMaterialDiv(command.mcost2,command.mcost2amt));
-            }
-            $("<div/>").addClass("tinkerCommandHeader").html("Command Finish Reward").appendTo(d1);
-            const d3 = $("<div/>").addClass("trinketCommandReward").appendTo(d1);
-                $("<div/>").addClass("commandRewardContent").html(`Earn ${ResourceManager.idToMaterial("M802").img} instead of Gold for sale.`).appendTo(d3);
-            if (command.id !== "T001") {
-                d3.html(createTinkerStatDiv(command.stat));
-                $("<div/>").addClass("commandRewardTrinket").html(`Trinket`).appendTo(d3);
-            }
-            $("<div/>").addClass("tinkerCommandStatus").html(command.status).appendTo(d1);
-            if (command.id !== "T001") $("<div/>").addClass("tinkerCommandRange").html(`${miscIcons.star} ${command.min}-${TinkerManager.max()}`).appendTo(d1);
-            createTinkerProgress(command).appendTo(d1);
-    });
-};
-
-function createTinkerMaterialDiv(id,amt) {
-    const res = ResourceManager.idToMaterial(id);
-    return $("<div/>").addClass("indvCost tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":res.id}).html(`${res.img}&nbsp;&nbsp;${amt}`);
-}
-
-function createTinkerStatDiv(stat) {
-    const d = $("<div/>").addClass("tinkerCommandStat");
-        $("<span/>").addClass("tinkerCommandStatIcon").html(miscIcons[stat]).appendTo(d);
-        $("<span/>").addClass("tinkerCommandStatName").html(stat).appendTo(d);
-    return d;
-}
-
-function refreshTinkerSlotProgress() {
-    TinkerManager.commands.forEach(command => {
-        const percent = command.time/command.maxTime;
-        const width = (percent*100).toFixed(1)+"%";
-        let datalabel = "disabled";
-        if (command.enabled && command.state !== "running") datalabel = command.state;
-        else if (command.enabled) datalabel = msToTime(command.maxTime-command.time);
-        $("#tinkerBar"+command.id).attr("data-label",datalabel);
-        $("#tinkerFill"+command.id).css('width', width);
-    })
-};
-
-function createTinkerProgress(command) {
-    const percent = command.time/command.maxTime;
-    const width = (percent*100).toFixed(1)+"%";
-    const d1 = $("<div/>").addClass("tinkerProgressDiv");
-    const datalabel = command.enabled ? msToTime(command.maxTime-command.time) : "";
-    const d1a = $("<div/>").addClass("tinkerBar").attr("id","tinkerBar"+command.id).attr("data-label",datalabel);
-    const s1 = $("<span/>").addClass("tinkerBarFill").attr("id","tinkerFill"+command.id).css('width', width);
-    return d1.append(d1a,s1);
-}
-
-const $tinkerRangeContainer = $("#tinkerRangeContainer");
-
-function populateTinkerRange() {
-    TinkerManager.commands.forEach(command => {
-        if (command.id === "T001") return;
-        const d = $("<div/>").addClass("tinkerRangeBox").appendTo($tinkerRangeContainer);
-            const tinkerRangeDesc = $("<div/>").addClass("tinkerRangeDesc").attr("id","rangeLabel"+command.id).appendTo(d);
-            const commandName = $("<div/>").addClass("commandName").html(`${command.name}`);
-            const commandStatus = $("<div/>").addClass("commandStatus");
-                if ((TinkerManager["d"+command.id] === 0)) $(commandStatus).addClass("commandDisabled").html(`Disabled`);
-                else $(commandStatus).html(`${TinkerManager["d"+command.id]}${miscIcons.star}`);
-                tinkerRangeDesc.append(commandName,commandStatus);
-            $("<input type='range'/>").addClass("tinkerRange").attr({"id":"range"+command.id,"max":100,"min":0,"step":1,"value":TinkerManager["d"+command.id],}).data("tinkerID",command.id).appendTo(d);
-    })
-}
-
-$(document).on('input', '.tinkerRange', (e) => {
-    const tinkerID = $(e.currentTarget).data("tinkerID");
-    const value = parseInt($(e.currentTarget).val());
-    TinkerManager["d"+tinkerID] = value;
-    const commandName = $("<div/>").addClass("commandName").html(`${TinkerManager.idToCommand(tinkerID).name}`);
-    const commandStatus = $("<div/>").addClass("commandStatus commandDisabled").html(`Disabled`);
-    if (value === 0) $("#rangeLabel"+tinkerID).empty().append(commandName,commandStatus);
-    else {
-        $(commandStatus).removeClass("commandDisabled").html(`${$(e.currentTarget).val()}${miscIcons.star}`);
-        $("#rangeLabel"+tinkerID).empty().append(commandName,commandStatus);
-    }
-});
-
-//enable or disable
-$(document).on('click', '.tinkerCommand', (e) => {
+//toggle command
+$(document).on('click','.tinkerCommandInline', (e) => {
     e.preventDefault();
-    const commandID =$(e.currentTarget).data("tinkerID");
+    const commandID = $(e.currentTarget).data("cid");
     TinkerManager.toggle(commandID);
     const command = TinkerManager.idToCommand(commandID);
-    if (command.enabled) $("#enable"+commandID).addClass("tinkerCommandEnable").removeClass("tinkerCommandDisable");
-    else $("#enable"+commandID).removeClass("tinkerCommandEnable").addClass("tinkerCommandDisable");
+    refreshCommandToggle(command);
 });
+
+//purchase advancement
+$(document).on('click','.completeCommand', (e) => {
+    e.preventDefault();
+    const commandID = $(e.currentTarget).data("cid");
+    TinkerManager.completeResearch(commandID);
+});
+
+$(document).on('click','.tinkerRecipes', (e) => {
+    e.preventDefault();
+    equipHeroRecipesButton(e);
+})
+
+function refreshCommandToggle(command) {
+    if (command.enabled) $("#ct"+command.id).removeClass("toggleDisable").addClass("toggleEnable").html(`${miscIcons.toggleOn} Enabled`);
+    else $("#ct"+command.id).removeClass("toggleEnable").addClass("toggleDisable").html(`${miscIcons.toggleOff} Disabled`);
+}

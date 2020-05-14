@@ -123,6 +123,10 @@ const miscIcons = Object.freeze({
     time: `<i class="fas fa-clock"></i>`,
     alert: `<i class="fas fa-exclamation-circle"></i>`,
     checkmark: `<i class="fas fa-check"></i>`,
+    commandTime: `<i class="far fa-stopwatch"></i>`,
+    commandProgress: `<i class="fas fa-spinner"></i>`,
+    toggleOn: `<i class="fas fa-toggle-on"></i>`,
+    toggleOff: `<i class="fas fa-toggle-off"></i>`,
 });
 
 const heroStat = Object.freeze({

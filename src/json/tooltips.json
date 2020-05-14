@@ -140,13 +140,6 @@
     "type": "static"
   },
   {
-    "id": "tech",
-    "title": "Technique",
-    "description": "The amount of damage an entity can deal with special attacks.",
-    "icon": "<i class=\"fas fa-book-spells statTECH\"></i>",
-    "type": "static"
-  },
-  {
     "id": "material_desc",
     "title": "#name#",
     "description": "#description#</br>You have #amt#.",
@@ -191,7 +184,7 @@
   {
     "id": "skill_desc",
     "title": "#name#",
-    "description": "#description#</br><span class=\"tooltipStat tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span> <span class=\"tooltipStat tooltipSPower\"><i class=\"fas fa-book-spells statTECH\"></i> #techPercent#</span>",
+    "description": "#description#</br><span class=\"tooltipStat tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span>",
     "icon": "#icon#",
     "type": "skill"
   },

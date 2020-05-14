@@ -288,6 +288,18 @@ const Notifications = {
         const heading = "Cannot afford Upgrade";
         const icon = "error";
         popToast(text,heading,icon);
+    },
+    tinkerDisable() {
+        const text = "Not enough gold to research";
+        const heading = "Tinker Command Disabled";
+        const icon = "error";
+        popToast(text,heading,icon);
+    },
+    tinkerResearch() {
+        const text = "Not enough gold to complete research";
+        const heading = "Tinker Research Complete";
+        const icon = "error";
+        popToast(text,heading,icon);
     }
 }
 

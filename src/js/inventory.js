@@ -210,7 +210,7 @@ const Inventory = {
         if (TownManager.buildingRecipes().includes(id)) return TownManager.unlockBldg(id);
         const item = recipeList.idToItem(id)
         item.addCount(skipAnimation);
-        const roll = Math.floor(Math.random() * 1000);
+        let roll = Math.floor(Math.random() * 1000);
         const sellToggleChart = {
             "None" : 0,
             "Common" : 1,
@@ -220,6 +220,7 @@ const Inventory = {
         }
         const sellToggle = sellToggleChart[item.autoSell];
         const procRate = this.craftChance(item);
+        if (item.type === "Trinkets") roll = 0;
         if (roll < procRate.epic) {
             const epicItem = new itemContainer(id,3);
             if (sellToggle < 4) {

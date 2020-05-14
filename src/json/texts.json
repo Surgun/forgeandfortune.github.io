@@ -40,11 +40,6 @@
     "es": "Progreso"
   },
   {
-    "tid": "type_arcane",
-    "en": "Arcane",
-    "es": null
-  },
-  {
     "tid": "type_armor",
     "en": "Armor",
     "es": null
@@ -75,18 +70,13 @@
     "es": null
   },
   {
-    "tid": "type_heavy",
-    "en": "Heavy",
-    "es": null
-  },
-  {
     "tid": "type_helmets",
     "en": "Helmets",
     "es": null
   },
   {
-    "tid": "type_light",
-    "en": "Light",
+    "tid": "type_knives",
+    "en": "Knives",
     "es": null
   },
   {
@@ -115,6 +105,16 @@
     "es": null
   },
   {
+    "tid": "type_staves",
+    "en": "Staves",
+    "es": null
+  },
+  {
+    "tid": "type_swords",
+    "en": "Swords",
+    "es": null
+  },
+  {
     "tid": "type_thrown",
     "en": "Thrown",
     "es": null
@@ -125,13 +125,13 @@
     "es": null
   },
   {
-    "tid": "type_vests",
-    "en": "Vests",
+    "tid": "type_trinkets",
+    "en": "Trinkets",
     "es": null
   },
   {
-    "tid": "type_trinkets",
-    "en": "Trinkets",
+    "tid": "type_vests",
+    "en": "Vests",
     "es": null
   },
   {

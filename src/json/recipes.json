@@ -1,12 +1,12 @@
 [
   {
     "id": "R11001",
-    "name": "Water Staff",
-    "description": "Expert water staff users can use floods in expertly timed, awe inspiring bursts of magic.",
+    "name": "Earth Staff",
+    "description": "It's a dirty staff, but someone has got to use it.",
     "lvl": 1,
     "value": 11,
     "craftTime": 10983,
-    "type": "Arcane",
+    "type": "Staves",
     "gcost": [
       "G001"
     ],
@@ -28,12 +28,12 @@
   },
   {
     "id": "R11002",
-    "name": "Actor Rod",
-    "description": "Technically it's a Barista Rod, but as long as the dream is still alive, I guess it counts.",
+    "name": "Wind Staff",
+    "description": "If you spin the Wind Staff quickly over your head, you won't fly, but it will look really cool.",
     "lvl": 2,
     "value": 67,
     "craftTime": 18759,
-    "type": "Arcane",
+    "type": "Staves",
     "gcost": [
       "G001"
     ],
@@ -55,12 +55,12 @@
   },
   {
     "id": "R11003",
-    "name": "Hate Wand",
-    "description": "Most wizards use this wand out of anger, which unsurprisingly leads to suffering.",
+    "name": "Fire Staff",
+    "description": "Street performers have been dazzling audiences for years using this special staff.",
     "lvl": 3,
     "value": 408,
     "craftTime": 27749,
-    "type": "Arcane",
+    "type": "Staves",
     "gcost": [
       "G001"
     ],
@@ -82,12 +82,12 @@
   },
   {
     "id": "R11004",
-    "name": "Heart Staff",
-    "description": "Honestly the weirdest of the staves, and kind of a boring superpower.",
+    "name": "September Staff",
+    "description": "Better than the Month of May Staff, that's for sure.",
     "lvl": 4,
     "value": 2488,
     "craftTime": 45550,
-    "type": "Arcane",
+    "type": "Staves",
     "gcost": [
       "G001",
       "G004"
@@ -110,12 +110,12 @@
   },
   {
     "id": "R11005",
-    "name": "Stewart Rod",
-    "description": "Some rods have all the luck, and the Stewart Rod gets all the breaks.",
+    "name": "Water Staff",
+    "description": "Expert water staff users can use floods in expertly timed, awe inspiring bursts of magic.",
     "lvl": 5,
     "value": 15176,
     "craftTime": 66276,
-    "type": "Arcane",
+    "type": "Staves",
     "gcost": [
       "G001",
       "G004"
@@ -138,12 +138,12 @@
   },
   {
     "id": "R11006",
-    "name": "Thunder Wand",
-    "description": "Speaking scientifically, it's probably lightning, but the person who named it wasn't that bright.",
+    "name": "Heart Staff",
+    "description": "Honestly the weirdest of the staves, and kind of a boring superpower.",
     "lvl": 6,
     "value": 92573,
     "craftTime": 115588,
-    "type": "Arcane",
+    "type": "Staves",
     "gcost": [
       "G001",
       "G004"
@@ -166,12 +166,12 @@
   },
   {
     "id": "R11007",
-    "name": "Lunar Staff",
-    "description": "Possibly fake.  It casts an odd shadow.  Could be a movie studio knockoff.",
+    "name": "Planet Staff",
+    "description": "There aren't many of these to go around, so make sure you treat this one with care.",
     "lvl": 7,
     "value": 564695,
     "craftTime": 164687,
-    "type": "Arcane",
+    "type": "Staves",
     "gcost": [
       "G001",
       "G004",
@@ -195,12 +195,12 @@
   },
   {
     "id": "R11008",
-    "name": "Love Wand",
-    "description": "Romantic comedies are right: trading in glasses for contacts counts as a total makeover.",
+    "name": "Lunar Staff",
+    "description": "Possibly fake.  It casts an odd shadow.  Could be a movie studio knockoff.",
     "lvl": 8,
     "value": 3444639,
     "craftTime": 245445,
-    "type": "Arcane",
+    "type": "Staves",
     "gcost": [
       "G001",
       "G004",
@@ -224,12 +224,12 @@
   },
   {
     "id": "R11009",
-    "name": "Fishing Rod",
-    "description": "Don't teach a man to fish, feed yourself.  Fishing isn't that hard.",
+    "name": "Support Staff",
+    "description": "Having somewhere between five and seven of these at all times is highly efficient.",
     "lvl": 9,
     "value": 21012297,
     "craftTime": 452766,
-    "type": "Arcane",
+    "type": "Staves",
     "gcost": [
       "G001",
       "G004",
@@ -258,7 +258,7 @@
     "lvl": 10,
     "value": 128175011,
     "craftTime": 632922,
-    "type": "Arcane",
+    "type": "Staves",
     "gcost": [
       "G001",
       "G004",
@@ -287,7 +287,7 @@
     "lvl": 1,
     "value": 9,
     "craftTime": 9963,
-    "type": "Light",
+    "type": "Knives",
     "gcost": [
       "G003"
     ],
@@ -307,12 +307,12 @@
   },
   {
     "id": "R13002",
-    "name": "El Bow",
-    "description": "Named by someone who took too many hits to their funny bone.",
+    "name": "Butter Knife",
+    "description": "Check out the low calorie version -- Hard To Believe This Isn't A Butter Knife.",
     "lvl": 2,
     "value": 54,
     "craftTime": 13407,
-    "type": "Light",
+    "type": "Knives",
     "gcost": [
       "G003"
     ],
@@ -334,12 +334,12 @@
   },
   {
     "id": "R13003",
-    "name": "Cool Whip",
-    "description": "This is a dish best served cold.",
+    "name": "Kitchen Knife",
+    "description": "I'm knifin around... cut, cut, cut, cut, cut.",
     "lvl": 3,
     "value": 329,
     "craftTime": 21109,
-    "type": "Light",
+    "type": "Knives",
     "gcost": [
       "G003"
     ],
@@ -361,12 +361,12 @@
   },
   {
     "id": "R13004",
-    "name": "Butter Knife",
-    "description": "Check out the low calorie version -- Hard To Believe This Isn't A Butter Knife.",
+    "name": "Chef's Knife",
+    "description": "Also known in some circles as Everybody's Grudge.",
     "lvl": 4,
     "value": 2006,
     "craftTime": 32051,
-    "type": "Light",
+    "type": "Knives",
     "gcost": [
       "G003",
       "G004"
@@ -389,12 +389,12 @@
   },
   {
     "id": "R13005",
-    "name": "Rain Bow",
-    "description": "Now you can shoot enemies with all the colors of the wind.",
+    "name": "Fishing Knife",
+    "description": "Named for the common technique of \"Water Stabbing,\" which is the best way to catch a fish.",
     "lvl": 5,
     "value": 12236,
     "craftTime": 53436,
-    "type": "Light",
+    "type": "Knives",
     "gcost": [
       "G003",
       "G004"
@@ -417,12 +417,12 @@
   },
   {
     "id": "R13006",
-    "name": "Shaped Whip",
-    "description": "Try to detect this whip, not before it's too late, or else you'll get whipped good.",
+    "name": "That's Not A Knife",
+    "description": "Sure, a talking dog and a duck who refuses to wear pants is fine, but the weapon is breaking immersion.",
     "lvl": 6,
     "value": 74639,
     "craftTime": 93195,
-    "type": "Light",
+    "type": "Knives",
     "gcost": [
       "G003",
       "G004"
@@ -445,12 +445,12 @@
   },
   {
     "id": "R13007",
-    "name": "Club Knife",
-    "description": "It's the most exclusive Club in town.",
+    "name": "That's A Knife",
+    "description": "Some suggest that the original name is actually \"This Is A Knife\" -- they're wrong.",
     "lvl": 7,
     "value": 455297,
     "craftTime": 140912,
-    "type": "Light",
+    "type": "Knives",
     "gcost": [
       "G003",
       "G004",
@@ -474,12 +474,12 @@
   },
   {
     "id": "R13008",
-    "name": "Disintegrator",
-    "description": "This bow is unlicensed.  I'd stand back if I were you.",
+    "name": "Club Knife",
+    "description": "It's the most exclusive Club in town.",
     "lvl": 8,
     "value": 2777311,
     "craftTime": 241872,
-    "type": "Light",
+    "type": "Knives",
     "gcost": [
       "G003",
       "G004",
@@ -503,12 +503,12 @@
   },
   {
     "id": "R13009",
-    "name": "Qilinbian",
-    "description": "The qilinbian is mostly used for exercise, but certain instructors can wield it with lethal force.",
+    "name": "Dark Knife",
+    "description": "One popular urban legend mentions that this blade is involved in fowl play.",
     "lvl": 9,
     "value": 16941597,
     "craftTime": 381276,
-    "type": "Light",
+    "type": "Knives",
     "gcost": [
       "G003",
       "G004",
@@ -537,7 +537,7 @@
     "lvl": 10,
     "value": 103343741,
     "craftTime": 500856,
-    "type": "Light",
+    "type": "Knives",
     "gcost": [
       "G003",
       "G004",
@@ -566,7 +566,7 @@
     "lvl": 1,
     "value": 13,
     "craftTime": 12980,
-    "type": "Heavy",
+    "type": "Swords",
     "gcost": [
       "G001"
     ],
@@ -586,12 +586,12 @@
   },
   {
     "id": "R12002",
-    "name": "Greedy Pickaxe",
-    "description": "I'm not saying it's a gold digger, but it has been used in such activities in the past.",
+    "name": "Modest Sabre",
+    "description": "It may not look like much, but it does the job.  Eventually.",
     "lvl": 2,
     "value": 79,
     "craftTime": 20384,
-    "type": "Heavy",
+    "type": "Swords",
     "gcost": [
       "G001"
     ],
@@ -613,12 +613,12 @@
   },
   {
     "id": "R12003",
-    "name": "Striped Club",
-    "description": "When used as a scratching post, it brings out all the cats and kittens.",
+    "name": "Sailor Cutlass",
+    "description": "Because what new sailors need is a heavy object that sinks.",
     "lvl": 3,
     "value": 481,
     "craftTime": 32713,
-    "type": "Heavy",
+    "type": "Swords",
     "gcost": [
       "G001"
     ],
@@ -640,12 +640,12 @@
   },
   {
     "id": "R12004",
-    "name": "Buzzblade",
-    "description": "Set this blade to stun, instead of kill, and have a blast.",
+    "name": "Salty Sword",
+    "description": "A weapon for the eternally angry and margarita fans alike.",
     "lvl": 4,
     "value": 2934,
     "craftTime": 49583,
-    "type": "Heavy",
+    "type": "Swords",
     "gcost": [
       "G001",
       "G001"
@@ -668,12 +668,12 @@
   },
   {
     "id": "R12005",
-    "name": "Gluttonous Axe",
-    "description": "Gluttonous Axe is not very balanced, and probably should lose some weight around the belly.",
+    "name": "Lakekeeper",
+    "description": "The Lakekeeper may be a bit rusty, but a little tetanus never hurt anyone.",
     "lvl": 5,
     "value": 17897,
     "craftTime": 81285,
-    "type": "Heavy",
+    "type": "Swords",
     "gcost": [
       "G001",
       "G001"
@@ -696,12 +696,12 @@
   },
   {
     "id": "R12006",
-    "name": "Night Club",
-    "description": "Nothing good ever happens with this club after two in the morning, so be careful.",
+    "name": "Buzzblade",
+    "description": "Set this blade to stun, instead of kill, and have a blast.",
     "lvl": 6,
     "value": 109171,
     "craftTime": 133472,
-    "type": "Heavy",
+    "type": "Swords",
     "gcost": [
       "G001",
       "G001"
@@ -724,12 +724,12 @@
   },
   {
     "id": "R12007",
-    "name": "Salty Sword",
-    "description": "A weapon for the eternally angry and margarita fans alike.",
+    "name": "Feverbreaker",
+    "description": "It's hard to have a fever when your head is missing.",
     "lvl": 7,
     "value": 665943,
     "craftTime": 187022,
-    "type": "Heavy",
+    "type": "Swords",
     "gcost": [
       "G001",
       "G001",
@@ -753,12 +753,12 @@
   },
   {
     "id": "R12008",
-    "name": "Wrath",
-    "description": "This axe's name varies by region. In some places it is known as Crusade, and in others, Cataclysm.",
+    "name": "Balmungous",
+    "description": "Having two or three of these in a group will make a giant difference.",
     "lvl": 8,
     "value": 4062252,
     "craftTime": 294813,
-    "type": "Heavy",
+    "type": "Swords",
     "gcost": [
       "G001",
       "G001",
@@ -782,12 +782,12 @@
   },
   {
     "id": "R12009",
-    "name": "Knife Club",
-    "description": "It's the most exclusive Knife in town.",
+    "name": "Cannonballer",
+    "description": "The favorite weapon of pirates and gunpowder enthusiasts.",
     "lvl": 9,
     "value": 24779737,
     "craftTime": 557676,
-    "type": "Heavy",
+    "type": "Swords",
     "gcost": [
       "G001",
       "G001",
@@ -811,12 +811,12 @@
   },
   {
     "id": "R12010",
-    "name": "Balmungous",
-    "description": "Having two or three of these in a group will make a giant difference.",
+    "name": "Jawstriker",
+    "description": "A blow to the jaw from this blade will do serious, long lasting damage.",
     "lvl": 10,
     "value": 151156395,
     "craftTime": 791187,
-    "type": "Heavy",
+    "type": "Swords",
     "gcost": [
       "G001",
       "G001",

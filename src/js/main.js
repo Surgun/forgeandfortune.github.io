@@ -41,7 +41,7 @@ function afterLoad() {
     checkCraftableStatus();
     player.lastTime = Date.now();
     setInterval(mainLoop, 10);
-    recipeList.recipeFilterType = "Light";
+    recipeList.recipeFilterType = "Knives";
     recipeList.recipeFilterString = "";
     recipeFilterList();
     populateTinkerRange();

@@ -1,6 +1,6 @@
 "use strict";
 
-const ItemType = ["Heavy", "Light", "Arcane",
+const ItemType = ["Swords", "Knives", "Staves",
                     "Armor", "Belts", "Cloaks", 
                     "Gauntlets", "Gloves", "Hats", 
                     "Helmets", "Masks", "Pendants", 

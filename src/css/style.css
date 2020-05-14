@@ -2077,16 +2077,16 @@ footer {
     background-image: url('/assets/images/recipeFilter/NoMat32.png');
 }
 
-.recipeFilterList a[href="HeavySelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Heavy32.png');
+.recipeFilterList a[href="SwordsSelector"]:before {
+    background-image: url('/assets/images/recipeFilter/Swords32.png');
 }
 
-.recipeFilterList a[href="ArcaneSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Arcane32.png');
+.recipeFilterList a[href="StavesSelector"]:before {
+    background-image: url('/assets/images/recipeFilter/Staves32.png');
 }
 
-.recipeFilterList a[href="LightSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Light32.png');
+.recipeFilterList a[href="KnivesSelector"]:before {
+    background-image: url('/assets/images/recipeFilter/Knives32.png');
 }
 
 .recipeFilterList a[href="HelmetSelector"]:before {

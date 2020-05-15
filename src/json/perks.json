@@ -831,16 +831,16 @@
     "icon": "<i class=\"fas fa-landmark\"></i>"
   },
   {
-    "id": "AL3009",
-    "title": "Get your Fix",
-    "description": "Adds new capabilities to the Magical Synthesizer.",
+    "id": "AL3013",
+    "title": "Over Engineered",
+    "description": "Unlocks the Tinker Hut, to make trinkets.",
     "category": "Town",
     "order": 10,
     "goldCost": 85000,
-    "type": "synth",
-    "subtype": "level",
+    "type": "tinker",
+    "subtype": "open",
     "unlockReq": "D405",
-    "icon": "<i class=\"fas fa-building\"></i>"
+    "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
     "id": "AL3010",
@@ -879,16 +879,16 @@
     "icon": "<i class=\"fas fa-vihara\"></i>"
   },
   {
-    "id": "AL3013",
-    "title": "Over Engineered",
-    "description": "Unlocks the Tinker Hut, to make trinkets.",
+    "id": "AL3009",
+    "title": "Get your Fix",
+    "description": "Adds new capabilities to the Magical Synthesizer.",
     "category": "Town",
     "order": 14,
     "goldCost": 300000,
-    "type": "tinker",
-    "subtype": "open",
+    "type": "synth",
+    "subtype": "level",
     "unlockReq": "D407",
-    "icon": "<i class=\"fas fa-tools\"></i>"
+    "icon": "<i class=\"fas fa-building\"></i>"
   },
   {
     "id": "AL3014",

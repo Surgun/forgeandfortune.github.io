@@ -190,7 +190,11 @@ const recipeList = {
     },
     unlockTrinketRecipe(recipeID) {
         const recipe = this.idToItem(recipeID);
+        recipeList.recipes.filter(r=>r.name===recipe.name).forEach(r => {
+            r.owned = false;
+        })
         recipe.owned = true;
+        recipeFilterList();
         refreshRecipeFilters();
         checkCraftableStatus();
         refreshAllSales();
@@ -334,7 +338,6 @@ function recipeFilterList(n) {
     //uses two recipeLists to cycle through all the items and display as appropriate
     if (n === 0) Object.values(sortOrder.recipeDivDict).forEach(div => div.hide());
     recipeList.filteredRecipeList().map(r=>r.id).slice(0,n+30).forEach(recipe => {
-        console.log(recipe);
         sortOrder.recipeDivDict[recipe].show();
     })
 };

@@ -5234,7 +5234,7 @@
   },
   {
     "id": "R90001",
-    "name": "Healthy Trinket I",
+    "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 1,
     "value": 1,
@@ -5259,7 +5259,7 @@
   },
   {
     "id": "R90002",
-    "name": "Healthy Trinket II",
+    "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 2,
     "value": 7,
@@ -5284,7 +5284,7 @@
   },
   {
     "id": "R90003",
-    "name": "Healthy Trinket III",
+    "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 3,
     "value": 42,
@@ -5309,7 +5309,7 @@
   },
   {
     "id": "R90004",
-    "name": "Healthy Trinket IV",
+    "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 4,
     "value": 274,
@@ -5334,7 +5334,7 @@
   },
   {
     "id": "R90005",
-    "name": "Healthy Trinket V",
+    "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 5,
     "value": 500,
@@ -5359,7 +5359,7 @@
   },
   {
     "id": "R90006",
-    "name": "Healthy Trinket VI",
+    "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 6,
     "value": 500,
@@ -5384,7 +5384,7 @@
   },
   {
     "id": "R90007",
-    "name": "Healthy Trinket VII",
+    "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 7,
     "value": 500,
@@ -5409,7 +5409,7 @@
   },
   {
     "id": "R90008",
-    "name": "Healthy Trinket VIII",
+    "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 8,
     "value": 500,
@@ -5434,7 +5434,7 @@
   },
   {
     "id": "R90009",
-    "name": "Healthy Trinket IX",
+    "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 9,
     "value": 500,
@@ -5459,7 +5459,7 @@
   },
   {
     "id": "R90010",
-    "name": "Healthy Trinket X",
+    "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 10,
     "value": 500,
@@ -5484,7 +5484,7 @@
   },
   {
     "id": "R90101",
-    "name": "Powerful Trinket I",
+    "name": "Powerful Trinket",
     "description": "Using this trinket requires a large amount of duty, or restraint, or maybe authority.",
     "lvl": 1,
     "value": 1,
@@ -5509,7 +5509,7 @@
   },
   {
     "id": "R90102",
-    "name": "Powerful Trinket II",
+    "name": "Powerful Trinket",
     "description": "Using this trinket requires a large amount of duty, or restraint, or maybe authority.",
     "lvl": 2,
     "value": 7,
@@ -5534,7 +5534,7 @@
   },
   {
     "id": "R90103",
-    "name": "Powerful Trinket III",
+    "name": "Powerful Trinket",
     "description": "Using this trinket requires a large amount of duty, or restraint, or maybe authority.",
     "lvl": 3,
     "value": 42,
@@ -5559,7 +5559,7 @@
   },
   {
     "id": "R90104",
-    "name": "Powerful Trinket IV",
+    "name": "Powerful Trinket",
     "description": "Using this trinket requires a large amount of duty, or restraint, or maybe authority.",
     "lvl": 4,
     "value": 274,
@@ -5584,7 +5584,7 @@
   },
   {
     "id": "R90105",
-    "name": "Powerful Trinket V",
+    "name": "Powerful Trinket",
     "description": "Using this trinket requires a large amount of duty, or restraint, or maybe authority.",
     "lvl": 5,
     "value": 500,
@@ -5609,7 +5609,7 @@
   },
   {
     "id": "R90106",
-    "name": "Powerful Trinket VI",
+    "name": "Powerful Trinket",
     "description": "Using this trinket requires a large amount of duty, or restraint, or maybe authority.",
     "lvl": 6,
     "value": 500,
@@ -5634,7 +5634,7 @@
   },
   {
     "id": "R90107",
-    "name": "Powerful Trinket VII",
+    "name": "Powerful Trinket",
     "description": "Using this trinket requires a large amount of duty, or restraint, or maybe authority.",
     "lvl": 7,
     "value": 500,
@@ -5659,7 +5659,7 @@
   },
   {
     "id": "R90108",
-    "name": "Powerful Trinket VIII",
+    "name": "Powerful Trinket",
     "description": "Using this trinket requires a large amount of duty, or restraint, or maybe authority.",
     "lvl": 8,
     "value": 500,
@@ -5684,7 +5684,7 @@
   },
   {
     "id": "R90109",
-    "name": "Powerful Trinket IX",
+    "name": "Powerful Trinket",
     "description": "Using this trinket requires a large amount of duty, or restraint, or maybe authority.",
     "lvl": 9,
     "value": 500,
@@ -5709,7 +5709,7 @@
   },
   {
     "id": "R90110",
-    "name": "Powerful Trinket X",
+    "name": "Powerful Trinket",
     "description": "Using this trinket requires a large amount of duty, or restraint, or maybe authority.",
     "lvl": 10,
     "value": 500,
@@ -5734,7 +5734,7 @@
   },
   {
     "id": "R90201",
-    "name": "Balanced Trinket I",
+    "name": "Balanced Trinket",
     "description": "Same power to control the universe, but with less snapping.",
     "lvl": 1,
     "value": 1,
@@ -5759,7 +5759,7 @@
   },
   {
     "id": "R90202",
-    "name": "Balanced Trinket II",
+    "name": "Balanced Trinket",
     "description": "Same power to control the universe, but with less snapping.",
     "lvl": 2,
     "value": 7,
@@ -5784,7 +5784,7 @@
   },
   {
     "id": "R90203",
-    "name": "Balanced Trinket III",
+    "name": "Balanced Trinket",
     "description": "Same power to control the universe, but with less snapping.",
     "lvl": 3,
     "value": 42,
@@ -5809,7 +5809,7 @@
   },
   {
     "id": "R90204",
-    "name": "Balanced Trinket IV",
+    "name": "Balanced Trinket",
     "description": "Same power to control the universe, but with less snapping.",
     "lvl": 4,
     "value": 274,
@@ -5834,7 +5834,7 @@
   },
   {
     "id": "R90205",
-    "name": "Balanced Trinket V",
+    "name": "Balanced Trinket",
     "description": "Same power to control the universe, but with less snapping.",
     "lvl": 5,
     "value": 500,
@@ -5859,7 +5859,7 @@
   },
   {
     "id": "R90206",
-    "name": "Balanced Trinket VI",
+    "name": "Balanced Trinket",
     "description": "Same power to control the universe, but with less snapping.",
     "lvl": 6,
     "value": 500,
@@ -5884,7 +5884,7 @@
   },
   {
     "id": "R90207",
-    "name": "Balanced Trinket VII",
+    "name": "Balanced Trinket",
     "description": "Same power to control the universe, but with less snapping.",
     "lvl": 7,
     "value": 500,
@@ -5909,7 +5909,7 @@
   },
   {
     "id": "R90208",
-    "name": "Balanced Trinket VIII",
+    "name": "Balanced Trinket",
     "description": "Same power to control the universe, but with less snapping.",
     "lvl": 8,
     "value": 500,
@@ -5934,7 +5934,7 @@
   },
   {
     "id": "R90209",
-    "name": "Balanced Trinket IX",
+    "name": "Balanced Trinket",
     "description": "Same power to control the universe, but with less snapping.",
     "lvl": 9,
     "value": 500,
@@ -5959,7 +5959,7 @@
   },
   {
     "id": "R90210",
-    "name": "Balanced Trinket X",
+    "name": "Balanced Trinket",
     "description": "Same power to control the universe, but with less snapping.",
     "lvl": 10,
     "value": 500,

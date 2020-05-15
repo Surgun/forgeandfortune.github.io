@@ -129,40 +129,54 @@ const SynthManager = {
         if (this.slot.rarity + mod === 1) reward.id = "M700";
         if (this.slot.rarity + mod === 2) reward.id = "M701";
         if (this.slot.rarity + mod === 3) reward.id = "M702";
-        reward.amt = Math.floor(this.slot.item.craftTime / 4000);
+        reward.amt = Math.max(1,Math.floor(this.slot.item.craftTime / 4000));
         return reward;
     },
     resynthCosts() {
         const resynthCost = {M700 : 0, M701 : 0, M702 : 0}
         if (this.slot === null) return resynthCost;
-        const baseline = Math.floor(this.slot.item.craftTime / 4000);
-        if (this.slot.maxRatio() === 3) {
-            resynthCost.M700 = this.slot.powRatio === 3 ? 0 : baseline;
-            resynthCost.M701 = this.slot.hpRatio === 3 ? 0 : baseline;
+        const baseline = Math.max(1,Math.floor(this.slot.item.craftTime / 4000));
+        if (this.slot.powRatio === 3 || this.slot.hpRatio === 3) {
+            resynthCost.M702 = baseline;
         }
         else {
-            resynthCost.M700 = this.slot.powRatio === 0 ? 0 : baseline;
-            resynthCost.M701 = this.slot.hpRatio === 0 ? 0 : baseline;
+            resynthCost.M700 = baseline;
+            resynthCost.M701 = baseline;
         }
         return resynthCost;
     },
     resynthChange() {
-        const change = [0,0,0];
+        const change = [0,0];
         if (this.slot === null || this.resynth === null) return change;
         if (this.resynth === "M700") {
-            change[0] += 1;
-            change[1] -= 1;
-            change[2] -= 1;
+            if (this.slot.hpRatio === 1) {
+                change[0] = 1;
+                change[1] = -1;
+            }
+            else {
+                change[0] = -1;
+                change[1] = 1;
+            }
         }
         if (this.resynth === "M701") {
-            change[0] -= 1;
-            change[1] += 1;
-            change[2] -= 1;
+            if (this.slot.hpRatio === 2) {
+                change[0] = 1;
+                change[1] = -1;
+            }
+            else {
+                change[0] = -1;
+                change[1] = 1;
+            }
         }
         if (this.resynth === "M702") {
-            change[0] -= 1;
-            change[1] -= 1;
-            change[2] += 1;
+            if (this.slot.hpRatio === 3) {
+                change[0] = 1;
+                change[1] = -1;
+            }
+            else {
+                change[0] = -1;
+                change[1] = 1;
+            }
         }
         return change;
     },
@@ -173,20 +187,9 @@ const SynthManager = {
     },
     fillResynthSlot(value) {
         if (this.state !== "staged") return;
-        const ratio = {"M700":SynthManager.slot.powRatio, "M701":SynthManager.slot.hpRatio};
-        const maxRatio = Math.max(SynthManager.slot.powRatio,SynthManager.slot.hpRatio);
-        if (maxRatio === 3) {
-            //we are all-in on a material, ratio = 3 is the one we can't use
-            if (ratio[value] === 3) return;
-            this.resynth = value;
-        }
-        else if (maxRatio === 2) {
-            //we are mixed, ratio = 0 is the one we can't use
-            if (ratio[value] === 0) return;
-            this.resynth = value;
-        }
+        this.resynth = value;
         refreshResynth();
-    }
+    },
 }
 
 const $synthBuilding = $("#synthBuilding");
@@ -276,7 +279,7 @@ function refreshResynth() {
         $("#synthRemove").hide();
         synthBarText("Collect");
     }
-    refreshSynthStage()
+    refreshSynthStage();
 }
 
 function refreshSynthButtons() {
@@ -362,8 +365,8 @@ function createSynthStageCard(container) {
     const stageRemove = $('<div/>').attr("id","synthRemove").html(`<i class="fas fa-times"></i>`);
     const itemLevel = $("<div/>").addClass("inventoryItemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
     const itemProps = $("<div/>").addClass("inventoryProps");
-    const synthStatProps = SynthManager.setting === synthToggle.RESYNTH ? SynthManager.resynthChange() : [0,0,0];
-    for (const [stat, val] of Object.entries(container.itemStat(0, synthStatProps[0], synthStatProps[1], synthStatProps[2]))) {
+    const synthStatProps = SynthManager.setting === synthToggle.RESYNTH ? SynthManager.resynthChange() : [0,0];
+    for (const [stat, val] of Object.entries(container.itemStat(0, synthStatProps[0], synthStatProps[1]))) {
         if (val === 0) continue;
         $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
     };

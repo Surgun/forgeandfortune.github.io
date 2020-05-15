@@ -130,22 +130,13 @@ class itemContainer {
         this.powRatio = Math.max(0,this.powRatio + ratio[0]);
         this.hpRatio = Math.max(0,this.hpRatio + ratio[1]);
     }
-    maxRatio() {
-        return Math.max(this.powRatio,this.hpRatio);
-    }
 }
 
 const adjective = {
-    "300" : "Powerful",
-    "210" : "Sturdy",
-    "201" : "Strong",
-    "120" : "Mighty",
-    "111" : "Balanced",
-    "102" : "Potent",
-    "012" : "Wonderous",
-    "021" : "Unwieldy",
-    "030" : "Bulky",
-    "003" : "Mystical",
+    "30" : "Powerful",
+    "21" : "Mighty",
+    "12" : "Sturdy",
+    "03" : "Bulky",
 }
 
 const rarities = {

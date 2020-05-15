@@ -259,5 +259,5 @@ const HeroManager = {
     swapPlaybook(hid,pbid) {
         const hero = this.idToHero(hid);
         hero.swapPlaybook(pbid);
-    }
+    },
 }

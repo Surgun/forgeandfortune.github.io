@@ -67,6 +67,7 @@ class Perk {
     purchase() {
         this.purchased = true;
         if (this.type === "hero") HeroManager.gainHero(this.subtype);
+        if (this.type === "playbook") PlaybookManager.unlockPlaybook(this.subtype);
         if (this.type === "worker") {
             if (this.subtype !== null) WorkerManager.gainWorker(this.subtype);
             initializeGuilds();

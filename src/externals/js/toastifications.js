@@ -300,6 +300,12 @@ const Notifications = {
         const heading = "Tinker Research Complete";
         const icon = "error";
         popToast(text,heading,icon);
+    },
+    heroDungeonPlaybookSwap() {
+        const text = "Cannot swap while hero is on an adventure";
+        const heading = "Cannot Swap Playbook";
+        const icon = "error";
+        popToast(text,heading,icon);
     }
 }
 

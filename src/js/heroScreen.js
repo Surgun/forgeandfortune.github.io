@@ -191,9 +191,14 @@ function generateHeroPlaybooks(hero) {
 
 $(document).on('click',".playbookSelectable", (e) => {
     e.preventDefault();
+    const hid = $(e.currentTarget).data("hid");
+    const hero = HeroManager.idToHero(hid);
+    if (hero.inDungeon) {
+        Notifications.heroDungeonPlaybookSwap();
+        return;
+    }
     $(".playbookSelectable").removeClass("playbookSelected");
     $(e.currentTarget).addClass("playbookSelected");
-    const hid = $(e.currentTarget).data("hid");
     const pbid = $(e.currentTarget).data("pbid");
     HeroManager.swapPlaybook(hid,pbid);
 });

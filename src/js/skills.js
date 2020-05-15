@@ -41,6 +41,10 @@ const PlaybookManager = {
         const skills = {skill1:s1,skill2:s2,skill3:s3,skill4:s4};
         return new Playbook(skills);
     },
+    unlockPlaybook(playbookID) {
+        const playbook = this.idToPlaybook(playbookID);
+        playbook.unlock();
+    }
 }
 
 class playBookTemplate {
@@ -59,6 +63,9 @@ class playBookTemplate {
     }
     loadSave(save) {
         this.unlocked = save.unlocked;
+    }
+    unlock() {
+        this.unlocked = true;
     }
 }
 

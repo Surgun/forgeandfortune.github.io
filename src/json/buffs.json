@@ -155,8 +155,8 @@
   },
   {
     "id": "B2010",
-    "name": "Alok 1",
-    "description": "Increase health",
+    "name": "Army's Boon",
+    "description": "Health has increased.",
     "icon": "<img src=\"/assets/svg/double-quaver.svg\">",
     "maxStack": 1,
     "stackCast": 1,
@@ -166,8 +166,8 @@
   },
   {
     "id": "B2011",
-    "name": "Alok 2",
-    "description": "Increase power",
+    "name": "Valor's Blessing",
+    "description": "Power has increased.",
     "icon": "<img src=\"/assets/svg/love-song.svg\">",
     "maxStack": 1,
     "stackCast": 1,
@@ -177,8 +177,8 @@
   },
   {
     "id": "B2012",
-    "name": "Alok 3",
-    "description": "Increases damage taken next attack",
+    "name": "Foe's Bane",
+    "description": "This unit will take increased damage on next attack.",
     "icon": "<img src=\"/assets/svg/anthem.svg\">",
     "maxStack": 1,
     "stackCast": 1,

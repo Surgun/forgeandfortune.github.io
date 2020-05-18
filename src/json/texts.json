@@ -415,6 +415,41 @@
     "es": null
   },
   {
+    "tid": "header_tinker_research_title",
+    "en": "Trinket Research",
+    "es": null
+  },
+  {
+    "tid": "header_tinker_research_desc",
+    "en": "Research new trinket recipes that can be crafted for gold and are always Epic. ",
+    "es": null
+  },
+  {
+    "tid": "tinker_view_recipes_button",
+    "en": "View {0} Recipes",
+    "es": null
+  },
+  {
+    "tid": "tinker_command_enabled",
+    "en": "Enabled",
+    "es": null
+  },
+  {
+    "tid": "tinker_command_disabled",
+    "en": "Disabled",
+    "es": null
+  },
+  {
+    "tid": "tinker_command_research_cost",
+    "en": "Research Cost",
+    "es": null
+  },
+  {
+    "tid": "tinker_command_research_complete",
+    "en": "Complete Research",
+    "es": null
+  },
+  {
     "tid": "museum_nav_collections",
     "en": "Collection",
     "es": null

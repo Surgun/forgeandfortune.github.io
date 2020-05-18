@@ -2,7 +2,7 @@
 
 const $tinkerBuilding = $("#tinkerBuilding");
 const $tinkerCommands = $("#tinkerCommands");
-const $tinkerRecipes = $("#tinkerRecipes");
+const $tinkerTopContainer = $("#tinkerTopContainer");
 
 class tinkerCommand {
     constructor(props) {
@@ -84,7 +84,6 @@ class tinkerCommand {
         this.lvl += 1;
         this.progress = 0;
         this.time = 0;
-        $(".tinkerRecipes").show();
         refreshTinkerProgressBar(this);
         refreshTinkerLvLBar(this);
         refreshTrinketCompleteCost(this);
@@ -125,37 +124,63 @@ const TinkerManager = {
     completeResearch(commandID) {
         const command = this.idToCommand(commandID);
         command.completeResearch();
+        $("#tinkerRecipes").show();
     }
 }
 
 function refreshTinkerCommands() {
     $tinkerCommands.empty();
-    const d = $("<div/>").addClass("tinkerRecipes").html("Unlocked Trinket Recipes").data("recipeType","Trinkets").appendTo($tinkerCommands).hide();
-    if (Math.max(...TinkerManager.commands.map(r=>r.lvl)) > 0) d.show();
     TinkerManager.commands.forEach(command => {
         createTinkerCommand(command).appendTo($tinkerCommands);
     })
 }
 
+function generateTinkerHeader() {
+    $tinkerTopContainer.empty();
+    const tinkerHeader = $("<div/>").addClass(`tinkerHeader`).appendTo($tinkerTopContainer);
+        const headingDetails = $("<div/>").addClass("headingDetails").appendTo(tinkerHeader);
+            $("<div/>").addClass("headingTitle").html(displayText("header_tinker_research_title")).appendTo(headingDetails);
+            $("<div/>").addClass("headingDescription").html(displayText("header_tinker_research_desc")).appendTo(headingDetails);
+    const buttonText = displayText('tinker_view_recipes_button').replace('{0}', displayText('type_trinkets'));
+    const recipeButton = $("<div/>").attr("id","tinkerRecipes").addClass("actionButton tinkerRecipes").html(buttonText).data("recipeType","Trinkets").appendTo(tinkerHeader).hide();
+    if (Math.max(...TinkerManager.commands.map(r=>r.lvl)) > 0) recipeButton.show();
+}
+
 function createTinkerCommand(command) {
     const d = $("<div/>").addClass("tinkerCommand");
     $("<div/>").addClass("tinkerCommandName").html(command.name).appendTo(d);
-    createTinkerProgressBar(command).appendTo(d);
-    createTinkerLvlBar(command).appendTo(d);
+    const tinkerBars=  $("<div/>").addClass("tinkerBarsContainer").appendTo(d);
+        createTinkerProgressBar(command).appendTo(tinkerBars);
+        createTinkerLvlBar(command).appendTo(tinkerBars);
     const d1 = $("<div/>").addClass("tinkerCommandInline").data("cid",command.id).appendTo(d);
-        if (command.enabled) $("<div/>").addClass("tinkerCommandToggle toggleEnable").attr("id","ct"+command.id).html(`${miscIcons.toggleOn} Enabled`).appendTo(d1);
-        else $("<div/>").addClass("tinkerCommandToggle toggleDisable").attr("id","ct"+command.id).html(`${miscIcons.toggleOff} Disabled`).appendTo(d1);
-        $("<div/>").addClass("tinkerCommandResearchCost").attr("id","tcrc"+command.id).html(`Research Cost: ${miscIcons.gold} ${command.paidGoldAmt()}`).appendTo(d1);
-    $("<div/>").addClass("completeCommand").attr("id","tcc"+command.id).data("cid",command.id).html(`Complete for ${miscIcons.gold} ${command.completeCost()}`).appendTo(d);
+        if (command.enabled) {
+            const toggle = $("<div/>").addClass("tinkerCommandToggle toggleEnabled").attr("id","ct"+command.id).html(`${miscIcons.toggleOn}`).appendTo(d1);
+            $("<span/>").html(displayText('tinker_command_enabled')).appendTo(toggle);
+        }
+        else {
+            const toggle = $("<div/>").addClass("tinkerCommandToggle toggleDisabled").attr("id","ct"+command.id).html(`${miscIcons.toggleOff}`).appendTo(d1);
+            $("<span/>").html(displayText('tinker_command_disabled')).appendTo(toggle);
+        }
+    const d2 = $("<div/>").addClass("tinkerCommandCostContainer").appendTo(d);
+        const researchCost = $("<div/>").addClass("tinkerCommandResearchCost").attr("id","tcrc"+command.id).appendTo(d2);
+            $("<div/>").addClass("researchCostHeader").html(displayText('tinker_command_research_cost')).appendTo(researchCost);
+            $("<div/>").addClass("researchCostValue actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": command.paidGoldAmt()}).html(`${miscIcons.gold} ${command.paidGoldAmt()}`).appendTo(researchCost);
+        const completeButton = $("<div/>").addClass("completeCommand actionButtonCardCost").attr("id","tcc"+command.id).data("cid",command.id).appendTo(d2);
+            $("<div/>").addClass("actionButtonCardText").html(displayText('tinker_command_research_complete')).appendTo(completeButton);
+            $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": command.completeCost()}).html(`${miscIcons.gold} ${command.completeCost()}`).appendTo(completeButton);
     return d;
 }
 
 function refreshTrinketCompleteCost(command) {
-    $("#tcc"+command.id).html(`Complete for ${miscIcons.gold} ${command.completeCost()}`);
+    const completeButton = $("#tcc"+command.id).empty();
+        $("<div/>").addClass("actionButtonCardText").html(displayText('tinker_command_research_complete')).appendTo(completeButton);
+        $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": command.completeCost()}).html(`${miscIcons.gold} ${command.completeCost()}`).appendTo(completeButton);
 }
 
 function refreshTrinketResearchCost(command) {
-    $("#tcrc"+command.id).html(`Research Cost: ${miscIcons.gold} ${command.paidGoldAmt()}`);
+    const researchCost = $("#tcrc"+command.id).empty();
+        $("<div/>").addClass("researchCostHeader").html(displayText('tinker_command_research_cost')).appendTo(researchCost);
+        $("<div/>").addClass("researchCostValue actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": command.paidGoldAmt()}).html(`${miscIcons.gold} ${command.paidGoldAmt()}`).appendTo(researchCost);
 }
 
 function createTinkerProgressBar(command) {
@@ -163,6 +188,7 @@ function createTinkerProgressBar(command) {
     const commandBarText = msToTime(command.getTime()-command.time);
     const commandBarWidth = (commandBarPercent*100).toFixed(1)+"%";
     const options = {
+        prefix: "commandTime",
         tooltip: "commandTime",
         icon: miscIcons.commandTime,
         text: commandBarText,
@@ -186,6 +212,7 @@ function createTinkerLvlBar(command) {
     const commandBarWidth = (commandBarPercent*100).toFixed(1)+"%";
     const commandBarText = `Level ${command.lvl} (${commandBarWidth})`;
     const options = {
+        prefix: "commandProgress",
         tooltip: "commandProgress",
         icon: miscIcons.commandProgress,
         text: commandBarText,
@@ -206,6 +233,7 @@ function refreshTinkerLvLBar(command) {
 
 function initiateTinkerBldg () {
     $tinkerBuilding.show();
+    generateTinkerHeader();
     refreshTinkerCommands();
 }
 
@@ -225,12 +253,18 @@ $(document).on('click','.completeCommand', (e) => {
     TinkerManager.completeResearch(commandID);
 });
 
-$(document).on('click','.tinkerRecipes', (e) => {
+$(document).on('click','#tinkerRecipes', (e) => {
     e.preventDefault();
     equipHeroRecipesButton(e);
 })
 
 function refreshCommandToggle(command) {
-    if (command.enabled) $("#ct"+command.id).removeClass("toggleDisable").addClass("toggleEnable").html(`${miscIcons.toggleOn} Enabled`);
-    else $("#ct"+command.id).removeClass("toggleEnable").addClass("toggleDisable").html(`${miscIcons.toggleOff} Disabled`);
+    if (command.enabled) {
+        const toggle = $("#ct"+command.id).removeClass("toggleDisabled").addClass("toggleEnabled").html(`${miscIcons.toggleOn}`);
+        $("<span/>").html(displayText('tinker_command_enabled')).appendTo(toggle);
+    }
+    else {
+        const toggle = $("#ct"+command.id).removeClass("toggleEnabled").addClass("toggleDisabled").html(`${miscIcons.toggleOff}`);
+        $("<span/>").html(displayText('tinker_command_disabled')).appendTo(toggle);
+    }
 }

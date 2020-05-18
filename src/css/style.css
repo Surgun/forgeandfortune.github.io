@@ -4061,7 +4061,7 @@ footer {
     margin: 0;
 }
 
-.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .synthSlot, .synthGroup, .fortuneItem, .tinkerCommand, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard, .lineRewardContainer, .recipeMasteryGuildCard, .recipeBuyCard, .workerBuyCard, .museumItem {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .synthSlot, .synthGroup, .fortuneItem, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard, .lineRewardContainer, .recipeMasteryGuildCard, .recipeBuyCard, .workerBuyCard, .museumItem {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -4321,7 +4321,7 @@ footer {
     padding: 5px 8px;
 }
 
-#smithWorkingArea, #synthSide, #fortuneTop, .tinkerTopContainer {
+#smithWorkingArea, #synthSide {
     margin: -10px -10px 10px -10px;
     padding: 10px;
     display: -webkit-box;
@@ -4891,183 +4891,93 @@ footer {
     color: var(--highlight);
 }
 
-.tinkerTopContainer {
-    flex-direction: column;
-    min-height: 50px;
+/* Tinker Building */ 
+
+.tinkerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 0 10px;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-primary);
 }
 
-.tinkerMaterialsContainer, .tinkerCommandsContainer, .tinkerSlotsContainer, .tinkerRangeContainer {
+.tinkerHeader > .actionButton {
+    margin: 0;
+}
+
+.tinkerCommandsContainer {
     display: grid;
-    grid-template: auto / repeat(auto-fill,minmax(150px, 1fr));
+    grid-template: auto / repeat(auto-fill,minmax(225px, 1fr));
     grid-gap: 5px;
     width: 100%;
     margin-top: 5px;
 }
 
-.tinkerMat {
+.tinkerCommand {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background: var(--bg-primary);
-    padding: 5px 10px;
-}
-
-.tinkerCommandsContainer, .tinkerSlotsContainer, .tinkerRangeContainer {
-    grid-template: auto / repeat(auto-fill,minmax(225px, 1fr));
-}
-
-.toggleStatus {
-    position: relative;
-    background-color: var(--bg-secondary);
-    border: 2px solid var(--border-tertiary);
-    border-radius: 20px;
-    height: 25px;
-    width: 50px;
-}
-
-.toggleCue {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    height: 70%;
-    width: 15px;
-    background: var(--text-tertiary);
-    border-radius: 20px;
-}
-
-.tinkerCommandEnable .toggleStatus {
-    border-color: var(--green-tertiary);
-}
-
-.tinkerCommandEnable .toggleCue {
-    background: var(--green-primary);
-    left: 28px;
+    padding: 10px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
 }
 
 .tinkerCommandName {
-    margin: 10px 0 0 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -10px -10px 0;
+    padding: 10px;
     color: var(--highlight);
-}
-
-.tinkerCommandHeader {
-    padding-bottom: 5px;
-    margin: 5px 0;
-    border-bottom: 2px solid var(--border-secondary);
-}
-
-.trinketCommandCost {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    margin: 5px 0;
-    color: var(--text-secondary);
-}
-
-.trinketCommandCost .indvCost {
-    color: var(--text-primary);
-}
-
-.trinketCommandReward {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--green-primary);
-}
-
-.tinkerCommandStat {
-    text-transform: uppercase;
-    background-color: var(--bg-secondary);
-    padding: 3px 10px;
-    border-radius: 5px;
-}
-
-.commandRewardTrinket {
-    margin-left: 5px;
-}
-
-.tinkerCommandDesc {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0;
-    padding: 5px 10px;
-    text-align: center;
-    color: var(--text-secondary);
     background-color: var(--bg-tertiary);
-    border-radius: 5px;
+    border-bottom: 2px solid var(--border-primary);
+    border-radius: 10px 10px 0 0;
 }
 
-.tinkerCommandDesc > img {
-    margin: 0 3px;
-    max-height: 24px;
+.tinkerBarsContainer {
+    display: grid;
+    grid-template: auto / 1;
+    grid-gap: 5px;
+    padding: 10px 0;
 }
 
-.tinkerCommandDesc > i {
-    margin: 0 3px;
-    color: var(--green-primary);
-    padding: 5px 8px;
-    font-size: 1.25rem;
-}
-
-.tinkerCommandRange {
-    margin: 5px 0 ;
-}
-
-.tinkerOptions {
-    margin-top: 15px;
-}
-
-.commandName {
-    color: var(--highlight);
+.tinkerCommandToggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     margin-bottom: 10px;
-}
-
-.commandStatus {
-    text-align: center;
-}
-
-.commandStatus > i {
-    margin-left: 5px;
-}
-
-.commandStatus.commandDisabled {
-    color: var(--text-tertiary);
-}
-
-.tinkerRange[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    border-radius: 15px;
-    width: 100%;
-    background-color: var(--bg-tertiary);
-    padding: 0;
-    margin: 10px 0 0;
+    padding: 5px 10px;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
+    color: var(--text-secondary);
     cursor: pointer;
 }
 
-.tinkerRange[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 20px;
-    width: 20px;
-    background-color: var(--highlight);
-    border: 1px solid var(--highlight);
-    border-radius: 100%;
-    cursor: grab;
-  }
-
-.tinkerRange[type="range"]::-moz-range-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 20px;
-    width: 20px;
-    background-color: var(--highlight);
-    border: 1px solid var(--highlight);
-    border-radius: 100%;
-    cursor: grab;
+.tinkerCommandToggle.toggleEnabled {
+    color: var(--green-primary);
 }
+
+.tinkerCommandToggle > span {
+    flex-grow: 1;
+}
+
+.tinkerCommandResearchCost {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.researchCostHeader {
+    margin: 10px 0 5px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+
+/* End Tinker Building */
 
 /* Monster Hall */
 
@@ -6908,7 +6818,6 @@ span.beta-tag {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(190px, 1fr));
     grid-gap: 5px;
-    padding: 0 5px;
 }
 
 .bankActionsButtons {

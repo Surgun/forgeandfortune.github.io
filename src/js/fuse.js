@@ -243,7 +243,7 @@ function refreshPossibleFuse() {
     // Possible Fusions Cards
     const d2 = $("<div/>").addClass('possibleFuseHolder');
     const rarities = ["rarity_common","rarity_good","rarity_great","rarity_epic"];
-    if(Inventory.getFusePossibilities().length === 0) $("<div/>").addClass("fuseInvBlank").html(displayText("fusion_possible_empty")).appendTo($fuseList);
+    if(Inventory.getFusePossibilities().length === 0) $("<div/>").addClass("emptyContentMessage").html(displayText("fusion_possible_empty")).appendTo($fuseList);
     if(Inventory.getFusePossibilities().length > 0) {
         Inventory.getFusePossibilities().forEach(f => {
             console.log(f)

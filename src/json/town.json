@@ -1,7 +1,7 @@
 [
   {
     "id": "TB001",
-    "name": "Magical Synthezier",
+    "name": "Magical Synthesizer",
     "description": "Harness the magical arts to transform your equipment.",
     "shorthand": "synth",
     "recipeID": "R99410"
@@ -16,7 +16,7 @@
   {
     "id": "TB003",
     "name": "Fusion Cabin",
-    "description": "Be come the master alchemist you always wanted.",
+    "description": "Become the master alchemist you've always wanted to be.",
     "shorthand": "fusion",
     "recipeID": "R99210"
   },

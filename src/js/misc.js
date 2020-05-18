@@ -20,7 +20,7 @@ class idAmt {
 }
 
 function formatToUnits(number, precision) {
-    const abbrev = ['', ' K', ' M', ' B', ' T', 'Q'];
+    const abbrev = ['', 'k', 'M', 'B', 'T', 'Q'];
     const unrangifiedOrder = Math.floor(Math.log10(Math.abs(number)) / 3)
     const order = Math.max(0, Math.min(unrangifiedOrder, abbrev.length -1 ))
     const suffix = abbrev[order];

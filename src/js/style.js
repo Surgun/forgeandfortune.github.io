@@ -72,8 +72,9 @@ function dbEnable() {
         const d4a = $("<div/>").addClass("addItemTitle").html("Add Item to Inventory");
         const d4b = $("<input/>").addClass("addItemName").attr("placeholder", "Item ID");
         const d4c = $("<input/>").addClass("addItemRarity").attr("placeholder", "Item Rarity");
-        const d4d = $("<button/>").addClass("addItemBtn dbActionButton").html("Add");
-    d4.append(d4a,d4b,d4c,d4d);
+        const d4d = $("<input/>").addClass("addItemSharp").attr("placeholder", "Item Sharp");
+        const d4e = $("<button/>").addClass("addItemBtn dbActionButton").html("Add");
+    d4.append(d4a,d4b,d4c,d4d,d4e);
 
     const d5 = $("<div/>").addClass("gearHeroesContainer dbActionContainer");
         const d5a = $("<div/>").addClass("gearHeroesTitle").html("Add Gear to Heroes");
@@ -122,6 +123,7 @@ $(document).on('click', '.dbActionButton', (e) => {
     const type = $(e.currentTarget).data("devToolType");
     if (type === "tutorialSkip") devtools.tutorialSkip();
     if (type === "godMode") devtools.godmode();
+    if (type === "uiux") devtools.designmode();
     if (type === "addMaterial") devtools.materials();
     if (type === "townUnlock") devtools.forceTown();
     if (type === "dungeonUnlock") devtools.dungeonUnlock();
@@ -151,9 +153,10 @@ $(document).on('click', '.gearHeroesBtn', (e) => {
 });
 
 $(document).on('click', '.addItemBtn', (e) => {
-    const itemName = (document.querySelector(".addItemName").value).toString();
-    const itemRarity = parseInt(document.querySelector(".addItemRarity").value);
-    devtools.addItem(itemName,itemRarity);
+    let itemName = (document.querySelector(".addItemName").value).toString();
+    let itemRarity = parseInt(document.querySelector(".addItemRarity").value);
+    let itemSharp = parseInt(document.querySelector(".addItemSharp").value);
+    devtools.addItem(itemName,itemRarity,itemSharp);
 });
 
 

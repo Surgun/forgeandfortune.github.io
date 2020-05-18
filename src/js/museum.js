@@ -137,7 +137,7 @@ function refreshMuseumTop() {
             $("<div/>").addClass("headingTitle").html(displayText("header_museum_item_types_title")).appendTo(headingDetails);
             $("<div/>").addClass("headingDescription").html(displayText("header_museum_item_types_desc")).appendTo(headingDetails);
     const museumItemTypesContainer = $("<div/>").addClass(`museumItemTypesContainer`).appendTo($museumRecipeTypes);
-    ItemType.forEach(type => {
+    ItemType.sort().forEach(type => {
         const d = $("<div/>").addClass("museumTypeDiv").data("recipeType",type).appendTo(museumItemTypesContainer);
         $("<div/>").addClass("museumTypeName").html(displayText(`type_${type}`)).appendTo(d);
         const percent = (Museum.completeByType(type)/44*100).toFixed(1)+"%";
@@ -207,14 +207,13 @@ function refreshMuseumInv() {
         $("<div/>").addClass("headingDescription").html(displayText("header_museum_donations_desc")).appendTo(headingDetails);
     const museumDonationCardsContainer = $("<div/>").addClass(`museumDonationCardsContainer`).appendTo($museumInv);
     if (donations.length === 0) {
-        $("<div/>").addClass("museumNoItems").html(displayText("museum_no_donations_message")).appendTo($museumInv);
+        $("<div/>").addClass("emptyContentMessage").html(displayText("museum_no_donations_message")).appendTo($museumInv);
         return;
     }
     Museum.possibleInventoryDonations().forEach(container => {
         createMuseumCard(container).appendTo(museumDonationCardsContainer);
     });
 }
-
 
 function createMuseumCard(container) {
     const d = $("<div/>").addClass("museumItem").addClass("R"+container.rarity);

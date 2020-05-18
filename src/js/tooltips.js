@@ -92,6 +92,10 @@ $(document).on("mouseleave", ".tooltip", (e) => {
   destroyTooltip(e);
 });
 
+$(document).on("mouseenter", ".tooltip-container", (e) => {
+  destroyTooltip(e);
+});
+
 function hashtagReplace(tooltip, id, html) {
   if (!html.includes("#")) return html;
   const start = html.indexOf("#");

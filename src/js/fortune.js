@@ -145,11 +145,21 @@ const FortuneManager = {
 
 const $fortuneStage = $("#fortuneStage");
 const $fortuneGear = $("#fortuneGear");
+const $fortuneHeading = $("#fortuneHeading");
 
 function initiateFortuneBldg () {
     $fortuneBuilding.show();
     refreshFortuneSlots();
+    generateFortuneHeader();
     refreshFortuneGear();
+}
+
+function generateFortuneHeader() {
+    $fortuneHeading.empty();
+    const fortuneOfferingsHeader = $("<div/>").addClass(`museumItemTypesHeader`).appendTo($fortuneHeading);
+    const headingDetails = $("<div/>").addClass("headingDetails").appendTo(fortuneOfferingsHeader);
+        $("<div/>").addClass("headingTitle").html(displayText("header_fortune_possible_title")).appendTo(headingDetails);
+        $("<div/>").addClass("headingDescription").html(displayText("header_fortune_possible_desc")).appendTo(headingDetails);
 }
 
 function refreshFortuneSlots() {
@@ -165,47 +175,64 @@ function refreshFortuneSlots() {
 
 function refreshFortuneGear() {
     $fortuneGear.empty();
+    if (Inventory.nonEpic().length === 0) {
+        $("<div/>").addClass("emptyContentMessage").html(displayText("fortune_possible_empty")).appendTo($fortuneGear);
+        return;
+    }
+    const fortuneCardsContainer = $("<div/>").addClass("fortuneCardsContainer").appendTo($fortuneGear);
     Inventory.nonEpic().forEach(container => {
-        $fortuneGear.append(createFortuneInv(container));
+        fortuneCardsContainer.append(createFortuneInv(container));
     });
 }
 
 function createFortuneInv(item) {
     const itemdiv = $("<div/>").addClass("fortuneItem").addClass("R"+item.rarity);
-    const itemName = $("<div/>").addClass("fortuneItemName itemName").html(item.picName());
-    const itemLevel = $("<div/>").addClass("fortuneItemLevel").html(item.itemLevel());
-    const fortuneButton = $("<div/>").addClass("fortuneStage").attr("containerID",item.containerID).html("Offer");
-    return itemdiv.append(itemName,itemLevel,fortuneButton);
+    const itemName = $("<div/>").addClass("itemName").html(item.picName());
+    const itemLevel = $("<div/>").addClass("itemLevel").html(item.itemLevel());
+    const itemRarity = $("<div/>").addClass(`itemRarity RT${item.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[item.rarity].toLowerCase()}`}).html(miscIcons.rarity);
+    const fortuneButton = $("<div/>").addClass("actionButtonCard fortuneStage").attr("containerID",item.containerID).html(displayText('fortune_possible_assign_button'));
+    return itemdiv.append(itemName,itemLevel,itemRarity,fortuneButton);
 }
 
 function createFortuneCard(slot) {
     const rarity = ["Common","Good","Great","Epic"];
     const itemdiv = $("<div/>").addClass("fortuneSlot").addClass("R"+slot.rarity);
-        $("<div/>").addClass("fortuneItemName itemName").html(slot.picName()).appendTo(itemdiv);
-        $("<div/>").addClass("fortuneItemLevel").html(slot.itemLevel()).appendTo(itemdiv);
-    $("<div/>").addClass("fortuneItemDesc").html(`2x ${rarity[slot.rarity+1]} Chance`).appendTo(itemdiv);
+        $("<div/>").addClass("itemName").html(slot.picName()).appendTo(itemdiv);
+        $("<div/>").addClass("itemLevel").html(slot.itemLevel()).appendTo(itemdiv);
+        $("<div/>").addClass(`itemRarity RT${slot.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[slot.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(itemdiv);
+    const rarityBonus = displayText('fortune_slot_rarity_chance').replace('{0}', '100%').replace('{1}', rarity[slot.rarity+1]);
+    $("<div/>").addClass("fortuneItemDesc").html(rarityBonus).appendTo(itemdiv);
     const cost = FortuneManager.getMaterialCost(slot);
-    const sacContainer = $("<div/>").addClass("fortuneItemSac").data("fortuneID",slot.slotid).appendTo(itemdiv);
-        $("<div/>").addClass("fortune_text").html(`Sacrifice for`).appendTo(sacContainer);
-        $("<div/>").addClass("fortune_cost tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":cost.id}).html(`${ResourceManager.idToMaterial(cost.id).img} ${cost.amt}`).appendTo(sacContainer);
-    $('<div/>').addClass("fortuneItemClose").data("fortuneID",slot.slotid).html(`<i class="fas fa-times"></i>`).appendTo(itemdiv);
+    const sacContainer = $("<div/>").addClass("actionButtonCardCost fortuneItemSac").data("fortuneID",slot.slotid).appendTo(itemdiv);
+        $("<div/>").addClass("actionButtonCardText").html(displayText('fortune_slot_confirm_button')).appendTo(sacContainer);
+        $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":cost.id}).html(`${ResourceManager.idToMaterial(cost.id).img} ${cost.amt}`).appendTo(sacContainer);
+    $('<div/>').addClass("fortuneItemClose tooltip").attr({"data-tooltip": "offering_remove"}).data("fortuneID",slot.slotid).html(`<i class="fas fa-times"></i>`).appendTo(itemdiv);
     return itemdiv;
 }
 
 function createFortuneCardLocked(slot) {
     const rarity = ["Common","Good","Great","Epic"];
     const itemdiv = $("<div/>").addClass("fortuneSlot").addClass("R"+(slot.rarity));
-        $("<div/>").addClass("fortuneItemName itemName").html(slot.picName()).appendTo(itemdiv);
-        $("<div/>").addClass("fortuneItemLevel").html(slot.itemLevel()).appendTo(itemdiv);
-    $("<div/>").addClass("fortuneItemDesc").html(`2x ${rarity[slot.rarity]} Chance`).appendTo(itemdiv);
-    $("<div/>").addClass("fortuneItemAmt").html(`${slot.amt} Crafts Left`).appendTo(itemdiv);
-    $('<div/>').addClass("fortuneItemSetClose").data("fortuneID",slot.slotid).html(`<i class="fas fa-times"></i>`).appendTo(itemdiv);
+        $("<div/>").addClass("itemName").html(slot.picName()).appendTo(itemdiv);
+        $("<div/>").addClass("itemLevel").html(slot.itemLevel()).appendTo(itemdiv);
+        $("<div/>").addClass(`itemRarity RT${slot.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[slot.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(itemdiv);
+    const rarityBonus = displayText('fortune_slot_rarity_chance').replace('{0}', '100%').replace('{1}', rarity[slot.rarity]);
+    $("<div/>").addClass("fortuneItemDesc").html(rarityBonus).appendTo(itemdiv);
+    $("<div/>").addClass("fortuneItemAmt").html(displayText('fortune_slot_crafts_remaining').replace('{0}',slot.amt)).appendTo(itemdiv);
+    $('<div/>').addClass("fortuneItemSetClose tooltip").attr({"data-tooltip": "fortune_remove"}).data("fortuneID",slot.slotid).html(`<i class="fas fa-times"></i>`).appendTo(itemdiv);
     return itemdiv;
 }
 
 function createFortuneBlank() {
-    const itemdiv = $("<div/>").addClass("fortuneSlot");
-        $("<div/>").addClass("fortuneSlotEmpty").html("Fortune Available").appendTo(itemdiv);
+    const itemdiv = $("<div/>").addClass("fortuneSlot fortuneSlotEmpty");
+        const itemName = $("<div/>").addClass("itemName").appendTo(itemdiv);
+            $("<div/>").addClass("fortuneSlotNameIcon").html(miscIcons.emptySlot).appendTo(itemName)
+            $("<div/>").addClass("fortuneSlotNameTitle").html(displayText("fortune_slot_empty")).appendTo(itemName)
+        $("<div/>").addClass("itemLevel").appendTo(itemdiv);
+        $("<div/>").addClass(`itemRarity`).appendTo(itemdiv);
+    const actionButton = $("<div/>").addClass("actionButtonCardCost").appendTo(itemdiv);
+        $("<div/>").addClass("actionButtonCardText").appendTo(actionButton);
+        $("<div/>").addClass("actionButtonCardValue").appendTo(actionButton);
     return itemdiv;
 }
 
@@ -230,6 +257,7 @@ $(document).on('click', '.fortuneItemClose', (e) => {
     const fortuneID = parseInt($(e.currentTarget).data("fortuneID"));
     FortuneManager.removeFortune(fortuneID);
     refreshFortuneSlots();
+    destroyTooltip();
 });
 
 $(document).on('click', '.fortuneItemSetClose', (e) => {
@@ -237,4 +265,5 @@ $(document).on('click', '.fortuneItemSetClose', (e) => {
     const fortuneID = parseInt($(e.currentTarget).data("fortuneID"));
     FortuneManager.removeLockedFortune(fortuneID);
     refreshFortuneSlots();
+    destroyTooltip();
 });

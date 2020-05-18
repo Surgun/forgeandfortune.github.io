@@ -229,7 +229,7 @@ function initializeGuilds() {
         const d1 = $("<div/>").addClass("guildListButton").data("gid",g.id).html(`${g.icon} ${g.name}`);
         if (GuildManager.lastClicked === g.id) d1.addClass("selected");
         d1.appendTo($guildList);
-        $(`#${g.id}Name`).html(`<h2>${g.name}</h2>`);
+        $(`#${g.id}Name`).html(`${g.name}`);
         $(`#${g.id}Desc`).html(g.description);
         if (!g.unlocked()) d1.hide();
     });

@@ -312,6 +312,11 @@ body {
     transition: all var(--transition_linear);     
 }
 
+.actionButtonCardCost:hover, 
+.actionButtonCardCost:focus {
+    background-color: var(--green-tertiary);
+}
+
 .actionButtonCardText {
     padding: 5px 0 2.5px;
 }
@@ -328,6 +333,15 @@ body {
 
 .actionButtonCardValue > i, .actionButtonCardValue > img {
     margin-right: 5px;
+}
+
+.emptyContentMessage {
+    padding: 10px;
+    color: rgb(255, 130, 130);
+    background-color: var(--bg-primary);
+    border-radius: 5px;
+    animation: fade-in var(--transition_linear);
+    box-shadow: var(--box-shadow);
 }
 
 .statValue, .goldValue {
@@ -1058,7 +1072,7 @@ footer {
     overflow: auto;
 }
 
-.marketContainer .guildSummary {
+.marketContainer {
     margin: 0;
 }
 
@@ -2607,32 +2621,20 @@ footer {
 }
 
 #guildList, #buildingList {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: var(--bg-primary);
-    border-right: 1px solid var(--border-primary);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
     max-width: 220px;
     height: 100%;
-    overflow: auto;
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    -webkit-animation: 0.15s scale-x-in forwards;
+    background-color: var(--bg-primary);
+    border-right: 2px solid var(--border-primary);
+    transform-origin: left;
     animation: 0.15s scale-x-in forwards;
+    overflow: auto;
 }
 
 .buildingName {
@@ -2643,6 +2645,7 @@ footer {
     border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
     cursor: pointer;
+    transition: all var(--transition_linear);
 }
 
 .guildListButton {
@@ -3153,7 +3156,9 @@ footer {
 }
 
 .emptyHeroSlot .emptyHeroSlotDescription {
-    padding: 10px 0;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     text-align: center;
 }
@@ -3441,8 +3446,8 @@ footer {
     border-radius: 5px;
 }
 
-.heroSelectSkill > img, .orderUnitSkill > img, .orderUnitPassive > img {
-    height: 20px;
+.heroSelectSkill > img, .orderUnitSkill > img, .orderUnitPassive > img, .buffContainerIcon > img {
+    height: 16px;
 }
 
 .heroUpgradesHeadingContainer {
@@ -3738,8 +3743,27 @@ footer {
 }
 
 @media screen and (max-width: 1670px) {
+    .heroInspectPreviewCardContainer {
+        flex-wrap: unset;
+        align-content: unset;
+        max-width: 300px;
+    }
+    .previewCardCycle {
+        order: unset;
+    }
     .heroExamineEquip {
         grid-template: auto / repeat(3, 190px);
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .heroInspectPreviewCardContainer {
+        flex-wrap: wrap;
+        align-content: center;
+        max-width: 225px;
+    }
+    .previewCardCycle {
+        order: -1;
     }
 }
 
@@ -3891,7 +3915,7 @@ footer {
     background: var(--gradient-primary);
 }
 
-/* Town & Buildings */
+/* Building Headers */
 
 #townContainer {
     height: 100%;
@@ -3899,54 +3923,16 @@ footer {
 }
 
 .buildingContentContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     height: 100%;
 }
 
 #buildingRecipes {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-}
-
-#buildingList {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    background-color: var(--bg-primary);
-    border-right: 1px solid var(--border-primary);
-    width: 100%;
-    max-width: 220px;
-    height: 100%;
-    overflow: auto;
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    -webkit-animation: 0.15s scale-x-in forwards;
-    animation: 0.15s scale-x-in forwards;
 }
 
 .buildingName > i {
@@ -3954,144 +3940,121 @@ footer {
 }
 
 #buildingContent {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
     height: 100%;
     overflow: auto;
-}
-
-.buildingInfo {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 20px 5px;
-    max-height: 200px;
-    background-color: var(--bg-tertiary);
-    border-bottom: 2px solid var(--border-primary);
-    overflow: hidden;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    -webkit-animation: 0.2s .15s fade-in forwards;
-    animation: 0.2s .15s fade-in forwards;
 }
 
 .buildingTab {
     display: none;
     padding: 10px;
     opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    -webkit-animation: 0.2s .15s fade-in forwards;
-    animation: 0.2s .15s fade-in forwards;
+    animation: 0.2s 0.2s fade-in forwards;
 }
 
-.buildingInfoImage, .buildingInfoName, .buildingInfoDesc, .guildName, .guildDesc {
-    min-width: 400px;
-    text-align: center;
+.buildingInfo, .guildSummary {
+    position: relative;
+    display: flex;
+    padding: 20px;
+    height: 200px;
+    background-color: var(--bg-tertiary);
+    border-bottom: 2px solid var(--border-primary);
+    overflow: hidden;
 }
 
 .buildingInfoBackground {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .buildingfusion .buildingInfoBackground {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/assets/images/townImages/fusionBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(68, 48, 40) 40%, rgb(68, 48, 40) 60%, transparent 100%), url(/assets/images/townImages/fusionBuilding/bg.png);
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/townImages/fusionBuilding/bg.png);
 }
 
 .buildingbank .buildingInfoBackground {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(57, 111, 39) 40%, rgb(57, 111, 39) 60%, transparent 100%), url(/assets/images/townImages/bankBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(57, 111, 39) 40%, rgb(57, 111, 39) 60%, transparent 100%), url(/assets/images/townImages/bankBuilding/bg.png);
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/townImages/bankBuilding/bg.png);
 }
 
 .buildingforge .buildingInfoBackground {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/assets/images/townImages/forgeBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(160, 111, 73) 40%, rgb(160, 111, 73) 60%, transparent 100%), url(/assets/images/townImages/forgeBuilding/bg.png);
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/townImages/forgeBuilding/bg.png);
 }
 
 .buildingfortune .buildingInfoBackground {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(65, 123, 48) 40%, rgb(65, 123, 48) 60%, transparent 100%), url(/assets/images/townImages/fortuneBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(65, 123, 48) 40%, rgb(65, 123, 48) 60%, transparent 100%), url(/assets/images/townImages/fortuneBuilding/bg.png);
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/townImages/fortuneBuilding/bg.png);
 }
 
 .buildingsynth .buildingInfoBackground {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/assets/images/townImages/synthBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(67, 121, 42) 40%, rgb(67, 121, 42) 60%, transparent 100%), url(/assets/images/townImages/synthBuilding/bg.png);
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/townImages/synthBuilding/bg.png);
 }
 
 .buildingtinker .buildingInfoBackground {
-    background: -webkit-linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/assets/images/townImages/tinkerBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/assets/images/townImages/tinkerBuilding/bg.png);
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/townImages/tinkerBuilding/bg.png);
 }
 
-.buildingmonster .buildingInfoBackground {
-    background: -webkit-linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/assets/images/townImages/monsterBuilding/bg.png);
-    background: linear-gradient(to right, transparent 0%, rgb(144, 160, 155) 40%, rgb(144, 160, 155) 60%, transparent 100%), url(/assets/images/townImages/monsterBuilding/bg.png);
-}
-
-.buildingInfoImage {
-    text-align: center;
-}
-
-.buildingInfoImage > img {
-    max-height: 100px;
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="5" /><feOffset dx="1" dy="1" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,1)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
-    -webkit-filter: drop-shadow(0 0 5px black);
-            filter: drop-shadow(0 0 5px black)
-}
-
-.buildingInfoName {
-    display: inline-block;
-    color: var(--text-primary);
-    z-index: 1;
-}
-
-.buildingInfoName:after, .guildName:after {
-    display: block;
-    content: "";
-    position: relative;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    margin: 5px auto;
-    background-color: var(--highlight);
-    -webkit-animation: 1s 0.3s width forwards;
-            animation: 1s 0.3s width forwards;
-}
-
-.buildingInfoName > h2 {
-    margin: 0;
-    font-size: 32px;
-    font-size: 2rem;
-    font-weight: normal;
-    text-shadow: 2px 2px 0 black;
-}
-
-.buildingInfoDesc, .guildDesc {
-    padding: 5px 10px;
-    z-index: 1;
+.buildingmuseum .buildingInfoBackground {
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/townImages/museumBuilding/bg.png);
 }
 
 .buildInProgress .buildingInfoBackground {
-    -webkit-filter: grayscale(1);
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
     filter: grayscale(1);
 }
 
-#smithInvSlots, #smithHeroSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleSynthHolder, #fortuneGear, .fortuneStageContainer, .smithActionsContainer {
+.buildingInfoImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-tertiary);
+    border-radius: 50%;
+    overflow: hidden;
+    transform: scale(0);
+    animation: 0.3s 0.2s scale-in forwards;
+    z-index: 1;
+}
+
+.buildingInfoImage > img {
+    height: 100px;
+}
+
+.buildingInfoDetails {
+    margin-left: -50px;
+    width: 100%;
+    max-width: 300px;
+    opacity: 0;
+    animation: 1s 0.35s buildingInfoSlideRight forwards;
+}
+
+.buildingInfoName, .guildName {
+    padding: 10px;
+    color: var(--highlight);
+    border-bottom: 2px solid var(--border-tertiary);
+}
+
+.buildingInfoDesc, .guildDesc {
+    padding: 10px;
+}
+
+@keyframes buildingInfoSlideRight {
+    from {
+        opacity: 0;
+        margin-left: -50px;
+    } to {
+        opacity: 1;
+        margin-left: 0;
+    }
+}
+
+/* End Building Headers */
+
+
+
+
+#smithInvSlots, #smithHeroSlots, #smithWorkingArea, .EquipmentCardsContainer, .possibleSynthHolder, .smithActionsContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
@@ -4344,15 +4307,6 @@ footer {
     margin-right: 5px;
 }
 
-.fuseInvBlank {
-    padding: 10px;
-    color: rgb(255, 130, 130);
-    background-color: var(--bg-primary);
-    border-radius: 5px;
-    animation: fade-in var(--transition_linear);
-    box-shadow: var(--box-shadow);
-}
-
 /* End Fusion Building */
 
 .smithItemLevel, .inventoryItemLevel, .recipeItemLevel, .equipLevel, .equipItemLevel, .WorkerLvl, .heroLevel, .gearItemLevel, .workerBuyCardLevel, .synthLevel, .fortuneItemLevel, .itemLevel {
@@ -4491,70 +4445,6 @@ footer {
             align-items: center;
 }
 
-.smith_title {
-    width: 100%;
-}
-
-#swConfirm:hover, #swCollect:hover, #fortuneSetButton:hover, .fortuneStatusButton:hover, .fuseSlotCollect:hover, .buyBuildingBP:hover, .WorkerUpgrade:hover, .buyNewWorkerButton:hover, .buyNewHeroButton:hover, .ASBuySlotButton:hover, .recipeBuyCardBuy:hover, .workerBuyCardBuy:hover, .alPerkBuy:hover, .guildOrderSubmit:hover, .fuseStart:hover, .synthPowerEnabled,  .synthPowerEnabled:hover, #synthSlotCollect:hover, #collectResmith:hover, .eventActionButton:hover, .dreCollect:hover, .smithButton:hover, .lineRewardPay:hover {
-    background-color: var(--green-tertiary);
-}
-
-#swConfirm, .smith_cost, #fortuneSetButton, .fortune_cost, .fortuneStatusButton, .deeper_cost, .buyBuildingBP, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .recipeBuyCardBuyCost, .guildOrderSubmitValue, #collectResmith, .lineRewardPayCost {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.smith_cost, .fortune_cost, .deeper_cost, .buybp_cost, .worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .recipeBuyCardBuyCost, .guildOrderSubmitValue, .lineRewardPayCost {
-    position: relative;
-    margin-top: 5px;
-    padding: 5px;
-    width: 100%;
-    background-color: rgba(0,0,0,.2);
-    border-radius: 5px;
-}
-
-.smith_cost {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    width: unset;
-    margin: 5px 2.5px 0;
-}
-
-.smith_cost > img, .fortune_cost > img, .deeper_cost > img, .buybp_cost > img, > img, .recipeBuyCardBuyCost > img, .guildOrderSubmitValue > img, .lineRewardPayCost > img, .recipeMasteryGuildButton > img {
-    margin: 0 5px;
-}
-
-.worker_cost, .unlockbp_cost, .buyWorkerCost, .buyHeroCost, .ASBuySlotCost, .lineRewardPayCost {
-    margin-top: 0;
-    max-width: 120px;
-}
-
-#swSuccess, .recipeBuyCardBuy {
-    margin-top: 10px;
-    text-align: center;
-}
-
-#smithInvSlots {
-    margin-bottom: 20px;
-}
-
-.smithInvBlank, .synthBlank {
-    padding: 0 5px;
-    color: var(--text-tertiary);
-}
-
-.smithInvBlank {
-    margin-bottom: 15px;
-}
-
-.smithItemLocation {
-    font-size: .85rem;
-    margin-bottom: 10px;
-    color: var(--highlight);
-}
 
 /* Forge Building */ 
 
@@ -4670,127 +4560,124 @@ footer {
     border-radius: 5px;
 }
 
-#fortuneWeek {
-    font-size: 1.1em;
+/* Fortune Building */
+
+.fortuneStageContainer, .fortuneCardsContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(190px, 1fr));
+    grid-gap: 10px;
+}
+
+.fortuneSlot {
+    min-height: 240px;
+}
+
+.fortuneItemDesc {
+    padding: 10px 0;
+    font-size: 0.85rem;
     text-align: center;
-    color: var(--highlight);
-}
-
-#fortuneWeek:after {
-    content: "";
-    display: block;
-    margin: 10px auto;
-    width: 100%;
-    max-width: 800px;
-    height: 2px;
-    background-color: var(--border-secondary);
-}
-
-#fortuneSetButton, .buyBuildingBP {
-    margin: 15px auto 0;
-    max-width: 200px;
-}
-
-.fortuneSetHead {
-    text-align: center;
-}
-
-.fortuneStatusContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-}
-
-.fortuneStatus {
-    margin: 10px;
-    min-width: 210px;
-    min-height: 185px;
-}
-
-.fortuneStatusHeading, .fortuneStatusType {
-    margin-bottom: 10px;
-}
-
-.fortuneStatusHeading > i {
-    font-size: 2em;
-    margin-bottom: 5px;
-}
-
-.fortuneStatus.fortuneGood > .fortuneStatusHeading {
-    color: rgb(44, 255, 89);
-}
-
-.fortuneStatus.fortuneGreat > .fortuneStatusHeading {
-    color: rgb(8, 173, 255);
-}
-
-.fortuneStatus.fortuneEpic > .fortuneStatusHeading {
-    color: rgb(255, 79, 167);
-}
-
-.fortuneStatusType {
-    padding: 5px 10px;
-    color: var(--highlight);
-    background-color: var(--bg-tertiary);
-    border-radius: 5px;
-}
-
-#fortuneStart {
-    color: var(--highlight);
-}
-
-.fortuneStageContainer {
-    margin-bottom: 15px;
-}
-
-.fortuneSlotEmpty {
     color: var(--green-primary);
-    padding: 0 5px;
+}
+
+.fortuneItemAmt {
+    margin-top: auto;
+    padding: 10px;
+    width: 100%;
+    font-size: 0.85rem;
+    text-align: center;
+    color: var(--highlight);
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
 }
 
 .fortuneItemClose, .fortuneItemSetClose {
     position: absolute;
-    top: 5px;
-    right: 5px;
-    padding: 5px 8px;
-    background-color: rgba(255,255,255,0.05);
-    border-radius: 5px;
+    top: -5px;
+    right: -5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--border-primary);
+    border: 2px solid var(--border-secondary);
+    border-radius: 50%;
+    transition: var(--transition_linear);
+    box-shadow: 0 2px 0 0 rgba(0,0,0,.25);
+    transform: scale(0);
     cursor: pointer;
 }
 
 .fortuneItemClose:hover, .fortuneItemSetClose:hover {
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: var(--button-cancel);
+    border-color: var(--button-cancel-border);
 }
 
-.fortuneItemDesc {
-    margin-bottom: 10px;
-    color: var(--highlight);
+.fortuneSlot:hover .fortuneItemClose, .fortuneSlot:hover .fortuneItemSetClose {
+    transform: scale(1);
 }
 
-.fortuneSlotsContainer {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-    margin: 0 10px;
-    max-width: 200px;
+.fortuneSlotEmpty {
+    opacity: .75;
+    background-color: var(--bg-secondary);
+    border-color: var(--bg-primary);
 }
+
+.fortuneSlotEmpty .itemName {
+    margin-bottom: auto;
+    opacity: 0.75;
+}
+
+.fortuneSlotEmpty .fortuneSlotNameIcon {
+    padding: 10px;
+    height: 56px;
+    width: 56px;
+    background-color: rgba(0,0,0,0.25);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+}
+
+.fortuneSlotEmpty .fortuneSlotNameIcon > i {
+    font-size: 2rem;
+    opacity: .1;
+}
+
+.fortuneSlotEmpty .fortuneSlotNameTitle {
+    margin-top: 5px;
+    color: var(--text-secondary);
+}
+
+.fortuneSlotEmpty .itemLevel {
+    width: 37.5px;
+    height: 38px;
+    opacity: .45;
+}
+
+.fortuneSlotEmpty .itemRarity {
+    width: 37.5px;
+    height: 38px;
+    opacity: .45;
+}
+
+.fortuneSlotEmpty .actionButtonCardCost {
+    opacity: .45;
+}
+
+.fortuneSlotEmpty .actionButtonCardCost:hover {
+    background-color: var(--button-primary);
+    cursor: default;
+}
+
+.fortuneSlotEmpty .actionButtonCardText {
+    height: 27.5px;
+}
+
+.fortuneSlotEmpty .actionButtonCardValue {
+    height: 30px;
+}
+
+/* End Fortune Building */ 
 
 #buildingMats {
     background-color: var(--bg-primary);
@@ -5861,6 +5748,21 @@ span.beta-tag {
     }
 }
 
+@keyframes bounce-scale-in {
+    0% {
+        transform: scale(0);
+    }
+    30% {
+        transform: scale(1.10);
+    }
+    60% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    } 
+}
+
 @keyframes point-right {
     0% {
         left: 0;
@@ -6622,7 +6524,7 @@ span.beta-tag {
 }
 
 .heroDead .dfcImage, .mobDead .dfmImage {
-    opacity: 0.5;
+    opacity: 0.25;
 }
 
 .heroDead .dfcName, .mobDead .dfmName {
@@ -6762,10 +6664,6 @@ span.beta-tag {
     margin-bottom: 2.5px;
 }
 
-.buffContainerIcon > img {
-    height: 20px;
-}
-
 .buffContainerCount {
     width: 100%;
     background-color: rgba(0,0,0,0.1);
@@ -6874,6 +6772,7 @@ span.beta-tag {
     transition: all 200ms ease-in-out;
     animation: 0.2s fade-in;
     user-select: none;
+    pointer-events: all;
 }
 
 .destroyingTooltip {
@@ -7017,15 +6916,6 @@ span.beta-tag {
     width: 100%;
 }
 
-.bankInventoryEmpty, .bankStorageEmpty {
-    padding: 10px;
-    color: rgb(255, 130, 130);
-    background-color: var(--bg-primary);
-    border-radius: 5px;
-    animation: fade-in var(--transition_linear);
-    box-shadow: var(--box-shadow);
-}
-
 /* End Bank Building */
 
 /* Museum Building */
@@ -7135,15 +7025,6 @@ span.beta-tag {
 .museumButtons {
     margin-top: 10px;
     width: 100%;
-}
-
-.museumNoItems {
-    padding: 10px;
-    color: rgb(255, 130, 130);
-    background-color: var(--bg-primary);
-    border-radius: 5px;
-    animation: fade-in var(--transition_linear);
-    box-shadow: var(--box-shadow);
 }
 
 .museumContributionsActions {

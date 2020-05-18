@@ -9,6 +9,34 @@ const devtools = {
         this.forceTown();
         this.dungeonUnlock();
     },
+    designmode() {
+        this.tutorialSkip();
+        this.materials();
+        this.forceTown();
+        this.addGold(100000000);
+        // Unlock all recipes and mastered some
+        recipeList.recipes.forEach(recipe => recipe.owned = true);
+        recipeList.recipes.map((recipe, i) => {
+            if (i < 50) recipe.mastered = true
+        });
+        refreshCraftedCount();
+        // Buy 13 perks from each perk line
+        const perkCatergories = ['Crafting','Dungeon','Town'];
+        perkCatergories.forEach(pCat => {
+            Shop.perks.filter(perk => perk.category === pCat).forEach((perk, i) => {
+                if (i < 13) Shop.buyPerk(perk.id);
+            });
+        });
+        // Add some different state items to inventory
+        for (let i = 0; i < 3; i++) {
+            devtools.addItem();
+            devtools.addItem("R11001", 1);
+            devtools.addItem("R11001", 2);
+            devtools.addItem("R11001", 3);
+        }
+        devtools.addItem("R5505", 3, 10);
+        Inventory.sortInventory();
+    },
     tutorialSkip() {
         recipeList.idToItem("R13001").craftCount = 1;
         achievementStats.totalGoldEarned = 1;
@@ -30,8 +58,9 @@ const devtools = {
     speed(amt) {
         player.timeWarp = amt;
     },
-    addItem(itemID, rarity) {
+    addItem(itemID="R13001",rarity=0,sharp=0) {
         const container = new itemContainer(itemID,rarity);
+        container.sharp = sharp;
         Inventory.addToInventory(container,false);
     },
     gearHeroes(lvl=1,rarity=0,sharp=0) {

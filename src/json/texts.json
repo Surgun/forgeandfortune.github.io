@@ -370,6 +370,51 @@
     "es": null
   },
   {
+    "tid": "header_fortune_possible_title",
+    "en": "Fortune Offerings Available",
+    "es": null
+  },
+  {
+    "tid": "header_fortune_possible_desc",
+    "en": "You can offer up the following items for a fortune.",
+    "es": null
+  },
+  {
+    "tid": "fortune_possible_empty",
+    "en": "You currently have no items available to offer.",
+    "es": null
+  },
+  {
+    "tid": "fortune_slot_rarity_chance",
+    "en": "+{0} Base {1} Rarity Chance",
+    "es": null
+  },
+  {
+    "tid": "fortune_slot_available",
+    "en": "Fortune Available",
+    "es": null
+  },
+  {
+    "tid": "fortune_slot_confirm_button",
+    "en": "Confirm Offering",
+    "es": null
+  },
+  {
+    "tid": "fortune_possible_assign_button",
+    "en": "Assign Offering",
+    "es": null
+  },
+  {
+    "tid": "fortune_slot_crafts_remaining",
+    "en": "{0} Crafts Remaining",
+    "es": null
+  },
+  {
+    "tid": "fortune_slot_empty",
+    "en": "No Active Fortune",
+    "es": null
+  },
+  {
     "tid": "museum_nav_collections",
     "en": "Collection",
     "es": null

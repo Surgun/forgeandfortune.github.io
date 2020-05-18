@@ -135,14 +135,16 @@ function showBldg(type) {
     $(`#${type}Building`).addClass("bldgTabActive");
     $buildingHeader.empty();
     $buildBuilding.hide();
+
     const d = $("<div/>").addClass(`buildingInfo building${building.shorthand}`);
     const da = $("<div/>").addClass("buildingInfoBackground");
     const db = $("<div/>").addClass("buildingInfoImage").html("<img src='/assets/images/recipes/noitem.png'>")
     if (building.getStatus() === BuildingState.built) db.html(`<img src='/assets/images/townImages/${building.shorthand}Building/${building.shorthand}_building.png'>`);
-    const dc = $("<div/>").addClass("buildingInfoName").html(`<h2>${building.name}</h2>`);
-    const dd = $("<div/>").addClass("buildingInfoDesc").html(building.description);
+    const dc = $("<div/>").addClass("buildingInfoDetails");
+        $("<div/>").addClass("buildingInfoName").html(building.name).appendTo(dc);
+        $("<div/>").addClass("buildingInfoDesc").html(building.description).appendTo(dc);
     if (building.getStatus() !== BuildingState.built) d.addClass("buildInProgress");
-    d.append(da,db,dc,dd);
+    d.append(da,db,dc);
     $buildingHeader.append(d);
     const upper = building.shorthand.replace(/^\w/, c => c.toUpperCase());
     const buildingText = `initiate${upper}Bldg`;

@@ -164,23 +164,23 @@ function createTinkerCommand(command) {
     const d2 = $("<div/>").addClass("tinkerCommandCostContainer").appendTo(d);
         const researchCost = $("<div/>").addClass("tinkerCommandResearchCost").attr("id","tcrc"+command.id).appendTo(d2);
             $("<div/>").addClass("researchCostHeader").html(displayText('tinker_command_research_cost')).appendTo(researchCost);
-            $("<div/>").addClass("researchCostValue actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": command.paidGoldAmt()}).html(`${miscIcons.gold} ${command.paidGoldAmt()}`).appendTo(researchCost);
+            $("<div/>").addClass("researchCostValue actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(command.paidGoldAmt())}).html(`${miscIcons.gold} ${formatToUnits(command.paidGoldAmt(),2)}`).appendTo(researchCost);
         const completeButton = $("<div/>").addClass("completeCommand actionButtonCardCost").attr("id","tcc"+command.id).data("cid",command.id).appendTo(d2);
             $("<div/>").addClass("actionButtonCardText").html(displayText('tinker_command_research_complete')).appendTo(completeButton);
-            $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": command.completeCost()}).html(`${miscIcons.gold} ${command.completeCost()}`).appendTo(completeButton);
+            $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(command.completeCost())}).html(`${miscIcons.gold} ${formatToUnits(command.completeCost(),2)}`).appendTo(completeButton);
     return d;
 }
 
 function refreshTrinketCompleteCost(command) {
     const completeButton = $("#tcc"+command.id).empty();
         $("<div/>").addClass("actionButtonCardText").html(displayText('tinker_command_research_complete')).appendTo(completeButton);
-        $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": command.completeCost()}).html(`${miscIcons.gold} ${command.completeCost()}`).appendTo(completeButton);
+        $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(command.completeCost())}).html(`${miscIcons.gold} ${formatToUnits(command.completeCost(),2)}`).appendTo(completeButton);
 }
 
 function refreshTrinketResearchCost(command) {
     const researchCost = $("#tcrc"+command.id).empty();
         $("<div/>").addClass("researchCostHeader").html(displayText('tinker_command_research_cost')).appendTo(researchCost);
-        $("<div/>").addClass("researchCostValue actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": command.paidGoldAmt()}).html(`${miscIcons.gold} ${command.paidGoldAmt()}`).appendTo(researchCost);
+        $("<div/>").addClass("researchCostValue actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(command.paidGoldAmt())}).html(`${miscIcons.gold} ${formatToUnits(command.paidGoldAmt(),2)}`).appendTo(researchCost);
 }
 
 function createTinkerProgressBar(command) {
@@ -189,7 +189,7 @@ function createTinkerProgressBar(command) {
     const commandBarWidth = (commandBarPercent*100).toFixed(1)+"%";
     const options = {
         prefix: "commandTime",
-        tooltip: "commandTime",
+        tooltip: "research_time",
         icon: miscIcons.commandTime,
         text: commandBarText,
         textID: "cb"+command.id,
@@ -213,7 +213,7 @@ function createTinkerLvlBar(command) {
     const commandBarText = `Level ${command.lvl} (${commandBarWidth})`;
     const options = {
         prefix: "commandProgress",
-        tooltip: "commandProgress",
+        tooltip: "research_level",
         icon: miscIcons.commandProgress,
         text: commandBarText,
         textID: "cbp"+command.id,

@@ -4956,6 +4956,11 @@ footer {
     border-radius: 5px;
     color: var(--text-secondary);
     cursor: pointer;
+    transition: all var(--transition_linear);
+}
+
+.tinkerCommandToggle:hover {
+    color: var(--text-primary);
 }
 
 .tinkerCommandToggle.toggleEnabled {

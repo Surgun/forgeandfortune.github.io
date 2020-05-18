@@ -196,6 +196,20 @@
     "type": "static"
   },
   {
+    "id": "research_time",
+    "title": "Research Time",
+    "description": "The amount of time needed to increment this trinket research.",
+    "icon": "<i class=\"far fa-stopwatch\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "research_level",
+    "title": "Research Level",
+    "description": "The level of this trinket research.",
+    "icon": "<i class=\"fas fa-spinner\"></i>",
+    "type": "static"
+  },
+  {
     "id": "skill_desc",
     "title": "#name#",
     "description": "#description#</br><span class=\"tooltipStat tooltipPower\"><i class=\"fad fa-sword statPOW\"></i> #powerPercent#</span>",

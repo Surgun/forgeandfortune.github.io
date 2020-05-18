@@ -113,7 +113,7 @@
     "description": "Unlocks the third Crafting Slot.",
     "category": "Crafting",
     "order": 10,
-    "goldCost": 8000,
+    "goldCost": 30000,
     "type": "craft",
     "subtype": null,
     "unlockReq": "D402",

@@ -241,6 +241,19 @@ function loadMuseum() {
             const reward = new MuseumReward(props);
             Museum.addReward(reward);
         });
+        loadQuest();
+        preloader.setMessage('Feeding the hamsters...');
+    });
+}
+
+function loadQuest() {
+    $.ajax({
+        url: "json/quest.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            //const quest = new Quest(props);
+            //QuestManager.addQuest(quest);
+        });
         afterLoad();
         preloader.setMessage('Finalizing your progress...');
     });

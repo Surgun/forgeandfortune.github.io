@@ -150,12 +150,11 @@ function createALperk(perk,name) {
         $("<div/>").addClass("alBossBeat").html("Beat next boss to unlock!").appendTo(d1);
         return d1;
     }
-    const d5 = $("<div/>").addClass("alPerkBuy").data("pid",perk.id).appendTo(d1);
+    const d5 = $("<div/>").addClass("alPerkBuy actionButtonCardCost").data("pid",perk.id).appendTo(d1);
         if (!perk.canBuy()) d5.addClass("cannotAfford");
         else d5.removeClass("cannotAfford");
-        $("<div/>").addClass("alPerkBuyText").html("Purchase").appendTo(d5);
-        const d5a = $("<div/>").addClass("alPerkBuyCost").appendTo(d5);
-            $("<div/>").addClass("buyCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(perk.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(perk.goldCost,2)}`).appendTo(d5a);
+        $("<div/>").addClass("actionButtonCardText").html(displayText('market_perk_purchase_button')).appendTo(d5);
+        $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(perk.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(perk.goldCost,2)}`).appendTo(d5);
     return d1;
 }
 

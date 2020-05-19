@@ -1102,6 +1102,7 @@ footer {
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
+    box-shadow: var(--box-shadow);
 }
 
 .alTitle, .purchasedPerkTitle {
@@ -1169,55 +1170,6 @@ footer {
     border: 5px solid var(--border-tertiary);
     box-shadow: 0 3px 0 0 rgba(0,0,0,.25);
     z-index: 1;
-}
-
-.alPerkBuy {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: auto;
-    padding: 8px 10px;
-    width: 100%;
-    color: var(--text-primary);
-    text-align: center;
-    background-color: rgba(255,255,255,.05);
-    border-radius: 5px;
-    transition: all var(--transition_linear);
-    cursor: pointer;
-}
-
-.alPerkBuy.cannotAfford, .alPerkBuy.cannotAfford:hover, .alPerkBuy.cannotAfford:focus {
-    background-color: rgba(255, 0, 0, 0.1);
-}
-
-.alPerkBuyText {
-    width: 100%;
-}
-
-.alPerkBuyCost {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.buyCost {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 1px;
-    flex-grow: 1;
-    margin: 5px 2.5px 0;
-    padding: 8px 10px;
-    white-space: nowrap;
-    background-color: rgba(0,0,0,.2);
-    border-radius: 5px;
-}
-
-.buyCost > img {
-    margin-right: 5px;
 }
 
 /* End Market */
@@ -2171,18 +2123,13 @@ footer {
     width: 100%;
 }
 
-.recipeContents, .brecipeTable {
+.recipeContents, .buildingCardContainer {
     display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(275px, 1fr));
     grid-auto-rows: auto;
     grid-gap: 10px;
     margin: 10px 20px 10px 10px;
-}
-
-.brecipeTable {
-    margin: 10px 40px 10px 10px;
-    grid-template: auto / repeat(auto-fill, minmax(275px, 1fr));
 }
 
 /* Recipes - Recipe Cards */
@@ -2288,8 +2235,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.85rem;
+    flex-grow: 2;
+    margin-right: 10px;
     color: var(--text-secondary);
+    font-size: 0.85rem;
     background-color: var(--bg-tertiary);
     border-radius: 5px;
 }
@@ -2334,9 +2283,7 @@ footer {
 }
 
 .recipeCountAndCraft {
-    display: grid;
-    grid-template: 1fr / 2fr 1fr;
-    grid-gap: 10px;
+    display: flex;
 }
 
 .brecipeTable .recipeCountAndCraft {
@@ -2376,12 +2323,13 @@ footer {
 }
 
 .recipeCraft {
-    margin-top: auto;
-    padding: 8px 5px;
-    width: 100%;
-    background-color: var(--green-secondary);
+    flex-grow: 1;
+    margin: auto 0 0 auto;
+    padding: 5px 10px;
     color: var(--text-primary);
     text-align: center;
+    background-color: var(--green-secondary);
+    border: 2px solid var(--green-tertiary);
     border-radius: 5px;
     cursor: pointer;
     transition: all var(--transition_linear);
@@ -3915,9 +3863,9 @@ footer {
     background: var(--gradient-primary);
 }
 
-/* Building Headers */
+/* Town & Building Headers */
 
-#townContainer {
+.townContainer {
     height: 100%;
     overflow: auto;
 }
@@ -3927,19 +3875,24 @@ footer {
     height: 100%;
 }
 
-#buildingRecipes {
+.buildingRecipes {
+    padding: 10px;
+}
+
+.buildingCardContainer {
+    margin: 10px 0;
+}
+
+.buildingCardHeader {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-primary);
+    animation: fade-in var(--transition_linear);
 }
 
-.buildingName > i {
-    margin-right: 5px;
-}
-
-#buildingContent {
+.buildingContent {
     flex-grow: 1;
     height: 100%;
     overflow: auto;
@@ -4950,7 +4903,6 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 10px;
     padding: 5px 10px;
     background-color: var(--bg-secondary);
     border-radius: 5px;
@@ -5953,35 +5905,6 @@ span.beta-tag {
 @media screen and (min-width: 1250px) {
     .back-to-top:hover {
         color: var(--highlight);
-    }
-}
-
-/* For desktop/laptop screens with enough width to display vertical recipe filter listing */
-@media screen and (max-width: 1308px) {
-    .recipeFilterList {
-        max-width: 170px;
-    }
-
-    .recipeContents {
-        grid-template: auto / repeat(auto-fill, minmax(265px, 1fr));
-    }
-
-    .recipeContents .itemCost {
-        display: -ms-grid;
-        display: grid;
-        grid-template: 1fr 1fr / repeat(auto-fill, minmax(50px, 1fr));
-    }
-
-    .recipeCountAndCraft {
-        grid-template: 1fr / 3fr 1fr;
-    }
-
-    .recipeCraft > span {
-        display: none;
-    }
-
-    .brecipeTable .recipeCraft > span {
-        display: inline;
     }
 }
 

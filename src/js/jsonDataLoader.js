@@ -9,6 +9,17 @@ function loadMisc() {
                 miscLoadedValues[name] = val;
             })
         });
+        loadGlobalTexts();
+    });
+}
+
+let globalTexts = null;
+
+function loadGlobalTexts() {
+    $.ajax({
+        url: "json/texts.json",
+    }).done((data) => {
+        globalTexts = Object.values(data)
         loadPatchnotes();
     });
 }
@@ -21,20 +32,10 @@ function loadPatchnotes() {
             const patch = new PatchNote(props);
             PatchManager.addPatch(patch,true);
         });
-        loadGlobalTexts();
-    });
-}
-
-let globalTexts = null;
-
-function loadGlobalTexts() {
-    $.ajax({
-        url: "json/texts.json",
-    }).done((data) => {
-        globalTexts = Object.values(data)
         loadMaterials();
     });
 }
+
 
 function loadMaterials() {
     $.ajax({
@@ -45,6 +46,7 @@ function loadMaterials() {
             ResourceManager.addNewMaterial(material);
         });
         loadRecipes();
+        preloader.setMessage('Gathering materials...');
     });
 }
 
@@ -132,6 +134,7 @@ function loadGuilds() {
             GuildManager.addGuild(guild);
         });
         loadPerks();
+        preloader.setMessage('Assembling the guilds...');
     });
 }
 
@@ -205,6 +208,7 @@ function loadTown() {
             TownManager.addBuilding(building);
         });
         loadDialogs();
+        preloader.setMessage('Constructing buildings...');
     });
 }
 
@@ -242,7 +246,6 @@ function loadMuseum() {
             Museum.addReward(reward);
         });
         loadQuest();
-        preloader.setMessage('Feeding the hamsters...');
     });
 }
 

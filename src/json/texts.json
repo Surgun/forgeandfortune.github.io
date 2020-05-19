@@ -270,6 +270,16 @@
     "es": null
   },
   {
+    "tid": "header_building_construct_title",
+    "en": "Construct Building",
+    "es": null
+  },
+  {
+    "tid": "header_building_construct_desc",
+    "en": "Unlock this building by crafting the recipe below.",
+    "es": null
+  },
+  {
     "tid": "bank_nav_inventory",
     "en": "Your Inventory",
     "es": null
@@ -577,6 +587,31 @@
   {
     "tid": "museum_reward_purchase_plural",
     "en": "Purchase ({0} Points)",
+    "es": null
+  },
+  {
+    "tid": "header_market_perks_available_title",
+    "en": "Available Perks",
+    "es": null
+  },
+  {
+    "tid": "header_market_perks_available_desc",
+    "en": "Perks you can purchase from the Market.",
+    "es": null
+  },
+  {
+    "tid": "header_market_perks_purchased_title",
+    "en": "Purchased Perks",
+    "es": null
+  },
+  {
+    "tid": "header_market_perks_purchased_desc",
+    "en": "Perks you have already purchased from the Market.",
+    "es": null
+  },
+  {
+    "tid": "market_perk_purchase_button",
+    "en": "Purchase",
     "es": null
   }
 ]

@@ -177,14 +177,18 @@ $(document).on('click', ".buildingName", (e) => {
 
 function buildScreen(type) {
     $buildingRecipes.empty();
+    // Building Card Header
+    const buildingCardHeader = $("<div/>").addClass(`buildingCardHeader`).appendTo($buildingRecipes);
+        const headingDetails = $("<div/>").addClass("headingDetails").appendTo(buildingCardHeader);
+            $("<div/>").addClass("headingTitle").html(displayText("header_building_construct_title")).appendTo(headingDetails);
+            $("<div/>").addClass("headingDescription").html(displayText("header_building_construct_desc")).appendTo(headingDetails);
+    // Building Card
     TownManager.lastType = type;
+    const buildingCardContainer = $("<div/>").addClass("buildingCardContainer").appendTo($buildingRecipes);
     recipeList.recipes.filter(r=>r.type===type).forEach(recipe => {
         const recipeCardInfo = $('<div/>').addClass('recipeCardInfo').append(recipeCardFront(recipe),recipeCardBack(recipe))
         const recipeCardContainer = $('<div/>').addClass('recipeCardContainer buildingCard').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardInfo);
-        $buildingRecipes.append(recipeCardContainer);
+        buildingCardContainer.append(recipeCardContainer);
     });
-    const d5 = $("<div/>").addClass("buildingInstr");
-        $("<div/>").addClass("buildingInstrHead").html("Instruction").appendTo(d5);
-        $("<div/>").addClass("buildingInstrDesc").html("Construct the building recipe to unlock this building permanently!").appendTo(d5);
-    $buildingRecipes.append(d5);
+    
 }

@@ -132,7 +132,7 @@ function initiateMuseumBldg() {
 function refreshMuseumTop() {
     $museumTop.hide();
     $museumRecipeTypes.empty().show();
-    const museumItemTypesHeader = $("<div/>").addClass(`museumItemTypesHeader`).appendTo($museumRecipeTypes);
+    const museumItemTypesHeader = $("<div/>").addClass(`contentHeader`).appendTo($museumRecipeTypes);
         const headingDetails = $("<div/>").addClass("headingDetails").appendTo(museumItemTypesHeader);
             $("<div/>").addClass("headingTitle").html(displayText("header_museum_item_types_title")).appendTo(headingDetails);
             $("<div/>").addClass("headingDescription").html(displayText("header_museum_item_types_desc")).appendTo(headingDetails);
@@ -173,7 +173,7 @@ function showMuseumRewards() {
     $museumTop.hide();
     $museumRewards.empty().show();
 
-    const museumRewardsHeader = $("<div/>").addClass(`museumItemTypesHeader`).appendTo($museumRewards);
+    const museumRewardsHeader = $("<div/>").addClass(`contentHeader`).appendTo($museumRewards);
     const headingDetails = $("<div/>").addClass("headingDetails").appendTo(museumRewardsHeader);
         $("<div/>").addClass("headingTitle").html(displayText("header_museum_reward_points_title")).appendTo(headingDetails);
         $("<div/>").addClass("headingDescription").html(displayText("header_museum_reward_points_desc")).appendTo(headingDetails);
@@ -201,7 +201,7 @@ function showMuseumRewards() {
 function refreshMuseumInv() {
     $museumInv.empty();
     const donations = Museum.possibleInventoryDonations();
-    const museumDonationsHeader = $("<div/>").addClass(`museumItemTypesHeader`).appendTo($museumInv);
+    const museumDonationsHeader = $("<div/>").addClass(`contentHeader`).appendTo($museumInv);
     const headingDetails = $("<div/>").addClass("headingDetails").appendTo(museumDonationsHeader);
         $("<div/>").addClass("headingTitle").html(displayText("header_museum_donations_title")).appendTo(headingDetails);
         $("<div/>").addClass("headingDescription").html(displayText("header_museum_donations_desc")).appendTo(headingDetails);

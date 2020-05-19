@@ -119,17 +119,31 @@ const shopDivs = [
 
 function refreshShop() {
     $purchasePerks.empty();
+    // Perks Available Header
+    const perksAvailableHeader = $("<div/>").addClass(`contentHeader`).appendTo($purchasePerks);
+    const perksAvailableHeadingDetails = $("<div/>").addClass("headingDetails").appendTo(perksAvailableHeader);
+        $("<div/>").addClass("headingTitle").html(displayText("header_market_perks_available_title")).appendTo(perksAvailableHeadingDetails);
+        $("<div/>").addClass("headingDescription").html(displayText("header_market_perks_available_desc")).appendTo(perksAvailableHeadingDetails);
+    // Perks Available Cards
+    const perksAvailableCardsContainer = $("<div/>").addClass(`perksAvailableCardsContainer`).appendTo($purchasePerks);
     shopDivs.forEach(type => {
         const perks = Shop.nextUnlocks(type);
         if (perks.canPurchase === undefined) return;
-        $purchasePerks.append(createALperk(perks.canPurchase,type));
+        perksAvailableCardsContainer.append(createALperk(perks.canPurchase,type));
     })
     const boughtPerks = Shop.boughtPerks();
     if (boughtPerks.length > 0) {
         $purchasedPerks.show();
         $boughtPerks.empty();
+        // Perks Purchased Header
+        const perksPurchasedHeader = $("<div/>").addClass(`contentHeader`).appendTo($boughtPerks);
+        const perksPurchasedHeadingDetails = $("<div/>").addClass("headingDetails").appendTo(perksPurchasedHeader);
+            $("<div/>").addClass("headingTitle").html(displayText("header_market_perks_purchased_title")).appendTo(perksPurchasedHeadingDetails);
+            $("<div/>").addClass("headingDescription").html(displayText("header_market_perks_purchased_desc")).appendTo(perksPurchasedHeadingDetails);
+        // Perks Purchased Cards
+        const perksPurchasedCardsContainer = $("<div/>").addClass(`perksPurchasedCardsContainer`).appendTo($boughtPerks);
         boughtPerks.forEach(perk => {
-            createPurchasedperk(perk).appendTo($boughtPerks);
+            createPurchasedperk(perk).appendTo(perksPurchasedCardsContainer);
         });
     }
     else $purchasedPerks.hide();

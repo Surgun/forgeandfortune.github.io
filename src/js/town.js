@@ -178,7 +178,7 @@ $(document).on('click', ".buildingName", (e) => {
 function buildScreen(type) {
     $buildingRecipes.empty();
     // Building Card Header
-    const buildingCardHeader = $("<div/>").addClass(`buildingCardHeader`).appendTo($buildingRecipes);
+    const buildingCardHeader = $("<div/>").addClass(`contentHeader`).appendTo($buildingRecipes);
         const headingDetails = $("<div/>").addClass("headingDetails").appendTo(buildingCardHeader);
             $("<div/>").addClass("headingTitle").html(displayText("header_building_construct_title")).appendTo(headingDetails);
             $("<div/>").addClass("headingDescription").html(displayText("header_building_construct_desc")).appendTo(headingDetails);

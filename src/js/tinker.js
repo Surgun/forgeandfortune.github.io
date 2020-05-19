@@ -137,7 +137,7 @@ function refreshTinkerCommands() {
 
 function generateTinkerHeader() {
     $tinkerTopContainer.empty();
-    const tinkerHeader = $("<div/>").addClass(`tinkerHeader`).appendTo($tinkerTopContainer);
+    const tinkerHeader = $("<div/>").addClass(`contentHeader tinkerHeader`).appendTo($tinkerTopContainer);
         const headingDetails = $("<div/>").addClass("headingDetails").appendTo(tinkerHeader);
             $("<div/>").addClass("headingTitle").html(displayText("header_tinker_research_title")).appendTo(headingDetails);
             $("<div/>").addClass("headingDescription").html(displayText("header_tinker_research_desc")).appendTo(headingDetails);

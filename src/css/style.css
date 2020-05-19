@@ -335,6 +335,16 @@ body {
     margin-right: 5px;
 }
 
+.contentHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 10px 0;
+    padding: 10px;
+    border-bottom: 2px solid var(--border-primary);
+    animation: fade-in var(--transition_linear); 
+}
+
 .emptyContentMessage {
     padding: 10px;
     color: rgb(255, 130, 130);
@@ -1080,10 +1090,10 @@ footer {
     display: grid;
     grid-template: auto / 1fr;
     grid-gap: 10px;
-    padding: 10px;
+    padding: 0 10px 10px;
 }
 
-.perkTypeContainer {
+.perksAvailableCardsContainer, .perksPurchasedCardsContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, 250px);
     grid-gap: 10px;
@@ -2640,24 +2650,13 @@ footer {
 }
 
 .guildSummary {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: -10px -10px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     height: 200px;
     background-color: var(--bg-tertiary);
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(84, 127, 139) 40%, rgb(84, 127, 139) 60%, transparent 100%), url(/assets/images/guildImages/default.png);
     background: linear-gradient(to right, transparent 0%, rgb(84, 127, 139) 40%, rgb(84, 127, 139) 60%, transparent 100%), url(/assets/images/guildImages/default.png);
     border-bottom: 2px solid var(--border-primary);
 }
@@ -3883,15 +3882,6 @@ footer {
     margin: 10px 0;
 }
 
-.buildingCardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 10px;
-    border-bottom: 2px solid var(--border-primary);
-    animation: fade-in var(--transition_linear);
-}
-
 .buildingContent {
     flex-grow: 1;
     height: 100%;
@@ -4847,12 +4837,7 @@ footer {
 /* Tinker Building */ 
 
 .tinkerHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin: 0 0 10px;
-    padding: 10px;
-    border-bottom: 2px solid var(--border-primary);
+    margin-top: 0;
 }
 
 .tinkerHeader > .actionButton {
@@ -4864,7 +4849,6 @@ footer {
     grid-template: auto / repeat(auto-fill,minmax(225px, 1fr));
     grid-gap: 5px;
     width: 100%;
-    margin-top: 5px;
 }
 
 .tinkerCommand {
@@ -6801,21 +6785,10 @@ span.beta-tag {
     background-color: var(--highlight);
 }
 
-.museumItemTypesHeader, .museumDonationsHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin: 10px 0;
-    padding: 10px;
-    border-bottom: 2px solid var(--border-primary);
-    animation: fade-in var(--transition_linear);
-}
-
 .museumItemTypesContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 5px;
-    margin-bottom: 10px;
 }
 
 .museumTypeDiv {

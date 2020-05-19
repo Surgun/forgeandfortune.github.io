@@ -156,7 +156,7 @@ function initiateFortuneBldg () {
 
 function generateFortuneHeader() {
     $fortuneHeading.empty();
-    const fortuneOfferingsHeader = $("<div/>").addClass(`museumItemTypesHeader`).appendTo($fortuneHeading);
+    const fortuneOfferingsHeader = $("<div/>").addClass(`contentHeader`).appendTo($fortuneHeading);
     const headingDetails = $("<div/>").addClass("headingDetails").appendTo(fortuneOfferingsHeader);
         $("<div/>").addClass("headingTitle").html(displayText("header_fortune_possible_title")).appendTo(headingDetails);
         $("<div/>").addClass("headingDescription").html(displayText("header_fortune_possible_desc")).appendTo(headingDetails);

@@ -46,6 +46,7 @@ class Party {
 
 const PartyCreator = {
     heroes : [],
+    areaSelectType : "adventure",
     dungeonSelect : null,
     areaSelect : null,
     mobPartyHidden: true,

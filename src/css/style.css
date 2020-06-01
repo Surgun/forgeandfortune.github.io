@@ -1641,7 +1641,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 15px;
+    padding: 10px 12.5px;
 }
 
 .tabLinkName {
@@ -3875,7 +3875,7 @@ footer {
 }
 
 .buildingRecipes {
-    padding: 10px;
+    padding: 0 10px 10px;
 }
 
 .buildingCardContainer {

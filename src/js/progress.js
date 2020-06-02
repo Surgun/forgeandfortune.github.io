@@ -12,6 +12,13 @@ const $pbPerk = $("#pbPerk");
 const $plOverall = $("#plOverall");
 const $pbOverall = $("#pbOverall");
 
+const $progresslist = $("#progresslist");
+
+function initiateMilestoneBldg() {
+    $progresslist.show();
+    refreshProgress();
+}
+
 function refreshProgress() {
     //big progress boxes
     let tally = 0;

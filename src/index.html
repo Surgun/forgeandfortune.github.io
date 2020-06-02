@@ -118,6 +118,12 @@
                             <span class="tabLinkName">Adventures</span>
                         </div>
                     </button>
+                    <button class="tablinks" id="questTabLink" onclick="openTab('questsTab')">
+                        <div id="questTab">
+                            <i class="fas fa-map-signs"></i>
+                            <span class="tabLinkName">Quests</span>
+                        </div>
+                    </button>
                     <button class="tablinks" id="townTabLink" onclick="openTab('townsTab')">
                         <div id="townTab">
                             <i class="fas fa-city"></i>
@@ -128,12 +134,6 @@
                         <div id="marketsTab">
                             <i class="fas fa-store"></i>
                             <span class="tabLinkName" id="marketTabSpan">Market</span>
-                        </div>
-                    </button>
-                    <button class="tablinks" id="progressTabLink" onclick="openTab('progressTab')">
-                        <div>
-                            <i class="fas fa-tasks"></i>
-                            <span class="tabLinkName">Progress</span>
                         </div>
                     </button>
                 </div>
@@ -544,6 +544,18 @@
                         </div>
                     </div>
                 </div>
+                <div id="questsTab" class="tabcontent">
+                    <div class="questContainer">
+                        <div class="questHeader">
+                            <div class="questIcon">
+                                <i class="fas fa-map-signs"></i>
+                            </div>
+                            <div class="questHeaderMain">Questing Locations</div>
+                            <div class="questHeaderSub">Select a quest for your heroes to partake on</div>
+                        </div>
+                        <div id="questLocations"></div>
+                    </div>
+                </div>
                 <div id="townsTab" class="tabcontent">
                     <div id="townContainer" class="townContainer">
                         <div id="emptyTown"><i class="fas fa-question"></i> The town looks empty - except for your Shop, of course. Perhaps the Action League can help with that?</div>
@@ -633,6 +645,78 @@
                                         <div id="museumInv" class="museumInvContainers"></div>
                                     </div>
                                 </div>
+                                <div id="milestoneBuilding" class="buildingTab">
+                                    <div id="progresslist">
+                                        <div id="progress_container">
+                                            <h3 class="progress-section-title">Progress Tracker</h3>
+                                            <div class="progressRecipe"><h2>Bosses Beat</h2><p class="progress-desc">Your progress for bosses beat.</p><span id="plBoss">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbBoss"></span></div></div>
+                                            <div class="progressRecipe"><h2>Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/300</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
+                                            <div class="progressRecipe"><h2>Perks Bought</h2><p class="progress-desc"> Your progress for Action League perks bought.</p><span id="plPerk">0/60</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbPerk"></span></div></div>
+                                            <div class="progressOverall"><h2>Overall</h2><p class="progress-desc">Your overall game progress.</p><span id="plOverall">0%</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbOverall"></span></div></div>
+                                        </div>
+                                        <div id="achievements">
+                                            <h3 id="db-init" class="progress-section-title">Statistics</h3>
+                                            <div class="stat-box-container">
+                 
+                                                <div class="statBox">
+                                                    <div class="statHeading">Groovy Grove Floor Reached</div>
+                                                    <div class="statNormal" id="statMaxFloorD001">?</div>
+                                                </div>
+                
+                                                <div class="statBox">
+                                                    <div class="statHeading">Spooky Spot Floor Reached</div>
+                                                    <div class="statNormal" id="statMaxFloorD002">?</div>
+                                                </div>
+                
+                                                <div class="statBox">
+                                                    <div class="statHeading">Creepy Crag Floor Reached</div>
+                                                    <div class="statNormal" id="statMaxFloorD003">?</div>
+                                                </div>
+                
+                                                <div class="statBox">
+                                                    <div class="statHeading">Total Floors Beaten</div>
+                                                    <div class="statNormal" id="statFloors">?</div>
+                                                </div>
+                                                <div class="statBox">
+                                                    <div class="statHeading">Total Gold Earned</div>
+                                                    <div class="statNormal" id="statTotalGoldEarned">?</div>
+                                                </div>
+                                                <div class="statBox">
+                                                    <div class="statHeading">Total Items Crafted</div>
+                                                    <div class="statNormal" id="statTotalItems">?</div>
+                                                </div>
+                                                <div class="statBox">
+                                                    <div class="statHeading">Total Commons Crafted</div>
+                                                    <div class="statNormal" id="statCommons">?</div>
+                                                </div>
+                                                <div class="statBox">
+                                                    <div class="statHeading">Total Goods Crafted</div>
+                                                    <div class="statNormal" id="statGoods">?</div>
+                                                </div>
+                                                <div class="statBox">
+                                                    <div class="statHeading">Total Greats Crafted</div>
+                                                    <div class="statNormal" id="statGreats">?</div> 
+                                                </div>
+                                                <div class="statBox">
+                                                    <div class="statHeading">Total Epics Crafted</div>
+                                                    <div class="statNormal" id="statEpics">?</div>
+                                                </div>
+                                                <div class="statBox">
+                                                    <div class="statHeading">Time Played</div>
+                                                    <div class="statNormal" id="statTimePlayed">?</div>
+                                                </div>
+                                                <div class="statBox">
+                                                    <div class="statHeading">Total Game Time</div>
+                                                    <div class="statNormal" id="gameTime">?</div>
+                                                </div>
+                                                <div class="statBox">
+                                                    <div class="statHeading">Completion Time</div>
+                                                    <div class="statNormal"id="completeTime">Achieve 100% Overall to complete!</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -649,78 +733,6 @@
                             </div>
                             <div class="shopPerks purchasedPerks">
                                 <div id="boughtPerks" class="perkTypeContainer"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="progressTab" class="tabcontent">
-                    <div id="progresslist">
-                        <div id="progress_container">
-                            <h3 class="progress-section-title">Progress Tracker</h3>
-                            <div class="progressRecipe"><h2>Bosses Beat</h2><p class="progress-desc">Your progress for bosses beat.</p><span id="plBoss">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbBoss"></span></div></div>
-                            <div class="progressRecipe"><h2>Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/300</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
-                            <div class="progressRecipe"><h2>Perks Bought</h2><p class="progress-desc"> Your progress for Action League perks bought.</p><span id="plPerk">0/60</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbPerk"></span></div></div>
-                            <div class="progressOverall"><h2>Overall</h2><p class="progress-desc">Your overall game progress.</p><span id="plOverall">0%</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbOverall"></span></div></div>
-                        </div>
-                        <div id="achievements">
-                            <h3 id="db-init" class="progress-section-title">Statistics</h3>
-                            <div class="stat-box-container">
- 
-                                <div class="statBox">
-                                    <div class="statHeading">Groovy Grove Floor Reached</div>
-                                    <div class="statNormal" id="statMaxFloorD001">?</div>
-                                </div>
-
-                                <div class="statBox">
-                                    <div class="statHeading">Spooky Spot Floor Reached</div>
-                                    <div class="statNormal" id="statMaxFloorD002">?</div>
-                                </div>
-
-                                <div class="statBox">
-                                    <div class="statHeading">Creepy Crag Floor Reached</div>
-                                    <div class="statNormal" id="statMaxFloorD003">?</div>
-                                </div>
-
-                                <div class="statBox">
-                                    <div class="statHeading">Total Floors Beaten</div>
-                                    <div class="statNormal" id="statFloors">?</div>
-                                </div>
-                                <div class="statBox">
-                                    <div class="statHeading">Total Gold Earned</div>
-                                    <div class="statNormal" id="statTotalGoldEarned">?</div>
-                                </div>
-                                <div class="statBox">
-                                    <div class="statHeading">Total Items Crafted</div>
-                                    <div class="statNormal" id="statTotalItems">?</div>
-                                </div>
-                                <div class="statBox">
-                                    <div class="statHeading">Total Commons Crafted</div>
-                                    <div class="statNormal" id="statCommons">?</div>
-                                </div>
-                                <div class="statBox">
-                                    <div class="statHeading">Total Goods Crafted</div>
-                                    <div class="statNormal" id="statGoods">?</div>
-                                </div>
-                                <div class="statBox">
-                                    <div class="statHeading">Total Greats Crafted</div>
-                                    <div class="statNormal" id="statGreats">?</div> 
-                                </div>
-                                <div class="statBox">
-                                    <div class="statHeading">Total Epics Crafted</div>
-                                    <div class="statNormal" id="statEpics">?</div>
-                                </div>
-                                <div class="statBox">
-                                    <div class="statHeading">Time Played</div>
-                                    <div class="statNormal" id="statTimePlayed">?</div>
-                                </div>
-                                <div class="statBox">
-                                    <div class="statHeading">Total Game Time</div>
-                                    <div class="statNormal" id="gameTime">?</div>
-                                </div>
-                                <div class="statBox">
-                                    <div class="statHeading">Completion Time</div>
-                                    <div class="statNormal"id="completeTime">Achieve 100% Overall to complete!</div>
-                                </div>
                             </div>
                         </div>
                     </div>

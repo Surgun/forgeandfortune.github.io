@@ -47,5 +47,12 @@
     "description": "Let us know if you have items to donate.",
     "shorthand": "museum",
     "recipeID": "R99810"
+  },
+  {
+    "id": "TB009",
+    "name": "Hall of Milestones",
+    "description": "A list of all of your accomplishments",
+    "shorthand": "milestone",
+    "recipeID": "R99910"
   }
 ]

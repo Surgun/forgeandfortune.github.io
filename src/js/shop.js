@@ -87,6 +87,7 @@ class Perk {
         if (this.type === "tinker" && this.subtype === "open") TownManager.buildingPerk("tinker");
         if (this.type === "tinker" && this.subtype === "level") TinkerManager.addLevel();
         if (this.type === "museum" && this.subtype === "open") TownManager.buildingPerk("museum");
+        if (this.type === "milestone" && this.subtype === "open") TownManager.buildingPerk("milestone");
     }
     createSave() {
         const save = {};

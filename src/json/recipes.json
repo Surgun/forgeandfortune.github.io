@@ -5234,6 +5234,35 @@
     "recipeType": null
   },
   {
+    "id": "R99910",
+    "name": "Hall of Milestones",
+    "description": "A list of all of your achievements",
+    "lvl": 1,
+    "value": 0,
+    "craftTime": 3000,
+    "type": "milestone",
+    "gcost": [
+      "G001"
+    ],
+    "mcost": {
+      "M101": 100,
+      "M201": 100,
+      "M301": 100
+    },
+    "smithCost": null,
+    "pts": null,
+    "pow": 0,
+    "hp": 0,
+    "guildUnlock": null,
+    "goldCost": null,
+    "repReq": null,
+    "deconType": null,
+    "minMastery": null,
+    "maxMastery": null,
+    "reductionMastery": null,
+    "recipeType": "milestone"
+  },
+  {
     "id": "R90001",
     "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",

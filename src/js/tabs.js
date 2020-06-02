@@ -27,6 +27,9 @@ function openTab(tabName) {
         $marketTabSpan.removeClass("hasEvent");
         refreshShop();
     }
+    if (tabName === "questsTab") {
+        refreshQuestLocations();
+    }
     $(".tabcontent").hide();
     $("#"+tabName).show();
 }
@@ -85,10 +88,10 @@ $(document).on( "keypress", (e) => {
         else if (e.which === 51) tabClick(e, "recipesTab");
         else if (e.which === 52) tabClick(e, "heroesTab");
         else if (e.which === 53) tabClick(e, "dungeonsTab");
-        else if (e.which === 54) tabClick(e, "townsTab");
-        else if (e.which === 55) tabClick(e, "marketTab");
-        else if (e.which === 56) tabClick(e, "eventsTab");
-        else if (e.which === 57) tabClick(e, "progressTab");
+        else if (e.which === 54) tabClick(e, "questsTab");
+        else if (e.which === 55) tabClick(e, "townsTab");
+        else if (e.which === 56) tabClick(e, "marketTab");
+        else if (e.which === 57) tabClick(e, "eventsTab");
     }
 });
 

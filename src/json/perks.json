@@ -736,12 +736,12 @@
   },
   {
     "id": "AL3001",
-    "title": "Progress Tracker",
-    "description": "Unlocks the Progress Tracking Page.  This will tell you how far you are in the game.",
+    "title": "Hall of Milestones",
+    "description": "Unlocks the Hall of Milestones.  This will tell you how far you are in the game.",
     "category": "Town",
     "order": 2,
     "goldCost": 850,
-    "type": "progress",
+    "type": "museum",
     "subtype": "open",
     "unlockReq": null,
     "icon": "<i class=\"fas fa-tasks\"></i>"

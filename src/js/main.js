@@ -66,7 +66,6 @@ function mainLoop() {
     actionSlotVisualManager.updateSlots();
     PatchManager.patchTimer(elapsedTime);
     TinkerManager.addTime(elapsedTime);
-    QuestManager.addTime(elapsedTime);
     if (TownManager.purgeSlots) {
         actionSlotManager.removeBldgSlots();
         TownManager.purgeSlots = false;

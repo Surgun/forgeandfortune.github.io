@@ -13,11 +13,7 @@ a group...
 
 //tabs
 const $dungeonSelect = $("#dungeonSelect");
-const $adventureTabContent = $(".adventureTabContent");
 const $areaSelect = $("#areaSelect");
-const $bossSelect = $("#bossSelect");
-const $questSelect = $("#questSelect");
-const $adventureTabs = $("#adventureTabs");
 const $areaTeamSelect = $("#areaTeamSelect");
 const $dungeonRun = $("#dungeonRun");
 const $dungeonRewards = $("#dungeonRewards");
@@ -28,28 +24,10 @@ const $DungeonSideBarTeam = $("#DungeonSideBarTeam");
   -     AREA SELECT CODE    -
   ---------------------------*/
 
-  //this is what goes off when you check the 
 function dungeonsTabClicked() {
     DungeonManager.dungeonView = null;
     AreaManager.areaView = null;
-    //adventure tabs
-    $adventureTabs.empty();
-    $("<div/>").addClass("adventureTabNav").html("Areas").appendTo($adventureTabs);
-    if (Shop.alreadyPurchased("AL20051")) $("<div/").addClass("adventureTabNav").html("Boss Realm").appendTo($adventureTabs);
-    else $("<div/").addClass("adventureTabNav").html(`${miscIcons.lock} Locked`).appendTo($adventureTabs);
-    if (Shop.alreadyPurchased("AL2024")) $("<div/").addClass("adventureTabNav").html("Quests").appendTo($adventureTabs);
-    else $("<div/").addClass("adventureTabNav").html(`${miscIcons.lock} Locked`).appendTo($adventureTabs);
-    //show appropriate content for what's checked
-    $adventureTabContent.hide();
-    if (PartyCreator.areaSelectType === "adventure") {
-        $areaSelect.show();
-    }
-    else if (PartyCreator.areaSelectType === "boss") {
-        $bossSelect.show();
-    }
-    else if (PartyCreator.areaSelectType === "quest") {
-        $questSelect.show();
-    }
+    $areaSelect.show();
     $areaTeamSelect.hide();
     $dungeonRun.hide();
     $dungeonRewards.hide();
@@ -58,8 +36,8 @@ function dungeonsTabClicked() {
 }
 
 function generateAreaSelect() {
-    // Area Header
     $areaSelect.empty();
+    // Area Header
     const adventureAreaHeaderContainer = $("<div/>").addClass(`dungeonListingsHeadingContainer`).prependTo($areaSelect);
     const adventureAreaHeader = $("<div/>").addClass(`dungeonListingsHeading`).appendTo(adventureAreaHeaderContainer);
         $("<div/>").addClass("headingIcon").html('<i class="fas fa-swords"></i>').appendTo(adventureAreaHeader);
@@ -69,15 +47,6 @@ function generateAreaSelect() {
     $("<div/>").addClass("dungeonAbandonAll actionButton").attr({id: "dAbandonAll"}).html(displayText("adventure_dungeon_abandon_all")).appendTo(adventureAreaHeaderContainer);
     // Area Listings
     $("<div/>").addClass("areaListings").attr({id: "areaListings"}).appendTo($areaSelect);
-    if (!QuestManager.unlocked) return;
-    //Quests
-    const questHeaderContainer = $("<div/>").addClass(`questListingsHeadingContainer`).prependTo($areaSelect);
-    const questAreaHeader = $("<div/>").addClass(`dungeonListingsHeading`).appendTo(questHeaderContainer);
-        $("<div/>").addClass("headingIcon").html('<i class="fas fa-swords"></i>').appendTo(questAreaHeader);
-    const questDetails = $("<div/>").addClass("headingDetails").appendTo(questHeaderContainer);
-        $("<div/>").addClass("headingTitle").html("Quests Available").appendTo(questDetails);
-    //Quest Listings
-    $("<div/>").addClass("questistings").attr({id: "questListings"}).appendTo($areaSelect);
 }
 
 function refreshAreaSelect() {
@@ -86,15 +55,6 @@ function refreshAreaSelect() {
         if (!area.unlocked()) return;
         createAreaBlock(area).appendTo($("#areaListings"));
     });
-}
-
-function refreshQuestSelect() {
-    if (!QuestManager.unlocked) return;
-    const $questListings = $("#questListings");
-    $questListings.empty();
-    QuestManager.unlockedQuests().forEach(quest => {
-        createQuestBlock(quest).appendTo($questListings);
-    })
 }
 
 function createAreaBlock(area) {
@@ -111,21 +71,6 @@ function createAreaBlock(area) {
         });
     }
     return d;    
-}
-
-function createQuestBlock(quest) {
-    const d = $("<div/>").addClass("questContainer").data("questID",quest.id);
-    $("<div/>").addClass("questHeader").html(quest.name).appendTo(d);
-    if (quest.state === "idle") $("<div/>").addClass("questStatus").html("Available").appendTo(d);
-    else if (quest.state === "complete") $("<div/>").addClass("questStatus").html("Collect").appendTo(d);
-    else {
-        const d1 = $("<div/>").addClass("questAdventurers").appendTo(d);
-        quest.heroes().forEach(h=> {
-            $("<div/>").addClass("questHero").html(h.head).appendTo(d1);
-        });
-        $("<div/>").addClass("questTime").html("0:00").appendTo(d);
-    }
-    return d;
 }
 
 //click on a dungeon to start making a team!

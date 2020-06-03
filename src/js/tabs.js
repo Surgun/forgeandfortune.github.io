@@ -99,6 +99,7 @@ const $heroesTabLink = $("#heroesTabLink");
 const $dungeonsTabLink = $("#dungeonsTabLink");
 const $progressTabLink = $("#progressTabLink");
 const $guildTabLink = $("#guildTabLink");
+const $questTabLink = $("#questTabLink");
 const $inventoryTabLink = $("#inventoryTabLink");
 const $inventoryTabSpan = $("#inventoryTabSpan");
 const $marketTabLink = $("#marketTabLink");
@@ -119,4 +120,6 @@ function tabHide() {
     else $guildTabLink.hide();
     if (achievementStats.totalGoldEarned > 0) $marketTabLink.show();
     else $marketTabLink.hide();
+    if (QuestManager.unlocked) $questTabLink.show();
+    else $questTabLink.show();
 }

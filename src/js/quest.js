@@ -44,11 +44,13 @@ class Quest {
 
 const QuestManager = {
     quests : [],
+    unlocked: false,
     addQuest(quest) {
         this.quests.push(quest);
     },
     createSave() {
         const save = {};
+        save.unlocked = this.unlocked;
         save.quests = [];
         this.quests.forEach(quest => {
             save.quests.push(quest.createSave());
@@ -56,6 +58,7 @@ const QuestManager = {
         return save;
     },
     loadSave(save) {
+        save.unlocked = this.unlocked;
         save.quests.forEach(questSave => {
             const quest = this.idToQuest(questSave.id);
             quest.loadSave(questSave);
@@ -67,11 +70,10 @@ const QuestManager = {
     addTime(ms) {
         this.quests.forEach(q=>q.addTime(ms));
     },
-    available
+    available() {
+        return this.quests;
+    }
 }
-
-
-
 
 function refreshQuestLocations() {
     $questLocations.empty();
@@ -85,5 +87,7 @@ function createQuestContainer(quest) {
     $("<div/>").addClass("questName").html(quest.name).appendTo(d);
     $("<div/>").addClass("questDesc").html(quest.description).appendTo(d);
     const d1 = $("<div/>").addClass("questReq").html("Requirements:").appendTo(d);
-    
+    $("<div/>").addClass("questReqStat").html(`${miscIcons.pow} ${quest.powReq} ${miscIcons.hp} ${quest.hpReq}`).appendTo(d1);
+    $("<div/>").addClass("questTime").html(`${miscIcons.time} ${msToTime(quest.timeReq)}`);
+    return d;    
 }

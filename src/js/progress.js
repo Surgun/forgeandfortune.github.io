@@ -15,7 +15,7 @@ const $pbOverall = $("#pbOverall");
 const $progresslist = $("#progresslist");
 
 function initiateMilestoneBldg() {
-    $progresslist.show();
+    $("#milestoneBuilding").show();
     refreshProgress();
 }
 

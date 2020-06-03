@@ -88,6 +88,7 @@ class Perk {
         if (this.type === "tinker" && this.subtype === "level") TinkerManager.addLevel();
         if (this.type === "museum" && this.subtype === "open") TownManager.buildingPerk("museum");
         if (this.type === "milestone" && this.subtype === "open") TownManager.buildingPerk("milestone");
+        if (this.type === "quest" && this.subtype === "open") QuestManager.unlocked = true;
     }
     createSave() {
         const save = {};

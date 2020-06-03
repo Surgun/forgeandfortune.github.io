@@ -127,6 +127,7 @@ const miscIcons = Object.freeze({
     commandProgress: `<i class="fas fa-spinner"></i>`,
     toggleOn: `<i class="fas fa-toggle-on"></i>`,
     toggleOff: `<i class="fas fa-toggle-off"></i>`,
+    quest : `<i class="fas fa-map-signs"></i>`,
 });
 
 const heroStat = Object.freeze({

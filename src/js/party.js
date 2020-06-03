@@ -168,6 +168,7 @@ function startPartyCreation(partyStarted) {
     HeroManager.ownedHeroes().forEach(hero => {
         //if (dungeon.bannedHero.includes(hero.id)) characterCard("heroBanned dungeonNotAvailable",hero.uniqueid,hero.id, "Banned from Here").appendTo(d2);
         if (hero.inDungeon) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"in_dungeon").appendTo(d2);
+        else if (hero.inQuest) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"in_quest").appendTo(d2);
         else if (PartyCreator.heroes.includes(hero.id)) characterCard("partyHero dungeonNotAvailable",hero.uniqueid,hero.id,"in_party").appendTo(d2);
         else characterCard("dungeonAvailable",hero.uniqueid,hero.id,null).appendTo(d2);
     });
@@ -310,6 +311,7 @@ function characterCard(prefix,dv,ID,status) {
     if (status !== null && status !== undefined) {
         if (status === "in_dungeon") $("<div/>").addClass("heroStatus tooltip statusDungeon").attr({"data-tooltip": "hero_in_combat"}).html(`<i class="fas fa-swords"></i>`).appendTo(dclick);
         if (status === "in_party") $("<div/>").addClass("heroStatus tooltip statusParty").attr({"data-tooltip": "hero_in_party"}).html(`<i class="fas fa-check"></i>`).appendTo(dclick);
+        if (status === "in_quest") $("<div/>").addClass("heroStatus tooltip statusQuest").attr({"data-tooltip": "hero_in_quest"}).html(`${miscIcons.quest}`).appendTo(dclick);
     }
     return d;
 }

@@ -1,6 +1,6 @@
 "use strict";
 
-const QuestState = Object.freeze({idle:"Idle",running:"In Progress",complete:"Complete"});
+const QuestState = Object.freeze({idle:"Idle",running:"In Progress",success:"Success",failure:"Failure"});
 
 const $questLocations = $("#questLocations");
 const $questSelect = $("#questSelect");
@@ -12,6 +12,8 @@ class Quest {
         this.elapsed = 0;
         this.state = QuestState.idle;
         this.unlocked = false;
+        this.heroids = [];
+        this.future = false;
     }
     createSave() {
         const save = {};
@@ -19,12 +21,16 @@ class Quest {
         save.elapsed = this.elapsed;
         save.state = this.state;
         save.unlocked = this.unlocked;
+        save.heroids = this.heroids;
+        save.future = this.future;
         return save;
     }
     loadSave(save) {
         this.elapsed = save.elapsed;
         this.state = save.state;
         this.unlocked = save.unlocked;
+        this.heroids = save.heroids;
+        this.future = save.future;
     }
     startQuest() {
         if (this.state !== QuestState.idle) return;
@@ -39,11 +45,24 @@ class Quest {
         }
     }
     collect() {
-        if (this.state !== QuestState.complete) return;
+        if (this.state !== QuestState.success || this.state !== QuestState.failure) return;
         this.state = QuestState.idle;
     }
     remaining() {
         return this.elapsed - this.timeReq;
+    }
+    totalPow() {
+        const heroes = this.heroids.map(hid=>HeroManager.idToHero(hid));
+        return heroes.map(h=>h.getPow());
+    }
+    totalHP() {
+        const heroes = this.heroids.map(hid=>HeroManager.idToHero(hid));
+        return heroes.map(h=>h.maxHP());
+    }
+    successChance() {
+        const total = this.hpReq + 8*this.powReq;
+        const current = this.totalHP() + 8*this.totalPow();
+        return Math.floor(100*current/total);
     }
 }
 

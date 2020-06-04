@@ -2356,6 +2356,7 @@ footer {
 
 .recipeCraftDisable, .orderCraft.recipeCraftDisable {
     background-color: var(--button-cancel-border);
+    border-color: var(--button-cancel);
 }
 
 .recipeCraftDisable:hover, .orderCraft.recipeCraftDisable:hover {

@@ -2356,6 +2356,7 @@ footer {
 
 .recipeCraftDisable, .orderCraft.recipeCraftDisable {
     background-color: var(--button-cancel-border);
+    border-color: var(--button-cancel);
 }
 
 .recipeCraftDisable:hover, .orderCraft.recipeCraftDisable:hover {
@@ -3911,6 +3912,7 @@ footer {
     right: 0;
     bottom: 0;
     left: 0;
+    animation: fade-in 1s forwards;
 }
 
 .buildingfusion .buildingInfoBackground {

@@ -88,6 +88,7 @@ class tinkerCommand {
         refreshTinkerLvLBar(this);
         refreshTrinketCompleteCost(this);
         refreshTrinketResearchCost(this);
+        $("#tinkerRecipes").show();
     }
 }
 
@@ -124,7 +125,6 @@ const TinkerManager = {
     completeResearch(commandID) {
         const command = this.idToCommand(commandID);
         command.completeResearch();
-        $("#tinkerRecipes").show();
     }
 }
 

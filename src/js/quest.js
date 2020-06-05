@@ -11,26 +11,26 @@ class Quest {
         Object.assign(this, props);
         this.elapsed = 0;
         this.state = QuestState.idle;
-        this.unlocked = false;
         this.heroids = [];
         this.future = false;
+        this.complete = false;
     }
     createSave() {
         const save = {};
         save.id = this.id;
         save.elapsed = this.elapsed;
         save.state = this.state;
-        save.unlocked = this.unlocked;
         save.heroids = this.heroids;
         save.future = this.future;
+        save.complete = this.complete;
         return save;
     }
     loadSave(save) {
         this.elapsed = save.elapsed;
         this.state = save.state;
-        this.unlocked = save.unlocked;
         this.heroids = save.heroids;
         this.future = save.future;
+        this.complete = save.complete;
     }
     lockTeam(heroids) {
         if (this.state !== QuestState.idle) return;
@@ -49,27 +49,42 @@ class Quest {
         }
     }
     collect() {
-        if (this.state !== QuestState.success || this.state !== QuestState.failure) return;
         if (this.state === QuestState.success) {
-
+            this.complete = true;
+            if (this.rewardType === "Gold") ResourceManager.addMaterial("M001",this.rewardAmt);
+            if (this.rewardType === "Playbook") HeroManager.unlockPlaybook(this.rewardAmt);
         }
         this.state = QuestState.idle;
     }
     remaining() {
         return this.timeReq - this.elapsed;
     }
-    totalPow() {
-        const heroes = this.heroids.map(hid=>HeroManager.idToHero(hid));
-        return heroes.map(h=>h.getPow());
+    totalPow(useQuestManager) {
+        const heroids = useQuestManager ? QuestManager.heroids() : this.heroids.filter(h=>h);
+        if (heroids.length === 0) return 0;
+        const heroes = heroids.map(hid=>HeroManager.idToHero(hid));
+        return heroes.map(h=>h.getPow()).reduce((a,b) => a+b);
     }
-    totalHP() {
-        const heroes = this.heroids.map(hid=>HeroManager.idToHero(hid));
-        return heroes.map(h=>h.maxHP());
+    totalHP(useQuestManager) {
+        const heroids = useQuestManager ? QuestManager.heroids() : this.heroids.filter(h=>h);
+        if (heroids.length === 0) return 0;
+        const heroes = heroids.map(hid=>HeroManager.idToHero(hid));
+        return heroes.map(h=>h.maxHP()).reduce((a,b) => a+b);
     }
-    successChance() {
+    successChance(useQuestManager) {
         const total = this.hpReq + 8*this.powReq;
-        const current = this.totalHP() + 8*this.totalPow();
-        return Math.max(0.05,current/total);
+        const current = this.totalHP(useQuestManager) + 8*this.totalPow(useQuestManager);
+        const chance = current/total;
+        if (chance < 0.05) return 0.05;
+        if (chance > 1) return 1;
+        return chance;
+    }
+    available() {
+        if (this.openReqType === "Perk" && !Shop.alreadyPurchased(this.openReq)) return false;
+        console.log(this.openReq);
+        if (this.openReqType === "Quest" && !QuestManager.idToQuest(this.openReq).complete) return false;
+        if (this.complete && !this.repeatable) return false;
+        return true;
     }
 }
 
@@ -108,7 +123,7 @@ const QuestManager = {
         if (lastTab === "questsTab") refreshQuestTimes();
     },
     available() {
-        return this.quests;
+        return this.quests.filter(q=>q.available());
     },
     inParty(heroID) {
         return this.hero1 === heroID || this.hero2 === heroID || this.hero3 === heroID || this.hero4 === heroID;
@@ -120,6 +135,7 @@ const QuestManager = {
         this.hero4 = null;
     },
     removeParty(heroID) {
+        console.log(heroID);
         if (heroID === "hero1") this.hero1 = null;
         if (heroID === "hero2") this.hero2 = null;
         if (heroID === "hero3") this.hero3 = null;
@@ -129,24 +145,23 @@ const QuestManager = {
         const quest = this.idToQuest(this.questView);
         const hero = HeroManager.idToHero(heroID);
         //check if heroID matches slot requirement -- if so add it
-        if (quest.hero1 === heroID) return this.hero1 = heroID;
-        if (quest.hero2 === heroID) return this.hero2 = heroID;
-        if (quest.hero3 === heroID) return this.hero3 = heroID;
-        if (quest.hero4 === heroID) return this.hero4 = heroID;
+        if (!this.hero1 && quest.hero1 === heroID) return this.hero1 = heroID;
+        if (!this.hero2 && quest.hero2 === heroID) return this.hero2 = heroID;
+        if (!this.hero3 && quest.hero3 === heroID) return this.hero3 = heroID;
+        if (!this.hero4 && quest.hero4 === heroID) return this.hero4 = heroID;
         //loop through type and add it if it matches
-        if (quest.hero1 === hero.type) return this.hero1 = heroID;
-        if (quest.hero2 === hero.type) return this.hero2 = heroID;
-        if (quest.hero3 === hero.type) return this.hero3 = heroID;
-        if (quest.hero4 === hero.type) return this.hero4 = heroID;
+        if (!this.hero1 && quest.hero1 === hero.type) return this.hero1 = heroID;
+        if (!this.hero2 && quest.hero2 === hero.type) return this.hero2 = heroID;
+        if (!this.hero3 && quest.hero3 === hero.type) return this.hero3 = heroID;
+        if (!this.hero4 && quest.hero4 === hero.type) return this.hero4 = heroID;
         //loop through and add to first blank
-        if (quest.hero1 === null) return this.hero1 = heroID;
-        if (quest.hero2 === null) return this.hero2 = heroID;
-        if (quest.hero3 === null) return this.hero3 = heroID;
-        if (quest.hero4 === null) return this.hero4 = heroID;
+        if (!this.hero1 && quest.hero1 === "Any") return this.hero1 = heroID;
+        if (!this.hero2 && quest.hero2 === "Any") return this.hero2 = heroID;
+        if (!this.hero3 && quest.hero3 === "Any") return this.hero3 = heroID;
+        if (!this.hero4 && quest.hero4 === "Any") return this.hero4 = heroID;
     },
     pow() {
         const heroIDs = [this.hero1,this.hero2,this.hero3,this.hero4].filter(h=>h);
-        console.log(heroIDs);
         if (heroIDs.length === 0) return 0;
         const pow = heroIDs.map(hid=>HeroManager.idToHero(hid).getPow());
         return pow.reduce((a,b)=>a+b,0);
@@ -170,6 +185,9 @@ const QuestManager = {
         const quest = this.idToQuest(this.questView);
         quest.lockTeam(heroids);
         this.questView = null;
+    },
+    heroids() {
+        return [this.hero1,this.hero2,this.hero3,this.hero4].filter(h=>h);
     }
 }
 
@@ -214,7 +232,12 @@ $(document).on("click", ".questLocationContainer", (e) => {
     e.preventDefault();
     const qid = $(e.currentTarget).data("questID");
     const quest = QuestManager.idToQuest(qid);
-    if (quest.state !== QuestState.idle) return;
+    if (quest.state === QuestState.running) return;
+    if (quest.state === QuestState.failure || quest.state === QuestState.success) {
+        quest.collect();
+        refreshQuestLocations();
+        return;
+    }
     QuestManager.questView = qid;
     QuestManager.clearParty();
     showQuestParty();
@@ -239,7 +262,7 @@ function showQuestParty() {
         $("<div/>").addClass("qpHeaderTime").html(`${miscIcons.time} ${msToTime(quest.timeReq)}`).appendTo(a);
     const b = $("<div/>").addClass(`qpHeaderCurrent`).appendTo($qpHeader);
         $("<div/>").addClass("qpHeaderCurrStat").html(`${miscIcons.pow} ${QuestManager.pow()} ${miscIcons.hp} ${QuestManager.maxHP()}`).appendTo(b);
-        $("<div/>").addClass("qpHeaderChance").html(`Success chance: ${Math.floor(quest.successChance()*100)}%`).appendTo(b);
+        $("<div/>").addClass("qpHeaderChance").html(`Success chance: ${Math.floor(quest.successChance(true)*100)}%`).appendTo(b);
     const c = $("<div/>").addClass("qpHeaderStartQuest").html(`Start Quest`).appendTo($qpHeader);
     if (!QuestManager.validTeam()) c.addClass("qpHeaderInvalidTeam");
     //populate team
@@ -266,7 +289,7 @@ function showQuestParty() {
 //click on a hero to remove from team
 $(document).on("click", ".questTeamCardClick", (e) => {
     e.preventDefault();
-    const heroID = $(e.currentTarget).data("heroID");
+    const heroID = $(e.currentTarget).attr("heroID");
     QuestManager.removeParty(heroID);
     showQuestParty();
 });

@@ -11,7 +11,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": true,
-    "openReq": "Perk"
+    "openReqType": "Perk",
+    "openReq": "AL30061",
+    "rewardType": "Gold",
+    "rewardAmt": 1000,
+    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 1000"
   },
   {
     "id": "Q0002",
@@ -25,7 +29,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": true,
-    "openReq": "Q001"
+    "openReqType": "Quest",
+    "openReq": "Q0001",
+    "rewardType": "Gold",
+    "rewardAmt": 10000,
+    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 10000"
   },
   {
     "id": "Q0003",
@@ -39,7 +47,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": true,
-    "openReq": "Q002"
+    "openReqType": "Quest",
+    "openReq": "Q0002",
+    "rewardType": "Gold",
+    "rewardAmt": 100000,
+    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 100000"
   },
   {
     "id": "Q0004",
@@ -53,7 +65,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": true,
-    "openReq": "Q003"
+    "openReqType": "Quest",
+    "openReq": "Q0003",
+    "rewardType": "Gold",
+    "rewardAmt": 1000000,
+    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 1000000"
   },
   {
     "id": "Q1000",
@@ -67,7 +83,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2025"
+    "openReqType": "Perk",
+    "openReq": "AL2025",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0011",
+    "rewardText": "Additional Playbook for Beorn"
   },
   {
     "id": "Q1001",
@@ -81,7 +101,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2037"
+    "openReqType": "Perk",
+    "openReq": "AL2037",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0012",
+    "rewardText": "Additional Playbook for Beorn"
   },
   {
     "id": "Q1100",
@@ -95,7 +119,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2028"
+    "openReqType": "Perk",
+    "openReq": "AL2028",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0021",
+    "rewardText": "Additional Playbook for Cedric"
   },
   {
     "id": "Q1101",
@@ -109,7 +137,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2040"
+    "openReqType": "Perk",
+    "openReq": "AL2040",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0022",
+    "rewardText": "Additional Playbook for Cedric"
   },
   {
     "id": "Q1200",
@@ -123,7 +155,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2031"
+    "openReqType": "Perk",
+    "openReq": "AL2031",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0031",
+    "rewardText": "Additional Playbook for Grim"
   },
   {
     "id": "Q1201",
@@ -137,7 +173,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2043"
+    "openReqType": "Perk",
+    "openReq": "AL2043",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0032",
+    "rewardText": "Additional Playbook for Grim"
   },
   {
     "id": "Q1300",
@@ -151,7 +191,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2034"
+    "openReqType": "Perk",
+    "openReq": "AL2034",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0041",
+    "rewardText": "Additional Playbook for Lambug"
   },
   {
     "id": "Q1301",
@@ -165,7 +209,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2046"
+    "openReqType": "Perk",
+    "openReq": "AL2046",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0042",
+    "rewardText": "Additional Playbook for Lambug"
   },
   {
     "id": "Q2000",
@@ -179,7 +227,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2029"
+    "openReqType": "Perk",
+    "openReq": "AL2029",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0051",
+    "rewardText": "Additional Playbook for Zoe"
   },
   {
     "id": "Q2001",
@@ -193,7 +245,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2041"
+    "openReqType": "Perk",
+    "openReq": "AL2041",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0052",
+    "rewardText": "Additional Playbook for Zoe"
   },
   {
     "id": "Q2100",
@@ -207,7 +263,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2026"
+    "openReqType": "Perk",
+    "openReq": "AL2026",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0061",
+    "rewardText": "Additional Playbook for Neve"
   },
   {
     "id": "Q2101",
@@ -221,7 +281,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2038"
+    "openReqType": "Perk",
+    "openReq": "AL2038",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0062",
+    "rewardText": "Additional Playbook for Neve"
   },
   {
     "id": "Q2200",
@@ -235,7 +299,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2035"
+    "openReqType": "Perk",
+    "openReq": "AL2035",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0071",
+    "rewardText": "Additional Playbook for Titus"
   },
   {
     "id": "Q2201",
@@ -249,7 +317,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2047"
+    "openReqType": "Perk",
+    "openReq": "AL2047",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0072",
+    "rewardText": "Additional Playbook for Titus"
   },
   {
     "id": "Q2300",
@@ -263,7 +335,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2032"
+    "openReqType": "Perk",
+    "openReq": "AL2032",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0081",
+    "rewardText": "Additional Playbook for Troy"
   },
   {
     "id": "Q2301",
@@ -277,7 +353,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2044"
+    "openReqType": "Perk",
+    "openReq": "AL2044",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0082",
+    "rewardText": "Additional Playbook for Troy"
   },
   {
     "id": "Q3000",
@@ -291,7 +371,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2027"
+    "openReqType": "Perk",
+    "openReq": "AL2027",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0091",
+    "rewardText": "Additional Playbook for Alok"
   },
   {
     "id": "Q3001",
@@ -305,7 +389,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2039"
+    "openReqType": "Perk",
+    "openReq": "AL2039",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0092",
+    "rewardText": "Additional Playbook for Alok"
   },
   {
     "id": "Q3100",
@@ -319,7 +407,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2030"
+    "openReqType": "Perk",
+    "openReq": "AL2030",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0101",
+    "rewardText": "Additional Playbook for Grogmar"
   },
   {
     "id": "Q3101",
@@ -333,7 +425,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2042"
+    "openReqType": "Perk",
+    "openReq": "AL2042",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0102",
+    "rewardText": "Additional Playbook for Grogmar"
   },
   {
     "id": "Q3200",
@@ -347,7 +443,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2024"
+    "openReqType": "Perk",
+    "openReq": "AL2024",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0111",
+    "rewardText": "Additional Playbook for Revere"
   },
   {
     "id": "Q3201",
@@ -361,7 +461,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2036"
+    "openReqType": "Perk",
+    "openReq": "AL2036",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0112",
+    "rewardText": "Additional Playbook for Revere"
   },
   {
     "id": "Q3300",
@@ -375,7 +479,11 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2033"
+    "openReqType": "Perk",
+    "openReq": "AL2033",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0121",
+    "rewardText": "Additional Playbook for Caeda"
   },
   {
     "id": "Q3301",
@@ -389,6 +497,10 @@
     "hpReq": 1000,
     "timeReq": 1000000,
     "repeatable": false,
-    "openReq": "AL2045"
+    "openReqType": "Perk",
+    "openReq": "AL2045",
+    "rewardType": "Playbook",
+    "rewardAmt": "PB0122",
+    "rewardText": "Additional Playbook for Caeda"
   }
 ]

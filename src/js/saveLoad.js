@@ -65,6 +65,7 @@ function createSave() {
     saveFile["t"] = TinkerManager.createSave();
     saveFile["m"] = Museum.createSave();
     saveFile["pb"] = PlaybookManager.createSave();
+    saveFile["q"] = QuestManager.createSave();
     saveFile["saveTime"] = Date.now();
     return JSON.stringify(saveFile);
 }
@@ -101,6 +102,7 @@ function loadGame() {
     if (typeof loadGame["t"] !== "undefined") TinkerManager.loadSave(loadGame["t"]);
     if (typeof loadGame["m"] !== "undefined") Museum.loadSave(loadGame["m"]);
     if (typeof loadGame["pb"] !== "undefined") PlaybookManager.loadSave(loadGame["pb"]);
+    if (typeof loadGame['q'] !== "undefined") QuestManager.loadSave(loadGame["q"]);
     return true;
 }
 

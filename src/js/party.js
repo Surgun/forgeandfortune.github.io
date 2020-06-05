@@ -66,7 +66,7 @@ const PartyCreator = {
     },
     lockParty() {
         this.heroes.map(hid => HeroManager.idToHero(hid)).forEach(h=>{
-            h.inDungeon = true;
+            h.state = HeroState.inDungeon;
             h.hp = h.maxHP();
         });
         const party = new Party(this.heroes);
@@ -75,8 +75,8 @@ const PartyCreator = {
     },
     startingTeam(team) {
         if (team === null) return;
-        const statuses = team.map(h=>HeroManager.idToHero(h).inDungeon)
-        if (statuses.some(h=>h)) return;
+        const statuses = team.map(h=>HeroManager.idToHero(h).state)
+        if (statuses.some(h=>h !== HeroState.idle)) return;
         team.forEach(h => this.addMember(h));
     },
     emptyPartySlots() {
@@ -167,8 +167,8 @@ function startPartyCreation(partyStarted) {
     const d2 = $("<div/>").addClass("dungeonAvailableCollection");
     HeroManager.ownedHeroes().forEach(hero => {
         //if (dungeon.bannedHero.includes(hero.id)) characterCard("heroBanned dungeonNotAvailable",hero.uniqueid,hero.id, "Banned from Here").appendTo(d2);
-        if (hero.inDungeon) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"in_dungeon").appendTo(d2);
-        else if (hero.inQuest) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"in_quest").appendTo(d2);
+        if (hero.state === HeroState.inDungeon) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"in_dungeon").appendTo(d2);
+        else if (hero.state === HeroState.inQuest) characterCard("dungeonNotAvailable",hero.uniqueid,hero.id,"in_quest").appendTo(d2);
         else if (PartyCreator.heroes.includes(hero.id)) characterCard("partyHero dungeonNotAvailable",hero.uniqueid,hero.id,"in_party").appendTo(d2);
         else characterCard("dungeonAvailable",hero.uniqueid,hero.id,null).appendTo(d2);
     });

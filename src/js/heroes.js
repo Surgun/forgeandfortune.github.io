@@ -1,5 +1,7 @@
 "use strict";
 
+const HeroState = Object.freeze({idle:"Idle",inDungeon:"In Dungeon",inQuest:"In Quest"});
+
 class Hero extends Combatant {
     constructor (props) {
         super(props);
@@ -13,7 +15,7 @@ class Hero extends Combatant {
         this.head = '<img src="/assets/images/heroes/heads/'+this.id+'.png">';
         this.portrait = '<img src="/assets/images/heroes/portraits/'+this.id+'.png">';
         this.owned = false;
-        this.inDungeon = false;
+        this.state = HeroState.idle;
         this.protection = 0;
         this.playbook = PlaybookManager.generatePlayBook(this.startingPlaybook);
         this.passiveSkill = null;
@@ -22,7 +24,7 @@ class Hero extends Combatant {
         const save = {};
         save.id = this.id;
         save.hp = this.hp;
-        save.inDungeon = this.inDungeon;
+        save.state = this.state;
         save.gearSlots = [];
         this.gearSlots.forEach(gearSlot => {
             save.gearSlots.push(gearSlot.createSave());
@@ -38,7 +40,7 @@ class Hero extends Combatant {
     }
     loadSave(save) {
         this.hp = save.hp;
-        this.inDungeon = save.inDungeon;
+        this.state = save.state;
         save.gearSlots.forEach((gearSlot,i) => {
             this.gearSlots[i].loadSave(gearSlot);
         });

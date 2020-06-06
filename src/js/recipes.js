@@ -359,7 +359,7 @@ $("#recipes-list").scroll(function () {
 function recipeCardFront(recipe) {
     const td1 = $('<div/>').addClass('recipeName').append(recipe.itemPicName());
     const td2 = $('<div/>').addClass('recipeDescription').html("<i class='fas fa-info-circle'></i>");
-    const td3 = $('<div/>').addClass('recipeItemLevel tooltip').attr({"data-tooltip": "recipe_level"}).html(recipe.itemLevel());
+    const td3 = $('<div/>').addClass('itemLevel tooltip').attr({"data-tooltip": "recipe_level"}).html(recipe.itemLevel());
     if (recipe.recipeType !== "normal") td3.hide();
     const td4 = $('<div/>').addClass('recipecostdiv').attr("id",recipe.id+"rcd");
         if (recipe.isMastered()) td4.addClass("isMastered");

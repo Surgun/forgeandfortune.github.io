@@ -616,24 +616,25 @@
                                     </div>
                                 </div>
                                 <div id="smithBuilding" class="buildingTab">
-                                    <div class="smithHeading">Item To Smith</div>
-                                    <div id="smithNoSelectionDiv" class="smithNoselection">Select an Item to Improve</div>
-                                    <div id="smithCanImproveDiv" class="smithCanImprove">
-                                        <div class="smithImproveContainer">
-                                            <div id="smithOriginal"></div>
-                                            <div id="smithArrow" class="smithArrow"><i class="fas fa-arrow-right"></i></div>
-                                            <div id="smithImproved"></div>
+                                    <div class="smithMainContentContainer">
+                                        <div id="smithNoSelectionDiv" class="smithNoSelection"></div>
+                                        <div id="smithCanImproveDiv" class="smithCanImprove">
+                                            <div class="smithImproveContainer">
+                                                <div id="smithOriginal" class="smithOriginal"></div>
+                                                <div class="smithSeparator">
+                                                    <i class="fas fa-arrow-right"></i>
+                                                    <div id="smithConfirm" class="actionButtonCardCost smithButton"></div>
+                                                </div>
+                                                <div id="smithImproved" class="smithImproved"></div>
+                                            </div>
                                         </div>
-                                        <div id="smithConfirm" class="smithButton">Improve for 1 bajillion gold</div>
+                                        <div id="smithCantImproveDiv" class="smithCantImprove">
+                                            <div id="smithMax" class="smithMax"></div>
+                                            <div class="smithMaxHeading">Max Level Reached!</div>
+                                        </div>
                                     </div>
-                                    <div id="smithCantImproveDiv" class="smithCantImprove">
-                                        <div class="smithMaxHeading">Max Level Reached!</div>
-                                        <div id="smithMax" class="smithMax"></div>
-                                    </div>
-                                    <div class="smithHeading">Inventory</div>
                                     <div id="smithInvSlots"></div>
-                                    <div class="smithHeading">Hero Equipment</div>
-                                    <div id="smithHeroSlots"></div>
+                                    <div id="smithHeroSlots" class="smithHeroSlots"></div>
                                 </div>
                                 <div id="fortuneBuilding" class="buildingTab">
                                     <div id="fortuneStage" class="fortuneStageContainer"></div>                            

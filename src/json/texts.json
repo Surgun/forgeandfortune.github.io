@@ -380,6 +380,61 @@
     "es": null
   },
   {
+    "tid": "header_forge_inventory_title",
+    "en": "Your Inventory",
+    "es": null
+  },
+  {
+    "tid": "header_forge_inventory_desc",
+    "en": "Items in your inventory that you can upgrade using the forge.",
+    "es": null
+  },
+  {
+    "tid": "header_forge_heroes_title",
+    "en": "Heroes' Inventory",
+    "es": null
+  },
+  {
+    "tid": "header_forge_heroes_desc",
+    "en": "Items your heroes have equipped that you can upgrade using the forge.",
+    "es": null
+  },
+  {
+    "tid": "forge_smith_slot_empty",
+    "en": "Empty Forge Slot",
+    "es": null
+  },
+  {
+    "tid": "forge_smith_confirm_button",
+    "en": "Confirm Smith",
+    "es": null
+  },
+  {
+    "tid": "forge_inventory_assign_button",
+    "en": "Assign Smith",
+    "es": null
+  },
+  {
+    "tid": "forge_inventory_empty",
+    "en": "You have no items in your inventory that can be upgraded using the forge.",
+    "es": null
+  },
+  {
+    "tid": "forge_heroes_empty",
+    "en": "This hero has no items equipped that can be upgraded using the forge.",
+    "es": null
+  },
+  {
+    "tid": "forge_heroes_back_button",
+    "en": "Back to Heroes",
+    "es": null
+  },
+  {
+    "tid": "forge_heroes_browsing",
+    "en": "Browsing {0}",
+    "es": null
+  },
+  {
     "tid": "header_fortune_possible_title",
     "en": "Fortune Offerings Available",
     "es": null

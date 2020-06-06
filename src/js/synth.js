@@ -349,7 +349,7 @@ function createSynthCard(container) {
     const itemdiv = $("<div/>").addClass("inventoryItem").addClass("R"+container.rarity);
     const itemName = $("<div/>").addClass("inventoryItemName itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
     const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
-    const itemLevel = $("<div/>").addClass("inventoryItemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
+    const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
     const itemProps = $("<div/>").addClass("inventoryProps");
     for (const [stat, val] of Object.entries(container.itemStat(0))) {
         if (val === 0) continue;
@@ -363,7 +363,7 @@ function createSynthStageCard(container) {
     const itemdiv = $("<div/>").addClass("inventoryItem").addClass("R"+container.rarity);
     const itemName = $("<div/>").addClass("inventoryItemName itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
     const stageRemove = $('<div/>').attr("id","synthRemove").html(`<i class="fas fa-times"></i>`);
-    const itemLevel = $("<div/>").addClass("inventoryItemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
+    const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
     const itemProps = $("<div/>").addClass("inventoryProps");
     const synthStatProps = SynthManager.setting === synthToggle.RESYNTH ? SynthManager.resynthChange() : [0,0];
     for (const [stat, val] of Object.entries(container.itemStat(0, synthStatProps[0], synthStatProps[1]))) {

@@ -262,7 +262,7 @@ function heroCurrentGearEquip(hero,gearSlot) {
         const d1 = $("<div/>").addClass("heroExamineEquipmentEquip emptyGearSlot").appendTo(d);
             $("<div/>").addClass("emptyGearSlotIcon").html(miscIcons.emptySlot).appendTo(d1);
             $("<div/>").addClass("emptyGearSlotTitle").html('Empty Slot').appendTo(d1);
-            $("<div/>").addClass("emptyGearSlotLevel equipLevel").appendTo(d1);
+            $("<div/>").addClass("emptyGearSlotLevel itemLevel").appendTo(d1);
             $("<div/>").addClass("emptyGearSlotRarity equipRarity").appendTo(d1);
             const equipStats = $("<div/>").addClass("emptyEquipStats").appendTo(d1);
                 const ed = $("<div/>").addClass('gearStat').appendTo(equipStats);
@@ -272,7 +272,7 @@ function heroCurrentGearEquip(hero,gearSlot) {
     }
     const d1 = $("<div/>").addClass("heroExamineEquipmentEquip").addClass("R"+gear.rarity).appendTo(d);
         $("<div/>").addClass("itemName").html(gear.picName()).appendTo(d1);
-    const d2 = $("<div/>").addClass("equipLevel").appendTo(d1);
+    const d2 = $("<div/>").addClass("itemLevel").appendTo(d1);
         $("<div/>").addClass("level_text").html(`LVL`).appendTo(d2);
         $("<div/>").addClass("level_integer").html(`${gear.lvl}`).appendTo(d2);
     $("<div/>").addClass("equipRarity itemRarity").addClass(`RT${gear.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[gear.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d1);

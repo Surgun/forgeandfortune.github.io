@@ -484,7 +484,7 @@ function recipeCanCraft() {
     //loops through recipes, adds class if disabled
     recipeList.recipes.forEach(recipe => {
         if (recipe.recipeType !== "normal") return;
-        if (recipe.canProduce) recipe.recipeDiv.removeClass("recipeCraftDisable");
+        if (recipe.canProduce && actionSlotManager.slots.length < actionSlotManager.maxSlots) recipe.recipeDiv.removeClass("recipeCraftDisable");
         else recipe.recipeDiv.addClass("recipeCraftDisable");
     });
 }

@@ -808,8 +808,8 @@
   },
   {
     "id": "AL30061",
-    "title": "Expedition",
-    "description": "Expedition",
+    "title": "Questing",
+    "description": "Questing",
     "category": "Town",
     "order": 8,
     "goldCost": 120000,

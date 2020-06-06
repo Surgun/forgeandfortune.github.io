@@ -306,6 +306,12 @@ const Notifications = {
         const heading = "Cannot Swap Playbook";
         const icon = "error";
         popToast(text,heading,icon);
+    },
+    invalidQuestTeam() {
+        const text = "Quest Team is not fully populated";
+        const heading = "Cannot Start Quest";
+        const icon = "error";
+        popToast(text,heading,icon);
     }
 }
 

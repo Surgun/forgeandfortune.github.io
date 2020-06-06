@@ -233,7 +233,7 @@ class Dungeon {
     resetDungeon() {
         if (this.status !== DungeonStatus.ADVENTURING && this.status !== DungeonStatus.COLLECT) return;
         this.party.heroes.forEach(h=>{
-            h.inDungeon = false;
+            h.state = HeroState.idle;
             h.hp = h.maxHP()
         });
         if (DungeonManager.dungeonView === this.id) {

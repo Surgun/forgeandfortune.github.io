@@ -193,7 +193,7 @@ $(document).on('click',".playbookSelectable", (e) => {
     e.preventDefault();
     const hid = $(e.currentTarget).data("hid");
     const hero = HeroManager.idToHero(hid);
-    if (hero.inDungeon) {
+    if (hero.state !== HeroState.idle) {
         Notifications.heroDungeonPlaybookSwap();
         return;
     }

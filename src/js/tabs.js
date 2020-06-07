@@ -91,7 +91,6 @@ $(document).on( "keypress", (e) => {
         else if (e.which === 54) tabClick(e, "questsTab");
         else if (e.which === 55) tabClick(e, "townsTab");
         else if (e.which === 56) tabClick(e, "marketTab");
-        else if (e.which === 57) tabClick(e, "eventsTab");
     }
 });
 

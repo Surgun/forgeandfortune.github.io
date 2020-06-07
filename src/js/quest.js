@@ -222,7 +222,7 @@ function refreshQuestText(quest) {
 }
 
 function createQuestContainer(quest) {
-    const d = $("<div/>").attr("q"+quest.id).addClass("questLocationContainer").data("questID",quest.id);
+    const d = $("<div/>").attr("id","q"+quest.id).addClass("questLocationContainer").data("questID",quest.id);
     if (quest.state === QuestState.running) d.addClass("questActive");
     if (quest.state === QuestState.success) d.addClass("questSuccess");
     if (quest.state === QuestState.failure) d.addClass("questFailure");

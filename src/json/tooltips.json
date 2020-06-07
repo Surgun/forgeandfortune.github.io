@@ -175,6 +175,13 @@
     "type": "static"
   },
   {
+    "id": "forge_remove",
+    "title": "Removed Sloted Forge",
+    "description": "This will remove the currently slotted item for forging and return it to your inventory.",
+    "icon": "<i class=\"fas fa-times\"></i>",
+    "type": "static"
+  },
+  {
     "id": "fusion_remove",
     "title": "Remove Slotted Fusion",
     "description": "This will remove the currently slotted fusion and return the items to your inventory. ",

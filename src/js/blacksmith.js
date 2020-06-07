@@ -64,6 +64,9 @@ const bloopSmith = {
         this.lvl += 1;
         refreshSmithInventory();
         refreshSmithStage();
+    },
+    removeSmith() {
+        this.smithStage = null;
     }
 }
 function initiateForgeBldg() {
@@ -203,6 +206,7 @@ function itemStageCardSmith(slot,upgrade) {
     const itemRarity = $("<div/>").addClass(`itemRarity RT${slot.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[slot.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemMaterial = $("<div/>").addClass("smithItemMaterial tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":slot.material()}).html(ResourceManager.materialIcon(slot.material()));
     const smithClose = $("<div/>").addClass("smithClose tooltip").html(`<i class="fas fa-times"></i>`);
+    if (upgrade) smithClose.hide();
     const equipStats = $("<div/>").addClass("equipStats");
     for (const [stat, val] of Object.entries(slot.itemStat(upgrade))) {
         if (val === 0) continue;
@@ -236,4 +240,10 @@ $(document).on("click",".smithHeroButton",(e) => {
 $(document).on("click",".smithHeroBackButton",() => {
     bloopSmith.heroView = null;
     refreshSmithInventory();
+});
+
+$(document).on("click",".smithClose",(e) => {
+    e.preventDefault();
+    bloopSmith.removeSmith();
+    refreshSmithStage();
 });

@@ -86,7 +86,7 @@
     "icon": "<img src=\"/assets/svg/skull-bolt.svg\">",
     "powMod": 3,
     "techMod": 0,
-    "mod1": 0.2,
+    "mod1": 1,
     "mod2": null
   },
   {
@@ -114,7 +114,7 @@
     "name": "Overexertion",
     "description": "Lambug deals a large single attack that decreases in damage every subsequent use.",
     "icon": "<img src=\"/assets/svg/armor-punch.svg\">",
-    "powMod": 5,
+    "powMod": 4,
     "techMod": 0,
     "mod1": null,
     "mod2": null
@@ -136,17 +136,17 @@
     "icon": "<img src=\"/assets/svg/burning-meteor.svg\">",
     "powMod": 0.75,
     "techMod": 0.75,
-    "mod1": 0.05,
+    "mod1": 0.1,
     "mod2": null
   },
   {
     "id": "S1011",
-    "name": "Flare",
+    "name": "Conflagrate",
     "description": "Zoe attacks a single enemy.  The enemy will become scorched.",
     "icon": "<img src=\"/assets/svg/fire-silhouette.svg\">",
     "powMod": 3,
     "techMod": 3,
-    "mod1": 0.05,
+    "mod1": 0.1,
     "mod2": null
   },
   {
@@ -182,7 +182,7 @@
   {
     "id": "S1022",
     "name": "Deep Freeze",
-    "description": "Neve becomes immune to all damage.",
+    "description": "Neve becomes immune to all damage until her next turn.",
     "icon": "<img src=\"/assets/svg/frozen-body.svg\">",
     "powMod": 0,
     "techMod": 0,
@@ -264,7 +264,7 @@
     "name": "Madrigal",
     "description": "Inspires all teammates, increasing their Pow",
     "icon": "<img src=\"/assets/svg/guitar.svg\">",
-    "powMod": 1,
+    "powMod": 0.25,
     "techMod": 0,
     "mod1": null,
     "mod2": null
@@ -304,9 +304,9 @@
     "name": "Incapacitate",
     "description": "Grogmar attacks the fourth enemy unit.  If the enemy is at full health, Grogmar deals additional damage.",
     "icon": "<img src=\"/assets/svg/william-tell-skull.svg\">",
-    "powMod": 2,
+    "powMod": 1,
     "techMod": 0,
-    "mod1": 4,
+    "mod1": 3.5,
     "mod2": null
   },
   {
@@ -492,7 +492,7 @@
   {
     "id": "SM202",
     "name": "Overpower",
-    "description": "Deals additional damage if below 50% HP",
+    "description": "Deals additional damage if enemy is below 50% HP",
     "icon": "<img src=\"/assets/svg/chart.svg\">",
     "powMod": 2,
     "techMod": 0,
@@ -502,7 +502,7 @@
   {
     "id": "SM203",
     "name": "Helping Hand",
-    "description": "Heals teammate",
+    "description": "Heals teammate for a moderate amount",
     "icon": "<img src=\"/assets/svg/water-splash.svg\">",
     "powMod": 2,
     "techMod": 0,
@@ -514,7 +514,7 @@
     "name": "Lightning Storm",
     "description": "Damages all enemy units",
     "icon": "<img src=\"/assets/svg/lightning-branches.svg\">",
-    "powMod": 0.75,
+    "powMod": 1,
     "techMod": 0,
     "mod1": null,
     "mod2": null
@@ -552,7 +552,7 @@
   {
     "id": "SM208",
     "name": "Evasion",
-    "description": "Negate damage next hit to all allies next hit",
+    "description": "All allies evade incoming damage the next time they are attacked",
     "icon": "<img src=\"/assets/svg/fluffy-wing.svg\">",
     "powMod": 1,
     "techMod": 0,
@@ -604,7 +604,7 @@
     "name": "Stronger Together",
     "description": "Heals for each living ally",
     "icon": "<img src=\"/assets/svg/round-table.svg\">",
-    "powMod": 1,
+    "powMod": 1.5,
     "techMod": 0,
     "mod1": null,
     "mod2": null

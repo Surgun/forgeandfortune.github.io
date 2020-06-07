@@ -134,7 +134,7 @@
   {
     "id": "B1030",
     "name": "Necrosis",
-    "description": "This unit takes damage at the start of its turn.",
+    "description": "This unit takes damage at the end of its turn.",
     "icon": "<img src=\"/assets/svg/foam.svg\">",
     "maxStack": 10,
     "stackCast": 1,

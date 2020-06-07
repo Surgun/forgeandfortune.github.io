@@ -104,7 +104,6 @@ const TownManager = {
 
 const $emptyTown = $("#emptyTown");
 const $townTab = $("#townTab");
-const $townTabLink = $("#townTabLink");
 
 function refreshSideTown() {
     if (TownManager.unseenLeft()) $townTab.addClass("hasEvent");

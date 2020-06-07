@@ -82,17 +82,26 @@ $(document).on('click', "#goToBank", (e) => {
 });
 
 $(document).on( "keypress", (e) => {
-    if (settings.dialogStatus === 0) {
-        if (e.which === 49) tabClick(e, "inventoryTab");
-        else if (e.which === 50) tabClick(e, "guildTab");
-        else if (e.which === 51) tabClick(e, "recipesTab");
-        else if (e.which === 52) tabClick(e, "heroesTab");
-        else if (e.which === 53) tabClick(e, "dungeonsTab");
-        else if (e.which === 54) tabClick(e, "questsTab");
-        else if (e.which === 55) tabClick(e, "townsTab");
-        else if (e.which === 56) tabClick(e, "marketTab");
-    }
+    if (settings.dialogStatus !== 0) return;
+    if (e.which < 49 || e.which > 56) return;
+    const choice = e.which - 49;
+    const tabs = generateTabVisibleTabList();
+    if (choice >= tabs.length) return;
+    tabClick(e, tabs[choice]);
 });
+
+function generateTabVisibleTabList() {
+    const tabs = [];
+    if (recipeList.idToItem("R13001").craftCount > 0) tabs.push("inventoryTab");
+    if (Shop.alreadyPurchased("AL1000")) tabs.push("guildTab");
+    tabs.push("recipesTab");
+    if (HeroManager.heroOwned("H203")) tabs.push("heroesTab");
+    if (AreaManager.idToArea("A01").unlocked()) tabs.push("dungeonsTab");
+    if (QuestManager.unlocked) tabs.push("questsTab");
+    if (TownManager.buildingsOwned()) tabs.push("townsTab");
+    if (achievementStats.totalGoldEarned > 0) tabs.push("marketTab");
+    return tabs;
+}
 
 const $heroesTabLink = $("#heroesTabLink");
 const $dungeonsTabLink = $("#dungeonsTabLink");
@@ -103,22 +112,21 @@ const $inventoryTabLink = $("#inventoryTabLink");
 const $inventoryTabSpan = $("#inventoryTabSpan");
 const $marketTabLink = $("#marketTabLink");
 const $marketTabSpan = $("#marketTabSpan");
+const $townTabLink = $("#townTabLink");
 
 function tabHide() {
     if (recipeList.idToItem("R13001").craftCount > 0) $inventoryTabLink.show();
     else $inventoryTabLink.hide();
+    if (Shop.alreadyPurchased("AL1000")) $guildTabLink.show();
+    else $guildTabLink.hide();
     if (HeroManager.heroOwned("H203")) $heroesTabLink.show();
     else $heroesTabLink.hide();
     if (AreaManager.idToArea("A01").unlocked()) $dungeonsTabLink.show();
     else $dungeonsTabLink.hide();
-    if (Shop.alreadyPurchased("AL3001")) $progressTabLink.show();
-    else $progressTabLink.hide();
-    if (Shop.alreadyPurchased("AL3001")) $progressTabLink.show();
-    else $progressTabLink.hide();
-    if (Shop.alreadyPurchased("AL1000")) $guildTabLink.show();
-    else $guildTabLink.hide();
+    if (QuestManager.unlocked) $questTabLink.show();
+    else $questTabLink.hide();
+    if (TownManager.buildingsOwned()) $townTabLink.show();
+    else $townTabLink.hide();
     if (achievementStats.totalGoldEarned > 0) $marketTabLink.show();
     else $marketTabLink.hide();
-    if (QuestManager.unlocked) $questTabLink.show();
-    else $questTabLink.show();
 }

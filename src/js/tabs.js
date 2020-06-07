@@ -97,7 +97,7 @@ function generateTabVisibleTabList() {
     tabs.push("recipesTab");
     if (HeroManager.heroOwned("H203")) tabs.push("heroesTab");
     if (AreaManager.idToArea("A01").unlocked()) tabs.push("dungeonsTab");
-    if (QuestManager.unlocked) tabs.push("questsTab");
+    if (QuestManager.unlocked()) tabs.push("questsTab");
     if (TownManager.buildingsOwned()) tabs.push("townsTab");
     if (achievementStats.totalGoldEarned > 0) tabs.push("marketTab");
     return tabs;
@@ -123,7 +123,7 @@ function tabHide() {
     else $heroesTabLink.hide();
     if (AreaManager.idToArea("A01").unlocked()) $dungeonsTabLink.show();
     else $dungeonsTabLink.hide();
-    if (QuestManager.unlocked) $questTabLink.show();
+    if (QuestManager.unlocked()) $questTabLink.show();
     else $questTabLink.hide();
     if (TownManager.buildingsOwned()) $townTabLink.show();
     else $townTabLink.hide();

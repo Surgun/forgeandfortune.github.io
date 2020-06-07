@@ -80,7 +80,6 @@ const devtools = {
         this.tutorialSkip();
         TownManager.buildings.forEach(building => {
             recipeList.idToItem(building.recipeID).owned = true;
-            console.log(building.getStatus());
             if (building.getStatus() === BuildingState.seen) building.setStatus(BuildingState.built);
             else if (building.getStatus() !== BuildingState.built) building.setStatus(BuildingState.seen);
         })

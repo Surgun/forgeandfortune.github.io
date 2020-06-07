@@ -51,7 +51,6 @@ const Shop = {
         return this.perks.filter(p=>p.purchased);
     },
     alreadyPurchased(perkID) {
-        console.log(perkID);
         const perk = this.idToPerk(perkID);
         return perk.alreadyPurchased();
     }

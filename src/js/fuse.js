@@ -189,7 +189,6 @@ function refreshFuseSlots() {
     // Fusion Slots Cards
     const fusionCardsContainer = $("<div/>").addClass(`fusionCardsContainer`).appendTo($fuseSlots);
     FusionManager.slots.forEach(slot => {
-        console.log(slot)
         const d1 = $("<div/>").addClass("fuseSlot").addClass("R"+slot.rarity);
         const d2 = $("<div/>").addClass("fuseSlotName itemName").html(slot.name);
         const d3 = $("<div/>").addClass("itemLevel").html(recipeList.idToItem(slot.id).itemLevel());

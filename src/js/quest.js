@@ -81,7 +81,6 @@ class Quest {
     }
     available() {
         if (this.openReqType === "Perk" && !Shop.alreadyPurchased(this.openReq)) return false;
-        console.log(this.openReq);
         if (this.openReqType === "Quest" && !QuestManager.idToQuest(this.openReq).complete) return false;
         if (this.complete && !this.repeatable) return false;
         return true;
@@ -90,7 +89,6 @@ class Quest {
 
 const QuestManager = {
     quests : [],
-    unlocked: false,
     hero1 : null,
     hero2 : null,
     hero3 : null,
@@ -101,7 +99,6 @@ const QuestManager = {
     },
     createSave() {
         const save = {};
-        save.unlocked = this.unlocked;
         save.quests = [];
         this.quests.forEach(quest => {
             save.quests.push(quest.createSave());
@@ -109,7 +106,6 @@ const QuestManager = {
         return save;
     },
     loadSave(save) {
-        save.unlocked = this.unlocked;
         save.quests.forEach(questSave => {
             const quest = this.idToQuest(questSave.id);
             quest.loadSave(questSave);
@@ -121,6 +117,9 @@ const QuestManager = {
     addTime(ms) {
         this.quests.forEach(q=>q.addTime(ms));
         if (lastTab === "questsTab") refreshQuestTimes();
+    },
+    unlocked() {
+        return this.quests.some(q=>q.available());
     },
     available() {
         return this.quests.filter(q=>q.available());
@@ -135,7 +134,6 @@ const QuestManager = {
         this.hero4 = null;
     },
     removeParty(heroID) {
-        console.log(heroID);
         if (heroID === "hero1") this.hero1 = null;
         if (heroID === "hero2") this.hero2 = null;
         if (heroID === "hero3") this.hero3 = null;
@@ -183,6 +181,7 @@ const QuestManager = {
     lockTeam() {
         const heroids = [this.hero1,this.hero2,this.hero3,this.hero4].filter(h => h !== null);
         const quest = this.idToQuest(this.questView);
+        console.log(heroids,quest);
         quest.lockTeam(heroids);
         this.questView = null;
     },
@@ -210,14 +209,21 @@ function refreshQuestTimes() {
 function refreshQuestText(quest) {
     if (quest.state === QuestState.idle) $("#qst"+quest.id).html(displayText('quests_status_idle'));
     if (quest.state === QuestState.running) $("#qst"+quest.id).html(msToTime(quest.remaining()));
-    if (quest.state === QuestState.success) $("#qst"+quest.id).html(displayText('quests_status_success'));
-    if (quest.state === QuestState.failure) $("#qst"+quest.id).html(displayText('quests_status_failure'));   
+    if (quest.state === QuestState.success) {
+        $("#q"+quest.id).addClass("questSuccess");
+        $("#qst2"+quest.id).hide();
+        $("#qst"+quest.id).html(displayText('quests_status_success'));
+    }
+    if (quest.state === QuestState.failure) {
+        $("#q"+quest.id).addClass("questFailure");
+        $("#qst2"+quest.id).hide();
+        $("#qst"+quest.id).html(displayText('quests_status_failure'));
+    }
 }
 
 function createQuestContainer(quest) {
-    const d = $("<div/>").addClass("questLocationContainer").data("questID",quest.id);
+    const d = $("<div/>").attr("q"+quest.id).addClass("questLocationContainer").data("questID",quest.id);
     if (quest.state === QuestState.running) d.addClass("questActive");
-    console.log(quest.state)
     if (quest.state === QuestState.success) d.addClass("questSuccess");
     if (quest.state === QuestState.failure) d.addClass("questFailure");
     $("<div/>").addClass("questName").html(quest.name).appendTo(d);
@@ -235,7 +241,7 @@ function createQuestContainer(quest) {
         $("<div/>").addClass("questTimeIcon").html(miscIcons.time).appendTo(questTime);
         $("<div/>").addClass("questTimeText").html(msToTime(quest.timeReq)).appendTo(questTime);
     const d2 = $("<div/>").addClass("questStatus").appendTo(d);
-        $("<div/>").addClass("questStatusText").html(displayText(`quests_status_${quest.state}`)).appendTo(d2);
+        $("<div/>").attr("id","qst2"+quest.id).addClass("questStatusText").html(displayText(`quests_status_${quest.state}`)).appendTo(d2);
     if (quest.state === QuestState.running) {
         const questRunningTime = $("<div/>").addClass("questStatusTime tooltip").attr({'data-tooltip':'quest_time_remaining'}).appendTo(d2);
             $("<div/>").addClass("questTimeIcon").html(miscIcons.time).appendTo(questRunningTime);

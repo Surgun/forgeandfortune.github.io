@@ -402,7 +402,6 @@ const DungeonManager = {
         return bossDung.reduce((a,b) => a + b);
     },
     beaten(dungeonID) {
-        console.log(dungeonID);
         const dungeon = this.dungeonByID(dungeonID);
         return dungeon.beaten();
     }

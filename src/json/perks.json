@@ -808,8 +808,8 @@
   },
   {
     "id": "AL30061",
-    "title": "Questing",
-    "description": "Questing",
+    "title": "First Gold Quest",
+    "description": "First Gold Quest",
     "category": "Town",
     "order": 8,
     "goldCost": 120000,

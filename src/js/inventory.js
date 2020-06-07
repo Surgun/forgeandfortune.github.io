@@ -386,8 +386,8 @@ function refreshInventory() {
     //build the sorted inventory
     Inventory.inv.forEach((item,i) => {
         const itemdiv = $("<div/>").addClass("inventoryItem");
-        const itemName = $("<div/>").addClass("inventoryItemName");
-        const itemRarity = $("<div/>").addClass(`inventoryItemRarity`);
+        const itemName = $("<div/>").addClass("itemName");
+        const itemRarity = $("<div/>").addClass(`itemRarity`);
         const itemLevel = $("<div/>").addClass("itemLevel");
         const itemCost = $("<div/>").addClass("inventoryItemValue")
         const itemProps = $("<div/>").addClass("inventoryProps");
@@ -443,8 +443,8 @@ function refreshInventory() {
 
 function createInventoryCard(container,i) {
     const itemdiv = $("<div/>").addClass("inventoryItem").addClass("R"+container.rarity);
-    const itemName = $("<div/>").addClass("inventoryItemName itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
-    const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
+    const itemName = $("<div/>").addClass("itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
+    const itemRarity = $("<div/>").addClass(`itemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(container.goldValue())}).html(container.goldValueFormatted());
     const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
     if (container.goldValue() === 0) {
@@ -487,8 +487,8 @@ function gearEquipFromInventory(invID) {
     const item = equipContainerTarget.item;
     const itemdiv = $("<div/>").addClass("equipItem");
     itemdiv.addClass("R"+equipContainerTarget.rarity)
-    const itemName = $("<div/>").addClass("equipItemName itemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
-    const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${equipContainerTarget.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[equipContainerTarget.rarity].toLowerCase()}`}).html(miscIcons.rarity);
+    const itemName = $("<div/>").addClass("itemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
+    const itemRarity = $("<div/>").addClass(`itemRarity RT${equipContainerTarget.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[equipContainerTarget.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(equipContainerTarget.itemLevel());
     const itemProps = $("<div/>").addClass("equipItemProps");
     for (const [stat, val] of Object.entries(equipContainerTarget.itemStat(false))) {

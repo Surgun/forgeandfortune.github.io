@@ -238,6 +238,20 @@
     "type": "static"
   },
   {
+    "id": "quest_time",
+    "title": "Quest Time",
+    "description": "The amount of time needed to complete this quest.",
+    "icon": "<i class=\"fas fa-clock\"></i>",
+    "type": "static"
+  },
+  {
+    "id": "quest_time_remaining",
+    "title": "Remaining Quest Time",
+    "description": "The amount of time remaining until this quest is completed.",
+    "icon": "<i class=\"fas fa-clock\"></i>",
+    "type": "static"
+  },
+  {
     "id": "perk_desc",
     "title": "#title#",
     "description": "#description#",

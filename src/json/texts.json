@@ -216,6 +216,22 @@
     "en": "Select the heroes to send on this adventure."
   },
   {
+    "tid": "quests_status_idle",
+    "en": "Quest Not Active"
+  },
+  {
+    "tid": "quests_status_in_progress",
+    "en": "Quest In Progress"
+  },
+  {
+    "tid": "quests_status_success",
+    "en": "Quest Succeeded"
+  },
+  {
+    "tid": "quests_status_failure",
+    "en": "Quest Failed"
+  },
+  {
     "tid": "header_building_construct_title",
     "en": "Construct Building"
   },

@@ -347,8 +347,8 @@ $(document).on('click', '.resynthMaterial', (e) => {
 
 function createSynthCard(container) {
     const itemdiv = $("<div/>").addClass("inventoryItem").addClass("R"+container.rarity);
-    const itemName = $("<div/>").addClass("inventoryItemName itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
-    const itemRarity = $("<div/>").addClass(`inventoryItemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
+    const itemName = $("<div/>").addClass("itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
+    const itemRarity = $("<div/>").addClass(`itemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
     const itemProps = $("<div/>").addClass("inventoryProps");
     for (const [stat, val] of Object.entries(container.itemStat(0))) {
@@ -361,7 +361,7 @@ function createSynthCard(container) {
 
 function createSynthStageCard(container) {
     const itemdiv = $("<div/>").addClass("inventoryItem").addClass("R"+container.rarity);
-    const itemName = $("<div/>").addClass("inventoryItemName itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
+    const itemName = $("<div/>").addClass("itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
     const stageRemove = $('<div/>').attr("id","synthRemove").html(`<i class="fas fa-times"></i>`);
     const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
     const itemProps = $("<div/>").addClass("inventoryProps");

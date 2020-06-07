@@ -263,7 +263,7 @@ function heroCurrentGearEquip(hero,gearSlot) {
             $("<div/>").addClass("emptyGearSlotIcon").html(miscIcons.emptySlot).appendTo(d1);
             $("<div/>").addClass("emptyGearSlotTitle").html('Empty Slot').appendTo(d1);
             $("<div/>").addClass("emptyGearSlotLevel itemLevel").appendTo(d1);
-            $("<div/>").addClass("emptyGearSlotRarity equipRarity").appendTo(d1);
+            $("<div/>").addClass("emptyGearSlotRarity itemRarity").appendTo(d1);
             const equipStats = $("<div/>").addClass("emptyEquipStats").appendTo(d1);
                 const ed = $("<div/>").addClass('gearStat').appendTo(equipStats);
                 $("<div/>").addClass(`empty_img`).appendTo(ed);
@@ -275,7 +275,7 @@ function heroCurrentGearEquip(hero,gearSlot) {
     const d2 = $("<div/>").addClass("itemLevel").appendTo(d1);
         $("<div/>").addClass("level_text").html(`LVL`).appendTo(d2);
         $("<div/>").addClass("level_integer").html(`${gear.lvl}`).appendTo(d2);
-    $("<div/>").addClass("equipRarity itemRarity").addClass(`RT${gear.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[gear.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d1);
+    $("<div/>").addClass("itemRarity").addClass(`RT${gear.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[gear.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d1);
     const equipStats = $("<div/>").addClass("equipStats").appendTo(d1);
     for (const [stat, val] of Object.entries(gear.itemStat())) {
         if (val === 0) continue;
@@ -355,9 +355,9 @@ function examineHeroPossibleEquip(heroID,gearType,skipAnimation) {
 function heroEquipCard(hero, itemContainer) {
     const equippedItem = hero.getSlot(itemContainer.type).gear;
     const card = $('<div/>').addClass('gearItem').addClass("R"+itemContainer.rarity).data({"heroID":hero.id,"containerID":itemContainer.containerID});
-        $('<div/>').addClass('gearItemName itemName').html(itemContainer.picName()).appendTo(card);
-        $('<div/>').addClass('gearItemLevel').html(itemContainer.itemLevel()).appendTo(card);
-        $("<div/>").addClass("gearItemRarity itemRarity").addClass(`RT${itemContainer.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[itemContainer.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(card);
+        $('<div/>').addClass('itemName').html(itemContainer.picName()).appendTo(card);
+        $('<div/>').addClass('itemLevel').html(itemContainer.itemLevel()).appendTo(card);
+        $("<div/>").addClass("itemRarity").addClass(`RT${itemContainer.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[itemContainer.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(card);
     const equippedStats = equippedItem ? equippedItem.itemStat() : blankItemStat();
     const d3 = $('<div/>').addClass('equipStats').appendTo(card);
     for (const [stat, val] of Object.entries(itemContainer.itemStat())) {

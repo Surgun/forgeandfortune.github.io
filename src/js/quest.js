@@ -1,6 +1,6 @@
 "use strict";
 
-const QuestState = Object.freeze({idle:"Idle",running:"In Progress",success:"Success",failure:"Failure"});
+const QuestState = Object.freeze({idle:"idle",running:"in_progress",success:"success",failure:"failure"});
 
 const $questLocations = $("#questLocations");
 const $questSelect = $("#questSelect");
@@ -208,22 +208,39 @@ function refreshQuestTimes() {
 }
 
 function refreshQuestText(quest) {
-    if (quest.state === QuestState.idle) $("#qst"+quest.id).html("Idle");
+    if (quest.state === QuestState.idle) $("#qst"+quest.id).html(displayText('quests_status_idle'));
     if (quest.state === QuestState.running) $("#qst"+quest.id).html(msToTime(quest.remaining()));
-    if (quest.state === QuestState.success) $("#qst"+quest.id).html("Success");
-    if (quest.state === QuestState.failure) $("#qst"+quest.id).html("Failure");   
+    if (quest.state === QuestState.success) $("#qst"+quest.id).html(displayText('quests_status_success'));
+    if (quest.state === QuestState.failure) $("#qst"+quest.id).html(displayText('quests_status_failure'));   
 }
 
 function createQuestContainer(quest) {
     const d = $("<div/>").addClass("questLocationContainer").data("questID",quest.id);
+    if (quest.state === QuestState.running) d.addClass("questActive");
+    console.log(quest.state)
+    if (quest.state === QuestState.success) d.addClass("questSuccess");
+    if (quest.state === QuestState.failure) d.addClass("questFailure");
     $("<div/>").addClass("questName").html(quest.name).appendTo(d);
     $("<div/>").addClass("questDesc").html(quest.description).appendTo(d);
-    const d1 = $("<div/>").addClass("questReq").html("Requirements").appendTo(d);
-    $("<div/>").addClass("questReqStat").html(`${miscIcons.pow} ${quest.powReq} ${miscIcons.hp} ${quest.hpReq}`).appendTo(d1);
-    $("<div/>").addClass("questTime").html(`${miscIcons.time} ${msToTime(quest.timeReq)}`).appendTo(d1);
-    const d2 = $("<div/>").addClass("questStatus").html("Status").appendTo(d);
-    $("<div/>").addClass("questStatusText").html(quest.state).appendTo(d2);
-    if (quest.state === QuestState.running) $("<div/>").addClass("questStatusTime").attr("id","qst"+quest.id).html(msToTime(quest.remaining())).appendTo(d2);
+    const d1 = $("<div/>").addClass("questReq").appendTo(d);
+        $("<div/>").addClass("questReqHeader").html("Requirements").appendTo(d1);
+        const equipStats = $("<div/>").addClass("questStats equipStats").appendTo(d1);
+            const ed1 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'pow'}).appendTo(equipStats);
+                $("<div/>").addClass(`pow_img`).html(miscIcons.pow).appendTo(ed1);
+                $("<div/>").addClass(`pow_integer statValue`).html(quest.powReq).appendTo(ed1);
+            const ed2 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'hp'}).appendTo(equipStats);
+                $("<div/>").addClass(`hp_img`).html(miscIcons.hp).appendTo(ed2);
+                $("<div/>").addClass(`hp_integer statValue`).html(quest.hpReq).appendTo(ed2);
+    const questTime = $("<div/>").addClass("questTime tooltip").attr({'data-tooltip':'quest_time'}).appendTo(d1);
+        $("<div/>").addClass("questTimeIcon").html(miscIcons.time).appendTo(questTime);
+        $("<div/>").addClass("questTimeText").html(msToTime(quest.timeReq)).appendTo(questTime);
+    const d2 = $("<div/>").addClass("questStatus").appendTo(d);
+        $("<div/>").addClass("questStatusText").html(displayText(`quests_status_${quest.state}`)).appendTo(d2);
+    if (quest.state === QuestState.running) {
+        const questRunningTime = $("<div/>").addClass("questStatusTime tooltip").attr({'data-tooltip':'quest_time_remaining'}).appendTo(d2);
+            $("<div/>").addClass("questTimeIcon").html(miscIcons.time).appendTo(questRunningTime);
+            $("<div/>").addClass("questTimeText").attr("id","qst"+quest.id).html(msToTime(quest.remaining())).appendTo(questRunningTime);
+    }
     return d;    
 }
 

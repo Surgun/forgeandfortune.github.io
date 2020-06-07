@@ -531,14 +531,16 @@ function gearEquipFromInventory(invID) {
 }
 
 function refreshInventoryPlaces() {
-    refreshInventory();
-    refreshCardInvCount();
-    refreshOrderInvCount();
+    if (lastTab === "inventoryTab") refreshInventory();
+    if (lastTab === "recipesTab") refreshCardInvCount();
+    if (lastTab === "guildTab") refreshOrderInvCount();
     if (lastTab === "townsTab" && TownManager.lastBldg === "fusion") refreshPossibleFuse();
-    refreshBankInventory();
-    refreshSmithInventory();
-    refreshSmithStage();
-    refreshSynthInventory();
-    refreshFortuneGear();
-    refreshMuseumInv();
+    if (lastTab === "townsTab" && TownManager.lastBldg === "bank") refreshBankInventory();
+    if (lastTab === "townsTab" && TownManager.lastBldg === "smith") {
+        refreshSmithInventory();
+        refreshSmithStage();
+    }
+    if (lastTab === "townsTab" && TownManager.lastBldg === "synth") refreshSynthInventory();
+    if (lastTab === "townsTab" && TownManager.lastBldg === "fortune") refreshFortuneGear();
+    if (lastTab === "townsTab" && TownManager.lastBldg === "museum") refreshMuseumInv();    
 }

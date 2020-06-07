@@ -1,672 +1,538 @@
 [
   {
     "tid": "tab_inventory",
-    "en": "Inventory",
-    "es": "Inventario"
+    "en": "Inventory"
   },
   {
     "tid": "tab_guilds",
-    "en": "Guilds",
-    "es": "Gremios"
+    "en": "Guilds"
   },
   {
     "tid": "tab_recipes",
-    "en": "Recipes",
-    "es": "Recetas"
+    "en": "Recipes"
   },
   {
     "tid": "tab_heroes",
-    "en": "Heroes",
-    "es": "Héroes"
+    "en": "Heroes"
   },
   {
     "tid": "tab_adventures",
-    "en": "Adventures",
-    "es": "Aventuras"
+    "en": "Adventures"
   },
   {
     "tid": "tab_town",
-    "en": "Town",
-    "es": "Pueblo"
+    "en": "Town"
   },
   {
     "tid": "tab_market",
-    "en": "Market",
-    "es": "Mercado"
+    "en": "Market"
   },
   {
     "tid": "tab_progress",
-    "en": "Progress",
-    "es": "Progreso"
+    "en": "Progress"
   },
   {
     "tid": "type_armor",
-    "en": "Armor",
-    "es": null
+    "en": "Armor"
   },
   {
     "tid": "type_belts",
-    "en": "Belts",
-    "es": null
+    "en": "Belts"
   },
   {
     "tid": "type_cloaks",
-    "en": "Cloaks",
-    "es": null
+    "en": "Cloaks"
   },
   {
     "tid": "type_gauntlets",
-    "en": "Gauntlets",
-    "es": null
+    "en": "Gauntlets"
   },
   {
     "tid": "type_gloves",
-    "en": "Gloves",
-    "es": null
+    "en": "Gloves"
   },
   {
     "tid": "type_hats",
-    "en": "Hats",
-    "es": null
+    "en": "Hats"
   },
   {
     "tid": "type_helmets",
-    "en": "Helmets",
-    "es": null
+    "en": "Helmets"
   },
   {
     "tid": "type_knives",
-    "en": "Knives",
-    "es": null
+    "en": "Knives"
   },
   {
     "tid": "type_masks",
-    "en": "Masks",
-    "es": null
+    "en": "Masks"
   },
   {
     "tid": "type_pendants",
-    "en": "Pendants",
-    "es": null
+    "en": "Pendants"
   },
   {
     "tid": "type_rings",
-    "en": "Rings",
-    "es": null
+    "en": "Rings"
   },
   {
     "tid": "type_shields",
-    "en": "Shields",
-    "es": null
+    "en": "Shields"
   },
   {
     "tid": "type_shoes",
-    "en": "Shoes",
-    "es": null
+    "en": "Shoes"
   },
   {
     "tid": "type_staves",
-    "en": "Staves",
-    "es": null
+    "en": "Staves"
   },
   {
     "tid": "type_swords",
-    "en": "Swords",
-    "es": null
+    "en": "Swords"
   },
   {
     "tid": "type_thrown",
-    "en": "Thrown",
-    "es": null
+    "en": "Thrown"
   },
   {
     "tid": "type_tomes",
-    "en": "Tomes",
-    "es": null
+    "en": "Tomes"
   },
   {
     "tid": "type_trinkets",
-    "en": "Trinkets",
-    "es": null
+    "en": "Trinkets"
   },
   {
     "tid": "type_vests",
-    "en": "Vests",
-    "es": null
+    "en": "Vests"
   },
   {
     "tid": "rarity_common",
-    "en": "Common",
-    "es": null
+    "en": "Common"
   },
   {
     "tid": "rarity_good",
-    "en": "Good",
-    "es": null
+    "en": "Good"
   },
   {
     "tid": "rarity_great",
-    "en": "Great",
-    "es": null
+    "en": "Great"
   },
   {
     "tid": "rarity_epic",
-    "en": "Epic",
-    "es": null
+    "en": "Epic"
   },
   {
     "tid": "equipment_select_title",
-    "en": "Select Your Hero Equipment",
-    "es": null
+    "en": "Select Your Hero Equipment"
   },
   {
     "tid": "equipment_select_desc",
-    "en": "Equip your hero with items from your inventory.",
-    "es": null
+    "en": "Equip your hero with items from your inventory."
   },
   {
     "tid": "trinket_select_title",
-    "en": "Select Your Hero Trinket",
-    "es": null
+    "en": "Select Your Hero Trinket"
   },
   {
     "tid": "trinket_select_desc",
-    "en": "Equip your hero with trinkets from your inventory.",
-    "es": null
+    "en": "Equip your hero with trinkets from your inventory."
   },
   {
     "tid": "no_equipment_desc",
-    "en": "No equipment available to equip in this slot.",
-    "es": null
+    "en": "No equipment available to equip in this slot."
   },
   {
     "tid": "no_trinkets_desc",
-    "en": "No trinkets available to equip in this slot.",
-    "es": null
+    "en": "No trinkets available to equip in this slot."
   },
   {
     "tid": "equipment_recipes_button",
-    "en": "View {0} Recipes",
-    "es": null
+    "en": "View {0} Recipes"
   },
   {
     "tid": "playbook_locked",
-    "en": "Locked",
-    "es": null
+    "en": "Locked"
   },
   {
     "tid": "header_adventure_areas_title",
-    "en": "Adventure Areas",
-    "es": null
+    "en": "Adventure Areas"
   },
   {
     "tid": "header_adventure_areas_desc",
-    "en": "Select an area for your heroes to explore.",
-    "es": null
+    "en": "Select an area for your heroes to explore."
   },
   {
     "tid": "adventure_dungeon_abandon",
-    "en": "Abandon Dungeon",
-    "es": null
+    "en": "Abandon Dungeon"
   },
   {
     "tid": "adventure_dungeon_abandon_all",
-    "en": "Abandon All Dungeons",
-    "es": null
+    "en": "Abandon All Dungeons"
   },
   {
     "tid": "adventure_area_status_idle",
-    "en": "Idle",
-    "es": null
+    "en": "Idle"
   },
   {
     "tid": "adventure_area_status_in_progress",
-    "en": "Adventure In Progress",
-    "es": null
+    "en": "Adventure In Progress"
   },
   {
     "tid": "adventure_area_status_complete",
-    "en": "Adventure Completed",
-    "es": null
+    "en": "Adventure Completed"
   },
   {
     "tid": "adventure_launch_floor",
-    "en": "Start At Floor 1",
-    "es": null
+    "en": "Start At Floor 1"
   },
   {
     "tid": "adventure_launch_floor_highest",
-    "en": "Start At Highest Floor Reached",
-    "es": null
+    "en": "Start At Highest Floor Reached"
   },
   {
     "tid": "adventure_launch_floor_boss",
-    "en": "Start Boss Fight",
-    "es": null
+    "en": "Start Boss Fight"
   },
   {
     "tid": "slot_party_empty",
-    "en": "Empty Party Slot",
-    "es": null
+    "en": "Empty Party Slot"
   },
   {
     "tid": "enemy_party_show",
-    "en": "Show Enemy Party",
-    "es": null
+    "en": "Show Enemy Party"
   },
   {
     "tid": "enemy_party_hide",
-    "en": "Hide Enemy Party",
-    "es": null
+    "en": "Hide Enemy Party"
   },
   {
     "tid": "header_party_heroes_title",
-    "en": "Your Available Heroes",
-    "es": null
+    "en": "Your Available Heroes"
   },
   {
     "tid": "header_party_heroes_desc",
-    "en": "Select the heroes to send on this adventure.",
-    "es": null
+    "en": "Select the heroes to send on this adventure."
   },
   {
     "tid": "header_building_construct_title",
-    "en": "Construct Building",
-    "es": null
+    "en": "Construct Building"
   },
   {
     "tid": "header_building_construct_desc",
-    "en": "Unlock this building by crafting the recipe below.",
-    "es": null
+    "en": "Unlock this building by crafting the recipe below."
   },
   {
     "tid": "bank_nav_inventory",
-    "en": "Your Inventory",
-    "es": null
+    "en": "Your Inventory"
   },
   {
     "tid": "bank_nav_storage",
-    "en": "Bank Storage",
-    "es": null
+    "en": "Bank Storage"
   },
   {
     "tid": "header_bank_inventory_title",
-    "en": "Your Inventory",
-    "es": null
+    "en": "Your Inventory"
   },
   {
     "tid": "header_bank_inventory_desc",
-    "en": "Items you currently have in your inventory.",
-    "es": null
+    "en": "Items you currently have in your inventory."
   },
   {
     "tid": "header_bank_storage_title",
-    "en": "Bank Storage",
-    "es": null
+    "en": "Bank Storage"
   },
   {
     "tid": "header_bank_storage_desc",
-    "en": "Items you currently have stored in the bank.",
-    "es": null
+    "en": "Items you currently have stored in the bank."
   },
   {
     "tid": "bank_sort_inventory_button",
-    "en": "Sort Inventory",
-    "es": null
+    "en": "Sort Inventory"
   },
   {
     "tid": "bank_sort_bank_button",
-    "en": "Sort Bank Storage",
-    "es": null
+    "en": "Sort Bank Storage"
   },
   {
     "tid": "bank_stow_item_button",
-    "en": "Store in Bank",
-    "es": null
+    "en": "Store in Bank"
   },
   {
     "tid": "bank_remove_item_button",
-    "en": "Add to Inventory",
-    "es": null
+    "en": "Add to Inventory"
   },
   {
     "tid": "bank_inventory_empty",
-    "en": "You currently have no items in your inventory.",
-    "es": null
+    "en": "You currently have no items in your inventory."
   },
   {
     "tid": "bank_storage_empty",
-    "en": "You currently have no items stored in the bank.",
-    "es": null
+    "en": "You currently have no items stored in the bank."
   },
   {
     "tid": "header_fusion_possible_fuse_title",
-    "en": "Items Available to Fuse",
-    "es": null
+    "en": "Items Available for Fusion"
   },
   {
     "tid": "header_fusion_possible_fuse_desc",
-    "en": "Use three of the same item to fuse into higher rarity.",
-    "es": null
+    "en": "Use three of the same item to fuse into higher rarity."
   },
   {
     "tid": "fusion_possible_empty",
-    "en": "You currently have no items available to fuse.",
-    "es": null
+    "en": "You currently have no items available to fuse."
   },
   {
     "tid": "fusion_slot_empty",
-    "en": "Empty Fusion Slot",
-    "es": null
+    "en": "Empty Fusion Slot"
   },
   {
     "tid": "fusion_possible_fuse_rarity",
-    "en": "{0} Fusion",
-    "es": null
+    "en": "{0} Fusion"
   },
   {
     "tid": "fusion_possible_assign_button",
-    "en": "Assign Fusion",
-    "es": null
+    "en": "Assign Fusion"
   },
   {
     "tid": "fusion_slot_start_fuse_button",
-    "en": "Start Fusion",
-    "es": null
+    "en": "Start Fusion"
   },
   {
     "tid": "fusion_slot_collect_fuse_button",
-    "en": "Collect Fused Item",
-    "es": null
+    "en": "Collect Fused Item"
   },
   {
     "tid": "header_forge_inventory_title",
-    "en": "Your Inventory",
-    "es": null
+    "en": "Your Inventory"
   },
   {
     "tid": "header_forge_inventory_desc",
-    "en": "Items in your inventory that you can upgrade using the forge.",
-    "es": null
+    "en": "Items in your inventory that you can upgrade using the forge."
   },
   {
     "tid": "header_forge_heroes_title",
-    "en": "Heroes' Inventory",
-    "es": null
+    "en": "Heroes' Inventory"
   },
   {
     "tid": "header_forge_heroes_desc",
-    "en": "Items your heroes have equipped that you can upgrade using the forge.",
-    "es": null
+    "en": "Items your heroes have equipped that you can upgrade using the forge."
   },
   {
     "tid": "forge_smith_slot_empty",
-    "en": "Empty Forge Slot",
-    "es": null
+    "en": "Empty Forge Slot"
   },
   {
     "tid": "forge_smith_confirm_button",
-    "en": "Confirm Smith",
-    "es": null
+    "en": "Confirm Smith"
   },
   {
     "tid": "forge_inventory_assign_button",
-    "en": "Assign Smith",
-    "es": null
+    "en": "Assign Smith"
   },
   {
     "tid": "forge_inventory_empty",
-    "en": "You have no items in your inventory that can be upgraded using the forge.",
-    "es": null
+    "en": "You have no items in your inventory that can be upgraded using the forge."
   },
   {
     "tid": "forge_heroes_empty",
-    "en": "This hero has no items equipped that can be upgraded using the forge.",
-    "es": null
+    "en": "This hero has no items equipped that can be upgraded using the forge."
   },
   {
     "tid": "forge_heroes_back_button",
-    "en": "Back to Heroes",
-    "es": null
+    "en": "Back to Heroes"
   },
   {
     "tid": "forge_heroes_browsing",
-    "en": "Browsing {0}",
-    "es": null
+    "en": "Browsing {0}"
   },
   {
     "tid": "header_fortune_possible_title",
-    "en": "Fortune Offerings Available",
-    "es": null
+    "en": "Fortune Offerings Available"
   },
   {
     "tid": "header_fortune_possible_desc",
-    "en": "You can offer up the following items for a fortune.",
-    "es": null
+    "en": "You can offer up the following items for a fortune."
   },
   {
     "tid": "fortune_possible_empty",
-    "en": "You currently have no items available to offer.",
-    "es": null
+    "en": "You currently have no items available to offer."
   },
   {
     "tid": "fortune_slot_rarity_chance",
-    "en": "+{0} Base {1} Rarity Chance",
-    "es": null
+    "en": "+{0} Base {1} Rarity Chance"
   },
   {
     "tid": "fortune_slot_available",
-    "en": "Fortune Available",
-    "es": null
+    "en": "Fortune Available"
   },
   {
     "tid": "fortune_slot_confirm_button",
-    "en": "Confirm Offering",
-    "es": null
+    "en": "Confirm Offering"
   },
   {
     "tid": "fortune_possible_assign_button",
-    "en": "Assign Offering",
-    "es": null
+    "en": "Assign Offering"
   },
   {
     "tid": "fortune_slot_crafts_remaining",
-    "en": "{0} Crafts Remaining",
-    "es": null
+    "en": "{0} Crafts Remaining"
   },
   {
     "tid": "fortune_slot_empty",
-    "en": "No Active Fortune",
-    "es": null
+    "en": "No Active Fortune"
   },
   {
     "tid": "header_tinker_research_title",
-    "en": "Trinket Research",
-    "es": null
+    "en": "Trinket Research"
   },
   {
     "tid": "header_tinker_research_desc",
-    "en": "Research new trinket recipes that can be crafted for gold and are always Epic. ",
-    "es": null
+    "en": "Research new trinket recipes that can be crafted for gold. "
   },
   {
     "tid": "tinker_view_recipes_button",
-    "en": "View {0} Recipes",
-    "es": null
+    "en": "View {0} Recipes"
   },
   {
     "tid": "tinker_command_enabled",
-    "en": "Enabled",
-    "es": null
+    "en": "Enabled"
   },
   {
     "tid": "tinker_command_disabled",
-    "en": "Disabled",
-    "es": null
+    "en": "Disabled"
   },
   {
     "tid": "tinker_command_research_cost",
-    "en": "Research Cost",
-    "es": null
+    "en": "Research Cost"
   },
   {
     "tid": "tinker_command_research_complete",
-    "en": "Complete Research",
-    "es": null
+    "en": "Complete Research"
   },
   {
     "tid": "museum_nav_collections",
-    "en": "Collection",
-    "es": null
+    "en": "Collection"
   },
   {
     "tid": "museum_nav_rewards",
-    "en": "Rewards",
-    "es": null
+    "en": "Rewards"
   },
   {
     "tid": "header_museum_item_types_title",
-    "en": "Recipe Lines",
-    "es": null
+    "en": "Recipe Lines"
   },
   {
     "tid": "header_museum_item_types_desc",
-    "en": "View your contribution details for each line.",
-    "es": null
+    "en": "View your contribution details for each line."
   },
   {
     "tid": "header_museum_donations_title",
-    "en": "Contribute to the Museum",
-    "es": null
+    "en": "Contribute to the Museum"
   },
   {
     "tid": "header_museum_donations_desc",
-    "en": "Donate your items to earn points to spend on museum rewards.",
-    "es": null
+    "en": "Donate your items to earn points to spend on museum rewards."
   },
   {
     "tid": "museum_no_donations_message",
-    "en": "You have no items available to donate.",
-    "es": null
+    "en": "You have no items available to donate."
   },
   {
     "tid": "museum_donations_donate_button",
-    "en": "Donate",
-    "es": null
+    "en": "Donate"
   },
   {
     "tid": "museum_item_types_back_button",
-    "en": "Back to Recipe Types",
-    "es": null
+    "en": "Back to Recipe Types"
   },
   {
     "tid": "header_museum_reward_points_title",
-    "en": "Museum Rewards",
-    "es": null
+    "en": "Museum Rewards"
   },
   {
     "tid": "header_museum_reward_points_desc",
-    "en": "Earn more points by donating unique items to the museum.",
-    "es": null
+    "en": "Earn more points by donating unique items to the museum."
   },
   {
     "tid": "museum_reward_points_balance",
-    "en": "You have <span>{0} point</span> left to spend.",
-    "es": null
+    "en": "You have <span>{0} point</span> left to spend."
   },
   {
     "tid": "museum_reward_points_balance_plural",
-    "en": "You have <span>{0} points</span> left to spend.",
-    "es": null
+    "en": "You have <span>{0} points</span> left to spend."
   },
   {
     "tid": "museum_reward_craft_time_redux_title",
-    "en": "Craft Time Reduction",
-    "es": null
+    "en": "Craft Time Reduction"
   },
   {
     "tid": "museum_reward_craft_good_rate_title",
-    "en": "Good Rarity Rate",
-    "es": null
+    "en": "Good Rarity Rate"
   },
   {
     "tid": "museum_reward_craft_great_rate_title",
-    "en": "Great Rarity Rate",
-    "es": null
+    "en": "Great Rarity Rate"
   },
   {
     "tid": "museum_reward_craft_epic_rate_title",
-    "en": "Epic Rarity Rate",
-    "es": null
+    "en": "Epic Rarity Rate"
   },
   {
     "tid": "museum_reward_craft_time_redux_desc",
-    "en": "{0} Base Crafting Time",
-    "es": null
+    "en": "{0} Base Crafting Time"
   },
   {
     "tid": "museum_reward_craft_good_rate_desc",
-    "en": "{0} Base Good Rarity Chance",
-    "es": null
+    "en": "{0} Base Good Rarity Chance"
   },
   {
     "tid": "museum_reward_craft_great_rate_desc",
-    "en": "{0} Base Great Rarity Chance",
-    "es": null
+    "en": "{0} Base Great Rarity Chance"
   },
   {
     "tid": "museum_reward_craft_epic_rate_desc",
-    "en": "{0} Base Epic Rarity Chance",
-    "es": null
+    "en": "{0} Base Epic Rarity Chance"
   },
   {
     "tid": "museum_reward_level",
-    "en": "Level {0}",
-    "es": null
+    "en": "Level {0}"
   },
   {
     "tid": "museum_reward_current",
-    "en": "Current Reward",
-    "es": null
+    "en": "Current Reward"
   },
   {
     "tid": "museum_reward_next",
-    "en": "Next Reward",
-    "es": null
+    "en": "Next Reward"
   },
   {
     "tid": "museum_reward_purchase",
-    "en": "Purchase ({0} Point)",
-    "es": null
+    "en": "Purchase ({0} Point)"
   },
   {
     "tid": "museum_reward_purchase_plural",
-    "en": "Purchase ({0} Points)",
-    "es": null
+    "en": "Purchase ({0} Points)"
   },
   {
     "tid": "header_market_perks_available_title",
-    "en": "Available Perks",
-    "es": null
+    "en": "Available Perks"
   },
   {
     "tid": "header_market_perks_available_desc",
-    "en": "Perks you can purchase from the Market.",
-    "es": null
+    "en": "Perks you can purchase from the Market."
   },
   {
     "tid": "header_market_perks_purchased_title",
-    "en": "Purchased Perks",
-    "es": null
+    "en": "Purchased Perks"
   },
   {
     "tid": "header_market_perks_purchased_desc",
-    "en": "Perks you have already purchased from the Market.",
-    "es": null
+    "en": "Perks you have already purchased from the Market."
   },
   {
     "tid": "market_perk_purchase_button",
-    "en": "Purchase",
-    "es": null
+    "en": "Purchase"
   }
 ]

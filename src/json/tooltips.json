@@ -176,7 +176,7 @@
   },
   {
     "id": "forge_remove",
-    "title": "Removed Sloted Forge",
+    "title": "Removed Slotted Forge",
     "description": "This will remove the currently slotted item for forging and return it to your inventory.",
     "icon": "<i class=\"fas fa-times\"></i>",
     "type": "static"
@@ -191,7 +191,7 @@
   {
     "id": "offering_remove",
     "title": "Remove Slotted Offering",
-    "description": "This will remove the currently slotted fortune offering and return the item to your inventory. ",
+    "description": "This will remove the currently slotted offering and return the item to your inventory. ",
     "icon": "<i class=\"fas fa-times\"></i>",
     "type": "static"
   },

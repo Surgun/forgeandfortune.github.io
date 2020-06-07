@@ -205,7 +205,7 @@ function itemStageCardSmith(slot,upgrade) {
     const itemLevel = $("<div/>").addClass("itemLevel").html(slot.itemLevel());
     const itemRarity = $("<div/>").addClass(`itemRarity RT${slot.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[slot.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemMaterial = $("<div/>").addClass("smithItemMaterial tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":slot.material()}).html(ResourceManager.materialIcon(slot.material()));
-    const smithClose = $("<div/>").addClass("smithClose tooltip").html(`<i class="fas fa-times"></i>`);
+    const smithClose = $("<div/>").addClass("smithClose tooltip").attr({'data-tooltip': 'forge_remove'}).html(`<i class="fas fa-times"></i>`);
     if (upgrade) smithClose.hide();
     const equipStats = $("<div/>").addClass("equipStats");
     for (const [stat, val] of Object.entries(slot.itemStat(upgrade))) {
@@ -246,4 +246,5 @@ $(document).on("click",".smithClose",(e) => {
     e.preventDefault();
     bloopSmith.removeSmith();
     refreshSmithStage();
+    destroyTooltip();
 });

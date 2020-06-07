@@ -7003,6 +7003,10 @@ span.beta-tag {
 
 /* Quests */ 
 
+.questLocationsHeader {
+    margin: 10px;
+}
+
 .questLocationCardsContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(300px, 1fr));
@@ -7058,6 +7062,10 @@ span.beta-tag {
 }
 
 .questDesc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     padding: 10px;
     color: var(--text-secondary);
     font-size: 0.85rem;
@@ -7075,7 +7083,7 @@ span.beta-tag {
 }
 
 .questReq {
-    margin: 0 -10px;
+    margin: auto -10px 0;
     padding: 10px;
     background-color: var(--bg-secondary);
     border-top: 2px solid var(--border-primary);

@@ -213,11 +213,13 @@ function refreshQuestText(quest) {
         $("#q"+quest.id).addClass("questSuccess");
         $("#qst2"+quest.id).hide();
         $("#qst"+quest.id).html(displayText('quests_status_success'));
+        $("#qsti"+quest.id).hide();
     }
     if (quest.state === QuestState.failure) {
         $("#q"+quest.id).addClass("questFailure");
         $("#qst2"+quest.id).hide();
         $("#qst"+quest.id).html(displayText('quests_status_failure'));
+        $("#qsti"+quest.id).hide();
     }
 }
 
@@ -229,7 +231,7 @@ function createQuestContainer(quest) {
     $("<div/>").addClass("questName").html(quest.name).appendTo(d);
     $("<div/>").addClass("questDesc").html(quest.description).appendTo(d);
     const d1 = $("<div/>").addClass("questReq").appendTo(d);
-        $("<div/>").addClass("questReqHeader").html("Requirements").appendTo(d1);
+        $("<div/>").addClass("questReqHeader").html(displayText('quests_location_heading_reqs')).appendTo(d1);
         const equipStats = $("<div/>").addClass("questStats equipStats").appendTo(d1);
             const ed1 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'pow'}).appendTo(equipStats);
                 $("<div/>").addClass(`pow_img`).html(miscIcons.pow).appendTo(ed1);
@@ -244,7 +246,7 @@ function createQuestContainer(quest) {
         $("<div/>").attr("id","qst2"+quest.id).addClass("questStatusText").html(displayText(`quests_status_${quest.state}`)).appendTo(d2);
     if (quest.state === QuestState.running) {
         const questRunningTime = $("<div/>").addClass("questStatusTime tooltip").attr({'data-tooltip':'quest_time_remaining'}).appendTo(d2);
-            $("<div/>").addClass("questTimeIcon").html(miscIcons.time).appendTo(questRunningTime);
+            $("<div/>").addClass("questTimeIcon").attr("id","qsti"+quest.id).html(miscIcons.time).appendTo(questRunningTime);
             $("<div/>").addClass("questTimeText").attr("id","qst"+quest.id).html(msToTime(quest.remaining())).appendTo(questRunningTime);
     }
     return d;    
@@ -280,14 +282,32 @@ function showQuestParty() {
     $("<div/>").addClass(`qpHeaderBanner`).css("background", `url(/assets/images/quest/background.jpg)`).appendTo($qpHeader);
     $("<div/>").addClass(`qpHeaderTitle`).html(quest.name).appendTo($qpHeader);
     $("<div/>").addClass(`qpHeaderFlavor`).html(quest.description).appendTo($qpHeader);
+
     const a = $("<div/>").addClass(`qpHeaderCriteria`).appendTo($qpHeader);
-        $("<div/>").addClass("qpHeaderReqStat").html(`${miscIcons.pow} ${quest.powReq} ${miscIcons.hp} ${quest.hpReq}`).appendTo(a);
-        $("<div/>").addClass("qpHeaderTime").html(`${miscIcons.time} ${msToTime(quest.timeReq)}`).appendTo(a);
+        const questStats = $("<div/>").addClass("qpHeaderReqStat").appendTo(a);
+        const qs1 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'pow'}).appendTo(questStats);
+            $("<div/>").addClass(`pow_img`).html(miscIcons.pow).appendTo(qs1);
+            $("<div/>").addClass(`pow_integer statValue`).html(quest.powReq).appendTo(qs1);
+        const qs2 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'hp'}).appendTo(questStats);
+            $("<div/>").addClass(`hp_img`).html(miscIcons.hp).appendTo(qs2);
+            $("<div/>").addClass(`hp_integer statValue`).html(quest.hpReq).appendTo(qs2);
+        const questTime = $("<div/>").addClass("qpHeaderTime tooltip").attr({'data-tooltip':'quest_time'}).appendTo(questStats);
+            $("<div/>").addClass("questTimeIcon").html(miscIcons.time).appendTo(questTime);
+            $("<div/>").addClass("questTimeText").html(msToTime(quest.timeReq)).appendTo(questTime);
+
     const b = $("<div/>").addClass(`qpHeaderCurrent`).appendTo($qpHeader);
-        $("<div/>").addClass("qpHeaderCurrStat").html(`${miscIcons.pow} ${QuestManager.pow()} ${miscIcons.hp} ${QuestManager.maxHP()}`).appendTo(b);
-        $("<div/>").addClass("qpHeaderChance").html(`Success chance: ${Math.floor(quest.successChance(true)*100)}%`).appendTo(b);
-    const c = $("<div/>").addClass("qpHeaderStartQuest").html(`Start Quest`).appendTo($qpHeader);
-    if (!QuestManager.validTeam()) c.addClass("qpHeaderInvalidTeam");
+        const currentStats = $("<div/>").addClass("qpHeaderCurrStat").appendTo(b);
+        const cs1 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'pow'}).appendTo(currentStats);
+            $("<div/>").addClass(`pow_img`).html(miscIcons.pow).appendTo(cs1);
+            $("<div/>").addClass(`pow_integer statValue`).html(QuestManager.pow()).appendTo(cs1);
+        const cs2 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'hp'}).appendTo(currentStats);
+            $("<div/>").addClass(`hp_img`).html(miscIcons.hp).appendTo(cs2);
+            $("<div/>").addClass(`hp_integer statValue`).html(QuestManager.maxHP()).appendTo(cs2);
+        $("<div/>").addClass("qpHeaderChance").html(displayText('quests_success_chance').replace('{0}',Math.floor(quest.successChance(true)*100))).appendTo(currentStats);
+
+    const c = $("<div/>").addClass(`qpActionsContainer`).appendTo($qpHeader);
+        const c1 = $("<div/>").addClass("qpHeaderStartQuest actionButton").html(displayText('quests_start_quest_button')).appendTo(c);
+        if (!QuestManager.validTeam()) c1.addClass("qpHeaderInvalidTeam");
     //populate team
     $qpTeam.empty();
     if (quest.hero1 !== "None") characterCard("questTeam","hero1",QuestManager.hero1).appendTo($qpTeam);
@@ -296,7 +316,7 @@ function showQuestParty() {
     if (quest.hero4 !== "None") characterCard("questTeam","hero4",QuestManager.hero4).appendTo($qpTeam);
     //populate available
     $qpAvailable.empty();
-    const d = $("<div/>").addClass("qpSelectHeader").appendTo($qpAvailable);
+    const d = $("<div/>").addClass("qpSelectHeader contentHeader").appendTo($qpAvailable);
         const d1 = $("<div/>").addClass("headingDetails").appendTo(d);
         $("<div/>").addClass("headingTitle").html("Your Available Heroes").appendTo(d1);
         $("<div/>").addClass("headingDescription").html("A list of your available heroes").appendTo(d1);

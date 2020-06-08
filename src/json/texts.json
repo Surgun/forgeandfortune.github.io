@@ -216,6 +216,18 @@
     "en": "Select the heroes to send on this adventure."
   },
   {
+    "tid": "header_quests_select_title",
+    "en": "Questing Locations"
+  },
+  {
+    "tid": "header_quests_select_desc",
+    "en": "Select a quest for your heroes to partake in."
+  },
+  {
+    "tid": "quests_location_heading_reqs",
+    "en": "Requirements"
+  },
+  {
     "tid": "quests_status_idle",
     "en": "Quest Not Active"
   },
@@ -230,6 +242,30 @@
   {
     "tid": "quests_status_failure",
     "en": "Quest Failed"
+  },
+  {
+    "tid": "quests_success_chance",
+    "en": "{0}% Success Chance"
+  },
+  {
+    "tid": "quests_start_quest_button",
+    "en": "Start Quest"
+  },
+  {
+    "tid": "header_quests_party_title",
+    "en": "Your Questing Party"
+  },
+  {
+    "tid": "header_quests_party_desc",
+    "en": "The heroes you have selected for this quest."
+  },
+  {
+    "tid": "header_quests_heroes_title",
+    "en": "Your Available Heroes"
+  },
+  {
+    "tid": "header_quests_heroes_desc",
+    "en": "Select the heroes to send on this quest."
   },
   {
     "tid": "header_building_construct_title",

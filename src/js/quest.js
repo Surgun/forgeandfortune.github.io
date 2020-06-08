@@ -290,10 +290,22 @@ function showQuestParty() {
     if (!QuestManager.validTeam()) c.addClass("qpHeaderInvalidTeam");
     //populate team
     $qpTeam.empty();
-    if (quest.hero1 !== "None") characterCard("questTeam","hero1",QuestManager.hero1).appendTo($qpTeam);
-    if (quest.hero2 !== "None") characterCard("questTeam","hero2",QuestManager.hero2).appendTo($qpTeam);
-    if (quest.hero3 !== "None") characterCard("questTeam","hero3",QuestManager.hero3).appendTo($qpTeam);
-    if (quest.hero4 !== "None") characterCard("questTeam","hero4",QuestManager.hero4).appendTo($qpTeam);
+    if (quest.hero1 !== "None") {
+        const h1 = characterCard("questTeam","hero1",QuestManager.hero1).appendTo($qpTeam);
+        if (!QuestManager.hero1) h1.addClass("noHeroQuestSelect");
+    }
+    if (quest.hero2 !== "None") {
+        const h2 = characterCard("questTeam","hero2",QuestManager.hero2).appendTo($qpTeam);
+        if (!QuestManager.hero2) h2.addClass("noHeroQuestSelect");
+    }
+    if (quest.hero3 !== "None") {
+        const h3 = characterCard("questTeam","hero3",QuestManager.hero3).appendTo($qpTeam);
+        if (!QuestManager.hero3) h3.addClass("noHeroQuestSelect");
+    }
+    if (quest.hero4 !== "None") {
+        const h4 = characterCard("questTeam","hero4",QuestManager.hero4).appendTo($qpTeam);
+        if (!QuestManager.hero4) h4.addClass("noHeroQuestSelect");
+    }
     //populate available
     $qpAvailable.empty();
     const d = $("<div/>").addClass("qpSelectHeader").appendTo($qpAvailable);

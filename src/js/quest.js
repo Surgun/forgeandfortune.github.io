@@ -279,7 +279,7 @@ function showQuestParty() {
     //populate header
     $qpHeader.empty();
     $("<div/>").addClass(`qpBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($qpHeader);
-    $("<div/>").addClass(`qpHeaderBanner`).css("background", `url(/assets/images/quest/background.jpg)`).appendTo($qpHeader);
+    $("<div/>").addClass(`qpHeaderBanner`).css("background", `url(/assets/images/quests/background.jpg)`).appendTo($qpHeader);
     $("<div/>").addClass(`qpHeaderTitle`).html(quest.name).appendTo($qpHeader);
     $("<div/>").addClass(`qpHeaderFlavor`).html(quest.description).appendTo($qpHeader);
 
@@ -295,19 +295,20 @@ function showQuestParty() {
             $("<div/>").addClass("questTimeIcon").html(miscIcons.time).appendTo(questTime);
             $("<div/>").addClass("questTimeText").html(msToTime(quest.timeReq)).appendTo(questTime);
 
-    const b = $("<div/>").addClass(`qpHeaderCurrent`).appendTo($qpHeader);
-        const currentStats = $("<div/>").addClass("qpHeaderCurrStat").appendTo(b);
-        const cs1 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'pow'}).appendTo(currentStats);
-            $("<div/>").addClass(`pow_img`).html(miscIcons.pow).appendTo(cs1);
-            $("<div/>").addClass(`pow_integer statValue`).html(QuestManager.pow()).appendTo(cs1);
-        const cs2 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'hp'}).appendTo(currentStats);
-            $("<div/>").addClass(`hp_img`).html(miscIcons.hp).appendTo(cs2);
-            $("<div/>").addClass(`hp_integer statValue`).html(QuestManager.maxHP()).appendTo(cs2);
-        $("<div/>").addClass("qpHeaderChance").html(displayText('quests_success_chance').replace('{0}',Math.floor(quest.successChance(true)*100))).appendTo(currentStats);
+    const b = $("<div/>").addClass(`qpActionsContainer`).appendTo($qpHeader);
+        const b1 = $("<div/>").addClass("qpHeaderStartQuest actionButton").html(displayText('quests_start_quest_button')).appendTo(b);
+        if (!QuestManager.validTeam()) b1.addClass("qpHeaderInvalidTeam");
 
-    const c = $("<div/>").addClass(`qpActionsContainer`).appendTo($qpHeader);
-        const c1 = $("<div/>").addClass("qpHeaderStartQuest actionButton").html(displayText('quests_start_quest_button')).appendTo(c);
-        if (!QuestManager.validTeam()) c1.addClass("qpHeaderInvalidTeam");
+    const c = $("<div/>").addClass(`qpHeaderCurrent`).appendTo(b);
+    const currentStats = $("<div/>").addClass("qpHeaderCurrStat").appendTo(c);
+    const cs1 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'pow'}).appendTo(currentStats);
+        $("<div/>").addClass(`pow_img`).html(miscIcons.pow).appendTo(cs1);
+        $("<div/>").addClass(`pow_integer statValue`).html(QuestManager.pow()).appendTo(cs1);
+    const cs2 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'hp'}).appendTo(currentStats);
+        $("<div/>").addClass(`hp_img`).html(miscIcons.hp).appendTo(cs2);
+        $("<div/>").addClass(`hp_integer statValue`).html(QuestManager.maxHP()).appendTo(cs2);
+    $("<div/>").addClass("qpHeaderChance").html(displayText('quests_success_chance').replace('{0}',Math.floor(quest.successChance(true)*100))).appendTo(currentStats);
+
     //populate team
     $qpTeam.empty();
     if (quest.hero1 !== "None") {

@@ -181,7 +181,6 @@ const QuestManager = {
     lockTeam() {
         const heroids = [this.hero1,this.hero2,this.hero3,this.hero4].filter(h => h !== null);
         const quest = this.idToQuest(this.questView);
-        console.log(heroids,quest);
         quest.lockTeam(heroids);
         this.questView = null;
     },

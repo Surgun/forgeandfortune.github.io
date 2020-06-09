@@ -260,7 +260,7 @@
     "maxStack": 2,
     "stackCast": 1,
     "onCast": "stack",
-    "decrease": "never",
+    "decrease": "onHit",
     "type": "buff"
   },
   {

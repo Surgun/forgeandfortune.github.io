@@ -63,7 +63,7 @@ function refreshHeroOverview() {
     });
     if (Shop.alreadyPurchased("AL3007")) $heroTabUpgrade.show();
     else $heroTabUpgrade.hide();
-    if (TinkerManager.lvl > 0) $heroTabTrinket.show();
+    if (TinkerManager.unlocked()) $heroTabTrinket.show();
     else $heroTabTrinket.hide();
 }
 
@@ -467,16 +467,17 @@ $(document).on('click', "div.heroExamineEquipment", (e) => {
     examineHeroPossibleEquip(heroID,gearType);
 });
 
+//equip any item
 $(document).on('click', "div.gearItem", (e) => {
     //equip the clicked item
     e.preventDefault();
     const heroID = $(e.currentTarget).data("heroID");
     const containerID = $(e.currentTarget).data("containerID");
     HeroManager.equipItem(containerID,heroID);
-    showHeroGear();
+    showTab(HeroManager.tabSelected);
     clearExaminePossibleEquip();
     updateHeroStats();
-    refreshSmithInventory(); //because hero gear is here
+    //refreshSmithInventory(); //because hero gear is here
     destroyTooltip();
 });
 

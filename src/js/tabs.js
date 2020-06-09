@@ -22,6 +22,7 @@ function openTab(tabName) {
         $inventoryTabSpan.removeClass("hasEvent");
         if (TownManager.typeToBuilding('bank').status === BuildingState.built) $("#goToBank").show();
         else $("#goToBank").hide();
+        refreshInventory();
     }
     if (tabName === "marketTab") {
         $marketTabSpan.removeClass("hasEvent");

@@ -125,6 +125,9 @@ const TinkerManager = {
     completeResearch(commandID) {
         const command = this.idToCommand(commandID);
         command.completeResearch();
+    },
+    unlocked() {
+        return TownManager.idToBuilding("TB006").status === 2;
     }
 }
 

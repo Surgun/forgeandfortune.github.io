@@ -10,6 +10,7 @@ const $museumTop = $(".museumTop");
 
 const Museum = {
     rewards : [],
+    view : "main",
     addReward(reward) {
         this.rewards.push(reward);
     },
@@ -132,6 +133,7 @@ function initiateMuseumBldg() {
 function refreshMuseumTop() {
     $museumTop.hide();
     $museumRecipeTypes.empty().show();
+    Museum.view = "main";
     const museumItemTypesHeader = $("<div/>").addClass(`contentHeader`).appendTo($museumRecipeTypes);
         const headingDetails = $("<div/>").addClass("headingDetails").appendTo(museumItemTypesHeader);
             $("<div/>").addClass("headingTitle").html(displayText("header_museum_item_types_title")).appendTo(headingDetails);
@@ -148,7 +150,7 @@ function refreshMuseumTop() {
 function showMuseumType(type) {
     $museumTop.hide();
     $museumRecipeContributions.empty().show();
-
+    Museum.view = type;
     const museumContributionsActions = $("<div/>").addClass("museumContributionsActions").appendTo($museumRecipeContributions);
     const backButton = $("<div/>").addClass(`museumBackButton actionButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo(museumContributionsActions);
         $("<div/>").addClass(`backButtonText`).html(displayText("museum_item_types_back_button")).appendTo(backButton);
@@ -172,7 +174,7 @@ function showMuseumType(type) {
 function showMuseumRewards() {
     $museumTop.hide();
     $museumRewards.empty().show();
-
+    Museum.view = "rewards";
     const museumRewardsHeader = $("<div/>").addClass(`contentHeader`).appendTo($museumRewards);
     const headingDetails = $("<div/>").addClass("headingDetails").appendTo(museumRewardsHeader);
         $("<div/>").addClass("headingTitle").html(displayText("header_museum_reward_points_title")).appendTo(headingDetails);
@@ -241,10 +243,13 @@ $(document).on("click",".museumBackButton",(e) => {
     refreshMuseumTop();
 })
 
+//click on an item to donate to museum
 $(document).on("click",".museumDonate",(e) => {
     const containerid = parseInt($(e.target).data("containerid"));
     Museum.donate(containerid);
-    refreshMuseumTop();
+    if (Museum.view === "main") refreshMuseumTop();
+    else if (Museum.view === "rewards") showMuseumRewards();
+    else showMuseumType(Museum.view);
     refreshMuseumInv();
 });
 

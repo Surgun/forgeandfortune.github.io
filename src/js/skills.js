@@ -174,7 +174,7 @@ SkillManager.skillEffects['S0030'] = function (combatParams) {
     //Blood Thrust  - Grim
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
     targets.forEach(target => {
-        target.takeDamagePercent(combatParams.attack.mod1);
+        target.takeDamagePercent(combatParams.attack.mod1*100);
         refreshHPBar(target);
     });
     const targets2 = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
@@ -200,7 +200,7 @@ SkillManager.skillEffects['S0032'] = function (combatParams) {
     //Blood Cleave - Grim
     const thisUnit = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
     thisUnit.forEach(target => {
-        target.takeDamagePercent(combatParams.attack.mod1);
+        target.takeDamagePercent(combatParams.attack.mod1*100);
         refreshHPBar(target);
     });
     const targets = combatParams.getTarget(TargetType.CLEAVE,SideType.ENEMIES);
@@ -221,7 +221,7 @@ SkillManager.skillEffects['S0041'] = function (combatParams) {
     //Overexertion - Lambug
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
-    combatParams.power -=  0.5*selfTarget.getBuffStacks("B0041");
+    combatParams.power -=  combatParams.power*combatParams.attack.mod1*selfTarget.getBuffStacks("B0041");
     targets.forEach(target => {
         target.takeAttack(combatParams);
     });
@@ -310,11 +310,12 @@ SkillManager.skillEffects['S1030'] = function (combatParams) {
     const lifeDrain = combatParams.getTarget(TargetType.BEFORE,SideType.ALLIES);
     if (lifeDrain === null || lifeDrain[0].race === "undead") return;
     const targets = combatParams.getTarget(TargetType.MIRROR,SideType.ENEMIES);
+    const damage = combatParams.power*combatParams.attack.mod1;
     lifeDrain.forEach(target => {
         target.takeAttack(combatParams);
     })
     targets.forEach(target => {
-        BuffManager.generateBuff("B1030",target,combatParams.power);
+        BuffManager.generateBuff("B1030",target,damage);
     });
 };
 
@@ -323,11 +324,12 @@ SkillManager.skillEffects['S1031'] = function (combatParams) {
     const lifeDrain = combatParams.getTarget(TargetType.AFTER,SideType.ALLIES);
     if (lifeDrain === null || lifeDrain[0].race === "undead") return;
     const targets = combatParams.getTarget(TargetType.MIRROR,SideType.ENEMIES);
+    const damage = combatParams.power*combatParams.attack.mod1;
     lifeDrain.forEach(target => {
         target.takeAttack(combatParams);
     })
     targets.forEach(target => {
-        BuffManager.generateBuff("B1030",target,combatParams.power);
+        BuffManager.generateBuff("B1030",target,damage);
     });
 };
 
@@ -336,12 +338,13 @@ SkillManager.skillEffects['S1032'] = function (combatParams) {
     //Disintegrate - Titus
     const lifeDrainAllies = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
     const lifeDrainEnemies = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    const damage = combatParams.power*combatParams.attack.mod1;
     lifeDrainAllies.forEach(target => {
         if (target.race === "undead") return;
         BuffManager.generateBuff("B1030",target,combatParams.power);
     });
     lifeDrainEnemies.forEach(target => {
-        BuffManager.generateBuff("B1030",target,combatParams.power);
+        BuffManager.generateBuff("B1030",target,damage);
     });
 };
 
@@ -413,7 +416,10 @@ SkillManager.skillEffects['S2021'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.THIRD,SideType.ENEMIES);
     targets.forEach(target => {
         const ogPow = combatParams.power;
-        if (target.hasBuff("B1010")) combatParams.power = combatParams.power*combatParams.attack.mod1;
+        if (target.hasBuff("B1010")) {
+            combatParams.power = combatParams.power*combatParams.attack.mod1;
+            BuffManager.removeBuff("B1010",target);
+        }
         target.takeAttack(combatParams);
         combatParams.power = ogPow;
     });
@@ -479,8 +485,6 @@ SkillManager.skillEffects['S2041'] = function (combatParams) {
         target.takeAttack(combatParams);
     });
 };
-
-
 
 SkillManager.skillEffects['S2042'] = function (combatParams) {
     //Bulls Eye - Caeda
@@ -548,7 +552,7 @@ SkillManager.skillEffects['SM105'] = function (combatParams) {
         if (target.maxHP()*combatParams.attack.mod1 >= target.hp) {
             combatParams.power = Math.floor(combatParams.power*combatParams.attack.mod2);
         }
-        target.heal(combatParams);
+        target.heal(combatParams.power);
         combatParams.power = ogPow;
     });
 };
@@ -575,13 +579,13 @@ SkillManager.skillEffects['SM108'] = function (combatParams) {
     //Holy Radiation - Elf Mender
     const targets = combatParams.getTarget(TargetType.ADJACENT,SideType.ALLIES);
     targets.forEach(target => {
-        target.heal(combatParams);
+        target.heal(combatParams.power);
     });
 }
 
 SkillManager.skillEffects['SM109'] = function (combatParams) {
     //Deadly Web - Scary Spider
-    const targets = combatParams.getTarget(TargetType.LAST,SideType.ENEMIES);
+    const targets = combatParams.getTarget(TargetType.FOURTH,SideType.ENEMIES);
     targets.forEach(target => {
         const ogPow = combatParams.power;
         if (target.hpLessThan(combatParams.attack.mod1)) combatParams.power = Math.floor(combatParams.power*combatParams.attack.mod2);
@@ -656,7 +660,7 @@ SkillManager.skillEffects['SM206'] = function (combatParams) {
     const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
     if (selfTarget.hp === selfTarget.maxHP()) combatParams.power = Math.floor(combatParams.power*combatParams.attack.mod1);
     targets.forEach(target => {
-        target.heal(combatParams);
+        target.heal(combatParams.power);
     });
 }
 
@@ -664,7 +668,7 @@ SkillManager.skillEffects['SM207'] = function (combatParams) {
     //Avalanche - Rockfall
     const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
     targets.forEach(target => {
-        if (target.hp === target.maxHP()) target.takeDamagePercent(combatParams.attack.mod1);
+        if (target.hp === target.maxHP()) target.takeDamagePercent(combatParams.attack.mod1*100);
     });
 }
 
@@ -706,7 +710,7 @@ SkillManager.skillEffects['SM301'] = function (combatParams) {
 
 SkillManager.skillEffects['SM302'] = function (combatParams) {
     //Viking Smash - Dwarf Minor
-    const targets = combatParams.getTarget(TargetType.LAST,SideType.ENEMIES);
+    const targets = combatParams.getTarget(TargetType.FOURTH,SideType.ENEMIES);
     targets.forEach(target => {
         target.takeAttack(combatParams);
     });
@@ -760,14 +764,14 @@ SkillManager.skillEffects['SM308'] = function (combatParams) {
     //Dwarvish Prayer - Dwarf Magus
     const targets = combatParams.getTarget(TargetType.BEFORE,SideType.ALLIES);
     targets.forEach(target => {
-        target.heal(combatParams);
+        target.heal(combatParams.power);
     });
 }
 
 SkillManager.skillEffects['SM309'] = function (combatParams) {
     //Ten Tickles - Obese Octopus
     const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
-    const thisunit = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    const thisunit = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
     if (thisunit.hp !== thisunit.maxHP()) combatParams.power = Math.floor(combatParams.power*combatParams.attack.mod1);
     targets.forEach(target => {
         target.takeAttack(combatParams);

@@ -116,7 +116,7 @@
     "icon": "<img src=\"/assets/svg/armor-punch.svg\">",
     "powMod": 4,
     "techMod": 0,
-    "mod1": null,
+    "mod1": 0.125,
     "mod2": null
   },
   {

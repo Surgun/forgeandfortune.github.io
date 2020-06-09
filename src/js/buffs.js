@@ -49,12 +49,14 @@ class Buff {
     onHit() { return; }
     onHitting() { return; }
     getPow() { return 0; }
+    getPowPercent() { return 0; }
     isChilled() { return false; }
     isWilt() { return false; }
     isLifeTapped() { return false; }
     getProtection() { return 0; }
     getVulnerability() { return 0; }
     maxHP() { return 0; }
+    maxHPPercent() { return 0; }
     mark() { return false; }
     debuffImmune() { return false; }
     thorns() { return 0; }
@@ -195,10 +197,10 @@ class B0022 extends Buff {
         super(buffTemplate,target,power);
         this.power2 = power2;
     }
-    maxHP() {
+    maxHPPercent() {
         return -this.power*this.stacks;
     }
-    pow() {
+    getPowPercent() {
         return this.power2*this.stacks;
     }
 }
@@ -213,7 +215,7 @@ class B0042 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    pow() {
+    getPow() {
         return this.power*this.stacks;
     }
 }
@@ -276,7 +278,7 @@ class B2010 extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
-    getHP() {
+    maxHP() {
         return this.power*this.stacks;
     }
 }

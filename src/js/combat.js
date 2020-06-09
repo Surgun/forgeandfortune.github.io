@@ -42,7 +42,7 @@ class combatRoundParams {
         if (target === TargetType.THIRD) {
             if (living.length === 1) return [living[0]];
             if (living.length === 2) return [living[1]];
-            return [living[3]];
+            return [living[2]];
         }
         if (target === TargetType.FOURTH) return [living[living.length-1]];
         if (target === TargetType.SELF) return [this.attacker];
@@ -88,9 +88,9 @@ class combatRoundParams {
         }
         if (target === TargetType.MIRROR) {
             const uid = this.attacker.uniqueid;
-            const indx = living.findIndex(h=>h.uniqueid === uid);
-            if (living.length-1 < indx) return living[living.length-1];
-            return living[indx];
+            const indx = this.allies.findIndex(h=>h.uniqueid === uid);
+            if (living.length-1 < indx) return [living[living.length-1]];
+            return [living[indx]];
         }
     }
 }
@@ -152,7 +152,8 @@ class Combatant {
         this.buffs = this.buffs.filter(b=>b.id !== buffID);
     }
     getPow() {
-        return Math.floor(this.pow + this.getBuffPower());
+        const pow = Math.floor(this.pow + this.getBuffPower());
+        return Math.floor(pow * (1+this.getBuffPowerPercent()));
     }
     getProtection() {
         return 1 - (this.protection + this.getBuffProtection());
@@ -170,7 +171,8 @@ class Combatant {
         return this.hp > 0;
     }
     maxHP() {
-        return Math.floor(this.hpmax + this.getBuffMaxHP());
+        const hp = Math.floor(this.hpmax + this.getBuffMaxHP());
+        return Math.floor(hp * (1+this.getBuffMaxHPPercent()));
     }
     missingHP() {
         return this.maxHP()-this.hp;
@@ -232,8 +234,16 @@ class Combatant {
         const buffs = this.buffs.map(b=>b.getPow());
         return buffs.reduce((a,b) => a+b, 0);
     }
+    getBuffPowerPercent() {
+        const buffs = this.buffs.map(b=>b.getPowPercent());
+        return buffs.reduce((a,b) => a+b, 0);
+    }
     getBuffMaxHP() {
         const buffs = this.buffs.map(b=>b.maxHP());
+        return buffs.reduce((a,b) => a+b, 0);
+    }
+    getBuffMaxHPPercent() {
+        const buffs = this.buffs.map(b=>b.maxHPPercent());
         return buffs.reduce((a,b) => a+b, 0);
     }
     debuffImmune() {

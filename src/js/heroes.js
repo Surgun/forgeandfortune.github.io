@@ -65,10 +65,12 @@ class Hero extends Combatant {
         return gearslots;
     }
     getPow() {
-        return Math.floor(this.initialPow + this.gearSlots.map(g=>g.pow()).reduce((a,b) => a+b) + this.getBuffPower());
+        const pow = Math.floor(this.initialPow + this.gearSlots.map(g=>g.pow()).reduce((a,b) => a+b) + this.getBuffPower());
+        return Math.floor(pow * (1+this.getBuffPowerPercent()));
     }
     maxHP() {
-        return Math.floor(this.initialHP + this.gearSlots.map(g=>g.hp()).reduce((a,b) => a+b) + this.getBuffMaxHP());
+        const hp = Math.floor(this.initialHP + this.gearSlots.map(g=>g.hp()).reduce((a,b) => a+b) + this.getBuffMaxHP());
+        return Math.floor(hp * (1+this.getBuffMaxHPPercent()));
     }
     getAdjPow() {
         return Math.floor(this.getPow());

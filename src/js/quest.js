@@ -268,6 +268,21 @@ $(document).on("click", ".questLocationContainer", (e) => {
     showQuestParty();
 });
 
+function generateSlotClass(type) {
+    const hero = HeroManager.idToHero(type);
+    const slotClass =  $("<div/>").addClass("slotClass");
+    const slotText = $("<div/>").addClass("slotClassText").appendTo(slotClass);
+    if (hero !== undefined) {
+        slotClass.addClass('classHero');
+        slotText.html(hero.name);
+    }
+    else {
+        slotClass.addClass(`class${type}`)
+        slotText.html(type);
+    }
+    return slotClass;
+}
+
 const $qpHeader = $("#qpHeader");
 const $qpTeam = $("#qpTeam");
 const $qpAvailable = $("#qpAvailable");
@@ -314,18 +329,22 @@ function showQuestParty() {
     if (quest.hero1 !== "None") {
         const h1 = characterCard("questTeam","hero1",QuestManager.hero1).appendTo($qpTeam);
         if (!QuestManager.hero1) h1.addClass("noHeroQuestSelect");
+        generateSlotClass(quest.hero1).appendTo(h1);
     }
     if (quest.hero2 !== "None") {
         const h2 = characterCard("questTeam","hero2",QuestManager.hero2).appendTo($qpTeam);
         if (!QuestManager.hero2) h2.addClass("noHeroQuestSelect");
+        generateSlotClass(quest.hero2).appendTo(h2);
     }
     if (quest.hero3 !== "None") {
         const h3 = characterCard("questTeam","hero3",QuestManager.hero3).appendTo($qpTeam);
         if (!QuestManager.hero3) h3.addClass("noHeroQuestSelect");
+        generateSlotClass(quest.hero3).appendTo(h3);
     }
     if (quest.hero4 !== "None") {
         const h4 = characterCard("questTeam","hero4",QuestManager.hero4).appendTo($qpTeam);
         if (!QuestManager.hero4) h4.addClass("noHeroQuestSelect");
+        generateSlotClass(quest.hero4).appendTo(h4);
     }
     //populate available
     $qpAvailable.empty();

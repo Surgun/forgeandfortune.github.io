@@ -1471,6 +1471,7 @@ footer {
 }
 
 .dungeonTeamCard, .dungeonAvailableCard, .dungeonNotAvailableCard, .dtsMobDiv, .questTeamCard, .questAvailableCard, .questNotAvailableCard {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1569,6 +1570,34 @@ footer {
 
 .heroPlayBookDialogPortrait > img {
     max-height: 30px;
+}
+
+.slotClass {
+    position: absolute;
+    top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 5px;
+    box-shadow: 0 2px 0 rgba(0,0,0,.5);
+}
+
+.slotClass.classMight {
+    background-color: #541919;
+    border-color: #612929;
+}
+
+.slotClass.classMind {
+    background-color: #193454;
+    border-color: #293d61;
+}
+
+.slotClass.classMoxie {
+    background-color: #3e1954;
+    border-color: #432961;
 }
 
 .dungeonTeamImage, .dungeonAvailableImage, .dungeonNotAvailableImage, .dtsMobPic, .questTeamImage, .questAvailableImage, .questNotAvailableImage {

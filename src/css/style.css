@@ -1596,16 +1596,31 @@ footer {
 .slotClass.classMight {
     background-color: #541919;
     border-color: #612929;
+    color: var(--text-white);
 }
 
 .slotClass.classMind {
     background-color: #193454;
     border-color: #293d61;
+    color: var(--text-white);
 }
 
 .slotClass.classMoxie {
     background-color: #3e1954;
     border-color: #432961;
+    color: var(--text-white);
+}
+
+.classMight {
+    color: #d85d5d;
+}
+
+.classMind {
+    color: #618cdb;
+}
+
+.classMoxie {
+    color: #935cd3;
 }
 
 .dungeonTeamImage, .dungeonAvailableImage, .dungeonNotAvailableImage, .dtsMobPic, .questTeamImage, .questAvailableImage, .questNotAvailableImage {

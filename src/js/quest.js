@@ -264,6 +264,7 @@ $(document).on("click", ".questLocationContainer", (e) => {
     }
     QuestManager.questView = qid;
     QuestManager.clearParty();
+    generateQuestPartyHeaders();
     showQuestParty();
 });
 
@@ -285,6 +286,23 @@ function generateSlotClass(type) {
 const $qpHeader = $("#qpHeader");
 const $qpTeam = $("#qpTeam");
 const $qpAvailable = $("#qpAvailable");
+const $questPartyTeamHeader = $("#questPartyTeamHeader");
+const $questHeroesHeader = $("#questHeroesHeader");
+
+function generateQuestPartyHeaders() {
+    $questPartyTeamHeader.empty();
+    $questHeroesHeader.empty();
+    // Quest Party Header
+    const a = $("<div/>").addClass("contentHeader").appendTo($questPartyTeamHeader);
+        const a1 = $("<div/>").addClass("headingDetails").appendTo(a);
+        $("<div/>").addClass("headingTitle").html(displayText('header_quests_party_title')).appendTo(a1);
+        $("<div/>").addClass("headingDescription").html(displayText('header_quests_party_desc')).appendTo(a1);
+    // Available Heroes Header
+    const b = $("<div/>").addClass("contentHeader").appendTo($questHeroesHeader);
+        const b1 = $("<div/>").addClass("headingDetails").appendTo(b);
+        $("<div/>").addClass("headingTitle").html(displayText('header_quests_heroes_title')).appendTo(b1);
+        $("<div/>").addClass("headingDescription").html(displayText('header_quests_heroes_desc')).appendTo(b1);
+}
 
 function showQuestParty() {
     $questSelect.hide();
@@ -321,7 +339,11 @@ function showQuestParty() {
     const cs2 = $("<div/>").addClass('gearStat tooltip').attr({"data-tooltip": 'hp'}).appendTo(currentStats);
         $("<div/>").addClass(`hp_img`).html(miscIcons.hp).appendTo(cs2);
         $("<div/>").addClass(`hp_integer statValue`).html(QuestManager.maxHP()).appendTo(cs2);
-    $("<div/>").addClass("qpHeaderChance").html(displayText('quests_success_chance').replace('{0}',Math.floor(quest.successChance(true)*100))).appendTo(currentStats);
+    const chanceCount = Math.floor(quest.successChance(true)*100);
+    const successChance = $("<div/>").addClass("qpHeaderChance").html(displayText('quests_success_chance').replace('{0}',chanceCount)).appendTo(currentStats);
+    if (chanceCount >= 75) successChance.addClass('goodSucessChance');
+    else if (chanceCount >= 50) successChance.addClass('neutralSucessChance');
+    else successChance.addClass('badSucessChance');
 
     //populate team
     $qpTeam.empty();
@@ -347,16 +369,24 @@ function showQuestParty() {
     }
     //populate available
     $qpAvailable.empty();
-    const d = $("<div/>").addClass("qpSelectHeader contentHeader").appendTo($qpAvailable);
-        const d1 = $("<div/>").addClass("headingDetails").appendTo(d);
-        $("<div/>").addClass("headingTitle").html("Your Available Heroes").appendTo(d1);
-        $("<div/>").addClass("headingDescription").html("A list of your available heroes").appendTo(d1);
     const d2 = $("<div/>").addClass("qpAvailableDiv").appendTo($qpAvailable);
     HeroManager.ownedHeroes().forEach(hero => {
-        if (hero.state === HeroState.inDungeon) characterCard("questNotAvailable",hero.uniqueid,hero.id,"in_dungeon").appendTo(d2);
-        else if (hero.state === HeroState.inQuest) characterCard("questNotAvailable",hero.uniqueid,hero.id,"in_quest").appendTo(d2);
-        else if (QuestManager.inParty(hero.id)) characterCard("partyHero questNotAvailable",hero.uniqueid,hero.id,"in_party").appendTo(d2);
-        else characterCard("questAvailable",hero.uniqueid,hero.id,null).appendTo(d2);
+        if (hero.state === HeroState.inDungeon) {
+            const d2a = characterCard("questNotAvailable",hero.uniqueid,hero.id,"in_dungeon").appendTo(d2);
+            generateSlotClass(hero.type).appendTo(d2a);
+        }
+        else if (hero.state === HeroState.inQuest) {
+            const d2a = characterCard("questNotAvailable",hero.uniqueid,hero.id,"in_quest").appendTo(d2);
+            generateSlotClass(hero.type).appendTo(d2a);
+        }
+        else if (QuestManager.inParty(hero.id)) {
+            const d2a = characterCard("partyHero questNotAvailable",hero.uniqueid,hero.id,"in_party").appendTo(d2);
+            generateSlotClass(hero.type).appendTo(d2a);
+        }
+        else {
+            const d2a = characterCard("questAvailable",hero.uniqueid,hero.id,null).appendTo(d2);
+            generateSlotClass(hero.type).appendTo(d2a);
+        }
     });
 }
 

@@ -21,6 +21,8 @@ body {
     --green-secondary: #1e7c52;
     --green-tertiary: #15925b;
 
+    --red-primary: #ff8d8d;
+
     --rarity-common: #fff;
     --rarity-good: #2cff59;
     --rarity-great: #08adff;
@@ -332,7 +334,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 10px 0;
+    margin: 10px;
     padding: 10px;
     border-bottom: 2px solid var(--border-primary);
     animation: fade-in var(--transition_linear); 
@@ -1206,7 +1208,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 0 10px 10px;
+    margin: 0 0 10px;
     padding: 10px;
     border-bottom: 2px solid var(--border-primary);
 }
@@ -1574,8 +1576,10 @@ footer {
 
 .slotClass {
     position: absolute;
-    top: -10px;
+    top: 70px;
+    right: 5px;
     display: flex;
+    font-size: 0.85rem;
     justify-content: center;
     align-items: center;
     padding: 5px 10px;
@@ -1611,7 +1615,7 @@ footer {
     border-radius: 10px;
 }
 
-.dungeonTeamImage > img, .dungeonAvailableImage > img, .dungeonNotAvailableImage > img, .dtsMobPic > img, .questTeamImage > img {
+.dungeonTeamImage > img, .dungeonAvailableImage > img, .dungeonNotAvailableImage > img, .dtsMobPic > img, .questTeamImage > img, .questAvailableImage > img, .questNotAvailableImage > img {
     height: 64px;
 }
 
@@ -1628,7 +1632,7 @@ footer {
     border-bottom: 2px solid rgba(255,255,255,0.05);
 }
 
-.noHeroDungeonSelect .dungeonTeamName {
+.noHeroDungeonSelect .dungeonTeamName, .noHeroQuestSelect .questTeamName {
     color: var(--text-secondary);
 }
 
@@ -7157,7 +7161,7 @@ span.beta-tag {
 }
 
 .questFailure .questStatus {
-    color: #ff4545;
+    color: var(--red-primary);
 }
 
 .questStatusTime {
@@ -7165,10 +7169,6 @@ span.beta-tag {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.questPartyTeam > .contentHeader, .qpAvailable > .contentHeader {
-    margin: 10px;
 }
 
 .questPartyHeader {
@@ -7236,6 +7236,18 @@ span.beta-tag {
     min-height: 36px;
     background-color: rgba(0,0,0,0.25);
     border-radius: 5px;
+}
+
+.qpHeaderChance.goodSucessChance {
+    color: var(--green-primary);
+}
+
+.qpHeaderChance.neutralSucessChance {
+    color: var(--highlight);
+}
+
+.qpHeaderChance.badSucessChance {
+    color: var(--red-primary);
 }
 
 .qpActionsContainer {

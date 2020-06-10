@@ -2,7 +2,7 @@
   {
     "id": "Q0001",
     "name": "The Milk Hole",
-    "description": "The Cat's Meow are seeking a Mighty adventurer to bring them some milk.  They will pay handsomely to anyone who will travel to the wall and pick some up.",
+    "description": "The Cat's Meow are seeking a <span class='classMight'>Mighty</span> adventurer to bring them some milk.  They will pay handsomely to anyone who will travel to the wall and pick some up.",
     "hero1": "Might",
     "hero2": "None",
     "hero3": "None",
@@ -20,7 +20,7 @@
   {
     "id": "Q0002",
     "name": "Wizard College",
-    "description": "The nearby Wizard College is requesting a Mindful hero to help them with a problem.  They are suffering from a gas leak and report many popping noises.",
+    "description": "The nearby Wizard College is requesting a <span class='classMind'>Mindful</span> hero to help them with a problem.  They are suffering from a gas leak and report many popping noises.",
     "hero1": "Mind",
     "hero2": "None",
     "hero3": "None",
@@ -38,7 +38,7 @@
   {
     "id": "Q0003",
     "name": "Steam Pipes",
-    "description": "A neighboring distributor needs a champion with Moxie.  Head on over to the Steam Pipe Trunk Distribution Venue, and consider bringing them a muffin.",
+    "description": "A neighboring distributor needs a champion with <span class='classMoxie'>Moxie</span>.  Head on over to the Steam Pipe Trunk Distribution Venue, and consider bringing them a muffin.",
     "hero1": "Moxie",
     "hero2": "None",
     "hero3": "None",
@@ -56,7 +56,7 @@
   {
     "id": "Q0004",
     "name": "Cruise Tickets",
-    "description": "Trawled Treasures desires a Mighty traveler to acquire cruise tickets for their northern team.  Don't let their promises go undelivered.",
+    "description": "Trawled Treasures desires a <span class='classMight'>Mighty</span> traveler to acquire cruise tickets for their northern team.  Don't let their promises go undelivered.",
     "hero1": "Might",
     "hero2": "None",
     "hero3": "None",
@@ -74,7 +74,7 @@
   {
     "id": "Q0005",
     "name": "Chaos Theory",
-    "description": "A Mindful hero is needed to assist with a potential divergence of timelines.  You don't have to turn off the red light, but getting pizza would be seen as a bonus.",
+    "description": "A <span class='classMind'>Mindful</span> hero is needed to assist with a potential divergence of timelines.  You don't have to turn off the red light, but getting pizza would be seen as a bonus.",
     "hero1": "Mind",
     "hero2": "None",
     "hero3": "None",
@@ -92,7 +92,7 @@
   {
     "id": "Q0006",
     "name": "Sir Randolph Doogleberry",
-    "description": "An adventurer with Moxie is hereby commissioned to rescue Sir Doogleberry from an ancient tomb with puzzle elements and a save system.",
+    "description": "An adventurer with <span class='classMoxie'>Moxie</span> is hereby commissioned to rescue Sir Doogleberry from an ancient tomb with puzzle elements and a save system.",
     "hero1": "Moxie",
     "hero2": "None",
     "hero3": "None",
@@ -110,7 +110,7 @@
   {
     "id": "Q0007",
     "name": "Arms Race",
-    "description": "The Avian Association seeks a Mighty and Mindful champions to assist them in the shipment of rare Bird Arms.",
+    "description": "The Avian Association seeks a <span class='classMight'>Mighty</span> and <span class='classMind'>Mindful</span> champions to assist them in the shipment of rare Bird Arms.",
     "hero1": "Might",
     "hero2": "Mind",
     "hero3": "None",
@@ -128,7 +128,7 @@
   {
     "id": "Q0008",
     "name": "Safety Not Guaranteed",
-    "description": "Wanted: A Mindful hero and a mercenary with Moxie to go back in time with me.  This is not a joke.  I have only done this once before.",
+    "description": "Wanted: A <span class='classMind'>Mindful</span> hero and a mercenary with <span class='classMoxie'>Moxie</span> to go back in time with me.  This is not a joke.  I have only done this once before.",
     "hero1": "Mind",
     "hero2": "Moxie",
     "hero3": "None",
@@ -146,7 +146,7 @@
   {
     "id": "Q0009",
     "name": "Who Says I'm In",
-    "description": "The Green Guard of the Rapid Chi Orchard request two individuals: one with Might, and another with Moxie.  Hacking experience a plus, but not required.",
+    "description": "The Green Guard of the Rapid Chi Orchard request two individuals: one with <span class='classMight'>Might</span>, and another with <span class='classMoxie'>Moxie</span>.  Hacking experience a plus, but not required.",
     "hero1": "Moxie",
     "hero2": "Might",
     "hero3": "None",

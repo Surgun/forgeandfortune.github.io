@@ -229,7 +229,7 @@
   },
   {
     "tid": "quests_status_idle",
-    "en": "Quest Not Active"
+    "en": "Quest Inactive"
   },
   {
     "tid": "quests_status_in_progress",

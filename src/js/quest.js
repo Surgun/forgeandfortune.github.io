@@ -82,6 +82,7 @@ class Quest {
     available() {
         if (this.openReqType === "Perk" && !Shop.alreadyPurchased(this.openReq)) return false;
         if (this.openReqType === "Quest" && !QuestManager.idToQuest(this.openReq).complete) return false;
+        if (this.openReqType === "Boss" && !DungeonManager.beaten(this.openReq)) return false;
         if (this.complete && !this.repeatable) return false;
         return true;
     }

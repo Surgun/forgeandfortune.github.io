@@ -61,10 +61,10 @@ function refreshHeroOverview() {
     HeroManager.heroes.filter(h=>h.owned).forEach(hero => {
         createHeroOverlayCard(hero).appendTo($overviewContainer);
     });
-    if (Shop.alreadyPurchased("AL3007")) $heroTabUpgrade.show();
-    else $heroTabUpgrade.hide();
-    if (TinkerManager.unlocked()) $heroTabTrinket.show();
-    else $heroTabTrinket.hide();
+    if (DungeonManager.bossRefightUnlocked()) $heroTabUpgrade.removeClass("heroTabLocked").html(displayText("hero_tab_upgrade"));
+    else $heroTabUpgrade.addClass("heroTabLocked").html(`${miscIcons.locked}&nbsp;${displayText("universal_locked")}`);
+    if (TinkerManager.unlocked()) $heroTabTrinket.removeClass("heroTabLocked").html(displayText("hero_tab_trinket"));
+    else $heroTabTrinket.addClass("heroTabLocked").html(`${miscIcons.locked}&nbsp;${displayText("universal_locked")}`);
 }
 
 const $heroTabUpgrade = $("#heroTabUpgrade");
@@ -442,6 +442,7 @@ $(document).on('click', ".heroInspect", (e) => {
 //click on a tab on hero page
 $(document).on('click', ".heroTab", (e) => {
     e.preventDefault();
+    if ($(e.currentTarget).hasClass("heroTabLocked")) return;
     $(".heroTab").removeClass("selected");
     $(e.currentTarget).addClass("selected");
     const tabType = $(e.currentTarget).html();

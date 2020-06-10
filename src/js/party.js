@@ -108,11 +108,13 @@ function startPartyCreation(partyStarted) {
         $("<div/>").addClass(`dungeonAreaBanner`).css("background", `url(/assets/images/dungeonpreviews/${area.id}.jpg)`).appendTo($dtsHeader);
         $("<div/>").addClass(`dungeonAreaTitle`).html(dungeon.name).appendTo($dtsHeader);
         const partyLaunch = $("<div/>").addClass(`partyLaunchButtonContainer`).appendTo($dtsHeader);
-            if (dungeon.type === "boss") $("<div/>").attr("id", "dungeonTeamButtonBoss").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor_boss')).appendTo(partyLaunch);
-            else {
-                $("<div/>").attr("id", "dungeonTeamButtonSkip").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor_highest')).appendTo(partyLaunch);
-                $("<div/>").attr("id", "dungeonTeamButton").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor')).appendTo(partyLaunch);
-            }
+        if (dungeon.type === "boss" && !dungeon.beaten()) $("<div/>").attr("id", "dungeonTeamButtonBoss").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor_boss')).appendTo(partyLaunch);
+        else if (dungeon.type === "boss" && !DungeonManager.bossRefightUnlocked()) $("<div/>").addClass(`dungeonTeamButtonLocked`).html(`${miscIcons.locked} ${displayText('universal_locked')}`).appendTo(partyLaunch);
+        else if (dungeon.type === "boss" && DungeonManager.bossRefightUnlocked()) $("<div/>").addClass(`dungeonTeamButton actionButton`).attr("id","dungeonTeamButtonBoss").html(`${displayText('Rechallenge Boss')}&nbsp;${miscIcons.skull}&nbsp;${dungeon.maxFloor}`).appendTo(partyLaunch);
+        else {
+            $("<div/>").attr("id", "dungeonTeamButtonSkip").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor_highest')).appendTo(partyLaunch);
+            $("<div/>").attr("id", "dungeonTeamButton").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor')).appendTo(partyLaunch);
+        }
     }
     // Needed to update dungeon title when previous code block does not trigger
     $(".dungeonAreaTitle").html(dungeon.name);
@@ -257,7 +259,7 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
 $(document).on('click', "#dungeonTeamButtonBoss", (e) => {
     e.preventDefault();
     if (PartyCreator.validTeam()) {
-        DungeonManager.createDungeon(PartyCreator.dungeonSelect,false);
+        DungeonManager.createDungeon(PartyCreator.dungeonSelect,true);
         initializeSideBarDungeon();
         $areaTeamSelect.hide();
         $dungeonRun.show();

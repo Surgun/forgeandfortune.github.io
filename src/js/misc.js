@@ -128,6 +128,7 @@ const miscIcons = Object.freeze({
     toggleOn: `<i class="fas fa-toggle-on"></i>`,
     toggleOff: `<i class="fas fa-toggle-off"></i>`,
     quest : `<i class="fas fa-map-signs"></i>`,
+    locked : `<i class="fas fa-lock-alt"></i>`,
 });
 
 const heroStat = Object.freeze({

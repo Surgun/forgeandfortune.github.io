@@ -291,11 +291,9 @@ class Dungeon {
         const boss = this.mobs.find(m=>m.event === "boss")
         return `${formatToUnits(boss.hp,2)} (${Math.round(100*boss.hp/boss.maxHP())+"%"})`;
     }
-    bossDifficulty() {
-        return 0;
-        //if (this.type === "regular") return 0;
-        //const boss = DungeonManager.bossByDungeon(this.id);
-        //return MonsterHall.monsterKillCount(boss);
+    difficulty() {
+        if (this.type === "regular") return 0;
+        return this.maxFloor;
     }
     buffTick(type) {
         this.party.heroes.forEach(hero => {
@@ -404,5 +402,8 @@ const DungeonManager = {
     beaten(dungeonID) {
         const dungeon = this.dungeonByID(dungeonID);
         return dungeon.beaten();
+    },
+    bossRefightUnlocked() {
+        return Shop.alreadyPurchased("AL3007");
     }
 };

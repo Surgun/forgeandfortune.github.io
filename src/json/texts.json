@@ -156,6 +156,14 @@
     "en": "Locked"
   },
   {
+    "tid": "hero_tab_upgrade",
+    "en": "Upgrades"
+  },
+  {
+    "tid": "hero_tab_trinket",
+    "en": "Trinket"
+  },
+  {
     "tid": "header_adventure_areas_title",
     "en": "Adventure Areas"
   },
@@ -194,6 +202,10 @@
   {
     "tid": "adventure_launch_floor_boss",
     "en": "Start Boss Fight"
+  },
+  {
+    "tid": "adventure_launch_floor_boss_refight",
+    "en": "Rechallenge Boss"
   },
   {
     "tid": "slot_party_empty",
@@ -586,5 +598,9 @@
   {
     "tid": "market_perk_purchase_button",
     "en": "Purchase"
+  },
+  {
+    "tid": "universal_locked",
+    "en": "Locked"
   }
 ]

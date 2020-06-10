@@ -17,11 +17,12 @@ const MobManager = {
         disableEventLayers();
         const mobTemplate = this.monsterDB.find(m=>m.id === mobID);
         if (dungeon.type === "boss") {
-            return new Mob(mobTemplate);
+            const boss = new Mob(mobTemplate,0,0,dungeon.difficulty());
+            boss.difficulty = dungeon.difficulty();
         }
         const atk = (dungeon.pow + dungeon.floor * dungeon.powGain);
         const hp = (dungeon.hp + dungeon.floor * dungeon.hpGain);
-        const mob = new Mob(mobTemplate, atk, hp);
+        const mob = new Mob(mobTemplate, atk, hp,dungeon.difficulty());
         return mob;
     },
 }
@@ -41,12 +42,12 @@ class MobTemplate {
 }
 
 class Mob extends Combatant {
-    constructor (mobTemplate, atk, hp) {
+    constructor (mobTemplate, atk, hp, difficulty) {
         super(mobTemplate);
         if (this.event === "boss") {
-            this.pow = this.powMod;
-            this.hpmax = this.hpMod;
-            this.hp = this.hpMod;
+            this.pow = Math.floor(this.powMod * Math.pow(1.3,difficulty));
+            this.hpmax = Math.floor(this.hpMod * Math.pow(1.3,difficulty));
+            this.hp = Math.floor(this.hpMod * Math.pow(1.3,difficulty));
         }
         else {
             this.pow = Math.floor(atk*this.powMod);

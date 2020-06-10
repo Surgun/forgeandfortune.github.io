@@ -241,7 +241,7 @@ function createQuestContainer(quest,skipAnim) {
     if (quest.state === QuestState.success) d.removeClass("questActive").addClass("questSuccess");
     if (quest.state === QuestState.failure) d.removeClass("questActive").addClass("questFailure");
     $("<div/>").addClass("questName").html(quest.name).appendTo(d);
-    $("<div/>").addClass("questDesc").html(quest.description).appendTo(d);
+    $("<div/>").addClass("questDesc").html(`<span>${quest.description}</span>`).appendTo(d);
     const d1 = $("<div/>").addClass("questReq").appendTo(d);
         $("<div/>").addClass("questReqHeader").html(displayText('quests_location_heading_reqs')).appendTo(d1);
         const equipStats = $("<div/>").addClass("questStats equipStats").appendTo(d1);

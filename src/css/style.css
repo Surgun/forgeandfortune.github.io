@@ -1242,6 +1242,10 @@ footer {
     padding: 10px;
 }
 
+.adventureAreaHeader {
+    margin-top: 0;
+}
+
 .dungeonAbandonAll:hover, .dungeonAbandonAll:focus, .dungeonAbandon:hover, .dungeonAbandon:focus {
     background-color: var(--button-cancel);
 }
@@ -3073,18 +3077,7 @@ footer {
 }
 
 .heroesHeadingContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin: 10px;
-    padding: 10px;
-    border-bottom: 2px solid var(--border-primary);
-    animation: fade-in var(--transition_linear);
-}
-
-.heroesListingsHeading {
-    display: flex;
-    align-items: center;
+    margin-top: 0;
 }
 
 .heroOwnedCard {
@@ -7036,10 +7029,6 @@ span.beta-tag {
 
 /* Quests */ 
 
-.questLocationsHeader {
-    margin: 10px;
-}
-
 .questLocationCardsContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(300px, 1fr));
@@ -7091,7 +7080,7 @@ span.beta-tag {
 }
 
 .questFailure .questName {
-    color: #ff4545;
+    color: var(--red-primary);
 }
 
 .questDesc {

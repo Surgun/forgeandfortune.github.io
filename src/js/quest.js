@@ -2,8 +2,9 @@
 
 const QuestState = Object.freeze({idle:"idle",running:"in_progress",success:"success",failure:"failure"});
 
-const $questLocations = $("#questLocations");
 const $questSelect = $("#questSelect");
+const $questSelectHeader = $("#questSelectHeader");
+const $questLocations = $("#questLocations");
 const $questPartySelect = $("#questPartySelect");
 
 class Quest {
@@ -190,12 +191,12 @@ const QuestManager = {
     }
 }
 
-function refreshQuestLocations() {
+function refreshQuestLocations(skipAnim) {
     $questLocations.empty();
     $questSelect.show();
     $questPartySelect.hide();
     QuestManager.available().forEach(quest => {
-        createQuestContainer(quest).appendTo($questLocations);
+        createQuestContainer(quest,skipAnim).appendTo($questLocations);
     });
 }
 
@@ -210,24 +211,35 @@ function refreshQuestText(quest) {
     if (quest.state === QuestState.idle) $("#qst"+quest.id).html(displayText('quests_status_idle'));
     if (quest.state === QuestState.running) $("#qst"+quest.id).html(msToTime(quest.remaining()));
     if (quest.state === QuestState.success) {
-        $("#q"+quest.id).addClass("questSuccess");
+        $("#q"+quest.id).removeClass('questActive').addClass("questSuccess");
         $("#qst2"+quest.id).hide();
         $("#qst"+quest.id).html(displayText('quests_status_success'));
         $("#qsti"+quest.id).hide();
     }
     if (quest.state === QuestState.failure) {
-        $("#q"+quest.id).addClass("questFailure");
+        $("#q"+quest.id).removeClass('questActive').addClass("questFailure");
         $("#qst2"+quest.id).hide();
         $("#qst"+quest.id).html(displayText('quests_status_failure'));
         $("#qsti"+quest.id).hide();
     }
 }
 
-function createQuestContainer(quest) {
+function generateQuestSelectHeader() {
+    $questSelectHeader.empty();
+    const a = $("<div/>").addClass("contentHeader").appendTo($questSelectHeader);
+        const a1 = $("<div/>").addClass("contentHeading").appendTo(a);
+        $("<div/>").addClass("headingIcon").html('<i class="fas fa-map-signs"></i>').appendTo(a1);
+            const a1a = $("<div/>").addClass("headingDetails").appendTo(a1);
+            $("<div/>").addClass("headingTitle").html(displayText('header_quests_select_title')).appendTo(a1a);
+            $("<div/>").addClass("headingDescription").html(displayText('header_quests_select_desc')).appendTo(a1a);
+}
+
+function createQuestContainer(quest,skipAnim) {
     const d = $("<div/>").attr("id","q"+quest.id).addClass("questLocationContainer").data("questID",quest.id);
+    if (skipAnim) d.css({"animation": "none"});
     if (quest.state === QuestState.running) d.addClass("questActive");
-    if (quest.state === QuestState.success) d.addClass("questSuccess");
-    if (quest.state === QuestState.failure) d.addClass("questFailure");
+    if (quest.state === QuestState.success) d.removeClass("questActive").addClass("questSuccess");
+    if (quest.state === QuestState.failure) d.removeClass("questActive").addClass("questFailure");
     $("<div/>").addClass("questName").html(quest.name).appendTo(d);
     $("<div/>").addClass("questDesc").html(quest.description).appendTo(d);
     const d1 = $("<div/>").addClass("questReq").appendTo(d);
@@ -260,7 +272,7 @@ $(document).on("click", ".questLocationContainer", (e) => {
     if (quest.state === QuestState.running) return;
     if (quest.state === QuestState.failure || quest.state === QuestState.success) {
         quest.collect();
-        refreshQuestLocations();
+        refreshQuestLocations(true);
         return;
     }
     QuestManager.questView = qid;
@@ -411,6 +423,7 @@ $(document).on("click", ".questAvailableCardClick", (e) => {
 $(document).on("click", ".qpBackButton", (e) => {
     e.preventDefault();
     refreshQuestLocations();
+    generateQuestSelectHeader();
 });
 
 //Quest Start Button
@@ -422,4 +435,5 @@ $(document).on("click", ".qpHeaderStartQuest", (e) => {
     }
     QuestManager.lockTeam();
     refreshQuestLocations();
+    generateQuestSelectHeader();
 })

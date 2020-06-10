@@ -30,6 +30,7 @@ function openTab(tabName) {
     }
     if (tabName === "questsTab") {
         refreshQuestLocations();
+        generateQuestSelectHeader();
     }
     $(".tabcontent").hide();
     $("#"+tabName).show();

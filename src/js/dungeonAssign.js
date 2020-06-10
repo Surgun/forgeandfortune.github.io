@@ -38,7 +38,7 @@ function dungeonsTabClicked() {
 function generateAreaSelect() {
     $areaSelect.empty();
     // Area Header
-    const adventureAreaHeaderContainer = $("<div/>").addClass(`contentHeader`).prependTo($areaSelect);
+    const adventureAreaHeaderContainer = $("<div/>").addClass(`adventureAreaHeader contentHeader`).prependTo($areaSelect);
     const adventureAreaHeader = $("<div/>").addClass(`contentHeading`).appendTo(adventureAreaHeaderContainer);
         $("<div/>").addClass("headingIcon").html('<i class="fas fa-swords"></i>').appendTo(adventureAreaHeader);
     const headingDetails = $("<div/>").addClass("headingDetails").appendTo(adventureAreaHeader);

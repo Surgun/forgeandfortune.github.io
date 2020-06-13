@@ -288,6 +288,38 @@
     "en": "Unlock this building by crafting the recipe below."
   },
   {
+    "tid": "header_synthesizer_desynth_title",
+    "en": "Items Available to Deynthesize"
+  },
+  {
+    "tid": "header_synthesizer_desynth_desc",
+    "en": "Deynthesize your items to extract rare materials."
+  },
+  {
+    "tid": "synthesizer_inventory_empty",
+    "en": "You currently have no items available to desynthesize."
+  },
+  {
+    "tid": "synthesizer_settings_title",
+    "en": "Synthesizer Setting"
+  },
+  {
+    "tid": "synthesizer_desynth_setting",
+    "en": "Desynthsis"
+  },
+  {
+    "tid": "synthesizer_synth_setting",
+    "en": "Synthesis"
+  },
+  {
+    "tid": "synthesizer_desynth_assign_button",
+    "en": "Desynthesize"
+  },
+  {
+    "tid": "synthesizer_synth_assign_button",
+    "en": "Synthesize"
+  },
+  {
     "tid": "bank_nav_inventory",
     "en": "Your Inventory"
   },

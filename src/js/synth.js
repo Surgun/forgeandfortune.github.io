@@ -194,7 +194,8 @@ const SynthManager = {
 
 const $synthBuilding = $("#synthBuilding");
 const $synthSlot = $("#synthSlot");
-const $synthList = $("#synthList");
+const $synthListHeader = $("#synthListHeader");
+const $synthListContainer = $("#synthListContainer");
 const $synthRewardCard = $("#synthRewardCard");
 const $synthRewardAmt = $("#synthRewardAmt")
 const $synthReward = $("#synthReward");
@@ -203,17 +204,26 @@ const $synthReward = $("#synthReward");
 function initiateSynthBldg() {
     $synthBuilding.show();
     refreshSynthStage();
+    generateSynthHeader();
     refreshSynthInventory();
     refreshSynthButtons();
     if (SynthManager.setting === synthToggle.DESYNTH) refreshDesynth();
     if (SynthManager.setting === synthToggle.RESYNTH) refreshResynth();
 }
 
+function generateSynthHeader() {
+    $synthListHeader.empty();
+    const a = $("<div/>").addClass("contentHeader").appendTo($synthListHeader);
+    const a1 = $("<div/>").addClass("contentHeading").appendTo(a);
+        const a1a = $("<div/>").addClass("headingDetails").appendTo(a1);
+        $("<div/>").addClass("headingTitle").html(displayText('header_synthesizer_desynth_title')).appendTo(a1a);
+        $("<div/>").addClass("headingDescription").html(displayText('header_synthesizer_desynth_desc')).appendTo(a1a);
+}
+
 function refreshSynthInventory() {
-    $synthList.empty();
-        $("<div/>").addClass("possibleSynthHead synthHeading").html("Available Items to Synthesize").appendTo($synthList);
-        const d1 = $("<div/>").addClass('possibleSynthHolder').appendTo($synthList);
-    if (SynthManager.possibleSynth().length === 0) $("<div/>").addClass("synthBlank").html("No Items to Synthesize").appendTo(d1)
+    $synthListContainer.empty();
+    const d1 = $("<div/>").addClass('synthListCardsContainer').appendTo($synthListContainer);
+    if (SynthManager.possibleSynth().length === 0) $("<div/>").addClass("emptyContentMessage").html(displayText('synthesizer_inventory_empty')).appendTo($synthListContainer)
     SynthManager.possibleSynth().forEach(container => {
         createSynthCard(container,false).appendTo(d1);
     });
@@ -346,7 +356,7 @@ $(document).on('click', '.resynthMaterial', (e) => {
 });
 
 function createSynthCard(container) {
-    const itemdiv = $("<div/>").addClass("inventoryItem").addClass("R"+container.rarity);
+    const itemdiv = $("<div/>").addClass("synthItem").addClass("R"+container.rarity);
     const itemName = $("<div/>").addClass("itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
     const itemRarity = $("<div/>").addClass(`itemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
@@ -355,8 +365,9 @@ function createSynthCard(container) {
         if (val === 0) continue;
         $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
     };
-    const synthButton = $("<div/>").addClass("synthButton").data("containerID",container.containerID).html("Stage Item");
-    return itemdiv.append(itemName,itemRarity,itemLevel,itemProps,synthButton);
+    const synthActions = $("<div/>").addClass("synthActions");
+        $("<div/>").addClass("synthButton actionButtonCard").data("containerID",container.containerID).html("Stage Item").appendTo(synthActions);
+    return itemdiv.append(itemName,itemRarity,itemLevel,itemProps,synthActions);
 }
 
 function createSynthStageCard(container) {

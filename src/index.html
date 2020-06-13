@@ -235,7 +235,7 @@
                     </div>
                 </div>
                 <div id="heroesTab" class="tabcontent">
-                    <div id="heroContainer">
+                    <div id="heroContainer" class="heroContainer">
                         <div class="heroesHeadingContainer contentHeader">
                             <div class="contentHeading">
                                 <div class="headingIcon">
@@ -465,7 +465,7 @@
                 <div id="dungeonsTab" class="tabcontent">
                     <div id="dungeonsContainer" class="dungeonsContainer">
                         <div id="dungeonCloseup" class="dungeonsCloseup">
-                            <div id="areaSelect">
+                            <div id="areaSelect" class="areaSelect">
                             </div>
                             <div id="areaTeamSelect" class="areaSelectContainer">
                                 <div class="areaTeamSelectionContainer">
@@ -551,12 +551,14 @@
                     </div>
                     <div id="questPartySelect" class="questParty">
                             <div id="qpHeader" class="questPartyHeader"></div>
-                            <div id="questPartyTeamHeader" class="questPartyTeamHeader"></div>
-                            <div class="questPartyTeam">
-                                <div class="qpTeam" id="qpTeam"></div>                               
+                            <div class="questPartyContentContainer">
+                                <div id="questPartyTeamHeader" class="questPartyTeamHeader"></div>
+                                <div class="questPartyTeam">
+                                    <div class="qpTeam" id="qpTeam"></div>                               
+                                </div>
+                                <div id="questHeroesHeader" class="questHeroesHeader"></div>
+                                <div id="qpAvailable" class="qpAvailable"></div>
                             </div>
-                            <div id="questHeroesHeader" class="questHeroesHeader"></div>
-                            <div id="qpAvailable" class="qpAvailable"></div>
                         </div>
                 </div>
                 <div id="townsTab" class="tabcontent">
@@ -591,7 +593,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="synthList"></div>
+                                    <div id="synthList">
+                                        <div id="synthListHeader" class="synthListHeader"></div>
+                                        <div id="synthListContainer" class="synthListContainer"></div>
+                                    </div>
                                 </div>         
                                 <div id="fuseBuilding" class="buildingTab">
                                     <div id="fuseSlots"></div>

@@ -334,7 +334,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 10px;
+    margin: 10px 0;
     padding: 10px;
     border-bottom: 2px solid var(--border-primary);
     animation: fade-in var(--transition_linear); 
@@ -652,7 +652,7 @@ footer {
     border-radius: 10px;
 }
 
-.heroEquipBlockName, .inventoryItemEmptyText, .emptyGearSlotTitle, .itemName {
+.heroEquipBlockName, .emptyGearSlotTitle, .itemName {
     width: 100%;
     margin-bottom: 5px;
     padding: 5px;
@@ -1235,11 +1235,15 @@ footer {
     color: var(--text-secondary);
 }
 
+.areaSelect {
+    padding: 0 10px;
+}
+
 .areaListings {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 10px;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .adventureAreaHeader {
@@ -1439,7 +1443,7 @@ footer {
 }
 
 .dungeonSelectionTop, .dungeonSelectionBottom, .dtsMobs {
-    padding: 10px;
+    padding: 0 10px 10px;
     transform-origin: right;
     animation: scale-x-in var(--transition_linear);
 }
@@ -1457,7 +1461,6 @@ footer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
     grid-gap: 10px;
-    padding: 10px;
 }
 
 .dtsMobsCollection.collapsedMobsCollection {
@@ -3074,9 +3077,10 @@ footer {
 
 /* Heroes */
 
-#heroContainer {
+.heroContainer {
     height: 100%;
     overflow: auto;
+    padding: 10px;
 }
 
 #heroTab {
@@ -3087,7 +3091,7 @@ footer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(195px, 2fr));
     grid-gap: 10px;
-    padding: 10px;
+    padding: 10px 0;
     width: 100%;
 }
 
@@ -4048,7 +4052,7 @@ footer {
 
 /* End Building Headers */
 
-.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .synthSlot, .synthGroup, .fortuneItem, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard, .lineRewardContainer, .recipeMasteryGuildCard, .recipeBuyCard, .workerBuyCard, .museumItem {
+.fuseSlot, .bankItem, .smithItem, .fortuneStatus, .gearItem, .orderCard, .synthSlot, .synthGroup, .fortuneItem, .tinkerSlot, .tinkerRangeBox, .fortuneSlot, .monsterCard, .lineRewardContainer, .recipeMasteryGuildCard, .recipeBuyCard, .workerBuyCard, .museumItem, .synthItem {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -4113,6 +4117,23 @@ footer {
 
 .beatBarFill {
     background-color: rgba(255,255,255,0.1);
+}
+
+/* Synthesizer Building */
+
+.synthListCardsContainer {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(190px, 1fr));
+    grid-gap: 10px;
+}
+
+.synthActions {
+    margin-top: auto;
+    width: 100%;
+}
+
+.synthButton {
+    margin-top: 10px;
 }
 
 /* Fusion Building */
@@ -7042,13 +7063,17 @@ span.beta-tag {
 /* End Museum Building */
 
 
-/* Quests */ 
+/* Quests Screen */ 
+
+.questContainer {
+    padding: 0 10px;
+}
 
 .questLocationCardsContainer {
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 10px;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .questLocationContainer {
@@ -7199,6 +7224,7 @@ span.beta-tag {
     width: 100%;
     max-width: 800px;
     color: var(--text-secondary);
+    text-shadow: 1px 1px black;
 }
 
 .qpHeaderCriteria, .qpHeaderCurrent {
@@ -7258,4 +7284,8 @@ span.beta-tag {
     margin: auto 0 0;
     padding: 10px;
     background-color: rgba(0,0,0,.15);
+}
+
+.questPartyContentContainer {
+    padding: 0 10px;
 }

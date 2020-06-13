@@ -88,7 +88,7 @@ function refreshSmithInventory() {
         $("<div/>").addClass("headingDescription").html(displayText("header_forge_inventory_desc")).appendTo(forgeInvHeadingDetails);
     // Empty Inventory Message
     if (invItems.length === 0) {
-        $("<div/>").addClass("emptyContentMessage").html(displayText('forge_heroes_empty')).appendTo($smithInvSlots);
+        $("<div/>").addClass("emptyContentMessage").html(displayText('forge_inventory_empty')).appendTo($smithInvSlots);
     }
     // Forge Inventory Cards
     else {

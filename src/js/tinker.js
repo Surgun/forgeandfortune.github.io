@@ -128,6 +128,9 @@ const TinkerManager = {
     },
     unlocked() {
         return TownManager.idToBuilding("TB006").status === 2;
+    },
+    addLevel() {
+        return;
     }
 }
 

@@ -466,6 +466,33 @@ class BM906B extends Buff {
     }
 }
 
+class BM907 extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+}
+
+class BM907A extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 1;
+    }
+    onHitting() {
+        this.target.takeDamage(1);
+    }
+}
+
+class BM907B extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 1;
+    }
+}
+
 const BuffLookup = {
     B0010,
     B0011,
@@ -502,4 +529,7 @@ const BuffLookup = {
     BM906,
     BM906A,
     BM906B,
+    BM907,
+    BM907A,
+    BM907B,
 }

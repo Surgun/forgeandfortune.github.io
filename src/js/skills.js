@@ -923,6 +923,36 @@ SkillManager.skillEffects['SM906B'] = function (combatParams) {
 }
 
 
+SkillManager.skillEffects['SM907A'] = function (combatParams) {
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    const aoeTarget = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    const self = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    const stacks = self[0].getBuffStacks("BM907");
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+    combatParams.power += combatParams.power * stacks * combatParams.attack.mod1;
+    aoeTarget.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+}
+
+SkillManager.skillEffects['SM907B'] = function (combatParams) {
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    const self = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
+    const stacks = self[0].getBuffStacks("BM907");
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+    combatParams.power += combatParams.power * stacks * combatParams.attack.mod1;
+    self.forEach(target => {
+        target.heal(combatParams.power);
+    });
+}
+
+SkillManager.skillEffects['SM907C'] = function (combatParams) {
+    //lol it does nothing
+}
 
   //--------------------//
  //   PASSIVE SKILLS   //
@@ -959,4 +989,25 @@ SkillManager.skillEffects['SMP906'] = function (type,target,attack,skillParams) 
     target.playbook = PlaybookManager.generatePlayBookFromSkills("SM906A","SM906A","SM906A","SM906B");
     refreshSkillUnit(target);
     BuffManager.generateBuff('BM906A',target,0);
+}
+
+SkillManager.skillEffects['SMP907'] = function (type,target,attack,skillParams) {
+    if (type === "initial") {
+        BuffManager.generateBuff("BM907B",target,skillParams.powMod*target.pow);
+    }
+    //Monkey Tree Hide
+    if (type !== "onHit") {
+        const stacks = target.getBuffStacks("BM907");
+        if (!target.hpLessThan(0.25*stacks)) return;
+        this.buffTick("custom");
+        target.state = "tree";
+        target.image = '<img src="/assets/images/enemies/B904B.gif">';
+        BuffManager.generateBuff("BM907B",target);
+    }
+}
+
+SkillManager.skillEffects['SMP907A'] = function (type,target,attack,skillParams) {
+    //Spiky Self - Cactus
+    if (type !== "initial") return;
+    BuffManager.generateBuff("BM907A",target,skillParams.powMod*target.pow);
 }

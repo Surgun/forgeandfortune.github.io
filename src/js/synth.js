@@ -2,7 +2,7 @@
 
 const synthToggle = Object.freeze({DESYNTH:0,RESYNTH:1});
 
-const $synthPowerResynthesis = $("#synthPowerResynthesis");
+const $synthSide = $("#synthSide");
 
 const SynthManager = {
     slot : null,
@@ -193,17 +193,13 @@ const SynthManager = {
 }
 
 const $synthBuilding = $("#synthBuilding");
-const $synthSlot = $("#synthSlot");
 const $synthListHeader = $("#synthListHeader");
 const $synthListContainer = $("#synthListContainer");
-const $synthRewardCard = $("#synthRewardCard");
-const $synthRewardAmt = $("#synthRewardAmt")
-const $synthReward = $("#synthReward");
-
 
 function initiateSynthBldg() {
     $synthBuilding.show();
     refreshSynthStage();
+    generateSynthStageActions();
     generateSynthHeader();
     refreshSynthInventory();
     refreshSynthButtons();
@@ -220,6 +216,29 @@ function generateSynthHeader() {
         $("<div/>").addClass("headingDescription").html(displayText('header_synthesizer_desynth_desc')).appendTo(a1a);
 }
 
+function generateSynthStageActions() {
+    $synthSide.empty();
+    const synthSettings =  $("<div/>").addClass("synthSettingsContainer").appendTo($synthSide);
+    const synthSettingOptions = $("<div/>").addClass("synthSettingsOptions").appendTo(synthSettings);
+        $("<div/>").addClass("synthRewardHeader").html(displayText('synthesizer_settings_title')).appendTo(synthSettingOptions);
+        $("<div/>").addClass("synthPowerSetting actionButton actionButtonAnimDisabled").attr({"id":"synthPowerDesynthesis"}).html("Desynthesis").appendTo(synthSettingOptions);
+        $("<div/>").addClass("synthPowerSetting synthPowerSettingLocked actionButton actionButtonAnimDisabled").attr({"id":"synthPowerResynthesis"}).html("<i class='fas fa-lock'></i>Synthesis").appendTo(synthSettingOptions);
+    // Synth Slot
+    const synthSlot = $("<div/>").addClass("synthSlot").attr({"id":"synthSlot"}).appendTo($synthSide);
+
+    // Desynth Reward
+    const desynthRewards = $("<div/>").addClass("desynthRewards").attr({"id":"desynthRewards"}).appendTo($synthSide);
+        $("<div/>").addClass("synthRewardHeader").html("Material to be extracted").appendTo(desynthRewards);
+        const synthReward = $("<div/>").addClass("synthReward").appendTo(desynthRewards);
+            $("<div/>").addClass("synthRewardCard").attr({"id":"synthRewardCard"}).appendTo(synthReward);
+            $("<div/>").addClass("synthRewardAmt").attr({"id":"synthRewardAmt"}).appendTo(synthReward);
+    // Synth Reward
+    const resynthCost = $("<div/>").addClass("resynthCost").attr({"id":"resynthCost"}).appendTo($synthSide);
+        const resynthBlock = $("<div/>").addClass("resynthBlock").appendTo(resynthCost);
+            $("<div/>").addClass("synthRewardHeader").html("Material to infuse").appendTo(resynthBlock);
+            $("<div/>").addClass("resynthMaterials").attr({"id":"resynthMaterials"}).appendTo(resynthBlock);
+}
+
 function refreshSynthInventory() {
     $synthListContainer.empty();
     const d1 = $("<div/>").addClass('synthListCardsContainer').appendTo($synthListContainer);
@@ -230,78 +249,71 @@ function refreshSynthInventory() {
 };
 
 function refreshSynthStage() {
-    $synthSlot.empty();
+    $("#synthSlot").empty();
     if (SynthManager.slot === null) {
-        $("<div/>").addClass("synthSlotName itemName slotEmpty").html("Empty").appendTo($synthSlot);
+        $("<div/>").addClass("synthSlotName itemName slotEmpty").html("Empty").appendTo($("#synthSlot"));
         return;
     }
-    createSynthStageCard(SynthManager.slot).appendTo($synthSlot);
+    createSynthStageCard(SynthManager.slot).appendTo($("#synthSlot"));
 }
 
-const $desynthRewards = $("#desynthRewards");
-const $resynthCost = $("#resynthCost");
-
-const $resynthMaterial = $("#resynthMaterial");
-const $resynthMaterials = $("#resynthMaterials");
-
 function refreshDesynth() {
-    $desynthRewards.show();
-    $resynthCost.hide();
+    $("#desynthRewards").show();
+    $("#resynthCost").hide();
     $(".synthPowerSetting").removeClass("synthPowerEnabled");
     $("#synthPowerDesynthesis").addClass("synthPowerEnabled");
-    $synthRewardCard.empty();
-    $synthRewardAmt.empty();
+    $("#synthRewardCard").empty();
+    $("#synthRewardAmt").empty();
     if (SynthManager.slot === null) {
-        $desynthRewards.hide();
+        $("#desynthRewards").hide();
         return;
     }
-    $desynthRewards.show();
+    $("#desynthRewards").show();
     const mod = SynthManager.state === "complete";
     const reward = SynthManager.desynthRewards(mod);
-    $("<div/>").addClass("synthMaterialPic").html(ResourceManager.idToMaterial(reward.id).img).appendTo($synthRewardCard);
-    $("<div/>").addClass("synthMaterialAmt").html(reward.amt).appendTo($synthRewardAmt);
-    $synthReward.addClass("tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":reward.id});
+    $("<div/>").addClass("synthMaterialIcon").html(ResourceManager.idToMaterial(reward.id).img).appendTo($("#synthRewardCard"));
+    $("<div/>").addClass("synthMaterialAmt").html(reward.amt).appendTo($("#synthRewardAmt"));
+    $(".synthReward").addClass("tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":reward.id});
     synthBarText("Desynthesize");
     refreshSynthStage();
 }
 
 function refreshResynth() {
-    $desynthRewards.hide();
+    $("#desynthRewards").hide();
     $(".synthPowerSetting").removeClass("synthPowerEnabled");
     $("#synthPowerResynthesis").addClass("synthPowerEnabled");
-    if (SynthManager.state === "empty") return $resynthCost.hide();
-    $resynthCost.show();
+    if (SynthManager.state === "empty") return $("#resynthCost").hide();
+    $("#resynthCost").show();
     const idAmts = SynthManager.resynthCosts();
-    $resynthMaterials.empty();
+    $("#resynthMaterials").empty();
     const mats = ["M700","M701","M702"];
     mats.forEach(mat => {
         if (idAmts[mat] === 0) return;
-        $("<div/>").addClass("resynthMaterial").data("matid",mat).html(`${ResourceManager.idToMaterial(mat).img} ${idAmts[mat]}`).appendTo($resynthMaterials);
+        const resynthMaterial = $("<div/>").addClass("resynthMaterial tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":mat}).data("matid",mat).appendTo($("#resynthMaterials"));
+        $("<div/>").addClass("resynthMaterialIcon").html(ResourceManager.idToMaterial(mat).img).appendTo(resynthMaterial);
+        $("<div/>").addClass("resynthMaterialAmt").html(idAmts[mat]).appendTo(resynthMaterial);
     });
-    if (SynthManager.state === "staged") {
-        synthBarText("Start Resynthesis");
-    }
     if (SynthManager.state === "resynthing") {
         $("#synthRemove").hide();
         synthBarText("Resynthing...");
     }
     if (SynthManager.state === "complete") {
         $("#synthRemove").hide();
-        synthBarText("Collect");
     }
     refreshSynthStage();
 }
 
 function refreshSynthButtons() {
-    if (SynthManager.lvl >= 2) $synthPowerResynthesis.html("Resynthesis");
+    if (SynthManager.lvl >= 2) $("#synthPowerResynthesis").removeClass("synthPowerSettingLocked").html("Synthesis");
 }
 
-function createSynthBar(text) {
+function createSynthBar() {
     const synthPercent = SynthManager.time/SynthManager.cookTime;
     const synthWidth = (synthPercent*100).toFixed(1)+"%";
+    const synthAmt = msToTime(SynthManager.cookTime - SynthManager.time);
     const d1 = $("<div/>").addClass("synthBarDiv").attr("id","synthBarDiv");
-    const d1a = $("<div/>").addClass("synthBar").attr("id","synthBar");
-    const s1 = $("<span/>").addClass("synthBarFill").attr("id","synthFill").html(text).css('width', synthWidth);
+    const d1a = $("<div/>").addClass("synthBar").attr("data-label",synthAmt).attr("id","synthBar");
+    const s1 = $("<span/>").addClass("synthBarFill").attr("id","synthFill").css('width', synthWidth);
     return d1.append(d1a,s1);
 }
 
@@ -329,7 +341,7 @@ $(document).on('click', '#synthRemove', (e) => {
 })
 
 //click synth start button
-$(document).on('click', '#synthBarDiv', (e) => {
+$(document).on('click', '.synthSlotAction', (e) => {
     e.preventDefault();
     SynthManager.stageButton();
 });
@@ -360,10 +372,12 @@ function createSynthCard(container) {
     const itemName = $("<div/>").addClass("itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
     const itemRarity = $("<div/>").addClass(`itemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
-    const itemProps = $("<div/>").addClass("inventoryProps");
+    const itemProps = $("<div/>").addClass("equipStats");
     for (const [stat, val] of Object.entries(container.itemStat(0))) {
         if (val === 0) continue;
-        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
+        const ed = $("<div/>").addClass("gearStat tooltip").attr("data-tooltip", stat).appendTo(itemProps);
+            $("<div/>").addClass(`${stat}_img`).html(miscIcons[stat]).appendTo(ed);
+            $("<div/>").addClass(`${stat}_integer statValue`).html(val).appendTo(ed);
     };
     const synthActions = $("<div/>").addClass("synthActions");
         $("<div/>").addClass("synthButton actionButtonCard").data("containerID",container.containerID).html("Stage Item").appendTo(synthActions);
@@ -371,26 +385,33 @@ function createSynthCard(container) {
 }
 
 function createSynthStageCard(container) {
-    const itemdiv = $("<div/>").addClass("inventoryItem").addClass("R"+container.rarity);
+    const itemdiv = $("<div/>").addClass("synthItem").addClass("R"+container.rarity);
     const itemName = $("<div/>").addClass("itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
-    const stageRemove = $('<div/>').attr("id","synthRemove").html(`<i class="fas fa-times"></i>`);
     const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
-    const itemProps = $("<div/>").addClass("inventoryProps");
+    const itemRarity = $("<div/>").addClass(`itemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
+    const itemProps = $("<div/>").addClass("equipStats");
+    const stageRemove = $('<div/>').addClass("synthRemove").attr("id","synthRemove").html(`<i class="fas fa-times"></i>`);
     const synthStatProps = SynthManager.setting === synthToggle.RESYNTH ? SynthManager.resynthChange() : [0,0];
     for (const [stat, val] of Object.entries(container.itemStat(0, synthStatProps[0], synthStatProps[1]))) {
         if (val === 0) continue;
-        $("<div/>").addClass("invPropStat tooltip").attr("data-tooltip", stat).html(`${miscIcons[stat]} <span class="statValue">${val}</span>`).appendTo(itemProps);
+            const ed = $("<div/>").addClass("gearStat tooltip").attr("data-tooltip", stat).appendTo(itemProps);
+                $("<div/>").addClass(`${stat}_img`).html(miscIcons[stat]).appendTo(ed);
+                $("<div/>").addClass(`${stat}_integer statValue`).html(val).appendTo(ed);
     };
-    itemdiv.append(itemName,stageRemove,itemLevel,itemProps)
+    const synthBar = createSynthBar();
+    const synthButton = $("<div/>").addClass("synthSlotAction actionButtonCard");
+    itemdiv.append(itemName,itemLevel,itemRarity,itemProps,stageRemove,synthBar,synthButton);
     if (SynthManager.state === "staged" && SynthManager.resynth !== null) {
-        createSynthBar("Resynthesize").appendTo(itemdiv);
+        synthButton.html("Synthesize");
     }
     if (SynthManager.state === "staged" && SynthManager.resynth === null) {
-        createSynthBar("Select Material").appendTo(itemdiv);
+        synthButton.html("Select Material");
+        // synthBar.hide();
     }
     if (SynthManager.state === "complete") {
-        createSynthBar("Collect").appendTo(itemdiv);
+        synthButton.html("Collect Item");
         stageRemove.hide();
+        // synthBar.hide();
     }
     return itemdiv;
 };

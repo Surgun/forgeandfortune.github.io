@@ -383,5 +383,27 @@
     "onCast": "stack",
     "decrease": "never",
     "type": "debuff"
+  },
+  {
+    "id": "BM907",
+    "name": "Bananas",
+    "description": "Amplifies effects from all the potasium",
+    "icon": "<i class=\"fas fa-monkey\"></i>",
+    "maxStack": 100,
+    "stackCast": 1,
+    "onCast": "stack",
+    "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM907A",
+    "name": "Tree",
+    "description": "Reduces all damage taken to 1",
+    "icon": "<i class=\"fas fa-tree\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "never",
+    "type": "buff"
   }
 ]

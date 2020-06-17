@@ -468,6 +468,58 @@
     "event": "boss"
   },
   {
+    "id": "B907",
+    "name": "Monkey Knife Fight",
+    "hpMod": 120000,
+    "powMod": 1200,
+    "protection": 0,
+    "skill1": "S0000",
+    "skill2": "SM907A",
+    "skill3": "S0000",
+    "skill4": "SM907B",
+    "passiveSkill": "SMP907",
+    "event": "boss"
+  },
+  {
+    "id": "B908",
+    "name": "Krakoptopus",
+    "hpMod": 120000,
+    "powMod": 1200,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
+    "passiveSkill": null,
+    "event": "boss"
+  },
+  {
+    "id": "B909",
+    "name": "Goblin King",
+    "hpMod": 120000,
+    "powMod": 1200,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
+    "passiveSkill": null,
+    "event": "boss"
+  },
+  {
+    "id": "B910",
+    "name": "Beclutcher",
+    "hpMod": 120000,
+    "powMod": 1200,
+    "protection": 0,
+    "skill1": null,
+    "skill2": null,
+    "skill3": null,
+    "skill4": null,
+    "passiveSkill": null,
+    "event": "boss"
+  },
+  {
     "id": "B904A",
     "name": "Larry Jr",
     "hpMod": 1000,
@@ -478,6 +530,32 @@
     "skill3": "S0000",
     "skill4": "SM904A",
     "passiveSkill": "SMP904A",
+    "event": "boss"
+  },
+  {
+    "id": "B907A",
+    "name": "Normal Tree",
+    "hpMod": 10,
+    "powMod": 0,
+    "protection": 0,
+    "skill1": "SM907C",
+    "skill2": "SM907C",
+    "skill3": "SM907C",
+    "skill4": "SM907C",
+    "passiveSkill": "SMP907A",
+    "event": "boss"
+  },
+  {
+    "id": "B907B",
+    "name": "Monkey Tree",
+    "hpMod": 10,
+    "powMod": 0,
+    "protection": 0,
+    "skill1": "SM907C",
+    "skill2": "SM907C",
+    "skill3": "SM907C",
+    "skill4": "SM907C",
+    "passiveSkill": "SMP907A",
     "event": "boss"
   }
 ]

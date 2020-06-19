@@ -74,7 +74,6 @@ const SynthManager = {
     },
     startDesynth() {
         this.state = "desynthing";
-        synthBarText("");
         this.time = this.cookTime;
         refreshSynthStage();
     },
@@ -89,7 +88,6 @@ const SynthManager = {
         ResourceManager.addMaterial("M701",-cost.M701,false);
         ResourceManager.addMaterial("M702",-cost.M702,false);
         this.state = "resynthing";
-        synthBarText("");
         $("#synthRemove").hide();
         this.time = this.cookTime;
     },
@@ -102,7 +100,6 @@ const SynthManager = {
         if (this.state === "resynthing") this.slot.transform(this.resynthChange());
         this.state = "complete";
         this.resynth = null;
-        synthBarText("Collect");
         refreshSynthStage();
         refreshResynth();
     },
@@ -269,8 +266,10 @@ function refreshSynthStage() {
 function refreshDesynth() {
     $("#desynthRewards").show();
     $("#resynthCost").hide();
-    $(".synthPowerSetting").removeClass("synthPowerEnabled");
-    $("#synthPowerDesynthesis").addClass("synthPowerEnabled");
+    if (SynthManager.setting === synthToggle.DESYNTH) {
+        $(".synthPowerSetting").removeClass("synthPowerEnabled");
+        $("#synthPowerDesynthesis").addClass("synthPowerEnabled");
+    }
     $("#synthRewardCard").empty();
     $("#synthRewardAmt").empty();
     if (SynthManager.slot === null) {
@@ -283,14 +282,15 @@ function refreshDesynth() {
     $("<div/>").addClass("synthMaterialIcon").html(ResourceManager.idToMaterial(reward.id).img).appendTo($("#synthRewardCard"));
     $("<div/>").addClass("synthMaterialAmt").html(reward.amt).appendTo($("#synthRewardAmt"));
     $(".synthReward").addClass("tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":reward.id});
-    synthBarText("Desynthesize");
     refreshSynthStage();
 }
 
 function refreshResynth() {
     $("#desynthRewards").hide();
-    $(".synthPowerSetting").removeClass("synthPowerEnabled");
-    $("#synthPowerResynthesis").addClass("synthPowerEnabled");
+    if (SynthManager.setting === synthToggle.RESYNTH) {
+        $(".synthPowerSetting").removeClass("synthPowerEnabled");
+        $("#synthPowerResynthesis").addClass("synthPowerEnabled");
+    }
     if (SynthManager.state === "empty") return $("#resynthCost").hide();
     $("#resynthCost").show();
     const idAmts = SynthManager.resynthCosts();
@@ -304,7 +304,6 @@ function refreshResynth() {
     });
     if (SynthManager.state === "resynthing") {
         $("#synthRemove").hide();
-        synthBarText("Resynthing...");
     }
     if (SynthManager.state === "complete") {
         $("#synthRemove").hide();
@@ -319,21 +318,18 @@ function refreshSynthButtons() {
 function createSynthBar() {
     const synthPercent = SynthManager.time/SynthManager.cookTime;
     const synthWidth = (synthPercent*100).toFixed(1)+"%";
-    const synthAmt = msToTime(SynthManager.cookTime - SynthManager.time);
+    const synthAmt = msToTime(SynthManager.time);
     const d1 = $("<div/>").addClass("synthBarDiv").attr("id","synthBarDiv");
     const d1a = $("<div/>").addClass("synthBar").attr("data-label",synthAmt).attr("id","synthBar");
     const s1 = $("<span/>").addClass("synthBarFill").attr("id","synthFill").css('width', synthWidth);
     return d1.append(d1a,s1);
 }
 
-function refreshSynthBar(text) {
+function refreshSynthBar() {
     const synthPercent = SynthManager.time/SynthManager.cookTime;
     const synthWidth = (synthPercent*100).toFixed(1)+"%";
-    $("#synthFill").html(text).css('width', synthWidth);
-}
-
-function synthBarText(text) {
-    $("#synthFill").html(text);
+    const synthAmt = msToTime(SynthManager.time);
+    $("#synthBar").attr("data-label",synthAmt).css('width', synthWidth);
 }
     
 //click synth on item in inventory

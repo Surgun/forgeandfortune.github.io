@@ -76,6 +76,7 @@ const SynthManager = {
         this.state = "desynthing";
         synthBarText("");
         this.time = this.cookTime;
+        refreshSynthStage();
     },
     startResynth() {
         if (this.state !== "staged" || this.resynth === null) return;
@@ -198,9 +199,9 @@ const $synthListContainer = $("#synthListContainer");
 
 function initiateSynthBldg() {
     $synthBuilding.show();
-    refreshSynthStage();
     generateSynthStageActions();
     generateSynthHeader();
+    refreshSynthStage();
     refreshSynthInventory();
     refreshSynthButtons();
     if (SynthManager.setting === synthToggle.DESYNTH) refreshDesynth();
@@ -228,14 +229,14 @@ function generateSynthStageActions() {
 
     // Desynth Reward
     const desynthRewards = $("<div/>").addClass("desynthRewards").attr({"id":"desynthRewards"}).appendTo($synthSide);
-        $("<div/>").addClass("synthRewardHeader").html("Material to be extracted").appendTo(desynthRewards);
+        $("<div/>").addClass("synthRewardHeader").html("Material Extraction").appendTo(desynthRewards);
         const synthReward = $("<div/>").addClass("synthReward").appendTo(desynthRewards);
             $("<div/>").addClass("synthRewardCard").attr({"id":"synthRewardCard"}).appendTo(synthReward);
             $("<div/>").addClass("synthRewardAmt").attr({"id":"synthRewardAmt"}).appendTo(synthReward);
     // Synth Reward
     const resynthCost = $("<div/>").addClass("resynthCost").attr({"id":"resynthCost"}).appendTo($synthSide);
         const resynthBlock = $("<div/>").addClass("resynthBlock").appendTo(resynthCost);
-            $("<div/>").addClass("synthRewardHeader").html("Material to infuse").appendTo(resynthBlock);
+            $("<div/>").addClass("synthRewardHeader").html("Material Infusion").appendTo(resynthBlock);
             $("<div/>").addClass("resynthMaterials").attr({"id":"resynthMaterials"}).appendTo(resynthBlock);
 }
 
@@ -251,7 +252,15 @@ function refreshSynthInventory() {
 function refreshSynthStage() {
     $("#synthSlot").empty();
     if (SynthManager.slot === null) {
-        $("<div/>").addClass("synthSlotName itemName slotEmpty").html("Empty").appendTo($("#synthSlot"));
+        const itemdiv = $("<div/>").addClass("synthItem synthSlotEmpty");
+        const d = $("<div/>").addClass("synthSlotEmpty itemName").appendTo(itemdiv);
+            $("<div/>").addClass("synthSlotEmptyIcon").html(miscIcons.emptySlot).appendTo(d);
+            $("<div/>").addClass("synthSlotEmptyTitle").html("Empty Slot").appendTo(d);
+        $("<div/>").addClass("itemLevel").appendTo(itemdiv);
+        $("<div/>").addClass("itemRarity").appendTo(itemdiv);
+        $("<div/>").addClass("gearStat").html("<span/>").appendTo(itemdiv);
+        $("<div/>").addClass("synthSlotEmptyButton").appendTo(itemdiv);
+        $("#synthSlot").append(itemdiv);
         return;
     }
     createSynthStageCard(SynthManager.slot).appendTo($("#synthSlot"));
@@ -338,6 +347,7 @@ $(document).on('click', '.synthButton', (e) => {
 $(document).on('click', '#synthRemove', (e) => {
     e.preventDefault();
     SynthManager.removeSynth();
+    refreshSynthStage();
 })
 
 //click synth start button
@@ -405,13 +415,17 @@ function createSynthStageCard(container) {
         synthButton.html("Synthesize");
     }
     if (SynthManager.state === "staged" && SynthManager.resynth === null) {
-        synthButton.html("Select Material");
-        // synthBar.hide();
+        synthBar.hide();
+        synthButton.html("Desynthesize");
+    }
+    if (SynthManager.state === "desynthing") {
+        synthBar.show();
+        synthButton.hide();
     }
     if (SynthManager.state === "complete") {
-        synthButton.html("Collect Item");
+        synthBar.hide();
+        synthButton.html("Collect Item").show();
         stageRemove.hide();
-        // synthBar.hide();
     }
     return itemdiv;
 };

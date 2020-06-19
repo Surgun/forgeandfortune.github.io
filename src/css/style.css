@@ -583,6 +583,9 @@ footer {
 
 .equipItem, .heroEquipBlock {
     min-height: 200px;
+}
+
+.equipItem {
     max-width: 190px;
 }
 

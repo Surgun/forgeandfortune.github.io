@@ -386,7 +386,7 @@
   },
   {
     "id": "BM907",
-    "name": "Bananas",
+    "name": "This is Bananas",
     "description": "Amplifies effects from all the potasium",
     "icon": "<i class=\"fas fa-monkey\"></i>",
     "maxStack": 100,
@@ -404,6 +404,28 @@
     "stackCast": 1,
     "onCast": "refresh",
     "decrease": "never",
+    "type": "buff"
+  },
+  {
+    "id": "BM907B",
+    "name": "Will Hide",
+    "description": "Goes into hiding eventually",
+    "icon": "<i class=\"fas fa-monkey\"></i>",
+    "maxStack": 3,
+    "stackCast": 3,
+    "onCast": "refresh",
+    "decrease": "custom",
+    "type": "buff"
+  },
+  {
+    "id": "BM907C",
+    "name": "Hiding",
+    "description": "I am hiding",
+    "icon": "<i class=\"fas fa-monkey\"></i>",
+    "maxStack": 3,
+    "stackCast": 3,
+    "onCast": "refresh",
+    "decrease": "custom",
     "type": "buff"
   }
 ]

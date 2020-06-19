@@ -32,11 +32,26 @@ class TurnOrder {
     loadSave(save) {
         this.position = save.position;
     }
-    addMob(mob) {
-        this.order.splice(this.position+1,0,mob);
-    }
     getCurrentID() {
-        return this.order[this.position].uniqueid;
+        return this.currentTurn().uniqueid;
+    }
+    currentTurn() {
+        return this.order[this.position];
+    }
+    adjustOrder(heroes,mobs) {
+        const uniqueid = this.getCurrentID();
+        console.log(heroes,mobs);
+        this.heroes = heroes;
+        this.mobs = mobs;
+        this.order = interlace(heroes,mobs);
+        this.position = this.order.findIndex(m=>m.uniqueid === uniqueid);
+    }
+    positionInParty() {
+        const uniqueid = this.order[this.position];
+        const huid = this.heroes.map(h=>h.uniqueid);
+        const muid = this.mobs.map(m=>m.uniqueid);
+        if (huid.includes(uniqueid)) return huid.findIndex(h=>h === uniqueid);
+        return muid.findIndex(m=>m === uniqueid);
     }
 }
 
@@ -275,6 +290,7 @@ class Dungeon {
         this.mobs = [];
         this.mobIDs.forEach(mobID => {
             const mob = MobManager.generateMob(mobID,this);
+            mob.dungeonid = this.id;
             this.mobs.push(mob);
         });
         this.party.reset();
@@ -322,6 +338,21 @@ class Dungeon {
     }
     beaten() {
         return this.maxFloor > 0;
+    }
+    addMob(mobID,position = 999,refreshLater = false) {
+        const mob = MobManager.generateMob(mobID,this);
+        mob.dungeonid = this.id;
+        this.mobs.splice(position,0,mob);
+        this.mobIDs.splice(position,0,mobID);
+        this.order.adjustOrder(this.party.heroes,this.mobs);
+        mob.passiveCheck("initial",null);
+        if (!refreshLater && DungeonManager.dungeonView === this.id) initiateDungeonFloor(this.id);
+    }
+    removeMob(uniqueid,refreshLater = false) {
+        this.mobs.filter(m=>m.uniqueid !== uniqueid);
+        this.mobIDs = this.mobs.map(m=>m.uniqueid);
+        this.order.adjustOrder(this.party.heroes,this.mobs);
+        if (!refreshLater && DungeonManager.dungeonView === this.id) initiateDungeonFloor(this.id);
     }
 }
 

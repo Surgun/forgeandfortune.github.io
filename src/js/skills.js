@@ -997,12 +997,19 @@ SkillManager.skillEffects['SMP907'] = function (type,target,attack,skillParams) 
     }
     //Monkey Tree Hide
     if (type !== "onHit") {
-        const stacks = target.getBuffStacks("BM907");
+        const stacks = target.getBuffStacks("BM907B");
         if (!target.hpLessThan(0.25*stacks)) return;
-        this.buffTick("custom");
+        target.buffTick("custom");
         target.state = "tree";
         target.image = '<img src="/assets/images/enemies/B904B.gif">';
         BuffManager.generateBuff("BM907B",target);
+        //generate three mobs
+        const dungeon = DungeonManager.dungeonByID(target.dungeonid)
+        const position = dungeon.order.positionInParty();
+        for (let i=0;i<4;i++) {
+            if (i === position) return;
+            dungeon.addMob("B907A",0,false);
+        }
     }
 }
 

@@ -39,7 +39,10 @@ class Buff {
         if (type === "onHitting") this.onHitting();
         if (type !== this.decrease) return;
         this.stacks -= 1;
-        if (this.stacks <= 0) BuffRefreshManager.removeBuff(this, this.target);
+        if (this.stacks <= 0) {
+            this.expire();
+            BuffRefreshManager.removeBuff(this, this.target);
+        }
         else BuffRefreshManager.updateBuffCount(this, this.target);
     }
     expired() {
@@ -62,6 +65,7 @@ class Buff {
     thorns() { return 0; }
     parry() { return 0; }
     beornTank() { return 0; }
+    expire() { return; }
 }
 
 const BuffManager = {
@@ -488,8 +492,18 @@ class BM907B extends Buff {
     constructor (buffTemplate,target,power) {
         super(buffTemplate,target,power);
     }
+}
+
+class BM907C extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
     getProtection() {
         return 1;
+    }
+    expire() {
+        const dungeon = DungeonManager.dungeonByID(this.target.dungeonid);
+        dungeon.wipetrees();
     }
 }
 

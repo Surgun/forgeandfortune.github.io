@@ -5,7 +5,6 @@
     "description": "A standard attack.",
     "icon": "<img src=\"/assets/svg/sword-brandish.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -15,7 +14,6 @@
     "description": "Beorn increases armor for next two times being hit.",
     "icon": "<img src=\"/assets/svg/armor-upgrade.svg\">",
     "powMod": 0,
-    "techMod": 0,
     "mod1": 0.5,
     "mod2": null
   },
@@ -25,7 +23,6 @@
     "description": "Beorn will partially evade the next attack, and counterattack.",
     "icon": "<img src=\"/assets/svg/bouncing-sword.svg\">",
     "powMod": 3,
-    "techMod": 3,
     "mod1": 0.5,
     "mod2": null
   },
@@ -35,7 +32,6 @@
     "description": "Beorn will take a portion of the damage dealt to his teammates behind him.",
     "icon": "<img src=\"/assets/svg/shield-echoes.svg\">",
     "powMod": 0,
-    "techMod": 0,
     "mod1": 0.25,
     "mod2": null
   },
@@ -45,7 +41,6 @@
     "description": "Cedric's health increases, and is healed for an equal amount.",
     "icon": "<img src=\"/assets/svg/heart-bottle.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -55,7 +50,6 @@
     "description": "The next two enemy attacks will be redirected to Cedric.",
     "icon": "<img src=\"/assets/svg/arrows-shield.svg\">",
     "powMod": 0,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -65,7 +59,6 @@
     "description": "Cedric's attack is increased, but his total health is reduced.",
     "icon": "<img src=\"/assets/svg/half-heart.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": 0.1,
     "mod2": 0.1
   },
@@ -75,7 +68,6 @@
     "description": "Grim consumes a portion of his HP to deal additional damage to a single target.",
     "icon": "<img src=\"/assets/svg/battered-axe.svg\">",
     "powMod": 3.5,
-    "techMod": 0,
     "mod1": 0.15,
     "mod2": null
   },
@@ -85,7 +77,6 @@
     "description": "Grim does a strong attack.  If target is afflicted with Necrosis, Grim will also heal himself.",
     "icon": "<img src=\"/assets/svg/skull-bolt.svg\">",
     "powMod": 3,
-    "techMod": 0,
     "mod1": 1,
     "mod2": null
   },
@@ -95,7 +86,6 @@
     "description": "Grim consumes a portion of his HP to deal additional damage to the front two targets.",
     "icon": "<img src=\"/assets/svg/hatchets.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": 0.15,
     "mod2": null
   },
@@ -105,7 +95,6 @@
     "description": "Lambug deals damage to the front two enemy targets.",
     "icon": "<img src=\"/assets/svg/claw-slashes.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -115,7 +104,6 @@
     "description": "Lambug deals a large single attack that decreases in damage every subsequent use.",
     "icon": "<img src=\"/assets/svg/armor-punch.svg\">",
     "powMod": 4,
-    "techMod": 0,
     "mod1": 0.125,
     "mod2": null
   },
@@ -125,7 +113,6 @@
     "description": "Lambug deals additional single target damage at full health.",
     "icon": "<img src=\"/assets/svg/muscle-up.svg\">",
     "powMod": 3,
-    "techMod": 0,
     "mod1": 0.25,
     "mod2": null
   },
@@ -135,7 +122,6 @@
     "description": "Zoe attacks all enemies and applies the scorched debuff. Scorched enemies take damage every turn.",
     "icon": "<img src=\"/assets/svg/burning-meteor.svg\">",
     "powMod": 0.75,
-    "techMod": 0.75,
     "mod1": 0.1,
     "mod2": null
   },
@@ -145,7 +131,6 @@
     "description": "Zoe attacks a single enemy.  The enemy will become scorched.",
     "icon": "<img src=\"/assets/svg/fire-silhouette.svg\">",
     "powMod": 3,
-    "techMod": 3,
     "mod1": 0.1,
     "mod2": null
   },
@@ -155,7 +140,6 @@
     "description": "Zoe focuses her energy for two turns, and on the third, deals massive single target damage.",
     "icon": "<img src=\"/assets/svg/fire-bomb.svg\">",
     "powMod": 10,
-    "techMod": 10,
     "mod1": null,
     "mod2": null
   },
@@ -165,7 +149,6 @@
     "description": "Neve attacks a single target and applies a chilled effect. If the target is already chilled,  Zoe deals increased damage.",
     "icon": "<img src=\"/assets/svg/ice-bolt.svg\">",
     "powMod": 1,
-    "techMod": 1,
     "mod1": 2.5,
     "mod2": null
   },
@@ -175,7 +158,6 @@
     "description": "Neve attacks all enemies and applies a chilled effect.",
     "icon": "<img src=\"/assets/svg/snowing.svg\">",
     "powMod": 0.6,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -185,7 +167,6 @@
     "description": "Neve becomes immune to all damage until her next turn.",
     "icon": "<img src=\"/assets/svg/frozen-body.svg\">",
     "powMod": 0,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -195,7 +176,6 @@
     "description": "Titus deals damage an ally in front to apply Necrosis to an enemy, which deals damages over time.",
     "icon": "<img src=\"/assets/svg/skull-crack.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": 0.1,
     "mod2": null
   },
@@ -205,7 +185,6 @@
     "description": "Titus deals damage to allies behind himself to apply Necrosis to enemies.  Grim is immune.",
     "icon": "<img src=\"/assets/svg/stoned-skull.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": 0.1,
     "mod2": null
   },
@@ -215,7 +194,6 @@
     "description": "Applies Necrosis to every unit.  Titus and Grim are immune.",
     "icon": "<img src=\"/assets/svg/disintegrate.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": 0.1,
     "mod2": null
   },
@@ -225,7 +203,6 @@
     "description": "Troy heals the teammate missing the most health.",
     "icon": "<img src=\"/assets/svg/fairy-wand.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -235,7 +212,6 @@
     "description": "Troy heals all allies equally.",
     "icon": "<img src=\"/assets/svg/circle-sparks.svg\">",
     "powMod": 1.5,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -245,7 +221,6 @@
     "description": "Troy empowers an ally.  The ally will heal on their turn.",
     "icon": "<img src=\"/assets/svg/star-swirl.svg\">",
     "powMod": 1.25,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -255,7 +230,6 @@
     "description": "Inspires all teammates, increasing their HP",
     "icon": "<img src=\"/assets/svg/bugle-call.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -265,7 +239,6 @@
     "description": "Inspires all teammates, increasing their Pow",
     "icon": "<img src=\"/assets/svg/guitar.svg\">",
     "powMod": 0.25,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -275,7 +248,6 @@
     "description": "Targets all enemies, increasing damage taken next time they're hit",
     "icon": "<img src=\"/assets/svg/lyre.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -285,7 +257,6 @@
     "description": "Grogmar attacks the enemy with lowest HP. If the enemy is less than 50%, Grogmar deals additional damage",
     "icon": "<img src=\"/assets/svg/william-tell.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": 0.5,
     "mod2": 1.5
   },
@@ -295,7 +266,6 @@
     "description": "Grogmar attacks the third enemy unit.  If the enemy is scorched, Grogmar will consume scorch and deal additional damage.",
     "icon": "<img src=\"/assets/svg/flaming-arrow.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": 2,
     "mod2": null
   },
@@ -305,7 +275,6 @@
     "description": "Grogmar attacks the fourth enemy unit.  If the enemy is at full health, Grogmar deals additional damage.",
     "icon": "<img src=\"/assets/svg/william-tell-skull.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": 3.5,
     "mod2": null
   },
@@ -315,7 +284,6 @@
     "description": "Revere attacks twice in the same round.",
     "icon": "<img src=\"/assets/svg/plain-dagger.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -325,7 +293,6 @@
     "description": "Revere attacks the second enemy unit.  If the enemy is chilled, Revere does additional damage",
     "icon": "<img src=\"/assets/svg/fragmented-sword.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": 2,
     "mod2": null
   },
@@ -335,7 +302,6 @@
     "description": "Revere attacks a single enemy.  Revere will do much more damage if her HP ends in a 7.",
     "icon": "<img src=\"/assets/svg/card-7-hearts.svg\">",
     "powMod": 3,
-    "techMod": 0,
     "mod1": 4,
     "mod2": null
   },
@@ -345,7 +311,6 @@
     "description": "Caeda marks the second unit in enemy list to focus adventurer team attacks.",
     "icon": "<img src=\"/assets/svg/arrow-dunk.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -355,7 +320,6 @@
     "description": "Caeda marks the third unit in enemy list to focus adventurer team attacks.",
     "icon": "<img src=\"/assets/svg/arrow-flights.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -365,7 +329,6 @@
     "description": "Caeda marks the fourth unit in enemy list to focus adventurer team attacks.",
     "icon": "<img src=\"/assets/svg/arrow-scope.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -375,7 +338,6 @@
     "description": "Attacks the enemy and heals for the same amount.",
     "icon": "<img src=\"/assets/svg/bleeding-heart.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -385,7 +347,6 @@
     "description": "Heals self instead of attacking",
     "icon": "<img src=\"/assets/svg/healing.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -395,7 +356,6 @@
     "description": "Reduce healing of target attacked",
     "icon": "<img src=\"/assets/svg/mushrooms-cluster.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -405,7 +365,6 @@
     "description": "Massive damage if at full health",
     "icon": "<img src=\"/assets/svg/cherish.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -415,7 +374,6 @@
     "description": "Attacks an enemy.  If that enemy is buffed, Elf Scout deals additional damage.",
     "icon": "<img src=\"/assets/svg/bowman.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": 2,
     "mod2": null
   },
@@ -425,7 +383,6 @@
     "description": "Heals self instead of attacking.  Additional healing done below half health.",
     "icon": "<img src=\"/assets/svg/mushroom-gills.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": 0.5,
     "mod2": 1.5
   },
@@ -435,7 +392,6 @@
     "description": "Removes debuffs from all allies and heals if debuffed",
     "icon": "<img src=\"/assets/svg/gooey-molecule.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -445,7 +401,6 @@
     "description": "If less than full health deals additional damage",
     "icon": "<img src=\"/assets/svg/worm-mouth.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": 1,
     "mod2": 3
   },
@@ -455,7 +410,6 @@
     "description": "Heals adjacent units",
     "icon": "<img src=\"/assets/svg/transfuse.svg\">",
     "powMod": 1.5,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -465,7 +419,6 @@
     "description": "Damages last hero, if full health deal additional damage",
     "icon": "<img src=\"/assets/svg/spider-web.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": 1,
     "mod2": 3
   },
@@ -475,7 +428,6 @@
     "description": "Negates damage taken next time being hit.",
     "icon": "<img src=\"/assets/svg/ghost.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -485,7 +437,6 @@
     "description": "Removes all debuffs from allies and damages for each debuff removed",
     "icon": "<img src=\"/assets/svg/broom.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -495,7 +446,6 @@
     "description": "Deals additional damage if enemy is below 50% HP",
     "icon": "<img src=\"/assets/svg/chart.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -505,7 +455,6 @@
     "description": "Heals teammate for a moderate amount",
     "icon": "<img src=\"/assets/svg/water-splash.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -515,7 +464,6 @@
     "description": "Damages all enemy units",
     "icon": "<img src=\"/assets/svg/lightning-branches.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -525,7 +473,6 @@
     "description": "Negates damage until next turn",
     "icon": "<img src=\"/assets/svg/crossed-slashes.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -535,7 +482,6 @@
     "description": "Heal all teammates, heal additional if undamaged",
     "icon": "<img src=\"/assets/svg/ground-sprout.svg\">",
     "powMod": 0.75,
-    "techMod": 0,
     "mod1": 2,
     "mod2": null
   },
@@ -545,7 +491,6 @@
     "description": "All undamaged units lose 50% of their HP",
     "icon": "<img src=\"/assets/svg/rock.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": 0.5,
     "mod2": null
   },
@@ -555,7 +500,6 @@
     "description": "All allies evade incoming damage the next time they are attacked",
     "icon": "<img src=\"/assets/svg/fluffy-wing.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -565,7 +509,6 @@
     "description": "Damage all enemy units. Units take more damage if this unit is full HP",
     "icon": "<img src=\"/assets/svg/burning-embers.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": 2,
     "mod2": null
   },
@@ -575,7 +518,6 @@
     "description": "Deal a powerful magical attack to the enemy.",
     "icon": "<img src=\"/assets/svg/laser-precision.svg\">",
     "powMod": 3,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -585,7 +527,6 @@
     "description": "Attacks for 25% of max HP of defender",
     "icon": "<img src=\"/assets/svg/crab-claw.svg\">",
     "powMod": 0,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -595,7 +536,6 @@
     "description": "Deals damage to last enemy",
     "icon": "<img src=\"/assets/svg/viking-helmet.svg\">",
     "powMod": 3,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -605,7 +545,6 @@
     "description": "Heals for each living ally",
     "icon": "<img src=\"/assets/svg/round-table.svg\">",
     "powMod": 1.5,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -615,7 +554,6 @@
     "description": "Increases damage of each adjacent ally",
     "icon": "<img src=\"/assets/svg/horned-helm.svg\">",
     "powMod": 0.2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -625,7 +563,6 @@
     "description": "Gains 25% damage reduction for 4 attacks",
     "icon": "<img src=\"/assets/svg/turtle.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -635,7 +572,6 @@
     "description": "Explodes, killing itself and dealing massive damage",
     "icon": "<img src=\"/assets/svg/surprised-skull.svg\">",
     "powMod": 6,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -645,7 +581,6 @@
     "description": "Deals massive damage to lowest HP enemy",
     "icon": "<img src=\"/assets/svg/reticule.svg\">",
     "powMod": 3,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -655,7 +590,6 @@
     "description": "Heals unit in front of this enemy",
     "icon": "<img src=\"/assets/svg/prayer.svg\">",
     "powMod": 2.5,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -665,7 +599,6 @@
     "description": "Damages all enemies, deals additional damage if damaged",
     "icon": "<img src=\"/assets/svg/tentacle-strike.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": 2,
     "mod2": null
   },
@@ -675,7 +608,6 @@
     "description": "Deals massive damage to each enemy",
     "icon": "<img src=\"/assets/svg/bone-mace.svg\">",
     "powMod": 3,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -685,7 +617,6 @@
     "description": "Regenerates to full health",
     "icon": "<img src=\"/assets/svg/poison-bottle.svg\">",
     "powMod": 0,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -695,7 +626,24 @@
     "description": "Maybe he's doing yoga?",
     "icon": "<img src=\"/assets/svg/shrug.svg\">",
     "powMod": 0,
-    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM907C",
+    "name": "Tree Nothing",
+    "description": "Trees don't move",
+    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
+    "powMod": null,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SMP907A",
+    "name": "Tree Nothing Passive",
+    "description": "Trees are strong",
+    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
+    "powMod": null,
     "mod1": null,
     "mod2": null
   },
@@ -705,7 +653,6 @@
     "description": "High damage attack to second in order",
     "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
     "powMod": 7,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -715,7 +662,6 @@
     "description": "Attacking this enemy damages the hero",
     "icon": "<img src=\"/assets/svg/cactus.svg\">",
     "powMod": 0.2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -725,7 +671,6 @@
     "description": "Hurls a thousand needles at the two nearest targets",
     "icon": "<img src=\"/assets/svg/caltrops.svg\">",
     "powMod": 2.5,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -735,7 +680,6 @@
     "description": "Redistributes enemy health to be equal",
     "icon": "<img src=\"/assets/svg/star-prominences.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -745,7 +689,6 @@
     "description": "Deals 2% max HP damage to each enemy",
     "icon": "<img src=\"/assets/svg/death-book.svg\">",
     "powMod": 0,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -755,7 +698,6 @@
     "description": "When dead, turn into a pile of bones instead",
     "icon": "<img src=\"/assets/svg/graveyard.svg\">",
     "powMod": 0,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -765,7 +707,6 @@
     "description": "Attack a Hero and absorb their Type",
     "icon": "<img src=\"/assets/svg/paint-brush.svg\">",
     "powMod": 1,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -775,7 +716,6 @@
     "description": "Attack and perform an action based off form - Mighty: Gain stacking protective shield. Mindful: Heal and gain a % heal buff. Moxious: Add debuff to take additional damage",
     "icon": "<img src=\"/assets/svg/palette.svg\">",
     "powMod": 2,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -785,7 +725,6 @@
     "description": "Once below 25%, Phoenix will turn into an egg and attempt to regenerate health",
     "icon": "<img src=\"/assets/svg/dinosaur-egg.svg\">",
     "powMod": 0,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -795,7 +734,6 @@
     "description": "Burns the first enemy, dealing damage for every stack",
     "icon": "<img src=\"/assets/svg/ember-shot.svg\">",
     "powMod": 0.14,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -805,7 +743,6 @@
     "description": "Monster is sleeping and performs no action",
     "icon": "<img src=\"/assets/svg/night-sleep.svg\">",
     "powMod": 0,
-    "techMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -815,7 +752,33 @@
     "description": "Monster returns to its original form",
     "icon": "<img src=\"/assets/svg/flaming-sheet.svg\">",
     "powMod": 0,
-    "techMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM907A",
+    "name": "MKF 1",
+    "description": "AoE attack",
+    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
+    "powMod": null,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM907B",
+    "name": "MKF 2 ",
+    "description": "Healing attack",
+    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
+    "powMod": null,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SMP907",
+    "name": "MKF 3",
+    "description": "I hide in trees",
+    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
+    "powMod": null,
     "mod1": null,
     "mod2": null
   }

@@ -243,6 +243,7 @@ function refreshDungeonMatBar(dungeonid) {
 }
 
 function createHPBar(hero,tag) {
+    console.log(hero);
     const hpPercent = hero.hp/hero.maxHP();
     const hpBarText = hero.hp+" / "+hero.maxHP();
     const hpWidth = (hpPercent*100).toFixed(1)+"%";

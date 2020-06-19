@@ -4171,6 +4171,10 @@ footer {
     border-color: var(--bg-primary);
 }
 
+.synthBarDiv.synthBarHidden {
+    display: none;
+}
+
 .synthRewardHeader {
     margin-bottom: 5px;
     padding: 5px;

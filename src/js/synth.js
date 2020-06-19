@@ -329,7 +329,8 @@ function refreshSynthBar() {
     const synthPercent = SynthManager.time/SynthManager.cookTime;
     const synthWidth = (synthPercent*100).toFixed(1)+"%";
     const synthAmt = msToTime(SynthManager.time);
-    $("#synthBar").attr("data-label",synthAmt).css('width', synthWidth);
+    $("#synthBar").attr("data-label",synthAmt);
+    $("#synthFill").css('width', synthWidth);
 }
     
 //click synth on item in inventory
@@ -404,22 +405,26 @@ function createSynthStageCard(container) {
                 $("<div/>").addClass(`${stat}_img`).html(miscIcons[stat]).appendTo(ed);
                 $("<div/>").addClass(`${stat}_integer statValue`).html(val).appendTo(ed);
     };
-    const synthBar = createSynthBar();
+    const synthBar = createSynthBar().addClass("synthBarHidden");
     const synthButton = $("<div/>").addClass("synthSlotAction actionButtonCard");
     itemdiv.append(itemName,itemLevel,itemRarity,itemProps,stageRemove,synthBar,synthButton);
     if (SynthManager.state === "staged" && SynthManager.resynth !== null) {
         synthButton.html("Synthesize");
+        synthButton.hide();
     }
     if (SynthManager.state === "staged" && SynthManager.resynth === null) {
-        synthBar.hide();
+        synthBar.addClass("synthBarHidden");
         synthButton.html("Desynthesize");
     }
     if (SynthManager.state === "desynthing") {
-        synthBar.show();
+        synthBar.removeClass("synthBarHidden");
         synthButton.hide();
     }
+    if (SynthManager.state === "resynthing") {
+        synthBar.removeClass("synthBarHidden");
+    }
     if (SynthManager.state === "complete") {
-        synthBar.hide();
+        synthBar.addClass("synthBarHidden");
         synthButton.html("Collect Item").show();
         stageRemove.hide();
     }

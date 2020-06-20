@@ -257,7 +257,9 @@ function refreshguildprogress(guild) {
     const id = guild.id;
     const $gp = $(`#${id}Progress`);
     $gp.empty();
-    $("<div/>").addClass("guildLevel").html(`Level ${inWords(guild.lvl)}`).appendTo($gp);
+    const guildLevel = $("<div/>").addClass("guildLevel").appendTo($gp);
+        $("<div/>").addClass("guildLevelText").html("Level").appendTo(guildLevel);
+        $("<div/>").addClass("guildLevelValue").html(guild.lvl).appendTo(guildLevel);
     $gp.append(createGuildBar(guild));
 }
 
@@ -295,7 +297,7 @@ function createGuildBar(guild) {
     }
     if (guild.maxLvlReached()) {
         options.prefix = "repMax"
-        options.text = "Max Level Reached!"
+        options.text = "Max Level!"
         options.width = "100%"
     }
     return generateProgressBar(options);
@@ -311,14 +313,15 @@ function refreshguildOrder(guild) {
     const $go = $(`#${id}Order`);
     $go.empty();
     if (guild.maxLvlReached()) {
-        $("<div/>").addClass("guildMaxLvl").html("Max Guild Level Reached - Defeat a Boss to unlock more levels").appendTo($go);
+        $("<div/>").addClass("emptyContentMessage").html("You have reached the current maximum guild level.").appendTo($go);
         return;
     }
-    $go.append(createOrderCard(guild.order1,id,1));
+    const guildOrderCardsContainer =  $("<div/>").addClass("guildOrderCardsContainer").appendTo($go);
+    guildOrderCardsContainer.append(createOrderCard(guild.order1,id,1));
     if (guild.lvl < 4) return;
-    $go.append(createOrderCard(guild.order2,id,2));
+    guildOrderCardsContainer.append(createOrderCard(guild.order2,id,2));
     if (guild.lvl < 8) return;
-    $go.append(createOrderCard(guild.order3,id,3));
+    guildOrderCardsContainer.append(createOrderCard(guild.order3,id,3));
 };
 
 function createOrderCard(item,id,index) {
@@ -362,24 +365,30 @@ function refreshAllProgress() {
 function refreshSales(guild) {
     const $gs = $(`#${guild.id}Sales`);
     $gs.empty();
+    if (guild.recipeToBuy().length === 0) {
+        $("<div/>").addClass("emptyContentMessage").html("There are no more recipes available to purchase.").appendTo($gs);
+        return;
+    }
+    const guildSalesCardsContainer = $("<div/>").addClass("guildSalesCardsContainer").appendTo($gs);
     guild.recipeToBuy().forEach(recipe => {
-        $gs.append(createRecipeBuyCard(recipe,guild.lvl));
+        guildSalesCardsContainer.append(createRecipeBuyCard(recipe,guild.lvl));
     });
 };
 
 function createRecipeBuyCard(recipe,guildLvl) {
     const d1 = $("<div/>").addClass("recipeBuyCard");
-    const d2 = $("<div/>").addClass("recipeBuyCardHead").html(recipe.type);
-    const d3 = $("<div/>").addClass("recipeBuyCardBody").html(recipe.itemPicName());
-    const d3a = $("<div/>").addClass("recipeBuyCardTier recipeItemLevel").html(recipe.itemLevel());
+    $("<div/>").addClass("itemTypeHeader").html(recipe.type).appendTo(d1);
+    const guildRecipeBuyContent = $("<div/>").addClass("guildRecipeBuyContent").appendTo(d1);
+        $("<div/>").addClass("itemName").html(recipe.itemPicName()).appendTo(guildRecipeBuyContent);
+        $("<div/>").addClass("itemLevel").html(recipe.itemLevel()).appendTo(guildRecipeBuyContent);
     if (recipe.repReq > guildLvl) {
-        const d4 = $("<div/>").addClass("recipeBuyCardBuyLater").html(`Reach Guild Level ${recipe.repReq} to Unlock`);
-        return d1.append(d2,d3,d3a,d4);
+        $("<div/>").addClass("guildRecipeBuyReq").html(`Guild Level ${recipe.repReq} Required`).appendTo(guildRecipeBuyContent);
+        return d1;
     }
     const d5 = $("<div/>").addClass("recipeBuyCardBuy").data("rid",recipe.id);
         $("<div/>").addClass("recipeBuyCardBuyText").html("Purchase").appendTo(d5);
         $("<div/>").addClass("recipeBuyCardBuyCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(recipe.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
-    return d1.append(d2,d3,d3a,d5);
+    return d1.append(d5);
 };
 
 function refreshAllGuildWorkers() {
@@ -409,30 +418,36 @@ function refreshAllRecipeMastery() {
 
 function refreshRecipeMastery(guild) {
     guild.repopulateUnmastered();
-    const $guildNotice = $(`#${guild.id}Mastery .guildMasteryNotice`);
-    const $guildMasteryContainer = $(`#${guild.id}Mastery .guildMasteryCardContainer`)
-    $guildNotice.empty();
-    $guildMasteryContainer.empty();
-    if (guild.unmastered.length === 0) $guildNotice.addClass("noMasteryAvailable").html("No recipes to master currently.");
-    else $guildNotice.removeClass("noMasteryAvailable");
+    const $guildMastery = $(`#${guild.id}Mastery`);
+    $guildMastery.empty();
+    if (guild.unmastered.length === 0) {
+        $("<div/>").addClass("emptyContentMessage").html("There are no recipes available to master.").appendTo($guildMastery);
+        return;
+    }
+    const guildMasteryCardContainer = $("<div/>").addClass("guildMasteryCardContainer").appendTo($guildMastery);
     guild.unmastered.forEach(rid => {
         const recipe = recipeList.idToItem(rid);
-        $guildMasteryContainer.append(createRecipeMasteryCard(recipe));
+        guildMasteryCardContainer.append(createRecipeMasteryCard(recipe));
     });
-    
 }
 
 function createRecipeMasteryCard(recipe) {
     const d1 = $("<div/>").addClass("recipeMasteryGuildCard");
-    $("<div/>").addClass("recipeMasteryGuildPicName").html(recipe.itemPicName()).appendTo(d1);
+        $("<div/>").addClass("itemName").html(recipe.itemPicName()).appendTo(d1);
+        $("<div/>").addClass("itemLevel").html(recipe.itemLevel()).appendTo(d1);
     const masteryCost = recipe.masteryCost();
-    $("<div/>").addClass("recipeMasteryGuildButton tooltip").attr({"id": "rcm"+recipe.id, "data-tooltip": "material_desc", "data-tooltip-value": masteryCost.id}).data("rid",recipe.id).html(`Master for ${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`).appendTo(d1);
+    const masteryButton = $("<div/>").addClass("recipeMasteryGuildButton actionButtonCardCost").attr({"id": "rcm"+recipe.id}).data("rid",recipe.id).appendTo(d1);
+        $("<div/>").addClass("actionButtonCardText").html("Master Recipe").appendTo(masteryButton);
+        $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "material_desc", "data-tooltip-value": masteryCost.id}).html(`${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`).appendTo(masteryButton);
     return d1;
 }
 
 function refreshRecipeMasteryAmt(recipe) {
     const masteryCost = recipe.masteryCost();
-    $(`#rcm${recipe.id}`).html(`Master for ${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`);
+    const masteryButton = $(`#rcm${recipe.id}`);
+    masteryButton.empty();
+    $("<div/>").addClass("actionButtonCardText").html("Master Recipe").appendTo(masteryButton);
+    $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "material_desc", "data-tooltip-value": masteryCost.id}).html(`${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`).appendTo(masteryButton);
 }
 
 //attempt a mastery

@@ -438,14 +438,6 @@ body {
 
 /* End Reusable Components */
 
-/* Custom Progress Bars */
-
-.repMaxBarContainer .progressBarText {
-    color: var(--highlight);
-}
-
-/* End Custom Progress Bars */
-
 /* General Content */
 
 p.hamster {
@@ -2331,16 +2323,6 @@ footer {
     border-radius: 5px;
 }
 
-.recipeTotalCrafted, .recipeMasteryGuildButton {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.85rem;
-    min-height: 36px;
-    transition: all var(--transition_linear);
-}
-
 .recipeTotalCrafted.isMastered, .recipeMasteredStatus.isMastered, .recipeTotalCrafted.isMastered:hover {
     position: relative;
     color: var(--highlight);
@@ -2608,47 +2590,14 @@ footer {
 
 /* Ends Recipes - Recipe Cards */
 
-/* Guilds - Guild Workers */
+/* Guilds Screen */
 
-.workerBuyCardBodyName {
-    padding: 5px;
-    margin-bottom: 5px;
-    width: 100%;
-    text-align: center;
-    border-bottom: 2px solid var(--border-primary);
-}
-
-.workerBuyCardBodyProduction {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: var(--bg-tertiary);
-    border: 2px solid var(--border-secondary);
-    border-radius: 5px;
-}
-
-.production_type {
-    padding: 5px 10px;
-    background-color: var(--border-secondary);
-}
-
-.production_text {
-    flex-grow: 1;
-    margin-left: 5px;
-    text-align: center;
-}
-
-/* End Guild - Guild Workers */
-
-/* Guilds */
-
-#guildsContainer {
+.guildsContainer {
     display: flex;
     height: 100%;
 }
 
-#guildList, #buildingList {
+.guildList, .buildingList {
     position: sticky;
     top: 0;
     display: flex;
@@ -2685,6 +2634,7 @@ footer {
     border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
     cursor: pointer;
+    transition: all var(--transition_linear);
 }
 
 .guildListButton > i {
@@ -2708,63 +2658,41 @@ footer {
 }
 
 .guildContainer {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    padding: 10px;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    -webkit-animation: 0.2s .15s fade-in forwards;
-    animation: 0.2s .15s fade-in forwards;
+    width: 100%;
     overflow: auto;
 }
 
-.guildSummary {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    height: 200px;
-    background-color: var(--bg-tertiary);
-    background: linear-gradient(to right, transparent 0%, rgb(84, 127, 139) 40%, rgb(84, 127, 139) 60%, transparent 100%), url(/assets/images/guildImages/default.png);
-    border-bottom: 2px solid var(--border-primary);
+.guildBodyContentContainer {
+    padding: 0 10px 10px;
+    transform-origin: bottom;
+    animation: scale-y-in 0.3s ease;
 }
 
-#G001Summary.guildSummary {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/assets/images/guildImages/G001.png);
-    background: linear-gradient(to right, transparent 0%, rgb(64, 68, 70) 40%, rgb(64, 68, 70) 60%, transparent 100%), url(/assets/images/guildImages/G001.png);
+.guildBackground {
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/guildImages/default.png);
 }
 
-#G002Summary.guildSummary {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(112, 73, 47) 40%, rgb(112, 73, 47)  60%, transparent 100%), url(/assets/images/guildImages/G002.png);
-    background: linear-gradient(to right, transparent 0%, rgb(112, 73, 47) 40%, rgb(112, 73, 47)  60%, transparent 100%), url(/assets/images/guildImages/G002.png);
+#G001Summary .guildBackground {
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/guildImages/G001.png);
 }
 
-#G003Summary.guildSummary {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(37, 30, 47) 40%, rgb(37, 30, 47) 60%, transparent 100%), url(/assets/images/guildImages/G003.png);
-    background: linear-gradient(to right, transparent 0%, rgb(37, 30, 47) 40%, rgb(37, 30, 47) 60%, transparent 100%), url(/assets/images/guildImages/G003.png);
+#G002Summary .guildBackground {
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/guildImages/G002.png);
 }
 
-#G004Summary.guildSummary {
-    background: -webkit-linear-gradient(left, transparent 0%, rgb(111, 103, 68) 40%, rgb(111, 103, 68) 60%, transparent 100%), url(/assets/images/guildImages/G004.png);
-    background: linear-gradient(to right, transparent 0%, rgb(111, 103, 68) 40%, rgb(111, 103, 68) 60%, transparent 100%), url(/assets/images/guildImages/G004.png);
+#G003Summary .guildBackground {
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/guildImages/G003.png);
 }
 
-#G005Summary.guildSummary {
-    background: -webkit-linear-gradient(left, transparent 0%,rgb(83, 99, 94) 40%, rgb(83, 99, 94) 60%, transparent 100%), url(/assets/images/guildImages/G005.png);
-    background: linear-gradient(to right, transparent 0%,rgb(83, 99, 94) 40%, rgb(83, 99, 94) 60%, transparent 100%), url(/assets/images/guildImages/G005.png);
+#G004Summary .guildBackground {
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/guildImages/G004.png);
 }
 
-.guildName > h2 {
-    margin: 0;
-    font-size: 32px;
-    font-size: 2rem;
-    font-weight: normal;
-    text-shadow: 2px 2px 0 black;
+#G005Summary .guildBackground {
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/guildImages/G005.png);
 }
 
-.guildOrder, .guildSales, .guildWorkers, .guildMasteryCardContainer {
+.guildOrderCardsContainer, .guildSalesCardsContainer, .guildWorkers, .guildMasteryCardContainer {
     display: -ms-grid;
     display: grid;
     grid-template: auto / repeat(auto-fill, minmax(175px, 1fr));
@@ -2783,21 +2711,51 @@ footer {
     border-bottom: 2px solid var(--border-primary);
 }
 
+.guildProgress {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 150px;
+    text-align: center;
+}
+
 .guildLevel {
-    margin-bottom: 5px;
-    color: var(--highlight);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
     text-shadow: 2px 2px 0 black;
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-tertiary);
+    border-radius: 50%;
+    overflow: hidden;
+    transform: scale(0);
+    animation: 0.3s 0.2s scale-in forwards;
+    z-index: 1;
 }
 
-.guildMaxLvl {
-    grid-column: 1 / -1;
-    color: var(--highlight);
-    padding: 0 5px;
+.guildLevelValue {
+    color: var(--green-primary);
+    font-size: 3rem;
 }
 
-.noMasteryAvailable {
-    padding: 0 5px 30px;
-    color: var(--highlight);
+.repBarContainer, .repMaxBarContainer {
+    position: absolute;
+    bottom: 0;
+    width: 175px;
+    transform: scale(0);
+    transform-origin: top;
+    animation: 0.3s 0.2s scale-in forwards;
+    z-index: 1;
+}
+
+.repMaxBarContainer .progressBarText {
+    color: var(--green-primary);
 }
 
 .progressHeading {
@@ -2805,11 +2763,6 @@ footer {
     text-align: center;
     width: 100%;
     max-width: 500px;
-}
-
-.recipeMasteryGuildPicName {
-    text-align: center;
-    margin-bottom: 10px;
 }
 
 .orderCard {
@@ -2856,43 +2809,41 @@ footer {
 }
 
 .guildOrderSubmit {
-    -ms-grid-row: 2;
-        grid-row: 2;
+    grid-row: 2;
 }
 
-.recipeBuyCardBody, .recipeBuyCardBuyLater {
-    text-align: center;
-}
-
-.recipeBuyCardBody > img, .orderIcon {
+.orderIcon {
     margin: 10px 0;
 }
 
-.recipeBuyCardBuyLater, .alPerkCantBuy {
-    margin-top: 10px;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    color: var(--highlight);
+.guildSalesCardsContainer .recipeBuyCard {
+    padding: 0;
+    align-items: unset;
 }
 
-.guildProgress {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+.itemTypeHeader {
+    padding: 10px;
+    color: var(--text-primary);
     text-align: center;
-    width: 100%;
-    max-width: 300px;
+    background-color: var(--bg-tertiary);
+    border-bottom: 2px solid var(--border-primary);
+    border-radius: 10px 10px 0 0;
+    color: var(--text-primary);
+}
+
+.guildRecipeBuyContent {
+    position: relative;
+    padding: 10px;
+}
+
+.guildRecipeBuyReq {
+    margin-top: auto;
+    padding: 10px 5px;
+    color: var(--highlight);
+    font-size: 0.85rem;
+    text-align: center;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
 }
 
 .workerBuyCardMax {
@@ -2913,6 +2864,38 @@ footer {
 .guildWorkersContainer {
     margin-bottom: 30px;
 }
+
+.workerBuyCardBodyName {
+    padding: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.workerBuyCardBodyProduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-secondary);
+    border-radius: 5px;
+}
+
+.production_type {
+    padding: 5px 10px;
+    background-color: var(--border-secondary);
+}
+
+.production_text {
+    flex-grow: 1;
+    margin-left: 5px;
+    text-align: center;
+}
+
+
+/* End Guilds Screen */
 
 /* Progress */
 
@@ -3959,7 +3942,7 @@ footer {
     overflow: hidden;
 }
 
-.buildingInfoBackground {
+.buildingInfoBackground, .guildBackground {
     position: absolute;
     top: 0;
     right: 0;
@@ -4019,7 +4002,7 @@ footer {
     height: 100px;
 }
 
-.buildingInfoDetails {
+.buildingInfoDetails, .guildInfoDetails {
     margin-left: -50px;
     width: 100%;
     max-width: 300px;

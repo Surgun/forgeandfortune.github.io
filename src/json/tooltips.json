@@ -3,7 +3,7 @@
     "id": "rep",
     "title": "Reputation",
     "description": "Used to level up guilds.",
-    "icon": "<i class=\"far fa-grin-alt\"></i>",
+    "icon": "<i class=\"fas fa-grin-alt\"></i>",
     "type": "static"
   },
   {

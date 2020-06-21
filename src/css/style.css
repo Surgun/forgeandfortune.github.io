@@ -4098,6 +4098,10 @@ footer {
     height: 100px;
 }
 
+.buildingInfoImage > i {
+    font-size: 4rem;
+}
+
 .buildingInfoDetails, .guildInfoDetails {
     margin-left: -50px;
     width: 100%;

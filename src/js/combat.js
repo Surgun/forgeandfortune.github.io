@@ -124,6 +124,7 @@ class Combatant {
             HeroManager.idToHero("H001").takeDamage(this.beornTank());
         }
         this.buffTick("onHit",attack); //this has to be after thorns/parry so it can remove them as appropriate
+        this.passiveCheck("onHit",attack);
     }
     takeDamage(dmg) {
         this.hp = Math.max(this.hp-dmg,0);

@@ -535,9 +535,9 @@
   {
     "id": "B907A",
     "name": "Normal Tree",
-    "hpMod": 10,
-    "powMod": 10,
-    "protection": 1,
+    "hpMod": 5,
+    "powMod": 5,
+    "protection": 0,
     "skill1": "SM907C",
     "skill2": "SM907C",
     "skill3": "SM907C",

@@ -954,6 +954,12 @@ SkillManager.skillEffects['SM907C'] = function (combatParams) {
     //lol it does nothing
 }
 
+SkillManager.skillEffects['SM907D'] = function (combatParams) {
+    //MKF - make bananas
+    const self = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
+    BuffManager.generateBuff('BM907',self,0);
+}
+
   //--------------------//
  //   PASSIVE SKILLS   //
 //--------------------//
@@ -996,25 +1002,37 @@ SkillManager.skillEffects['SMP907'] = function (type,target,attack,skillParams) 
         BuffManager.generateBuff("BM907B",target,skillParams.powMod*target.pow);
     }
     //Monkey Tree Hide
-    if (type !== "onHit") {
+    if (type === "onHit") {
         const stacks = target.getBuffStacks("BM907B");
         if (!target.hpLessThan(0.25*stacks)) return;
         target.buffTick("custom");
         target.state = "tree";
-        target.image = '<img src="/assets/images/enemies/B904B.gif">';
-        BuffManager.generateBuff("BM907B",target);
+        target.image = '<img src="/assets/images/enemies/B907B.gif">';
+        target.playbook = PlaybookManager.generatePlayBookFromSkills("SM907C","SM907D","SM907C","SM907D");
+        BuffManager.generateBuff("BM907C",target);
         //generate three mobs
         const dungeon = DungeonManager.dungeonByID(target.dungeonid)
         const position = dungeon.order.positionInParty();
         for (let i=0;i<4;i++) {
-            if (i === position) return;
+            if (i === position) continue;
             dungeon.addMob("B907A",0,false);
         }
+    }
+    if (type === "treeBuffGone") {
+        target.state = null;
+        target.image = '<img src="/assets/images/enemies/B907.gif">';
+        const dungeon = DungeonManager.dungeonByID(target.dungeonid)
+        const trees = dungeon.mobs.filter(m=>m.id === "B907A");
+        const treeuid = trees.map(t=>t.uniqueid);
+        treeuid.forEach(uid => dungeon.removeMob(uid,false));
+        dungeon.refreshDungeon();
     }
 }
 
 SkillManager.skillEffects['SMP907A'] = function (type,target,attack,skillParams) {
-    //Spiky Self - Cactus
+    //Normal Tree
     if (type !== "initial") return;
     BuffManager.generateBuff("BM907A",target,skillParams.powMod*target.pow);
+    target.hp = target.hpMod;
+    target.hpmax = target.hpMod;
 }

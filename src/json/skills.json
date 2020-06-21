@@ -634,7 +634,7 @@
     "name": "Tree Nothing",
     "description": "Trees don't move",
     "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
-    "powMod": null,
+    "powMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -643,7 +643,7 @@
     "name": "Tree Nothing Passive",
     "description": "Trees are strong",
     "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
-    "powMod": null,
+    "powMod": 0,
     "mod1": null,
     "mod2": null
   },
@@ -760,7 +760,7 @@
     "name": "MKF 1",
     "description": "AoE attack",
     "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
-    "powMod": null,
+    "powMod": 2,
     "mod1": null,
     "mod2": null
   },
@@ -769,8 +769,17 @@
     "name": "MKF 2 ",
     "description": "Healing attack",
     "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
-    "powMod": null,
-    "mod1": null,
+    "powMod": 2,
+    "mod1": 0.1,
+    "mod2": null
+  },
+  {
+    "id": "SM907D",
+    "name": "Banana Find",
+    "description": "Find a banana",
+    "icon": "<i class=\"fas fa-carrot\"></i>",
+    "powMod": 0,
+    "mod1": 0.1,
     "mod2": null
   },
   {
@@ -778,7 +787,7 @@
     "name": "MKF 3",
     "description": "I hide in trees",
     "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
-    "powMod": null,
+    "powMod": 0,
     "mod1": null,
     "mod2": null
   }

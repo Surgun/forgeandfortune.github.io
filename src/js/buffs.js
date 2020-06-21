@@ -38,7 +38,10 @@ class Buff {
         if (type === "onHit") this.onHit(attack);
         if (type === "onHitting") this.onHitting();
         if (type !== this.decrease) return;
+        console.log(type);
+        console.log(this.stacks);
         this.stacks -= 1;
+        console.log(this.stacks);
         if (this.stacks <= 0) {
             this.expire();
             BuffRefreshManager.removeBuff(this, this.target);
@@ -483,7 +486,7 @@ class BM907A extends Buff {
     getProtection() {
         return 1;
     }
-    onHitting() {
+    onHit() {
         this.target.takeDamage(1);
     }
 }
@@ -502,8 +505,7 @@ class BM907C extends Buff {
         return 1;
     }
     expire() {
-        const dungeon = DungeonManager.dungeonByID(this.target.dungeonid);
-        dungeon.wipetrees();
+        this.target.passiveCheck("treeBuffGone");
     }
 }
 
@@ -546,4 +548,5 @@ const BuffLookup = {
     BM907,
     BM907A,
     BM907B,
+    BM907C,
 }

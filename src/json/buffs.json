@@ -388,7 +388,7 @@
     "id": "BM907",
     "name": "This is Bananas",
     "description": "Amplifies effects from all the potasium",
-    "icon": "<i class=\"fas fa-monkey\"></i>",
+    "icon": "<i class=\"fas fa-carrot\"></i>",
     "maxStack": 100,
     "stackCast": 1,
     "onCast": "stack",
@@ -422,10 +422,10 @@
     "name": "Hiding",
     "description": "I am hiding",
     "icon": "<i class=\"fas fa-monkey\"></i>",
-    "maxStack": 3,
-    "stackCast": 3,
+    "maxStack": 1,
+    "stackCast": 2,
     "onCast": "refresh",
-    "decrease": "custom",
+    "decrease": "onHit",
     "type": "buff"
   }
 ]

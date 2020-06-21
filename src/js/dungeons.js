@@ -47,7 +47,7 @@ class TurnOrder {
         this.position = this.order.findIndex(m=>m.uniqueid === uniqueid);
     }
     positionInParty() {
-        const uniqueid = this.order[this.position];
+        const uniqueid = this.order[this.position].uniqueid;
         const huid = this.heroes.map(h=>h.uniqueid);
         const muid = this.mobs.map(m=>m.uniqueid);
         if (huid.includes(uniqueid)) return huid.findIndex(h=>h === uniqueid);
@@ -135,11 +135,7 @@ class Dungeon {
         Object.assign(this, props);
         this.party = null;
         this.mobs = [];
-        this.mobIDs = [];
-        this.mobIDs.push(this.mob1);
-        if (this.mob2 !== null) this.mobIDs.push(this.mob2);
-        if (this.mob3 !== null) this.mobIDs.push(this.mob3);
-        if (this.mob4 !== null) this.mobIDs.push(this.mob4);
+        this.setMobIDs();
         this.maxFloor = 0;
         this.floor = 0;
         this.floorClear = 0;
@@ -226,6 +222,13 @@ class Dungeon {
         }
         if (DungeonManager.dungeonView === this.id) refreshBeatBar(this.order.getCurrentID(),this.dungeonTime);
     }
+    setMobIDs() {
+        this.mobIDs = [];
+        this.mobIDs.push(this.mob1);
+        if (this.mob2 !== null) this.mobIDs.push(this.mob2);
+        if (this.mob3 !== null) this.mobIDs.push(this.mob3);
+        if (this.mob4 !== null) this.mobIDs.push(this.mob4);
+    }
     addDungeonReward(time,skipAnimation) {
         if (this.type === "boss" || this.floorClear === 0) return;
         this.rewardTime += time;
@@ -260,6 +263,7 @@ class Dungeon {
         this.party = null;
         this.order = null;
         this.mobs = [];
+        this.setMobIDs();
         this.floor = 0;
         this.floorClear = 0;
         this.rewardAmt = 0;
@@ -288,6 +292,7 @@ class Dungeon {
     }
     resetFloor(refreshLater) {
         this.mobs = [];
+        this.setMobIDs();
         this.mobIDs.forEach(mobID => {
             const mob = MobManager.generateMob(mobID,this);
             mob.dungeonid = this.id;
@@ -349,10 +354,13 @@ class Dungeon {
         if (!refreshLater && DungeonManager.dungeonView === this.id) initiateDungeonFloor(this.id);
     }
     removeMob(uniqueid,refreshLater = false) {
-        this.mobs.filter(m=>m.uniqueid !== uniqueid);
-        this.mobIDs = this.mobs.map(m=>m.uniqueid);
+        this.mobs = this.mobs.filter(m=>m.uniqueid !== uniqueid);
+        this.mobIDs = this.mobs.map(m=>m.id);
         this.order.adjustOrder(this.party.heroes,this.mobs);
         if (!refreshLater && DungeonManager.dungeonView === this.id) initiateDungeonFloor(this.id);
+    }
+    refreshDungeon() {
+        if (DungeonManager.dungeonView === this.id) initiateDungeonFloor(this.id);
     }
 }
 

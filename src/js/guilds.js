@@ -249,7 +249,7 @@ function checkCraftableStatus() {
     const $orderCraft = $(".orderCraft");
     $orderCraft.removeClass("recipeCraftDisable");
     recipeList.recipes.forEach(recipe => {
-        if (!recipe.canProduce || !recipe.owned) $("#"+recipe.id+".orderCraft").addClass("recipeCraftDisable");
+        if (!recipe.canProduce || !recipe.owned || actionSlotManager.slots.length >= actionSlotManager.maxSlots) $("#"+recipe.id+".orderCraft").addClass("recipeCraftDisable");
     }) 
 }
 
@@ -329,19 +329,27 @@ function createOrderCard(item,id,index) {
     if (item.complete()) d1.addClass('orderComplete');
     $("<div/>").addClass("orderIcon").html(ResourceManager.materialIcon(item.id)).appendTo(d1);
     $("<div/>").addClass("orderName itemName").html(item.displayName).appendTo(d1);
+    $("<div/>").addClass("itemLevel").html(item.item.itemLevel()).appendTo(d1);
+    $("<div/>").addClass(`itemRarity RT${item.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[item.rarity].toLowerCase()}`}).html(miscIcons.rarity).appendTo(d1);
     $("<div/>").addClass("itemToSac tooltip").attr({"data-tooltip":"recipe_desc","data-tooltip-value":item.id}).appendTo(d1);
     const d2 = $("<div/>").addClass("orderMaterials").appendTo(d1);
     item.item.gcost.forEach(g => {
-        $("<div/>").addClass("orderGuildWorker").html(GuildManager.idToGuild(g).icon).appendTo(d2);
+        $("<div/>").addClass("orderGuildWorker tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d2);
     });
     $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Left`).appendTo(d1);
-    $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","in_inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(d1);
-    $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`).appendTo(d1);
+
     const d3 = $("<div/>").addClass("guildItemSubmit").appendTo(d1);
-    $("<div/>").addClass("guildItemSubmitHeading").html(`Submit one for:`).appendTo(d3);
-        const d3a = $("<div/>").addClass("guildItemSubmitRewards").appendTo(d3);
-        $("<div/>").addClass("guildItemSubmitItem RewardGold tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": item.goldValue()}).html(`${miscIcons.gold} +${item.goldValue()}`).appendTo(d3a);
-        $("<div/>").addClass("guildItemSubmitItem RewardRep tooltip").attr("data-tooltip", "rep").html(`+${item.rep} Reputation`).appendTo(d3a);
+    $("<div/>").addClass("guildItemSubmitHeading").html(`Rewards`).appendTo(d3);
+        const d3a = $("<div/>").addClass("guildOrderRewards").appendTo(d3);
+        const goldReward = $("<div/>").addClass("guildOrderReward tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": item.goldValue()}).appendTo(d3a);
+            $("<div/>").addClass("rewardIcon").html(miscIcons.gold).appendTo(goldReward);
+            $("<div/>").addClass("rewardValue").html(item.goldValue()).appendTo(goldReward);
+        const repReward = $("<div/>").addClass("guildOrderReward tooltip").attr("data-tooltip", "rep").appendTo(d3a);
+            $("<div/>").addClass("rewardIcon").html(miscIcons.guildRep).appendTo(repReward);
+            $("<div/>").addClass("rewardValue").html(item.rep).appendTo(repReward);
+    const orderActions = $("<div/>").addClass("orderActions").appendTo(d1);
+        $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","in_inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(orderActions);
+        $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`).appendTo(orderActions);
     return d1;
 };
 

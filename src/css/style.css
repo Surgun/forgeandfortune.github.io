@@ -1931,6 +1931,7 @@ footer {
 
 /* End Crafting Slots */
 
+/* Generic Progress Bar */ 
 
 .plProgressBar {
     position: relative;
@@ -1952,10 +1953,9 @@ footer {
     color: var(--text-primary);
 }
 
-.tab-heading {
-    text-align: center;
-    text-transform: uppercase;
-}
+/* End Generic Progress Bar */ 
+
+/* Recipes Screen */ 
 
 .recipesContainer {
     display: flex;
@@ -2015,6 +2015,7 @@ footer {
     border: 1px solid transparent;
     border-radius: 5px 0 0 5px;
     cursor: pointer;
+    transition: var(--transition_linear);
 }
 
 .recipeSortInput:hover {
@@ -2033,6 +2034,7 @@ footer {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
+    transition: var(--transition_linear);
 }
 
 .recipeSortInput:hover + .recipeSortButton, .recipeSortInput:focus + .recipeSortButton {
@@ -2442,11 +2444,11 @@ footer {
     align-items: center;
     flex-grow: 1;
     margin-right: 5px;
+    height: 100%;
     background-color: var(--bg-secondary);
     color: var(--text-secondary);
-    height: 100%;
-    cursor: pointer;
     transition: var(--transition_linear);
+    cursor: pointer;
 }
 
 .recipeBackTab:hover {
@@ -2586,6 +2588,8 @@ footer {
 }
 
 /* Ends Recipes - Recipe Cards */
+
+/* End Recipes Screen */ 
 
 /* Guilds Screen */
 
@@ -2990,172 +2994,7 @@ footer {
     text-align: center;
 }
 
-
 /* End Guilds Screen */
-
-/* Progress */
-
-#progresslist {
-    height: 100%;
-    overflow: auto;
-}
-
-#progress_container {
-    display: -ms-grid;
-    display: grid;
-    grid-template: auto / repeat(auto-fill,minmax(250px,1fr));
-    grid-gap: 10px;
-}
-
-#progress_container > .progress-section-title {
-    margin-top: 0;
-    grid-column: 1 / -1;
-}
-
-.progress-section-title {
-    display: block;
-    text-align: left;
-    width: 100%;
-    padding: 0 5px 5px;
-    margin: 25px 0 10px;
-    border-bottom: 2px solid var(--border-primary);
-}
-
-#progress_container > div > h2 {
-    font-size: 16px;
-    font-size: 1rem;
-    font-weight: normal;
-    margin-bottom: 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--border-primary);
-}
-
-#progress_container > div > span {
-    margin-bottom: 10px;
-}
-
-.progress-desc {
-    font-size: 14.4px;
-    font-size: .9rem;
-    text-align: center;
-    color: var(--text-secondary);
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-}
-
-.progressRecipe, .progressWorker, .progressHero, .progressOverall {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: relative;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-primary);
-    padding: 15px 15px 30px 15px;
-    border-radius: 10px;
-    overflow: hidden;
-    -webkit-animation: 0.2s scale-in;
-    animation: 0.2s scale-in;
-}
-
-.plProgressBar {
-    display: block;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    max-width: 90%;
-    border-radius: 5px;
-    background-color: var(--bg-tertiary);
-    overflow: hidden;
-}
-
-.plProgressBarPercent.Completed {
-    background: var(--gradient-secondary);
-}
-
-.plProgressBarPercent {
-    z-index: 1;
-}
-
-.progress-card-container, .stat-box-container, .dreStats {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    grid-gap: 10px;
-}
-
-.ProgressCard {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 15px 15px 15px 0;
-    font-size: 0.9em;
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
-}
-
-.ProgressCard.achieved > .MilestoneStar {
-    color: var(--highlight);
-}
-
-.ProgressCard > .MilestoneStar {
-    margin: 0 25px;
-    font-size: 2em;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-.stat-box-container, .dreStats {
-    -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-.statBox, .dreStatContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    padding: 15px;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-primary);
-    border-radius: 10px;
-    -webkit-animation: 0.2s scale-in;
-    animation: 0.2s scale-in;
-}
-
-.statHeading, .dreStatHeading {
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 2px solid var(--border-primary);
-}
-
-.statNormal, .MilestoneDescription, .dreStatDescription {
-    font-size: 0.9em;
-    color: var(--text-tertiary);
-}
-
-.MilestoneTitle, .MilestoneDescription {
-    margin: 0;
-}
-
-.MilestoneTitle {
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid var(--border-primary);
-}
 
 /* Heroes */
 
@@ -4893,34 +4732,19 @@ footer {
 }
 
 .buildingMatTable {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
 }
 
 .buildingMatDiv {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
@@ -4968,15 +4792,9 @@ footer {
 }
 
 .buildingInstrHead {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     background-color: var(--border-tertiary);
     border: 1px solid var(--border-tertiary);
     color: var(--highlight);
@@ -5006,7 +4824,6 @@ footer {
     color: var(--highlight);
     border: 2px solid var(--border-primary);
     border-radius: 5px;
-    -webkit-animation: 0.2s scale-in forwards;
     animation: 0.2s scale-in forwards;
 }
 
@@ -5017,9 +4834,7 @@ footer {
     font-size: 3rem;
     color: var(--text-white);
     opacity: 0.25;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
-    -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
+    transform: rotate(-30deg);
 }
 
 /* Tinker Building */ 
@@ -5104,10 +4919,9 @@ footer {
     border-bottom: 2px solid var(--border-primary);
 }
 
-
 /* End Tinker Building */
 
-/* Monster Hall */
+/* Monster Hall Building */
 
 .monsterNav {
     display: flex;
@@ -5161,7 +4975,6 @@ footer {
 }
 
 .monsterFiltersContainer .selection-container {
-    -webkit-animation: 0.2s scale-in forwards;
     animation: 0.2s scale-in forwards;
 }
 
@@ -5175,7 +4988,6 @@ footer {
     display: flex;
     flex-direction: column;
     min-height: 150px;
-    -webkit-animation: 0.2s scale-in forwards;
     animation: 0.2s scale-in forwards;
     cursor: pointer;
 }
@@ -5301,7 +5113,6 @@ footer {
 
 .mhiBlockImage > img {
     max-width: 64px;
-    -webkit-animation: 0.2s fade-in forwards;
     animation: 0.2s fade-in forwards;
 }
 
@@ -5317,7 +5128,6 @@ footer {
 .mhiStats .heroExamineStatRow {
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
-    -webkit-animation: 0.2s scale-in forwards;
     animation: 0.2s scale-in forwards;
 }
 
@@ -5409,60 +5219,170 @@ footer {
     color: var(--green-primary);
 }
 
-/* Events / Mail Content */
+/* End Monster Hall Building */
+
+/* Progress Building */
+
+#progresslist {
+    height: 100%;
+    overflow: auto;
+}
+
+#progress_container {
+    display: -ms-grid;
+    display: grid;
+    grid-template: auto / repeat(auto-fill,minmax(250px,1fr));
+    grid-gap: 10px;
+}
+
+#progress_container > .progress-section-title {
+    margin-top: 0;
+    grid-column: 1 / -1;
+}
+
+.progress-section-title {
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 0 5px 5px;
+    margin: 25px 0 10px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+#progress_container > div > h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+#progress_container > div > span {
+    margin-bottom: 10px;
+}
+
+.progress-desc {
+    font-size: .9rem;
+    text-align: center;
+    color: var(--text-secondary);
+    flex-grow: 1;
+}
+
+.progressRecipe, .progressWorker, .progressHero, .progressOverall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    padding: 15px 15px 30px 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: 0.2s scale-in;
+}
+
+.plProgressBar {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    max-width: 90%;
+    border-radius: 5px;
+    background-color: var(--bg-tertiary);
+    overflow: hidden;
+}
+
+.plProgressBarPercent.Completed {
+    background: var(--gradient-secondary);
+}
+
+.plProgressBarPercent {
+    z-index: 1;
+}
+
+.progress-card-container, .stat-box-container, .dreStats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 10px;
+}
+
+.ProgressCard {
+    display: flex;
+    align-items: center;
+    padding: 15px 15px 15px 0;
+    font-size: 0.9em;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+}
+
+.ProgressCard.achieved > .MilestoneStar {
+    color: var(--highlight);
+}
+
+.ProgressCard > .MilestoneStar {
+    margin: 0 25px;
+    font-size: 2em;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.stat-box-container, .dreStats {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.statBox, .dreStatContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    animation: 0.2s scale-in;
+}
+
+.statHeading, .dreStatHeading {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.statNormal, .MilestoneDescription, .dreStatDescription {
+    font-size: 0.9em;
+    color: var(--text-tertiary);
+}
+
+.MilestoneTitle, .MilestoneDescription {
+    margin: 0;
+}
+
+.MilestoneTitle {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+/* End Progress Building */
+
+/* Events */
 
 .hasEvent:after {
-    content: "!";
+    content: "";
     display: inline-block;
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 12px;
-    line-height: 20px;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     font-weight: 700;
     text-align: center;
-    background-color: rgba(162,21,0,1);
+    background-color: #fff;
+    box-shadow: inset 0 0 0 4px #eb1818;
     color: var(--text-white);
     border-radius: 50%;
-    animation: 2s ease-in-out infinite notification;
+    animation: 1s var(--transition_linear) infinite alternate notification;
     z-index: 10;
 }
 
-.rewardDivTitle {
-    margin-top: 20px;
-}
-
-.rewardCard, .dreLootDropCard {
-    position: relative;
-    padding: 5px 10px;
-    margin-top: 10px;
-    margin-right: 5px;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    background-color: var(--bg-primary);
-    border: 2px solid var(--border-primary);
-    border-radius: 5px;
-    -webkit-animation: 0.2s scale-in forwards;
-    animation: 0.2s scale-in forwards;
-}
-
-.rewardImage, .dreLootDropImage {
-    position: relative;
-    margin-right: 5px;
-}
-
-.rewardImage > img, .dreLootDropImage > img {
-    vertical-align: middle;
-    padding: 3px;
-}
+/* End Events */
 
 /* Stat Icons */
 
@@ -5494,6 +5414,7 @@ footer {
     height: 100%;
     color: var(--text-primary);
     text-decoration: none;
+    transition: var(--transition_linear);
     cursor: pointer;
 }
 
@@ -5525,7 +5446,15 @@ footer {
 }
 
 .footer_more-btn:hover + .footer_more-list, .footer_more-list:hover {
-    transform: scale(1);
+    transform: scaleY(1);
+}
+
+.footer_more-btn > i {
+    transition: var(--transition_linear);
+}
+
+.footer_more-btn:hover > i {
+    transform: rotate(180deg);
 }
 
 .footer_more-list {
@@ -5539,8 +5468,10 @@ footer {
     background-color: var(--bg-secondary);
     border: 2px solid var(--border-primary);
     border-right: transparent;
-    transform: scale(0);
+    transform: scaleY(0);
     transform-origin: bottom;
+    transition: var(--transition_linear);
+    box-shadow: 0 -5px 10px 0 rgba(0,0,0,.15);
     overflow: hidden;
     z-index: 10;
 }
@@ -5629,21 +5560,18 @@ span.beta-tag {
     background-color: var(--bg-primary);
     border: 1px solid var(--border-primary);
     border-radius: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 .selection:after {
     position: absolute;
     content: "";
     display: none;
-    -webkit-transform: rotate(45deg) scale(0);
     transform: rotate(45deg) scale(0);
 }
 
 .selection-container input:checked ~ .selection:after {
     display: block;
-    -webkit-transform: rotate(45deg) scale(1);
     transform: rotate(45deg) scale(1);
 }
 
@@ -5773,16 +5701,10 @@ span.beta-tag {
 
 @keyframes notification {
     0% {
-        -webkit-transform: scale(1);
                 transform: scale(1);
-    }
-    50% {
-        -webkit-transform: scale(.8);
-                transform: scale(.8);
     }
     100% {
-        -webkit-transform: scale(1);
-                transform: scale(1);
+                transform: scale(.75);
     }
 }
 
@@ -5815,34 +5737,28 @@ span.beta-tag {
 
 @keyframes scale-in {
     from {
-        -webkit-transform: scale(0);
                 transform: scale(0);
     }
     to {
-        -webkit-transform: scale(1);
                 transform: scale(1);
     }
 }
 
 @keyframes scale-out {
     from {
-        -webkit-transform: scale(1);
                 transform: scale(1);
     }
     to {
-        -webkit-transform: scale(0);
                 transform: scale(0);
     }
 }
 
 @keyframes scale-out-fade {
     from {
-        -webkit-transform: scale(1);
                 transform: scale(1);
                 opacity: 1;
     }
     to {
-        -webkit-transform: scale(0);
                 transform: scale(0);
                 opacity: 0;
     }
@@ -5850,33 +5766,27 @@ span.beta-tag {
 
 @keyframes scale-check-in {
     from {
-        -webkit-transform: rotate(45deg) scale(0);
                 transform: rotate(45deg) scale(0);
     }
     to {
-        -webkit-transform: rotate(45deg) scale(1);;
-                transform: rotate(45deg) scale(1);;
+                transform: rotate(45deg) scale(1);
     }
 }
 
 @keyframes scale-x-in {
     from {
-        -webkit-transform: scaleX(0);
                 transform: scaleX(0);
     }
     to {
-        -webkit-transform: scaleX(1);
                 transform: scaleX(1);
     }
 }
 
 @keyframes scale-x-out {
     from {
-        -webkit-transform: scaleX(1);
                 transform: scaleX(1);
     }
     to {
-        -webkit-transform: scaleX(0);
                 transform: scaleX(0);
     }
 }
@@ -5884,23 +5794,19 @@ span.beta-tag {
 
 @keyframes scale-y-in {
     from {
-        -webkit-transform: scaleY(0);
                 transform: scaleY(0);
     }
     to {
-        -webkit-transform: scaleY(1);
                 transform: scaleY(1);
     }
 }
 
 @keyframes scale-y-out {
     from {
-        -webkit-transform: scaleY(1);
                 transform: scaleY(1);
                 opacity: 1;
     }
     to {
-        -webkit-transform: scaleY(0);
                 transform: scaleY(0);
                 opacity: 0;
     }
@@ -5908,11 +5814,9 @@ span.beta-tag {
 
 @keyframes flip-in {
     0% {
-        -webkit-transform: perspective(1000px) rotateX(180deg) translateZ(0);
                 transform: perspective(1000px) rotateX(180deg) translateZ(0);
     }
     100% {
-        -webkit-transform: perspective(1000px) rotateX(360deg) translateZ(0);
                 transform: perspective(1000px) rotateX(360deg) translateZ(0);
     }
 }
@@ -5928,46 +5832,38 @@ span.beta-tag {
 @keyframes button-active {
     0% {
         opacity: 1;
-        -webkit-transform: scaleY(1) scaleX(1);
                 transform: scaleY(1) scaleX(1);
     }
     100% {
         opacity: 0;
-        -webkit-transform: scaleY(1.5) scaleX(1.1);
                 transform: scaleY(1.5) scaleX(1.1);
     }
 }
 
 @keyframes btn-press {
     0% {
-        -webkit-transform: scale(1);
                 transform: scale(1);
     }
     50% {
-        -webkit-transform: scale(.97);
                 transform: scale(.97);
     }
     100% {
-        -webkit-transform: scale(1);
                 transform: scale(1);
     }
 }
 
 @keyframes slide-right {
     0% {
-        -webkit-transform: rotate(-45deg) translateY(0);
                 transform: rotate(-45deg) translateY(0);
     }
     33%, 100% {
         opacity: .3;
-        -webkit-transform: rotate(-45deg) translateY(0);
                 transform: rotate(-45deg) translateY(100px);
     }
 }
 
 .btn-press {
     animation: 0.3s btn-press;
-    -webkit-animation: 0.3s btn-press;
 }
 
 /* Hide content while retaining the content's effects on elements, such as, its width and height. */

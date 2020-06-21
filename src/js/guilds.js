@@ -393,10 +393,10 @@ function createRecipeBuyCard(recipe,guildLvl) {
         $("<div/>").addClass("guildRecipeBuyReq").html(`Guild Level ${recipe.repReq} Required`).appendTo(guildRecipeBuyContent);
         return d1;
     }
-    const d5 = $("<div/>").addClass("recipeBuyCardBuy").data("rid",recipe.id);
-        $("<div/>").addClass("recipeBuyCardBuyText").html("Purchase").appendTo(d5);
-        $("<div/>").addClass("recipeBuyCardBuyCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(recipe.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
-    return d1.append(d5);
+    const d5 = $("<div/>").addClass("recipeBuyCardBuy actionButtonCardCost").data("rid",recipe.id).appendTo(guildRecipeBuyContent);
+        $("<div/>").addClass("actionButtonCardText").html("Purchase").appendTo(d5);
+        $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(recipe.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
+    return d1;
 };
 
 function refreshAllGuildWorkers() {

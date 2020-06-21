@@ -2320,6 +2320,8 @@ footer {
 
 .recipeTotalCrafted.isMastered, .recipeMasteredStatus.isMastered, .recipeTotalCrafted.isMastered:hover {
     position: relative;
+    flex-direction: row;
+    padding: 8px 10px;
     color: var(--highlight);
     background-color: var(--bg-tertiary);
     border: 2px solid var(--border-primary);
@@ -2926,6 +2928,7 @@ footer {
 
 .guildRecipeBuyContent {
     position: relative;
+    margin-bottom: auto;
     padding: 10px;
 }
 

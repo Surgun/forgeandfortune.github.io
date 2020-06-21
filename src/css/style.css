@@ -3914,6 +3914,11 @@ footer {
     background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/townImages/museumBuilding/bg.png);
 }
 
+.buildingmilestone .buildingInfoBackground {
+    background: linear-gradient(90deg, rgba(0,0,0,0.75) 200px, transparent), url(/assets/images/townImages/milestoneBuilding/bg.png);
+}
+
+
 .buildInProgress .buildingInfoBackground {
     filter: grayscale(1);
 }

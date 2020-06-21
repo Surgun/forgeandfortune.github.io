@@ -348,7 +348,8 @@ function createOrderCard(item,id,index) {
             $("<div/>").addClass("rewardIcon").html(miscIcons.guildRep).appendTo(repReward);
             $("<div/>").addClass("rewardValue").html(item.rep).appendTo(repReward);
     const orderActions = $("<div/>").addClass("orderActions").appendTo(d1);
-        $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","in_inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(orderActions);
+        const invCount = $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","in_inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(orderActions);
+        if (Inventory.itemCountSpecific(item.uniqueID()) > 0) invCount.addClass("canContribute");
         $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`).appendTo(orderActions);
     return d1;
 };

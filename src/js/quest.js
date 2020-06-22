@@ -324,7 +324,7 @@ function showQuestParty() {
     //populate header
     $qpHeader.empty();
     $("<div/>").addClass(`qpBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($qpHeader);
-    $("<div/>").addClass(`qpHeaderBanner`).css("background", `url(/assets/images/quests/background.jpg)`).appendTo($qpHeader);
+    $("<div/>").addClass(`qpHeaderBanner`).css("background", `url(/assets/images/quests/background.png)`).appendTo($qpHeader);
     $("<div/>").addClass(`qpHeaderTitle`).html(quest.name).appendTo($qpHeader);
     $("<div/>").addClass(`qpHeaderFlavor`).html(quest.description).appendTo($qpHeader);
 

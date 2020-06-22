@@ -5273,7 +5273,7 @@ footer {
     font-size: 0.85rem;
 }
 
-.progressBarFill.Completed {
+.progressBarFill.progressCompleted {
     background: var(--gradient-secondary);
 }
 

@@ -427,5 +427,27 @@
     "onCast": "refresh",
     "decrease": "onHit",
     "type": "buff"
+  },
+  {
+    "id": "BM908A",
+    "name": "Mind Control",
+    "description": "Next special attack hurts allies or helps enemies",
+    "icon": "<i class=\"fas fa-mind-share\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "onHitSpecial",
+    "type": null
+  },
+  {
+    "id": "BM908B",
+    "name": "Cold Blooded",
+    "description": "Heal for damage dealt next attack",
+    "icon": "<i class=\"fas fa-fish\"></i>",
+    "maxStack": 1,
+    "stackCast": 1,
+    "onCast": "refresh",
+    "decrease": "onHit",
+    "type": "buff"
   }
 ]

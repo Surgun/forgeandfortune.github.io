@@ -1,6 +1,6 @@
 "use strict";
 
-const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9,CLEAVE:10,BEFORE:11,AFTER:12,ADJACENT:13,MIRROR:14,});
+const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9,CLEAVE:10,BEFORE:11,AFTER:12,ADJACENT:13,MIRROR:14,RANDOM:15,});
 const SideType = Object.freeze({ALLIES:0,ENEMIES:1});
 
 const CombatManager = {
@@ -31,9 +31,14 @@ class combatRoundParams {
         this.dungeonid = dungeonid;
     }
     getTarget(target,side) {
+        //figure out the important side
         const aliveEnemys = this.enemies.filter(h=>h.alive());
         const enemies = aliveEnemys.some(h=>h.mark()) ? aliveEnemys.filter(h=>h.mark()) : aliveEnemys;
-        const living = (side === SideType.ALLIES) ? this.allies.filter(h=>h.alive()) : enemies;
+        const aliveAllies = this.allies.filter(h=>h.alive());
+        let living = aliveAllies;
+        if (this.attacker.confusion() && side === SideType.ALLIES) living = enemies;
+        if (!this.attacker.confusion() && side === SideType.ENEMIES) living = enemies;
+        //figure out who to target
         if (target === TargetType.FIRST) return [living[0]];
         if (target === TargetType.SECOND) {
             if (living.length === 1) return [living[0]];
@@ -91,6 +96,10 @@ class combatRoundParams {
             const indx = this.allies.findIndex(h=>h.uniqueid === uid);
             if (living.length-1 < indx) return [living[living.length-1]];
             return [living[indx]];
+        }
+        if (target === TargetType.RANDOM) {
+            const seed = aliveEnemys.map(e=>e.hp).reduce((a,b) => a+b) + aliveAllies.map(e=>e.hp).reduce((a,b) => a+b);
+            return [living[seed%living.length]];
         }
     }
 }
@@ -222,6 +231,9 @@ class Combatant {
     }
     parry() {
         return this.buffs.map(b=>b.parry()).reduce((a,b) => a+b,0);
+    }
+    confusion() {
+        return this.buffs.some(b=>b.confusion());
     }
     getBuffProtection() {
         const buffs = this.buffs.map(b=>b.getProtection());

@@ -38,10 +38,7 @@ class Buff {
         if (type === "onHit") this.onHit(attack);
         if (type === "onHitting") this.onHitting();
         if (type !== this.decrease) return;
-        console.log(type);
-        console.log(this.stacks);
         this.stacks -= 1;
-        console.log(this.stacks);
         if (this.stacks <= 0) {
             this.expire();
             BuffRefreshManager.removeBuff(this, this.target);
@@ -69,6 +66,7 @@ class Buff {
     parry() { return 0; }
     beornTank() { return 0; }
     expire() { return; }
+    confusion() { return false; }
 }
 
 const BuffManager = {
@@ -509,6 +507,27 @@ class BM907C extends Buff {
     }
 }
 
+class BM908A extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    confusion() {
+        return true;
+    }
+}
+
+class BM908B extends Buff {
+    constructor (buffTemplate,target,power) {
+        super(buffTemplate,target,power);
+    }
+    getProtection() {
+        return 1;
+    }
+    onHit(attack) {
+        this.target.heal(attack.power);
+    }
+}
+
 const BuffLookup = {
     B0010,
     B0011,
@@ -549,4 +568,6 @@ const BuffLookup = {
     BM907A,
     BM907B,
     BM907C,
+    BM908A,
+    BM908B,
 }

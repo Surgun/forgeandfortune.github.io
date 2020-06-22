@@ -960,6 +960,35 @@ SkillManager.skillEffects['SM907D'] = function (combatParams) {
     BuffManager.generateBuff('BM907',self,0);
 }
 
+SkillManager.skillEffects['SM908'] = function (combatParams) {
+    //Krakoctopus Cleave
+    const targets = combatParams.getTarget(TargetType.CLEAVE,SideType.ENEMIES);
+    let first = true;
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+        if (first) {
+            combatParams.power = combatParams.power * combatParams.attack.mod1;
+            first = false;
+        }
+    })
+}
+
+SkillManager.skillEffects['SM908A'] = function (combatParams) {
+    //Krakoctopus Mind Control
+    const random = combatParams.getTarget(TargetType.random,SideType.ENEMIES);
+    random.forEach(target => {
+        BuffManager.generateBuff('BM908A',target,0);
+    }) 
+}
+
+SkillManager.skillEffects['SM908B'] = function (combatParams) {
+    //Krakoctopus Mind Control
+    const self = combatParams.getTarget(TargetType.self,SideType.ALLIES);
+    self.forEach(target => {
+        BuffManager.generateBuff('BM908B',target,0);
+    }) 
+}
+
   //--------------------//
  //   PASSIVE SKILLS   //
 //--------------------//

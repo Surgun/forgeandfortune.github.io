@@ -790,5 +790,32 @@
     "powMod": 0,
     "mod1": null,
     "mod2": null
+  },
+  {
+    "id": "SM908",
+    "name": "Tentacle Whip",
+    "description": "Attacks front unit and two behind for less damage",
+    "icon": "<i class=\"fas fa-unlink\"></i>",
+    "powMod": 2,
+    "mod1": 0.5,
+    "mod2": null
+  },
+  {
+    "id": "SM908A",
+    "name": "Mind Control",
+    "description": "Forces target to fight for other team for next special attack",
+    "icon": "<i class=\"fas fa-mind-share\"></i>",
+    "powMod": 0,
+    "mod1": null,
+    "mod2": null
+  },
+  {
+    "id": "SM908B",
+    "name": "Cold Blooded",
+    "description": "Negates damage dealt on next attack and heals for amount instead",
+    "icon": "<i class=\"fas fa-fish\"></i>",
+    "powMod": 0,
+    "mod1": 2,
+    "mod2": null
   }
 ]

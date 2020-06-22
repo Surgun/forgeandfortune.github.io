@@ -5273,9 +5273,13 @@ footer {
     font-size: 0.85rem;
 }
 
+.progressBarFill.Completed {
+    background: var(--gradient-secondary);
+}
+
 .statBoxContainer {
     display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(400px, 1fr));
+    grid-template: auto / repeat(auto-fill, minmax(450px, 1fr));
     grid-gap: 10px 25px;
 }
 

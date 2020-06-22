@@ -20,16 +20,16 @@
     "en": "Adventures"
   },
   {
+    "tid": "tab_quests",
+    "en": "Quests"
+  },
+  {
     "tid": "tab_town",
     "en": "Town"
   },
   {
     "tid": "tab_market",
     "en": "Market"
-  },
-  {
-    "tid": "tab_progress",
-    "en": "Progress"
   },
   {
     "tid": "type_armor",
@@ -289,7 +289,7 @@
   },
   {
     "tid": "header_synthesizer_desynth_title",
-    "en": "Items Available to Deynthesize"
+    "en": "Items Available for Synthesizer"
   },
   {
     "tid": "header_synthesizer_desynth_desc",
@@ -297,7 +297,7 @@
   },
   {
     "tid": "synthesizer_inventory_empty",
-    "en": "You currently have no items available to desynthesize."
+    "en": "You currently have no items available for the synthesizer."
   },
   {
     "tid": "synthesizer_settings_title",

@@ -695,33 +695,92 @@
                                     </div>
                                 </div>
                                 <div id="milestoneBuilding" class="buildingTab">
-                                    <div id="progresslist">
-                                        <div id="progress_container">
-                                            <h3 class="progress-section-title">Progress Tracker</h3>
-                                            <div class="progressRecipe"><h2>Bosses Beat</h2><p class="progress-desc">Your progress for bosses beat.</p><span id="plBoss">0/10</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbBoss"></span></div></div>
-                                            <div class="progressRecipe"><h2>Recipe Mastery</h2><p class="progress-desc">Your progress for total mastered recipes. To master a recipe, craft 100 of it.</p><span id="plRecipeMastery">0/300</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbRecipe"></span></div></div>
-                                            <div class="progressRecipe"><h2>Perks Bought</h2><p class="progress-desc"> Your progress for Action League perks bought.</p><span id="plPerk">0/60</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbPerk"></span></div></div>
-                                            <div class="progressOverall"><h2>Overall</h2><p class="progress-desc">Your overall game progress.</p><span id="plOverall">0%</span><div class="plProgressBar"><span class="plProgressBarPercent" id="pbOverall"></span></div></div>
-                                        </div>
-                                        <div id="achievements">
-                                            <h3 id="db-init" class="progress-section-title">Statistics</h3>
-                                            <div class="stat-box-container">
-                 
+                                    <div id="progresslist" class="progressListContainer">
+                                            <div class="contentHeader">
+                                                <div class="headingDetails">
+                                                    <div class="headingTitle">Progress Tracker</div>
+                                                    <div class="headingDescription">Your overall progress throughout the game.</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="progressBoxContainer">
+                                                <div class="progressBox">
+                                                    <div class="progressBoxTitle">Bosses Beat</div>
+                                                    <div class="progressBoxDescription">Your progress for total bosses defeated.</div>
+                                                    <div class="progressBoxProgressBar">
+                                                        <div class="progressBarContainer">
+                                                            <div class="progressBarText" id="plBoss"></div>
+                                                            <div class="progressBarContent">
+                                                                <div class="progressBar">
+                                                                    <div class="progressBarFill" id="pbBoss"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="progressBox">
+                                                    <div class="progressBoxTitle">Recipe Mastery</div>
+                                                    <div class="progressBoxDescription">Your progress for total recipes mastered.</div>
+                                                    <div class="progressBoxProgressBar">
+                                                        <div class="progressBarContainer">
+                                                            <div class="progressBarText" id="plRecipeMastery"></div>
+                                                            <div class="progressBarContent">
+                                                                <div class="progressBar">
+                                                                    <div class="progressBarFill" id="pbRecipe"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="progressBox">
+                                                    <div class="progressBoxTitle">Perks Purchased</div>
+                                                    <div class="progressBoxDescription">Your progress for perks purchased from the Market.</div>
+                                                    <div class="progressBoxProgressBar">
+                                                        <div class="progressBarContainer">
+                                                            <div class="progressBarText" id="plPerk"></div>
+                                                            <div class="progressBarContent">
+                                                                <div class="progressBar">
+                                                                    <div class="progressBarFill" id="pbPerk"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="progressBox">
+                                                    <div class="progressBoxTitle">Overall</div>
+                                                    <div class="progressBoxDescription">Your overall game progress.</div>
+                                                    <div class="progressBoxProgressBar">
+                                                        <div class="progressBarContainer">
+                                                            <div class="progressBarText" id="plOverall"></div>
+                                                            <div class="progressBarContent">
+                                                                <div class="progressBar">
+                                                                    <div class="progressBarFill" id="pbOverall"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="contentHeader">
+                                                <div class="headingDetails">
+                                                    <div class="headingTitle">Game Statistics</div>
+                                                    <div class="headingDescription">A statistical overview of your game progression and accomplishments.</div>
+                                                </div>
+                                            </div>
+                                            <div class="statBoxContainer">
                                                 <div class="statBox">
                                                     <div class="statHeading">Groovy Grove Floor Reached</div>
                                                     <div class="statNormal" id="statMaxFloorD001">?</div>
                                                 </div>
-                
                                                 <div class="statBox">
                                                     <div class="statHeading">Spooky Spot Floor Reached</div>
                                                     <div class="statNormal" id="statMaxFloorD002">?</div>
                                                 </div>
-                
                                                 <div class="statBox">
                                                     <div class="statHeading">Creepy Crag Floor Reached</div>
                                                     <div class="statNormal" id="statMaxFloorD003">?</div>
                                                 </div>
-                
                                                 <div class="statBox">
                                                     <div class="statHeading">Total Floors Beaten</div>
                                                     <div class="statNormal" id="statFloors">?</div>
@@ -760,10 +819,9 @@
                                                 </div>
                                                 <div class="statBox">
                                                     <div class="statHeading">Completion Time</div>
-                                                    <div class="statNormal"id="completeTime">Achieve 100% Overall to complete!</div>
+                                                    <div class="statNormal" id="completeTime">Not Completed</div>
                                                 </div>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -773,8 +831,14 @@
                 <div id="marketTab" class="tabcontent">
                     <div id="actionLeague" class="marketContainer">
                         <div class="guildSummary">
-                            <div class="guildName"><h2>The Marketplace</h2></div>
-                            <div class="guildDesc">Stop in to buy some cool upgrades!</div>
+                            <div class="guildBackground"></div>
+                            <div class="buildingInfoImage">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <div class="guildInfoDetails">
+                                <div class="guildName">The Marketplace</div>
+                                <div class="guildDesc">Purchase unique upgrades and perks that will expand your capabilities.</div>
+                            </div>
                         </div>
                         <div class="marketSalesContainer">
                             <div class="shopPerks">

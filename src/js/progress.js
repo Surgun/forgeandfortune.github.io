@@ -24,24 +24,24 @@ function refreshProgress() {
     let tally = 0;
     let max = 0;
 
-    $plBoss.html(`1/1}`);
+    $plBoss.html(`1 / 1`);
     const bossPercent = (100).toFixed(2);
     $pbBoss.css('width', bossPercent+"%");
-    if (bossPercent === "100.00") $pbBoss.addClass("Completed");
+    if (bossPercent === "100.00") $pbBoss.addClass("progressCompleted");
     tally += 1;
     max += 1;
 
-    $plRecipeMastery.html(`${recipeList.masteryCount()}/${recipeList.recipeCount()}`);
+    $plRecipeMastery.html(`${recipeList.masteryCount()} / ${recipeList.recipeCount()}`);
     const recipePercent = (recipeList.masteryCount()/recipeList.recipeCount()*100).toFixed(2);
     $pbRecipe.css('width', recipePercent+"%");
-    if (recipePercent === "100.00") $pbRecipe.addClass("Completed");
+    if (recipePercent === "100.00") $pbRecipe.addClass("progressCompleted");
     tally += recipeList.masteryCount();
     max += recipeList.recipeCount();
     
-    $plPerk.html(`${Shop.perkCount()}/${Shop.perkMaxCount()}`);
+    $plPerk.html(`${Shop.perkCount()} / ${Shop.perkMaxCount()}`);
     const perkPercent = (Shop.perkCount()/Shop.perkMaxCount()*100).toFixed(2);
     $pbPerk.css('width', perkPercent+"%");
-    if (perkPercent === "100.00") $pbPerk.addClass("Completed");
+    if (perkPercent === "100.00") $pbPerk.addClass("progressCompleted");
     tally += Shop.perkCount();
     max += Shop.perkMaxCount();
 
@@ -49,7 +49,7 @@ function refreshProgress() {
     if (overallPercent === 1 && achievementStats.endTime === -1) achievementStats.endTime = Date.now();
     $plOverall.html((overallPercent * 100).toFixed(2)+"%");
     $pbOverall.css('width', (overallPercent*100).toFixed(2)+"%");
-    if (overallPercent === 1) $pbOverall.addClass("Completed");
+    if (overallPercent === 1) $pbOverall.addClass("progressCompleted");
 }
 
 const $statMaxFloor = $("#statMaxFloor");

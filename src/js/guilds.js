@@ -348,7 +348,8 @@ function createOrderCard(item,id,index) {
             $("<div/>").addClass("rewardIcon").html(miscIcons.guildRep).appendTo(repReward);
             $("<div/>").addClass("rewardValue").html(item.rep).appendTo(repReward);
     const orderActions = $("<div/>").addClass("orderActions").appendTo(d1);
-        $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","in_inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(orderActions);
+        const invCount = $("<div/>").addClass("orderInv tooltip").attr("data-tooltip","in_inventory").data("uid",item.uniqueID()).html(`<i class="fas fa-cube"></i> ${Inventory.itemCountSpecific(item.uniqueID())}`).appendTo(orderActions);
+        if (Inventory.itemCountSpecific(item.uniqueID()) > 0) invCount.addClass("canContribute");
         $("<div/>").attr("id",item.id).addClass("orderCraft").html(`<i class="fas fa-hammer"></i> Craft`).appendTo(orderActions);
     return d1;
 };
@@ -393,10 +394,10 @@ function createRecipeBuyCard(recipe,guildLvl) {
         $("<div/>").addClass("guildRecipeBuyReq").html(`Guild Level ${recipe.repReq} Required`).appendTo(guildRecipeBuyContent);
         return d1;
     }
-    const d5 = $("<div/>").addClass("recipeBuyCardBuy").data("rid",recipe.id);
-        $("<div/>").addClass("recipeBuyCardBuyText").html("Purchase").appendTo(d5);
-        $("<div/>").addClass("recipeBuyCardBuyCost tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(recipe.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
-    return d1.append(d5);
+    const d5 = $("<div/>").addClass("recipeBuyCardBuy actionButtonCardCost").data("rid",recipe.id).appendTo(guildRecipeBuyContent);
+        $("<div/>").addClass("actionButtonCardText").html("Purchase").appendTo(d5);
+        $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(recipe.goldCost)}).html(`${miscIcons.gold} ${formatToUnits(recipe.goldCost,2)}`).appendTo(d5);
+    return d1;
 };
 
 function refreshAllGuildWorkers() {

@@ -163,8 +163,8 @@ SkillManager.skillEffects['S0022'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
     targets.forEach(target => {
         if (target.getBuffStacks('B0022') === 5) return;
-        const power1 = combatParams.power*combatParams.attack.mod1;
-        const power2 = combatParams.power*combatParams.attack.mod2;
+        const power1 = Math.floor(combatParams.power*combatParams.attack.mod1);
+        const power2 = Math.floor(combatParams.power*combatParams.attack.mod2);
         BuffManager.generateBuff('B0022',target,power1,power2);
         refreshHPBar(target);
     });
@@ -221,7 +221,7 @@ SkillManager.skillEffects['S0041'] = function (combatParams) {
     //Overexertion - Lambug
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
-    combatParams.power -=  combatParams.power*combatParams.attack.mod1*selfTarget.getBuffStacks("B0041");
+    combatParams.power -=  Math.floor(combatParams.power*combatParams.attack.mod1*selfTarget.getBuffStacks("B0041"));
     targets.forEach(target => {
         target.takeAttack(combatParams);
     });
@@ -232,7 +232,7 @@ SkillManager.skillEffects['S0042'] = function (combatParams) {
     //Amped Up - Lambug
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
-    const buffPower = selfTarget.getPow()*combatParams.attack.mod1;
+    const buffPower = Math.floor(selfTarget.getPow()*combatParams.attack.mod1);
     BuffManager.generateBuff("B0042",selfTarget,buffPower);
     targets.forEach(target => {
         target.takeAttack(combatParams);
@@ -310,7 +310,7 @@ SkillManager.skillEffects['S1030'] = function (combatParams) {
     const lifeDrain = combatParams.getTarget(TargetType.BEFORE,SideType.ALLIES);
     if (lifeDrain === null || lifeDrain[0].race === "undead") return;
     const targets = combatParams.getTarget(TargetType.MIRROR,SideType.ENEMIES);
-    const damage = combatParams.power*combatParams.attack.mod1;
+    const damage = Math.floor(combatParams.power*combatParams.attack.mod1);
     lifeDrain.forEach(target => {
         target.takeAttack(combatParams);
     })
@@ -324,7 +324,7 @@ SkillManager.skillEffects['S1031'] = function (combatParams) {
     const lifeDrain = combatParams.getTarget(TargetType.AFTER,SideType.ALLIES);
     if (lifeDrain === null || lifeDrain[0].race === "undead") return;
     const targets = combatParams.getTarget(TargetType.MIRROR,SideType.ENEMIES);
-    const damage = combatParams.power*combatParams.attack.mod1;
+    const damage = Math.floor(combatParams.power*combatParams.attack.mod1);
     lifeDrain.forEach(target => {
         target.takeAttack(combatParams);
     })
@@ -338,7 +338,7 @@ SkillManager.skillEffects['S1032'] = function (combatParams) {
     //Disintegrate - Titus
     const lifeDrainAllies = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
     const lifeDrainEnemies = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
-    const damage = combatParams.power*combatParams.attack.mod1;
+    const damage = Math.floor(combatParams.power*combatParams.attack.mod1);
     lifeDrainAllies.forEach(target => {
         if (target.race === "undead") return;
         BuffManager.generateBuff("B1030",target,combatParams.power);
@@ -404,7 +404,7 @@ SkillManager.skillEffects['S2020'] = function (combatParams) {
     targets.forEach(target => {
         const ogPow = combatParams.power;
         if (target.maxHP()*combatParams.attack.mod1 >= target.hp) {
-            combatParams.power = combatParams.power*combatParams.attack.mod2;
+            combatParams.power = Math.floor(combatParams.power*combatParams.attack.mod2);
         }
         target.takeAttack(combatParams);
         combatParams.power = ogPow;
@@ -417,7 +417,7 @@ SkillManager.skillEffects['S2021'] = function (combatParams) {
     targets.forEach(target => {
         const ogPow = combatParams.power;
         if (target.hasBuff("B1010")) {
-            combatParams.power = combatParams.power*combatParams.attack.mod1;
+            combatParams.power = Math.floor(combatParams.power*combatParams.attack.mod1);
             BuffManager.removeBuff("B1010",target);
         }
         target.takeAttack(combatParams);
@@ -430,7 +430,7 @@ SkillManager.skillEffects['S2022'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.FOURTH,SideType.ENEMIES);
     targets.forEach(target => {
         const ogPow = combatParams.power;
-        if (target.maxHP() === target.hp) combatParams.power = combatParams.power*combatParams.attack.mod1;
+        if (target.maxHP() === target.hp) combatParams.power = Math.floor(combatParams.power*combatParams.attack.mod1);
         target.takeAttack(combatParams);
         combatParams.power = ogPow;
     });
@@ -450,7 +450,7 @@ SkillManager.skillEffects['S2031'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.SECOND,SideType.ENEMIES);
     targets.forEach(target => {
         const ogPow = combatParams.power;
-        if (target.isChilled()) combatParams.power *= combatParams.attack.mod1;
+        if (target.isChilled()) combatParams.power = Math.floor(combatParams.power * combatParams.attack.mod1);
         target.takeAttack(combatParams);
         combatParams.power = ogPow;
     });
@@ -461,7 +461,7 @@ SkillManager.skillEffects['S2032'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     targets.forEach(target => {
         const ogPow = combatParams.power;
-        if (combatParams.attacker.hp%10 === 7) combatParams.power *= combatParams.attack.mod1;
+        if (combatParams.attacker.hp%10 === 7) combatParams.power = Math.floor(combatParams.power * combatParams.attack.mod1);
         target.takeAttack(combatParams);
         combatParams.power = ogPow;
     });
@@ -527,7 +527,7 @@ SkillManager.skillEffects['SM103'] = function (combatParams) {
     //Full Force - Bumbling Bee
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     const selfTarget = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
-    if (selfTarget.hp === selfTarget.maxHP()) combatParams.power = Math.floor(combatParams.power*1.5);
+    if (selfTarget.hp === selfTarget.maxHP()) combatParams.power = Math.floor(combatParams.power * combatParams.attack.mod1);
     targets.forEach(target => {
         target.takeAttack(combatParams);
     });
@@ -550,7 +550,7 @@ SkillManager.skillEffects['SM105'] = function (combatParams) {
     targets.forEach(target => {
         const ogPow = combatParams.power;
         if (target.maxHP()*combatParams.attack.mod1 >= target.hp) {
-            combatParams.power = Math.floor(combatParams.power*combatParams.attack.mod2);
+            combatParams.power = Math.floor(combatParams.power * combatParams.attack.mod2);
         }
         target.heal(combatParams.power);
         combatParams.power = ogPow;
@@ -588,7 +588,7 @@ SkillManager.skillEffects['SM109'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.FOURTH,SideType.ENEMIES);
     targets.forEach(target => {
         const ogPow = combatParams.power;
-        if (target.hpLessThan(combatParams.attack.mod1)) combatParams.power = Math.floor(combatParams.power*combatParams.attack.mod2);
+        if (target.hpLessThan(combatParams.attack.mod1)) combatParams.power = Math.floor(combatParams.power * combatParams.attack.mod2);
         target.takeAttack(combatParams);
         combatParams.power = ogPow;
     });
@@ -624,7 +624,7 @@ SkillManager.skillEffects['SM202'] = function (combatParams) {
     const originalDmg = combatParams.power;
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     targets.forEach(target => {
-        if (target.underHalfHP()) combatParams.power = Math.floor(originalDmg * 1.5);
+        if (target.hpLessThan(combatParams.attack.mod1)) combatParams.power = Math.floor(originalDmg * combatParams.attack.mod2);
         else combatParams.power = originalDmg;
         target.takeAttack(combatParams);
     });
@@ -703,7 +703,7 @@ SkillManager.skillEffects['SM301'] = function (combatParams) {
     //Crab Hammer - Crusty Crab
     const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
     targets.forEach(target => {
-        combatParams.power = Math.floor(target.maxHP() * 0.25);
+        combatParams.power = Math.floor(target.maxHP() * combatParams.attack.mod1);
         target.takeAttack(combatParams);
     });
 }
@@ -844,8 +844,6 @@ SkillManager.skillEffects['SM904B'] = function (combatParams) {
 SkillManager.skillEffects['SM904C'] = function (combatParams) {
     //lol it does nothing
 }
-
-
 
 SkillManager.skillEffects['SM905A'] = function (combatParams) {
     //PAINTBRUSH KNIGHT - CANVAS

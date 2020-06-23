@@ -365,7 +365,7 @@
     "description": "Massive damage if at full health",
     "icon": "<img src=\"/assets/svg/cherish.svg\">",
     "powMod": 2,
-    "mod1": null,
+    "mod1": 1.5,
     "mod2": null
   },
   {
@@ -446,8 +446,8 @@
     "description": "Deals additional damage if enemy is below 50% HP",
     "icon": "<img src=\"/assets/svg/chart.svg\">",
     "powMod": 2,
-    "mod1": null,
-    "mod2": null
+    "mod1": 0.5,
+    "mod2": 1.5
   },
   {
     "id": "SM203",
@@ -527,7 +527,7 @@
     "description": "Attacks for 25% of max HP of defender",
     "icon": "<img src=\"/assets/svg/crab-claw.svg\">",
     "powMod": 0,
-    "mod1": null,
+    "mod1": 0.25,
     "mod2": null
   },
   {

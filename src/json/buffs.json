@@ -257,7 +257,7 @@
     "name": "Carapace",
     "description": "Reduces damage taken by 25%",
     "icon": "<img src=\"/assets/svg/turtle-shell.svg\">",
-    "maxStack": 2,
+    "maxStack": 4,
     "stackCast": 1,
     "onCast": "stack",
     "decrease": "onHit",

@@ -731,7 +731,7 @@
   {
     "id": "SM906",
     "name": "Phoenix Fire",
-    "description": "Burns the first enemy, dealing damage for every stack",
+    "description": "Burns all enemies, dealing damage for every stack",
     "icon": "<img src=\"/assets/svg/ember-shot.svg\">",
     "powMod": 0.14,
     "mod1": null,
@@ -759,7 +759,7 @@
     "id": "SM907A",
     "name": "MKF 1",
     "description": "AoE attack",
-    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
+    "icon": "<img src=\"/assets/svg/butterfly-knife.svg\">",
     "powMod": 2,
     "mod1": null,
     "mod2": null
@@ -768,7 +768,7 @@
     "id": "SM907B",
     "name": "MKF 2 ",
     "description": "Healing attack",
-    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
+    "icon": "<img src=\"/assets/svg/banana-peeled.svg\">",
     "powMod": 2,
     "mod1": 0.1,
     "mod2": null
@@ -777,7 +777,7 @@
     "id": "SM907D",
     "name": "Banana Find",
     "description": "Find a banana",
-    "icon": "<i class=\"fas fa-carrot\"></i>",
+    "icon": "<img src=\"/assets/svg/banana.svg\">",
     "powMod": 0,
     "mod1": 0.1,
     "mod2": null
@@ -786,7 +786,7 @@
     "id": "SMP907",
     "name": "MKF 3",
     "description": "I hide in trees",
-    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
+    "icon": "<img src=\"/assets/svg/beech.svg\">",
     "powMod": 0,
     "mod1": null,
     "mod2": null
@@ -803,7 +803,7 @@
   {
     "id": "SM908A",
     "name": "Mind Control",
-    "description": "find a banana",
+    "description": "find a banana inside the enemy's MIND OOOOO SPOOKEY",
     "icon": "<i class=\"fas fa-mind-share\"></i>",
     "powMod": 0,
     "mod1": null,

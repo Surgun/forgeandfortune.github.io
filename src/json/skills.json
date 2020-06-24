@@ -176,7 +176,7 @@
     "description": "Titus deals damage an ally in front to apply Necrosis to an enemy, which deals damages over time.",
     "icon": "<img src=\"/assets/svg/skull-crack.svg\">",
     "powMod": 1,
-    "mod1": 0.25,
+    "mod1": 0.3,
     "mod2": null
   },
   {
@@ -185,7 +185,7 @@
     "description": "Titus deals damage to allies behind himself to apply Necrosis to enemies.  Grim is immune.",
     "icon": "<img src=\"/assets/svg/stoned-skull.svg\">",
     "powMod": 1,
-    "mod1": 0.25,
+    "mod1": 0.3,
     "mod2": null
   },
   {
@@ -194,7 +194,7 @@
     "description": "Applies Necrosis to every unit.  Titus and Grim are immune.",
     "icon": "<img src=\"/assets/svg/disintegrate.svg\">",
     "powMod": 1,
-    "mod1": 0.25,
+    "mod1": 0.3,
     "mod2": null
   },
   {

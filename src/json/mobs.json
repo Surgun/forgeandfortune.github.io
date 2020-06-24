@@ -457,8 +457,8 @@
   {
     "id": "B906",
     "name": "Cinder Phoenix",
-    "hpMod": 120000,
-    "powMod": 1200,
+    "hpMod": 18000,
+    "powMod": 800,
     "protection": 0,
     "skill1": "S0000",
     "skill2": "SM906",

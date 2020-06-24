@@ -1045,6 +1045,7 @@ SkillManager.skillEffects['SMP907'] = function (type,target,attack,skillParams) 
     if (type === "treeBuffGone") {
         target.state = null;
         target.image = '<img src="/assets/images/enemies/B907.gif">';
+        target.playbook = PlaybookManager.generatePlayBookFromSkills("SM907A","S0000","SM907A","SM907B");
         const dungeon = DungeonManager.dungeonByID(target.dungeonid)
         const trees = dungeon.mobs.filter(m=>m.id === "B907A");
         const treeuid = trees.map(t=>t.uniqueid);

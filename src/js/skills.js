@@ -848,7 +848,7 @@ SkillManager.skillEffects['SM904C'] = function (combatParams) {
 
 SkillManager.skillEffects['SM905A'] = function (combatParams) {
     //PAINTBRUSH KNIGHT - CANVAS
-    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
+    const targets = combatParams.getTarget(TargetType.ENEMIES,SideType.ENEMIES);
     const thisMob = combatParams.getTarget(TargetType.SELF,SideType.ALLIES)[0];
     if (this.state === undefined || this.state === targets.length-1) this.state = 0;
     else this.state += 1;

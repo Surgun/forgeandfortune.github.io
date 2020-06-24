@@ -1,8 +1,3 @@
-const weekDuration = 86400000;
-const weeksInSeason = 4;
-const seasonsInYear = 4;
-const seasonWords = ["Spring","Summer","Fall","Winter"];
-
 class idAmt {
     constructor (id,amt) {
         this.id = id;
@@ -14,7 +9,7 @@ class idAmt {
         save.amt = this.amt;
         return save;
     }
-    loadSave(save) {
+    loadSave() {
         return;
     }
 }
@@ -142,33 +137,6 @@ function msToSec(ms) {
 
 const miscLoadedValues = {};
 
-function currentDate() {
-    const elapsed = achievementStats.timePlayed;
-    const weeks = Math.floor(elapsed/weekDuration);
-    const seasons = Math.floor(weeks/weeksInSeason);
-    const years = Math.floor(seasons/seasonsInYear);
-    const weekRemaining = weeks-4*seasons;
-    const seasonRemaining = seasons-4*years;
-    
-    return `Week ${weekRemaining+1} of ${seasonWords[seasonRemaining]}, Year ${years+1}`;
-}
-
-function timeLeftinWeek() {
-    const elapsed = achievementStats.timePlayed;
-    const left = weekDuration-elapsed%weekDuration;
-    return timeSince(0,left);
-}
-
-function currentWeek() {
-    const elapsed = achievementStats.timePlayed;
-    return Math.floor(elapsed/weekDuration);
-}
-
-function randomChance(num,total) {
-    //return true if random(0-total) is less than num
-    return num > Math.floor(Math.random() * total);
-}
-
 function inventorySort(a, b) {
     const ai = a.item;
     const bi = b.item;
@@ -242,10 +210,6 @@ function normalDistribution(min, max, skew) {
     num *= max - min; // Stretch to fill range
     num += min; // offset to min
     return num;
-}
-
-function extractPounds(text) {
-    return text.split("#")[1];
 }
 
 function createArray(length) {

@@ -209,7 +209,7 @@ const recipeList = {
         return this.recipes.filter(r=>r.isMastered() && r.recipeType==="normal").length;
     },
     recipeCount() {
-        return this.recipes.filter(r=>r.recipeType==="normal").length;
+        return this.recipes.filter(r=>r.recipeType==="normal" && r.type !== "Trinkets").length;
     },
     maxTier() {
         const lvls = this.recipes.filter(r=>r.owned).map(r=>r.lvl);

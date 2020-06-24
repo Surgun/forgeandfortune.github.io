@@ -24,24 +24,24 @@ function refreshProgress() {
     let tally = 0;
     let max = 0;
 
-    $plBoss.html(`1 / 1`);
-    const bossPercent = (100).toFixed(2);
+    $plBoss.html(`${DungeonManager.bossCount()} / 10`);
+    const bossPercent = (DungeonManager.bossCount() * 10).toFixed(2);
     $pbBoss.css('width', bossPercent+"%");
-    if (bossPercent === "100.00") $pbBoss.addClass("progressCompleted");
-    tally += 1;
-    max += 1;
+    if (DungeonManager.bossCount() === 10) $pbBoss.addClass("progressCompleted");
+    tally += DungeonManager.bossCount();
+    max += 10;
 
     $plRecipeMastery.html(`${recipeList.masteryCount()} / ${recipeList.recipeCount()}`);
     const recipePercent = (recipeList.masteryCount()/recipeList.recipeCount()*100).toFixed(2);
     $pbRecipe.css('width', recipePercent+"%");
-    if (recipePercent === "100.00") $pbRecipe.addClass("progressCompleted");
+    if (recipeList.masteryCount() === recipeList.recipeCount()) $pbRecipe.addClass("progressCompleted");
     tally += recipeList.masteryCount();
     max += recipeList.recipeCount();
     
     $plPerk.html(`${Shop.perkCount()} / ${Shop.perkMaxCount()}`);
     const perkPercent = (Shop.perkCount()/Shop.perkMaxCount()*100).toFixed(2);
     $pbPerk.css('width', perkPercent+"%");
-    if (perkPercent === "100.00") $pbPerk.addClass("progressCompleted");
+    if (Shop.perkCount() === Shop.perkMaxCount()) $pbPerk.addClass("progressCompleted");
     tally += Shop.perkCount();
     max += Shop.perkMaxCount();
 
@@ -61,7 +61,6 @@ const $statGoods = $("#statGoods");
 const $statGreats = $("#statGreats");
 const $statEpics = $("#statEpics");
 const $statTimePlayed = $("#statTimePlayed");
-const $gameTime = $("#gameTime");
 const $completeTime = $("#completeTime");
 
 
@@ -87,22 +86,9 @@ const achievementStats = {
     setTimePlayed(ms) {
         this.timePlayed += ms;
         $statTimePlayed.html(timeSince(this.startTime,Date.now()));
-        $gameTime.html(currentDate());
         if (achievementStats.endTime > 0) $completeTime.html(timeSince(this.startTime,this.endTime));
     },
     floorRecord(dungeonID, floor) {
-        if (dungeonID === "D001") {
-            achievementStats.D001floor = Math.max(achievementStats.D001floor, floor);
-            $statMaxFloorD001.html("Floor " + this.D001floor);
-        }
-        if (dungeonID === "D002") {
-            achievementStats.D002floor = Math.max(achievementStats.D002floor, floor);
-            $statMaxFloorD002.html("Floor " + this.D002floor);
-        }
-        if (dungeonID === "D003") {
-            achievementStats.D003floor = Math.max(achievementStats.D003floor, floor);
-            $statMaxFloorD003.html("Floor " + this.D003floor);
-        }
         this.totalFloorsBeaten += 1;
         $statFloors.html(this.totalFloorsBeaten);
     },
@@ -133,10 +119,6 @@ const achievementStats = {
         save.goodsCrafted = this.goodsCrafted;
         save.commonsCrafted = this.commonsCrafted;
         save.totalItemsCrafted = this.totalItemsCrafted;
-        save.totalFloorsBeaten = this.totalFloorsBeaten;
-        save.D001floor = this.D001floor;
-        save.D002floor = this.D002floor;
-        save.D003floor = this.D003floor;
         return save;
     },
     loadSave(save) {
@@ -151,19 +133,6 @@ const achievementStats = {
         this.commonsCrafted = save.commonsCrafted;
         this.totalItemsCrafted = save.totalItemsCrafted;
         this.totalFloorsBeaten = save.totalFloorsBeaten;
-        if (save.D001floor !== undefined) {
-            this.D001floor = save.D001floor;
-            $statMaxFloorD001.html("Floor " + this.D001floor);
-        }
-        if (save.D002floor !== undefined) {
-            this.D002floor = save.D002floor;
-            $statMaxFloorD002.html("Floor " + this.D002floor);
-        }
-        if (save.D003floor !== undefined) {
-            this.D003floor = save.D003floor;
-            $statMaxFloorD003.html("Floor " + this.D003floor);
-        }        
-        $statMaxFloor.html("Floor " + this.maxFloor);
         $statTotalGoldEarned.html(formatToUnits(this.totalGoldEarned,2));
         $statFloors.html(this.totalFloorsBeaten);
         $statTimePlayed.html(timeSince(0,this.timePlayed));
@@ -173,9 +142,6 @@ const achievementStats = {
         $statGreats.html(this.greatsCrafted);
         $statEpics.html(this.epicsCrafted);
     },
-    highestFloor() {
-        return Math.max(this.D001floor, this.D002floor, this.D003floor);
-    }
 }
 
 const $achieve1 = $("#achieve1");

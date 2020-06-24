@@ -112,7 +112,7 @@ class Playbook {
 
 SkillManager.skillEffects['S0000'] = function(combatParams) {
     //Regular Attack
-    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES);
+    const targets = combatParams.getTarget(TargetType.FIRST,SideType.ENEMIES,true);
     targets.forEach(target => {
         target.takeAttack(combatParams)
     });
@@ -307,7 +307,8 @@ SkillManager.skillEffects['S1022'] = function (combatParams) {
 
 SkillManager.skillEffects['S1030'] = function (combatParams) {
     //Decay - Titus
-    const lifeDrain = combatParams.getTarget(TargetType.BEFORE,SideType.ALLIES);
+    const lifeDrain = combatParams.getTarget(TargetType.BEFORE,SideType.ALLIES,true);
+    console.log(lifeDrain);
     if (lifeDrain === null || lifeDrain[0].race === "undead") return;
     const targets = combatParams.getTarget(TargetType.MIRROR,SideType.ENEMIES);
     const damage = Math.floor(combatParams.power*combatParams.attack.mod1);
@@ -321,7 +322,7 @@ SkillManager.skillEffects['S1030'] = function (combatParams) {
 
 SkillManager.skillEffects['S1031'] = function (combatParams) {
     //Decompose - Titus
-    const lifeDrain = combatParams.getTarget(TargetType.AFTER,SideType.ALLIES);
+    const lifeDrain = combatParams.getTarget(TargetType.AFTER,SideType.ALLIES,true);
     if (lifeDrain === null || lifeDrain[0].race === "undead") return;
     const targets = combatParams.getTarget(TargetType.MIRROR,SideType.ENEMIES);
     const damage = Math.floor(combatParams.power*combatParams.attack.mod1);
@@ -336,7 +337,7 @@ SkillManager.skillEffects['S1031'] = function (combatParams) {
 
 SkillManager.skillEffects['S1032'] = function (combatParams) {
     //Disintegrate - Titus
-    const lifeDrainAllies = combatParams.getTarget(TargetType.ALL,SideType.ALLIES);
+    const lifeDrainAllies = combatParams.getTarget(TargetType.ALL,SideType.ALLIES,true);
     const lifeDrainEnemies = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
     const damage = Math.floor(combatParams.power*combatParams.attack.mod1);
     lifeDrainAllies.forEach(target => {
@@ -960,30 +961,26 @@ SkillManager.skillEffects['SM907D'] = function (combatParams) {
 
 SkillManager.skillEffects['SM908'] = function (combatParams) {
     //Krakoctopus Cleave
-    const targets = combatParams.getTarget(TargetType.CLEAVE,SideType.ENEMIES);
-    let first = true;
+    const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);
     targets.forEach(target => {
         target.takeAttack(combatParams);
-        if (first) {
-            combatParams.power = combatParams.power * combatParams.attack.mod1;
-            first = false;
-        }
-    })
+        combatParams.power = combatParams.power * combatParams.attack.mod1;
+    });
 }
 
 SkillManager.skillEffects['SM908A'] = function (combatParams) {
     //Krakoctopus Mind Control
-    const random = combatParams.getTarget(TargetType.random,SideType.ENEMIES);
+    const random = combatParams.getTarget(TargetType.RANDOM,SideType.ENEMIES);
     random.forEach(target => {
         BuffManager.generateBuff('BM908A',target,0);
     }) 
 }
 
 SkillManager.skillEffects['SM908B'] = function (combatParams) {
-    //Krakoctopus Mind Control
-    const self = combatParams.getTarget(TargetType.self,SideType.ALLIES);
+    //Krakoctopus Healing
+    const self = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
     self.forEach(target => {
-        BuffManager.generateBuff('BM908B',target,0);
+        BuffManager.generateBuff('BM908B',target,combatParams.attack.mod1);
     }) 
 }
 

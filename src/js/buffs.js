@@ -524,7 +524,7 @@ class BM908B extends Buff {
         return 1;
     }
     onHit(attack) {
-        this.target.heal(attack.power);
+        this.target.heal(Math.floor(attack.power*this.power));
     }
 }
 

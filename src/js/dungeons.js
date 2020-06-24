@@ -337,6 +337,7 @@ class Dungeon {
     }
     unlocked() {
         if (this.unlockedBy === null) return true;
+        if (devtools.unlockBosses) return true;
         if (this.unlockedBy.charAt(0) === "A") return Shop.alreadyPurchased(this.unlockedBy);
         const bossDungeon = DungeonManager.dungeonByID(this.unlockedBy);
         return bossDungeon.beaten();

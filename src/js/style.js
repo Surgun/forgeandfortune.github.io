@@ -67,6 +67,7 @@ function dbEnable() {
         $("<button/>").addClass("dbActionButton").data("devToolType","unlockHeroes").html("Unlock Heroes").appendTo(d1);
         $("<button/>").addClass("dbActionButton").data("devToolType","unlockPerks").html("Unlock Perks").appendTo(d1);
         $("<button/>").addClass("dbActionButton").data("devToolType","timeWarp").html("Time Warp").appendTo(d1);
+        $("<button/>").addClass("dbActionButton").data("devToolType","clearBossBeats").html("Reset Bosses").appendTo(d1);
 
     const d4 = $("<div/>").addClass("addItemContainer dbActionContainer");
         const d4a = $("<div/>").addClass("addItemTitle").html("Add Item to Inventory");
@@ -130,6 +131,7 @@ $(document).on('click', '.dbActionButton', (e) => {
     if (type === "unlockHeroes") devtools.heroUnlock();
     if (type === "unlockPerks") devtools.allPerks();
     if (type === "timeWarp") devtools.timeWarp();
+    if (type === "clearBossBeats") devtools.clearBossBeats();
 });
 
 $(document).on('click', '.addGoldBtn', (e) => {

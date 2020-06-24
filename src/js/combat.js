@@ -17,7 +17,8 @@ const CombatManager = {
     },
     execute(combatRound) {
         SkillManager.skillEffects[combatRound.attack.id](combatRound);
-        combatRound.attacker.buffTick("onHitting");        
+        combatRound.attacker.buffTick("onHitting");
+        if (combatRound.attack.id !== "S0000") combatRound.attacker.buffTick("onSpecial");
     }
 }
 
@@ -30,14 +31,14 @@ class combatRoundParams {
         this.power = Math.floor(this.attacker.getPow() * this.attack.powMod);
         this.dungeonid = dungeonid;
     }
-    getTarget(target,side) {
+    getTarget(target,side,isNormal=false) {
         //figure out the important side
         const aliveEnemys = this.enemies.filter(h=>h.alive());
         const enemies = aliveEnemys.some(h=>h.mark()) ? aliveEnemys.filter(h=>h.mark()) : aliveEnemys;
         const aliveAllies = this.allies.filter(h=>h.alive());
         let living = aliveAllies;
-        if (this.attacker.confusion() && side === SideType.ALLIES) living = enemies;
-        if (!this.attacker.confusion() && side === SideType.ENEMIES) living = enemies;
+        if (this.attacker.confusion(isNormal) && side === SideType.ALLIES) living = enemies;
+        if (!this.attacker.confusion(isNormal) && side === SideType.ENEMIES) living = enemies;
         //figure out who to target
         if (target === TargetType.FIRST) return [living[0]];
         if (target === TargetType.SECOND) {
@@ -94,6 +95,8 @@ class combatRoundParams {
         if (target === TargetType.MIRROR) {
             const uid = this.attacker.uniqueid;
             const indx = this.allies.findIndex(h=>h.uniqueid === uid);
+            console.log(indx);
+            console.log(living);
             if (living.length-1 < indx) return [living[living.length-1]];
             return [living[indx]];
         }
@@ -232,7 +235,8 @@ class Combatant {
     parry() {
         return this.buffs.map(b=>b.parry()).reduce((a,b) => a+b,0);
     }
-    confusion() {
+    confusion(isNormal) {
+        if (isNormal) return false;
         return this.buffs.some(b=>b.confusion());
     }
     getBuffProtection() {

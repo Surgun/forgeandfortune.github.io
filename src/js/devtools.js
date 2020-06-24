@@ -112,4 +112,8 @@ const devtools = {
     timeWarp() {
         player.lastTime -= 600000;
     },
+    clearBossBeats() {
+        DungeonManager.dungeons.forEach(dungeon=>dungeon.maxFloor = 0);
+        this.unlockBosses = true;
+    }
 }

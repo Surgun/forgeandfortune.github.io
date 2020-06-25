@@ -6333,7 +6333,7 @@ span.beta-tag {
 }
 
 .combatFloorStatus {
-    padding-bottom: 5px;
+    padding: 0 5px 5px;
     color: var(--highlight);
     border-bottom: 2px solid var(--border-primary);
 }
@@ -6347,7 +6347,7 @@ span.beta-tag {
 }
 
 .combatFloorHelp {
-    padding-top: 5px;
+    padding: 5px 5px 0;
     color: var(--text-secondary);
 }
 

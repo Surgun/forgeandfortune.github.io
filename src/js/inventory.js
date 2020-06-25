@@ -409,7 +409,7 @@ function refreshInventory() {
         itemName.addClass("itemName").attr({"id": item.id, "r": item.rarity}).html(item.picName());
         itemRarity.addClass(`RT${item.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[item.rarity].toLowerCase()}`}).html(miscIcons.rarity);
         itemCost.addClass("tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(item.goldValue())}).html(item.goldValueFormatted());
-        itemLevel.addClass("tooltip").attr({"data-tooltip": "item_level"}).html(item.itemLevel());
+        itemLevel.html(item.itemLevel());
         if (item.goldValue() === 0) {
             itemCost.hide();
         }
@@ -446,7 +446,7 @@ function createInventoryCard(container,i) {
     const itemName = $("<div/>").addClass("itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
     const itemRarity = $("<div/>").addClass(`itemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemCost = $("<div/>").addClass("inventoryItemValue tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(container.goldValue())}).html(container.goldValueFormatted());
-    const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
+    const itemLevel = $("<div/>").addClass("itemLevel").html(container.itemLevel());
     if (container.goldValue() === 0) {
         itemCost.hide();
     }
@@ -489,7 +489,7 @@ function gearEquipFromInventory(invID) {
     itemdiv.addClass("R"+equipContainerTarget.rarity)
     const itemName = $("<div/>").addClass("itemName").attr("id",item.id).attr("r",equipContainerTarget.rarity).html(equipContainerTarget.picName());
     const itemRarity = $("<div/>").addClass(`itemRarity RT${equipContainerTarget.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[equipContainerTarget.rarity].toLowerCase()}`}).html(miscIcons.rarity);
-    const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(equipContainerTarget.itemLevel());
+    const itemLevel = $("<div/>").addClass("itemLevel").html(equipContainerTarget.itemLevel());
     const itemProps = $("<div/>").addClass("equipItemProps");
     for (const [stat, val] of Object.entries(equipContainerTarget.itemStat(false))) {
         if (val === 0) continue;

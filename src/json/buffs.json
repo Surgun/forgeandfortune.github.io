@@ -35,7 +35,7 @@
   {
     "id": "B0020",
     "name": "Toughen",
-    "description": "Increases max health by #power# per stack.",
+    "description": "Increases max health by Cedric's power per stack.",
     "icon": "<img src=\"/assets/svg/self-love.svg\">",
     "maxStack": 5,
     "stackCast": 1,

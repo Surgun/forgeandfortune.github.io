@@ -173,7 +173,7 @@
   {
     "id": "S1030",
     "name": "Decay",
-    "description": "Titus deals damage an ally in front to apply Necrosis to an enemy, which deals damages over time.",
+    "description": "Titus deals damage to the ally in directly in front of him to apply Necrosis on his counterpart on the enemy squad, which deals damages over time.",
     "icon": "<img src=\"/assets/svg/skull-crack.svg\">",
     "powMod": 1,
     "mod1": 0.3,
@@ -182,7 +182,7 @@
   {
     "id": "S1031",
     "name": "Decompose",
-    "description": "Titus deals damage to allies behind himself to apply Necrosis to enemies.  Grim is immune.",
+    "description": "Titus deals damage to the ally directly behind himself to apply Necrosis on his counterpart on the enemy squad.  Grim is immune.",
     "icon": "<img src=\"/assets/svg/stoned-skull.svg\">",
     "powMod": 1,
     "mod1": 0.3,

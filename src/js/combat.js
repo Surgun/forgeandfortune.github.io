@@ -95,10 +95,17 @@ class combatRoundParams {
         if (target === TargetType.MIRROR) {
             const uid = this.attacker.uniqueid;
             const indx = this.allies.findIndex(h=>h.uniqueid === uid);
-            console.log(indx);
-            console.log(living);
-            if (living.length-1 < indx) return [living[living.length-1]];
-            return [living[indx]];
+            //this one gets ugly...
+            if (this.some(h=>h.mark())) return [this.enemies.find(h=>h.mark())];
+            if (this.confusion()) return [this.attacker];
+            if (this.enemies[indx].alive()) return [this.enemies[indx]];
+            //this is what happens if enemies aren't alive but should be
+            if (indx > 0 && this.enemies[indx-1].alive()) return [this.enemies[indx-1]];
+            if (indx < this.enemies.length-1 && this.enemies[indx+1].alive()) return [this.enemies[indx+1]];
+            if (indx-1 > 0 && this.enemies[indx-2].alive()) return [this.enemies[indx-2]];
+            if (indx < this.enemies.length-2 && this.enemies[indx+2].alive()) return [this.enemies[indx+2]];
+            if (indx-2 > 0 && this.enemies[indx-3].alive()) return [this.enemies[indx-3]];
+            if (indx < this.enemies.length-3 && this.enemies[indx+3].alive()) return [this.enemies[indx+3]];
         }
         if (target === TargetType.RANDOM) {
             const seed = aliveEnemys.map(e=>e.hp).reduce((a,b) => a+b) + aliveAllies.map(e=>e.hp).reduce((a,b) => a+b);

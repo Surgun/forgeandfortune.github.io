@@ -163,8 +163,8 @@ SkillManager.skillEffects['S0022'] = function (combatParams) {
     const targets = combatParams.getTarget(TargetType.SELF,SideType.ALLIES);
     targets.forEach(target => {
         if (target.getBuffStacks('B0022') === 5) return;
-        const power1 = Math.floor(combatParams.power*combatParams.attack.mod1);
-        const power2 = Math.floor(combatParams.power*combatParams.attack.mod2);
+        const power1 = combatParams.attack.mod1;
+        const power2 = combatParams.attack.mod2;
         BuffManager.generateBuff('B0022',target,power1,power2);
         refreshHPBar(target);
     });

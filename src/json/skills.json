@@ -757,8 +757,8 @@
   },
   {
     "id": "SM907A",
-    "name": "MKF 1",
-    "description": "AoE attack",
+    "name": "Knife Throw",
+    "description": "Throws knives at all enemies",
     "icon": "<img src=\"/assets/svg/butterfly-knife.svg\">",
     "powMod": 2,
     "mod1": null,
@@ -766,8 +766,8 @@
   },
   {
     "id": "SM907B",
-    "name": "MKF 2 ",
-    "description": "Healing attack",
+    "name": "Bananadine",
+    "description": "Heals self, additional healing done for each banana found (banana for scale)",
     "icon": "<img src=\"/assets/svg/banana-peeled.svg\">",
     "powMod": 2,
     "mod1": 0.1,
@@ -776,7 +776,7 @@
   {
     "id": "SM907D",
     "name": "Banana Find",
-    "description": "Find a banana",
+    "description": "Finding bananas in the trees, hopefully stored away from heat and light, or someone will have to make bread in a few days",
     "icon": "<img src=\"/assets/svg/banana.svg\">",
     "powMod": 0,
     "mod1": 0.1,
@@ -784,8 +784,8 @@
   },
   {
     "id": "SMP907",
-    "name": "MKF 3",
-    "description": "I hide in trees",
+    "name": "Snack Break",
+    "description": "Occasionally becomes hungry, and will hunt for food",
     "icon": "<img src=\"/assets/svg/beech.svg\">",
     "powMod": 0,
     "mod1": null,
@@ -794,7 +794,7 @@
   {
     "id": "SM908",
     "name": "Tentacle Whip",
-    "description": "Attacks front unit and two behind for less damage",
+    "description": "Attacks front unit and two behind for reduced damage",
     "icon": "<i class=\"fas fa-unlink\"></i>",
     "powMod": 2,
     "mod1": 0.5,
@@ -803,7 +803,7 @@
   {
     "id": "SM908A",
     "name": "Mind Control",
-    "description": "find a banana inside the enemy's MIND OOOOO SPOOKEY",
+    "description": "Takes control of an enemy for a short time, forcing them to attack their allies instead",
     "icon": "<i class=\"fas fa-mind-share\"></i>",
     "powMod": 0,
     "mod1": null,

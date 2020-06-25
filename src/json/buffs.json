@@ -90,7 +90,7 @@
   {
     "id": "B1010",
     "name": "Scorched",
-    "description": "Deals #power# damage on this unit's turn",
+    "description": "Deals damage on this unit's turn",
     "icon": "<img src=\"/assets/svg/candlebright.svg\">",
     "maxStack": 1,
     "stackCast": 1,
@@ -354,7 +354,7 @@
   {
     "id": "BM906",
     "name": "Phoenix Fire",
-    "description": "Deals #power# damage on this unit's turn per stack",
+    "description": "Deals damage on this unit's turn per stack",
     "icon": "<img src=\"/assets/svg/ember-shot.svg\">",
     "maxStack": 100,
     "stackCast": 1,

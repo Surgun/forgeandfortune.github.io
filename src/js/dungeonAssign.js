@@ -63,8 +63,8 @@ function createAreaBlock(area) {
     const d1 = $("<div/>").addClass("areaStatus").html(displayText(statuses[area.status()])).appendTo(d);
     if (area.status() === DungeonStatus.EMPTY) return d;
     if (area.status() === DungeonStatus.ADVENTURING) d1.addClass("statusAdventuring");
-    if (area.status() === DungeonStatus.SUCCESS) d1.addClass("statusAdventureSuccess");
-    if (area.status() === DungeonStatus.FAILURE) d1.addClass("statusAdventureFailure");  
+    if (area.status() === DungeonStatus.SUCCESS) d1.addClass("statusSuccess");
+    if (area.status() === DungeonStatus.FAILURE) d1.addClass("statusFailure");  
     const d2 = $("<div/>").addClass("areaAdventurers").appendTo(d);
     area.activeParty().heroes.forEach(h=> {
         $("<div/>").addClass("areaHero").html(h.head).appendTo(d2);
@@ -143,13 +143,13 @@ function initiateDungeonFloor(dungeonID) {
     }
     else if (dungeon.status === DungeonStatus.SUCCESS) {
         $combatFloorExit.show();
-        $combatFloorStatus.html("SUCCESS").addClass("combatFloorSuccess").removeClass("combatFloorFailure");
-        $combatFloorHelp.hide();
+        $combatFloorStatus.html(displayText("adventure_area_status_success")).addClass("combatFloorSuccess").removeClass("combatFloorFailure");
+        $combatFloorHelp.html(displayText("adventure_area_desc_success"));
     }
     else if (dungeon.status === DungeonStatus.FAILURE) {
         $combatFloorExit.show();
-        $combatFloorStatus.html("FAILURE").removeClass("combatFloorSuccess").addClass("combatFloorFailure");
-        $combatFloorHelp.show();
+        $combatFloorStatus.html(displayText("adventure_area_status_failure")).removeClass("combatFloorSuccess").addClass("combatFloorFailure");
+        $combatFloorHelp.html(displayText("adventure_area_desc_failure"));
     }
     $dungeonHeroList.empty();
     $dungeonMobList.empty();

@@ -188,8 +188,20 @@
     "en": "Adventure In Progress"
   },
   {
-    "tid": "adventure_area_status_complete",
+    "tid": "adventure_area_status_success",
     "en": "Adventure Completed"
+  },
+  {
+    "tid": "adventure_area_status_failure",
+    "en": "Adventure Failed"
+  },
+  {
+    "tid": "adventure_area_desc_success",
+    "en": "You have successfully completed this adventure!"
+  },
+  {
+    "tid": "adventure_area_desc_failure",
+    "en": "You have failed to complete this adventure. Try different hero combinations or gear!"
   },
   {
     "tid": "adventure_launch_floor",

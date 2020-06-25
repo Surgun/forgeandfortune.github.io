@@ -1,6 +1,6 @@
 "use strict";
 
-const DungeonStatus = Object.freeze({EMPTY:0,ADVENTURING:1,COLLECT:2});
+const DungeonStatus = Object.freeze({EMPTY:0,ADVENTURING:1,SUCCESS:2,FAILURE:3});
 
 class TurnOrder {
     constructor(heroes,mobs) {
@@ -79,12 +79,13 @@ class Area {
         
     }
     status() {
-        if (this.dungeons.some(d => d.status === DungeonStatus.COLLECT)) return DungeonStatus.COLLECT;
         if (this.dungeons.some(d => d.status === DungeonStatus.ADVENTURING)) return DungeonStatus.ADVENTURING;
+        if (this.dungeons.some(d => d.status === DungeonStatus.SUCCESS)) return DungeonStatus.SUCCESS;
+        if (this.dungeons.some(d => d.status === DungeonStatus.FAILURE)) return DungeonStatus.FAILURE;
         return DungeonStatus.EMPTY;
     }
     activeParty() {
-        const dungeon = this.dungeons.find(d => d.status === DungeonStatus.ADVENTURING);
+        const dungeon = this.dungeons.find(d => d.status === DungeonStatus.ADVENTURING || d.status === DungeonStatus.SUCCESS || d.status === DungeonStatus.FAILURE);
         return dungeon.party;
     }
     activeDungeonID() {
@@ -92,7 +93,7 @@ class Area {
         return dungeon ? dungeon.id : dungeon;
     }
     activeDungeon() {
-        const dungeon = this.dungeons.find(d => d.status === DungeonStatus.ADVENTURING || d.status === DungeonStatus.COLLECT);
+        const dungeon = this.dungeons.find(d => d.status === DungeonStatus.ADVENTURING || d.status === DungeonStatus.SUCCESS || d.status === DungeonStatus.FAILURE);
         return dungeon ? dungeon : null;
     }
     lastOpen() {
@@ -249,7 +250,7 @@ class Dungeon {
         this.lastParty = party.heroID;
     }
     resetDungeon() {
-        if (this.status !== DungeonStatus.ADVENTURING && this.status !== DungeonStatus.COLLECT) return;
+        if (this.status !== DungeonStatus.ADVENTURING && this.status !== DungeonStatus.SUCCESS && this.status !== DungeonStatus.FAILURE) return;
         this.party.heroes.forEach(h=>{
             h.state = HeroState.idle;
             h.hp = h.maxHP()
@@ -272,7 +273,7 @@ class Dungeon {
         return;
     }
     previousFloor(refreshLater) {
-        if (this.type === "boss") return this.resetDungeon(); 
+        if (this.type === "boss") return this.status = DungeonStatus.FAILURE;
         this.floor = Math.max(1,this.floor - 1);
         this.resetFloor(refreshLater);
     }
@@ -282,7 +283,9 @@ class Dungeon {
             refreshAllSales();
             refreshAllOrders();
             refreshAllProgress();
-            return this.resetDungeon();
+            this.status = DungeonStatus.SUCCESS;
+            if (DungeonManager.dungeonView === this.id) initiateDungeonFloor(this.id);
+            return;
         }
         this.setRewardRate(this.floor);
         this.maxFloor = Math.max(this.maxFloor,this.floor);

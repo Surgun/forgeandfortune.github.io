@@ -16,7 +16,6 @@ const $dungeonSelect = $("#dungeonSelect");
 const $areaSelect = $("#areaSelect");
 const $areaTeamSelect = $("#areaTeamSelect");
 const $dungeonRun = $("#dungeonRun");
-const $dungeonRewards = $("#dungeonRewards");
 
 const $DungeonSideBarTeam = $("#DungeonSideBarTeam");
 
@@ -30,7 +29,6 @@ function dungeonsTabClicked() {
     $areaSelect.show();
     $areaTeamSelect.hide();
     $dungeonRun.hide();
-    $dungeonRewards.hide();
     generateAreaSelect();
     refreshAreaSelect();
 }
@@ -58,18 +56,19 @@ function refreshAreaSelect() {
 }
 
 function createAreaBlock(area) {
-    const statuses = ["adventure_area_status_idle","adventure_area_status_in_progress","adventure_area_status_complete"];
+    const statuses = ["adventure_area_status_idle","adventure_area_status_in_progress","adventure_area_status_success","adventure_area_status_failure"];
     const d = $("<div/>").addClass("areaContainer").data("areaID",area.id);
     $("<div/>").addClass("areaHeader").html(area.name).appendTo(d);
     $("<div/>").addClass("dungeonBackground").css("background-image",`url(/assets/images/dungeonpreviews/${area.id}.jpg)`).appendTo(d);
     const d1 = $("<div/>").addClass("areaStatus").html(displayText(statuses[area.status()])).appendTo(d);
-    if (area.status() === DungeonStatus.ADVENTURING) {
-        d1.addClass("statusAdventuring");
-        const d2 = $("<div/>").addClass("areaAdventurers").appendTo(d);
-        area.activeParty().heroes.forEach(h=> {
-            $("<div/>").addClass("areaHero").html(h.head).appendTo(d2);
-        });
-    }
+    if (area.status() === DungeonStatus.EMPTY) return d;
+    if (area.status() === DungeonStatus.ADVENTURING) d1.addClass("statusAdventuring");
+    if (area.status() === DungeonStatus.SUCCESS) d1.addClass("statusAdventureSuccess");
+    if (area.status() === DungeonStatus.FAILURE) d1.addClass("statusAdventureFailure");  
+    const d2 = $("<div/>").addClass("areaAdventurers").appendTo(d);
+    area.activeParty().heroes.forEach(h=> {
+        $("<div/>").addClass("areaHero").html(h.head).appendTo(d2);
+    });
     return d;    
 }
 
@@ -90,12 +89,13 @@ $(document).on("click", "#dAbandonAll", (e) => {
 function screenDirectDungeon(areaID) {
     $areaSelect.hide();
     const area = AreaManager.idToArea(areaID);
-    if (area.status() === DungeonStatus.ADVENTURING) showDungeon(area.activeDungeonID());
-    else if (area.status() === DungeonStatus.COLLECT) showDungeonReward(area.activeDungeonID(),false);
-    else if (area.status() === DungeonStatus.EMPTY) {
+    if (area.status() === DungeonStatus.EMPTY) {
         PartyCreator.areaSelect = area;
         PartyCreator.dungeonSelect = null;
         startPartyCreation(false);
+    }
+    else {
+        showDungeon(area.activeDungeonID());
     }
 }
 
@@ -104,12 +104,13 @@ function screenDirectDungeon(areaID) {
 /*-----------------------------------------*/
 
 function showDungeon(dungeonID) {
+    console.log(dungeonID);
     DungeonManager.dungeonView = dungeonID;
     $dungeonRun.show();
     initiateDungeonFloor(dungeonID);
 }
 
-$(document).on("click", "#dungeonAbandon", (e) => {
+$(document).on("click", ".dungeonAbandon", (e) => {
     e.preventDefault();
     DungeonManager.abandonCurrentDungeon();
 })
@@ -120,14 +121,36 @@ const $dungeonHeroList = $("#dungeonHeroList");
 const $dungeonMobList = $("#dungeonMobList");
 const $drTurnOrder = $("#drTurnOrder");
 const $combatBackgroundContainer = $("#combatBackgroundContainer");
+const $combatFloorExit = $("#combatFloorExit");
+const $combatFloorStatus = $("#combatFloorStatus");
+const $combatFloorHelp = $("#combatFloorHelp");
 
 function initiateDungeonFloor(dungeonID) {
     if (DungeonManager.dungeonView !== dungeonID) return;
+    console.log(DungeonManager.dungeonView);
     const dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonView);
     $dungeonRun.removeClass().addClass(dungeon.id);
     $combatBackgroundContainer.css({backgroundImage: `url(/assets/images/dungeonBackgrounds/${dungeon.area}.jpg)`});
-    if (dungeon.type === "boss") $dungeonRun.addClass("DBoss");
-    $floorID.html("Floor "+dungeon.floor);
+    if (dungeon.type === "boss") {
+        $dungeonRun.addClass("DBoss");
+        $floorID.hide();
+    }
+    else {
+        $floorID.show().html("Floor "+dungeon.floor);
+    }
+    if (dungeon.status === DungeonStatus.ADVENTURING) {
+        $combatFloorExit.hide();
+    }
+    else if (dungeon.status === DungeonStatus.SUCCESS) {
+        $combatFloorExit.show();
+        $combatFloorStatus.html("SUCCESS").addClass("combatFloorSuccess").removeClass("combatFloorFailure");
+        $combatFloorHelp.hide();
+    }
+    else if (dungeon.status === DungeonStatus.FAILURE) {
+        $combatFloorExit.show();
+        $combatFloorStatus.html("FAILURE").removeClass("combatFloorSuccess").addClass("combatFloorFailure");
+        $combatFloorHelp.show();
+    }
     $dungeonHeroList.empty();
     $dungeonMobList.empty();
     dungeon.party.heroes.forEach(hero => {

@@ -570,7 +570,12 @@
                                                 <div class="combatFloorContainer">
                                                     <div id="floorID" class="combatFloorCounter">Floor 1</div>
                                                 </div>
-                                                <div id="dungeonAbandon" class="actionButton dungeonAbandon">Abandon Dungeon</div>
+                                                <div id="combatFloorExit" class="combatFloorExit">
+                                                    <div id="combatFloorStatus">Success</div>
+                                                    <div id="combatFloorHelp">Try different hero combinations and improve your gear!</div>
+                                                    <div class="actionButton dungeonAbandon">Exit</div>
+                                                </div>
+                                                <div class="actionButton dungeonAbandon">Abandon Dungeon</div>
                                             </div>
                                             <div id="dungeonListContainer" class="dungeonListContainer">
                                                 <div id="dungeonHeroList" class="dungeonHeroList"></div>
@@ -585,20 +590,6 @@
                                             <div id="drTurnOrder" class="drTurnOrder"></div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div id="dungeonRewards" class="dungeonRewards">
-                                <div id="dreHeader" class="dreHeader">Dungeon Complete</div>
-                                <div id="dreTeamContainer" class="dreTeamContainer">
-                                    <div class="dungeonRewardsHeader">Team</div>
-                                    <div id="dreTeam" class="dreTeam"></div>
-                                </div>
-                                <div id="dreStatsContainer" class="dreStatsContainer">
-                                    <div class="dungeonRewardsHeader">Statistics</div>
-                                    <div id="dreStats" class="dreStats"></div>
-                                </div>
-                                <div class="dreActions">
-                                    <div id="dreCollect" class="dreCollect dreActionButton">Collect Rewards</div>
                                 </div>
                             </div>
                         </div>
@@ -966,7 +957,6 @@
     <script src="/js/party.js"></script>
     <script src="/js/dungeons.js"></script>
     <script src="/js/dungeonAssign.js"></script>
-    <script src="/js/dungeonReward.js"></script>
     <script src="/js/workers.js"></script>
     <script src="/js/inventory.js"></script>
     <script src="/js/actionslots.js"></script>

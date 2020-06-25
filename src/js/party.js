@@ -110,7 +110,10 @@ function startPartyCreation(partyStarted) {
         const partyLaunch = $("<div/>").addClass(`partyLaunchButtonContainer`).appendTo($dtsHeader);
         if (dungeon.type === "boss" && !dungeon.beaten()) $("<div/>").attr("id", "dungeonTeamButtonBoss").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor_boss')).appendTo(partyLaunch);
         else if (dungeon.type === "boss" && !DungeonManager.bossRefightUnlocked()) $("<div/>").addClass(`dungeonTeamButtonLocked`).html(`${miscIcons.locked} ${displayText('universal_locked')}`).appendTo(partyLaunch);
-        else if (dungeon.type === "boss" && DungeonManager.bossRefightUnlocked()) $("<div/>").addClass(`dungeonTeamButton actionButton`).attr("id","dungeonTeamButtonBoss").html(`${displayText('Rechallenge Boss')}&nbsp;${miscIcons.skull}&nbsp;${dungeon.maxFloor}`).appendTo(partyLaunch);
+        else if (dungeon.type === "boss" && DungeonManager.bossRefightUnlocked()) {
+            const button = $("<div/>").addClass(`dungeonTeamButton actionButton`).attr("id","dungeonTeamButtonBoss").html(displayText('adventure_launch_floor_boss_refight')).appendTo(partyLaunch);
+                $("<div/>").addClass(`dungeonTeamButtonBossText tooltip`).attr({"data-tooltip":"boss_refight_count"}).html(`${miscIcons.skull} ${dungeon.maxFloor}`).appendTo(button);
+        }
         else {
             $("<div/>").attr("id", "dungeonTeamButtonSkip").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor_highest')).appendTo(partyLaunch);
             $("<div/>").attr("id", "dungeonTeamButton").addClass(`dungeonTeamButton actionButton`).html(displayText('adventure_launch_floor')).appendTo(partyLaunch);

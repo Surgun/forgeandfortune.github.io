@@ -258,8 +258,8 @@
     "description": "Reduces damage taken by 25%",
     "icon": "<img src=\"/assets/svg/turtle-shell.svg\">",
     "maxStack": 4,
-    "stackCast": 1,
-    "onCast": "stack",
+    "stackCast": 4,
+    "onCast": "refresh",
     "decrease": "onHit",
     "type": "buff"
   },

@@ -1290,6 +1290,14 @@ footer {
     color: var(--highlight);
 }
 
+.areaStatus.statusFailure {
+    color: var(--red-primary);
+}
+
+.areaStatus.statusSuccess {
+    color: var(--green-primary);
+}
+
 .areaAdventurers {
     position: absolute;
     bottom: 60px;
@@ -6254,7 +6262,7 @@ span.beta-tag {
     background: linear-gradient(rgba(0, 0, 0, 0.5) 50%, transparent);
     transform-origin: top;
     animation: scale-y-in var(--transition_linear);
-    z-index: 1;
+    z-index: 10;
 }
 
 .dungeonBackButton {
@@ -6298,6 +6306,41 @@ span.beta-tag {
     margin: 5px auto;
     background-color: var(--highlight);
     animation: 1s 0.3s width forwards;
+}
+
+.combatFloorExit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.75);
+    border-bottom: 2px solid var(--border-primary);
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.25);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.combatFloorStatus {
+    padding-bottom: 5px;
+    color: var(--highlight);
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.combatFloorFailure {
+    color: var(--red-primary);
+}
+
+.combatFloorSuccess {
+    color: var(--green-primary);
+}
+
+.combatFloorHelp {
+    padding-top: 5px;
+    color: var(--text-secondary);
 }
 
 .drArenaContainer {
@@ -6383,7 +6426,7 @@ span.beta-tag {
 }
 
 .drTurnOrderLogContainer {
-    padding: 0 10px;
+    padding: 10px 10px 0;
     transform-origin: top;
     animation: scale-y-in var(--transition_linear);
 }
@@ -7004,18 +7047,6 @@ span.beta-tag {
     border-bottom: 2px solid var(--border-primary);
 }
 
-.questActive .questName {
-    color: var(--highlight);
-}
-
-.questSuccess .questName {
-    color: var(--green-primary);
-}
-
-.questFailure .questName {
-    color: var(--red-primary);
-}
-
 .questDesc {
     display: flex;
     justify-content: center;
@@ -7075,7 +7106,7 @@ span.beta-tag {
 }
 
 .questActive .questStatus {
-    color: var(--text-primary);
+    color: var(--highlight);
 }
 
 .questSuccess .questStatus {

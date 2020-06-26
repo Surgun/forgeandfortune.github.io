@@ -109,7 +109,24 @@ function loadGame() {
 function saveUpdate(loadGame) {
     //pre v0.4 save update
     if (loadGame.v !== undefined) {
+        loadGame["as"].slots = [];
+        //keep dungeon progress
+        console.log(loadGame["d"]);
+        const dungeonProgress = [];
+        if (loadGame['d'].bossesBeat.includes("D010")) dungeonProgress.push({"id":"D401","maxFloor":1});
+        if (loadGame['d'].bossesBeat.includes("D011")) dungeonProgress.push({"id":"D402","maxFloor":1});
+        if (loadGame['d'].bossesBeat.includes("D012")) dungeonProgress.push({"id":"D403","maxFloor":1});
+        if (loadGame['d'].bossesBeat.includes("D013")) dungeonProgress.push({"id":"D404","maxFloor":1});
+        if (loadGame['d'].bossesBeat.includes("D014")) dungeonProgress.push({"id":"D405","maxFloor":1});
+        if (loadGame['d'].bossesBeat.includes("D015")) dungeonProgress.push({"id":"D406","maxFloor":1});
+        if (loadGame['d'].bossesBeat.includes("D016")) dungeonProgress.push({"id":"D407","maxFloor":1});
+        if (loadGame['d'].bossesBeat.includes("D017")) dungeonProgress.push({"id":"D408","maxFloor":1});
+        if (loadGame['d'].bossesBeat.includes("D018")) dungeonProgress.push({"id":"D409","maxFloor":1});
+        if (loadGame['d'].bossesBeat.includes("D019")) dungeonProgress.push({"id":"D410","maxFloor":1});
+        console.log(dungeonProgress);
         delete loadGame["d"];
+        loadGame["d"] = {};
+        loadGame["d"].dungeons = dungeonProgress;
         delete loadGame["ds"];
         delete loadGame["f"];
         //update hero.gear1 etc to hero.gearSlots...
@@ -247,6 +264,9 @@ function saveUpdate(loadGame) {
         if (loadGame['fo'].lvl >= 2) loadGame['sh'].perks.push({"id":"AL3014","purchased":true});
         if (loadGame['fo'].lvl >= 3) loadGame['sh'].perks.push({"id":"AL3019","purchased":true});
     }
+
+
+ 
     return loadGame;
 }
 

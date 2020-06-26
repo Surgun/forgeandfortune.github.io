@@ -61,7 +61,6 @@ function mainLoop() {
     player.lastTime = Date.now();
     DungeonManager.addTime(elapsedTime);
     FusionManager.addTime(elapsedTime);
-    SynthManager.addTime(elapsedTime);
     actionSlotManager.addTime(elapsedTime);
     actionSlotVisualManager.updateSlots();
     PatchManager.patchTimer(elapsedTime);

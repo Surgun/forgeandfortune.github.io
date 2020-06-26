@@ -78,7 +78,7 @@ class Guild {
             this.lvl += 1;
             refreshAllSales();
         }
-        refreshguildprogress(this);
+        refreshguildprogress(this,true);
     }
     repLvl(givenlvl) {
         givenlvl = givenlvl || this.lvl;
@@ -253,14 +253,19 @@ function checkCraftableStatus() {
     }) 
 }
 
-function refreshguildprogress(guild) {
+function refreshguildprogress(guild, skipAnimation) {
     const id = guild.id;
     const $gp = $(`#${id}Progress`);
     $gp.empty();
-    const guildLevel = $("<div/>").addClass("guildLevel").appendTo($gp);
+    const guildLevel = $("<div/>").addClass("guildLevel");
         $("<div/>").addClass("guildLevelText").html("Level").appendTo(guildLevel);
         $("<div/>").addClass("guildLevelValue").html(guild.lvl).appendTo(guildLevel);
-    $gp.append(createGuildBar(guild));
+    const repBar = createGuildBar(guild);
+    if (skipAnimation) {
+        guildLevel.addClass('guildRepAnimDisabled');
+        repBar.addClass('guildRepAnimDisabled');
+    }
+    $gp.append(guildLevel, repBar);
 }
 
 function generateProgressBar(options) {

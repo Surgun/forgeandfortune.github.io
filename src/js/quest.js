@@ -317,12 +317,13 @@ function generateQuestPartyHeaders() {
         $("<div/>").addClass("headingDescription").html(displayText('header_quests_heroes_desc')).appendTo(b1);
 }
 
-function showQuestParty() {
+function showQuestParty(skipAnimation) {
     $questSelect.hide();
     $questPartySelect.show();
     const quest = QuestManager.idToQuest(QuestManager.questView);
     //populate header
-    $qpHeader.empty();
+    $qpHeader.empty().removeClass('questHeaderAnimDisabled');
+    if (skipAnimation) $qpHeader.addClass('questHeaderAnimDisabled');
     $("<div/>").addClass(`qpBackButton`).html(`<i class="fas fa-arrow-left"></i>`).appendTo($qpHeader);
     $("<div/>").addClass(`qpHeaderBanner`).css("background", `url(/assets/images/quests/background.png)`).appendTo($qpHeader);
     $("<div/>").addClass(`qpHeaderTitle`).html(quest.name).appendTo($qpHeader);
@@ -408,7 +409,7 @@ $(document).on("click", ".questTeamCardClick", (e) => {
     e.preventDefault();
     const heroID = $(e.currentTarget).attr("heroID");
     QuestManager.removeParty(heroID);
-    showQuestParty();
+    showQuestParty(true);
 });
 
 //click on a hero to add to team
@@ -416,7 +417,7 @@ $(document).on("click", ".questAvailableCardClick", (e) => {
     e.preventDefault();
     const heroID = $(e.currentTarget).attr("heroID");
     QuestManager.addParty(heroID);
-    showQuestParty();
+    showQuestParty(true);
 });
 
 //Team Back Button

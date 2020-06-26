@@ -385,8 +385,8 @@ function recipeCardFront(recipe) {
     td5.append(td5a,td5b,td5c);
 
     const td6 = $('<div/>').addClass('recipeCountAndCraft');
-        const td6a = $('<div/>').addClass('recipeMasteredStatus').attr("id","rms"+recipe.id).html(`UNMASTERED`);
-        if (recipe.isMastered()) td6a.addClass('isMastered').html(`<i class="fas fa-star-christmas"></i> MASTERED`);
+        const td6a = $('<div/>').addClass('recipeMasteredStatus').attr("id","rms"+recipe.id).html(displayText('recipes_card_mastery_recipe_unmastered'));
+        if (recipe.isMastered()) td6a.addClass('isMastered').html(`<i class="fas fa-star-christmas"></i> ${displayText('recipes_card_mastery_recipe_mastered')}`);
         if (recipe.recipeType !== "normal" || recipe.type === "Trinkets") td6a.hide();
         const td6b = $('<div/>').addClass(`recipeCraft rr${recipe.id}`).attr("id",recipe.id).html(`<i class="fas fa-hammer"></i><span>Craft</span>`);
         recipe.recipeDiv = td6b;
@@ -404,8 +404,8 @@ function recipeCardBack(recipe) {
     const td6 = $('<div/>').addClass('recipeClose').html(`<i class="fas fa-times"></i>`);
         
     const td7 = $('<div/>').addClass('recipeBackTabContainer');
-        const td7a = $('<div/>').addClass('recipeBackTab backTab1 selected').html(`Details`);
-        const td7b = $('<div/>').addClass('recipeBackTab backTab2').html(`Mastery`);
+        const td7a = $('<div/>').addClass('recipeBackTab backTab1 selected').html(displayText('recipes_card_tab_details'));
+        const td7b = $('<div/>').addClass('recipeBackTab backTab2').html(displayText('recipes_card_tab_mastery'));
     td7.append(td7a);
     if (recipe.recipeType === 'normal' && recipe.type !== "Trinkets") td7.append(td7b);
 
@@ -413,20 +413,21 @@ function recipeCardBack(recipe) {
         const td8a = $('<div/>').addClass('recipeDetailsContainer');
             const td8a1 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
             const td8a2 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
-            const td8a3 = $('<div/>').addClass('recipeCrafted').attr("id","rc"+recipe.id).html(`${recipe.craftCount} crafted`);
+            const craftedCount = displayText('recipes_card_tab_mastery').replace('{0}', recipe.craftCount);
+            const td8a3 = $('<div/>').addClass('recipeCrafted').attr("id","rc"+recipe.id).html(craftedCount);
         td8a.append(td8a1,td8a2,td8a3);
     td8.append(td8a);
 
     const td9 = $('<div/>').addClass('recipeTabContainer recipeTabMastery');
         const td9a = $('<div/>').addClass('recipeMasteryContainer');
-            const td9a1 = $('<div/>').addClass('recipeBackDescription').attr("id","rbd"+recipe.id).html("Crafting this recipe will reduce the cost to master it, down to a maximum of 100.");
+            const td9a1 = $('<div/>').addClass('recipeBackDescription').attr("id","rbd"+recipe.id).html(displayText('recipes_card_mastery_available_notice'));
             const masteryCost = recipe.masteryCost();
             const td9a2 = $('<div/>').addClass('recipeTotalCrafted actionButtonCardCost tooltip').attr({"id": "rcc"+recipe.id}).data("rid",recipe.id);
-                $('<div/>').addClass("actionButtonCardText").html("Master Recipe").appendTo(td9a2);
+                $('<div/>').addClass("actionButtonCardText").html(displayText('recipes_card_mastery_master_button')).appendTo(td9a2);
                 $('<div/>').addClass("actionButtonCardValue tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value": masteryCost.id}).html(`${ResourceManager.idToMaterial(masteryCost.id).img} ${masteryCost.amt}`).appendTo(td9a2);
             if (recipe.isMastered()) {
-                td9a1.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
-                td9a2.addClass("isMastered").html(`<i class="fas fa-star-christmas"></i> MASTERED`);
+                td9a1.addClass("isMastered").html(displayText('recipes_card_mastery_attained_notice'));
+                td9a2.addClass("isMastered").html(`<i class="fas fa-star-christmas"></i> ${displayText('recipes_card_mastery_recipe_mastered')}`);
             }
             if (recipe.recipeType !== "normal" || recipe.type === "Trinkets") td9a2.hide();
         td9a.append(td9a1,td9a2);
@@ -451,7 +452,8 @@ function recipeMasteryBar(craftCount) {
 function refreshMasteryBar() {
     recipeList.recipes.forEach((recipe) => {
         const rr = $("#rc"+recipe.id)
-        rr.html(`${recipe.craftCount} crafted`);
+        const craftedCount = displayText('recipes_card_details_crafted_count').replace('{0}', recipe.craftCount);
+        rr.html(craftedCount);
     });
 }
 
@@ -464,12 +466,12 @@ function refreshCraftedCount() {
         const material = (recipe.mcost) ? Object.keys(recipe.mcost)[0] : "M201";
         const masteryCost = recipe.masteryCost();
         rcc.empty();
-        $('<div/>').addClass("actionButtonCardText").html("Master Recipe").appendTo(rcc);
+        $('<div/>').addClass("actionButtonCardText").html(displayText('recipes_card_mastery_master_button')).appendTo(rcc);
         $('<div/>').addClass("actionButtonCardValue tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value": masteryCost.id}).html(`${ResourceManager.idToMaterial(masteryCost.id).img} ${masteryCost.amt}`).appendTo(rcc);
         if (recipe.isMastered()) {
-            rbd.addClass("isMastered").html("You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled.");
-            rcc.addClass("isMastered").removeClass("tooltip").html(`<i class="fas fa-star-christmas"></i> MASTERED`);
-            rms.addClass("isMastered").html(`<i class="fas fa-star-christmas"></i> MASTERED`);
+            rbd.addClass("isMastered").html(displayText('recipes_card_mastery_attained_notice'));
+            rcc.addClass("isMastered").removeClass("tooltip").html(`<i class="fas fa-star-christmas"></i> ${displayText('recipes_card_mastery_recipe_mastered')}`);
+            rms.addClass("isMastered").html(`<i class="fas fa-star-christmas"></i> ${displayText('recipes_card_mastery_recipe_mastered')}`);
             rcd.find(".matCost").attr({"data-tooltip":"material_desc_mastered","data-tooltip-value":material.id}).addClass("isMastered");
         }
     });

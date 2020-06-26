@@ -124,6 +124,38 @@
     "en": "Epic"
   },
   {
+    "tid": "recipes_card_tab_details",
+    "en": "Details"
+  },
+  {
+    "tid": "recipes_card_tab_mastery",
+    "en": "Mastery"
+  },
+  {
+    "tid": "recipes_card_details_crafted_count",
+    "en": "{0} crafted"
+  },
+  {
+    "tid": "recipes_card_mastery_available_notice",
+    "en": "Crafting this recipe will reduce the material cost to master it, down to 100."
+  },
+  {
+    "tid": "recipes_card_mastery_attained_notice",
+    "en": "You have mastered this recipe. Its material cost has been removed, if any, and its higher rarity crafting chance has been doubled."
+  },
+  {
+    "tid": "recipes_card_mastery_master_button",
+    "en": "Master Recipe"
+  },
+  {
+    "tid": "recipes_card_mastery_recipe_unmastered",
+    "en": "Unmastered"
+  },
+  {
+    "tid": "recipes_card_mastery_recipe_mastered",
+    "en": "Mastered"
+  },
+  {
     "tid": "equipment_select_title",
     "en": "Select Your Hero Equipment"
   },

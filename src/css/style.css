@@ -1424,6 +1424,10 @@ footer {
     background-color: var(--button-cancel);
 }
 
+.questHeaderAnimDisabled .qpBackButton {
+    animation: none;
+}
+
 .dungeonAreaTitle, .qpHeaderTitle {
     font-size: 2.5rem;
     padding: 25px 70px 0;
@@ -1443,6 +1447,10 @@ footer {
 
 .dungeonTeamButton:not(.dungeonStartNotAvailable):hover, .qpHeaderStartQuest:not(.qpHeaderInvalidTeam):hover {
     background-color: var(--green-secondary);
+}
+
+.questHeaderAnimDisabled .qpHeaderStartQuest {
+    animation: none;
 }
 
 .dungeonTeamButtonBossText {
@@ -2323,6 +2331,7 @@ footer {
     margin-right: 10px;
     color: var(--text-secondary);
     font-size: 0.85rem;
+    text-transform: uppercase;
     background-color: var(--bg-tertiary);
     border-radius: 5px;
 }
@@ -2341,6 +2350,7 @@ footer {
     flex-direction: row;
     padding: 8px 10px;
     color: var(--highlight);
+    text-transform: uppercase;
     background-color: var(--bg-tertiary);
     border: 2px solid var(--border-primary);
     cursor: default;
@@ -2772,6 +2782,11 @@ footer {
 
 .repMaxBarContainer .progressBarText {
     color: var(--green-primary);
+}
+
+.guildLevel.guildRepAnimDisabled, .repBarContainer.guildRepAnimDisabled {
+    transform: scale(1);
+    animation: none;
 }
 
 .guildOrderCardsContainer {
@@ -6527,14 +6542,13 @@ span.beta-tag {
 }
 
 .buffListContent {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
     width: 100%;
 }
 
 .buffContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     color: var(--highlight);
@@ -6555,10 +6569,25 @@ span.beta-tag {
     margin-bottom: 2.5px;
 }
 
+.buffContainerIcon > i {
+    font-size: 16px;
+}
+
 .buffContainerCount {
-    width: 100%;
-    background-color: rgba(0,0,0,0.1);
-    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border-primary);
+    border-radius: 50%;
+    box-shadow: 0 2px 0 rgba(0,0,0,.5);
+    z-index: 1;
 }
 
 .dungeonToggleProgress {

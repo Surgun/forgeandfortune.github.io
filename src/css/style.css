@@ -4135,13 +4135,23 @@ footer {
     display: none;
 }
 
-.synthRewardHeader {
+.synthRewardHeader, .synthTutHeader {
     margin-bottom: 5px;
     padding: 5px;
     text-align: center;
     text-transform: uppercase;
     font-size: 0.85rem;
     border-bottom: 2px solid var(--border-primary);
+}
+
+.synthTutDesc {
+    padding: 10px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-align: center;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-primary);
+    border-radius: 5px;
 }
 
 .desynthRewards, .resynthCost {

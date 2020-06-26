@@ -117,17 +117,17 @@ function generateSynthStageActions() {
     const synthSettings =  $("<div/>").addClass("synthSettingsContainer").appendTo($synthSide);
     const synthSettingOptions = $("<div/>").addClass("synthSettingsOptions").appendTo(synthSettings);
         $("<div/>").addClass("synthRewardHeader").html(displayText('synthesizer_settings_title')).appendTo(synthSettingOptions);
-        $("<div/>").addClass("synthPowerSetting actionButton actionButtonAnimDisabled").attr({"id":"synthPowerDesynthesis"}).html("Desynthesis").appendTo(synthSettingOptions);
-        $("<div/>").addClass("synthPowerSetting synthPowerSettingLocked actionButton actionButtonAnimDisabled").attr({"id":"synthPowerResynthesis"}).html("<i class='fas fa-lock'></i>Synthesis").appendTo(synthSettingOptions);
+        $("<div/>").addClass("synthPowerSetting actionButton actionButtonAnimDisabled").attr({"id":"synthPowerDesynthesis"}).html(displayText('synthesizer_desynth_setting')).appendTo(synthSettingOptions);
+        $("<div/>").addClass("synthPowerSetting synthPowerSettingLocked actionButton actionButtonAnimDisabled").attr({"id":"synthPowerResynthesis"}).html(`<i class='fas fa-lock'></i>${displayText('synthesizer_synth_setting')}`).appendTo(synthSettingOptions);
     
-        // Synth Slot
+    // Synth Slot
     $("<div/>").addClass("synthSlot").attr({"id":"synthSlot"}).appendTo($synthSide);
 
     //how it works
     const synthTutorial = $("<div/>").addClass("desynthRewards").appendTo($synthSide);
-    $("<div/>").addClass("synthTutHeader").html(displayText("synthesizer_how_it_works_header")).appendTo(synthTutorial);
-    $("<div/>").addClass("synthTutDesc").attr("id","resynthTut").html(displayText("resynth_how_it_works_desc")).appendTo(synthTutorial);
-    $("<div/>").addClass("synthTutDesc").attr("id","desynthTut").html(displayText("desynth_how_it_works_desc")).appendTo(synthTutorial);
+    $("<div/>").addClass("synthTutHeader").html(displayText("synthesizer_tutorial_head_title")).appendTo(synthTutorial);
+    $("<div/>").addClass("synthTutDesc").attr("id","resynthTut").html(displayText("synthesizer_tutorial_resynth_desc")).appendTo(synthTutorial);
+    $("<div/>").addClass("synthTutDesc").attr("id","desynthTut").html(displayText("synthesizer_tutorial_desynth_desc")).appendTo(synthTutorial);
 }
 
 function refreshSynthInventory() {
@@ -177,7 +177,7 @@ function refreshResynth() {
 }
 
 function refreshSynthButtons() {
-    if (SynthManager.lvl >= 2) $("#synthPowerResynthesis").removeClass("synthPowerSettingLocked").html("Synthesis");
+    if (SynthManager.lvl >= 2) $("#synthPowerResynthesis").removeClass("synthPowerSettingLocked").html(displayText('synthesizer_synth_setting'));
 }
     
 //click synth on item in inventory
@@ -217,7 +217,7 @@ function createSynthCard(container) {
     const itemdiv = $("<div/>").addClass("synthItem").addClass("R"+container.rarity);
     const itemName = $("<div/>").addClass("itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
     const itemRarity = $("<div/>").addClass(`itemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
-    const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
+    const itemLevel = $("<div/>").addClass("itemLevel").html(container.itemLevel());
     const itemProps = $("<div/>").addClass("equipStats");
     for (const [stat, val] of Object.entries(container.itemStat(0))) {
         if (val === 0) continue;
@@ -233,7 +233,7 @@ function createSynthCard(container) {
 function createSynthStageCard(container) {
     const itemdiv = $("<div/>").addClass("synthItem").addClass("R"+container.rarity);
     const itemName = $("<div/>").addClass("itemName").attr({"id": container.id, "r": container.rarity}).html(container.picName());
-    const itemLevel = $("<div/>").addClass("itemLevel tooltip").attr({"data-tooltip": "item_level"}).html(container.itemLevel());
+    const itemLevel = $("<div/>").addClass("itemLevel").html(container.itemLevel());
     const itemRarity = $("<div/>").addClass(`itemRarity RT${container.rarity} tooltip`).attr({"data-tooltip": `rarity_${rarities[container.rarity].toLowerCase()}`}).html(miscIcons.rarity);
     const itemProps = $("<div/>").addClass("equipStats");
     const stageRemove = $('<div/>').addClass("synthRemove").attr("id","synthRemove").html(`<i class="fas fa-times"></i>`);
@@ -243,8 +243,12 @@ function createSynthStageCard(container) {
                 $("<div/>").addClass(`${stat}_img`).html(miscIcons[stat]).appendTo(ed);
                 $("<div/>").addClass(`${stat}_integer statValue`).html(val).appendTo(ed);
     };
-    const synthButton = $("<div/>").addClass("synthSlotAction actionButtonCard");
-    if (SynthManager.setting === synthToggle.RESYNTH) synthButton.html(`Synth ${SynthManager.resynthAmt()} ${ResourceManager.materialIcon(container.item.resynth)}`);
-    if (SynthManager.setting === synthToggle.DESYNTH) synthButton.html("Desynthesize");
+    const synthButton = $("<div/>").addClass("synthSlotAction");
+    if (SynthManager.setting === synthToggle.RESYNTH) { 
+        synthButton.addClass('actionButtonCardCost');
+        $("<div/>").addClass('actionButtonCardText').html(displayText('synthesizer_synth_assign_button')).appendTo(synthButton);
+        $("<div/>").addClass('actionButtonCardValue tooltip').attr({"data-tooltip":"material_desc","data-tooltip-value":container.item.resynth}).html(`${ResourceManager.materialIcon(container.item.resynth)} ${SynthManager.resynthAmt()}`).appendTo(synthButton);
+    }
+    if (SynthManager.setting === synthToggle.DESYNTH) synthButton.addClass('actionButtonCard').html(displayText('synthesizer_desynth_assign_button'));
     return itemdiv.append(itemName,itemLevel,itemRarity,itemProps,stageRemove,synthButton);
 };

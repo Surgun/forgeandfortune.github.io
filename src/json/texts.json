@@ -229,17 +229,11 @@
   },
   {
     "tid": "adventure_area_desc_success",
-    "en": [
-      "You have successfully completed this adventure",
-      ""
-    ]
+    "en": "You have successfully completed this adventure!"
   },
   {
     "tid": "adventure_area_desc_failure",
-    "en": [
-      "You have failed to complete this adventure. Try different hero combinations or gear",
-      ""
-    ]
+    "en": "You have failed to complete this adventure. Try different hero combinations or gear!"
   },
   {
     "tid": "adventure_launch_floor",
@@ -343,7 +337,7 @@
   },
   {
     "tid": "header_synthesizer_desynth_desc",
-    "en": "Click \"Stage Item\" to add to the synthesizer"
+    "en": "Items in your inventory that can be used in the Synthesizer."
   },
   {
     "tid": "synthesizer_inventory_empty",
@@ -355,7 +349,7 @@
   },
   {
     "tid": "synthesizer_desynth_setting",
-    "en": "Desynthsis"
+    "en": "Desynthesis"
   },
   {
     "tid": "synthesizer_synth_setting",
@@ -370,16 +364,16 @@
     "en": "Synthesize"
   },
   {
-    "tid": "synthesizer_how_it_works_header",
-    "en": "How it Works"
+    "tid": "synthesizer_tutorial_head_title",
+    "en": "How it works"
   },
   {
-    "tid": "resynth_how_it_works_desc",
-    "en": "Receive special essence in exchange for  lowering the rarity of a piece of equipment one tier"
+    "tid": "synthesizer_tutorial_resynth_desc",
+    "en": "Use Essence to transform the stats on a piece of equipment."
   },
   {
-    "tid": "desynth_how_it_works_desc",
-    "en": "Use essence to transform the stats on a piece of gear"
+    "tid": "synthesizer_tutorial_desynth_desc",
+    "en": "Receive special Essence in exchange for lowering the rarity of a piece of equipment by one tier."
   },
   {
     "tid": "bank_nav_inventory",

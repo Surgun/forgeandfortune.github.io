@@ -167,8 +167,9 @@ class Dungeon {
         return save;
     }
     loadSave(save) {
-        if (save.party !== null) this.party = new Party(save.party.heroID);
-        save.mobs.forEach(mobSave => {
+        console.log(save.party);
+        if (save.party) this.party = new Party(save.party.heroID);
+        if (save.mobs) save.mobs.forEach(mobSave => {
             const mobTemplate = MobManager.idToMob(mobSave.id);
             const mob = new Mob(mobTemplate,0,0);
             mob.loadSave(mobSave);
@@ -177,14 +178,14 @@ class Dungeon {
         if (save.maxFloor !== undefined) this.maxFloor = save.maxFloor;
         if (save.floor !== undefined) this.floor = save.floor;
         if (save.floorClear !== undefined) this.floorClear = save.floorClear;
-        if (save.order !== null) {
+        if (save.order) {
             this.order = new TurnOrder(this.party.heroes,this.mobs);
             this.order.loadSave(save.order);
         }
-        this.status = save.status;
-        this.lastParty = save.lastParty;
-        this.rewardAmt = save.rewardAmt;
-        this.rewardTimeRate = save.rewardTimeRate;
+        if (save.status) this.status = save.status;
+        if (save.lastParty) this.lastParty = save.lastParty;
+        if (save.rewardAmt) this.rewardAmt = save.rewardAmt;
+        if (save.rewardTimeRate) this.rewardTimeRate = save.rewardTimeRate;
     }
     addTime(t) {
         //if there's enough time, grab the next guy and do some combat
@@ -340,7 +341,6 @@ class Dungeon {
     }
     unlocked() {
         if (this.unlockedBy === null) return true;
-        if (devtools.unlockBosses) return true;
         if (this.unlockedBy.charAt(0) === "A") return Shop.alreadyPurchased(this.unlockedBy);
         const bossDungeon = DungeonManager.dungeonByID(this.unlockedBy);
         return bossDungeon.beaten();

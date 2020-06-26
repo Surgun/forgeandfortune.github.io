@@ -242,10 +242,7 @@
   {
     "id": "AL2000",
     "title": "Real Moxie",
-    "description": [
-      "Unlocks Revere, your very first Adventurer",
-      "Make sure to give her good equipment."
-    ],
+    "description": "Unlocks Revere, your very first Adventurer! Make sure to give her good equipment.",
     "category": "Dungeon",
     "order": 1,
     "goldCost": 5,
@@ -725,7 +722,7 @@
   {
     "id": "AL3000",
     "title": "Auto Sell",
-    "description": "Unlocks ability to Auto Sell items you're crafting.  Saves time managing your inventory.",
+    "description": "Unlocks ability to Auto Sell items.  You can enable this ability directly on your crafting slots.",
     "category": "Town",
     "order": 1,
     "goldCost": 350,
@@ -808,8 +805,8 @@
   },
   {
     "id": "AL30061",
-    "title": "First Gold Quest",
-    "description": "First Gold Quest",
+    "title": "To The Chaos Gate!",
+    "description": "Opens up the Questing feature.  Your heroes might be happy to have new things to do.",
     "category": "Town",
     "order": 8,
     "goldCost": 200000,
@@ -820,8 +817,8 @@
   },
   {
     "id": "AL3007",
-    "title": "Boss Refight",
-    "description": "Boss Refight",
+    "title": "Flip It And Reverse It",
+    "description": "Allows you to refight old bosses.  Gear up and head to the Boss Realm!",
     "category": "Town",
     "order": 9,
     "goldCost": 300000,
@@ -845,7 +842,7 @@
   {
     "id": "AL3013",
     "title": "Over Engineered",
-    "description": "Unlocks the Tinker Hut, to make trinkets.",
+    "description": "Unlocks the Tinker Hut.  Get to work on those trinkets.",
     "category": "Town",
     "order": 11,
     "goldCost": 1000000,
@@ -916,8 +913,8 @@
   },
   {
     "id": "AL3015",
-    "title": "Museum",
-    "description": "Unlocks the Museum feature, where you can improve your crafting chances.",
+    "title": "Blathering On",
+    "description": "Unlocks the Museum building.  Hand over equipment to improve your crafting!",
     "category": "Town",
     "order": 17,
     "goldCost": 100000000,
@@ -949,18 +946,6 @@
     "subtype": "level",
     "unlockReq": "D408",
     "icon": "<i class=\"fas fa-landmark\"></i>"
-  },
-  {
-    "id": "AL3018",
-    "title": "Not The Train Kind",
-    "description": "Increases the max star rating of trinkets.",
-    "category": "Town",
-    "order": 20,
-    "goldCost": 400000000,
-    "type": "tinker",
-    "subtype": "level",
-    "unlockReq": "D409",
-    "icon": "<i class=\"fas fa-tools\"></i>"
   },
   {
     "id": "AL3019",

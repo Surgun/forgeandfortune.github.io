@@ -1,7 +1,6 @@
 "use strict";
 
 const Shop = {
-    purchased : [],
     perks : [],
     addPerk(reward) {
         this.perks.push(reward);
@@ -13,6 +12,7 @@ const Shop = {
         return save;
     },
     loadSave(save) {
+        if (save.perks === undefined) return;
         save.perks.forEach(perk => {
             const perka = this.idToPerk(perk.id);
             if (perka === undefined) return;
@@ -35,7 +35,7 @@ const Shop = {
         tabHide();
     },
     perkCount() {
-        return this.purchased.length;
+        return this.perks.filter(p=>p.purchased).length;
     },
     perkMaxCount() {
         return this.perks.length;

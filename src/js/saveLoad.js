@@ -44,7 +44,7 @@ function forceSave() {
 
 function createSave() {
     const saveFile = {}
-    saveFile["v"] = "0334"
+    saveFile["ver"] = 0
     saveFile["as"] = actionSlotManager.createSave();
     saveFile["d"] = DungeonManager.createSave();
     saveFile["h"] = HeroManager.createSave();
@@ -61,7 +61,7 @@ function createSave() {
     saveFile["tm"] = TownManager.createSave();
     saveFile["gsm"] = GuildSeedManager.createSave();
     saveFile["g"] = GuildManager.createSave();
-    saveFile["al"] = Shop.createSave();
+    saveFile["sh"] = Shop.createSave();
     saveFile["t"] = TinkerManager.createSave();
     saveFile["m"] = Museum.createSave();
     saveFile["pb"] = PlaybookManager.createSave();
@@ -98,7 +98,7 @@ function loadGame() {
     if (typeof loadGame["tm"] !== "undefined") TownManager.loadSave(loadGame["tm"]);
     if (typeof loadGame["gsm"] !== "undefined") GuildSeedManager.loadSave(loadGame["gsm"]);
     if (typeof loadGame["g"] !== "undefined") GuildManager.loadSave(loadGame["g"]);
-    if (typeof loadGame["al"] !== "undefined") Shop.loadSave(loadGame["al"]);
+    if (typeof loadGame["sh"] !== "undefined") Shop.loadSave(loadGame["sh"]);
     if (typeof loadGame["t"] !== "undefined") TinkerManager.loadSave(loadGame["t"]);
     if (typeof loadGame["m"] !== "undefined") Museum.loadSave(loadGame["m"]);
     if (typeof loadGame["pb"] !== "undefined") PlaybookManager.loadSave(loadGame["pb"]);
@@ -107,10 +107,145 @@ function loadGame() {
 }
 
 function saveUpdate(loadGame) {
-    if (loadGame.v === "0202") {
-        loadGame.v = "03";
-        //remove E008 because we killed it (it was auto craft sac)
-        loadGame["e"].events = loadGame["e"].events.filter(e => e.id !== "E008");
+    //pre v0.4 save update
+    if (loadGame.v !== undefined) {
+        delete loadGame["d"];
+        delete loadGame["ds"];
+        delete loadGame["f"];
+        //update hero.gear1 etc to hero.gearSlots...
+        loadGame["h"].forEach(heroSave => {
+            heroSave.gearSlots = [];
+            if (heroSave.slot1 !== null) {
+                const gearslot1 = {};
+                gearslot1.lvl = 0;
+                gearslot1.gear = heroSave.slot1;
+                heroSave.gearSlots.push(gearslot1);
+            }
+            if (heroSave.slot2 !== null) {
+                const gearslot2 = {};
+                gearslot2.lvl = 0;
+                gearslot2.gear = heroSave.slot2;
+                heroSave.gearSlots.push(gearslot2);
+            }
+            if (heroSave.slot3 !== null) {
+                const gearslot3 = {};
+                gearslot3.lvl = 0;
+                gearslot3.gear = heroSave.slot3;
+                heroSave.gearSlots.push(gearslot3);
+            }
+            if (heroSave.slot4 !== null) {
+                const gearslot4 = {};
+                gearslot4.lvl = 0;
+                gearslot4.gear = heroSave.slot4;
+                heroSave.gearSlots.push(gearslot4);
+            }
+            if (heroSave.slot5 !== null) {
+                const gearslot5 = {};
+                gearslot5.lvl = 0;
+                gearslot5.gear = heroSave.slot5;
+                heroSave.gearSlots.push(gearslot5);
+            }
+            if (heroSave.slot6 !== null) {
+                const gearslot6 = {};
+                gearslot6.lvl = 0;
+                gearslot6.gear = heroSave.slot6;
+                heroSave.gearSlots.push(gearslot6);
+            }
+            if (heroSave.slot7 !== null) {
+                const gearslot7 = {};
+                gearslot7.lvl = 0;
+                gearslot7.gear = heroSave.slot7;
+                heroSave.gearSlots.push(gearslot7);
+            }
+        });
+
+
+        delete loadGame["g"];
+        //guild orders might be fucked
+        //shop needs to auto-buy stuff that you unlocked
+        delete loadGame["t"];
+        GuildManager.guilds.forEach(g=>{
+            g.generateNewOrder(1);
+            g.generateNewOrder(2);
+            g.generateNewOrder(3);
+        });
+        HeroManager.heroes.forEach(hero => {
+            PlaybookManager.idToPlaybook(hero.startingPlaybook).unlocked = true;
+        })
+
+        //get all the perks
+        loadGame['sh'] = {};
+        loadGame['sh'].perks = [];
+        //CRAFTING PERKS - guilds
+        loadGame['sh'].perks.push({"id":"AL1000","purchased":true});
+        loadGame['sh'].perks.push({"id":"AL1001","purchased":true});
+        loadGame['sh'].perks.push({"id":"AL1002","purchased":true});
+        loadGame['sh'].perks.push({"id":"AL1004","purchased":true});
+        // -workers
+        loadGame["w"].forEach(workerSave => {
+            if (workerSave.id === "WN001" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1001","purchased":true});
+            else if (workerSave.id === "WN002" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1010","purchased":true});
+            else if (workerSave.id === "WN003" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1017","purchased":true});
+            else if (workerSave.id === "WN004" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1023","purchased":true});
+            else if (workerSave.id === "WN101" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1002","purchased":true});
+            else if (workerSave.id === "WN102" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1011","purchased":true});
+            else if (workerSave.id === "WN103" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1018","purchased":true});
+            else if (workerSave.id === "WN104" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1024","purchased":true});
+            else if (workerSave.id === "WN202" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1008","purchased":true});
+            else if (workerSave.id === "WN203" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1016","purchased":true});
+            else if (workerSave.id === "WN204" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1022","purchased":true});
+            else if (workerSave.id === "WN301" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1004","purchased":true});
+            else if (workerSave.id === "WN302" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1012","purchased":true});
+            else if (workerSave.id === "WN303" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1019","purchased":true});
+            else if (workerSave.id === "WN304" && workerSave.owned) loadGame['sh'].perks.push({"id":"AL1025","purchased":true});
+        })
+        // -crafting slots
+        if (loadGame["as"].maxSlots >= 2) loadGame['sh'].perks.push({"id":"AL1003","purchased":true});
+        if (loadGame["as"].maxSlots >= 3) loadGame['sh'].perks.push({"id":"AL1006","purchased":true});
+        if (loadGame["as"].maxSlots >= 4) loadGame['sh'].perks.push({"id":"AL1009","purchased":true});
+        if (loadGame["as"].maxSlots >= 5) loadGame['sh'].perks.push({"id":"AL1014","purchased":true});
+
+        //COMBAT PERKS
+        loadGame["h"].forEach(heroSave => {
+                 if (heroSave.id === "H001" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2003","purchased":true});
+            else if (heroSave.id === "H002" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2010","purchased":true});
+            else if (heroSave.id === "H003" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2016","purchased":true});
+            else if (heroSave.id === "H004" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2022","purchased":true});
+            else if (heroSave.id === "H101" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2011","purchased":true});
+            else if (heroSave.id === "H102" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2005","purchased":true});
+            else if (heroSave.id === "H103" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2023","purchased":true});
+            else if (heroSave.id === "H104" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2017","purchased":true});
+            else if (heroSave.id === "H201" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2008","purchased":true});
+            else if (heroSave.id === "H202" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2014","purchased":true});
+            else if (heroSave.id === "H203" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2000","purchased":true});
+            else if (heroSave.id === "H204" && heroSave.owned) loadGame['sh'].perks.push({"id":"AL2020","purchased":true});
+        })
+        loadGame['sh'].perks.push({"id":"AL2001","purchased":true});
+        loadGame['sh'].perks.push({"id":"AL2002","purchased":true});
+        loadGame['sh'].perks.push({"id":"AL2004","purchased":true});
+        loadGame['sh'].perks.push({"id":"AL20051","purchased":true});
+
+        //TOWN PERKS
+        loadGame['sh'].perks.push({"id":"AL3000","purchased":true});
+        loadGame['sh'].perks.push({"id":"AL3001","purchased":true});
+        //get all the buildings
+        loadGame["tm"].buildings.forEach(buildingSave => {
+            if (buildingSave.id === "TB001" && buildingSave.status > 0) loadGame['sh'].perks.push({"id":"AL3002","purchased":true});
+            if (buildingSave.id === "TB002" && buildingSave.status > 0) loadGame['sh'].perks.push({"id":"AL3004","purchased":true});
+            if (buildingSave.id === "TB003" && buildingSave.status > 0) loadGame['sh'].perks.push({"id":"AL3003","purchased":true});
+            if (buildingSave.id === "TB004" && buildingSave.status > 0) loadGame['sh'].perks.push({"id":"AL3005","purchased":true});
+            if (buildingSave.id === "TB005" && buildingSave.status > 0) loadGame['sh'].perks.push({"id":"AL3011","purchased":true});
+            if (buildingSave.id === "TB006" && buildingSave.status > 0) loadGame['sh'].perks.push({"id":"AL3013","purchased":true});
+        });
+        //building levels
+        if (loadGame['fb'].lvl >= 2) loadGame['sh'].perks.push({"id":"AL3006","purchased":true});
+        if (loadGame['fb'].lvl >= 3) loadGame['sh'].perks.push({"id":"AL3012","purchased":true});
+        if (loadGame['bb'].lvl >= 2) loadGame['sh'].perks.push({"id":"AL3008","purchased":true});
+        if (loadGame['bb'].lvl >= 3) loadGame['sh'].perks.push({"id":"AL3017","purchased":true});
+        if (loadGame['bs'].lvl >= 2) loadGame['sh'].perks.push({"id":"AL3010","purchased":true});
+        if (loadGame['bs'].lvl >= 3) loadGame['sh'].perks.push({"id":"AL3016","purchased":true});
+        if (loadGame['fo'].lvl >= 2) loadGame['sh'].perks.push({"id":"AL3014","purchased":true});
+        if (loadGame['fo'].lvl >= 3) loadGame['sh'].perks.push({"id":"AL3019","purchased":true});
     }
     return loadGame;
 }

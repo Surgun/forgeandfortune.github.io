@@ -47,7 +47,6 @@ class itemContainer {
         this.rarity = rarity;
         this.containerID = containerid;
         this.sharp = 0;
-        this.seed = Math.floor(Math.random() * 1000000);
         this.powRatio = this.item.pow;
         this.hpRatio = this.item.hp;
         this.pts = this.item.pts;
@@ -62,7 +61,6 @@ class itemContainer {
         save.id = this.id;
         save.rarity = this.rarity;
         save.sharp = this.sharp;
-        save.seed = this.seed;
         save.scale = this.scale;
         save.powRatio = this.powRatio;
         save.hpRatio = this.hpRatio;
@@ -70,7 +68,6 @@ class itemContainer {
     }
     loadSave(save) {
         this.sharp = save.sharp;
-        if (save.seed !== undefined) this.seed = save.seed;
         if (save.scale !== undefined) this.scale = save.scale;
         if (save.powRatio !== undefined) this.powRatio = save.powRatio;
         if (save.hpRatio !== undefined) this.hpRatio = save.hpRatio;
@@ -549,4 +546,5 @@ function refreshInventoryPlaces() {
     if (lastTab === "townsTab" && TownManager.lastBldg === "synth") refreshSynthInventory();
     if (lastTab === "townsTab" && TownManager.lastBldg === "fortune") refreshFortuneGear();
     if (lastTab === "townsTab" && TownManager.lastBldg === "museum") refreshMuseumInv();    
+    if (lastTab === "townsTab" && TownManager.lastBldg === "forge") refreshSmithInventory();    
 }

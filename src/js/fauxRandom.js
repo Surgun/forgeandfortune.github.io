@@ -13,18 +13,6 @@ function seedCreateSave() {
     return [wsSeed,hbSeed,wbSeed];
 }
 
-const DungeonSeedManager = {
-    getFloorSeed(dungeonID,floor) {
-        if (this[dungeonID] === undefined) this[dungeonID] = [DungeonManager.dungeonByID(dungeonID).seed];
-        const dungeonSeedList = this[dungeonID];
-        while (dungeonSeedList.length < floor) {
-            const num = dungeonSeedList[dungeonSeedList.length-1];
-            dungeonSeedList.push((num * 9301 + 49297) % 233280)
-        };
-        return dungeonSeedList[floor-1] / 233280;
-    }
-}
-
 const GuildSeedManager = {
     G001 : 1,
     G002 : 2,
@@ -52,8 +40,3 @@ const GuildSeedManager = {
         return this[gid] / 233280;
     }
 }
-
-function getRandomFromItem(item) {
-    item.seed = (item.seed * 9301 + 49297) % 233280;
-    return Math.floor(item.seed/233280*100);
-} 

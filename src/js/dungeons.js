@@ -378,10 +378,6 @@ const DungeonManager = {
         this.dungeons.forEach(d => {
             save.dungeons.push(d.createSave());
         });
-        save.dungeonPaid = this.dungeonPaid;
-        save.speed = this.speed;
-        save.bossesBeat = this.bossesBeat;
-        save.partySize = this.partySize;
         return save;
     },
     addDungeon(dungeon) {
@@ -393,10 +389,6 @@ const DungeonManager = {
             const dungeon = DungeonManager.dungeonByID(d.id);
             dungeon.loadSave(d);
         });
-        this.speed = save.speed;
-        if (typeof save.dungeonPaid !== "undefined") this.dungeonPaid = save.dungeonPaid;
-        if (typeof save.bossesBeat !== "undefined") this.bossesBeat = save.bossesBeat;
-        if (typeof save.partySize !== "undefined") this.partySize = save.partySize;
     },
     addTime(t) {
         this.dungeons.forEach(dungeon => {

@@ -126,9 +126,15 @@ class itemContainer {
         if (this.powRatio === this.item.pow && this.hpRatio === this.item.hp) return "";
         return `${adjective[this.powRatio.toString() + this.hpRatio.toString()]} `
     }
-    transform(ratio) {
-        this.powRatio = Math.max(0,this.powRatio + ratio[0]);
-        this.hpRatio = Math.max(0,this.hpRatio + ratio[1]);
+    transform() {
+        if (this.powRatio === 3) {
+            this.powRatio = 0;
+            this.hpRatio = 3;
+        }
+        else if (this.hpRatio === 3) {
+            this.powRatio = 3;
+            this.hpRatio = 0;
+        }
     }
 }
 

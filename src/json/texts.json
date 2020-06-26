@@ -229,11 +229,17 @@
   },
   {
     "tid": "adventure_area_desc_success",
-    "en": "You have successfully completed this adventure!"
+    "en": [
+      "You have successfully completed this adventure",
+      ""
+    ]
   },
   {
     "tid": "adventure_area_desc_failure",
-    "en": "You have failed to complete this adventure. Try different hero combinations or gear!"
+    "en": [
+      "You have failed to complete this adventure. Try different hero combinations or gear",
+      ""
+    ]
   },
   {
     "tid": "adventure_launch_floor",
@@ -337,7 +343,7 @@
   },
   {
     "tid": "header_synthesizer_desynth_desc",
-    "en": "Deynthesize your items to extract rare materials."
+    "en": "Click \"Stage Item\" to add to the synthesizer"
   },
   {
     "tid": "synthesizer_inventory_empty",
@@ -362,6 +368,18 @@
   {
     "tid": "synthesizer_synth_assign_button",
     "en": "Synthesize"
+  },
+  {
+    "tid": "synthesizer_how_it_works_header",
+    "en": "How it Works"
+  },
+  {
+    "tid": "resynth_how_it_works_desc",
+    "en": "Receive special essence in exchange for  lowering the rarity of a piece of equipment one tier"
+  },
+  {
+    "tid": "desynth_how_it_works_desc",
+    "en": "Use essence to transform the stats on a piece of gear"
   },
   {
     "tid": "bank_nav_inventory",

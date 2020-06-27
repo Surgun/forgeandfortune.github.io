@@ -6,7 +6,8 @@ const settings = {
     lang: 'en',
     toastPosition: "top-left",
     dialogStatus: 0,
-    db: 0
+    db: 0,
+    tpref: 1
 }
 
 function saveSettings() {

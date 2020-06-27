@@ -28,11 +28,18 @@ if ($backToTopButton) $(window).scroll(() => {
 
 // Toast Positioning Setting
 
-$(document).on("change", ".toastPositionSelection", () => {
-    $toastSettings.removeAttr("checked");
+$(document).on("change", ".toastPositionSelection", (e) => {
     $(e.target).attr("checked", "checked")
     $.toast().reset('all');
     settings.toastPosition = $(e.target).val();
+    saveSettings();
+});
+
+// Tooltip Setting
+
+$(document).on("change", ".tooltipPrefSelection", (e) => {
+    $(e.target).attr("checked", "checked")
+    settings.tpref = parseInt($(e.target).val());
     saveSettings();
 });
 

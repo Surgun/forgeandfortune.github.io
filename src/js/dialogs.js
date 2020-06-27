@@ -91,9 +91,26 @@ function renderDialogActions(id) {
     locations.forEach((location, i) => {
       const label = $("<label/>").addClass("selection-container toastPositionSelection").html(location);
         $("<input/>").attr({type: "radio", name: "toast", value: location.toLowerCase(), checked: location.toLowerCase() === settings.toastPosition ? "checked" : null}).appendTo(label);
-        $("<span/>").addClass("selection").appendTo(label);;
+        $("<span/>").addClass("selection").appendTo(label);
       label.appendTo(selectionsGrid);
     });
+    // Settings: Tooltips
+    const tooltipPref = $("<div/>").attr({id: "settings_tooltipPref"}).addClass("setting-container").appendTo(settingsContainer);
+    const tooltipPref_details = {
+      title: "Tooltips",
+      description: "Choose whether tooltips are rendered when hovering over tooltip-enabled content."
+    }
+    settingsBoilerplate(tooltipPref_details).appendTo(tooltipPref);
+
+    const tooltipPrefGrid = $("<div/>").addClass("selections-grid").appendTo(tooltipPref);
+    const options = [0, 1];
+    options.forEach((option, i) => {
+      const label = $("<label/>").addClass("selection-container tooltipPrefSelection").html(option === 1 ? "Enabled" : "Disabled");
+        $("<input/>").attr({type: "radio", name: "tooltipPref", value: option, checked: settings.tpref === option ? "checked" : null}).appendTo(label);
+        $("<span/>").addClass("selection").appendTo(label);
+      label.appendTo(tooltipPrefGrid);
+    });
+
     // Setting: Reset Settings
     const clearSettings = $("<div/>").attr({id: "settings_clearSettings"}).addClass("setting-container").appendTo(settingsContainer);
     const clearSettings_details = {

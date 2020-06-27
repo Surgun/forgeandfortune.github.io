@@ -203,7 +203,9 @@ const Inventory = {
     craftToInventory(id,skipAnimation) {
         if (TownManager.buildingRecipes().includes(id)) return TownManager.unlockBldg(id);
         const item = recipeList.idToItem(id)
+        skipAnimation = true;
         item.addCount(skipAnimation);
+        skipAnimation = false;
         let roll = Math.floor(Math.random() * 1000);
         const sellToggleChart = {
             "None" : 0,
@@ -439,9 +441,6 @@ function refreshInventory() {
         itemdiv.append(itemName,itemRarity,itemLevel,itemCost,itemProps,actionBtns);
         $inventory.append(itemdiv);
     });
-    $sideInventoryAmt.html(`${Inventory.inventoryCount()}/20`)
-    if (Inventory.inventoryCount() === 20) $sideInventory.addClass("inventoryFullSide");
-    else $sideInventory.removeClass("inventoryFullSide");
 }
 
 function createInventoryCard(container,i) {
@@ -546,5 +545,8 @@ function refreshInventoryPlaces() {
     if (lastTab === "townsTab" && TownManager.lastBldg === "synth") refreshSynthInventory();
     if (lastTab === "townsTab" && TownManager.lastBldg === "fortune") refreshFortuneGear();
     if (lastTab === "townsTab" && TownManager.lastBldg === "museum") refreshMuseumInv();    
-    if (lastTab === "townsTab" && TownManager.lastBldg === "forge") refreshSmithInventory();    
+    if (lastTab === "townsTab" && TownManager.lastBldg === "forge") refreshSmithInventory();
+    $sideInventoryAmt.html(`${Inventory.inventoryCount()}/20`)
+    if (Inventory.inventoryCount() === 20) $sideInventory.addClass("inventoryFullSide");
+    else $sideInventory.removeClass("inventoryFullSide");
 }

@@ -690,5 +690,117 @@
   {
     "tid": "universal_locked",
     "en": "Locked"
+  },
+  {
+    "tid": "tutorial_header",
+    "en": "Introduction"
+  },
+  {
+    "tid": "tutorial_desc_0",
+    "en": "Craft a knife"
+  },
+  {
+    "tid": "tutorial_desc_1",
+    "en": "Sell the Knife in your Inventory"
+  },
+  {
+    "tid": "tutorial_desc_2",
+    "en": "Unlock the hero Revere in the Market"
+  },
+  {
+    "tid": "tutorial_desc_3",
+    "en": "Unlock the dungeon The Groovy Grove in the Market"
+  },
+  {
+    "tid": "tutorial_desc_4",
+    "en": "Send Revere to the Dungeon to start collecting materials"
+  },
+  {
+    "tid": "tutorial_desc_5",
+    "en": "Equip Revere with a Knife to make further dungeon progress"
+  },
+  {
+    "tid": "tutorial_desc_6",
+    "en": "Reach floor 5 of The Groovy Grove"
+  },
+  {
+    "tid": "tutorial_desc_7",
+    "en": "Unlock the Cat's Meow crafting guild from the Market"
+  },
+  {
+    "tid": "tutorial_desc_8",
+    "en": "Level the Cat's Meow to Level 1 by submitting 5 Knives"
+  },
+  {
+    "tid": "tutorial_desc_9",
+    "en": "Purchase the recipes Simple Hat"
+  },
+  {
+    "tid": "tutorial_desc_10",
+    "en": "Level the Cat's Meow to Level 2"
+  },
+  {
+    "tid": "tutorial_desc_11",
+    "en": "Unlock the dungeon The Spooky Spot in the Market"
+  },
+  {
+    "tid": "tutorial_desc_12",
+    "en": "Unlock the guild The Aviation Association in the Market"
+  },
+  {
+    "tid": "tutorial_desc_13",
+    "en": "Level the Aviation Association to Level 1"
+  },
+  {
+    "tid": "tutorial_desc_14",
+    "en": "Earth Staff needs new materials, send Revere to The Spooky Spot"
+  },
+  {
+    "tid": "tutorial_desc_15",
+    "en": "Craft an Earth Staff"
+  },
+  {
+    "tid": "tutorial_desc_16",
+    "en": "Level the Aviation Association to Level 2"
+  },
+  {
+    "tid": "tutorial_desc_17",
+    "en": "Purchase the hero Beorn in the Market"
+  },
+  {
+    "tid": "tutorial_desc_18",
+    "en": "Equip Beorn with a Meager Sword"
+  },
+  {
+    "tid": "tutorial_desc_19",
+    "en": "Send Beorn to the Groovy Grove to collect more materials"
+  },
+  {
+    "tid": "tutorial_desc_20",
+    "en": "Purchase the Green Guard and get it to Level 2"
+  },
+  {
+    "tid": "tutorial_desc_21",
+    "en": "Keep Leveling your Guilds and purchase a second crafting slot"
+  },
+  {
+    "tid": "tutorial_desc_22",
+    "en": "Unlock the creepy crag and neve and send her adventuring!"
+  },
+  {
+    "tid": "tutorial_desc_23",
+    "en": "Unlock autosell, allowing you to automatically sell from the crafting slot"
+  },
+  {
+    "tid": "tutorial_desc_24",
+    "en": "Master your first recipe, increasing rarity procs and removing material costs"
+  },
+  {
+    "tid": "tutorial_desc_25",
+    "en": "Get all four crafting guilds to level 4"
+  },
+  {
+    "tid": "tutorial_desc_26",
+    "en": "Unlock the first boss and slay him to finish introduction"
   }
 ]

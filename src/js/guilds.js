@@ -28,7 +28,7 @@ const GuildManager = {
         guild.submitOrder();
     },
     maxGuildLevel() {
-        return 4*DungeonManager.bossCount()-1;
+        return Math.min(39,4*(DungeonManager.bossCount()+1));
     },
     maxLvl() {
         return Math.max(...this.guilds.map(g=>g.lvl));
@@ -367,10 +367,11 @@ function createOrderCard(item,id,index) {
 
 function refreshOrderInvCount() {
     $(".orderInv").each(function() {
-        const uniqueID = $(this).data("uid");
+        const $this = $(this);
+        const uniqueID = $this.data("uid");
         const invCount = Inventory.itemCountSpecific(uniqueID);
-        $(this).removeClass("canContribute").html(`<i class="fas fa-cube"></i> ${invCount}`);
-        if (invCount > 0) $(this).addClass("canContribute");
+        if (invCount > 0) $this.addClass("canContribute").html(`<i class="fas fa-cube"></i> ${invCount}`);
+        else $this.removeClass("canContribute").html(`<i class="fas fa-cube"></i> ${invCount}`);
     });
 }
 

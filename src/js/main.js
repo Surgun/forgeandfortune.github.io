@@ -47,6 +47,7 @@ function afterLoad() {
     refreshCraftTimes();
     GuildManager.repopulateUnmastered();
     refreshAllRecipeMastery();
+    refreshTutorial();
     preloader.contentLoaded();
 }
 
@@ -70,6 +71,7 @@ function mainLoop() {
         actionSlotManager.removeBldgSlots();
         TownManager.purgeSlots = false;
     }
+    Tutorial.monitor();
 }
 
 function pregearHeroes() {

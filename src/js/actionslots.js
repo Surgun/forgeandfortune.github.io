@@ -164,7 +164,13 @@ const actionSlotManager = {
         checkCraftableStatus();
     },
     removeBldgSlots() {
-        this.slots = this.slots.filter(s => s.item.recipeType === "normal");
+        const remove = [];
+        this.slots.forEach(slot => {
+            if (slot.item.recipeType !== "normal" && TownManager.typeToBuilding(slot.item.type).status >= 0) {
+                remove.push(slot.item.type);
+            }
+        })
+        this.slots = this.slots.filter(s => !remove.includes(s.item.type));
         this.slots.forEach((s,i) => s.slotNum = i);
         this.adjustMinTime();
         refreshSideWorkers();

@@ -527,5 +527,6 @@ $(document).on('click', '.orderCraft', (e) => {
     e.preventDefault();
     e.stopPropagation();
     const itemID = $(e.currentTarget).attr("id");
+    recipeList.idToItem(itemID).autoSell = "None";
     actionSlotManager.addSlot(itemID);
 });

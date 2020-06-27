@@ -67,10 +67,6 @@ function mainLoop() {
     PatchManager.patchTimer(elapsedTime);
     TinkerManager.addTime(elapsedTime);
     QuestManager.addTime(elapsedTime);
-    if (TownManager.purgeSlots) {
-        actionSlotManager.removeBldgSlots();
-        TownManager.purgeSlots = false;
-    }
     Tutorial.monitor();
 }
 

@@ -222,6 +222,15 @@ const actionSlotManager = {
     },
     freeSlots() {
         return this.maxSlots - this.slots.length;
+    },
+    purgeSlot(recipeID) {
+        const slot = this.slots.findIndex(s=>s.itemid === recipeID);
+        this.slots.splice(slot,1);
+        this.slots.forEach((s,i) => s.slotNum = i);
+        this.adjustMinTime();
+        refreshSideWorkers();
+        recipeList.canCraft();
+        checkCraftableStatus();
     }
 }
 

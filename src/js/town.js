@@ -35,7 +35,6 @@ const TownManager = {
     lastBldg : null,
     lastType : null,
     buildings : [],
-    purgeSlots : false,
     addBuilding(building) {
         this.buildings.push(building);
     },
@@ -94,7 +93,7 @@ const TownManager = {
         const type = building.shorthand;
         building.setStatus(BuildingState.built);
         this.lastBldg = type;
-        this.purgeSlots = true;
+        actionSlotManager.purgeSlot(recipeID);
         $(".buildingName").removeClass("selected");
         $(`#${building.shorthand}Bldg`).addClass("selected");
         refreshSideTown();

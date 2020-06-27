@@ -347,6 +347,13 @@ function createOrderCard(item,id,index) {
     item.item.gcost.forEach(g => {
         $("<div/>").addClass("orderGuildWorker tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d2);
     });
+    if (item.item.mcost) {
+        Object.keys(item.item.mcost).forEach((mat,i) => {
+            const matBox = $("<div/>").addClass("orderGuildMat tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":mat}).appendTo(d2);
+            $("<div/>").addClass("matIcon").html(ResourceManager.idToMaterial(mat).img).appendTo(matBox);
+            $("<div/>").addClass("matAmt").html(Object.values(item.item.mcost)[i]).appendTo(matBox);
+        });
+    }
     $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Left`).appendTo(d1);
 
     const d3 = $("<div/>").addClass("guildItemSubmit").appendTo(d1);
@@ -354,7 +361,7 @@ function createOrderCard(item,id,index) {
         const d3a = $("<div/>").addClass("guildOrderRewards").appendTo(d3);
         const goldReward = $("<div/>").addClass("guildOrderReward tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": item.goldValue()}).appendTo(d3a);
             $("<div/>").addClass("rewardIcon").html(miscIcons.gold).appendTo(goldReward);
-            $("<div/>").addClass("rewardValue").html(item.goldValue()).appendTo(goldReward);
+            $("<div/>").addClass("rewardValue").html(formatToUnits(item.goldValue(),2)).appendTo(goldReward);
         const repReward = $("<div/>").addClass("guildOrderReward tooltip").attr("data-tooltip", "rep").appendTo(d3a);
             $("<div/>").addClass("rewardIcon").html(miscIcons.guildRep).appendTo(repReward);
             $("<div/>").addClass("rewardValue").html(item.rep).appendTo(repReward);

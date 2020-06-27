@@ -241,7 +241,7 @@
   },
   {
     "id": "AL2000",
-    "title": "Real Moxie",
+    "title": "Revere",
     "description": "Unlocks Revere, your very first Adventurer! Make sure to give her good equipment.",
     "category": "Dungeon",
     "order": 1,
@@ -277,7 +277,7 @@
   },
   {
     "id": "AL2003",
-    "title": "Mighty Allies",
+    "title": "Beorn",
     "description": "Unlocks Beorn, the noble warrior.  Don't forget to give him a sword.",
     "category": "Dungeon",
     "order": 4,
@@ -301,7 +301,7 @@
   },
   {
     "id": "AL2005",
-    "title": "Mindful Bond",
+    "title": "Neve",
     "description": "Unlocks Neve, the focused mage.  Now you can farm all dungeons at the same time.",
     "category": "Dungeon",
     "order": 6,

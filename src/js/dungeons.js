@@ -167,7 +167,6 @@ class Dungeon {
         return save;
     }
     loadSave(save) {
-        console.log(save.party);
         if (save.party) this.party = new Party(save.party.heroID);
         if (save.mobs) save.mobs.forEach(mobSave => {
             const mobTemplate = MobManager.idToMob(mobSave.id);

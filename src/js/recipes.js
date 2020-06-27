@@ -1,13 +1,11 @@
 "use strict";
 
-const ItemType = ["Swords", "Knives", "Staves",
-                    "Armor", "Belts", "Cloaks", 
-                    "Gauntlets", "Gloves", "Hats", 
-                    "Helmets", "Masks", "Pendants", 
-                    "Rings", "Shields", "Shoes", 
-                    "Thrown", "Tomes", "Trinkets", "Vests"];
+const ItemType = ["Armor", "Belts", "Cloaks", "Gauntlets", "Gloves", "Hats", "Helmets", "Knives", "Masks", "Pendants", 
+                "Rings", "Shields", "Shoes", "Staves", "Swords", "Thrown", "Tomes", "Trinkets", "Vests"];
 
 const $RecipeResults = $("#RecipeResults");
+
+const MasteryFilter = Object.freeze({BOTH:0,MASTERED:1,UNMASTERED:2});
 
 class Item{
     constructor (props) {
@@ -147,6 +145,7 @@ const recipeList = {
     recipeFilterType : "default",
     recipeFilterString : "",
     recipeSortType : "default",
+    masteryFilter : MasteryFilter.BOTH,
     addItem(item) {
         this.recipes.push(item);
     },
@@ -166,13 +165,9 @@ const recipeList = {
     filteredRecipeList() {
         const cleanString = this.recipeFilterString.toLowerCase().replace(/\s+/g, '');
         if (this.recipeFilterType === "default") return this.recipes.filter(r => r.owned && r.name.toLowerCase().includes(cleanString));
-        if (this.recipeFilterType === "Matless") return this.recipes.filter(r => r.owned && (r.mcost === null || r.isMastered()));
-        return this.recipes.filter(r => r.owned && r.type === this.recipeFilterType);
-    },
-    setSortOrder(filter) {
-        if (this.recipeSortType === filter) this.recipeSortType = this.recipeSortType+"Asc";
-        else this.recipeSortType = filter;
-        recipeSort();
+        if (this.masteryFilter === MasteryFilter.BOTH) return this.recipes.filter(r => r.owned && r.type === this.recipeFilterType);
+        if (this.masteryFilter === MasteryFilter.UNMASTERED) return this.recipes.filter(r => r.owned && !r.mastered && r.type === this.recipeFilterType);
+        if (this.masteryFilter === MasteryFilter.MASTERED) return this.recipes.filter(r => r.owned && r.mastered && r.type === this.recipeFilterType);
     },
     buyRecipe(recipeID) {
         const recipe = this.idToItem(recipeID);
@@ -250,42 +245,19 @@ const recipeList = {
 
 const $recipeActionButton = $(".recipeActionButton");
 
-//click the sort by name value etc at the top
-$(document).on("click",".recipeActionButton",(e) => {
-    e.preventDefault();
-    const toggleFilterA = $(e.currentTarget).hasClass("filterActive") && !$(e.currentTarget).hasClass("toggleFilter");
-    $recipeActionButton.removeClass("filterActive toggleFilter");
-    $recipeActionButton.removeClass("toggleFilter");
-    $(e.currentTarget).addClass("filterActive");
-    if (toggleFilterA) $(e.currentTarget).addClass("toggleFilter");
-    const filter = $(e.currentTarget).attr("data-filter");
-    recipeList.setSortOrder(filter);
-});
-
 function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
-    ItemType.forEach(type => {
-        const recipeIcon = $("#rf"+type);
-        if (recipeList.ownAtLeastOne(type)) recipeIcon.show();
-        else recipeIcon.hide();
-    });
+    $recipeFilter.empty();
+    ItemType.forEach(itemtype => {
+        if (recipeList.ownAtLeastOne(itemtype)) $("<div/>").addClass("recipeSelect").data("itemType",itemtype).html(itemtype).appendTo($recipeFilter);
+    })
 }
 
 const $recipeContents = $("#recipeContents");
+const $recipeFilter = $("#recipeFilter");
 
 const sortOrder = {
-    default : [],
     defaultAsc : [],
-    name : [],
-    nameAsc : [],
-    mastery : [],
-    masteryAsc : [],
-    lvl : [],
-    lvlAsc : [],
-    time : [],
-    timeAsc : [],
-    value : [],
-    valueAsc : [],
     recipeDivDict : {},
     recipeDivs : null,
 }
@@ -294,42 +266,12 @@ function initializeRecipes() { //this is run once at the beginning to load ALL t
     recipeList.recipes.filter(r=>r.recipeType === "normal").forEach(recipe => {
         const recipeCardInfo = $('<div/>').addClass('recipeCardInfo').append(recipeCardFront(recipe),recipeCardBack(recipe))
         const recipeCardContainer = $('<div/>').addClass('recipeCardContainer').data("recipeID",recipe.id).attr("id","rr"+recipe.id).append(recipeCardInfo).hide();
-        $recipeContents.append(recipeCardContainer);
+        $recipeContents.prepend(recipeCardContainer);
         sortOrder.recipeDivDict[recipe.id] = recipeCardContainer;
     });
     const tempList = recipeList.recipes.filter(r=>r.recipeType === "normal");
-    sortOrder.default = tempList.sort((a, b) => a.id.localeCompare(b.id)).map(r => r.id);
     sortOrder.defaultAsc = tempList.sort((a, b) => b.id.localeCompare(a.id)).map(r => r.id);
-    sortOrder.name = tempList.sort((a, b) => a.name.localeCompare(b.name)).map(r => r.id);
-    sortOrder.nameAsc = tempList.sort((a, b) => b.name.localeCompare(a.name)).map(r => r.id);
-    sortOrder.mastery = tempList.sort((a,b) => Math.min(100,a.craftCount)-Math.min(100,b.craftCount)).map(r => r.id);
-    sortOrder.masteryAsc = tempList.sort((a,b) => Math.min(100,b.craftCount)-Math.min(100,a.craftCount)).map(r => r.id);
-    sortOrder.lvl = tempList.sort((a,b) => a.lvl - b.lvl).map(r => r.id);
-    sortOrder.lvlAsc = tempList.sort((a,b) => b.lvl - a.lvl).map(r => r.id);
-    sortOrder.time = tempList.sort((a,b) => a.craftTime - b.craftTime).map(r => r.id);
-    sortOrder.timeAsc = tempList.sort((a,b) => b.craftTime - a.craftTime).map(r => r.id);
-    sortOrder.value = tempList.sort((a,b) => a.value - b.value).map(r => r.id);
-    sortOrder.valueAsc = tempList.sort((a,b) => b.value - a.value).map(r => r.id);
     sortOrder.recipeDivs = $(".recipeCardContainer");
-}
-
-function recipeSort() {
-    //assign a data-sort value to each div then re-order as appropriate
-    if (recipeList.recipeSortType === "mastery") {
-        const tempList = recipeList.recipes.filter(r=>r.recipeType === "normal");
-        sortOrder.mastery = tempList.sort((a,b) => Math.min(100,a.craftCount)-Math.min(100,b.craftCount)).map(r => r.id);
-    }
-    if (recipeList.recipeSortType === "masteryAsc") {
-        const tempList = recipeList.recipes.filter(r=>r.recipeType === "normal");
-        sortOrder.masteryAsc = tempList.sort((a,b) => Math.min(100,b.craftCount)-Math.min(100,a.craftCount)).map(r => r.id);
-    }
-    const sortedList = sortOrder[recipeList.recipeSortType];
-    sortOrder.recipeDivs.sort((a,b) => {
-    //$(".recipeCardContainer").sort((a,b) => {
-        const aval = sortedList.indexOf($(a).data("recipeID"));
-        const bval = sortedList.indexOf($(b).data("recipeID"));
-        return aval > bval ? 1 : -1;
-    }).appendTo($recipeContents);
 }
 
 function recipeFilterList(n) {
@@ -505,17 +447,6 @@ $(document).on('click', '.recipeCraft', (e) => {
     actionSlotManager.addSlot(itemID);
 });
 
-$(document).on('click', '.recipeSelect', (e) => {
-    //click on a recipe filter
-    e.preventDefault();
-    $(".recipeCardInfo").removeClass("recipeCardFlipped");
-    $(".recipeCardFront").removeClass("recipeCardDisabled");
-    const type = $(e.target).attr("id").substring(2);
-    recipeList.recipeFilterType = type;
-    recipeList.recipeFilterString = "";
-    recipeFilterList();
-})
-
 $(document).on('click','.recipeDescription', (e) => {
     e.preventDefault();
     $(".recipeCardInfo").removeClass("recipeCardFlipped");
@@ -582,4 +513,33 @@ $(document).on('focus','.recipeSortInput', (e) => {
 $(document).on('blur','.recipeSortInput', (e) => {
     settings.dialogStatus = 0;
     saveSettings();
+});
+
+//click on a category to filter by it
+$(document).on('click','.recipeSelect', (e) => {
+    e.preventDefault();
+    if (recipeList.recipeFilterType === $(e.currentTarget).data("itemType")) return;
+    recipeList.recipeFilterType = $(e.currentTarget).data("itemType");
+    $(".recipeSelect").removeClass("selectedRecipeFilter");
+    $(e.currentTarget).addClass("selectedRecipeFilter");
+    recipeFilterList();
+});
+
+//change mastery sorting
+$(document).on('click',".recipeMasterySort", (e) => {
+    e.preventDefault();
+    const currentType = $(e.currentTarget).html();
+    if (currentType === "All Recipes") {
+        $(e.currentTarget).html("Unmastered Only");
+        recipeList.masteryFilter = MasteryFilter.UNMASTERED;
+    }
+    if (currentType === "Unmastered Only") {
+        $(e.currentTarget).html("Mastered Only");
+        recipeList.masteryFilter = MasteryFilter.MASTERED;
+    }
+    if (currentType === "Mastered Only") {
+        $(e.currentTarget).html("All Recipes");
+        recipeList.masteryFilter = MasteryFilter.BOTH;
+    }
+    recipeFilterList();
 });

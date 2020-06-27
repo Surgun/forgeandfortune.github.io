@@ -60,6 +60,10 @@ class Quest {
             if (this.rewardType === "Playbook") HeroManager.unlockPlaybook(this.rewardAmt);
         }
         this.state = QuestState.idle;
+        this.heroids.forEach(heroid => {
+            const hero = HeroManager.idToHero(heroid);
+            hero.state = HeroState.idle;
+        })
     }
     remaining() {
         return this.timeReq - this.elapsed;

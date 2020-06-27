@@ -2027,6 +2027,7 @@ footer {
     display: flex;
     flex-grow: 1;
     margin: 0 5px;
+    max-width: 400px;
     transform-origin: left;
     animation: 0.2s scale-in forwards;
 }

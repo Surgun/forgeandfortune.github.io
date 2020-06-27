@@ -697,110 +697,110 @@
   },
   {
     "tid": "tutorial_desc_0",
-    "en": "Craft a knife"
+    "en": "Craft a Knife."
   },
   {
     "tid": "tutorial_desc_1",
-    "en": "Sell the Knife in your Inventory"
+    "en": "Sell the Knife in your Inventory."
   },
   {
     "tid": "tutorial_desc_2",
-    "en": "Unlock the hero Revere in the Market"
+    "en": "Unlock the hero Revere in the Market."
   },
   {
     "tid": "tutorial_desc_3",
-    "en": "Unlock the dungeon The Groovy Grove in the Market"
+    "en": "Unlock the adventure area Groovy Grove in the Market."
   },
   {
     "tid": "tutorial_desc_4",
-    "en": "Send Revere to the Dungeon to start collecting materials"
+    "en": "Send Revere on an adventure to start collecting materials."
   },
   {
     "tid": "tutorial_desc_5",
-    "en": "Equip Revere with a Knife to make further dungeon progress"
+    "en": "Equip Revere with a Knife to make further dungeon progress."
   },
   {
     "tid": "tutorial_desc_6",
-    "en": "Reach floor 5 of The Groovy Grove"
+    "en": "Reach Floor 5 of in the Groovy Grove dungeon."
   },
   {
     "tid": "tutorial_desc_7",
-    "en": "Unlock the Cat's Meow crafting guild from the Market"
+    "en": "Unlock the guild The Cat's Meow in the Market."
   },
   {
     "tid": "tutorial_desc_8",
-    "en": "Level the Cat's Meow to Level 1 by submitting 5 Knives"
+    "en": "Level the Cat's Meow to Level 1 by submitting 5 Knives."
   },
   {
     "tid": "tutorial_desc_9",
-    "en": "Purchase the Simple Hat recipe"
+    "en": "Purchase the Simple Hat recipe."
   },
   {
     "tid": "tutorial_desc_10",
-    "en": "Grow the Cat's Meow to Level 2"
+    "en": "Grow the Cat's Meow to Level 2."
   },
   {
     "tid": "tutorial_desc_11",
-    "en": "Unlock the dungeon The Spooky Spot in the Market"
+    "en": "Unlock the adventure area Spooky Spot in the Market."
   },
   {
     "tid": "tutorial_desc_12",
-    "en": "Unlock the guild The Aviation Association in the Market"
+    "en": "Unlock the guild Aviation Association in the Market."
   },
   {
     "tid": "tutorial_desc_13",
-    "en": "Level the Aviation Association to Level 1"
+    "en": "Level the Aviation Association to Level 1."
   },
   {
     "tid": "tutorial_desc_14",
-    "en": "Earth Staff requires a new material, send Revere to The Spooky Spot"
+    "en": "Earth Staff requires a new material; send Revere to adventure Spooky Spot."
   },
   {
     "tid": "tutorial_desc_15",
-    "en": "Craft an Earth Staff"
+    "en": "Craft an Earth Staff."
   },
   {
     "tid": "tutorial_desc_16",
-    "en": "Grow the Aviation Association to Level 2"
+    "en": "Grow the Aviation Association to Level 2."
   },
   {
     "tid": "tutorial_desc_17",
-    "en": "Purchase the hero Beorn in the Market"
+    "en": "Purchase the hero Beorn in the Market."
   },
   {
     "tid": "tutorial_desc_18",
-    "en": "Equip Beorn with a Meager Sword"
+    "en": "Equip Beorn with a Meager Sword."
   },
   {
     "tid": "tutorial_desc_19",
-    "en": "Send Beorn to the Groovy Grove to collect more materials"
+    "en": "Send Beorn to the Groovy Grove to collect more materials."
   },
   {
     "tid": "tutorial_desc_20",
-    "en": "Purchase the Green Guard and grow it to Level 2"
+    "en": "Purchase the Green Guard guild from the Market and grow it to Level 2."
   },
   {
     "tid": "tutorial_desc_21",
-    "en": "Keep leveling your Guilds and purchase a second Crafting Slot"
+    "en": "Keep leveling your Guilds and purchase a second Crafting Slot."
   },
   {
     "tid": "tutorial_desc_22",
-    "en": "Unlock the Creepy Crag dungeon, hire Neve and send her out on an adventure"
+    "en": "Unlock the Creepy Crag adventure area, hire Neve and send her out on an adventure."
   },
   {
     "tid": "tutorial_desc_23",
-    "en": "Unlock Autosell, allowing you to automatically sell from the crafting slot"
+    "en": "Unlock Autosell, allowing you to automatically sell from the crafting slot."
   },
   {
     "tid": "tutorial_desc_24",
-    "en": "Master your first recipe, which increases rarity procs and removes material costs"
+    "en": "Master your first recipe, which increases rarity chances and removes material costs."
   },
   {
     "tid": "tutorial_desc_25",
-    "en": "Advance all four crafting guilds to level 4"
+    "en": "Advance all four crafting guilds to Level 4."
   },
   {
     "tid": "tutorial_desc_26",
-    "en": "Unlock the Boss Realm and slay the foe to finish your introduction"
+    "en": "Unlock the Boss Realm and slay the foe to finish your introduction."
   }
 ]

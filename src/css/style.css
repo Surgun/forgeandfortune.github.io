@@ -2550,7 +2550,7 @@ footer {
     border-radius: 5px;
 }
 
-.indvCost > i, .indvCost > .matIcon {
+.indvCost > i, .indvCost > .matIcon, .orderGuildMat > .matIcon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2561,14 +2561,18 @@ footer {
     border-radius: 3px 0 0 3px;
 }
 
-.indvCost > .matIcon {
+.indvCost > .matIcon, .orderGuildMat > .matIcon {
     flex-grow: 0;
     background-color: var(--border-secondary);
 }
 
-.indvCost > .matAmt {
+.indvCost > .matAmt, .orderGuildMat > .matAmt {
     flex-grow: 1;
     text-align: center;
+}
+
+.orderGuildMat > .matAmt {
+    padding: 0 3px;
 }
 
 .indvCost.matCost.isMastered {
@@ -2813,12 +2817,12 @@ footer {
 
 .orderMaterials {
     display: grid;
-    grid-template: auto / repeat(3, 1fr);
+    grid-template: auto / repeat(4, 1fr);
     grid-gap: 5px;
     width: 100%;
 }
 
-.orderGuildWorker {
+.orderGuildWorker, .orderGuildMat {
     position: relative;
     display: flex;
     justify-content: center;
@@ -7266,7 +7270,7 @@ span.beta-tag {
 .tutorial {
     margin-top: 10px;
     font-size: 0.85rem;
-    border: 2px solid var(--border-primary);
+    border: 2px solid var(--border-tertiary);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
 }
@@ -7276,7 +7280,7 @@ span.beta-tag {
     color: var(--green-primary);
     text-align: center;
     background-color: var(--bg-tertiary);
-    border-bottom: 2px solid var(--border-primary);
+    border-bottom: 2px solid var(--border-tertiary);
     border-radius: 8px 8px 0 0;
 }
 

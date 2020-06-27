@@ -36,6 +36,10 @@ class Quest {
     lockTeam(heroids) {
         if (this.state !== QuestState.idle) return;
         this.heroids = heroids;
+        this.heroids.forEach(heroid => {
+            const hero = HeroManager.idToHero(heroid);
+            hero.state = HeroState.inQuest;
+        })
         this.state = QuestState.running;
         this.future = Math.random() < this.successChance();
     }

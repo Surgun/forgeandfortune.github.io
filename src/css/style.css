@@ -7260,3 +7260,27 @@ span.beta-tag {
 .questPartyContentContainer {
     padding: 0 10px;
 }
+
+/* Tutorial  */
+
+.tutorial {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    border: 2px solid var(--border-primary);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.tutorialHeader {
+    padding: 10px;
+    color: var(--green-primary);
+    text-align: center;
+    background-color: var(--bg-tertiary);
+    border-bottom: 2px solid var(--border-primary);
+    border-radius: 8px 8px 0 0;
+}
+
+.tutorialDesc {
+    padding: 10px;
+    text-align: center;
+}

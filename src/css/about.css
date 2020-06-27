@@ -36,6 +36,7 @@ nav {
     font-size: 0.8em;
     text-decoration: none;
     text-transform: uppercase;
+    transition: var(--transition_linear);
 }
 
 .back-to:hover {
@@ -119,6 +120,7 @@ nav {
     background-color: var(--bg-primary);
     border: 2px solid var(--border-primary);
     border-radius: 10px;
+    box-shadow: var(--box-shadow);
 }
 
 .user-card {
@@ -219,6 +221,7 @@ nav {
 .external-link_inline {
     color: var(--text-tertiary);
     text-decoration: none;
+    transition: var(--transition_linear);
 }
 
 .external-link_inline:hover {
@@ -296,6 +299,7 @@ nav {
     text-decoration: none;
     font-size: 0.9em;
     color: var(--text-primary);
+    transition: var(--transition_linear);
 }
 
 .asset-card .asset-link:hover {

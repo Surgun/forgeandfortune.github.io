@@ -176,8 +176,6 @@ function saveUpdate(loadGame) {
             }
         });
 
-
-        delete loadGame["g"];
         //guild orders might be fucked
         //shop needs to auto-buy stuff that you unlocked
         delete loadGame["t"];

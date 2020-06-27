@@ -28,7 +28,7 @@ const GuildManager = {
         guild.submitOrder();
     },
     maxGuildLevel() {
-        return (DungeonManager.bossCount()+1)*4;
+        return 4*DungeonManager.bossCount()-1;
     },
     maxLvl() {
         return Math.max(...this.guilds.map(g=>g.lvl));
@@ -43,9 +43,9 @@ class Guild {
         Object.assign(this, props);
         this.rep = 0;
         this.lvl = 0;
-        this.order1 = null;
-        this.order2 = null;
-        this.order3 = null;
+        this.order1 = this.generateNewOrder(1,false);
+        this.order2 = this.generateNewOrder(1,false);
+        this.order3 = this.generateNewOrder(1,false);
         this.unmastered = [];
     }
     createSave() {
@@ -62,12 +62,18 @@ class Guild {
     loadSave(save) {
         this.rep = save.rep;
         this.lvl = save.lvl;
-        this.order1 = new guildOrderItem(save.order1.gid,save.order1.id,save.order1.lvl);
-        this.order1.loadSave(save.order1);
-        this.order2 = new guildOrderItem(save.order2.gid,save.order2.id,save.order2.lvl);
-        this.order2.loadSave(save.order2);
-        this.order3 = new guildOrderItem(save.order3.gid,save.order3.id,save.order3.lvl);
-        this.order3.loadSave(save.order3);
+        if (save.order1) {
+            this.order1 = new guildOrderItem(save.order1.gid,save.order1.id,save.order1.lvl);
+            this.order1.loadSave(save.order1);
+        }
+        if (save.order2) {
+            this.order2 = new guildOrderItem(save.order2.gid,save.order2.id,save.order2.lvl);
+            this.order2.loadSave(save.order2);
+        }
+        if (save.order3) {
+            this.order3 = new guildOrderItem(save.order3.gid,save.order3.id,save.order3.lvl);
+            this.order3.loadSave(save.order3);
+        }
         if (save.unmastered !== undefined) this.unmastered = save.unmastered;
     }
     addRep(rep) {

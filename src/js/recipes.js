@@ -249,7 +249,11 @@ function refreshRecipeFilters() {
     //hide recipe buttons if we don't know know a recipe and also can't learn one...
     $recipeFilter.empty();
     ItemType.forEach(itemtype => {
-        if (recipeList.ownAtLeastOne(itemtype)) $("<div/>").addClass("recipeSelect").data("itemType",itemtype).html(itemtype).appendTo($recipeFilter);
+        if (recipeList.ownAtLeastOne(itemtype)) {
+            const recipeSelect = $("<div/>").addClass("recipeSelect").data("itemType",itemtype).appendTo($recipeFilter);
+            $("<div/>").addClass("recipeSelectIcon").html(`<img src="/assets/images/recipeFilter/${itemtype}32.png" />`).appendTo(recipeSelect);
+            $("<div/>").addClass("recipeSelectName").html(itemtype).appendTo(recipeSelect);
+        }
     })
 }
 

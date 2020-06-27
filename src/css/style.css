@@ -2092,16 +2092,36 @@ footer {
     border-top: 1px solid var(--border-primary);
     border-bottom: 1px solid var(--border-primary);
     transition: all var(--transition_linear);
+    cursor: pointer;
 }
 
 .recipeSelect:hover, .recipeSelect:focus {
     background-color: var(--bg-secondary);
 }
 
-.recipeSelect.selected, .recipeSelect.selected:hover {
+.recipeSelect.selectedRecipeFilter, .recipeSelect.selectedRecipeFilter:hover {
     color: var(--highlight);
     background-color: var(--border-primary);
     border-color: var(--border-tertiary);
+}
+
+.recipeSelectIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    padding: 10px;
+    width: 40px;
+    background-color: var(--bg-tertiary);
+}
+
+.recipeSelectIcon > img {
+    width: 100%;
+    height: 100%;
+}
+
+.recipeSelectName {
+    flex-grow: 1;
 }
 
 .recipeSelect.luckyFortune.luckyGood > i {
@@ -2114,101 +2134,6 @@ footer {
 
 .recipeSelect.luckyFortune.luckyEpic > i {
     color: rgb(255, 79, 167);
-}
-
-.recipeFilterList a[href*="Selector"]:before {
-    display: inline-block;
-    position: relative;
-    content: "";
-    margin-right: 10px;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0,0,0,0.25);
-    background-image: url('/assets/images/userpics/nopic.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;
-    vertical-align: middle;
-}
-
-.recipeFilterList a[href="NoMatSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/NoMat32.png');
-}
-
-.recipeFilterList a[href="SwordsSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Swords32.png');
-}
-
-.recipeFilterList a[href="StavesSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Staves32.png');
-}
-
-.recipeFilterList a[href="KnivesSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Knives32.png');
-}
-
-.recipeFilterList a[href="HelmetSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Helmets32.png');
-}
-
-.recipeFilterList a[href="HatSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Hats32.png');
-}
-
-.recipeFilterList a[href="MaskSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Masks32.png');
-}
-
-.recipeFilterList a[href="GauntletSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Gauntlets32.png');
-}
-
-.recipeFilterList a[href="GloveSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Gloves32.png');
-}
-
-.recipeFilterList a[href="ShoeSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Shoes32.png');
-}
-
-.recipeFilterList a[href="ArmorSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Armor32.png');
-}
-
-.recipeFilterList a[href="CloakSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Cloaks32.png');
-}
-
-.recipeFilterList a[href="VestSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Vests32.png');
-}
-
-.recipeFilterList a[href="ShieldSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Shields32.png');
-}
-
-.recipeFilterList a[href="ThrownSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Thrown32.png');
-}
-
-.recipeFilterList a[href="TomeSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Tomes32.png');
-}
-
-.recipeFilterList a[href="TrinketsSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Trinkets32.png');
-}
-
-.recipeFilterList a[href="PendantSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Pendants32.png');
-}
-
-.recipeFilterList a[href="RingSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Rings32.png');
-}
-
-.recipeFilterList a[href="BeltSelector"]:before {
-    background-image: url('/assets/images/recipeFilter/Belts32.png');
 }
 
 .recipeTable {

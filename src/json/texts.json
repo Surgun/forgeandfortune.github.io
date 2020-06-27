@@ -733,11 +733,11 @@
   },
   {
     "tid": "tutorial_desc_9",
-    "en": "Purchase the recipes Simple Hat"
+    "en": "Purchase the Simple Hat recipe"
   },
   {
     "tid": "tutorial_desc_10",
-    "en": "Level the Cat's Meow to Level 2"
+    "en": "Grow the Cat's Meow to Level 2"
   },
   {
     "tid": "tutorial_desc_11",
@@ -753,7 +753,7 @@
   },
   {
     "tid": "tutorial_desc_14",
-    "en": "Earth Staff needs new materials, send Revere to The Spooky Spot"
+    "en": "Earth Staff requires a new material, send Revere to The Spooky Spot"
   },
   {
     "tid": "tutorial_desc_15",
@@ -761,7 +761,7 @@
   },
   {
     "tid": "tutorial_desc_16",
-    "en": "Level the Aviation Association to Level 2"
+    "en": "Grow the Aviation Association to Level 2"
   },
   {
     "tid": "tutorial_desc_17",
@@ -777,30 +777,30 @@
   },
   {
     "tid": "tutorial_desc_20",
-    "en": "Purchase the Green Guard and get it to Level 2"
+    "en": "Purchase the Green Guard and grow it to Level 2"
   },
   {
     "tid": "tutorial_desc_21",
-    "en": "Keep Leveling your Guilds and purchase a second crafting slot"
+    "en": "Keep leveling your Guilds and purchase a second Crafting Slot"
   },
   {
     "tid": "tutorial_desc_22",
-    "en": "Unlock the creepy crag and neve and send her adventuring!"
+    "en": "Unlock the Creepy Crag dungeon, hire Neve and send her out on an adventure"
   },
   {
     "tid": "tutorial_desc_23",
-    "en": "Unlock autosell, allowing you to automatically sell from the crafting slot"
+    "en": "Unlock Autosell, allowing you to automatically sell from the crafting slot"
   },
   {
     "tid": "tutorial_desc_24",
-    "en": "Master your first recipe, increasing rarity procs and removing material costs"
+    "en": "Master your first recipe, which increases rarity procs and removes material costs"
   },
   {
     "tid": "tutorial_desc_25",
-    "en": "Get all four crafting guilds to level 4"
+    "en": "Advance all four crafting guilds to level 4"
   },
   {
     "tid": "tutorial_desc_26",
-    "en": "Unlock the first boss and slay him to finish introduction"
+    "en": "Unlock the Boss Realm and slay the foe to finish your introduction"
   }
 ]

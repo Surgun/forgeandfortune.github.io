@@ -17,8 +17,9 @@ const Notifications = {
     popToast(id,a,b,c) {
         const toast = this.idToToast(id);
         if (toast === undefined) return popToast(id,id,"error");
+        const heading = toast.heading.replace("{0}",a).replace("{1}",b).replace("{2}",c);
         const text = toast.text.replace("{0}",a).replace("{1}",b).replace("{2}",c);
-        return popToast(text,toast.heading,toast.icon);
+        return popToast(text,heading,toast.icon);
     },
 }
 

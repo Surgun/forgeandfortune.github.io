@@ -308,7 +308,6 @@ SkillManager.skillEffects['S1022'] = function (combatParams) {
 SkillManager.skillEffects['S1030'] = function (combatParams) {
     //Decay - Titus
     const lifeDrain = combatParams.getTarget(TargetType.BEFORE,SideType.ALLIES,true);
-    console.log(lifeDrain);
     if (lifeDrain === null || lifeDrain[0].race === "undead") return;
     const targets = combatParams.getTarget(TargetType.MIRROR,SideType.ENEMIES);
     const damage = Math.floor(combatParams.power*combatParams.attack.mod1);

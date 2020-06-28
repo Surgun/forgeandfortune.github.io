@@ -104,7 +104,6 @@ function screenDirectDungeon(areaID) {
 /*-----------------------------------------*/
 
 function showDungeon(dungeonID) {
-    console.log(dungeonID);
     DungeonManager.dungeonView = dungeonID;
     $dungeonRun.show();
     initiateDungeonFloor(dungeonID);
@@ -127,7 +126,6 @@ const $combatFloorHelp = $("#combatFloorHelp");
 
 function initiateDungeonFloor(dungeonID) {
     if (DungeonManager.dungeonView !== dungeonID) return;
-    console.log(DungeonManager.dungeonView);
     const dungeon = DungeonManager.dungeonByID(DungeonManager.dungeonView);
     $dungeonRun.removeClass().addClass(dungeon.id);
     $combatBackgroundContainer.css({backgroundImage: `url(/assets/images/dungeonBackgrounds/${dungeon.area}.jpg)`});

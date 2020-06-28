@@ -40,7 +40,6 @@ class TurnOrder {
     }
     adjustOrder(heroes,mobs) {
         const uniqueid = this.getCurrentID();
-        console.log(heroes,mobs);
         this.heroes = heroes;
         this.mobs = mobs;
         this.order = interlace(heroes,mobs);

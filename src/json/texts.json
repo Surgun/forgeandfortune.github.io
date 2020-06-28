@@ -32,6 +32,18 @@
     "en": "Market"
   },
   {
+    "tid": "warning_github_title",
+    "en": "Our github.io domain will be deprecated soon!"
+  },
+  {
+    "tid": "warning_github_desc",
+    "en": "Please move over to our official domain to continue playing in the future! Transfer all of your progress by exporting your save and importing it on the official site."
+  },
+  {
+    "tid": "warning_github_button",
+    "en": "Visit Now (forgeandfortune.com)"
+  },
+  {
     "tid": "type_armor",
     "en": "Armor"
   },

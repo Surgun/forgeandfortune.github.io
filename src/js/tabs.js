@@ -7,6 +7,9 @@ function openTab(tabName) {
     // Declare all variables
     DungeonManager.dungeonView = null;
     //HeroManager.heroView = null;
+    if (tabName === "guildTab") {
+        refreshOrderInvCount();
+    }
     if (tabName === "heroesTab") {
         refreshHeroOverview();
     }

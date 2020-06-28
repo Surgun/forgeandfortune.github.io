@@ -111,7 +111,6 @@ function saveUpdate(loadGame) {
     if (loadGame.v !== undefined) {
         loadGame["as"].slots = [];
         //keep dungeon progress
-        console.log(loadGame["d"]);
         const dungeonProgress = [];
         if (loadGame['d'].bossesBeat.includes("D010")) dungeonProgress.push({"id":"D401","maxFloor":1});
         if (loadGame['d'].bossesBeat.includes("D011")) dungeonProgress.push({"id":"D402","maxFloor":1});
@@ -123,7 +122,6 @@ function saveUpdate(loadGame) {
         if (loadGame['d'].bossesBeat.includes("D017")) dungeonProgress.push({"id":"D408","maxFloor":1});
         if (loadGame['d'].bossesBeat.includes("D018")) dungeonProgress.push({"id":"D409","maxFloor":1});
         if (loadGame['d'].bossesBeat.includes("D019")) dungeonProgress.push({"id":"D410","maxFloor":1});
-        console.log(dungeonProgress);
         delete loadGame["d"];
         loadGame["d"] = {};
         loadGame["d"].dungeons = dungeonProgress;

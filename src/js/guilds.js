@@ -502,6 +502,7 @@ $(document).on("click",".guildListButton",(e) => {
     GuildManager.lastClicked = gid;
     $(".guildContainer").hide();
     $("#"+gid).show();
+    refreshOrderInvCount();
 });
 
 

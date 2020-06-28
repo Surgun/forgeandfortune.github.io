@@ -227,7 +227,7 @@
   {
     "id": "S2010",
     "name": "Paeon",
-    "description": "Inspires all teammates, increasing their HP",
+    "description": "Inspires all teammates, increasing their HP.",
     "icon": "<img src=\"/assets/svg/bugle-call.svg\">",
     "powMod": 1,
     "mod1": null,
@@ -236,7 +236,7 @@
   {
     "id": "S2011",
     "name": "Madrigal",
-    "description": "Inspires all teammates, increasing their Pow",
+    "description": "Inspires all teammates, increasing their Pow.",
     "icon": "<img src=\"/assets/svg/guitar.svg\">",
     "powMod": 0.25,
     "mod1": null,
@@ -245,7 +245,7 @@
   {
     "id": "S2012",
     "name": "Requiem",
-    "description": "Targets all enemies, increasing damage taken next time they're hit",
+    "description": "Targets all enemies, increasing damage taken next time they're hit.",
     "icon": "<img src=\"/assets/svg/lyre.svg\">",
     "powMod": 1,
     "mod1": null,
@@ -254,7 +254,7 @@
   {
     "id": "S2020",
     "name": "Snipe",
-    "description": "Grogmar attacks the enemy with lowest HP. If the enemy is less than 50%, Grogmar deals additional damage",
+    "description": "Grogmar attacks the enemy with lowest HP. If the enemy is less than 50%, Grogmar deals additional damage.",
     "icon": "<img src=\"/assets/svg/william-tell.svg\">",
     "powMod": 2,
     "mod1": 0.5,
@@ -290,7 +290,7 @@
   {
     "id": "S2031",
     "name": "Cold Cuts",
-    "description": "Revere attacks the second enemy unit.  If the enemy is chilled, Revere does additional damage",
+    "description": "Revere attacks the second enemy unit.  If the enemy is chilled, Revere does additional damage.",
     "icon": "<img src=\"/assets/svg/fragmented-sword.svg\">",
     "powMod": 2,
     "mod1": 2,
@@ -344,7 +344,7 @@
   {
     "id": "SM101",
     "name": "Regenerate",
-    "description": "Heals self instead of attacking",
+    "description": "Heals self instead of attacking.",
     "icon": "<img src=\"/assets/svg/healing.svg\">",
     "powMod": 2,
     "mod1": null,
@@ -353,7 +353,7 @@
   {
     "id": "SM102",
     "name": "Wilt",
-    "description": "Reduce healing of target attacked",
+    "description": "Reduce healing of target attacked.",
     "icon": "<img src=\"/assets/svg/mushrooms-cluster.svg\">",
     "powMod": 1,
     "mod1": null,
@@ -362,7 +362,7 @@
   {
     "id": "SM103",
     "name": "Full Force",
-    "description": "Massive damage if at full health",
+    "description": "Massive damage if at full health.",
     "icon": "<img src=\"/assets/svg/cherish.svg\">",
     "powMod": 2,
     "mod1": 1.5,
@@ -389,7 +389,7 @@
   {
     "id": "SM106",
     "name": "Gloop Glop",
-    "description": "Removes debuffs from all allies and heals if debuffed",
+    "description": "Removes debuffs from all allies and heals if debuffed.",
     "icon": "<img src=\"/assets/svg/gooey-molecule.svg\">",
     "powMod": 1,
     "mod1": null,
@@ -398,7 +398,7 @@
   {
     "id": "SM107",
     "name": "Antisymbiosis",
-    "description": "If less than full health deals additional damage",
+    "description": "If less than full health deals additional damage.",
     "icon": "<img src=\"/assets/svg/worm-mouth.svg\">",
     "powMod": 1,
     "mod1": 1,
@@ -407,7 +407,7 @@
   {
     "id": "SM108",
     "name": "Holy Radiation",
-    "description": "Heals adjacent units",
+    "description": "Heals adjacent units.",
     "icon": "<img src=\"/assets/svg/transfuse.svg\">",
     "powMod": 1.5,
     "mod1": null,
@@ -416,7 +416,7 @@
   {
     "id": "SM109",
     "name": "Deadly Web",
-    "description": "Damages last hero, if full health deal additional damage",
+    "description": "Damages last hero, if full health deal additional damage.",
     "icon": "<img src=\"/assets/svg/spider-web.svg\">",
     "powMod": 1,
     "mod1": 1,
@@ -434,7 +434,7 @@
   {
     "id": "SM201",
     "name": "Purge",
-    "description": "Removes all debuffs from allies and damages for each debuff removed",
+    "description": "Removes all debuffs from allies and damages for each debuff removed.",
     "icon": "<img src=\"/assets/svg/broom.svg\">",
     "powMod": 1,
     "mod1": null,
@@ -443,7 +443,7 @@
   {
     "id": "SM202",
     "name": "Overpower",
-    "description": "Deals additional damage if enemy is below 50% HP",
+    "description": "Deals additional damage if enemy is below 50% HP.",
     "icon": "<img src=\"/assets/svg/chart.svg\">",
     "powMod": 2,
     "mod1": 0.5,
@@ -452,7 +452,7 @@
   {
     "id": "SM203",
     "name": "Helping Hand",
-    "description": "Heals teammate for a moderate amount",
+    "description": "Heals teammate for a moderate amount.",
     "icon": "<img src=\"/assets/svg/water-splash.svg\">",
     "powMod": 2,
     "mod1": null,
@@ -461,7 +461,7 @@
   {
     "id": "SM204",
     "name": "Lightning Storm",
-    "description": "Damages all enemy units",
+    "description": "Damages all enemy units.",
     "icon": "<img src=\"/assets/svg/lightning-branches.svg\">",
     "powMod": 1,
     "mod1": null,
@@ -470,7 +470,7 @@
   {
     "id": "SM205",
     "name": "Phase Out",
-    "description": "Negates damage until next turn",
+    "description": "Negates damage until next turn.",
     "icon": "<img src=\"/assets/svg/crossed-slashes.svg\">",
     "powMod": 1,
     "mod1": null,
@@ -479,7 +479,7 @@
   {
     "id": "SM206",
     "name": "Life Seed",
-    "description": "Heal all teammates, heal additional if undamaged",
+    "description": "Heal all teammates, heal additional if undamaged.",
     "icon": "<img src=\"/assets/svg/ground-sprout.svg\">",
     "powMod": 0.75,
     "mod1": 2,
@@ -488,7 +488,7 @@
   {
     "id": "SM207",
     "name": "Avalanche",
-    "description": "All undamaged units lose 50% of their HP",
+    "description": "All undamaged units lose 50% of their HP.",
     "icon": "<img src=\"/assets/svg/rock.svg\">",
     "powMod": 1,
     "mod1": 0.5,
@@ -497,7 +497,7 @@
   {
     "id": "SM208",
     "name": "Evasion",
-    "description": "All allies evade incoming damage the next time they are attacked",
+    "description": "All allies evade incoming damage the next time they are attacked.",
     "icon": "<img src=\"/assets/svg/fluffy-wing.svg\">",
     "powMod": 1,
     "mod1": null,
@@ -506,7 +506,7 @@
   {
     "id": "SM209",
     "name": "Ignition",
-    "description": "Damage all enemy units. Units take more damage if this unit is full HP",
+    "description": "Damage all enemy units. Units take more damage if this unit is full HP.",
     "icon": "<img src=\"/assets/svg/burning-embers.svg\">",
     "powMod": 1,
     "mod1": 2,
@@ -524,7 +524,7 @@
   {
     "id": "SM301",
     "name": "Crab Hammer",
-    "description": "Attacks for 25% of max HP of defender",
+    "description": "Attacks for 25% of max HP of defender.",
     "icon": "<img src=\"/assets/svg/crab-claw.svg\">",
     "powMod": 0,
     "mod1": 0.25,
@@ -533,7 +533,7 @@
   {
     "id": "SM302",
     "name": "Viking Smash",
-    "description": "Deals damage to last enemy",
+    "description": "Deals damage to last enemy.",
     "icon": "<img src=\"/assets/svg/viking-helmet.svg\">",
     "powMod": 3,
     "mod1": null,
@@ -542,7 +542,7 @@
   {
     "id": "SM303",
     "name": "Stronger Together",
-    "description": "Heals for each living ally",
+    "description": "Heals for each living ally.",
     "icon": "<img src=\"/assets/svg/round-table.svg\">",
     "powMod": 1.5,
     "mod1": null,
@@ -551,7 +551,7 @@
   {
     "id": "SM304",
     "name": "Jarls Blessing",
-    "description": "Increases damage of each adjacent ally",
+    "description": "Increases damage of each adjacent ally.",
     "icon": "<img src=\"/assets/svg/horned-helm.svg\">",
     "powMod": 0.2,
     "mod1": null,
@@ -560,7 +560,7 @@
   {
     "id": "SM305",
     "name": "Shellstopper",
-    "description": "Gains 25% damage reduction for 4 attacks",
+    "description": "Gains 25% damage reduction for 4 attacks.",
     "icon": "<img src=\"/assets/svg/turtle.svg\">",
     "powMod": 2,
     "mod1": null,
@@ -569,7 +569,7 @@
   {
     "id": "SM306",
     "name": "Fragment Bone",
-    "description": "Explodes, killing itself and dealing massive damage",
+    "description": "Explodes, killing itself and dealing massive damage.",
     "icon": "<img src=\"/assets/svg/surprised-skull.svg\">",
     "powMod": 6,
     "mod1": null,
@@ -578,7 +578,7 @@
   {
     "id": "SM307",
     "name": "Execute",
-    "description": "Deals massive damage to lowest HP enemy",
+    "description": "Deals massive damage to lowest HP enemy.",
     "icon": "<img src=\"/assets/svg/reticule.svg\">",
     "powMod": 3,
     "mod1": null,
@@ -587,7 +587,7 @@
   {
     "id": "SM308",
     "name": "Dwarvish Prayer",
-    "description": "Heals unit in front of this enemy",
+    "description": "Heals unit in front of this enemy.",
     "icon": "<img src=\"/assets/svg/prayer.svg\">",
     "powMod": 2.5,
     "mod1": null,
@@ -596,7 +596,7 @@
   {
     "id": "SM309",
     "name": "Ten Tickles",
-    "description": "Damages all enemies, deals additional damage if damaged",
+    "description": "Damages all enemies, deals additional damage if damaged.",
     "icon": "<img src=\"/assets/svg/tentacle-strike.svg\">",
     "powMod": 2,
     "mod1": 2,
@@ -605,7 +605,7 @@
   {
     "id": "SM904A",
     "name": "Bonesplosion",
-    "description": "Deals massive damage to each enemy",
+    "description": "Deals massive damage to each enemy.",
     "icon": "<img src=\"/assets/svg/bone-mace.svg\">",
     "powMod": 3,
     "mod1": null,
@@ -614,7 +614,7 @@
   {
     "id": "SM904B",
     "name": "Bone Up",
-    "description": "Regenerates to full health",
+    "description": "Regenerates to full health.",
     "icon": "<img src=\"/assets/svg/poison-bottle.svg\">",
     "powMod": 0,
     "mod1": null,
@@ -632,7 +632,7 @@
   {
     "id": "SM907C",
     "name": "Tree Nothing",
-    "description": "Trees don't move",
+    "description": "Trees don't move.",
     "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
     "powMod": 0,
     "mod1": null,
@@ -641,7 +641,7 @@
   {
     "id": "SMP907A",
     "name": "Tree Nothing Passive",
-    "description": "Trees are strong",
+    "description": "Trees are strong.",
     "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
     "powMod": 0,
     "mod1": null,
@@ -650,7 +650,7 @@
   {
     "id": "SM901",
     "name": "Tree Wallop",
-    "description": "High damage attack to second in order",
+    "description": "High damage attack to second in order.",
     "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
     "powMod": 7,
     "mod1": null,
@@ -659,7 +659,7 @@
   {
     "id": "SMP902",
     "name": "Prickly Personality",
-    "description": "Attacking this enemy damages the hero",
+    "description": "Attacking this enemy damages the hero.",
     "icon": "<img src=\"/assets/svg/cactus.svg\">",
     "powMod": 0.2,
     "mod1": null,
@@ -668,7 +668,7 @@
   {
     "id": "SM902",
     "name": "Needle Barrage",
-    "description": "Hurls a thousand needles at the two nearest targets",
+    "description": "Hurls a thousand needles at the two nearest targets.",
     "icon": "<img src=\"/assets/svg/caltrops.svg\">",
     "powMod": 2.5,
     "mod1": null,
@@ -677,7 +677,7 @@
   {
     "id": "SM903",
     "name": "Forgotten Wish",
-    "description": "Redistributes enemy health to be equal",
+    "description": "Redistributes enemy health to be equal.",
     "icon": "<img src=\"/assets/svg/star-prominences.svg\">",
     "powMod": 1,
     "mod1": null,
@@ -686,7 +686,7 @@
   {
     "id": "SM904",
     "name": "Decay",
-    "description": "Deals 2% max HP damage to each enemy",
+    "description": "Deals 2% max HP damage to each enemy.",
     "icon": "<img src=\"/assets/svg/death-book.svg\">",
     "powMod": 0,
     "mod1": null,
@@ -695,7 +695,7 @@
   {
     "id": "SMP904A",
     "name": "Bone Down",
-    "description": "When dead, turn into a pile of bones instead",
+    "description": "When dead, turn into a pile of bones instead.",
     "icon": "<img src=\"/assets/svg/graveyard.svg\">",
     "powMod": 0,
     "mod1": null,
@@ -704,7 +704,7 @@
   {
     "id": "SM905A",
     "name": "Blank Canvas",
-    "description": "Attack a Hero and absorb their Type",
+    "description": "Attack a Hero and absorb their Type.",
     "icon": "<img src=\"/assets/svg/paint-brush.svg\">",
     "powMod": 1,
     "mod1": null,
@@ -713,7 +713,7 @@
   {
     "id": "SM905B",
     "name": "Masterpiece",
-    "description": "Attack and perform an action based off form - Mighty: Gain stacking protective shield. Mindful: Heal and gain a % heal buff. Moxious: Add debuff to take additional damage",
+    "description": "Attack and perform an action based off form - Mighty: Gain stacking protective shield. Mindful: Heal and gain a % heal buff. Moxious: Add debuff to take additional damage.",
     "icon": "<img src=\"/assets/svg/palette.svg\">",
     "powMod": 2,
     "mod1": null,
@@ -722,7 +722,7 @@
   {
     "id": "SMP906",
     "name": "Rising Phoenix",
-    "description": "Once below 25%, Phoenix will turn into an egg and attempt to regenerate health",
+    "description": "Once below 25%, Phoenix will turn into an egg and attempt to regenerate health.",
     "icon": "<img src=\"/assets/svg/dinosaur-egg.svg\">",
     "powMod": 0,
     "mod1": null,
@@ -731,7 +731,7 @@
   {
     "id": "SM906",
     "name": "Phoenix Fire",
-    "description": "Burns all enemies, dealing damage for every stack",
+    "description": "Burns all enemies, dealing damage for every stack.",
     "icon": "<img src=\"/assets/svg/ember-shot.svg\">",
     "powMod": 0.14,
     "mod1": null,
@@ -740,7 +740,7 @@
   {
     "id": "SM906A",
     "name": "Hibernate",
-    "description": "Monster is sleeping and performs no action",
+    "description": "Monster is sleeping and performs no action.",
     "icon": "<img src=\"/assets/svg/night-sleep.svg\">",
     "powMod": 0,
     "mod1": null,
@@ -749,7 +749,7 @@
   {
     "id": "SM906B",
     "name": "Rise",
-    "description": "Monster returns to its original form",
+    "description": "Monster returns to its original form.",
     "icon": "<img src=\"/assets/svg/flaming-sheet.svg\">",
     "powMod": 0,
     "mod1": null,
@@ -758,7 +758,7 @@
   {
     "id": "SM907A",
     "name": "Knife Throw",
-    "description": "Throws knives at all enemies",
+    "description": "Throws knives at all enemies.",
     "icon": "<img src=\"/assets/svg/butterfly-knife.svg\">",
     "powMod": 2,
     "mod1": null,
@@ -767,7 +767,7 @@
   {
     "id": "SM907B",
     "name": "Bananadine",
-    "description": "Heals self, additional healing done for each banana found (banana for scale)",
+    "description": "Heals self, additional healing done for each banana found (banana for scale).",
     "icon": "<img src=\"/assets/svg/banana-peeled.svg\">",
     "powMod": 2,
     "mod1": 0.1,
@@ -776,7 +776,7 @@
   {
     "id": "SM907D",
     "name": "Banana Find",
-    "description": "Finding bananas in the trees, hopefully stored away from heat and light, or someone will have to make bread in a few days",
+    "description": "Finding bananas in the trees, hopefully stored away from heat and light, or someone will have to make bread in a few days.",
     "icon": "<img src=\"/assets/svg/banana.svg\">",
     "powMod": 0,
     "mod1": 0.1,
@@ -785,7 +785,7 @@
   {
     "id": "SMP907",
     "name": "Snack Break",
-    "description": "Occasionally becomes hungry, and will hunt for food",
+    "description": "Occasionally becomes hungry, and will hunt for food.",
     "icon": "<img src=\"/assets/svg/beech.svg\">",
     "powMod": 0,
     "mod1": null,
@@ -794,7 +794,7 @@
   {
     "id": "SM908",
     "name": "Tentacle Whip",
-    "description": "Attacks front unit and two behind for reduced damage",
+    "description": "Attacks front unit and two behind for reduced damage.",
     "icon": "<i class=\"fas fa-unlink\"></i>",
     "powMod": 2,
     "mod1": 0.5,
@@ -803,7 +803,7 @@
   {
     "id": "SM908A",
     "name": "Mind Control",
-    "description": "Takes control of an enemy for a short time, forcing them to attack their allies instead",
+    "description": "Takes control of an enemy for a short time, forcing them to attack their allies instead.",
     "icon": "<i class=\"fas fa-mind-share\"></i>",
     "powMod": 0,
     "mod1": null,
@@ -812,7 +812,7 @@
   {
     "id": "SM908B",
     "name": "Cold Blooded",
-    "description": "Negates damage dealt on next attack and heals for amount instead",
+    "description": "Negates damage dealt on next attack and heals for amount instead.",
     "icon": "<i class=\"fas fa-fish\"></i>",
     "powMod": 0,
     "mod1": 2,

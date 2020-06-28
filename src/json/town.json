@@ -51,7 +51,7 @@
   {
     "id": "TB009",
     "name": "Hall of Milestones",
-    "description": "A list of all of your accomplishments",
+    "description": "A list of all of your accomplishments and progress.",
     "shorthand": "milestone",
     "recipeID": "R99910"
   }

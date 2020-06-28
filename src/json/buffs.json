@@ -2,7 +2,7 @@
   {
     "id": "B0010",
     "name": "Armor Up",
-    "description": "Reduces damage taken from attacks by 50% while active",
+    "description": "Reduces damage taken from attacks by 50% while active.",
     "icon": "<img src=\"/assets/svg/attached-shield.svg\">",
     "maxStack": 2,
     "stackCast": 2,
@@ -79,7 +79,7 @@
   {
     "id": "B0042",
     "name": "Rested",
-    "description": "Increases damage until hit",
+    "description": "Increases damage until hit.",
     "icon": "<img src=\"/assets/svg/strong.svg\">",
     "maxStack": 3,
     "stackCast": 1,
@@ -90,7 +90,7 @@
   {
     "id": "B1010",
     "name": "Scorched",
-    "description": "Deals damage on this unit's turn",
+    "description": "Deals damage on this unit's turn.",
     "icon": "<img src=\"/assets/svg/candlebright.svg\">",
     "maxStack": 1,
     "stackCast": 1,
@@ -200,7 +200,7 @@
   {
     "id": "BM102",
     "name": "Wilt",
-    "description": "Reduce healing received by 50%",
+    "description": "Reduce healing received by 50%.",
     "icon": "<img src=\"/assets/svg/chemical-bolt.svg\">",
     "maxStack": 1,
     "stackCast": 1,
@@ -211,7 +211,7 @@
   {
     "id": "BM200",
     "name": "Translucent",
-    "description": "Reduces damage taken from attacks by 100% while active",
+    "description": "Reduces damage taken from attacks by 100% while active.",
     "icon": "<img src=\"/assets/svg/ghost.svg\">",
     "maxStack": 1,
     "stackCast": 1,
@@ -222,7 +222,7 @@
   {
     "id": "BM205",
     "name": "Phased",
-    "description": "Reduces damage taken from attacks by 100% until next turn",
+    "description": "Reduces damage taken from attacks by 100% until next turn.",
     "icon": "<img src=\"/assets/svg/spectre.svg\">",
     "maxStack": 1,
     "stackCast": 1,
@@ -233,7 +233,7 @@
   {
     "id": "BM208",
     "name": "Evasive",
-    "description": "Reduces damage taken from attacks by 100% while active",
+    "description": "Reduces damage taken from attacks by 100% while active.",
     "icon": "<img src=\"/assets/svg/feathered-wing.svg\">",
     "maxStack": 1,
     "stackCast": 1,
@@ -244,7 +244,7 @@
   {
     "id": "BM304",
     "name": "Viking Strength",
-    "description": "Increases damage",
+    "description": "Increases damage.",
     "icon": "<img src=\"/assets/svg/beard.svg\">",
     "maxStack": 3,
     "stackCast": 1,
@@ -255,7 +255,7 @@
   {
     "id": "BM305",
     "name": "Carapace",
-    "description": "Reduces damage taken by 25%",
+    "description": "Reduces damage taken by 25%.",
     "icon": "<img src=\"/assets/svg/turtle-shell.svg\">",
     "maxStack": 4,
     "stackCast": 4,
@@ -266,7 +266,7 @@
   {
     "id": "BM902",
     "name": "Cactus Time",
-    "description": "Take damage sometimes",
+    "description": "Take damage sometimes.",
     "icon": "<img src=\"/assets/svg/cactus.svg\">",
     "maxStack": 1,
     "stackCast": 1,
@@ -277,7 +277,7 @@
   {
     "id": "BM904B",
     "name": "Bone Up",
-    "description": "Take no damage",
+    "description": "Take no damage.",
     "icon": "<img src=\"/assets/svg/pirate-grave.svg\">",
     "maxStack": 1,
     "stackCast": 1,
@@ -321,7 +321,7 @@
   {
     "id": "BM905D",
     "name": "Mighty Mail",
-    "description": "Reduces damage taken from attacks per stack",
+    "description": "Reduces damage taken from attacks per stack.",
     "icon": "<i class=\"fas fa-shield-cross\"></i>",
     "maxStack": 5,
     "stackCast": 1,
@@ -332,7 +332,7 @@
   {
     "id": "BM905E",
     "name": "Mindful Meditation",
-    "description": "Increases healing per stack",
+    "description": "Increases healing per stack.",
     "icon": "<i class=\"fas fa-spa\"></i>",
     "maxStack": 5,
     "stackCast": 1,
@@ -343,7 +343,7 @@
   {
     "id": "BM905F",
     "name": "Moxious Maneuver",
-    "description": "Increases damage taken per stack",
+    "description": "Increases damage taken per stack.",
     "icon": "<i class=\"fas fa-angry\"></i>",
     "maxStack": 5,
     "stackCast": 1,
@@ -354,7 +354,7 @@
   {
     "id": "BM906",
     "name": "Phoenix Fire",
-    "description": "Deals damage on this unit's turn per stack",
+    "description": "Deals damage on this unit's turn per stack.",
     "icon": "<img src=\"/assets/svg/ember-shot.svg\">",
     "maxStack": 100,
     "stackCast": 1,
@@ -365,7 +365,7 @@
   {
     "id": "BM906A",
     "name": "Hardened",
-    "description": "Reduces damage taken from attacks by 75% while active",
+    "description": "Reduces damage taken from attacks by 75% while active.",
     "icon": "<i class=\"fas fa-egg\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -376,7 +376,7 @@
   {
     "id": "BM906B",
     "name": "Weakened",
-    "description": "Reduces max HP by 10% per stack",
+    "description": "Reduces max HP by 10% per stack.",
     "icon": "<i class=\"fas fa-temperature-low\"></i>",
     "maxStack": 100,
     "stackCast": 1,
@@ -387,7 +387,7 @@
   {
     "id": "BM907",
     "name": "This is Bananas",
-    "description": "Amplifies effects from all the potasium",
+    "description": "Amplifies effects from all the potasium.",
     "icon": "<i class=\"fas fa-carrot\"></i>",
     "maxStack": 100,
     "stackCast": 1,
@@ -398,7 +398,7 @@
   {
     "id": "BM907A",
     "name": "Tree",
-    "description": "Reduces all damage taken to 1",
+    "description": "Reduces all damage taken to 1.",
     "icon": "<i class=\"fas fa-tree\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -409,7 +409,7 @@
   {
     "id": "BM907B",
     "name": "Will Hide",
-    "description": "Goes into hiding eventually",
+    "description": "Goes into hiding eventually.",
     "icon": "<i class=\"fas fa-monkey\"></i>",
     "maxStack": 3,
     "stackCast": 3,
@@ -420,7 +420,7 @@
   {
     "id": "BM907C",
     "name": "Hiding",
-    "description": "I am hiding",
+    "description": "I am hiding.",
     "icon": "<i class=\"fas fa-monkey\"></i>",
     "maxStack": 1,
     "stackCast": 2,
@@ -431,7 +431,7 @@
   {
     "id": "BM908A",
     "name": "Mind Control",
-    "description": "Next special attack hurts allies or helps enemies",
+    "description": "Next special attack hurts allies or helps enemies.",
     "icon": "<i class=\"fas fa-mind-share\"></i>",
     "maxStack": 1,
     "stackCast": 1,
@@ -442,7 +442,7 @@
   {
     "id": "BM908B",
     "name": "Cold Blooded",
-    "description": "Heal for damage dealt next attack",
+    "description": "Heal for damage dealt next attack.",
     "icon": "<i class=\"fas fa-fish\"></i>",
     "maxStack": 1,
     "stackCast": 1,

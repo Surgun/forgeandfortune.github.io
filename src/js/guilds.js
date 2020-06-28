@@ -520,7 +520,7 @@ $(document).on("click",".recipeBuyCardBuy", (e) => {
     e.preventDefault();
     destroyTooltip();
     const recipeId = $(e.currentTarget).data("rid");
-    recipeList.popToast("buy_recipe",recipeId);
+    recipeList.buyRecipe(recipeId);
 });
 
 //Craft from Order Card

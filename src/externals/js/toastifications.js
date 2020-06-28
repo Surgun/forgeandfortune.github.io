@@ -8,8 +8,8 @@ const Notifications = {
         popToast(text,heading,icon);
     },
     slotsFull() {
-        const text = "Your action slots are all in use, please remove a craft to continue."; // Text that is to be shown in the toast
-        const heading = 'No Action Slots Available'; // Optional heading to be shown on the toast
+        const text = "Your crafting slots are all in use, please remove a craft to continue."; // Text that is to be shown in the toast
+        const heading = 'No Crafting Slots Available'; // Optional heading to be shown on the toast
         const icon = 'error'; // Type of toast icon
         popToast(text,heading,icon);
     },

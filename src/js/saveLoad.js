@@ -166,12 +166,6 @@ function saveUpdate(loadGame) {
                 gearslot6.gear = heroSave.slot6;
                 heroSave.gearSlots.push(gearslot6);
             }
-            if (heroSave.slot7 !== null) {
-                const gearslot7 = {};
-                gearslot7.lvl = 0;
-                gearslot7.gear = heroSave.slot7;
-                heroSave.gearSlots.push(gearslot7);
-            }
         });
 
         //guild orders might be fucked

@@ -202,3 +202,14 @@ $(document).on('click', '#clearSettings', (e) => {
     e.preventDefault();
     clearSettings();
 });
+
+// Deprecation Warning
+
+function triggerWarning() {
+    if (window.location.hostname === "forgeandfortune.github.io") {
+        const warningContainer = $("<div/>").addClass("warningPopupContainer").appendTo(document.body);
+        $("<div/>").addClass("warningPopupTitle").html(displayText('warning_github_title')).appendTo(warningContainer);
+        $("<div/>").addClass("warningPopupDesc").html(displayText('warning_github_desc')).appendTo(warningContainer);
+        $("<a/>").addClass("warningPopupLink").attr({"href":"https://www.forgeandfortune.com/"}).html(displayText('warning_github_button')).appendTo(warningContainer);
+    }
+}

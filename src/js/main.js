@@ -49,6 +49,7 @@ function afterLoad() {
     refreshAllRecipeMastery();
     refreshTutorial();
     preloader.contentLoaded();
+    triggerWarning();
 }
 
 loadMisc(); //the others are loaded in order

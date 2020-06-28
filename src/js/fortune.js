@@ -80,7 +80,7 @@ const FortuneManager = {
     },
     stageItem(containerID) {
         if (this.slots.length >= this.maxSlot()) {
-            Notifications.fortuneNoSlot();
+            Notifications.popToast("fortune_no_slot");
             return;
         }
         const container = Inventory.containerToItem(containerID);
@@ -95,7 +95,7 @@ const FortuneManager = {
     },
     removeFortune(fortuneID) {
         if (Inventory.full()) {
-            Notifications.fortuneInvFull();
+            Notifications.popToast("fortune_inv_full");
             return;
         }
         const fortune = this.fortuneByID(fortuneID);

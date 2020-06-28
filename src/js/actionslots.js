@@ -131,14 +131,14 @@ const actionSlotManager = {
     },
     addSlot(itemid) {
         if (this.slots.length >= this.maxSlots) {
-            Notifications.slotsFull();
+            Notifications.popToast(slots_full);
             return;
         }
         const item = recipeList.idToItem(itemid);
         if (item.recipeType !== "normal" && this.isAlreadySlotted(itemid)) return;
-        if (!item.owned) return Notifications.recipeNotOwned();
+        if (!item.owned) return Notifications.popToast("recipe_not_owned");
         if (!item.canProduce) {
-            Notifications.craftWarning();
+            Notifications.popToast("craft_warning");
             return;
         }
         this.slots.push(new actionSlot(itemid,this.slots.length));

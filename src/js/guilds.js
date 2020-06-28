@@ -120,7 +120,7 @@ class Guild {
         if (slot === 3) submitContainer = this.order3;
         const itemString = submitContainer.uniqueID();
         const itemMatch = Inventory.findCraftMatch(itemString);
-        if (itemMatch === undefined) return Notifications.cantFindMatch();
+        if (itemMatch === undefined) return Notifications.popToast("cant_find_match");
         Inventory.removeContainerFromInventory(itemMatch.containerID);
         submitContainer.fufilled += 1;
         this.addRep(submitContainer.rep);
@@ -519,7 +519,7 @@ $(document).on("click",".recipeBuyCardBuy", (e) => {
     e.preventDefault();
     destroyTooltip();
     const recipeId = $(e.currentTarget).data("rid");
-    recipeList.buyRecipe(recipeId);
+    recipeList.popToast("buy_recipe",recipeId);
 });
 
 //Craft from Order Card

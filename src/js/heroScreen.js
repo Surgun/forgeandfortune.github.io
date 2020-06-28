@@ -194,7 +194,7 @@ $(document).on('click',".playbookSelectable", (e) => {
     const hid = $(e.currentTarget).data("hid");
     const hero = HeroManager.idToHero(hid);
     if (hero.state !== HeroState.idle) {
-        Notifications.heroDungeonPlaybookSwap();
+        Notifications.popToast("hero_dungeon_playbook_swap");
         return;
     }
     $(".playbookSelectable").removeClass("playbookSelected");

@@ -257,6 +257,18 @@ function loadQuest() {
             const quest = new Quest(props);
             QuestManager.addQuest(quest);
         });
+        loadToast();
+    });
+}
+
+function loadToast() {
+    $.ajax({
+        url: "json/toasts.json",
+    }).done((data) => {
+        $.each(data, function(i,props){
+            const toast = new toaster(props);
+            Notifications.addToast(toast);
+        });
         afterLoad();
         preloader.setMessage('Finalizing your progress...');
     });

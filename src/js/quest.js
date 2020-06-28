@@ -439,7 +439,7 @@ $(document).on("click", ".qpBackButton", (e) => {
 $(document).on("click", ".qpHeaderStartQuest", (e) => {
     e.preventDefault();
     if ($(e.currentTarget).hasClass("qpHeaderInvalidTeam")) {
-        Notifications.invalidQuestTeam();
+        Notifications.popToast("invalid_quest_team");
         return;
     }
     QuestManager.lockTeam();

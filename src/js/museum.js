@@ -60,7 +60,7 @@ const Museum = {
     purchaseReward(rewardID) {
         const reward = this.idToReward(rewardID);
         if (this.remainingPoints() < reward.purchaseCost()) {
-            Notifications.cantAffordMuseumReward();
+            Notifications.popToast("cant_afford_museum_reward");
             return;
         }
         reward.purchase();

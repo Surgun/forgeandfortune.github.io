@@ -255,7 +255,7 @@ $(document).on('click', "#dungeonTeamButton", (e) => {
         $dungeonRun.show();
     }
     else {
-        Notifications.noPartySelected();
+        Notifications.popToast("no_party_selected");
     }
 });
 
@@ -268,7 +268,7 @@ $(document).on('click', "#dungeonTeamButtonBoss", (e) => {
         $dungeonRun.show();
     }
     else {
-        Notifications.noPartySelected();
+        Notifications.popToast("no_party_selected");
     }
 });
 
@@ -281,7 +281,7 @@ $(document).on('click', "#dungeonTeamButtonSkip", (e) => {
         $dungeonRun.show();
     }
     else {
-        Notifications.noPartySelected();
+        Notifications.popToast("no_party_selected");
     }
 });
 

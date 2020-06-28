@@ -38,7 +38,7 @@ class tinkerCommand {
             this.time = 0;
             this.enabled = false;
             refreshCommandToggle(this);
-            Notifications.tinkerDisable();
+            Notifications.popToast("tinker_disable");
             return;
         }
         this.time += ms;
@@ -77,7 +77,7 @@ class tinkerCommand {
         return 10*(this.progressMax-this.progress)*this.paidGoldAmt();
     }
     completeResearch() {
-        if (!ResourceManager.available("M001",this.completeCost())) return Notifications.tinkerResearch();
+        if (!ResourceManager.available("M001",this.completeCost())) return Notifications.popToast("tinker_research");
         ResourceManager.addMaterial("M001",-this.completeCost());
         const recipeID = this.recipeUnlock[this.lvl];
         recipeList.unlockTrinketRecipe(recipeID);

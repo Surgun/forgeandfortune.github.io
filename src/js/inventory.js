@@ -221,7 +221,7 @@ const Inventory = {
             const epicItem = new itemContainer(id,3);
             if (sellToggle < 4) {
                 this.addToInventory(epicItem,skipAnimation);
-                Notifications.exceptionalCraft(item.name,"Epic","craftEpic");
+                Notifications.popToast("exceptional_craft_epic",item.name,"Epic","craftEpic");
             }
             else this.sellContainer(epicItem,skipAnimation);
             achievementStats.craftedItem("Epic");
@@ -230,7 +230,7 @@ const Inventory = {
             const greatItem = new itemContainer(id,2);
             if (sellToggle < 3) {
                 this.addToInventory(greatItem,skipAnimation);
-                Notifications.exceptionalCraft(item.name,"Great","craftGreat");
+                Notifications.popToast("exceptional_craft_great",item.name,"Great","craftGreat");
             }
             else this.sellContainer(greatItem,skipAnimation);
             achievementStats.craftedItem("Great");
@@ -239,7 +239,7 @@ const Inventory = {
             const goodItem = new itemContainer(id,1);
             if (sellToggle < 2) {
                 this.addToInventory(goodItem,skipAnimation);
-                Notifications.exceptionalCraft(item.name,"Good","craftGood");
+                Notifications.popToast("exceptional_craft_good",item.name,"Good","craftGood");
             }
             else this.sellContainer(goodItem,skipAnimation);
             achievementStats.craftedItem("Good");

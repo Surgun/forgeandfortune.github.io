@@ -69,12 +69,12 @@ const FusionManager = {
     addFuse(uniqueid) {
         if (!Inventory.hasThree(uniqueid)) return;
         if (this.slots.length === this.maxSlots()) {
-            Notifications.noFuseSlots();
+            Notifications.popToast("no_fuse_slots");
             return;
         }
         const fuseProps = uniqueIDProperties(uniqueid);
         if (ResourceManager.materialAvailable("M001") < this.getFuseCost(fuseProps,1)) {
-            Notifications.cantAffordFuse();
+            Notifications.popToast("cant_afford_fuse");
             return;
         }
         ResourceManager.deductMoney(this.getFuseCost(fuseProps,1));
@@ -100,7 +100,7 @@ const FusionManager = {
     cancelFuse(fuseid) {
         const fuse = this.fuseByID(fuseid);
         if (Inventory.full(3)) {
-            Notifications.fuseInvFull();
+            Notifications.popToast("fuse_inv_full");
             return;
         }
         ResourceManager.addMaterial("M001",this.getFuseCost(fuse,1));
@@ -128,7 +128,7 @@ const FusionManager = {
         const slot = this.slots.find(f=>f.fuseID === fuseID);
         if (slot === undefined || !slot.fuseComplete()) return;
         if (Inventory.full()) {
-            Notifications.fuseInvFull();
+            Notifications.popToast("fuse_inv_full");
             return;
         }
         Inventory.addFuseToInventory(slot);

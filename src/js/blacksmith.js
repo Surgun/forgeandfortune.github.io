@@ -25,7 +25,7 @@ const bloopSmith = {
     },
     addSmith(containerID,location) {
         const item = (location === "inventory") ? Inventory.containerToItem(containerID) : HeroManager.getContainerID(containerID);
-        if (item.sharp >= this.maxSharp()) return Notifications.cantSmithMax();
+        if (item.sharp >= this.maxSharp()) return Notifications.popToast("cant_smith_max");
         this.smithStage = item;
         refreshSmithStage();
     },
@@ -38,17 +38,17 @@ const bloopSmith = {
         if (this.smithStage === null) return;
         const params = this.getSmithCost();
         if (ResourceManager.materialAvailable("M001") < params.gold) {
-            Notifications.cantAffordSmithGold();
+            Notifications.popToast("cant_afford_smith_gold");
             return;
         }
         if (ResourceManager.materialAvailable(params.resType) < params.resAmt) {
-            Notifications.cantAffordSmithMaterials(ResourceManager.idToMaterial(params.resType).name, params.resAmt-ResourceManager.materialAvailable(params.resType));
+            Notifications.popToast("cant_afford_smith_material",ResourceManager.idToMaterial(params.resType).name, params.resAmt-ResourceManager.materialAvailable(params.resType));
             return;
         }
         ResourceManager.deductMoney(params.gold);
         ResourceManager.addMaterial(params.resType,-params.resAmt);
         this.smithStage.sharp += 1;
-        Notifications.smithSuccess(this.smithStage.name);
+        Notifications.popToast("smith_success",this.smithStage.name);
         refreshInventoryPlaces();
         refreshSmithStage();
     },

@@ -93,12 +93,12 @@ class Item{
         if (this.isMastered()) return;
         const masteryCost = this.masteryCost();
         if (ResourceManager.materialAvailable(masteryCost.id) < masteryCost.amt) {
-            Notifications.recipeMasterNeedMore();
+            Notifications.popToast("recipe_master_need_more");
             return;
         }
         ResourceManager.addMaterial(masteryCost.id,-masteryCost.amt);
         this.mastered = true;
-        Notifications.masterRecipe(this.name);
+        Notifications.popToast("master_recipe",this.name);
         refreshCraftedCount();
         destroyTooltip(); // Removes stuck tooltip after mastering item on recipe card
         refreshProgress();
@@ -172,12 +172,12 @@ const recipeList = {
     buyRecipe(recipeID) {
         const recipe = this.idToItem(recipeID);
         if (ResourceManager.materialAvailable("M001") < recipe.goldCost) {
-            Notifications.recipeGoldReq();
+            Notifications.popToast("recipe_gold_req");
             return;
         }
         ResourceManager.deductMoney(recipe.goldCost);
         recipe.owned = true;
-        Notifications.buyRecipe(recipe.name);
+        Notifications.popToast("buy_recipe",recipe.name);
         refreshRecipeMastery(GuildManager.idToGuild(recipe.guildUnlock));
         refreshRecipeFilters();
         checkCraftableStatus();
@@ -491,7 +491,7 @@ const $recipeSortInput = $("#recipeSortInput");
 $(document).on('click','.recipeSortButton', (e) => {
     e.preventDefault();
     const searchString = $recipeSortInput.val();
-    if (searchString.length < 2) return Notifications.searchLengthInvalid();
+    if (searchString.length < 2) return Notifications.popToast("search_length_invalid");
     recipeList.recipeFilterString = searchString;
     recipeList.recipeFilterType = "default";
     recipeFilterList();
@@ -502,7 +502,7 @@ $(document).on('keydown','.recipeSortInput', (e) => {
     if (e.keyCode !== 13) return;
     e.preventDefault();
     const searchString = $recipeSortInput.val();
-    if (searchString.length < 2) return Notifications.searchLengthInvalid();
+    if (searchString.length < 2) return Notifications.popToast("search_length_invalid");
     recipeList.recipeFilterString = searchString;
     recipeList.recipeFilterType = "default";
     recipeFilterList();

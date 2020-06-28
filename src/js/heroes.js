@@ -102,7 +102,7 @@ class Hero extends Combatant {
     }
     unequip(type) {
         if (Inventory.full()) {
-            Notifications.inventoryFull();
+            Notifications.popToast("inventory_full");
             return;
         }
         const item = this.getSlot(type);
@@ -255,7 +255,7 @@ const HeroManager = {
         return this.heroes.map(h=>h.getEquipSlots(true)).flat().map(i=>i.containerID).includes(containerID);
     },
     upgradeSlot(heroID,gearType) {
-        if (this.totalUpgrades() >= DungeonManager.availableUpgrades()) return Notifications.cantAffordSlotUpgrade();
+        if (this.totalUpgrades() >= DungeonManager.availableUpgrades()) return Notifications.popToast("cant_afford_slot_upgrade");
         const hero = this.idToHero(heroID);
         hero.upgradeSlot(gearType);
     },

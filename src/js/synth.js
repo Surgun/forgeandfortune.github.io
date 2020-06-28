@@ -46,7 +46,7 @@ const SynthManager = {
         if (this.slot.rarity === 2) id = "M701";
         if (this.slot.rarity === 3) id = "M702";
         ResourceManager.addMaterial(id,this.amt());
-        Notifications.synthCollect(ResourceManager.idToMaterial(id).name,this.amt());
+        Notifications.popToast("synth_collect",ResourceManager.idToMaterial(id).name,this.amt());
         this.slot.rarity -= 1;
         if (this.slot.rarity === 0) this.slot = null;
         refreshSynthStage();
@@ -56,7 +56,7 @@ const SynthManager = {
         if (this.slot === null) return;
         const type = this.slot.item.resynth;
         if (!ResourceManager.available(type,this.resynthAmt())) {
-            Notifications.insufficientResynthMats();
+            Notifications.popToast("insufficient_resynth_mats");
             return;
         }
         ResourceManager.addMaterial(type,-this.resynthAmt());

@@ -25,7 +25,7 @@ const Shop = {
     buyPerk(id) {
         const perk = this.idToPerk(id);
         if (ResourceManager.materialAvailable("M001") < perk.goldCost) {
-            Notifications.perkCost();
+            Notifications.popToast("perk_cost");
             return;
         }
         ResourceManager.deductMoney(perk.goldCost);

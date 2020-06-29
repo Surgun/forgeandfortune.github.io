@@ -1557,7 +1557,7 @@ footer {
     box-shadow: 0 2px 0 rgba(0,0,0,.5);
 }
 
-.heroStatus.statusDungeon {
+.heroStatus.statusDungeon, .heroStatus.statusQuest {
     background-color: var(--button-cancel);
     border-color: var(--button-cancel-border);
 }

@@ -238,6 +238,13 @@
     "type": "static"
   },
   {
+    "id": "hero_in_quest",
+    "title": "Hero Already Questing",
+    "description": "This hero is already on a quest.",
+    "icon": "<i class=\"fas fa-map-signs\"></i>",
+    "type": "static"
+  },
+  {
     "id": "boss_refight_count",
     "title": "Boss Defeats",
     "description": "The amount of times you have defeated this boss.",

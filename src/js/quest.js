@@ -144,10 +144,10 @@ const QuestManager = {
         this.hero4 = null;
     },
     removeParty(heroID) {
-        if (heroID === "hero1") this.hero1 = null;
-        if (heroID === "hero2") this.hero2 = null;
-        if (heroID === "hero3") this.hero3 = null;
-        if (heroID === "hero4") this.hero4 = null;
+        if (heroID === this.hero1) this.hero1 = null;
+        if (heroID === this.hero2) this.hero2 = null;
+        if (heroID === this.hero3) this.hero3 = null;
+        if (heroID === this.hero4) this.hero4 = null;
     },
     addParty(heroID) {
         const quest = this.idToQuest(this.questView);

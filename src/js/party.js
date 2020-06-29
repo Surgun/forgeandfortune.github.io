@@ -49,8 +49,8 @@ const PartyCreator = {
     dungeonSelect : null,
     areaSelect : null,
     mobPartyHidden: true,
-    removeMember(slotNum) {
-        this.heroes.splice(slotNum,1);
+    removeMember(ID) {
+        this.heroes = this.heroes.filter(hero => hero !== ID)
     },
     addMember(heroID) {
         if (this.emptyPartySlots() === 0) return false;
@@ -301,7 +301,7 @@ function characterCard(prefix,dv,ID,status) {
         return d;
     }
     // Return hero cards with stats
-    const dclick = $("<div/>").addClass(prefix+"CardClick").attr("heroID",dv).appendTo(d);
+    const dclick = $("<div/>").addClass(prefix+"CardClick").attr("heroID",ID).appendTo(d);
     const hero = HeroManager.idToHero(ID);
     $("<div/>").addClass(prefix+"Image").html(hero.image).appendTo(dclick);
     $("<div/>").addClass(prefix+"Name").html(hero.name).appendTo(dclick);

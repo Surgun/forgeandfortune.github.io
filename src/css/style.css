@@ -2754,8 +2754,8 @@ footer {
     justify-content: center;
     align-items: center;
     font-size: 0.85rem;
-    background-color: var(--bg-tertiary);
-    border: 2px solid var(--border-secondary);
+    background-color: rgba(0,0,0,0.15);
+    border: 2px solid rgba(255,255,255,0.1);
     border-radius: 5px;
 }
 
@@ -2768,6 +2768,11 @@ footer {
     height: 30px;
     font-size: 1rem;
     border-radius: 3px 0 0 3px;
+}
+
+.orderGuildMat > .matIcon {
+    flex-grow: 0;
+    background-color: rgba(255,255,255,0.1);
 }
 
 .itemToSacReq {
@@ -2834,7 +2839,7 @@ footer {
 .guildItemSubmitHeading {
     margin: 10px 0 5px;
     padding-bottom: 5px;
-    border-bottom: 2px solid var(--border-primary);
+    border-bottom: 2px solid rgba(255,255,255,0.05);
 }
 
 .guildOrderRewards {

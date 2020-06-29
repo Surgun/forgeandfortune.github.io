@@ -16,14 +16,14 @@
   {
     "id": "sort_inventory",
     "title": "Inventory Sorting",
-    "description": "This shit sorts your inventory by cookies, then hamburgers, then your sexual preference.",
+    "description": "Sort your inventory by tier, type, and then rarity.",
     "icon": "<i class=\"fas fa-sort-size-up-alt\"></i>",
     "type": "static"
   },
   {
     "id": "sort_bank",
     "title": "Bank Storage Sorting",
-    "description": "This shit sorts your bank storage by cookies, then hamburgers, then your sexual preference.",
+    "description": "Sort your bank by tier, type, and then rarity.",
     "icon": "<i class=\"fas fa-sort-size-up-alt\"></i>",
     "type": "static"
   },

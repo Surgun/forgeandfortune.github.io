@@ -254,9 +254,12 @@ function saveUpdate(loadGame) {
         if (loadGame['fo'].lvl >= 2) loadGame['sh'].perks.push({"id":"AL3014","purchased":true});
         if (loadGame['fo'].lvl >= 3) loadGame['sh'].perks.push({"id":"AL3019","purchased":true});
     }
+    // Remove old materials
+    loadGame["rs"] = loadGame['rs'].filter(mat => {
+        const removedMats = ['M800','M801','M802'];
+        return !removedMats.includes(mat.id);
+    })
 
-
- 
     return loadGame;
 }
 

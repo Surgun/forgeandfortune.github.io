@@ -161,6 +161,13 @@
     "type": "guild"
   },
   {
+    "id": "guild_mastery_recipe",
+    "title": "View in Recipes",
+    "description": "Redirects directly to this recipe's details.",
+    "icon": "<i class=\"fas fa-book\"></i>",
+    "type": "static"
+  },
+  {
     "id": "worker_desc",
     "title": "#name#",
     "description": "#description#",

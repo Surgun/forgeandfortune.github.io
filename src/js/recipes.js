@@ -163,7 +163,7 @@ const recipeList = {
         });
     },
     filteredRecipeList() {
-        const cleanString = this.recipeFilterString.toLowerCase().replace(/\s+/g, '');
+        const cleanString = this.recipeFilterString.toLowerCase();
         if (this.recipeFilterType === "default") return this.recipes.filter(r => r.owned && r.name.toLowerCase().includes(cleanString));
         if (this.masteryFilter === MasteryFilter.BOTH) return this.recipes.filter(r => r.owned && r.type === this.recipeFilterType);
         if (this.masteryFilter === MasteryFilter.UNMASTERED) return this.recipes.filter(r => r.owned && !r.mastered && r.type === this.recipeFilterType);
@@ -279,9 +279,7 @@ function initializeRecipes() { //this is run once at the beginning to load ALL t
     sortOrder.recipeDivs = $(".recipeCardContainer");
 }
 
-function recipeFilterList(n) {
-    // if "n" not provided, set to 0
-    n = n || 0;
+function recipeFilterList(n = 0) {
     //uses two recipeLists to cycle through all the items and display as appropriate
     if (n === 0) Object.values(sortOrder.recipeDivDict).forEach(div => div.hide());
     recipeList.filteredRecipeList().map(r=>r.id).slice(0,n+30).forEach(recipe => {
@@ -488,14 +486,19 @@ $(document).on('click','.recipeBackTab', (e) => {
 
 const $recipeSortInput = $("#recipeSortInput");
 
+function invokeSearch(string) {
+    recipeList.recipeFilterString = string;
+    recipeList.recipeFilterType = "default";
+    $(".recipeSelect").removeClass("selectedRecipeFilter");
+    recipeFilterList();
+}
+
 //clicking button runs search
 $(document).on('click','.recipeSortButton', (e) => {
     e.preventDefault();
     const searchString = $recipeSortInput.val();
     if (searchString.length < 2) return Notifications.popToast("search_length_invalid");
-    recipeList.recipeFilterString = searchString;
-    recipeList.recipeFilterType = "default";
-    recipeFilterList();
+    invokeSearch(searchString);
 });
 
 //enter key searches if you're in sort input
@@ -504,9 +507,7 @@ $(document).on('keydown','.recipeSortInput', (e) => {
     e.preventDefault();
     const searchString = $recipeSortInput.val();
     if (searchString.length < 2) return Notifications.popToast("search_length_invalid");
-    recipeList.recipeFilterString = searchString;
-    recipeList.recipeFilterType = "default";
-    recipeFilterList();
+    invokeSearch(searchString);
 });
 
 // Prevent hotkey input when search bar focused

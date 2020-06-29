@@ -463,12 +463,22 @@ function createRecipeMasteryCard(recipe) {
     const d1 = $("<div/>").addClass("recipeMasteryGuildCard");
         $("<div/>").addClass("itemName").html(recipe.itemPicName()).appendTo(d1);
         $("<div/>").addClass("itemLevel").html(recipe.itemLevel()).appendTo(d1);
+        $("<div/>").addClass("recipeMasteryViewButton actionButton tooltip").attr({"data-tooltip": "guild_mastery_recipe"}).data("rid",recipe.id).html('<i class="fas fa-book"></i>').appendTo(d1);
     const masteryCost = recipe.masteryCost();
     const masteryButton = $("<div/>").addClass("recipeMasteryGuildButton actionButtonCardCost").attr({"id": "rcm"+recipe.id}).data("rid",recipe.id).appendTo(d1);
         $("<div/>").addClass("actionButtonCardText").html("Master Recipe").appendTo(masteryButton);
         $("<div/>").addClass("actionButtonCardValue tooltip").attr({"data-tooltip": "material_desc", "data-tooltip-value": masteryCost.id}).html(`${ResourceManager.materialIcon(masteryCost.id)} ${masteryCost.amt}`).appendTo(masteryButton);
     return d1;
 }
+
+$(document).on("click",".recipeMasteryViewButton",(e) => {
+    e.preventDefault();
+    const ID = $(e.currentTarget).data("rid");
+    const recipe = recipeList.recipes.filter(r => r.id === ID)[0];
+    const searchString = recipe.name;
+    tabClick(e, "recipesTab");
+    invokeSearch(searchString);
+});
 
 function refreshRecipeMasteryAmt(recipe) {
     const masteryCost = recipe.masteryCost();

@@ -63,7 +63,6 @@ const $statEpics = $("#statEpics");
 const $statTimePlayed = $("#statTimePlayed");
 const $completeTime = $("#completeTime");
 
-
 const $statMaxFloorD001 = $("#statMaxFloorD001");
 const $statMaxFloorD002 = $("#statMaxFloorD002");
 const $statMaxFloorD003 = $("#statMaxFloorD003");

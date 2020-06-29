@@ -6696,7 +6696,7 @@ span.beta-tag {
 
 .bankNavigation {
     display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(200px, 1fr));
+    grid-template: auto / repeat(auto-fill, minmax(210px, 1fr));
     margin: -10px -10px 0;
     background-color: var(--bg-primary);
     border-bottom: 2px solid var(--border-primary);
@@ -6736,6 +6736,15 @@ span.beta-tag {
 .bankTabNavigation.selected:after {
     width: 100%;
     background-color: var(--highlight);
+}
+
+.bankTabCount {
+    margin: -5px 0 -5px auto;
+    padding: 5px 10px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 5px;
 }
 
 .bankInventoryHeaderContainer, .bankStorageHeaderContainer {

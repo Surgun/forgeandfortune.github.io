@@ -39,6 +39,7 @@ const BankManager = {
         const container = Inventory.containerToItem(containerID);
         Inventory.removeContainerFromInventory(containerID);
         this.addContainer(container);
+        refreshBankCounts();
     },
     removeContainer(containerID) {
         this.slots = this.slots.filter(c=>c.containerID !== containerID);
@@ -46,7 +47,7 @@ const BankManager = {
     },
     sortBank() {
         this.slots.sort((a,b) => inventorySort(a,b));
-        refreshBankBank()
+        refreshBankBank();
     },
     addContainer(container) {
         this.slots.push(container);
@@ -56,6 +57,7 @@ const BankManager = {
         const container = this.containerToItem(containerID);
         this.removeContainer(containerID);
         Inventory.addToInventory(container,true);
+        refreshBankCounts();
     },
     addLevel() {
         this.lvl += 1;
@@ -67,11 +69,18 @@ const BankManager = {
 function initiateBankBldg() {
     $bankBuilding.show();
     $bankNavigation.empty();
-    $("<div/>").addClass("bankTabNavigation").attr({id: "bankNavInventory"}).html(displayText("bank_nav_inventory")).appendTo($bankNavigation);
-    $("<div/>").addClass("bankTabNavigation").attr({id: "bankNavStorage"}).html(displayText("bank_nav_storage")).appendTo($bankNavigation);
+    const invTab = $("<div/>").addClass("bankTabNavigation").attr({id: "bankNavInventory"}).html(displayText("bank_nav_inventory")).appendTo($bankNavigation);
+    const bankTab = $("<div/>").addClass("bankTabNavigation").attr({id: "bankNavStorage"}).html(displayText("bank_nav_storage")).appendTo($bankNavigation);
+        $("<div/>").addClass("bankTabCount").attr({"id":"bankNavInvCount"}).html(`(${Inventory.nonblank().length}/${Inventory.invMax})`).appendTo(invTab);
+        $("<div/>").addClass("bankTabCount").attr({"id":"bankNavStorageCount"}).html(`(${BankManager.slots.length}/${BankManager.maxSlots()})`).appendTo(bankTab);
     $("#bankNavStorage").removeClass("selected");
     $("#bankNavInventory").addClass("selected");
     refreshBankInventory();
+}
+
+function refreshBankCounts() {
+    $("#bankNavInvCount").html(`(${Inventory.nonblank().length}/${Inventory.invMax})`);
+    $("#bankNavStorageCount").html(`(${BankManager.slots.length}/${BankManager.maxSlots()})`);
 }
 
 function refreshBankInventory() {
@@ -81,7 +90,7 @@ function refreshBankInventory() {
     const bankInventoryHeaderContainer = $("<div/>").addClass(`bankInventoryHeaderContainer`).appendTo($bankInvSlots);
     const bankInventoryHeader = $("<div/>").addClass(`bankInventoryHeader`).appendTo(bankInventoryHeaderContainer);
     const bankInventoryHeadingDetails = $("<div/>").addClass("headingDetails").appendTo(bankInventoryHeader);
-        $("<div/>").addClass("headingTitle").html(`${displayText("header_bank_inventory_title")} (${Inventory.nonblank().length}/${Inventory.invMax})`).appendTo(bankInventoryHeadingDetails);
+        $("<div/>").addClass("headingTitle").html(displayText("header_bank_inventory_title")).appendTo(bankInventoryHeadingDetails);
         $("<div/>").addClass("headingDescription").html(displayText("header_bank_inventory_desc")).appendTo(bankInventoryHeadingDetails);
     const sortInventoryBtn = $("<div/>").addClass("actionButtonAnimDisabled actionButton tooltip").attr({id: "sortInventoryBank", "data-tooltip": "sort_inventory"}).html('<i class="fas fa-sort-size-up-alt"></i>').appendTo(bankInventoryHeaderContainer);
         $("<span/>").addClass("actionButtonTextRight").html(displayText("bank_sort_inventory_button")).appendTo(sortInventoryBtn);
@@ -91,6 +100,7 @@ function refreshBankInventory() {
     Inventory.nonblank().forEach(item => {
         bankInventoryCardsContainer.append(itemCard(item,false));
     });
+    refreshBankCounts();
 }
 
 function refreshBankBank() {
@@ -100,7 +110,7 @@ function refreshBankBank() {
     const bankStorageHeaderContainer = $("<div/>").addClass(`bankStorageHeaderContainer`).appendTo($bankBankSlots);
     const bankStorageHeader = $("<div/>").addClass(`bankStorageHeader`).appendTo(bankStorageHeaderContainer);
     const bankStorageHeadingDetails = $("<div/>").addClass("headingDetails").appendTo(bankStorageHeader);
-        $("<div/>").addClass("headingTitle").html(`${displayText("header_bank_storage_title")} (${BankManager.slots.length}/${BankManager.maxSlots()})`).appendTo(bankStorageHeadingDetails);
+        $("<div/>").addClass("headingTitle").html(displayText("header_bank_storage_title")).appendTo(bankStorageHeadingDetails);
         $("<div/>").addClass("headingDescription").html(displayText("header_bank_storage_desc")).appendTo(bankStorageHeadingDetails);
     const sortBankBtn = $("<div/>").addClass("actionButtonAnimDisabled actionButton tooltip").attr({id: "sortBank", "data-tooltip": "sort_bank"}).html('<i class="fas fa-sort-size-up-alt"></i>').appendTo(bankStorageHeaderContainer);
         $("<span/>").addClass("actionButtonTextRight").html(displayText("bank_sort_bank_button")).appendTo(sortBankBtn);
@@ -110,6 +120,7 @@ function refreshBankBank() {
     BankManager.slots.forEach(item => {
         bankStorageCardsContainer.append(itemCard(item,true));
     });
+    refreshBankCounts();
 }
 
 function itemCard(item,inBank) {

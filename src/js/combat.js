@@ -96,8 +96,8 @@ class combatRoundParams {
             const uid = this.attacker.uniqueid;
             const indx = this.allies.findIndex(h=>h.uniqueid === uid);
             //this one gets ugly...
-            if (this.some(h=>h.mark())) return [this.enemies.find(h=>h.mark())];
-            if (this.confusion()) return [this.attacker];
+            if (this.enemies.some(h=>h.mark())) return [this.enemies.find(h=>h.mark())];
+            if (this.attacker.confusion()) return [this.attacker];
             if (this.enemies[indx].alive()) return [this.enemies[indx]];
             //this is what happens if enemies aren't alive but should be
             if (indx > 0 && this.enemies[indx-1].alive()) return [this.enemies[indx-1]];

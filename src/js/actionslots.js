@@ -131,7 +131,7 @@ const actionSlotManager = {
     },
     addSlot(itemid) {
         if (this.slots.length >= this.maxSlots) {
-            Notifications.popToast(slots_full);
+            Notifications.popToast("slots_full");
             return;
         }
         const item = recipeList.idToItem(itemid);
@@ -202,6 +202,8 @@ const actionSlotManager = {
     upgradeSlot() {
         if (this.maxSlots === 5) return;
         this.maxSlots += 1;
+        recipeList.canCraft();
+        checkCraftableStatus();
     },
     autoSell(i) {
         if (this.slots.length <= i) return "";

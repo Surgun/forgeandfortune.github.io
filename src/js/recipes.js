@@ -250,7 +250,7 @@ function refreshRecipeFilters() {
     $recipeFilter.empty();
     ItemType.forEach(itemtype => {
         if (recipeList.ownAtLeastOne(itemtype)) {
-            const recipeSelect = $("<div/>").addClass("recipeSelect").data("itemType",itemtype).appendTo($recipeFilter);
+            const recipeSelect = $("<div/>").addClass("recipeSelect").attr({"id":`rf${itemtype}`}).data("itemType",itemtype).appendTo($recipeFilter);
             if (itemtype === "Knives") recipeSelect.addClass("selectedRecipeFilter");
             $("<div/>").addClass("recipeSelectIcon").html(`<img src="/assets/images/recipeFilter/${itemtype}32.png" />`).appendTo(recipeSelect);
             $("<div/>").addClass("recipeSelectName").html(itemtype).appendTo(recipeSelect);

@@ -404,8 +404,8 @@ function equipHeroRecipesButton(e) {
     recipeList.recipeFilterType = type;
     recipeList.recipeFilterString = "";
     recipeFilterList();
-    $(".recipeSelect").removeClass("selected");
-    $(`#rf${type}`).addClass("selected");  
+    $(".recipeSelect").removeClass("selectedRecipeFilter");
+    $(`#rf${type}`).addClass("selectedRecipeFilter");  
 }
 
 $(document).on('click',".equipRecipeButton", (e) => {

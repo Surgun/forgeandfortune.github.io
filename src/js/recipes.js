@@ -360,7 +360,7 @@ function recipeCardBack(recipe) {
         const td8a = $('<div/>').addClass('recipeDetailsContainer');
             const td8a1 = $('<div/>').addClass('recipeBackDescription').html(recipe.itemDescription());
             const td8a2 = $('<div/>').addClass('recipeStats').html(recipe.recipeListStats());
-            const craftedCount = displayText('recipes_card_tab_mastery').replace('{0}', recipe.craftCount);
+            const craftedCount = displayText('recipes_card_details_crafted_count').replace('{0}', recipe.craftCount);
             const td8a3 = $('<div/>').addClass('recipeCrafted').attr("id","rc"+recipe.id).html(craftedCount);
         td8a.append(td8a1,td8a2,td8a3);
     td8.append(td8a);

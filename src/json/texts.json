@@ -725,7 +725,7 @@
   },
   {
     "tid": "tutorial_desc_4",
-    "en": "Send Revere on an adventure to start collecting materials."
+    "en": "Send Revere on an adventure to start collecting materials.  Revere will stay in the dungeon until you cancel it."
   },
   {
     "tid": "tutorial_desc_5",
@@ -733,7 +733,7 @@
   },
   {
     "tid": "tutorial_desc_6",
-    "en": "Reach Floor 5 of in the Groovy Grove dungeon."
+    "en": "Reach Floor 5 of in the Groovy Grove dungeon.  Adventures will progress on their own.  If a floor is too difficult, they will drop down until they are on a floor they can complete."
   },
   {
     "tid": "tutorial_desc_7",

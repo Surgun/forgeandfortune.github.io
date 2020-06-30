@@ -27,6 +27,9 @@ function openTab(tabName) {
         else $("#goToBank").hide();
         refreshInventory();
     }
+    if (tabName === "recipesTab") {
+        refreshCardInvCount();
+    }
     if (tabName === "marketTab") {
         $marketTabSpan.removeClass("hasEvent");
         refreshShop();

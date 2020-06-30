@@ -202,10 +202,12 @@ const Inventory = {
     },
     craftToInventory(id,skipAnimation) {
         if (TownManager.buildingRecipes().includes(id)) return TownManager.unlockBldg(id);
-        const item = recipeList.idToItem(id)
-        skipAnimation = true;
-        item.addCount(skipAnimation);
-        skipAnimation = false;
+        const item = recipeList.idToItem(id);
+        item.addCount();
+        if (!skipAnimation) {
+            refreshMasteryBar(item);
+            refreshCraftedCount(item);
+        }
         let roll = Math.floor(Math.random() * 1000);
         const sellToggleChart = {
             "None" : 0,
@@ -537,7 +539,7 @@ function refreshInventoryPlaces() {
     if (lastTab === "recipesTab") refreshCardInvCount();
     if (lastTab === "guildTab") refreshOrderInvCount();
     if (lastTab === "townsTab" && TownManager.lastBldg === "fusion") refreshPossibleFuse();
-    if (lastTab === "townsTab" && TownManager.lastBldg === "bank") refreshBankInventory();
+    if (lastTab === "townsTab" && TownManager.lastBldg === "bank") refreshBankPage();
     if (lastTab === "townsTab" && TownManager.lastBldg === "smith") {
         refreshSmithInventory();
         refreshSmithStage();

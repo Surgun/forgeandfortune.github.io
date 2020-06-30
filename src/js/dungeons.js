@@ -399,7 +399,7 @@ const DungeonManager = {
     createDungeon(dungeonID,floorSkip) {
         const party = PartyCreator.lockParty();
         const dungeon = this.dungeonByID(dungeonID);
-        dungeon.floor = floorSkip ? dungeon.maxFloor : 1;
+        dungeon.floor = floorSkip ? dungeon.maxFloor : 0;
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = dungeonID;
         const area = AreaManager.idToArea(dungeon.area);

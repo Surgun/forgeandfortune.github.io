@@ -83,11 +83,8 @@ class Item{
     count() {
         return Math.min(this.craftCount,100);
     }
-    addCount(skipAnimation) {
+    addCount() {
         this.craftCount += 1;
-        if (skipAnimation) return;
-        refreshMasteryBar();
-        refreshCraftedCount();
     }
     attemptMastery() {
         if (this.isMastered()) return;
@@ -99,7 +96,7 @@ class Item{
         ResourceManager.addMaterial(masteryCost.id,-masteryCost.amt);
         this.mastered = true;
         Notifications.popToast("master_recipe",this.name);
-        refreshCraftedCount();
+        refreshCraftedCount(this);
         destroyTooltip(); // Removes stuck tooltip after mastering item on recipe card
         refreshProgress();
         GuildManager.repopulateUnmastered();
@@ -320,7 +317,7 @@ function recipeCardFront(recipe) {
 
         const td5b = $('<div/>').addClass('recipeAmountContainer tooltip').attr("data-tooltip", "in_inventory");
             $("<div/>").addClass("recipeAmountHeader recipeCardHeader").html(`<i class="fas fa-cube"></i>`).appendTo(td5b);
-            $('<div/>').addClass('recipeAmount').html(`${Inventory.itemCountAll(recipe.id)}`).appendTo(td5b);
+            $('<div/>').addClass('recipeAmount').attr("id","ra"+recipe.id).html(`${Inventory.itemCountAll(recipe.id)}`).appendTo(td5b);
         if (recipe.recipeType !== "normal") td5b.hide();
 
         const td5c = $('<div/>').addClass('recipeValueContainer tooltip').attr({"data-tooltip": "recipe_gold", "data-tooltip-value": recipe.id});
@@ -381,53 +378,37 @@ function recipeCardBack(recipe) {
     return $('<div/>').addClass('recipeCardBack').append(td6,td7,td8,td9);
 }
 
-function recipeMasteryBar(craftCount) {
-    craftCount = Math.min(100,craftCount);
-    const masteryWidth = (craftCount).toFixed(1)+"%";
-    const masteryBarDiv = $("<div/>").addClass("masteryBarDiv").attr("id","masteryBarDiv");
-    const masteryBar = $("<div/>").addClass("masteryBar").attr("id","masteryBar");
-    if (craftCount >= 100) {
-        masteryBarDiv.addClass("isMastered");
-        masteryBar.attr("data-label",`Mastered`);
-    } else masteryBar.attr("data-label",`${craftCount} / 100`);
-    const masteryBarFill = $("<div/>").addClass("masteryBarFill").attr("id","masteryFill").css('width', masteryWidth);
-    return masteryBarDiv.append(masteryBar,masteryBarFill);
-}
-
-function refreshMasteryBar() {
-    recipeList.recipes.forEach((recipe) => {
-        const rr = $("#rc"+recipe.id)
+function refreshMasteryBar(recipe) {
+        if (!recipe.rc) recipe.rc=$("#rc"+recipe.id);
         const craftedCount = displayText('recipes_card_details_crafted_count').replace('{0}', recipe.craftCount);
-        rr.html(craftedCount);
-    });
+        recipe.rc.html(craftedCount);
 }
 
-function refreshCraftedCount() {
-    recipeList.recipes.forEach(recipe => {
-        const rcc = $("#rcc"+recipe.id);
-        const rbd = $("#rbd"+recipe.id);
-        const rms = $("#rms"+recipe.id);
-        const rcd = $("#"+recipe.id+"rcd");
-        const material = (recipe.mcost) ? Object.keys(recipe.mcost)[0] : "M201";
-        const masteryCost = recipe.masteryCost();
-        rcc.empty();
-        $('<div/>').addClass("actionButtonCardText").html(displayText('recipes_card_mastery_master_button')).appendTo(rcc);
-        $('<div/>').addClass("actionButtonCardValue tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value": masteryCost.id}).html(`${ResourceManager.idToMaterial(masteryCost.id).img} ${masteryCost.amt}`).appendTo(rcc);
-        if (recipe.isMastered()) {
-            rbd.addClass("isMastered").html(displayText('recipes_card_mastery_attained_notice'));
-            rcc.addClass("isMastered").removeClass("tooltip").html(`<i class="fas fa-star-christmas"></i> ${displayText('recipes_card_mastery_recipe_mastered')}`);
-            rms.addClass("isMastered").html(`<i class="fas fa-star-christmas"></i> ${displayText('recipes_card_mastery_recipe_mastered')}`);
-            rcd.find(".matCost").attr({"data-tooltip":"material_desc_mastered","data-tooltip-value":material.id}).addClass("isMastered");
-        }
-    });
+function refreshCraftedCount(recipe) {
+    if (!recipe.rcc) recipe.rcc = $("#rcc"+recipe.id);
+    if (!recipe.rbd) recipe.rbd = $("#rbd"+recipe.id);
+    if (!recipe.rms) recipe.rms = $("#rms"+recipe.id);
+    if (!recipe.rcd) recipe.rcd = $("#rcd"+recipe.id);
+    const material = (recipe.mcost) ? Object.keys(recipe.mcost)[0] : "M201";
+    const masteryCost = recipe.masteryCost();
+    recipe.rcc.empty();
+    $('<div/>').addClass("actionButtonCardText").html(displayText('recipes_card_mastery_master_button')).appendTo(recipe.rcc);
+    $('<div/>').addClass("actionButtonCardValue tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value": masteryCost.id}).html(`${ResourceManager.idToMaterial(masteryCost.id).img} ${masteryCost.amt}`).appendTo(recipe.rcc);
+    if (recipe.isMastered()) {
+        recipe.rbd.addClass("isMastered").html(displayText('recipes_card_mastery_attained_notice'));
+        recipe.rcc.addClass("isMastered").removeClass("tooltip").html(`<i class="fas fa-star-christmas"></i> ${displayText('recipes_card_mastery_recipe_mastered')}`);
+        recipe.rms.addClass("isMastered").html(`<i class="fas fa-star-christmas"></i> ${displayText('recipes_card_mastery_recipe_mastered')}`);
+        recipe.rcd.find(".matCost").attr({"data-tooltip":"material_desc_mastered","data-tooltip-value":material.id}).addClass("isMastered");
+    }
 }
  
 // Refresh and show current number of item in inventory on recipe card
 function refreshCardInvCount() {
-    recipeList.recipes.forEach((recipe) => {
-        const rr = $("#rr"+recipe.id+" .recipeAmount");
-        const invCount = Inventory.itemCountAll(recipe.id);
-        rr.html(invCount);
+    const counts = groupArray(Inventory.nonblank().map(r=>r.id));
+        recipeList.recipes.forEach((recipe) => {
+        const rr = $("#ra"+recipe.id);
+        if (recipe.id in counts) rr.html(counts[recipe.id]);
+        else rr.html(0);
     });
 }
 

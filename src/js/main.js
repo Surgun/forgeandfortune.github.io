@@ -26,7 +26,7 @@ function afterLoad() {
         })
     }
     tabHide();
-    refreshMasteryBar()
+    recipeList.recipes.forEach(r=>refreshMasteryBar(r));
     refreshInventory();
     refreshSideWorkers();
     refreshRecipeFilters();
@@ -34,7 +34,7 @@ function afterLoad() {
     refreshProgress();
     initializeSideBarDungeon();
     refreshSideTown();
-    refreshCraftedCount();
+    recipeList.recipes.forEach(r=>refreshCraftedCount(r));
     initializeGuilds();
     refreshInventoryPlaces();
     recipeList.canCraft();

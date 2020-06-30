@@ -19,7 +19,7 @@ const devtools = {
         recipeList.recipes.map((recipe, i) => {
             if (i < 50) recipe.mastered = true
         });
-        refreshCraftedCount();
+        recipeList.recipes.forEach(r=>refreshCraftedCount(r));
         // Buy 13 perks from each perk line
         const perkCatergories = ['Crafting','Dungeon','Town'];
         perkCatergories.forEach(pCat => {

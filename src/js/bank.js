@@ -8,6 +8,7 @@ const $bankNavigation = $("#bankNavigation");
 const BankManager = {
     slots : [],
     lvl : 1,
+    tab : "inv",
     createSave() {
         const save = {};
         save.lvl = this.lvl;
@@ -75,6 +76,7 @@ function initiateBankBldg() {
         $("<div/>").addClass("bankTabCount").attr({"id":"bankNavStorageCount"}).html(`(${BankManager.slots.length}/${BankManager.maxSlots()})`).appendTo(bankTab);
     $("#bankNavStorage").removeClass("selected");
     $("#bankNavInventory").addClass("selected");
+    BankManager.tab = "inv";
     refreshBankInventory();
 }
 
@@ -84,6 +86,7 @@ function refreshBankCounts() {
 }
 
 function refreshBankInventory() {
+    if (BankManager.tab !== "inv") return;
     $bankBankSlots.hide();
     $bankInvSlots.empty().show();
     // Bank Inventory Header
@@ -104,6 +107,7 @@ function refreshBankInventory() {
 }
 
 function refreshBankBank() {
+    if (BankManager.tab !== "bank") return;
     $bankInvSlots.hide();
     $bankBankSlots.empty().show();
     // Bank Storage Header
@@ -143,6 +147,11 @@ function itemCard(item,inBank) {
     return itemdiv.append(itemName,itemLevel,itemRarity,equipStats,bankActionButtons);
 }
 
+function refreshBankPage() {
+    if (BankManager.tab === "inv") refreshBankInventory();
+    if (BankManager.tab === "bank") refreshBankBank();
+}
+
 $(document).on("click",".bankTake",(e) => {
     e.preventDefault();
     const containerID = parseInt($(e.target).attr("containerID"));
@@ -166,6 +175,8 @@ $(document).on("click","#sortInventoryBank",(e) => {
 });
 
 $(document).on("click","#bankNavInventory",(e) => {
+    //click inventory
+    BankManager.tab = "inv";
     e.preventDefault();
     $("#bankNavStorage").removeClass("selected");
     $("#bankNavInventory").addClass("selected");
@@ -173,6 +184,8 @@ $(document).on("click","#bankNavInventory",(e) => {
 });
 
 $(document).on("click","#bankNavStorage",(e) => {
+    //click bank
+    BankManager.tab = "bank";
     e.preventDefault();
     $("#bankNavInventory").removeClass("selected");
     $("#bankNavStorage").addClass("selected");

@@ -154,7 +154,7 @@ function hardMatRefresh() {
     ResourceManager.materials.forEach(mat=> {
         if (mat.amt === 0) $("#"+mat.id).hide();
         else $("#"+mat.id).show();
-        $("#amt"+mat.id).html(mat.amt);
+        $("#amt"+mat.id).html(formatToUnits(mat.amt,2));
         if (mat.id === "M001") {
             $goldSidebarAmt.html(formatToUnits(mat.amt,2));
             $goldSidebar.addClass("tooltip").attr({"data-tooltip": "gold_value", "data-tooltip-value": formatWithCommas(mat.amt)})

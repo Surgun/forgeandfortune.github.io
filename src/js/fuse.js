@@ -96,6 +96,7 @@ const FusionManager = {
         fuse.increaseRarity();    
         fuse.started = true;
         refreshFuseSlots();
+        refreshInventoryPlaces();
     },
     cancelFuse(fuseid) {
         const fuse = this.fuseByID(fuseid);

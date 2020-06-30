@@ -136,14 +136,16 @@ class Dungeon {
         this.party = null;
         this.mobs = [];
         this.setMobIDs();
-        this.maxFloor = 0;
-        this.floor = 0;
+        this.maxFloor = 1;
+        this.floor = 1;
         this.floorClear = 0;
         this.order = null;
         this.status = DungeonStatus.EMPTY;
         this.lastParty = null;
         this.dungeonTime = 0;
         this.rewardTime = 0;
+        this.rewardAmt = 0;
+        this.rewardTimeRate = 0;
     }
     createSave() {
         const save = {};
@@ -239,11 +241,6 @@ class Dungeon {
         if (!skipAnimation) refreshDungeonMatBar(this.id);
     }
     setRewardRate(floor) {
-        if (floor === 0) {
-            this.rewardAmt = 0;
-            this.rewardTimeRate = 5;
-            return;
-        }
         this.floorClear = Math.max(floor,this.floorClear);
         this.rewardAmt = Math.ceil(floor/40);
         const rewardRate = Math.floor(floor/10)*0.25+1
@@ -269,7 +266,7 @@ class Dungeon {
         this.order = null;
         this.mobs = [];
         this.setMobIDs();
-        this.floor = 0;
+        this.floor = 1;
         this.floorClear = 0;
         this.rewardAmt = 0;
         this.rewardTimeRate = 0;
@@ -310,7 +307,8 @@ class Dungeon {
         this.mobs.forEach(mob => mob.passiveCheck("initial",null));
         this.party.heroes.forEach(hero => hero.passiveCheck("initial",null));
         if (refreshLater) return;
-        $("#dsb"+this.id).html(`${this.name} - ${this.floorClear}`);
+        const text = this.floorClear === 0 ? `${this.name}` : `${this.name} - ${this.floorClear}`;
+        $("#dsb"+this.id).html(text);
         refreshSidebarDungeonMats(this.id);
         if (DungeonManager.dungeonView === this.id) initiateDungeonFloor(this.id);
     }
@@ -405,7 +403,8 @@ const DungeonManager = {
     createDungeon(dungeonID,floorSkip) {
         const party = PartyCreator.lockParty();
         const dungeon = this.dungeonByID(dungeonID);
-        dungeon.floor = floorSkip ? dungeon.maxFloor : 0;
+        if (dungeon.maxFloor === 0) dungeon.maxFloor = 1; //this is because lots of saves are maxFloor = 0 and I don't want to update saves
+        dungeon.floor = floorSkip ? dungeon.maxFloor : 1;
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = dungeonID;
         const area = AreaManager.idToArea(dungeon.area);

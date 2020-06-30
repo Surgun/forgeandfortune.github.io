@@ -238,7 +238,8 @@ function initializeSideBarDungeon() {
         if (area.status() === DungeonStatus.ADVENTURING) {
             d1.addClass("DungeonSideBarAdventuring");
             const dungeon = area.activeDungeon();
-            $("<div/>").addClass("dungeonSidebarFloor").attr("id","dsb"+dungeon.id).html(`${dungeon.name} - ${dungeon.floorClear}`).appendTo(d1);
+            const text = dungeon.floorClear === 0 ? `${dungeon.name}` : `${dungeon.name} - ${dungeon.floorClear}`;
+            $("<div/>").addClass("dungeonSidebarFloor").attr("id","dsb"+dungeon.id).html(text).appendTo(d1);
             $("<div/>").addClass("dungeonSidebarReward").html(createDungeonSidebarReward(dungeon)).appendTo(d);
         }
         else {

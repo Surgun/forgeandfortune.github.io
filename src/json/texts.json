@@ -149,7 +149,7 @@
   },
   {
     "tid": "recipes_card_mastery_available_notice",
-    "en": "Crafting this recipe will reduce the material cost to master it, down to 100."
+    "en": "Crafting this recipe will reduce the material cost to master it."
   },
   {
     "tid": "recipes_card_mastery_attained_notice",

@@ -129,6 +129,8 @@ function saveUpdate(loadGame) {
         delete loadGame["f"];
         //update hero.gear1 etc to hero.gearSlots...
         loadGame["h"].forEach(heroSave => {
+            if (heroSave.hp === 0) heroSave.hp = 1;
+            heroSave.state = HeroState.idle;
             heroSave.gearSlots = [];
             if (heroSave.slot1 !== null) {
                 const gearslot1 = {};

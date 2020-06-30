@@ -239,6 +239,11 @@ class Dungeon {
         if (!skipAnimation) refreshDungeonMatBar(this.id);
     }
     setRewardRate(floor) {
+        if (floor === 0) {
+            this.rewardAmt = 0;
+            this.rewardTimeRate = 5;
+            return;
+        }
         this.floorClear = Math.max(floor,this.floorClear);
         this.rewardAmt = Math.ceil(floor/40);
         const rewardRate = Math.floor(floor/10)*0.25+1
@@ -340,6 +345,7 @@ class Dungeon {
     unlocked() {
         if (this.unlockedBy === null) return true;
         if (this.unlockedBy.charAt(0) === "A") return Shop.alreadyPurchased(this.unlockedBy);
+        if (!Shop.alreadyPurchased("AL20081")) return false;
         const bossDungeon = DungeonManager.dungeonByID(this.unlockedBy);
         return bossDungeon.beaten();
     }

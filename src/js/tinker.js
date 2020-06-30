@@ -58,11 +58,15 @@ class tinkerCommand {
         this.paidGold = false;
         this.progress += 1;
         if (this.progress === 1000) {
+            const recipeID = this.recipeUnlock[this.lvl];
+            recipeList.unlockTrinketRecipe(recipeID);
             this.lvl += 1;
             this.progress = 0;
         }
+        refreshTinkerProgressBar(this);
         refreshTinkerLvLBar(this);
         refreshTrinketCompleteCost(this);
+        refreshTrinketResearchCost(this);
     }    
     toggle() {
         this.enabled = !this.enabled;

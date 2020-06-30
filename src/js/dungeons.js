@@ -136,7 +136,7 @@ class Dungeon {
         this.party = null;
         this.mobs = [];
         this.setMobIDs();
-        this.maxFloor = 1;
+        this.maxFloor = 0;
         this.floor = 1;
         this.floorClear = 0;
         this.order = null;
@@ -403,8 +403,7 @@ const DungeonManager = {
     createDungeon(dungeonID,floorSkip) {
         const party = PartyCreator.lockParty();
         const dungeon = this.dungeonByID(dungeonID);
-        if (dungeon.maxFloor === 0) dungeon.maxFloor = 1; //this is because lots of saves are maxFloor = 0 and I don't want to update saves
-        dungeon.floor = floorSkip ? dungeon.maxFloor : 1;
+        dungeon.floor = floorSkip ? Math.max(1,dungeon.maxFloor) : 1;
         dungeon.status = DungeonStatus.ADVENTURING;
         this.dungeonView = dungeonID;
         const area = AreaManager.idToArea(dungeon.area);

@@ -57,7 +57,7 @@ class Quest {
         if (this.state === QuestState.success) {
             this.complete = true;
             if (this.rewardType === "Gold") ResourceManager.addMaterial("M001",this.rewardAmt);
-            if (this.rewardType === "Playbook") HeroManager.unlockPlaybook(this.rewardAmt);
+            if (this.rewardType === "Playbook") PlaybookManager.unlockPlaybook(this.rewardAmt);
         }
         this.state = QuestState.idle;
         this.heroids.forEach(heroid => {

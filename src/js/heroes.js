@@ -267,8 +267,4 @@ const HeroManager = {
         const hero = this.idToHero(hid);
         hero.swapPlaybook(pbid);
     },
-    unlockPlaybook(playbookID) {
-        const hero = this.heroes.find(h=>h.canLearnPlaybook(playbookID));
-        hero.unlockPlaybook(playbookID);
-    }
 }

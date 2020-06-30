@@ -151,6 +151,7 @@ function showBldg(type) {
         $buildBuilding.show();
         buildScreen(building.shorthand);
     }
+    recipeCanCraft();
 }
 
 function refreshTownBuilding() {

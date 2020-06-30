@@ -415,7 +415,7 @@ function refreshCardInvCount() {
 function recipeCanCraft() {
     //loops through recipes, adds class if disabled
     recipeList.recipes.forEach(recipe => {
-        if (recipe.recipeType !== "normal") return;
+        if (recipe.recipeDiv === undefined) return;
         if (recipe.canProduce && actionSlotManager.slots.length < actionSlotManager.maxSlots) recipe.recipeDiv.removeClass("recipeCraftDisable");
         else recipe.recipeDiv.addClass("recipeCraftDisable");
     });

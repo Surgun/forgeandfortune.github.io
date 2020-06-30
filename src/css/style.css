@@ -5327,6 +5327,7 @@ footer {
 }
 
 .isDialog, .footer_more-btn, .footer_more-content {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;

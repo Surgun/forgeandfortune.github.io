@@ -5467,7 +5467,9 @@
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 150
+    },
     "smithCost": null,
     "pts": 5,
     "pow": 0,
@@ -5493,7 +5495,9 @@
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 1000
+    },
     "smithCost": null,
     "pts": 10,
     "pow": 0,
@@ -5519,7 +5523,9 @@
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 6500
+    },
     "smithCost": null,
     "pts": 15,
     "pow": 0,
@@ -5545,7 +5551,9 @@
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 41000
+    },
     "smithCost": null,
     "pts": 20,
     "pow": 0,
@@ -5571,7 +5579,9 @@
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 270000
+    },
     "smithCost": null,
     "pts": 25,
     "pow": 0,
@@ -5597,7 +5607,9 @@
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 1700000
+    },
     "smithCost": null,
     "pts": 35,
     "pow": 0,
@@ -5623,7 +5635,9 @@
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 11000000
+    },
     "smithCost": null,
     "pts": 45,
     "pow": 0,
@@ -5649,7 +5663,9 @@
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 67000000
+    },
     "smithCost": null,
     "pts": 60,
     "pow": 0,
@@ -5675,7 +5691,9 @@
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 430000000
+    },
     "smithCost": null,
     "pts": 90,
     "pow": 0,
@@ -5701,7 +5719,9 @@
     "gcost": [
       "G002"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 2700000000
+    },
     "smithCost": null,
     "pts": 120,
     "pow": 0,
@@ -5727,7 +5747,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 150
+    },
     "smithCost": null,
     "pts": 5,
     "pow": 3,
@@ -5753,7 +5775,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 1000
+    },
     "smithCost": null,
     "pts": 10,
     "pow": 3,
@@ -5779,7 +5803,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 6500
+    },
     "smithCost": null,
     "pts": 15,
     "pow": 3,
@@ -5805,7 +5831,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 41000
+    },
     "smithCost": null,
     "pts": 20,
     "pow": 3,
@@ -5831,7 +5859,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 270000
+    },
     "smithCost": null,
     "pts": 25,
     "pow": 3,
@@ -5857,7 +5887,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 1700000
+    },
     "smithCost": null,
     "pts": 35,
     "pow": 3,
@@ -5883,7 +5915,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 11000000
+    },
     "smithCost": null,
     "pts": 45,
     "pow": 3,
@@ -5909,7 +5943,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 67000000
+    },
     "smithCost": null,
     "pts": 60,
     "pow": 3,
@@ -5935,7 +5971,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 430000000
+    },
     "smithCost": null,
     "pts": 90,
     "pow": 3,
@@ -5961,7 +5999,9 @@
     "gcost": [
       "G001"
     ],
-    "mcost": null,
+    "mcost": {
+      "M001": 2700000000
+    },
     "smithCost": null,
     "pts": 120,
     "pow": 3,

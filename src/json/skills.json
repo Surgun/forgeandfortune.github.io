@@ -631,18 +631,18 @@
   },
   {
     "id": "SM907C",
-    "name": "Tree Nothing",
-    "description": "Trees don't move.",
-    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
+    "name": "Uhhh... Photosynthesis?",
+    "description": "Literally just a tree.  Might eventually process sunlight in an attempt synthesize foods from carbon dioxide and water.",
+    "icon": "<img src=\"/assets/svg/pine-tree.svg\">",
     "powMod": 0,
     "mod1": null,
     "mod2": null
   },
   {
     "id": "SMP907A",
-    "name": "Tree Nothing Passive",
-    "description": "Trees are strong.",
-    "icon": "<img src=\"/assets/svg/tree-branch.svg\">",
+    "name": "Load Bearing",
+    "description": "Trees are strong.  You won't do much damage to them.",
+    "icon": "<img src=\"/assets/svg/wood-beam.svg\">",
     "powMod": 0,
     "mod1": null,
     "mod2": null

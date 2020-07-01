@@ -253,9 +253,9 @@ function createQuestContainer(quest,skipAnim) {
     $("<div/>").addClass("questRewardHeader").html("Rewards").appendTo(d);
     const questRewardContainer = $("<div/>").addClass("questRewardContainer").appendTo(d);
     if (quest.rewardType === "Gold") {
-        const questReward = $("<div/>").addClass("questReward").appendTo(questRewardContainer);
+        const questReward = $("<div/>").addClass("questReward tooltip").attr({"data-tooltip":"gold_value","data-tooltip-value":formatWithCommas(quest.rewardAmt)}).appendTo(questRewardContainer);
             $("<div/>").addClass("rewardIcon").html(miscIcons.gold).appendTo(questReward);
-            $("<div/>").addClass("rewardValue tooltip").attr({"data-tooltip":"gold_value","data-tooltip-value":formatWithCommas(quest.rewardAmt)}).html(formatToUnits(quest.rewardAmt,2)).appendTo(questReward);
+            $("<div/>").addClass("rewardValue").html(formatToUnits(quest.rewardAmt,2)).appendTo(questReward);
     } else {
         $("<div/>").addClass("questRewardDesc").html(quest.rewardText).appendTo(questRewardContainer); 
     }

@@ -68,6 +68,7 @@ class Item{
         for (const [material, amt] of Object.entries(this.mcost)) {
             const mat = ResourceManager.idToMaterial(material);
             const d1 = $("<div/>").addClass("indvCost matCost tooltip").attr("id","vr"+this.id).attr({"data-tooltip":"material_desc","data-tooltip-value":mat.id}).html(ResourceManager.formatCost(material,amt));
+            if (mat.id === "M001") d1.addClass("matGold").attr({"data-tooltip":"gold_value","data-tooltip-value":formatWithCommas(amt)});
             d.append(d1);
         }
         return d;

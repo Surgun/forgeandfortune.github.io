@@ -76,7 +76,7 @@ const ResourceManager = {
         return `<img src="/assets/images/resources/${type}.png" alt="${type}">`
     },
     formatCost(res,amt) {
-        return `<div class="matIcon">${this.materialIcon(res)}</div> <span class="matAmt">${amt}</span>`;
+        return `<div class="matIcon">${this.materialIcon(res)}</div> <span class="matAmt">${formatToUnits(amt,2)}</span>`;
     },
     sidebarMaterial(resID) {
         const res = this.materials.find(resource => resource.id == resID)

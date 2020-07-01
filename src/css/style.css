@@ -2480,6 +2480,10 @@ footer {
     border-radius: 5px;
 }
 
+.indvCost.matGold {
+    grid-column: span 2;
+}
+
 .indvCost > i, .indvCost > .matIcon, .orderGuildMat > .matIcon {
     display: flex;
     justify-content: center;

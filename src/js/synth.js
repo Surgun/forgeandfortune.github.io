@@ -135,6 +135,7 @@ function refreshSynthInventory() {
     const d1 = $("<div/>").addClass('synthListCardsContainer').appendTo($synthListContainer);
     if (Inventory.higherRarity().length === 0) $("<div/>").addClass("emptyContentMessage").html(displayText('synthesizer_inventory_empty')).appendTo($synthListContainer)
     Inventory.higherRarity().forEach(container => {
+        if (container.item.type === "Trinkets") return;
         createSynthCard(container,false).appendTo(d1);
     });
 };

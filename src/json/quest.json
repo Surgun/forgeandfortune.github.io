@@ -15,7 +15,7 @@
     "openReq": "AL30061",
     "rewardType": "Gold",
     "rewardAmt": 378979,
-    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 378979"
+    "rewardText": null
   },
   {
     "id": "Q0002",
@@ -33,7 +33,7 @@
     "openReq": "AL30061",
     "rewardType": "Gold",
     "rewardAmt": 378979,
-    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 378979"
+    "rewardText": null
   },
   {
     "id": "Q0003",
@@ -51,7 +51,7 @@
     "openReq": "AL30061",
     "rewardType": "Gold",
     "rewardAmt": 378979,
-    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 378979"
+    "rewardText": null
   },
   {
     "id": "Q0004",
@@ -69,7 +69,7 @@
     "openReq": "D405",
     "rewardType": "Gold",
     "rewardAmt": 1185082,
-    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 1185082"
+    "rewardText": null
   },
   {
     "id": "Q0005",
@@ -87,7 +87,7 @@
     "openReq": "D405",
     "rewardType": "Gold",
     "rewardAmt": 1185082,
-    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 1185082"
+    "rewardText": null
   },
   {
     "id": "Q0006",
@@ -105,7 +105,7 @@
     "openReq": "D405",
     "rewardType": "Gold",
     "rewardAmt": 1185082,
-    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 1185082"
+    "rewardText": null
   },
   {
     "id": "Q0007",
@@ -123,7 +123,7 @@
     "openReq": "D406",
     "rewardType": "Gold",
     "rewardAmt": 4203700,
-    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 4203700"
+    "rewardText": null
   },
   {
     "id": "Q0008",
@@ -141,7 +141,7 @@
     "openReq": "D407",
     "rewardType": "Gold",
     "rewardAmt": 13309343,
-    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 13309343"
+    "rewardText": null
   },
   {
     "id": "Q0009",
@@ -159,7 +159,7 @@
     "openReq": "D408",
     "rewardType": "Gold",
     "rewardAmt": 63499259,
-    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 63499259"
+    "rewardText": null
   },
   {
     "id": "Q0010",
@@ -177,7 +177,7 @@
     "openReq": "D409",
     "rewardType": "Gold",
     "rewardAmt": 228018376,
-    "rewardText": "<img src=\"/assets/images/resources/M001.png\"> 228018376"
+    "rewardText": null
   },
   {
     "id": "Q1000",

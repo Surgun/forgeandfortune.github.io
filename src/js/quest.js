@@ -252,7 +252,7 @@ function createQuestContainer(quest,skipAnim) {
     $("<div/>").addClass("questDesc").html(`<span>${quest.description}</span>`).appendTo(d);
     $("<div/>").addClass("questRewardHeader").html("Rewards").appendTo(d);
     const questRewardContainer = $("<div/>").addClass("questRewardContainer").appendTo(d);
-    if (quest.rewardType === "Gold") {
+    if (!quest.rewardText) {
         const questReward = $("<div/>").addClass("questReward tooltip").attr({"data-tooltip":"gold_value","data-tooltip-value":formatWithCommas(quest.rewardAmt)}).appendTo(questRewardContainer);
             $("<div/>").addClass("rewardIcon").html(miscIcons.gold).appendTo(questReward);
             $("<div/>").addClass("rewardValue").html(formatToUnits(quest.rewardAmt,2)).appendTo(questReward);

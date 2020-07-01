@@ -238,5 +238,11 @@
     "version": "V0.4.0.3",
     "date": "July 1st, 2020",
     "body": "<p>Hey Fortuneers!</p><p>V0.4.0.3 is here, mostly focusing on balance changes. Here's the scoop:</p><ul><li>Dungeons overall have been made easier (although still harder than release). This is especially true post T6.</li><li>Trinkets now have a crafting cost (as well as a research cost)</li><li>Fixed various tooltips (notably Titus's tooltips) and visual improvements</li></ul><p>That's it! As always leave us feedback over on discord and thank you for playing!</p><p>Akerson</p>"
+  },
+  {
+    "patchCount": 41,
+    "version": "V0.4.0.4",
+    "date": "July 1st, 2020",
+    "body": "I missed Abqu's changes in merge, all is fixed (no additional notes but nerfs correctly applied)"
   }
 ]

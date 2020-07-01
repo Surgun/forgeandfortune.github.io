@@ -335,9 +335,9 @@
   {
     "id": "SM100",
     "name": "Swift Strike",
-    "description": "Attacks the enemy and heals for the same amount.",
+    "description": "Attacks the enemy and heals all allies for the same amount.",
     "icon": "<img src=\"/assets/svg/bleeding-heart.svg\">",
-    "powMod": 2,
+    "powMod": 0.75,
     "mod1": null,
     "mod2": null
   },

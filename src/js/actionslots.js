@@ -104,6 +104,9 @@ class actionSlot {
     resList() {
         return this.item.gcost;
     }
+    matList() {
+        return this.item.mcost;
+    }
 }
 
 const actionSlotManager = {
@@ -257,7 +260,7 @@ function newActionSlot(slot) {
     $("<div/>").addClass("ASCancelText tooltip").attr({"data-tooltip": "cancel_craft"}).data("slotNum",slot.slotNum).html(`${miscIcons.cancelSlot}`).appendTo(d2);
     const d3 = $("<div/>").addClass("ASProgressBar").attr("id","ASBar"+slot.slotNum).appendTo(d);
         const d3a = $("<div/>").addClass("ASProgressBarTimer tooltip").appendTo(d3);
-        if (slot.status === slotState.NEEDMATERIAL) d3a.addClass("matsNeeded").attr({"data-tooltip": "materials_needed"}).html(miscIcons.alert + "Materials Needed");
+        if (slot.status === slotState.NEEDMATERIAL) d3a.addClass("matsNeeded").attr({"data-tooltip": "materials_needed"}).html(miscIcons.alert);
     const s3 = $("<span/>").addClass("ProgressBarFill").attr("id","ASBarFill"+slot.slotNum).appendTo(d3);
     if (slot.isMastered()) s3.addClass("ProgressBarFillMaster");
     const d4 = $("<div/>").addClass("ASauto tooltip").attr("data-tooltip", `autosell_${slot.autoSell().toLowerCase()}`).attr("id","asAuto"+slot.slotNum).data("slotNum",slot.slotNum).html(miscIcons.autoSell).appendTo(d);
@@ -268,6 +271,9 @@ function newActionSlot(slot) {
     slot.resList().forEach(g => {
         $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d5);
     });
+    const mat = Object.keys(slot.matList());
+    const matIcon = $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":mat}).html(ResourceManager.materialIcon(mat)).appendTo(d5);
+    if (recipeList.idToItem(slot.itemid).isMastered()) matIcon.hide();
     return d;
 }
 

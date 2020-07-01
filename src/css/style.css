@@ -1953,6 +1953,10 @@ footer {
     z-index: 2;
 }
 
+.asResIcon > img {
+    height: 16px;
+}
+
 /* End Crafting Slots */
 
 /* Generic Progress Bar */ 

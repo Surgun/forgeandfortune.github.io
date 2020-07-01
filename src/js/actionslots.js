@@ -272,7 +272,9 @@ function newActionSlot(slot) {
         $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"guild_worker","data-tooltip-value":g}).html(GuildManager.idToGuild(g).icon).appendTo(d5);
     });
     const mat = Object.keys(slot.matList());
+    const matAmt = Object.values(slot.matList());
     const matIcon = $("<div/>").addClass("asResIcon tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":mat}).html(ResourceManager.materialIcon(mat)).appendTo(d5);
+    if (mat[0] === "M001") matIcon.attr({"data-tooltip":"gold_value","data-tooltip-value":formatWithCommas(matAmt)})
     if (recipeList.idToItem(slot.itemid).isMastered()) matIcon.hide();
     return d;
 }

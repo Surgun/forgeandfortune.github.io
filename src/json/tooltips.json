@@ -338,14 +338,14 @@
   {
     "id": "import_save",
     "title": "Import Game Data",
-    "description": "Export your current game data for sharing or importing at a later time.",
+    "description": "Import your own previously exported data or shared game data.",
     "icon": "<i class=\"fas fa-file-export\"></i>",
     "type": "static"
   },
   {
     "id": "export_save",
     "title": "Export Game Data",
-    "description": "Import your own previously exported data or shared game data.",
+    "description": "Export your current game data for sharing or importing at a later time.",
     "icon": "<i class=\"fas fa-file-import\"></i>",
     "type": "static"
   },

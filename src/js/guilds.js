@@ -352,6 +352,7 @@ function createOrderCard(item,id,index) {
             const matBox = $("<div/>").addClass("orderGuildMat tooltip").attr({"data-tooltip":"material_desc","data-tooltip-value":mat}).appendTo(d2);
             $("<div/>").addClass("matIcon").html(ResourceManager.idToMaterial(mat).img).appendTo(matBox);
             $("<div/>").addClass("matAmt").html(Object.values(item.item.mcost)[i]).appendTo(matBox);
+            if (item.item.isMastered()) matBox.addClass("isMastered");
         });
     }
     $("<div/>").addClass("itemToSacReq").html(`${formatToUnits(item.left(),2)} Left`).appendTo(d1);

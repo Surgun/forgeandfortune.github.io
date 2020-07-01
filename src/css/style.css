@@ -2509,16 +2509,16 @@ footer {
     padding: 0 3px;
 }
 
-.indvCost.matCost.isMastered {
+.indvCost.matCost.isMastered, .orderGuildMat.isMastered {
     border-color: var(--highlight);
 }
 
-.indvCost.matCost.isMastered .matIcon {
+.indvCost.matCost.isMastered .matIcon, .orderGuildMat.isMastered .matIcon {
     flex-grow: 1;
     background: var(--gradient-secondary);
 }
 
-.indvCost.matCost.isMastered .matAmt {
+.indvCost.matCost.isMastered, .orderGuildMat.isMastered .matAmt {
     display: none;
 }
 

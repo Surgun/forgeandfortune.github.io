@@ -733,7 +733,7 @@
   },
   {
     "tid": "tutorial_desc_6",
-    "en": "Reach Floor 5 of in the Groovy Grove dungeon.  Adventures will progress on their own.  If a floor is too difficult, they will drop down until they are on a floor they can complete."
+    "en": "Reach Floor 5 of in the Groovy Grove dungeon.  Adventures will progress on their own.  If a floor is too difficult, heroes will drop down until they are on a floor they can complete."
   },
   {
     "tid": "tutorial_desc_7",
@@ -741,7 +741,7 @@
   },
   {
     "tid": "tutorial_desc_8",
-    "en": "Level the Cat's Meow to Level 1 by submitting 5 Knives."
+    "en": "Advance the Cat's Meow to Level 1 by submitting 5 Knives."
   },
   {
     "tid": "tutorial_desc_9",
@@ -757,15 +757,15 @@
   },
   {
     "tid": "tutorial_desc_12",
-    "en": "Unlock the guild Aviation Association in the Market."
+    "en": "Unlock the Aviation Association guild in the Market."
   },
   {
     "tid": "tutorial_desc_13",
-    "en": "Level the Aviation Association to Level 1."
+    "en": "Advance the Aviation Association to Level 1."
   },
   {
     "tid": "tutorial_desc_14",
-    "en": "Earth Staff requires a new material; send Revere to adventure Spooky Spot."
+    "en": "Earth Staff requires a new material; send Revere to adventure in the Spooky Spot."
   },
   {
     "tid": "tutorial_desc_15",

@@ -304,7 +304,7 @@ function recipeCardFront(recipe) {
     const td2 = $('<div/>').addClass('recipeDescription').html("<i class='fas fa-info-circle'></i>");
     const td3 = $('<div/>').addClass('itemLevel').html(recipe.itemLevel());
     if (recipe.recipeType !== "normal") td3.hide();
-    const td4 = $('<div/>').addClass('recipecostdiv').attr("id",recipe.id+"rcd");
+    const td4 = $('<div/>').addClass('recipecostdiv').attr("id","rcd"+recipe.id);
         if (recipe.isMastered()) td4.addClass("isMastered");
         const td4a = $('<div/>').addClass('reciperesdiv').html(recipe.visualizeResAndMat());
         if (recipe.isMastered()) td4a.addClass('isMastered');

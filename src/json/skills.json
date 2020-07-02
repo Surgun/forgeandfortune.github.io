@@ -146,7 +146,7 @@
   {
     "id": "S1020",
     "name": "Frost Strike",
-    "description": "Neve attacks a single target and applies a chilled effect. If the target is already chilled,  Zoe deals increased damage.",
+    "description": "Neve attacks a single target and applies a chilled effect. If the target is already chilled,  Neve deals increased damage.",
     "icon": "<img src=\"/assets/svg/ice-bolt.svg\">",
     "powMod": 1,
     "mod1": 2.5,

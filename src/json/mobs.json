@@ -483,8 +483,8 @@
   {
     "id": "B908",
     "name": "Krakoptopus",
-    "hpMod": 130000,
-    "powMod": 3000,
+    "hpMod": 150000,
+    "powMod": 3500,
     "protection": 0,
     "skill1": "SM908",
     "skill2": "S0000",

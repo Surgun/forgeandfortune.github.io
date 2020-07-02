@@ -479,7 +479,7 @@
   {
     "id": "SM206",
     "name": "Life Seed",
-    "description": "Heal all teammates, heal additional if undamaged.",
+    "description": "Heal all teammates. Additional healing done if Cyan Curse is undamaged.",
     "icon": "<img src=\"/assets/svg/ground-sprout.svg\">",
     "powMod": 0.75,
     "mod1": 2,
@@ -488,7 +488,7 @@
   {
     "id": "SM207",
     "name": "Avalanche",
-    "description": "All undamaged units lose 50% of their HP.",
+    "description": "All undamaged enemy units lose 50% of their HP.",
     "icon": "<img src=\"/assets/svg/rock.svg\">",
     "powMod": 1,
     "mod1": 0.5,
@@ -506,7 +506,7 @@
   {
     "id": "SM209",
     "name": "Ignition",
-    "description": "Damage all enemy units. Units take more damage if this unit is full HP.",
+    "description": "Damage all enemy units. Units take more damage if Blaze is at full HP.",
     "icon": "<img src=\"/assets/svg/burning-embers.svg\">",
     "powMod": 1,
     "mod1": 2,

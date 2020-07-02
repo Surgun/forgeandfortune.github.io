@@ -794,7 +794,7 @@
   {
     "id": "SM908",
     "name": "Tentacle Whip",
-    "description": "Attacks front unit and two behind for reduced damage.",
+    "description": "Attacks all units, reducing damage dealt after each additional target hit.",
     "icon": "<i class=\"fas fa-unlink\"></i>",
     "powMod": 2,
     "mod1": 0.5,
@@ -803,7 +803,7 @@
   {
     "id": "SM908A",
     "name": "Mind Control",
-    "description": "Takes control of an enemy for a short time, forcing them to attack their allies instead.",
+    "description": "Krakoptopus gains control of this hero's next special skill, using it against your team or for his benefit.",
     "icon": "<i class=\"fas fa-mind-share\"></i>",
     "powMod": 0,
     "mod1": null,
@@ -812,7 +812,7 @@
   {
     "id": "SM908B",
     "name": "Cold Blooded",
-    "description": "Negates damage dealt on next attack and heals for amount instead.",
+    "description": "Negates damage received from heroes on the next attack, and heals Krakoptopus for an equal amount instead.",
     "icon": "<i class=\"fas fa-fish\"></i>",
     "powMod": 0,
     "mod1": 2,

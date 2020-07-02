@@ -5314,9 +5314,9 @@
       "G004"
     ],
     "mcost": {
-      "M108": 100,
-      "M208": 100,
-      "M308": 100
+      "M107": 100,
+      "M207": 100,
+      "M307": 100
     },
     "smithCost": null,
     "pts": null,
@@ -5489,7 +5489,7 @@
     "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 2,
-    "value": 7,
+    "value": 3,
     "craftTime": 17122,
     "type": "Trinkets",
     "gcost": [
@@ -5517,7 +5517,7 @@
     "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 3,
-    "value": 42,
+    "value": 5,
     "craftTime": 28765,
     "type": "Trinkets",
     "gcost": [
@@ -5545,7 +5545,7 @@
     "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 4,
-    "value": 274,
+    "value": 10,
     "craftTime": 48062,
     "type": "Trinkets",
     "gcost": [
@@ -5573,7 +5573,7 @@
     "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 5,
-    "value": 500,
+    "value": 20,
     "craftTime": 79792,
     "type": "Trinkets",
     "gcost": [
@@ -5601,7 +5601,7 @@
     "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 6,
-    "value": 500,
+    "value": 40,
     "craftTime": 131615,
     "type": "Trinkets",
     "gcost": [
@@ -5629,7 +5629,7 @@
     "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 7,
-    "value": 500,
+    "value": 80,
     "craftTime": 215766,
     "type": "Trinkets",
     "gcost": [
@@ -5657,7 +5657,7 @@
     "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 8,
-    "value": 500,
+    "value": 160,
     "craftTime": 351769,
     "type": "Trinkets",
     "gcost": [
@@ -5685,7 +5685,7 @@
     "name": "Healthy Trinket",
     "description": "An excellent choice for packing on a few extra pounds.",
     "lvl": 9,
-    "value": 500,
+    "value": 320,
     "craftTime": 570860,
     "type": "Trinkets",
     "gcost": [

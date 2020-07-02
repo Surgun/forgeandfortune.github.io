@@ -420,10 +420,10 @@
   {
     "id": "BM907C",
     "name": "Time For Lunch",
-    "description": "Searching for bananas.",
+    "description": "Searching for bananas.  Will come out of hiding when reduced to 0.",
     "icon": "<i class=\"fas fa-monkey\"></i>",
-    "maxStack": 1,
-    "stackCast": 2,
+    "maxStack": 5,
+    "stackCast": 5,
     "onCast": "refresh",
     "decrease": "onHit",
     "type": "buff"

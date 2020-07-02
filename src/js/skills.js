@@ -821,6 +821,14 @@ SkillManager.skillEffects['SM904'] = function (combatParams) {
     });
 }
 
+SkillManager.skillEffects['SM904D'] = function (combatParams) {
+    //DRAIN - LICH
+    const targets = combatParams.getTarget(TargetType.TWOLEASTMAX,SideType.ENEMIES);
+    targets.forEach(target => {
+        target.takeAttack(combatParams);
+    });
+}
+
 SkillManager.skillEffects['SM904A'] = function (combatParams) {
     //BONESPLOSION - DRY BONES
     const targets = combatParams.getTarget(TargetType.ALL,SideType.ENEMIES);

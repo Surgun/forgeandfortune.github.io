@@ -693,6 +693,15 @@
     "mod2": null
   },
   {
+    "id": "SM904D",
+    "name": "Bonerang",
+    "description": "Hits two lowest max HP enemies",
+    "icon": "<img src=\"/assets/svg/death-book.svg\">",
+    "powMod": 2,
+    "mod1": null,
+    "mod2": null
+  },
+  {
     "id": "SMP904A",
     "name": "Bone Down",
     "description": "When dead, turn into a pile of bones instead.",

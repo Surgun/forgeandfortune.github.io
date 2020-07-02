@@ -1,6 +1,6 @@
 "use strict";
 
-const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9,CLEAVE:10,BEFORE:11,AFTER:12,ADJACENT:13,MIRROR:14,RANDOM:15,ENEMIES:16,});
+const TargetType = Object.freeze({FIRST:0,SECOND:1,THIRD:2,FOURTH:3,SELF:5,ALL:6,MISSINGHP:7,LOWESTHP:8,BEHIND:9,CLEAVE:10,BEFORE:11,AFTER:12,ADJACENT:13,MIRROR:14,RANDOM:15,ENEMIES:16,TWOLEASTMAX:17});
 const SideType = Object.freeze({ALLIES:0,ENEMIES:1});
 
 const CombatManager = {
@@ -113,6 +113,9 @@ class combatRoundParams {
         }
         if (target === TargetType.ENEMIES) {
             return this.enemies;
+        }
+        if (target === TargetType.TWOLEASTMAX) {
+            return living.sort((a,b)=>a.maxHP()-b.maxHP()).slice(0,2);
         }
     }
 }

@@ -696,7 +696,7 @@
     "id": "SM904D",
     "name": "Bonerang",
     "description": "Hits two lowest max HP enemies",
-    "icon": "<img src=\"/assets/svg/death-book.svg\">",
+    "icon": "<img src=\"/assets/svg/boomerang.svg\">",
     "powMod": 2,
     "mod1": null,
     "mod2": null
